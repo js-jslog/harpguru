@@ -1,0 +1,21 @@
+import { HarpStrata } from '../types'
+import { EXAMPLE_DEGREE_MATRICES } from '../Degree/testResources'
+import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/constants'
+
+const MAJOR_DIATONIC_FIRST_POZITION: HarpStrata = {
+  apparatus: MAJOR_DIATONIC_APPARATUS,
+  degreeMatrix: EXAMPLE_DEGREE_MATRICES.MAJOR_DIATONIC_FIRST_POZITION,
+} as const
+
+const MAJOR_DIATONIC_SECOND_POZITION: HarpStrata = {
+  apparatus: MAJOR_DIATONIC_APPARATUS,
+  degreeMatrix: EXAMPLE_DEGREE_MATRICES.MAJOR_DIATONIC_SECOND_POZITION,
+} as const
+
+export const EXAMPLE_STRATA: {
+  MAJOR_DIATONIC_FIRST_POZITION;
+  MAJOR_DIATONIC_SECOND_POZITION;
+} = {
+  MAJOR_DIATONIC_FIRST_POZITION,
+  MAJOR_DIATONIC_SECOND_POZITION,
+} as const
