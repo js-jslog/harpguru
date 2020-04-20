@@ -1,4 +1,4 @@
-import { ApparatusIds, Apparatus } from './types'
+import type { ApparatusIds, Apparatus } from './types'
 import { MAJOR_DIATONIC_APPARATUS } from './constants'
 
 

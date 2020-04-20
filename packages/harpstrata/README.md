@@ -46,7 +46,7 @@ A composition of a hardcoded `Apparatus` object and a map of the `Degrees` which
 ### getHarps() => ApparatusIds[]
 Returns an array of id's of the various `Apparatus` objects which can be represented with HarpStrata. The id from which can be fed in to the `getHarpStrata` next.
 
-### getPozitions() => PozitionIds[]
+### getPozitionIds() => PozitionIds[]
 Returns an array of id's of the various `Pozition` objects which can be represented with HarpStrata. The id from which can be fed in to the `getHarpStrata` next.
 
 ### getHarpStrata(apparatusId: ApparatusIds, pozitionId: PozitionIds) => HarpStrata

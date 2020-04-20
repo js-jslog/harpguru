@@ -1,5 +1,4 @@
-import { ApparatusIds, Apparatus } from '../types'
-import { InteractionMatrix } from '../Interaction/types'
+import { ApparatusIds, Apparatus, InteractionMatrix, HalfstepIndexMatrix } from '../types'
 import {
   OVERBLOW1,
   BLOW,
@@ -8,7 +7,6 @@ import {
   BEND2,
   BEND3,
 } from '../Interaction/constants'
-import { HalfstepIndexMatrix } from '../HalfstepIndex/types'
 
 const halfstepIndexMatrix: HalfstepIndexMatrix = [
   [ 3        , undefined, undefined, 15       , ],

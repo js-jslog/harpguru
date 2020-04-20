@@ -11,5 +11,5 @@ export interface Interaction {
   readonly id: InteractionIds;
 }
 
-type InteractionRow = ReadonlyArray<Interaction | undefined>
+export type InteractionRow = ReadonlyArray<Interaction | undefined>
 export type InteractionMatrix = ReadonlyArray<InteractionRow>

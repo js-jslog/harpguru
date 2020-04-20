@@ -1,4 +1,4 @@
-import { PozitionIds, Pozition } from './types'
+import type { PozitionIds, Pozition } from './types'
 import { FIRST, SECOND } from './constants'
 
 const pozitionMap = new Map()

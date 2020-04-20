@@ -1,4 +1,4 @@
-import { HarpStrata } from '../types'
+import type { HarpStrata } from '../types'
 import { EXAMPLE_DEGREE_MATRICES } from '../Degree/testResources'
 import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/constants'
 

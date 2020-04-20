@@ -1,4 +1,4 @@
-import { DegreeMatrix } from '../types'
+import type { DegreeMatrix } from '../types'
 import {
   ROOT,
   FLAT2,

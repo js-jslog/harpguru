@@ -1,6 +1,6 @@
-import { HalfstepIndexMatrix, HalfstepIndex } from '../Apparatus/HalfstepIndex/types'
+import type { HalfstepIndexMatrix, HalfstepIndex } from '../types'
 
-import { DegreeMatrix } from './types'
+import type { DegreeMatrix } from './types'
 import { ORDERED_DEGREES } from './constants'
 
 

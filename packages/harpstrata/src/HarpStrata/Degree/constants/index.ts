@@ -1,4 +1,5 @@
-import { Degree, DegreeIds } from '../types'
+import { DegreeIds } from '../types'
+import type { Degree } from '../types'
 
 export const ROOT: Degree = { id: DegreeIds.Root } as const
 export const FLAT2: Degree = { id: DegreeIds.Flat2 } as const

@@ -17,5 +17,5 @@ export interface Degree {
   readonly id: DegreeIds;
 }
 
-type DegreeRow = ReadonlyArray<Degree | undefined>
+export type DegreeRow = ReadonlyArray<Degree | undefined>
 export type DegreeMatrix = ReadonlyArray<DegreeRow>
