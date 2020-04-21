@@ -1,9 +1,10 @@
 {
     "name": "harpstrata",
     "version": "0.1.0",
-    "description": "A basic tdd project with typescript",
+    "description": "A library for generating matrix representations of various harmonica layouts played in various positions",
     "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
+    "files": ["lib/**/*"],
     "private": true,
     "author": "js-jslog <josephsinfield@yahoo.com>",
     "license": "UNLICENSED",
@@ -12,7 +13,11 @@
         "clear-jest": "jest --clearCache",
         "lint": "tsc --noEmit && eslint './**'",
         "fix-lint": "eslint './**' --fix",
-        "prepublish": "tsc"
+        "build": "tsc",
+        "prepare" : "npm run build",
+        "prepublishOnly" : "npm test && npm run lint",
+        "preversion" : "npm test && npm run lint",
+        "postversion" : "git push && git push --tags"
     },
     "devDependencies": {
         "@types/jest": "^25.2.1",

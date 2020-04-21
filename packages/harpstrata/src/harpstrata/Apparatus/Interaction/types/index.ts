@@ -5,11 +5,11 @@ export enum InteractionIds {
   Bend2 = 'BEND2',
   Bend3 = 'BEND3',
   Overblow1 = 'OVERBLOW1',
+  Overblow2 = 'OVERBLOW2',
 }
 
 export interface Interaction {
   readonly id: InteractionIds;
 }
 
-export type InteractionRow = ReadonlyArray<Interaction | undefined>
-export type InteractionMatrix = ReadonlyArray<InteractionRow>
+export type InteractionMask = ReadonlyArray<Interaction>

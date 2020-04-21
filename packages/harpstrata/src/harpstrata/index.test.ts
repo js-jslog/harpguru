@@ -1,10 +1,10 @@
 import { EXAMPLE_STRATA } from './testResources'
 
 import { ApparatusIds, PozitionIds } from './types'
-import { getHarpIds, getPozitionIds, getHarpStrata} from './index'
+import { getApparatusIds, getPozitionIds, getHarpStrata} from './index'
 
-test('getHarpIds function returns an array with a major diatonic as one of the values', () => {
-  expect(getHarpIds().includes(ApparatusIds.MajorDiatonic)).toBeTruthy()
+test('getApparatusIds function returns an array with a major diatonic as one of the values', () => {
+  expect(getApparatusIds().includes(ApparatusIds.MajorDiatonic)).toBeTruthy()
 })
 
 test('getPozitionIds function returns an array with a first pozition as one of the values', () => {

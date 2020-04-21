@@ -1,6 +1,7 @@
 node_modules/
 lib/
 README.md
+CHANGELOG.md
 package.json
 package-lock.json
 tsconfig.json
