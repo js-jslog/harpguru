@@ -12,14 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Security: to invite users to upgrade in case of vulnerabilities.
 
 
-## [Unreleased] - yyyy-mm-dd
-[unreleased]: https://github.com/js-jslog/harpstrata/compare/0.1.0...HEAD
+## [Unreleased]
+[unreleased]: https://github.com/js-jslog/harpstrata/compare/1.0.0...HEAD
 
-## [0.1.0] - yyyy-mm-dd
-[0.1.0]: https://github.com/js-jslog/harpstrata/releases/tag/0.1.0
+## [1.0.0] - 2020-04-21
+[1.0.0]: https://github.com/js-jslog/harpstrata/releases/tag/1.0.0
 ### Added
 - Library created
 
-## Example diff list (to be replaced once I have a few diffs)
-[unreleased]: https://github.com/js-jslog/harpstrata/compare/0.1.0...HEAD
-[0.1.0]: https://github.com/js-jslog/harpstrata/releases/tag/0.1.0
+## Example diff list
+[unreleased]: https://github.com/js-jslog/harpstrata/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/js-jslog/harpstrata/releases/tag/1.0.0
