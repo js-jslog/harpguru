@@ -21,7 +21,7 @@ test('Each of the apparatus halfstep matrices have parity with their interaction
 
     const matricesDoNotHaveParity = matrixA.some((rowA: HalfstepIndexRow, indexY: number) => {
       return rowA.some((elementA: HalfstepIndex | undefined, indexX: number) => {
-        const elementB = matrixB[indexY][indexX]
+        const { [indexX]: elementB } = matrixB[indexY]
         const noParityA = (elementA === undefined && elementB !== undefined)
         const noParityB = (elementA !== undefined && elementB === undefined)
 
