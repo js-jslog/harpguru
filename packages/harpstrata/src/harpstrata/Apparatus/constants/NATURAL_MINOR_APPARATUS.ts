@@ -23,7 +23,7 @@ const halfstepIndexMatrix: HalfstepIndexMatrix = [
 const interactionMatrix: InteractionMatrix = [
   //    1          2          3          4          5          6          7          8          9         10
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, BLOWBEND2 ],
-  [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, BLOWBEND1, BLOWBEND1, BLOWBEND1 ],
+  [ undefined, undefined, undefined, undefined, undefined, undefined, BLOWBEND1, undefined, BLOWBEND1, BLOWBEND1 ],
   [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
   [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
   [ BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , undefined, undefined, undefined, undefined ],
