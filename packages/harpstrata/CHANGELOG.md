@@ -13,13 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
-[unreleased]: https://github.com/js-jslog/harpstrata/compare/1.0.0...HEAD
+[unreleased](https://github.com/js-jslog/harpstrata/compare/1.0.0...HEAD)
 
 ## [1.0.0] - 2020-04-21
-[1.0.0]: https://github.com/js-jslog/harpstrata/releases/tag/1.0.0
+[1.0.0](https://github.com/js-jslog/harpstrata/releases/tag/1.0.0)
 ### Added
 - Library created
 
 ## Example diff list
-[unreleased]: https://github.com/js-jslog/harpstrata/compare/1.0.0...HEAD
-[1.0.0]: https://github.com/js-jslog/harpstrata/releases/tag/1.0.0
+- [unreleased](https://github.com/js-jslog/harpstrata/compare/1.0.0...HEAD)
+- [1.0.0](https://github.com/js-jslog/harpstrata/releases/tag/1.0.0)
