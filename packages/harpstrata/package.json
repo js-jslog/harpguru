@@ -5,7 +5,6 @@
     "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
     "files": ["lib/**/*"],
-    "private": true,
     "author": "js-jslog <josephsinfield@yahoo.com>",
     "license": "UNLICENSED",
     "scripts": {
