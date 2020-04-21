@@ -4,6 +4,7 @@ import { HalfstepIndexMatrix } from '../types'
 export enum ApparatusIds {
   MajorDiatonic = 'MAJOR-DIATONIC',
   CountryTuned = 'COUNTRY-TUNED',
+  NaturalMinor = 'NATURAL-MINOR',
 }
 
 export interface Apparatus {
