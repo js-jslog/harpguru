@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [unreleased diff](https://github.com/js-jslog/harpstrata/compare/1.0.0...HEAD)
 ### Added
 - More Interaction types added
+- Natural minor apparatus added
 
 ### Changed
 - 1d InteractionMask changed to 2d InteractionMatrix
