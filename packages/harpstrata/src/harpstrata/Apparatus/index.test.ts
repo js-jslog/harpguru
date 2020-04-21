@@ -14,7 +14,7 @@ test('getApparatus function can return a major diatonic apparatus', () => {
 })
 
 test('Each of the apparatus halfstep matrices have parity with their interaction matrices', () => {
-  const matricesHaveParity = (matrixA: HalfstepIndexMatrix, matrixB: InteractionMatrix): boolean => {
+  const matricesHaveParity = (matrixA: HalfstepIndexMatrix, matrixB: InteractionMatrix, apparatusId: ApparatusIds): boolean => {
     const matrix1dsMatch = (matrixA.length === matrixB.length)
     const matrix2dsMatch = (matrixA[0].length === matrixB[0].length)
     if (!matrix1dsMatch || !matrix2dsMatch) return false
@@ -25,7 +25,7 @@ test('Each of the apparatus halfstep matrices have parity with their interaction
         const noParityA = (elementA === undefined && elementB !== undefined)
         const noParityB = (elementA !== undefined && elementB === undefined)
 
-        if (noParityA || noParityB) console.log(`Mismatch found at YX (${indexY},${indexX})`)
+        if (noParityA || noParityB) console.log(`Mismatch found at YX (${indexY},${indexX}) in ${apparatusId}`)
 
         return (noParityA || noParityB)
       })
@@ -33,7 +33,9 @@ test('Each of the apparatus halfstep matrices have parity with their interaction
 
     return !matricesDoNotHaveParity
   }
-  const majorDiatonicParity = matricesHaveParity(MAJOR_DIATONIC_APPARATUS.halfstepIndexMatrix, MAJOR_DIATONIC_APPARATUS.interactionMatrix)
-
-  expect(majorDiatonicParity).toBeTruthy()
+  getActiveApparatusIds().forEach(apprartusId => {
+    const apparatus = getApparatus(apprartusId)
+    const hasParity = matricesHaveParity(apparatus.halfstepIndexMatrix, apparatus.interactionMatrix, apparatus.id)
+    expect(hasParity).toBeTruthy()
+  })
 })
