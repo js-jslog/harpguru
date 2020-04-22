@@ -14,18 +14,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 [unreleased diff](https://github.com/js-jslog/harpstrata/compare/1.0.0...HEAD)
+
+## [2.0.0]
+[2.0.0](https://github.com/js-jslog/harpstrata/releases/tag/2.0.0)
 ### Added
-- More Interaction types added
-- Natural minor apparatus added
+- MINOR: More Interaction types added
+- MINOR: Natural minor apparatus added
 
 ### Changed
-- 1d InteractionMask changed to 2d InteractionMatrix
+- MAJOR: 1d InteractionMask changed to 2d InteractionMatrix
 
 ## [1.0.0] - 2020-04-21
-[1.0.0 diff](https://github.com/js-jslog/harpstrata/releases/tag/1.0.0)
+[1.0.0](https://github.com/js-jslog/harpstrata/releases/tag/1.0.0)
 ### Added
 - Library created
 
-## Diff list
+## Github release list
 - [unreleased](https://github.com/js-jslog/harpstrata/compare/1.0.0...HEAD)
+- [2.0.0](https://github.com/js-jslog/harpstrata/releases/tag/2.0.0)
 - [1.0.0](https://github.com/js-jslog/harpstrata/releases/tag/1.0.0)
