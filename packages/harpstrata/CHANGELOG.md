@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v2.0.0...HEAD) - yyyy-mm-dd
+### Added
+- MAJOR: Add Pitch information to public API, changing related types
+- MAJOR: Pitch related parameters added to public API, changing function signatures
+
 ### Fixed
 - PATCH: Correct v2.0.0 tag name in CHANGELOG
 
