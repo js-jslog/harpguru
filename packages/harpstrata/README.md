@@ -39,6 +39,9 @@ The `Pozition` the harp is played in effects the location of the root note of th
 
 `Pozition` is a deliberate misspelling of the word "position". This is the result of "Position" being a reserved word in Typescript. From this point on, the word "pozition" will always be spelled with a "z".
 
+### Pitch
+`Pitch` represents the tone which is produced at each hole interaction. It is also used to identify what key a harmonica is in. This simply refers to the `Pitch` which is at the first position root degree.
+
 ### HarpStrata
 A composition of a hardcoded `Apparatus` object and a map of the `Degrees` which map on to each `Interaction` therein.
 
@@ -49,6 +52,6 @@ Returns an array of id's of the various `Apparatus` objects which can be represe
 ### getPozitionIds() => PozitionIds[]
 Returns an array of id's of the various `Pozition` objects which can be represented with HarpStrata. The id from which can be fed in to the `getHarpStrata` next.
 
-### getHarpStrata(apparatusId: ApparatusIds, pozitionId: PozitionIds) => HarpStrata
-Requires an `ApparatusIds` id object as well as a `PozitionIds` id object from which to deduce the `DegreeMatrix` component of the returned `HarpStrata`.
+### getHarpStrata(apparatusId: ApparatusIds, pozitionId: PozitionIds, harpKeyPitchId: PitchIds) => HarpStrata
+Requires an `ApparatusIds` id object as well as a `PozitionIds` and `PitchIds` id object from which to deduce the `DegreeMatrix` and `PitchMatrix` components of the returned `HarpStrata`.
 
