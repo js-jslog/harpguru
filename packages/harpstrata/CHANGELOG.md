@@ -12,12 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Security: to invite users to upgrade in case of vulnerabilities.
 
 
-## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v3.0.1...HEAD) - yyyy-mm-dd
-## [v3.0.1](https://github.com/js-jslog/harpstrata/compare/v3.0.1) - 2020-05-03
+## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v3.0.2...HEAD) - yyyy-mm-dd
+## [v3.0.2](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.2) - 2020-05-03
+- PATCH: Include Pitch and PitchIds types in the entrypoint file
+- PATCH: Fix version links in CHANGELOG for `v3.0.1` & `v3.0.0`
+
+## [v3.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.1) - 2020-05-03
 ### Fixed
 - PATCH: Change `Unreleased` CHANGELOG entry to `v3.0.0`
 
-## [v3.0.0](https://github.com/js-jslog/harpstrata/compare/v3.0.0) - 2020-05-03
+## [v3.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.0) - 2020-05-03
 ### Added
 - MAJOR: Add Pitch information to public API, changing related types
 - MAJOR: Pitch related parameters added to public API, changing function signatures
@@ -38,8 +42,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Library created
 
 ## Github release list
-- [unreleased](https://github.com/js-jslog/harpstrata/compare/v3.0.1...HEAD)
-- [v3.0.1](https://github.com/js-jslog/harpstrata/compare/v3.0.1)
-- [v3.0.0](https://github.com/js-jslog/harpstrata/compare/v3.0.0)
+- [unreleased](https://github.com/js-jslog/harpstrata/compare/v3.0.2...HEAD)
+- [v3.0.2](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.2)
+- [v3.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.1)
+- [v3.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.0)
 - [v2.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v2.0.0)
 - [1.0.0](https://github.com/js-jslog/harpstrata/releases/tag/1.0.0)
