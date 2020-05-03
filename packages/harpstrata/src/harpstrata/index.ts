@@ -42,5 +42,7 @@ export {
   DegreeRow,
   DegreeMatrix,
   PozitionIds,
-  Pozition
+  Pozition,
+  PitchIds,
+  Pitch
 } from './types'
