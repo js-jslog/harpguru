@@ -13,3 +13,4 @@ apparatusMap.set(NATURAL_MINOR_APPARATUS.id, NATURAL_MINOR_APPARATUS)
 
 export const getActiveApparatusIds = (): ApparatusIds[] => Array.from(apparatusMap.keys())
 export const getApparatus = (apparatusId: ApparatusIds): Apparatus => apparatusMap.get(apparatusId)
+export type { ApparatusIds, Apparatus } from './types'
