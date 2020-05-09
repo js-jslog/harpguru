@@ -1,4 +1,4 @@
-import type { HalfstepIndexMatrix } from '../types'
+import type { HalfstepIndexMatrix } from '../Apparatus'
 
 import type { PitchIds, PitchMatrix, Pitch } from './types'
 import { C, Db, ORDERED_PITCHES } from './constants'

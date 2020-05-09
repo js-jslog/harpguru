@@ -1,61 +1,24 @@
-import { getActivePozitionIds, getPozition } from './Pozition'
-import { getPitchMatrix, getActivePitchIds, getPitch } from './Pitch'
-import { getIsActiveComplex } from './IsActive'
-import { getDegreeMatrix } from './Degree'
-import { getActiveApparatusIds, getApparatus } from './Apparatus'
+export type { HarpStrataProps, HarpStrata } from './HarpStrata'
+export { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from './HarpStrata'
 
-import type { HarpStrataProps, HarpStrata } from './types'
-
-
-export const getApparatusIds = getActiveApparatusIds
-
-export const getPozitionIds = getActivePozitionIds
-
-export const getPitchIds = getActivePitchIds
-
-export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
-  const { apparatusId, pozitionId, keyPitchId, activeIds } = props
-
-  const apparatus = getApparatus(apparatusId)
-  const pozition = getPozition(pozitionId)
-  const pitch = getPitch(keyPitchId)
-
-  const { halfstepIndexMatrix } = apparatus
-  const { root: pozitionRoot } = pozition
-  const { id: pitchId } = pitch
-
-  const degreeMatrix = getDegreeMatrix(halfstepIndexMatrix, pozitionRoot)
-  const pitchMatrix = getPitchMatrix(halfstepIndexMatrix, pitchId)
-  const isActiveComplex = getIsActiveComplex({degreeMatrix, pitchMatrix, activeIds: activeIds })
-
-  return {
-    apparatus,
-    degreeMatrix,
-    pitchMatrix,
-    isActiveComplex,
-  }
-}
-
-export {
-  HarpStrata,
-  ApparatusIds,
+export { ApparatusIds, InteractionIds } from './Apparatus'
+export type {
   Apparatus,
-  InteractionIds,
-  Interaction,
-  InteractionRow,
-  InteractionMatrix,
-  HalfstepIndex,
-  HalfstepIndexRow,
-  HalfstepIndexMatrix,
-  DegreeIds,
-  Degree,
-  DegreeRow,
-  DegreeMatrix,
-  PozitionIds,
-  Pozition,
-  PitchIds,
-  Pitch
-} from './types'
+  Interaction, InteractionRow, InteractionMatrix,
+  HalfstepIndex , HalfstepIndexRow, HalfstepIndexMatrix,
+} from './Apparatus'
 
-export type { ActiveDegreeIds, ActivePitchIds, ActiveIds, IsActiveMatrix, IsActiveRow, IsActiveComplex } from './IsActive'
+export { DegreeIds } from './Degree'
+export type { Degree, DegreeRow, DegreeMatrix } from './Degree'
+
+export { PozitionIds } from './Pozition'
+export type { Pozition } from './Pozition'
+
+export { PitchIds } from './Pitch'
+export type { Pitch } from './Pitch'
+
 export { IsActiveIds } from './IsActive'
+export type {
+  ActiveDegreeIds, ActivePitchIds, ActiveIds,
+  IsActiveMatrix , IsActiveRow   , IsActiveComplex
+} from './IsActive'

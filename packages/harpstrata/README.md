@@ -2,7 +2,7 @@
 A library for generating a layered representation of various harmonica layouts played in various positions
 
 ## Overview
-A harp strata represents the various interactions possible on each hole on the face of a harmonica. The interactions which are possible as well as the note (unimplemented) which is played is governed by the harmonica layout, and the role that note plays in the scale range depends on this position the harmonica is being played in.
+A harp strata represents the various interactions possible on each hole on the face of a harmonica. The interactions which are possible as well as the note which is played is governed by the harmonica layout, and the role that note plays in the scale range depends on this position the harmonica is being played in.
 
 #### Example
 ||hole1|hole2|hole3|hole4|
@@ -32,7 +32,7 @@ The `Apparatus` is the physical harp which is being represented. The relative pi
 
 ### Interaction
 `Interaction` is the name given to the way in which you get various pitches from a single hole. All holes have at least a blow and a draw `Interaction`. Others have bends of various kinds. Each of these has a name.
-// TODO: rather than documenting each of the types and enumerations, we should ellaborate the getter functions to provide sufficient documentation on the types and what they are for
+// TODO: rather than documenting each of the types and enumerations, we could ellaborate the getter functions to provide sufficient documentation on the types and what they are for
 
 ### Pozition
 The `Pozition` the harp is played in effects the location of the root note of the harp and therefore the role that any `Interaction` has.
@@ -41,6 +41,9 @@ The `Pozition` the harp is played in effects the location of the root note of th
 
 ### Pitch
 `Pitch` represents the tone which is produced at each hole interaction. It is also used to identify what key a harmonica is in. This simply refers to the `Pitch` which is at the first position root degree.
+
+### IsActive
+Represents whether the given position in the matrix is considered active or not. Making holes active / inactive represents whether they are important for the current view on the harp. The consuming library will benefit from highlighting the active ones. For example, a user considering a major pentatonic scale will want to only see the relevant holes highlighted.
 
 ### HarpStrata
 A composition of a hardcoded `Apparatus` object and a map of the `Degrees` which map on to each `Interaction` therein.
@@ -52,6 +55,6 @@ Returns an array of id's of the various `Apparatus` objects which can be represe
 ### getPozitionIds() => PozitionIds[]
 Returns an array of id's of the various `Pozition` objects which can be represented with HarpStrata. The id from which can be fed in to the `getHarpStrata` next.
 
-### getHarpStrata(apparatusId: ApparatusIds, pozitionId: PozitionIds, harpKeyPitchId: PitchIds) => HarpStrata
-Requires an `ApparatusIds` id object as well as a `PozitionIds` and `PitchIds` id object from which to deduce the `DegreeMatrix` and `PitchMatrix` components of the returned `HarpStrata`.
+### getHarpStrata(HarpStrataProps) => HarpStrata
+Requires an `ApparatusIds` id object as well as a `PozitionIds`, `PitchIds` and `ActiveIds` object from which to deduce the `DegreeMatrix`, `PitchMatrix` and `IsActiveComplex` components of the returned `HarpStrata`.
 

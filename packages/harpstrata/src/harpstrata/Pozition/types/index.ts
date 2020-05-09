@@ -1,11 +1,11 @@
-import type { HalfstepIndex } from '../../types'
+import type { HalfstepIndex } from '../../Apparatus'
 
 export enum PozitionIds {
   First = 'FIRST',
   Second = 'SECOND',
 }
 
-export interface Pozition {
+export type Pozition = {
   readonly id: PozitionIds;
   readonly root: HalfstepIndex;
 }

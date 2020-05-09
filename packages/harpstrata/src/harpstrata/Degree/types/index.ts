@@ -13,7 +13,7 @@ export enum DegreeIds {
   Seventh = '7',
 }
 
-export interface Degree {
+export type Degree = {
   readonly id: DegreeIds;
 }
 

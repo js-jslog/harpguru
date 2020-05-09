@@ -10,7 +10,7 @@ export enum InteractionIds {
   OverBlow1 = 'OVERBLOW1',
 }
 
-export interface Interaction {
+export type Interaction = {
   readonly id: InteractionIds;
 }
 

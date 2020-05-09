@@ -13,7 +13,7 @@ export enum PitchIds {
   Ab = 'Ab',
 }
 
-export interface Pitch {
+export type Pitch = {
   readonly id: PitchIds;
 }
 

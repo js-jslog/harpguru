@@ -1,4 +1,7 @@
-import { ApparatusIds, InteractionMatrix, HalfstepIndex, HalfstepIndexRow, HalfstepIndexMatrix } from './types'
+import type { InteractionMatrix } from './Interaction'
+import type { HalfstepIndex, HalfstepIndexRow, HalfstepIndexMatrix } from './HalfstepIndex'
+
+import { ApparatusIds } from './types'
 import { getActiveApparatusIds, getApparatus } from './index'
 import { MAJOR_DIATONIC_APPARATUS } from './constants'
 

@@ -1,15 +1,15 @@
-import { ApparatusIds, Apparatus, InteractionMatrix, HalfstepIndexMatrix } from '../types'
+import { ApparatusIds } from '../types'
+import type { Apparatus } from '../types'
+import type { InteractionMatrix } from '../Interaction'
 import {
   BLOW,
   DRAW,
-  BEND1,
-  BEND2,
-  BEND3,
-  BLOWBEND1,
-  BLOWBEND2,
+  BEND1, BEND2, BEND3,
+  BLOWBEND1, BLOWBEND2,
   OVERDRAW1,
   OVERBLOW1,
-} from '../Interaction/constants'
+} from '../Interaction'
+import type { HalfstepIndexMatrix } from '../HalfstepIndex'
 
 const halfstepIndexMatrix: HalfstepIndexMatrix = [
   //    1          2          3          4          5          6          7          8          9         10
