@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v4.0.0...HEAD) - yyyy-mm-dd
-## [v4.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.0) - xxxx-xx-xx
+## [v4.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.0) - 2020-05-09
 ### Added
 - MAJOR: Add IsActiveComplex to the HarpStrata type
 - MINOR: Add remaining Pozitions to make all 12
@@ -53,7 +53,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Library created
 
 ## Github release list
-- [unreleased](https://github.com/js-jslog/harpstrata/compare/v3.0.2...HEAD)
+- [unreleased](https://github.com/js-jslog/harpstrata/compare/v4.0.0...HEAD)
+- [v4.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.0)
 - [v3.0.2](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.2)
 - [v3.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.1)
 - [v3.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.0)
