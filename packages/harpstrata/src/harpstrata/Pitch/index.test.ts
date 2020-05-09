@@ -9,10 +9,10 @@ import { C, F } from './constants'
 
 
 test('getActivePitchIds function returns an array of the available pitches', () => {
-  const expectedArray = [ PitchIds.C, PitchIds.Db ]
+  const expectedIncludes = [ PitchIds.C, PitchIds.Db ]
   const actualArray = getActivePitchIds()
 
-  expect(actualArray).toStrictEqual(expectedArray)
+  expect(actualArray).toEqual(expect.arrayContaining(expectedIncludes))
 })
 
 test('getPitch function can return a first pozition', () => {

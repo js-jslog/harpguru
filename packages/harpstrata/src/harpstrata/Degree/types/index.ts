@@ -1,15 +1,15 @@
 export enum DegreeIds {
   Root = '1',
-  Flat2 = 'b2',
+  Flat2 = '2b',
   Second = '2',
-  Flat3 = 'b3',
+  Flat3 = '3b',
   Third = '3',
   Fourth = '4',
-  Flat5 = 'b5',
+  Flat5 = '5b',
   Fifth = '5',
-  Flat6 = 'b6',
+  Flat6 = '6b',
   Sixth = '6',
-  Flat7 = 'b7',
+  Flat7 = '7b',
   Seventh = '7',
 }
 

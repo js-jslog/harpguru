@@ -16,9 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v4.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.0) - xxxx-xx-xx
 ### Added
 - MAJOR: Add IsActiveComplex to the HarpStrata type
+- MINOR: Add remaining Pozitions to make all 12
+- MINOR: Add remaining Pitches to public API function make all 12
+
 ### Changed
 - MAJOR: Change getHarpStrata function signature to typed object
 - PATCH: Restructured internal architecture
+- PATCH: Change the value part of some of the DegreeIds enum
 
 ## [v3.0.2](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.2) - 2020-05-03
 - PATCH: Include Pitch and PitchIds types in the entrypoint file

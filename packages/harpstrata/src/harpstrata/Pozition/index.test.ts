@@ -3,10 +3,10 @@ import type { Pozition } from './types'
 import { getActivePozitionIds, getPozition } from './index'
 
 test('getActivePozitionIds function returns an array of the available pozitions', () => {
-  const expectedArray = [ PozitionIds.First, PozitionIds.Second ]
+  const expectedIncludes = [ PozitionIds.First, PozitionIds.Second ]
   const actualArray = getActivePozitionIds()
 
-  expect(actualArray).toStrictEqual(expectedArray)
+  expect(actualArray).toEqual(expect.arrayContaining(expectedIncludes))
 })
 
 test('getPozition function can return a first pozition', () => {
