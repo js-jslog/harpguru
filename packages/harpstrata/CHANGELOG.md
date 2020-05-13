@@ -12,7 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Security: to invite users to upgrade in case of vulnerabilities.
 
 
-## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v4.0.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v4.0.1...HEAD) - yyyy-mm-dd
+## [v4.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.1) - 2020-05-13
+### Fixed
+- PATCH: Fix enum list lookup, fixes bug demonstrated by new test case
+
 ## [v4.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.0) - 2020-05-09
 ### Added
 - MAJOR: Add IsActiveComplex to the HarpStrata type
@@ -54,6 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Github release list
 - [unreleased](https://github.com/js-jslog/harpstrata/compare/v4.0.0...HEAD)
+- [v4.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.1)
 - [v4.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.0)
 - [v3.0.2](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.2)
 - [v3.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.1)
