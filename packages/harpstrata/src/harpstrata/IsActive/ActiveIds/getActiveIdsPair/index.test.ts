@@ -69,3 +69,14 @@ test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
 
   expect(actualActiveIds).toEqual(expectedActiveIds)
 })
+
+test('getActiveIdsPair returns the active ids for a given Flat3 DegreeIds[]', () => {
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: [ DegreeIds.Flat3 ] as ActiveIds }
+  const actualActiveIds = getActiveIdsPair(isActiveProps)
+  const expectedActiveIds = {
+    activePitchIds: [ PitchIds.Eb ] as ActivePitchIds,
+    activeDegreeIds: [ DegreeIds.Flat3 ] as ActiveDegreeIds,
+  }
+
+  expect(actualActiveIds).toEqual(expectedActiveIds)
+})
