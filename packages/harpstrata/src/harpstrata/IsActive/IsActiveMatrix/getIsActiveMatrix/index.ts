@@ -6,7 +6,8 @@ import { getMatrixGivenDegree, getMatrixGivenPitch } from './getIsActiveMatrixFo
 
 export const getIsActiveMatrix = (props: IsActiveProps): IsActiveMatrix => {
   const { activeIds } = props
-  if (activeIds[0] in Object.values(DegreeIds)) {
+  const possibleDegreeId = activeIds[0] as DegreeIds
+  if (Object.values(DegreeIds).includes(possibleDegreeId)) {
     return getMatrixGivenDegree(props)
   }
   return getMatrixGivenPitch(props)
