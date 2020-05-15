@@ -1,8 +1,9 @@
 import { exampleHarpFaceProps } from '../HarpFace'
 
-import { HoleRowsBlow } from './index'
+import { HarpRows } from './index'
 
-test('HoleRowsBlow returns an array of 3 HoleRow elements for a major diatonic harp', () => {
-  const holeRowsBlow = HoleRowsBlow(exampleHarpFaceProps)
-  expect(holeRowsBlow.length).toBe(3)
+test('HarpRows returns an object with the major diatonic rows split between the blow / draw holes', () => {
+  const holeRows = HarpRows(exampleHarpFaceProps)
+  expect(holeRows.top.length).toBe(3)
+  expect(holeRows.bottom.length).toBe(4)
 })
