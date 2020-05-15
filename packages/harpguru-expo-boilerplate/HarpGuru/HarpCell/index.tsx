@@ -1,6 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
+import {HarpCellProps} from './types';
+
 const styles = StyleSheet.create({
   cell: {
     backgroundColor: 'skyblue',
@@ -11,10 +13,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export const HarpCell = () => {
+export const HarpCell = (props: HarpCellProps) => {
   return (
     <View style={styles.cell}>
-      <Text>A</Text>
+      <Text>{props.content}</Text>
     </View>
   );
 };
