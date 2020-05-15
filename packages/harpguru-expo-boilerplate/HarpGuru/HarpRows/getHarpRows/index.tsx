@@ -1,12 +1,11 @@
 import React from 'react'
 import { InteractionIds } from 'harpstrata'
 
-import { HarpRow } from '../HarpRow'
-import type { HarpFaceProps } from '../HarpFace'
+import { HarpRows } from '../types'
+import { mapRowToBlowDrawIds } from '../mapRowToBlowDrawIds'
+import { HarpRow } from '../../HarpRow'
+import type { HarpFaceProps } from '../../HarpFace'
 
-import { mapRowToBlowDrawIds } from './mapRowToBlowDrawIds'
-
-import { HarpRows } from './types'
 
 export const getHarpRows = (props: HarpFaceProps): HarpRows => {
   const { harpStrata: { apparatus: { interactionMatrix }}} = props

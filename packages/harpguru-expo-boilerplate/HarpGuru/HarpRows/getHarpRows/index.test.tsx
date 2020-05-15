@@ -1,4 +1,4 @@
-import { exampleHarpFaceProps } from '../HarpFace'
+import { exampleHarpFaceProps } from '../../HarpFace'
 
 import { getHarpRows } from './index'
 
