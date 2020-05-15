@@ -1,5 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+
+import {HarpCell} from '../HarpCell';
 
 const styles = StyleSheet.create({
   row: {
@@ -8,24 +10,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     backgroundColor: 'powderblue',
   },
-  cell: {
-    backgroundColor: 'skyblue',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 50,
-    height: 50,
-  },
 });
 
 export const HarpRow = () => {
   return (
     <View style={styles.row}>
-      <View style={styles.cell}>
-        <Text>A</Text>
-      </View>
-      <View style={styles.cell}>
-        <Text>Bb</Text>
-      </View>
+      <HarpCell />
+      <HarpCell />
+      <HarpCell />
+      <HarpCell />
+      <HarpCell />
+      <HarpCell />
+      <HarpCell />
     </View>
   );
 };
