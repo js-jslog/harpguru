@@ -1,3 +1,5 @@
-export type HarpCellProps = {
-  readonly content: string;
+import type { HarpFaceProps, YXCoord } from '../../HarpFace'
+
+export type HarpCellProps = HarpFaceProps & {
+  readonly yxCoord: YXCoord;
 };

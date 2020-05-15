@@ -1,13 +1,14 @@
 import 'react-native'
 import React from 'react'
+import { DegreeIds } from 'harpstrata'
 import {render} from '@testing-library/react-native'
 
-import type {HarpCellProps} from './types'
+import { exampleHarpFaceProps } from '../HarpFace'
+
 import {HarpCell} from './index'
 
 test('A component is rendered with an props value in its text view', () => {
-  const harpCellProps: HarpCellProps = {content: 'A'}
-  const {getByText} = render(<HarpCell {...harpCellProps} />)
+  const {getByText} = render(<HarpCell {...exampleHarpFaceProps} yxCoord={[3,0]} />)
 
-  expect(getByText('A')).toBeTruthy()
+  expect(getByText(DegreeIds.Second)).toBeTruthy()
 })

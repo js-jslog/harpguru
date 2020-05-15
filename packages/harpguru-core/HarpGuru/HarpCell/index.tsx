@@ -1,6 +1,9 @@
 import {StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 
+import { analysePosition } from './analysePosition'
+import type { PositionFacts } from './analysePosition'
+
 import {HarpCellProps} from './types'
 
 const styles = StyleSheet.create({
@@ -14,9 +17,13 @@ const styles = StyleSheet.create({
 })
 
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
+  const positionFacts: PositionFacts = analysePosition(props)
+  const { thisDegree } = positionFacts
+  const { id: degreeId } = thisDegree || { id: undefined }
+
   return (
     <View style={styles.cell}>
-      <Text>{props.content}</Text>
+      <Text>{degreeId}</Text>
     </View>
   )
 }
