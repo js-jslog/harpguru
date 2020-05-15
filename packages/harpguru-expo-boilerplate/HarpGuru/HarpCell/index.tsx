@@ -27,3 +27,5 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
     </View>
   )
 }
+
+export type { YXCoord } from './types'
