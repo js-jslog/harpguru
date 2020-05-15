@@ -1,7 +1,8 @@
 import {StyleSheet, View} from 'react-native'
 import React from 'react'
 
-import type {HarpFaceProps} from '../../HarpFace'
+import type {HarpRowProps} from '../types'
+import type {YXCoord} from '../../HarpFace'
 import {HarpCell} from '../../HarpCell'
 
 const styles = StyleSheet.create({
@@ -13,12 +14,17 @@ const styles = StyleSheet.create({
   },
 })
 
-export const HarpRow = (props: HarpFaceProps): React.ReactElement => {
+export const HarpRow = (props: HarpRowProps): React.ReactElement => {
+  const { yCoord } = props
+  const yxCoord1: YXCoord = [yCoord, 0]
+  const yxCoord2: YXCoord = [yCoord, 1]
+  const yxCoord3: YXCoord = [yCoord, 2]
+
   return (
     <View style={styles.row}>
-      <HarpCell {...props} yxCoord={[3,0]} />
-      <HarpCell {...props} yxCoord={[3,1]} />
-      <HarpCell {...props} yxCoord={[3,2]} />
+      <HarpCell {...props} yxCoord={yxCoord1} />
+      <HarpCell {...props} yxCoord={yxCoord2} />
+      <HarpCell {...props} yxCoord={yxCoord3} />
     </View>
   )
 }
