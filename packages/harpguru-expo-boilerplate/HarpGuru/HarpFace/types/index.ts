@@ -9,5 +9,3 @@ export type HarpFaceProps = {
   readonly harpStrata: HarpStrata;
   readonly displayMode: DisplayModes;
 }
-
-export type YXCoord = [ number, number ]
