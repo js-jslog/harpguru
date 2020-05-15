@@ -1,1 +1,1 @@
-export {HarpFace} from './HarpFace';
+export {HarpFace} from './HarpFace'

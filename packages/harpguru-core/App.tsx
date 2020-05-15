@@ -8,13 +8,13 @@
  * @format
  */
 
-import React from 'react';
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen'
+import {StatusBar, StyleSheet, Text, View} from 'react-native'
+import React from 'react'
 
-import {HarpFace} from './HarpGuru';
+import {HarpFace} from './HarpGuru'
 
-declare const global: {HermesInternal: null | {}};
+declare const global: {HermesInternal: null | {}}
 
 const App = () => {
   return (
@@ -27,8 +27,8 @@ const App = () => {
       )}
       <HarpFace />
     </>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   engine: {
@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
-});
+})
 
-export default App;
+export default App
