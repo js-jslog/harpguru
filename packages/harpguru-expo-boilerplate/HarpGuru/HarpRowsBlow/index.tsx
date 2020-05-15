@@ -7,12 +7,12 @@ import type { HarpFaceProps } from '../HarpFace'
 
 import { mapRowToBlowDrawIds } from './mapRowToBlowDrawIds'
 
-type HoleRows = {
+type HarpRows = {
   readonly top: ReactElement[];
   readonly bottom: ReactElement[];
 }
 
-export const HarpRows = (props: HarpFaceProps): HoleRows => {
+export const HarpRows = (props: HarpFaceProps): HarpRows => {
   const { harpStrata: { apparatus: { interactionMatrix }}} = props
   const blowDrawIdsMap = interactionMatrix.map(mapRowToBlowDrawIds)
 
