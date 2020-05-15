@@ -1,6 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
+import {HarpRow} from '../HarpRow';
+
 const styles = StyleSheet.create({
   body: {
     flex: 1,
@@ -11,8 +13,11 @@ const styles = StyleSheet.create({
 
 export const HarpFace = () => {
   return (
-    <View style={styles.body}>
-      <Text>Try editing me! 🎉</Text>
-    </View>
+    <>
+      <HarpRow />
+      <View style={styles.body}>
+        <Text>Try editing me! 🎉</Text>
+      </View>
+    </>
   );
 };
