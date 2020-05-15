@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-import {HarpRow} from '../HarpRow';
+import {HarpRow} from '../../HarpRow';
 
 const styles = StyleSheet.create({
   body: {
