@@ -1,5 +1,4 @@
 import React from 'react'
-import type { ReactElement } from 'react'
 import { InteractionIds } from 'harpstrata'
 
 import { HarpRow } from '../HarpRow'
@@ -7,12 +6,9 @@ import type { HarpFaceProps } from '../HarpFace'
 
 import { mapRowToBlowDrawIds } from './mapRowToBlowDrawIds'
 
-type HarpRows = {
-  readonly top: ReactElement[];
-  readonly bottom: ReactElement[];
-}
+import { HarpRows } from './types'
 
-export const HarpRows = (props: HarpFaceProps): HarpRows => {
+export const getHarpRows = (props: HarpFaceProps): HarpRows => {
   const { harpStrata: { apparatus: { interactionMatrix }}} = props
   const blowDrawIdsMap = interactionMatrix.map(mapRowToBlowDrawIds)
 
@@ -28,10 +24,10 @@ export const HarpRows = (props: HarpFaceProps): HarpRows => {
     return <HarpRow key={amendedIndex} {...props} yCoord={amendedIndex} />
   })
 
-  const HarpRows = {
+  const harpRows = {
     top: topHarpRows,
     bottom: bottomHarpRows,
   }
 
-  return HarpRows
+  return harpRows
 }
