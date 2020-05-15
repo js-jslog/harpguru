@@ -1,8 +1,8 @@
 import {StyleSheet, View} from 'react-native'
 import React from 'react'
 
-import type {HarpFaceProps} from '../HarpFace'
-import {HarpCell} from '../HarpCell'
+import type {HarpFaceProps} from '../../HarpFace'
+import {HarpCell} from '../../HarpCell'
 
 const styles = StyleSheet.create({
   row: {
