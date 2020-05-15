@@ -1,15 +1,15 @@
 import React from 'react'
 
 import type {HarpFaceProps} from '../types'
-import {HarpRow} from '../../HarpRow'
+import { getHarpRows } from '../../HarpRows'
+
 
 export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
+  const harpRows = getHarpRows(props)
   return (
     <>
-      <HarpRow {...props} yCoord={2} />
-      <HarpRow {...props} yCoord={3} />
-      <HarpRow {...props} yCoord={4} />
-      <HarpRow {...props} yCoord={5} />
+      { harpRows.top }
+      { harpRows.bottom }
     </>
   )
 }
