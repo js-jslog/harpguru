@@ -1,7 +1,7 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native'
+import React from 'react'
 
-import {HarpRow} from '../../HarpRow';
+import {HarpRow} from '../../HarpRow'
 
 const styles = StyleSheet.create({
   body: {
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-});
+})
 
 export const HarpFace = () => {
   return (
@@ -19,5 +19,5 @@ export const HarpFace = () => {
         <Text>Try editing me! 🎉</Text>
       </View>
     </>
-  );
-};
+  )
+}

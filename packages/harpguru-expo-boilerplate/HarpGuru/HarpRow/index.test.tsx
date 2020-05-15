@@ -1,9 +1,10 @@
-import 'react-native';
-import React from 'react';
-import {HarpRow} from './index';
+import 'react-native'
+import renderer from 'react-test-renderer'
+import React from 'react'
 
-import renderer from 'react-test-renderer';
+import {HarpRow} from './index'
+
 
 test('A component is rendered', () => {
-  renderer.create(<HarpRow />);
-});
+  renderer.create(<HarpRow />)
+})

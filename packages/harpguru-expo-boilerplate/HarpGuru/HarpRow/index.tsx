@@ -1,7 +1,7 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native'
+import React from 'react'
 
-import {HarpCell} from '../HarpCell';
+import {HarpCell} from '../HarpCell'
 
 const styles = StyleSheet.create({
   row: {
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     backgroundColor: 'powderblue',
   },
-});
+})
 
 export const HarpRow = () => {
   return (
@@ -23,5 +23,5 @@ export const HarpRow = () => {
       <HarpCell />
       <HarpCell />
     </View>
-  );
-};
+  )
+}
