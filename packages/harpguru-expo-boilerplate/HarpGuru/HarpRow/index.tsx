@@ -12,16 +12,16 @@ const styles = StyleSheet.create({
   },
 })
 
-export const HarpRow = () => {
+export const HarpRow = (): React.ReactElement => {
   return (
     <View style={styles.row}>
-      <HarpCell />
-      <HarpCell />
-      <HarpCell />
-      <HarpCell />
-      <HarpCell />
-      <HarpCell />
-      <HarpCell />
+      <HarpCell content='A' />
+      <HarpCell content='B' />
+      <HarpCell content='B' />
+      <HarpCell content='B' />
+      <HarpCell content='B' />
+      <HarpCell content='B' />
+      <HarpCell content='B' />
     </View>
   )
 }

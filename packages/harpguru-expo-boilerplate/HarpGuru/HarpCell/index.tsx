@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const HarpCell = (props: HarpCellProps) => {
+export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   return (
     <View style={styles.cell}>
       <Text>{props.content}</Text>

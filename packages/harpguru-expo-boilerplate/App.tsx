@@ -16,20 +16,6 @@ import {HarpFace} from './HarpGuru'
 
 declare const global: {HermesInternal: null | {}}
 
-const App = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      {global.HermesInternal == null ? null : (
-        <View style={styles.engine}>
-          <Text style={styles.footer}>Engine: Hermes</Text>
-        </View>
-      )}
-      <HarpFace />
-    </>
-  )
-}
-
 const styles = StyleSheet.create({
   engine: {
     position: 'absolute',
@@ -44,5 +30,19 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 })
+
+const App = (): Element => {
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      {global.HermesInternal == null ? null : (
+        <View style={styles.engine}>
+          <Text style={styles.footer}>Engine: Hermes</Text>
+        </View>
+      )}
+      <HarpFace />
+    </>
+  )
+}
 
 export default App

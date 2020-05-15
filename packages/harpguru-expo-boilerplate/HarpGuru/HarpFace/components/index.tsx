@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const HarpFace = () => {
+export const HarpFace = (): React.ReactElement => {
   return (
     <>
       <HarpRow />
