@@ -5,15 +5,15 @@ const styles = StyleSheet.create({
   row: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'space-around',
     backgroundColor: 'powderblue',
   },
   cell: {
-    flex: 1,
+    backgroundColor: 'skyblue',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'skyblue',
+    width: 50,
+    height: 50,
   },
 });
 
@@ -21,10 +21,10 @@ export const HarpRow = () => {
   return (
     <View style={styles.row}>
       <View style={styles.cell}>
-        <Text>Try editing me! 🎉</Text>
+        <Text>A</Text>
       </View>
       <View style={styles.cell}>
-        <Text>Try editing me! 🎉</Text>
+        <Text>Bb</Text>
       </View>
     </View>
   );
