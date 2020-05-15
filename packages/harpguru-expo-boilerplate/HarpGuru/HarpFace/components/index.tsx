@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
   return (
     <>
-      <HarpRow {...props} />
+      <HarpRow {...props} yCoord={2} />
       <View style={styles.body}>
         <Text>Try editing me! 🎉</Text>
       </View>
