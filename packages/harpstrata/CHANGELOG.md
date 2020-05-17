@@ -12,7 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Security: to invite users to upgrade in case of vulnerabilities.
 
 
-## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v4.0.1...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.0.1...HEAD) - yyyy-mm-dd
+## [v5.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.0.0) - 2020-05-17
+### Added
+- MAJOR: Add all the properties which the calling app would need to know how the harpstrata was generated
+- MAJOR: Improve the name of one of the HarpStrataProps properties
+
 ## [v4.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.1) - 2020-05-13
 ### Fixed
 - PATCH: Fix enum list lookup, fixes bug demonstrated by new test case
@@ -57,7 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Library created
 
 ## Github release list
-- [unreleased](https://github.com/js-jslog/harpstrata/compare/v4.0.1...HEAD)
+- [unreleased](https://github.com/js-jslog/harpstrata/compare/v5.0.0...HEAD)
+- [v5.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.0.0)
 - [v4.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.1)
 - [v4.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.0)
 - [v3.0.2](https://github.com/js-jslog/harpstrata/releases/tag/v3.0.2)
