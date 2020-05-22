@@ -11,21 +11,8 @@
 import {Colors} from 'react-native/Libraries/NewAppScreen'
 import {StatusBar, StyleSheet, Text, View} from 'react-native'
 import React from 'react'
-import { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from 'harpstrata'
-import type { HarpStrata, HarpStrataProps } from 'harpstrata'
 
-import {HarpFace, DisplayModes} from './HarpGuru'
-import type { HarpFaceProps } from './HarpGuru'
-
-const [ apparatusId ] = getApparatusIds()
-const [ pozitionId ] = getPozitionIds()
-const [ pitchId ] = getPitchIds()
-const harpStrataProps: HarpStrataProps = {
-  apparatusId, pozitionId, keyPitchId: pitchId, activeIds: []
-}
-const initialHarpStrata: HarpStrata = getHarpStrata(harpStrataProps)
-const { Degree: displayMode } = DisplayModes
-const harpFaceProps: HarpFaceProps = { harpStrata: initialHarpStrata, displayMode }
+import {HarpGuru} from './HarpGuru'
 
 declare const global: {HermesInternal: null | {}}
 
@@ -53,7 +40,7 @@ const App = (): Element => {
           <Text style={styles.footer}>Engine: Hermes</Text>
         </View>
       )}
-      <HarpFace {...harpFaceProps} />
+      <HarpGuru />
     </>
   )
 }

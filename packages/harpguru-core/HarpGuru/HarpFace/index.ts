@@ -1,5 +1,4 @@
-export { HarpFace } from './components'
-export { DisplayModes } from './types'
-export type { HarpFaceProps } from './types'
+export { HarpFace, DisplayModes } from './HarpFace'
+export type { HarpFaceProps } from './HarpFace'
 
-export { exampleHarpFaceProps } from './testResources'
+export { exampleHarpFaceProps } from './HarpFace'
