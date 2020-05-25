@@ -1,7 +1,6 @@
-import {render as renderAlt, fireEvent} from 'react-native-testing-library'
 import React from 'react'
 import { PitchIds, DegreeIds } from 'harpstrata'
-import {render} from '@testing-library/react-native'
+import {render, fireEvent} from '@testing-library/react-native'
 
 import { DisplayModes } from '../HarpFace'
 import { exampleHarpFaceProps } from '../HarpFace'
@@ -21,25 +20,25 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 
 test('A component is rendered with an a11y role of button', () => {
   const harpFaceProps = { ...exampleHarpFaceProps, activeDisplayMode: DisplayModes.Degree }
-  const { getByA11yRole  } = renderAlt(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
+  const { getByRole } = render(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
 
-  expect(getByA11yRole('button')).toBeTruthy()
+  expect(getByRole('button')).toBeTruthy()
 })
 
 test('A component is rendered without an a11y role of button if it has no content', () => {
   const harpFaceProps = { ...exampleHarpFaceProps, activeDisplayMode: DisplayModes.Degree }
-  const { queryByA11yRole  } = renderAlt(<HarpCell {...harpFaceProps} yxCoord={[0,0]} />)
+  const { queryByRole  } = render(<HarpCell {...harpFaceProps} yxCoord={[0,0]} />)
 
-  expect(queryByA11yRole('button')).toBeNull()
+  expect(queryByRole('button')).toBeNull()
 })
 
 test('A press of the componenet results in toggled active ids in the harpstrata passed to the paramaterised setter', () => {
   const setActiveHarpStrata = jest.fn()
   const harpFaceProps = { ...exampleHarpFaceProps, activeDisplayMode: DisplayModes.Degree, setActiveHarpStrata }
 
-  const {getByA11yRole} = renderAlt(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
+  const { getByText } = render(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)
 
-  fireEvent.press(getByA11yRole('button'))
+  fireEvent.press(getByText(DegreeIds.Second))
 
   const { mock: { calls: [[ newHarpStrata ]]}} = setActiveHarpStrata
   const { isActiveComplex: { activeDegreeIds: newDegreeIds, activePitchIds: newPitchIds }} = newHarpStrata
