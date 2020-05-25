@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.1.0...HEAD) - yyyy-mm-dd
-## [v5.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.0)
+## [v5.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.0) - 2020-05-25
 ### Added
 - MINOR: Add covariant deduction functions
 - MINOR: Add ability to specify origin value on pitch & pozition id list getters
