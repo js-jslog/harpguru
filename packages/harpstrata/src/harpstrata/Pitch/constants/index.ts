@@ -13,7 +13,3 @@ export const F: Pitch = { id: PitchIds.F } as const
 export const Gb: Pitch = { id: PitchIds.Gb } as const
 export const G: Pitch = { id: PitchIds.G } as const
 export const Ab: Pitch = { id: PitchIds.Ab } as const
-
-export const ORDERED_PITCHES: readonly Pitch[] = [
-  A, Bb, B, C, Db, D, Eb, E, F, Gb, G, Ab,
-] as const

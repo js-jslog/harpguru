@@ -1,26 +1,9 @@
-import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/constants'
+import { EXAMPLE_PITCH_MATRICES } from '../testResources'
+import { C, F } from '../constants'
+import { MAJOR_DIATONIC_APPARATUS } from '../../Apparatus'
 
-import { EXAMPLE_PITCH_MATRICES } from './testResources'
+import { getPitchMatrix } from './index'
 
-import { PitchIds } from './types'
-import type { Pitch } from './types'
-import { getPitchMatrix, getActivePitchIds, getPitch } from './index'
-import { C, F } from './constants'
-
-
-test('getActivePitchIds function returns an array of the available pitches', () => {
-  const expectedIncludes = [ PitchIds.C, PitchIds.Db ]
-  const actualArray = getActivePitchIds()
-
-  expect(actualArray).toEqual(expect.arrayContaining(expectedIncludes))
-})
-
-test('getPitch function can return a first pozition', () => {
-  const C_PITCH: Pitch = { id: PitchIds.C } as const
-  const actualPitch = getPitch(C_PITCH.id)
-
-  expect(actualPitch).toStrictEqual(C_PITCH)
-})
 
 test('getPitchMatrix function maps a simple 2d array of 0\'s to the input key pitch of C', () => {
   const expectedArray = [[ C, ], [ C, ]]

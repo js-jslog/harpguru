@@ -11,7 +11,7 @@
     "license": "UNLICENSED",
     "scripts": {
         "test": "jest",
-        "clear-jest": "jest --clearCache",
+        "clear-jest": "jest --clearCache && jest",
         "lint": "tsc --noEmit && eslint './**'",
         "fix-lint": "eslint './**' --fix",
         "build": "tsc",

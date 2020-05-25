@@ -13,18 +13,3 @@ export const FLAT6: Degree = { id: DegreeIds.Flat6 } as const
 export const SIXTH: Degree = { id: DegreeIds.Sixth } as const
 export const FLAT7: Degree = { id: DegreeIds.Flat7 } as const
 export const SEVENTH: Degree = { id: DegreeIds.Seventh } as const
-
-export const ORDERED_DEGREES: readonly Degree[] = [
-  ROOT,
-  FLAT2,
-  SECOND,
-  FLAT3,
-  THIRD,
-  FOURTH,
-  FLAT5,
-  FIFTH,
-  FLAT6,
-  SIXTH,
-  FLAT7,
-  SEVENTH,
-] as const
