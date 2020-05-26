@@ -12,7 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Security: to invite users to upgrade in case of vulnerabilities.
 
 
-## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.1.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.1.1...HEAD) - yyyy-mm-dd
+## [v5.1.1](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.1) - 2020-05-26
+### Added
+- PATCH: CovariantsGroup type exported from public api
+
 ## [v5.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.0) - 2020-05-25
 ### Added
 - MINOR: Add covariant deduction functions
@@ -71,7 +75,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Library created
 
 ## Github release list
-- [unreleased](https://github.com/js-jslog/harpstrata/compare/v5.1.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpstrata/compare/v5.1.1...HEAD)
+- [v5.1.1](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.1)
 - [v5.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.0)
 - [v5.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.0.0)
 - [v4.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.1)
