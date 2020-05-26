@@ -36,7 +36,7 @@ export const isRootPitchControlVars = (props: CovariantControlVars): props is Ro
   return hasHarpKey && hasPozition
 }
 
-export type CovariantGroup = {
+export type CovariantsGroup = {
   readonly harpKeyId: PitchIds;
   readonly pozitionId: PozitionIds;
   readonly rootPitchId: PitchIds;

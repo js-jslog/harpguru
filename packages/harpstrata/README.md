@@ -57,7 +57,7 @@ Returns an array of id's of the complete list of `PitchIds` which exist in an oc
 ### getPozitionIds(?PozitionIds) => PozitionIds[]
 Returns an array of id's of the complete list of `PozitionIds` which can be taken on a harp. The id from which can be fed in to the `getHarpStrata` next. A `PozitionIds` parameter can optionally be provided to indicate what the origin id of the list should be.
 
-### getCovariants(CovariantControlVars) => CovariantGroup
+### getCovariants(CovariantControlVars) => CovariantsGroup
 Returns the complete set of covariant variables given any combination of 2 inputs. The covariant variables are harp key, root pitch and pozition. Given any two of these the third can be deduced.
 
 ### getHarpStrata(HarpStrataProps) => HarpStrata

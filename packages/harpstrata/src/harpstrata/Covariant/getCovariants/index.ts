@@ -1,11 +1,11 @@
-import type { CovariantControlVars, CovariantGroup } from '../types'
+import type { CovariantControlVars, CovariantsGroup } from '../types'
 import { isHarpKeyControlVars, isRootPitchControlVars, isPozitionControlVars } from '../types'
 import { deduceRootPitchId } from '../deduceRootPitchId'
 import { deducePozitionId } from '../deducePozitionId'
 import { deduceHarpKeyId } from '../deduceHarpKeyId'
 
 
-export const getCovariants = (controlVariables: CovariantControlVars): CovariantGroup => {
+export const getCovariants = (controlVariables: CovariantControlVars): CovariantsGroup => {
   if (isHarpKeyControlVars(controlVariables)) {
     const { rootPitchId, pozitionId } = controlVariables
     const harpKeyId = deduceHarpKeyId(controlVariables)

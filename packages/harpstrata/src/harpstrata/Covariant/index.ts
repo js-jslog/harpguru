@@ -1,2 +1,2 @@
 export { getCovariants } from './getCovariants'
-export type { CovariantControlVars, HarpKeyControlVars, RootPitchControlVars, PozitionControlVars } from './types'
+export type { CovariantsGroup, CovariantControlVars, HarpKeyControlVars, RootPitchControlVars, PozitionControlVars } from './types'
