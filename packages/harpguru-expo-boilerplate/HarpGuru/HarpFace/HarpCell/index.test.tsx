@@ -7,6 +7,8 @@ import { exampleHarpFaceProps } from '../HarpFace'
 
 import {HarpCell} from './index'
 
+jest.mock('react-native/Libraries/Components/Touchable/TouchableOpacity', () => 'TouchableOpacity')
+
 test('A component is rendered with the Degree or Pitch value in its text view depending on the DisplayMode selected', () => {
   const harpFaceProps = { ...exampleHarpFaceProps, activeDisplayMode: DisplayModes.Degree }
   const {getByText, rerender} = render(<HarpCell {...harpFaceProps} yxCoord={[3,0]} />)

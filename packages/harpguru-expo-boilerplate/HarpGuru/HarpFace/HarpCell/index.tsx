@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, TouchableWithoutFeedback} from 'react-native'
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
@@ -51,7 +51,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   }
 
   const accessibleContent = 
-    <TouchableWithoutFeedback
+    <TouchableOpacity
       accessible={true}
       accessibilityRole='button'
       onPress={(): void => toggleActiveIdsIfHoleExists()}>
@@ -61,12 +61,12 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
           {displayValue}
         </Text>
       </View>
-    </TouchableWithoutFeedback>
+    </TouchableOpacity>
 
   const inAccessibleContent = 
-    <TouchableWithoutFeedback disabled={true} accessible={false} style={styles.cell} >
+    <TouchableOpacity disabled={true} accessible={false} style={styles.cell} >
       <View style={styles.cell} />
-    </TouchableWithoutFeedback>
+    </TouchableOpacity>
 
   const content = (thisDegree === undefined ? inAccessibleContent : accessibleContent)
 
