@@ -6,14 +6,14 @@ export type HarpKeyControlVars = {
   readonly pozitionId: PozitionIds;
 }
 
-export type RootPitchControlVars = {
-  readonly harpKeyId: PitchIds;
-  readonly pozitionId: PozitionIds;
-}
-
 export type PozitionControlVars = {
   readonly rootPitchId: PitchIds;
   readonly harpKeyId: PitchIds;
+}
+
+export type RootPitchControlVars = {
+  readonly harpKeyId: PitchIds;
+  readonly pozitionId: PozitionIds;
 }
 
 export type CovariantControlVars = HarpKeyControlVars | RootPitchControlVars | PozitionControlVars
@@ -38,6 +38,6 @@ export const isPozitionControlVars = (props: CovariantControlVars): props is Poz
 
 export type CovariantGroup = {
   readonly harpKeyId: PitchIds;
-  readonly rootPitchId: PitchIds;
   readonly pozitionId: PozitionIds;
+  readonly rootPitchId: PitchIds;
 }
