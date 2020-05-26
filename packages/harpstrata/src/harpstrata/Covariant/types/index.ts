@@ -23,17 +23,17 @@ export const isHarpKeyControlVars = (props: CovariantControlVars): props is Harp
 
   return hasRootPitch && hasPozition
 }
-export const isRootPitchControlVars = (props: CovariantControlVars): props is RootPitchControlVars => {
-  const hasHarpKey = (props as RootPitchControlVars).harpKeyId !== undefined
-  const hasPozition = (props as RootPitchControlVars).pozitionId !== undefined
-
-  return hasHarpKey && hasPozition
-}
 export const isPozitionControlVars = (props: CovariantControlVars): props is PozitionControlVars => {
   const hasRootPitch = (props as PozitionControlVars).rootPitchId !== undefined
   const hasHarpKey = (props as PozitionControlVars).harpKeyId !== undefined
 
   return hasRootPitch && hasHarpKey
+}
+export const isRootPitchControlVars = (props: CovariantControlVars): props is RootPitchControlVars => {
+  const hasHarpKey = (props as RootPitchControlVars).harpKeyId !== undefined
+  const hasPozition = (props as RootPitchControlVars).pozitionId !== undefined
+
+  return hasHarpKey && hasPozition
 }
 
 export type CovariantGroup = {
