@@ -28,7 +28,7 @@ export const getCovariants = (controlVariables: CovariantControlVars): Covariant
 
     Input: ${JSON.stringify(controlVariables)}
 
-    Two of the CovariateGroup properties need to be defined.
+    Two of the CovariantsGroup properties need to be defined.
   `
   throw new Error(errorMessage)
 }
