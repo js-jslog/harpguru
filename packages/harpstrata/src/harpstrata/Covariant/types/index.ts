@@ -1,6 +1,12 @@
 import type { PozitionIds } from '../../Pozition'
 import type { PitchIds } from '../../Pitch'
 
+export type CovariantsGroup = {
+  readonly harpKeyId: PitchIds;
+  readonly pozitionId: PozitionIds;
+  readonly rootPitchId: PitchIds;
+}
+
 export type HarpKeyControlVars = {
   readonly rootPitchId: PitchIds;
   readonly pozitionId: PozitionIds;
@@ -17,6 +23,7 @@ export type RootPitchControlVars = {
 }
 
 export type CovariantControlVars = HarpKeyControlVars | RootPitchControlVars | PozitionControlVars
+
 export const isHarpKeyControlVars = (props: CovariantControlVars): props is HarpKeyControlVars => {
   const hasRootPitch = (props as HarpKeyControlVars).rootPitchId !== undefined
   const hasPozition = (props as HarpKeyControlVars).pozitionId !== undefined
@@ -34,10 +41,4 @@ export const isRootPitchControlVars = (props: CovariantControlVars): props is Ro
   const hasPozition = (props as RootPitchControlVars).pozitionId !== undefined
 
   return hasHarpKey && hasPozition
-}
-
-export type CovariantsGroup = {
-  readonly harpKeyId: PitchIds;
-  readonly pozitionId: PozitionIds;
-  readonly rootPitchId: PitchIds;
 }
