@@ -1,7 +1,8 @@
 import { PozitionIds } from '../types'
-import { FIRST } from '../constants'
 
 import { getAscendingPozitionIds, getPozitionRootOffset, getPozition } from './index'
+
+const first = getPozition(PozitionIds.First)
 
 const { First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, Tenth, Eleventh, Twelfth } = PozitionIds
 
@@ -36,7 +37,7 @@ test('getPozitionRootOffset returns 5 for twelfth pozition id', () => {
 })
 
 test('getPozition function can return a first pozition', () => {
-  const actualPozition = getPozition(FIRST.id)
+  const actualPozition = getPozition(first.id)
 
-  expect(actualPozition).toStrictEqual(FIRST)
+  expect(actualPozition).toStrictEqual(first)
 })

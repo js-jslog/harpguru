@@ -1,5 +1,6 @@
+export { getDegree } from './Degree'
 export { getDegreeMatrix } from './getDegreeMatrix'
 export type { Degree, DegreeRow, DegreeMatrix } from './types'
 export { DegreeIds } from './types'
-export { ROOT, FLAT2, SECOND, FLAT3, THIRD, FOURTH, FLAT5, FIFTH, FLAT6, SIXTH, FLAT7, SEVENTH } from './constants'
+
 export { EXAMPLE_DEGREE_MATRICES } from './testResources'

@@ -1,16 +1,26 @@
 import type { IsActiveProps } from '../../types'
-import { PitchIds, C, D, E, F } from '../../../Pitch'
-import { DegreeIds, ROOT, SECOND, THIRD, FOURTH } from '../../../Degree'
+import { PitchIds, getPitch } from '../../../Pitch'
+import { DegreeIds, getDegree } from '../../../Degree'
 
 import { getCounterpartDegreeIds, getCounterpartPitchIds } from './index'
 
+const c = getPitch(PitchIds.C)
+const d = getPitch(PitchIds.D)
+const e = getPitch(PitchIds.E)
+const f = getPitch(PitchIds.F)
+
+const root = getDegree(DegreeIds.Root)
+const second = getDegree(DegreeIds.Second)
+const third = getDegree(DegreeIds.Third)
+const fourth = getDegree(DegreeIds.Fourth)
+
 const degreeMatrix = [
-  [ ROOT , SECOND ],
-  [ THIRD, FOURTH ],
+  [ root , second ],
+  [ third, fourth ],
 ]
 const pitchMatrix = [
-  [ C, D ],
-  [ E, F ],
+  [ c, d ],
+  [ e, f ],
 ]
 const baseIsActiveProps: IsActiveProps = {
   degreeMatrix, pitchMatrix, activeIds: []

@@ -1,16 +1,16 @@
 export enum PozitionIds {
   First = 'FIRST',
-  Second = 'SECOND',
-  Third = 'THIRD',
-  Fourth = 'FOURTH',
-  Fifth = 'FIFTH',
-  Sixth = 'SIXTH',
-  Seventh = 'SEVENTH',
   Eighth = 'EIGHTH',
-  Ninth = 'NINTH',
+  Third = 'THIRD',
   Tenth = 'TENTH',
-  Eleventh = 'ELEVENTH',
+  Fifth = 'FIFTH',
   Twelfth = 'TWELFTH',
+  Seventh = 'SEVENTH',
+  Second = 'SECOND',
+  Ninth = 'NINTH',
+  Fourth = 'FOURTH',
+  Eleventh = 'ELEVENTH',
+  Sixth = 'SIXTH',
 }
 
 export type Pozition = {
