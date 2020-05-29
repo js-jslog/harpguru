@@ -2,3 +2,5 @@ export { getAscendingPozitionIds, getPozitionRootOffset, getPozition } from './p
 
 export { PozitionIds } from './types'
 export type { Pozition } from './types'
+
+export { isPozitionId } from './typeguards'

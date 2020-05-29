@@ -13,9 +13,11 @@ export type { Degree, DegreeRow, DegreeMatrix } from './Degree'
 
 export { PozitionIds } from './Pozition'
 export type { Pozition } from './Pozition'
+export { isPozitionId } from './Pozition'
 
 export { PitchIds } from './Pitch'
 export type { Pitch } from './Pitch'
+export { isPitchId } from './Pitch'
 
 export { getCovariants } from './Covariant'
 export type {
