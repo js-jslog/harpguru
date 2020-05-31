@@ -1,6 +1,6 @@
 import { DegreeIds } from '../types'
 import { EXAMPLE_DEGREE_MATRICES } from '../testResources'
-import { getDegree } from '../Degree'
+import { getDegree } from '../getDegree'
 import { ApparatusIds, getApparatus } from '../../Apparatus'
 
 import { getDegreeMatrix } from './index'

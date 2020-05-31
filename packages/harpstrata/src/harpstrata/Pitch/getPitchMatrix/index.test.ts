@@ -1,6 +1,6 @@
 import { PitchIds } from '../types'
 import { EXAMPLE_PITCH_MATRICES } from '../testResources'
-import { getPitch } from '../Pitch'
+import { getPitch } from '../getPitch'
 import { MAJOR_DIATONIC_APPARATUS } from '../../Apparatus'
 
 import { getPitchMatrix } from './index'

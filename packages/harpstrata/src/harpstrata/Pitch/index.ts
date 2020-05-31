@@ -1,5 +1,4 @@
-export { getAscendingPitchIds, getDescendingPitchIds } from './Pitch'
-export { getPitch } from './Pitch'
+export { getPitch } from './getPitch'
 
 export { getPitchMatrix } from './getPitchMatrix'
 

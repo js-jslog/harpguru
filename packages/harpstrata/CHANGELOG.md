@@ -13,7 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.1.1...HEAD) - yyyy-mm-dd
+### Added
 - MINOR: Add CovariantControlVars subtype typeguards to public api
+
+### Changed
+- PATCH: Have the enumerators be their own source of truth with respect to order
 
 ## [v5.1.1](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.1) - 2020-05-26
 ### Added

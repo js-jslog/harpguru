@@ -1,6 +1,6 @@
 import { PitchIds } from '../types'
 import type { PitchMatrix } from '../types'
-import { getPitch } from '../Pitch'
+import { getPitch } from '../getPitch'
 
 const c = getPitch(PitchIds.C)
 const db = getPitch(PitchIds.Db)

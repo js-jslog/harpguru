@@ -1,4 +1,4 @@
-export { getDegree } from './Degree'
+export { getDegree } from './getDegree'
 export { getDegreeMatrix } from './getDegreeMatrix'
 export type { Degree, DegreeRow, DegreeMatrix } from './types'
 export { DegreeIds } from './types'

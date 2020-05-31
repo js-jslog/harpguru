@@ -1,6 +1,6 @@
 import { DegreeIds } from '../types'
 import type { DegreeMatrix } from '../types'
-import { getDegree } from '../Degree'
+import { getDegree } from '../getDegree'
 
 const root = getDegree(DegreeIds.Root)
 const flat2 = getDegree(DegreeIds.Flat2)
