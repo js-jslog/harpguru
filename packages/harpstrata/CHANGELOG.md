@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Security: to invite users to upgrade in case of vulnerabilities.
 
 
-## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.1.1...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - yyyy-mm-dd
+## [v5.2.0](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - 2020-06-01
 ### Added
 - MINOR: Add CovariantControlVars subtype typeguards to public api
 - MINOR: Typeguards created for PitchIds and PozitionIds
@@ -82,7 +83,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Library created
 
 ## Github release list
-- [unreleased](https://github.com/js-jslog/harpstrata/compare/v5.1.1...HEAD)
+- [unreleased](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD)
+- [v5.2.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.2.0)
 - [v5.1.1](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.1)
 - [v5.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.0)
 - [v5.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.0.0)
