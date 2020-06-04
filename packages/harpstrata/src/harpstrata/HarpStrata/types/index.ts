@@ -17,6 +17,6 @@ export type HarpStrata = {
   readonly pitchMatrix: PitchMatrix;
   readonly isActiveComplex: IsActiveComplex;
   readonly pozitionId: PozitionIds;
-  readonly rootPitchId: PitchIds | undefined;
+  readonly rootPitchId: PitchIds;
   readonly harpKeyId: PitchIds;
 }
