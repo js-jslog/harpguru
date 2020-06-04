@@ -1,6 +1,8 @@
-export { getCovariants } from './getCovariants'
+export { getCovariantSet } from './getCovariantSet'
+
 export type {
-  CovariantsGroup, CovariantControlVars,
-  HarpKeyControlVars, PozitionControlVars, RootPitchControlVars,
-  isHarpKeyControlVars, isPozitionControlVars, isRootPitchControlVars
+  CovariantSet, CovariantControllers,
+  HarpKeyControllers, PozitionControllers, RootPitchControllers,
 } from './types'
+
+export { areHarpKeyControllers, arePozitionControllers, areRootPitchControllers } from './typeguards'

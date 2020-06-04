@@ -1,10 +1,10 @@
-import { PozitionControlVars } from '../types'
+import { PozitionControllers } from '../types'
 import type { PozitionIds } from '../../Pozition'
 import { getAscendingPozitionIds } from '../../OrderedIds'
 import { getAscendingPitchIds } from '../../OrderedIds'
 
 
-export const deducePozitionId = (props: PozitionControlVars): PozitionIds => {
+export const deducePozitionId = (props: PozitionControllers): PozitionIds => {
   const { rootPitchId, harpKeyId } = props
 
   const harpKeyAscendingPitchIds = getAscendingPitchIds(harpKeyId)

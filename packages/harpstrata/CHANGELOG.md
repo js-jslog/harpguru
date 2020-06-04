@@ -15,6 +15,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - yyyy-mm-dd
 ### Changed
+- MAJOR: The names of many of the types and functions within the Covariant module
+- MINOR: Update README.md with name changes in Covariants module
+
+### Fixed
+- MINOR: Fix Covariant module typeguard exports to be functions rather than types
 - MINOR: Changed from Semantic Versioning to Compatible Versioning
 
 ### Fixed

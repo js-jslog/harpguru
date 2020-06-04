@@ -19,12 +19,12 @@ export { PitchIds } from './Pitch'
 export type { Pitch } from './Pitch'
 export { isPitchId } from './Pitch'
 
-export { getCovariants } from './Covariant'
+export { getCovariantSet } from './Covariant'
 export type {
-  CovariantsGroup, CovariantControlVars,
-  HarpKeyControlVars, RootPitchControlVars, PozitionControlVars,
-  isHarpKeyControlVars, isPozitionControlVars, isRootPitchControlVars
+  CovariantSet, CovariantControllers,
+  HarpKeyControllers, RootPitchControllers, PozitionControllers
 } from './Covariant'
+export { areHarpKeyControllers, arePozitionControllers, areRootPitchControllers } from './Covariant'
 
 export { IsActiveIds } from './IsActive'
 export type {
