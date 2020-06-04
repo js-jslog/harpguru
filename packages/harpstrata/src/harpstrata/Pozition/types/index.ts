@@ -1,18 +1,21 @@
+import type { HalfstepIndex } from '../../Apparatus'
+
 export enum PozitionIds {
   First = 'FIRST',
-  Eighth = 'EIGHTH',
-  Third = 'THIRD',
-  Tenth = 'TENTH',
-  Fifth = 'FIFTH',
-  Twelfth = 'TWELFTH',
-  Seventh = 'SEVENTH',
   Second = 'SECOND',
-  Ninth = 'NINTH',
+  Third = 'THIRD',
   Fourth = 'FOURTH',
-  Eleventh = 'ELEVENTH',
+  Fifth = 'FIFTH',
   Sixth = 'SIXTH',
+  Seventh = 'SEVENTH',
+  Eighth = 'EIGHTH',
+  Ninth = 'NINTH',
+  Tenth = 'TENTH',
+  Eleventh = 'ELEVENTH',
+  Twelfth = 'TWELFTH',
 }
 
 export type Pozition = {
   readonly id: PozitionIds;
+  readonly rootOffset: HalfstepIndex;
 }

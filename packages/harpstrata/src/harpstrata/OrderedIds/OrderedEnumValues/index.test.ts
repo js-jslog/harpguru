@@ -7,12 +7,12 @@ import { getAscendingEnumValues, getDescendingEnumValues } from './index'
 
 test('Generic function returns the values from the PozitionIds enum defaulting to First', () => {
   const {
-    First, Eighth, Third, Tenth, Fifth, Twelfth,
-    Seventh, Second, Ninth, Fourth, Eleventh, Sixth,
+    First, Second, Third, Fourth, Fifth, Sixth,
+    Seventh, Eighth, Ninth, Tenth, Eleventh, Twelfth,
   } = PozitionIds
   const expectedArray = [
-    First, Eighth, Third, Tenth, Fifth, Twelfth,
-    Seventh, Second, Ninth, Fourth, Eleventh, Sixth,
+    First, Second, Third, Fourth, Fifth, Sixth,
+    Seventh, Eighth, Ninth, Tenth, Eleventh, Twelfth,
   ]
   expect(getAscendingEnumValues(PozitionIds)).toStrictEqual(expectedArray)
 })

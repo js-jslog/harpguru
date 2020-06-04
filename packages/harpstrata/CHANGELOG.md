@@ -15,6 +15,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - yyyy-mm-dd
 ### Changed
+- MAJOR: Reorder the PozitionIds by name rather than rootOffset
+- MINOR: Recover root offset values from Pozition instances rather than from enum order
 - MAJOR: The names of many of the types and functions within the Covariant module
 - MINOR: Update README.md with name changes in Covariants module
 
