@@ -2,14 +2,17 @@ import {StyleSheet, View} from 'react-native'
 import React from 'react'
 
 import type { ScreenProps } from '../types'
+import { themeColors } from '../../Styles'
 import { HarpFace } from '../../HarpFace'
 import { DisplayModeToggler } from '../../Controls'
+
+const { pageColor } = themeColors
 
 const styles = StyleSheet.create({
   guruhome: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: 'white',
+    backgroundColor: pageColor,
     justifyContent: 'space-between',
     alignItems: 'stretch',
   },

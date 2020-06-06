@@ -8,10 +8,11 @@ import { getHoleNumbers } from './getHoleNumbers'
 
 const styles = StyleSheet.create({
   row: {
-    flex: 0.4,
+    flex: 0,
     backgroundColor: 'red',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
+    zIndex: 10,
   },
 })
 
