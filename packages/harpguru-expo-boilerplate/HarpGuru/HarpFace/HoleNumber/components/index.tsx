@@ -3,6 +3,10 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import type { HoleNumberIds, HoleNumberProps } from '../types'
+import { themeSizes, themeColors } from '../../../Styles'
+
+const { 5: fontSize, 8: width } = themeSizes
+const { holeNumbersColor } = themeColors
 
 export function HoleNumber(props: HoleNumberProps): ReactElement {
   const { xCoord } = props
@@ -10,16 +14,20 @@ export function HoleNumber(props: HoleNumberProps): ReactElement {
 
   const styles = StyleSheet.create({
     cell: {
-      backgroundColor: 'yellow',
       justifyContent: 'center',
       alignItems: 'center',
-      width: 30,
+      width,
+      height: 0,
+    },
+    text: {
+      fontSize,
+      color: holeNumbersColor,
     },
   })
 
   return (
     <View style={styles.cell}>
-      <Text>{holeNumber}</Text>
+      <Text style={styles.text}>{holeNumber}</Text>
     </View>
   )
 }

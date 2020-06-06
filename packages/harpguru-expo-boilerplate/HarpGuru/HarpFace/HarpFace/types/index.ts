@@ -10,3 +10,8 @@ export type HarpFaceProps = {
   readonly setActiveHarpStrata: (harpStrata: HarpStrata) => void;
   readonly activeDisplayMode: DisplayModes;
 }
+
+export type HarpFaceFacts = {
+  readonly columnCount: number;
+  readonly rowCount: number;
+}
