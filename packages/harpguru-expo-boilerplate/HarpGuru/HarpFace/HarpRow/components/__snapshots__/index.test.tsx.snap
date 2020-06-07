@@ -1,0 +1,1051 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A snapshot of a blow home row 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#e9ecef",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#ced4da",
+        "borderLeftWidth": 1.1,
+        "borderRightWidth": 1.1,
+        "borderTopLeftRadius": 12.199000000000002,
+        "borderTopRightRadius": 12.199000000000002,
+        "borderTopWidth": 1.1,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          1
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          3
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          5
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          1
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          3
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          5
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          1
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          3
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          5
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          1
+        </Text>
+      </View>
+    </>
+  </View>
+</View>
+`;
+
+exports[`A snapshot of a draw home row 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#e9ecef",
+        "borderBottomLeftRadius": 12.199000000000002,
+        "borderBottomRightRadius": 12.199000000000002,
+        "borderBottomWidth": 1.1,
+        "borderColor": "#ced4da",
+        "borderLeftWidth": 1.1,
+        "borderRightWidth": 1.1,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          2
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          5
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          7
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          2
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          4
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          6
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          7
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          2
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          4
+        </Text>
+      </View>
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          6
+        </Text>
+      </View>
+    </>
+  </View>
+</View>
+`;
+
+exports[`A snapshot of a non-home row 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#ced4da",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <
+      accessible={false}
+      disabled={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 0,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      />
+    </>
+    <
+      accessible={false}
+      disabled={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 0,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      />
+    </>
+    <
+      accessible={false}
+      disabled={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 0,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      />
+    </>
+    <
+      accessible={false}
+      disabled={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 0,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      />
+    </>
+    <
+      accessible={false}
+      disabled={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 0,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      />
+    </>
+    <
+      accessible={false}
+      disabled={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 0,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      />
+    </>
+    <
+      accessible={false}
+      disabled={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 0,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      />
+    </>
+    <
+      accessible={false}
+      disabled={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 0,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      />
+    </>
+    <
+      accessible={false}
+      disabled={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ced4da",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 0,
+          "elevation": 0,
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 0,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      />
+    </>
+    <
+      accessibilityRole="button"
+      accessible={true}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#ced4da",
+            "borderRadius": 7.5394000000000005,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "height": 31.9374,
+            "justifyContent": "center",
+            "width": 31.9374,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ced4da",
+              "fontSize": 12.199000000000002,
+            }
+          }
+        >
+          7b
+        </Text>
+      </View>
+    </>
+  </View>
+</View>
+`;

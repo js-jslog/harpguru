@@ -1,3 +1,5 @@
+import type { ViewStyle, TextStyle } from 'react-native'
+
 import type { Coord } from '../../HarpRow'
 
 export enum HoleNumberIds {
@@ -9,4 +11,9 @@ export enum HoleNumberIds {
 
 export type HoleNumberProps = {
   readonly xCoord: Coord;
+}
+
+export type HoleNumberStyles = {
+  readonly cell: ViewStyle;
+  readonly text: TextStyle;
 }

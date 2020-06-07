@@ -2,9 +2,10 @@ import React from 'react'
 import type { ReactElement } from 'react'
 import type { Degree } from 'harpstrata'
 
+import type { HarpFaceProps } from '../../types'
 import { HoleNumber } from '../../HoleNumber'
 import type { HoleNumberProps } from '../../HoleNumber'
-import type { HarpFaceProps } from '../../HarpFace'
+
 
 export const getHoleNumbers = (harpFaceProps: HarpFaceProps): ReactElement[] => {
   const { activeHarpStrata } = harpFaceProps

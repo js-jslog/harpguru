@@ -3,12 +3,12 @@ import React from 'react'
 import { DegreeIds } from 'harpstrata'
 import {render} from '@testing-library/react-native'
 
-import { exampleHarpFaceProps } from '../testResources'
+import { harpFaceProps } from '../../testResources'
 
 import {HarpFace} from './index'
 
 test('A component is rendered with all of the degrees of a major diatonic presented', () => {
-  const { getAllByText } = render(<HarpFace {...exampleHarpFaceProps} />)
+  const { getAllByText } = render(<HarpFace {...harpFaceProps} />)
 
   const [ holeRoot ] = getAllByText(DegreeIds.Root)
   const [ holeFlat2 ] = getAllByText(DegreeIds.Flat2)
@@ -35,4 +35,10 @@ test('A component is rendered with all of the degrees of a major diatonic presen
   expect(holeSixth).toBeTruthy()
   expect(holeFlat7).toBeTruthy()
   expect(holeSeventh).toBeTruthy()
+})
+
+test('A snapshot of a HarpFace', () => {
+  const { container } = render(<HarpFace {...harpFaceProps} />)
+
+  expect(container).toMatchSnapshot()
 })
