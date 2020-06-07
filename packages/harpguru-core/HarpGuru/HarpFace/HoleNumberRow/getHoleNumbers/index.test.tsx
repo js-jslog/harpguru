@@ -1,11 +1,11 @@
-import { exampleHarpFaceProps } from '../../HarpFace'
+import { harpFaceProps } from '../../testResources'
 
 import { getHoleNumbers } from './index'
 
 test('getHoleNumbers returns an array of HoleNumber components which is the width of the harmonica face', () => {
-  const { activeHarpStrata: { degreeMatrix }} = exampleHarpFaceProps
+  const { activeHarpStrata: { degreeMatrix }} = harpFaceProps
   const [ { length: columnCount } ] = degreeMatrix
-  const holeNumbers = getHoleNumbers(exampleHarpFaceProps)
+  const holeNumbers = getHoleNumbers(harpFaceProps)
 
   expect(holeNumbers.length).toBe(columnCount)
 })

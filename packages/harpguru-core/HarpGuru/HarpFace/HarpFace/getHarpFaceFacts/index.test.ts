@@ -1,9 +1,9 @@
-import { exampleHarpFaceProps } from '../testResources'
+import { harpFaceProps } from '../../testResources'
 
 import { getHarpFaceFacts } from './index'
 
 test('Recovers the column and row count from the HarpFaceProps', () => {
-  const harpFaceFacts = getHarpFaceFacts(exampleHarpFaceProps)
+  const harpFaceFacts = getHarpFaceFacts(harpFaceProps)
 
   const { columnCount, rowCount } = harpFaceFacts
 
@@ -12,11 +12,11 @@ test('Recovers the column and row count from the HarpFaceProps', () => {
 })
 
 test('Recovers the column and row count from the HarpFaceProps for a harp with a different number of rows and columns', () => {
-  const { activeHarpStrata } = exampleHarpFaceProps
+  const { activeHarpStrata } = harpFaceProps
   const tamperedDegreeMatrix = [[ undefined, undefined ]]
 
   const tamperedHarpStrata = { ...activeHarpStrata, degreeMatrix: tamperedDegreeMatrix }
-  const tamperedHarpFaceProps = { ...exampleHarpFaceProps, activeHarpStrata: tamperedHarpStrata }
+  const tamperedHarpFaceProps = { ...harpFaceProps, activeHarpStrata: tamperedHarpStrata }
 
   const harpFaceFacts = getHarpFaceFacts(tamperedHarpFaceProps)
 

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A snapshot of HoleNumber 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 31.9374,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#495057",
+          "fontSize": 7.5394000000000005,
+        }
+      }
+    >
+      1
+    </Text>
+  </View>
+</View>
+`;
