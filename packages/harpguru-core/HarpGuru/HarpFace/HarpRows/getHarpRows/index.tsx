@@ -15,10 +15,10 @@ export const getHarpRows = (props: HarpFaceProps): HarpRows => {
   const topRowsPrimer = blowDrawIdsMap.slice(0, drawIndex)
   const bottomRowsPrimer = blowDrawIdsMap.slice(drawIndex)
 
-  const topHarpRows = topRowsPrimer.map((redundantValue, index) => {
+  const topHarpRows = topRowsPrimer.map((_, index) => {
     return <HarpRow key={index} {...props} yCoord={index} />
   })
-  const bottomHarpRows = bottomRowsPrimer.map((redundantValue, index) => {
+  const bottomHarpRows = bottomRowsPrimer.map((_, index) => {
     const amendedIndex = index + topHarpRows.length
     return <HarpRow key={amendedIndex} {...props} yCoord={amendedIndex} />
   })

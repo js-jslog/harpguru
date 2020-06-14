@@ -11,10 +11,15 @@
 import {Colors} from 'react-native/Libraries/NewAppScreen'
 import {StatusBar, StyleSheet, Text, View} from 'react-native'
 import React from 'react'
+import type { ReactElement } from 'react'
+import * as ScreenOrientation from 'expo-screen-orientation'
+
 
 import {HarpGuru} from './HarpGuru'
 
-declare const global: {HermesInternal: null | {}}
+ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
+
+declare const global: {HermesInternal: null | unknown}
 
 const styles = StyleSheet.create({
   engine: {
@@ -31,7 +36,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const App = (): Element => {
+const App = (): ReactElement => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
