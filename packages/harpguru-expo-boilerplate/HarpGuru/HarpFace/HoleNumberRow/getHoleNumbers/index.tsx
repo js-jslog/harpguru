@@ -12,7 +12,7 @@ export const getHoleNumbers = (harpFaceProps: HarpFaceProps): ReactElement[] => 
   const { degreeMatrix } = activeHarpStrata
   const [ degreeRow ] = degreeMatrix
 
-  return degreeRow.map((degree: Degree | undefined, index: number) => {
+  return degreeRow.map((_: Degree | undefined, index: number) => {
     const xCoord = index
     const holeNumberProps: HoleNumberProps = { xCoord }
 
