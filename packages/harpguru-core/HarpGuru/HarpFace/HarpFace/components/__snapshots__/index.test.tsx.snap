@@ -35,7 +35,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             "borderBottomLeftRadius": 0,
             "borderBottomRightRadius": 0,
             "borderBottomWidth": 0,
-            "borderColor": "#ced4da",
+            "borderColor": "#ddd",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
             "borderTopLeftRadius": 0,
@@ -47,15 +47,13 @@ exports[`A snapshot of a HarpFace 1`] = `
           }
         }
       >
-        <TouchableOpacity
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -70,7 +68,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -80,16 +78,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -104,7 +100,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -114,16 +110,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -138,7 +132,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -148,16 +142,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -172,7 +164,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -182,16 +174,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -206,7 +196,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -216,16 +206,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -240,7 +228,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -250,16 +238,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -274,7 +260,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -284,16 +270,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -308,7 +292,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -318,16 +302,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -342,7 +324,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -352,39 +334,36 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              7b
-            </Text>
-          </View>
-        </TouchableOpacity>
+            7b
+          </Text>
+        </View>
       </View>
       <View
         style={
@@ -394,7 +373,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             "borderBottomLeftRadius": 0,
             "borderBottomRightRadius": 0,
             "borderBottomWidth": 0,
-            "borderColor": "#ced4da",
+            "borderColor": "#ddd",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
             "borderTopLeftRadius": 0,
@@ -406,47 +385,42 @@ exports[`A snapshot of a HarpFace 1`] = `
           }
         }
       >
-        <TouchableOpacity
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              3b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
+          collapsable={false}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            3b
+          </Text>
+        </View>
+        <View
+          accessible={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -461,7 +435,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -471,16 +445,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -495,7 +467,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -505,112 +477,101 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              3b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessibilityRole="button"
-          accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              5b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessibilityRole="button"
-          accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              7b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
+          collapsable={false}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            3b
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            5b
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            7b
+          </Text>
+        </View>
+        <View
+          accessible={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -625,7 +586,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -635,113 +596,104 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              3b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            3b
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              5b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            5b
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              7
-            </Text>
-          </View>
-        </TouchableOpacity>
+            7
+          </Text>
+        </View>
       </View>
       <View
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#e9ecef",
+            "backgroundColor": "#eee",
             "borderBottomLeftRadius": 0,
             "borderBottomRightRadius": 0,
             "borderBottomWidth": 0,
-            "borderColor": "#ced4da",
+            "borderColor": "#ddd",
             "borderLeftWidth": 1.1,
             "borderRightWidth": 1.1,
             "borderTopLeftRadius": 12.199000000000002,
@@ -753,326 +705,296 @@ exports[`A snapshot of a HarpFace 1`] = `
           }
         }
       >
-        <TouchableOpacity
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              1
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            1
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              3
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            3
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              5
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            5
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              1
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            1
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              3
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            3
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              5
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            5
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              1
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            1
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              3
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            3
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              5
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            5
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              1
-            </Text>
-          </View>
-        </TouchableOpacity>
+            1
+          </Text>
+        </View>
       </View>
       <View
         style={
@@ -1300,11 +1222,11 @@ exports[`A snapshot of a HarpFace 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#e9ecef",
+            "backgroundColor": "#eee",
             "borderBottomLeftRadius": 12.199000000000002,
             "borderBottomRightRadius": 12.199000000000002,
             "borderBottomWidth": 1.1,
-            "borderColor": "#ced4da",
+            "borderColor": "#ddd",
             "borderLeftWidth": 1.1,
             "borderRightWidth": 1.1,
             "borderTopLeftRadius": 0,
@@ -1316,326 +1238,296 @@ exports[`A snapshot of a HarpFace 1`] = `
           }
         }
       >
-        <TouchableOpacity
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              2
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            2
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              5
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            5
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              7
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            7
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              2
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            2
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              4
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            4
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            6
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              7
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            7
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              2
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            2
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              4
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            4
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-        </TouchableOpacity>
+            6
+          </Text>
+        </View>
       </View>
       <View
         style={
@@ -1645,7 +1537,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             "borderBottomLeftRadius": 0,
             "borderBottomRightRadius": 0,
             "borderBottomWidth": 0,
-            "borderColor": "#ced4da",
+            "borderColor": "#ddd",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
             "borderTopLeftRadius": 0,
@@ -1657,143 +1549,129 @@ exports[`A snapshot of a HarpFace 1`] = `
           }
         }
       >
-        <TouchableOpacity
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              2b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessibilityRole="button"
-          accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              5b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessibilityRole="button"
-          accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              7b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessibilityRole="button"
-          accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              2b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
+          collapsable={false}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            2b
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            5b
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            7b
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            2b
+          </Text>
+        </View>
+        <View
+          accessible={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -1808,7 +1686,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -1818,80 +1696,72 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              6b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessibilityRole="button"
-          accessible={true}
-          activeOpacity={0.2}
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              2b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
+          collapsable={false}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            6b
+          </Text>
+        </View>
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
+              }
+            }
+          >
+            2b
+          </Text>
+        </View>
+        <View
+          accessible={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -1906,7 +1776,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -1916,71 +1786,65 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              6b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            6b
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              2b
-            </Text>
-          </View>
-        </TouchableOpacity>
+            2b
+          </Text>
+        </View>
       </View>
       <View
         style={
@@ -1990,7 +1854,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             "borderBottomLeftRadius": 0,
             "borderBottomRightRadius": 0,
             "borderBottomWidth": 0,
-            "borderColor": "#ced4da",
+            "borderColor": "#ddd",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
             "borderTopLeftRadius": 0,
@@ -2002,15 +1866,13 @@ exports[`A snapshot of a HarpFace 1`] = `
           }
         }
       >
-        <TouchableOpacity
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2025,7 +1887,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2035,80 +1897,72 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              4
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            4
+          </Text>
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            6
+          </Text>
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2123,7 +1977,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2133,16 +1987,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2157,7 +2009,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2167,16 +2019,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2191,7 +2041,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2201,16 +2051,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2225,7 +2073,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2235,16 +2083,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2259,7 +2105,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2269,16 +2115,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2293,7 +2137,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2303,16 +2147,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2327,7 +2169,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2337,7 +2179,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
+        </View>
       </View>
       <View
         style={
@@ -2347,7 +2189,7 @@ exports[`A snapshot of a HarpFace 1`] = `
             "borderBottomLeftRadius": 0,
             "borderBottomRightRadius": 0,
             "borderBottomWidth": 0,
-            "borderColor": "#ced4da",
+            "borderColor": "#ddd",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
             "borderTopLeftRadius": 0,
@@ -2359,15 +2201,13 @@ exports[`A snapshot of a HarpFace 1`] = `
           }
         }
       >
-        <TouchableOpacity
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2382,7 +2222,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2392,16 +2232,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2416,7 +2254,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2426,48 +2264,43 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessibilityRole="button"
           accessible={true}
-          activeOpacity={0.2}
+          collapsable={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#ddd",
+              "borderRadius": 7.5394000000000005,
+              "borderWidth": 1.1,
+              "elevation": 0,
+              "height": 31.9374,
+              "justifyContent": "center",
+              "width": 31.9374,
+            }
+          }
         >
-          <View
+          <Text
             style={
               Object {
-                "alignItems": "center",
-                "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
-                "borderRadius": 7.5394000000000005,
-                "borderWidth": 1.1,
-                "elevation": 0,
-                "height": 31.9374,
-                "justifyContent": "center",
-                "width": 31.9374,
+                "color": "#ddd",
+                "fontSize": 12.199000000000002,
               }
             }
           >
-            <Text
-              style={
-                Object {
-                  "color": "#ced4da",
-                  "fontSize": 12.199000000000002,
-                }
-              }
-            >
-              6b
-            </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
+            6b
+          </Text>
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2482,7 +2315,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2492,16 +2325,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2516,7 +2347,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2526,16 +2357,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2550,7 +2379,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2560,16 +2389,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2584,7 +2411,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2594,16 +2421,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2618,7 +2443,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2628,16 +2453,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2652,7 +2475,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2662,16 +2485,14 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </View>
+        <View
           accessible={false}
-          activeOpacity={0.2}
-          disabled={true}
           style={
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ced4da",
+              "borderColor": "#ddd",
               "borderRadius": 7.5394000000000005,
               "borderWidth": 0,
               "elevation": 0,
@@ -2686,7 +2507,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               Object {
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
-                "borderColor": "#ced4da",
+                "borderColor": "#ddd",
                 "borderRadius": 7.5394000000000005,
                 "borderWidth": 0,
                 "elevation": 0,
@@ -2696,7 +2517,7 @@ exports[`A snapshot of a HarpFace 1`] = `
               }
             }
           />
-        </TouchableOpacity>
+        </View>
       </View>
     </View>
   </View>

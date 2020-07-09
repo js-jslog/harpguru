@@ -3,14 +3,15 @@ import { PozitionIds, PitchIds } from 'harpstrata'
 import { UpdateCategories } from '../types'
 import type { GenericButtonProps } from '../types'
 import { firstPozitionHarpStrata, keyCHarpStrata } from '../testResources'
-import { getPropsForHarpStrata } from '../getPropsForHarpStrata'
+import { getPropsForHarpStrata } from '../../ControlHelpers'
+import {DisplayModes} from '../../../HarpFace'
 
 import { getUpdateHarpStrataProps } from './index'
 
 test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Pozition update', () => {
   const sourceHarpStrata = firstPozitionHarpStrata
 
-  const baseHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata)
+  const baseHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata, DisplayModes.Degree)
 
   const expectedHarpStrataProps = { ...baseHarpStrataProps, pozitionId: PozitionIds.Third }
 
@@ -29,7 +30,7 @@ test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Pozi
 test('getUpdateHarpStrataProps provides amended HarpStrataProps for a given Harp Key update', () => {
   const sourceHarpStrata = keyCHarpStrata
 
-  const baseHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata)
+  const baseHarpStrataProps = getPropsForHarpStrata(sourceHarpStrata, DisplayModes.Degree)
 
   const expectedHarpStrataProps = { ...baseHarpStrataProps, harpKeyId: PitchIds.D }
 
