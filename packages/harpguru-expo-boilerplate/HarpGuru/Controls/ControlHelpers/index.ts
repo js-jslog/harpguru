@@ -1,0 +1,1 @@
+export { getPropsForHarpStrata } from './getPropsForHarpStrata'

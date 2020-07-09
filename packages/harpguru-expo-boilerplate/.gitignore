@@ -12,7 +12,10 @@ web-report/
 
 # macOS
 .DS_Store
-#
+
 # vim
 *.swp
 *.swo
+
+# log files
+*.log
