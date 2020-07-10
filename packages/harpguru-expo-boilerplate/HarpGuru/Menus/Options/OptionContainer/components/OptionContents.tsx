@@ -7,9 +7,9 @@ type ChildProps = {
   readonly children: React.ReactNode
 }
 
-export const Title = ({children}: ChildProps): React.ReactElement => {
+export const Title = ({ children }: ChildProps): React.ReactElement => {
   return <Text style={styles.title}>{children}</Text>
 }
-export const Option = ({children}: ChildProps): React.ReactElement => {
+export const Option = ({ children }: ChildProps): React.ReactElement => {
   return <Text style={styles.option}>{children}</Text>
 }

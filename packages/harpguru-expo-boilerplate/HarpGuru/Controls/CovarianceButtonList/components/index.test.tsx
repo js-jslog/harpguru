@@ -11,7 +11,7 @@ import { CovarianceButtonList } from './index'
 test('A list is produced with multiple PozitionControllers CovarianceButton in it', () => {
   const harpStrataControlProps = {
     setActiveHarpStrata: jest.fn(),
-    activeHarpStrata: keyCHarpStrata, 
+    activeHarpStrata: keyCHarpStrata,
   }
   const pozitionByKeyAtPitchPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.RootPitch,
@@ -19,8 +19,13 @@ test('A list is produced with multiple PozitionControllers CovarianceButton in i
     lockedValue: PitchIds.C,
     variedValue: PitchIds.C,
   }
-  const covarianceButtonListProps = { ...harpStrataControlProps, ...pozitionByKeyAtPitchPrimer }
-  const { getByText } = render(<CovarianceButtonList {...covarianceButtonListProps} />)
+  const covarianceButtonListProps = {
+    ...harpStrataControlProps,
+    ...pozitionByKeyAtPitchPrimer,
+  }
+  const { getByText } = render(
+    <CovarianceButtonList {...covarianceButtonListProps} />
+  )
 
   const expectedText1 = `${PitchIds.C} ${PozitionIds.First}`
   const expectedText2 = `${PitchIds.F} ${PozitionIds.Second}`

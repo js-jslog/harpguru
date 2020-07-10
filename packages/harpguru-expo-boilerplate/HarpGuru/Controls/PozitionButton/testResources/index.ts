@@ -16,5 +16,9 @@ const secondPozitionHarpStrataProps: HarpStrataProps = {
   pozitionId: PozitionIds.Second,
 }
 
-export const firstPozitionHarpStrata: HarpStrata = getHarpStrata(firstPozitionHarpStrataProps)
-export const secondPozitionHarpStrata: HarpStrata = getHarpStrata(secondPozitionHarpStrataProps)
+export const firstPozitionHarpStrata: HarpStrata = getHarpStrata(
+  firstPozitionHarpStrataProps
+)
+export const secondPozitionHarpStrata: HarpStrata = getHarpStrata(
+  secondPozitionHarpStrataProps
+)

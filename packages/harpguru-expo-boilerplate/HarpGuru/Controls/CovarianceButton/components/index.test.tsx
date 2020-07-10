@@ -9,7 +9,6 @@ import { CovariantMembers } from '../../CovarianceSeries'
 
 import { CovarianceButton } from './index'
 
-
 test('Displays a Harp Key and Pozition when a PozitionByKeyAtRootPrimer given', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
@@ -25,9 +24,14 @@ test('Displays a Harp Key and Pozition when a PozitionByKeyAtRootPrimer given', 
     pozitionId: PozitionIds.First,
   }
 
-  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...pozitionByKeyAtRootPrimer, ...covariantSet }
+  const covarianceButtonProps = {
+    setActiveHarpStrata,
+    activeHarpStrata,
+    ...pozitionByKeyAtRootPrimer,
+    ...covariantSet,
+  }
 
-  const { getByText } = render(<CovarianceButton { ...covarianceButtonProps } />)
+  const { getByText } = render(<CovarianceButton {...covarianceButtonProps} />)
 
   const expectedTitle = `${PitchIds.C} ${PozitionIds.First}`
   expect(getByText(expectedTitle)).toBeTruthy()
@@ -48,9 +52,14 @@ test('Calls setActiveHarpStrata with the expected new HarpStrata when given a Ke
     pozitionId: PozitionIds.First,
   }
 
-  const covarianceButtonProps = { setActiveHarpStrata, activeHarpStrata, ...keyByRootAtPozitionPrimer, ...covariantSet }
+  const covarianceButtonProps = {
+    setActiveHarpStrata,
+    activeHarpStrata,
+    ...keyByRootAtPozitionPrimer,
+    ...covariantSet,
+  }
 
-  const { getByText } = render(<CovarianceButton { ...covarianceButtonProps } />)
+  const { getByText } = render(<CovarianceButton {...covarianceButtonProps} />)
 
   const expectedHarpStrata = keyDHarpStrata
   const expectedTitle = `${PitchIds.D} ${PitchIds.D}`

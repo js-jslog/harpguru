@@ -1,6 +1,10 @@
 import React from 'react'
 import { PitchIds } from 'harpstrata'
-import { render, fireEvent, NativeTestEvent } from '@testing-library/react-native'
+import {
+  render,
+  fireEvent,
+  NativeTestEvent,
+} from '@testing-library/react-native'
 
 import { UpdateCategories } from '../types'
 import type { GenericButtonProps } from '../types'
@@ -15,7 +19,10 @@ test('GenericButton renders a component with the parameter label on it', () => {
   const { C: id } = PitchIds
 
   const harpKeyUpdateProps: GenericButtonProps = {
-    activeHarpStrata, setActiveHarpStrata, updateCategory, id
+    activeHarpStrata,
+    setActiveHarpStrata,
+    updateCategory,
+    id,
   }
 
   const { getByText } = render(<GenericButton {...harpKeyUpdateProps} />)
@@ -23,14 +30,17 @@ test('GenericButton renders a component with the parameter label on it', () => {
   expect(getByText(id)).toBeTruthy()
 })
 
-test('GenericButton renders a component which set\'s the expected harp strata to the paramaterised function', () => {
+test('GenericButton renders a component which sets the expected harp strata to the paramaterised function', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyDHarpStrata
   const { HarpKey: updateCategory } = UpdateCategories
   const { C: id } = PitchIds
 
   const harpKeyUpdateProps: GenericButtonProps = {
-    activeHarpStrata, setActiveHarpStrata, updateCategory, id
+    activeHarpStrata,
+    setActiveHarpStrata,
+    updateCategory,
+    id,
   }
 
   const { getByText } = render(<GenericButton {...harpKeyUpdateProps} />)
@@ -41,14 +51,17 @@ test('GenericButton renders a component which set\'s the expected harp strata to
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(keyCHarpStrata)
 })
 
-test('GenericButton renders a disabled component if it\'s id matches the active id in that category', () => {
+test('GenericButton renders a disabled component if its id matches the active id in that category', () => {
   const setActiveHarpStrata = jest.fn()
   const activeHarpStrata = keyCHarpStrata
   const { C: id } = PitchIds
   const { HarpKey: updateCategory } = UpdateCategories
 
   const harpKeyUpdateProps: GenericButtonProps = {
-    activeHarpStrata, setActiveHarpStrata, updateCategory, id
+    activeHarpStrata,
+    setActiveHarpStrata,
+    updateCategory,
+    id,
   }
 
   const { getByText } = render(<GenericButton {...harpKeyUpdateProps} />)

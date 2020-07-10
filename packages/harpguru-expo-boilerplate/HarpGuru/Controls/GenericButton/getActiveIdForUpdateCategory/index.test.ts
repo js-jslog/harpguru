@@ -13,7 +13,10 @@ test('getActiveIdForUpdateCategory returns the active harpkey when expected', ()
   const { D: id } = PitchIds
 
   const harpKeyUpdateProps: GenericButtonProps = {
-    activeHarpStrata, setActiveHarpStrata, updateCategory, id
+    activeHarpStrata,
+    setActiveHarpStrata,
+    updateCategory,
+    id,
   }
 
   const activeId = getActiveIdForUpdateCategory(harpKeyUpdateProps)

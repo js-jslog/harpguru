@@ -16,7 +16,12 @@ test('getRootPitchControllers returns a RootPitchControllers for a locked harp k
     pozitionId: PozitionIds.Second,
   }
 
-  const actualControlVars = getRootPitchControllers({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVars = getRootPitchControllers({
+    lockedType,
+    variedType,
+    lockedValue,
+    variedValue,
+  })
 
   expect(actualControlVars).toEqual(expectedControlVars)
 })
@@ -32,7 +37,12 @@ test('getRootPitchControllers returns a RootPitchControllers for a locked root p
     pozitionId: PozitionIds.Eighth,
   }
 
-  const actualControlVars = getRootPitchControllers({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVars = getRootPitchControllers({
+    lockedType,
+    variedType,
+    lockedValue,
+    variedValue,
+  })
 
   expect(actualControlVars).toEqual(expectedControlVars)
 })

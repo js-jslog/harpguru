@@ -8,18 +8,17 @@
  * @format
  */
 
-import {Colors} from 'react-native/Libraries/NewAppScreen'
-import {StatusBar, StyleSheet, Text, View} from 'react-native'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { StatusBar, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 import * as ScreenOrientation from 'expo-screen-orientation'
 
-
-import {HarpGuru} from './HarpGuru'
+import { HarpGuru } from './HarpGuru'
 
 ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
 
-declare const global: {HermesInternal: null | unknown}
+declare const global: { HermesInternal: null | unknown }
 
 const styles = StyleSheet.create({
   engine: {

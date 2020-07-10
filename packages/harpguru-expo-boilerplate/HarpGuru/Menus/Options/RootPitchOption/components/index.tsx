@@ -5,21 +5,25 @@ import { nudgeHarpStrataByRootPitch } from '../nudgeHarpStrataByRootPitch'
 import { partiallyApplyNudgeFunction } from '../../helpers'
 import { OptionContainer } from '../../OptionContainer'
 
-
-export const RootPitchOption = (props: RootPitchOptionProps): React.ReactElement => {
+export const RootPitchOption = (
+  props: RootPitchOptionProps
+): React.ReactElement => {
   const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
   const { rootPitchId } = activeHarpStrata
   const partialParams = {
     activeHarpStrata,
     setActiveHarpStrata,
-    activeDisplayMode
+    activeDisplayMode,
   }
 
   const rootPitchOptionContainerProps = {
     title: 'Position Key',
     optionId: rootPitchId,
-    nudgeFunction: partiallyApplyNudgeFunction(nudgeHarpStrataByRootPitch, partialParams),
+    nudgeFunction: partiallyApplyNudgeFunction(
+      nudgeHarpStrataByRootPitch,
+      partialParams
+    ),
   }
 
-  return <OptionContainer {...rootPitchOptionContainerProps}/>
+  return <OptionContainer {...rootPitchOptionContainerProps} />
 }

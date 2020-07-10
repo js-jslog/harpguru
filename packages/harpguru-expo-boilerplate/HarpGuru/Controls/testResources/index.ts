@@ -9,25 +9,29 @@ const baseHarpStrataProps: HarpStrataProps = {
 }
 export const keyCHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
-  harpKeyId: PitchIds.C
+  harpKeyId: PitchIds.C,
 }
 export const keyDHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
-  harpKeyId: PitchIds.D
+  harpKeyId: PitchIds.D,
 }
 export const cHarpSecondPozHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
   pozitionId: PozitionIds.Second,
-  harpKeyId: PitchIds.C
+  harpKeyId: PitchIds.C,
 }
 
 export const gHarpFirstPozHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
   pozitionId: PozitionIds.First,
-  harpKeyId: PitchIds.G
+  harpKeyId: PitchIds.G,
 }
 
 export const keyCHarpStrata: HarpStrata = getHarpStrata(keyCHarpStrataProps)
 export const keyDHarpStrata: HarpStrata = getHarpStrata(keyDHarpStrataProps)
-export const cHarpSecondPozHarpStrata: HarpStrata = getHarpStrata(cHarpSecondPozHarpStrataProps)
-export const gHarpFirstPozHarpStrata: HarpStrata = getHarpStrata(gHarpFirstPozHarpStrataProps)
+export const cHarpSecondPozHarpStrata: HarpStrata = getHarpStrata(
+  cHarpSecondPozHarpStrataProps
+)
+export const gHarpFirstPozHarpStrata: HarpStrata = getHarpStrata(
+  gHarpFirstPozHarpStrataProps
+)

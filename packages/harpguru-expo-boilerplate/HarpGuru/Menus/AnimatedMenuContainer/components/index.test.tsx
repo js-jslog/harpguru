@@ -6,6 +6,10 @@ import { AnimatedMenuContainer } from './index'
 
 test('AnimatedMenuContainer renders a component with children', () => {
   const testText = 'Test text'
-  const { getByText } = render(<AnimatedMenuContainer onScreen={true}><Text>{testText}</Text></AnimatedMenuContainer>)
+  const { getByText } = render(
+    <AnimatedMenuContainer onScreen={true}>
+      <Text>{testText}</Text>
+    </AnimatedMenuContainer>
+  )
   expect(getByText(testText)).toBeTruthy()
 })

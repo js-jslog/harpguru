@@ -16,7 +16,12 @@ test('getPozitionControllers returns a PozitionControllers for a locked harp key
     rootPitchId: PitchIds.C,
   }
 
-  const actualControlVars = getPozitionControllers({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVars = getPozitionControllers({
+    lockedType,
+    variedType,
+    lockedValue,
+    variedValue,
+  })
 
   expect(actualControlVars).toEqual(expectedControlVars)
 })
@@ -32,7 +37,12 @@ test('getPozitionControllers returns a PozitionControllers for a locked root pit
     rootPitchId: PitchIds.Eb,
   }
 
-  const actualControlVars = getPozitionControllers({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVars = getPozitionControllers({
+    lockedType,
+    variedType,
+    lockedValue,
+    variedValue,
+  })
 
   expect(actualControlVars).toEqual(expectedControlVars)
 })

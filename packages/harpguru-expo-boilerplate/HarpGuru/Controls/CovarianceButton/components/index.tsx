@@ -10,24 +10,49 @@ import { CovariantMembers } from '../../CovarianceSeries'
 const getButtonTitle = (props: CovarianceButtonProps): string => {
   const { lockedType, variedType } = props
   const { harpKeyId, pozitionId, rootPitchId } = props
-  if ( lockedType === CovariantMembers.RootPitch && variedType === CovariantMembers.HarpKey ) {
+  if (
+    lockedType === CovariantMembers.RootPitch &&
+    variedType === CovariantMembers.HarpKey
+  ) {
     return `${harpKeyId} ${pozitionId}`
-  } else if ( lockedType === CovariantMembers.RootPitch && variedType === CovariantMembers.Pozition ) {
+  } else if (
+    lockedType === CovariantMembers.RootPitch &&
+    variedType === CovariantMembers.Pozition
+  ) {
     return `${pozitionId} ${harpKeyId}`
-  } else if ( lockedType === CovariantMembers.HarpKey && variedType === CovariantMembers.RootPitch ) {
+  } else if (
+    lockedType === CovariantMembers.HarpKey &&
+    variedType === CovariantMembers.RootPitch
+  ) {
     return `${rootPitchId} ${pozitionId}`
-  } else if ( lockedType === CovariantMembers.HarpKey && variedType === CovariantMembers.Pozition ) {
+  } else if (
+    lockedType === CovariantMembers.HarpKey &&
+    variedType === CovariantMembers.Pozition
+  ) {
     return `${pozitionId} ${rootPitchId}`
-  } else if ( lockedType === CovariantMembers.Pozition && variedType === CovariantMembers.HarpKey ) {
+  } else if (
+    lockedType === CovariantMembers.Pozition &&
+    variedType === CovariantMembers.HarpKey
+  ) {
     return `${harpKeyId} ${rootPitchId}`
-  } else if ( lockedType === CovariantMembers.Pozition && variedType === CovariantMembers.RootPitch ) {
+  } else if (
+    lockedType === CovariantMembers.Pozition &&
+    variedType === CovariantMembers.RootPitch
+  ) {
     return `${rootPitchId} ${harpKeyId}`
   }
 
+  const errorObject = {
+    lockedType,
+    variedType,
+    harpKeyId,
+    pozitionId,
+    rootPitchId,
+  }
   const errorMessage = `
     Expected lockedType and variedType to constitute a covariant controling pair but didn't.
 
-    ${JSON.stringify({lockedType, variedType, harpKeyId, pozitionId, rootPitchId})}
+    ${JSON.stringify(errorObject)}
   `
   throw new Error(errorMessage)
 }
@@ -35,19 +60,27 @@ const getButtonTitle = (props: CovarianceButtonProps): string => {
 const getNewHarpStrata = (props: CovarianceButtonProps): void => {
   const { setActiveHarpStrata } = props
   const { harpKeyId, pozitionId } = props
-  const { activeHarpStrata: { apparatus: { id: apparatusId }, isActiveComplex: { activeDegreeIds: activeIds }}} = props
+  const {
+    activeHarpStrata: {
+      apparatus: { id: apparatusId },
+      isActiveComplex: { activeDegreeIds: activeIds },
+    },
+  } = props
   const harpStrataProps: HarpStrataProps = {
-    apparatusId, harpKeyId, pozitionId, activeIds
+    apparatusId,
+    harpKeyId,
+    pozitionId,
+    activeIds,
   }
   const newHarpStrata = getHarpStrata(harpStrataProps)
 
   setActiveHarpStrata(newHarpStrata)
 }
 
-export const CovarianceButton = (props: CovarianceButtonProps): ReactElement => {
+export const CovarianceButton = (
+  props: CovarianceButtonProps
+): ReactElement => {
   const title = getButtonTitle(props)
 
-  return (
-    <Button onPress={(): void => getNewHarpStrata(props)} title={title} />
-  )
+  return <Button onPress={(): void => getNewHarpStrata(props)} title={title} />
 }

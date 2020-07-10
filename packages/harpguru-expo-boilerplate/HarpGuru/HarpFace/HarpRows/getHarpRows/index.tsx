@@ -6,9 +6,12 @@ import { mapRowToBlowDrawIds } from '../mapRowToBlowDrawIds'
 import type { HarpFaceProps } from '../../types'
 import { HarpRow } from '../../HarpRow'
 
-
 export const getHarpRows = (props: HarpFaceProps): HarpRows => {
-  const { activeHarpStrata: { apparatus: { interactionMatrix }}} = props
+  const {
+    activeHarpStrata: {
+      apparatus: { interactionMatrix },
+    },
+  } = props
   const blowDrawIdsMap = interactionMatrix.map(mapRowToBlowDrawIds)
 
   const drawIndex = blowDrawIdsMap.indexOf(InteractionIds.Draw)
