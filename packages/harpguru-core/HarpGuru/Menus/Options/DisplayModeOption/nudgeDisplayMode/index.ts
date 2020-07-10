@@ -1,7 +1,9 @@
 import type { DisplayModeOptionProps } from '../types'
-import {DisplayModes} from '../../../../HarpFace'
+import { DisplayModes } from '../../../../HarpFace'
 
-export const nudgeDisplayMode = (partialParams: DisplayModeOptionProps): void => {
+export const nudgeDisplayMode = (
+  partialParams: DisplayModeOptionProps
+): void => {
   const { activeDisplayMode, setActiveDisplayMode } = partialParams
 
   if (activeDisplayMode === DisplayModes.Degree) {

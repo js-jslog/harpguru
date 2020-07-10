@@ -25,18 +25,21 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   title: {
-    fontSize: titleSize
+    fontSize: titleSize,
   },
   option: {
-    fontSize: variableSize
-  }
+    fontSize: variableSize,
+  },
 })
 
 // Dynamic styles for OptionContainer
-export const getDynamicStyles = (state: State): { readonly activeSwipeStyle: ViewStyle } => {
+export const getDynamicStyles = (
+  state: State
+): { readonly activeSwipeStyle: ViewStyle } => {
   return StyleSheet.create({
     activeSwipeStyle: {
-      backgroundColor: (state === State.ACTIVE ? themeColors.inertOutline : 'transparent')
-    }
+      backgroundColor:
+        state === State.ACTIVE ? themeColors.inertOutline : 'transparent',
+    },
   })
 }

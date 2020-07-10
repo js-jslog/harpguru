@@ -9,11 +9,11 @@ const baseHarpStrataProps: HarpStrataProps = {
 }
 const keyCHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
-  harpKeyId: PitchIds.C
+  harpKeyId: PitchIds.C,
 }
 const keyDHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
-  harpKeyId: PitchIds.D
+  harpKeyId: PitchIds.D,
 }
 
 export const keyCHarpStrata: HarpStrata = getHarpStrata(keyCHarpStrataProps)

@@ -3,14 +3,28 @@ import type { HarpStrata, HarpStrataProps, DegreeIds } from 'harpstrata'
 
 import { getToggledActiveDegreeIds } from '../getToggledActiveDegreeIds'
 
-export const toggleDegreeIdInHarpStrata = (activeHarpStrata: HarpStrata, toggledDegreeId: DegreeIds): HarpStrata => {
-  const { apparatus: { id: apparatusId }, pozitionId, harpKeyId, isActiveComplex: { activeDegreeIds }} = activeHarpStrata
+export const toggleDegreeIdInHarpStrata = (
+  activeHarpStrata: HarpStrata,
+  toggledDegreeId: DegreeIds
+): HarpStrata => {
+  const {
+    apparatus: { id: apparatusId },
+    pozitionId,
+    harpKeyId,
+    isActiveComplex: { activeDegreeIds },
+  } = activeHarpStrata
 
-  const newActiveDegreeIds = getToggledActiveDegreeIds(toggledDegreeId, activeDegreeIds)
+  const newActiveDegreeIds = getToggledActiveDegreeIds(
+    toggledDegreeId,
+    activeDegreeIds
+  )
   const activeIds = newActiveDegreeIds
 
   const newHarpStrataProps: HarpStrataProps = {
-    apparatusId, pozitionId, harpKeyId, activeIds
+    apparatusId,
+    pozitionId,
+    harpKeyId,
+    activeIds,
   }
 
   return getHarpStrata(newHarpStrataProps)

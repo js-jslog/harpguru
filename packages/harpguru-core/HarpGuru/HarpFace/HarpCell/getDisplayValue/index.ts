@@ -9,7 +9,8 @@ export const getDisplayValue = (props: HarpCellProps): string | undefined => {
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
 
-  const displayValue = (activeDisplayMode === DisplayModes.Degree ? degreeId : pitchId)
+  const displayValue =
+    activeDisplayMode === DisplayModes.Degree ? degreeId : pitchId
 
   return displayValue
 }

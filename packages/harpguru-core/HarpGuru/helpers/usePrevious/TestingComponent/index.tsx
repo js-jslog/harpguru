@@ -8,8 +8,11 @@ type Props = {
   readonly initial: unknown
 }
 
-export const TestingComponent = ({value, initial}: Props): React.ReactElement => {
-  const previousValue =  usePrevious(value, initial)
+export const TestingComponent = ({
+  value,
+  initial,
+}: Props): React.ReactElement => {
+  const previousValue = usePrevious(value, initial)
   return (
     <>
       <Text>Current: {value}</Text>

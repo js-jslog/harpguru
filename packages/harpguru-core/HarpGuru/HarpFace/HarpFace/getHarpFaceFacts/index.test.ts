@@ -13,10 +13,16 @@ test('Recovers the column and row count from the HarpFaceProps', () => {
 
 test('Recovers the column and row count from the HarpFaceProps for a harp with a different number of rows and columns', () => {
   const { activeHarpStrata } = harpFaceProps
-  const tamperedDegreeMatrix = [[ undefined, undefined ]]
+  const tamperedDegreeMatrix = [[undefined, undefined]]
 
-  const tamperedHarpStrata = { ...activeHarpStrata, degreeMatrix: tamperedDegreeMatrix }
-  const tamperedHarpFaceProps = { ...harpFaceProps, activeHarpStrata: tamperedHarpStrata }
+  const tamperedHarpStrata = {
+    ...activeHarpStrata,
+    degreeMatrix: tamperedDegreeMatrix,
+  }
+  const tamperedHarpFaceProps = {
+    ...harpFaceProps,
+    activeHarpStrata: tamperedHarpStrata,
+  }
 
   const harpFaceFacts = getHarpFaceFacts(tamperedHarpFaceProps)
 

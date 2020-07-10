@@ -1,4 +1,4 @@
-import {ApparatusIds, PozitionIds, PitchIds, getHarpStrata} from 'harpstrata'
+import { ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
 
 import { nudgeHarpStrataByApparatus } from './index'
 
@@ -9,8 +9,14 @@ const baseHarpStrataProps = {
   activeIds: [],
 }
 const majorDiatonicHarpProps = baseHarpStrataProps
-const countryTunedHarpProps = { ...baseHarpStrataProps, apparatusId: ApparatusIds.CountryTuned }
-const naturalMinorHarpProps = { ...baseHarpStrataProps, apparatusId: ApparatusIds.NaturalMinor }
+const countryTunedHarpProps = {
+  ...baseHarpStrataProps,
+  apparatusId: ApparatusIds.CountryTuned,
+}
+const naturalMinorHarpProps = {
+  ...baseHarpStrataProps,
+  apparatusId: ApparatusIds.NaturalMinor,
+}
 
 const majorDiatonicHarp = getHarpStrata(majorDiatonicHarpProps)
 const countryTunedHarp = getHarpStrata(countryTunedHarpProps)
@@ -20,7 +26,7 @@ test('provides incremented HarpStrata by apparatus', () => {
   const setActiveHarpStrata = jest.fn()
   const partialParams = {
     activeHarpStrata: countryTunedHarp,
-    setActiveHarpStrata
+    setActiveHarpStrata,
   }
   nudgeHarpStrataByApparatus(partialParams, 'UP')
 
@@ -31,7 +37,7 @@ test('provides decremented HarpStrata by apparatus', () => {
   const setActiveHarpStrata = jest.fn()
   const partialParams = {
     activeHarpStrata: countryTunedHarp,
-    setActiveHarpStrata
+    setActiveHarpStrata,
   }
   nudgeHarpStrataByApparatus(partialParams, 'DOWN')
 
@@ -42,7 +48,7 @@ test('provides incremented HarpStrata by apparatus across array limit', () => {
   const setActiveHarpStrata = jest.fn()
   const partialParams = {
     activeHarpStrata: naturalMinorHarp,
-    setActiveHarpStrata
+    setActiveHarpStrata,
   }
   nudgeHarpStrataByApparatus(partialParams, 'UP')
 
@@ -53,7 +59,7 @@ test('provides decremented HarpStrata by apparatus across array limit', () => {
   const setActiveHarpStrata = jest.fn()
   const partialParams = {
     activeHarpStrata: majorDiatonicHarp,
-    setActiveHarpStrata
+    setActiveHarpStrata,
   }
   nudgeHarpStrataByApparatus(partialParams, 'DOWN')
 

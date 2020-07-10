@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 import { PitchIds } from 'harpstrata'
@@ -16,7 +16,11 @@ export const ControlPanel = (props: ScreenProps): ReactElement => {
     lockedValue: PitchIds.C,
     variedValue: PitchIds.C,
   }
-  const covarianceButtonListProps = { activeHarpStrata, setActiveHarpStrata, ...covarianceOriginPrimer }
+  const covarianceButtonListProps = {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    ...covarianceOriginPrimer,
+  }
 
   const styles = StyleSheet.create({
     headsupdiplay: {
@@ -30,7 +34,6 @@ export const ControlPanel = (props: ScreenProps): ReactElement => {
       justifyContent: 'space-between',
     },
   })
-
 
   return (
     <>

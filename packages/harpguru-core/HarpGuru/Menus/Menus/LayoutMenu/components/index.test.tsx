@@ -1,8 +1,15 @@
 import React from 'react'
-import {PitchIds, PozitionIds, HarpStrataProps, ApparatusIds, ActiveIds, getHarpStrata} from 'harpstrata'
-import {render} from '@testing-library/react-native'
+import {
+  PitchIds,
+  PozitionIds,
+  HarpStrataProps,
+  ApparatusIds,
+  ActiveIds,
+  getHarpStrata,
+} from 'harpstrata'
+import { render } from '@testing-library/react-native'
 
-import {DisplayModes} from '../../../../HarpFace'
+import { DisplayModes } from '../../../../HarpFace'
 
 import { LayoutMenu } from './index'
 
@@ -20,7 +27,7 @@ test('LayoutMenu renders a component with a major diatonic layout selected', () 
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
-    setActiveDisplayMode: jest.fn()
+    setActiveDisplayMode: jest.fn(),
   }
   const { getByText } = render(<LayoutMenu {...menuProps} />)
 
@@ -32,7 +39,7 @@ test('LayoutMenu renders a component with Degree DisplayMode selected', () => {
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
-    setActiveDisplayMode: jest.fn()
+    setActiveDisplayMode: jest.fn(),
   }
   const { getByText } = render(<LayoutMenu {...menuProps} />)
 

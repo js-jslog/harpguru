@@ -5,12 +5,13 @@ import { nudgeDisplayMode } from '../nudgeDisplayMode'
 import { partiallyApplyNudgeFunction } from '../../helpers'
 import { OptionContainer } from '../../OptionContainer'
 
-
-export const DisplayModeOption = (props: DisplayModeOptionProps): React.ReactElement => {
+export const DisplayModeOption = (
+  props: DisplayModeOptionProps
+): React.ReactElement => {
   const { activeDisplayMode, setActiveDisplayMode } = props
   const partialParams = {
     activeDisplayMode,
-    setActiveDisplayMode
+    setActiveDisplayMode,
   }
 
   const displayModeOptionContainerProps = {
@@ -19,5 +20,5 @@ export const DisplayModeOption = (props: DisplayModeOptionProps): React.ReactEle
     nudgeFunction: partiallyApplyNudgeFunction(nudgeDisplayMode, partialParams),
   }
 
-  return <OptionContainer {...displayModeOptionContainerProps}/>
+  return <OptionContainer {...displayModeOptionContainerProps} />
 }

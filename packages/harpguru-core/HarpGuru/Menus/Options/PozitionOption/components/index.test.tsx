@@ -1,8 +1,8 @@
 import React from 'react'
-import {PitchIds, PozitionIds, ApparatusIds, getHarpStrata} from 'harpstrata'
-import {render} from '@testing-library/react-native'
+import { PitchIds, PozitionIds, ApparatusIds, getHarpStrata } from 'harpstrata'
+import { render } from '@testing-library/react-native'
 
-import {DisplayModes} from '../../../../HarpFace'
+import { DisplayModes } from '../../../../HarpFace'
 
 import { PozitionOption } from './index'
 
@@ -20,7 +20,7 @@ test('PozitionOption renders a component with position information displayed', (
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
-    setActiveDisplayMode: jest.fn()
+    setActiveDisplayMode: jest.fn(),
   }
   const { getByText } = render(<PozitionOption {...menuOptionProps} />)
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import {PitchIds, PozitionIds, ApparatusIds, getHarpStrata} from 'harpstrata'
-import {render} from '@testing-library/react-native'
+import { PitchIds, PozitionIds, ApparatusIds, getHarpStrata } from 'harpstrata'
+import { render } from '@testing-library/react-native'
 
-import {DisplayModes} from '../../../../HarpFace'
+import { DisplayModes } from '../../../../HarpFace'
 
 import { HarpKeyOption } from './index'
 
@@ -20,7 +20,7 @@ test('HarpKeyOption renders a component with harp key information displayed', ()
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
-    setActiveDisplayMode: jest.fn()
+    setActiveDisplayMode: jest.fn(),
   }
   const { getByText } = render(<HarpKeyOption {...menuOptionProps} />)
 

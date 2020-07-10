@@ -4,7 +4,7 @@ import { CovarianceSeries, CovariancePrimer, CovariantMembers } from '../types'
 
 import { getCovarianceSeries } from './index'
 
-test('getCovarianceSeries returns a complete series of CovariantSet\'s for an origin primer', () => {
+test('getCovarianceSeries returns a complete series of CovariantSets for an origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.Pozition,
     variedType: CovariantMembers.HarpKey,
@@ -80,7 +80,7 @@ test('getCovarianceSeries returns a complete series of CovariantSet\'s for an or
   expect(actualCovarianceSeries).toStrictEqual(expectedCovarianceSeries)
 })
 
-test('getCovarianceSeries returns a series of CovariantSet\'s for a different origin primer', () => {
+test('getCovarianceSeries returns a series of CovariantSets for a different origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.HarpKey,
@@ -88,24 +88,27 @@ test('getCovarianceSeries returns a series of CovariantSet\'s for a different or
     variedValue: PitchIds.G,
   }
 
-  const expectedSeriesIncludes= [
+  const expectedSeriesIncludes = [
     {
       harpKeyId: PitchIds.G,
       pozitionId: PozitionIds.First,
       rootPitchId: PitchIds.G,
-    }, {
+    },
+    {
       harpKeyId: PitchIds.C,
       pozitionId: PozitionIds.Second,
       rootPitchId: PitchIds.G,
-    }
+    },
   ]
 
   const actualCovarianceSeries = getCovarianceSeries(covarianceOriginPrimer)
 
-  expect(actualCovarianceSeries).toEqual(expect.arrayContaining(expectedSeriesIncludes))
+  expect(actualCovarianceSeries).toEqual(
+    expect.arrayContaining(expectedSeriesIncludes)
+  )
 })
 
-test('getCovarianceSeries returns a series of CovariantSet\'s for yet another different origin primer', () => {
+test('getCovarianceSeries returns a series of CovariantSets for yet another different origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.RootPitch,
     variedType: CovariantMembers.Pozition,
@@ -113,24 +116,27 @@ test('getCovarianceSeries returns a series of CovariantSet\'s for yet another di
     variedValue: PozitionIds.Seventh,
   }
 
-  const expectedSeriesIncludes= [
+  const expectedSeriesIncludes = [
     {
       harpKeyId: PitchIds.Db,
       pozitionId: PozitionIds.Seventh,
       rootPitchId: PitchIds.G,
-    }, {
+    },
+    {
       harpKeyId: PitchIds.F,
       pozitionId: PozitionIds.Third,
       rootPitchId: PitchIds.G,
-    }
+    },
   ]
 
   const actualCovarianceSeries = getCovarianceSeries(covarianceOriginPrimer)
 
-  expect(actualCovarianceSeries).toEqual(expect.arrayContaining(expectedSeriesIncludes))
+  expect(actualCovarianceSeries).toEqual(
+    expect.arrayContaining(expectedSeriesIncludes)
+  )
 })
 
-test('getCovarianceSeries returns a series of CovariantSet\'s for yet again another different origin primer', () => {
+test('getCovarianceSeries returns a series of CovariantSets for yet again another different origin primer', () => {
   const covarianceOriginPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.Pozition,
     variedType: CovariantMembers.RootPitch,
@@ -138,19 +144,22 @@ test('getCovarianceSeries returns a series of CovariantSet\'s for yet again anot
     variedValue: PitchIds.Bb,
   }
 
-  const expectedSeriesIncludes= [
+  const expectedSeriesIncludes = [
     {
       harpKeyId: PitchIds.Db,
       pozitionId: PozitionIds.Fourth,
       rootPitchId: PitchIds.Bb,
-    }, {
+    },
+    {
       harpKeyId: PitchIds.G,
       pozitionId: PozitionIds.Fourth,
       rootPitchId: PitchIds.E,
-    }
+    },
   ]
 
   const actualCovarianceSeries = getCovarianceSeries(covarianceOriginPrimer)
 
-  expect(actualCovarianceSeries).toEqual(expect.arrayContaining(expectedSeriesIncludes))
+  expect(actualCovarianceSeries).toEqual(
+    expect.arrayContaining(expectedSeriesIncludes)
+  )
 })

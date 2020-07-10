@@ -6,10 +6,10 @@ import type { Coord } from '../../HarpRow'
 export type YXCoord = [Coord, Coord]
 
 export type HarpCellProps = HarpFaceProps & {
-  readonly yxCoord: YXCoord;
-};
+  readonly yxCoord: YXCoord
+}
 
 export type HarpCellStyles = {
-  readonly cell: ViewStyle;
-  readonly text: TextStyle;
+  readonly cell: ViewStyle
+  readonly text: TextStyle
 }

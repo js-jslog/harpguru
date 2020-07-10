@@ -1,4 +1,4 @@
-import {Button} from 'react-native'
+import { Button } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 import { getHarpStrata } from 'harpstrata'
@@ -17,11 +17,17 @@ const isDisabled = (props: GenericButtonProps): boolean => {
   const activeId = getActiveIdForUpdateCategory(props)
   const { id } = props
 
-  return (id === activeId)
+  return id === activeId
 }
 
 export function GenericButton(props: GenericButtonProps): ReactElement {
   return (
-    <Button onPress={(): void => {setNewHarpStrata(props)}} title={props.id} disabled={isDisabled(props)} />
+    <Button
+      onPress={(): void => {
+        setNewHarpStrata(props)
+      }}
+      title={props.id}
+      disabled={isDisabled(props)}
+    />
   )
 }

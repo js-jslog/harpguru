@@ -1,20 +1,33 @@
 import type { CovariantControllers } from 'harpstrata'
-import { getPitchIds, getPozitionIds, isPitchId, isPozitionId } from 'harpstrata'
+import {
+  getPitchIds,
+  getPozitionIds,
+  isPitchId,
+  isPozitionId,
+} from 'harpstrata'
 
 import type { CovariancePrimer } from '../types'
 import { getCovariantControllers } from '../getCovariantControllers'
 
-export const getSeriesControllers = (props: CovariancePrimer): ReadonlyArray<CovariantControllers> => {
+export const getSeriesControllers = (
+  props: CovariancePrimer
+): ReadonlyArray<CovariantControllers> => {
   const { variedValue } = props
-  if ( isPitchId(variedValue) ) {
+  if (isPitchId(variedValue)) {
     const variedValues = getPitchIds(variedValue)
     return variedValues.map((nextVariedValue) => {
-      return getCovariantControllers({ ...props, variedValue: nextVariedValue } as CovariancePrimer)
+      return getCovariantControllers({
+        ...props,
+        variedValue: nextVariedValue,
+      } as CovariancePrimer)
     })
-  } else if ( isPozitionId(variedValue) ) {
+  } else if (isPozitionId(variedValue)) {
     const variedValues = getPozitionIds(variedValue)
     return variedValues.map((nextVariedValue) => {
-      return getCovariantControllers({ ...props, variedValue: nextVariedValue } as CovariancePrimer)
+      return getCovariantControllers({
+        ...props,
+        variedValue: nextVariedValue,
+      } as CovariancePrimer)
     })
   }
 

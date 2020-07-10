@@ -1,4 +1,13 @@
-import { PitchIds, HarpStrataProps, ApparatusIds, PozitionIds, ActiveIds, HarpStrata, getHarpStrata, DegreeIds } from 'harpstrata'
+import {
+  PitchIds,
+  HarpStrataProps,
+  ApparatusIds,
+  PozitionIds,
+  ActiveIds,
+  HarpStrata,
+  getHarpStrata,
+  DegreeIds,
+} from 'harpstrata'
 
 import { setPozitionRootAtCell } from './index'
 
@@ -10,22 +19,27 @@ const baseHarpStrataProps: HarpStrataProps = {
 }
 export const keyCHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
-  harpKeyId: PitchIds.C
+  harpKeyId: PitchIds.C,
 }
 export const cHarpSecondPozHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,
   pozitionId: PozitionIds.Second,
-  harpKeyId: PitchIds.C
+  harpKeyId: PitchIds.C,
 }
 export const keyCHarpStrata: HarpStrata = getHarpStrata(keyCHarpStrataProps)
-export const cHarpSecondPozHarpStrata: HarpStrata = getHarpStrata(cHarpSecondPozHarpStrataProps)
+export const cHarpSecondPozHarpStrata: HarpStrata = getHarpStrata(
+  cHarpSecondPozHarpStrataProps
+)
 
 test('The function returns a harpstrata with the pozition shifted to meet the root pitch requirement', () => {
   const activeHarpStrata = keyCHarpStrata
   const { G: newRootPitchId } = PitchIds
 
   const expectedHarpStrata = cHarpSecondPozHarpStrata
-  const actualHarpStrata = setPozitionRootAtCell(activeHarpStrata, newRootPitchId)
+  const actualHarpStrata = setPozitionRootAtCell(
+    activeHarpStrata,
+    newRootPitchId
+  )
 
   expect(actualHarpStrata).toStrictEqual(expectedHarpStrata)
 })

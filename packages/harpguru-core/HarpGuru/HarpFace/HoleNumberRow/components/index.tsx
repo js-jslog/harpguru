@@ -11,9 +11,5 @@ const styles = getStyles()
 export const HoleNumberRow = (props: HarpFaceProps): ReactElement => {
   const holeNumbers = getHoleNumbers(props)
 
-  return (
-    <View style={styles.row}>
-      {holeNumbers}
-    </View>
-  )
+  return <View style={styles.row}>{holeNumbers}</View>
 }

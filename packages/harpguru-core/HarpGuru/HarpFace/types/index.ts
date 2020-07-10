@@ -8,12 +8,12 @@ export enum DisplayModes {
 }
 
 export type HarpFaceProps = {
-  readonly activeHarpStrata: HarpStrata;
-  readonly setActiveHarpStrata: SetActiveHarpStrata;
-  readonly activeDisplayMode: DisplayModes;
+  readonly activeHarpStrata: HarpStrata
+  readonly setActiveHarpStrata: SetActiveHarpStrata
+  readonly activeDisplayMode: DisplayModes
 }
 
 export type HarpFaceFacts = {
-  readonly columnCount: number;
-  readonly rowCount: number;
+  readonly columnCount: number
+  readonly rowCount: number
 }

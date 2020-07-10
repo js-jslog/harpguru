@@ -1,6 +1,6 @@
-import {ApparatusIds, PozitionIds, PitchIds, getHarpStrata} from 'harpstrata'
+import { ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
 
-import {DisplayModes} from '../../../../HarpFace'
+import { DisplayModes } from '../../../../HarpFace'
 
 import { nudgeHarpStrataByPozition } from './index'
 
@@ -11,7 +11,10 @@ const baseHarpStrataProps = {
   activeIds: [],
 }
 const cHarpFirstPozitionProps = baseHarpStrataProps
-const cHarpSecondPozitionProps = { ...baseHarpStrataProps, pozitionId: PozitionIds.Second }
+const cHarpSecondPozitionProps = {
+  ...baseHarpStrataProps,
+  pozitionId: PozitionIds.Second,
+}
 
 const cHarpFirstPozition = getHarpStrata(cHarpFirstPozitionProps)
 const cHarpSecondPozition = getHarpStrata(cHarpSecondPozitionProps)
@@ -21,11 +24,13 @@ test('provides incremented HarpStrata by pozition along with root pitch id', () 
   const partialParams = {
     activeHarpStrata: cHarpFirstPozition,
     setActiveHarpStrata,
-    activeDisplayMode: DisplayModes.Degree
+    activeDisplayMode: DisplayModes.Degree,
   }
   nudgeHarpStrataByPozition(partialParams, 'UP')
 
-  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(cHarpSecondPozition)
+  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(
+    cHarpSecondPozition
+  )
 })
 
 test('provides decremented HarpStrata by pozition along with root pitch id', () => {
@@ -33,7 +38,7 @@ test('provides decremented HarpStrata by pozition along with root pitch id', () 
   const partialParams = {
     activeHarpStrata: cHarpSecondPozition,
     setActiveHarpStrata,
-    activeDisplayMode: DisplayModes.Degree
+    activeDisplayMode: DisplayModes.Degree,
   }
   nudgeHarpStrataByPozition(partialParams, 'DOWN')
 

@@ -16,7 +16,12 @@ test('getHarpKeyControllers returns a HarpKeyControllers for a locked pozition',
     rootPitchId: PitchIds.C,
   }
 
-  const actualControlVars = getHarpKeyControllers({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVars = getHarpKeyControllers({
+    lockedType,
+    variedType,
+    lockedValue,
+    variedValue,
+  })
 
   expect(actualControlVars).toEqual(expectedControlVars)
 })
@@ -32,7 +37,12 @@ test('getHarpKeyControllers returns a HarpKeyControllers for a locked root pitch
     rootPitchId: PitchIds.Eb,
   }
 
-  const actualControlVars = getHarpKeyControllers({lockedType, variedType, lockedValue, variedValue})
+  const actualControlVars = getHarpKeyControllers({
+    lockedType,
+    variedType,
+    lockedValue,
+    variedValue,
+  })
 
   expect(actualControlVars).toEqual(expectedControlVars)
 })

@@ -1,4 +1,4 @@
-import {View} from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 
 import { getStyles } from '../styles'
@@ -13,9 +13,9 @@ export const HarpFace = (props: HarpFaceProps): React.ReactElement => {
   return (
     <View style={styles.facewrapper}>
       <View style={styles.face}>
-        { harpRows.top }
+        {harpRows.top}
         <HoleNumberRow {...props} />
-        { harpRows.bottom }
+        {harpRows.bottom}
       </View>
     </View>
   )

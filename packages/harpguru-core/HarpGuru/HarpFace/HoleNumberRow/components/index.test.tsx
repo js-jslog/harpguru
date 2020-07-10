@@ -5,9 +5,10 @@ import { harpFaceProps } from '../../testResources'
 
 import { HoleNumberRow } from './index'
 
-
 test('HoleNumberRow returns holes numbered 1 to 10 for a 10 hole major diatonic harmonica', () => {
-  const { queryByText, getByText } = render(<HoleNumberRow {...harpFaceProps} />)
+  const { queryByText, getByText } = render(
+    <HoleNumberRow {...harpFaceProps} />
+  )
 
   expect(queryByText('0')).toBeNull()
   expect(getByText('1')).toBeTruthy()

@@ -5,8 +5,7 @@ import { render } from '@testing-library/react-native'
 
 import { harpFaceProps } from '../../testResources'
 
-import {HarpRow} from './index'
-
+import { HarpRow } from './index'
 
 test('A blow row from a major diatonic harmonica can be rendered', () => {
   const { getAllByText } = render(<HarpRow {...harpFaceProps} yCoord={2} />)
@@ -17,19 +16,19 @@ test('A blow row from a major diatonic harmonica can be rendered', () => {
 })
 
 test('A snapshot of a non-home row', () => {
-  const { container } = render(<HarpRow {...harpFaceProps } yCoord={0} />)
+  const { container } = render(<HarpRow {...harpFaceProps} yCoord={0} />)
 
   expect(container).toMatchSnapshot()
 })
 
 test('A snapshot of a blow home row', () => {
-  const { container } = render(<HarpRow {...harpFaceProps } yCoord={2} />)
+  const { container } = render(<HarpRow {...harpFaceProps} yCoord={2} />)
 
   expect(container).toMatchSnapshot()
 })
 
 test('A snapshot of a draw home row', () => {
-  const { container } = render(<HarpRow {...harpFaceProps } yCoord={3} />)
+  const { container } = render(<HarpRow {...harpFaceProps} yCoord={3} />)
 
   expect(container).toMatchSnapshot()
 })

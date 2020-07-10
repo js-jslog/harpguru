@@ -1,8 +1,15 @@
 import React from 'react'
-import {PitchIds, PozitionIds, HarpStrataProps, ApparatusIds, ActiveIds, getHarpStrata} from 'harpstrata'
-import {render} from '@testing-library/react-native'
+import {
+  PitchIds,
+  PozitionIds,
+  HarpStrataProps,
+  ApparatusIds,
+  ActiveIds,
+  getHarpStrata,
+} from 'harpstrata'
+import { render } from '@testing-library/react-native'
 
-import {DisplayModes} from '../../../../HarpFace'
+import { DisplayModes } from '../../../../HarpFace'
 
 import { CovariantMenu } from './index'
 
@@ -20,7 +27,7 @@ test('CovariantMenu renders a component with position and key information displa
     activeHarpStrata: harpStrata,
     setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
-    setActiveDisplayMode: jest.fn()
+    setActiveDisplayMode: jest.fn(),
   }
   const { getByText } = render(<CovariantMenu {...menuProps} />)
 
