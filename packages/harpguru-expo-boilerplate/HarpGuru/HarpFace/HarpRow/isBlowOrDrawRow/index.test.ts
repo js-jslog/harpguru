@@ -1,11 +1,20 @@
-import { harpFaceProps } from '../../testResources'
+import { getHarpStrata, ApparatusIds, PozitionIds, PitchIds } from 'harpstrata'
 
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './index'
 
+const harpStrataProps = {
+  apparatusId: ApparatusIds.MajorDiatonic,
+  pozitionId: PozitionIds.First,
+  harpKeyId: PitchIds.C,
+  activeIds: [],
+}
+
+const activeHarpStrata = getHarpStrata(harpStrataProps)
+
 test('isBlowRow returns true for a blow row and false otherwise', () => {
-  const harpRowPropsBlow = { ...harpFaceProps, yCoord: 2 }
-  const harpRowPropsDraw = { ...harpFaceProps, yCoord: 3 }
-  const harpRowPropsBend = { ...harpFaceProps, yCoord: 4 }
+  const harpRowPropsBlow = { activeHarpStrata, yCoord: 2 }
+  const harpRowPropsDraw = { activeHarpStrata, yCoord: 3 }
+  const harpRowPropsBend = { activeHarpStrata, yCoord: 4 }
 
   expect(isBlowRow(harpRowPropsBlow)).toBeTruthy()
   expect(isBlowRow(harpRowPropsDraw)).toBeFalsy()
@@ -13,9 +22,9 @@ test('isBlowRow returns true for a blow row and false otherwise', () => {
 })
 
 test('isDrawRow returns true for a blow row and false otherwise', () => {
-  const harpRowPropsBlow = { ...harpFaceProps, yCoord: 2 }
-  const harpRowPropsDraw = { ...harpFaceProps, yCoord: 3 }
-  const harpRowPropsBend = { ...harpFaceProps, yCoord: 4 }
+  const harpRowPropsBlow = { activeHarpStrata, yCoord: 2 }
+  const harpRowPropsDraw = { activeHarpStrata, yCoord: 3 }
+  const harpRowPropsBend = { activeHarpStrata, yCoord: 4 }
 
   expect(isDrawRow(harpRowPropsBlow)).toBeFalsy()
   expect(isDrawRow(harpRowPropsDraw)).toBeTruthy()
@@ -23,9 +32,9 @@ test('isDrawRow returns true for a blow row and false otherwise', () => {
 })
 
 test('isBlowOrDrawRow returns true for a blow or draw row and false otherwise', () => {
-  const harpRowPropsBlow = { ...harpFaceProps, yCoord: 2 }
-  const harpRowPropsDraw = { ...harpFaceProps, yCoord: 3 }
-  const harpRowPropsBend = { ...harpFaceProps, yCoord: 4 }
+  const harpRowPropsBlow = { activeHarpStrata, yCoord: 2 }
+  const harpRowPropsDraw = { activeHarpStrata, yCoord: 3 }
+  const harpRowPropsBend = { activeHarpStrata, yCoord: 4 }
 
   expect(isBlowOrDrawRow(harpRowPropsBlow)).toBeTruthy()
   expect(isBlowOrDrawRow(harpRowPropsDraw)).toBeTruthy()

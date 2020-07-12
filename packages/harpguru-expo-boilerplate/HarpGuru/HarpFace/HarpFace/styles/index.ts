@@ -1,24 +1,37 @@
 import { StyleSheet } from 'react-native'
+import type { ViewStyle } from 'react-native'
 
-import type { HarpFaceStyles } from '../types'
-import { getHarpFaceFacts } from '../getHarpFaceFacts'
-import type { HarpFaceProps } from '../../types'
+import type { HarpFaceProps } from '../types'
+import { getHarpFaceFacts } from '../helpers'
 import { themeSizes } from '../../../Styles'
 
-const { 9: columnWidth } = themeSizes
-const { 9: rowHeight } = themeSizes
+type HarpFaceStyles = {
+  readonly facewrapper: ViewStyle
+  readonly face: ViewStyle
+}
+
+const { 7: boundaryWidth } = themeSizes
+export const { 9: columnWidth } = themeSizes
+export const { 9: rowHeight } = themeSizes
 
 export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
-  const { columnCount, rowCount } = getHarpFaceFacts(props)
+  const { columnCount, rowCount, octaveColumnGroups } = getHarpFaceFacts(props)
+  const { length: groupCount } = octaveColumnGroups
 
-  const styles = StyleSheet.create<HarpFaceStyles>({
+  const styles = StyleSheet.create({
+    // Wrapper, just to fill up all the available space
+    // and place the face in the center
     facewrapper: {
-      flex: 5,
-      alignItems: 'center',
+      ...StyleSheet.absoluteFillObject,
       justifyContent: 'center',
+      alignItems: 'center',
     },
+    // This is itself a wrapper for a series of face fragments
     face: {
-      width: columnWidth * columnCount,
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      width: columnWidth * columnCount + (boundaryWidth * groupCount + 1),
       height: rowHeight * rowCount,
     },
   })
