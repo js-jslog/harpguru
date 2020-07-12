@@ -1,22 +1,16 @@
 import React from 'react'
 import type { ReactElement } from 'react'
-import type { Degree } from 'harpstrata'
 
-import type { HarpFaceProps } from '../../types'
+import type { HoleNumberRowProps } from '../types'
 import { HoleNumber } from '../../HoleNumber'
 import type { HoleNumberProps } from '../../HoleNumber'
 
-export const getHoleNumbers = (
-  harpFaceProps: HarpFaceProps
-): ReactElement[] => {
-  const { activeHarpStrata } = harpFaceProps
-  const { degreeMatrix } = activeHarpStrata
-  const [degreeRow] = degreeMatrix
-
-  return degreeRow.map((_: Degree | undefined, index: number) => {
-    const xCoord = index
+export const getHoleNumbers = ({
+  xRange,
+}: HoleNumberRowProps): ReactElement[] => {
+  return xRange.map((xCoord) => {
     const holeNumberProps: HoleNumberProps = { xCoord }
 
-    return <HoleNumber key={index} {...holeNumberProps} />
+    return <HoleNumber key={xCoord} {...holeNumberProps} />
   })
 }

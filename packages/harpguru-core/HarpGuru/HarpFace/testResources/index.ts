@@ -7,7 +7,6 @@ import {
 } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, ActiveIds } from 'harpstrata'
 
-import type { HarpFaceProps } from '../types'
 import { DisplayModes } from '../types'
 
 const allActiveDegrees = [
@@ -47,12 +46,12 @@ const activeCellsHarpStrataProps = {
 const inactiveCellsHarpStrata = getHarpStrata(inactiveCellsHarpStrataProps)
 const activeCellsHarpStrata = getHarpStrata(activeCellsHarpStrataProps)
 
-export const inactiveCellsHarpFaceProps: HarpFaceProps = {
+export const inactiveCellsHarpFaceProps = {
   activeHarpStrata: inactiveCellsHarpStrata,
   activeDisplayMode,
   setActiveHarpStrata,
 }
-export const activeCellsHarpFaceProps: HarpFaceProps = {
+export const activeCellsHarpFaceProps = {
   activeHarpStrata: activeCellsHarpStrata,
   activeDisplayMode,
   setActiveHarpStrata,

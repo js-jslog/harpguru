@@ -1,6 +1,3 @@
-import type { ViewStyle } from 'react-native'
+import type { HarpFaceFragmentProps } from '../../HarpFaceFragment'
 
-export type HarpFaceStyles = {
-  readonly facewrapper: ViewStyle
-  readonly face: ViewStyle
-}
+export type HarpFaceProps = Omit<HarpFaceFragmentProps, 'xRange'>
