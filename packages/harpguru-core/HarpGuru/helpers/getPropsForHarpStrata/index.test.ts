@@ -1,9 +1,21 @@
-import { getHarpStrata, DegreeIds, PitchIds } from 'harpstrata'
+import { getHarpStrata, DegreeIds, PitchIds, PozitionIds, ApparatusIds } from 'harpstrata'
+import type { HarpStrataProps, ActiveIds, HarpStrata } from 'harpstrata'
 
-import { keyCHarpStrata, keyCHarpStrataProps } from '../../testResources'
-import { DisplayModes } from '../../../HarpFace'
+import { DisplayModes } from '../../HarpFace'
 
 import { getPropsForHarpStrata } from './index'
+
+const baseHarpStrataProps: HarpStrataProps = {
+  apparatusId: ApparatusIds.MajorDiatonic,
+  pozitionId: PozitionIds.First,
+  harpKeyId: PitchIds.C,
+  activeIds: [] as ActiveIds,
+}
+export const keyCHarpStrataProps: HarpStrataProps = {
+  ...baseHarpStrataProps,
+  harpKeyId: PitchIds.C,
+}
+export const keyCHarpStrata: HarpStrata = getHarpStrata(keyCHarpStrataProps)
 
 test('given a HarpStrata, getPropsForHarpStrata supplies the props to generate the exact same HarpStrata again', () => {
   const sourceHarpStrata = keyCHarpStrata

@@ -6,7 +6,7 @@ import {
 } from 'harpstrata'
 
 import type { PozitionOptionProps } from '../types'
-import { getPropsForHarpStrata } from '../../../../Controls'
+import { getPropsForHarpStrata } from '../../../../helpers'
 
 const getNextId = (
   rootId: PozitionIds,
