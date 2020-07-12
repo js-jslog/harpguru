@@ -6,7 +6,7 @@ import {
 } from 'harpstrata'
 
 import type { HarpKeyOptionProps } from '../types'
-import { getPropsForHarpStrata } from '../../../../Controls'
+import { getPropsForHarpStrata } from '../../../../helpers'
 
 const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
   if (direction === 'UP') {

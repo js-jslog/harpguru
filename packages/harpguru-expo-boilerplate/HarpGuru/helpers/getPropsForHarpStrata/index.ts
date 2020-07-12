@@ -1,6 +1,6 @@
 import type { HarpStrata, HarpStrataProps } from 'harpstrata'
 
-import { DisplayModes } from '../../../HarpFace'
+import { DisplayModes } from '../../HarpFace'
 
 export const getPropsForHarpStrata = (
   harpStrata: HarpStrata,
