@@ -22,6 +22,7 @@ exports[`A snapshot of a populated cell 1`] = `
         "borderRadius": 7.5394000000000005,
         "borderWidth": 1.1,
         "elevation": 0,
+        "flexDirection": "row",
         "height": 31.9374,
         "justifyContent": "center",
         "width": 31.9374,
@@ -32,11 +33,22 @@ exports[`A snapshot of a populated cell 1`] = `
       style={
         Object {
           "color": "#ddd",
-          "fontSize": 12.199000000000002,
+          "fontSize": 19.738400000000002,
         }
       }
     >
       2
+    </Text>
+    <Text
+      style={
+        Object {
+          "alignSelf": "flex-start",
+          "color": "#ddd",
+          "fontSize": 12.199000000000002,
+        }
+      }
+    >
+      
     </Text>
   </View>
 </View>
@@ -64,6 +76,7 @@ exports[`A snapshot of an active cell 1`] = `
         "borderRadius": 7.5394000000000005,
         "borderWidth": 1.1,
         "elevation": 1.7798000000000003,
+        "flexDirection": "row",
         "height": 31.9374,
         "justifyContent": "center",
         "width": 31.9374,
@@ -74,11 +87,22 @@ exports[`A snapshot of an active cell 1`] = `
       style={
         Object {
           "color": "#fefefe",
-          "fontSize": 12.199000000000002,
+          "fontSize": 19.738400000000002,
         }
       }
     >
       2
+    </Text>
+    <Text
+      style={
+        Object {
+          "alignSelf": "flex-start",
+          "color": "#fefefe",
+          "fontSize": 12.199000000000002,
+        }
+      }
+    >
+      
     </Text>
   </View>
 </View>
@@ -104,6 +128,7 @@ exports[`A snapshot of an empty cell 1`] = `
         "borderRadius": 7.5394000000000005,
         "borderWidth": 0,
         "elevation": 0,
+        "flexDirection": "row",
         "height": 31.9374,
         "justifyContent": "center",
         "width": 31.9374,
@@ -119,6 +144,7 @@ exports[`A snapshot of an empty cell 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,

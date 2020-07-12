@@ -16,5 +16,6 @@ export type HarpCellProps = {
 
 export type HarpCellStyles = {
   readonly cell: ViewStyle
-  readonly text: TextStyle
+  readonly note: TextStyle
+  readonly modifier: TextStyle
 }

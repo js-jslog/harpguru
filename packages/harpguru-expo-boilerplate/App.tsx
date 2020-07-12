@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 const App = (): ReactElement => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar hidden={true} />
       {global.HermesInternal == null ? null : (
         <View style={styles.engine}>
           <Text style={styles.footer}>Engine: Hermes</Text>

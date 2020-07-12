@@ -13,7 +13,7 @@ const {
   8: width,
   2: elevation,
 } = themeSizes
-const { 6: fontSize } = themeSizes
+const { 7: noteFontSize, 6: modifierFontSize } = themeSizes
 const { pageColor, degreeColors, inertOutline: borderColor } = themeColors
 
 export const getStyles = (props: HarpCellProps): HarpCellStyles => {
@@ -25,6 +25,7 @@ export const getStyles = (props: HarpCellProps): HarpCellStyles => {
 
   const styles = StyleSheet.create<HarpCellStyles>({
     cell: {
+      flexDirection: 'row',
       backgroundColor: cellColor,
       justifyContent: 'center',
       alignItems: 'center',
@@ -35,9 +36,14 @@ export const getStyles = (props: HarpCellProps): HarpCellStyles => {
       width,
       height,
     },
-    text: {
+    note: {
       color: isActive ? pageColor : borderColor,
-      fontSize,
+      fontSize: noteFontSize,
+    },
+    modifier: {
+      alignSelf: 'flex-start',
+      color: isActive ? pageColor : borderColor,
+      fontSize: modifierFontSize,
     },
   })
 

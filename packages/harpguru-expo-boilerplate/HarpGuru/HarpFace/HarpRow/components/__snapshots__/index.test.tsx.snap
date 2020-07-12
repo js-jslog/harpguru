@@ -42,6 +42,7 @@ exports[`A snapshot of a blow home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -52,11 +53,22 @@ exports[`A snapshot of a blow home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         1
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
       </Text>
     </View>
     <View
@@ -71,6 +83,7 @@ exports[`A snapshot of a blow home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -81,12 +94,23 @@ exports[`A snapshot of a blow home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         3
       </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
+      </Text>
     </View>
     <View
       accessibilityRole="button"
@@ -100,6 +124,7 @@ exports[`A snapshot of a blow home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -110,40 +135,22 @@ exports[`A snapshot of a blow home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         5
       </Text>
-    </View>
-    <View
-      accessibilityRole="button"
-      accessible={true}
-      collapsable={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#ddd",
-          "borderRadius": 7.5394000000000005,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "height": 31.9374,
-          "justifyContent": "center",
-          "width": 31.9374,
-        }
-      }
-    >
       <Text
         style={
           Object {
+            "alignSelf": "flex-start",
             "color": "#ddd",
             "fontSize": 12.199000000000002,
           }
         }
       >
-        1
+        
       </Text>
     </View>
     <View
@@ -158,6 +165,7 @@ exports[`A snapshot of a blow home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -168,12 +176,64 @@ exports[`A snapshot of a blow home row 1`] = `
         style={
           Object {
             "color": "#ddd",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        1
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
             "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ddd",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 1.1,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#ddd",
+            "fontSize": 19.738400000000002,
           }
         }
       >
         3
       </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
+      </Text>
     </View>
     <View
       accessibilityRole="button"
@@ -187,6 +247,7 @@ exports[`A snapshot of a blow home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -197,40 +258,22 @@ exports[`A snapshot of a blow home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         5
       </Text>
-    </View>
-    <View
-      accessibilityRole="button"
-      accessible={true}
-      collapsable={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#ddd",
-          "borderRadius": 7.5394000000000005,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "height": 31.9374,
-          "justifyContent": "center",
-          "width": 31.9374,
-        }
-      }
-    >
       <Text
         style={
           Object {
+            "alignSelf": "flex-start",
             "color": "#ddd",
             "fontSize": 12.199000000000002,
           }
         }
       >
-        1
+        
       </Text>
     </View>
     <View
@@ -245,6 +288,7 @@ exports[`A snapshot of a blow home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -255,40 +299,63 @@ exports[`A snapshot of a blow home row 1`] = `
         style={
           Object {
             "color": "#ddd",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        1
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
             "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ddd",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 1.1,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#ddd",
+            "fontSize": 19.738400000000002,
           }
         }
       >
         3
       </Text>
-    </View>
-    <View
-      accessibilityRole="button"
-      accessible={true}
-      collapsable={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#ddd",
-          "borderRadius": 7.5394000000000005,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "height": 31.9374,
-          "justifyContent": "center",
-          "width": 31.9374,
-        }
-      }
-    >
       <Text
         style={
           Object {
+            "alignSelf": "flex-start",
             "color": "#ddd",
             "fontSize": 12.199000000000002,
           }
         }
       >
-        5
+        
       </Text>
     </View>
     <View
@@ -303,6 +370,7 @@ exports[`A snapshot of a blow home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -313,11 +381,63 @@ exports[`A snapshot of a blow home row 1`] = `
         style={
           Object {
             "color": "#ddd",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        5
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
             "fontSize": 12.199000000000002,
           }
         }
       >
+        
+      </Text>
+    </View>
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ddd",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 1.1,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#ddd",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
         1
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
       </Text>
     </View>
   </View>
@@ -366,6 +486,7 @@ exports[`A snapshot of a draw home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -376,11 +497,22 @@ exports[`A snapshot of a draw home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         2
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
       </Text>
     </View>
     <View
@@ -395,6 +527,7 @@ exports[`A snapshot of a draw home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -405,12 +538,23 @@ exports[`A snapshot of a draw home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         5
       </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
+      </Text>
     </View>
     <View
       accessibilityRole="button"
@@ -424,6 +568,7 @@ exports[`A snapshot of a draw home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -434,12 +579,23 @@ exports[`A snapshot of a draw home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         7
       </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
+      </Text>
     </View>
     <View
       accessibilityRole="button"
@@ -453,6 +609,7 @@ exports[`A snapshot of a draw home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -463,12 +620,23 @@ exports[`A snapshot of a draw home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         2
       </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
+      </Text>
     </View>
     <View
       accessibilityRole="button"
@@ -482,6 +650,7 @@ exports[`A snapshot of a draw home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -492,40 +661,22 @@ exports[`A snapshot of a draw home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         4
       </Text>
-    </View>
-    <View
-      accessibilityRole="button"
-      accessible={true}
-      collapsable={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#ddd",
-          "borderRadius": 7.5394000000000005,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "height": 31.9374,
-          "justifyContent": "center",
-          "width": 31.9374,
-        }
-      }
-    >
       <Text
         style={
           Object {
+            "alignSelf": "flex-start",
             "color": "#ddd",
             "fontSize": 12.199000000000002,
           }
         }
       >
-        6
+        
       </Text>
     </View>
     <View
@@ -540,6 +691,7 @@ exports[`A snapshot of a draw home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -550,12 +702,64 @@ exports[`A snapshot of a draw home row 1`] = `
         style={
           Object {
             "color": "#ddd",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        6
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
             "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ddd",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 1.1,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#ddd",
+            "fontSize": 19.738400000000002,
           }
         }
       >
         7
       </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
+      </Text>
     </View>
     <View
       accessibilityRole="button"
@@ -569,6 +773,7 @@ exports[`A snapshot of a draw home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -579,40 +784,22 @@ exports[`A snapshot of a draw home row 1`] = `
         style={
           Object {
             "color": "#ddd",
-            "fontSize": 12.199000000000002,
+            "fontSize": 19.738400000000002,
           }
         }
       >
         2
       </Text>
-    </View>
-    <View
-      accessibilityRole="button"
-      accessible={true}
-      collapsable={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#ddd",
-          "borderRadius": 7.5394000000000005,
-          "borderWidth": 1.1,
-          "elevation": 0,
-          "height": 31.9374,
-          "justifyContent": "center",
-          "width": 31.9374,
-        }
-      }
-    >
       <Text
         style={
           Object {
+            "alignSelf": "flex-start",
             "color": "#ddd",
             "fontSize": 12.199000000000002,
           }
         }
       >
-        4
+        
       </Text>
     </View>
     <View
@@ -627,6 +814,7 @@ exports[`A snapshot of a draw home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -637,11 +825,63 @@ exports[`A snapshot of a draw home row 1`] = `
         style={
           Object {
             "color": "#ddd",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        4
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
             "fontSize": 12.199000000000002,
           }
         }
       >
+        
+      </Text>
+    </View>
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#ddd",
+          "borderRadius": 7.5394000000000005,
+          "borderWidth": 1.1,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 31.9374,
+          "justifyContent": "center",
+          "width": 31.9374,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#ddd",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
         6
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
+            "fontSize": 12.199000000000002,
+          }
+        }
+      >
+        
       </Text>
     </View>
   </View>
@@ -688,6 +928,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -703,6 +944,7 @@ exports[`A snapshot of a non-home row 1`] = `
             "borderRadius": 7.5394000000000005,
             "borderWidth": 0,
             "elevation": 0,
+            "flexDirection": "row",
             "height": 31.9374,
             "justifyContent": "center",
             "width": 31.9374,
@@ -720,6 +962,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -735,6 +978,7 @@ exports[`A snapshot of a non-home row 1`] = `
             "borderRadius": 7.5394000000000005,
             "borderWidth": 0,
             "elevation": 0,
+            "flexDirection": "row",
             "height": 31.9374,
             "justifyContent": "center",
             "width": 31.9374,
@@ -752,6 +996,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -767,6 +1012,7 @@ exports[`A snapshot of a non-home row 1`] = `
             "borderRadius": 7.5394000000000005,
             "borderWidth": 0,
             "elevation": 0,
+            "flexDirection": "row",
             "height": 31.9374,
             "justifyContent": "center",
             "width": 31.9374,
@@ -784,6 +1030,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -799,6 +1046,7 @@ exports[`A snapshot of a non-home row 1`] = `
             "borderRadius": 7.5394000000000005,
             "borderWidth": 0,
             "elevation": 0,
+            "flexDirection": "row",
             "height": 31.9374,
             "justifyContent": "center",
             "width": 31.9374,
@@ -816,6 +1064,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -831,6 +1080,7 @@ exports[`A snapshot of a non-home row 1`] = `
             "borderRadius": 7.5394000000000005,
             "borderWidth": 0,
             "elevation": 0,
+            "flexDirection": "row",
             "height": 31.9374,
             "justifyContent": "center",
             "width": 31.9374,
@@ -848,6 +1098,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -863,6 +1114,7 @@ exports[`A snapshot of a non-home row 1`] = `
             "borderRadius": 7.5394000000000005,
             "borderWidth": 0,
             "elevation": 0,
+            "flexDirection": "row",
             "height": 31.9374,
             "justifyContent": "center",
             "width": 31.9374,
@@ -880,6 +1132,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -895,6 +1148,7 @@ exports[`A snapshot of a non-home row 1`] = `
             "borderRadius": 7.5394000000000005,
             "borderWidth": 0,
             "elevation": 0,
+            "flexDirection": "row",
             "height": 31.9374,
             "justifyContent": "center",
             "width": 31.9374,
@@ -912,6 +1166,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -927,6 +1182,7 @@ exports[`A snapshot of a non-home row 1`] = `
             "borderRadius": 7.5394000000000005,
             "borderWidth": 0,
             "elevation": 0,
+            "flexDirection": "row",
             "height": 31.9374,
             "justifyContent": "center",
             "width": 31.9374,
@@ -944,6 +1200,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 0,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -959,6 +1216,7 @@ exports[`A snapshot of a non-home row 1`] = `
             "borderRadius": 7.5394000000000005,
             "borderWidth": 0,
             "elevation": 0,
+            "flexDirection": "row",
             "height": 31.9374,
             "justifyContent": "center",
             "width": 31.9374,
@@ -978,6 +1236,7 @@ exports[`A snapshot of a non-home row 1`] = `
           "borderRadius": 7.5394000000000005,
           "borderWidth": 1.1,
           "elevation": 0,
+          "flexDirection": "row",
           "height": 31.9374,
           "justifyContent": "center",
           "width": 31.9374,
@@ -988,11 +1247,22 @@ exports[`A snapshot of a non-home row 1`] = `
         style={
           Object {
             "color": "#ddd",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        7
+      </Text>
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "color": "#ddd",
             "fontSize": 12.199000000000002,
           }
         }
       >
-        7b
+        b
       </Text>
     </View>
   </View>
