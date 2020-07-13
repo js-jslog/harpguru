@@ -1,6 +1,8 @@
-import type { MenuProps } from '../../../types'
+import type { HarpStrata } from 'harpstrata'
 
-export type ApparatusOptionProps = Pick<
-  MenuProps,
-  'activeHarpStrata' | 'setActiveHarpStrata'
->
+import type { SetActiveHarpStrata } from '../../../../HarpGuru'
+
+export type ApparatusOptionProps = {
+  readonly activeHarpStrata: HarpStrata
+  readonly setActiveHarpStrata: SetActiveHarpStrata
+}

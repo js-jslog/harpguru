@@ -1,9 +1,9 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
-import type { ScreenProps } from '../types'
 import { themeColors } from '../../Styles'
 import { HarpFace } from '../../HarpFace'
+import type { HarpFaceProps } from '../../HarpFace'
 
 const { pageColor } = themeColors
 
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const HomeScreen = (props: ScreenProps): React.ReactElement => {
+export const HomeScreen = (props: HarpFaceProps): React.ReactElement => {
   const { activeHarpStrata, activeDisplayMode, setActiveHarpStrata } = props
 
   const harpFaceProps = {

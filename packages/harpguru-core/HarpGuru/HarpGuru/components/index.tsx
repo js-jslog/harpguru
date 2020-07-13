@@ -19,8 +19,11 @@ import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 import { styles } from '../styles'
 import { usePrevious } from '../../helpers'
 import { themeSizes } from '../../Styles'
-import { HomeScreen } from '../../Screens'
-import { AnimatedMenuContainer, CovariantMenu, LayoutMenu } from '../../Menus'
+import {
+  HomeScreen,
+  CovariantMenuScreen,
+  LayoutMenuScreen,
+} from '../../Screens'
 import { DisplayModes } from '../../HarpFace'
 
 const { 8: swipeThreshold } = themeSizes
@@ -49,29 +52,32 @@ export const HarpGuru = (): ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useState(initialHarpStrata)
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
 
-  const screenProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
-    activeDisplayMode,
-    setActiveDisplayMode,
-  }
-  const covariantMenuProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
-    activeDisplayMode,
-    setActiveDisplayMode,
-  }
-  const layoutMenuProps = {
+  const [panState, setPanState] = useState<State>(State.UNDETERMINED)
+  const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
+  const [translationX, setTranslationX] = useState<number>(0)
+  const previousPanState = usePrevious(panState, State.UNDETERMINED)
+
+  const homeScreenProps = {
     activeHarpStrata,
     setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
   }
 
-  const [panState, setPanState] = useState<State>(State.UNDETERMINED)
-  const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
-  const [translationX, setTranslationX] = useState<number>(0)
-  const previousPanState = usePrevious(panState, State.UNDETERMINED)
+  const covariantMenuScreenProps = {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    activeDisplayMode,
+    setActiveDisplayMode,
+    onScreen: menuState === MenuStates.CovariantMenu,
+  }
+  const layoutMenuScreenProps = {
+    activeHarpStrata,
+    setActiveHarpStrata,
+    activeDisplayMode,
+    setActiveDisplayMode,
+    onScreen: menuState === MenuStates.LayoutMenu,
+  }
 
   const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     setPanState(nativeEvent.state)
@@ -98,15 +104,9 @@ export const HarpGuru = (): ReactElement => {
       onHandlerStateChange={handleSwipe}
     >
       <View style={styles.overlay}>
-        <HomeScreen {...screenProps} />
-        <AnimatedMenuContainer
-          onScreen={menuState === MenuStates.CovariantMenu}
-        >
-          <CovariantMenu {...covariantMenuProps} />
-        </AnimatedMenuContainer>
-        <AnimatedMenuContainer onScreen={menuState === MenuStates.LayoutMenu}>
-          <LayoutMenu {...layoutMenuProps} />
-        </AnimatedMenuContainer>
+        <HomeScreen {...homeScreenProps} />
+        <CovariantMenuScreen {...covariantMenuScreenProps} />
+        <LayoutMenuScreen {...layoutMenuScreenProps} />
       </View>
     </PanGestureHandler>
   )

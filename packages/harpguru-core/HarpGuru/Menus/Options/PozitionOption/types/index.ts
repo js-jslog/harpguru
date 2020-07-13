@@ -1,6 +1,10 @@
-import type { MenuProps } from '../../../types'
+import type { HarpStrata } from 'harpstrata'
 
-export type PozitionOptionProps = Pick<
-  MenuProps,
-  'activeHarpStrata' | 'setActiveHarpStrata' | 'activeDisplayMode'
->
+import type { SetActiveHarpStrata } from '../../../../HarpGuru'
+import type { DisplayModes } from '../../../../HarpFace'
+
+export type PozitionOptionProps = {
+  readonly activeHarpStrata: HarpStrata
+  readonly setActiveHarpStrata: SetActiveHarpStrata
+  readonly activeDisplayMode: DisplayModes
+}
