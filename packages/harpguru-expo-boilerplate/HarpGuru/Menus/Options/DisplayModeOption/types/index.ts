@@ -1,6 +1,7 @@
-import type { MenuProps } from '../../../types'
+import type { SetActiveDisplayMode } from '../../../../HarpGuru'
+import type { DisplayModes } from '../../../../HarpFace'
 
-export type DisplayModeOptionProps = Pick<
-  MenuProps,
-  'activeDisplayMode' | 'setActiveDisplayMode'
->
+export type DisplayModeOptionProps = {
+  readonly activeDisplayMode: DisplayModes
+  readonly setActiveDisplayMode: SetActiveDisplayMode
+}
