@@ -1,3 +1,2 @@
-export { HarpFace } from './HarpFace'
-export type { HarpFaceProps } from './HarpFace'
-export { DisplayModes } from './types'
+export { HarpFace } from './components'
+export type { HarpFaceProps } from './types'

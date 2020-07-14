@@ -1,7 +1,7 @@
 import { State } from 'react-native-gesture-handler'
 import { StyleSheet, ViewStyle } from 'react-native'
 
-import { themeSizes, themeColors } from '../../Styles'
+import { themeSizes, themeColors } from '../../Theme'
 
 const { 7: variableSize, 8: titleSize } = themeSizes
 

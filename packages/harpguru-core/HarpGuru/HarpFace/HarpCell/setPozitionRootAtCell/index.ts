@@ -1,8 +1,8 @@
 import { getHarpStrata, getCovariantSet } from 'harpstrata'
 import type { PitchIds, HarpStrata } from 'harpstrata'
 
+import { DisplayModes } from '../../../types'
 import { getPropsForHarpStrata } from '../../../helpers'
-import { DisplayModes } from '../../../HarpFace'
 
 export const setPozitionRootAtCell = (
   activeHarpStrata: HarpStrata,

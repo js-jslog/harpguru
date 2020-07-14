@@ -1,6 +1,6 @@
 import { HarpCellProps } from '../types'
 import { analysePosition } from '../analysePosition'
-import { DisplayModes } from '../../types'
+import { DisplayModes } from '../../../types'
 
 type DisplayValueTuple =
   | [string, string]

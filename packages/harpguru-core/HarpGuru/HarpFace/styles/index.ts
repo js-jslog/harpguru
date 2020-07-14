@@ -3,7 +3,7 @@ import type { ViewStyle } from 'react-native'
 
 import type { HarpFaceProps } from '../types'
 import { getHarpFaceFacts } from '../helpers'
-import { themeSizes } from '../../../Styles'
+import { themeSizes } from '../../Theme'
 
 type HarpFaceStyles = {
   readonly facewrapper: ViewStyle

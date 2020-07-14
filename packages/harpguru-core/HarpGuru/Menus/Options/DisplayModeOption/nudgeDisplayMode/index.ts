@@ -1,5 +1,5 @@
 import type { DisplayModeOptionProps } from '../types'
-import { DisplayModes } from '../../../../HarpFace'
+import { DisplayModes } from '../../../../types'
 
 export const nudgeDisplayMode = (
   partialParams: DisplayModeOptionProps

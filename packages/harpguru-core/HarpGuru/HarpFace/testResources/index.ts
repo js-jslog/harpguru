@@ -7,7 +7,7 @@ import {
 } from 'harpstrata'
 import type { HarpStrata, HarpStrataProps, ActiveIds } from 'harpstrata'
 
-import { DisplayModes } from '../types'
+import { DisplayModes } from '../../types'
 
 const allActiveDegrees = [
   DegreeIds.Root,

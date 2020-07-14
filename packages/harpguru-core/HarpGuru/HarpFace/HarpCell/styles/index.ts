@@ -4,7 +4,7 @@ import { IsActiveIds } from 'harpstrata'
 import { HarpCellProps, HarpCellStyles } from '../types'
 import { analysePosition } from '../analysePosition'
 import type { PositionFacts } from '../analysePosition'
-import { themeSizes, themeColors } from '../../../Styles'
+import { themeSizes, themeColors } from '../../../Theme'
 
 const {
   1: borderWidth,

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import type { HoleNumberStyles } from '../types'
-import { themeSizes, themeColors } from '../../../Styles'
+import { themeSizes, themeColors } from '../../../Theme'
 
 const { 5: fontSize, 8: width } = themeSizes
 const { holeNumbersColor } = themeColors

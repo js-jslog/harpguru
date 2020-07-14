@@ -1,4 +1,4 @@
-import { DisplayModes } from '../../../../HarpFace'
+import { DisplayModes } from '../../../../types'
 
 import { nudgeDisplayMode } from './index'
 

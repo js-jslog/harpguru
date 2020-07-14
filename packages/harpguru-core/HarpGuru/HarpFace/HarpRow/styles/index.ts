@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import type { HarpRowProps, HarpRowStyles } from '../types'
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from '../isBlowOrDrawRow'
-import { themeSizes, themeColors } from '../../../Styles'
+import { themeSizes, themeColors } from '../../../Theme'
 
 const { 1: borderWidth, 6: borderRadius } = themeSizes
 const { homeRowsColor, inertOutline } = themeColors

@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { DisplayModes } from '../../../../HarpFace'
+import { DisplayModes } from '../../../../types'
 
 import { DisplayModeOption } from './index'
 

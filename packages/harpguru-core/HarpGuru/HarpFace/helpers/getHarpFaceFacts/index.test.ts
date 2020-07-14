@@ -1,4 +1,4 @@
-import { harpFaceProps } from '../../../testResources'
+import { harpFaceProps } from '../../testResources'
 
 import { getHarpFaceFacts } from './index'
 
