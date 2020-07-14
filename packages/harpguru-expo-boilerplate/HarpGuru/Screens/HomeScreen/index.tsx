@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
-import { themeColors } from '../../Styles'
+import { themeColors } from '../../Theme'
 import { HarpFace } from '../../HarpFace'
 import type { HarpFaceProps } from '../../HarpFace'
 

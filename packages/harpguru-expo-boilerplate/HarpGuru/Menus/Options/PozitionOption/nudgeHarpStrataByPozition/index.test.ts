@@ -1,6 +1,6 @@
 import { ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
 
-import { DisplayModes } from '../../../../HarpFace'
+import { DisplayModes } from '../../../../types'
 
 import { nudgeHarpStrataByPozition } from './index'
 

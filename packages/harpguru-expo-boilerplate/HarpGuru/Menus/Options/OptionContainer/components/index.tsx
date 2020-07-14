@@ -9,7 +9,7 @@ import React, { useState } from 'react'
 import type { OptionContainerProps } from '../types'
 import { styles, getDynamicStyles } from '../../../styles'
 import { usePrevious } from '../../../../helpers'
-import { themeSizes } from '../../../../Styles'
+import { themeSizes } from '../../../../Theme'
 
 import { Title, Option } from './OptionContents'
 
