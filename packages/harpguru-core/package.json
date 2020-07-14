@@ -1,5 +1,6 @@
 {
   "name": "harpnative",
+  "version": "0.1.0",
   "description": "A React Native implementation of the HarpGuru concept; a UI to aid the understanding of harmonica music theory",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
