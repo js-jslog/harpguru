@@ -1,6 +1,6 @@
 import type { ViewStyle, TextStyle } from 'react-native'
 
-import type { Coord } from '../../HarpRow'
+import type { Coord } from '../../HarpCell'
 
 export enum HoleNumberIds {
   One = '1',

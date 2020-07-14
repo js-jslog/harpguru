@@ -1,2 +1,2 @@
 export { HarpRow } from './components'
-export type { HarpRowProps, Coord } from './types'
+export type { HarpRowProps } from './types'
