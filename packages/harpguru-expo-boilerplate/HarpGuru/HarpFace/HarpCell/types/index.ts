@@ -1,8 +1,9 @@
 import type { TextStyle, ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
 
-import type { Coord } from '../../HarpRow'
 import type { SetActiveHarpStrata, DisplayModes } from '../../../types'
+
+export type Coord = number
 
 export type YXCoord = [Coord, Coord]
 

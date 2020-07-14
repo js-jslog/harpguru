@@ -20,11 +20,7 @@ import { DisplayModes } from '../types'
 import { styles } from '../styles'
 import { usePrevious } from '../helpers'
 import { themeSizes } from '../Theme'
-import {
-  HomeScreen,
-  CovariantMenuScreen,
-  LayoutMenuScreen,
-} from '../Screens'
+import { HomeScreen, CovariantMenuScreen, LayoutMenuScreen } from '../Screens'
 
 const { 8: swipeThreshold } = themeSizes
 
