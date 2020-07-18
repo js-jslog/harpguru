@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
@@ -15,15 +16,20 @@ import { getDisplayValue } from '../getDisplayValue'
 import { analysePosition } from '../analysePosition'
 
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
-  const { setActiveHarpStrata, activeHarpStrata } = props
-  const positionFacts = analysePosition(props)
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const harpCellProps = {
+    ...props,
+    activeHarpStrata,
+    setActiveHarpStrata,
+  }
+  const positionFacts = analysePosition(harpCellProps)
   const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
   const { id: pitchId } = thisPitch || { id: undefined }
 
-  const displayValue = getDisplayValue(props)
+  const displayValue = getDisplayValue(harpCellProps)
 
-  const styles = getStyles(props)
+  const styles = getStyles(harpCellProps)
 
   const handleTapStateChange = ({
     nativeEvent,

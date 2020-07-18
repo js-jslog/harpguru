@@ -1,5 +1,4 @@
 export { ApparatusOption } from './ApparatusOption'
-export type { ApparatusOptionProps } from './ApparatusOption'
 export { HarpKeyOption } from './HarpKeyOption'
 export type { HarpKeyOptionProps } from './HarpKeyOption'
 export { PozitionOption } from './PozitionOption'

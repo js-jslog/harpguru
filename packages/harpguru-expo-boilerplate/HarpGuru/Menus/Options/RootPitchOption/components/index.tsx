@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import React from 'react'
 
 import type { RootPitchOptionProps } from '../types'
@@ -8,7 +9,8 @@ import { OptionContainer } from '../../OptionContainer'
 export const RootPitchOption = (
   props: RootPitchOptionProps
 ): React.ReactElement => {
-  const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const { activeDisplayMode } = props
   const { rootPitchId } = activeHarpStrata
   const partialParams = {
     activeHarpStrata,

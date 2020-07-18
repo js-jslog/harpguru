@@ -1,4 +1,10 @@
-import type { Degree, Pitch, Interaction, IsActiveIds } from 'harpstrata'
+import type {
+  Degree,
+  Pitch,
+  Interaction,
+  IsActiveIds,
+  HarpStrata,
+} from 'harpstrata'
 
 import type { HarpCellProps } from '../types'
 
@@ -10,7 +16,11 @@ export type PositionFacts = {
   readonly leftmost: boolean
 }
 
-export const analysePosition = (props: HarpCellProps): PositionFacts => {
+type Props = HarpCellProps & {
+  readonly activeHarpStrata: HarpStrata
+}
+
+export const analysePosition = (props: Props): PositionFacts => {
   const {
     activeHarpStrata: {
       degreeMatrix,

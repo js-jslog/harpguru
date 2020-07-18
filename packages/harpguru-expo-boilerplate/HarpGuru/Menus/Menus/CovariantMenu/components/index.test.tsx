@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import React from 'react'
 import {
   PitchIds,
@@ -13,6 +14,9 @@ import { DisplayModes } from '../../../../types'
 
 import { CovariantMenu } from './index'
 
+jest.mock('reactn')
+const mockUseGlobal = useGlobal as jest.Mock
+
 const harpStrataProps: HarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
   pozitionId: PozitionIds.Second,
@@ -24,11 +28,10 @@ const harpStrata = getHarpStrata(harpStrataProps)
 
 test('CovariantMenu renders a component with position and key information displayed', () => {
   const menuProps = {
-    activeHarpStrata: harpStrata,
-    setActiveHarpStrata: jest.fn(),
     activeDisplayMode: DisplayModes.Degree,
     setActiveDisplayMode: jest.fn(),
   }
+  mockUseGlobal.mockReturnValue([harpStrata])
   const { getByText } = render(<CovariantMenu {...menuProps} />)
 
   expect(getByText(PitchIds.C)).toBeTruthy()

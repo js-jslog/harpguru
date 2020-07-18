@@ -8,34 +8,15 @@ import {
 import { View } from 'react-native'
 import React, { useState } from 'react'
 import type { ReactElement } from 'react'
-import {
-  getApparatusIds,
-  getPozitionIds,
-  getPitchIds,
-  getHarpStrata,
-} from 'harpstrata'
-import type { ActiveIds, HarpStrata, HarpStrataProps } from 'harpstrata'
 
 import { DisplayModes } from '../types'
 import { styles } from '../styles'
-import { usePrevious } from '../helpers'
+import { usePrevious, setGlobalReactNState } from '../helpers'
 import { themeSizes } from '../Theme'
 import { HomeScreen, CovariantMenuScreen, LayoutMenuScreen } from '../Screens'
 
 const { 8: swipeThreshold } = themeSizes
 
-const [initialApparatusId] = getApparatusIds()
-const [initialPozitionId] = getPozitionIds()
-const [initialPitchId] = getPitchIds()
-const initialActiveIds: ActiveIds = []
-
-const initialHarpStrataProps: HarpStrataProps = {
-  apparatusId: initialApparatusId,
-  pozitionId: initialPozitionId,
-  harpKeyId: initialPitchId,
-  activeIds: initialActiveIds,
-}
-const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
 const { Degree: initialDisplayMode } = DisplayModes
 
 enum MenuStates {
@@ -44,8 +25,14 @@ enum MenuStates {
   NoMenu,
 }
 
+// TODO: this is messy. I have exported the setGlobalReactNState
+// string as a convenient way to load the file which creates the
+// global state and simultaneously report on what the state was
+// set as. At the moment I don't actually have anywhere I want to
+// report it so this is a loose thread.
+export const initialReactNState = setGlobalReactNState
+
 export const HarpGuru = (): ReactElement => {
-  const [activeHarpStrata, setActiveHarpStrata] = useState(initialHarpStrata)
   const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
 
   const [panState, setPanState] = useState<State>(State.UNDETERMINED)
@@ -54,22 +41,15 @@ export const HarpGuru = (): ReactElement => {
   const previousPanState = usePrevious(panState, State.UNDETERMINED)
 
   const homeScreenProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
     activeDisplayMode,
-    setActiveDisplayMode,
   }
 
   const covariantMenuScreenProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
     onScreen: menuState === MenuStates.CovariantMenu,
   }
   const layoutMenuScreenProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
     onScreen: menuState === MenuStates.LayoutMenu,

@@ -1,12 +1,17 @@
 import React from 'react'
 import { InteractionIds } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
 
 import { HarpRows } from '../types'
 import { mapRowToBlowDrawIds } from '../mapRowToBlowDrawIds'
 import { HarpRow } from '../../HarpRow'
 import type { HarpFaceFragmentProps } from '../../HarpFaceFragment'
 
-export const getHarpRows = (props: HarpFaceFragmentProps): HarpRows => {
+type Props = HarpFaceFragmentProps & {
+  readonly activeHarpStrata: HarpStrata
+}
+
+export const getHarpRows = (props: Props): HarpRows => {
   const {
     activeHarpStrata: {
       apparatus: { interactionMatrix },

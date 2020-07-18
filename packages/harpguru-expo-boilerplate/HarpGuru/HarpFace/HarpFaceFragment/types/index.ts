@@ -4,11 +4,7 @@ import type { HarpRowProps } from '../../HarpRow'
 
 export type HarpFaceFragmentProps = Pick<
   HarpRowProps,
-  | 'activeHarpStrata'
-  | 'setActiveHarpStrata'
-  | 'activeDisplayMode'
-  | 'activeDisplayMode'
-  | 'xRange'
+  'activeDisplayMode' | 'activeDisplayMode' | 'xRange'
 >
 
 export type FragmentFacts = {

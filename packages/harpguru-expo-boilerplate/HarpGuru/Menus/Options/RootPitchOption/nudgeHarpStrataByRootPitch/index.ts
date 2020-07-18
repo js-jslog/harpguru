@@ -4,8 +4,10 @@ import {
   getPitchIds,
   PitchIds,
 } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
 
 import type { RootPitchOptionProps } from '../types'
+import type { SetActiveHarpStrata } from '../../../../helpers'
 import { getPropsForHarpStrata } from '../../../../helpers'
 
 const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
@@ -17,8 +19,13 @@ const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
   return previousRootPitchId
 }
 
+type Props = RootPitchOptionProps & {
+  readonly activeHarpStrata: HarpStrata
+  readonly setActiveHarpStrata: SetActiveHarpStrata
+}
+
 export const nudgeHarpStrataByRootPitch = (
-  partialParams: RootPitchOptionProps,
+  partialParams: Props,
   direction: 'UP' | 'DOWN'
 ): void => {
   const {

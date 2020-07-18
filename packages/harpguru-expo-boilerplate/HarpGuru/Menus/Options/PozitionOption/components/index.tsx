@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import React from 'react'
 
 import type { PozitionOptionProps } from '../types'
@@ -8,7 +9,8 @@ import { OptionContainer } from '../../OptionContainer'
 export const PozitionOption = (
   props: PozitionOptionProps
 ): React.ReactElement => {
-  const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const { activeDisplayMode } = props
   const { pozitionId } = activeHarpStrata
   const partialParams = {
     activeHarpStrata,

@@ -1,3 +1,5 @@
+import type { HarpStrata } from 'harpstrata'
+
 import { HarpCellProps } from '../types'
 import { analysePosition } from '../analysePosition'
 import { DisplayModes } from '../../../types'
@@ -7,7 +9,11 @@ type DisplayValueTuple =
   | [string, undefined]
   | [undefined, undefined]
 
-export const getDisplayValue = (props: HarpCellProps): DisplayValueTuple => {
+type Props = HarpCellProps & {
+  readonly activeHarpStrata: HarpStrata
+}
+
+export const getDisplayValue = (props: Props): DisplayValueTuple => {
   const positionFacts = analysePosition(props)
   const { activeDisplayMode } = props
   const { thisDegree, thisPitch } = positionFacts

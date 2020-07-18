@@ -1,8 +1,11 @@
 import { InteractionIds } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
 
 import type { HarpRowProps } from '../types'
 
-type Props = Pick<HarpRowProps, 'activeHarpStrata' | 'yCoord'>
+type Props = Pick<HarpRowProps, 'yCoord'> & {
+  readonly activeHarpStrata: HarpStrata
+}
 
 const getInteractionId = ({
   activeHarpStrata,
