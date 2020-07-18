@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { IsActiveIds } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
 
 import { HarpCellProps, HarpCellStyles } from '../types'
 import { analysePosition } from '../analysePosition'
@@ -16,7 +17,11 @@ const {
 const { 7: noteFontSize, 6: modifierFontSize } = themeSizes
 const { pageColor, degreeColors, inertOutline: borderColor } = themeColors
 
-export const getStyles = (props: HarpCellProps): HarpCellStyles => {
+type Props = HarpCellProps & {
+  readonly activeHarpStrata: HarpStrata
+}
+
+export const getStyles = (props: Props): HarpCellStyles => {
   const positionFacts: PositionFacts = analysePosition(props)
   const { thisDegree, thisIsActive } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }

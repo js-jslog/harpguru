@@ -18,11 +18,9 @@ const styles = StyleSheet.create({
 })
 
 export const HomeScreen = (props: HarpFaceProps): React.ReactElement => {
-  const { activeHarpStrata, activeDisplayMode, setActiveHarpStrata } = props
+  const { activeDisplayMode } = props
 
   const harpFaceProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
     activeDisplayMode,
   }
 

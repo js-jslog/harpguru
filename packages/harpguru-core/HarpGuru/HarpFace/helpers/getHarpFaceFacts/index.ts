@@ -1,4 +1,4 @@
-import type { DegreeMatrix } from 'harpstrata'
+import type { DegreeMatrix, HarpStrata } from 'harpstrata'
 
 import { transposeMatrix } from '../transposeMatrix'
 import { getOctaveColumnGroups } from '../getOctaveColumnGroups'
@@ -12,7 +12,11 @@ type HarpFaceFacts = {
   readonly octaveColumnGroups: ColumnRanges
 }
 
-export const getHarpFaceFacts = (props: HarpFaceProps): HarpFaceFacts => {
+type Props = HarpFaceProps & {
+  readonly activeHarpStrata: HarpStrata
+}
+
+export const getHarpFaceFacts = (props: Props): HarpFaceFacts => {
   const {
     activeHarpStrata: { degreeMatrix },
   } = props

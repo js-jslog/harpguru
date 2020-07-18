@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 
@@ -9,8 +10,9 @@ import { getHarpRows } from '../../HarpRows'
 export const HarpFaceFragment = (
   props: HarpFaceFragmentProps
 ): React.ReactElement => {
-  const harpRows = getHarpRows(props)
-  const styles = getStyles(props)
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const harpRows = getHarpRows({ ...props, activeHarpStrata })
+  const styles = getStyles({ ...props, activeHarpStrata, setActiveHarpStrata })
   const holeNumberRowProps = {
     xRange: props.xRange,
   }

@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import React from 'react'
 
 import type { HarpKeyOptionProps } from '../types'
@@ -8,7 +9,8 @@ import { OptionContainer } from '../../OptionContainer'
 export const HarpKeyOption = (
   props: HarpKeyOptionProps
 ): React.ReactElement => {
-  const { activeHarpStrata, setActiveHarpStrata, activeDisplayMode } = props
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const { activeDisplayMode } = props
   const { harpKeyId } = activeHarpStrata
   const partialParams = {
     activeHarpStrata,

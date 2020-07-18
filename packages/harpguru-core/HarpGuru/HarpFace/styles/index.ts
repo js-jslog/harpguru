@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
+import type { HarpStrata } from 'harpstrata'
 
 import type { HarpFaceProps } from '../types'
 import { getHarpFaceFacts } from '../helpers'
@@ -14,7 +15,10 @@ const { 7: boundaryWidth } = themeSizes
 export const { 9: columnWidth } = themeSizes
 export const { 9: rowHeight } = themeSizes
 
-export const getStyles = (props: HarpFaceProps): HarpFaceStyles => {
+type Props = HarpFaceProps & {
+  readonly activeHarpStrata: HarpStrata
+}
+export const getStyles = (props: Props): HarpFaceStyles => {
   const { columnCount, rowCount, octaveColumnGroups } = getHarpFaceFacts(props)
   const { length: groupCount } = octaveColumnGroups
 

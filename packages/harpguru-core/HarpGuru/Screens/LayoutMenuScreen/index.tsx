@@ -12,15 +12,8 @@ export const LayoutMenuScreen = (
   props: LayoutMenuScreenProps
 ): ReactElement => {
   const { onScreen } = props
-  const {
-    activeHarpStrata,
-    setActiveHarpStrata,
-    activeDisplayMode,
-    setActiveDisplayMode,
-  } = props
+  const { activeDisplayMode, setActiveDisplayMode } = props
   const covariantMenuProps = {
-    activeHarpStrata,
-    setActiveHarpStrata,
     activeDisplayMode,
     setActiveDisplayMode,
   }

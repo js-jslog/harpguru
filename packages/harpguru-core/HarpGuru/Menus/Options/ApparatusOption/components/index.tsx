@@ -1,14 +1,12 @@
+import { useGlobal } from 'reactn'
 import React from 'react'
 
-import type { ApparatusOptionProps } from '../types'
 import { nudgeHarpStrataByApparatus } from '../nudgeHarpStrataByApparatus'
 import { partiallyApplyNudgeFunction } from '../../helpers'
 import { OptionContainer } from '../../OptionContainer'
 
-export const ApparatusOption = (
-  props: ApparatusOptionProps
-): React.ReactElement => {
-  const { activeHarpStrata, setActiveHarpStrata } = props
+export const ApparatusOption = (): React.ReactElement => {
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const {
     apparatus: { id: apparatusId },
   } = activeHarpStrata
