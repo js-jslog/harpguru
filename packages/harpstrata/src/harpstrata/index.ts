@@ -1,5 +1,5 @@
 export type { HarpStrataProps, HarpStrata } from './HarpStrata'
-export { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from './HarpStrata'
+export { getApparatusIds, getPozitionIds, getPitchIds, getDegreeIds, getHarpStrata } from './HarpStrata'
 
 export { ApparatusIds, InteractionIds } from './Apparatus'
 export type {

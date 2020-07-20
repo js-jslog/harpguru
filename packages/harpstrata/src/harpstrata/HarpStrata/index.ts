@@ -1,5 +1,8 @@
-import { getAscendingPozitionIds } from '../OrderedIds'
-import { getAscendingPitchIds } from '../OrderedIds'
+import {
+  getAscendingPozitionIds,
+  getAscendingPitchIds,
+  getAscendingDegreeIds
+} from '../OrderedIds'
 import { getActiveApparatusIds } from '../Apparatus'
 
 
@@ -8,6 +11,8 @@ export const getApparatusIds = getActiveApparatusIds
 export const getPozitionIds = getAscendingPozitionIds
 
 export const getPitchIds = getAscendingPitchIds
+
+export const getDegreeIds = getAscendingDegreeIds
 
 export { getHarpStrata } from './getHarpStrata'
 
