@@ -13,7 +13,12 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Security: to invite users to upgrade in case of vulnerabilities.
 
 
-## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v6.1.0...HEAD) - yyyy-mm-dd
+## [v6.1.0](https://github.com/js-jslog/harpstrata/compare/v6.1.0...HEAD) - 2020-07-20
+### Added
+- MINOR: Add getDegreeIds to public api
+
+## [v6.0.0](https://github.com/js-jslog/harpstrata/compare/v6.0.0...HEAD) - 2020-06-04
 ### Changed
 - MAJOR: Reorder the PozitionIds by name rather than rootOffset
 - MINOR: Recover root offset values from Pozition instances rather than from enum order
