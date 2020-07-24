@@ -3,7 +3,6 @@ import React from 'react'
 
 import { themeColors } from '../../Theme'
 import { HarpFace } from '../../HarpFace'
-import type { HarpFaceProps } from '../../HarpFace'
 
 const { pageColor } = themeColors
 
@@ -17,16 +16,10 @@ const styles = StyleSheet.create({
   },
 })
 
-export const HomeScreen = (props: HarpFaceProps): React.ReactElement => {
-  const { activeDisplayMode } = props
-
-  const harpFaceProps = {
-    activeDisplayMode,
-  }
-
+export const HomeScreen = (): React.ReactElement => {
   return (
     <View style={styles.guruhome}>
-      <HarpFace {...harpFaceProps} />
+      <HarpFace />
     </View>
   )
 }

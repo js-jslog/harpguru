@@ -22,35 +22,24 @@ const harpStrata = getHarpStrata(harpStrataProps)
 mockUseGlobal.mockImplementation((stateItem: string) => {
   if (stateItem === 'activeHarpStrata') return [harpStrata]
   if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+  if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
   return undefined
 })
 
 test('LayoutMenu renders a component with a major diatonic layout selected', () => {
-  const menuProps = {
-    activeDisplayMode: DisplayModes.Degree,
-    setActiveDisplayMode: jest.fn(),
-  }
-  const { getByText } = render(<LayoutMenu {...menuProps} />)
+  const { getByText } = render(<LayoutMenu />)
 
   expect(getByText(ApparatusIds.MajorDiatonic)).toBeTruthy()
 })
 
 test('LayoutMenu renders a component with Degree DisplayMode selected', () => {
-  const menuProps = {
-    activeDisplayMode: DisplayModes.Degree,
-    setActiveDisplayMode: jest.fn(),
-  }
-  const { getByText } = render(<LayoutMenu {...menuProps} />)
+  const { getByText } = render(<LayoutMenu />)
 
   expect(getByText(DisplayModes.Degree)).toBeTruthy()
 })
 
 test('LayoutMenu renders a component with Explore ExperienceMode selected', () => {
-  const menuProps = {
-    activeDisplayMode: DisplayModes.Degree,
-    setActiveDisplayMode: jest.fn(),
-  }
-  const { getByText } = render(<LayoutMenu {...menuProps} />)
+  const { getByText } = render(<LayoutMenu />)
 
   expect(getByText(ExperienceModes.Explore)).toBeTruthy()
 })

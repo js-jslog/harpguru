@@ -1,6 +1,4 @@
 export { AnimatedMenuContainer } from './AnimatedMenuContainer'
 export { CovariantMenu } from './Menus'
-export type { CovariantMenuProps } from './Menus'
 export { LayoutMenu } from './Menus'
-export type { LayoutMenuProps } from './Menus'
 export { QuizQuestionDisplay } from './Menus'

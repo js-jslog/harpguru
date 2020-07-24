@@ -1,14 +1,14 @@
+import { useGlobal } from 'reactn'
 import React from 'react'
 
-import type { DisplayModeOptionProps } from '../types'
 import { nudgeDisplayMode } from '../nudgeDisplayMode'
 import { partiallyApplyNudgeFunction } from '../../helpers'
 import { OptionContainer } from '../../OptionContainer'
 
-export const DisplayModeOption = (
-  props: DisplayModeOptionProps
-): React.ReactElement => {
-  const { activeDisplayMode, setActiveDisplayMode } = props
+export const DisplayModeOption = (): React.ReactElement => {
+  const [activeDisplayMode, setActiveDisplayMode] = useGlobal(
+    'activeDisplayMode'
+  )
   const partialParams = {
     activeDisplayMode,
     setActiveDisplayMode,

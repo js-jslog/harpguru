@@ -31,35 +31,27 @@ import {
 
 setGlobalReactNState()
 
-addReducer(
-  'quizAnswerGiven',
-  (_global: GlobalState, dispatch: Dispatch, displayMode: DisplayModes) => {
-    setTimeout(() => dispatch.requestNextQuestion(displayMode), 1000)
+addReducer('quizAnswerGiven', (_global: GlobalState, dispatch: Dispatch) => {
+  setTimeout(dispatch.requestNextQuestion, 1000)
+})
+addReducer('requestNextQuestion', (global: GlobalState) => {
+  const { activeHarpStrata, quizQuestion, activeDisplayMode } = global
+  const nextQuizQuestion = getNextQuizQuestion(quizQuestion, activeDisplayMode)
+  const harpStrataProps = getPropsForHarpStrata(
+    activeHarpStrata,
+    DisplayModes.Degree
+  )
+  const resetActiveHarpStrata = getHarpStrata({
+    ...harpStrataProps,
+    activeIds: [],
+  })
+  return {
+    activeHarpStrata: resetActiveHarpStrata,
+    quizQuestion: nextQuizQuestion,
   }
-)
-addReducer(
-  'requestNextQuestion',
-  (global: GlobalState, _dispatch: Dispatch, displayMode: DisplayModes) => {
-    const { activeHarpStrata, quizQuestion } = global
-    const nextQuizQuestion = getNextQuizQuestion(quizQuestion, displayMode)
-    const harpStrataProps = getPropsForHarpStrata(
-      activeHarpStrata,
-      DisplayModes.Degree
-    )
-    const resetActiveHarpStrata = getHarpStrata({
-      ...harpStrataProps,
-      activeIds: [],
-    })
-    return {
-      activeHarpStrata: resetActiveHarpStrata,
-      quizQuestion: nextQuizQuestion,
-    }
-  }
-)
+})
 
 const { 8: swipeThreshold } = themeSizes
-
-const { Degree: initialDisplayMode } = DisplayModes
 
 enum MenuStates {
   LayoutMenu,
@@ -68,7 +60,6 @@ enum MenuStates {
 }
 
 export const HarpGuru = (): ReactElement => {
-  const [activeDisplayMode, setActiveDisplayMode] = useState(initialDisplayMode)
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const requestNextQuestion = useDispatch('requestNextQuestion')
 
@@ -78,23 +69,14 @@ export const HarpGuru = (): ReactElement => {
   const previousPanState = usePrevious(panState, State.UNDETERMINED)
   const previousMenuState = usePrevious(menuState, MenuStates.NoMenu)
 
-  const homeScreenProps = {
-    activeDisplayMode,
-  }
-
   const covariantMenuScreenProps = {
-    activeDisplayMode,
-    setActiveDisplayMode,
     onScreen: menuState === MenuStates.CovariantMenu,
   }
   const layoutMenuScreenProps = {
-    activeDisplayMode,
-    setActiveDisplayMode,
     onScreen: menuState === MenuStates.LayoutMenu,
   }
   const quizQuestionScreenProps = {
     screenFree: menuState === MenuStates.NoMenu,
-    activeDisplayMode,
   }
 
   const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
@@ -121,7 +103,7 @@ export const HarpGuru = (): ReactElement => {
     previousMenuState !== MenuStates.NoMenu &&
     activeExperienceMode === ExperienceModes.Quiz
   )
-    requestNextQuestion(activeDisplayMode)
+    requestNextQuestion()
 
   return (
     <PanGestureHandler
@@ -129,7 +111,7 @@ export const HarpGuru = (): ReactElement => {
       onHandlerStateChange={handleSwipe}
     >
       <View style={styles.overlay}>
-        <HomeScreen {...homeScreenProps} />
+        <HomeScreen />
         <CovariantMenuScreen {...covariantMenuScreenProps} />
         <LayoutMenuScreen {...layoutMenuScreenProps} />
         <QuizQuestionScreen {...quizQuestionScreenProps} />

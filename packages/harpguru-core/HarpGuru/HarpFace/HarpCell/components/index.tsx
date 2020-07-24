@@ -20,14 +20,15 @@ import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
 export const HarpCell = (props: HarpCellProps): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [quizQuestion] = useGlobal('quizQuestion')
   const harpCellProps = {
     ...props,
     activeHarpStrata,
     setActiveHarpStrata,
     activeExperienceMode,
+    activeDisplayMode,
   }
-  const { activeDisplayMode } = props
   const positionFacts = analysePosition(harpCellProps)
   const { thisDegree, thisPitch } = positionFacts
   const { id: degreeId } = thisDegree || { id: undefined }
@@ -57,7 +58,7 @@ export const HarpCell = (props: HarpCellProps): React.ReactElement => {
           cellId: quizQuestion,
         })
       )
-      quizAnswerGiven(activeDisplayMode)
+      quizAnswerGiven()
     }
   }
 

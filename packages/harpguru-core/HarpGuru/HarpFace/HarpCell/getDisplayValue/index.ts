@@ -11,6 +11,7 @@ type DisplayValueTuple =
 
 type Props = HarpCellProps & {
   readonly activeHarpStrata: HarpStrata
+  readonly activeDisplayMode: DisplayModes
 }
 
 export const getDisplayValue = (props: Props): DisplayValueTuple => {

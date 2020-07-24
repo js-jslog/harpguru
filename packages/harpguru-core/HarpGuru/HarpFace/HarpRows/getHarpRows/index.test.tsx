@@ -1,10 +1,10 @@
-import { harpFaceProps } from '../../testResources'
+import { inactiveCellsHarpStrata as activeHarpStrata } from '../../testResources'
 
 import { getHarpRows } from './index'
 
 test('getHarpRows returns an object with the major diatonic rows split between the blow / draw holes', () => {
   const harpRowProps = {
-    ...harpFaceProps,
+    activeHarpStrata,
     xRange: [0, 1, 2],
   }
   const holeRows = getHarpRows(harpRowProps)

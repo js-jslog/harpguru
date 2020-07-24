@@ -1,6 +1,6 @@
 import { InteractionIds } from 'harpstrata'
 
-import { harpFaceProps } from '../../testResources'
+import { inactiveCellsHarpStrata } from '../../testResources'
 
 import { mapRowToBlowDrawIds } from './index'
 
@@ -8,10 +8,8 @@ const { Blow, Draw } = InteractionIds
 
 test('mapRowToBlowDrawIds can be used to map a matrix to just an array indicating whether that was a blow or draw row, or neither', () => {
   const {
-    activeHarpStrata: {
-      apparatus: { interactionMatrix },
-    },
-  } = harpFaceProps
+    apparatus: { interactionMatrix },
+  } = inactiveCellsHarpStrata
 
   const resultingArray = interactionMatrix.map(mapRowToBlowDrawIds)
   const expectedArray = [
