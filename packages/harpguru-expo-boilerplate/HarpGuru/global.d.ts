@@ -18,14 +18,11 @@ declare module 'reactn/default' {
     quizAnswerGiven: (
       global: State,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      dispatch: any,
-      displayMode: DisplayModes
+      dispatch: any
     ) => void
     requestNextQuestion: (
-      global: State,
+      global: State
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      dispatch: any,
-      displayMode: DisplayModes
     ) => Pick<State, 'quizQuestion' | 'activeHarpStrata'>
   }
 
@@ -33,5 +30,6 @@ declare module 'reactn/default' {
     quizQuestion: DegreeIds | PitchIds
     activeHarpStrata: HarpStrata
     activeExperienceMode: ExperienceModes
+    activeDisplayMode: DisplayModes
   }
 }

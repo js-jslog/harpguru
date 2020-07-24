@@ -1,9 +1,11 @@
-import type { DisplayModeOptionProps } from '../types'
 import { DisplayModes } from '../../../../types'
 
-export const nudgeDisplayMode = (
-  partialParams: DisplayModeOptionProps
-): void => {
+type Props = {
+  readonly activeDisplayMode: DisplayModes
+  readonly setActiveDisplayMode: (arg0: DisplayModes) => void
+}
+
+export const nudgeDisplayMode = (partialParams: Props): void => {
   const { activeDisplayMode, setActiveDisplayMode } = partialParams
 
   if (activeDisplayMode === DisplayModes.Degree) {

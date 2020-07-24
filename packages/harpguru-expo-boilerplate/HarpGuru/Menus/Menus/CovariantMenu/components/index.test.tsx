@@ -27,12 +27,13 @@ const harpStrataProps: HarpStrataProps = {
 const harpStrata = getHarpStrata(harpStrataProps)
 
 test('CovariantMenu renders a component with position and key information displayed', () => {
-  const menuProps = {
-    activeDisplayMode: DisplayModes.Degree,
-    setActiveDisplayMode: jest.fn(),
-  }
-  mockUseGlobal.mockReturnValue([harpStrata])
-  const { getByText } = render(<CovariantMenu {...menuProps} />)
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata') return [harpStrata]
+    if (stateItem === 'activeDisplayMode')
+      return [DisplayModes.Degree, jest.fn()]
+    return undefined
+  })
+  const { getByText } = render(<CovariantMenu />)
 
   expect(getByText(PitchIds.C)).toBeTruthy()
   expect(getByText(PitchIds.G)).toBeTruthy()

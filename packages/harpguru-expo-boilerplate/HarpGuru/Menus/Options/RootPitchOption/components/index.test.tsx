@@ -20,11 +20,12 @@ const harpStrataProps = {
 const harpStrata = getHarpStrata(harpStrataProps)
 
 test('RootPitchOption renders a component with root pitch information displayed', () => {
-  const menuOptionProps = {
-    activeDisplayMode: DisplayModes.Degree,
-  }
-  mockUseGlobal.mockReturnValue([harpStrata])
-  const { getByText } = render(<RootPitchOption {...menuOptionProps} />)
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata') return [harpStrata]
+    if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    return undefined
+  })
+  const { getByText } = render(<RootPitchOption />)
 
   expect(getByText(PitchIds.G)).toBeTruthy()
 })

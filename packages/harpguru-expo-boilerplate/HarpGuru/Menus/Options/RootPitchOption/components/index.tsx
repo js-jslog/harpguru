@@ -1,16 +1,13 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
 
-import type { RootPitchOptionProps } from '../types'
 import { nudgeHarpStrataByRootPitch } from '../nudgeHarpStrataByRootPitch'
 import { partiallyApplyNudgeFunction } from '../../helpers'
 import { OptionContainer } from '../../OptionContainer'
 
-export const RootPitchOption = (
-  props: RootPitchOptionProps
-): React.ReactElement => {
+export const RootPitchOption = (): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
-  const { activeDisplayMode } = props
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const { rootPitchId } = activeHarpStrata
   const partialParams = {
     activeHarpStrata,

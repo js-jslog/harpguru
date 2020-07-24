@@ -1,16 +1,13 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
 
-import type { HarpKeyOptionProps } from '../types'
 import { nudgeHarpStrataByHarpKey } from '../nudgeHarpStrataByHarpKey'
 import { partiallyApplyNudgeFunction } from '../../helpers'
 import { OptionContainer } from '../../OptionContainer'
 
-export const HarpKeyOption = (
-  props: HarpKeyOptionProps
-): React.ReactElement => {
+export const HarpKeyOption = (): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
-  const { activeDisplayMode } = props
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const { harpKeyId } = activeHarpStrata
   const partialParams = {
     activeHarpStrata,

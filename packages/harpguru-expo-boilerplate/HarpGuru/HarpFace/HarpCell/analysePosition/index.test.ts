@@ -1,9 +1,8 @@
 import type { YXCoord } from '../types'
-import { harpFaceProps } from '../../testResources'
+import { inactiveCellsHarpStrata as activeHarpStrata } from '../../testResources'
 
 import { analysePosition } from './index'
 
-const { activeHarpStrata } = harpFaceProps
 const {
   degreeMatrix: [, , , [, , , ourDegree]],
 } = activeHarpStrata
@@ -25,11 +24,11 @@ test('leftmost is true if the provided coord has is 0 in the x axis and false ot
   const yxCoordLeftmostTrue: YXCoord = [0, 0]
   const yxCoordLeftmostFalse: YXCoord = [0, 1]
   const { leftmost: leftmostTrue } = analysePosition({
-    ...harpFaceProps,
+    activeHarpStrata,
     yxCoord: yxCoordLeftmostTrue,
   })
   const { leftmost: leftmostFalse } = analysePosition({
-    ...harpFaceProps,
+    activeHarpStrata,
     yxCoord: yxCoordLeftmostFalse,
   })
   expect(leftmostTrue).toBeTruthy()
@@ -43,7 +42,7 @@ test('thisDegree, thisPitch, thisInteraction, & thisIsActive provide the degree,
     thisPitch,
     thisInteraction,
     thisIsActive,
-  } = analysePosition({ ...harpFaceProps, yxCoord: ourCoord })
+  } = analysePosition({ activeHarpStrata, yxCoord: ourCoord })
   expect(thisDegree).toBe(ourDegree)
   expect(thisPitch).toBe(ourPitch)
   expect(thisInteraction).toBe(ourInteraction)

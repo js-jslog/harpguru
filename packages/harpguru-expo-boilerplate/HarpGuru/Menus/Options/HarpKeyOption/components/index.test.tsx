@@ -20,11 +20,12 @@ const harpStrataProps = {
 const harpStrata = getHarpStrata(harpStrataProps)
 
 test('HarpKeyOption renders a component with harp key information displayed', () => {
-  const menuOptionProps = {
-    activeDisplayMode: DisplayModes.Degree,
-  }
-  mockUseGlobal.mockReturnValue([harpStrata])
-  const { getByText } = render(<HarpKeyOption {...menuOptionProps} />)
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata') return [harpStrata]
+    if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    return undefined
+  })
+  const { getByText } = render(<HarpKeyOption />)
 
   expect(getByText(PitchIds.C)).toBeTruthy()
 })

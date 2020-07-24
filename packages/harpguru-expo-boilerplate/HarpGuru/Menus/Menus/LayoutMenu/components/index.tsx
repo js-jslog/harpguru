@@ -6,16 +6,13 @@ import {
   DisplayModeOption,
   ExperienceModeOption,
 } from '../../../Options'
-import type { DisplayModeOptionProps } from '../../../Options'
 
-export type LayoutMenuProps = DisplayModeOptionProps
-
-export const LayoutMenu = (props: LayoutMenuProps): React.ReactElement => {
+export const LayoutMenu = (): React.ReactElement => {
   return (
     <MenuContainer>
       <ApparatusOption />
       <ExperienceModeOption />
-      <DisplayModeOption {...props} />
+      <DisplayModeOption />
     </MenuContainer>
   )
 }

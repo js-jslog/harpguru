@@ -1,8 +1,8 @@
 import type { ViewStyle } from 'react-native'
 
-import type { HarpCellProps, Coord } from '../../HarpCell'
+import type { Coord } from '../../HarpCell'
 
-export type HarpRowProps = Pick<HarpCellProps, 'activeDisplayMode'> & {
+export type HarpRowProps = {
   readonly yCoord: Coord
   readonly xRange: ReadonlyArray<number>
 }

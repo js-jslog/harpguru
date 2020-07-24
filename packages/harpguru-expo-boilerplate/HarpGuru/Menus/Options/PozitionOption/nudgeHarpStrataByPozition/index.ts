@@ -6,7 +6,7 @@ import {
 } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
-import type { PozitionOptionProps } from '../types'
+import { DisplayModes } from '../../../../types'
 import type { SetActiveHarpStrata } from '../../../../helpers'
 import { getPropsForHarpStrata } from '../../../../helpers'
 
@@ -22,9 +22,10 @@ const getNextId = (
   return previousPozitionId
 }
 
-type Props = PozitionOptionProps & {
+type Props = {
   readonly activeHarpStrata: HarpStrata
   readonly setActiveHarpStrata: SetActiveHarpStrata
+  readonly activeDisplayMode: DisplayModes
 }
 
 export const nudgeHarpStrataByPozition = (
