@@ -33,6 +33,7 @@ exports[`A snapshot of a populated cell 1`] = `
       style={
         Object {
           "color": "#ddd",
+          "display": "flex",
           "fontSize": 19.738400000000002,
         }
       }
@@ -44,6 +45,7 @@ exports[`A snapshot of a populated cell 1`] = `
         Object {
           "alignSelf": "flex-start",
           "color": "#ddd",
+          "display": "flex",
           "fontSize": 12.199000000000002,
         }
       }
@@ -87,6 +89,7 @@ exports[`A snapshot of an active cell 1`] = `
       style={
         Object {
           "color": "#fefefe",
+          "display": "flex",
           "fontSize": 19.738400000000002,
         }
       }
@@ -98,6 +101,7 @@ exports[`A snapshot of an active cell 1`] = `
         Object {
           "alignSelf": "flex-start",
           "color": "#fefefe",
+          "display": "flex",
           "fontSize": 12.199000000000002,
         }
       }
@@ -151,6 +155,118 @@ exports[`A snapshot of an empty cell 1`] = `
         }
       }
     />
+  </View>
+</View>
+`;
+
+exports[`A snapshot of an inactive cell in Explore mode 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    collapsable={false}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fefefe",
+        "borderColor": "#ddd",
+        "borderRadius": 7.5394000000000005,
+        "borderWidth": 1.1,
+        "elevation": 0,
+        "flexDirection": "row",
+        "height": 31.9374,
+        "justifyContent": "center",
+        "width": 31.9374,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ddd",
+          "display": "flex",
+          "fontSize": 19.738400000000002,
+        }
+      }
+    >
+      2
+    </Text>
+    <Text
+      style={
+        Object {
+          "alignSelf": "flex-start",
+          "color": "#ddd",
+          "display": "flex",
+          "fontSize": 12.199000000000002,
+        }
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    collapsable={false}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fefefe",
+        "borderColor": "#ddd",
+        "borderRadius": 7.5394000000000005,
+        "borderWidth": 1.1,
+        "elevation": 0,
+        "flexDirection": "row",
+        "height": 31.9374,
+        "justifyContent": "center",
+        "width": 31.9374,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ddd",
+          "display": "none",
+          "fontSize": 19.738400000000002,
+        }
+      }
+    >
+      2
+    </Text>
+    <Text
+      style={
+        Object {
+          "alignSelf": "flex-start",
+          "color": "#ddd",
+          "display": "none",
+          "fontSize": 12.199000000000002,
+        }
+      }
+    >
+      
+    </Text>
   </View>
 </View>
 `;
