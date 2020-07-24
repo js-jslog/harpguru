@@ -8,6 +8,7 @@ import {
   activeCellsHarpFaceProps,
 } from '../../testResources'
 import { DisplayModes } from '../../../types'
+import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
 
 import { HarpCell } from './index'
 
@@ -15,7 +16,13 @@ jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
 
 test('A component is rendered with the Degree or Pitch value in its text view depending on the DisplayMode selected', () => {
-  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+    return undefined
+  })
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [3, 0] as [3, 0],
@@ -32,7 +39,13 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 })
 
 test('A component is rendered with an a11y role of button', () => {
-  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+    return undefined
+  })
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [3, 0] as [3, 0],
@@ -43,7 +56,13 @@ test('A component is rendered with an a11y role of button', () => {
 })
 
 test('A component is rendered without an a11y role of button if it has no content', () => {
-  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+    return undefined
+  })
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [0, 0] as [0, 0],
@@ -87,7 +106,13 @@ test.skip('A press of the componenet results in toggled active ids in the harpst
 })
 
 test('A snapshot of a populated cell', () => {
-  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+    return undefined
+  })
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [3, 0] as [3, 0],
@@ -98,7 +123,13 @@ test('A snapshot of a populated cell', () => {
 })
 
 test('A snapshot of an active cell', () => {
-  mockUseGlobal.mockReturnValue([activeCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [activeCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+    return undefined
+  })
   const harpCellProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [3, 0] as [3, 0],
@@ -109,12 +140,54 @@ test('A snapshot of an active cell', () => {
 })
 
 test('A snapshot of an empty cell', () => {
-  mockUseGlobal.mockReturnValue([inactiveCellsHarpFaceProps.activeHarpStrata])
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+    return undefined
+  })
   const harpFaceProps = {
     activeDisplayMode: DisplayModes.Degree,
     yxCoord: [0, 0] as [0, 0],
   }
 
   const { container } = render(<HarpCell {...harpFaceProps} />)
+  expect(container).toMatchSnapshot()
+})
+
+test('A snapshot of an inactive cell in Explore mode', () => {
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+    return undefined
+  })
+  const harpCellProps = {
+    activeDisplayMode: DisplayModes.Degree,
+    yxCoord: [3, 0] as [3, 0],
+  }
+
+  const { container } = render(<HarpCell {...harpCellProps} />)
+  expect(container).toMatchSnapshot()
+})
+
+// The important difference between this and the previous is just that
+// the contents of the cells should be hidden in Quiz mode.
+test('A snapshot of an inactive cell in Quiz mode', () => {
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata')
+      return [inactiveCellsHarpFaceProps.activeHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Quiz]
+    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
+    return undefined
+  })
+  const harpCellProps = {
+    activeDisplayMode: DisplayModes.Degree,
+    yxCoord: [3, 0] as [3, 0],
+  }
+
+  const { container } = render(<HarpCell {...harpCellProps} />)
   expect(container).toMatchSnapshot()
 })
