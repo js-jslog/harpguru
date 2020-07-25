@@ -1,10 +1,9 @@
+import { useGlobal } from 'reactn'
 import { StyleSheet } from 'react-native'
 import { IsActiveIds } from 'harpstrata'
-import type { HarpStrata } from 'harpstrata'
 
-import { HarpCellProps, HarpCellStyles } from '../types'
-import { analysePosition } from '../analysePosition'
-import type { PositionFacts } from '../analysePosition'
+import { usePositionAnalysis } from '../usePositionAnalysis'
+import { HarpCellStyles, YXCoord } from '../types'
 import { ExperienceModes } from '../../../helpers/setGlobalReactNState'
 import { themeSizes, themeColors } from '../../../Theme'
 
@@ -18,18 +17,14 @@ const {
 const { 7: noteFontSize, 6: modifierFontSize } = themeSizes
 const { pageColor, degreeColors, inertOutline: borderColor } = themeColors
 
-type Props = HarpCellProps & {
-  readonly activeHarpStrata: HarpStrata
-  readonly activeExperienceMode: ExperienceModes
-}
-
-export const getStyles = (props: Props): HarpCellStyles => {
-  const positionFacts: PositionFacts = analysePosition(props)
-  const { thisDegree, thisIsActive } = positionFacts
-  const { id: degreeId } = thisDegree || { id: undefined }
-  const isActive = thisIsActive === IsActiveIds.Active
-  const isQuizMode = props.activeExperienceMode === ExperienceModes.Quiz
-  const cellColor = isActive && degreeId ? degreeColors[degreeId] : pageColor
+export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const positionFacts = usePositionAnalysis(yxCoord)
+  const { thisDegreeId, thisIsActiveId } = positionFacts
+  const isActive = thisIsActiveId === IsActiveIds.Active
+  const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
+  const cellColor =
+    isActive && thisDegreeId ? degreeColors[thisDegreeId] : pageColor
 
   const styles = StyleSheet.create<HarpCellStyles>({
     cell: {
@@ -39,7 +34,7 @@ export const getStyles = (props: Props): HarpCellStyles => {
       alignItems: 'center',
       elevation: isActive ? elevation : 0,
       borderRadius,
-      borderWidth: degreeId ? borderWidth : 0,
+      borderWidth: thisDegreeId ? borderWidth : 0,
       borderColor: isActive ? cellColor : borderColor,
       width,
       height,

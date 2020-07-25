@@ -1,2 +1,2 @@
 export { HarpCell } from './components'
-export type { HarpCellProps, YXCoord, Coord } from './types'
+export type { YXCoord, Coord } from './types'

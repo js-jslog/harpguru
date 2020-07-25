@@ -23,7 +23,7 @@ export const QuizQuestionScreen = (
     }, 5000)
     const hideQuestionTimer = setTimeout(() => {
       setDisplayPeriod(false)
-    }, 2000)
+    }, 1000)
     return () => {
       clearTimeout(nextQuestionTimer)
       clearTimeout(hideQuestionTimer)

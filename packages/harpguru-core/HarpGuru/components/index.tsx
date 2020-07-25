@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 
-import type { State as GlobalState, Dispatch } from 'reactn/default'
+import type { State as GlobalState } from 'reactn/default'
 import { addReducer, useDispatch, useGlobal } from 'reactn'
 import {
   PanGestureHandler,
@@ -20,6 +20,7 @@ import {
   getPropsForHarpStrata,
   getNextQuizQuestion,
   setGlobalReactNState,
+  activateHarpCell,
 } from '../helpers'
 import { themeSizes } from '../Theme'
 import {
@@ -31,9 +32,6 @@ import {
 
 setGlobalReactNState()
 
-addReducer('quizAnswerGiven', (_global: GlobalState, dispatch: Dispatch) => {
-  setTimeout(dispatch.requestNextQuestion, 1000)
-})
 addReducer('requestNextQuestion', (global: GlobalState) => {
   const { activeHarpStrata, quizQuestion, activeDisplayMode } = global
   const nextQuizQuestion = getNextQuizQuestion(quizQuestion, activeDisplayMode)
@@ -48,6 +46,17 @@ addReducer('requestNextQuestion', (global: GlobalState) => {
   return {
     activeHarpStrata: resetActiveHarpStrata,
     quizQuestion: nextQuizQuestion,
+  }
+})
+
+addReducer('revealAnswer', (global: GlobalState) => {
+  const { activeHarpStrata, quizQuestion } = global
+  const props = {
+    harpStrata: activeHarpStrata,
+    cellId: quizQuestion,
+  }
+  return {
+    activeHarpStrata: activateHarpCell(props),
   }
 })
 
