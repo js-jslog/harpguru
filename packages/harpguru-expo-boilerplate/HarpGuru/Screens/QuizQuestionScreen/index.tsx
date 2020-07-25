@@ -1,4 +1,4 @@
-import React, { useGlobal, useEffect, useDispatch } from 'reactn'
+import React, { useGlobal, useEffect } from 'reactn'
 import { ReactElement, useState } from 'react'
 
 import { ExperienceModes } from '../../helpers/setGlobalReactNState'
@@ -15,17 +15,12 @@ export const QuizQuestionScreen = (
   const [quizQuestion] = useGlobal('quizQuestion')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const { screenFree } = props
-  const requestNextQuestion = useDispatch('requestNextQuestion')
   useEffect(() => {
     setDisplayPeriod(true)
-    const nextQuestionTimer = setTimeout(() => {
-      if (activeExperienceMode === ExperienceModes.Quiz) requestNextQuestion()
-    }, 5000)
     const hideQuestionTimer = setTimeout(() => {
       setDisplayPeriod(false)
     }, 1000)
     return () => {
-      clearTimeout(nextQuestionTimer)
       clearTimeout(hideQuestionTimer)
     }
   }, [quizQuestion])
