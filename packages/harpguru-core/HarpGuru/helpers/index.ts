@@ -1,6 +1,7 @@
 export { usePrevious } from './usePrevious'
 export { getPropsForHarpStrata } from './getPropsForHarpStrata'
 export { setGlobalReactNState } from './setGlobalReactNState'
+export { setGlobalReactNReducers } from './setGlobalReactNReducers'
 export type { SetActiveHarpStrata } from './setGlobalReactNState'
 export { getNextQuizQuestion } from './getNextQuizQuestion'
 export { activateHarpCell } from './activateHarpCell'
