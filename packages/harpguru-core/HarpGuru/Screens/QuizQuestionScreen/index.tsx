@@ -1,37 +1,20 @@
-import React, { useGlobal, useEffect } from 'reactn'
-import { ReactElement, useState } from 'react'
+import React from 'reactn'
+import { ReactElement } from 'react'
 
-import { ExperienceModes } from '../../helpers/setGlobalReactNState'
 import { AnimatedMenuContainer, QuizQuestionDisplay } from '../../Menus'
+
+import { useFlashDisplay } from './useFlashDisplay'
 
 type QuizQuestionScreenProps = {
   readonly screenFree: boolean
 }
 
-export const QuizQuestionScreen = (
-  props: QuizQuestionScreenProps
-): ReactElement => {
-  const [displayPeriod, setDisplayPeriod] = useState<boolean>(true)
-  const [quizQuestion] = useGlobal('quizQuestion')
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const { screenFree } = props
-  useEffect(() => {
-    setDisplayPeriod(true)
-    const hideQuestionTimer = setTimeout(() => {
-      setDisplayPeriod(false)
-    }, 1000)
-    return () => {
-      clearTimeout(hideQuestionTimer)
-    }
-  }, [quizQuestion])
+export const QuizQuestionScreen = ({
+  screenFree,
+}: QuizQuestionScreenProps): ReactElement => {
+  const shouldDisplay = useFlashDisplay(screenFree)
   return (
-    <AnimatedMenuContainer
-      onScreen={
-        screenFree &&
-        displayPeriod &&
-        activeExperienceMode === ExperienceModes.Quiz
-      }
-    >
+    <AnimatedMenuContainer onScreen={shouldDisplay}>
       <QuizQuestionDisplay />
     </AnimatedMenuContainer>
   )

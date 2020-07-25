@@ -10,7 +10,6 @@ import React from 'react'
 import { useToggleHarpCell } from '../useToggleHarpCell'
 import { useStyles } from '../useStyles'
 import { useSetPozitionRoot } from '../useSetPozitionRoot'
-import { useQuizCycle } from '../useQuizCycle'
 import { usePositionAnalysis } from '../usePositionAnalysis'
 import { useDisplayValue } from '../useDisplayValue'
 import { YXCoord } from '../types'
@@ -25,8 +24,6 @@ export const HarpCell = ({ yxCoord }: Props): React.ReactElement => {
   const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
   const displayValue = useDisplayValue(yxCoord)
   const styles = useStyles(yxCoord)
-
-  useQuizCycle(yxCoord)
 
   const handleTapStateChange = ({
     nativeEvent,
