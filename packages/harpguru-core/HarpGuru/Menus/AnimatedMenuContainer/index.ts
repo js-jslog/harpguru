@@ -1,1 +1,0 @@
-export { AnimatedMenuContainer } from './components'

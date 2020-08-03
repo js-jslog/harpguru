@@ -1,1 +1,0 @@
-export { HarpFace } from './components'

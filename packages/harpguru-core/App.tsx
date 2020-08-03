@@ -14,7 +14,7 @@ import React from 'react'
 import type { ReactElement } from 'react'
 import * as ScreenOrientation from 'expo-screen-orientation'
 
-import { HarpGuru } from './HarpGuru'
+import { HarpGuru } from './src'
 
 ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
 
