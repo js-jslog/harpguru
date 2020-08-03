@@ -1,0 +1,36 @@
+import { DegreeIds } from 'harpstrata'
+
+type DegreeColors = {
+  readonly [DegreeIds.Root]: string
+  readonly [DegreeIds.Flat2]: string
+  readonly [DegreeIds.Second]: string
+  readonly [DegreeIds.Flat3]: string
+  readonly [DegreeIds.Third]: string
+  readonly [DegreeIds.Fourth]: string
+  readonly [DegreeIds.Flat5]: string
+  readonly [DegreeIds.Fifth]: string
+  readonly [DegreeIds.Flat6]: string
+  readonly [DegreeIds.Sixth]: string
+  readonly [DegreeIds.Flat7]: string
+  readonly [DegreeIds.Seventh]: string
+}
+export type ColorSheme = {
+  readonly degreeColors: DegreeColors
+  readonly pageColor: string
+  readonly homeRowsColor: string
+  readonly inertOutline: string
+  readonly holeNumbersColor: string
+}
+
+export type SizeScheme = {
+  readonly 1: number
+  readonly 2: number
+  readonly 3: number
+  readonly 4: number
+  readonly 5: number
+  readonly 6: number
+  readonly 7: number
+  readonly 8: number
+  readonly 9: number
+  readonly 10: number
+}

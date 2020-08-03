@@ -1,1 +1,0 @@
-export { getHarpFaceFacts } from './getHarpFaceFacts'

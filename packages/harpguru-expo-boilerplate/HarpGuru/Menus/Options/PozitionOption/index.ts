@@ -1,1 +1,0 @@
-export { PozitionOption } from './components'

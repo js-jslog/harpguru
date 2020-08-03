@@ -1,1 +1,0 @@
-export { CovariantMenu } from './components'

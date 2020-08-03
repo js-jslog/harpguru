@@ -1,1 +1,0 @@
-export { ApparatusOption } from './components'
