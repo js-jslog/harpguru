@@ -440,7 +440,7 @@ exports[`A component is rendered 1`] = `
             "flex": 0,
             "flexDirection": "row",
             "justifyContent": "space-around",
-            "zIndex": 10,
+            "zIndex": 3,
           }
         }
       >
@@ -1520,7 +1520,7 @@ exports[`A component is rendered 1`] = `
             "flex": 0,
             "flexDirection": "row",
             "justifyContent": "space-around",
-            "zIndex": 10,
+            "zIndex": 3,
           }
         }
       >
@@ -2555,7 +2555,7 @@ exports[`A component is rendered 1`] = `
             "flex": 0,
             "flexDirection": "row",
             "justifyContent": "space-around",
-            "zIndex": 10,
+            "zIndex": 3,
           }
         }
       >
@@ -3368,7 +3368,7 @@ exports[`A component is rendered 1`] = `
             "flex": 0,
             "flexDirection": "row",
             "justifyContent": "space-around",
-            "zIndex": 10,
+            "zIndex": 3,
           }
         }
       >

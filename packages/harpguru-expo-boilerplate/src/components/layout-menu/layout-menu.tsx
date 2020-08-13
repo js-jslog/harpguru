@@ -1,20 +1,20 @@
 import { useGlobal } from 'reactn'
+import Animated from 'react-native-reanimated'
+import { TapGestureHandler } from 'react-native-gesture-handler'
+import { View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
-import { MenuContainer } from '../menu-container'
-import { AnimatedMenuContainer } from '../animated-menu-container'
-import { useNudgeDisplayMode } from '../../hooks'
+import { getMenuStylesAndAnimationVals } from '../../utils'
+import type { MenuProps } from '../../types'
 
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
-type LayoutMenuProps = {
-  readonly onScreen: boolean
-}
-
 export const LayoutMenu = ({
-  onScreen,
-}: LayoutMenuProps): React.ReactElement => {
+  hideMenu,
+  hideLabel,
+  tapHandler,
+}: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   const {
@@ -34,21 +34,56 @@ export const LayoutMenu = ({
     nudgeFunction: nudgeExperienceMode,
   }
 
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const nudgeDisplayMode = useNudgeDisplayMode()
-  const displayModeOptionProps = {
-    title: 'Display',
-    optionId: activeDisplayMode,
-    nudgeFunction: nudgeDisplayMode,
-  }
+  const {
+    styles,
+    menuSlideTranslation,
+    menuScale,
+    menuBackgroundColor,
+    labelOpacity,
+    labelCounterScale,
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'RIGHT')
 
   return (
-    <AnimatedMenuContainer onScreen={onScreen}>
-      <MenuContainer>
-        <Option {...apparatusOptionProps} />
-        <Option {...experienceModeOptionProps} />
-        <Option {...displayModeOptionProps} />
-      </MenuContainer>
-    </AnimatedMenuContainer>
+    <Animated.View
+      style={[
+        styles.animated,
+        {
+          transform: [
+            { translateX: menuSlideTranslation },
+            { scale: menuScale },
+          ],
+        },
+      ]}
+    >
+      <TapGestureHandler onHandlerStateChange={tapHandler}>
+        <Animated.View
+          style={[
+            styles.overlay,
+            {
+              backgroundColor: menuBackgroundColor,
+            },
+          ]}
+        >
+          <View style={styles.mainContents}>
+            <Option {...apparatusOptionProps} />
+            <Option {...experienceModeOptionProps} />
+          </View>
+          <View style={styles.rotatedLabel}>
+            <Animated.View
+              style={[
+                {
+                  transform: [{ scale: labelCounterScale }],
+                  opacity: labelOpacity,
+                },
+              ]}
+            >
+              <View style={styles.labelAligner}>
+                <Text style={styles.text}>Settings</Text>
+              </View>
+            </Animated.View>
+          </View>
+        </Animated.View>
+      </TapGestureHandler>
+    </Animated.View>
   )
 }

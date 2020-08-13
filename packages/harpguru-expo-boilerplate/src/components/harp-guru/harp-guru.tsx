@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler'
 
 import { PanGestureHandler } from 'react-native-gesture-handler'
+import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
@@ -14,7 +15,7 @@ import { MenuStates } from '../../types'
 import { colors } from '../../styles'
 import { sizes } from '../../styles'
 
-import { useSwipeMenus, useQuizCycle } from './hooks'
+import { useMenus, useQuizCycle } from './hooks'
 
 setGlobalState()
 setGlobalReducers()
@@ -31,7 +32,13 @@ const styles = StyleSheet.create({
 })
 
 export const HarpGuru = (): ReactElement => {
-  const [menuState, handleSwipe] = useSwipeMenus()
+  const [menuState, handleSwipe, handleTap] = useMenus()
+  const covariantTapHandler = (event: TapGestureHandlerStateChangeEvent) => {
+    handleTap(MenuStates.CovariantMenu, event)
+  }
+  const layoutTapHandler = (event: TapGestureHandlerStateChangeEvent) => {
+    handleTap(MenuStates.LayoutMenu, event)
+  }
 
   useQuizCycle(menuState)
 
@@ -42,8 +49,22 @@ export const HarpGuru = (): ReactElement => {
     >
       <View style={styles.fillScreen}>
         <HarpFace />
-        <CovariantMenu onScreen={menuState === MenuStates.CovariantMenu} />
-        <LayoutMenu onScreen={menuState === MenuStates.LayoutMenu} />
+        <CovariantMenu
+          hideMenu={menuState !== MenuStates.CovariantMenu}
+          hideLabel={
+            menuState !== MenuStates.CovariantMenu &&
+            menuState !== MenuStates.NoMenu
+          }
+          tapHandler={covariantTapHandler}
+        />
+        <LayoutMenu
+          hideMenu={menuState !== MenuStates.LayoutMenu}
+          hideLabel={
+            menuState !== MenuStates.LayoutMenu &&
+            menuState !== MenuStates.NoMenu
+          }
+          tapHandler={layoutTapHandler}
+        />
         <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />
       </View>
     </PanGestureHandler>

@@ -33,7 +33,10 @@ test('CovariantMenu renders a component with position and key information displa
       return [DisplayModes.Degree, jest.fn()]
     return undefined
   })
-  const { getByText } = render(<CovariantMenu onScreen={true} />)
+  const tapHandler = jest.fn()
+  const { getByText } = render(
+    <CovariantMenu hideMenu={false} hideLabel={false} tapHandler={tapHandler} />
+  )
 
   expect(getByText(PitchIds.C)).toBeTruthy()
   expect(getByText(PitchIds.G)).toBeTruthy()

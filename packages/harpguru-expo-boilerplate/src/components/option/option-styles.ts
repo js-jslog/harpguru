@@ -1,7 +1,7 @@
 import { State } from 'react-native-gesture-handler'
 import { StyleSheet, ViewStyle } from 'react-native'
 
-import { sizes, colors } from '../../styles'
+import { sizes } from '../../styles'
 
 const { 7: variableSize, 8: titleSize } = sizes
 
@@ -25,8 +25,7 @@ export const getDynamicStyles = (
 ): { readonly activeSwipeStyle: ViewStyle } => {
   return StyleSheet.create({
     activeSwipeStyle: {
-      backgroundColor:
-        state === State.ACTIVE ? colors.inertOutline : 'transparent',
+      opacity: state === State.ACTIVE ? 0.5 : 1,
     },
   })
 }

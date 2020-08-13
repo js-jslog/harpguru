@@ -1,9 +1,12 @@
 import { useGlobal } from 'reactn'
+import Animated from 'react-native-reanimated'
+import { TapGestureHandler } from 'react-native-gesture-handler'
+import { View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
-import { MenuContainer } from '../menu-container'
-import { AnimatedMenuContainer } from '../animated-menu-container'
+import { getMenuStylesAndAnimationVals } from '../../utils'
+import type { MenuProps } from '../../types'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import {
@@ -12,13 +15,11 @@ import {
   useNudgeHarpStrataByRootPitch,
 } from './hooks'
 
-type CovariantMenuProps = {
-  readonly onScreen: boolean
-}
-
 export const CovariantMenu = ({
-  onScreen,
-}: CovariantMenuProps): React.ReactElement => {
+  hideLabel,
+  hideMenu,
+  tapHandler,
+}: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
 
   const { harpKeyId } = activeHarpStrata
@@ -53,14 +54,58 @@ export const CovariantMenu = ({
     nudgeFunction: nudgeDisplayMode,
   }
 
+  const {
+    styles,
+    menuSlideTranslation,
+    menuScale,
+    menuBackgroundColor,
+    labelOpacity,
+    labelCounterScale,
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'LEFT')
+
   return (
-    <AnimatedMenuContainer onScreen={onScreen}>
-      <MenuContainer>
-        <Option {...harpKeyOptionProps} />
-        <Option {...pozitionOptionProps} />
-        <Option {...rootPitchOptionProps} />
-        <Option {...displayModeOptionProps} />
-      </MenuContainer>
-    </AnimatedMenuContainer>
+    <Animated.View
+      style={[
+        styles.animated,
+        {
+          transform: [
+            { translateX: menuSlideTranslation },
+            { scale: menuScale },
+          ],
+        },
+      ]}
+    >
+      <TapGestureHandler onHandlerStateChange={tapHandler}>
+        <Animated.View
+          style={[
+            styles.overlay,
+            {
+              backgroundColor: menuBackgroundColor,
+            },
+          ]}
+        >
+          <View style={styles.mainContents}>
+            <Option {...harpKeyOptionProps} />
+            <Option {...pozitionOptionProps} />
+            <Option {...rootPitchOptionProps} />
+            <Option {...displayModeOptionProps} />
+          </View>
+          <View style={styles.rotatedLabel}>
+            <Animated.View
+              style={[
+                {
+                  transform: [{ scale: labelCounterScale }],
+                  opacity: labelOpacity,
+                },
+              ]}
+            >
+              <View style={styles.labelAligner}>
+                <Text style={styles.text}>Tuning</Text>
+              </View>
+            </Animated.View>
+          </View>
+        </Animated.View>
+      </TapGestureHandler>
+    </Animated.View>
   )
 }

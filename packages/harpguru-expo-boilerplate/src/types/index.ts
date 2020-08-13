@@ -1,3 +1,4 @@
+import { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import type { HarpStrata } from 'harpstrata'
 
 export enum DisplayModes {
@@ -14,6 +15,12 @@ export enum MenuStates {
   LayoutMenu,
   CovariantMenu,
   NoMenu,
+}
+
+export type MenuProps = {
+  readonly hideMenu: boolean
+  readonly hideLabel: boolean
+  readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
 }
 
 export type SetActiveHarpStrata = (arg0: HarpStrata) => void
