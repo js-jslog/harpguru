@@ -12,7 +12,7 @@ export const getStyles = (): HoleNumberRowStyles => {
       backgroundColor: 'red',
       flexDirection: 'row',
       justifyContent: 'space-around',
-      zIndex: 10,
+      zIndex: 3,
     },
   })
 
