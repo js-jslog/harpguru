@@ -7,7 +7,7 @@ import { sizes, colors } from '../../styles'
 
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './utils'
 
-const { 1: borderWidth, 6: borderRadius } = sizes
+const { 0: borderWidth, 6: borderRadius } = sizes
 const { homeRowsColor, inertOutline } = colors
 
 type HarpRowStyles = {

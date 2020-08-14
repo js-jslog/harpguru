@@ -18,40 +18,69 @@ exports[`A snapshot of a populated cell 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#fefefe",
-        "borderColor": "#ddd",
-        "borderRadius": 7.5394000000000005,
+        "borderColor": "#aaa",
+        "borderRadius": 12.199000000000002,
         "borderWidth": 1.1,
         "elevation": 0,
         "flexDirection": "row",
-        "height": 31.9374,
+        "height": 36.597,
         "justifyContent": "center",
-        "width": 31.9374,
+        "width": 36.597,
       }
     }
   >
-    <Text
+    <View
       style={
         Object {
-          "color": "#ddd",
-          "display": "flex",
-          "fontSize": 19.738400000000002,
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         }
       }
     >
-      2
-    </Text>
-    <Text
+      <Text
+        style={
+          Object {
+            "color": "#aaa",
+            "display": "flex",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        2
+      </Text>
+    </View>
+    <View
       style={
         Object {
-          "alignSelf": "flex-start",
-          "color": "#ddd",
-          "display": "flex",
-          "fontSize": 12.199000000000002,
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         }
       }
     >
-      
-    </Text>
+      <Text
+        style={
+          Object {
+            "bottom": 7.5394000000000005,
+            "color": "#aaa",
+            "display": "flex",
+            "fontSize": 12.199000000000002,
+            "left": 7.5394000000000005,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -75,39 +104,68 @@ exports[`A snapshot of an active cell 1`] = `
         "alignItems": "center",
         "backgroundColor": "#323031",
         "borderColor": "#323031",
-        "borderRadius": 7.5394000000000005,
+        "borderRadius": 12.199000000000002,
         "borderWidth": 1.1,
         "elevation": 1.7798000000000003,
         "flexDirection": "row",
-        "height": 31.9374,
+        "height": 36.597,
         "justifyContent": "center",
-        "width": 31.9374,
+        "width": 36.597,
       }
     }
   >
-    <Text
+    <View
       style={
         Object {
-          "color": "#fefefe",
-          "display": "flex",
-          "fontSize": 19.738400000000002,
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         }
       }
     >
-      2
-    </Text>
-    <Text
+      <Text
+        style={
+          Object {
+            "color": "#fefefe",
+            "display": "flex",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        2
+      </Text>
+    </View>
+    <View
       style={
         Object {
-          "alignSelf": "flex-start",
-          "color": "#fefefe",
-          "display": "flex",
-          "fontSize": 12.199000000000002,
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         }
       }
     >
-      
-    </Text>
+      <Text
+        style={
+          Object {
+            "bottom": 7.5394000000000005,
+            "color": "#fefefe",
+            "display": "flex",
+            "fontSize": 12.199000000000002,
+            "left": 7.5394000000000005,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -128,14 +186,14 @@ exports[`A snapshot of an empty cell 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#fefefe",
-        "borderColor": "#ddd",
-        "borderRadius": 7.5394000000000005,
+        "borderColor": "#aaa",
+        "borderRadius": 12.199000000000002,
         "borderWidth": 0,
         "elevation": 0,
         "flexDirection": "row",
-        "height": 31.9374,
+        "height": 36.597,
         "justifyContent": "center",
-        "width": 31.9374,
+        "width": 36.597,
       }
     }
   >
@@ -144,14 +202,14 @@ exports[`A snapshot of an empty cell 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#ddd",
-          "borderRadius": 7.5394000000000005,
+          "borderColor": "#aaa",
+          "borderRadius": 12.199000000000002,
           "borderWidth": 0,
           "elevation": 0,
           "flexDirection": "row",
-          "height": 31.9374,
+          "height": 36.597,
           "justifyContent": "center",
-          "width": 31.9374,
+          "width": 36.597,
         }
       }
     />
@@ -177,40 +235,69 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#fefefe",
-        "borderColor": "#ddd",
-        "borderRadius": 7.5394000000000005,
+        "borderColor": "#aaa",
+        "borderRadius": 12.199000000000002,
         "borderWidth": 1.1,
         "elevation": 0,
         "flexDirection": "row",
-        "height": 31.9374,
+        "height": 36.597,
         "justifyContent": "center",
-        "width": 31.9374,
+        "width": 36.597,
       }
     }
   >
-    <Text
+    <View
       style={
         Object {
-          "color": "#ddd",
-          "display": "flex",
-          "fontSize": 19.738400000000002,
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         }
       }
     >
-      2
-    </Text>
-    <Text
+      <Text
+        style={
+          Object {
+            "color": "#aaa",
+            "display": "flex",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        2
+      </Text>
+    </View>
+    <View
       style={
         Object {
-          "alignSelf": "flex-start",
-          "color": "#ddd",
-          "display": "flex",
-          "fontSize": 12.199000000000002,
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         }
       }
     >
-      
-    </Text>
+      <Text
+        style={
+          Object {
+            "bottom": 7.5394000000000005,
+            "color": "#aaa",
+            "display": "flex",
+            "fontSize": 12.199000000000002,
+            "left": 7.5394000000000005,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -233,40 +320,69 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#fefefe",
-        "borderColor": "#ddd",
-        "borderRadius": 7.5394000000000005,
+        "borderColor": "#aaa",
+        "borderRadius": 12.199000000000002,
         "borderWidth": 1.1,
         "elevation": 0,
         "flexDirection": "row",
-        "height": 31.9374,
+        "height": 36.597,
         "justifyContent": "center",
-        "width": 31.9374,
+        "width": 36.597,
       }
     }
   >
-    <Text
+    <View
       style={
         Object {
-          "color": "#ddd",
-          "display": "none",
-          "fontSize": 19.738400000000002,
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         }
       }
     >
-      2
-    </Text>
-    <Text
+      <Text
+        style={
+          Object {
+            "color": "#aaa",
+            "display": "none",
+            "fontSize": 19.738400000000002,
+          }
+        }
+      >
+        2
+      </Text>
+    </View>
+    <View
       style={
         Object {
-          "alignSelf": "flex-start",
-          "color": "#ddd",
-          "display": "none",
-          "fontSize": 12.199000000000002,
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         }
       }
     >
-      
-    </Text>
+      <Text
+        style={
+          Object {
+            "bottom": 7.5394000000000005,
+            "color": "#aaa",
+            "display": "none",
+            "fontSize": 12.199000000000002,
+            "left": 7.5394000000000005,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </View>
 `;

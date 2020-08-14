@@ -8,7 +8,7 @@ type HoleNumberStyles = {
   readonly text: TextStyle
 }
 
-const { 5: fontSize, 8: width } = sizes
+const { 6: fontSize, 8: width } = sizes
 const { holeNumbersColor } = colors
 
 export const getStyles = (): HoleNumberStyles => {

@@ -19,7 +19,7 @@ const degreeColors = {
 
 const pageColor = '#fefefe' as const
 const homeRowsColor = '#eee' as const
-const inertOutline = '#ddd' as const
+const inertOutline = '#aaa' as const
 const holeNumbersColor = '#495057' as const
 
 export const colors: ColorSheme = {
