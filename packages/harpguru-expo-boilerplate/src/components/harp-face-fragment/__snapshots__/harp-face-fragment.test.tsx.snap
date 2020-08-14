@@ -26,7 +26,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#ddd",
+          "borderColor": "#aaa",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -44,14 +44,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -60,14 +60,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -78,14 +78,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -94,14 +94,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -112,14 +112,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -128,14 +128,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -146,14 +146,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -162,14 +162,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -180,14 +180,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -196,14 +196,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -214,14 +214,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -230,14 +230,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -248,14 +248,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -264,14 +264,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -282,14 +282,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -298,14 +298,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -316,14 +316,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -332,14 +332,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -352,40 +352,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          7
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            7
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          b
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
       </View>
     </View>
     <View
@@ -396,7 +425,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#ddd",
+          "borderColor": "#aaa",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -416,40 +445,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          3
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            3
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          b
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
       </View>
       <View
         accessible={false}
@@ -457,14 +515,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -473,14 +531,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -491,14 +549,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -507,177 +565,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
-            }
-          }
-        />
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          3
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          b
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          5
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          b
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          7
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          b
-        </Text>
-      </View>
-      <View
-        accessible={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 0,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
-              "borderWidth": 0,
-              "elevation": 0,
-              "flexDirection": "row",
-              "height": 31.9374,
-              "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -690,40 +585,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          3
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            3
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          b
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -733,40 +657,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          5
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            5
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          b
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -776,40 +729,319 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          7
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            7
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 0,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 0,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
+          }
+        />
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            3
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            5
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            7
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
     <View
@@ -820,12 +1052,12 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#ddd",
-          "borderLeftWidth": 1.1,
-          "borderRightWidth": 1.1,
+          "borderColor": "#aaa",
+          "borderLeftWidth": 0,
+          "borderRightWidth": 0,
           "borderTopLeftRadius": 12.199000000000002,
           "borderTopRightRadius": 12.199000000000002,
-          "borderTopWidth": 1.1,
+          "borderTopWidth": 0,
           "flex": 1,
           "flexDirection": "row",
           "justifyContent": "space-around",
@@ -840,40 +1072,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          1
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            1
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -883,40 +1144,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          3
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            3
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -926,40 +1216,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          5
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            5
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -969,40 +1288,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          1
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            1
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -1012,40 +1360,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          3
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            3
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -1055,40 +1432,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          5
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            5
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -1098,40 +1504,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          1
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            1
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -1141,40 +1576,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          3
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            3
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -1184,40 +1648,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          5
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            5
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -1227,40 +1720,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          1
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            1
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
     <View
@@ -1288,7 +1810,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1309,7 +1831,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1330,7 +1852,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1351,7 +1873,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1372,7 +1894,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1393,7 +1915,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1414,7 +1936,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1435,7 +1957,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1456,7 +1978,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1477,7 +1999,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "color": "#495057",
-              "fontSize": 7.5394000000000005,
+              "fontSize": 12.199000000000002,
             }
           }
         >
@@ -1492,459 +2014,8 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "backgroundColor": "#eee",
           "borderBottomLeftRadius": 12.199000000000002,
           "borderBottomRightRadius": 12.199000000000002,
-          "borderBottomWidth": 1.1,
-          "borderColor": "#ddd",
-          "borderLeftWidth": 1.1,
-          "borderRightWidth": 1.1,
-          "borderTopLeftRadius": 0,
-          "borderTopRightRadius": 0,
-          "borderTopWidth": 0,
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "space-around",
-        }
-      }
-    >
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          2
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          5
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          7
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          2
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          4
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          6
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          7
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          2
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          4
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          6
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          
-        </Text>
-      </View>
-    </View>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#ddd",
+          "borderColor": "#aaa",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -1964,184 +2035,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          2
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          b
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          5
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          b
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          7
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          b
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          2
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          b
-        </Text>
-      </View>
-      <View
-        accessible={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 0,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2149,18 +2050,54 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
-              "borderWidth": 0,
-              "elevation": 0,
-              "flexDirection": "row",
-              "height": 31.9374,
+              "bottom": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
-        />
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            2
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -2170,98 +2107,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          6
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          b
-        </Text>
-      </View>
-      <View
-        accessibilityRole="button"
-        accessible={true}
-        collapsable={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 1.1,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
-            }
-          }
-        >
-          2
-        </Text>
-        <Text
-          style={
-            Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
-            }
-          }
-        >
-          b
-        </Text>
-      </View>
-      <View
-        accessible={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
-            "borderWidth": 0,
-            "elevation": 0,
-            "flexDirection": "row",
-            "height": 31.9374,
-            "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2269,18 +2122,54 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
-              "borderWidth": 0,
-              "elevation": 0,
-              "flexDirection": "row",
-              "height": 31.9374,
+              "bottom": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
-        />
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            5
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -2290,40 +2179,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          6
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            7
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          b
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -2333,40 +2251,501 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          2
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            2
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          b
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            4
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            6
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            7
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            2
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            4
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            6
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
     <View
@@ -2377,7 +2756,672 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#ddd",
+          "borderColor": "#aaa",
+          "borderLeftWidth": 0,
+          "borderRightWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+        }
+      }
+    >
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            2
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            5
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            7
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            2
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 0,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 0,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
+          }
+        />
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            6
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            2
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 0,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#fefefe",
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
+              "borderWidth": 0,
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 36.597,
+              "justifyContent": "center",
+              "width": 36.597,
+            }
+          }
+        />
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            6
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
+            "borderWidth": 1.1,
+            "elevation": 0,
+            "flexDirection": "row",
+            "height": 36.597,
+            "justifyContent": "center",
+            "width": 36.597,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            2
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 0,
+          "borderBottomWidth": 0,
+          "borderColor": "#aaa",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -2395,14 +3439,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2411,14 +3455,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2431,40 +3475,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          4
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            4
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessibilityRole="button"
@@ -2474,40 +3547,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          6
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            6
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
       <View
         accessible={false}
@@ -2515,14 +3617,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2531,14 +3633,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2549,14 +3651,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2565,14 +3667,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2583,14 +3685,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2599,14 +3701,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2617,14 +3719,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2633,14 +3735,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2651,14 +3753,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2667,14 +3769,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2685,14 +3787,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2701,14 +3803,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2719,14 +3821,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2735,14 +3837,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2756,7 +3858,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#ddd",
+          "borderColor": "#aaa",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -2774,14 +3876,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2790,14 +3892,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2808,14 +3910,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2824,14 +3926,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2844,40 +3946,69 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 1.1,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 19.738400000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          6
-        </Text>
-        <Text
+          <Text
+            style={
+              Object {
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 19.738400000000002,
+              }
+            }
+          >
+            6
+          </Text>
+        </View>
+        <View
           style={
             Object {
-              "alignSelf": "flex-start",
-              "color": "#ddd",
-              "display": "flex",
-              "fontSize": 12.199000000000002,
+              "alignItems": "center",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
-          b
-        </Text>
+          <Text
+            style={
+              Object {
+                "bottom": 7.5394000000000005,
+                "color": "#aaa",
+                "display": "flex",
+                "fontSize": 12.199000000000002,
+                "left": 7.5394000000000005,
+              }
+            }
+          >
+            b
+          </Text>
+        </View>
       </View>
       <View
         accessible={false}
@@ -2885,14 +4016,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2901,14 +4032,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2919,14 +4050,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2935,14 +4066,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2953,14 +4084,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -2969,14 +4100,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -2987,14 +4118,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -3003,14 +4134,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -3021,14 +4152,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -3037,14 +4168,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -3055,14 +4186,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -3071,14 +4202,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
@@ -3089,14 +4220,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#ddd",
-            "borderRadius": 7.5394000000000005,
+            "borderColor": "#aaa",
+            "borderRadius": 12.199000000000002,
             "borderWidth": 0,
             "elevation": 0,
             "flexDirection": "row",
-            "height": 31.9374,
+            "height": 36.597,
             "justifyContent": "center",
-            "width": 31.9374,
+            "width": 36.597,
           }
         }
       >
@@ -3105,14 +4236,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#ddd",
-              "borderRadius": 7.5394000000000005,
+              "borderColor": "#aaa",
+              "borderRadius": 12.199000000000002,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 31.9374,
+              "height": 36.597,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 36.597,
             }
           }
         />
