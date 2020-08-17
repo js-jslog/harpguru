@@ -12,7 +12,9 @@
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "build-android-aad": "expo build:android -t app-bundle",
+    "build-android-apk": "expo build:android -t apk"
   },
   "dependencies": {
     "expo": "^38.0.0",

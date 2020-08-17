@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "harpexpo",
-    "slug": "harpexpo",
+    "name": "Harp Guru",
+    "slug": "harp-guru",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,6 +17,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.jslog.harpguru",
+      "versionCode": 0
     }
   }
 }
