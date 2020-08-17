@@ -8,34 +8,9 @@ import { StyleSheet, View, Text, Dimensions } from 'react-native'
 import React from 'react'
 
 import { colors } from '../../styles'
-import { sizes } from '../../styles'
+import { getSizes } from '../../styles'
 
 import { useFlashDisplay } from './hooks'
-
-const styles = StyleSheet.create({
-  animated: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: 10,
-  },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    flexDirection: 'row',
-    backgroundColor: colors.pageColor,
-  },
-  mainContents: {
-    ...StyleSheet.absoluteFillObject,
-    flexDirection: 'row',
-  },
-  question: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-  },
-  text: {
-    fontSize: sizes['10'],
-  },
-})
 
 type QuizQuestionDisplayProps = {
   readonly screenFree: boolean
@@ -60,6 +35,33 @@ export const QuizQuestionDisplay = ({
     0,
     guaranteeOffScreenWidth
   )
+
+  const sizes = getSizes()
+
+  const styles = StyleSheet.create({
+    animated: {
+      ...StyleSheet.absoluteFillObject,
+      zIndex: 10,
+    },
+    overlay: {
+      ...StyleSheet.absoluteFillObject,
+      flexDirection: 'row',
+      backgroundColor: colors.pageColor,
+    },
+    mainContents: {
+      ...StyleSheet.absoluteFillObject,
+      flexDirection: 'row',
+    },
+    question: {
+      flex: 1,
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'space-evenly',
+    },
+    text: {
+      fontSize: sizes['10'],
+    },
+  })
 
   return (
     <Animated.View

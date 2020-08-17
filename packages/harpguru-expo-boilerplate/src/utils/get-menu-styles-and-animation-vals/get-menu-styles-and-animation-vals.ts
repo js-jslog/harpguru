@@ -10,7 +10,7 @@ import {
 import { StyleSheet, Dimensions } from 'react-native'
 import type { TextStyle, ViewStyle } from 'react-native'
 
-import { sizes, colors } from '../../styles'
+import { getSizes, colors } from '../../styles'
 
 type MenuStyles = {
   readonly animated: ViewStyle
@@ -35,7 +35,8 @@ export const getMenuStylesAndAnimationVals = (
   hideLabel: boolean,
   stashDirection: 'RIGHT' | 'LEFT'
 ): StyleAndAnimationVals => {
-  const { 10: labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
+  const sizes = getSizes()
+  const { labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
   const outwardDirectionMultiplier = stashDirection === 'RIGHT' ? 1 : -1
   const labelRotation = stashDirection === 'RIGHT' ? '90deg' : '-90deg'
 

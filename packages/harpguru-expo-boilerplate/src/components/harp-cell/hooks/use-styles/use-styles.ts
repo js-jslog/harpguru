@@ -5,23 +5,24 @@ import { IsActiveIds } from 'harpstrata'
 import { usePositionAnalysis } from '../use-position-analysis'
 import { HarpCellStyles, YXCoord } from '../../harp-cell'
 import { ExperienceModes } from '../../../../types'
-import { sizes, colors } from '../../../../styles'
-
-const {
-  1: borderWidth,
-  6: borderRadius,
-  2: elevation,
-  7: noteFontSize,
-  5: modifierTopMargin,
-  6: modifierFontSize,
-} = sizes
-const width = sizes['8'] + sizes['4']
-const height = sizes['8'] + sizes['4']
-const { pageColor, degreeColors, inertOutline: borderColor } = colors
+import { getSizes, colors } from '../../../../styles'
 
 export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const positionFacts = usePositionAnalysis(yxCoord)
+
+  const sizes = getSizes()
+  const {
+    1: borderWidth,
+    6: borderRadius,
+    2: elevation,
+    7: noteFontSize,
+    5: modifierTopMargin,
+    6: modifierFontSize,
+  } = sizes
+  const width = sizes['8'] + sizes['4']
+  const height = sizes['8'] + sizes['4']
+  const { pageColor, degreeColors, inertOutline: borderColor } = colors
   const { thisDegreeId, thisIsActiveId } = positionFacts
   const isActive = thisIsActiveId === IsActiveIds.Active
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz

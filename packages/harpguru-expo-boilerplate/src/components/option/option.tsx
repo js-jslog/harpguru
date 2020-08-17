@@ -6,12 +6,10 @@ import {
 import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 
-import { sizes } from '../../styles'
+import { getSizes } from '../../styles'
 import { usePrevious } from '../../hooks'
 
-import { styles, getDynamicStyles } from './option-styles'
-
-const { 8: swipeThreshold } = sizes
+import { getStyles, getDynamicStyles } from './option-styles'
 
 type OptionProps = {
   readonly title: string
@@ -23,6 +21,9 @@ export const Option = (props: OptionProps): React.ReactElement => {
   const [state, setState] = useState(State.UNDETERMINED)
   const [translationY, setTranslationY] = useState(0)
   const previousState = usePrevious(state, State.UNDETERMINED)
+  const styles = getStyles()
+  const sizes = getSizes()
+  const { 8: swipeThreshold } = sizes
 
   const { title, optionId, nudgeFunction } = props
 
@@ -62,8 +63,10 @@ type ChildProps = {
 }
 
 const OptionTitle = ({ children }: ChildProps): React.ReactElement => {
+  const styles = getStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
 }
 const OptionValue = ({ children }: ChildProps): React.ReactElement => {
+  const styles = getStyles()
   return <Text style={styles.optionValue}>{children}</Text>
 }
