@@ -1,1 +1,1 @@
-export { colors, sizes, columnWidth, rowHeight } from './styles'
+export { colors, getSizes } from './styles'

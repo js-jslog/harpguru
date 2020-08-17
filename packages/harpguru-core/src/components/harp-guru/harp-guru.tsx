@@ -13,14 +13,12 @@ import { CovariantMenu } from '../covariant-menu'
 import { setGlobalState, setGlobalReducers } from '../../utils'
 import { MenuStates } from '../../types'
 import { colors } from '../../styles'
-import { sizes } from '../../styles'
+import { getSizes } from '../../styles'
 
 import { useMenus, useQuizCycle } from './hooks'
 
 setGlobalState()
 setGlobalReducers()
-
-const { 8: swipeThreshold } = sizes
 
 const styles = StyleSheet.create({
   fillScreen: {
@@ -39,6 +37,9 @@ export const HarpGuru = (): ReactElement => {
   const layoutTapHandler = (event: TapGestureHandlerStateChangeEvent) => {
     handleTap(MenuStates.LayoutMenu, event)
   }
+
+  const sizes = getSizes()
+  const { 8: swipeThreshold } = sizes
 
   useQuizCycle(menuState)
 

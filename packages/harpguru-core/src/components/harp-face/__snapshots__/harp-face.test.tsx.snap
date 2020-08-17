@@ -14,17 +14,17 @@ exports[`A component is rendered 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "height": 361.73830000000004,
+        "height": 616.5392924602551,
         "justifyContent": "space-around",
-        "width": 596.7226,
+        "width": 1016.3373040858089,
       }
     }
   >
     <View
       style={
         Object {
-          "height": 361.73830000000004,
-          "width": 155.03070000000002,
+          "height": 616.5392924602551,
+          "width": 264.2311253401093,
         }
       }
     >
@@ -55,13 +55,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -71,13 +71,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -89,13 +89,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -105,13 +105,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -123,13 +123,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -139,13 +139,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -180,13 +180,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -208,7 +208,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -231,11 +231,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -250,13 +250,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -266,13 +266,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -284,13 +284,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -300,13 +300,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -323,8 +323,8 @@ exports[`A component is rendered 1`] = `
             "borderColor": "#aaa",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 12.199000000000002,
-            "borderTopRightRadius": 12.199000000000002,
+            "borderTopLeftRadius": 20.79172382001754,
+            "borderTopRightRadius": 20.79172382001754,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -341,13 +341,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -369,7 +369,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -392,11 +392,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -413,13 +413,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -441,7 +441,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -464,11 +464,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -485,13 +485,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -513,7 +513,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -536,11 +536,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -566,7 +566,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -574,7 +574,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -587,7 +587,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -595,7 +595,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -608,7 +608,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -616,7 +616,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -629,8 +629,8 @@ exports[`A component is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#eee",
-            "borderBottomLeftRadius": 12.199000000000002,
-            "borderBottomRightRadius": 12.199000000000002,
+            "borderBottomLeftRadius": 20.79172382001754,
+            "borderBottomRightRadius": 20.79172382001754,
             "borderBottomWidth": 0,
             "borderColor": "#aaa",
             "borderLeftWidth": 0,
@@ -653,13 +653,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -681,7 +681,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -704,11 +704,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -725,13 +725,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -753,7 +753,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -776,11 +776,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -797,13 +797,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -825,7 +825,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -848,11 +848,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -890,13 +890,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -918,7 +918,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -941,11 +941,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -962,13 +962,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -990,7 +990,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1013,11 +1013,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -1034,13 +1034,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1062,7 +1062,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1085,11 +1085,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -1125,13 +1125,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1141,13 +1141,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -1161,13 +1161,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1189,7 +1189,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1212,11 +1212,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -1233,13 +1233,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1261,7 +1261,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1284,11 +1284,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -1324,13 +1324,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1340,13 +1340,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -1358,13 +1358,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1374,13 +1374,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -1394,13 +1394,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1422,7 +1422,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1445,11 +1445,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -1462,8 +1462,8 @@ exports[`A component is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 361.73830000000004,
-          "width": 155.03070000000002,
+          "height": 616.5392924602551,
+          "width": 264.2311253401093,
         }
       }
     >
@@ -1494,13 +1494,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1510,13 +1510,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -1528,13 +1528,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1544,13 +1544,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -1562,13 +1562,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1578,13 +1578,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -1619,13 +1619,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1647,7 +1647,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1670,11 +1670,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -1691,13 +1691,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1719,7 +1719,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1742,11 +1742,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -1763,13 +1763,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1791,7 +1791,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1814,11 +1814,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -1838,8 +1838,8 @@ exports[`A component is rendered 1`] = `
             "borderColor": "#aaa",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 12.199000000000002,
-            "borderTopRightRadius": 12.199000000000002,
+            "borderTopLeftRadius": 20.79172382001754,
+            "borderTopRightRadius": 20.79172382001754,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -1856,13 +1856,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1884,7 +1884,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1907,11 +1907,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -1928,13 +1928,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -1956,7 +1956,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -1979,11 +1979,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -2000,13 +2000,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2028,7 +2028,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -2051,11 +2051,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -2081,7 +2081,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -2089,7 +2089,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -2102,7 +2102,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -2110,7 +2110,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -2123,7 +2123,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -2131,7 +2131,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -2144,8 +2144,8 @@ exports[`A component is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#eee",
-            "borderBottomLeftRadius": 12.199000000000002,
-            "borderBottomRightRadius": 12.199000000000002,
+            "borderBottomLeftRadius": 20.79172382001754,
+            "borderBottomRightRadius": 20.79172382001754,
             "borderBottomWidth": 0,
             "borderColor": "#aaa",
             "borderLeftWidth": 0,
@@ -2168,13 +2168,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2196,7 +2196,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -2219,11 +2219,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -2240,13 +2240,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2268,7 +2268,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -2291,11 +2291,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -2312,13 +2312,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2340,7 +2340,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -2363,11 +2363,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -2405,13 +2405,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2433,7 +2433,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -2456,11 +2456,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -2475,13 +2475,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2491,13 +2491,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2511,13 +2511,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2539,7 +2539,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -2562,11 +2562,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -2602,13 +2602,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2618,13 +2618,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2636,13 +2636,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2652,13 +2652,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2670,13 +2670,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2686,13 +2686,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2725,13 +2725,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2741,13 +2741,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2759,13 +2759,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2775,13 +2775,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2793,13 +2793,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2809,13 +2809,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2825,8 +2825,8 @@ exports[`A component is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 361.73830000000004,
-          "width": 155.03070000000002,
+          "height": 616.5392924602551,
+          "width": 264.2311253401093,
         }
       }
     >
@@ -2857,13 +2857,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2873,13 +2873,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2891,13 +2891,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2907,13 +2907,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2925,13 +2925,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2941,13 +2941,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -2980,13 +2980,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -2996,13 +2996,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -3016,13 +3016,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3044,7 +3044,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3067,11 +3067,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3088,13 +3088,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3116,7 +3116,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3139,11 +3139,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3163,8 +3163,8 @@ exports[`A component is rendered 1`] = `
             "borderColor": "#aaa",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 12.199000000000002,
-            "borderTopRightRadius": 12.199000000000002,
+            "borderTopLeftRadius": 20.79172382001754,
+            "borderTopRightRadius": 20.79172382001754,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -3181,13 +3181,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3209,7 +3209,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3232,11 +3232,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3253,13 +3253,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3281,7 +3281,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3304,11 +3304,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3325,13 +3325,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3353,7 +3353,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3376,11 +3376,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3406,7 +3406,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -3414,7 +3414,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -3427,7 +3427,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -3435,7 +3435,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -3448,7 +3448,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -3456,7 +3456,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -3469,8 +3469,8 @@ exports[`A component is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#eee",
-            "borderBottomLeftRadius": 12.199000000000002,
-            "borderBottomRightRadius": 12.199000000000002,
+            "borderBottomLeftRadius": 20.79172382001754,
+            "borderBottomRightRadius": 20.79172382001754,
             "borderBottomWidth": 0,
             "borderColor": "#aaa",
             "borderLeftWidth": 0,
@@ -3493,13 +3493,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3521,7 +3521,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3544,11 +3544,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3565,13 +3565,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3593,7 +3593,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3616,11 +3616,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3637,13 +3637,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3665,7 +3665,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3688,11 +3688,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3730,13 +3730,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3758,7 +3758,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3781,11 +3781,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3800,13 +3800,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3816,13 +3816,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -3836,13 +3836,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3864,7 +3864,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -3887,11 +3887,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -3927,13 +3927,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3943,13 +3943,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -3961,13 +3961,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -3977,13 +3977,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -3995,13 +3995,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4011,13 +4011,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -4050,13 +4050,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4066,13 +4066,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -4084,13 +4084,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4100,13 +4100,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -4118,13 +4118,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4134,13 +4134,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -4150,8 +4150,8 @@ exports[`A component is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 361.73830000000004,
-          "width": 51.6769,
+          "height": 616.5392924602551,
+          "width": 88.07704178003644,
         }
       }
     >
@@ -4184,13 +4184,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4212,7 +4212,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -4235,11 +4235,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -4277,13 +4277,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4305,7 +4305,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -4328,11 +4328,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -4352,8 +4352,8 @@ exports[`A component is rendered 1`] = `
             "borderColor": "#aaa",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 12.199000000000002,
-            "borderTopRightRadius": 12.199000000000002,
+            "borderTopLeftRadius": 20.79172382001754,
+            "borderTopRightRadius": 20.79172382001754,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -4370,13 +4370,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4398,7 +4398,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -4421,11 +4421,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -4451,7 +4451,7 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "height": 0,
               "justifyContent": "center",
-              "width": 31.9374,
+              "width": 54.433445391378655,
             }
           }
         >
@@ -4459,7 +4459,7 @@ exports[`A component is rendered 1`] = `
             style={
               Object {
                 "color": "#495057",
-                "fontSize": 12.199000000000002,
+                "fontSize": 20.79172382001754,
               }
             }
           >
@@ -4472,8 +4472,8 @@ exports[`A component is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#eee",
-            "borderBottomLeftRadius": 12.199000000000002,
-            "borderBottomRightRadius": 12.199000000000002,
+            "borderBottomLeftRadius": 20.79172382001754,
+            "borderBottomRightRadius": 20.79172382001754,
             "borderBottomWidth": 0,
             "borderColor": "#aaa",
             "borderLeftWidth": 0,
@@ -4496,13 +4496,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4524,7 +4524,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -4547,11 +4547,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -4589,13 +4589,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
-              "borderWidth": 1.1,
+              "borderRadius": 20.79172382001754,
+              "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4617,7 +4617,7 @@ exports[`A component is rendered 1`] = `
                 Object {
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 19.738400000000002,
+                  "fontSize": 33.64172157136112,
                 }
               }
             >
@@ -4640,11 +4640,11 @@ exports[`A component is rendered 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.5394000000000005,
+                  "bottom": 12.849997751343574,
                   "color": "#aaa",
                   "display": "flex",
-                  "fontSize": 12.199000000000002,
-                  "left": 7.5394000000000005,
+                  "fontSize": 20.79172382001754,
+                  "left": 12.849997751343574,
                 }
               }
             >
@@ -4680,13 +4680,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4696,13 +4696,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />
@@ -4735,13 +4735,13 @@ exports[`A component is rendered 1`] = `
               "alignItems": "center",
               "backgroundColor": "#fefefe",
               "borderColor": "#aaa",
-              "borderRadius": 12.199000000000002,
+              "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 36.597,
+              "height": 62.37517146005262,
               "justifyContent": "center",
-              "width": 36.597,
+              "width": 62.37517146005262,
             }
           }
         >
@@ -4751,13 +4751,13 @@ exports[`A component is rendered 1`] = `
                 "alignItems": "center",
                 "backgroundColor": "#fefefe",
                 "borderColor": "#aaa",
-                "borderRadius": 12.199000000000002,
+                "borderRadius": 20.79172382001754,
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 36.597,
+                "height": 62.37517146005262,
                 "justifyContent": "center",
-                "width": 36.597,
+                "width": 62.37517146005262,
               }
             }
           />

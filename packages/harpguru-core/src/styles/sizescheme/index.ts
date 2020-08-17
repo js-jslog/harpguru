@@ -1,1 +1,1 @@
-export { sizes } from './sizescheme'
+export { getSizes } from './sizescheme'

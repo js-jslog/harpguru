@@ -4,7 +4,7 @@ import type { HarpStrata } from 'harpstrata'
 
 import { getHarpFaceFacts } from '../../utils'
 import type { XRange } from '../../types'
-import { columnWidth, rowHeight } from '../../styles'
+import { getSizes } from '../../styles'
 
 import { getFragmentFacts } from './utils'
 
@@ -16,6 +16,7 @@ export const getStyles = (
   xRange: XRange,
   activeHarpStrata: HarpStrata
 ): HarpFaceFragmentStyles => {
+  const { columnWidth, rowHeight } = getSizes()
   const { columnCount } = getFragmentFacts(xRange)
   const { rowCount } = getHarpFaceFacts(activeHarpStrata)
 
