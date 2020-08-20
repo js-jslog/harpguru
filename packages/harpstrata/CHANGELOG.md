@@ -16,11 +16,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v6.1.0...HEAD) - yyyy-mm-dd
 - MINOR: Add properties to Pitches to inform contextual rendering
 
-## [v6.1.0](https://github.com/js-jslog/harpstrata/compare/v6.1.0...HEAD) - 2020-07-20
+## [v6.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.1.0) - 2020-07-20
 ### Added
 - MINOR: Add getDegreeIds to public api
 
-## [v6.0.0](https://github.com/js-jslog/harpstrata/compare/v6.0.0...HEAD) - 2020-06-04
+## [v6.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.0.0) - 2020-06-04
 ### Changed
 - MAJOR: Reorder the PozitionIds by name rather than rootOffset
 - MINOR: Recover root offset values from Pozition instances rather than from enum order
@@ -34,7 +34,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Fixed
 - MAJOR: Superfluous `undefined` type union removed from HarpStrata type on public API
 
-## [v5.2.0](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - 2020-06-01
+## [v5.2.1](https://github.com/js-jslog/harpstrata/releases/tag/v5.2.1) - 2020-06-01
 ### Added
 - MINOR: Add CovariantControlVars subtype typeguards to public api
 - MINOR: Typeguards created for PitchIds and PozitionIds
