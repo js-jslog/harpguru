@@ -15,7 +15,7 @@ export { PozitionIds } from './Pozition'
 export type { Pozition } from './Pozition'
 export { isPozitionId } from './Pozition'
 
-export { PitchIds } from './Pitch'
+export { PitchIds, getPitch } from './Pitch'
 export type { Pitch, NaturalPitch, UnnaturalPitch } from './Pitch'
 export { isPitchId, isNaturalPitch } from './Pitch'
 
