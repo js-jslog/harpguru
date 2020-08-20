@@ -13,9 +13,34 @@ export enum PitchIds {
   Ab = 'Ab',
 }
 
-export type Pitch = {
-  readonly id: PitchIds;
+export enum NoteFoundations {
+  A = 'A',
+  B = 'B',
+  C = 'C',
+  D = 'D',
+  E = 'E',
+  F = 'F',
+  G = 'G',
 }
+
+export type NaturalDisplayValue = {
+  readonly natural: NoteFoundations;
+}
+export type UnnaturalDisplayValues = {
+  readonly sharp: NoteFoundations;
+  readonly flat: NoteFoundations;
+}
+
+export type NaturalPitch = {
+  readonly id: PitchIds;
+  readonly contextualDisplayValues: NaturalDisplayValue;
+}
+export type UnnaturalPitch = {
+  readonly id: PitchIds;
+  readonly contextualDisplayValues: UnnaturalDisplayValues;
+}
+export type Pitch = NaturalPitch | UnnaturalPitch
+
 
 export type PitchRow = ReadonlyArray<Pitch | undefined>
 export type PitchMatrix = ReadonlyArray<PitchRow>

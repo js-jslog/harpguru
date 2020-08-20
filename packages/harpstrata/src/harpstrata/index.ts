@@ -16,8 +16,8 @@ export type { Pozition } from './Pozition'
 export { isPozitionId } from './Pozition'
 
 export { PitchIds } from './Pitch'
-export type { Pitch } from './Pitch'
-export { isPitchId } from './Pitch'
+export type { Pitch, NaturalPitch, UnnaturalPitch } from './Pitch'
+export { isPitchId, isNaturalPitch } from './Pitch'
 
 export { getCovariantSet } from './Covariant'
 export type {
