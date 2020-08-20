@@ -14,7 +14,12 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v6.2.0...HEAD) - yyyy-mm-dd
+## [v6.3.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.3.0) - 2020-08-20
+### Added
+- MINOR: Add `getPitch` to the public API
+
 ## [v6.2.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.2.0) - 2020-08-20
+### Added
 - MINOR: Add properties to Pitches to inform contextual rendering
 
 ## [v6.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.1.0) - 2020-07-20
@@ -35,7 +40,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Fixed
 - MAJOR: Superfluous `undefined` type union removed from HarpStrata type on public API
 
-## [v5.2.1](https://github.com/js-jslog/harpstrata/releases/tag/v5.2.1) - 2020-06-01
+## [v5.2.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.2.0) - 2020-06-01
 ### Added
 - MINOR: Add CovariantControlVars subtype typeguards to public api
 - MINOR: Typeguards created for PitchIds and PozitionIds
@@ -106,6 +111,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## Github release list
 - [unreleased](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD)
+- [v6.3.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.3.0)
+- [v6.2.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.2.0)
+- [v6.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.1.0)
+- [v6.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.0.0)
 - [v5.2.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.2.0)
 - [v5.1.1](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.1)
 - [v5.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.0)
