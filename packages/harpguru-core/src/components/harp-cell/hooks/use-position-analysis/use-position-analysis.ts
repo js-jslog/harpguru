@@ -1,9 +1,17 @@
 import { useGlobal } from 'reactn'
-import type { IsActiveIds, DegreeIds, PitchIds } from 'harpstrata'
+import type {
+  IsActiveIds,
+  DegreeIds,
+  PitchIds,
+  Pitch,
+  Degree,
+} from 'harpstrata'
 
 import type { YXCoord } from '../../harp-cell'
 
 export type PositionFacts = {
+  readonly thisDegree: Degree | undefined
+  readonly thisPitch: Pitch | undefined
   readonly thisDegreeId: DegreeIds | undefined
   readonly thisPitchId: PitchIds | undefined
   readonly thisIsActiveId: IsActiveIds | undefined
@@ -29,6 +37,8 @@ export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
   const { id: thisDegreeId } = thisDegree || { id: undefined }
   const { id: thisPitchId } = thisPitch || { id: undefined }
   return {
+    thisDegree,
+    thisPitch,
     thisDegreeId,
     thisPitchId,
     thisIsActiveId,

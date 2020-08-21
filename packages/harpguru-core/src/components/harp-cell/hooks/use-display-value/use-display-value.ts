@@ -1,4 +1,5 @@
 import { useGlobal } from 'reactn'
+import { isNaturalPitch } from 'harpstrata'
 
 import { usePositionAnalysis } from '../use-position-analysis'
 import type { YXCoord } from '../../harp-cell'
@@ -9,18 +10,34 @@ type DisplayValueTuple =
   | [string, undefined]
   | [undefined, undefined]
 
-export const useDisplayValue = (yxCoord: YXCoord): DisplayValueTuple => {
+type DisplayValues = ReadonlyArray<DisplayValueTuple>
+
+export const useDisplayValue = (yxCoord: YXCoord): DisplayValues => {
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
-  const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
+  const { thisDegree, thisPitch } = usePositionAnalysis(yxCoord)
 
-  if (thisDegreeId === undefined || thisPitchId === undefined)
-    return [undefined, undefined]
+  if (thisDegree === undefined || thisPitch === undefined)
+    return [[undefined, undefined]]
 
-  const [note, ...modifiers] =
-    activeDisplayMode === DisplayModes.Degree
-      ? thisDegreeId.split('')
-      : thisPitchId.split('')
+  if (activeDisplayMode === DisplayModes.Degree) {
+    const [note, ...modifiers] = thisDegree.id.split('')
 
-  return [note, modifiers.join('')]
+    return [[note, modifiers.join('')]]
+  }
+
+  if (isNaturalPitch(thisPitch)) {
+    const {
+      contextualDisplayValues: { natural },
+    } = thisPitch
+    return [[natural, undefined]]
+  }
+
+  const {
+    contextualDisplayValues: { sharp, flat },
+  } = thisPitch
+  return [
+    [sharp, '#'],
+    [flat, 'b'],
+  ]
 }

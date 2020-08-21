@@ -26,7 +26,7 @@ const ourDegree = <Degree>y3x3Degree
 const ourPitch = <Pitch>y3x3Pitch
 const ourIsActive = <IsActiveIds>y3x3IsActive
 
-test('thisIsActiveId provides the isActiveId at if available and undefined otherwise', () => {
+test('thisIsActiveId provides the isActiveId if available and undefined otherwise', () => {
   const ourCoord: YXCoord = [3, 3]
   const { thisIsActiveId } = usePositionAnalysis(ourCoord)
   expect(thisIsActiveId).toBe(ourIsActive)
@@ -51,4 +51,21 @@ test('thisDegreeId and thisPitchId provide an id when available and undefined ot
   } = usePositionAnalysis(emptyCoord)
   expect(undefinedDegreeId).toBe(undefined)
   expect(undefinedPitchId).toBe(undefined)
+})
+
+test('thisDegree and thisPitch provide an object when available and undefined otherwise', () => {
+  const ourCoord: YXCoord = [3, 3]
+  const { thisDegree, thisPitch } = usePositionAnalysis(ourCoord)
+  expect(ourDegree).not.toBe(undefined)
+  expect(ourDegree.id).toBeTruthy()
+  expect(thisDegree).toStrictEqual(ourDegree)
+  expect(thisPitch).toStrictEqual(ourPitch)
+
+  const emptyCoord: YXCoord = [0, 0]
+  const {
+    thisDegree: undefinedDegree,
+    thisPitch: undefinedPitch,
+  } = usePositionAnalysis(emptyCoord)
+  expect(undefinedDegree).toBe(undefined)
+  expect(undefinedPitch).toBe(undefined)
 })

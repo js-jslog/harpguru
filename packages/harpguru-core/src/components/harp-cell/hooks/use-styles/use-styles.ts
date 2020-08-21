@@ -20,8 +20,8 @@ export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
     5: modifierTopMargin,
     6: modifierFontSize,
   } = sizes
-  const width = sizes['8'] + sizes['4']
-  const height = sizes['8'] + sizes['4']
+  const width = sizes['8'] + sizes['5']
+  const height = sizes['8'] + sizes['5']
   const { pageColor, degreeColors, inertOutline: borderColor } = colors
   const { thisDegreeId, thisIsActiveId } = positionFacts
   const isActive = thisIsActiveId === IsActiveIds.Active
@@ -42,10 +42,24 @@ export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
       width,
       height,
     },
-    contentsWrapper: {
+    naturalContentsWrapper: {
       ...StyleSheet.absoluteFillObject,
       justifyContent: 'center',
       alignItems: 'center',
+    },
+    sharpContentsWrapper: {
+      ...StyleSheet.absoluteFillObject,
+      justifyContent: 'center',
+      alignItems: 'center',
+      bottom: sizes['5'],
+      right: sizes['7'],
+    },
+    flatContentsWrapper: {
+      ...StyleSheet.absoluteFillObject,
+      justifyContent: 'center',
+      alignItems: 'center',
+      top: sizes['5'],
+      left: sizes['6'],
     },
     note: {
       display: isQuizMode && !isActive ? 'none' : 'flex',
