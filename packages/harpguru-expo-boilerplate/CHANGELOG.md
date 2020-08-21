@@ -19,8 +19,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - INITIAL-DEVELOPMENT: Introduce ReactN to enable the use of some global state
 - INITIAL-DEVELOPMENT: Add a quiz mode
-- INITIAL-DEVELOPMENT: Enhance menu UX
 - INITIAL-DEVELOPMENT: Add context dependant sizing
+
+### Changed
+- INITIAL-DEVELOPMENT: Enhance menu UX
+- INITIAL-DEVELOPMENT: Present both sharp and flat version of Pitch
 
 ## [v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/v0.1.0) - 2020-07-14
 
