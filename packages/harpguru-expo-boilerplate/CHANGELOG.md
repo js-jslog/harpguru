@@ -21,6 +21,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - INITIAL-DEVELOPMENT: Add a quiz mode
 - INITIAL-DEVELOPMENT: Add context dependant sizing
 - INITIAL-DEVELOPMENT: Add memoisation of HarpFace
+- INITIAL-DEVELOPMENT: Add privacy policy and terms & conditions files
 
 ### Changed
 
