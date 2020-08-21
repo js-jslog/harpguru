@@ -59,9 +59,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -75,9 +75,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -93,9 +93,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -109,9 +109,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -127,9 +127,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -143,9 +143,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -184,9 +184,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -254,9 +254,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -270,9 +270,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -288,9 +288,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -304,9 +304,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -345,9 +345,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -417,9 +417,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -489,9 +489,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -657,9 +657,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -729,9 +729,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -801,9 +801,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -894,9 +894,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -966,9 +966,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1038,9 +1038,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1129,9 +1129,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1145,9 +1145,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -1165,9 +1165,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1237,9 +1237,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1328,9 +1328,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1344,9 +1344,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -1362,9 +1362,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1378,9 +1378,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -1398,9 +1398,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1498,9 +1498,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1514,9 +1514,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -1532,9 +1532,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1548,9 +1548,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -1566,9 +1566,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1582,9 +1582,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -1623,9 +1623,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1695,9 +1695,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1767,9 +1767,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1860,9 +1860,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -1932,9 +1932,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2004,9 +2004,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2172,9 +2172,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2244,9 +2244,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2316,9 +2316,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2409,9 +2409,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2479,9 +2479,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2495,9 +2495,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2515,9 +2515,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2606,9 +2606,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2622,9 +2622,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2640,9 +2640,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2656,9 +2656,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2674,9 +2674,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2690,9 +2690,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2729,9 +2729,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2745,9 +2745,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2763,9 +2763,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2779,9 +2779,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2797,9 +2797,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2813,9 +2813,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2861,9 +2861,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2877,9 +2877,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2895,9 +2895,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2911,9 +2911,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2929,9 +2929,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -2945,9 +2945,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -2984,9 +2984,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3000,9 +3000,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -3020,9 +3020,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3092,9 +3092,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3185,9 +3185,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3257,9 +3257,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3329,9 +3329,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3497,9 +3497,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3569,9 +3569,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3641,9 +3641,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3734,9 +3734,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3804,9 +3804,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3820,9 +3820,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -3840,9 +3840,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3931,9 +3931,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3947,9 +3947,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -3965,9 +3965,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -3981,9 +3981,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -3999,9 +3999,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4015,9 +4015,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -4054,9 +4054,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4070,9 +4070,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -4088,9 +4088,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4104,9 +4104,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -4122,9 +4122,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4138,9 +4138,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -4188,9 +4188,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4281,9 +4281,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4374,9 +4374,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4500,9 +4500,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4593,9 +4593,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 1.8748172966652428,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4684,9 +4684,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4700,9 +4700,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />
@@ -4739,9 +4739,9 @@ exports[`A component is rendered 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "flexDirection": "row",
-              "height": 62.37517146005262,
+              "height": 67.28344314272223,
               "justifyContent": "center",
-              "width": 62.37517146005262,
+              "width": 67.28344314272223,
             }
           }
         >
@@ -4755,9 +4755,9 @@ exports[`A component is rendered 1`] = `
                 "borderWidth": 0,
                 "elevation": 0,
                 "flexDirection": "row",
-                "height": 62.37517146005262,
+                "height": 67.28344314272223,
                 "justifyContent": "center",
-                "width": 62.37517146005262,
+                "width": 67.28344314272223,
               }
             }
           />

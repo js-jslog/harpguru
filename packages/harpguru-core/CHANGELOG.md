@@ -20,8 +20,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - INITIAL-DEVELOPMENT: Introduce ReactN to enable the use of some global state
 - INITIAL-DEVELOPMENT: Add a quiz mode
 - INITIAL-DEVELOPMENT: Add context dependant sizing
+- INITIAL-DEVELOPMENT: Add memoisation of HarpFace
 
 ### Changed
+
 - INITIAL-DEVELOPMENT: Enhance menu UX
 - INITIAL-DEVELOPMENT: Present both sharp and flat version of Pitch
 

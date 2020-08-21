@@ -22,3 +22,7 @@ export const HarpFace = (): React.ReactElement => {
 
   return <View style={styles.face}>{fragments}</View>
 }
+
+export const HarpFaceMemo = (): React.ReactElement => {
+  return React.useMemo(() => <HarpFace />, [])
+}
