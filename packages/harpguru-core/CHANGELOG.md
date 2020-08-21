@@ -13,7 +13,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpnative/compare/v0.1.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpnative/compare/v0.2.0...HEAD) - yyyy-mm-dd
 
 ## [v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/v0.2.0) - 2020-08-21
 
@@ -38,5 +38,6 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpnative/compare/v0.1.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpnative/compare/v0.2.0...HEAD)
+- [v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/v0.2.0)
 - [v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/v0.1.0)
