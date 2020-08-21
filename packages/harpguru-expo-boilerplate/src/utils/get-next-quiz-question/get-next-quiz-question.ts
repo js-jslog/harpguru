@@ -1,4 +1,10 @@
-import { getPitchIds, getPitch, getDegreeIds, isPitchId, isNaturalPitch } from 'harpstrata'
+import {
+  getPitchIds,
+  getPitch,
+  getDegreeIds,
+  isPitchId,
+  isNaturalPitch,
+} from 'harpstrata'
 import type { PitchIds, DegreeIds } from 'harpstrata'
 
 import { DisplayModes } from '../../types'

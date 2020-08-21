@@ -8,7 +8,7 @@ import type { ReactElement } from 'react'
 
 import { QuizQuestionDisplay } from '../quiz-question-display'
 import { LayoutMenu } from '../layout-menu'
-import { HarpFace } from '../harp-face'
+import { HarpFaceMemo } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
 import { setGlobalState, setGlobalReducers } from '../../utils'
 import { MenuStates } from '../../types'
@@ -49,7 +49,7 @@ export const HarpGuru = (): ReactElement => {
       onHandlerStateChange={handleSwipe}
     >
       <View style={styles.fillScreen}>
-        <HarpFace />
+        <HarpFaceMemo />
         <CovariantMenu
           hideMenu={menuState !== MenuStates.CovariantMenu}
           hideLabel={

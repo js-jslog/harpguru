@@ -23,9 +23,9 @@ exports[`A snapshot of a populated cell 1`] = `
         "borderWidth": 1.8748172966652428,
         "elevation": 0,
         "flexDirection": "row",
-        "height": 62.37517146005262,
+        "height": 67.28344314272223,
         "justifyContent": "center",
-        "width": 62.37517146005262,
+        "width": 67.28344314272223,
       }
     }
   >
@@ -108,9 +108,9 @@ exports[`A snapshot of an active cell 1`] = `
         "borderWidth": 1.8748172966652428,
         "elevation": 3.033454386004363,
         "flexDirection": "row",
-        "height": 62.37517146005262,
+        "height": 67.28344314272223,
         "justifyContent": "center",
-        "width": 62.37517146005262,
+        "width": 67.28344314272223,
       }
     }
   >
@@ -191,9 +191,9 @@ exports[`A snapshot of an empty cell 1`] = `
         "borderWidth": 0,
         "elevation": 0,
         "flexDirection": "row",
-        "height": 62.37517146005262,
+        "height": 67.28344314272223,
         "justifyContent": "center",
-        "width": 62.37517146005262,
+        "width": 67.28344314272223,
       }
     }
   >
@@ -207,9 +207,9 @@ exports[`A snapshot of an empty cell 1`] = `
           "borderWidth": 0,
           "elevation": 0,
           "flexDirection": "row",
-          "height": 62.37517146005262,
+          "height": 67.28344314272223,
           "justifyContent": "center",
-          "width": 62.37517146005262,
+          "width": 67.28344314272223,
         }
       }
     />
@@ -240,9 +240,9 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
         "borderWidth": 1.8748172966652428,
         "elevation": 0,
         "flexDirection": "row",
-        "height": 62.37517146005262,
+        "height": 67.28344314272223,
         "justifyContent": "center",
-        "width": 62.37517146005262,
+        "width": 67.28344314272223,
       }
     }
   >
@@ -325,9 +325,9 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
         "borderWidth": 1.8748172966652428,
         "elevation": 0,
         "flexDirection": "row",
-        "height": 62.37517146005262,
+        "height": 67.28344314272223,
         "justifyContent": "center",
-        "width": 62.37517146005262,
+        "width": 67.28344314272223,
       }
     }
   >
