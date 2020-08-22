@@ -1,24 +1,22 @@
 {
-  "name": "harpnative",
-  "version": "0.2.0",
+  "name": "harpguru",
+  "version": "0.1.0",
   "description": "A React Native implementation of the HarpGuru concept; a UI to aid the understanding of harmonica music theory",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "js-jslog <josephsinfield@yahoo.com>",
+  "license": "UNLICENSED",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject",
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc",
-    "prettier": "prettier --write .",
-    "build-android-aad": "expo build:android -t app-bundle --clear-credentials",
-    "build-android-apk": "expo build:android -t apk --clear-credentials"
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "expo": "^38.0.0",
-    "expo-screen-orientation": "~1.1.1",
     "harpstrata": "^6.3.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
