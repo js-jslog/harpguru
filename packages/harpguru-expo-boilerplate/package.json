@@ -13,8 +13,8 @@
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc",
     "prettier": "prettier --write .",
-    "build-android-aad": "expo build:android -t app-bundle",
-    "build-android-apk": "expo build:android -t apk"
+    "build-android-aad": "expo build:android -t app-bundle --clear-credentials",
+    "build-android-apk": "expo build:android -t apk --clear-credentials"
   },
   "dependencies": {
     "expo": "^38.0.0",
