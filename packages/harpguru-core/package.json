@@ -10,9 +10,10 @@
   "author": "js-jslog <josephsinfield@yahoo.com>",
   "license": "UNLICENSED",
   "scripts": {
+    "build": "tsc",
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx .",
-    "ci": "yarn lint && yarn tsc",
+    "ci": "yarn lint && yarn tsc --noEmit",
     "prettier": "prettier --write ."
   },
   "dependencies": {
