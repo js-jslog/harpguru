@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
     "noEmit": false,
     "outDir": "./lib/",
+    "declaration": true,
     "lib": ["dom", "esnext"],
     "jsx": "react-native",
     "moduleResolution": "node",
