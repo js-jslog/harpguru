@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "noEmit": false,
+    "outDir": "./lib/",
     "lib": ["dom", "esnext"],
     "jsx": "react-native",
     "moduleResolution": "node",
@@ -18,5 +19,10 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "exclude": [
+    "./**/*test.ts",
+    "./**/testResources/",
+    "./lib"
+  ]
 }
