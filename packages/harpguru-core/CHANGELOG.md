@@ -29,6 +29,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - INITIAL-DEVELOPMENT: Enhance menu UX
 - INITIAL-DEVELOPMENT: Present both sharp and flat version of Pitch
+- INITIAL-DEVELOPMENT: Pivoted to an npm package
 
 ## [v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/v0.1.0) - 2020-07-14
 
