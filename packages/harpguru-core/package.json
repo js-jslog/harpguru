@@ -14,7 +14,10 @@
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc --noEmit",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn ci",
+    "preversion": "npm test && npm run lint"
   },
   "peerDependencies": {
     "react": "16.11.0",
