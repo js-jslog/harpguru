@@ -21,22 +21,11 @@
     "expo": "^38.0.0",
     "expo-screen-orientation": "~1.1.1",
     "harpguru-core": "0.2.2",
-    "harpstrata": "^6.3.0",
     "react": "16.11.0",
-    "react-dom": "16.11.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-    "react-native-gesture-handler": "~1.6.0",
-    "react-native-reanimated": "~1.9.0",
-    "react-native-redash": "^14.1.1",
-    "react-native-safe-area-context": "~3.0.7",
-    "react-native-screens": "~2.9.0",
-    "react-native-web": "~0.11.7",
-    "reactn": "^2.2.7"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "@testing-library/react-native": "^5.0.3",
-    "@types/jest": "^26.0.0",
     "@types/react": "~16.9.41",
     "@types/react-native": "~0.62.13",
     "@typescript-eslint/eslint-plugin": "^3.2.0",
@@ -44,21 +33,11 @@
     "babel-preset-expo": "^8.2.3",
     "eslint": "6.5.1",
     "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jest": "^23.13.2",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-native": "^3.8.1",
     "expo-yarn-workspaces": "^1.2.1",
-    "jest": "24.9.0",
     "prettier": "^2.0.5",
-    "react-test-renderer": "16.11.0",
     "typescript": "~3.9.5"
-  },
-  "jest": {
-    "preset": "@testing-library/react-native",
-    "setupFiles": [
-      "./node_modules/react-native-gesture-handler/jestSetup.js",
-      "./jest.setup.js"
-    ]
   },
   "private": true
 }
