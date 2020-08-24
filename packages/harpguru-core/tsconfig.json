@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "noEmit": false,
-    "outDir": "./lib/",
-    "declaration": true,
+    "noEmit": true,
     "lib": ["dom", "esnext"],
     "jsx": "react-native",
     "moduleResolution": "node",
@@ -22,13 +18,5 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "include": [
-    "src/**/*.ts"
-    ],
-  "exclude": [
-    "./**/*test.ts",
-    "./**/testResources/",
-    "./lib"
-  ]
+  }
 }

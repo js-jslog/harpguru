@@ -3,22 +3,13 @@
   "version": "0.2.2",
   "description": "A React Native implementation of the HarpGuru concept; a UI to aid the understanding of harmonica music theory",
   "main": "./src/index.ts",
-  "types": "./lib/index.d.ts",
-  "files": [
-    "lib/**/*",
-    "src/**/*"
-  ],
   "author": "js-jslog <josephsinfield@yahoo.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "tsc",
     "test": "jest",
-    "lint": "eslint --ext .ts,.tsx ./src",
-    "ci": "yarn lint && yarn tsc --noEmit",
-    "prettier": "prettier --write .",
-    "prepare": "yarn build",
-    "prepublishOnly": "yarn test && yarn ci",
-    "preversion": "npm test && npm run lint"
+    "lint": "eslint --ext .ts,.tsx",
+    "ci": "yarn lint && yarn tsc",
+    "prettier": "prettier --write ."
   },
   "peerDependencies": {
     "react": "16.11.0",
