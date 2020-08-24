@@ -1,7 +1,7 @@
 {
-  "name": "harpnative",
+  "name": "harpguru-expo-boilerplate",
   "version": "0.2.0",
-  "description": "A React Native implementation of the HarpGuru concept; a UI to aid the understanding of harmonica music theory",
+  "description": "An expo based boilerplate to run the harpguru-core app",
   "main": "__generated__/AppEntry.js",
   "scripts": {
     "start": "expo start --clear",
