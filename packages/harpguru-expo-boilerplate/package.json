@@ -9,7 +9,6 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest",
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc",
     "prettier": "prettier --write .",
