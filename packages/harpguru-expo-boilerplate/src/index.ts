@@ -1,1 +1,0 @@
-export { HarpGuru } from './components'
