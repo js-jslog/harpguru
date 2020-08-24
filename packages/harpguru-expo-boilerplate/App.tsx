@@ -12,9 +12,9 @@ import { Colors } from 'react-native/Libraries/NewAppScreen'
 import { StatusBar, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
+import { HarpGuru } from 'harpguru-core'
 import * as ScreenOrientation from 'expo-screen-orientation'
 
-import { HarpGuru } from './src'
 
 ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
 
