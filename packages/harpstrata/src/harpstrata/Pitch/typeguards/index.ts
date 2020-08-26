@@ -6,6 +6,8 @@ export const isPitchId = (idIn: string): idIn is PitchIds => {
 }
 
 export const isNaturalPitch = (pitch: Pitch): pitch is NaturalPitch => {
-  const { contextualDisplayValues: { natural } } = pitch as NaturalPitch
+  const {
+    contextualDisplayValues: { natural },
+  } = pitch as NaturalPitch
   return natural !== undefined
 }

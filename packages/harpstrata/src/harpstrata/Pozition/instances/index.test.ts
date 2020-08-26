@@ -5,7 +5,6 @@ test('POZITION_INSTANCES has exactly 12 entries', () => {
   expect(Object.keys(POZITION_INSTANCES).length).toBe(12)
 })
 
-
 test('POZITION_INSTANCES has a mapping for each of the PozitionIds', () => {
   expect(POZITION_INSTANCES[PozitionIds.First]).toBeTruthy()
   expect(POZITION_INSTANCES[PozitionIds.Second]).toBeTruthy()

@@ -8,7 +8,7 @@ export enum ApparatusIds {
 }
 
 export type Apparatus = {
-  readonly id: ApparatusIds;
-  readonly halfstepIndexMatrix: HalfstepIndexMatrix;
-  readonly interactionMatrix: InteractionMatrix;
+  readonly id: ApparatusIds
+  readonly halfstepIndexMatrix: HalfstepIndexMatrix
+  readonly interactionMatrix: InteractionMatrix
 }

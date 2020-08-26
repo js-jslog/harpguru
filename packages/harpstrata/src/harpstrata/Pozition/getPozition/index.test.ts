@@ -5,7 +5,6 @@ import { getPozition, getPozitionByOffset } from './index'
 const first = getPozition(PozitionIds.First)
 const third = getPozition(PozitionIds.Third)
 
-
 test('getPozition function can return a first pozition', () => {
   const actualPozition = getPozition(first.id)
 

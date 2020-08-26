@@ -5,18 +5,18 @@ import type { DegreeMatrix } from '../../Degree'
 import type { Apparatus, ApparatusIds } from '../../Apparatus'
 
 export type HarpStrataProps = {
-  readonly apparatusId: ApparatusIds;
-  readonly pozitionId: PozitionIds;
-  readonly harpKeyId: PitchIds;
-  readonly activeIds: ActiveIds;
+  readonly apparatusId: ApparatusIds
+  readonly pozitionId: PozitionIds
+  readonly harpKeyId: PitchIds
+  readonly activeIds: ActiveIds
 }
 
 export type HarpStrata = {
-  readonly apparatus: Apparatus;
-  readonly degreeMatrix: DegreeMatrix;
-  readonly pitchMatrix: PitchMatrix;
-  readonly isActiveComplex: IsActiveComplex;
-  readonly pozitionId: PozitionIds;
-  readonly rootPitchId: PitchIds;
-  readonly harpKeyId: PitchIds;
+  readonly apparatus: Apparatus
+  readonly degreeMatrix: DegreeMatrix
+  readonly pitchMatrix: PitchMatrix
+  readonly isActiveComplex: IsActiveComplex
+  readonly pozitionId: PozitionIds
+  readonly rootPitchId: PitchIds
+  readonly harpKeyId: PitchIds
 }

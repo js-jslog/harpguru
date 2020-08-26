@@ -3,8 +3,10 @@ import { getDegree } from '../getDegree'
 import { getAscendingDegreeIds, getDescendingDegreeIds } from '../../OrderedIds'
 import type { HalfstepIndexMatrix, HalfstepIndex } from '../../Apparatus'
 
-
-export const getDegreeMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, root: HalfstepIndex): DegreeMatrix => {
+export const getDegreeMatrix = (
+  halfstepIndexMatrix: HalfstepIndexMatrix,
+  root: HalfstepIndex
+): DegreeMatrix => {
   const { [root]: rootDegreeId } = getDescendingDegreeIds()
   const ascendingDegreeIdsFromHarpRoot = getAscendingDegreeIds(rootDegreeId)
 

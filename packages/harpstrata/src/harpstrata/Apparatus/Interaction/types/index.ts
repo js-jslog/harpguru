@@ -11,7 +11,7 @@ export enum InteractionIds {
 }
 
 export type Interaction = {
-  readonly id: InteractionIds;
+  readonly id: InteractionIds
 }
 
 export type InteractionRow = ReadonlyArray<Interaction | undefined>

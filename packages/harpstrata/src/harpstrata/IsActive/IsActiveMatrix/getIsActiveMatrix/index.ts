@@ -2,7 +2,10 @@ import type { IsActiveMatrix } from '../types'
 import type { IsActiveProps } from '../../types'
 import { DegreeIds } from '../../../Degree'
 
-import { getMatrixGivenDegree, getMatrixGivenPitch } from './getIsActiveMatrixForSpecificType'
+import {
+  getMatrixGivenDegree,
+  getMatrixGivenPitch,
+} from './getIsActiveMatrixForSpecificType'
 
 export const getIsActiveMatrix = (props: IsActiveProps): IsActiveMatrix => {
   const { activeIds } = props

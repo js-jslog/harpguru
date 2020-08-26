@@ -1,10 +1,9 @@
 import {
   getAscendingPozitionIds,
   getAscendingPitchIds,
-  getAscendingDegreeIds
+  getAscendingDegreeIds,
 } from '../OrderedIds'
 import { getActiveApparatusIds } from '../Apparatus'
-
 
 export const getApparatusIds = getActiveApparatusIds
 

@@ -3,7 +3,6 @@ import { getPozitionByOffset } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
 import { getAscendingPitchIds } from '../../OrderedIds'
 
-
 export const deducePozitionId = (props: PozitionControllers): PozitionIds => {
   const { rootPitchId, harpKeyId } = props
 

@@ -3,8 +3,10 @@ import { getPitch } from '../getPitch'
 import { getAscendingPitchIds } from '../../OrderedIds'
 import type { HalfstepIndexMatrix } from '../../Apparatus'
 
-export const getPitchMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, keyPitchId: PitchIds): PitchMatrix => {
-
+export const getPitchMatrix = (
+  halfstepIndexMatrix: HalfstepIndexMatrix,
+  keyPitchId: PitchIds
+): PitchMatrix => {
   const ascendingPitchIdsInKey = getAscendingPitchIds(keyPitchId)
 
   return halfstepIndexMatrix.map((halfstepIndexRow) => {

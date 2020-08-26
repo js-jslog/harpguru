@@ -3,7 +3,7 @@ import type { IsActiveProps } from '../../../types'
 import { PitchIds, getPitch } from '../../../../Pitch'
 import { DegreeIds, getDegree } from '../../../../Degree'
 
-import { getMatrixGivenPitch, getMatrixGivenDegree,  } from './index'
+import { getMatrixGivenPitch, getMatrixGivenDegree } from './index'
 
 const c = getPitch(PitchIds.C)
 const d = getPitch(PitchIds.D)
@@ -16,22 +16,27 @@ const third = getDegree(DegreeIds.Third)
 const fourth = getDegree(DegreeIds.Fourth)
 
 const degreeMatrix = [
-  [ root , second ],
-  [ third, fourth ],
+  [root, second],
+  [third, fourth],
 ]
 const pitchMatrix = [
-  [ c, d ],
-  [ e, f ],
+  [c, d],
+  [e, f],
 ]
 const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix, pitchMatrix, activeIds: []
+  degreeMatrix,
+  pitchMatrix,
+  activeIds: [],
 }
 
 test('getMatrixGivenDegree returns a IsActiveMatrix using Degree objects', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeIds: [ DegreeIds.Root, DegreeIds.Fourth ] }
+  const isActiveProps = {
+    ...baseIsActiveProps,
+    activeIds: [DegreeIds.Root, DegreeIds.Fourth],
+  }
   const expectedIsActiveMatrix = [
-    [ IsActiveIds.Active  , IsActiveIds.Inactive ],
-    [ IsActiveIds.Inactive, IsActiveIds.Active   ],
+    [IsActiveIds.Active, IsActiveIds.Inactive],
+    [IsActiveIds.Inactive, IsActiveIds.Active],
   ]
   const actualIsActiveMatrix = getMatrixGivenDegree(isActiveProps)
 
@@ -39,10 +44,13 @@ test('getMatrixGivenDegree returns a IsActiveMatrix using Degree objects', () =>
 })
 
 test('getMatrixGivenPitch returns a IsActiveMatrix using Pitch objects', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeIds: [ PitchIds.D, PitchIds.E ] }
+  const isActiveProps = {
+    ...baseIsActiveProps,
+    activeIds: [PitchIds.D, PitchIds.E],
+  }
   const expectedIsActiveMatrix = [
-    [ IsActiveIds.Inactive, IsActiveIds.Active   ],
-    [ IsActiveIds.Active  , IsActiveIds.Inactive ],
+    [IsActiveIds.Inactive, IsActiveIds.Active],
+    [IsActiveIds.Active, IsActiveIds.Inactive],
   ]
   const actualIsActiveMatrix = getMatrixGivenPitch(isActiveProps)
 

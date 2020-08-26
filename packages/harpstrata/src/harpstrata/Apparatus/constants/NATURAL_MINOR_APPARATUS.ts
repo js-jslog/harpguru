@@ -4,8 +4,11 @@ import type { InteractionMatrix } from '../Interaction'
 import {
   BLOW,
   DRAW,
-  BEND1, BEND2, BEND3,
-  BLOWBEND1, BLOWBEND2,
+  BEND1,
+  BEND2,
+  BEND3,
+  BLOWBEND1,
+  BLOWBEND2,
 } from '../Interaction'
 import type { HalfstepIndexMatrix } from '../HalfstepIndex'
 

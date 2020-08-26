@@ -15,28 +15,36 @@ const third = getDegree(DegreeIds.Third)
 const fourth = getDegree(DegreeIds.Fourth)
 
 const degreeMatrix = [
-  [ root , second ],
-  [ third, fourth ],
+  [root, second],
+  [third, fourth],
 ]
 const pitchMatrix = [
-  [ c, d ],
-  [ e, f ],
+  [c, d],
+  [e, f],
 ]
 const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix, pitchMatrix, activeIds: []
+  degreeMatrix,
+  pitchMatrix,
+  activeIds: [],
 }
 
 test('getCounterpartDegreeIds returns the ActiveDegreeIds for a given ActivePitchIds', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeIds: [ PitchIds.D, PitchIds.E ] }
-  const expectedCounterpartIds = [ DegreeIds.Second, DegreeIds.Third ]
+  const isActiveProps = {
+    ...baseIsActiveProps,
+    activeIds: [PitchIds.D, PitchIds.E],
+  }
+  const expectedCounterpartIds = [DegreeIds.Second, DegreeIds.Third]
   const actualCounterpartIds = getCounterpartDegreeIds(isActiveProps)
 
   expect(actualCounterpartIds).toStrictEqual(expectedCounterpartIds)
 })
 
 test('getCounterpartPitchIds returns the ActivePitchIds for a given ActiveDegreeIds', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeIds: [ DegreeIds.Second, DegreeIds.Third ] }
-  const expectedCounterpartIds = [ PitchIds.D, PitchIds.E ]
+  const isActiveProps = {
+    ...baseIsActiveProps,
+    activeIds: [DegreeIds.Second, DegreeIds.Third],
+  }
+  const expectedCounterpartIds = [PitchIds.D, PitchIds.E]
   const actualCounterpartIds = getCounterpartPitchIds(isActiveProps)
 
   expect(actualCounterpartIds).toStrictEqual(expectedCounterpartIds)

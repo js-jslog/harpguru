@@ -1,11 +1,16 @@
 import type { CovariantControllers, CovariantSet } from '../types'
-import { areHarpKeyControllers, areRootPitchControllers, arePozitionControllers } from '../typeguards'
+import {
+  areHarpKeyControllers,
+  areRootPitchControllers,
+  arePozitionControllers,
+} from '../typeguards'
 import { deduceRootPitchId } from '../deduceRootPitchId'
 import { deducePozitionId } from '../deducePozitionId'
 import { deduceHarpKeyId } from '../deduceHarpKeyId'
 
-
-export const getCovariantSet = (controlVariables: CovariantControllers): CovariantSet => {
+export const getCovariantSet = (
+  controlVariables: CovariantControllers
+): CovariantSet => {
   if (areHarpKeyControllers(controlVariables)) {
     const { rootPitchId, pozitionId } = controlVariables
     const harpKeyId = deduceHarpKeyId(controlVariables)

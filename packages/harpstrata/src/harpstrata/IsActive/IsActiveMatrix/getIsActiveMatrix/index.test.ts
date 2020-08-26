@@ -17,21 +17,23 @@ const fourth = getDegree(DegreeIds.Fourth)
 import { getIsActiveMatrix } from './index'
 
 const degreeMatrix = [
-  [ root , second ],
-  [ third, fourth ],
+  [root, second],
+  [third, fourth],
 ]
 const pitchMatrix = [
-  [ c, d ],
-  [ e, f ],
+  [c, d],
+  [e, f],
 ]
 const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix, pitchMatrix, activeIds: []
+  degreeMatrix,
+  pitchMatrix,
+  activeIds: [],
 }
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given an empty list of ActiveIds', () => {
   const expectedIsActiveMatrix = [
-    [ IsActiveIds.Inactive, IsActiveIds.Inactive ],
-    [ IsActiveIds.Inactive, IsActiveIds.Inactive ],
+    [IsActiveIds.Inactive, IsActiveIds.Inactive],
+    [IsActiveIds.Inactive, IsActiveIds.Inactive],
   ]
   const actualIsActiveMatrix = getIsActiveMatrix(baseIsActiveProps)
 
@@ -39,10 +41,13 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given an empty list of A
 })
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given ActiveDegreeIds', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeIds: [ DegreeIds.Root, DegreeIds.Fourth ] }
+  const isActiveProps = {
+    ...baseIsActiveProps,
+    activeIds: [DegreeIds.Root, DegreeIds.Fourth],
+  }
   const expectedIsActiveMatrix = [
-    [ IsActiveIds.Active  , IsActiveIds.Inactive ],
-    [ IsActiveIds.Inactive, IsActiveIds.Active   ],
+    [IsActiveIds.Active, IsActiveIds.Inactive],
+    [IsActiveIds.Inactive, IsActiveIds.Active],
   ]
   const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
 
@@ -50,10 +55,13 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given ActiveDegreeIds', 
 })
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given ActivePitchIds', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeIds: [ PitchIds.D, PitchIds.E ] }
+  const isActiveProps = {
+    ...baseIsActiveProps,
+    activeIds: [PitchIds.D, PitchIds.E],
+  }
   const expectedIsActiveMatrix = [
-    [ IsActiveIds.Inactive, IsActiveIds.Active   ],
-    [ IsActiveIds.Active  , IsActiveIds.Inactive ],
+    [IsActiveIds.Inactive, IsActiveIds.Active],
+    [IsActiveIds.Active, IsActiveIds.Inactive],
   ]
   const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
 
@@ -62,17 +70,21 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given ActivePitchIds', (
 
 test('getIsActiveMatrix returns the IsActiveMatrix including undefined when given ActivePitchIds', () => {
   const degreeMatrix = [
-    [ undefined, second ],
-    [ third    , fourth ],
+    [undefined, second],
+    [third, fourth],
   ]
   const pitchMatrix = [
-    [ undefined, d ],
-    [ e        , f ],
+    [undefined, d],
+    [e, f],
   ]
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: [ PitchIds.D, PitchIds.E ] }
+  const isActiveProps = {
+    degreeMatrix,
+    pitchMatrix,
+    activeIds: [PitchIds.D, PitchIds.E],
+  }
   const expectedIsActiveMatrix = [
-    [ undefined         , IsActiveIds.Active   ],
-    [ IsActiveIds.Active, IsActiveIds.Inactive ],
+    [undefined, IsActiveIds.Active],
+    [IsActiveIds.Active, IsActiveIds.Inactive],
   ]
   const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
 
@@ -80,26 +92,44 @@ test('getIsActiveMatrix returns the IsActiveMatrix including undefined when give
 })
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given ActiveDegreeIs against large element matrices', () => {
-  const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
+  const {
+    C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
+      degreeMatrix,
+      pitchMatrix,
+      isActiveComplex: {
+        isActiveMatrix: exampleIsActiveMatrix,
+        activeDegreeIds: exampleDegreeIds,
+      },
+    },
+  } = EXAMPLE_STRATA
+
+  const isActiveProps = {
     degreeMatrix,
     pitchMatrix,
-    isActiveComplex: { isActiveMatrix: exampleIsActiveMatrix, activeDegreeIds: exampleDegreeIds }
-  }} = EXAMPLE_STRATA
-
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: exampleDegreeIds }
+    activeIds: exampleDegreeIds,
+  }
   const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
 
   expect(actualIsActiveMatrix).toStrictEqual(exampleIsActiveMatrix)
 })
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given ActivePitchIs against large element matrices', () => {
-  const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
+  const {
+    C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
+      degreeMatrix,
+      pitchMatrix,
+      isActiveComplex: {
+        isActiveMatrix: exampleIsActiveMatrix,
+        activePitchIds: examplePitchIds,
+      },
+    },
+  } = EXAMPLE_STRATA
+
+  const isActiveProps = {
     degreeMatrix,
     pitchMatrix,
-    isActiveComplex: { isActiveMatrix: exampleIsActiveMatrix, activePitchIds: examplePitchIds }
-  }} = EXAMPLE_STRATA
-
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: examplePitchIds }
+    activeIds: examplePitchIds,
+  }
   const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
 
   expect(actualIsActiveMatrix).toStrictEqual(exampleIsActiveMatrix)

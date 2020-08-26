@@ -8,7 +8,7 @@ test('deduceHarpKeyId returns C for a C root in first pozition', () => {
   const { First: pozitionId } = PozitionIds
 
   const { C: expectedHarpKeyId } = PitchIds
-  const actualHarpKeyId = deduceHarpKeyId({rootPitchId, pozitionId})
+  const actualHarpKeyId = deduceHarpKeyId({ rootPitchId, pozitionId })
 
   expect(actualHarpKeyId).toBe(expectedHarpKeyId)
 })
@@ -18,7 +18,7 @@ test('deduceHarpKeyId returns C for a G root in second pozition', () => {
   const { Second: pozitionId } = PozitionIds
 
   const { C: expectedHarpKeyId } = PitchIds
-  const actualHarpKeyId = deduceHarpKeyId({rootPitchId, pozitionId})
+  const actualHarpKeyId = deduceHarpKeyId({ rootPitchId, pozitionId })
 
   expect(actualHarpKeyId).toBe(expectedHarpKeyId)
 })
@@ -28,7 +28,7 @@ test('deduceHarpKeyId returns D for an Eb root in eighth pozition', () => {
   const { Eighth: pozitionId } = PozitionIds
 
   const { D: expectedHarpKeyId } = PitchIds
-  const actualHarpKeyId = deduceHarpKeyId({rootPitchId, pozitionId})
+  const actualHarpKeyId = deduceHarpKeyId({ rootPitchId, pozitionId })
 
   expect(actualHarpKeyId).toBe(expectedHarpKeyId)
 })

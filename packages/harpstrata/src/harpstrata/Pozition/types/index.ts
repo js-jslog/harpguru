@@ -16,6 +16,6 @@ export enum PozitionIds {
 }
 
 export type Pozition = {
-  readonly id: PozitionIds;
-  readonly rootOffset: HalfstepIndex;
+  readonly id: PozitionIds
+  readonly rootOffset: HalfstepIndex
 }

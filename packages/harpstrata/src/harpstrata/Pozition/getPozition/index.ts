@@ -3,7 +3,6 @@ import type { Pozition } from '../types'
 import { POZITION_INSTANCES } from '../instances'
 import type { HalfstepIndex } from '../../Apparatus'
 
-
 export const getPozition = (pozitionId: PozitionIds): Pozition => {
   const { [pozitionId]: pozition } = POZITION_INSTANCES
 
@@ -12,7 +11,10 @@ export const getPozition = (pozitionId: PozitionIds): Pozition => {
 
 export const getPozitionByOffset = (rootOffset: HalfstepIndex): Pozition => {
   const pozitions = Object.values(POZITION_INSTANCES)
-  const reducer = (accumulator: PozitionIds | undefined, nextPozition: Pozition): PozitionIds | undefined => {
+  const reducer = (
+    accumulator: PozitionIds | undefined,
+    nextPozition: Pozition
+  ): PozitionIds | undefined => {
     if (rootOffset === nextPozition.rootOffset) return nextPozition.id
     return accumulator
   }

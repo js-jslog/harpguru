@@ -1,8 +1,15 @@
 export { getCovariantSet } from './getCovariantSet'
 
 export type {
-  CovariantSet, CovariantControllers,
-  HarpKeyControllers, PozitionControllers, RootPitchControllers,
+  CovariantSet,
+  CovariantControllers,
+  HarpKeyControllers,
+  PozitionControllers,
+  RootPitchControllers,
 } from './types'
 
-export { areHarpKeyControllers, arePozitionControllers, areRootPitchControllers } from './typeguards'
+export {
+  areHarpKeyControllers,
+  arePozitionControllers,
+  areRootPitchControllers,
+} from './typeguards'

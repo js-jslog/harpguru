@@ -3,13 +3,12 @@ import type { Pitch } from '../types'
 
 import { getPitch } from './index'
 
-
 test('getPitch function can return a C pitch', () => {
   const C_PITCH: Pitch = {
     id: PitchIds.C,
     contextualDisplayValues: {
-      natural: NoteFoundations.C
-    }
+      natural: NoteFoundations.C,
+    },
   } as const
   const actualPitch = getPitch(C_PITCH.id)
 
@@ -21,8 +20,8 @@ test('getPitch function can return a Db pitch', () => {
     id: PitchIds.Db,
     contextualDisplayValues: {
       flat: NoteFoundations.D,
-      sharp: NoteFoundations.C
-    }
+      sharp: NoteFoundations.C,
+    },
   } as const
   const actualPitch = getPitch(DB_PITCH.id)
 

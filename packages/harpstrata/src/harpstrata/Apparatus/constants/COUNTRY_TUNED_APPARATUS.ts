@@ -4,8 +4,11 @@ import type { InteractionMatrix } from '../Interaction'
 import {
   BLOW,
   DRAW,
-  BEND1, BEND2, BEND3,
-  BLOWBEND1, BLOWBEND2,
+  BEND1,
+  BEND2,
+  BEND3,
+  BLOWBEND1,
+  BLOWBEND2,
   OVERDRAW1,
   OVERBLOW1,
 } from '../Interaction'

@@ -7,6 +7,6 @@ export type ActivePitchIds = ReadonlyArray<PitchIds>
 export type ActiveIds = ActivePitchIds | ActiveDegreeIds
 
 export type ActiveIdsPair = {
-  readonly activeDegreeIds: ActiveDegreeIds;
-  readonly activePitchIds: ActivePitchIds;
+  readonly activeDegreeIds: ActiveDegreeIds
+  readonly activePitchIds: ActivePitchIds
 }
