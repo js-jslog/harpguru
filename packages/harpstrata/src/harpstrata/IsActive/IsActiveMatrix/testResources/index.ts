@@ -3,6 +3,7 @@ import { IsActiveIds } from '../types'
 
 const { Active, Inactive } = IsActiveIds
 
+// prettier-ignore
 const C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC_MATRIX: IsActiveMatrix = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Inactive  ],
   [ Inactive , undefined, undefined, Inactive , Inactive , Inactive , undefined, Inactive , Inactive , Inactive  ],
@@ -13,6 +14,7 @@ const C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC_MATRIX: IsActiveMatrix 
   [ undefined, undefined, Inactive , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
 
+// prettier-ignore
 const C_MAJOR_DIATONIC_SECOND_POZITION_G_MAJOR_PENTATONIC_MATRIX: IsActiveMatrix = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Inactive  ],
   [ Inactive , undefined, undefined, Inactive , Inactive , Inactive , undefined, Inactive , Inactive , Active    ],

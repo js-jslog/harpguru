@@ -11,6 +11,7 @@ import {
 } from '../Interaction'
 import type { HalfstepIndexMatrix } from '../HalfstepIndex'
 
+// prettier-ignore
 const halfstepIndexMatrix: HalfstepIndexMatrix = [
   //    1          2          3          4          5          6          7          8          9         10
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 34        ],
@@ -22,6 +23,7 @@ const halfstepIndexMatrix: HalfstepIndexMatrix = [
   [ undefined, undefined, 8        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
 
+// prettier-ignore
 const interactionMatrix: InteractionMatrix = [
   //    1          2          3          4          5          6          7          8          9         10
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, BLOWBEND2 ],

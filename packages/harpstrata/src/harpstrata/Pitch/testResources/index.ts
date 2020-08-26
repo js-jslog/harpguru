@@ -15,6 +15,7 @@ const a = getPitch(PitchIds.A)
 const bb = getPitch(PitchIds.Bb)
 const b = getPitch(PitchIds.B)
 
+// prettier-ignore
 const MAJOR_DIATONIC_C_HARMONICA: PitchMatrix = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, bb        ],
   [ eb       , undefined, undefined, eb       , gb       , bb       , undefined, eb       , gb       , b         ],
@@ -25,6 +26,7 @@ const MAJOR_DIATONIC_C_HARMONICA: PitchMatrix = [
   [ undefined, undefined, ab       , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
 
+// prettier-ignore
 const MAJOR_DIATONIC_F_HARMONICA: PitchMatrix = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, eb        ],
   [ ab       , undefined, undefined, ab       , b        , eb       , undefined, ab       , b        , e         ],

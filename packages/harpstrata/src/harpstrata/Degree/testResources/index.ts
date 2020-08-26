@@ -15,6 +15,7 @@ const sixth = getDegree(DegreeIds.Sixth)
 const flat7 = getDegree(DegreeIds.Flat7)
 const seventh = getDegree(DegreeIds.Seventh)
 
+// prettier-ignore
 const MAJOR_DIATONIC_FIRST_POZITION: DegreeMatrix = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat7     ],
   [ flat3    , undefined, undefined, flat3    , flat5    , flat7    , undefined, flat3    , flat5    , seventh   ],
@@ -25,6 +26,7 @@ const MAJOR_DIATONIC_FIRST_POZITION: DegreeMatrix = [
   [ undefined, undefined, flat6 , undefined   , undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
 
+// prettier-ignore
 const MAJOR_DIATONIC_SECOND_POZITION: DegreeMatrix = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat3     ],
   [ flat6    , undefined, undefined, flat6    , seventh  , flat3    , undefined, flat6    , seventh  , third     ],
