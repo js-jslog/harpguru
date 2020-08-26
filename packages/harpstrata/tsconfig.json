@@ -1,16 +1,21 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "target": "es5",
-    "module": "commonjs",
-    "declaration": true,
-    "outDir": "./lib/",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "strict": true,
-    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "exclude": [
-    "./**/*test.ts",
-    "./**/testResources/"
-  ]
+  }
 }
