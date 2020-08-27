@@ -15,6 +15,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpnative/compare/v0.2.0...HEAD) - yyyy-mm-dd
 
+- INITIAL-DEVELOPMENT: Remove the HarpGuru core code and reference as dependency
+- INITIAL-DEVELOPMENT: Configure remaining boilerplate for use in yarn workspaces
+
 ## [v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/v0.2.0) - 2020-08-21
 
 ### Added
