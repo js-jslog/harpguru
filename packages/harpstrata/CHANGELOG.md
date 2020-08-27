@@ -13,7 +13,14 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v6.2.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v6.3.0...HEAD) - yyyy-mm-dd
+
+### Changed
+- MAJOR: Overhauled assumptions about project to run as a workspaces in a yarn workspaces context
+
+### REMOVED
+- MAJOR: Configuration to publish as npm package
+
 
 ## [v6.3.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.3.0) - 2020-08-20
 
