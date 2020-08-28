@@ -13,11 +13,22 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-expo-boilerplate.v0.1.0...experiment-with-consumin-harpguru-core-from-locall-from-yarn-workspaces-context) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-expo-boilerplate.v0.2.0...experiment-with-consumin-harpguru-core-from-locall-from-yarn-workspaces-context) - yyyy-mm-dd
+
+## [harpguru-expo-boilerplate.v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.2.0) - 2020-08-28
+
+### Added
+
+- INITIAL-DEVELOPMENT: Identification of relevant feature branch in README.md
 
 ## [harpguru-expo-boilerplate.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.1.0) - 2020-08-28
 
+### Removed
+
 - INITIAL-DEVELOPMENT: Remove the HarpGuru core code and reference as dependency
+
+### Added
+
 - INITIAL-DEVELOPMENT: Configure remaining boilerplate for use in yarn workspaces
 
 ## [v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/v0.2.0) - 2020-08-21
@@ -44,6 +55,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ## Github release list
 
 - [unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-expo-boilerplate.v0.1.0...experiment-with-consumin-harpguru-core-from-locall-from-yarn-workspaces-context)
+- [harpguru-expo-boilerplate.v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.2.0)
 - [harpguru-expo-boilerplate.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.1.0)
 - [v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/v0.2.0)
 - [v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/v0.1.0)
