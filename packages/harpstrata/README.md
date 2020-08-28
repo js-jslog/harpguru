@@ -1,3 +1,13 @@
+# WARNING
+
+All of the v7.x.x tags have been made on a feature branch, _not_ on the master branch.
+
+The reason for this is explained in [this commit](https://github.com/js-jslog/harpstrata/pull/39/commits/7a429452036ef2c620958e86d877a611f59e6edd)
+
+[This is the pull request with all of the commits relating to the move to a monorepo architecture](https://github.com/js-jslog/harpstrata/pull/39)
+
+If this doesn't work out the tags for v8.x.x will likely be back on the master branch as though none of this ever happened.
+
 # HarpStrata
 
 A library for generating a layered representation of various harmonica layouts played in various positions

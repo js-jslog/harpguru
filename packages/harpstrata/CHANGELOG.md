@@ -13,7 +13,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v7.0.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v7.1.0...HEAD) - yyyy-mm-dd
+
+## [v7.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v7.1.0) - 2020-08-28
+
+### Changed
+
+- MINOR: Added comment to README.md explaining that the v7.x.x tags have not been made on the master branch
 
 ## [v7.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v7.0.0) - 2020-08-28
 
