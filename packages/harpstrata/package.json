@@ -9,11 +9,7 @@
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc",
-    "prettier": "prettier --write .",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm test && npm run lint",
-    "postversion": "git push && git push --tags"
+    "prettier": "prettier --write ."
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
