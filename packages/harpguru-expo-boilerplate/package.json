@@ -1,6 +1,6 @@
 {
   "name": "harpguru-expo-boilerplate",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "An expo based boilerplate to run the harpguru-core app",
   "main": "__generated__/AppEntry.js",
   "scripts": {
