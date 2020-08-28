@@ -15,7 +15,6 @@ import type { ReactElement } from 'react'
 import { HarpGuru } from 'harpguru-core'
 import * as ScreenOrientation from 'expo-screen-orientation'
 
-
 ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
 
 declare const global: { HermesInternal: null | unknown }
