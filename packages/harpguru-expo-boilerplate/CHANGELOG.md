@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-expo-boilerplate.v0.2.0...experiment-with-consumin-harpguru-core-from-locall-from-yarn-workspaces-context) - yyyy-mm-dd
 
+### Changed
+
+- INITIAL-DEVELOPMENT: Configure the splashscreen background colour to be thematically correct
+
 ## [harpguru-expo-boilerplate.v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.2.0) - 2020-08-28
 
 ### Added
