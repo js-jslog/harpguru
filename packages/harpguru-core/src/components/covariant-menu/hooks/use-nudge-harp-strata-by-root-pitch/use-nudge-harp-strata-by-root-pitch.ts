@@ -39,6 +39,45 @@ const getNextId = (rootId: PitchIds, direction: 'UP' | 'DOWN'): PitchIds => {
   return previousRootPitchId
 }
 
+const getNextHarpStrataProps = (
+  activeHarpStrata: HarpStrata,
+  lockedCovariant: CovariantMembers,
+  direction: 'UP' | 'DOWN',
+  activeDisplayMode: DisplayModes
+) => {
+  const { rootPitchId, harpKeyId, pozitionId } = activeHarpStrata
+
+  if (lockedCovariant === CovariantMembers.HarpKey) {
+    const covariantGroup = getCovariantSet({
+      rootPitchId: getNextId(rootPitchId, direction),
+      harpKeyId,
+    })
+
+    return getPropsForHarpStrata(
+      {
+        ...activeHarpStrata,
+        pozitionId: covariantGroup.pozitionId,
+        harpKeyId: covariantGroup.harpKeyId,
+      },
+      activeDisplayMode
+    )
+  } else {
+    const covariantGroup = getCovariantSet({
+      rootPitchId: getNextId(rootPitchId, direction),
+      pozitionId,
+    })
+
+    return getPropsForHarpStrata(
+      {
+        ...activeHarpStrata,
+        pozitionId: covariantGroup.pozitionId,
+        harpKeyId: covariantGroup.harpKeyId,
+      },
+      activeDisplayMode
+    )
+  }
+}
+
 type PartialParams = {
   readonly activeHarpStrata: HarpStrata
   readonly setActiveHarpStrata: SetActiveHarpStrata
@@ -59,39 +98,12 @@ const nudgeHarpStrataByRootPitch = (
 
   if (lockedCovariant === CovariantMembers.RootPitch) return
 
-  const { rootPitchId, harpKeyId, pozitionId } = activeHarpStrata
+  const nextHarpStrataProps = getNextHarpStrataProps(
+    activeHarpStrata,
+    lockedCovariant,
+    direction,
+    activeDisplayMode
+  )
 
-  if (lockedCovariant === CovariantMembers.HarpKey) {
-    const covariantGroup = getCovariantSet({
-      rootPitchId: getNextId(rootPitchId, direction),
-      harpKeyId,
-    })
-
-    const nextHarpStrataProps = getPropsForHarpStrata(
-      {
-        ...activeHarpStrata,
-        pozitionId: covariantGroup.pozitionId,
-        harpKeyId: covariantGroup.harpKeyId,
-      },
-      activeDisplayMode
-    )
-
-    setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))
-  } else {
-    const covariantGroup = getCovariantSet({
-      rootPitchId: getNextId(rootPitchId, direction),
-      pozitionId,
-    })
-
-    const nextHarpStrataProps = getPropsForHarpStrata(
-      {
-        ...activeHarpStrata,
-        pozitionId: covariantGroup.pozitionId,
-        harpKeyId: covariantGroup.harpKeyId,
-      },
-      activeDisplayMode
-    )
-
-    setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))
-  }
+  setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))
 }
