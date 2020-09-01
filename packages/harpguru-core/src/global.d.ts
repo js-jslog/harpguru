@@ -1,6 +1,8 @@
 import 'reactn'
 import type { HarpStrata } from 'harpstrata'
 
+import { CovariantMembers } from './packages/covariance-series'
+
 import type { DisplayModes, ExperienceModes } from './types'
 
 // All of the `dispatch: any` lines in here are
@@ -24,5 +26,6 @@ declare module 'reactn/default' {
     activeHarpStrata: HarpStrata
     activeExperienceMode: ExperienceModes
     activeDisplayMode: DisplayModes
+    lockedCovariant: CovariantMembers
   }
 }

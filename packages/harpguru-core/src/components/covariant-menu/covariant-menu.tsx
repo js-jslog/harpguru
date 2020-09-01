@@ -8,6 +8,7 @@ import { OptionLock } from '../option-lock'
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
+import { CovariantMembers } from '../../packages/covariance-series'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import {
@@ -22,6 +23,7 @@ export const CovariantMenu = ({
   tapHandler,
 }: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [lockedCovariant] = useGlobal('lockedCovariant')
 
   const { harpKeyId } = activeHarpStrata
   const nudgeHarpStrataByHarpKey = useNudgeHarpStrataByHarpKey()
@@ -30,6 +32,7 @@ export const CovariantMenu = ({
     optionId: harpKeyId,
     nudgeFunction: nudgeHarpStrataByHarpKey,
   }
+  const harpKeyIsLocked = lockedCovariant === CovariantMembers.HarpKey
 
   const { pozitionId } = activeHarpStrata
   const nudgeHarpStrataByPozition = useNudgeHarpStrataByPozition()
@@ -38,6 +41,7 @@ export const CovariantMenu = ({
     optionId: pozitionId,
     nudgeFunction: nudgeHarpStrataByPozition,
   }
+  const pozitionIsLocked = lockedCovariant === CovariantMembers.Pozition
 
   const { rootPitchId } = activeHarpStrata
   const nudgeHarpStrataByRootPitch = useNudgeHarpStrataByRootPitch()
@@ -46,6 +50,7 @@ export const CovariantMenu = ({
     optionId: rootPitchId,
     nudgeFunction: nudgeHarpStrataByRootPitch,
   }
+  const rootPitchIsLocked = lockedCovariant === CovariantMembers.RootPitch
 
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const nudgeDisplayMode = useNudgeDisplayMode()
@@ -86,13 +91,13 @@ export const CovariantMenu = ({
           ]}
         >
           <View style={styles.mainContents}>
-            <OptionLock locked={true}>
+            <OptionLock locked={harpKeyIsLocked}>
               <Option {...harpKeyOptionProps} />
             </OptionLock>
-            <OptionLock locked={false}>
+            <OptionLock locked={pozitionIsLocked}>
               <Option {...pozitionOptionProps} />
             </OptionLock>
-            <OptionLock locked={false}>
+            <OptionLock locked={rootPitchIsLocked}>
               <Option {...rootPitchOptionProps} />
             </OptionLock>
             <Option {...displayModeOptionProps} />
