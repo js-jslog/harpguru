@@ -18,6 +18,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ## [harpguru-core.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-core.v0.1.0) - 2020-08-28
 
 ### Changed
+
 - INITIAL-DEVELOPMENT: Remove HarpGuru app from expo boilerplate
 - INITIAL-DEVELOPMENT: Modify dependencies and other project assumptions for use in a yarn workspaces context
 
