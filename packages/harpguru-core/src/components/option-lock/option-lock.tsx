@@ -6,6 +6,8 @@ import {
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
+import { getSizes } from '../../styles'
+
 type OptionLockProps = {
   readonly children: React.ReactNode
   readonly locked: boolean
@@ -17,6 +19,25 @@ export const OptionLock = ({
   locked,
   handleTap,
 }: OptionLockProps): React.ReactElement => {
+  const { 10: contentHeight } = getSizes()
+
+  const styles = StyleSheet.create({
+    fillColumn: {
+      flex: 1,
+    },
+    overlay: {
+      ...StyleSheet.absoluteFillObject,
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    content: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: contentHeight,
+    },
+  })
+
   const labelText = locked ? 'locked' : 'tap to lock'
 
   const handleTapStateChange = ({
@@ -29,22 +50,9 @@ export const OptionLock = ({
 
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <View style={{ flex: 1 }}>
-        <View
-          style={{
-            ...StyleSheet.absoluteFillObject,
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}
-        >
-          <View
-            style={{
-              flex: 1,
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: 200,
-            }}
-          >
+      <View style={styles.fillColumn}>
+        <View style={styles.overlay}>
+          <View style={styles.content}>
             <Text>{labelText}</Text>
           </View>
         </View>
