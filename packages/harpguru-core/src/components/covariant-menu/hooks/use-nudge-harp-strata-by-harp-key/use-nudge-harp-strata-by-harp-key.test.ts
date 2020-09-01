@@ -25,7 +25,6 @@ const dbHarpSixthPozitionProps = {
 const dbHarpFirstPozitionProps = {
   ...baseHarpStrataProps,
   harpKeyId: PitchIds.Db,
-  pozitionId: PozitionIds.First,
 }
 
 const cHarpFirstPozition = getHarpStrata(cHarpFirstPozitionProps)
