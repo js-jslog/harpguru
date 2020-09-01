@@ -32,7 +32,7 @@ export const setGlobalState = (): void => {
   const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
   const { Explore: initialExperienceMode } = ExperienceModes
   const { Degree: initialDisplayMode } = DisplayModes
-  const { RootPitch: initialLockedCovariant } = CovariantMembers
+  const { Pozition: initialLockedCovariant } = CovariantMembers
 
   const state = {
     activeHarpStrata: initialHarpStrata,
