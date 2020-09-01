@@ -86,11 +86,15 @@ export const CovariantMenu = ({
           ]}
         >
           <View style={styles.mainContents}>
-            <OptionLock>
+            <OptionLock locked={true}>
               <Option {...harpKeyOptionProps} />
             </OptionLock>
-            <Option {...pozitionOptionProps} />
-            <Option {...rootPitchOptionProps} />
+            <OptionLock locked={false}>
+              <Option {...pozitionOptionProps} />
+            </OptionLock>
+            <OptionLock locked={false}>
+              <Option {...rootPitchOptionProps} />
+            </OptionLock>
             <Option {...displayModeOptionProps} />
           </View>
           <View style={styles.rotatedLabel}>
