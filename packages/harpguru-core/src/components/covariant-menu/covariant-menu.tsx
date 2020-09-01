@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { View, Text } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import { Option } from '../option'
@@ -85,7 +85,14 @@ export const CovariantMenu = ({
           ]}
         >
           <View style={styles.mainContents}>
-            <Option {...harpKeyOptionProps} />
+            <View style={{flex:1}} >
+              <View style={{...StyleSheet.absoluteFillObject, flexDirection: 'row', alignItems: 'center'}} >
+                <View style={{flex:1, alignItems: 'center', justifyContent: 'center', height: 200}} >
+                  <Text>locked</Text>
+                </View>
+              </View>
+              <Option {...harpKeyOptionProps} />
+            </View>
             <Option {...pozitionOptionProps} />
             <Option {...rootPitchOptionProps} />
             <Option {...displayModeOptionProps} />
