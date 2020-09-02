@@ -11,6 +11,7 @@ import {
 import { render } from '@testing-library/react-native'
 
 import { DisplayModes } from '../../types'
+import { CovariantMembers } from '../../packages/covariance-series'
 
 import { CovariantMenu } from './index'
 
@@ -25,10 +26,14 @@ const harpStrataProps: HarpStrataProps = {
 }
 
 const harpStrata = getHarpStrata(harpStrataProps)
+const { HarpKey: lockedCovariant } = CovariantMembers
+const setLockedCovariant = jest.fn()
 
 test('CovariantMenu renders a component with position and key information displayed', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [harpStrata]
+    if (stateItem === 'lockedCovariant')
+      return [lockedCovariant, setLockedCovariant]
     if (stateItem === 'activeDisplayMode')
       return [DisplayModes.Degree, jest.fn()]
     return undefined

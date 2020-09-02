@@ -10,6 +10,7 @@ import type { ActiveIds, HarpStrataProps, HarpStrata } from 'harpstrata'
 
 import { getNextQuizQuestion } from '../get-next-quiz-question'
 import { DisplayModes, ExperienceModes } from '../../types'
+import { CovariantMembers } from '../../packages/covariance-series'
 
 import { espyGlobalTuple } from './state-informant'
 
@@ -31,12 +32,14 @@ export const setGlobalState = (): void => {
   const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
   const { Explore: initialExperienceMode } = ExperienceModes
   const { Degree: initialDisplayMode } = DisplayModes
+  const { Pozition: initialLockedCovariant } = CovariantMembers
 
   const state = {
     activeHarpStrata: initialHarpStrata,
     quizQuestion: getNextQuizQuestion(PitchIds.A, initialDisplayMode),
     activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
+    lockedCovariant: initialLockedCovariant,
   }
   setGlobal(state)
 }
