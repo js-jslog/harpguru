@@ -79,7 +79,7 @@ export const getMenuStylesAndAnimationVals = (
   })
 
   const menuHiddenScale = 0.5
-  const menuScaleTranslationFactor = menuHiddenScale / 2
+  const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
 
   // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
