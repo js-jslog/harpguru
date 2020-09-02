@@ -5,10 +5,11 @@ import Animated, {
   interpolate,
   multiply,
 } from 'react-native-reanimated'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { getPitchIds, getDegreeIds } from 'harpstrata'
 
+import { NoteDisplayFragment } from '../note-display-fragment'
 import { getSizes, colors } from '../../styles'
 
 const { degreeColors, pageColor, inertOutline } = colors
@@ -92,6 +93,11 @@ const ActivityCell = ({
     outputRange: [multiply(legendWidth, -1), 0],
   })
 
+  const displayTuple =
+    pitchValue.split('').length === 1
+      ? [[pitchValue, undefined]]
+      : [[pitchValue.split('')[0], pitchValue.split('')[1]]]
+
   return (
     <>
       <View style={styles.cell}>
@@ -104,7 +110,10 @@ const ActivityCell = ({
           ]}
         />
         <View style={styles.pitchValuetWrapper}>
-          <Text style={styles.pitchValue}>{pitchValue}</Text>
+          <NoteDisplayFragment
+            isActive={isActive}
+            displayValue={displayTuple}
+          />
         </View>
       </View>
     </>
