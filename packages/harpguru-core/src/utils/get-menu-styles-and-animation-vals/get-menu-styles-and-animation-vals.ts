@@ -78,7 +78,7 @@ export const getMenuStylesAndAnimationVals = (
     },
   })
 
-  const menuHiddenScale = 0.49
+  const menuHiddenScale = 0.49 // 0.5 would have both tabs fill exactly half the screen height
   const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
 
   // Animation values
