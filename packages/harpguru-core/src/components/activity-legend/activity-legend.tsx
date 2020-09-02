@@ -12,6 +12,7 @@ import { getPitchIds, getDegreeIds } from 'harpstrata'
 import { NoteDisplayFragment } from '../note-display-fragment'
 import { getDisplayValueTuple } from '../../utils'
 import type { DisplayValues } from '../../utils'
+import { DisplayModes } from '../../types'
 import { getSizes, colors } from '../../styles'
 
 const { degreeColors, pageColor, inertOutline } = colors
@@ -32,10 +33,14 @@ export const ActivityLegend = (): React.ReactElement => {
     const isActive = activePitchIds.indexOf(pitchId) > -1
     const { [index]: degreeId } = orderedDegreeIds
     const { [degreeId]: degreeColor } = degreeColors
+    const legendDisplayMode =
+      activeDisplayMode === DisplayModes.Pitch
+        ? DisplayModes.Degree
+        : DisplayModes.Pitch
     const displayValue = getDisplayValueTuple(
       degreeId,
       pitchId,
-      activeDisplayMode
+      legendDisplayMode
     )
     return (
       <ActivityCell

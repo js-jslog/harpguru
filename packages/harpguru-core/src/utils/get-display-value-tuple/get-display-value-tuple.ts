@@ -13,12 +13,12 @@ export type DisplayValues = ReadonlyArray<DisplayValueTuple>
 export const getDisplayValueTuple = (
   degreeId: DegreeIds | undefined,
   pitchId: PitchIds | undefined,
-  activeDisplayMode: DisplayModes
+  displayMode: DisplayModes
 ): DisplayValues => {
   if (degreeId === undefined || pitchId === undefined)
     return [[undefined, undefined]]
 
-  if (activeDisplayMode === DisplayModes.Degree) {
+  if (displayMode === DisplayModes.Degree) {
     const [note, ...modifiers] = degreeId.split('')
 
     return [[note, modifiers.join('')]]
