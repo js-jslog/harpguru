@@ -11,7 +11,7 @@ import { getPitchIds, getDegreeIds } from 'harpstrata'
 
 import { getSizes, colors } from '../../styles'
 
-const { degreeColors, pageColor } = colors
+const { degreeColors, pageColor, inertOutline } = colors
 
 export const ActivityLegend = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
@@ -78,7 +78,7 @@ const ActivityCell = ({
       alignItems: 'center',
     },
     pitchValue: {
-      color: isActive ? pageColor : degreeColor,
+      color: isActive ? pageColor : inertOutline,
       fontSize: pitchValueSize,
     },
   })
