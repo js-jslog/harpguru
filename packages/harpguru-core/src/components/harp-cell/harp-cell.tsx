@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
@@ -9,6 +10,7 @@ import React from 'react'
 import { IsActiveIds } from 'harpstrata'
 
 import { NoteDisplayFragment } from '../note-display-fragment'
+import { getDisplayValueTuple } from '../../utils'
 import type { Coord } from '../../types'
 
 import {
@@ -16,7 +18,6 @@ import {
   useStyles,
   useSetPozitionRoot,
   usePositionAnalysis,
-  useDisplayValue,
 } from './hooks'
 
 export type YXCoord = [Coord, Coord]
@@ -26,12 +27,17 @@ type HarpCellProps = {
 }
 
 export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const toggleHarpCell = useToggleHarpCell()
   const setPozitionRoot = useSetPozitionRoot()
   const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
     yxCoord
   )
-  const displayValue = useDisplayValue(yxCoord)
+  const displayValue = getDisplayValueTuple(
+    thisDegreeId,
+    thisPitchId,
+    activeDisplayMode
+  )
   const styles = useStyles(yxCoord)
 
   const handleTapStateChange = ({
