@@ -71,12 +71,13 @@ export const CovariantMenu = ({
 
   const {
     styles,
-    menuSlideTranslation,
+    menuSlideXTranslation,
+    menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
     labelOpacity,
     labelCounterScale,
-  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'LEFT')
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
 
   return (
     <Animated.View
@@ -84,7 +85,8 @@ export const CovariantMenu = ({
         styles.animated,
         {
           transform: [
-            { translateX: menuSlideTranslation },
+            { translateX: menuSlideXTranslation },
+            { translateY: menuSlideYTranslation },
             { scale: menuScale },
           ],
         },
