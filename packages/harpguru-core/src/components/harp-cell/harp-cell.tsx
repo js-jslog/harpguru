@@ -4,10 +4,11 @@ import {
   State,
   LongPressGestureHandler,
 } from 'react-native-gesture-handler'
-import { Text, View } from 'react-native'
-import type { TextStyle, ViewStyle } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
+import { IsActiveIds } from 'harpstrata'
 
+import { NoteDisplayFragment } from '../note-display-fragment'
 import type { Coord } from '../../types'
 
 import {
@@ -20,15 +21,6 @@ import {
 
 export type YXCoord = [Coord, Coord]
 
-export type HarpCellStyles = {
-  readonly cell: ViewStyle
-  readonly naturalContentsWrapper: ViewStyle
-  readonly sharpContentsWrapper: ViewStyle
-  readonly flatContentsWrapper: ViewStyle
-  readonly note: TextStyle
-  readonly modifier: TextStyle
-}
-
 type HarpCellProps = {
   readonly yxCoord: YXCoord
 }
@@ -36,7 +28,9 @@ type HarpCellProps = {
 export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const toggleHarpCell = useToggleHarpCell()
   const setPozitionRoot = useSetPozitionRoot()
-  const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
+  const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
+    yxCoord
+  )
   const displayValue = useDisplayValue(yxCoord)
   const styles = useStyles(yxCoord)
 
@@ -56,32 +50,12 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     setPozitionRoot(thisPitchId)
   }
 
-  const contentFragment =
-    displayValue.length === 2 ? (
-      <>
-        <View style={styles.sharpContentsWrapper}>
-          <Text style={styles.note}>{displayValue[0][0]}</Text>
-        </View>
-        <View style={styles.sharpContentsWrapper}>
-          <Text style={styles.modifier}>{displayValue[0][1]}</Text>
-        </View>
-        <View style={styles.flatContentsWrapper}>
-          <Text style={styles.note}>{displayValue[1][0]}</Text>
-        </View>
-        <View style={styles.flatContentsWrapper}>
-          <Text style={styles.modifier}>{displayValue[1][1]}</Text>
-        </View>
-      </>
-    ) : (
-      <>
-        <View style={styles.naturalContentsWrapper}>
-          <Text style={styles.note}>{displayValue[0][0]}</Text>
-        </View>
-        <View style={styles.naturalContentsWrapper}>
-          <Text style={styles.modifier}>{displayValue[0][1]}</Text>
-        </View>
-      </>
-    )
+  const contentFragment = (
+    <NoteDisplayFragment
+      displayValue={displayValue}
+      isActive={thisIsActiveId === IsActiveIds.Active}
+    />
+  )
 
   const accessibleContent = (
     <LongPressGestureHandler onHandlerStateChange={handleLongPressStateChange}>
