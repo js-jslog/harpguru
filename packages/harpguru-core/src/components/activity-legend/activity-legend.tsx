@@ -3,7 +3,7 @@ import React from 'react'
 
 import { getSizes, colors } from '../../styles'
 
-const { degreeColors } = colors
+const { degreeColors, pageColor } = colors
 
 export const ActivityLegend = (): React.ReactElement => {
   const sizes = getSizes()
@@ -12,7 +12,6 @@ export const ActivityLegend = (): React.ReactElement => {
   const styles = StyleSheet.create({
     block: {
       ...StyleSheet.absoluteFillObject,
-      backgroundColor: 'red',
       width: legendWidth,
       flexDirection: 'column',
     },
@@ -20,18 +19,66 @@ export const ActivityLegend = (): React.ReactElement => {
 
   return (
     <View style={styles.block}>
-      <ActivityCell degreeColor={degreeColors['1']} pitchValue={'A'} />
-      <ActivityCell degreeColor={degreeColors['2b']} pitchValue={'A#/Bb'} />
-      <ActivityCell degreeColor={degreeColors['2']} pitchValue={'B'} />
-      <ActivityCell degreeColor={degreeColors['3b']} pitchValue={'C'} />
-      <ActivityCell degreeColor={degreeColors['3']} pitchValue={'C#/Db'} />
-      <ActivityCell degreeColor={degreeColors['4']} pitchValue={'D'} />
-      <ActivityCell degreeColor={degreeColors['5b']} pitchValue={'D#/Eb'} />
-      <ActivityCell degreeColor={degreeColors['5']} pitchValue={'E'} />
-      <ActivityCell degreeColor={degreeColors['6b']} pitchValue={'F'} />
-      <ActivityCell degreeColor={degreeColors['6']} pitchValue={'F#/Gb'} />
-      <ActivityCell degreeColor={degreeColors['7b']} pitchValue={'G'} />
-      <ActivityCell degreeColor={degreeColors['7']} pitchValue={'G#/Ab'} />
+      <ActivityCell
+        isActive={true}
+        degreeColor={degreeColors['1']}
+        pitchValue={'A'}
+      />
+      <ActivityCell
+        isActive={false}
+        degreeColor={degreeColors['2b']}
+        pitchValue={'A#/Bb'}
+      />
+      <ActivityCell
+        isActive={true}
+        degreeColor={degreeColors['2']}
+        pitchValue={'B'}
+      />
+      <ActivityCell
+        isActive={false}
+        degreeColor={degreeColors['3b']}
+        pitchValue={'C'}
+      />
+      <ActivityCell
+        isActive={true}
+        degreeColor={degreeColors['3']}
+        pitchValue={'C#/Db'}
+      />
+      <ActivityCell
+        isActive={true}
+        degreeColor={degreeColors['4']}
+        pitchValue={'D'}
+      />
+      <ActivityCell
+        isActive={false}
+        degreeColor={degreeColors['5b']}
+        pitchValue={'D#/Eb'}
+      />
+      <ActivityCell
+        isActive={true}
+        degreeColor={degreeColors['5']}
+        pitchValue={'E'}
+      />
+      <ActivityCell
+        isActive={false}
+        degreeColor={degreeColors['6b']}
+        pitchValue={'F'}
+      />
+      <ActivityCell
+        isActive={true}
+        degreeColor={degreeColors['6']}
+        pitchValue={'F#/Gb'}
+      />
+      <ActivityCell
+        isActive={false}
+        degreeColor={degreeColors['7b']}
+        pitchValue={'G'}
+      />
+      <ActivityCell
+        isActive={true}
+        degreeColor={degreeColors['7']}
+        pitchValue={'G#/Ab'}
+      />
     </View>
   )
 }
@@ -39,25 +86,25 @@ export const ActivityLegend = (): React.ReactElement => {
 type ActivityCellProps = {
   readonly degreeColor: string
   readonly pitchValue: string
+  readonly isActive: boolean
 }
 
 const ActivityCell = ({
   degreeColor,
   pitchValue,
+  isActive,
 }: ActivityCellProps): React.ReactElement => {
   const sizes = getSizes()
-  const { 7: pitchValueSize } = sizes
+  const { 7: pitchValueSize, 9: legendWidth, 3: inactiveProtrusion } = sizes
+  const retraction = legendWidth - inactiveProtrusion
 
   const styles = StyleSheet.create({
     cell: {
       flex: 1,
     },
-    cellColorWrapper: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-    },
     cellColor: {
-      backgroundColor: 'red',
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: degreeColor,
     },
     pitchValuetWrapper: {
       ...StyleSheet.absoluteFillObject,
@@ -66,14 +113,21 @@ const ActivityCell = ({
       alignItems: 'center',
     },
     pitchValue: {
-      color: 'white',
+      color: isActive ? pageColor : degreeColor,
       fontSize: pitchValueSize,
     },
   })
   return (
     <>
       <View style={styles.cell}>
-        <View style={[styles.cell, { backgroundColor: degreeColor }]} />
+        <View
+          style={[
+            styles.cellColor,
+            {
+              transform: [{ translateX: isActive ? 0 : retraction * -1 }],
+            },
+          ]}
+        />
         <View style={styles.pitchValuetWrapper}>
           <Text style={styles.pitchValue}>{pitchValue}</Text>
         </View>
