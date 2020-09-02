@@ -1,13 +1,33 @@
+import { useGlobal } from 'reactn'
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import { getPitchIds, getDegreeIds } from 'harpstrata'
 
 import { getSizes, colors } from '../../styles'
 
 const { degreeColors, pageColor } = colors
 
 export const ActivityLegend = (): React.ReactElement => {
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const { rootPitchId, isActiveComplex: { activePitchIds } } = activeHarpStrata
+  const orderedPitchIds = getPitchIds(rootPitchId)
+  const orderedDegreeIds = getDegreeIds()
   const sizes = getSizes()
   const { 9: legendWidth } = sizes
+
+  const activityCells = orderedPitchIds.map((pitchId, index) => {
+    const isActive = activePitchIds.indexOf(pitchId) > -1
+    const { [index]: degreeId } = orderedDegreeIds
+    const { [degreeId]: degreeColor } = degreeColors
+    return (
+      <ActivityCell
+        key={index}
+        isActive={isActive}
+        degreeColor={degreeColor}
+        pitchValue={pitchId}
+      />
+    )
+  })
 
   const styles = StyleSheet.create({
     block: {
@@ -19,66 +39,7 @@ export const ActivityLegend = (): React.ReactElement => {
 
   return (
     <View style={styles.block}>
-      <ActivityCell
-        isActive={true}
-        degreeColor={degreeColors['1']}
-        pitchValue={'A'}
-      />
-      <ActivityCell
-        isActive={false}
-        degreeColor={degreeColors['2b']}
-        pitchValue={'A#/Bb'}
-      />
-      <ActivityCell
-        isActive={true}
-        degreeColor={degreeColors['2']}
-        pitchValue={'B'}
-      />
-      <ActivityCell
-        isActive={false}
-        degreeColor={degreeColors['3b']}
-        pitchValue={'C'}
-      />
-      <ActivityCell
-        isActive={true}
-        degreeColor={degreeColors['3']}
-        pitchValue={'C#/Db'}
-      />
-      <ActivityCell
-        isActive={true}
-        degreeColor={degreeColors['4']}
-        pitchValue={'D'}
-      />
-      <ActivityCell
-        isActive={false}
-        degreeColor={degreeColors['5b']}
-        pitchValue={'D#/Eb'}
-      />
-      <ActivityCell
-        isActive={true}
-        degreeColor={degreeColors['5']}
-        pitchValue={'E'}
-      />
-      <ActivityCell
-        isActive={false}
-        degreeColor={degreeColors['6b']}
-        pitchValue={'F'}
-      />
-      <ActivityCell
-        isActive={true}
-        degreeColor={degreeColors['6']}
-        pitchValue={'F#/Gb'}
-      />
-      <ActivityCell
-        isActive={false}
-        degreeColor={degreeColors['7b']}
-        pitchValue={'G'}
-      />
-      <ActivityCell
-        isActive={true}
-        degreeColor={degreeColors['7']}
-        pitchValue={'G#/Ab'}
-      />
+      {activityCells}
     </View>
   )
 }
