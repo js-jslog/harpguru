@@ -33,7 +33,11 @@ export const useMenus = (): [MenuStates, HandleSwipe, HandleTap] => {
       if (isSwipeLeft(translationX) && isSwipeUp(translationY)) {
         setMenuState(MenuStates.LayoutMenu)
       }
-      if ((menuState === MenuStates.CovariantMenu || menuState === MenuStates.LayoutMenu) && isSwipeRight(translationX)) {
+      if (
+        (menuState === MenuStates.CovariantMenu ||
+          menuState === MenuStates.LayoutMenu) &&
+        isSwipeRight(translationX)
+      ) {
         setMenuState(MenuStates.NoMenu)
       }
       setPanState(State.UNDETERMINED)
