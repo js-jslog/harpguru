@@ -61,8 +61,7 @@ const ActivityCell = ({
   isActive,
 }: ActivityCellProps): React.ReactElement => {
   const sizes = getSizes()
-  const { 7: pitchValueSize, 9: legendWidth, 3: inactiveProtrusion } = sizes
-  const retraction = legendWidth - inactiveProtrusion
+  const { 7: pitchValueSize, 9: legendWidth } = sizes
 
   const styles = StyleSheet.create({
     cell: {
@@ -86,11 +85,11 @@ const ActivityCell = ({
 
   const hideActivityCellVal = useTimingTransition(isActive, {
     duration: 200,
-    easing: Easing.inOut(Easing.bounce),
+    easing: Easing.inOut(Easing.circle),
   })
   const hideActivityCellTranslation = interpolate(hideActivityCellVal, {
     inputRange: [0, 1],
-    outputRange: [multiply(retraction, -1), 0],
+    outputRange: [multiply(legendWidth, -1), 0],
   })
 
   return (
