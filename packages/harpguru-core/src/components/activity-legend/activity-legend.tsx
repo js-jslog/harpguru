@@ -121,6 +121,7 @@ const ActivityCell = ({
           <NoteDisplayFragment
             isActive={isActive}
             displayValue={displayValue}
+            splitType={'FLAT'}
           />
         </View>
       </View>

@@ -60,6 +60,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     <NoteDisplayFragment
       displayValue={displayValue}
       isActive={thisIsActiveId === IsActiveIds.Active}
+      splitType={'SLANT'}
     />
   )
 

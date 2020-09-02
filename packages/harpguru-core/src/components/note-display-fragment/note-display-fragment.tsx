@@ -10,10 +10,12 @@ type NoteTuple = [string, string] | [string, undefined] | [undefined, undefined]
 type NoteDisplayFragment = {
   readonly displayValue: ReadonlyArray<NoteTuple>
   readonly isActive: boolean
+  readonly splitType: 'FLAT' | 'SLANT'
 }
 export const NoteDisplayFragment = ({
   displayValue,
   isActive,
+  splitType,
 }: NoteDisplayFragment): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
@@ -32,15 +34,15 @@ export const NoteDisplayFragment = ({
       ...StyleSheet.absoluteFillObject,
       justifyContent: 'center',
       alignItems: 'center',
-      bottom: sizes['5'],
-      right: sizes['7'],
+      bottom: splitType === 'SLANT' ? sizes['5'] : 0,
+      right: splitType === 'SLANT' ? sizes['7'] : sizes['7'],
     },
     flatContentsWrapper: {
       ...StyleSheet.absoluteFillObject,
       justifyContent: 'center',
       alignItems: 'center',
-      top: sizes['5'],
-      left: sizes['6'],
+      top: splitType === 'SLANT' ? sizes['5'] : 0,
+      left: splitType === 'SLANT' ? sizes['6'] : sizes['7'],
     },
     note: {
       display: isQuizMode && !isActive ? 'none' : 'flex',
