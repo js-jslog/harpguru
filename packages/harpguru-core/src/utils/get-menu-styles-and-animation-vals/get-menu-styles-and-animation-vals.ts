@@ -78,6 +78,9 @@ export const getMenuStylesAndAnimationVals = (
     },
   })
 
+  const menuHiddenScale = 0.5
+  const menuScaleTranslationFactor = menuHiddenScale / 2
+
   // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
     duration: 400,
@@ -99,14 +102,20 @@ export const getMenuStylesAndAnimationVals = (
     outputRange: [
       0,
       multiply(
-        sub(deviceLongSide, multiply(deviceLongSide, 0.25)),
+        sub(
+          deviceLongSide,
+          multiply(deviceLongSide, menuScaleTranslationFactor)
+        ),
         outwardXMultiplier
       ),
     ],
   })
   const hideMenuYTranslation = interpolate(hideMenuVal, {
     inputRange: [0, 1],
-    outputRange: [0, multiply(deviceShortSide, 0.25, outwardYMultiplier)],
+    outputRange: [
+      0,
+      multiply(deviceShortSide, menuScaleTranslationFactor, outwardYMultiplier),
+    ],
   })
   const hideLabelTranslation = interpolate(hideLabelVal, {
     inputRange: [0, 1],
@@ -116,7 +125,7 @@ export const getMenuStylesAndAnimationVals = (
   const menuSlideYTranslation = hideMenuYTranslation
   const menuScale = interpolate(hideMenuVal, {
     inputRange: [0, 1],
-    outputRange: [1, 0.5],
+    outputRange: [1, menuHiddenScale],
   })
   const menuBackgroundColor = interpolateColor(hideMenuVal, {
     inputRange: [0, 1],
@@ -129,8 +138,8 @@ export const getMenuStylesAndAnimationVals = (
     outputRange: [0, 1],
   })
   const labelCounterScale = interpolate(menuScale, {
-    inputRange: [0.5, 1],
-    outputRange: [1, 0.5],
+    inputRange: [menuHiddenScale, 1],
+    outputRange: [1, menuHiddenScale],
   })
 
   return {
