@@ -78,7 +78,7 @@ export const getMenuStylesAndAnimationVals = (
     },
   })
 
-  const menuHiddenScale = 0.5
+  const menuHiddenScale = 0.49
   const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
 
   // Animation values
