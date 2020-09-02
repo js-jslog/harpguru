@@ -1,4 +1,10 @@
 import { useGlobal } from 'reactn'
+import { useTimingTransition } from 'react-native-redash'
+import Animated, {
+  Easing,
+  interpolate,
+  multiply,
+} from 'react-native-reanimated'
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { getPitchIds, getDegreeIds } from 'harpstrata'
@@ -9,7 +15,10 @@ const { degreeColors, pageColor } = colors
 
 export const ActivityLegend = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const { rootPitchId, isActiveComplex: { activePitchIds } } = activeHarpStrata
+  const {
+    rootPitchId,
+    isActiveComplex: { activePitchIds },
+  } = activeHarpStrata
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
   const sizes = getSizes()
@@ -37,11 +46,7 @@ export const ActivityLegend = (): React.ReactElement => {
     },
   })
 
-  return (
-    <View style={styles.block}>
-      {activityCells}
-    </View>
-  )
+  return <View style={styles.block}>{activityCells}</View>
 }
 
 type ActivityCellProps = {
@@ -78,14 +83,24 @@ const ActivityCell = ({
       fontSize: pitchValueSize,
     },
   })
+
+  const hideActivityCellVal = useTimingTransition(isActive, {
+    duration: 200,
+    easing: Easing.inOut(Easing.bounce),
+  })
+  const hideActivityCellTranslation = interpolate(hideActivityCellVal, {
+    inputRange: [0, 1],
+    outputRange: [multiply(retraction, -1), 0],
+  })
+
   return (
     <>
       <View style={styles.cell}>
-        <View
+        <Animated.View
           style={[
             styles.cellColor,
             {
-              transform: [{ translateX: isActive ? 0 : retraction * -1 }],
+              transform: [{ translateX: hideActivityCellTranslation }],
             },
           ]}
         />
