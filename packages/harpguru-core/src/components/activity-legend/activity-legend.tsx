@@ -10,12 +10,15 @@ import React from 'react'
 import { getPitchIds, getDegreeIds } from 'harpstrata'
 
 import { NoteDisplayFragment } from '../note-display-fragment'
+import { getDisplayValueTuple } from '../../utils'
+import type { DisplayValues } from '../../utils'
 import { getSizes, colors } from '../../styles'
 
 const { degreeColors, pageColor, inertOutline } = colors
 
 export const ActivityLegend = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const {
     rootPitchId,
     isActiveComplex: { activePitchIds },
@@ -29,12 +32,17 @@ export const ActivityLegend = (): React.ReactElement => {
     const isActive = activePitchIds.indexOf(pitchId) > -1
     const { [index]: degreeId } = orderedDegreeIds
     const { [degreeId]: degreeColor } = degreeColors
+    const displayValue = getDisplayValueTuple(
+      degreeId,
+      pitchId,
+      activeDisplayMode
+    )
     return (
       <ActivityCell
         key={index}
         isActive={isActive}
         degreeColor={degreeColor}
-        pitchValue={pitchId}
+        displayValue={displayValue}
       />
     )
   })
@@ -52,13 +60,13 @@ export const ActivityLegend = (): React.ReactElement => {
 
 type ActivityCellProps = {
   readonly degreeColor: string
-  readonly pitchValue: string
+  readonly displayValue: DisplayValues
   readonly isActive: boolean
 }
 
 const ActivityCell = ({
   degreeColor,
-  pitchValue,
+  displayValue,
   isActive,
 }: ActivityCellProps): React.ReactElement => {
   const sizes = getSizes()
@@ -93,11 +101,6 @@ const ActivityCell = ({
     outputRange: [multiply(legendWidth, -1), 0],
   })
 
-  const displayTuple =
-    pitchValue.split('').length === 1
-      ? [[pitchValue, undefined]]
-      : [[pitchValue.split('')[0], pitchValue.split('')[1]]]
-
   return (
     <>
       <View style={styles.cell}>
@@ -112,7 +115,7 @@ const ActivityCell = ({
         <View style={styles.pitchValuetWrapper}>
           <NoteDisplayFragment
             isActive={isActive}
-            displayValue={displayTuple}
+            displayValue={displayValue}
           />
         </View>
       </View>
