@@ -2,8 +2,8 @@ import { DegreeIds, PitchIds } from 'harpstrata'
 
 import { getRenderableToneTuples } from './get-renderable-tone-tuples'
 
-test('returns an undefined tone tuple with an undefined input', () => {
-  const expected = [[undefined, undefined]]
+test('returns an empty tone tuple with an undefined input', () => {
+  const expected = [['', '']]
   const actual = getRenderableToneTuples(undefined)
 
   expect(actual).toStrictEqual(expected)

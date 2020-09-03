@@ -6,7 +6,7 @@ import type { RenderableToneTuples } from '../../types'
 export const getRenderableToneTuples = (
   sourceId: DegreeIds | PitchIds | undefined
 ): RenderableToneTuples => {
-  if (sourceId === undefined) return [[undefined, undefined]]
+  if (sourceId === undefined) return [['', '']]
 
   if (!isPitchId(sourceId)) {
     const [note, ...modifiers] = sourceId.split('')
