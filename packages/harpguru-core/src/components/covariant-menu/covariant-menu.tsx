@@ -4,9 +4,11 @@ import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View, Text } from 'react-native'
 import React from 'react'
 
+import { OptionLock } from '../option-lock'
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
+import { CovariantMembers } from '../../packages/covariance-series'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import {
@@ -21,6 +23,7 @@ export const CovariantMenu = ({
   tapHandler,
 }: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
 
   const { harpKeyId } = activeHarpStrata
   const nudgeHarpStrataByHarpKey = useNudgeHarpStrataByHarpKey()
@@ -28,6 +31,10 @@ export const CovariantMenu = ({
     title: 'Harp Key',
     optionId: harpKeyId,
     nudgeFunction: nudgeHarpStrataByHarpKey,
+  }
+  const harpKeyIsLocked = lockedCovariant === CovariantMembers.HarpKey
+  const lockHarpKey = () => {
+    setLockedCovariant(CovariantMembers.HarpKey)
   }
 
   const { pozitionId } = activeHarpStrata
@@ -37,6 +44,10 @@ export const CovariantMenu = ({
     optionId: pozitionId,
     nudgeFunction: nudgeHarpStrataByPozition,
   }
+  const pozitionIsLocked = lockedCovariant === CovariantMembers.Pozition
+  const lockPozition = () => {
+    setLockedCovariant(CovariantMembers.Pozition)
+  }
 
   const { rootPitchId } = activeHarpStrata
   const nudgeHarpStrataByRootPitch = useNudgeHarpStrataByRootPitch()
@@ -44,6 +55,10 @@ export const CovariantMenu = ({
     title: 'Position Key',
     optionId: rootPitchId,
     nudgeFunction: nudgeHarpStrataByRootPitch,
+  }
+  const rootPitchIsLocked = lockedCovariant === CovariantMembers.RootPitch
+  const lockRootPitch = () => {
+    setLockedCovariant(CovariantMembers.RootPitch)
   }
 
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
@@ -56,12 +71,13 @@ export const CovariantMenu = ({
 
   const {
     styles,
-    menuSlideTranslation,
+    menuSlideXTranslation,
+    menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
     labelOpacity,
     labelCounterScale,
-  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'LEFT')
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
 
   return (
     <Animated.View
@@ -69,7 +85,8 @@ export const CovariantMenu = ({
         styles.animated,
         {
           transform: [
-            { translateX: menuSlideTranslation },
+            { translateX: menuSlideXTranslation },
+            { translateY: menuSlideYTranslation },
             { scale: menuScale },
           ],
         },
@@ -85,9 +102,15 @@ export const CovariantMenu = ({
           ]}
         >
           <View style={styles.mainContents}>
-            <Option {...harpKeyOptionProps} />
-            <Option {...pozitionOptionProps} />
-            <Option {...rootPitchOptionProps} />
+            <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
+              <Option {...harpKeyOptionProps} />
+            </OptionLock>
+            <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
+              <Option {...pozitionOptionProps} />
+            </OptionLock>
+            <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
+              <Option {...rootPitchOptionProps} />
+            </OptionLock>
             <Option {...displayModeOptionProps} />
           </View>
           <View style={styles.rotatedLabel}>

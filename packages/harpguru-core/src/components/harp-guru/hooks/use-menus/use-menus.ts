@@ -17,17 +17,27 @@ export const useMenus = (): [MenuStates, HandleSwipe, HandleTap] => {
   const [panState, setPanState] = useState<State>(State.UNDETERMINED)
   const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
   const [translationX, setTranslationX] = useState<number>(0)
+  const [translationY, setTranslationY] = useState<number>(0)
   const previousPanState = usePrevious(panState, State.UNDETERMINED)
+
+  const isSwipeLeft = (x: number) => x < 0
+  const isSwipeRight = (x: number) => x > 0
+  const isSwipeUp = (y: number) => y < 0
+  const isSwipeDown = (y: number) => y > 0
 
   useEffect(() => {
     if (panState === State.END && previousPanState === State.ACTIVE) {
-      if (menuState === MenuStates.NoMenu && translationX < 0) {
-        setMenuState(MenuStates.LayoutMenu)
-      } else if (menuState === MenuStates.NoMenu && translationX > 0) {
+      if (isSwipeLeft(translationX) && isSwipeDown(translationY)) {
         setMenuState(MenuStates.CovariantMenu)
-      } else if (menuState === MenuStates.CovariantMenu && translationX < 0) {
-        setMenuState(MenuStates.NoMenu)
-      } else if (menuState === MenuStates.LayoutMenu && translationX > 0) {
+      }
+      if (isSwipeLeft(translationX) && isSwipeUp(translationY)) {
+        setMenuState(MenuStates.LayoutMenu)
+      }
+      if (
+        (menuState === MenuStates.CovariantMenu ||
+          menuState === MenuStates.LayoutMenu) &&
+        isSwipeRight(translationX)
+      ) {
         setMenuState(MenuStates.NoMenu)
       }
       setPanState(State.UNDETERMINED)
@@ -50,6 +60,7 @@ export const useMenus = (): [MenuStates, HandleSwipe, HandleTap] => {
   const handleSwipe = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     setPanState(nativeEvent.state)
     setTranslationX(nativeEvent.translationX)
+    setTranslationY(nativeEvent.translationY)
   }
   return [menuState, handleSwipe, handleTap]
 }

@@ -1,43 +1,51 @@
+import { useGlobal } from 'reactn'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
   State,
   LongPressGestureHandler,
 } from 'react-native-gesture-handler'
-import { Text, View } from 'react-native'
-import type { TextStyle, ViewStyle } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
+import { IsActiveIds } from 'harpstrata'
+import type { DegreeIds, PitchIds } from 'harpstrata'
 
-import type { Coord } from '../../types'
+import { RenderedTone } from '../rendered-tone'
+import { getRenderableToneTuples } from '../../utils'
+import { Coord, DisplayModes } from '../../types'
 
 import {
   useToggleHarpCell,
   useStyles,
   useSetPozitionRoot,
   usePositionAnalysis,
-  useDisplayValue,
 } from './hooks'
 
 export type YXCoord = [Coord, Coord]
-
-export type HarpCellStyles = {
-  readonly cell: ViewStyle
-  readonly naturalContentsWrapper: ViewStyle
-  readonly sharpContentsWrapper: ViewStyle
-  readonly flatContentsWrapper: ViewStyle
-  readonly note: TextStyle
-  readonly modifier: TextStyle
-}
 
 type HarpCellProps = {
   readonly yxCoord: YXCoord
 }
 
+const getToneSource = (
+  degreeId: DegreeIds | undefined,
+  pitchId: PitchIds | undefined,
+  activeDisplayMode: DisplayModes
+): DegreeIds | PitchIds | undefined => {
+  if (degreeId === undefined && pitchId === undefined) return undefined
+  if (activeDisplayMode === DisplayModes.Degree) return degreeId
+  return pitchId
+}
+
 export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const toggleHarpCell = useToggleHarpCell()
   const setPozitionRoot = useSetPozitionRoot()
-  const { thisDegreeId, thisPitchId } = usePositionAnalysis(yxCoord)
-  const displayValue = useDisplayValue(yxCoord)
+  const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
+    yxCoord
+  )
+  const toneSource = getToneSource(thisDegreeId, thisPitchId, activeDisplayMode)
+  const toneTuples = getRenderableToneTuples(toneSource)
   const styles = useStyles(yxCoord)
 
   const handleTapStateChange = ({
@@ -56,38 +64,19 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     setPozitionRoot(thisPitchId)
   }
 
-  const contentFragment =
-    displayValue.length === 2 ? (
-      <>
-        <View style={styles.sharpContentsWrapper}>
-          <Text style={styles.note}>{displayValue[0][0]}</Text>
-        </View>
-        <View style={styles.sharpContentsWrapper}>
-          <Text style={styles.modifier}>{displayValue[0][1]}</Text>
-        </View>
-        <View style={styles.flatContentsWrapper}>
-          <Text style={styles.note}>{displayValue[1][0]}</Text>
-        </View>
-        <View style={styles.flatContentsWrapper}>
-          <Text style={styles.modifier}>{displayValue[1][1]}</Text>
-        </View>
-      </>
-    ) : (
-      <>
-        <View style={styles.naturalContentsWrapper}>
-          <Text style={styles.note}>{displayValue[0][0]}</Text>
-        </View>
-        <View style={styles.naturalContentsWrapper}>
-          <Text style={styles.modifier}>{displayValue[0][1]}</Text>
-        </View>
-      </>
-    )
+  const renderedTone = (
+    <RenderedTone
+      toneTuples={toneTuples}
+      isActive={thisIsActiveId === IsActiveIds.Active}
+      splitType={'SLANT'}
+    />
+  )
 
   const accessibleContent = (
     <LongPressGestureHandler onHandlerStateChange={handleLongPressStateChange}>
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
         <View accessible={true} accessibilityRole="button" style={styles.cell}>
-          {contentFragment}
+          {renderedTone}
         </View>
       </TapGestureHandler>
     </LongPressGestureHandler>

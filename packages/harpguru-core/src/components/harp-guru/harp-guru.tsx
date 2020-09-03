@@ -10,6 +10,7 @@ import { QuizQuestionDisplay } from '../quiz-question-display'
 import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
+import { ActivityLegend } from '../activity-legend'
 import { setGlobalState, setGlobalReducers } from '../../utils'
 import { MenuStates } from '../../types'
 import { colors } from '../../styles'
@@ -49,6 +50,7 @@ export const HarpGuru = (): ReactElement => {
       onHandlerStateChange={handleSwipe}
     >
       <View style={styles.fillScreen}>
+        <ActivityLegend />
         <HarpFaceMemo />
         <CovariantMenu
           hideMenu={menuState !== MenuStates.CovariantMenu}

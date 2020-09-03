@@ -13,11 +13,21 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-core.v0.1.0...experiment-as-npm-package) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/e88c0002da82bc8a49e89c8293a79c3619ae7c49...master) - yyyy-mm-dd
+
+### Added
+
+- INITIAL-DEVELOPMENT: Add covariant locking system to give user control of which covariants are varying together
+- INITIAL-DEVELOPMENT: Add activity legend to help map degrees and pitches from a single view
+
+### Changed
+
+- INITIAL-DEVELOPMENT: Move menus to both be on right hand side
 
 ## [harpguru-core.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-core.v0.1.0) - 2020-08-28
 
 ### Changed
+
 - INITIAL-DEVELOPMENT: Remove HarpGuru app from expo boilerplate
 - INITIAL-DEVELOPMENT: Modify dependencies and other project assumptions for use in a yarn workspaces context
 
