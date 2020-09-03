@@ -78,25 +78,18 @@ const ActivityCell = ({
   isActive,
 }: ActivityCellProps): React.ReactElement => {
   const sizes = getSizes()
-  const { 7: pitchValueSize, 9: legendWidth } = sizes
+  const { 9: legendWidth } = sizes
 
   const styles = StyleSheet.create({
     cell: {
       flex: 1,
-    },
-    cellColor: {
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: degreeColor,
-    },
-    pitchValuetWrapper: {
-      ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
     },
-    pitchValue: {
-      color: isActive ? pageColor : inertOutline,
-      fontSize: pitchValueSize,
+    cellColor: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: degreeColor,
     },
   })
 
@@ -120,13 +113,11 @@ const ActivityCell = ({
             },
           ]}
         />
-        <View style={styles.pitchValuetWrapper}>
-          <RenderedTone
-            toneTuples={toneTuples}
-            isActive={isActive}
-            splitType={'FLAT'}
-          />
-        </View>
+        <RenderedTone
+          toneTuples={toneTuples}
+          isActive={isActive}
+          splitType={'FLAT'}
+        />
       </View>
     </>
   )
