@@ -30,7 +30,6 @@ export type XRange = ReadonlyArray<number>
 
 type RenderableToneTuple =
   | [string, string]
-  | [string, undefined]
   | [undefined, undefined]
 export type RenderableToneTuples =
   | [RenderableToneTuple, RenderableToneTuple]

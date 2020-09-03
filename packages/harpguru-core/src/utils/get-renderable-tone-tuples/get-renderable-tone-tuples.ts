@@ -19,7 +19,7 @@ export const getRenderableToneTuples = (
     const {
       contextualDisplayValues: { natural },
     } = pitch
-    return [[natural, undefined]]
+    return [[natural, '']]
   }
 
   const {
