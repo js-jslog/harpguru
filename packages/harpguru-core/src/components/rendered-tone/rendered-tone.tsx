@@ -5,18 +5,24 @@ import React from 'react'
 import { ExperienceModes } from '../../types'
 import { getSizes, colors } from '../../styles'
 
-type NoteTuple = [string, string] | [string, undefined] | [undefined, undefined]
+type RenderableToneTuple =
+  | [string, string]
+  | [string, undefined]
+  | [undefined, undefined]
+export type RenderableToneTuples =
+  | [RenderableToneTuple, RenderableToneTuple]
+  | [RenderableToneTuple]
 
-type NoteDisplayFragment = {
-  readonly displayValue: ReadonlyArray<NoteTuple>
+type RenderedToneProps = {
+  readonly toneTuples: RenderableToneTuples
   readonly isActive: boolean
   readonly splitType: 'FLAT' | 'SLANT'
 }
-export const NoteDisplayFragment = ({
-  displayValue,
+export const RenderedTone = ({
+  toneTuples,
   isActive,
   splitType,
-}: NoteDisplayFragment): React.ReactElement => {
+}: RenderedToneProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
@@ -59,28 +65,28 @@ export const NoteDisplayFragment = ({
   })
 
   const fragment =
-    displayValue.length === 2 ? (
+    toneTuples.length === 2 ? (
       <>
         <View style={styles.sharpContentsWrapper}>
-          <Text style={styles.note}>{displayValue[0][0]}</Text>
+          <Text style={styles.note}>{toneTuples[0][0]}</Text>
         </View>
         <View style={styles.sharpContentsWrapper}>
-          <Text style={styles.modifier}>{displayValue[0][1]}</Text>
+          <Text style={styles.modifier}>{toneTuples[0][1]}</Text>
         </View>
         <View style={styles.flatContentsWrapper}>
-          <Text style={styles.note}>{displayValue[1][0]}</Text>
+          <Text style={styles.note}>{toneTuples[1][0]}</Text>
         </View>
         <View style={styles.flatContentsWrapper}>
-          <Text style={styles.modifier}>{displayValue[1][1]}</Text>
+          <Text style={styles.modifier}>{toneTuples[1][1]}</Text>
         </View>
       </>
     ) : (
       <>
         <View style={styles.naturalContentsWrapper}>
-          <Text style={styles.note}>{displayValue[0][0]}</Text>
+          <Text style={styles.note}>{toneTuples[0][0]}</Text>
         </View>
         <View style={styles.naturalContentsWrapper}>
-          <Text style={styles.modifier}>{displayValue[0][1]}</Text>
+          <Text style={styles.modifier}>{toneTuples[0][1]}</Text>
         </View>
       </>
     )

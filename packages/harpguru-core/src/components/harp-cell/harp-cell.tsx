@@ -9,7 +9,8 @@ import { View } from 'react-native'
 import React from 'react'
 import { IsActiveIds } from 'harpstrata'
 
-import { NoteDisplayFragment } from '../note-display-fragment'
+import { RenderedTone } from '../rendered-tone'
+import type { RenderableToneTuples } from '../rendered-tone'
 import { getDisplayValueTuple } from '../../utils'
 import type { Coord } from '../../types'
 
@@ -33,11 +34,11 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
     yxCoord
   )
-  const displayValue = getDisplayValueTuple(
+  const toneTuples = getDisplayValueTuple(
     thisDegreeId,
     thisPitchId,
     activeDisplayMode
-  )
+  ) as RenderableToneTuples
   const styles = useStyles(yxCoord)
 
   const handleTapStateChange = ({
@@ -57,8 +58,8 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   }
 
   const contentFragment = (
-    <NoteDisplayFragment
-      displayValue={displayValue}
+    <RenderedTone
+      toneTuples={toneTuples}
       isActive={thisIsActiveId === IsActiveIds.Active}
       splitType={'SLANT'}
     />

@@ -9,9 +9,9 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { getPitchIds, getDegreeIds } from 'harpstrata'
 
-import { NoteDisplayFragment } from '../note-display-fragment'
+import { RenderedTone } from '../rendered-tone'
+import type { RenderableToneTuples } from '../rendered-tone'
 import { getDisplayValueTuple } from '../../utils'
-import type { DisplayValues } from '../../utils'
 import { DisplayModes } from '../../types'
 import { getSizes, colors } from '../../styles'
 
@@ -37,17 +37,17 @@ export const ActivityLegend = (): React.ReactElement => {
       activeDisplayMode === DisplayModes.Pitch
         ? DisplayModes.Degree
         : DisplayModes.Pitch
-    const displayValue = getDisplayValueTuple(
+    const toneTuples = getDisplayValueTuple(
       degreeId,
       pitchId,
       legendDisplayMode
-    )
+    ) as RenderableToneTuples
     return (
       <ActivityCell
         key={index}
         isActive={isActive}
         degreeColor={degreeColor}
-        displayValue={displayValue}
+        toneTuples={toneTuples}
       />
     )
   })
@@ -65,13 +65,13 @@ export const ActivityLegend = (): React.ReactElement => {
 
 type ActivityCellProps = {
   readonly degreeColor: string
-  readonly displayValue: DisplayValues
+  readonly toneTuples: RenderableToneTuples
   readonly isActive: boolean
 }
 
 const ActivityCell = ({
   degreeColor,
-  displayValue,
+  toneTuples,
   isActive,
 }: ActivityCellProps): React.ReactElement => {
   const sizes = getSizes()
@@ -118,9 +118,9 @@ const ActivityCell = ({
           ]}
         />
         <View style={styles.pitchValuetWrapper}>
-          <NoteDisplayFragment
+          <RenderedTone
+            toneTuples={toneTuples}
             isActive={isActive}
-            displayValue={displayValue}
             splitType={'FLAT'}
           />
         </View>
