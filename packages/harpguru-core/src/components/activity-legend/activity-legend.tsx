@@ -16,7 +16,7 @@ import { DisplayModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
 import { getSizes, colors } from '../../styles'
 
-const { degreeColors, pageColor, inertOutline } = colors
+const { degreeColors } = colors
 
 const getToneSource = (
   degreeId: DegreeIds,
