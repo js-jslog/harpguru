@@ -28,9 +28,7 @@ export type SetActiveDisplayMode = (arg0: DisplayModes) => void
 export type Coord = number
 export type XRange = ReadonlyArray<number>
 
-type RenderableToneTuple =
-  | [string, string]
-  | [undefined, undefined]
+type RenderableToneTuple = [string, string] | [undefined, undefined]
 export type RenderableToneTuples =
   | [RenderableToneTuple, RenderableToneTuple]
   | [RenderableToneTuple]

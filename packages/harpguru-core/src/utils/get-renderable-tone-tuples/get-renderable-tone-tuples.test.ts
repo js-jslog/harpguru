@@ -31,7 +31,10 @@ test('returns a natural pitch tone tuple', () => {
 })
 
 test('returns a flat pitch tone tuple', () => {
-  const expected = [['A', '#'], ['B', 'b']]
+  const expected = [
+    ['A', '#'],
+    ['B', 'b'],
+  ]
   const actual = getRenderableToneTuples(PitchIds.Bb)
 
   expect(actual).toStrictEqual(expected)
