@@ -56,14 +56,14 @@ export const ActivityLegend = (): React.ReactElement => {
   })
 
   const styles = StyleSheet.create({
-    block: {
+    legendWrapper: {
       ...StyleSheet.absoluteFillObject,
       width: legendWidth,
       flexDirection: 'column',
     },
   })
 
-  return <View style={styles.block}>{activityCells}</View>
+  return <View style={styles.legendWrapper}>{activityCells}</View>
 }
 
 type ActivityCellProps = {
