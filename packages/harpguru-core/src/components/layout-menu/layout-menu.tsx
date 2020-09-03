@@ -36,12 +36,13 @@ export const LayoutMenu = ({
 
   const {
     styles,
-    menuSlideTranslation,
+    menuSlideXTranslation,
+    menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
     labelOpacity,
     labelCounterScale,
-  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'RIGHT')
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
 
   return (
     <Animated.View
@@ -49,7 +50,8 @@ export const LayoutMenu = ({
         styles.animated,
         {
           transform: [
-            { translateX: menuSlideTranslation },
+            { translateX: menuSlideXTranslation },
+            { translateY: menuSlideYTranslation },
             { scale: menuScale },
           ],
         },

@@ -18,6 +18,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Added
 
 - INITIAL-DEVELOPMENT: Add covariant locking system to give user control of which covariants are varying together
+- INITIAL-DEVELOPMENT: Add activity legend to help map degrees and pitches from a single view
+
+### Changed
+
+- INITIAL-DEVELOPMENT: Move menus to both be on right hand side
 
 ## [harpguru-core.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-core.v0.1.0) - 2020-08-28
 
