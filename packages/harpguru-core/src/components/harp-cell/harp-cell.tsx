@@ -64,7 +64,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     setPozitionRoot(thisPitchId)
   }
 
-  const contentFragment = (
+  const renderedTone = (
     <RenderedTone
       toneTuples={toneTuples}
       isActive={thisIsActiveId === IsActiveIds.Active}
@@ -76,7 +76,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     <LongPressGestureHandler onHandlerStateChange={handleLongPressStateChange}>
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
         <View accessible={true} accessibilityRole="button" style={styles.cell}>
-          {contentFragment}
+          {renderedTone}
         </View>
       </TapGestureHandler>
     </LongPressGestureHandler>
