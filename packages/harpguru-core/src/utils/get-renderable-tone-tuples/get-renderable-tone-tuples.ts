@@ -1,24 +1,20 @@
-import { isNaturalPitch, getPitch } from 'harpstrata'
+import { isPitchId, isNaturalPitch, getPitch } from 'harpstrata'
 import type { PitchIds, DegreeIds } from 'harpstrata'
 
-import { DisplayModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
 
 export const getRenderableToneTuples = (
-  degreeId: DegreeIds | undefined,
-  pitchId: PitchIds | undefined,
-  displayMode: DisplayModes
+  sourceId: DegreeIds | PitchIds | undefined
 ): RenderableToneTuples => {
-  if (degreeId === undefined || pitchId === undefined)
-    return [[undefined, undefined]]
+  if (sourceId === undefined) return [[undefined, undefined]]
 
-  if (displayMode === DisplayModes.Degree) {
-    const [note, ...modifiers] = degreeId.split('')
+  if (!isPitchId(sourceId)) {
+    const [note, ...modifiers] = sourceId.split('')
 
     return [[note, modifiers.join('')]]
   }
 
-  const pitch = getPitch(pitchId)
+  const pitch = getPitch(sourceId)
   if (isNaturalPitch(pitch)) {
     const {
       contextualDisplayValues: { natural },

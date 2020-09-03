@@ -7,7 +7,8 @@ import Animated, {
 } from 'react-native-reanimated'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
-import { getPitchIds, getDegreeIds } from 'harpstrata'
+import { getDegreeIds, getPitchIds } from 'harpstrata'
+import type { DegreeIds, PitchIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
@@ -16,6 +17,15 @@ import type { RenderableToneTuples } from '../../types'
 import { getSizes, colors } from '../../styles'
 
 const { degreeColors, pageColor, inertOutline } = colors
+
+const getToneSource = (
+  degreeId: DegreeIds,
+  pitchId: PitchIds,
+  activeDisplayMode: DisplayModes
+): DegreeIds | PitchIds => {
+  if (activeDisplayMode === DisplayModes.Pitch) return degreeId
+  return pitchId
+}
 
 export const ActivityLegend = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
@@ -33,15 +43,8 @@ export const ActivityLegend = (): React.ReactElement => {
     const isActive = activePitchIds.indexOf(pitchId) > -1
     const { [index]: degreeId } = orderedDegreeIds
     const { [degreeId]: degreeColor } = degreeColors
-    const legendDisplayMode =
-      activeDisplayMode === DisplayModes.Pitch
-        ? DisplayModes.Degree
-        : DisplayModes.Pitch
-    const toneTuples = getRenderableToneTuples(
-      degreeId,
-      pitchId,
-      legendDisplayMode
-    )
+    const toneSource = getToneSource(degreeId, pitchId, activeDisplayMode)
+    const toneTuples = getRenderableToneTuples(toneSource)
     return (
       <ActivityCell
         key={index}

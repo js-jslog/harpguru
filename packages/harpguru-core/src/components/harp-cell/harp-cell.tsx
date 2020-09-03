@@ -8,10 +8,11 @@ import {
 import { View } from 'react-native'
 import React from 'react'
 import { IsActiveIds } from 'harpstrata'
+import type { DegreeIds, PitchIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
-import type { Coord } from '../../types'
+import { Coord, DisplayModes } from '../../types'
 
 import {
   useToggleHarpCell,
@@ -26,6 +27,16 @@ type HarpCellProps = {
   readonly yxCoord: YXCoord
 }
 
+const getToneSource = (
+  degreeId: DegreeIds | undefined,
+  pitchId: PitchIds | undefined,
+  activeDisplayMode: DisplayModes
+): DegreeIds | PitchIds | undefined => {
+  if (degreeId === undefined && pitchId === undefined) return undefined
+  if (activeDisplayMode === DisplayModes.Degree) return degreeId
+  return pitchId
+}
+
 export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const toggleHarpCell = useToggleHarpCell()
@@ -33,11 +44,8 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
     yxCoord
   )
-  const toneTuples = getRenderableToneTuples(
-    thisDegreeId,
-    thisPitchId,
-    activeDisplayMode
-  )
+  const toneSource = getToneSource(thisDegreeId, thisPitchId, activeDisplayMode)
+  const toneTuples = getRenderableToneTuples(toneSource)
   const styles = useStyles(yxCoord)
 
   const handleTapStateChange = ({
