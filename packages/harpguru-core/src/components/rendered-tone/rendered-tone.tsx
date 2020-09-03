@@ -3,21 +3,15 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
 import { ExperienceModes } from '../../types'
+import type { RenderableToneTuples } from '../../types'
 import { getSizes, colors } from '../../styles'
-
-type RenderableToneTuple =
-  | [string, string]
-  | [string, undefined]
-  | [undefined, undefined]
-export type RenderableToneTuples =
-  | [RenderableToneTuple, RenderableToneTuple]
-  | [RenderableToneTuple]
 
 type RenderedToneProps = {
   readonly toneTuples: RenderableToneTuples
   readonly isActive: boolean
   readonly splitType: 'FLAT' | 'SLANT'
 }
+
 export const RenderedTone = ({
   toneTuples,
   isActive,

@@ -10,8 +10,7 @@ import React from 'react'
 import { IsActiveIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
-import type { RenderableToneTuples } from '../rendered-tone'
-import { getDisplayValueTuple } from '../../utils'
+import { getRenderableToneTuples } from '../../utils'
 import type { Coord } from '../../types'
 
 import {
@@ -34,11 +33,11 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
     yxCoord
   )
-  const toneTuples = getDisplayValueTuple(
+  const toneTuples = getRenderableToneTuples(
     thisDegreeId,
     thisPitchId,
     activeDisplayMode
-  ) as RenderableToneTuples
+  )
   const styles = useStyles(yxCoord)
 
   const handleTapStateChange = ({

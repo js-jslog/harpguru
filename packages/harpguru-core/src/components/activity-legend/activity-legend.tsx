@@ -10,9 +10,9 @@ import React from 'react'
 import { getPitchIds, getDegreeIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
-import type { RenderableToneTuples } from '../rendered-tone'
-import { getDisplayValueTuple } from '../../utils'
+import { getRenderableToneTuples } from '../../utils'
 import { DisplayModes } from '../../types'
+import type { RenderableToneTuples } from '../../types'
 import { getSizes, colors } from '../../styles'
 
 const { degreeColors, pageColor, inertOutline } = colors
@@ -37,11 +37,11 @@ export const ActivityLegend = (): React.ReactElement => {
       activeDisplayMode === DisplayModes.Pitch
         ? DisplayModes.Degree
         : DisplayModes.Pitch
-    const toneTuples = getDisplayValueTuple(
+    const toneTuples = getRenderableToneTuples(
       degreeId,
       pitchId,
       legendDisplayMode
-    ) as RenderableToneTuples
+    )
     return (
       <ActivityCell
         key={index}

@@ -2,19 +2,13 @@ import { isNaturalPitch, getPitch } from 'harpstrata'
 import type { PitchIds, DegreeIds } from 'harpstrata'
 
 import { DisplayModes } from '../../types'
+import type { RenderableToneTuples } from '../../types'
 
-type DisplayValueTuple =
-  | [string, string]
-  | [string, undefined]
-  | [undefined, undefined]
-
-export type DisplayValues = ReadonlyArray<DisplayValueTuple>
-
-export const getDisplayValueTuple = (
+export const getRenderableToneTuples = (
   degreeId: DegreeIds | undefined,
   pitchId: PitchIds | undefined,
   displayMode: DisplayModes
-): DisplayValues => {
+): RenderableToneTuples => {
   if (degreeId === undefined || pitchId === undefined)
     return [[undefined, undefined]]
 
