@@ -50,6 +50,11 @@ export const getMenuStylesAndAnimationVals = (
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
   const labelRotation = '90deg'
 
+  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
+  const deviceShortSide =
+    windowWidth < windowHeight ? windowWidth : windowHeight
+  const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
+
   const styles = StyleSheet.create({
     animated: {
       ...StyleSheet.absoluteFillObject,
@@ -78,7 +83,7 @@ export const getMenuStylesAndAnimationVals = (
     },
     labelAligner: {
       alignItems: 'center',
-      width: 500,
+      width: deviceShortSide,
     },
     text: {
       fontSize,
@@ -98,11 +103,6 @@ export const getMenuStylesAndAnimationVals = (
     duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
-
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const deviceShortSide =
-    windowWidth < windowHeight ? windowWidth : windowHeight
-  const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
 
   // Menu animation values
   const hideMenuXTranslation = interpolate(hideMenuVal, {
