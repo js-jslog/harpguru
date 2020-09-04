@@ -45,7 +45,7 @@ export const getMenuStylesAndAnimationVals = (
     overlayOpacity,
   } = sizes
   const {
-    pageColor: labelTextColor,
+    inertOutline: labelTextColor,
   } = colors
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
