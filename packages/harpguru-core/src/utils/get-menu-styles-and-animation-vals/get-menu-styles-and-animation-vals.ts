@@ -54,7 +54,7 @@ export const getMenuStylesAndAnimationVals = (
   const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
 
   const menuHiddenScale = 0.4 // 0.5 would have both tabs fill exactly half the screen height
-  const menuYOffsetFactor = 0.8
+  const menuHiddenYOffsetFactor = 0.8
   const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
 
   const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
@@ -124,7 +124,7 @@ export const getMenuStylesAndAnimationVals = (
     outputRange: [
       0,
       multiply(
-        multiply(deviceShortSide, menuYOffsetFactor),
+        multiply(deviceShortSide, menuHiddenYOffsetFactor),
         menuScaleTranslationFactor,
         outwardYMultiplier
       ),
