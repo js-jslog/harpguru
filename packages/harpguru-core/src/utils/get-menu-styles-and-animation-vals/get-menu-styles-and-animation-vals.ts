@@ -4,7 +4,6 @@ import {
   interpolate,
   sub,
   multiply,
-  divide,
   add,
   Node,
 } from 'react-native-reanimated'
@@ -44,9 +43,7 @@ export const getMenuStylesAndAnimationVals = (
     9: borderRadius,
     overlayOpacity,
   } = sizes
-  const {
-    inertOutline: labelTextColor,
-  } = colors
+  const { inertOutline: labelTextColor } = colors
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
   const labelRotation = '90deg'
@@ -98,7 +95,6 @@ export const getMenuStylesAndAnimationVals = (
     },
   })
 
-
   // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
     duration: 300,
@@ -127,7 +123,11 @@ export const getMenuStylesAndAnimationVals = (
     inputRange: [0, 1],
     outputRange: [
       0,
-      multiply(multiply(deviceShortSide, menuYOffsetFactor), menuScaleTranslationFactor, outwardYMultiplier),
+      multiply(
+        multiply(deviceShortSide, menuYOffsetFactor),
+        menuScaleTranslationFactor,
+        outwardYMultiplier
+      ),
     ],
   })
   const hideLabelTranslation = interpolate(hideLabelVal, {
