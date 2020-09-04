@@ -23,7 +23,7 @@ exports[`A snapshot of HoleNumber 1`] = `
     <Text
       style={
         Object {
-          "color": "#495057",
+          "color": "#fefefe",
           "fontSize": 20.79172382001754,
         }
       }

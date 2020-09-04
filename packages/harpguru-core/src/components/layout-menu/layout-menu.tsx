@@ -40,7 +40,7 @@ export const LayoutMenu = ({
     menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
-    labelOpacity,
+    menuOpacity,
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
 
@@ -63,6 +63,7 @@ export const LayoutMenu = ({
             styles.overlay,
             {
               backgroundColor: menuBackgroundColor,
+              opacity: menuOpacity,
             },
           ]}
         >
@@ -75,7 +76,6 @@ export const LayoutMenu = ({
               style={[
                 {
                   transform: [{ scale: labelCounterScale }],
-                  opacity: labelOpacity,
                 },
               ]}
             >

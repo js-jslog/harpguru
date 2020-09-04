@@ -18,7 +18,7 @@ exports[`A snapshot of a populated cell 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#fefefe",
-        "borderColor": "#aaa",
+        "borderColor": "#555",
         "borderRadius": 20.79172382001754,
         "borderWidth": 1.8748172966652428,
         "elevation": 0,
@@ -45,7 +45,7 @@ exports[`A snapshot of a populated cell 1`] = `
       <Text
         style={
           Object {
-            "color": "#aaa",
+            "color": "#555",
             "display": "flex",
             "fontSize": 33.64172157136112,
           }
@@ -71,7 +71,7 @@ exports[`A snapshot of a populated cell 1`] = `
         style={
           Object {
             "bottom": 12.849997751343574,
-            "color": "#aaa",
+            "color": "#555",
             "display": "flex",
             "fontSize": 20.79172382001754,
             "left": 12.849997751343574,
@@ -103,7 +103,7 @@ exports[`A snapshot of an active cell 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#323031",
-        "borderColor": "#323031",
+        "borderColor": "black",
         "borderRadius": 20.79172382001754,
         "borderWidth": 1.8748172966652428,
         "elevation": 3.033454386004363,
@@ -186,7 +186,7 @@ exports[`A snapshot of an empty cell 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#fefefe",
-        "borderColor": "#aaa",
+        "borderColor": "#555",
         "borderRadius": 20.79172382001754,
         "borderWidth": 0,
         "elevation": 0,
@@ -202,7 +202,7 @@ exports[`A snapshot of an empty cell 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#aaa",
+          "borderColor": "#555",
           "borderRadius": 20.79172382001754,
           "borderWidth": 0,
           "elevation": 0,
@@ -235,7 +235,7 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#fefefe",
-        "borderColor": "#aaa",
+        "borderColor": "#555",
         "borderRadius": 20.79172382001754,
         "borderWidth": 1.8748172966652428,
         "elevation": 0,
@@ -262,7 +262,7 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
       <Text
         style={
           Object {
-            "color": "#aaa",
+            "color": "#555",
             "display": "flex",
             "fontSize": 33.64172157136112,
           }
@@ -288,7 +288,7 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
         style={
           Object {
             "bottom": 12.849997751343574,
-            "color": "#aaa",
+            "color": "#555",
             "display": "flex",
             "fontSize": 20.79172382001754,
             "left": 12.849997751343574,
@@ -320,7 +320,7 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#fefefe",
-        "borderColor": "#aaa",
+        "borderColor": "#555",
         "borderRadius": 20.79172382001754,
         "borderWidth": 1.8748172966652428,
         "elevation": 0,
@@ -347,7 +347,7 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
       <Text
         style={
           Object {
-            "color": "#aaa",
+            "color": "#555",
             "display": "none",
             "fontSize": 33.64172157136112,
           }
@@ -373,7 +373,7 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
         style={
           Object {
             "bottom": 12.849997751343574,
-            "color": "#aaa",
+            "color": "#555",
             "display": "none",
             "fontSize": 20.79172382001754,
             "left": 12.849997751343574,

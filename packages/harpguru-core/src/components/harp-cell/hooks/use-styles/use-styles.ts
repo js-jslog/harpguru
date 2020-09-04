@@ -32,7 +32,7 @@ export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
       elevation: isActive ? elevation : 0,
       borderRadius,
       borderWidth: thisDegreeId ? borderWidth : 0,
-      borderColor: isActive ? cellColor : borderColor,
+      borderColor: isActive ? 'black' : borderColor,
       width,
       height,
     },

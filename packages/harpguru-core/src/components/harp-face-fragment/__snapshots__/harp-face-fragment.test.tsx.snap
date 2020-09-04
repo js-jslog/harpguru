@@ -26,7 +26,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#aaa",
+          "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -44,7 +44,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -60,7 +60,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -78,7 +78,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -94,7 +94,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -112,7 +112,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -128,7 +128,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -146,7 +146,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -162,7 +162,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -180,7 +180,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -196,7 +196,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -214,7 +214,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -230,7 +230,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -248,7 +248,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -264,7 +264,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -282,7 +282,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -298,7 +298,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -316,7 +316,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -332,7 +332,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -352,7 +352,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -379,7 +379,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -405,7 +405,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -425,7 +425,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#aaa",
+          "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -445,7 +445,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -472,7 +472,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -498,7 +498,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -515,7 +515,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -531,7 +531,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -549,7 +549,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -565,7 +565,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -585,7 +585,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -612,7 +612,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -638,7 +638,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -657,7 +657,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -684,7 +684,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -710,7 +710,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -729,7 +729,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -756,7 +756,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -782,7 +782,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -799,7 +799,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -815,7 +815,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -835,7 +835,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -862,7 +862,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -888,7 +888,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -907,7 +907,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -934,7 +934,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -960,7 +960,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -979,7 +979,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1006,7 +1006,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1032,7 +1032,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1048,11 +1048,11 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#eee",
+          "backgroundColor": "#555",
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#aaa",
+          "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 20.79172382001754,
@@ -1072,7 +1072,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1099,7 +1099,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1125,7 +1125,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1144,7 +1144,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1171,7 +1171,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1197,7 +1197,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1216,7 +1216,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1243,7 +1243,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1269,7 +1269,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1288,7 +1288,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1315,7 +1315,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1341,7 +1341,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1360,7 +1360,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1387,7 +1387,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1413,7 +1413,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1432,7 +1432,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1459,7 +1459,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1485,7 +1485,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1504,7 +1504,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1531,7 +1531,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1557,7 +1557,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1576,7 +1576,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1603,7 +1603,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1629,7 +1629,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1648,7 +1648,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1675,7 +1675,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1701,7 +1701,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1720,7 +1720,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -1747,7 +1747,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -1773,7 +1773,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -1809,7 +1809,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -1830,7 +1830,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -1851,7 +1851,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -1872,7 +1872,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -1893,7 +1893,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -1914,7 +1914,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -1935,7 +1935,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -1956,7 +1956,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -1977,7 +1977,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -1998,7 +1998,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         <Text
           style={
             Object {
-              "color": "#495057",
+              "color": "#fefefe",
               "fontSize": 20.79172382001754,
             }
           }
@@ -2011,11 +2011,11 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#eee",
+          "backgroundColor": "#555",
           "borderBottomLeftRadius": 20.79172382001754,
           "borderBottomRightRadius": 20.79172382001754,
           "borderBottomWidth": 0,
-          "borderColor": "#aaa",
+          "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -2035,7 +2035,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2062,7 +2062,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2088,7 +2088,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2107,7 +2107,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2134,7 +2134,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2160,7 +2160,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2179,7 +2179,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2206,7 +2206,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2232,7 +2232,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2251,7 +2251,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2278,7 +2278,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2304,7 +2304,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2323,7 +2323,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2350,7 +2350,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2376,7 +2376,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2395,7 +2395,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2422,7 +2422,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2448,7 +2448,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2467,7 +2467,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2494,7 +2494,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2520,7 +2520,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2539,7 +2539,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2566,7 +2566,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2592,7 +2592,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2611,7 +2611,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2638,7 +2638,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2664,7 +2664,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2683,7 +2683,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2710,7 +2710,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2736,7 +2736,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2756,7 +2756,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#aaa",
+          "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -2776,7 +2776,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2803,7 +2803,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2829,7 +2829,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2848,7 +2848,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2875,7 +2875,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2901,7 +2901,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2920,7 +2920,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -2947,7 +2947,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -2973,7 +2973,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -2992,7 +2992,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -3019,7 +3019,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -3045,7 +3045,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -3062,7 +3062,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3078,7 +3078,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3098,7 +3098,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -3125,7 +3125,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -3151,7 +3151,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -3170,7 +3170,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -3197,7 +3197,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -3223,7 +3223,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -3240,7 +3240,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3256,7 +3256,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3276,7 +3276,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -3303,7 +3303,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -3329,7 +3329,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -3348,7 +3348,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -3375,7 +3375,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -3401,7 +3401,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -3421,7 +3421,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#aaa",
+          "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -3439,7 +3439,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3455,7 +3455,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3475,7 +3475,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -3502,7 +3502,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -3528,7 +3528,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -3547,7 +3547,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -3574,7 +3574,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -3600,7 +3600,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -3617,7 +3617,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3633,7 +3633,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3651,7 +3651,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3667,7 +3667,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3685,7 +3685,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3701,7 +3701,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3719,7 +3719,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3735,7 +3735,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3753,7 +3753,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3769,7 +3769,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3787,7 +3787,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3803,7 +3803,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3821,7 +3821,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3837,7 +3837,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3858,7 +3858,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           "borderBottomLeftRadius": 0,
           "borderBottomRightRadius": 0,
           "borderBottomWidth": 0,
-          "borderColor": "#aaa",
+          "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
@@ -3876,7 +3876,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3892,7 +3892,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3910,7 +3910,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -3926,7 +3926,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -3946,7 +3946,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 1.8748172966652428,
             "elevation": 0,
@@ -3973,7 +3973,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           <Text
             style={
               Object {
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 33.64172157136112,
               }
@@ -3999,7 +3999,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             style={
               Object {
                 "bottom": 12.849997751343574,
-                "color": "#aaa",
+                "color": "#555",
                 "display": "flex",
                 "fontSize": 20.79172382001754,
                 "left": 12.849997751343574,
@@ -4016,7 +4016,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -4032,7 +4032,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -4050,7 +4050,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -4066,7 +4066,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -4084,7 +4084,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -4100,7 +4100,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -4118,7 +4118,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -4134,7 +4134,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -4152,7 +4152,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -4168,7 +4168,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -4186,7 +4186,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -4202,7 +4202,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,
@@ -4220,7 +4220,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#aaa",
+            "borderColor": "#555",
             "borderRadius": 20.79172382001754,
             "borderWidth": 0,
             "elevation": 0,
@@ -4236,7 +4236,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Object {
               "alignItems": "center",
               "backgroundColor": "#fefefe",
-              "borderColor": "#aaa",
+              "borderColor": "#555",
               "borderRadius": 20.79172382001754,
               "borderWidth": 0,
               "elevation": 0,

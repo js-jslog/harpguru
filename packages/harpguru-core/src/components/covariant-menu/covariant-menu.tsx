@@ -75,7 +75,7 @@ export const CovariantMenu = ({
     menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
-    labelOpacity,
+    menuOpacity,
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
 
@@ -98,6 +98,7 @@ export const CovariantMenu = ({
             styles.overlay,
             {
               backgroundColor: menuBackgroundColor,
+              opacity: menuOpacity,
             },
           ]}
         >
@@ -118,7 +119,6 @@ export const CovariantMenu = ({
               style={[
                 {
                   transform: [{ scale: labelCounterScale }],
-                  opacity: labelOpacity,
                 },
               ]}
             >

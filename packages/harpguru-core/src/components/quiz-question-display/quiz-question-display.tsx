@@ -28,7 +28,7 @@ export const QuizQuestionDisplay = ({
 
   const displayOpacity = interpolate(flashAnimationValue, {
     inputRange: [0, 1],
-    outputRange: [0, 0.7],
+    outputRange: [0, 0.9],
   })
   const translateX = cond(
     greaterThan(flashAnimationValue, 0),

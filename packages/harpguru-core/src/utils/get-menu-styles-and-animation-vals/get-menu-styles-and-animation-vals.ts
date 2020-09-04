@@ -27,7 +27,7 @@ type StyleAndAnimationVals = {
   readonly menuSlideYTranslation: Node<number>
   readonly menuScale: Node<number>
   readonly menuBackgroundColor: Node<number>
-  readonly labelOpacity: Node<number>
+  readonly menuOpacity: Node<number>
   readonly labelCounterScale: Node<number>
 }
 
@@ -53,7 +53,6 @@ export const getMenuStylesAndAnimationVals = (
       flexDirection: 'row',
       justifyContent: 'flex-start',
       borderRadius,
-      opacity: 0.7,
     },
     mainContents: {
       ...StyleSheet.absoluteFillObject,
@@ -75,6 +74,7 @@ export const getMenuStylesAndAnimationVals = (
     },
     text: {
       fontSize,
+      color: colors.pageColor,
     },
   })
 
@@ -131,12 +131,12 @@ export const getMenuStylesAndAnimationVals = (
     inputRange: [0, 1],
     outputRange: [colors.pageColor, colors.homeRowsColor],
   })
+  const menuOpacity = interpolate(hideMenuVal, {
+    inputRange: [0, 1],
+    outputRange: [0.9, 1],
+  })
 
   // Label animation values
-  const labelOpacity = interpolate(hideMenuVal, {
-    inputRange: [0, 1],
-    outputRange: [0, 1],
-  })
   const labelCounterScale = interpolate(menuScale, {
     inputRange: [menuHiddenScale, 1],
     outputRange: [1, menuHiddenScale],
@@ -148,7 +148,7 @@ export const getMenuStylesAndAnimationVals = (
     menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
-    labelOpacity,
+    menuOpacity,
     labelCounterScale,
   }
 }
