@@ -37,7 +37,12 @@ export const getMenuStylesAndAnimationVals = (
   stashDirection: 'TOP' | 'BOTTOM'
 ): StyleAndAnimationVals => {
   const sizes = getSizes()
-  const { labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
+  const {
+    labelProtrusion,
+    9: fontSize,
+    7: borderRadius,
+    overlayOpacity,
+  } = sizes
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
   const labelRotation = '90deg'
@@ -133,7 +138,7 @@ export const getMenuStylesAndAnimationVals = (
   })
   const menuOpacity = interpolate(hideMenuVal, {
     inputRange: [0, 1],
-    outputRange: [0.9, 1],
+    outputRange: [overlayOpacity, 1],
   })
 
   // Label animation values

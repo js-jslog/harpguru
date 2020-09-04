@@ -4,7 +4,11 @@ import { SizeScheme } from '../styles-types'
 
 const relativeSizes: Omit<
   SizeScheme,
-  'columnWidth' | 'rowHeight' | 'fragmentGutter' | 'labelProtrusion'
+  | 'columnWidth'
+  | 'rowHeight'
+  | 'fragmentGutter'
+  | 'labelProtrusion'
+  | 'overlayOpacity'
 > = {
   0: 0,
   1: 1,
@@ -65,6 +69,7 @@ export const getSizes = (): SizeScheme => {
     rowHeight: seedSize * columnWidth,
     fragmentGutter: seedSize * fragmentGutter,
     labelProtrusion: seedSize * labelProtrusion,
+    overlayOpacity: 0.9,
   } as const
 
   return absoluteSizes
