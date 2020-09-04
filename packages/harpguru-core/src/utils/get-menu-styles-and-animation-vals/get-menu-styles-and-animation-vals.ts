@@ -83,11 +83,11 @@ export const getMenuStylesAndAnimationVals = (
 
   // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
-    duration: 400,
+    duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
   const hideLabelVal = useTimingTransition(hideLabel, {
-    duration: 400,
+    duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
 
