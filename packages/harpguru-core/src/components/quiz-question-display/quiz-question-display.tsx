@@ -26,17 +26,18 @@ export const QuizQuestionDisplay = ({
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
 
+  const sizes = getSizes()
+  const { overlayOpacity } = sizes
+
   const displayOpacity = interpolate(flashAnimationValue, {
     inputRange: [0, 1],
-    outputRange: [0, 0.7],
+    outputRange: [0, overlayOpacity],
   })
   const translateX = cond(
     greaterThan(flashAnimationValue, 0),
     0,
     guaranteeOffScreenWidth
   )
-
-  const sizes = getSizes()
 
   const styles = StyleSheet.create({
     animated: {

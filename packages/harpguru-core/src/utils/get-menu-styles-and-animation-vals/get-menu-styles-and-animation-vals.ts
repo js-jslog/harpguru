@@ -27,7 +27,7 @@ type StyleAndAnimationVals = {
   readonly menuSlideYTranslation: Node<number>
   readonly menuScale: Node<number>
   readonly menuBackgroundColor: Node<number>
-  readonly labelOpacity: Node<number>
+  readonly menuOpacity: Node<number>
   readonly labelCounterScale: Node<number>
 }
 
@@ -37,10 +37,27 @@ export const getMenuStylesAndAnimationVals = (
   stashDirection: 'TOP' | 'BOTTOM'
 ): StyleAndAnimationVals => {
   const sizes = getSizes()
-  const { labelProtrusion, 9: fontSize, 7: borderRadius } = sizes
+  const {
+    labelProtrusion: unscaledLabelProtrusion,
+    9: fontSize,
+    9: borderRadius,
+    overlayOpacity,
+  } = sizes
+  const { inertOutline: labelTextColor } = colors
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
   const labelRotation = '90deg'
+
+  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
+  const deviceShortSide =
+    windowWidth < windowHeight ? windowWidth : windowHeight
+  const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
+
+  const menuHiddenScale = 0.4 // 0.5 would have both tabs fill exactly half the screen height
+  const menuHiddenYOffsetFactor = 0.8
+  const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
+
+  const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
 
   const styles = StyleSheet.create({
     animated: {
@@ -53,7 +70,6 @@ export const getMenuStylesAndAnimationVals = (
       flexDirection: 'row',
       justifyContent: 'flex-start',
       borderRadius,
-      opacity: 0.7,
     },
     mainContents: {
       ...StyleSheet.absoluteFillObject,
@@ -71,30 +87,23 @@ export const getMenuStylesAndAnimationVals = (
     },
     labelAligner: {
       alignItems: 'center',
-      width: 500,
+      width: deviceShortSide,
     },
     text: {
       fontSize,
+      color: labelTextColor,
     },
   })
 
-  const menuHiddenScale = 0.49 // 0.5 would have both tabs fill exactly half the screen height
-  const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
-
   // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
-    duration: 400,
+    duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
   const hideLabelVal = useTimingTransition(hideLabel, {
-    duration: 400,
+    duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
-
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const deviceShortSide =
-    windowWidth < windowHeight ? windowWidth : windowHeight
-  const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
 
   // Menu animation values
   const hideMenuXTranslation = interpolate(hideMenuVal, {
@@ -114,7 +123,11 @@ export const getMenuStylesAndAnimationVals = (
     inputRange: [0, 1],
     outputRange: [
       0,
-      multiply(deviceShortSide, menuScaleTranslationFactor, outwardYMultiplier),
+      multiply(
+        multiply(deviceShortSide, menuHiddenYOffsetFactor),
+        menuScaleTranslationFactor,
+        outwardYMultiplier
+      ),
     ],
   })
   const hideLabelTranslation = interpolate(hideLabelVal, {
@@ -131,12 +144,12 @@ export const getMenuStylesAndAnimationVals = (
     inputRange: [0, 1],
     outputRange: [colors.pageColor, colors.homeRowsColor],
   })
+  const menuOpacity = interpolate(hideMenuVal, {
+    inputRange: [0, 1],
+    outputRange: [overlayOpacity, 1],
+  })
 
   // Label animation values
-  const labelOpacity = interpolate(hideMenuVal, {
-    inputRange: [0, 1],
-    outputRange: [0, 1],
-  })
   const labelCounterScale = interpolate(menuScale, {
     inputRange: [menuHiddenScale, 1],
     outputRange: [1, menuHiddenScale],
@@ -148,7 +161,7 @@ export const getMenuStylesAndAnimationVals = (
     menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
-    labelOpacity,
+    menuOpacity,
     labelCounterScale,
   }
 }

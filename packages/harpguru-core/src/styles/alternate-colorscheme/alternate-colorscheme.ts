@@ -33,6 +33,7 @@ const degreeColors = {
 const pageColor = '#fefefe' as const
 const homeRowsColor = '#eee' as const
 const inertOutline = '#ddd' as const
+const activeOutline = '#ddd' as const
 const holeNumbersColor = '#495057' as const
 
 export const colors: ColorSheme = {
@@ -40,5 +41,6 @@ export const colors: ColorSheme = {
   degreeColors,
   homeRowsColor,
   inertOutline,
+  activeOutline,
   holeNumbersColor,
 } as const
