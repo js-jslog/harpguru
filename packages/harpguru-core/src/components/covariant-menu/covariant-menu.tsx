@@ -51,7 +51,7 @@ export const CovariantMenu = ({
   const { rootPitchId } = activeHarpStrata
   const nudgeHarpStrataByRootPitch = useNudgeHarpStrataByRootPitch()
   const rootPitchOptionProps = {
-    title: 'Position Key',
+    title: 'Root Pitch',
     optionId: rootPitchId,
     nudgeFunction: nudgeHarpStrataByRootPitch,
   }
@@ -113,7 +113,7 @@ export const CovariantMenu = ({
               ]}
             >
               <View style={styles.labelAligner}>
-                <Text style={styles.text}>Tuning</Text>
+                <Text style={styles.text}>Key / Position</Text>
               </View>
             </Animated.View>
           </View>

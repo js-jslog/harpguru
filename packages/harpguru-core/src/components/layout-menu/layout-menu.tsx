@@ -22,7 +22,7 @@ export const LayoutMenu = ({
     apparatus: { id: apparatusId },
   } = activeHarpStrata
   const apparatusOptionProps = {
-    title: 'Layout',
+    title: 'Tuning',
     optionId: apparatusId,
     nudgeFunction: nudgeHarpStrataByApparatus,
   }
@@ -90,7 +90,7 @@ export const LayoutMenu = ({
               ]}
             >
               <View style={styles.labelAligner}>
-                <Text style={styles.text}>Settings</Text>
+                <Text style={styles.text}>Display</Text>
               </View>
             </Animated.View>
           </View>
