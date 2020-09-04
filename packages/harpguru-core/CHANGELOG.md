@@ -24,6 +24,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - INITIAL-DEVELOPMENT: Move menus to both be on right hand side
 - INITIAL-DEVELOPMENT: Improve 'inactive' colours for visual impact
+- INITIAL-DEVELOPMENT: Improve naming used in menus
 
 ## [harpguru-core.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-core.v0.1.0) - 2020-08-28
 
