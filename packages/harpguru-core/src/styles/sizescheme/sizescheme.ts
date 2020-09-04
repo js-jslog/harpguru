@@ -25,7 +25,7 @@ const relativeSizes: Omit<
 
 const relativeColumnWidth = 9
 const relativeFragmentGutterWidth = 7
-const relativeLabelProtrusion = 10
+const relativeLabelProtrusion = 9
 
 export const getSizes = (): SizeScheme => {
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')

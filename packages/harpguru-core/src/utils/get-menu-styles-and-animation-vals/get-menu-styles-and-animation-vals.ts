@@ -4,6 +4,7 @@ import {
   interpolate,
   sub,
   multiply,
+  divide,
   add,
   Node,
 } from 'react-native-reanimated'
@@ -38,9 +39,9 @@ export const getMenuStylesAndAnimationVals = (
 ): StyleAndAnimationVals => {
   const sizes = getSizes()
   const {
-    labelProtrusion,
+    labelProtrusion: unscaledLabelProtrusion,
     9: fontSize,
-    7: borderRadius,
+    9: borderRadius,
     overlayOpacity,
   } = sizes
   const {
@@ -54,6 +55,12 @@ export const getMenuStylesAndAnimationVals = (
   const deviceShortSide =
     windowWidth < windowHeight ? windowWidth : windowHeight
   const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
+
+  const menuHiddenScale = 0.4 // 0.5 would have both tabs fill exactly half the screen height
+  const menuYOffsetFactor = 0.8
+  const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
+
+  const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
 
   const styles = StyleSheet.create({
     animated: {
@@ -91,8 +98,6 @@ export const getMenuStylesAndAnimationVals = (
     },
   })
 
-  const menuHiddenScale = 0.499 // 0.5 would have both tabs fill exactly half the screen height
-  const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
 
   // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
@@ -122,7 +127,7 @@ export const getMenuStylesAndAnimationVals = (
     inputRange: [0, 1],
     outputRange: [
       0,
-      multiply(deviceShortSide, menuScaleTranslationFactor, outwardYMultiplier),
+      multiply(multiply(deviceShortSide, menuYOffsetFactor), menuScaleTranslationFactor, outwardYMultiplier),
     ],
   })
   const hideLabelTranslation = interpolate(hideLabelVal, {
