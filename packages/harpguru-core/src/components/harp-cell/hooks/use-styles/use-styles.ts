@@ -17,7 +17,7 @@ export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
   const { 1: borderWidth, 6: borderRadius, 2: elevation } = sizes
   const width = sizes['8'] + sizes['5']
   const height = sizes['8'] + sizes['5']
-  const { pageColor, degreeColors, inertOutline: borderColor } = colors
+  const { pageColor, degreeColors, inertOutline, activeOutline } = colors
   const { thisDegreeId, thisIsActiveId } = positionFacts
   const isActive = thisIsActiveId === IsActiveIds.Active
   const cellColor =
@@ -32,7 +32,7 @@ export const useStyles = (yxCoord: YXCoord): HarpCellStyles => {
       elevation: isActive ? elevation : 0,
       borderRadius,
       borderWidth: thisDegreeId ? borderWidth : 0,
-      borderColor: isActive ? 'black' : borderColor,
+      borderColor: isActive ? activeOutline : inertOutline,
       width,
       height,
     },

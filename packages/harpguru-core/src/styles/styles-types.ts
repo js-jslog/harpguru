@@ -19,6 +19,7 @@ export type ColorSheme = {
   readonly pageColor: string
   readonly homeRowsColor: string
   readonly inertOutline: string
+  readonly activeOutline: string
   readonly holeNumbersColor: string
 }
 
