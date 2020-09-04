@@ -43,6 +43,9 @@ export const getMenuStylesAndAnimationVals = (
     7: borderRadius,
     overlayOpacity,
   } = sizes
+  const {
+    pageColor: labelTextColor,
+  } = colors
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
   const labelRotation = '90deg'
@@ -79,7 +82,7 @@ export const getMenuStylesAndAnimationVals = (
     },
     text: {
       fontSize,
-      color: colors.pageColor,
+      color: labelTextColor,
     },
   })
 
