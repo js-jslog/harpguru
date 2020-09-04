@@ -7,6 +7,7 @@ import React from 'react'
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
+import { useNudgeDisplayMode } from '../../hooks'
 
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
@@ -21,7 +22,7 @@ export const LayoutMenu = ({
     apparatus: { id: apparatusId },
   } = activeHarpStrata
   const apparatusOptionProps = {
-    title: 'Layout',
+    title: 'Tuning',
     optionId: apparatusId,
     nudgeFunction: nudgeHarpStrataByApparatus,
   }
@@ -34,13 +35,21 @@ export const LayoutMenu = ({
     nudgeFunction: nudgeExperienceMode,
   }
 
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const nudgeDisplayMode = useNudgeDisplayMode()
+  const displayModeOptionProps = {
+    title: 'Display',
+    optionId: activeDisplayMode,
+    nudgeFunction: nudgeDisplayMode,
+  }
+
   const {
     styles,
     menuSlideXTranslation,
     menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
-    labelOpacity,
+    menuOpacity,
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
 
@@ -63,11 +72,13 @@ export const LayoutMenu = ({
             styles.overlay,
             {
               backgroundColor: menuBackgroundColor,
+              opacity: menuOpacity,
             },
           ]}
         >
           <View style={styles.mainContents}>
             <Option {...apparatusOptionProps} />
+            <Option {...displayModeOptionProps} />
             <Option {...experienceModeOptionProps} />
           </View>
           <View style={styles.rotatedLabel}>
@@ -75,12 +86,11 @@ export const LayoutMenu = ({
               style={[
                 {
                   transform: [{ scale: labelCounterScale }],
-                  opacity: labelOpacity,
                 },
               ]}
             >
               <View style={styles.labelAligner}>
-                <Text style={styles.text}>Settings</Text>
+                <Text style={styles.text}>Display</Text>
               </View>
             </Animated.View>
           </View>

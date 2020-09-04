@@ -9,7 +9,6 @@ import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
 import { CovariantMembers } from '../../packages/covariance-series'
-import { useNudgeDisplayMode } from '../../hooks'
 
 import {
   useNudgeHarpStrataByHarpKey,
@@ -52,7 +51,7 @@ export const CovariantMenu = ({
   const { rootPitchId } = activeHarpStrata
   const nudgeHarpStrataByRootPitch = useNudgeHarpStrataByRootPitch()
   const rootPitchOptionProps = {
-    title: 'Position Key',
+    title: 'Root Pitch',
     optionId: rootPitchId,
     nudgeFunction: nudgeHarpStrataByRootPitch,
   }
@@ -61,21 +60,13 @@ export const CovariantMenu = ({
     setLockedCovariant(CovariantMembers.RootPitch)
   }
 
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const nudgeDisplayMode = useNudgeDisplayMode()
-  const displayModeOptionProps = {
-    title: 'Display',
-    optionId: activeDisplayMode,
-    nudgeFunction: nudgeDisplayMode,
-  }
-
   const {
     styles,
     menuSlideXTranslation,
     menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
-    labelOpacity,
+    menuOpacity,
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
 
@@ -98,6 +89,7 @@ export const CovariantMenu = ({
             styles.overlay,
             {
               backgroundColor: menuBackgroundColor,
+              opacity: menuOpacity,
             },
           ]}
         >
@@ -111,19 +103,17 @@ export const CovariantMenu = ({
             <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
               <Option {...rootPitchOptionProps} />
             </OptionLock>
-            <Option {...displayModeOptionProps} />
           </View>
           <View style={styles.rotatedLabel}>
             <Animated.View
               style={[
                 {
                   transform: [{ scale: labelCounterScale }],
-                  opacity: labelOpacity,
                 },
               ]}
             >
               <View style={styles.labelAligner}>
-                <Text style={styles.text}>Tuning</Text>
+                <Text style={styles.text}>Position / Key</Text>
               </View>
             </Animated.View>
           </View>
