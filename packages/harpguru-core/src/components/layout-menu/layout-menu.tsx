@@ -7,6 +7,7 @@ import React from 'react'
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
+import { useNudgeDisplayMode } from '../../hooks'
 
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
@@ -32,6 +33,14 @@ export const LayoutMenu = ({
     title: 'Experience',
     optionId: activeExperienceMode,
     nudgeFunction: nudgeExperienceMode,
+  }
+
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const nudgeDisplayMode = useNudgeDisplayMode()
+  const displayModeOptionProps = {
+    title: 'Display',
+    optionId: activeDisplayMode,
+    nudgeFunction: nudgeDisplayMode,
   }
 
   const {
@@ -69,6 +78,7 @@ export const LayoutMenu = ({
         >
           <View style={styles.mainContents}>
             <Option {...apparatusOptionProps} />
+            <Option {...displayModeOptionProps} />
             <Option {...experienceModeOptionProps} />
           </View>
           <View style={styles.rotatedLabel}>

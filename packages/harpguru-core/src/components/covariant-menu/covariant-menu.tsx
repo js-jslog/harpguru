@@ -9,7 +9,6 @@ import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
 import { CovariantMembers } from '../../packages/covariance-series'
-import { useNudgeDisplayMode } from '../../hooks'
 
 import {
   useNudgeHarpStrataByHarpKey,
@@ -61,14 +60,6 @@ export const CovariantMenu = ({
     setLockedCovariant(CovariantMembers.RootPitch)
   }
 
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const nudgeDisplayMode = useNudgeDisplayMode()
-  const displayModeOptionProps = {
-    title: 'Display',
-    optionId: activeDisplayMode,
-    nudgeFunction: nudgeDisplayMode,
-  }
-
   const {
     styles,
     menuSlideXTranslation,
@@ -112,7 +103,6 @@ export const CovariantMenu = ({
             <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
               <Option {...rootPitchOptionProps} />
             </OptionLock>
-            <Option {...displayModeOptionProps} />
           </View>
           <View style={styles.rotatedLabel}>
             <Animated.View
