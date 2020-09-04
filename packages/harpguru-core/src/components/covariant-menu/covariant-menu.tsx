@@ -1,8 +1,9 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
+import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
 import { Option } from '../option'
@@ -113,7 +114,7 @@ export const CovariantMenu = ({
               ]}
             >
               <View style={styles.labelAligner}>
-                <Text style={styles.text}>Position / Key</Text>
+                <Feather name="sliders" size={24} color="black" />
               </View>
             </Animated.View>
           </View>

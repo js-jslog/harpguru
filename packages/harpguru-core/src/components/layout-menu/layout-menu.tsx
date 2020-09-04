@@ -1,8 +1,9 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
+import { Entypo } from '@expo/vector-icons'
 
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
@@ -90,7 +91,7 @@ export const LayoutMenu = ({
               ]}
             >
               <View style={styles.labelAligner}>
-                <Text style={styles.text}>Display</Text>
+                <Entypo name="cog" size={24} color="black" />
               </View>
             </Animated.View>
           </View>

@@ -8,7 +8,7 @@ import {
   Node,
 } from 'react-native-reanimated'
 import { StyleSheet, Dimensions } from 'react-native'
-import type { TextStyle, ViewStyle } from 'react-native'
+import type { ViewStyle } from 'react-native'
 
 import { getSizes, colors } from '../../styles'
 
@@ -18,7 +18,6 @@ type MenuStyles = {
   readonly mainContents: ViewStyle
   readonly rotatedLabel: ViewStyle
   readonly labelAligner: ViewStyle
-  readonly text: TextStyle
 }
 
 type StyleAndAnimationVals = {
@@ -39,11 +38,9 @@ export const getMenuStylesAndAnimationVals = (
   const sizes = getSizes()
   const {
     labelProtrusion: unscaledLabelProtrusion,
-    9: fontSize,
     9: borderRadius,
     overlayOpacity,
   } = sizes
-  const { inertOutline: labelTextColor } = colors
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
   const labelRotation = '90deg'
@@ -88,10 +85,6 @@ export const getMenuStylesAndAnimationVals = (
     labelAligner: {
       alignItems: 'center',
       width: deviceShortSide,
-    },
-    text: {
-      fontSize,
-      color: labelTextColor,
     },
   })
 
