@@ -113,7 +113,7 @@ export const CovariantMenu = ({
               ]}
             >
               <View style={styles.labelAligner}>
-                <Text style={styles.text}>Key / Position</Text>
+                <Text style={styles.text}>Position / Key</Text>
               </View>
             </Animated.View>
           </View>
