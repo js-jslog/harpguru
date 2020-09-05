@@ -27,6 +27,7 @@ type StyleAndAnimationVals = {
   readonly menuScale: Node<number>
   readonly menuBackgroundColor: Node<number>
   readonly menuOpacity: Node<number>
+  readonly labelScaledIconSize: number
   readonly labelCounterScale: Node<number>
 }
 
@@ -43,18 +44,19 @@ export const getMenuStylesAndAnimationVals = (
   } = sizes
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
-  const labelRotation = '90deg'
+  const labelRotation = '0deg'
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceShortSide =
     windowWidth < windowHeight ? windowWidth : windowHeight
   const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
 
-  const menuHiddenScale = 0.4 // 0.5 would have both tabs fill exactly half the screen height
-  const menuHiddenYOffsetFactor = 0.8
+  const menuHiddenScale = 0.2 // 0.5 would have both tabs fill exactly half the screen height
+  const menuHiddenYOffsetFactor = 0.3
   const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
 
   const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
+  const labelScaledIconSize = sizes['7'] / menuHiddenScale
 
   const styles = StyleSheet.create({
     animated: {
@@ -155,6 +157,7 @@ export const getMenuStylesAndAnimationVals = (
     menuScale,
     menuBackgroundColor,
     menuOpacity,
+    labelScaledIconSize,
     labelCounterScale,
   }
 }

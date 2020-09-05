@@ -9,6 +9,7 @@ import { OptionLock } from '../option-lock'
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
+import { colors } from '../../styles'
 import { CovariantMembers } from '../../packages/covariance-series'
 
 import {
@@ -68,6 +69,7 @@ export const CovariantMenu = ({
     menuScale,
     menuBackgroundColor,
     menuOpacity,
+    labelScaledIconSize,
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
 
@@ -110,11 +112,16 @@ export const CovariantMenu = ({
               style={[
                 {
                   transform: [{ scale: labelCounterScale }],
+                  opacity: menuOpacity,
                 },
               ]}
             >
               <View style={styles.labelAligner}>
-                <Feather name="sliders" size={24} color="black" />
+                <Feather
+                  name="sliders"
+                  size={labelScaledIconSize}
+                  color={colors.inertOutline}
+                />
               </View>
             </Animated.View>
           </View>

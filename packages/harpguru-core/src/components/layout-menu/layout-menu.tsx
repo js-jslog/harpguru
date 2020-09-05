@@ -8,6 +8,7 @@ import { Entypo } from '@expo/vector-icons'
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
+import { colors } from '../../styles'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
@@ -51,6 +52,7 @@ export const LayoutMenu = ({
     menuScale,
     menuBackgroundColor,
     menuOpacity,
+    labelScaledIconSize,
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
 
@@ -91,7 +93,11 @@ export const LayoutMenu = ({
               ]}
             >
               <View style={styles.labelAligner}>
-                <Entypo name="cog" size={24} color="black" />
+                <Entypo
+                  name="cog"
+                  size={labelScaledIconSize}
+                  color={colors.inertOutline}
+                />
               </View>
             </Animated.View>
           </View>
