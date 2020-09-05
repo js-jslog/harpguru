@@ -6,6 +6,8 @@ import {
   multiply,
   add,
   Node,
+  divide,
+  Extrapolate,
 } from 'react-native-reanimated'
 import { StyleSheet, Dimensions } from 'react-native'
 import type { ViewStyle } from 'react-native'
@@ -16,8 +18,7 @@ type MenuStyles = {
   readonly animated: ViewStyle
   readonly overlay: ViewStyle
   readonly mainContents: ViewStyle
-  readonly rotatedLabel: ViewStyle
-  readonly labelAligner: ViewStyle
+  readonly label: ViewStyle
 }
 
 type StyleAndAnimationVals = {
@@ -27,7 +28,6 @@ type StyleAndAnimationVals = {
   readonly menuScale: Node<number>
   readonly menuBackgroundColor: Node<number>
   readonly menuOpacity: Node<number>
-  readonly labelScaledIconSize: number
   readonly labelCounterScale: Node<number>
 }
 
@@ -44,7 +44,6 @@ export const getMenuStylesAndAnimationVals = (
   } = sizes
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
-  const labelRotation = '0deg'
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceShortSide =
@@ -56,7 +55,6 @@ export const getMenuStylesAndAnimationVals = (
   const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
 
   const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
-  const labelScaledIconSize = sizes['7'] / menuHiddenScale
 
   const styles = StyleSheet.create({
     animated: {
@@ -75,18 +73,10 @@ export const getMenuStylesAndAnimationVals = (
       flexDirection: 'row',
       left: labelProtrusion,
     },
-    rotatedLabel: {
-      overflow: 'visible',
-      alignSelf: 'center',
+    label: {
       alignItems: 'center',
       justifyContent: 'center',
-      height: labelProtrusion,
       width: labelProtrusion,
-      transform: [{ rotate: labelRotation }],
-    },
-    labelAligner: {
-      alignItems: 'center',
-      width: deviceShortSide,
     },
   })
 
@@ -146,8 +136,9 @@ export const getMenuStylesAndAnimationVals = (
 
   // Label animation values
   const labelCounterScale = interpolate(menuScale, {
-    inputRange: [menuHiddenScale, 1],
-    outputRange: [1, menuHiddenScale],
+    inputRange: [menuHiddenScale, 0.4],
+    outputRange: [divide(1, menuHiddenScale), 0],
+    extrapolate: Extrapolate.CLAMP,
   })
 
   return {
@@ -157,7 +148,6 @@ export const getMenuStylesAndAnimationVals = (
     menuScale,
     menuBackgroundColor,
     menuOpacity,
-    labelScaledIconSize,
     labelCounterScale,
   }
 }
