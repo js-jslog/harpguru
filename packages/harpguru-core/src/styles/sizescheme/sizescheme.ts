@@ -69,7 +69,7 @@ export const getSizes = (): SizeScheme => {
     rowHeight: seedSize * columnWidth,
     fragmentGutter: seedSize * fragmentGutter,
     labelProtrusion: seedSize * labelProtrusion,
-    overlayOpacity: 0.9,
+    overlayOpacity: 0.85,
   } as const
 
   return absoluteSizes
