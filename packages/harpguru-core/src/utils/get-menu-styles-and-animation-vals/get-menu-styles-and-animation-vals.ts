@@ -5,10 +5,12 @@ import {
   sub,
   multiply,
   add,
-  Node,
+  divide,
+  Extrapolate,
 } from 'react-native-reanimated'
+import type { Node } from 'react-native-reanimated'
 import { StyleSheet, Dimensions } from 'react-native'
-import type { TextStyle, ViewStyle } from 'react-native'
+import type { ViewStyle } from 'react-native'
 
 import { getSizes, colors } from '../../styles'
 
@@ -16,9 +18,7 @@ type MenuStyles = {
   readonly animated: ViewStyle
   readonly overlay: ViewStyle
   readonly mainContents: ViewStyle
-  readonly rotatedLabel: ViewStyle
-  readonly labelAligner: ViewStyle
-  readonly text: TextStyle
+  readonly label: ViewStyle
 }
 
 type StyleAndAnimationVals = {
@@ -39,22 +39,19 @@ export const getMenuStylesAndAnimationVals = (
   const sizes = getSizes()
   const {
     labelProtrusion: unscaledLabelProtrusion,
-    9: fontSize,
     9: borderRadius,
     overlayOpacity,
   } = sizes
-  const { inertOutline: labelTextColor } = colors
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
-  const labelRotation = '90deg'
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceShortSide =
     windowWidth < windowHeight ? windowWidth : windowHeight
   const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
 
-  const menuHiddenScale = 0.4 // 0.5 would have both tabs fill exactly half the screen height
-  const menuHiddenYOffsetFactor = 0.8
+  const menuHiddenScale = 0.2 // 0.5 would have both tabs fill exactly half the screen height
+  const menuHiddenYOffsetFactor = 0.3
   const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
 
   const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
@@ -76,22 +73,10 @@ export const getMenuStylesAndAnimationVals = (
       flexDirection: 'row',
       left: labelProtrusion,
     },
-    rotatedLabel: {
-      overflow: 'visible',
-      alignSelf: 'center',
+    label: {
       alignItems: 'center',
       justifyContent: 'center',
-      height: labelProtrusion,
       width: labelProtrusion,
-      transform: [{ rotate: labelRotation }],
-    },
-    labelAligner: {
-      alignItems: 'center',
-      width: deviceShortSide,
-    },
-    text: {
-      fontSize,
-      color: labelTextColor,
     },
   })
 
@@ -151,8 +136,9 @@ export const getMenuStylesAndAnimationVals = (
 
   // Label animation values
   const labelCounterScale = interpolate(menuScale, {
-    inputRange: [menuHiddenScale, 1],
-    outputRange: [1, menuHiddenScale],
+    inputRange: [menuHiddenScale, 0.4],
+    outputRange: [divide(1, menuHiddenScale), 0],
+    extrapolate: Extrapolate.CLAMP,
   })
 
   return {

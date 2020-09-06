@@ -1,13 +1,15 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
+import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
+import { getSizes, colors } from '../../styles'
 import { CovariantMembers } from '../../packages/covariance-series'
 
 import {
@@ -70,6 +72,8 @@ export const CovariantMenu = ({
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
 
+  const sizes = getSizes()
+
   return (
     <Animated.View
       style={[
@@ -104,7 +108,7 @@ export const CovariantMenu = ({
               <Option {...rootPitchOptionProps} />
             </OptionLock>
           </View>
-          <View style={styles.rotatedLabel}>
+          <View style={styles.label}>
             <Animated.View
               style={[
                 {
@@ -112,9 +116,11 @@ export const CovariantMenu = ({
                 },
               ]}
             >
-              <View style={styles.labelAligner}>
-                <Text style={styles.text}>Position / Key</Text>
-              </View>
+              <Feather
+                name="sliders"
+                size={sizes['7']}
+                color={colors.inertOutline}
+              />
             </Animated.View>
           </View>
         </Animated.View>
