@@ -9,8 +9,8 @@ import React from 'react'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
-import { colors } from '../../styles'
-import { getSizes } from '../../styles'
+import type { RenderableToneTuples } from '../../types'
+import { getSizes, colors } from '../../styles'
 
 import { useFlashDisplay } from './hooks'
 
@@ -41,7 +41,17 @@ export const QuizQuestionDisplay = ({
     guaranteeOffScreenWidth
   )
   const toneTuples = getRenderableToneTuples(quizQuestion)
-  console.log(toneTuples)
+
+  const selectToneVersionForDisplay = (
+    toneTuples: RenderableToneTuples
+  ): RenderableToneTuples => {
+    if (toneTuples.length === 1) return toneTuples
+
+    const random = Math.floor(Math.random() * 2)
+
+    if (random === 0) return [toneTuples[0]]
+    return [toneTuples[1]]
+  }
 
   const styles = StyleSheet.create({
     animated: {
@@ -80,7 +90,7 @@ export const QuizQuestionDisplay = ({
         <View style={styles.mainContents}>
           <View style={styles.question}>
             <RenderedTone
-              toneTuples={toneTuples}
+              toneTuples={selectToneVersionForDisplay(toneTuples)}
               isActive={false}
               isQuestion={true}
               splitType={'FLAT'}
