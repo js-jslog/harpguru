@@ -19,12 +19,15 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - INITIAL-DEVELOPMENT: Add covariant locking system to give user control of which covariants are varying together
 - INITIAL-DEVELOPMENT: Add activity legend to help map degrees and pitches from a single view
+- INITIAL-DEVELOPMENT: Add animation to options as they update
 
 ### Changed
 
 - INITIAL-DEVELOPMENT: Move menus to both be on right hand side
 - INITIAL-DEVELOPMENT: Improve 'inactive' colours for visual impact
 - INITIAL-DEVELOPMENT: Improve naming used in menus
+- INITIAL-DEVELOPMENT: Replace menu labels with icons
+- INITIAL-DEVELOPMENT: Improve presentation of quiz question with superscript modifier
 
 ## [harpguru-core.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-core.v0.1.0) - 2020-08-28
 
