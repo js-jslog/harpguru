@@ -1,3 +1,5 @@
+import { useTimingTransition } from 'react-native-redash'
+import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -44,6 +46,17 @@ export const Option = (props: OptionProps): React.ReactElement => {
     setTranslationY(nativeEvent.translationY)
   }
 
+  const previousOptionId = usePrevious(optionId, '')
+  const isUpdated = optionId !== previousOptionId
+  const optionUpdatedVal = useTimingTransition(isUpdated, {
+    duration: 300,
+    easing: Easing.inOut(Easing.circle),
+  })
+  const optionUpdateTransition = interpolate(optionUpdatedVal, {
+    inputRange: [0, 1],
+    outputRange: isUpdated ? [2, 1] : [1, 1],
+  })
+
   return (
     <PanGestureHandler
       shouldCancelWhenOutside={true}
@@ -52,7 +65,15 @@ export const Option = (props: OptionProps): React.ReactElement => {
     >
       <View style={[styles.option, dynamicStyles.activeSwipeStyle]}>
         <OptionTitle>{title}</OptionTitle>
-        <OptionValue>{optionId}</OptionValue>
+        <Animated.View
+          style={[
+            {
+              transform: [{ scale: optionUpdateTransition }],
+            },
+          ]}
+        >
+          <OptionValue>{optionId}</OptionValue>
+        </Animated.View>
       </View>
     </PanGestureHandler>
   )
