@@ -5,10 +5,10 @@ import {
   sub,
   multiply,
   add,
-  Node,
   divide,
   Extrapolate,
 } from 'react-native-reanimated'
+import type { Node } from 'react-native-reanimated'
 import { StyleSheet, Dimensions } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
