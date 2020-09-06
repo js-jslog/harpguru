@@ -47,20 +47,14 @@ export const RenderedTone = ({
       left: splitType === 'SLANT' ? sizes['6'] : sizes['7'],
     },
     note: {
-      display:
-        isQuizMode && !isQuestion && !isActive
-          ? 'none'
-          : 'flex',
+      display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
       fontSize: noteFontSize,
     },
     modifier: {
       bottom: modifierTopMargin,
       left: modifierTopMargin,
-      display:
-        isQuizMode && !isQuestion && !isActive
-          ? 'none'
-          : 'flex',
+      display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
       fontSize: modifierFontSize,
     },
