@@ -7,7 +7,7 @@ import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { FontAwesome5 } from '@expo/vector-icons'
 
-import { getSizes } from '../../styles'
+import { getSizes, colors } from '../../styles'
 
 type OptionLockProps = {
   readonly children: React.ReactNode
@@ -50,7 +50,11 @@ export const OptionLock = ({
   const lockFragment = locked ? (
     <FontAwesome5 name="lock" size={iconSize} color="#aa3333" />
   ) : (
-    <FontAwesome5 name="lock-open" size={iconSize} color="#777" />
+    <FontAwesome5
+      name="lock-open"
+      size={iconSize}
+      color={colors.inertOutline}
+    />
   )
 
   return (
