@@ -116,6 +116,7 @@ const ActivityCell = ({
         <RenderedTone
           toneTuples={toneTuples}
           isActive={isActive}
+          isQuestion={false}
           splitType={'FLAT'}
         />
       </View>

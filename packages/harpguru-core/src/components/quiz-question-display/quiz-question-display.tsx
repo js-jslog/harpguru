@@ -82,7 +82,7 @@ export const QuizQuestionDisplay = ({
             <RenderedTone
               toneTuples={toneTuples}
               isActive={false}
-              visibilityOverride={true}
+              isQuestion={true}
               splitType={'FLAT'}
             />
           </View>
