@@ -13,7 +13,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-expo-boilerplate.v0.2.0...experiment-with-consumin-harpguru-core-from-locall-from-yarn-workspaces-context) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.0.0...master) - yyyy-mm-dd
+
+## [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v1.0.0) - 2020-09-06
 
 ### Changed
 

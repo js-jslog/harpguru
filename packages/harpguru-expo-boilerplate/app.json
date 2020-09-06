@@ -23,7 +23,7 @@
     },
     "android": {
       "package": "com.jslog.harpguru",
-      "versionCode": 0
+      "versionCode": 1
     }
   }
 }
