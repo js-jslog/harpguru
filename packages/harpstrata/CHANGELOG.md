@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.0.0...HEAD) - yyyy-mm-dd
 
+## [v7.1.0](https://github.com/js-jslog/harpguru/releases/tag/v0.1.0) - 2020-09-06
+
+AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER MATCH THE VERSION OF THIS CONTRIBUTING PACKAGE
+
 ## [v7.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v7.1.0) - 2020-08-28
 
 ### Changed
