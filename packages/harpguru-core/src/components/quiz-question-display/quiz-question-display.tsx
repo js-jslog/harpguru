@@ -4,9 +4,11 @@ import Animated, {
   cond,
   greaterThan,
 } from 'react-native-reanimated'
-import { StyleSheet, View, Text, Dimensions } from 'react-native'
+import { StyleSheet, View, Dimensions } from 'react-native'
 import React from 'react'
 
+import { RenderedTone } from '../rendered-tone'
+import { getRenderableToneTuples } from '../../utils'
 import { colors } from '../../styles'
 import { getSizes } from '../../styles'
 
@@ -38,6 +40,8 @@ export const QuizQuestionDisplay = ({
     0,
     guaranteeOffScreenWidth
   )
+  const toneTuples = getRenderableToneTuples(quizQuestion)
+  console.log(toneTuples)
 
   const styles = StyleSheet.create({
     animated: {
@@ -58,9 +62,7 @@ export const QuizQuestionDisplay = ({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-evenly',
-    },
-    text: {
-      fontSize: sizes['10'],
+      transform: [{ scale: sizes['5'] }],
     },
   })
 
@@ -77,7 +79,12 @@ export const QuizQuestionDisplay = ({
       <View style={styles.overlay}>
         <View style={styles.mainContents}>
           <View style={styles.question}>
-            <Text style={styles.text}>{quizQuestion}</Text>
+            <RenderedTone
+              toneTuples={toneTuples}
+              isActive={false}
+              visibilityOverride={true}
+              splitType={'FLAT'}
+            />
           </View>
         </View>
       </View>
