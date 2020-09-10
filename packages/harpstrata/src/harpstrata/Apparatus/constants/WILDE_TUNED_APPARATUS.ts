@@ -14,7 +14,6 @@ import type { HalfstepIndexMatrix } from '../HalfstepIndex'
 // prettier-ignore
 const halfstepIndexMatrix: HalfstepIndexMatrix = [
   //    1          2          3          4          5          6          7          8          9         10
-  [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   [ 3        , undefined, undefined, 15       , 18       , undefined, undefined, 25       , undefined, undefined ],
   [ 0        , 4        , 7        , 12       , 16       , 16       , 19       , 24       , 28       , 33        ],
   [ 2        , 7        , 11       , 14       , 17       , 19       , 23       , 26       , 31       , 36        ],
@@ -26,7 +25,6 @@ const halfstepIndexMatrix: HalfstepIndexMatrix = [
 // prettier-ignore
 const interactionMatrix: InteractionMatrix = [
   //    1          2          3          4          5          6          7          8          9         10
-  [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   [ OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, undefined, undefined, OVERBLOW1, undefined, undefined ],
   [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
   [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
