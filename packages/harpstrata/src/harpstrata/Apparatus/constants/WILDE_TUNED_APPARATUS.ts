@@ -1,14 +1,7 @@
 import { ApparatusIds } from '../types'
 import type { Apparatus } from '../types'
 import type { InteractionMatrix } from '../Interaction'
-import {
-  BLOW,
-  DRAW,
-  BEND1,
-  BEND2,
-  BEND3,
-  OVERBLOW1,
-} from '../Interaction'
+import { BLOW, DRAW, BEND1, BEND2, BEND3, OVERBLOW1 } from '../Interaction'
 import type { HalfstepIndexMatrix } from '../HalfstepIndex'
 
 // prettier-ignore
