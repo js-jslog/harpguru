@@ -15,6 +15,12 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.1.0...master) - yyyy-mm-dd
 
+## [v1.2.0](https://github.com/js-jslog/harpguru/releases/tag/v1.2.0) - 2020-09-10
+
+### Changed
+
+- MINOR: Increment android version to 3
+
 ## [v1.1.0](https://github.com/js-jslog/harpguru/releases/tag/v1.1.0) - 2020-09-06
 
 ### Changed
@@ -71,6 +77,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 ## Github release list
 
 - [unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-expo-boilerplate.v0.1.0...experiment-with-consumin-harpguru-core-from-locall-from-yarn-workspaces-context)
+- [v1.2.0](https://github.com/js-jslog/harpguru/releases/tag/v1.2.0)
+- [v1.1.0](https://github.com/js-jslog/harpguru/releases/tag/v1.1.0)
 - [harpguru-expo-boilerplate.v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.2.0)
 - [harpguru-expo-boilerplate.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.1.0)
 - [v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/v0.2.0)
