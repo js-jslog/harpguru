@@ -1,7 +1,6 @@
 import { ApparatusIds } from '../types'
 import type { Apparatus } from '../types'
 import type { InteractionMatrix } from '../Interaction'
-import { OVERBLOW1, OVERDRAW1 } from '../Interaction'
 import {
   BLOW,
   DRAW,
@@ -10,6 +9,8 @@ import {
   BEND3,
   BLOWBEND1,
   BLOWBEND2,
+  OVERBLOW1,
+  OVERDRAW1,
 } from '../Interaction'
 import type { HalfstepIndexMatrix } from '../HalfstepIndex'
 
