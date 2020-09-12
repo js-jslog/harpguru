@@ -6,6 +6,7 @@ export enum ApparatusIds {
   CountryTuned = 'COUNTRY-TUNED',
   NaturalMinor = 'NATURAL-MINOR',
   WildeTuned = 'WILDE-TUNED',
+  PowerBender = 'POWER-BENDER',
 }
 
 export type Apparatus = {
