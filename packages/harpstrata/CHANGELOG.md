@@ -15,6 +15,15 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.2.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: Add Power Bender tuned apparatus
+- MINOR: Missing overblows and overdraws in natural minor
+
+### Fixed
+
+- MINOR: Incorrect overblow in Wilde tuning
+
 ## [v7.2.0](https://github.com/js-jslog/harpguru/releases/tag/v1.2.0) - 2020-09-10
 
 ### Added
