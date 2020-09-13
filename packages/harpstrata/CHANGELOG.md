@@ -13,7 +13,33 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v7.1.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.3.0...HEAD) - yyyy-mm-dd
+
+## [v7.3.0](https://github.com/js-jslog/harpguru/releases/tag/v1.3.0) - 2020-09-13
+
+### Added
+
+- MINOR: Add Power Bender tuned apparatus
+- MINOR: Missing overblows and overdraws in natural minor
+- MINOR: Missing overblow in Wilde tuning
+
+### Removed
+
+- MINOR: Unnecessary overblow in Wilde tuning
+
+### Fixed
+
+- MINOR: Incorrect overblow in Wilde tuning
+
+## [v7.2.0](https://github.com/js-jslog/harpguru/releases/tag/v1.2.0) - 2020-09-10
+
+### Added
+
+- MINOR: Add Wilde tuned apparatus
+
+## [v7.1.0](https://github.com/js-jslog/harpguru/releases/tag/v0.1.0) - 2020-09-06
+
+AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER MATCH THE VERSION OF THIS CONTRIBUTING PACKAGE
 
 ## [v7.1.0](https://github.com/js-jslog/harpstrata/releases/tag/v7.1.0) - 2020-08-28
 
@@ -164,7 +190,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpstrata/compare/v7.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v1.3.0...HEAD)
+- [v7.3.0](https://github.com/js-jslog/harpguru/releases/tag/v1.3.0)
+- [v7.2.0](https://github.com/js-jslog/harpguru/releases/tag/v1.2.0)
+- [v7.1.0](https://github.com/js-jslog/harpguru/releases/tag/v0.1.0)
 - [v7.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v7.0.0)
 - [v6.3.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.3.0)
 - [v6.2.0](https://github.com/js-jslog/harpstrata/releases/tag/v6.2.0)

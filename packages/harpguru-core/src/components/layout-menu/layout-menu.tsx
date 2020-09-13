@@ -1,12 +1,15 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
+import { Entypo } from '@expo/vector-icons'
 
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
+import { getSizes, colors } from '../../styles'
+import { useNudgeDisplayMode } from '../../hooks'
 
 import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
 
@@ -21,7 +24,7 @@ export const LayoutMenu = ({
     apparatus: { id: apparatusId },
   } = activeHarpStrata
   const apparatusOptionProps = {
-    title: 'Layout',
+    title: 'Tuning',
     optionId: apparatusId,
     nudgeFunction: nudgeHarpStrataByApparatus,
   }
@@ -34,15 +37,25 @@ export const LayoutMenu = ({
     nudgeFunction: nudgeExperienceMode,
   }
 
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const nudgeDisplayMode = useNudgeDisplayMode()
+  const displayModeOptionProps = {
+    title: 'Display',
+    optionId: activeDisplayMode,
+    nudgeFunction: nudgeDisplayMode,
+  }
+
   const {
     styles,
     menuSlideXTranslation,
     menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
-    labelOpacity,
+    menuOpacity,
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
+
+  const sizes = getSizes()
 
   return (
     <Animated.View
@@ -63,25 +76,28 @@ export const LayoutMenu = ({
             styles.overlay,
             {
               backgroundColor: menuBackgroundColor,
+              opacity: menuOpacity,
             },
           ]}
         >
           <View style={styles.mainContents}>
             <Option {...apparatusOptionProps} />
+            <Option {...displayModeOptionProps} />
             <Option {...experienceModeOptionProps} />
           </View>
-          <View style={styles.rotatedLabel}>
+          <View style={styles.label}>
             <Animated.View
               style={[
                 {
                   transform: [{ scale: labelCounterScale }],
-                  opacity: labelOpacity,
                 },
               ]}
             >
-              <View style={styles.labelAligner}>
-                <Text style={styles.text}>Settings</Text>
-              </View>
+              <Entypo
+                name="cog"
+                size={sizes['7']}
+                color={colors.inertOutline}
+              />
             </Animated.View>
           </View>
         </Animated.View>

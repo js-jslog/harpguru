@@ -5,6 +5,8 @@ export enum ApparatusIds {
   MajorDiatonic = 'MAJOR-DIATONIC',
   CountryTuned = 'COUNTRY-TUNED',
   NaturalMinor = 'NATURAL-MINOR',
+  WildeTuned = 'WILDE-TUNED',
+  PowerBender = 'POWER-BENDER',
 }
 
 export type Apparatus = {

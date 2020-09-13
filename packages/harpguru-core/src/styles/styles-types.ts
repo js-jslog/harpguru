@@ -19,6 +19,7 @@ export type ColorSheme = {
   readonly pageColor: string
   readonly homeRowsColor: string
   readonly inertOutline: string
+  readonly activeOutline: string
   readonly holeNumbersColor: string
 }
 
@@ -38,4 +39,5 @@ export type SizeScheme = {
   readonly rowHeight: number
   readonly fragmentGutter: number
   readonly labelProtrusion: number
+  readonly overlayOpacity: number
 }

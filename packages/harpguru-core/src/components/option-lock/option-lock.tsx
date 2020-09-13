@@ -3,10 +3,11 @@ import {
   TapGestureHandlerStateChangeEvent,
   State,
 } from 'react-native-gesture-handler'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
+import { FontAwesome5 } from '@expo/vector-icons'
 
-import { getSizes } from '../../styles'
+import { getSizes, colors } from '../../styles'
 
 type OptionLockProps = {
   readonly children: React.ReactNode
@@ -19,7 +20,7 @@ export const OptionLock = ({
   locked,
   handleTap,
 }: OptionLockProps): React.ReactElement => {
-  const { 10: contentHeight } = getSizes()
+  const { 10: contentHeight, 7: iconSize } = getSizes()
 
   const styles = StyleSheet.create({
     fillColumn: {
@@ -38,8 +39,6 @@ export const OptionLock = ({
     },
   })
 
-  const labelText = locked ? 'locked' : 'tap to lock'
-
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
@@ -48,13 +47,21 @@ export const OptionLock = ({
     handleTap()
   }
 
+  const lockFragment = locked ? (
+    <FontAwesome5 name="lock" size={iconSize} color="#aa3333" />
+  ) : (
+    <FontAwesome5
+      name="lock-open"
+      size={iconSize}
+      color={colors.inertOutline}
+    />
+  )
+
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
       <View style={styles.fillColumn}>
         <View style={styles.overlay}>
-          <View style={styles.content}>
-            <Text>{labelText}</Text>
-          </View>
+          <View style={styles.content}>{lockFragment}</View>
         </View>
         {children}
       </View>

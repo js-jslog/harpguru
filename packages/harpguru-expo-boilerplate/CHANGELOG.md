@@ -13,11 +13,35 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-expo-boilerplate.v0.2.0...experiment-with-consumin-harpguru-core-from-locall-from-yarn-workspaces-context) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.3.0...master) - yyyy-mm-dd
+
+## [v1.3.0](https://github.com/js-jslog/harpguru/releases/tag/v1.3.0) - 2020-09-13
+
+### Changed
+
+- MINOR: Increment android version to 4 to build with minor harpstrata changes
+
+## [v1.2.0](https://github.com/js-jslog/harpguru/releases/tag/v1.2.0) - 2020-09-10
+
+### Changed
+
+- MINOR: Increment android version to 3 to build with minor harpstrata changes
+
+## [v1.1.0](https://github.com/js-jslog/harpguru/releases/tag/v1.1.0) - 2020-09-06
+
+### Changed
+
+- MINOR: Increment android version to 2, since 1 already has a version on android play
+
+## [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v1.0.0) - 2020-09-06
 
 ### Changed
 
 - INITIAL-DEVELOPMENT: Configure the splashscreen background colour to be thematically correct
+
+## [v0.2.0](https://github.com/js-jslog/harpguru/releases/tag/v0.1.0) - 2020-09-06
+
+AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER MATCH THE VERSION OF THIS CONTRIBUTING PACKAGE
 
 ## [harpguru-expo-boilerplate.v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.2.0) - 2020-08-28
 
@@ -58,7 +82,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-expo-boilerplate.v0.1.0...experiment-with-consumin-harpguru-core-from-locall-from-yarn-workspaces-context)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v1.3.0...HEAD)
+- [v1.3.0](https://github.com/js-jslog/harpguru/releases/tag/v1.3.0)
+- [v1.2.0](https://github.com/js-jslog/harpguru/releases/tag/v1.2.0)
+- [v1.1.0](https://github.com/js-jslog/harpguru/releases/tag/v1.1.0)
 - [harpguru-expo-boilerplate.v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.2.0)
 - [harpguru-expo-boilerplate.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-expo-boilerplate.v0.1.0)
 - [v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/v0.2.0)

@@ -16,15 +16,15 @@ exports[`A snapshot of HoleNumber 1`] = `
         "alignItems": "center",
         "height": 0,
         "justifyContent": "center",
-        "width": 54.433445391378655,
+        "width": 59.270470780512596,
       }
     }
   >
     <Text
       style={
         Object {
-          "color": "#495057",
-          "fontSize": 20.79172382001754,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >

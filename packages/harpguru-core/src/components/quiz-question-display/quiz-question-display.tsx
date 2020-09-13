@@ -4,11 +4,13 @@ import Animated, {
   cond,
   greaterThan,
 } from 'react-native-reanimated'
-import { StyleSheet, View, Text, Dimensions } from 'react-native'
+import { StyleSheet, View, Dimensions } from 'react-native'
 import React from 'react'
 
-import { colors } from '../../styles'
-import { getSizes } from '../../styles'
+import { RenderedTone } from '../rendered-tone'
+import { getRenderableToneTuples } from '../../utils'
+import type { RenderableToneTuples } from '../../types'
+import { getSizes, colors } from '../../styles'
 
 import { useFlashDisplay } from './hooks'
 
@@ -26,17 +28,30 @@ export const QuizQuestionDisplay = ({
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
 
+  const sizes = getSizes()
+  const { overlayOpacity } = sizes
+
   const displayOpacity = interpolate(flashAnimationValue, {
     inputRange: [0, 1],
-    outputRange: [0, 0.7],
+    outputRange: [0, overlayOpacity],
   })
   const translateX = cond(
     greaterThan(flashAnimationValue, 0),
     0,
     guaranteeOffScreenWidth
   )
+  const toneTuples = getRenderableToneTuples(quizQuestion)
 
-  const sizes = getSizes()
+  const selectToneVersionForDisplay = (
+    toneTuples: RenderableToneTuples
+  ): RenderableToneTuples => {
+    if (toneTuples.length === 1) return toneTuples
+
+    const random = Math.floor(Math.random() * 2)
+
+    if (random === 0) return [toneTuples[0]]
+    return [toneTuples[1]]
+  }
 
   const styles = StyleSheet.create({
     animated: {
@@ -57,9 +72,7 @@ export const QuizQuestionDisplay = ({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-evenly',
-    },
-    text: {
-      fontSize: sizes['10'],
+      transform: [{ scale: sizes['5'] }],
     },
   })
 
@@ -76,7 +89,12 @@ export const QuizQuestionDisplay = ({
       <View style={styles.overlay}>
         <View style={styles.mainContents}>
           <View style={styles.question}>
-            <Text style={styles.text}>{quizQuestion}</Text>
+            <RenderedTone
+              toneTuples={selectToneVersionForDisplay(toneTuples)}
+              isActive={false}
+              isQuestion={true}
+              splitType={'FLAT'}
+            />
           </View>
         </View>
       </View>

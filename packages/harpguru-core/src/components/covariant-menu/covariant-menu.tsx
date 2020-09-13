@@ -1,15 +1,16 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
+import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
 import { Option } from '../option'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
+import { getSizes, colors } from '../../styles'
 import { CovariantMembers } from '../../packages/covariance-series'
-import { useNudgeDisplayMode } from '../../hooks'
 
 import {
   useNudgeHarpStrataByHarpKey,
@@ -52,7 +53,7 @@ export const CovariantMenu = ({
   const { rootPitchId } = activeHarpStrata
   const nudgeHarpStrataByRootPitch = useNudgeHarpStrataByRootPitch()
   const rootPitchOptionProps = {
-    title: 'Position Key',
+    title: 'Root Pitch',
     optionId: rootPitchId,
     nudgeFunction: nudgeHarpStrataByRootPitch,
   }
@@ -61,23 +62,17 @@ export const CovariantMenu = ({
     setLockedCovariant(CovariantMembers.RootPitch)
   }
 
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const nudgeDisplayMode = useNudgeDisplayMode()
-  const displayModeOptionProps = {
-    title: 'Display',
-    optionId: activeDisplayMode,
-    nudgeFunction: nudgeDisplayMode,
-  }
-
   const {
     styles,
     menuSlideXTranslation,
     menuSlideYTranslation,
     menuScale,
     menuBackgroundColor,
-    labelOpacity,
+    menuOpacity,
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
+
+  const sizes = getSizes()
 
   return (
     <Animated.View
@@ -98,6 +93,7 @@ export const CovariantMenu = ({
             styles.overlay,
             {
               backgroundColor: menuBackgroundColor,
+              opacity: menuOpacity,
             },
           ]}
         >
@@ -111,20 +107,20 @@ export const CovariantMenu = ({
             <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
               <Option {...rootPitchOptionProps} />
             </OptionLock>
-            <Option {...displayModeOptionProps} />
           </View>
-          <View style={styles.rotatedLabel}>
+          <View style={styles.label}>
             <Animated.View
               style={[
                 {
                   transform: [{ scale: labelCounterScale }],
-                  opacity: labelOpacity,
                 },
               ]}
             >
-              <View style={styles.labelAligner}>
-                <Text style={styles.text}>Tuning</Text>
-              </View>
+              <Feather
+                name="sliders"
+                size={sizes['7']}
+                color={colors.inertOutline}
+              />
             </Animated.View>
           </View>
         </Animated.View>

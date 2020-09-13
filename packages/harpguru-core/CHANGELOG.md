@@ -13,16 +13,27 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/e88c0002da82bc8a49e89c8293a79c3619ae7c49...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.0.0...HEAD) - yyyy-mm-dd
+
+## [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v1.0.0) - 2020-09-06
 
 ### Added
 
 - INITIAL-DEVELOPMENT: Add covariant locking system to give user control of which covariants are varying together
 - INITIAL-DEVELOPMENT: Add activity legend to help map degrees and pitches from a single view
+- INITIAL-DEVELOPMENT: Add animation to options as they update
 
 ### Changed
 
 - INITIAL-DEVELOPMENT: Move menus to both be on right hand side
+- INITIAL-DEVELOPMENT: Improve 'inactive' colours for visual impact
+- INITIAL-DEVELOPMENT: Improve naming used in menus
+- INITIAL-DEVELOPMENT: Replace menu labels with icons
+- INITIAL-DEVELOPMENT: Improve presentation of quiz question with superscript modifier
+
+## [v0.1.0](https://github.com/js-jslog/harpguru/releases/tag/v0.1.0) - 2020-09-06
+
+AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER MATCH THE VERSION OF THIS CONTRIBUTING PACKAGE
 
 ## [harpguru-core.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-core.v0.1.0) - 2020-08-28
 
@@ -55,7 +66,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpnative/compare/harpguru-core.v0.1.0...experiment-as-npm-package)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v1.0.0...HEAD)
+- [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v1.0.0)
+- [v0.1.0](https://github.com/js-jslog/harpguru/releases/tag/v0.1.0)
 - [harpguru-core.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-core.v0.1.0)
 - [v0.2.0](https://github.com/js-jslog/harpnative/releases/tag/v0.2.0)
 - [v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/v0.1.0)

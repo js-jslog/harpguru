@@ -9,12 +9,14 @@ import { getSizes, colors } from '../../styles'
 type RenderedToneProps = {
   readonly toneTuples: RenderableToneTuples
   readonly isActive: boolean
+  readonly isQuestion: boolean
   readonly splitType: 'FLAT' | 'SLANT'
 }
 
 export const RenderedTone = ({
   toneTuples,
   isActive,
+  isQuestion,
   splitType,
 }: RenderedToneProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
@@ -45,14 +47,14 @@ export const RenderedTone = ({
       left: splitType === 'SLANT' ? sizes['6'] : sizes['7'],
     },
     note: {
-      display: isQuizMode && !isActive ? 'none' : 'flex',
+      display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
       fontSize: noteFontSize,
     },
     modifier: {
       bottom: modifierTopMargin,
       left: modifierTopMargin,
-      display: isQuizMode && !isActive ? 'none' : 'flex',
+      display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
       fontSize: modifierFontSize,
     },

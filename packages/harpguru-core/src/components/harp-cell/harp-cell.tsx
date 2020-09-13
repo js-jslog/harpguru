@@ -68,6 +68,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     <RenderedTone
       toneTuples={toneTuples}
       isActive={thisIsActiveId === IsActiveIds.Active}
+      isQuestion={false}
       splitType={'SLANT'}
     />
   )
