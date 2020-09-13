@@ -19,6 +19,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: Add Power Bender tuned apparatus
 - MINOR: Missing overblows and overdraws in natural minor
+- MINOR: Missing overblow in Wilde tuning
+
+### Removed
+
+- MINOR: Unnecessary overblow in Wilde tuning
 
 ### Fixed
 
