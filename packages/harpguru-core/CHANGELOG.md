@@ -15,6 +15,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.0.0...HEAD) - yyyy-mm-dd
 
+- MINOR: Correct failing test from unchecked introduction of new apparatus
+
 ## [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v1.0.0) - 2020-09-06
 
 ### Added
