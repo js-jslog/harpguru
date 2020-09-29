@@ -10,6 +10,7 @@ import {
 } from '../../test-resources'
 
 import { HarpCell } from './index'
+import {CovariantMembers} from '../../packages/covariance-series'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
@@ -20,6 +21,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     return undefined
   })
   const harpCellProps = {
@@ -33,6 +35,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Pitch]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     return undefined
   })
 
@@ -47,6 +50,7 @@ test('A component is rendered with an a11y role of button', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     return undefined
   })
   const harpCellProps = {
@@ -63,6 +67,7 @@ test('A component is rendered without an a11y role of button if it has no conten
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     return undefined
   })
   const harpCellProps = {
@@ -112,6 +117,7 @@ test('A snapshot of a populated cell', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     return undefined
   })
   const harpCellProps = {
@@ -128,6 +134,7 @@ test('A snapshot of an active cell', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     return undefined
   })
   const harpCellProps = {
@@ -144,6 +151,7 @@ test('A snapshot of an empty cell', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     return undefined
   })
   const harpFaceProps = {
@@ -160,6 +168,7 @@ test('A snapshot of an inactive cell in Explore mode', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     return undefined
   })
   const harpCellProps = {
@@ -178,6 +187,7 @@ test('A snapshot of an inactive cell in Quiz mode', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Quiz]
     if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     return undefined
   })
   const harpCellProps = {
