@@ -4,14 +4,17 @@ import type { PitchIds } from 'harpstrata'
 
 import { getPropsForHarpStrata } from '../../../../utils'
 import { DisplayModes } from '../../../../types'
-import {CovariantMembers} from '../../../../packages/covariance-series'
+import { CovariantMembers } from '../../../../packages/covariance-series'
 
 type SetPozitionRoot = (arg0: PitchIds | undefined) => void
 
 export const useSetPozitionRoot = (): SetPozitionRoot => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [lockedCovariant] = useGlobal('lockedCovariant')
-  const { harpKeyId: activeHarpKeyId, rootPitchId: activeRootPitchId } = activeHarpStrata
+  const {
+    harpKeyId: activeHarpKeyId,
+    rootPitchId: activeRootPitchId,
+  } = activeHarpStrata
   const activeHarpStrataProps = getPropsForHarpStrata(
     activeHarpStrata,
     DisplayModes.Degree
