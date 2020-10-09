@@ -71,22 +71,22 @@ export const LayoutMenu = ({
         },
       ]}
     >
-      <TapGestureHandler onHandlerStateChange={tapHandler}>
-        <Animated.View
-          style={[
-            styles.overlay,
-            {
-              backgroundColor: menuBackgroundColor,
-              opacity: menuOpacity,
-            },
-          ]}
-        >
-          <View style={styles.mainContents}>
-            <Option {...apparatusOptionProps} />
-            <Option {...displayModeOptionProps} />
-            <Option {...experienceModeOptionProps} />
-            <MenuCloseButton tapHandler={tapHandler} />
-          </View>
+      <Animated.View
+        style={[
+          styles.overlay,
+          {
+            backgroundColor: menuBackgroundColor,
+            opacity: menuOpacity,
+          },
+        ]}
+      >
+        <View style={styles.mainContents}>
+          <Option {...apparatusOptionProps} />
+          <Option {...displayModeOptionProps} />
+          <Option {...experienceModeOptionProps} />
+          <MenuCloseButton tapHandler={tapHandler} />
+        </View>
+        <TapGestureHandler onHandlerStateChange={tapHandler}>
           <View style={styles.label}>
             <Animated.View
               style={[
@@ -102,8 +102,8 @@ export const LayoutMenu = ({
               />
             </Animated.View>
           </View>
-        </Animated.View>
-      </TapGestureHandler>
+        </TapGestureHandler>
+      </Animated.View>
     </Animated.View>
   )
 }

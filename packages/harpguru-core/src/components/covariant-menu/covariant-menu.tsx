@@ -88,28 +88,28 @@ export const CovariantMenu = ({
         },
       ]}
     >
-      <TapGestureHandler onHandlerStateChange={tapHandler}>
-        <Animated.View
-          style={[
-            styles.overlay,
-            {
-              backgroundColor: menuBackgroundColor,
-              opacity: menuOpacity,
-            },
-          ]}
-        >
-          <View style={styles.mainContents}>
-            <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
-              <Option {...harpKeyOptionProps} />
-            </OptionLock>
-            <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
-              <Option {...pozitionOptionProps} />
-            </OptionLock>
-            <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
-              <Option {...rootPitchOptionProps} />
-            </OptionLock>
-            <MenuCloseButton tapHandler={tapHandler} />
-          </View>
+      <Animated.View
+        style={[
+          styles.overlay,
+          {
+            backgroundColor: menuBackgroundColor,
+            opacity: menuOpacity,
+          },
+        ]}
+      >
+        <View style={styles.mainContents}>
+          <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
+            <Option {...harpKeyOptionProps} />
+          </OptionLock>
+          <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
+            <Option {...pozitionOptionProps} />
+          </OptionLock>
+          <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
+            <Option {...rootPitchOptionProps} />
+          </OptionLock>
+          <MenuCloseButton tapHandler={tapHandler} />
+        </View>
+        <TapGestureHandler onHandlerStateChange={tapHandler}>
           <View style={styles.label}>
             <Animated.View
               style={[
@@ -125,8 +125,8 @@ export const CovariantMenu = ({
               />
             </Animated.View>
           </View>
-        </Animated.View>
-      </TapGestureHandler>
+        </TapGestureHandler>
+      </Animated.View>
     </Animated.View>
   )
 }
