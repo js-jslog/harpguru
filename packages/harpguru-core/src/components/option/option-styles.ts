@@ -37,7 +37,7 @@ export const getStyles = (): OptionStyles => {
       fontSize: sizes['6'],
       lineHeight: sizes['7'],
       color: colors.inertOutline,
-      minWidth: '50%'
+      minWidth: '50%',
     },
     nextOptionValue: {
       alignSelf: 'center',
@@ -45,7 +45,7 @@ export const getStyles = (): OptionStyles => {
       fontSize: sizes['7'],
       lineHeight: sizes['8'],
       color: colors.inertOutline,
-      minWidth: '50%'
+      minWidth: '50%',
     },
     activeOptionValue: {
       alignSelf: 'center',
@@ -53,7 +53,7 @@ export const getStyles = (): OptionStyles => {
       fontSize: sizes['8'],
       fontWeight: 'bold',
       lineHeight: sizes['9'],
-      minWidth: '50%'
+      minWidth: '50%',
     },
   })
 

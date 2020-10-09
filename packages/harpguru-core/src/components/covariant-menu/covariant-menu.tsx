@@ -26,7 +26,7 @@ import {
 export const CovariantMenu = ({
   hideLabel,
   hideMenu,
-  tapHandler,
+  openCloseTapHandler,
 }: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
@@ -123,9 +123,9 @@ export const CovariantMenu = ({
           <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
             <Option {...rootPitchOptionProps} />
           </OptionLock>
-          <MenuCloseButton tapHandler={tapHandler} />
+          <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
         </View>
-        <TapGestureHandler onHandlerStateChange={tapHandler}>
+        <TapGestureHandler onHandlerStateChange={openCloseTapHandler}>
           <View style={styles.label}>
             <Animated.View
               style={[

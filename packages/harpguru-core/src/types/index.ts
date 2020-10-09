@@ -25,7 +25,9 @@ export enum MenuStates {
 export type MenuProps = {
   readonly hideMenu: boolean
   readonly hideLabel: boolean
-  readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
+  readonly openCloseTapHandler: (
+    arg0: TapGestureHandlerStateChangeEvent
+  ) => void
 }
 
 export type SetActiveHarpStrata = (arg0: HarpStrata) => void

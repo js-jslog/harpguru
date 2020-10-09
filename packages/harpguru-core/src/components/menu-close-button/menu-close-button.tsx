@@ -1,5 +1,4 @@
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
@@ -8,13 +7,9 @@ import type { MenuProps } from '../../types'
 import { getSizes, colors } from '../../styles'
 
 export const MenuCloseButton = ({
-  tapHandler,
-}: Pick<MenuProps, 'tapHandler'>): React.ReactElement => {
+  openCloseTapHandler,
+}: Pick<MenuProps, 'openCloseTapHandler'>): React.ReactElement => {
   const sizes = getSizes()
-
-  const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
-    tapHandler(event)
-  }
 
   return (
     <View
@@ -24,11 +19,11 @@ export const MenuCloseButton = ({
         flexDirection: 'row',
       }}
     >
-      <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
+      <TapGestureHandler onHandlerStateChange={openCloseTapHandler}>
         <View
           style={{
             padding: sizes['6'],
-            height: sizes['10']
+            height: sizes['10'],
           }}
         >
           <AntDesign

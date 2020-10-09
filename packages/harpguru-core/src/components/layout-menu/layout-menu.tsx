@@ -27,7 +27,7 @@ import {
 export const LayoutMenu = ({
   hideMenu,
   hideLabel,
-  tapHandler,
+  openCloseTapHandler,
 }: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
@@ -105,9 +105,9 @@ export const LayoutMenu = ({
           <Option {...apparatusOptionProps} />
           <Option {...displayModeOptionProps} />
           <Option {...experienceModeOptionProps} />
-          <MenuCloseButton tapHandler={tapHandler} />
+          <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
         </View>
-        <TapGestureHandler onHandlerStateChange={tapHandler}>
+        <TapGestureHandler onHandlerStateChange={openCloseTapHandler}>
           <View style={styles.label}>
             <Animated.View
               style={[
