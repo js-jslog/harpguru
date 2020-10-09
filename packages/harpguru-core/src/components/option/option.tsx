@@ -65,15 +65,21 @@ export const Option = (props: OptionProps): React.ReactElement => {
     >
       <View style={[styles.option, dynamicStyles.activeSwipeStyle]}>
         <OptionTitle>{title}</OptionTitle>
-        <Animated.View
-          style={[
-            {
-              transform: [{ scale: optionUpdateTransition }],
-            },
-          ]}
-        >
-          <OptionValue>{optionId}</OptionValue>
-        </Animated.View>
+        <View>
+          <InactiveOptionValue>{optionId}</InactiveOptionValue>
+          <InactiveOptionValue>{optionId}</InactiveOptionValue>
+          <Animated.View
+            style={[
+              {
+                transform: [{ scale: optionUpdateTransition }],
+              },
+            ]}
+          >
+            <ActiveOptionValue>{optionId}</ActiveOptionValue>
+          </Animated.View>
+          <InactiveOptionValue>{optionId}</InactiveOptionValue>
+          <InactiveOptionValue>{optionId}</InactiveOptionValue>
+        </View>
       </View>
     </PanGestureHandler>
   )
@@ -87,7 +93,11 @@ const OptionTitle = ({ children }: ChildProps): React.ReactElement => {
   const styles = getStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
 }
-const OptionValue = ({ children }: ChildProps): React.ReactElement => {
+const InactiveOptionValue = ({ children }: ChildProps): React.ReactElement => {
   const styles = getStyles()
-  return <Text style={styles.optionValue}>{children}</Text>
+  return <Text style={styles.inactiveOptionValue}>{children}</Text>
+}
+const ActiveOptionValue = ({ children }: ChildProps): React.ReactElement => {
+  const styles = getStyles()
+  return <Text style={styles.activeOptionValue}>{children}</Text>
 }

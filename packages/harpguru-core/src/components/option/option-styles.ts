@@ -1,17 +1,17 @@
 import { State } from 'react-native-gesture-handler'
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native'
 
-import { getSizes } from '../../styles'
+import { getSizes, colors } from '../../styles'
 
 type OptionStyles = {
   readonly option: ViewStyle
   readonly optionTitle: TextStyle
-  readonly optionValue: TextStyle
+  readonly inactiveOptionValue: TextStyle
+  readonly activeOptionValue: TextStyle
 }
 
 export const getStyles = (): OptionStyles => {
   const sizes = getSizes()
-  const { 7: variableSize, 8: titleSize } = sizes
 
   const styles = StyleSheet.create({
     option: {
@@ -21,10 +21,20 @@ export const getStyles = (): OptionStyles => {
       justifyContent: 'space-evenly',
     },
     optionTitle: {
-      fontSize: titleSize,
+      alignSelf: 'center',
+      fontSize: sizes['8'],
     },
-    optionValue: {
-      fontSize: variableSize,
+    inactiveOptionValue: {
+      alignSelf: 'center',
+      fontSize: sizes['7'],
+      color: colors.inertOutline,
+      lineHeight: sizes['8']
+    },
+    activeOptionValue: {
+      alignSelf: 'center',
+      fontSize: sizes['8'],
+      fontWeight: 'bold',
+      lineHeight: sizes['9']
     },
   })
 
