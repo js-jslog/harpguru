@@ -58,13 +58,13 @@ export const OptionLock = ({
   )
 
   return (
-    <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <View style={styles.fillColumn}>
-        <View style={styles.overlay}>
+    <View style={styles.fillColumn}>
+      {children}
+      <View style={styles.overlay}>
+        <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
           <View style={styles.content}>{lockFragment}</View>
-        </View>
-        {children}
+        </TapGestureHandler>
       </View>
-    </TapGestureHandler>
+    </View>
   )
 }
