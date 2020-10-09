@@ -28,6 +28,7 @@ export const MenuCloseButton = ({
         <View
           style={{
             padding: sizes['6'],
+            height: sizes['10']
           }}
         >
           <AntDesign
