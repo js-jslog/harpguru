@@ -9,7 +9,7 @@ import type {
   PanGestureHandlerGestureEvent,
   TapGestureHandlerStateChangeEvent,
 } from 'react-native-gesture-handler'
-import { View, Text } from 'react-native'
+import { View, Text, TextStyle } from 'react-native'
 import React, { useState } from 'react'
 
 import { OptionIds } from '../../types'
@@ -80,10 +80,11 @@ export const OptionList = (props: OptionProps): React.ReactElement => {
   ]
   const innerActiveIdPos = activeIdPos + listLength
 
-  const { [innerActiveIdPos - 2]: inactiveOptionId4 } = extendedList
-  const { [innerActiveIdPos - 1]: inactiveOptionId3 } = extendedList
-  const { [innerActiveIdPos + 1]: inactiveOptionId2 } = extendedList
   const { [innerActiveIdPos + 2]: inactiveOptionId1 } = extendedList
+  const { [innerActiveIdPos + 1]: inactiveOptionId2 } = extendedList
+  const { [innerActiveIdPos - 1]: inactiveOptionId3 } = extendedList
+  const { [innerActiveIdPos - 2]: inactiveOptionId4 } = extendedList
+  const { [innerActiveIdPos - 3]: inactiveOptionId5 } = extendedList
 
   return (
     <PanGestureHandler
@@ -94,13 +95,15 @@ export const OptionList = (props: OptionProps): React.ReactElement => {
       <View style={[styles.option, dynamicStyles.activeSwipeStyle]}>
         <OptionTitle>{title}</OptionTitle>
         <View>
-          <InactiveOptionValue
+          <OptionValue
             id={inactiveOptionId1}
             setFunction={setFunction}
+            style={styles.distantOptionValue}
           />
-          <InactiveOptionValue
+          <OptionValue
             id={inactiveOptionId2}
             setFunction={setFunction}
+            style={styles.nextOptionValue}
           />
           <Animated.View
             style={[
@@ -109,15 +112,26 @@ export const OptionList = (props: OptionProps): React.ReactElement => {
               },
             ]}
           >
-            <ActiveOptionValue id={activeOptionId} setFunction={setFunction} />
+            <OptionValue
+              id={activeOptionId}
+              setFunction={setFunction}
+              style={styles.activeOptionValue}
+            />
           </Animated.View>
-          <InactiveOptionValue
+          <OptionValue
             id={inactiveOptionId3}
             setFunction={setFunction}
+            style={styles.nextOptionValue}
           />
-          <InactiveOptionValue
+          <OptionValue
             id={inactiveOptionId4}
             setFunction={setFunction}
+            style={styles.distantOptionValue}
+          />
+          <OptionValue
+            id={inactiveOptionId5}
+            setFunction={setFunction}
+            style={styles.distantOptionValue}
           />
         </View>
       </View>
@@ -125,23 +139,24 @@ export const OptionList = (props: OptionProps): React.ReactElement => {
   )
 }
 
-type ChildProps = {
+type TitleProps = {
   readonly children: React.ReactNode
 }
-type IdProps = {
+type OptionValueProps = {
   readonly id: OptionIds
   readonly setFunction: (arg0: OptionIds) => void
+  readonly style: TextStyle
 }
 
-const OptionTitle = ({ children }: ChildProps): React.ReactElement => {
+const OptionTitle = ({ children }: TitleProps): React.ReactElement => {
   const styles = getStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
 }
-const InactiveOptionValue = ({
+const OptionValue = ({
   id,
   setFunction,
-}: IdProps): React.ReactElement => {
-  const styles = getStyles()
+  style,
+}: OptionValueProps): React.ReactElement => {
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
@@ -152,12 +167,8 @@ const InactiveOptionValue = ({
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
       <View>
-        <Text style={styles.inactiveOptionValue}>{id}</Text>
+        <Text style={style}>{id}</Text>
       </View>
     </TapGestureHandler>
   )
-}
-const ActiveOptionValue = ({ id }: IdProps): React.ReactElement => {
-  const styles = getStyles()
-  return <Text style={styles.activeOptionValue}>{id}</Text>
 }

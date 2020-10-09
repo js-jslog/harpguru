@@ -20,7 +20,7 @@ export const OptionLock = ({
   locked,
   handleTap,
 }: OptionLockProps): React.ReactElement => {
-  const { 10: contentHeight, 7: iconSize } = getSizes()
+  const { 8: topLockPadding, 7: iconSize } = getSizes()
 
   const styles = StyleSheet.create({
     fillColumn: {
@@ -28,14 +28,13 @@ export const OptionLock = ({
     },
     overlay: {
       ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      alignItems: 'center',
+      flexDirection: 'column',
     },
     content: {
-      flex: 1,
       alignItems: 'center',
-      justifyContent: 'center',
-      height: contentHeight,
+      justifyContent: 'flex-start',
+      height: iconSize + topLockPadding + topLockPadding,
+      padding: topLockPadding,
     },
   })
 

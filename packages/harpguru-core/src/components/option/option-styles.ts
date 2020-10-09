@@ -6,7 +6,8 @@ import { getSizes, colors } from '../../styles'
 type OptionStyles = {
   readonly option: ViewStyle
   readonly optionTitle: TextStyle
-  readonly inactiveOptionValue: TextStyle
+  readonly distantOptionValue: TextStyle
+  readonly nextOptionValue: TextStyle
   readonly activeOptionValue: TextStyle
 }
 
@@ -24,7 +25,13 @@ export const getStyles = (): OptionStyles => {
       alignSelf: 'center',
       fontSize: sizes['8'],
     },
-    inactiveOptionValue: {
+    distantOptionValue: {
+      alignSelf: 'center',
+      fontSize: sizes['6'],
+      color: colors.inertOutline,
+      lineHeight: sizes['7'],
+    },
+    nextOptionValue: {
       alignSelf: 'center',
       fontSize: sizes['7'],
       color: colors.inertOutline,
