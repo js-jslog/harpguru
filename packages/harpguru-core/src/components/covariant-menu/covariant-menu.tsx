@@ -7,7 +7,6 @@ import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
 import { Option } from '../option'
-import { MenuInstructionLabel } from '../menu-instruction-label'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
@@ -109,7 +108,6 @@ export const CovariantMenu = ({
             <Option {...rootPitchOptionProps} />
           </OptionLock>
           <MenuCloseButton tapHandler={tapHandler} />
-          <MenuInstructionLabel />
         </View>
         <TapGestureHandler onHandlerStateChange={tapHandler}>
           <View style={styles.label}>

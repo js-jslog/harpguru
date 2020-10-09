@@ -6,7 +6,6 @@ import React from 'react'
 import { Entypo } from '@expo/vector-icons'
 
 import { Option } from '../option'
-import { MenuInstructionLabel } from '../menu-instruction-label'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps } from '../../types'
@@ -86,7 +85,6 @@ export const LayoutMenu = ({
           <Option {...displayModeOptionProps} />
           <Option {...experienceModeOptionProps} />
           <MenuCloseButton tapHandler={tapHandler} />
-          <MenuInstructionLabel />
         </View>
         <TapGestureHandler onHandlerStateChange={tapHandler}>
           <View style={styles.label}>
