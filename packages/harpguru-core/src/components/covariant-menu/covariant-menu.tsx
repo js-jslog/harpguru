@@ -5,6 +5,7 @@ import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-han
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { Feather } from '@expo/vector-icons'
+import { AntDesign } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
 import { Option } from '../option'
@@ -119,11 +120,11 @@ export const CovariantMenu = ({
             }}>
               <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
                 <View style={{
-                  padding: 20,
+                  padding: sizes['6'],
                 }}>
-                  <Feather
-                    name="sliders"
-                    size={sizes['7']}
+                  <AntDesign
+                    name="close"
+                    size={sizes['9']}
                     color={colors.inertOutline}
                   />
                 </View>
