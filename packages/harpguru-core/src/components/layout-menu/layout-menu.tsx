@@ -6,10 +6,10 @@ import React from 'react'
 import { getApparatusIds } from 'harpstrata'
 import { Entypo } from '@expo/vector-icons'
 
-import { OptionList, Option } from '../option'
+import { OptionList } from '../option'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
-import type { MenuProps, OptionIds } from '../../types'
+import { MenuProps, OptionIds, ExperienceModes, DisplayModes } from '../../types'
 import { getSizes, colors } from '../../styles'
 import { useNudgeDisplayMode } from '../../hooks'
 
@@ -26,7 +26,7 @@ export const LayoutMenu = ({
   const {
     apparatus: { id: apparatusId },
   } = activeHarpStrata
-  const apparatusOptionListProps = {
+  const apparatusOptionProps = {
     title: 'Tuning',
     activeOptionId: apparatusId,
     orderedOptionIds: getApparatusIds(),
@@ -34,20 +34,24 @@ export const LayoutMenu = ({
     setFunction: setHarpStrataByApparatus as (arg0: OptionIds) => void,
   }
 
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const [activeExperienceMode, setActiveExperienceMode] = useGlobal('activeExperienceMode')
   const nudgeExperienceMode = useNudgeExperienceMode()
   const experienceModeOptionProps = {
     title: 'Experience',
-    optionId: activeExperienceMode,
+    activeOptionId: activeExperienceMode,
+    orderedOptionIds: [ExperienceModes.Quiz, ExperienceModes.Explore],
     nudgeFunction: nudgeExperienceMode,
+    setFunction: setActiveExperienceMode as (arg0: OptionIds) => void,
   }
 
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeDisplayMode, setActiveDisplayMode] = useGlobal('activeDisplayMode')
   const nudgeDisplayMode = useNudgeDisplayMode()
   const displayModeOptionProps = {
     title: 'Display',
-    optionId: activeDisplayMode,
+    activeOptionId: activeDisplayMode,
+    orderedOptionIds: [DisplayModes.Pitch, DisplayModes.Degree],
     nudgeFunction: nudgeDisplayMode,
+    setFunction: setActiveDisplayMode as (arg0: OptionIds) => void,
   }
 
   const {
@@ -85,9 +89,9 @@ export const LayoutMenu = ({
         ]}
       >
         <View style={styles.mainContents}>
-          <OptionList {...apparatusOptionListProps} />
-          <Option {...displayModeOptionProps} />
-          <Option {...experienceModeOptionProps} />
+          <OptionList {...apparatusOptionProps} />
+          <OptionList {...displayModeOptionProps} />
+          <OptionList {...experienceModeOptionProps} />
           <MenuCloseButton tapHandler={tapHandler} />
         </View>
         <TapGestureHandler onHandlerStateChange={tapHandler}>
