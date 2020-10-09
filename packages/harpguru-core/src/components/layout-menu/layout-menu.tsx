@@ -9,11 +9,20 @@ import { Entypo } from '@expo/vector-icons'
 import { OptionList } from '../option'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
-import { MenuProps, OptionIds, ExperienceModes, DisplayModes } from '../../types'
+import {
+  MenuProps,
+  OptionIds,
+  ExperienceModes,
+  DisplayModes,
+} from '../../types'
 import { getSizes, colors } from '../../styles'
 import { useNudgeDisplayMode } from '../../hooks'
 
-import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode, useSetHarpStrataByApparatus } from './hooks'
+import {
+  useNudgeHarpStrataByApparatus,
+  useNudgeExperienceMode,
+  useSetHarpStrataByApparatus,
+} from './hooks'
 
 export const LayoutMenu = ({
   hideMenu,
@@ -34,7 +43,9 @@ export const LayoutMenu = ({
     setFunction: setHarpStrataByApparatus as (arg0: OptionIds) => void,
   }
 
-  const [activeExperienceMode, setActiveExperienceMode] = useGlobal('activeExperienceMode')
+  const [activeExperienceMode, setActiveExperienceMode] = useGlobal(
+    'activeExperienceMode'
+  )
   const nudgeExperienceMode = useNudgeExperienceMode()
   const experienceModeOptionProps = {
     title: 'Experience',
@@ -44,7 +55,9 @@ export const LayoutMenu = ({
     setFunction: setActiveExperienceMode as (arg0: OptionIds) => void,
   }
 
-  const [activeDisplayMode, setActiveDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeDisplayMode, setActiveDisplayMode] = useGlobal(
+    'activeDisplayMode'
+  )
   const nudgeDisplayMode = useNudgeDisplayMode()
   const displayModeOptionProps = {
     title: 'Display',

@@ -1,5 +1,10 @@
 import { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
-import type { ApparatusIds, HarpStrata, PitchIds, PozitionIds } from 'harpstrata'
+import type {
+  ApparatusIds,
+  HarpStrata,
+  PitchIds,
+  PozitionIds,
+} from 'harpstrata'
 
 export enum DisplayModes {
   Degree = 'DEGREE',
@@ -33,4 +38,9 @@ export type RenderableToneTuples =
   | [RenderableToneTuple, RenderableToneTuple]
   | [RenderableToneTuple]
 
-export type OptionIds = ApparatusIds | DisplayModes | ExperienceModes | PitchIds | PozitionIds
+export type OptionIds =
+  | ApparatusIds
+  | DisplayModes
+  | ExperienceModes
+  | PitchIds
+  | PozitionIds

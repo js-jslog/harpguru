@@ -1,14 +1,8 @@
 import { useGlobal } from 'reactn'
-import {
-  getCovariantSet,
-  getHarpStrata,
-  PozitionIds,
-} from 'harpstrata'
+import { getCovariantSet, getHarpStrata, PozitionIds } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
-import {
-  getPropsForHarpStrata,
-} from '../../../../utils'
+import { getPropsForHarpStrata } from '../../../../utils'
 import { CovariantMembers } from '../../../../packages/covariance-series'
 
 const getNextCovariantSet = (
@@ -31,11 +25,10 @@ const getNextCovariantSet = (
   }
 }
 
-export const useSetHarpStrataByPozition = (): (arg0: PozitionIds) => void => {
+export const useSetHarpStrataByPozition = (): ((arg0: PozitionIds) => void) => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [lockedCovariant] = useGlobal('lockedCovariant')
-
 
   const setHarpStrataByPozition = (pozitionId: PozitionIds): void => {
     if (lockedCovariant === CovariantMembers.Pozition) return

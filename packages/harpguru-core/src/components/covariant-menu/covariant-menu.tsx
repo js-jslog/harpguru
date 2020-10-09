@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
-import { TapGestureHandler} from 'react-native-gesture-handler'
+import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
 import { getPitchIds, getPozitionIds } from 'harpstrata'

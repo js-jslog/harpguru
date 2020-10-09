@@ -10,7 +10,6 @@ import { getSizes, colors } from '../../styles'
 export const MenuCloseButton = ({
   tapHandler,
 }: Pick<MenuProps, 'tapHandler'>): React.ReactElement => {
-
   const sizes = getSizes()
 
   const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
@@ -18,15 +17,19 @@ export const MenuCloseButton = ({
   }
 
   return (
-    <View style={{
-      ...StyleSheet.absoluteFillObject,
-      justifyContent: 'flex-end',
-      flexDirection: 'row'
-    }}>
+    <View
+      style={{
+        ...StyleSheet.absoluteFillObject,
+        justifyContent: 'flex-end',
+        flexDirection: 'row',
+      }}
+    >
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-        <View style={{
-          padding: sizes['6'],
-        }}>
+        <View
+          style={{
+            padding: sizes['6'],
+          }}
+        >
           <AntDesign
             name="close"
             size={sizes['9']}

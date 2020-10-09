@@ -34,7 +34,13 @@ export const OptionList = (props: OptionProps): React.ReactElement => {
   const sizes = getSizes()
   const { 8: swipeThreshold } = sizes
 
-  const { title, activeOptionId, orderedOptionIds, nudgeFunction, setFunction } = props
+  const {
+    title,
+    activeOptionId,
+    orderedOptionIds,
+    nudgeFunction,
+    setFunction,
+  } = props
 
   const dynamicStyles = getDynamicStyles(state)
 
@@ -67,13 +73,17 @@ export const OptionList = (props: OptionProps): React.ReactElement => {
   const activeIdPos = orderedOptionIds.indexOf(activeOptionId)
   const { length: listLength } = orderedOptionIds
 
-  const extendedList = [...orderedOptionIds, ...orderedOptionIds, ...orderedOptionIds]
+  const extendedList = [
+    ...orderedOptionIds,
+    ...orderedOptionIds,
+    ...orderedOptionIds,
+  ]
   const innerActiveIdPos = activeIdPos + listLength
 
-  const {[innerActiveIdPos -2]: inactiveOptionId4} = extendedList
-  const {[innerActiveIdPos -1]: inactiveOptionId3} = extendedList
-  const {[innerActiveIdPos +1]: inactiveOptionId2} = extendedList
-  const {[innerActiveIdPos +2]: inactiveOptionId1} = extendedList
+  const { [innerActiveIdPos - 2]: inactiveOptionId4 } = extendedList
+  const { [innerActiveIdPos - 1]: inactiveOptionId3 } = extendedList
+  const { [innerActiveIdPos + 1]: inactiveOptionId2 } = extendedList
+  const { [innerActiveIdPos + 2]: inactiveOptionId1 } = extendedList
 
   return (
     <PanGestureHandler
@@ -84,8 +94,14 @@ export const OptionList = (props: OptionProps): React.ReactElement => {
       <View style={[styles.option, dynamicStyles.activeSwipeStyle]}>
         <OptionTitle>{title}</OptionTitle>
         <View>
-          <InactiveOptionValue id={inactiveOptionId1} setFunction={setFunction} />
-          <InactiveOptionValue id={inactiveOptionId2} setFunction={setFunction} />
+          <InactiveOptionValue
+            id={inactiveOptionId1}
+            setFunction={setFunction}
+          />
+          <InactiveOptionValue
+            id={inactiveOptionId2}
+            setFunction={setFunction}
+          />
           <Animated.View
             style={[
               {
@@ -95,8 +111,14 @@ export const OptionList = (props: OptionProps): React.ReactElement => {
           >
             <ActiveOptionValue id={activeOptionId} setFunction={setFunction} />
           </Animated.View>
-          <InactiveOptionValue id={inactiveOptionId3} setFunction={setFunction} />
-          <InactiveOptionValue id={inactiveOptionId4} setFunction={setFunction} />
+          <InactiveOptionValue
+            id={inactiveOptionId3}
+            setFunction={setFunction}
+          />
+          <InactiveOptionValue
+            id={inactiveOptionId4}
+            setFunction={setFunction}
+          />
         </View>
       </View>
     </PanGestureHandler>
@@ -115,7 +137,10 @@ const OptionTitle = ({ children }: ChildProps): React.ReactElement => {
   const styles = getStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
 }
-const InactiveOptionValue = ({ id, setFunction }: IdProps): React.ReactElement => {
+const InactiveOptionValue = ({
+  id,
+  setFunction,
+}: IdProps): React.ReactElement => {
   const styles = getStyles()
   const handleTapStateChange = ({
     nativeEvent,

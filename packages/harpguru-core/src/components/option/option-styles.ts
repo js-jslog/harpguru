@@ -28,13 +28,13 @@ export const getStyles = (): OptionStyles => {
       alignSelf: 'center',
       fontSize: sizes['7'],
       color: colors.inertOutline,
-      lineHeight: sizes['8']
+      lineHeight: sizes['8'],
     },
     activeOptionValue: {
       alignSelf: 'center',
       fontSize: sizes['8'],
       fontWeight: 'bold',
-      lineHeight: sizes['9']
+      lineHeight: sizes['9'],
     },
   })
 
