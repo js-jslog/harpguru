@@ -3,13 +3,14 @@ import Animated from 'react-native-reanimated'
 import { TapGestureHandler} from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
+import { getPitchIds } from 'harpstrata'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
-import { Option } from '../option'
+import { Option, OptionList } from '../option'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
-import type { MenuProps } from '../../types'
+import type { MenuProps, OptionIds } from '../../types'
 import { getSizes, colors } from '../../styles'
 import { CovariantMembers } from '../../packages/covariance-series'
 
@@ -17,6 +18,7 @@ import {
   useNudgeHarpStrataByHarpKey,
   useNudgeHarpStrataByPozition,
   useNudgeHarpStrataByRootPitch,
+  useSetHarpStrataByHarpKey,
 } from './hooks'
 
 export const CovariantMenu = ({
@@ -27,12 +29,16 @@ export const CovariantMenu = ({
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
 
+  const orderedPitchIds = getPitchIds()
   const { harpKeyId } = activeHarpStrata
   const nudgeHarpStrataByHarpKey = useNudgeHarpStrataByHarpKey()
+  const setHarpStrataByHarpKey = useSetHarpStrataByHarpKey()
   const harpKeyOptionProps = {
     title: 'Harp Key',
-    optionId: harpKeyId,
+    activeOptionId: harpKeyId,
+    orderedOptionIds: orderedPitchIds,
     nudgeFunction: nudgeHarpStrataByHarpKey,
+    setFunction: setHarpStrataByHarpKey as (arg0: OptionIds) => void,
   }
   const harpKeyIsLocked = lockedCovariant === CovariantMembers.HarpKey
   const lockHarpKey = () => {
@@ -99,7 +105,7 @@ export const CovariantMenu = ({
       >
         <View style={styles.mainContents}>
           <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
-            <Option {...harpKeyOptionProps} />
+            <OptionList {...harpKeyOptionProps} />
           </OptionLock>
           <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
             <Option {...pozitionOptionProps} />
