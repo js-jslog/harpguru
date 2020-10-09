@@ -1,7 +1,8 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
-import { TapGestureHandler } from 'react-native-gesture-handler'
-import { View } from 'react-native'
+import { TapGestureHandler} from 'react-native-gesture-handler'
+import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { Feather } from '@expo/vector-icons'
 
@@ -74,6 +75,10 @@ export const CovariantMenu = ({
 
   const sizes = getSizes()
 
+  const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
+    tapHandler(event)
+  }
+
   return (
     <Animated.View
       style={[
@@ -107,6 +112,23 @@ export const CovariantMenu = ({
             <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
               <Option {...rootPitchOptionProps} />
             </OptionLock>
+            <View style={{
+              ...StyleSheet.absoluteFillObject,
+              justifyContent: 'flex-end',
+              flexDirection: 'row'
+            }}>
+              <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
+                <View style={{
+                  padding: 20,
+                }}>
+                  <Feather
+                    name="sliders"
+                    size={sizes['7']}
+                    color={colors.inertOutline}
+                  />
+                </View>
+              </TapGestureHandler>
+            </View>
           </View>
           <View style={styles.label}>
             <Animated.View
