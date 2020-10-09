@@ -3,3 +3,4 @@ export { useNudgeHarpStrataByPozition } from './use-nudge-harp-strata-by-pozitio
 export { useNudgeHarpStrataByRootPitch } from './use-nudge-harp-strata-by-root-pitch'
 export { useSetHarpStrataByHarpKey } from './use-set-harp-strata-by-harp-key'
 export { useSetHarpStrataByPozition } from './use-set-harp-strata-by-pozition'
+export { useSetHarpStrataByRootPitch } from './use-set-harp-strata-by-root-pitch'

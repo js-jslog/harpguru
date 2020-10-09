@@ -7,7 +7,7 @@ import { getPitchIds, getPozitionIds } from 'harpstrata'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
-import { Option, OptionList } from '../option'
+import { OptionList } from '../option'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps, OptionIds } from '../../types'
@@ -20,6 +20,7 @@ import {
   useNudgeHarpStrataByRootPitch,
   useSetHarpStrataByHarpKey,
   useSetHarpStrataByPozition,
+  useSetHarpStrataByRootPitch,
 } from './hooks'
 
 export const CovariantMenu = ({
@@ -65,10 +66,13 @@ export const CovariantMenu = ({
 
   const { rootPitchId } = activeHarpStrata
   const nudgeHarpStrataByRootPitch = useNudgeHarpStrataByRootPitch()
+  const setHarpStrataByRootPitch = useSetHarpStrataByRootPitch()
   const rootPitchOptionProps = {
     title: 'Root Pitch',
-    optionId: rootPitchId,
+    activeOptionId: rootPitchId,
+    orderedOptionIds: orderedPitchIds,
     nudgeFunction: nudgeHarpStrataByRootPitch,
+    setFunction: setHarpStrataByRootPitch as (arg0: OptionIds) => void,
   }
   const rootPitchIsLocked = lockedCovariant === CovariantMembers.RootPitch
   const lockRootPitch = () => {
@@ -117,7 +121,7 @@ export const CovariantMenu = ({
             <OptionList {...pozitionOptionProps} />
           </OptionLock>
           <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
-            <Option {...rootPitchOptionProps} />
+            <OptionList {...rootPitchOptionProps} />
           </OptionLock>
           <MenuCloseButton tapHandler={tapHandler} />
         </View>
