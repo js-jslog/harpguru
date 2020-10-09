@@ -3,16 +3,17 @@ import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
+import { getApparatusIds } from 'harpstrata'
 import { Entypo } from '@expo/vector-icons'
 
-import { Option } from '../option'
+import { OptionList, Option } from '../option'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
-import type { MenuProps } from '../../types'
+import type { MenuProps, OptionIds } from '../../types'
 import { getSizes, colors } from '../../styles'
 import { useNudgeDisplayMode } from '../../hooks'
 
-import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
+import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode, useSetHarpStrataByApparatus } from './hooks'
 
 export const LayoutMenu = ({
   hideMenu,
@@ -21,13 +22,16 @@ export const LayoutMenu = ({
 }: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
+  const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
   const {
     apparatus: { id: apparatusId },
   } = activeHarpStrata
-  const apparatusOptionProps = {
+  const apparatusOptionListProps = {
     title: 'Tuning',
-    optionId: apparatusId,
+    activeOptionId: apparatusId,
+    orderedOptionIds: getApparatusIds(),
     nudgeFunction: nudgeHarpStrataByApparatus,
+    setFunction: setHarpStrataByApparatus as (arg0: OptionIds) => void,
   }
 
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
@@ -81,7 +85,7 @@ export const LayoutMenu = ({
         ]}
       >
         <View style={styles.mainContents}>
-          <Option {...apparatusOptionProps} />
+          <OptionList {...apparatusOptionListProps} />
           <Option {...displayModeOptionProps} />
           <Option {...experienceModeOptionProps} />
           <MenuCloseButton tapHandler={tapHandler} />
