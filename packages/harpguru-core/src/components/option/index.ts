@@ -1,1 +1,1 @@
-export { OptionList } from './option-list'
+export { Option } from './option'

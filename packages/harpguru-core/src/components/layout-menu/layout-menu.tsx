@@ -6,7 +6,7 @@ import React from 'react'
 import { getApparatusIds } from 'harpstrata'
 import { Entypo } from '@expo/vector-icons'
 
-import { OptionList } from '../option'
+import { Option } from '../option'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import {
@@ -102,9 +102,9 @@ export const LayoutMenu = ({
         ]}
       >
         <View style={styles.mainContents}>
-          <OptionList {...apparatusOptionProps} />
-          <OptionList {...displayModeOptionProps} />
-          <OptionList {...experienceModeOptionProps} />
+          <Option {...apparatusOptionProps} />
+          <Option {...displayModeOptionProps} />
+          <Option {...experienceModeOptionProps} />
           <MenuCloseButton tapHandler={tapHandler} />
         </View>
         <TapGestureHandler onHandlerStateChange={tapHandler}>

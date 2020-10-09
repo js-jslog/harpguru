@@ -7,7 +7,7 @@ import { getPitchIds, getPozitionIds } from 'harpstrata'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
-import { OptionList } from '../option'
+import { Option } from '../option'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps, OptionIds } from '../../types'
@@ -115,13 +115,13 @@ export const CovariantMenu = ({
       >
         <View style={styles.mainContents}>
           <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
-            <OptionList {...harpKeyOptionProps} />
+            <Option {...harpKeyOptionProps} />
           </OptionLock>
           <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
-            <OptionList {...pozitionOptionProps} />
+            <Option {...pozitionOptionProps} />
           </OptionLock>
           <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
-            <OptionList {...rootPitchOptionProps} />
+            <Option {...rootPitchOptionProps} />
           </OptionLock>
           <MenuCloseButton tapHandler={tapHandler} />
         </View>
