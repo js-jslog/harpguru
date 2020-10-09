@@ -3,7 +3,7 @@ import Animated from 'react-native-reanimated'
 import { TapGestureHandler} from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
-import { getPitchIds } from 'harpstrata'
+import { getPitchIds, getPozitionIds } from 'harpstrata'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
@@ -19,6 +19,7 @@ import {
   useNudgeHarpStrataByPozition,
   useNudgeHarpStrataByRootPitch,
   useSetHarpStrataByHarpKey,
+  useSetHarpStrataByPozition,
 } from './hooks'
 
 export const CovariantMenu = ({
@@ -30,6 +31,8 @@ export const CovariantMenu = ({
   const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
 
   const orderedPitchIds = getPitchIds()
+  const orderedPozitionIds = getPozitionIds()
+
   const { harpKeyId } = activeHarpStrata
   const nudgeHarpStrataByHarpKey = useNudgeHarpStrataByHarpKey()
   const setHarpStrataByHarpKey = useSetHarpStrataByHarpKey()
@@ -47,10 +50,13 @@ export const CovariantMenu = ({
 
   const { pozitionId } = activeHarpStrata
   const nudgeHarpStrataByPozition = useNudgeHarpStrataByPozition()
+  const setHarpStrataByPozition = useSetHarpStrataByPozition()
   const pozitionOptionProps = {
     title: 'Position',
-    optionId: pozitionId,
+    activeOptionId: pozitionId,
+    orderedOptionIds: orderedPozitionIds,
     nudgeFunction: nudgeHarpStrataByPozition,
+    setFunction: setHarpStrataByPozition as (arg0: OptionIds) => void,
   }
   const pozitionIsLocked = lockedCovariant === CovariantMembers.Pozition
   const lockPozition = () => {
@@ -108,7 +114,7 @@ export const CovariantMenu = ({
             <OptionList {...harpKeyOptionProps} />
           </OptionLock>
           <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
-            <Option {...pozitionOptionProps} />
+            <OptionList {...pozitionOptionProps} />
           </OptionLock>
           <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
             <Option {...rootPitchOptionProps} />
