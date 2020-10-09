@@ -33,21 +33,27 @@ export const getStyles = (): OptionStyles => {
     },
     distantOptionValue: {
       alignSelf: 'center',
+      textAlign: 'center',
       fontSize: sizes['6'],
-      color: colors.inertOutline,
       lineHeight: sizes['7'],
+      color: colors.inertOutline,
+      minWidth: '50%'
     },
     nextOptionValue: {
       alignSelf: 'center',
+      textAlign: 'center',
       fontSize: sizes['7'],
-      color: colors.inertOutline,
       lineHeight: sizes['8'],
+      color: colors.inertOutline,
+      minWidth: '50%'
     },
     activeOptionValue: {
       alignSelf: 'center',
+      textAlign: 'center',
       fontSize: sizes['8'],
       fontWeight: 'bold',
       lineHeight: sizes['9'],
+      minWidth: '50%'
     },
   })
 
