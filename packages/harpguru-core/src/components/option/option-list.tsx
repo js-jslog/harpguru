@@ -94,7 +94,7 @@ export const OptionList = (props: OptionProps): React.ReactElement => {
     >
       <View style={[styles.option, dynamicStyles.activeSwipeStyle]}>
         <OptionTitle>{title}</OptionTitle>
-        <View>
+        <View style={styles.optionValues}>
           <OptionValue
             id={inactiveOptionId1}
             setFunction={setFunction}

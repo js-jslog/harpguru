@@ -20,7 +20,7 @@ export const OptionLock = ({
   locked,
   handleTap,
 }: OptionLockProps): React.ReactElement => {
-  const { 8: topLockPadding, 7: iconSize } = getSizes()
+  const { 9: padding, 7: iconSize } = getSizes()
 
   const styles = StyleSheet.create({
     fillColumn: {
@@ -33,8 +33,7 @@ export const OptionLock = ({
     content: {
       alignItems: 'center',
       justifyContent: 'flex-start',
-      height: iconSize + topLockPadding + topLockPadding,
-      padding: topLockPadding,
+      padding: padding,
     },
   })
 
