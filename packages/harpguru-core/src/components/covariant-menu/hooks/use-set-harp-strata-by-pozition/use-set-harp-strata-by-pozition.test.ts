@@ -30,7 +30,7 @@ const cHarpFirstPozition = getHarpStrata(cHarpFirstPozitionProps)
 const cHarpSecondPozition = getHarpStrata(cHarpSecondPozitionProps)
 const fHarpSecondPozition = getHarpStrata(fHarpSecondPozitionProps)
 
-test('provides incremented HarpStrata by pozition along with root pitch id when harp key is locked', () => {
+test('provides HarpStrata updated by pozition along with root pitch id when harp key is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
@@ -47,7 +47,7 @@ test('provides incremented HarpStrata by pozition along with root pitch id when 
   )
 })
 
-test('provides decremented HarpStrata by pozition along with root pitch id when harp key is locked', () => {
+test('provides HarpStrata updated by pozition along with root pitch id when harp key is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
@@ -62,7 +62,7 @@ test('provides decremented HarpStrata by pozition along with root pitch id when 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(cHarpFirstPozition)
 })
 
-test('provides incremented HarpStrata by pozition along with harp key id when root pitch is locked', () => {
+test('provides HarpStrata updated by pozition along with harp key id when root pitch is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
@@ -79,7 +79,7 @@ test('provides incremented HarpStrata by pozition along with harp key id when ro
   )
 })
 
-test('provides decremented HarpStrata by pozition along with harp key id when root pitch is locked', () => {
+test('provides HarpStrata updated by pozition along with harp key id when root pitch is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')

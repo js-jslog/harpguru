@@ -31,7 +31,7 @@ const cHarpFirstPozition = getHarpStrata(cHarpFirstPozitionProps)
 const dbHarpSixthPozition = getHarpStrata(dbHarpSixthPozitionProps)
 const dbHarpFirstPozition = getHarpStrata(dbHarpFirstPozitionProps)
 
-test('provides incremented HarpStrata by harp key along with pozition id when the root pitch is locked', () => {
+test('provides HarpStrata updated by harp key along with pozition id when the root pitch is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
@@ -48,7 +48,7 @@ test('provides incremented HarpStrata by harp key along with pozition id when th
   )
 })
 
-test('provides decremented HarpStrata by harp key along with pozition id when the root pitch is locked', () => {
+test('provides HarpStrata updated by harp key along with pozition id when the root pitch is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
@@ -63,7 +63,7 @@ test('provides decremented HarpStrata by harp key along with pozition id when th
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(cHarpFirstPozition)
 })
 
-test('provides incremented HarpStrata by harp key along with root pitch when the pozition is locked', () => {
+test('provides HarpStrata updated by harp key along with root pitch when the pozition is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
@@ -80,7 +80,7 @@ test('provides incremented HarpStrata by harp key along with root pitch when the
   )
 })
 
-test('provides decremented HarpStrata by harp key along with root pitch when the pozition is locked', () => {
+test('provides HarpStrata updated by harp key along with root pitch when the pozition is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')

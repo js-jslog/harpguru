@@ -30,7 +30,7 @@ const cHarpFirstPozition = getHarpStrata(cHarpFirstPozitionProps)
 const cHarpEighthPozition = getHarpStrata(cHarpEighthPozitionProps)
 const dbHarpFirstPozition = getHarpStrata(dbHarpFirstPozitionProps)
 
-test('provides incremented HarpStrata by root pitch along with pozition id when harp key is locked', () => {
+test('provides HarpStrata updated by root pitch along with pozition id when harp key is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
@@ -47,7 +47,7 @@ test('provides incremented HarpStrata by root pitch along with pozition id when 
   )
 })
 
-test('provides decremented HarpStrata by root pitch along with pozition id when harp key is locked', () => {
+test('provides HarpStrata updated by root pitch along with pozition id when harp key is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
@@ -62,7 +62,7 @@ test('provides decremented HarpStrata by root pitch along with pozition id when 
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(cHarpFirstPozition)
 })
 
-test('provides incremented HarpStrata by root pitch along with harp key when pozition is locked', () => {
+test('provides HarpStrata updated by root pitch along with harp key when pozition is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
@@ -79,7 +79,7 @@ test('provides incremented HarpStrata by root pitch along with harp key when poz
   )
 })
 
-test('provides decremented HarpStrata by root pitch along with harp key when pozition is locked', () => {
+test('provides HarpStrata updated by root pitch along with harp key when pozition is locked', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata')
