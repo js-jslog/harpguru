@@ -20,7 +20,7 @@ export const OptionLock = ({
   locked,
   handleTap,
 }: OptionLockProps): React.ReactElement => {
-  const { 10: contentHeight, 7: iconSize } = getSizes()
+  const { 9: padding, 7: iconSize } = getSizes()
 
   const styles = StyleSheet.create({
     fillColumn: {
@@ -28,14 +28,12 @@ export const OptionLock = ({
     },
     overlay: {
       ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      alignItems: 'center',
+      flexDirection: 'column',
     },
     content: {
-      flex: 1,
       alignItems: 'center',
-      justifyContent: 'center',
-      height: contentHeight,
+      justifyContent: 'flex-start',
+      padding: padding,
     },
   })
 
@@ -58,13 +56,13 @@ export const OptionLock = ({
   )
 
   return (
-    <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <View style={styles.fillColumn}>
-        <View style={styles.overlay}>
+    <View style={styles.fillColumn}>
+      {children}
+      <View style={styles.overlay}>
+        <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
           <View style={styles.content}>{lockFragment}</View>
-        </View>
-        {children}
+        </TapGestureHandler>
       </View>
-    </TapGestureHandler>
+    </View>
   )
 }

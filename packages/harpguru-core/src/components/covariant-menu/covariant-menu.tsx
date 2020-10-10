@@ -3,12 +3,14 @@ import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
+import { getPitchIds, getPozitionIds } from 'harpstrata'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
 import { Option } from '../option'
+import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
-import type { MenuProps } from '../../types'
+import type { MenuProps, OptionIds } from '../../types'
 import { getSizes, colors } from '../../styles'
 import { CovariantMembers } from '../../packages/covariance-series'
 
@@ -16,22 +18,31 @@ import {
   useNudgeHarpStrataByHarpKey,
   useNudgeHarpStrataByPozition,
   useNudgeHarpStrataByRootPitch,
+  useSetHarpStrataByHarpKey,
+  useSetHarpStrataByPozition,
+  useSetHarpStrataByRootPitch,
 } from './hooks'
 
 export const CovariantMenu = ({
   hideLabel,
   hideMenu,
-  tapHandler,
+  openCloseTapHandler,
 }: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
 
+  const orderedPitchIds = getPitchIds()
+  const orderedPozitionIds = getPozitionIds()
+
   const { harpKeyId } = activeHarpStrata
   const nudgeHarpStrataByHarpKey = useNudgeHarpStrataByHarpKey()
+  const setHarpStrataByHarpKey = useSetHarpStrataByHarpKey()
   const harpKeyOptionProps = {
     title: 'Harp Key',
-    optionId: harpKeyId,
+    activeOptionId: harpKeyId,
+    orderedOptionIds: orderedPitchIds,
     nudgeFunction: nudgeHarpStrataByHarpKey,
+    setFunction: setHarpStrataByHarpKey as (arg0: OptionIds) => void,
   }
   const harpKeyIsLocked = lockedCovariant === CovariantMembers.HarpKey
   const lockHarpKey = () => {
@@ -40,10 +51,13 @@ export const CovariantMenu = ({
 
   const { pozitionId } = activeHarpStrata
   const nudgeHarpStrataByPozition = useNudgeHarpStrataByPozition()
+  const setHarpStrataByPozition = useSetHarpStrataByPozition()
   const pozitionOptionProps = {
     title: 'Position',
-    optionId: pozitionId,
+    activeOptionId: pozitionId,
+    orderedOptionIds: orderedPozitionIds,
     nudgeFunction: nudgeHarpStrataByPozition,
+    setFunction: setHarpStrataByPozition as (arg0: OptionIds) => void,
   }
   const pozitionIsLocked = lockedCovariant === CovariantMembers.Pozition
   const lockPozition = () => {
@@ -52,10 +66,13 @@ export const CovariantMenu = ({
 
   const { rootPitchId } = activeHarpStrata
   const nudgeHarpStrataByRootPitch = useNudgeHarpStrataByRootPitch()
+  const setHarpStrataByRootPitch = useSetHarpStrataByRootPitch()
   const rootPitchOptionProps = {
     title: 'Root Pitch',
-    optionId: rootPitchId,
+    activeOptionId: rootPitchId,
+    orderedOptionIds: orderedPitchIds,
     nudgeFunction: nudgeHarpStrataByRootPitch,
+    setFunction: setHarpStrataByRootPitch as (arg0: OptionIds) => void,
   }
   const rootPitchIsLocked = lockedCovariant === CovariantMembers.RootPitch
   const lockRootPitch = () => {
@@ -87,27 +104,28 @@ export const CovariantMenu = ({
         },
       ]}
     >
-      <TapGestureHandler onHandlerStateChange={tapHandler}>
-        <Animated.View
-          style={[
-            styles.overlay,
-            {
-              backgroundColor: menuBackgroundColor,
-              opacity: menuOpacity,
-            },
-          ]}
-        >
-          <View style={styles.mainContents}>
-            <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
-              <Option {...harpKeyOptionProps} />
-            </OptionLock>
-            <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
-              <Option {...pozitionOptionProps} />
-            </OptionLock>
-            <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
-              <Option {...rootPitchOptionProps} />
-            </OptionLock>
-          </View>
+      <Animated.View
+        style={[
+          styles.overlay,
+          {
+            backgroundColor: menuBackgroundColor,
+            opacity: menuOpacity,
+          },
+        ]}
+      >
+        <View style={styles.mainContents}>
+          <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
+            <Option {...harpKeyOptionProps} />
+          </OptionLock>
+          <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
+            <Option {...pozitionOptionProps} />
+          </OptionLock>
+          <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
+            <Option {...rootPitchOptionProps} />
+          </OptionLock>
+          <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
+        </View>
+        <TapGestureHandler onHandlerStateChange={openCloseTapHandler}>
           <View style={styles.label}>
             <Animated.View
               style={[
@@ -123,8 +141,8 @@ export const CovariantMenu = ({
               />
             </Animated.View>
           </View>
-        </Animated.View>
-      </TapGestureHandler>
+        </TapGestureHandler>
+      </Animated.View>
     </Animated.View>
   )
 }

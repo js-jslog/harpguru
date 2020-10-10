@@ -32,10 +32,14 @@ const styles = StyleSheet.create({
 
 export const HarpGuru = (): ReactElement => {
   const [menuState, handleSwipe, handleTap] = useMenus()
-  const covariantTapHandler = (event: TapGestureHandlerStateChangeEvent) => {
+  const covariantOpenCloseTapHandler = (
+    event: TapGestureHandlerStateChangeEvent
+  ) => {
     handleTap(MenuStates.CovariantMenu, event)
   }
-  const layoutTapHandler = (event: TapGestureHandlerStateChangeEvent) => {
+  const layoutOpenCloseTapHandler = (
+    event: TapGestureHandlerStateChangeEvent
+  ) => {
     handleTap(MenuStates.LayoutMenu, event)
   }
 
@@ -58,7 +62,7 @@ export const HarpGuru = (): ReactElement => {
             menuState !== MenuStates.CovariantMenu &&
             menuState !== MenuStates.NoMenu
           }
-          tapHandler={covariantTapHandler}
+          openCloseTapHandler={covariantOpenCloseTapHandler}
         />
         <LayoutMenu
           hideMenu={menuState !== MenuStates.LayoutMenu}
@@ -66,7 +70,7 @@ export const HarpGuru = (): ReactElement => {
             menuState !== MenuStates.LayoutMenu &&
             menuState !== MenuStates.NoMenu
           }
-          tapHandler={layoutTapHandler}
+          openCloseTapHandler={layoutOpenCloseTapHandler}
         />
         <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />
       </View>

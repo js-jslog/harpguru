@@ -3,46 +3,68 @@ import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
+import { getApparatusIds } from 'harpstrata'
 import { Entypo } from '@expo/vector-icons'
 
 import { Option } from '../option'
+import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
-import type { MenuProps } from '../../types'
+import {
+  MenuProps,
+  OptionIds,
+  ExperienceModes,
+  DisplayModes,
+} from '../../types'
 import { getSizes, colors } from '../../styles'
 import { useNudgeDisplayMode } from '../../hooks'
 
-import { useNudgeHarpStrataByApparatus, useNudgeExperienceMode } from './hooks'
+import {
+  useNudgeHarpStrataByApparatus,
+  useNudgeExperienceMode,
+  useSetHarpStrataByApparatus,
+} from './hooks'
 
 export const LayoutMenu = ({
   hideMenu,
   hideLabel,
-  tapHandler,
+  openCloseTapHandler,
 }: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
+  const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
   const {
     apparatus: { id: apparatusId },
   } = activeHarpStrata
   const apparatusOptionProps = {
     title: 'Tuning',
-    optionId: apparatusId,
+    activeOptionId: apparatusId,
+    orderedOptionIds: getApparatusIds(),
     nudgeFunction: nudgeHarpStrataByApparatus,
+    setFunction: setHarpStrataByApparatus as (arg0: OptionIds) => void,
   }
 
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const [activeExperienceMode, setActiveExperienceMode] = useGlobal(
+    'activeExperienceMode'
+  )
   const nudgeExperienceMode = useNudgeExperienceMode()
   const experienceModeOptionProps = {
     title: 'Experience',
-    optionId: activeExperienceMode,
+    activeOptionId: activeExperienceMode,
+    orderedOptionIds: [ExperienceModes.Quiz, ExperienceModes.Explore],
     nudgeFunction: nudgeExperienceMode,
+    setFunction: setActiveExperienceMode as (arg0: OptionIds) => void,
   }
 
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeDisplayMode, setActiveDisplayMode] = useGlobal(
+    'activeDisplayMode'
+  )
   const nudgeDisplayMode = useNudgeDisplayMode()
   const displayModeOptionProps = {
     title: 'Display',
-    optionId: activeDisplayMode,
+    activeOptionId: activeDisplayMode,
+    orderedOptionIds: [DisplayModes.Pitch, DisplayModes.Degree],
     nudgeFunction: nudgeDisplayMode,
+    setFunction: setActiveDisplayMode as (arg0: OptionIds) => void,
   }
 
   const {
@@ -70,21 +92,22 @@ export const LayoutMenu = ({
         },
       ]}
     >
-      <TapGestureHandler onHandlerStateChange={tapHandler}>
-        <Animated.View
-          style={[
-            styles.overlay,
-            {
-              backgroundColor: menuBackgroundColor,
-              opacity: menuOpacity,
-            },
-          ]}
-        >
-          <View style={styles.mainContents}>
-            <Option {...apparatusOptionProps} />
-            <Option {...displayModeOptionProps} />
-            <Option {...experienceModeOptionProps} />
-          </View>
+      <Animated.View
+        style={[
+          styles.overlay,
+          {
+            backgroundColor: menuBackgroundColor,
+            opacity: menuOpacity,
+          },
+        ]}
+      >
+        <View style={styles.mainContents}>
+          <Option {...apparatusOptionProps} />
+          <Option {...displayModeOptionProps} />
+          <Option {...experienceModeOptionProps} />
+          <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
+        </View>
+        <TapGestureHandler onHandlerStateChange={openCloseTapHandler}>
           <View style={styles.label}>
             <Animated.View
               style={[
@@ -100,8 +123,8 @@ export const LayoutMenu = ({
               />
             </Animated.View>
           </View>
-        </Animated.View>
-      </TapGestureHandler>
+        </TapGestureHandler>
+      </Animated.View>
     </Animated.View>
   )
 }

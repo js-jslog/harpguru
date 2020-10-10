@@ -15,6 +15,17 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.0.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: Added multiple selectable options above and below selected one
+
+### Changed
+
+- MAJOR: Replaced the whole menu close tap, with a dedicated close button
+- MINOR: Moved the covariant lock icons and improved their tap handler catchment area
+
+### Fixed
+
 - MINOR: Correct failing test from unchecked introduction of new apparatus
 
 ## [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v1.0.0) - 2020-09-06

@@ -1,5 +1,10 @@
 import { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
-import type { HarpStrata } from 'harpstrata'
+import type {
+  ApparatusIds,
+  HarpStrata,
+  PitchIds,
+  PozitionIds,
+} from 'harpstrata'
 
 export enum DisplayModes {
   Degree = 'DEGREE',
@@ -20,7 +25,9 @@ export enum MenuStates {
 export type MenuProps = {
   readonly hideMenu: boolean
   readonly hideLabel: boolean
-  readonly tapHandler: (arg0: TapGestureHandlerStateChangeEvent) => void
+  readonly openCloseTapHandler: (
+    arg0: TapGestureHandlerStateChangeEvent
+  ) => void
 }
 
 export type SetActiveHarpStrata = (arg0: HarpStrata) => void
@@ -32,3 +39,10 @@ type RenderableToneTuple = [string, string] | ['', '']
 export type RenderableToneTuples =
   | [RenderableToneTuple, RenderableToneTuple]
   | [RenderableToneTuple]
+
+export type OptionIds =
+  | ApparatusIds
+  | DisplayModes
+  | ExperienceModes
+  | PitchIds
+  | PozitionIds
