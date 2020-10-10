@@ -100,7 +100,7 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v3.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v3.1.0...HEAD)
 - [v2.1.0](https://github.com/js-jslog/harpguru/releases/tag/v3.1.0)
 - [v2.0.0](https://github.com/js-jslog/harpguru/releases/tag/v3.0.0)
 - [v1.4.0](https://github.com/js-jslog/harpguru/releases/tag/v2.0.0)
