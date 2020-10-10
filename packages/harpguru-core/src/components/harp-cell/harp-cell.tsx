@@ -76,7 +76,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const accessibleContent = (
     <LongPressGestureHandler
       onHandlerStateChange={handleLongPressStateChange}
-      minDurationMs={100}
+      minDurationMs={500}
     >
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
         <View accessible={true} accessibilityRole="button" style={styles.cell}>
