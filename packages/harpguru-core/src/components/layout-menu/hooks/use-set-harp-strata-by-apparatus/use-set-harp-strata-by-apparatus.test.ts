@@ -26,7 +26,7 @@ const majorDiatonicHarp = getHarpStrata(majorDiatonicHarpProps)
 const countryTunedHarp = getHarpStrata(countryTunedHarpProps)
 const naturalMinorHarp = getHarpStrata(naturalMinorHarpProps)
 
-test('provides input HarpStrata with apparatus set to natural minor', () => {
+test('provides HarpStrata updated apparatus set to natural minor', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockReturnValue([countryTunedHarp, setActiveHarpStrata])
   const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
@@ -35,7 +35,7 @@ test('provides input HarpStrata with apparatus set to natural minor', () => {
   expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(naturalMinorHarp)
 })
 
-test('provides decremented HarpStrata by apparatus', () => {
+test('provides HarpStrata updated by apparatus to major diatonic', () => {
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockReturnValue([countryTunedHarp, setActiveHarpStrata])
   const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
