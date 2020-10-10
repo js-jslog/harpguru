@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v2.0.0...master) - yyyy-mm-dd
 
+### Removed
+
+- MAJOR: Permissions requested by expo, implied by the absence of a 'permissions' config are now removed, by the addition of that config
+
 ## [v1.4.0](https://github.com/js-jslog/harpguru/releases/tag/v2.0.0) - 2020-10-10
 
 ### Changed
