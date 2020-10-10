@@ -2,12 +2,17 @@ import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import {
   PanGestureHandler,
-  PanGestureHandlerGestureEvent,
+  TapGestureHandler,
   State,
 } from 'react-native-gesture-handler'
-import { View, Text } from 'react-native'
+import type {
+  PanGestureHandlerGestureEvent,
+  TapGestureHandlerStateChangeEvent,
+} from 'react-native-gesture-handler'
+import { View, Text, TextStyle } from 'react-native'
 import React, { useState } from 'react'
 
+import { OptionIds } from '../../types'
 import { getSizes } from '../../styles'
 import { usePrevious } from '../../hooks'
 
@@ -15,8 +20,10 @@ import { getStyles, getDynamicStyles } from './option-styles'
 
 type OptionProps = {
   readonly title: string
-  readonly optionId: string
+  readonly activeOptionId: OptionIds
+  readonly orderedOptionIds: ReadonlyArray<OptionIds>
   readonly nudgeFunction: (arg0: 'UP' | 'DOWN') => void
+  readonly setFunction: (arg0: OptionIds) => void
 }
 
 export const Option = (props: OptionProps): React.ReactElement => {
@@ -27,7 +34,13 @@ export const Option = (props: OptionProps): React.ReactElement => {
   const sizes = getSizes()
   const { 8: swipeThreshold } = sizes
 
-  const { title, optionId, nudgeFunction } = props
+  const {
+    title,
+    activeOptionId,
+    orderedOptionIds,
+    nudgeFunction,
+    setFunction,
+  } = props
 
   const dynamicStyles = getDynamicStyles(state)
 
@@ -46,8 +59,8 @@ export const Option = (props: OptionProps): React.ReactElement => {
     setTranslationY(nativeEvent.translationY)
   }
 
-  const previousOptionId = usePrevious(optionId, '')
-  const isUpdated = optionId !== previousOptionId
+  const previousOptionId = usePrevious(activeOptionId, undefined)
+  const isUpdated = activeOptionId !== previousOptionId
   const optionUpdatedVal = useTimingTransition(isUpdated, {
     duration: 300,
     easing: Easing.inOut(Easing.circle),
@@ -57,6 +70,22 @@ export const Option = (props: OptionProps): React.ReactElement => {
     outputRange: isUpdated ? [2, 1] : [1, 1],
   })
 
+  const activeIdPos = orderedOptionIds.indexOf(activeOptionId)
+  const { length: listLength } = orderedOptionIds
+
+  const extendedList = [
+    ...orderedOptionIds,
+    ...orderedOptionIds,
+    ...orderedOptionIds,
+  ]
+  const innerActiveIdPos = activeIdPos + listLength
+
+  const { [innerActiveIdPos + 2]: inactiveOptionId1 } = extendedList
+  const { [innerActiveIdPos + 1]: inactiveOptionId2 } = extendedList
+  const { [innerActiveIdPos - 1]: inactiveOptionId3 } = extendedList
+  const { [innerActiveIdPos - 2]: inactiveOptionId4 } = extendedList
+  const { [innerActiveIdPos - 3]: inactiveOptionId5 } = extendedList
+
   return (
     <PanGestureHandler
       shouldCancelWhenOutside={true}
@@ -65,29 +94,81 @@ export const Option = (props: OptionProps): React.ReactElement => {
     >
       <View style={[styles.option, dynamicStyles.activeSwipeStyle]}>
         <OptionTitle>{title}</OptionTitle>
-        <Animated.View
-          style={[
-            {
-              transform: [{ scale: optionUpdateTransition }],
-            },
-          ]}
-        >
-          <OptionValue>{optionId}</OptionValue>
-        </Animated.View>
+        <View style={styles.optionValues}>
+          <OptionValue
+            id={inactiveOptionId1}
+            setFunction={setFunction}
+            style={styles.distantOptionValue}
+          />
+          <OptionValue
+            id={inactiveOptionId2}
+            setFunction={setFunction}
+            style={styles.nextOptionValue}
+          />
+          <Animated.View
+            style={[
+              {
+                transform: [{ scale: optionUpdateTransition }],
+              },
+            ]}
+          >
+            <OptionValue
+              id={activeOptionId}
+              setFunction={setFunction}
+              style={styles.activeOptionValue}
+            />
+          </Animated.View>
+          <OptionValue
+            id={inactiveOptionId3}
+            setFunction={setFunction}
+            style={styles.nextOptionValue}
+          />
+          <OptionValue
+            id={inactiveOptionId4}
+            setFunction={setFunction}
+            style={styles.distantOptionValue}
+          />
+          <OptionValue
+            id={inactiveOptionId5}
+            setFunction={setFunction}
+            style={styles.distantOptionValue}
+          />
+        </View>
       </View>
     </PanGestureHandler>
   )
 }
 
-type ChildProps = {
+type TitleProps = {
   readonly children: React.ReactNode
 }
+type OptionValueProps = {
+  readonly id: OptionIds
+  readonly setFunction: (arg0: OptionIds) => void
+  readonly style: TextStyle
+}
 
-const OptionTitle = ({ children }: ChildProps): React.ReactElement => {
+const OptionTitle = ({ children }: TitleProps): React.ReactElement => {
   const styles = getStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
 }
-const OptionValue = ({ children }: ChildProps): React.ReactElement => {
-  const styles = getStyles()
-  return <Text style={styles.optionValue}>{children}</Text>
+const OptionValue = ({
+  id,
+  setFunction,
+  style,
+}: OptionValueProps): React.ReactElement => {
+  const handleTapStateChange = ({
+    nativeEvent,
+  }: TapGestureHandlerStateChangeEvent) => {
+    if (nativeEvent.state !== State.END) return
+
+    setFunction(id)
+  }
+  return (
+    <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
+      <View>
+        <Text style={style}>{id}</Text>
+      </View>
+    </TapGestureHandler>
+  )
 }
