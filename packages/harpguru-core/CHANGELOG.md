@@ -24,6 +24,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Changed
 
 - MAJOR: Replaced the whole menu close tap, with a dedicated close button
+- MAJOR: Long press root pitch change now considers which covariant is locked when setting next HarpStrata
 - MINOR: Moved the covariant lock icons and improved their tap handler catchment area
 
 ### Fixed

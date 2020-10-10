@@ -4,12 +4,17 @@ import type { PitchIds } from 'harpstrata'
 
 import { getPropsForHarpStrata } from '../../../../utils'
 import { DisplayModes } from '../../../../types'
+import { CovariantMembers } from '../../../../packages/covariance-series'
 
 type SetPozitionRoot = (arg0: PitchIds | undefined) => void
 
 export const useSetPozitionRoot = (): SetPozitionRoot => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
-  const { harpKeyId: activeHarpKeyId } = activeHarpStrata
+  const [lockedCovariant] = useGlobal('lockedCovariant')
+  const {
+    harpKeyId: activeHarpKeyId,
+    rootPitchId: activeRootPitchId,
+  } = activeHarpStrata
   const activeHarpStrataProps = getPropsForHarpStrata(
     activeHarpStrata,
     DisplayModes.Degree
@@ -21,11 +26,25 @@ export const useSetPozitionRoot = (): SetPozitionRoot => {
       rootPitchId: newRootPitchId,
     }
     const { pozitionId: newPozitionId } = getCovariantSet(covariantControllers)
-    const newActiveHarpStrata = getHarpStrata({
-      ...activeHarpStrataProps,
-      harpKeyId: activeHarpKeyId,
-      pozitionId: newPozitionId,
-    })
-    setActiveHarpStrata(newActiveHarpStrata)
+    if (lockedCovariant === CovariantMembers.HarpKey) {
+      const newActiveHarpStrata = getHarpStrata({
+        ...activeHarpStrataProps,
+        harpKeyId: activeHarpKeyId,
+        pozitionId: newPozitionId,
+      })
+      setActiveHarpStrata(newActiveHarpStrata)
+    } else {
+      const covariantControllers2 = {
+        rootPitchId: activeRootPitchId,
+        pozitionId: newPozitionId,
+      }
+      const { harpKeyId: newHarpKeyId } = getCovariantSet(covariantControllers2)
+      const newActiveHarpStrata = getHarpStrata({
+        ...activeHarpStrataProps,
+        harpKeyId: newHarpKeyId,
+        pozitionId: newPozitionId,
+      })
+      setActiveHarpStrata(newActiveHarpStrata)
+    }
   }
 }
