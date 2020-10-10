@@ -8,9 +8,9 @@ import {
   inactiveCellsHarpStrata,
   activeCellsHarpStrata,
 } from '../../test-resources'
+import { CovariantMembers } from '../../packages/covariance-series'
 
 import { HarpCell } from './index'
-import { CovariantMembers } from '../../packages/covariance-series'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
