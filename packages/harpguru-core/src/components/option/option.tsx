@@ -77,8 +77,10 @@ export const Option = (props: OptionProps): React.ReactElement => {
     ...orderedOptionIds,
     ...orderedOptionIds,
     ...orderedOptionIds,
+    ...orderedOptionIds,
+    ...orderedOptionIds,
   ]
-  const innerActiveIdPos = activeIdPos + listLength
+  const innerActiveIdPos = activeIdPos + listLength + listLength
 
   const { [innerActiveIdPos + 2]: inactiveOptionId1 } = extendedList
   const { [innerActiveIdPos + 1]: inactiveOptionId2 } = extendedList
