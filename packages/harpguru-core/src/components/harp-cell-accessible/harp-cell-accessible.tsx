@@ -12,7 +12,6 @@ import { getRenderableToneTuples } from '../../utils'
 import { DisplayModes } from '../../types'
 
 import { getStyles } from './utils'
-import { useToggleHarpCell } from './hooks'
 
 const getToneSource = (
   degreeId: DegreeIds | undefined,
@@ -29,14 +28,13 @@ type HarpCellAccessibleProps = {
   readonly pitchId: PitchIds
   readonly isActive: boolean
   readonly displayMode: DisplayModes
+  readonly toggleHarpCell: (arg0: DegreeIds) => void
 }
 
 export const HarpCellAccessible = (
   props: HarpCellAccessibleProps
 ): React.ReactElement => {
-  const toggleHarpCell = useToggleHarpCell()
-
-  const { degreeId, pitchId, isActive, displayMode } = props
+  const { degreeId, pitchId, isActive, displayMode, toggleHarpCell } = props
 
   const toneSource = getToneSource(degreeId, pitchId, displayMode)
   const toneTuples = getRenderableToneTuples(toneSource)
