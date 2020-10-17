@@ -28,3 +28,5 @@ export const HarpCellInaccessible = (): React.ReactElement => {
     </View>
   )
 }
+
+export const MemoHarpCellInaccessible = React.memo(HarpCellInaccessible)

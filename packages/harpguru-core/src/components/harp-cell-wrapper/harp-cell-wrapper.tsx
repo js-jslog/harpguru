@@ -2,8 +2,8 @@ import { useGlobal } from 'reactn'
 import React from 'react'
 import { IsActiveIds } from 'harpstrata'
 
-import { HarpCellInaccessible } from '../harp-cell-inaccessible'
-import { HarpCellAccessible } from '../harp-cell-accessible'
+import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
+import { MemoHarpCellAccessible } from '../harp-cell-accessible'
 import type { Coord } from '../../types'
 
 export type YXCoord = [Coord, Coord]
@@ -37,7 +37,7 @@ export const HarpCellWrapper = ({
   const { id: thisPitchId } = thisPitch || { id: undefined }
 
   if (thisDegreeId === undefined || thisPitchId === undefined) {
-    return <HarpCellInaccessible />
+    return <MemoHarpCellInaccessible />
   } else {
     const harpCellAccessibleProps = {
       degreeId: thisDegreeId,
@@ -45,6 +45,6 @@ export const HarpCellWrapper = ({
       isActive: thisIsActiveId === IsActiveIds.Active,
       displayMode: activeDisplayMode,
     }
-    return <HarpCellAccessible {...harpCellAccessibleProps} />
+    return <MemoHarpCellAccessible {...harpCellAccessibleProps} />
   }
 }

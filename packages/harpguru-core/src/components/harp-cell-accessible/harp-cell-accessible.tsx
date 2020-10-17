@@ -68,3 +68,5 @@ export const HarpCellAccessible = (
   )
   return accessibleContent
 }
+
+export const MemoHarpCellAccessible = React.memo(HarpCellAccessible)
