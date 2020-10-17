@@ -41,7 +41,7 @@ export const HarpCellWrapper = ({
   } else {
     const harpCellAccessibleProps = {
       degreeId: thisDegreeId,
-      pitchId: thisPitch,
+      pitchId: thisPitchId,
       isActive: thisIsActiveId === IsActiveIds.Active,
       displayMode: activeDisplayMode,
     }
