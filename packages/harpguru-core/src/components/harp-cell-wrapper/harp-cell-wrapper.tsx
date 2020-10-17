@@ -14,7 +14,6 @@ export type YXCoord = [Coord, Coord]
 type HarpCellProps = {
   readonly yxCoord: YXCoord
 }
-type ToggleHarpCell = (arg0: DegreeIds) => void
 
 export const HarpCellWrapper = ({
   yxCoord,
@@ -22,12 +21,10 @@ export const HarpCellWrapper = ({
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
-  const toggleHarpCell = (): ToggleHarpCell => {
-    return (degreeId: DegreeIds) => {
-      setActiveHarpStrata(
-        toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId)
-      )
-    }
+  const toggleHarpCell = (degreeId: DegreeIds): void => {
+    setActiveHarpStrata(
+      toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId)
+    )
   }
 
   const {
