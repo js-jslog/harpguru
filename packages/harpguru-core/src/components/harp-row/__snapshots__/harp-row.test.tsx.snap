@@ -1544,7 +1544,6 @@ exports[`A snapshot of a non-home row 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#555",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
           "elevation": 0,
@@ -1560,7 +1559,6 @@ exports[`A snapshot of a non-home row 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#555",
             "borderRadius": 22.63930291919421,
             "borderWidth": 0,
             "elevation": 0,
@@ -1578,7 +1576,6 @@ exports[`A snapshot of a non-home row 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#555",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
           "elevation": 0,
@@ -1594,7 +1591,6 @@ exports[`A snapshot of a non-home row 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#555",
             "borderRadius": 22.63930291919421,
             "borderWidth": 0,
             "elevation": 0,
@@ -1612,7 +1608,6 @@ exports[`A snapshot of a non-home row 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#555",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
           "elevation": 0,
@@ -1628,7 +1623,6 @@ exports[`A snapshot of a non-home row 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#555",
             "borderRadius": 22.63930291919421,
             "borderWidth": 0,
             "elevation": 0,
@@ -1646,7 +1640,6 @@ exports[`A snapshot of a non-home row 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#555",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
           "elevation": 0,
@@ -1662,7 +1655,6 @@ exports[`A snapshot of a non-home row 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#555",
             "borderRadius": 22.63930291919421,
             "borderWidth": 0,
             "elevation": 0,
@@ -1680,7 +1672,6 @@ exports[`A snapshot of a non-home row 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#555",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
           "elevation": 0,
@@ -1696,7 +1687,6 @@ exports[`A snapshot of a non-home row 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#555",
             "borderRadius": 22.63930291919421,
             "borderWidth": 0,
             "elevation": 0,
@@ -1714,7 +1704,6 @@ exports[`A snapshot of a non-home row 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#555",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
           "elevation": 0,
@@ -1730,7 +1719,6 @@ exports[`A snapshot of a non-home row 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#555",
             "borderRadius": 22.63930291919421,
             "borderWidth": 0,
             "elevation": 0,
@@ -1748,7 +1736,6 @@ exports[`A snapshot of a non-home row 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#555",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
           "elevation": 0,
@@ -1764,7 +1751,6 @@ exports[`A snapshot of a non-home row 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#555",
             "borderRadius": 22.63930291919421,
             "borderWidth": 0,
             "elevation": 0,
@@ -1782,7 +1768,6 @@ exports[`A snapshot of a non-home row 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#555",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
           "elevation": 0,
@@ -1798,7 +1783,6 @@ exports[`A snapshot of a non-home row 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#555",
             "borderRadius": 22.63930291919421,
             "borderWidth": 0,
             "elevation": 0,
@@ -1816,7 +1800,6 @@ exports[`A snapshot of a non-home row 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#fefefe",
-          "borderColor": "#555",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
           "elevation": 0,
@@ -1832,7 +1815,6 @@ exports[`A snapshot of a non-home row 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#fefefe",
-            "borderColor": "#555",
             "borderRadius": 22.63930291919421,
             "borderWidth": 0,
             "elevation": 0,
