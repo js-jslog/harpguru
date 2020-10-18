@@ -39,6 +39,7 @@ const getToneSource = (
 
 export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const toggleHarpCell = useToggleHarpCell()
   const setPozitionRoot = useSetPozitionRoot()
   const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
@@ -70,6 +71,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
       isActive={thisIsActiveId === IsActiveIds.Active}
       isQuestion={false}
       splitType={'SLANT'}
+      activeExperienceMode={activeExperienceMode}
     />
   )
 
