@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
@@ -11,6 +10,7 @@ type RenderedToneProps = {
   readonly isActive: boolean
   readonly isQuestion: boolean
   readonly splitType: 'FLAT' | 'SLANT'
+  readonly activeExperienceMode: ExperienceModes
 }
 
 export const RenderedTone = ({
@@ -18,8 +18,8 @@ export const RenderedTone = ({
   isActive,
   isQuestion,
   splitType,
+  activeExperienceMode,
 }: RenderedToneProps): React.ReactElement => {
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
   const sizes = getSizes()

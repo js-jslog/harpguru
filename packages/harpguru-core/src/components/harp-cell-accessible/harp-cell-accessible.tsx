@@ -1,8 +1,3 @@
-import {
-  TapGestureHandler,
-  TapGestureHandlerStateChangeEvent,
-  State,
-} from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
@@ -10,6 +5,7 @@ import type { DegreeIds, PitchIds } from 'harpstrata'
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
 import { DisplayModes } from '../../types'
+import type { ExperienceModes } from '../../types'
 
 import { getStyles } from './utils'
 
@@ -28,25 +24,23 @@ type HarpCellAccessibleProps = {
   readonly pitchId: PitchIds
   readonly isActive: boolean
   readonly displayMode: DisplayModes
-  readonly toggleHarpCell: (arg0: DegreeIds) => void
+  readonly activeExperienceMode: ExperienceModes
 }
 
 export const HarpCellAccessible = (
   props: HarpCellAccessibleProps
 ): React.ReactElement => {
-  const { degreeId, pitchId, isActive, displayMode, toggleHarpCell } = props
+  const {
+    degreeId,
+    pitchId,
+    isActive,
+    displayMode,
+    activeExperienceMode,
+  } = props
 
   const toneSource = getToneSource(degreeId, pitchId, displayMode)
   const toneTuples = getRenderableToneTuples(toneSource)
   const styles = getStyles(degreeId, isActive)
-
-  const handleTapStateChange = ({
-    nativeEvent,
-  }: TapGestureHandlerStateChangeEvent) => {
-    if (nativeEvent.state !== State.END) return
-
-    toggleHarpCell(degreeId)
-  }
 
   const renderedTone = (
     <RenderedTone
@@ -54,17 +48,20 @@ export const HarpCellAccessible = (
       isActive={isActive}
       isQuestion={false}
       splitType={'SLANT'}
+      activeExperienceMode={activeExperienceMode}
     />
   )
 
   const accessibleContent = (
-    <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <View accessible={true} accessibilityRole="button" style={styles.cell}>
-        {renderedTone}
-      </View>
-    </TapGestureHandler>
+    <View accessible={true} accessibilityRole="button" style={styles.cell}>
+      {renderedTone}
+    </View>
   )
   return accessibleContent
 }
 
-export const MemoHarpCellAccessible = React.memo(HarpCellAccessible)
+const areEqual = (): boolean => {
+  return true
+}
+
+export const MemoHarpCellAccessible = React.memo(HarpCellAccessible, areEqual)

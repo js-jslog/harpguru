@@ -1,4 +1,10 @@
 import { useGlobal } from 'reactn'
+import {
+  TapGestureHandler,
+  TapGestureHandlerStateChangeEvent,
+  State,
+} from 'react-native-gesture-handler'
+import { View } from 'react-native'
 import React from 'react'
 import { IsActiveIds } from 'harpstrata'
 import type { DegreeIds } from 'harpstrata'
@@ -20,11 +26,10 @@ export const HarpCellWrapper = ({
 }: HarpCellProps): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
 
   const toggleHarpCell = (degreeId: DegreeIds): void => {
-    setActiveHarpStrata(
-      toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId)
-    )
+    setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
   }
 
   const {
@@ -53,8 +58,22 @@ export const HarpCellWrapper = ({
       pitchId: thisPitchId,
       isActive: thisIsActiveId === IsActiveIds.Active,
       displayMode: activeDisplayMode,
-      toggleHarpCell: toggleHarpCell,
+      activeExperienceMode: activeExperienceMode,
     }
-    return <MemoHarpCellAccessible {...harpCellAccessibleProps} />
+    const handleTapStateChange = ({
+      nativeEvent,
+    }: TapGestureHandlerStateChangeEvent) => {
+      if (nativeEvent.state !== State.END) return
+
+      toggleHarpCell(thisDegreeId)
+    }
+
+    return (
+      <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
+        <View>
+          <MemoHarpCellAccessible {...harpCellAccessibleProps} />
+        </View>
+      </TapGestureHandler>
+    )
   }
 }
