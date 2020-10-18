@@ -42,26 +42,17 @@ export const HarpCellAccessible = (
   const toneTuples = getRenderableToneTuples(toneSource)
   const styles = getStyles(degreeId, isActive)
 
-  const renderedTone = (
-    <RenderedTone
-      toneTuples={toneTuples}
-      isActive={isActive}
-      isQuestion={false}
-      splitType={'SLANT'}
-      activeExperienceMode={activeExperienceMode}
-    />
-  )
-
-  const accessibleContent = (
+  return (
     <View accessible={true} accessibilityRole="button" style={styles.cell}>
-      {renderedTone}
+      <RenderedTone
+        toneTuples={toneTuples}
+        isActive={isActive}
+        isQuestion={false}
+        splitType={'SLANT'}
+        activeExperienceMode={activeExperienceMode}
+      />
     </View>
   )
-  return accessibleContent
 }
 
-const areEqual = (): boolean => {
-  return true
-}
-
-export const MemoHarpCellAccessible = React.memo(HarpCellAccessible, areEqual)
+export const MemoHarpCellAccessible = React.memo(HarpCellAccessible)
