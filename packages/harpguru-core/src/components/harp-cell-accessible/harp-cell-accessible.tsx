@@ -58,4 +58,28 @@ export const HarpCellAccessible = (
   )
 }
 
-export const MemoHarpCellAccessible = React.memo(HarpCellAccessible)
+const areEqual = (
+  prevProps: HarpCellAccessibleProps,
+  nextProps: HarpCellAccessibleProps
+) => {
+  // The sizes object is too deep to be successfully analysed by the memo comparison.
+  // All the values in the object are related so we only need to check one of the values.
+  const equalSizes = prevProps.sizes['1'] === nextProps.sizes['1']
+  const equalDegree = prevProps.degreeId === nextProps.degreeId
+  const equalPitch = prevProps.pitchId === nextProps.pitchId
+  const equalActive = prevProps.isActive === nextProps.isActive
+  const equalDisplayMode = prevProps.displayMode === nextProps.displayMode
+  const equalExperienceMode =
+    prevProps.activeExperienceMode === nextProps.activeExperienceMode
+
+  return (
+    equalDegree &&
+    equalPitch &&
+    equalActive &&
+    equalDisplayMode &&
+    equalExperienceMode &&
+    equalSizes
+  )
+}
+
+export const MemoHarpCellAccessible = React.memo(HarpCellAccessible, areEqual)
