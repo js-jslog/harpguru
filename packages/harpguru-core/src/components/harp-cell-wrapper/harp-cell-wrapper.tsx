@@ -11,7 +11,7 @@ import type { DegreeIds } from 'harpstrata'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
-import type { Coord } from '../../types'
+import type { Coord, DisplayModes, ExperienceModes } from '../../types'
 
 import { toggleDegreeIdInHarpStrata } from './utils'
 
@@ -19,14 +19,16 @@ export type YXCoord = [Coord, Coord]
 
 type HarpCellProps = {
   readonly yxCoord: YXCoord
+  readonly activeDisplayMode: DisplayModes
+  readonly activeExperienceMode: ExperienceModes
 }
 
 export const HarpCellWrapper = ({
   yxCoord,
+  activeDisplayMode,
+  activeExperienceMode,
 }: HarpCellProps): React.ReactElement => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
 
   const toggleHarpCell = (degreeId: DegreeIds): void => {
     setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
