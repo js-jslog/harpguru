@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
@@ -7,7 +6,7 @@ import {
 import { View } from 'react-native'
 import React from 'react'
 import { IsActiveIds } from 'harpstrata'
-import type { DegreeIds } from 'harpstrata'
+import type { DegreeIds, HarpStrata } from 'harpstrata'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
@@ -19,17 +18,19 @@ export type YXCoord = [Coord, Coord]
 
 type HarpCellProps = {
   readonly yxCoord: YXCoord
+  readonly activeHarpStrata: HarpStrata
+  readonly setActiveHarpStrata: (arg0: HarpStrata) => void
   readonly activeDisplayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
 }
 
 export const HarpCellWrapper = ({
   yxCoord,
+  activeHarpStrata,
+  setActiveHarpStrata,
   activeDisplayMode,
   activeExperienceMode,
 }: HarpCellProps): React.ReactElement => {
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
-
   const toggleHarpCell = (degreeId: DegreeIds): void => {
     setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
   }

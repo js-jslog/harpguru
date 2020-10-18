@@ -9,12 +9,15 @@ export const getHarpCells = (
   yCoord: Coord,
   xRange: XRange
 ): React.ReactElement[] => {
+  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const harpCells = xRange.map((xCoord) => {
     const yxCoord: YXCoord = [yCoord, xCoord]
     const props = {
       yxCoord,
+      activeHarpStrata,
+      setActiveHarpStrata,
       activeDisplayMode,
       activeExperienceMode,
     }
