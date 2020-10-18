@@ -11,6 +11,7 @@ import type { DegreeIds, HarpStrata } from 'harpstrata'
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
 import type { Coord, DisplayModes, ExperienceModes } from '../../types'
+import type { SizeScheme } from '../../styles'
 
 import { toggleDegreeIdInHarpStrata } from './utils'
 
@@ -22,6 +23,7 @@ type HarpCellProps = {
   readonly setActiveHarpStrata: (arg0: HarpStrata) => void
   readonly activeDisplayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
+  readonly sizes: SizeScheme
 }
 
 export const HarpCellWrapper = ({
@@ -30,6 +32,7 @@ export const HarpCellWrapper = ({
   setActiveHarpStrata,
   activeDisplayMode,
   activeExperienceMode,
+  sizes,
 }: HarpCellProps): React.ReactElement => {
   const toggleHarpCell = (degreeId: DegreeIds): void => {
     setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
@@ -62,6 +65,7 @@ export const HarpCellWrapper = ({
       isActive: thisIsActiveId === IsActiveIds.Active,
       displayMode: activeDisplayMode,
       activeExperienceMode: activeExperienceMode,
+      sizes: sizes,
     }
     const handleTapStateChange = ({
       nativeEvent,

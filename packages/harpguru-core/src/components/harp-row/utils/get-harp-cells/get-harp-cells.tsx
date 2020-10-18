@@ -4,6 +4,7 @@ import React from 'react'
 import { HarpCellWrapper } from '../../../harp-cell-wrapper'
 import type { YXCoord } from '../../../harp-cell'
 import type { Coord, XRange } from '../../../../types'
+import { getSizes } from '../../../../styles'
 
 export const getHarpCells = (
   yCoord: Coord,
@@ -12,6 +13,7 @@ export const getHarpCells = (
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const sizes = getSizes()
   const harpCells = xRange.map((xCoord) => {
     const yxCoord: YXCoord = [yCoord, xCoord]
     const props = {
@@ -20,6 +22,7 @@ export const getHarpCells = (
       setActiveHarpStrata,
       activeDisplayMode,
       activeExperienceMode,
+      sizes,
     }
 
     return <HarpCellWrapper key={xCoord} {...props} />

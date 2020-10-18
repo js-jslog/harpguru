@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import { DegreeIds } from 'harpstrata'
 
-import { getSizes, colors } from '../../../../styles'
+import { colors } from '../../../../styles'
+import type { SizeScheme } from '../../../../styles'
 
 export type HarpCellStyles = {
   readonly cell: ViewStyle
@@ -10,9 +11,9 @@ export type HarpCellStyles = {
 
 export const getStyles = (
   degreeId: DegreeIds,
-  isActive: boolean
+  isActive: boolean,
+  sizes: SizeScheme
 ): HarpCellStyles => {
-  const sizes = getSizes()
   const { 1: borderWidth, 6: borderRadius, 2: elevation } = sizes
   const width = sizes['8'] + sizes['5']
   const height = sizes['8'] + sizes['5']

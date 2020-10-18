@@ -6,6 +6,7 @@ import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
 import { DisplayModes } from '../../types'
 import type { ExperienceModes } from '../../types'
+import type { SizeScheme } from '../../styles'
 
 import { getStyles } from './utils'
 
@@ -25,6 +26,7 @@ type HarpCellAccessibleProps = {
   readonly isActive: boolean
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
+  readonly sizes: SizeScheme
 }
 
 export const HarpCellAccessible = (
@@ -36,11 +38,12 @@ export const HarpCellAccessible = (
     isActive,
     displayMode,
     activeExperienceMode,
+    sizes,
   } = props
 
   const toneSource = getToneSource(degreeId, pitchId, displayMode)
   const toneTuples = getRenderableToneTuples(toneSource)
-  const styles = getStyles(degreeId, isActive)
+  const styles = getStyles(degreeId, isActive, sizes)
 
   return (
     <View accessible={true} accessibilityRole="button" style={styles.cell}>
