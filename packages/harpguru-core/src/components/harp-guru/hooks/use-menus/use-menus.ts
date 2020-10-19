@@ -45,7 +45,7 @@ export const useMenus = (): [MenuStates, HandleSwipe, HandleTap] => {
     menu: MenuStates,
     { nativeEvent }: TapGestureHandlerStateChangeEvent
   ) => {
-    if (nativeEvent.state !== State.ACTIVE) return
+    if (nativeEvent.state !== State.END) return
     if (menuState === menu) {
       setMenuState(MenuStates.NoMenu)
     } else {
