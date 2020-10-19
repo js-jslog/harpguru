@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v2.0.0...HEAD) - yyyy-mm-dd
 
+### Changed
+
+- MINOR: Menu swipe handler no longer blocks with expensive update on BEGIN state
+
 ## [v2.0.0](https://github.com/js-jslog/harpguru/releases/tag/v2.0.0) - 2020-10-10
 
 ### Added
