@@ -1,0 +1,398 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A snapshot of a populated cell 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={false}
+  >
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#555",
+          "borderRadius": 22.63930291919421,
+          "borderWidth": 2.0414159530382516,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 73.26233572263678,
+          "justifyContent": "center",
+          "width": 73.26233572263678,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#555",
+              "display": "flex",
+              "fontSize": 36.63116786131839,
+            }
+          }
+        >
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "bottom": 13.991864942124177,
+              "color": "#555",
+              "display": "flex",
+              "fontSize": 22.63930291919421,
+              "left": 13.991864942124177,
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`A snapshot of an active cell 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={false}
+  >
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#323031",
+          "borderColor": "black",
+          "borderRadius": 22.63930291919421,
+          "borderWidth": 2.0414159530382516,
+          "elevation": 3.3030110120158915,
+          "flexDirection": "row",
+          "height": 73.26233572263678,
+          "justifyContent": "center",
+          "width": 73.26233572263678,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#fefefe",
+              "display": "flex",
+              "fontSize": 36.63116786131839,
+            }
+          }
+        >
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "bottom": 13.991864942124177,
+              "color": "#fefefe",
+              "display": "flex",
+              "fontSize": 22.63930291919421,
+              "left": 13.991864942124177,
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`A snapshot of an empty cell 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessible={false}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fefefe",
+        "borderRadius": 22.63930291919421,
+        "borderWidth": 0,
+        "elevation": 0,
+        "flexDirection": "row",
+        "height": 73.26233572263678,
+        "justifyContent": "center",
+        "width": 73.26233572263678,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderRadius": 22.63930291919421,
+          "borderWidth": 0,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 73.26233572263678,
+          "justifyContent": "center",
+          "width": 73.26233572263678,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`A snapshot of an inactive cell in Explore mode 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={false}
+  >
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#555",
+          "borderRadius": 22.63930291919421,
+          "borderWidth": 2.0414159530382516,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 73.26233572263678,
+          "justifyContent": "center",
+          "width": 73.26233572263678,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#555",
+              "display": "flex",
+              "fontSize": 36.63116786131839,
+            }
+          }
+        >
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "bottom": 13.991864942124177,
+              "color": "#555",
+              "display": "flex",
+              "fontSize": 22.63930291919421,
+              "left": 13.991864942124177,
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={false}
+  >
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fefefe",
+          "borderColor": "#555",
+          "borderRadius": 22.63930291919421,
+          "borderWidth": 2.0414159530382516,
+          "elevation": 0,
+          "flexDirection": "row",
+          "height": 73.26233572263678,
+          "justifyContent": "center",
+          "width": 73.26233572263678,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#555",
+              "display": "none",
+              "fontSize": 36.63116786131839,
+            }
+          }
+        >
+          2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "bottom": 13.991864942124177,
+              "color": "#555",
+              "display": "none",
+              "fontSize": 22.63930291919421,
+              "left": 13.991864942124177,
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
