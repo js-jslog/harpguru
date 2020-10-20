@@ -20,9 +20,7 @@ exports[`A snapshot of a populated cell 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
@@ -114,9 +112,7 @@ exports[`A snapshot of an active cell 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
@@ -203,31 +199,14 @@ exports[`A snapshot of an empty cell 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#fefefe",
         "borderRadius": 22.63930291919421,
-        "borderWidth": 0,
         "flexDirection": "row",
         "height": 73.26233572263678,
         "justifyContent": "center",
         "width": 73.26233572263678,
       }
     }
-  >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderRadius": 22.63930291919421,
-          "borderWidth": 0,
-          "flexDirection": "row",
-          "height": 73.26233572263678,
-          "justifyContent": "center",
-          "width": 73.26233572263678,
-        }
-      }
-    />
-  </View>
+  />
 </View>
 `;
 
@@ -251,9 +230,7 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
@@ -345,9 +322,7 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",

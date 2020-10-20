@@ -9,12 +9,12 @@ export const getAccessibleStyles = (
   isActive: boolean
 ): ViewStyle => {
   const { 1: borderWidth, 2: elevation } = getSizes()
-  const { pageColor, degreeColors, inertOutline, activeOutline } = colors
-  const cellColor = isActive ? degreeColors[degreeId] : pageColor
+  const { degreeColors, pageColor, inertOutline, activeOutline } = colors
+  const { [degreeId]: degreeColor } = degreeColors
 
   const styles = StyleSheet.create({
     cell: {
-      backgroundColor: cellColor,
+      backgroundColor: isActive ? degreeColor : pageColor,
       elevation: isActive ? elevation : 0,
       borderWidth: borderWidth,
       borderColor: isActive ? activeOutline : inertOutline,

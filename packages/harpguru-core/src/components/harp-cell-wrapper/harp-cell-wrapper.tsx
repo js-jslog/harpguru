@@ -36,7 +36,7 @@ export const HarpCellWrapper = ({
   const baseHarpCellStyles = getBaseHarpCellStyles()
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
-    return <MemoHarpCellInaccessible style={baseHarpCellStyles} />
+    return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
 
   const setPozitionRoot = useSetPozitionRoot()
   const handleLongPressStateChange = ({

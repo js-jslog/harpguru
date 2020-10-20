@@ -43,271 +43,118 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         collapsable={false}
       >
@@ -318,9 +165,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -420,9 +265,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -496,61 +339,27 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         collapsable={false}
       >
@@ -561,9 +370,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -642,9 +449,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -723,9 +528,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -799,31 +602,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         collapsable={false}
       >
@@ -834,9 +620,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -915,9 +699,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -996,9 +778,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1098,9 +878,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1179,9 +957,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1260,9 +1036,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1341,9 +1115,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1422,9 +1194,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1503,9 +1273,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1584,9 +1352,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1665,9 +1431,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1746,9 +1510,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -1827,9 +1589,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2151,9 +1911,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2232,9 +1990,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2313,9 +2069,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2394,9 +2148,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2475,9 +2227,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2556,9 +2306,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2637,9 +2385,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2718,9 +2464,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2799,9 +2543,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2880,9 +2622,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -2982,9 +2722,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3063,9 +2801,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3144,9 +2880,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3225,9 +2959,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3301,31 +3033,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         collapsable={false}
       >
@@ -3336,9 +3051,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3417,9 +3130,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3493,31 +3204,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         collapsable={false}
       >
@@ -3528,9 +3222,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3609,9 +3301,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3706,31 +3396,14 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         collapsable={false}
       >
@@ -3741,9 +3414,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3822,9 +3493,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -3898,211 +3567,92 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
     </View>
     <View
       style={
@@ -4129,61 +3679,27 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         collapsable={false}
       >
@@ -4194,9 +3710,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fefefe",
                 "borderRadius": 22.63930291919421,
-                "borderWidth": 0,
                 "flexDirection": "row",
                 "height": 73.26233572263678,
                 "justifyContent": "center",
@@ -4270,211 +3784,92 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
       <View
         accessible={false}
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fefefe",
             "borderRadius": 22.63930291919421,
-            "borderWidth": 0,
             "flexDirection": "row",
             "height": 73.26233572263678,
             "justifyContent": "center",
             "width": 73.26233572263678,
           }
         }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fefefe",
-              "borderRadius": 22.63930291919421,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 73.26233572263678,
-              "justifyContent": "center",
-              "width": 73.26233572263678,
-            }
-          }
-        />
-      </View>
+      />
     </View>
   </View>
 </View>
