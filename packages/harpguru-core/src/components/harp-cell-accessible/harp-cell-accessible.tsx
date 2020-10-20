@@ -25,7 +25,7 @@ type HarpCellAccessibleProps = {
   readonly isActive: boolean
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
-  readonly baseStyle: ViewStyle
+  readonly baseStyles: ViewStyle
 }
 
 export const HarpCellAccessible = (
@@ -37,7 +37,7 @@ export const HarpCellAccessible = (
     isActive,
     displayMode,
     activeExperienceMode,
-    baseStyle,
+    baseStyles,
   } = props
 
   const toneSource = getToneSource(degreeId, pitchId, displayMode)
@@ -48,7 +48,7 @@ export const HarpCellAccessible = (
     <View
       accessible={true}
       accessibilityRole="button"
-      style={[baseStyle, accessibleStyles]}
+      style={[baseStyles, accessibleStyles]}
     >
       <RenderedTone
         toneTuples={toneTuples}
@@ -68,7 +68,7 @@ const areEqual = (
   // The baseStyle object is too deep to be successfully analysed by the memo comparison.
   // It's only the width and height which will vary in each render and they are
   // correlated so we only need to check one of them.
-  const equalStyle = prevProps.baseStyle.width === nextProps.baseStyle.width
+  const equalStyle = prevProps.baseStyles.width === nextProps.baseStyles.width
   const equalDegree = prevProps.degreeId === nextProps.degreeId
   const equalPitch = prevProps.pitchId === nextProps.pitchId
   const equalActive = prevProps.isActive === nextProps.isActive

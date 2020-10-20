@@ -66,7 +66,7 @@ export const HarpCellWrapper = ({
     displayMode: activeDisplayMode,
     activeExperienceMode: activeExperienceMode,
     sizes: sizes,
-    baseStyle: baseHarpCellStyles,
+    baseStyles: baseHarpCellStyles,
   }
 
   return (
