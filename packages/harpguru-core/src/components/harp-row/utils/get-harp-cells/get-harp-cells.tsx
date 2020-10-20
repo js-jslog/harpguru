@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { HarpCellWrapper } from '../../../harp-cell-wrapper'
-import type { YXCoord } from '../../../harp-cell'
+import type { YXCoord } from '../../../harp-cell-wrapper'
 import type { Coord, XRange } from '../../../../types'
 
 export const getHarpCells = (
