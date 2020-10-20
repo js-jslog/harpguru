@@ -8,15 +8,17 @@ import {
 import { View } from 'react-native'
 import React from 'react'
 import { IsActiveIds } from 'harpstrata'
-import type { DegreeIds } from 'harpstrata'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
 import type { Coord } from '../../types'
 import { getSizes } from '../../styles'
 
-import { toggleDegreeIdInHarpStrata } from './utils'
-import { useSetPozitionRoot } from './hooks'
+import {
+  useSetPozitionRoot,
+  useToggleHarpCell,
+  usePositionAnalysis,
+} from './hooks'
 
 export type YXCoord = [Coord, Coord]
 
@@ -27,70 +29,51 @@ type HarpCellProps = {
 export const HarpCellWrapper = ({
   yxCoord,
 }: HarpCellProps): React.ReactElement => {
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
+    yxCoord
+  )
+
+  if (thisDegreeId === undefined || thisPitchId === undefined)
+    return <MemoHarpCellInaccessible />
+
+  const sizes = getSizes()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const setPozitionRoot = useSetPozitionRoot()
-  const sizes = getSizes()
-  const toggleHarpCell = (degreeId: DegreeIds): void => {
-    setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
+  const toggleHarpCell = useToggleHarpCell()
+  const harpCellAccessibleProps = {
+    degreeId: thisDegreeId,
+    pitchId: thisPitchId,
+    isActive: thisIsActiveId === IsActiveIds.Active,
+    displayMode: activeDisplayMode,
+    activeExperienceMode: activeExperienceMode,
+    sizes: sizes,
+  }
+  const handleLongPressStateChange = ({
+    nativeEvent,
+  }: TapGestureHandlerStateChangeEvent) => {
+    if (nativeEvent.state !== State.ACTIVE) return
+
+    setPozitionRoot(thisPitchId)
+  }
+  const handleTapStateChange = ({
+    nativeEvent,
+  }: TapGestureHandlerStateChangeEvent) => {
+    if (nativeEvent.state !== State.END) return
+
+    toggleHarpCell(thisDegreeId)
   }
 
-  const {
-    degreeMatrix,
-    pitchMatrix,
-    isActiveComplex: { isActiveMatrix },
-  } = activeHarpStrata
-  const [yCoord, xCoord] = yxCoord
-  const {
-    [yCoord]: { [xCoord]: thisDegree },
-  } = degreeMatrix
-  const {
-    [yCoord]: { [xCoord]: thisPitch },
-  } = pitchMatrix
-  const {
-    [yCoord]: { [xCoord]: thisIsActiveId },
-  } = isActiveMatrix
-  const { id: thisDegreeId } = thisDegree || { id: undefined }
-  const { id: thisPitchId } = thisPitch || { id: undefined }
-
-  if (thisDegreeId === undefined || thisPitchId === undefined) {
-    return <MemoHarpCellInaccessible />
-  } else {
-    const harpCellAccessibleProps = {
-      degreeId: thisDegreeId,
-      pitchId: thisPitchId,
-      isActive: thisIsActiveId === IsActiveIds.Active,
-      displayMode: activeDisplayMode,
-      activeExperienceMode: activeExperienceMode,
-      sizes: sizes,
-    }
-    const handleLongPressStateChange = ({
-      nativeEvent,
-    }: TapGestureHandlerStateChangeEvent) => {
-      if (nativeEvent.state !== State.ACTIVE) return
-
-      setPozitionRoot(thisPitchId)
-    }
-    const handleTapStateChange = ({
-      nativeEvent,
-    }: TapGestureHandlerStateChangeEvent) => {
-      if (nativeEvent.state !== State.END) return
-
-      toggleHarpCell(thisDegreeId)
-    }
-
-    return (
-      <LongPressGestureHandler
-        onHandlerStateChange={handleLongPressStateChange}
-        minDurationMs={500}
-      >
-        <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-          <View>
-            <MemoHarpCellAccessible {...harpCellAccessibleProps} />
-          </View>
-        </TapGestureHandler>
-      </LongPressGestureHandler>
-    )
-  }
+  return (
+    <LongPressGestureHandler
+      onHandlerStateChange={handleLongPressStateChange}
+      minDurationMs={500}
+    >
+      <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
+        <View>
+          <MemoHarpCellAccessible {...harpCellAccessibleProps} />
+        </View>
+      </TapGestureHandler>
+    </LongPressGestureHandler>
+  )
 }
