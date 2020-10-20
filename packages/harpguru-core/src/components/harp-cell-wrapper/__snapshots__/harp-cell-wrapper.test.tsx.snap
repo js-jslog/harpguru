@@ -17,18 +17,24 @@ exports[`A snapshot of a populated cell 1`] = `
       accessibilityRole="button"
       accessible={true}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#555",
-          "borderRadius": 22.63930291919421,
-          "borderWidth": 2.0414159530382516,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 73.26233572263678,
-          "justifyContent": "center",
-          "width": 73.26233572263678,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderRadius": 22.63930291919421,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 73.26233572263678,
+            "justifyContent": "center",
+            "width": 73.26233572263678,
+          },
+          Object {
+            "backgroundColor": "#fefefe",
+            "borderColor": "#555",
+            "borderWidth": 2.0414159530382516,
+            "elevation": 0,
+          },
+        ]
       }
     >
       <View
@@ -105,18 +111,24 @@ exports[`A snapshot of an active cell 1`] = `
       accessibilityRole="button"
       accessible={true}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#323031",
-          "borderColor": "black",
-          "borderRadius": 22.63930291919421,
-          "borderWidth": 2.0414159530382516,
-          "elevation": 3.3030110120158915,
-          "flexDirection": "row",
-          "height": 73.26233572263678,
-          "justifyContent": "center",
-          "width": 73.26233572263678,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderRadius": 22.63930291919421,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 73.26233572263678,
+            "justifyContent": "center",
+            "width": 73.26233572263678,
+          },
+          Object {
+            "backgroundColor": "#323031",
+            "borderColor": "black",
+            "borderWidth": 2.0414159530382516,
+            "elevation": 3.3030110120158915,
+          },
+        ]
       }
     >
       <View
@@ -194,7 +206,6 @@ exports[`A snapshot of an empty cell 1`] = `
         "backgroundColor": "#fefefe",
         "borderRadius": 22.63930291919421,
         "borderWidth": 0,
-        "elevation": 0,
         "flexDirection": "row",
         "height": 73.26233572263678,
         "justifyContent": "center",
@@ -209,7 +220,6 @@ exports[`A snapshot of an empty cell 1`] = `
           "backgroundColor": "#fefefe",
           "borderRadius": 22.63930291919421,
           "borderWidth": 0,
-          "elevation": 0,
           "flexDirection": "row",
           "height": 73.26233572263678,
           "justifyContent": "center",
@@ -238,18 +248,24 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
       accessibilityRole="button"
       accessible={true}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#555",
-          "borderRadius": 22.63930291919421,
-          "borderWidth": 2.0414159530382516,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 73.26233572263678,
-          "justifyContent": "center",
-          "width": 73.26233572263678,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderRadius": 22.63930291919421,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 73.26233572263678,
+            "justifyContent": "center",
+            "width": 73.26233572263678,
+          },
+          Object {
+            "backgroundColor": "#fefefe",
+            "borderColor": "#555",
+            "borderWidth": 2.0414159530382516,
+            "elevation": 0,
+          },
+        ]
       }
     >
       <View
@@ -326,18 +342,24 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
       accessibilityRole="button"
       accessible={true}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#fefefe",
-          "borderColor": "#555",
-          "borderRadius": 22.63930291919421,
-          "borderWidth": 2.0414159530382516,
-          "elevation": 0,
-          "flexDirection": "row",
-          "height": 73.26233572263678,
-          "justifyContent": "center",
-          "width": 73.26233572263678,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fefefe",
+            "borderRadius": 22.63930291919421,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "height": 73.26233572263678,
+            "justifyContent": "center",
+            "width": 73.26233572263678,
+          },
+          Object {
+            "backgroundColor": "#fefefe",
+            "borderColor": "#555",
+            "borderWidth": 2.0414159530382516,
+            "elevation": 0,
+          },
+        ]
       }
     >
       <View

@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { View, ViewStyle } from 'react-native'
 import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
 
@@ -6,9 +6,8 @@ import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
 import { DisplayModes } from '../../types'
 import type { ExperienceModes } from '../../types'
-import type { SizeScheme } from '../../styles'
 
-import { getStyles } from './utils'
+import { getAccessibleStyles } from './utils'
 
 const getToneSource = (
   degreeId: DegreeIds | undefined,
@@ -26,7 +25,7 @@ type HarpCellAccessibleProps = {
   readonly isActive: boolean
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
-  readonly sizes: SizeScheme
+  readonly baseStyle: ViewStyle
 }
 
 export const HarpCellAccessible = (
@@ -38,15 +37,19 @@ export const HarpCellAccessible = (
     isActive,
     displayMode,
     activeExperienceMode,
-    sizes,
+    baseStyle,
   } = props
 
   const toneSource = getToneSource(degreeId, pitchId, displayMode)
   const toneTuples = getRenderableToneTuples(toneSource)
-  const styles = getStyles(degreeId, isActive, sizes)
+  const accessibleStyles = getAccessibleStyles(degreeId, isActive)
 
   return (
-    <View accessible={true} accessibilityRole="button" style={styles.cell}>
+    <View
+      accessible={true}
+      accessibilityRole="button"
+      style={[baseStyle, accessibleStyles]}
+    >
       <RenderedTone
         toneTuples={toneTuples}
         isActive={isActive}
@@ -62,9 +65,10 @@ const areEqual = (
   prevProps: HarpCellAccessibleProps,
   nextProps: HarpCellAccessibleProps
 ) => {
-  // The sizes object is too deep to be successfully analysed by the memo comparison.
-  // All the values in the object are related so we only need to check one of the values.
-  const equalSizes = prevProps.sizes['1'] === nextProps.sizes['1']
+  // The baseStyle object is too deep to be successfully analysed by the memo comparison.
+  // It's only the width and height which will vary in each render and they are
+  // correlated so we only need to check one of them.
+  const equalStyle = prevProps.baseStyle.width === nextProps.baseStyle.width
   const equalDegree = prevProps.degreeId === nextProps.degreeId
   const equalPitch = prevProps.pitchId === nextProps.pitchId
   const equalActive = prevProps.isActive === nextProps.isActive
@@ -73,12 +77,12 @@ const areEqual = (
     prevProps.activeExperienceMode === nextProps.activeExperienceMode
 
   return (
+    equalStyle &&
     equalDegree &&
     equalPitch &&
     equalActive &&
     equalDisplayMode &&
-    equalExperienceMode &&
-    equalSizes
+    equalExperienceMode
   )
 }
 

@@ -14,6 +14,7 @@ import { MemoHarpCellAccessible } from '../harp-cell-accessible'
 import type { Coord } from '../../types'
 import { getSizes } from '../../styles'
 
+import { getBaseHarpCellStyles } from './utils'
 import {
   useSetPozitionRoot,
   useToggleHarpCell,
@@ -32,9 +33,10 @@ export const HarpCellWrapper = ({
   const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
     yxCoord
   )
+  const baseHarpCellStyles = getBaseHarpCellStyles()
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
-    return <MemoHarpCellInaccessible />
+    return <MemoHarpCellInaccessible style={baseHarpCellStyles} />
 
   const setPozitionRoot = useSetPozitionRoot()
   const handleLongPressStateChange = ({
@@ -64,6 +66,7 @@ export const HarpCellWrapper = ({
     displayMode: activeDisplayMode,
     activeExperienceMode: activeExperienceMode,
     sizes: sizes,
+    baseStyle: baseHarpCellStyles,
   }
 
   return (
