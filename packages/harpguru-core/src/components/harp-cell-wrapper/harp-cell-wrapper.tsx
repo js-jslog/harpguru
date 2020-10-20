@@ -36,19 +36,7 @@ export const HarpCellWrapper = ({
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return <MemoHarpCellInaccessible />
 
-  const sizes = getSizes()
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const setPozitionRoot = useSetPozitionRoot()
-  const toggleHarpCell = useToggleHarpCell()
-  const harpCellAccessibleProps = {
-    degreeId: thisDegreeId,
-    pitchId: thisPitchId,
-    isActive: thisIsActiveId === IsActiveIds.Active,
-    displayMode: activeDisplayMode,
-    activeExperienceMode: activeExperienceMode,
-    sizes: sizes,
-  }
   const handleLongPressStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
@@ -56,12 +44,26 @@ export const HarpCellWrapper = ({
 
     setPozitionRoot(thisPitchId)
   }
+
+  const toggleHarpCell = useToggleHarpCell()
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
     if (nativeEvent.state !== State.END) return
 
     toggleHarpCell(thisDegreeId)
+  }
+
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const sizes = getSizes()
+  const harpCellAccessibleProps = {
+    degreeId: thisDegreeId,
+    pitchId: thisPitchId,
+    isActive: thisIsActiveId === IsActiveIds.Active,
+    displayMode: activeDisplayMode,
+    activeExperienceMode: activeExperienceMode,
+    sizes: sizes,
   }
 
   return (
