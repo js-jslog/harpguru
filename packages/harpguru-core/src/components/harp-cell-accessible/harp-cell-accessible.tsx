@@ -1,3 +1,5 @@
+import { useTimingTransition } from 'react-native-redash'
+import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { View } from 'react-native'
 import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
@@ -27,6 +29,7 @@ type HarpCellAccessibleProps = {
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
   readonly sizes: SizeScheme
+  readonly isTouched: boolean
 }
 
 export const HarpCellAccessible = (
@@ -39,22 +42,40 @@ export const HarpCellAccessible = (
     displayMode,
     activeExperienceMode,
     sizes,
+    isTouched,
   } = props
 
   const toneSource = getToneSource(degreeId, pitchId, displayMode)
   const toneTuples = getRenderableToneTuples(toneSource)
   const styles = getStyles(degreeId, isActive, sizes)
 
+  const optionUpdatedVal = useTimingTransition(isTouched, {
+    duration: 300,
+    easing: Easing.inOut(Easing.circle),
+  })
+  const optionUpdateTransition = interpolate(optionUpdatedVal, {
+    inputRange: [0, 1],
+    outputRange: isTouched ? [1.1, 1] : [1, 1],
+  })
+
   return (
-    <View accessible={true} accessibilityRole="button" style={styles.cell}>
-      <RenderedTone
-        toneTuples={toneTuples}
-        isActive={isActive}
-        isQuestion={false}
-        splitType={'SLANT'}
-        activeExperienceMode={activeExperienceMode}
-      />
-    </View>
+    <Animated.View
+      style={[
+        {
+          transform: [{ scale: optionUpdateTransition }],
+        },
+      ]}
+    >
+      <View accessible={true} accessibilityRole="button" style={styles.cell}>
+        <RenderedTone
+          toneTuples={toneTuples}
+          isActive={isActive}
+          isQuestion={false}
+          splitType={'SLANT'}
+          activeExperienceMode={activeExperienceMode}
+        />
+      </View>
+    </Animated.View>
   )
 }
 
@@ -71,6 +92,7 @@ const areEqual = (
   const equalDisplayMode = prevProps.displayMode === nextProps.displayMode
   const equalExperienceMode =
     prevProps.activeExperienceMode === nextProps.activeExperienceMode
+  const equalTouched = prevProps.isTouched === nextProps.isTouched
 
   return (
     equalDegree &&
@@ -78,7 +100,8 @@ const areEqual = (
     equalActive &&
     equalDisplayMode &&
     equalExperienceMode &&
-    equalSizes
+    equalSizes &&
+    equalTouched
   )
 }
 

@@ -32,6 +32,7 @@ export const HarpCellWrapper = ({
   const toggleHarpCell = (degreeId: DegreeIds): void => {
     setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
   }
+  const [isTouched, setIsTouched] = React.useState(false)
 
   const {
     degreeMatrix,
@@ -61,14 +62,27 @@ export const HarpCellWrapper = ({
       displayMode: activeDisplayMode,
       activeExperienceMode: activeExperienceMode,
       sizes: sizes,
+      isTouched,
     }
     const handleTapStateChange = ({
       nativeEvent,
     }: TapGestureHandlerStateChangeEvent) => {
+      if (nativeEvent.state === State.BEGAN) {
+        setIsTouched(true)
+      }
       if (nativeEvent.state !== State.END) return
 
       toggleHarpCell(thisDegreeId)
     }
+
+    React.useEffect(() => {
+      const hideQuestionTimer = setTimeout(() => {
+        setIsTouched(false)
+      }, 300)
+      return () => {
+        clearTimeout(hideQuestionTimer)
+      }
+    }, [isTouched])
 
     return (
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
