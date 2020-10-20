@@ -3,6 +3,7 @@ import {
   TapGestureHandler,
   TapGestureHandlerStateChangeEvent,
   State,
+  LongPressGestureHandler,
 } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
@@ -15,6 +16,7 @@ import type { Coord } from '../../types'
 import { getSizes } from '../../styles'
 
 import { toggleDegreeIdInHarpStrata } from './utils'
+import { useSetPozitionRoot } from './hooks'
 
 export type YXCoord = [Coord, Coord]
 
@@ -28,6 +30,7 @@ export const HarpCellWrapper = ({
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const setPozitionRoot = useSetPozitionRoot()
   const sizes = getSizes()
   const toggleHarpCell = (degreeId: DegreeIds): void => {
     setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
@@ -62,6 +65,13 @@ export const HarpCellWrapper = ({
       activeExperienceMode: activeExperienceMode,
       sizes: sizes,
     }
+    const handleLongPressStateChange = ({
+      nativeEvent,
+    }: TapGestureHandlerStateChangeEvent) => {
+      if (nativeEvent.state !== State.ACTIVE) return
+
+      setPozitionRoot(thisPitchId)
+    }
     const handleTapStateChange = ({
       nativeEvent,
     }: TapGestureHandlerStateChangeEvent) => {
@@ -71,11 +81,16 @@ export const HarpCellWrapper = ({
     }
 
     return (
-      <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-        <View>
-          <MemoHarpCellAccessible {...harpCellAccessibleProps} />
-        </View>
-      </TapGestureHandler>
+      <LongPressGestureHandler
+        onHandlerStateChange={handleLongPressStateChange}
+        minDurationMs={500}
+      >
+        <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
+          <View>
+            <MemoHarpCellAccessible {...harpCellAccessibleProps} />
+          </View>
+        </TapGestureHandler>
+      </LongPressGestureHandler>
     )
   }
 }
