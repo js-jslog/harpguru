@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
-import { DegreeIds } from 'harpstrata'
+import type { DegreeIds } from 'harpstrata'
 
 import { colors, getSizes } from '../../../../styles'
 
