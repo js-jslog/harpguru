@@ -77,6 +77,7 @@ const ActivityCell = ({
   toneTuples,
   isActive,
 }: ActivityCellProps): React.ReactElement => {
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const sizes = getSizes()
   const { 9: legendWidth } = sizes
 
@@ -118,6 +119,7 @@ const ActivityCell = ({
           isActive={isActive}
           isQuestion={false}
           splitType={'FLAT'}
+          activeExperienceMode={activeExperienceMode}
         />
       </View>
     </>

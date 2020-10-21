@@ -3,13 +3,12 @@ import { DegreeIds } from 'harpstrata'
 
 import { toggleDegreeIdInHarpStrata } from '../../utils'
 
-type ToggleHarpCell = (arg0: DegreeIds | undefined) => void
+type ToggleHarpCell = (arg0: DegreeIds) => void
 
 export const useToggleHarpCell = (): ToggleHarpCell => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
 
-  return (degreeId: DegreeIds | undefined) => {
-    if (degreeId === undefined) return
+  return (degreeId: DegreeIds) => {
     setActiveHarpStrata(toggleDegreeIdInHarpStrata(activeHarpStrata, degreeId))
   }
 }

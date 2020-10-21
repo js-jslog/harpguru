@@ -22,6 +22,7 @@ export const QuizQuestionDisplay = ({
   screenFree,
 }: QuizQuestionDisplayProps): React.ReactElement => {
   const [quizQuestion] = useGlobal('quizQuestion')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const flashAnimationValue = useFlashDisplay(screenFree)
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
@@ -94,6 +95,7 @@ export const QuizQuestionDisplay = ({
               isActive={false}
               isQuestion={true}
               splitType={'FLAT'}
+              activeExperienceMode={activeExperienceMode}
             />
           </View>
         </View>

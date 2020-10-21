@@ -10,7 +10,7 @@ import {
 } from '../../test-resources'
 import { CovariantMembers } from '../../packages/covariance-series'
 
-import { HarpCell } from './index'
+import { HarpCell } from './harp-cell'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
