@@ -4,20 +4,9 @@ import type { DegreeIds, PitchIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
-import { DisplayModes } from '../../types'
-import type { ExperienceModes } from '../../types'
+import type { DisplayModes, ExperienceModes } from '../../types'
 
-import { getAccessibleStyles } from './utils'
-
-const getToneSource = (
-  degreeId: DegreeIds | undefined,
-  pitchId: PitchIds | undefined,
-  activeDisplayMode: DisplayModes
-): DegreeIds | PitchIds | undefined => {
-  if (degreeId === undefined && pitchId === undefined) return undefined
-  if (activeDisplayMode === DisplayModes.Degree) return degreeId
-  return pitchId
-}
+import { getAccessibleStyles, getToneSource } from './utils'
 
 type HarpCellAccessibleProps = {
   readonly degreeId: DegreeIds
