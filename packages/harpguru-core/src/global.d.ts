@@ -1,5 +1,5 @@
 import 'reactn'
-import type { HarpStrata } from 'harpstrata'
+import type { HarpStrata, ActiveDegreeIds } from 'harpstrata'
 
 import type { CovariantMembers } from './packages/covariance-series'
 
@@ -27,5 +27,6 @@ declare module 'reactn/default' {
     activeExperienceMode: ExperienceModes
     activeDisplayMode: DisplayModes
     lockedCovariant: CovariantMembers
+    activeDegreeIdsBuffer: ActiveDegreeIds
   }
 }
