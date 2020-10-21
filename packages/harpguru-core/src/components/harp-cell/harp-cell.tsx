@@ -7,7 +7,7 @@ import {
 } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
-import { IsActiveIds } from 'harpstrata'
+import { IsActiveIds, DegreeIds } from 'harpstrata'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
@@ -16,7 +16,6 @@ import type { Coord } from '../../types'
 import { getBaseHarpCellStyles } from './utils'
 import {
   useSetPozitionRoot,
-  useToggleHarpCell,
   usePositionAnalysis,
 } from './hooks'
 
@@ -44,7 +43,18 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     setPozitionRoot(thisPitchId)
   }
 
-  const toggleHarpCell = useToggleHarpCell()
+  const [activeDegreeIdBuffer, setActiveDegreeIdBuffer] = useGlobal('activeDegreeIdBuffer')
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const toggleHarpCell = (degreeId: DegreeIds) => {
+    const { isActiveComplex: { activeDegreeIds } } = activeHarpStrata
+    if (activeDegreeIds.includes(degreeId)) {
+      const index = activeDegreeIds.indexOf(degreeId)
+      setActiveDegreeIdBuffer([...activeDegreeIdBuffer.slice(0, index), ...activeDegreeIdBuffer.slice(index + 1)])
+    } else {
+      if (activeDegreeIdBuffer.includes(degreeId)) return
+      setActiveDegreeIdBuffer([ ...activeDegreeIdBuffer, degreeId ])
+    }
+  }
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {

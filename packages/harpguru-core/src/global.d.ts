@@ -1,5 +1,5 @@
 import 'reactn'
-import type { HarpStrata } from 'harpstrata'
+import type { HarpStrata, ActiveDegreeIds } from 'harpstrata'
 
 import type { CovariantMembers } from './packages/covariance-series'
 
@@ -19,6 +19,9 @@ declare module 'reactn/default' {
       global: State
     ) => Pick<State, 'quizQuestion' | 'activeHarpStrata'>
     revealAnswer: (global: State) => Pick<State, 'activeHarpStrata'>
+    setActiveHarpStrata: (
+      newHarpStrata: HarpStrata
+    ) => Pick<State, 'activeHarpStrata' | 'activeDegreeIdBuffer'>
   }
 
   export interface State {
@@ -27,5 +30,11 @@ declare module 'reactn/default' {
     activeExperienceMode: ExperienceModes
     activeDisplayMode: DisplayModes
     lockedCovariant: CovariantMembers
+    // with the introduction of this, I'll want to
+    // add a setActiveHarpStrata reducer so that
+    // whenever contexts set a new HarpStrata
+    // it will also update this buffer. It needs
+    // to stay synchronised with the active harpstrata
+    activeDegreeIdBuffer: ActiveDegreeIds
   }
 }

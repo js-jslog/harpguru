@@ -1,6 +1,7 @@
 import type { State } from 'reactn/default'
 import { addReducer } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
 
 import { getPropsForHarpStrata } from '../get-props-for-harp-strata'
 import { getNextQuizQuestion } from '../get-next-quiz-question'
@@ -33,6 +34,14 @@ export const setGlobalReducers = (): void => {
     const { activeHarpStrata, quizQuestion } = global
     return {
       activeHarpStrata: activateHarpCell(activeHarpStrata, quizQuestion),
+    }
+  })
+
+  addReducer('setActiveHarpStrata', (newHarpStrata: HarpStrata) => {
+    const { isActiveComplex: { activeDegreeIds }} = newHarpStrata
+    return {
+      activeHarpStrata: newHarpStrata,
+      activeDegreeIdBuffer: activeDegreeIds
     }
   })
 }
