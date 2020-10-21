@@ -47,12 +47,13 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const toggleHarpCell = (degreeId: DegreeIds) => {
     const { isActiveComplex: { activeDegreeIds } } = activeHarpStrata
-    if (activeDegreeIds.includes(degreeId)) {
-      const index = activeDegreeIds.indexOf(degreeId)
-      setActiveDegreeIdBuffer([...activeDegreeIdBuffer.slice(0, index), ...activeDegreeIdBuffer.slice(index + 1)])
-    } else {
+    if (!activeDegreeIds.includes(degreeId)) {
       if (activeDegreeIdBuffer.includes(degreeId)) return
       setActiveDegreeIdBuffer([ ...activeDegreeIdBuffer, degreeId ])
+    } else {
+      if (!activeDegreeIdBuffer.includes(degreeId)) return
+      const index = activeDegreeIdBuffer.indexOf(degreeId)
+      setActiveDegreeIdBuffer([...activeDegreeIdBuffer.slice(0, index), ...activeDegreeIdBuffer.slice(index + 1)])
     }
   }
   const handleTapStateChange = ({
