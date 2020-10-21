@@ -10,7 +10,7 @@ import {
 } from '../../test-resources'
 import { CovariantMembers } from '../../packages/covariance-series'
 
-import { HarpCellWrapper } from './index'
+import { HarpCell } from './harp-cell'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
@@ -27,7 +27,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
   }
-  const { getByText, rerender } = render(<HarpCellWrapper {...harpCellProps} />)
+  const { getByText, rerender } = render(<HarpCell {...harpCellProps} />)
 
   expect(getByText(DegreeIds.Second)).toBeTruthy()
   mockUseGlobal.mockImplementation((stateItem: string) => {
@@ -39,7 +39,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
     return undefined
   })
 
-  rerender(<HarpCellWrapper {...harpCellProps} />)
+  rerender(<HarpCell {...harpCellProps} />)
 
   expect(getByText(PitchIds.D)).toBeTruthy()
 })
@@ -56,7 +56,7 @@ test('A component is rendered with an a11y role of button', () => {
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
   }
-  const { getByRole } = render(<HarpCellWrapper {...harpCellProps} />)
+  const { getByRole } = render(<HarpCell {...harpCellProps} />)
 
   expect(getByRole('button')).toBeTruthy()
 })
@@ -73,7 +73,7 @@ test('A component is rendered without an a11y role of button if it has no conten
   const harpCellProps = {
     yxCoord: [0, 0] as [0, 0],
   }
-  const { queryByRole } = render(<HarpCellWrapper {...harpCellProps} />)
+  const { queryByRole } = render(<HarpCell {...harpCellProps} />)
 
   expect(queryByRole('button')).toBeNull()
 })
@@ -87,7 +87,7 @@ test.skip('A press of the componenet results in toggled active ids in the harpst
     yxCoord: [3, 0] as [3, 0],
   }
 
-  const { getByText } = render(<HarpCellWrapper {...harpCellProps} />)
+  const { getByText } = render(<HarpCell {...harpCellProps} />)
 
   fireEvent.press(getByText(DegreeIds.Second))
 
@@ -124,7 +124,7 @@ test('A snapshot of a populated cell', () => {
     yxCoord: [3, 0] as [3, 0],
   }
 
-  const { container } = render(<HarpCellWrapper {...harpCellProps} />)
+  const { container } = render(<HarpCell {...harpCellProps} />)
   expect(container).toMatchSnapshot()
 })
 
@@ -141,7 +141,7 @@ test('A snapshot of an active cell', () => {
     yxCoord: [3, 0] as [3, 0],
   }
 
-  const { container } = render(<HarpCellWrapper {...harpCellProps} />)
+  const { container } = render(<HarpCell {...harpCellProps} />)
   expect(container).toMatchSnapshot()
 })
 
@@ -158,7 +158,7 @@ test('A snapshot of an empty cell', () => {
     yxCoord: [0, 0] as [0, 0],
   }
 
-  const { container } = render(<HarpCellWrapper {...harpFaceProps} />)
+  const { container } = render(<HarpCell {...harpFaceProps} />)
   expect(container).toMatchSnapshot()
 })
 
@@ -175,7 +175,7 @@ test('A snapshot of an inactive cell in Explore mode', () => {
     yxCoord: [3, 0] as [3, 0],
   }
 
-  const { container } = render(<HarpCellWrapper {...harpCellProps} />)
+  const { container } = render(<HarpCell {...harpCellProps} />)
   expect(container).toMatchSnapshot()
 })
 
@@ -194,6 +194,6 @@ test('A snapshot of an inactive cell in Quiz mode', () => {
     yxCoord: [3, 0] as [3, 0],
   }
 
-  const { container } = render(<HarpCellWrapper {...harpCellProps} />)
+  const { container } = render(<HarpCell {...harpCellProps} />)
   expect(container).toMatchSnapshot()
 })

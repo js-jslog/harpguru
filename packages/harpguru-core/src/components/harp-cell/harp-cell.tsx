@@ -27,7 +27,7 @@ type HarpCellProps = {
   readonly yxCoord: YXCoord
 }
 
-export const HarpCellWrapper = ({
+export const HarpCell = ({
   yxCoord,
 }: HarpCellProps): React.ReactElement => {
   const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(

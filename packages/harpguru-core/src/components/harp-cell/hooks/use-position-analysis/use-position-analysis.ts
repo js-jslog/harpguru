@@ -7,7 +7,7 @@ import type {
   Degree,
 } from 'harpstrata'
 
-import type { YXCoord } from '../../harp-cell-wrapper'
+import type { YXCoord } from '../../harp-cell'
 
 export type PositionFacts = {
   readonly thisDegree: Degree | undefined

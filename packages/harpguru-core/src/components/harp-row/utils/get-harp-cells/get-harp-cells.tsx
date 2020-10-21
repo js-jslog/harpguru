@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { HarpCellWrapper } from '../../../harp-cell-wrapper'
-import type { YXCoord } from '../../../harp-cell-wrapper'
+import { HarpCell } from '../../../harp-cell'
+import type { YXCoord } from '../../../harp-cell'
 import type { Coord, XRange } from '../../../../types'
 
 export const getHarpCells = (
@@ -11,7 +11,7 @@ export const getHarpCells = (
   const harpCells = xRange.map((xCoord) => {
     const yxCoord: YXCoord = [yCoord, xCoord]
 
-    return <HarpCellWrapper key={xCoord} yxCoord={yxCoord} />
+    return <HarpCell key={xCoord} yxCoord={yxCoord} />
   })
 
   return harpCells
