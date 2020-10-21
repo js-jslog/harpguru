@@ -12,7 +12,6 @@ import { IsActiveIds } from 'harpstrata'
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
 import type { Coord } from '../../types'
-import { getSizes } from '../../styles'
 
 import { getBaseHarpCellStyles } from './utils'
 import {
@@ -56,14 +55,12 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
 
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const sizes = getSizes()
   const harpCellAccessibleProps = {
     degreeId: thisDegreeId,
     pitchId: thisPitchId,
     isActive: thisIsActiveId === IsActiveIds.Active,
     displayMode: activeDisplayMode,
     activeExperienceMode: activeExperienceMode,
-    sizes: sizes,
     baseStyles: baseHarpCellStyles,
   }
 
