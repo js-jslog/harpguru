@@ -1,26 +1,14 @@
 import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
-import { View } from 'react-native'
+import { View, ViewStyle } from 'react-native'
 import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
-import { DisplayModes } from '../../types'
-import type { ExperienceModes } from '../../types'
-import type { SizeScheme } from '../../styles'
+import type { DisplayModes, ExperienceModes } from '../../types'
 
-import { getStyles } from './utils'
-
-const getToneSource = (
-  degreeId: DegreeIds | undefined,
-  pitchId: PitchIds | undefined,
-  activeDisplayMode: DisplayModes
-): DegreeIds | PitchIds | undefined => {
-  if (degreeId === undefined && pitchId === undefined) return undefined
-  if (activeDisplayMode === DisplayModes.Degree) return degreeId
-  return pitchId
-}
+import { getAccessibleStyles, getRenderableToneId } from './utils'
 
 type HarpCellAccessibleProps = {
   readonly degreeId: DegreeIds
@@ -28,8 +16,8 @@ type HarpCellAccessibleProps = {
   readonly isActive: boolean
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
-  readonly sizes: SizeScheme
   readonly isTouched: boolean
+  readonly baseStyles: ViewStyle
 }
 
 export const HarpCellAccessible = (
@@ -41,13 +29,13 @@ export const HarpCellAccessible = (
     isActive,
     displayMode,
     activeExperienceMode,
-    sizes,
     isTouched,
+    baseStyles,
   } = props
 
-  const toneSource = getToneSource(degreeId, pitchId, displayMode)
-  const toneTuples = getRenderableToneTuples(toneSource)
-  const styles = getStyles(degreeId, isActive, sizes)
+  const renderableToneId = getRenderableToneId(degreeId, pitchId, displayMode)
+  const renderableToneTuples = getRenderableToneTuples(renderableToneId)
+  const accessibleStyles = getAccessibleStyles(degreeId, isActive)
 
   const optionUpdatedVal = useTimingTransition(isTouched, {
     duration: 300,
@@ -66,9 +54,9 @@ export const HarpCellAccessible = (
         },
       ]}
     >
-      <View accessible={true} accessibilityRole="button" style={styles.cell}>
+      <View accessible={true} accessibilityRole="button" style={[baseStyles, accessibleStyles]} >
         <RenderedTone
-          toneTuples={toneTuples}
+          toneTuples={renderableToneTuples}
           isActive={isActive}
           isQuestion={false}
           splitType={'SLANT'}
@@ -83,9 +71,10 @@ const areEqual = (
   prevProps: HarpCellAccessibleProps,
   nextProps: HarpCellAccessibleProps
 ) => {
-  // The sizes object is too deep to be successfully analysed by the memo comparison.
-  // All the values in the object are related so we only need to check one of the values.
-  const equalSizes = prevProps.sizes['1'] === nextProps.sizes['1']
+  // The baseStyle object is too deep to be successfully analysed by the memo comparison.
+  // It's only the width and height which will vary in each render and they are
+  // correlated so we only need to check one of them.
+  const equalStyle = prevProps.baseStyles.width === nextProps.baseStyles.width
   const equalDegree = prevProps.degreeId === nextProps.degreeId
   const equalPitch = prevProps.pitchId === nextProps.pitchId
   const equalActive = prevProps.isActive === nextProps.isActive
@@ -95,13 +84,14 @@ const areEqual = (
   const equalTouched = prevProps.isTouched === nextProps.isTouched
 
   return (
+    equalStyle &&
     equalDegree &&
     equalPitch &&
     equalActive &&
     equalDisplayMode &&
     equalExperienceMode &&
-    equalSizes &&
-    equalTouched
+    equalTouched &&
+    equalExperienceMode
   )
 }
 

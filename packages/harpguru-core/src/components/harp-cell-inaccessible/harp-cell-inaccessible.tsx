@@ -1,32 +1,27 @@
-import { StyleSheet, View } from 'react-native'
+import { View } from 'react-native'
+import type { ViewStyle } from 'react-native'
 import React from 'react'
 
-import { getSizes, colors } from '../../styles'
-
-export const HarpCellInaccessible = (): React.ReactElement => {
-  const sizes = getSizes()
-  const { 6: borderRadius } = sizes
-  const { pageColor } = colors
-  const width = sizes['8'] + sizes['5']
-  const height = sizes['8'] + sizes['5']
-  const styles = StyleSheet.create({
-    cell: {
-      flexDirection: 'row',
-      backgroundColor: pageColor,
-      justifyContent: 'center',
-      alignItems: 'center',
-      elevation: 0,
-      borderRadius,
-      borderWidth: 0,
-      width,
-      height,
-    },
-  })
-  return (
-    <View accessible={false} style={styles.cell}>
-      <View style={styles.cell} />
-    </View>
-  )
+type StyleProps = {
+  readonly baseStyles: ViewStyle
 }
 
-export const MemoHarpCellInaccessible = React.memo(HarpCellInaccessible)
+export const HarpCellInaccessible = ({
+  baseStyles,
+}: StyleProps): React.ReactElement => {
+  return <View accessible={false} style={baseStyles} />
+}
+
+const areEqual = (prevProps: StyleProps, nextProps: StyleProps) => {
+  // The baseStyle object is too deep to be successfully analysed by the memo comparison.
+  // It's only the width and height which will vary in each render and they are
+  // correlated so we only need to check one of them.
+  const equalStyle = prevProps.baseStyles.width === nextProps.baseStyles.width
+
+  return equalStyle
+}
+
+export const MemoHarpCellInaccessible = React.memo(
+  HarpCellInaccessible,
+  areEqual
+)
