@@ -2,7 +2,7 @@ import type { DegreeIds, PitchIds } from 'harpstrata'
 
 import { DisplayModes } from '../../../../types'
 
-export const getToneSource = (
+export const getRenderableToneId = (
   degreeId: DegreeIds | undefined,
   pitchId: PitchIds | undefined,
   activeDisplayMode: DisplayModes

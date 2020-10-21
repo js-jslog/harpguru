@@ -6,7 +6,7 @@ import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
 import type { DisplayModes, ExperienceModes } from '../../types'
 
-import { getAccessibleStyles, getToneSource } from './utils'
+import { getAccessibleStyles, getRenderableToneId } from './utils'
 
 type HarpCellAccessibleProps = {
   readonly degreeId: DegreeIds
@@ -29,8 +29,8 @@ export const HarpCellAccessible = (
     baseStyles,
   } = props
 
-  const toneSource = getToneSource(degreeId, pitchId, displayMode)
-  const toneTuples = getRenderableToneTuples(toneSource)
+  const renderableToneId = getRenderableToneId(degreeId, pitchId, displayMode)
+  const renderableToneTuples = getRenderableToneTuples(renderableToneId)
   const accessibleStyles = getAccessibleStyles(degreeId, isActive)
 
   return (
@@ -40,7 +40,7 @@ export const HarpCellAccessible = (
       style={[baseStyles, accessibleStyles]}
     >
       <RenderedTone
-        toneTuples={toneTuples}
+        toneTuples={renderableToneTuples}
         isActive={isActive}
         isQuestion={false}
         splitType={'SLANT'}
