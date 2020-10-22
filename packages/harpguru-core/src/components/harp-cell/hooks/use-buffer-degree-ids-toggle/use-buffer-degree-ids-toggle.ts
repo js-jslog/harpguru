@@ -9,7 +9,10 @@ export const useBufferDegreeIdsToggle = (): BufferToggleFunction => {
   )
 
   return (toggleToBuffer) => {
-    if (toggleDegreeIdsBuffer.includes(toggleToBuffer)) return
-    setToggleDegreeIdsBuffer([...toggleDegreeIdsBuffer, toggleToBuffer])
+    if (toggleDegreeIdsBuffer.includes(toggleToBuffer)) {
+      setToggleDegreeIdsBuffer([...toggleDegreeIdsBuffer])
+    } else {
+      setToggleDegreeIdsBuffer([...toggleDegreeIdsBuffer, toggleToBuffer])
+    }
   }
 }
