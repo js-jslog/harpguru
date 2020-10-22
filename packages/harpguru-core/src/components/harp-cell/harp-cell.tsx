@@ -31,11 +31,14 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     yxCoord
   )
   const baseHarpCellStyles = getBaseHarpCellStyles()
+  const setPozitionRoot = useSetPozitionRoot()
+  const toggleHarpCell = useToggleHarpCell()
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
 
-  const setPozitionRoot = useSetPozitionRoot()
   const handleLongPressStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
@@ -44,7 +47,6 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     setPozitionRoot(thisPitchId)
   }
 
-  const toggleHarpCell = useToggleHarpCell()
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
@@ -53,8 +55,6 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     toggleHarpCell(thisDegreeId)
   }
 
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const harpCellAccessibleProps = {
     degreeId: thisDegreeId,
     pitchId: thisPitchId,
