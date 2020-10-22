@@ -19,6 +19,9 @@ declare module 'reactn/default' {
       global: State
     ) => Pick<State, 'quizQuestion' | 'activeHarpStrata'>
     revealAnswer: (global: State) => Pick<State, 'activeHarpStrata'>
+    updateHarpStrataAndFlushBuffer: (
+      global: State
+    ) => Pick<State, 'activeHarpStrata' | 'toggleDegreeIdsBuffer'>
   }
 
   export interface State {
