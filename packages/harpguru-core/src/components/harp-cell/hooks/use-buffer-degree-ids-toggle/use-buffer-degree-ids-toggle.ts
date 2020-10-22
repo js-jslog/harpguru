@@ -1,8 +1,15 @@
 import { useGlobal } from 'reactn'
 import type { DegreeIds } from 'harpstrata'
 
-export const useBufferDegreeIdsToggle = (toggleToBuffer: DegreeIds): void => {
-  const [toggleDegreeIdsBuffer, setToggleDegreeIdsBuffer] = useGlobal('toggleDegreeIdsBuffer')
-  if (toggleDegreeIdsBuffer.includes(toggleToBuffer)) return
-  setToggleDegreeIdsBuffer([...toggleDegreeIdsBuffer, toggleToBuffer])
+type BufferToggleFunction = (arg0: DegreeIds) => void
+
+export const useBufferDegreeIdsToggle = (): BufferToggleFunction => {
+  const [toggleDegreeIdsBuffer, setToggleDegreeIdsBuffer] = useGlobal(
+    'toggleDegreeIdsBuffer'
+  )
+
+  return (toggleToBuffer) => {
+    if (toggleDegreeIdsBuffer.includes(toggleToBuffer)) return
+    setToggleDegreeIdsBuffer([...toggleDegreeIdsBuffer, toggleToBuffer])
+  }
 }
