@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import type { HarpStrataProps } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
 
-import { batchToggleActiveDegreeIds } from '../../utils'
+import { batchToggleDegreeIds } from '../../utils'
 
 export const useFlushBatchIdToggles = (): void => {
   const [batchIdToggleBuffer] = useGlobal('toggleDegreeIdsBuffer')
@@ -17,7 +17,7 @@ export const useFlushBatchIdToggles = (): void => {
         harpKeyId,
         isActiveComplex: { activeDegreeIds }
       } = activeHarpStrata
-      const newActiveDegreeIds = batchToggleActiveDegreeIds(activeDegreeIds, batchIdToggleBuffer)
+      const newActiveDegreeIds = batchToggleDegreeIds(activeDegreeIds, batchIdToggleBuffer)
       const newHarpStrataProps: HarpStrataProps = {
         apparatusId,
         pozitionId,
