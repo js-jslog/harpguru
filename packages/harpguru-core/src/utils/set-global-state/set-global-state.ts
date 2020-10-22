@@ -41,7 +41,7 @@ export const setGlobalState = (): void => {
     activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
     lockedCovariant: initialLockedCovariant,
-    toggleDegreeIdsBuffer: [] as ActiveDegreeIds
+    toggleDegreeIdsBuffer: [] as ActiveDegreeIds,
   }
   setGlobal(state)
 }

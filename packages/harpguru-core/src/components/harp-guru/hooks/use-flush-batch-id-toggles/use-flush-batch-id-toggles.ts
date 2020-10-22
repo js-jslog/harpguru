@@ -15,9 +15,12 @@ export const useFlushBatchIdToggles = (): void => {
         apparatus: { id: apparatusId },
         pozitionId,
         harpKeyId,
-        isActiveComplex: { activeDegreeIds }
+        isActiveComplex: { activeDegreeIds },
       } = activeHarpStrata
-      const newActiveDegreeIds = batchToggleDegreeIds(activeDegreeIds, batchIdToggleBuffer)
+      const newActiveDegreeIds = batchToggleDegreeIds(
+        activeDegreeIds,
+        batchIdToggleBuffer
+      )
       const newHarpStrataProps: HarpStrataProps = {
         apparatusId,
         pozitionId,

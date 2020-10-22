@@ -1,5 +1,11 @@
 import { useGlobal } from 'reactn'
-import { getHarpStrata, ApparatusIds, PozitionIds, PitchIds, DegreeIds } from 'harpstrata'
+import {
+  getHarpStrata,
+  ApparatusIds,
+  PozitionIds,
+  PitchIds,
+  DegreeIds,
+} from 'harpstrata'
 
 import { useFlushBatchIdToggles } from './use-flush-batch-id-toggles'
 
@@ -16,7 +22,7 @@ const inactiveHarpStrataProps = baseHarpStrataProps
 const inactiveHarpStrata = getHarpStrata(inactiveHarpStrataProps)
 const rootActiveHarpStrata = {
   ...baseHarpStrataProps,
-  activeIds: [ DegreeIds.Root ]
+  activeIds: [DegreeIds.Root],
 }
 
 test.skip('a harpstrata with empty activeDegreeIds has all the batch ids activated', () => {
@@ -30,5 +36,7 @@ test.skip('a harpstrata with empty activeDegreeIds has all the batch ids activat
   })
 
   useFlushBatchIdToggles()
-  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(rootActiveHarpStrata)
+  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(
+    rootActiveHarpStrata
+  )
 })
