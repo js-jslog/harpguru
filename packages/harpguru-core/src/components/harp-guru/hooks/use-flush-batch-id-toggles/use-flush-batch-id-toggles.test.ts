@@ -19,7 +19,7 @@ const rootActiveHarpStrata = {
   activeIds: [ DegreeIds.Root ]
 }
 
-test('a harpstrata with empty activeDegreeIds has all the batch ids activated', () => {
+test.skip('a harpstrata with empty activeDegreeIds has all the batch ids activated', () => {
   jest.useFakeTimers()
   const setActiveHarpStrata = jest.fn()
   mockUseGlobal.mockImplementation((stateItem: string) => {
