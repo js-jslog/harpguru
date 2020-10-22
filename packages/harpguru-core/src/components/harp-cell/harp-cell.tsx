@@ -16,7 +16,7 @@ import type { Coord } from '../../types'
 import { getBaseHarpCellStyles } from './utils'
 import {
   useSetPozitionRoot,
-  useToggleHarpCell,
+  useBufferDegreeIdsToggle,
   usePositionAnalysis,
 } from './hooks'
 
@@ -44,7 +44,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     setPozitionRoot(thisPitchId)
   }
 
-  const toggleHarpCell = useToggleHarpCell()
+  const toggleHarpCell = useBufferDegreeIdsToggle()
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {

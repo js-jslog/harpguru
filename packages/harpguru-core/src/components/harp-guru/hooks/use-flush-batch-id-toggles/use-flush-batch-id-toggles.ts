@@ -6,11 +6,12 @@ import { getHarpStrata } from 'harpstrata'
 import { batchToggleDegreeIds } from '../../utils'
 
 export const useFlushBatchIdToggles = (): void => {
-  const [batchIdToggleBuffer] = useGlobal('toggleDegreeIdsBuffer')
+  const [batchIdToggleBuffer, setBatchIdToggleBuffer] = useGlobal('toggleDegreeIdsBuffer')
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
 
   useEffect(() => {
     const flushBufferedToggles = setTimeout(() => {
+      if (batchIdToggleBuffer.length == 0) return
       const {
         apparatus: { id: apparatusId },
         pozitionId,
@@ -28,7 +29,8 @@ export const useFlushBatchIdToggles = (): void => {
         activeIds: newActiveDegreeIds,
       }
       setActiveHarpStrata(getHarpStrata(newHarpStrataProps))
-    }, 1000)
+      setBatchIdToggleBuffer([])
+    }, 500)
     return () => {
       clearTimeout(flushBufferedToggles)
     }
