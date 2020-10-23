@@ -3,26 +3,26 @@ import { useEffect } from 'react'
 import type { HarpStrataProps } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
 
-import { batchToggleDegreeIds } from '../../utils'
+import { batchToggleActiveIds } from '../../utils'
 
 export const useFlushBufferedActivityToggles = (): void => {
-  const [batchActivityToggles, setBufferedActivityToggles] = useGlobal(
-    'toggleDegreeIdsBuffer'
+  const [bufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
+    'bufferedActivityToggles'
   )
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
 
   useEffect(() => {
     const flushBufferedToggles = setTimeout(() => {
-      if (batchActivityToggles.length === 0) return
+      if (bufferedActivityToggles.length === 0) return
       const {
         apparatus: { id: apparatusId },
         pozitionId,
         harpKeyId,
         isActiveComplex: { activeDegreeIds },
       } = activeHarpStrata
-      const newActiveDegreeIds = batchToggleDegreeIds(
+      const newActiveDegreeIds = batchToggleActiveIds(
         activeDegreeIds,
-        batchActivityToggles
+        bufferedActivityToggles
       )
       const newHarpStrataProps: HarpStrataProps = {
         apparatusId,
@@ -36,5 +36,5 @@ export const useFlushBufferedActivityToggles = (): void => {
     return () => {
       clearTimeout(flushBufferedToggles)
     }
-  }, [batchActivityToggles, setBufferedActivityToggles])
+  }, [bufferedActivityToggles, setBufferedActivityToggles])
 }

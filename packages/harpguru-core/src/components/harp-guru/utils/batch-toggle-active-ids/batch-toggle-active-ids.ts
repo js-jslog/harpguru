@@ -1,13 +1,13 @@
 import type { ActiveDegreeIds } from 'harpstrata'
 
-export const batchToggleDegreeIds = (
+export const batchToggleActiveIds = (
   activeDegreeIds: ActiveDegreeIds,
-  batchToggleIds: ActiveDegreeIds
+  bufferedActiveToggles: ActiveDegreeIds
 ): ActiveDegreeIds => {
-  const toggleOnList = batchToggleIds.filter(
+  const toggleOnList = bufferedActiveToggles.filter(
     (id) => !activeDegreeIds.includes(id)
   )
-  const toggleOffList = batchToggleIds.filter((id) =>
+  const toggleOffList = bufferedActiveToggles.filter((id) =>
     activeDegreeIds.includes(id)
   )
   return [...activeDegreeIds, ...toggleOnList].filter(

@@ -8,10 +8,10 @@ jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
 
 test('adding a toggle id to empty toggle buffer is successful', () => {
-  const toggleDegreeIdsBuffer = [] as ActiveDegreeIds
+  const bufferedActivityToggles = [] as ActiveDegreeIds
   const setToggleDegreeIdsBuffer = jest.fn()
   mockUseGlobal.mockReturnValue([
-    toggleDegreeIdsBuffer,
+    bufferedActivityToggles,
     setToggleDegreeIdsBuffer,
   ])
 
@@ -24,13 +24,13 @@ test('adding a toggle id to empty toggle buffer is successful', () => {
 })
 
 test('adding a toggle id to a toggle buffer with the id already present calls the setter again with the same array', () => {
-  const toggleDegreeIdsBuffer = [
+  const bufferedActivityToggles = [
     DegreeIds.Flat2,
     DegreeIds.Flat6,
   ] as ActiveDegreeIds
   const setToggleDegreeIdsBuffer = jest.fn()
   mockUseGlobal.mockReturnValue([
-    toggleDegreeIdsBuffer,
+    bufferedActivityToggles,
     setToggleDegreeIdsBuffer,
   ])
 

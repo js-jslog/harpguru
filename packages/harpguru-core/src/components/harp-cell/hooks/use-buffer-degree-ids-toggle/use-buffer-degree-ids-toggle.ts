@@ -4,15 +4,15 @@ import type { DegreeIds } from 'harpstrata'
 type BufferToggleFunction = (arg0: DegreeIds) => void
 
 export const useBufferDegreeIdsToggle = (): BufferToggleFunction => {
-  const [toggleDegreeIdsBuffer, setToggleDegreeIdsBuffer] = useGlobal(
-    'toggleDegreeIdsBuffer'
+  const [bufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
+    'bufferedActivityToggles'
   )
 
   return (toggleToBuffer) => {
-    if (toggleDegreeIdsBuffer.includes(toggleToBuffer)) {
-      setToggleDegreeIdsBuffer([...toggleDegreeIdsBuffer])
+    if (bufferedActivityToggles.includes(toggleToBuffer)) {
+      setBufferedActivityToggles([...bufferedActivityToggles])
     } else {
-      setToggleDegreeIdsBuffer([...toggleDegreeIdsBuffer, toggleToBuffer])
+      setBufferedActivityToggles([...bufferedActivityToggles, toggleToBuffer])
     }
   }
 }
