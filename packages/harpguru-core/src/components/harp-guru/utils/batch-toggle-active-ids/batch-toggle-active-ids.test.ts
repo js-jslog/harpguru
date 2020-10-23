@@ -5,7 +5,11 @@ import { batchToggleActiveIds } from './batch-toggle-active-ids'
 
 test('given an empty active degree list, all the toggle ids are added', () => {
   const activeDegreeIds = [] as ActiveDegreeIds
-  const bufferedActivityToggles = [DegreeIds.Flat3, DegreeIds.Root, DegreeIds.Flat7]
+  const bufferedActivityToggles = [
+    DegreeIds.Flat3,
+    DegreeIds.Root,
+    DegreeIds.Flat7,
+  ]
 
   const newActiveDegreeIds = batchToggleActiveIds(
     activeDegreeIds,
@@ -17,7 +21,11 @@ test('given an empty active degree list, all the toggle ids are added', () => {
 
 test('given an active degree list with none of the toggled ids, all the toggle ids are added', () => {
   const activeDegreeIds = [DegreeIds.Fourth]
-  const bufferedActivityToggles = [DegreeIds.Flat3, DegreeIds.Root, DegreeIds.Flat7]
+  const bufferedActivityToggles = [
+    DegreeIds.Flat3,
+    DegreeIds.Root,
+    DegreeIds.Flat7,
+  ]
 
   const newActiveDegreeIds = batchToggleActiveIds(
     activeDegreeIds,
@@ -32,7 +40,11 @@ test('given an active degree list with none of the toggled ids, all the toggle i
 
 test('given an active degree list with all and only the toggled ids, all the toggle ids are removed', () => {
   const activeDegreeIds = [DegreeIds.Flat7, DegreeIds.Root, DegreeIds.Flat3]
-  const bufferedActivityToggles = [DegreeIds.Flat3, DegreeIds.Root, DegreeIds.Flat7]
+  const bufferedActivityToggles = [
+    DegreeIds.Flat3,
+    DegreeIds.Root,
+    DegreeIds.Flat7,
+  ]
 
   const newActiveDegreeIds = batchToggleActiveIds(
     activeDegreeIds,
@@ -50,7 +62,11 @@ test('given an active degree list with all and the toggled ids and a few more, a
     DegreeIds.Flat5,
     DegreeIds.Flat3,
   ]
-  const bufferedActivityToggles = [DegreeIds.Flat3, DegreeIds.Root, DegreeIds.Flat7]
+  const bufferedActivityToggles = [
+    DegreeIds.Flat3,
+    DegreeIds.Root,
+    DegreeIds.Flat7,
+  ]
   const expectedNewActiveDegreeIds = [DegreeIds.Second, DegreeIds.Flat5]
 
   const newActiveDegreeIds = batchToggleActiveIds(
