@@ -24,7 +24,10 @@ test('adding a toggle id to empty toggle buffer is successful', () => {
 })
 
 test('adding a toggle id to a toggle buffer with the id already present calls the setter again with the same array', () => {
-  const toggleDegreeIdsBuffer = [DegreeIds.Flat2, DegreeIds.Flat6] as ActiveDegreeIds
+  const toggleDegreeIdsBuffer = [
+    DegreeIds.Flat2,
+    DegreeIds.Flat6,
+  ] as ActiveDegreeIds
   const setToggleDegreeIdsBuffer = jest.fn()
   mockUseGlobal.mockReturnValue([
     toggleDegreeIdsBuffer,
