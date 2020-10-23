@@ -2,7 +2,7 @@ import { useGlobal } from 'reactn'
 import { DegreeIds } from 'harpstrata'
 import type { ActiveDegreeIds } from 'harpstrata'
 
-import { useBufferDegreeIdsToggle } from './use-buffer-degree-ids-toggle'
+import { useAddBufferedActivityToggle } from './use-add-buffered-activity-toggle'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
@@ -15,7 +15,7 @@ test('adding a toggle id to empty toggle buffer is successful', () => {
     setToggleDegreeIdsBuffer,
   ])
 
-  useBufferDegreeIdsToggle()(DegreeIds.Flat6)
+  useAddBufferedActivityToggle()(DegreeIds.Flat6)
 
   expect(setToggleDegreeIdsBuffer.mock.calls.length).toBe(1)
   expect(setToggleDegreeIdsBuffer.mock.calls[0][0]).toStrictEqual([
@@ -34,7 +34,7 @@ test('adding a toggle id to a toggle buffer with the id already present calls th
     setToggleDegreeIdsBuffer,
   ])
 
-  useBufferDegreeIdsToggle()(DegreeIds.Flat6)
+  useAddBufferedActivityToggle()(DegreeIds.Flat6)
 
   expect(setToggleDegreeIdsBuffer.mock.calls.length).toBe(1)
   expect(setToggleDegreeIdsBuffer.mock.calls[0][0]).toStrictEqual([
