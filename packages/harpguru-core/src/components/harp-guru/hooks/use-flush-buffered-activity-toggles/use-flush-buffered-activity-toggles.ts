@@ -1,4 +1,5 @@
 import { useGlobal } from 'reactn'
+import { unstable_batchedUpdates } from 'react-native'
 import { useEffect } from 'react'
 import type { HarpStrataProps } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
@@ -30,9 +31,11 @@ export const useFlushBufferedActivityToggles = (): void => {
         harpKeyId,
         activeIds: newActiveDegreeIds,
       }
-      setActiveHarpStrata(getHarpStrata(newHarpStrataProps))
-      setBufferedActivityToggles([])
-    }, 1000)
+      unstable_batchedUpdates(() => {
+        setActiveHarpStrata(getHarpStrata(newHarpStrataProps))
+        setBufferedActivityToggles([])
+      })
+    }, 200)
     return () => {
       clearTimeout(flushBufferedToggles)
     }
