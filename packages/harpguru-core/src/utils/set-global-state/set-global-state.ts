@@ -41,8 +41,7 @@ export const setGlobalState = (): void => {
     activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
     lockedCovariant: initialLockedCovariant,
-    toggleDegreeIdsBuffer: [] as ActiveDegreeIds,
-    bufferedActivityToggles: initialHarpStrata.isActiveComplex.activeDegreeIds,
+    bufferedActivityToggles: [] as ActiveDegreeIds,
   }
   setGlobal(state)
 }
