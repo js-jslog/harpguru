@@ -27,5 +27,6 @@ declare module 'reactn/default' {
     activeExperienceMode: ExperienceModes
     activeDisplayMode: DisplayModes
     lockedCovariant: CovariantMembers
+    bufferedActivityToggles: ReadonlyArray<DegreeIds>
   }
 }

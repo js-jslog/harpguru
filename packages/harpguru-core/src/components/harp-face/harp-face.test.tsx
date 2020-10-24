@@ -18,6 +18,7 @@ mockUseGlobal.mockImplementation((stateItem: string) => {
   if (stateItem === 'quizQuestion') return [DegreeIds.Root]
   if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
   if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
+  if (stateItem === 'bufferedActivityToggles') return [[]]
   return undefined
 })
 

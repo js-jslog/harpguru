@@ -16,7 +16,11 @@ import { MenuStates } from '../../types'
 import { colors } from '../../styles'
 import { getSizes } from '../../styles'
 
-import { useMenus, useQuizCycle } from './hooks'
+import {
+  useFlushBufferedActivityToggles,
+  useMenus,
+  useQuizCycle,
+} from './hooks'
 
 setGlobalState()
 setGlobalReducers()
@@ -47,6 +51,7 @@ export const HarpGuru = (): ReactElement => {
   const { 8: swipeThreshold } = sizes
 
   useQuizCycle(menuState)
+  useFlushBufferedActivityToggles()
 
   return (
     <PanGestureHandler

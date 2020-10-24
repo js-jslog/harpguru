@@ -16,8 +16,8 @@ import type { Coord } from '../../types'
 import { getBaseHarpCellStyles } from './utils'
 import {
   useSetPozitionRoot,
-  useToggleHarpCell,
   usePositionAnalysis,
+  useAddBufferedActivityToggle,
 } from './hooks'
 
 export type YXCoord = [Coord, Coord]
@@ -32,7 +32,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   )
   const baseHarpCellStyles = getBaseHarpCellStyles()
   const setPozitionRoot = useSetPozitionRoot()
-  const toggleHarpCell = useToggleHarpCell()
+  const addBufferedActivityToggle = useAddBufferedActivityToggle()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
 
@@ -52,7 +52,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   }: TapGestureHandlerStateChangeEvent) => {
     if (nativeEvent.state !== State.END) return
 
-    toggleHarpCell(thisDegreeId)
+    addBufferedActivityToggle(thisDegreeId)
   }
 
   const harpCellAccessibleProps = {
