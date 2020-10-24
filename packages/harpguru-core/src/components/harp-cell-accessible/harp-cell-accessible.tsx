@@ -43,12 +43,12 @@ export const HarpCellAccessible = (
   const accessibleStyles = getAccessibleStyles(degreeId, isReallyActive)
 
   const optionUpdatedVal = useTimingTransition(touchState === State.BEGAN, {
-    duration: 200,
+    duration: 100,
     easing: Easing.inOut(Easing.circle),
   })
   const optionUpdateTransition = interpolate(optionUpdatedVal, {
     inputRange: [0, 1],
-    outputRange: touchState === State.BEGAN ? [1.1, 1] : [1, 1],
+    outputRange: touchState === State.BEGAN ? [0.8, 1] : [1, 1],
   })
 
   return (
