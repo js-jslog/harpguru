@@ -1,5 +1,6 @@
 import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
+import { State } from 'react-native-gesture-handler'
 import { View, ViewStyle } from 'react-native'
 import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
@@ -17,7 +18,7 @@ type HarpCellAccessibleProps = {
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
   readonly baseStyles: ViewStyle
-  readonly isTouched: boolean
+  readonly touchState: State
 }
 
 export const HarpCellAccessible = (
@@ -29,21 +30,25 @@ export const HarpCellAccessible = (
     isActive,
     displayMode,
     activeExperienceMode,
-    isTouched,
+    touchState,
     baseStyles,
   } = props
 
+  const isPreToggled = [State.BEGAN, State.END].includes(touchState)
+  const isReallyActive =
+    (isActive && !isPreToggled) || (!isActive && isPreToggled)
+
   const renderableToneId = getRenderableToneId(degreeId, pitchId, displayMode)
   const renderableToneTuples = getRenderableToneTuples(renderableToneId)
-  const accessibleStyles = getAccessibleStyles(degreeId, isActive)
+  const accessibleStyles = getAccessibleStyles(degreeId, isReallyActive)
 
-  const optionUpdatedVal = useTimingTransition(isTouched, {
+  const optionUpdatedVal = useTimingTransition(touchState === State.BEGAN, {
     duration: 200,
     easing: Easing.inOut(Easing.circle),
   })
   const optionUpdateTransition = interpolate(optionUpdatedVal, {
     inputRange: [0, 1],
-    outputRange: isTouched ? [1.1, 1] : [1, 1],
+    outputRange: touchState === State.BEGAN ? [1.1, 1] : [1, 1],
   })
 
   return (
@@ -85,7 +90,7 @@ const areEqual = (
   const equalDisplayMode = prevProps.displayMode === nextProps.displayMode
   const equalExperienceMode =
     prevProps.activeExperienceMode === nextProps.activeExperienceMode
-  const equalTouched = prevProps.isTouched === nextProps.isTouched
+  const equalTouched = prevProps.touchState === nextProps.touchState
 
   return (
     equalStyle &&

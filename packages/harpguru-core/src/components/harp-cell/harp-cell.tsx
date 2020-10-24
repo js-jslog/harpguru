@@ -5,7 +5,7 @@ import {
   State,
   LongPressGestureHandler,
 } from 'react-native-gesture-handler'
-import { View } from 'react-native'
+import { View, unstable_batchedUpdates } from 'react-native'
 import React from 'react'
 import { IsActiveIds } from 'harpstrata'
 
@@ -35,15 +35,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const addBufferedActivityToggle = useAddBufferedActivityToggle()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [isTouched, setIsTouched] = React.useState(false)
-  React.useEffect(() => {
-    const unTouchCell = setTimeout(() => {
-      setIsTouched(false)
-    }, 100)
-    return () => {
-      clearTimeout(unTouchCell)
-    }
-  }, [isTouched])
+  const [touchState, setIsTouchState] = React.useState(State.UNDETERMINED)
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
@@ -59,13 +51,27 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
-    if (nativeEvent.state === State.BEGAN) {
-      setIsTouched(true)
+    const interestingTouchStates = [
+      State.BEGAN,
+      State.END,
+      State.CANCELLED,
+      State.FAILED,
+    ]
+    if (interestingTouchStates.includes(nativeEvent.state)) {
+      if (nativeEvent.state === State.END) {
+        unstable_batchedUpdates(() => {
+          addBufferedActivityToggle(thisDegreeId)
+          setIsTouchState(nativeEvent.state)
+        })
+      } else {
+        setIsTouchState(nativeEvent.state)
+      }
     }
-    if (nativeEvent.state !== State.END) return
-
-    addBufferedActivityToggle(thisDegreeId)
   }
+
+  React.useEffect(() => {
+    setIsTouchState(State.UNDETERMINED)
+  }, [thisIsActiveId, setIsTouchState])
 
   const harpCellAccessibleProps = {
     degreeId: thisDegreeId,
@@ -74,13 +80,13 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     displayMode: activeDisplayMode,
     activeExperienceMode: activeExperienceMode,
     baseStyles: baseHarpCellStyles,
-    isTouched,
+    touchState,
   }
 
   return (
     <LongPressGestureHandler
       onHandlerStateChange={handleLongPressStateChange}
-      minDurationMs={500}
+      minDurationMs={5000}
     >
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
         <View>
