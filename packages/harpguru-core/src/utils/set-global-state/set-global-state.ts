@@ -6,7 +6,7 @@ import {
   getPitchIds,
   PitchIds,
 } from 'harpstrata'
-import type { ActiveDegreeIds } from 'harpstrata'
+import type { DegreeIds } from 'harpstrata'
 import type { ActiveIds, HarpStrataProps, HarpStrata } from 'harpstrata'
 
 import { getNextQuizQuestion } from '../get-next-quiz-question'
@@ -41,7 +41,7 @@ export const setGlobalState = (): void => {
     activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
     lockedCovariant: initialLockedCovariant,
-    bufferedActivityToggles: [] as ActiveDegreeIds,
+    bufferedActivityToggles: [] as ReadonlyArray<DegreeIds>,
   }
   setGlobal(state)
 }

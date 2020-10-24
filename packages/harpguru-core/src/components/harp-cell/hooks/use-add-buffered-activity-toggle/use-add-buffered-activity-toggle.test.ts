@@ -1,6 +1,5 @@
 import { useGlobal } from 'reactn'
 import { DegreeIds } from 'harpstrata'
-import type { ActiveDegreeIds } from 'harpstrata'
 
 import { useAddBufferedActivityToggle } from './use-add-buffered-activity-toggle'
 
@@ -8,7 +7,7 @@ jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
 
 test('adding a toggle id to empty toggle buffer is successful', () => {
-  const bufferedActivityToggles = [] as ActiveDegreeIds
+  const bufferedActivityToggles = [] as ReadonlyArray<DegreeIds>
   const setToggleDegreeIdsBuffer = jest.fn()
   mockUseGlobal.mockReturnValue([
     bufferedActivityToggles,
@@ -27,7 +26,7 @@ test('adding a toggle id to a toggle buffer with the id already present calls th
   const bufferedActivityToggles = [
     DegreeIds.Flat2,
     DegreeIds.Flat6,
-  ] as ActiveDegreeIds
+  ] as ReadonlyArray<DegreeIds>
   const setToggleDegreeIdsBuffer = jest.fn()
   mockUseGlobal.mockReturnValue([
     bufferedActivityToggles,
