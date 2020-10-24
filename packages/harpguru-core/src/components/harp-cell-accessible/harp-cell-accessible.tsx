@@ -66,7 +66,7 @@ export const HarpCellAccessible = (
       >
         <RenderedTone
           toneTuples={renderableToneTuples}
-          isActive={isActive}
+          isActive={isReallyActive}
           isQuestion={false}
           splitType={'SLANT'}
           activeExperienceMode={activeExperienceMode}
