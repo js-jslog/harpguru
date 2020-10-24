@@ -35,7 +35,7 @@ export const useFlushBufferedActivityToggles = (): void => {
         setActiveHarpStrata(getHarpStrata(newHarpStrataProps))
         setBufferedActivityToggles([])
       })
-    }, 200)
+    }, 1000)
     return () => {
       clearTimeout(flushBufferedToggles)
     }
