@@ -1,6 +1,6 @@
 import type { ActiveDegreeIds } from 'harpstrata'
 
-export const batchToggleActiveIds = (
+export const batchToggleDegreeIds = (
   activeDegreeIds: ActiveDegreeIds,
   bufferedActivityToggles: ActiveDegreeIds
 ): ActiveDegreeIds => {

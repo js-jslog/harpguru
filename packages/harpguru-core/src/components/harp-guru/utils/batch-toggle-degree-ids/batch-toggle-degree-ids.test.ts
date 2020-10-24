@@ -1,7 +1,7 @@
 import { DegreeIds } from 'harpstrata'
 import type { ActiveDegreeIds } from 'harpstrata'
 
-import { batchToggleActiveIds } from './batch-toggle-active-ids'
+import { batchToggleDegreeIds } from './batch-toggle-degree-ids'
 
 test('given an empty active degree list, all the toggle ids are added', () => {
   const activeDegreeIds = [] as ActiveDegreeIds
@@ -11,7 +11,7 @@ test('given an empty active degree list, all the toggle ids are added', () => {
     DegreeIds.Flat7,
   ]
 
-  const newActiveDegreeIds = batchToggleActiveIds(
+  const newActiveDegreeIds = batchToggleDegreeIds(
     activeDegreeIds,
     bufferedActivityToggles
   )
@@ -27,7 +27,7 @@ test('given an active degree list with none of the toggled ids, all the toggle i
     DegreeIds.Flat7,
   ]
 
-  const newActiveDegreeIds = batchToggleActiveIds(
+  const newActiveDegreeIds = batchToggleDegreeIds(
     activeDegreeIds,
     bufferedActivityToggles
   )
@@ -46,7 +46,7 @@ test('given an active degree list with all and only the toggled ids, all the tog
     DegreeIds.Flat7,
   ]
 
-  const newActiveDegreeIds = batchToggleActiveIds(
+  const newActiveDegreeIds = batchToggleDegreeIds(
     activeDegreeIds,
     bufferedActivityToggles
   )
@@ -69,7 +69,7 @@ test('given an active degree list with all and the toggled ids and a few more, a
   ]
   const expectedNewActiveDegreeIds = [DegreeIds.Second, DegreeIds.Flat5]
 
-  const newActiveDegreeIds = batchToggleActiveIds(
+  const newActiveDegreeIds = batchToggleDegreeIds(
     activeDegreeIds,
     bufferedActivityToggles
   )
@@ -99,7 +99,7 @@ test('given an active degree list with some of and the toggled ids, the absent o
     DegreeIds.Seventh,
   ]
 
-  const newActiveDegreeIds = batchToggleActiveIds(
+  const newActiveDegreeIds = batchToggleDegreeIds(
     activeDegreeIds,
     bufferedActivityToggles
   )
