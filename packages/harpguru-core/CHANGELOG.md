@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v3.2.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MAJOR: Buffer for harp cell activity updates
+
 ### Changed
 
 - MINOR: Memoisation added to HarpCell
