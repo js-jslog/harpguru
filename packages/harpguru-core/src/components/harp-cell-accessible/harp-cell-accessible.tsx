@@ -1,3 +1,5 @@
+import { useTimingTransition } from 'react-native-redash'
+import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { View, ViewStyle } from 'react-native'
 import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
@@ -15,6 +17,7 @@ type HarpCellAccessibleProps = {
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
   readonly baseStyles: ViewStyle
+  readonly isTouched: boolean
 }
 
 export const HarpCellAccessible = (
@@ -26,6 +29,7 @@ export const HarpCellAccessible = (
     isActive,
     displayMode,
     activeExperienceMode,
+    isTouched,
     baseStyles,
   } = props
 
@@ -33,20 +37,37 @@ export const HarpCellAccessible = (
   const renderableToneTuples = getRenderableToneTuples(renderableToneId)
   const accessibleStyles = getAccessibleStyles(degreeId, isActive)
 
+  const optionUpdatedVal = useTimingTransition(isTouched, {
+    duration: 200,
+    easing: Easing.inOut(Easing.circle),
+  })
+  const optionUpdateTransition = interpolate(optionUpdatedVal, {
+    inputRange: [0, 1],
+    outputRange: isTouched ? [1.1, 1] : [1, 1],
+  })
+
   return (
-    <View
-      accessible={true}
-      accessibilityRole="button"
-      style={[baseStyles, accessibleStyles]}
+    <Animated.View
+      style={[
+        {
+          transform: [{ scale: optionUpdateTransition }],
+        },
+      ]}
     >
-      <RenderedTone
-        toneTuples={renderableToneTuples}
-        isActive={isActive}
-        isQuestion={false}
-        splitType={'SLANT'}
-        activeExperienceMode={activeExperienceMode}
-      />
-    </View>
+      <View
+        accessible={true}
+        accessibilityRole="button"
+        style={[baseStyles, accessibleStyles]}
+      >
+        <RenderedTone
+          toneTuples={renderableToneTuples}
+          isActive={isActive}
+          isQuestion={false}
+          splitType={'SLANT'}
+          activeExperienceMode={activeExperienceMode}
+        />
+      </View>
+    </Animated.View>
   )
 }
 
@@ -64,6 +85,7 @@ const areEqual = (
   const equalDisplayMode = prevProps.displayMode === nextProps.displayMode
   const equalExperienceMode =
     prevProps.activeExperienceMode === nextProps.activeExperienceMode
+  const equalTouched = prevProps.isTouched === nextProps.isTouched
 
   return (
     equalStyle &&
@@ -71,7 +93,8 @@ const areEqual = (
     equalPitch &&
     equalActive &&
     equalDisplayMode &&
-    equalExperienceMode
+    equalExperienceMode &&
+    equalTouched
   )
 }
 

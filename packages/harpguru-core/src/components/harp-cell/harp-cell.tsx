@@ -35,6 +35,15 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const addBufferedActivityToggle = useAddBufferedActivityToggle()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const [isTouched, setIsTouched] = React.useState(false)
+  React.useEffect(() => {
+    const unTouchCell = setTimeout(() => {
+      setIsTouched(false)
+    }, 100)
+    return () => {
+      clearTimeout(unTouchCell)
+    }
+  }, [isTouched])
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
@@ -50,6 +59,9 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
+    if (nativeEvent.state === State.BEGAN) {
+      setIsTouched(true)
+    }
     if (nativeEvent.state !== State.END) return
 
     addBufferedActivityToggle(thisDegreeId)
@@ -62,6 +74,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     displayMode: activeDisplayMode,
     activeExperienceMode: activeExperienceMode,
     baseStyles: baseHarpCellStyles,
+    isTouched,
   }
 
   return (
