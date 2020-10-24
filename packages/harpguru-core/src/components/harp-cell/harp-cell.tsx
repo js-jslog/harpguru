@@ -5,7 +5,7 @@ import {
   State,
   LongPressGestureHandler,
 } from 'react-native-gesture-handler'
-import { View, unstable_batchedUpdates } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 import { IsActiveIds } from 'harpstrata'
 
@@ -51,26 +51,19 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
-    const interestingTouchStates = [
-      State.BEGAN,
-      State.END,
-      State.CANCELLED,
-      State.FAILED,
-    ]
+    const interestingTouchStates = [State.BEGAN, State.CANCELLED, State.FAILED]
     if (interestingTouchStates.includes(nativeEvent.state)) {
-      if (nativeEvent.state === State.END) {
-        unstable_batchedUpdates(() => {
-          addBufferedActivityToggle(thisDegreeId)
-          setIsTouchState(nativeEvent.state)
-        })
-      } else {
-        setIsTouchState(nativeEvent.state)
-      }
+      setIsTouchState(nativeEvent.state)
+    }
+    if (nativeEvent.state === State.END) {
+      addBufferedActivityToggle(thisDegreeId)
     }
   }
 
   React.useEffect(() => {
-    setIsTouchState(State.UNDETERMINED)
+    if (touchState !== State.UNDETERMINED) {
+      setIsTouchState(State.UNDETERMINED)
+    }
   }, [thisIsActiveId, setIsTouchState])
 
   const harpCellAccessibleProps = {

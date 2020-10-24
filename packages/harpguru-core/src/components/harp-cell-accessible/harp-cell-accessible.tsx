@@ -86,13 +86,15 @@ const areEqual = (
   const equalStyle = prevProps.baseStyles.width === nextProps.baseStyles.width
   const equalDegree = prevProps.degreeId === nextProps.degreeId
   const equalPitch = prevProps.pitchId === nextProps.pitchId
-  const equalActive = prevProps.isActive === nextProps.isActive
+  const equalActive =
+    nextProps.touchState !== State.UNDETERMINED ||
+    prevProps.isActive === nextProps.isActive
   const equalDisplayMode = prevProps.displayMode === nextProps.displayMode
   const equalExperienceMode =
     prevProps.activeExperienceMode === nextProps.activeExperienceMode
   const equalTouched = prevProps.touchState === nextProps.touchState
 
-  return (
+  const areEqual =
     equalStyle &&
     equalDegree &&
     equalPitch &&
@@ -100,7 +102,7 @@ const areEqual = (
     equalDisplayMode &&
     equalExperienceMode &&
     equalTouched
-  )
+  return areEqual
 }
 
 export const MemoHarpCellAccessible = React.memo(HarpCellAccessible, areEqual)
