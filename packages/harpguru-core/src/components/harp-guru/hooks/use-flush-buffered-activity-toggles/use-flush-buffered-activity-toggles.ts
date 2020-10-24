@@ -39,5 +39,10 @@ export const useFlushBufferedActivityToggles = (): void => {
     return () => {
       clearTimeout(flushBufferedToggles)
     }
-  }, [bufferedActivityToggles, setBufferedActivityToggles])
+  }, [
+    bufferedActivityToggles,
+    setBufferedActivityToggles,
+    setActiveHarpStrata,
+    activeHarpStrata,
+  ])
 }
