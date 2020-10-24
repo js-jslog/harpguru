@@ -22,6 +22,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Changed
 
 - MINOR: Memoisation added to HarpCell
+- MINOR: Default harp setup to popular configuration (major pent in 2nd position)
 
 ## [v2.1.0](https://github.com/js-jslog/harpguru/releases/tag/v3.2.0) - 2020-10-19
 
