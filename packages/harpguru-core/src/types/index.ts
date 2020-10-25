@@ -23,10 +23,10 @@ export enum MenuStates {
 }
 
 export enum CellStates {
-  'TAPPED_ON',
-  'TAPPED_OFF',
-  'ON',
-  'OFF',
+  TappedOn,
+  TappedOff,
+  On,
+  Off,
 }
 
 export type MenuProps = {

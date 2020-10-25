@@ -16,8 +16,8 @@ export const useTapRerenderLogic = (
 ): [CellStates, TapHandler] => {
   const initialCellState =
     thisIsActiveId && thisIsActiveId === IsActiveIds.Active
-      ? CellStates.ON
-      : CellStates.OFF
+      ? CellStates.On
+      : CellStates.Off
   const [cellState, setCellState] = React.useState(initialCellState)
   const addBufferedActivityToggle = useAddBufferedActivityToggle()
 
@@ -27,11 +27,11 @@ export const useTapRerenderLogic = (
     if (nativeEvent.state === State.BEGAN) {
       const relevantState =
         thisIsActiveId === IsActiveIds.Active
-          ? CellStates.TAPPED_OFF
-          : CellStates.TAPPED_ON
+          ? CellStates.TappedOff
+          : CellStates.TappedOn
       setCellState(relevantState)
     } else if (cancelToggleStates.includes(nativeEvent.state)) {
-      setCellState(CellStates.OFF)
+      setCellState(CellStates.Off)
     } else if (nativeEvent.state === State.END) {
       addBufferedActivityToggle(thisDegreeId)
     }
@@ -40,7 +40,7 @@ export const useTapRerenderLogic = (
   React.useEffect(() => {
     if (thisIsActiveId === undefined) return
     const appropriateCellState =
-      thisIsActiveId === IsActiveIds.Active ? CellStates.ON : CellStates.OFF
+      thisIsActiveId === IsActiveIds.Active ? CellStates.On : CellStates.Off
     if (cellState !== appropriateCellState) {
       setCellState(appropriateCellState)
     }

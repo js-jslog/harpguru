@@ -33,9 +33,9 @@ export const HarpCellAccessible = (
   } = props
 
   const isActive =
-    cellState === CellStates.ON || cellState === CellStates.TAPPED_ON
+    cellState === CellStates.On || cellState === CellStates.TappedOn
   const isTapped =
-    cellState === CellStates.TAPPED_ON || cellState === CellStates.TAPPED_OFF
+    cellState === CellStates.TappedOn || cellState === CellStates.TappedOff
   const renderableToneId = getRenderableToneId(degreeId, pitchId, displayMode)
   const renderableToneTuples = getRenderableToneTuples(renderableToneId)
   const accessibleStyles = getAccessibleStyles(degreeId, isActive)
