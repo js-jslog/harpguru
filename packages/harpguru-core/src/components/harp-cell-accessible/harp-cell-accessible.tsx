@@ -16,8 +16,8 @@ type HarpCellAccessibleProps = {
   readonly pitchId: PitchIds
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
-  readonly baseStyles: ViewStyle
   readonly cellState: CellState
+  readonly baseStyles: ViewStyle
 }
 
 export const HarpCellAccessible = (

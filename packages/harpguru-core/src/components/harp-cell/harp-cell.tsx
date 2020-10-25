@@ -60,8 +60,8 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     pitchId: thisPitchId,
     displayMode: activeDisplayMode,
     activeExperienceMode: activeExperienceMode,
-    baseStyles: baseHarpCellStyles,
     cellState,
+    baseStyles: baseHarpCellStyles,
   }
 
   return (
