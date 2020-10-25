@@ -31,7 +31,9 @@ export const useTapRerenderLogic = (
           : CellStates.TappedOn
       setCellState(relevantState)
     } else if (cancelToggleStates.includes(nativeEvent.state)) {
-      setCellState(CellStates.Off)
+      const relevantState =
+        thisIsActiveId === IsActiveIds.Active ? CellStates.On : CellStates.Off
+      setCellState(relevantState)
     } else if (nativeEvent.state === State.END) {
       addBufferedActivityToggle(thisDegreeId)
     }
