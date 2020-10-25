@@ -19,6 +19,13 @@ import {
   useTapRerenderLogic,
 } from './hooks'
 
+export enum CellState {
+  'TAPPED_ON',
+  'TAPPED_OFF',
+  'ON',
+  'OFF',
+}
+
 export type YXCoord = [Coord, Coord]
 
 type HarpCellProps = {

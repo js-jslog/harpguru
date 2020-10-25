@@ -6,13 +6,7 @@ import React from 'react'
 import { DegreeIds, IsActiveIds } from 'harpstrata'
 
 import { useAddBufferedActivityToggle } from '../use-add-buffered-activity-toggle'
-
-export enum CellState {
-  'TAPPED_ON',
-  'TAPPED_OFF',
-  'ON',
-  'OFF',
-}
+import { CellState } from '../../harp-cell'
 
 type TapHandler = (arg0: GestureHandlerStateChangeNativeEvent) => void
 

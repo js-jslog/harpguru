@@ -5,7 +5,7 @@ import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
-import { CellState } from '../harp-cell/hooks/use-tap-rerender-logic/use-tap-rerender-logic'
+import { CellState } from '../harp-cell'
 import { getRenderableToneTuples } from '../../utils'
 import type { DisplayModes, ExperienceModes } from '../../types'
 
