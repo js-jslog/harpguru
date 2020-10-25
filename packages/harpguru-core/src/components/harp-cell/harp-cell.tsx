@@ -51,8 +51,12 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
-    const interestingTouchStates = [State.BEGAN, State.CANCELLED, State.FAILED]
-    if (interestingTouchStates.includes(nativeEvent.state)) {
+    const tapDrivenRerenderableStates = [
+      State.BEGAN,
+      State.CANCELLED,
+      State.FAILED,
+    ]
+    if (tapDrivenRerenderableStates.includes(nativeEvent.state)) {
       setIsTouchState(nativeEvent.state)
     }
     if (nativeEvent.state === State.END) {
@@ -61,8 +65,9 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   }
 
   React.useEffect(() => {
-    if (touchState !== State.UNDETERMINED) {
-      setIsTouchState(State.UNDETERMINED)
+    const { UNDETERMINED: isActiveDrivenRerenderableState } = State
+    if (touchState !== isActiveDrivenRerenderableState) {
+      setIsTouchState(isActiveDrivenRerenderableState)
     }
   }, [thisIsActiveId, setIsTouchState])
 
