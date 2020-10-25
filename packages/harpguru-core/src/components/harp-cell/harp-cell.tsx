@@ -17,7 +17,7 @@ import { getBaseHarpCellStyles } from './utils'
 import {
   useSetPozitionRoot,
   usePositionAnalysis,
-  useAddBufferedActivityToggle,
+  useTapRerenderLogic,
 } from './hooks'
 
 export type YXCoord = [Coord, Coord]
@@ -32,10 +32,12 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   )
   const baseHarpCellStyles = getBaseHarpCellStyles()
   const setPozitionRoot = useSetPozitionRoot()
-  const addBufferedActivityToggle = useAddBufferedActivityToggle()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [touchState, setTouchState] = React.useState(State.UNDETERMINED)
+  const [touchState, tapHandler] = useTapRerenderLogic(
+    thisDegreeId,
+    thisIsActiveId
+  )
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
@@ -51,25 +53,8 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
-    const tapDrivenRerenderableStates = [
-      State.BEGAN,
-      State.CANCELLED,
-      State.FAILED,
-    ]
-    if (tapDrivenRerenderableStates.includes(nativeEvent.state)) {
-      setTouchState(nativeEvent.state)
-    }
-    if (nativeEvent.state === State.END) {
-      addBufferedActivityToggle(thisDegreeId)
-    }
+    tapHandler(nativeEvent)
   }
-
-  React.useEffect(() => {
-    const { UNDETERMINED: isActiveDrivenRerenderableState } = State
-    if (touchState !== isActiveDrivenRerenderableState) {
-      setTouchState(isActiveDrivenRerenderableState)
-    }
-  }, [thisIsActiveId, setTouchState])
 
   const harpCellAccessibleProps = {
     degreeId: thisDegreeId,
