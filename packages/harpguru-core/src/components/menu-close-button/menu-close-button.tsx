@@ -21,47 +21,47 @@ export const MenuCloseButton = ({
   })
   const animationValue = interpolate(transitionValue, {
     inputRange: [0, 1],
-    outputRange: isTapped ? [0.5, 1] : [1, 1],
+    outputRange: isTapped ? [1, 0.5] : [1, 0.5],
   })
 
   const handleTapAndAnimate = (event: TapGestureHandlerStateChangeEvent) => {
     const {
       nativeEvent: { state },
     } = event
-    setIsTapped(state === State.BEGAN)
+    setIsTapped([State.BEGAN, State.ACTIVE].includes(state))
     openCloseTapHandler(event)
   }
 
   return (
-    <Animated.View
-      style={[
-        {
-          transform: [{ scale: animationValue }],
-        },
-      ]}
+    <View
+      style={{
+        ...StyleSheet.absoluteFillObject,
+        justifyContent: 'flex-end',
+        flexDirection: 'row',
+      }}
     >
-      <View
-        style={{
-          ...StyleSheet.absoluteFillObject,
-          justifyContent: 'flex-end',
-          flexDirection: 'row',
-        }}
-      >
-        <TapGestureHandler onHandlerStateChange={handleTapAndAnimate}>
-          <View
-            style={{
-              padding: sizes['6'],
-              height: sizes['10'],
-            }}
+      <TapGestureHandler onHandlerStateChange={handleTapAndAnimate}>
+        <View
+          style={{
+            padding: sizes['6'],
+            height: sizes['10'],
+          }}
+        >
+          <Animated.View
+            style={[
+              {
+                transform: [{ scale: animationValue }],
+              },
+            ]}
           >
             <AntDesign
               name="close"
               size={sizes['9']}
               color={colors.inertOutline}
             />
-          </View>
-        </TapGestureHandler>
-      </View>
-    </Animated.View>
+          </Animated.View>
+        </View>
+      </TapGestureHandler>
+    </View>
   )
 }
