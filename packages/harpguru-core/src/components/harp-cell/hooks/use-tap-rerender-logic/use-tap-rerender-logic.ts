@@ -49,10 +49,10 @@ export const useTapRerenderLogic = (
   // it will be easier to grasp the logic if it is centred on a single value.
   React.useEffect(() => {
     if (thisIsActiveId === undefined) return
-    const appropriateCellState =
+    const relevantState =
       thisIsActiveId === IsActiveIds.Active ? CellStates.On : CellStates.Off
-    if (cellState !== appropriateCellState) {
-      setCellState(appropriateCellState)
+    if (cellState !== relevantState) {
+      setCellState(relevantState)
     }
   }, [thisIsActiveId, setCellState])
 
@@ -66,9 +66,9 @@ export const useTapRerenderLogic = (
     if (cellState !== CellStates.TappedOn && cellState !== CellStates.TappedOff)
       return
     const postTapStateSet = setTimeout(() => {
-      const appropriateCellState =
+      const relevantState =
         cellState === CellStates.TappedOn ? CellStates.On : CellStates.Off
-      setCellState(appropriateCellState)
+      setCellState(relevantState)
     }, 100)
     return () => {
       clearTimeout(postTapStateSet)
