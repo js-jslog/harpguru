@@ -2,16 +2,15 @@ import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import {
   PanGestureHandler,
-  TapGestureHandler,
   State,
 } from 'react-native-gesture-handler'
 import type {
   PanGestureHandlerGestureEvent,
-  TapGestureHandlerStateChangeEvent,
 } from 'react-native-gesture-handler'
-import { View, Text, TextStyle } from 'react-native'
+import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 
+import { OptionValue } from '../option-value'
 import { OptionIds } from '../../types'
 import { getSizes } from '../../styles'
 import { usePrevious } from '../../hooks'
@@ -144,52 +143,8 @@ export const Option = (props: OptionProps): React.ReactElement => {
 type TitleProps = {
   readonly children: React.ReactNode
 }
-type OptionValueProps = {
-  readonly id: OptionIds
-  readonly setFunction: (arg0: OptionIds) => void
-  readonly style: TextStyle
-}
 
 const OptionTitle = ({ children }: TitleProps): React.ReactElement => {
   const styles = getStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
-}
-const OptionValue = ({
-  id,
-  setFunction,
-  style,
-}: OptionValueProps): React.ReactElement => {
-  const [isTapped, setIsTapped] = useState(false)
-  const transitionValue = useTimingTransition(isTapped, {
-    duration: 100,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const animationValue = interpolate(transitionValue, {
-    inputRange: [0, 1],
-    outputRange: isTapped ? [1, 1.8] : [1, 1.8],
-  })
-  const handleTapStateChange = ({
-    nativeEvent,
-  }: TapGestureHandlerStateChangeEvent) => {
-    if (nativeEvent.state === State.BEGAN) setIsTapped(true)
-    if (nativeEvent.state !== State.END) return
-
-    setIsTapped(false)
-    setFunction(id)
-  }
-  return (
-    <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <Animated.View
-        style={[
-          {
-            transform: [{ scale: animationValue }],
-          },
-        ]}
-      >
-        <View>
-          <Text style={style}>{id}</Text>
-        </View>
-      </Animated.View>
-    </TapGestureHandler>
-  )
 }
