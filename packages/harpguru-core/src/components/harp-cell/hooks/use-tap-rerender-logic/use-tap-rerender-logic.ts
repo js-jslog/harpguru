@@ -6,18 +6,18 @@ import React from 'react'
 import { DegreeIds, IsActiveIds } from 'harpstrata'
 
 import { useAddBufferedActivityToggle } from '../use-add-buffered-activity-toggle'
-import { CellState } from '../../../../types'
+import { CellStates } from '../../../../types'
 
 type TapHandler = (arg0: GestureHandlerStateChangeNativeEvent) => void
 
 export const useTapRerenderLogic = (
   thisDegreeId: DegreeIds | undefined,
   thisIsActiveId: IsActiveIds | undefined
-): [CellState, TapHandler] => {
+): [CellStates, TapHandler] => {
   const initialCellState =
     thisIsActiveId && thisIsActiveId === IsActiveIds.Active
-      ? CellState.ON
-      : CellState.OFF
+      ? CellStates.ON
+      : CellStates.OFF
   const [cellState, setCellState] = React.useState(initialCellState)
   const addBufferedActivityToggle = useAddBufferedActivityToggle()
 
@@ -27,11 +27,11 @@ export const useTapRerenderLogic = (
     if (nativeEvent.state === State.BEGAN) {
       const relevantState =
         thisIsActiveId === IsActiveIds.Active
-          ? CellState.TAPPED_OFF
-          : CellState.TAPPED_ON
+          ? CellStates.TAPPED_OFF
+          : CellStates.TAPPED_ON
       setCellState(relevantState)
     } else if (cancelToggleStates.includes(nativeEvent.state)) {
-      setCellState(CellState.OFF)
+      setCellState(CellStates.OFF)
     } else if (nativeEvent.state === State.END) {
       addBufferedActivityToggle(thisDegreeId)
     }
@@ -40,7 +40,7 @@ export const useTapRerenderLogic = (
   React.useEffect(() => {
     if (thisIsActiveId === undefined) return
     const appropriateCellState =
-      thisIsActiveId === IsActiveIds.Active ? CellState.ON : CellState.OFF
+      thisIsActiveId === IsActiveIds.Active ? CellStates.ON : CellStates.OFF
     if (cellState !== appropriateCellState) {
       setCellState(appropriateCellState)
     }

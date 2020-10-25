@@ -5,7 +5,7 @@ import type { DegreeIds, PitchIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
-import { CellState } from '../../types'
+import { CellStates } from '../../types'
 import type { DisplayModes, ExperienceModes } from '../../types'
 
 import { getAccessibleStyles, getRenderableToneId } from './utils'
@@ -16,7 +16,7 @@ type HarpCellAccessibleProps = {
   readonly pitchId: PitchIds
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
-  readonly cellState: CellState
+  readonly cellState: CellStates
   readonly baseStyles: ViewStyle
 }
 
@@ -33,9 +33,9 @@ export const HarpCellAccessible = (
   } = props
 
   const isActive =
-    cellState === CellState.ON || cellState === CellState.TAPPED_ON
+    cellState === CellStates.ON || cellState === CellStates.TAPPED_ON
   const isTapped =
-    cellState === CellState.TAPPED_ON || cellState === CellState.TAPPED_OFF
+    cellState === CellStates.TAPPED_ON || cellState === CellStates.TAPPED_OFF
   const renderableToneId = getRenderableToneId(degreeId, pitchId, displayMode)
   const renderableToneTuples = getRenderableToneTuples(renderableToneId)
   const accessibleStyles = getAccessibleStyles(degreeId, isActive)

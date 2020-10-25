@@ -22,7 +22,7 @@ export enum MenuStates {
   NoMenu,
 }
 
-export enum CellState {
+export enum CellStates {
   'TAPPED_ON',
   'TAPPED_OFF',
   'ON',
