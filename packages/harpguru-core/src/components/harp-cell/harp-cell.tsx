@@ -66,7 +66,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   return (
     <LongPressGestureHandler
       onHandlerStateChange={handleLongPressStateChange}
-      minDurationMs={5000}
+      minDurationMs={1000}
     >
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
         <View>
