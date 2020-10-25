@@ -33,6 +33,8 @@ export const OptionValue = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
     if (nativeEvent.state === State.BEGAN) setIsTapped(true)
+    if ([State.FAILED, State.CANCELLED].includes(nativeEvent.state))
+      setIsTapped(false)
     if (nativeEvent.state !== State.END) return
 
     setIsTapped(false)
