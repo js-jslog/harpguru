@@ -4,8 +4,8 @@ import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
-import { CellState } from '../harp-cell'
 import { getRenderableToneTuples } from '../../utils'
+import { CellState } from '../../types'
 import type { DisplayModes, ExperienceModes } from '../../types'
 
 import { getAccessibleStyles, getRenderableToneId } from './utils'
