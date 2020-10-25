@@ -7,20 +7,18 @@ import {
 } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
-import { IsActiveIds } from 'harpstrata'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
-import type { Coord } from '../../types'
 
 import { getBaseHarpCellStyles } from './utils'
 import {
   useSetPozitionRoot,
   usePositionAnalysis,
-  useAddBufferedActivityToggle,
+  useTapRerenderLogic,
 } from './hooks'
 
-export type YXCoord = [Coord, Coord]
+import type { YXCoord } from './types'
 
 type HarpCellProps = {
   readonly yxCoord: YXCoord
@@ -32,9 +30,12 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   )
   const baseHarpCellStyles = getBaseHarpCellStyles()
   const setPozitionRoot = useSetPozitionRoot()
-  const addBufferedActivityToggle = useAddBufferedActivityToggle()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const [cellState, tapHandler] = useTapRerenderLogic(
+    thisDegreeId,
+    thisIsActiveId
+  )
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
@@ -50,24 +51,22 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
-    if (nativeEvent.state !== State.END) return
-
-    addBufferedActivityToggle(thisDegreeId)
+    tapHandler(nativeEvent)
   }
 
   const harpCellAccessibleProps = {
     degreeId: thisDegreeId,
     pitchId: thisPitchId,
-    isActive: thisIsActiveId === IsActiveIds.Active,
     displayMode: activeDisplayMode,
     activeExperienceMode: activeExperienceMode,
+    cellState,
     baseStyles: baseHarpCellStyles,
   }
 
   return (
     <LongPressGestureHandler
       onHandlerStateChange={handleLongPressStateChange}
-      minDurationMs={500}
+      minDurationMs={1000}
     >
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
         <View>

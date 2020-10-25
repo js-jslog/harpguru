@@ -18,6 +18,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Added
 
 - MAJOR: Buffer for harp cell activity updates
+- MINOR: Add animations to harp-cell toggleing
 
 ### Changed
 

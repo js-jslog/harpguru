@@ -22,6 +22,13 @@ export enum MenuStates {
   NoMenu,
 }
 
+export enum CellStates {
+  TappedOn,
+  TappedOff,
+  On,
+  Off,
+}
+
 export type MenuProps = {
   readonly hideMenu: boolean
   readonly hideLabel: boolean

@@ -1,19 +1,22 @@
+import Animated from 'react-native-reanimated'
 import { View, ViewStyle } from 'react-native'
 import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
+import { CellStates } from '../../types'
 import type { DisplayModes, ExperienceModes } from '../../types'
 
 import { getAccessibleStyles, getRenderableToneId } from './utils'
+import { useTapAnimationValue } from './hooks'
 
 type HarpCellAccessibleProps = {
   readonly degreeId: DegreeIds
   readonly pitchId: PitchIds
-  readonly isActive: boolean
   readonly displayMode: DisplayModes
   readonly activeExperienceMode: ExperienceModes
+  readonly cellState: CellStates
   readonly baseStyles: ViewStyle
 }
 
@@ -23,30 +26,43 @@ export const HarpCellAccessible = (
   const {
     degreeId,
     pitchId,
-    isActive,
     displayMode,
     activeExperienceMode,
+    cellState,
     baseStyles,
   } = props
 
+  const isActive =
+    cellState === CellStates.On || cellState === CellStates.TappedOn
+  const isTapped =
+    cellState === CellStates.TappedOn || cellState === CellStates.TappedOff
   const renderableToneId = getRenderableToneId(degreeId, pitchId, displayMode)
   const renderableToneTuples = getRenderableToneTuples(renderableToneId)
   const accessibleStyles = getAccessibleStyles(degreeId, isActive)
+  const tapAnimationValue = useTapAnimationValue(isTapped)
 
   return (
-    <View
-      accessible={true}
-      accessibilityRole="button"
-      style={[baseStyles, accessibleStyles]}
+    <Animated.View
+      style={[
+        {
+          transform: [{ scale: tapAnimationValue }],
+        },
+      ]}
     >
-      <RenderedTone
-        toneTuples={renderableToneTuples}
-        isActive={isActive}
-        isQuestion={false}
-        splitType={'SLANT'}
-        activeExperienceMode={activeExperienceMode}
-      />
-    </View>
+      <View
+        accessible={true}
+        accessibilityRole="button"
+        style={[baseStyles, accessibleStyles]}
+      >
+        <RenderedTone
+          toneTuples={renderableToneTuples}
+          isActive={isActive}
+          isQuestion={false}
+          splitType={'SLANT'}
+          activeExperienceMode={activeExperienceMode}
+        />
+      </View>
+    </Animated.View>
   )
 }
 
@@ -60,19 +76,20 @@ const areEqual = (
   const equalStyle = prevProps.baseStyles.width === nextProps.baseStyles.width
   const equalDegree = prevProps.degreeId === nextProps.degreeId
   const equalPitch = prevProps.pitchId === nextProps.pitchId
-  const equalActive = prevProps.isActive === nextProps.isActive
   const equalDisplayMode = prevProps.displayMode === nextProps.displayMode
   const equalExperienceMode =
     prevProps.activeExperienceMode === nextProps.activeExperienceMode
+  const equalCellState = prevProps.cellState === nextProps.cellState
 
-  return (
+  const areEqual =
     equalStyle &&
     equalDegree &&
     equalPitch &&
-    equalActive &&
     equalDisplayMode &&
-    equalExperienceMode
-  )
+    equalExperienceMode &&
+    equalCellState
+
+  return areEqual
 }
 
 export const MemoHarpCellAccessible = React.memo(HarpCellAccessible, areEqual)
