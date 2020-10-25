@@ -9,12 +9,14 @@ import { OptionIds } from '../../types'
 
 type OptionValueProps = {
   readonly id: OptionIds
+  readonly isActive: boolean
   readonly setFunction: (arg0: OptionIds) => void
   readonly style: TextStyle
 }
 
 export const OptionValue = ({
   id,
+  isActive,
   setFunction,
   style,
 }: OptionValueProps): React.ReactElement => {
@@ -41,7 +43,7 @@ export const OptionValue = ({
       <Animated.View
         style={[
           {
-            transform: [{ scale: animationValue }],
+            transform: [{ scale: isActive ? 1 : animationValue }],
           },
         ]}
       >

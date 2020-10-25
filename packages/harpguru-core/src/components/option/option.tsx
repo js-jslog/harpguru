@@ -1,12 +1,7 @@
 import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
-import {
-  PanGestureHandler,
-  State,
-} from 'react-native-gesture-handler'
-import type {
-  PanGestureHandlerGestureEvent,
-} from 'react-native-gesture-handler'
+import { PanGestureHandler, State } from 'react-native-gesture-handler'
+import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 
@@ -107,11 +102,13 @@ export const Option = (props: OptionProps): React.ReactElement => {
         <View style={styles.optionValues}>
           <OptionValue
             id={inactiveOptionId1}
+            isActive={false}
             setFunction={setFunction}
             style={styles.distantOptionValue}
           />
           <OptionValue
             id={inactiveOptionId2}
+            isActive={false}
             setFunction={setFunction}
             style={styles.nextOptionValue}
           />
@@ -124,22 +121,26 @@ export const Option = (props: OptionProps): React.ReactElement => {
           >
             <OptionValue
               id={activeOptionId}
+              isActive={true}
               setFunction={setFunction}
               style={styles.activeOptionValue}
             />
           </Animated.View>
           <OptionValue
             id={inactiveOptionId3}
+            isActive={false}
             setFunction={setFunction}
             style={styles.nextOptionValue}
           />
           <OptionValue
             id={inactiveOptionId4}
+            isActive={false}
             setFunction={setFunction}
             style={styles.distantOptionValue}
           />
           <OptionValue
             id={inactiveOptionId5}
+            isActive={false}
             setFunction={setFunction}
             style={styles.distantOptionValue}
           />
