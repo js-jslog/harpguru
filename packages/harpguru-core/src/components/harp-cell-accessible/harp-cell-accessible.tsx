@@ -86,22 +86,30 @@ const areEqual = (
   const equalStyle = prevProps.baseStyles.width === nextProps.baseStyles.width
   const equalDegree = prevProps.degreeId === nextProps.degreeId
   const equalPitch = prevProps.pitchId === nextProps.pitchId
-  const equalActive =
-    nextProps.touchState !== State.UNDETERMINED ||
-    prevProps.isActive === nextProps.isActive
   const equalDisplayMode = prevProps.displayMode === nextProps.displayMode
   const equalExperienceMode =
     prevProps.activeExperienceMode === nextProps.activeExperienceMode
-  const equalTouched = prevProps.touchState === nextProps.touchState
+
+  // Activity is unchanged if `isActive` is unchanged, but not if the `touchState` isn't UNDETERMINED
+  // - this is because any of the other states which `touchState` is set to *mean* an interaction has taken place
+  // Activity is unchanged if the `touchState` is unchanged, but not if it is `UNDETERMINED`
+  // - this is because `touchState` is only set to `UNDETERMINED` at initial render and by a change in `isActive`
+  // which itself obviously means that the state of the cell has to be rerendered. We just choose to drive that
+  // rerender by the setting of the state to `UNDETERMINED` rather than by the `isActive` directly.
+  const equalActivity =
+    (prevProps.touchState === nextProps.touchState &&
+      nextProps.touchState !== State.UNDETERMINED) ||
+    (prevProps.isActive === nextProps.isActive &&
+      nextProps.touchState === State.UNDETERMINED)
 
   const areEqual =
     equalStyle &&
     equalDegree &&
     equalPitch &&
-    equalActive &&
     equalDisplayMode &&
     equalExperienceMode &&
-    equalTouched
+    equalActivity
+
   return areEqual
 }
 
