@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import {
   GestureHandlerStateChangeNativeEvent,
   State,
@@ -20,7 +21,12 @@ export const useTapRerenderLogic = (
       : CellStates.Off
   const [cellState, setCellState] = React.useState(initialCellState)
   const addBufferedActivityToggle = useAddBufferedActivityToggle()
+  const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
 
+  const isGloballyActive = thisIsActiveId === IsActiveIds.Active
+  const isLocallyActive =
+    (!isGloballyActive && bufferedActivityToggles.includes(thisDegreeId)) ||
+    (isGloballyActive && !bufferedActivityToggles.includes(thisDegreeId))
   const tapHandler = (nativeEvent: GestureHandlerStateChangeNativeEvent) => {
     if (thisDegreeId === undefined) return
     const cancelToggleStates = [State.CANCELLED, State.FAILED]
@@ -31,10 +37,7 @@ export const useTapRerenderLogic = (
           : CellStates.TappedOn
       setCellState(relevantState)
     } else if (cancelToggleStates.includes(nativeEvent.state)) {
-      const relevantState =
-        thisIsActiveId === IsActiveIds.Active ? CellStates.On : CellStates.Off
-      // TODO: if the degree is in the buffer then this should
-      // be factored in to determining what the appropriate state is
+      const relevantState = isLocallyActive ? CellStates.On : CellStates.Off
       setCellState(relevantState)
     } else if (nativeEvent.state === State.END) {
       addBufferedActivityToggle(thisDegreeId)
