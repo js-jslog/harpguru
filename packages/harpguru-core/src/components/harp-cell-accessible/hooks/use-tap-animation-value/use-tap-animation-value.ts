@@ -1,9 +1,11 @@
 import { useTimingTransition } from 'react-native-redash'
 import { Easing, interpolate, Node } from 'react-native-reanimated'
 
+import { tapAnimationDuration } from '../../harp-cell-accessible'
+
 export const useTapAnimationValue = (isTapped: boolean): Node<number> => {
   const transitionValue = useTimingTransition(isTapped, {
-    duration: 100,
+    duration: tapAnimationDuration,
     easing: Easing.inOut(Easing.circle),
   })
   const animationValue = interpolate(transitionValue, {

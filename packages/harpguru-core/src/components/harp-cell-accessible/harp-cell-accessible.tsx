@@ -20,6 +20,8 @@ type HarpCellAccessibleProps = {
   readonly baseStyles: ViewStyle
 }
 
+export const tapAnimationDuration = 100
+
 export const HarpCellAccessible = (
   props: HarpCellAccessibleProps
 ): React.ReactElement => {

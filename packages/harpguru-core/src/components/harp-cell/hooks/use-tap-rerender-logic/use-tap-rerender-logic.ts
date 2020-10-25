@@ -7,6 +7,7 @@ import React from 'react'
 import { DegreeIds, IsActiveIds } from 'harpstrata'
 
 import { useAddBufferedActivityToggle } from '../use-add-buffered-activity-toggle'
+import { tapAnimationDuration } from '../../../harp-cell-accessible'
 import { CellStates } from '../../../../types'
 
 type TapHandler = (arg0: GestureHandlerStateChangeNativeEvent) => void
@@ -68,7 +69,7 @@ export const useTapRerenderLogic = (
       const relevantState =
         cellState === CellStates.TappedOn ? CellStates.On : CellStates.Off
       setCellState(relevantState)
-    }, 100)
+    }, tapAnimationDuration)
     return () => {
       clearTimeout(postTapStateSet)
     }
