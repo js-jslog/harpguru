@@ -166,7 +166,7 @@ const OptionValue = ({
   })
   const animationValue = interpolate(transitionValue, {
     inputRange: [0, 1],
-    outputRange: isTapped ? [1, 1.5] : [1, 1.5],
+    outputRange: isTapped ? [1, 1.8] : [1, 1.8],
   })
   const handleTapStateChange = ({
     nativeEvent,

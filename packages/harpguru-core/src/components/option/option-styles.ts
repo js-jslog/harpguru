@@ -34,8 +34,8 @@ export const getStyles = (): OptionStyles => {
     distantOptionValue: {
       alignSelf: 'center',
       textAlign: 'center',
-      fontSize: sizes['6'],
-      lineHeight: sizes['7'],
+      fontSize: sizes['7'],
+      lineHeight: sizes['8'],
       color: colors.inertOutline,
       minWidth: '50%',
     },
