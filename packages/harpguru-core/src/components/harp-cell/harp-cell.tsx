@@ -7,7 +7,6 @@ import {
 } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
-import { IsActiveIds } from 'harpstrata'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
@@ -34,7 +33,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const setPozitionRoot = useSetPozitionRoot()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [touchState, tapHandler] = useTapRerenderLogic(
+  const [cellState, tapHandler] = useTapRerenderLogic(
     thisDegreeId,
     thisIsActiveId
   )
@@ -59,11 +58,10 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const harpCellAccessibleProps = {
     degreeId: thisDegreeId,
     pitchId: thisPitchId,
-    isActive: thisIsActiveId === IsActiveIds.Active,
     displayMode: activeDisplayMode,
     activeExperienceMode: activeExperienceMode,
     baseStyles: baseHarpCellStyles,
-    touchState,
+    cellState,
   }
 
   return (

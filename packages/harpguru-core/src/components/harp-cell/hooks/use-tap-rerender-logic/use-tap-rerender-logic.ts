@@ -7,38 +7,50 @@ import { DegreeIds, IsActiveIds } from 'harpstrata'
 
 import { useAddBufferedActivityToggle } from '../use-add-buffered-activity-toggle'
 
-type TouchState = State
+export enum CellState {
+  'TAPPED_ON',
+  'TAPPED_OFF',
+  'ON',
+  'OFF',
+}
+
 type TapHandler = (arg0: GestureHandlerStateChangeNativeEvent) => void
 
 export const useTapRerenderLogic = (
   thisDegreeId: DegreeIds | undefined,
   thisIsActiveId: IsActiveIds | undefined
-): [TouchState, TapHandler] => {
-  const [touchState, setTouchState] = React.useState(State.UNDETERMINED)
+): [CellState, TapHandler] => {
+  const initialCellState =
+    thisIsActiveId && thisIsActiveId === IsActiveIds.Active
+      ? CellState.ON
+      : CellState.OFF
+  const [cellState, setCellState] = React.useState(initialCellState)
   const addBufferedActivityToggle = useAddBufferedActivityToggle()
 
   const tapHandler = (nativeEvent: GestureHandlerStateChangeNativeEvent) => {
     if (thisDegreeId === undefined) return
-    const tapDrivenRerenderableStates = [
-      State.BEGAN,
-      State.CANCELLED,
-      State.FAILED,
-    ]
-    if (tapDrivenRerenderableStates.includes(nativeEvent.state)) {
-      setTouchState(nativeEvent.state)
-    }
-    if (nativeEvent.state === State.END) {
+    const cancelToggleStates = [State.CANCELLED, State.FAILED]
+    if (nativeEvent.state === State.BEGAN) {
+      const relevantState =
+        thisIsActiveId === IsActiveIds.Active
+          ? CellState.TAPPED_OFF
+          : CellState.TAPPED_ON
+      setCellState(relevantState)
+    } else if (cancelToggleStates.includes(nativeEvent.state)) {
+      setCellState(CellState.OFF)
+    } else if (nativeEvent.state === State.END) {
       addBufferedActivityToggle(thisDegreeId)
     }
   }
 
   React.useEffect(() => {
     if (thisIsActiveId === undefined) return
-    const { UNDETERMINED: isActiveDrivenRerenderableState } = State
-    if (touchState !== isActiveDrivenRerenderableState) {
-      setTouchState(isActiveDrivenRerenderableState)
+    const appropriateCellState =
+      thisIsActiveId === IsActiveIds.Active ? CellState.ON : CellState.OFF
+    if (cellState !== appropriateCellState) {
+      setCellState(appropriateCellState)
     }
-  }, [thisIsActiveId, setTouchState])
+  }, [thisIsActiveId, setCellState])
 
-  return [touchState, tapHandler]
+  return [cellState, tapHandler]
 }
