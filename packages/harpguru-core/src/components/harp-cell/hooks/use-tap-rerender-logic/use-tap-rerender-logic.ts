@@ -7,8 +7,8 @@ import React from 'react'
 import { DegreeIds, IsActiveIds } from 'harpstrata'
 
 import { useAddBufferedActivityToggle } from '../use-add-buffered-activity-toggle'
-import { tapAnimationDuration } from '../../../harp-cell-accessible'
 import { CellStates } from '../../../../types'
+import { tapAnimationDuration } from '../../../../constants'
 
 type TapHandler = (arg0: GestureHandlerStateChangeNativeEvent) => void
 
