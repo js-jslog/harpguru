@@ -25,6 +25,15 @@ type OptionProps = {
   readonly setFunction: (arg0: OptionIds) => void
 }
 
+type TitleProps = {
+  readonly children: React.ReactNode
+}
+
+const OptionTitle = ({ children }: TitleProps): React.ReactElement => {
+  const styles = getStyles()
+  return <Text style={styles.optionTitle}>{children}</Text>
+}
+
 export const Option = (props: OptionProps): React.ReactElement => {
   const [state, setState] = useState(State.UNDETERMINED)
   const [translationY, setTranslationY] = useState(0)
@@ -138,13 +147,4 @@ export const Option = (props: OptionProps): React.ReactElement => {
       </View>
     </PanGestureHandler>
   )
-}
-
-type TitleProps = {
-  readonly children: React.ReactNode
-}
-
-const OptionTitle = ({ children }: TitleProps): React.ReactElement => {
-  const styles = getStyles()
-  return <Text style={styles.optionTitle}>{children}</Text>
 }
