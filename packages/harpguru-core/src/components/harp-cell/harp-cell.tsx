@@ -10,7 +10,6 @@ import React from 'react'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
-import type { Coord } from '../../types'
 
 import { getBaseHarpCellStyles } from './utils'
 import {
@@ -19,14 +18,7 @@ import {
   useTapRerenderLogic,
 } from './hooks'
 
-export enum CellState {
-  'TAPPED_ON',
-  'TAPPED_OFF',
-  'ON',
-  'OFF',
-}
-
-export type YXCoord = [Coord, Coord]
+import type { YXCoord } from './types'
 
 type HarpCellProps = {
   readonly yxCoord: YXCoord

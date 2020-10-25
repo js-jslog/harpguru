@@ -1,2 +1,3 @@
-export { HarpCell, CellState } from './harp-cell'
-export type { YXCoord } from './harp-cell'
+export { HarpCell } from './harp-cell'
+export { CellState } from './types'
+export type { YXCoord } from './types'
