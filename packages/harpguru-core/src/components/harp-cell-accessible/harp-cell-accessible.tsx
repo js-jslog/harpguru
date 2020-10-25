@@ -1,5 +1,4 @@
-import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, interpolate } from 'react-native-reanimated'
+import Animated from 'react-native-reanimated'
 import { View, ViewStyle } from 'react-native'
 import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpstrata'
@@ -10,6 +9,7 @@ import { getRenderableToneTuples } from '../../utils'
 import type { DisplayModes, ExperienceModes } from '../../types'
 
 import { getAccessibleStyles, getRenderableToneId } from './utils'
+import { useTapAnimationValue } from './hooks'
 
 type HarpCellAccessibleProps = {
   readonly degreeId: DegreeIds
@@ -39,21 +39,13 @@ export const HarpCellAccessible = (
   const renderableToneId = getRenderableToneId(degreeId, pitchId, displayMode)
   const renderableToneTuples = getRenderableToneTuples(renderableToneId)
   const accessibleStyles = getAccessibleStyles(degreeId, isActive)
-
-  const optionUpdatedVal = useTimingTransition(isTapped, {
-    duration: 100,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const optionUpdateTransition = interpolate(optionUpdatedVal, {
-    inputRange: [0, 1],
-    outputRange: isTapped ? [0.5, 1] : [1, 1],
-  })
+  const tapAnimationValue = useTapAnimationValue(isTapped)
 
   return (
     <Animated.View
       style={[
         {
-          transform: [{ scale: optionUpdateTransition }],
+          transform: [{ scale: tapAnimationValue }],
         },
       ]}
     >
