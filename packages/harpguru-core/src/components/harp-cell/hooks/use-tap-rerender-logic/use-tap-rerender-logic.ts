@@ -15,26 +15,23 @@ export const useTapRerenderLogic = (
   thisDegreeId: DegreeIds | undefined,
   thisIsActiveId: IsActiveIds | undefined
 ): [CellStates, TapHandler] => {
-  const initialCellState =
-    thisIsActiveId && thisIsActiveId === IsActiveIds.Active
-      ? CellStates.On
-      : CellStates.Off
-  const [cellState, setCellState] = React.useState(initialCellState)
-  const addBufferedActivityToggle = useAddBufferedActivityToggle()
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-
   const isGloballyActive = thisIsActiveId === IsActiveIds.Active
   const isLocallyActive =
     (!isGloballyActive && bufferedActivityToggles.includes(thisDegreeId)) ||
     (isGloballyActive && !bufferedActivityToggles.includes(thisDegreeId))
+
+  const initialCellState = isGloballyActive ? CellStates.On : CellStates.Off
+  const [cellState, setCellState] = React.useState(initialCellState)
+  const addBufferedActivityToggle = useAddBufferedActivityToggle()
+
   const tapHandler = (nativeEvent: GestureHandlerStateChangeNativeEvent) => {
     if (thisDegreeId === undefined) return
     const cancelToggleStates = [State.CANCELLED, State.FAILED]
     if (nativeEvent.state === State.BEGAN) {
-      const relevantState =
-        thisIsActiveId === IsActiveIds.Active
-          ? CellStates.TappedOff
-          : CellStates.TappedOn
+      const relevantState = isGloballyActive
+        ? CellStates.TappedOff
+        : CellStates.TappedOn
       setCellState(relevantState)
     } else if (cancelToggleStates.includes(nativeEvent.state)) {
       const relevantState = isLocallyActive ? CellStates.On : CellStates.Off
@@ -52,12 +49,11 @@ export const useTapRerenderLogic = (
   // it will be easier to grasp the logic if it is centred on a single value.
   React.useEffect(() => {
     if (thisIsActiveId === undefined) return
-    const relevantState =
-      thisIsActiveId === IsActiveIds.Active ? CellStates.On : CellStates.Off
+    const relevantState = isGloballyActive ? CellStates.On : CellStates.Off
     if (cellState !== relevantState) {
       setCellState(relevantState)
     }
-  }, [thisIsActiveId, setCellState])
+  }, [isGloballyActive, setCellState])
 
   // This sets the cellState to the untapped version after an interval sufficiently
   // long for the associated animation to have completed.
