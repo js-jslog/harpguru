@@ -159,18 +159,37 @@ const OptionValue = ({
   setFunction,
   style,
 }: OptionValueProps): React.ReactElement => {
+  const [isTapped, setIsTapped] = useState(false)
+  const transitionValue = useTimingTransition(isTapped, {
+    duration: 100,
+    easing: Easing.inOut(Easing.circle),
+  })
+  const animationValue = interpolate(transitionValue, {
+    inputRange: [0, 1],
+    outputRange: isTapped ? [1, 1.5] : [1, 1.5],
+  })
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
+    if (nativeEvent.state === State.BEGAN) setIsTapped(true)
     if (nativeEvent.state !== State.END) return
 
+    setIsTapped(false)
     setFunction(id)
   }
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <View>
-        <Text style={style}>{id}</Text>
-      </View>
+      <Animated.View
+        style={[
+          {
+            transform: [{ scale: animationValue }],
+          },
+        ]}
+      >
+        <View>
+          <Text style={style}>{id}</Text>
+        </View>
+      </Animated.View>
     </TapGestureHandler>
   )
 }
