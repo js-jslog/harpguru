@@ -25,16 +25,15 @@ const OptionTitle = ({ children }: TitleProps): React.ReactElement => {
 export const Option = (props: OptionProps): React.ReactElement => {
   const styles = getStyles()
   const { title, activeOptionId, orderedOptionIds, setFunction } = props
-  const initialActiveIndex = orderedOptionIds.indexOf(activeOptionId)
-  const [activeIndex, setActiveIndex] = useState(initialActiveIndex)
-  const setActiveIndexCallback = (optionId: OptionIds): void => {
-    setActiveIndex(orderedOptionIds.indexOf(optionId))
+  const [preactiveId, setPreactiveId] = useState(activeOptionId)
+
+  const setActiveOptionCallback = (optionId: OptionIds): void => {
+    setPreactiveId(optionId)
   }
-  const { [activeIndex]: preactiveId } = orderedOptionIds
   React.useEffect(() => {
     const flushOptionSelect = setTimeout(() => {
       setFunction(preactiveId)
-    }, 500)
+    }, 100)
     return () => {
       clearTimeout(flushOptionSelect)
     }
@@ -48,7 +47,8 @@ export const Option = (props: OptionProps): React.ReactElement => {
     undefined,
   ]
 
-  const innerActiveIdPos = orderedOptionIds.indexOf(activeOptionId) + 2
+  const activeIndex = orderedOptionIds.indexOf(activeOptionId)
+  const innerActiveIdPos = activeIndex + 2
 
   const { [innerActiveIdPos + 2]: inactiveOptionId1 } = extendedList
   const { [innerActiveIdPos + 1]: inactiveOptionId2 } = extendedList
@@ -63,37 +63,37 @@ export const Option = (props: OptionProps): React.ReactElement => {
         <OptionValue
           id={inactiveOptionId1}
           isActive={preactiveId === inactiveOptionId1}
-          setFunction={setActiveIndexCallback}
+          setFunction={setActiveOptionCallback}
           style={styles.optionValues}
         />
         <OptionValue
           id={inactiveOptionId2}
           isActive={preactiveId === inactiveOptionId2}
-          setFunction={setActiveIndexCallback}
+          setFunction={setActiveOptionCallback}
           style={styles.optionValues}
         />
         <OptionValue
           id={activeOptionId}
           isActive={preactiveId === activeOptionId}
-          setFunction={setActiveIndexCallback}
+          setFunction={setActiveOptionCallback}
           style={styles.optionValues}
         />
         <OptionValue
           id={inactiveOptionId3}
           isActive={preactiveId === inactiveOptionId3}
-          setFunction={setActiveIndexCallback}
+          setFunction={setActiveOptionCallback}
           style={styles.optionValues}
         />
         <OptionValue
           id={inactiveOptionId4}
           isActive={preactiveId === inactiveOptionId4}
-          setFunction={setActiveIndexCallback}
+          setFunction={setActiveOptionCallback}
           style={styles.optionValues}
         />
         <OptionValue
           id={inactiveOptionId5}
           isActive={preactiveId === inactiveOptionId5}
-          setFunction={setActiveIndexCallback}
+          setFunction={setActiveOptionCallback}
           style={styles.optionValues}
         />
       </View>
