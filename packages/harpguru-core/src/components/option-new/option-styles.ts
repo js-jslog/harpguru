@@ -1,12 +1,10 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native'
 
-import { getSizes, colors } from '../../styles'
+import { getSizes } from '../../styles'
 
 type OptionStyles = {
   readonly option: ViewStyle
   readonly optionTitle: TextStyle
-  readonly optionValues: TextStyle
-  readonly optionValuesActive: TextStyle
 }
 
 export const getStyles = (): OptionStyles => {
@@ -25,18 +23,6 @@ export const getStyles = (): OptionStyles => {
       fontSize: sizes['8'],
       paddingTop: sizes['10'],
       textDecorationLine: 'underline',
-    },
-    optionValues: {
-      alignSelf: 'center',
-      textAlign: 'center',
-      fontSize: sizes['7'],
-      lineHeight: sizes['8'],
-      color: colors.inertOutline,
-      minWidth: '50%',
-    },
-    optionValuesActive: {
-      fontWeight: 'bold',
-      lineHeight: sizes['9'],
     },
   })
 

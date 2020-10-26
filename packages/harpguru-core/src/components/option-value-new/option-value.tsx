@@ -2,24 +2,25 @@ import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { TapGestureHandler, State } from 'react-native-gesture-handler'
 import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
-import { View, Text, TextStyle } from 'react-native'
+import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 
 import { OptionIds } from '../../types'
+
+import { getStyles } from './option-value-styles'
 
 type OptionValueProps = {
   readonly id: OptionIds | undefined
   readonly isActive: boolean
   readonly setFunction: (arg0: OptionIds) => void
-  readonly style: TextStyle
 }
 
 export const OptionValue = ({
   id,
   isActive,
   setFunction,
-  style,
 }: OptionValueProps): React.ReactElement => {
+  const styles = getStyles()
   const [isTapped, setIsTapped] = useState(false)
   const transitionValue = useTimingTransition(isTapped || isActive, {
     duration: 100,
@@ -48,6 +49,15 @@ export const OptionValue = ({
   React.useEffect(() => {
     setIsTapped(false)
   })
+
+  const optionValuesActiveStyle = {
+    ...styles.optionValues,
+    ...styles.optionValuesActive,
+  }
+  const optionValuesStyle = { ...styles.optionValues }
+
+  const style = isActive ? optionValuesActiveStyle : optionValuesStyle
+
   const withTapHandler = (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
       <Animated.View
