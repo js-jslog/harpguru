@@ -30,10 +30,14 @@ export const Option = (props: OptionProps): React.ReactElement => {
   const setActiveOptionCallback = (optionId: OptionIds): void => {
     setPreactiveId(optionId)
   }
+  const cancelActiveOptionCallback = (): void => {
+    setPreactiveId(activeOptionId)
+  }
   React.useEffect(() => {
     const flushOptionSelect = setTimeout(() => {
+      if (activeOptionId === preactiveId) return
       setFunction(preactiveId)
-    }, 300)
+    }, 500)
     return () => {
       clearTimeout(flushOptionSelect)
     }
@@ -64,31 +68,37 @@ export const Option = (props: OptionProps): React.ReactElement => {
           id={inactiveOptionId1}
           preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
+          cancelFunction={cancelActiveOptionCallback}
         />
         <OptionValue
           id={inactiveOptionId2}
           preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
+          cancelFunction={cancelActiveOptionCallback}
         />
         <OptionValue
           id={activeOptionId}
           preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
+          cancelFunction={cancelActiveOptionCallback}
         />
         <OptionValue
           id={inactiveOptionId3}
           preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
+          cancelFunction={cancelActiveOptionCallback}
         />
         <OptionValue
           id={inactiveOptionId4}
           preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
+          cancelFunction={cancelActiveOptionCallback}
         />
         <OptionValue
           id={inactiveOptionId5}
           preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
+          cancelFunction={cancelActiveOptionCallback}
         />
       </View>
     </View>

@@ -13,12 +13,14 @@ type OptionValueProps = {
   readonly id: OptionIds | undefined
   readonly preactiveId: OptionIds
   readonly setFunction: (arg0: OptionIds) => void
+  readonly cancelFunction: () => void
 }
 
 export const OptionValue = ({
   id,
   preactiveId,
   setFunction,
+  cancelFunction,
 }: OptionValueProps): React.ReactElement => {
   const styles = getStyles()
   const isActive = preactiveId === id
@@ -40,7 +42,7 @@ export const OptionValue = ({
         nativeEvent.state
       )
     )
-      return // this should have a way to cancel the update
+      cancelFunction()
   }
 
   const optionValuesActiveStyle = {
