@@ -33,7 +33,7 @@ export const Option = (props: OptionProps): React.ReactElement => {
   React.useEffect(() => {
     const flushOptionSelect = setTimeout(() => {
       setFunction(preactiveId)
-    }, 100)
+    }, 300)
     return () => {
       clearTimeout(flushOptionSelect)
     }
@@ -62,32 +62,32 @@ export const Option = (props: OptionProps): React.ReactElement => {
       <View>
         <OptionValue
           id={inactiveOptionId1}
-          isActive={preactiveId === inactiveOptionId1}
+          preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
         />
         <OptionValue
           id={inactiveOptionId2}
-          isActive={preactiveId === inactiveOptionId2}
+          preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
         />
         <OptionValue
           id={activeOptionId}
-          isActive={preactiveId === activeOptionId}
+          preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
         />
         <OptionValue
           id={inactiveOptionId3}
-          isActive={preactiveId === inactiveOptionId3}
+          preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
         />
         <OptionValue
           id={inactiveOptionId4}
-          isActive={preactiveId === inactiveOptionId4}
+          preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
         />
         <OptionValue
           id={inactiveOptionId5}
-          isActive={preactiveId === inactiveOptionId5}
+          preactiveId={preactiveId}
           setFunction={setActiveOptionCallback}
         />
       </View>

@@ -3,7 +3,7 @@ import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { TapGestureHandler, State } from 'react-native-gesture-handler'
 import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { View, Text } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 
 import { OptionIds } from '../../types'
 
@@ -11,44 +11,37 @@ import { getStyles } from './option-value-styles'
 
 type OptionValueProps = {
   readonly id: OptionIds | undefined
-  readonly isActive: boolean
+  readonly preactiveId: OptionIds
   readonly setFunction: (arg0: OptionIds) => void
 }
 
 export const OptionValue = ({
   id,
-  isActive,
+  preactiveId,
   setFunction,
 }: OptionValueProps): React.ReactElement => {
   const styles = getStyles()
-  const [isTapped, setIsTapped] = useState(false)
-  const transitionValue = useTimingTransition(isTapped || isActive, {
+  const isActive = preactiveId === id
+  const transitionValue = useTimingTransition(isActive, {
     duration: 100,
     easing: Easing.inOut(Easing.circle),
   })
   const animationValue = interpolate(transitionValue, {
     inputRange: [0, 1],
-    outputRange: isTapped || isActive ? [1, 1.4] : [1, 1.4],
+    outputRange: isActive ? [1, 1.4] : [1, 1.4],
   })
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
     if (id === undefined) return
-    if (nativeEvent.state === State.BEGAN) setIsTapped(true)
+    if (nativeEvent.state === State.BEGAN) setFunction(id)
     if (
       [State.FAILED, State.CANCELLED, State.UNDETERMINED].includes(
         nativeEvent.state
       )
     )
-      setIsTapped(false)
-    if (nativeEvent.state !== State.END) return
-
-    setFunction(id)
+      return // this should have a way to cancel the update
   }
-
-  React.useEffect(() => {
-    setIsTapped(false)
-  })
 
   const optionValuesActiveStyle = {
     ...styles.optionValues,
