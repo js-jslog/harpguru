@@ -35,7 +35,9 @@ export const Option = (props: OptionProps): React.ReactElement => {
     const flushOptionSelect = setTimeout(() => {
       setFunction(preactiveId)
     }, 500)
-    return clearTimeout(flushOptionSelect)
+    return () => {
+      clearTimeout(flushOptionSelect)
+    }
   }, [preactiveId])
 
   const extendedList = [
@@ -46,7 +48,7 @@ export const Option = (props: OptionProps): React.ReactElement => {
     undefined,
   ]
 
-  const innerActiveIdPos = activeIndex + 2
+  const innerActiveIdPos = orderedOptionIds.indexOf(activeOptionId) + 2
 
   const { [innerActiveIdPos + 2]: inactiveOptionId1 } = extendedList
   const { [innerActiveIdPos + 1]: inactiveOptionId2 } = extendedList

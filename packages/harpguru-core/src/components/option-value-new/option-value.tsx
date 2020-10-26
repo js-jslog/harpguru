@@ -27,7 +27,7 @@ export const OptionValue = ({
   })
   const animationValue = interpolate(transitionValue, {
     inputRange: [0, 1],
-    outputRange: isTapped || isActive ? [1, 1.8] : [1, 1.8],
+    outputRange: isTapped || isActive ? [1, 1.2] : [1, 1.2],
   })
   const handleTapStateChange = ({
     nativeEvent,
@@ -54,7 +54,7 @@ export const OptionValue = ({
         ]}
       >
         <View>
-          <Text style={style}>{id}</Text>
+          <Text style={style}>{id ? id : ' '}</Text>
         </View>
       </Animated.View>
     </TapGestureHandler>

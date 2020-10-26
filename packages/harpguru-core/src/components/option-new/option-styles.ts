@@ -5,7 +5,7 @@ import { getSizes, colors } from '../../styles'
 type OptionStyles = {
   readonly option: ViewStyle
   readonly optionTitle: TextStyle
-  readonly optionValues: ViewStyle
+  readonly optionValues: TextStyle
 }
 
 export const getStyles = (): OptionStyles => {
@@ -17,6 +17,7 @@ export const getStyles = (): OptionStyles => {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-between',
+      paddingBottom: sizes['9'],
     },
     optionTitle: {
       alignSelf: 'center',
@@ -25,7 +26,6 @@ export const getStyles = (): OptionStyles => {
       textDecorationLine: 'underline',
     },
     optionValues: {
-      paddingBottom: sizes['9'],
       alignSelf: 'center',
       textAlign: 'center',
       fontSize: sizes['7'],
