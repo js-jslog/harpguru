@@ -6,6 +6,7 @@ type OptionStyles = {
   readonly option: ViewStyle
   readonly optionTitle: TextStyle
   readonly optionValues: TextStyle
+  readonly optionValuesActive: TextStyle
 }
 
 export const getStyles = (): OptionStyles => {
@@ -32,6 +33,10 @@ export const getStyles = (): OptionStyles => {
       lineHeight: sizes['8'],
       color: colors.inertOutline,
       minWidth: '50%',
+    },
+    optionValuesActive: {
+      fontWeight: 'bold',
+      lineHeight: sizes['9'],
     },
   })
 
