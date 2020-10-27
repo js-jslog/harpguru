@@ -10,7 +10,7 @@ import { OptionIds } from '../../types'
 import { getSizes } from '../../styles'
 import { usePrevious } from '../../hooks'
 
-import { putActiveOptionThird } from './utils'
+import { putActiveOptionThird, selectSixOptions } from './utils'
 import { getStyles, getDynamicStyles } from './option-styles'
 
 type OptionProps = {
@@ -28,29 +28,6 @@ type TitleProps = {
 const OptionTitle = ({ children }: TitleProps): React.ReactElement => {
   const styles = getStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
-}
-
-type OptionDisplayList = [
-  OptionIds | undefined,
-  OptionIds | undefined,
-  OptionIds | undefined,
-  OptionIds | undefined,
-  OptionIds | undefined,
-  OptionIds | undefined
-]
-const selectFiveOptions = (
-  orderedOptionIds: ReadonlyArray<OptionIds>
-): OptionDisplayList => {
-  if (orderedOptionIds.length === 2) {
-    const arrayToFill = [0, 0, 0, 0, 0, 0]
-    const retVal = arrayToFill.map((_element, index) => {
-      if (orderedOptionIds[index]) return orderedOptionIds[index]
-      return undefined
-    }) as OptionDisplayList
-
-    return [...retVal.slice(4), ...retVal.slice(0, 4)] as OptionDisplayList
-  }
-  return orderedOptionIds.slice(0, 6) as OptionDisplayList
 }
 
 export const Option = (props: OptionProps): React.ReactElement => {
@@ -97,9 +74,12 @@ export const Option = (props: OptionProps): React.ReactElement => {
     outputRange: isUpdated ? [2, 1] : [1, 1],
   })
 
-  const activeThirdOrderedList = putActiveOptionThird(orderedOptionIds, activeOptionId)
+  const activeThirdOrderedList = putActiveOptionThird(
+    orderedOptionIds,
+    activeOptionId
+  )
 
-  const visibleOptionList = selectFiveOptions(activeThirdOrderedList)
+  const visibleOptionList = selectSixOptions(activeThirdOrderedList)
 
   return (
     <PanGestureHandler
