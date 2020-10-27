@@ -10,6 +10,7 @@ import { OptionIds } from '../../types'
 import { getSizes } from '../../styles'
 import { usePrevious } from '../../hooks'
 
+import { putActiveOptionThird } from './utils'
 import { getStyles, getDynamicStyles } from './option-styles'
 
 type OptionProps = {
@@ -96,15 +97,7 @@ export const Option = (props: OptionProps): React.ReactElement => {
     outputRange: isUpdated ? [2, 1] : [1, 1],
   })
 
-  const activeIdPos = orderedOptionIds.indexOf(activeOptionId)
-  const activeFirstOrderedList = [
-    ...orderedOptionIds.slice(activeIdPos),
-    ...orderedOptionIds.slice(0, activeIdPos),
-  ]
-  const activeThirdOrderedList = [
-    ...activeFirstOrderedList.slice(3),
-    ...activeFirstOrderedList.slice(0, 3),
-  ]
+  const activeThirdOrderedList = putActiveOptionThird(orderedOptionIds, activeOptionId)
 
   const visibleOptionList = selectFiveOptions(activeThirdOrderedList)
 
