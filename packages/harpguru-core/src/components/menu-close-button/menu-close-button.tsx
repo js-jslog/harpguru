@@ -24,12 +24,12 @@ export const MenuCloseButton = ({
     outputRange: isTapped ? [1, 0.5] : [1, 0.5],
   })
 
-  const handleTapAndAnimate = (event: TapGestureHandlerStateChangeEvent) => {
-    const {
-      nativeEvent: { state },
-    } = event
-    setIsTapped([State.BEGAN, State.ACTIVE].includes(state))
-    openCloseTapHandler(event)
+  const handleTapAndAnimate = ({
+    nativeEvent: { state },
+  }: TapGestureHandlerStateChangeEvent) => {
+    setIsTapped([State.BEGAN].includes(state))
+    if (state !== State.END) return
+    openCloseTapHandler()
   }
 
   return (

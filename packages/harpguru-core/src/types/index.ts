@@ -1,4 +1,3 @@
-import { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import type {
   ApparatusIds,
   HarpStrata,
@@ -32,9 +31,7 @@ export enum CellStates {
 export type MenuProps = {
   readonly hideMenu: boolean
   readonly hideLabel: boolean
-  readonly openCloseTapHandler: (
-    arg0: TapGestureHandlerStateChangeEvent
-  ) => void
+  readonly openCloseTapHandler: () => void
 }
 
 export type SetActiveHarpStrata = (arg0: HarpStrata) => void

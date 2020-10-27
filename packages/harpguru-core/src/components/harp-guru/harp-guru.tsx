@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler'
 
 import { PanGestureHandler } from 'react-native-gesture-handler'
-import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
@@ -36,15 +35,11 @@ const styles = StyleSheet.create({
 
 export const HarpGuru = (): ReactElement => {
   const [menuState, handleSwipe, handleTap] = useMenus()
-  const covariantOpenCloseTapHandler = (
-    event: TapGestureHandlerStateChangeEvent
-  ) => {
-    handleTap(MenuStates.CovariantMenu, event)
+  const covariantOpenCloseTapHandler = () => {
+    handleTap(MenuStates.CovariantMenu)
   }
-  const layoutOpenCloseTapHandler = (
-    event: TapGestureHandlerStateChangeEvent
-  ) => {
-    handleTap(MenuStates.LayoutMenu, event)
+  const layoutOpenCloseTapHandler = () => {
+    handleTap(MenuStates.LayoutMenu)
   }
 
   const sizes = getSizes()
