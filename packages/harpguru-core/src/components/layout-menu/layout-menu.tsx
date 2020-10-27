@@ -1,5 +1,4 @@
 import { useGlobal } from 'reactn'
-import Animated from 'react-native-reanimated'
 import { View } from 'react-native'
 import React from 'react'
 import { getApparatusIds } from 'harpstrata'
@@ -8,6 +7,7 @@ import { Entypo } from '@expo/vector-icons'
 import { Option } from '../option'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuCloseButton } from '../menu-close-button'
+import { Menu } from '../menu'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import {
   MenuProps,
@@ -24,11 +24,8 @@ import {
   useSetHarpStrataByApparatus,
 } from './hooks'
 
-export const LayoutMenu = ({
-  hideMenu,
-  hideLabel,
-  openCloseTapHandler,
-}: MenuProps): React.ReactElement => {
+export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
+  const { hideMenu, hideLabel, openCloseTapHandler } = menuProps
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
@@ -69,11 +66,6 @@ export const LayoutMenu = ({
 
   const {
     styles,
-    menuSlideXTranslation,
-    menuSlideYTranslation,
-    menuScale,
-    menuBackgroundColor,
-    menuOpacity,
     labelCounterScale,
     labelProtrusion,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
@@ -81,41 +73,20 @@ export const LayoutMenu = ({
   const sizes = getSizes()
 
   return (
-    <Animated.View
-      style={[
-        styles.animated,
-        {
-          transform: [
-            { translateX: menuSlideXTranslation },
-            { translateY: menuSlideYTranslation },
-            { scale: menuScale },
-          ],
-        },
-      ]}
-    >
-      <Animated.View
-        style={[
-          styles.overlay,
-          {
-            backgroundColor: menuBackgroundColor,
-            opacity: menuOpacity,
-          },
-        ]}
+    <Menu {...menuProps}>
+      <View style={styles.mainContents}>
+        <Option {...apparatusOptionProps} />
+        <Option {...displayModeOptionProps} />
+        <Option {...experienceModeOptionProps} />
+        <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
+      </View>
+      <MenuOpenButton
+        counterScale={labelCounterScale}
+        openCloseMenu={openCloseTapHandler}
+        labelProtrusion={labelProtrusion}
       >
-        <View style={styles.mainContents}>
-          <Option {...apparatusOptionProps} />
-          <Option {...displayModeOptionProps} />
-          <Option {...experienceModeOptionProps} />
-          <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
-        </View>
-        <MenuOpenButton
-          counterScale={labelCounterScale}
-          openCloseMenu={openCloseTapHandler}
-          labelProtrusion={labelProtrusion}
-        >
-          <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
-        </MenuOpenButton>
-      </Animated.View>
-    </Animated.View>
+        <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
+      </MenuOpenButton>
+    </Menu>
   )
 }
