@@ -12,6 +12,7 @@ import { getApparatusIds } from 'harpstrata'
 import { Entypo } from '@expo/vector-icons'
 
 import { Option } from '../option'
+import { MenuOpenButton } from '../menu-open-button'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import {
@@ -145,19 +146,13 @@ export const LayoutMenu = ({
         </View>
         <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
           <View style={styles.label}>
-            <Animated.View
-              style={[
-                {
-                  transform: [{ scale: totalLabelScale }],
-                },
-              ]}
-            >
+            <MenuOpenButton scaleValue={totalLabelScale}>
               <Entypo
                 name="cog"
                 size={sizes['7']}
                 color={colors.inertOutline}
               />
-            </Animated.View>
+            </MenuOpenButton>
           </View>
         </TapGestureHandler>
       </Animated.View>
