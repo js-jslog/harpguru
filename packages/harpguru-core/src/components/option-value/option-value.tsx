@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 import { OptionIds } from '../../types'
 
 type OptionValueProps = {
-  readonly id: OptionIds
+  readonly id: OptionIds | undefined
   readonly isActive: boolean
   readonly setFunction: (arg0: OptionIds) => void
   readonly style: TextStyle
@@ -32,6 +32,7 @@ export const OptionValue = ({
   const handleTapStateChange = ({
     nativeEvent,
   }: TapGestureHandlerStateChangeEvent) => {
+    if (id === undefined) return
     if (nativeEvent.state === State.BEGAN) setIsTapped(true)
     if ([State.FAILED, State.CANCELLED].includes(nativeEvent.state))
       setIsTapped(false)
@@ -50,7 +51,7 @@ export const OptionValue = ({
         ]}
       >
         <View>
-          <Text style={style}>{id}</Text>
+          <Text style={style}>{id ? id : ' '}</Text>
         </View>
       </Animated.View>
     </TapGestureHandler>

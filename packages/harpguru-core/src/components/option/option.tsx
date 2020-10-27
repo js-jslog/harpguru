@@ -29,6 +29,29 @@ const OptionTitle = ({ children }: TitleProps): React.ReactElement => {
   return <Text style={styles.optionTitle}>{children}</Text>
 }
 
+type OptionDisplayList = [
+  OptionIds | undefined,
+  OptionIds | undefined,
+  OptionIds | undefined,
+  OptionIds | undefined,
+  OptionIds | undefined,
+  OptionIds | undefined
+]
+const selectFiveOptions = (
+  orderedOptionIds: ReadonlyArray<OptionIds>
+): OptionDisplayList => {
+  if (orderedOptionIds.length === 2) {
+    const arrayToFill = [0, 0, 0, 0, 0, 0]
+    const retVal = arrayToFill.map((_element, index) => {
+      if (orderedOptionIds[index]) return orderedOptionIds[index]
+      return undefined
+    }) as OptionDisplayList
+
+    return [...retVal.slice(4), ...retVal.slice(0, 4)] as OptionDisplayList
+  }
+  return orderedOptionIds.slice(0, 6) as OptionDisplayList
+}
+
 export const Option = (props: OptionProps): React.ReactElement => {
   const [state, setState] = useState(State.UNDETERMINED)
   const [translationY, setTranslationY] = useState(0)
@@ -74,22 +97,16 @@ export const Option = (props: OptionProps): React.ReactElement => {
   })
 
   const activeIdPos = orderedOptionIds.indexOf(activeOptionId)
-  const { length: listLength } = orderedOptionIds
-
-  const extendedList = [
-    ...orderedOptionIds,
-    ...orderedOptionIds,
-    ...orderedOptionIds,
-    ...orderedOptionIds,
-    ...orderedOptionIds,
+  const activeFirstOrderedList = [
+    ...orderedOptionIds.slice(activeIdPos),
+    ...orderedOptionIds.slice(0, activeIdPos),
   ]
-  const innerActiveIdPos = activeIdPos + listLength + listLength
+  const activeThirdOrderedList = [
+    ...activeFirstOrderedList.slice(3),
+    ...activeFirstOrderedList.slice(0, 3),
+  ]
 
-  const { [innerActiveIdPos + 2]: inactiveOptionId1 } = extendedList
-  const { [innerActiveIdPos + 1]: inactiveOptionId2 } = extendedList
-  const { [innerActiveIdPos - 1]: inactiveOptionId3 } = extendedList
-  const { [innerActiveIdPos - 2]: inactiveOptionId4 } = extendedList
-  const { [innerActiveIdPos - 3]: inactiveOptionId5 } = extendedList
+  const visibleOptionList = selectFiveOptions(activeThirdOrderedList)
 
   return (
     <PanGestureHandler
@@ -101,13 +118,13 @@ export const Option = (props: OptionProps): React.ReactElement => {
         <OptionTitle>{title}</OptionTitle>
         <View style={styles.optionValues}>
           <OptionValue
-            id={inactiveOptionId1}
+            id={visibleOptionList[0]}
             isActive={false}
             setFunction={setFunction}
             style={styles.distantOptionValue}
           />
           <OptionValue
-            id={inactiveOptionId2}
+            id={visibleOptionList[1]}
             isActive={false}
             setFunction={setFunction}
             style={styles.nextOptionValue}
@@ -120,26 +137,26 @@ export const Option = (props: OptionProps): React.ReactElement => {
             ]}
           >
             <OptionValue
-              id={activeOptionId}
+              id={visibleOptionList[2]}
               isActive={true}
               setFunction={setFunction}
               style={styles.activeOptionValue}
             />
           </Animated.View>
           <OptionValue
-            id={inactiveOptionId3}
+            id={visibleOptionList[3]}
             isActive={false}
             setFunction={setFunction}
             style={styles.nextOptionValue}
           />
           <OptionValue
-            id={inactiveOptionId4}
+            id={visibleOptionList[4]}
             isActive={false}
             setFunction={setFunction}
             style={styles.distantOptionValue}
           />
           <OptionValue
-            id={inactiveOptionId5}
+            id={visibleOptionList[5]}
             isActive={false}
             setFunction={setFunction}
             style={styles.distantOptionValue}
