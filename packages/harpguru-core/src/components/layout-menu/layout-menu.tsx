@@ -1,11 +1,5 @@
 import { useGlobal } from 'reactn'
-import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, interpolate, add } from 'react-native-reanimated'
-import {
-  TapGestureHandler,
-  TapGestureHandlerStateChangeEvent,
-  State,
-} from 'react-native-gesture-handler'
+import Animated from 'react-native-reanimated'
 import { View } from 'react-native'
 import React from 'react'
 import { getApparatusIds } from 'harpstrata'
@@ -22,7 +16,7 @@ import {
   DisplayModes,
 } from '../../types'
 import { getSizes, colors } from '../../styles'
-import { useNudgeDisplayMode, usePrevious } from '../../hooks'
+import { useNudgeDisplayMode } from '../../hooks'
 
 import {
   useNudgeHarpStrataByApparatus,
@@ -73,35 +67,6 @@ export const LayoutMenu = ({
     setFunction: setActiveDisplayMode as (arg0: OptionIds) => void,
   }
 
-  const [isTapped, setIsTapped] = React.useState(false)
-  const changedTap = isTapped !== usePrevious(isTapped, isTapped)
-  const labelTapTransitionValue = useTimingTransition(isTapped, {
-    duration: 100,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const labelTapAnimationValue = interpolate(labelTapTransitionValue, {
-    inputRange: [0, 1],
-    outputRange: isTapped ? [1, 5] : [1, 5],
-  })
-  const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
-    const { nativeEvent } = event
-    if (nativeEvent.state === State.BEGAN) setIsTapped(true)
-    if ([State.FAILED, State.CANCELLED].includes(nativeEvent.state))
-      setIsTapped(false)
-    if (nativeEvent.state === State.END) setIsTapped(false)
-  }
-
-  React.useEffect(() => {
-    const postAnimation = setTimeout(() => {
-      if (changedTap === false) return
-      setIsTapped(false)
-      openCloseTapHandler()
-    }, 100)
-    return () => {
-      clearTimeout(postAnimation)
-    }
-  }, [changedTap, setIsTapped])
-
   const {
     styles,
     menuSlideXTranslation,
@@ -111,8 +76,6 @@ export const LayoutMenu = ({
     menuOpacity,
     labelCounterScale,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
-
-  const totalLabelScale = add(labelTapAnimationValue, labelCounterScale)
 
   const sizes = getSizes()
 
@@ -144,17 +107,14 @@ export const LayoutMenu = ({
           <Option {...experienceModeOptionProps} />
           <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
         </View>
-        <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-          <View style={styles.label}>
-            <MenuOpenButton scaleValue={totalLabelScale}>
-              <Entypo
-                name="cog"
-                size={sizes['7']}
-                color={colors.inertOutline}
-              />
-            </MenuOpenButton>
-          </View>
-        </TapGestureHandler>
+        <View style={styles.label}>
+          <MenuOpenButton
+            counterScale={labelCounterScale}
+            openCloseMenu={openCloseTapHandler}
+          >
+            <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
+          </MenuOpenButton>
+        </View>
       </Animated.View>
     </Animated.View>
   )
