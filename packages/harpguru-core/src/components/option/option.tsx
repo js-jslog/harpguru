@@ -10,7 +10,7 @@ import { OptionIds } from '../../types'
 import { getSizes } from '../../styles'
 import { usePrevious } from '../../hooks'
 
-import { putActiveOptionThird, selectSixOptions } from './utils'
+import { setOptionsInListOfSix } from './utils'
 import { getStyles, getDynamicStyles } from './option-styles'
 
 type OptionProps = {
@@ -74,12 +74,10 @@ export const Option = (props: OptionProps): React.ReactElement => {
     outputRange: isUpdated ? [2, 1] : [1, 1],
   })
 
-  const activeThirdOrderedList = putActiveOptionThird(
+  const visibleOptionList = setOptionsInListOfSix(
     orderedOptionIds,
     activeOptionId
   )
-
-  const visibleOptionList = selectSixOptions(activeThirdOrderedList)
 
   return (
     <PanGestureHandler

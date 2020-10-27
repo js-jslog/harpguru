@@ -1,2 +1,1 @@
-export { putActiveOptionThird } from './put-active-option-third'
-export { selectSixOptions } from './select-six-options'
+export { setOptionsInListOfSix } from './set-options-in-list-of-six'
