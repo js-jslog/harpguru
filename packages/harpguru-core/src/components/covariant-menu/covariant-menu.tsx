@@ -8,6 +8,7 @@ import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
 import { Option } from '../option'
+import { MenuOpenButton } from '../menu-open-button'
 import { MenuCloseButton } from '../menu-close-button'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps, OptionIds } from '../../types'
@@ -87,6 +88,7 @@ export const CovariantMenu = ({
     menuBackgroundColor,
     menuOpacity,
     labelCounterScale,
+    labelProtrusion,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
 
   const sizes = getSizes()
@@ -125,21 +127,17 @@ export const CovariantMenu = ({
           </OptionLock>
           <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
         </View>
-        <TapGestureHandler onHandlerStateChange={openCloseTapHandler}>
-          <Animated.View
-            style={[
-              {
-                transform: [{ scale: labelCounterScale }],
-              },
-            ]}
-          >
-            <Feather
-              name="sliders"
-              size={sizes['7']}
-              color={colors.inertOutline}
-            />
-          </Animated.View>
-        </TapGestureHandler>
+        <MenuOpenButton
+          counterScale={labelCounterScale}
+          openCloseMenu={openCloseTapHandler}
+          labelProtrusion={labelProtrusion}
+        >
+          <Feather
+            name="sliders"
+            size={sizes['7']}
+            color={colors.inertOutline}
+          />
+        </MenuOpenButton>
       </Animated.View>
     </Animated.View>
   )
