@@ -6,6 +6,7 @@ import {
   State,
   TapGestureHandler,
 } from 'react-native-gesture-handler'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
 import { usePrevious } from '../../hooks'
@@ -14,12 +15,14 @@ type ChildProps = {
   readonly children: React.ReactNode
   readonly counterScale: Node<number>
   readonly openCloseMenu: () => void
+  readonly labelProtrusion: number
 }
 
 export const MenuOpenButton = ({
   children,
   counterScale,
   openCloseMenu,
+  labelProtrusion,
 }: ChildProps): React.ReactElement => {
   const [isTapped, setIsTapped] = React.useState(false)
   const changedTap = isTapped !== usePrevious(isTapped, isTapped)
@@ -50,19 +53,29 @@ export const MenuOpenButton = ({
     }
   }, [changedTap, setIsTapped])
 
+  const styles = StyleSheet.create({
+    label: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: labelProtrusion,
+    },
+  })
+
   const totalScaleValue = add(tapAnimationValue, counterScale)
 
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <Animated.View
-        style={[
-          {
-            transform: [{ scale: totalScaleValue }],
-          },
-        ]}
-      >
-        {children}
-      </Animated.View>
+      <View style={styles.label}>
+        <Animated.View
+          style={[
+            {
+              transform: [{ scale: totalScaleValue }],
+            },
+          ]}
+        >
+          {children}
+        </Animated.View>
+      </View>
     </TapGestureHandler>
   )
 }

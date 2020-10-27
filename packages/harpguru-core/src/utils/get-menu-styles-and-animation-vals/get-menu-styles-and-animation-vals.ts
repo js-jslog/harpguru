@@ -18,7 +18,6 @@ type MenuStyles = {
   readonly animated: ViewStyle
   readonly overlay: ViewStyle
   readonly mainContents: ViewStyle
-  readonly label: ViewStyle
 }
 
 type StyleAndAnimationVals = {
@@ -29,6 +28,7 @@ type StyleAndAnimationVals = {
   readonly menuBackgroundColor: Node<number>
   readonly menuOpacity: Node<number>
   readonly labelCounterScale: Node<number>
+  readonly labelProtrusion: number
 }
 
 export const getMenuStylesAndAnimationVals = (
@@ -72,11 +72,6 @@ export const getMenuStylesAndAnimationVals = (
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
       left: labelProtrusion,
-    },
-    label: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: labelProtrusion,
     },
   })
 
@@ -149,5 +144,6 @@ export const getMenuStylesAndAnimationVals = (
     menuBackgroundColor,
     menuOpacity,
     labelCounterScale,
+    labelProtrusion,
   }
 }

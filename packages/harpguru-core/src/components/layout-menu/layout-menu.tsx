@@ -75,6 +75,7 @@ export const LayoutMenu = ({
     menuBackgroundColor,
     menuOpacity,
     labelCounterScale,
+    labelProtrusion,
   } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
 
   const sizes = getSizes()
@@ -107,14 +108,13 @@ export const LayoutMenu = ({
           <Option {...experienceModeOptionProps} />
           <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
         </View>
-        <View style={styles.label}>
-          <MenuOpenButton
-            counterScale={labelCounterScale}
-            openCloseMenu={openCloseTapHandler}
-          >
-            <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
-          </MenuOpenButton>
-        </View>
+        <MenuOpenButton
+          counterScale={labelCounterScale}
+          openCloseMenu={openCloseTapHandler}
+          labelProtrusion={labelProtrusion}
+        >
+          <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
+        </MenuOpenButton>
       </Animated.View>
     </Animated.View>
   )

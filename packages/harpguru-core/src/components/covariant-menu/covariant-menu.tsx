@@ -126,21 +126,19 @@ export const CovariantMenu = ({
           <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
         </View>
         <TapGestureHandler onHandlerStateChange={openCloseTapHandler}>
-          <View style={styles.label}>
-            <Animated.View
-              style={[
-                {
-                  transform: [{ scale: labelCounterScale }],
-                },
-              ]}
-            >
-              <Feather
-                name="sliders"
-                size={sizes['7']}
-                color={colors.inertOutline}
-              />
-            </Animated.View>
-          </View>
+          <Animated.View
+            style={[
+              {
+                transform: [{ scale: labelCounterScale }],
+              },
+            ]}
+          >
+            <Feather
+              name="sliders"
+              size={sizes['7']}
+              color={colors.inertOutline}
+            />
+          </Animated.View>
         </TapGestureHandler>
       </Animated.View>
     </Animated.View>
