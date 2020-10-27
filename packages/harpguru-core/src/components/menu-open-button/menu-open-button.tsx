@@ -1,25 +1,29 @@
 import Animated, { add } from 'react-native-reanimated'
-import type { Node } from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { getStaticMenuValues } from '../../utils'
+import { getMenuStylesAndAnimationVals } from '../../utils'
+import type { MenuProps } from '../../types'
 
 import { useTapAnimation } from './hooks'
 
-type ChildProps = {
+type LocalMenuProps = MenuProps & {
   readonly children: React.ReactNode
-  readonly counterScale: Node<number>
-  readonly openCloseMenu: () => void
 }
-
 export const MenuOpenButton = ({
+  hideMenu,
+  hideLabel,
+  stashPosition,
+  openCloseTapHandler,
   children,
-  counterScale,
-  openCloseMenu,
-}: ChildProps): React.ReactElement => {
-  const { labelProtrusion } = getStaticMenuValues()
+}: LocalMenuProps): React.ReactElement => {
+  const { labelCounterScale, labelProtrusion } = getMenuStylesAndAnimationVals(
+    hideMenu,
+    hideLabel,
+    stashPosition
+  )
+
   const styles = StyleSheet.create({
     label: {
       alignItems: 'center',
@@ -29,9 +33,9 @@ export const MenuOpenButton = ({
   })
 
   const [tapAnimationValue, handleTapStateChange] = useTapAnimation(
-    openCloseMenu
+    openCloseTapHandler
   )
-  const totalScaleValue = add(tapAnimationValue, counterScale)
+  const totalScaleValue = add(tapAnimationValue, labelCounterScale)
 
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>

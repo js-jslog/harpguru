@@ -9,7 +9,6 @@ import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { MenuCloseButton } from '../menu-close-button'
 import { Menu } from '../menu'
-import { getMenuStylesAndAnimationVals } from '../../utils'
 import type { MenuProps, OptionIds } from '../../types'
 import { getSizes, colors } from '../../styles'
 import { CovariantMembers } from '../../packages/covariance-series'
@@ -24,7 +23,7 @@ import {
 } from './hooks'
 
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
-  const { hideLabel, hideMenu, stashPosition, openCloseTapHandler } = menuProps
+  const { openCloseTapHandler } = menuProps
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
 
@@ -76,12 +75,6 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     setLockedCovariant(CovariantMembers.RootPitch)
   }
 
-  const { labelCounterScale } = getMenuStylesAndAnimationVals(
-    hideMenu,
-    hideLabel,
-    stashPosition
-  )
-
   const sizes = getSizes()
 
   return (
@@ -98,10 +91,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         </OptionLock>
         <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
       </MenuFace>
-      <MenuOpenButton
-        counterScale={labelCounterScale}
-        openCloseMenu={openCloseTapHandler}
-      >
+      <MenuOpenButton {...menuProps}>
         <Feather name="sliders" size={sizes['7']} color={colors.inertOutline} />
       </MenuOpenButton>
     </Menu>

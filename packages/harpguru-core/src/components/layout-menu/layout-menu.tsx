@@ -7,7 +7,6 @@ import { Option } from '../option'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import { getMenuStylesAndAnimationVals } from '../../utils'
 import {
   MenuProps,
   OptionIds,
@@ -24,7 +23,7 @@ import {
 } from './hooks'
 
 export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
-  const { hideMenu, hideLabel, stashPosition, openCloseTapHandler } = menuProps
+  const { openCloseTapHandler } = menuProps
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
@@ -63,12 +62,6 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     setFunction: setActiveDisplayMode as (arg0: OptionIds) => void,
   }
 
-  const { labelCounterScale } = getMenuStylesAndAnimationVals(
-    hideMenu,
-    hideLabel,
-    stashPosition
-  )
-
   const sizes = getSizes()
 
   return (
@@ -78,10 +71,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
         <Option {...displayModeOptionProps} />
         <Option {...experienceModeOptionProps} />
       </MenuFace>
-      <MenuOpenButton
-        counterScale={labelCounterScale}
-        openCloseMenu={openCloseTapHandler}
-      >
+      <MenuOpenButton {...menuProps}>
         <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
       </MenuOpenButton>
     </Menu>
