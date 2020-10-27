@@ -9,6 +9,20 @@ type OptionDisplayList = [
   OptionIds | undefined,
   OptionIds | undefined
 ]
+
+const getRemainder = (
+  orderedOptionIds: ReadonlyArray<OptionIds>
+): [OptionIds | undefined, OptionIds | undefined] => {
+  const { length } = orderedOptionIds
+  if (length <= 4) {
+    return [undefined, undefined]
+  } else if (length === 5) {
+    return [undefined, orderedOptionIds[length - 1]]
+  } else {
+    return [orderedOptionIds[length - 2], orderedOptionIds[length - 1]]
+  }
+}
+
 export const setOptionsInListOfSix = (
   orderedOptionIds: ReadonlyArray<OptionIds>,
   activeOptionId: OptionIds
@@ -18,23 +32,14 @@ export const setOptionsInListOfSix = (
     activeOptionId
   )
 
-  const arrayToFill = [0, 0, 0, 0, 0, 0]
+  const arrayToFill = [0, 0, 0, 0]
   const returnArray = arrayToFill.map((_, index) => {
     if (activeFirstOrderedIds[index]) return activeFirstOrderedIds[index]
     return undefined
   })
 
-  const { length } = orderedOptionIds
-  if (length === 5) {
-    return [
-      undefined,
-      ...returnArray.slice(4, length),
-      ...returnArray.slice(0, 4),
-    ] as OptionDisplayList
-  }
-
   return [
-    ...returnArray.slice(4),
-    ...returnArray.slice(0, 4),
+    ...getRemainder(orderedOptionIds),
+    ...returnArray,
   ] as OptionDisplayList
 }
