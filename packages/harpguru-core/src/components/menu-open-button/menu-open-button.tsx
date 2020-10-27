@@ -1,7 +1,7 @@
 import Animated, { add } from 'react-native-reanimated'
 import type { Node } from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
 import { useTapAnimation } from './hooks'
@@ -34,16 +34,17 @@ export const MenuOpenButton = ({
 
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <Animated.View
-        style={[
-          styles.label,
-          {
-            transform: [{ scale: totalScaleValue }],
-          },
-        ]}
-      >
-        {children}
-      </Animated.View>
+      <View style={styles.label}>
+        <Animated.View
+          style={[
+            {
+              transform: [{ scale: totalScaleValue }],
+            },
+          ]}
+        >
+          {children}
+        </Animated.View>
+      </View>
     </TapGestureHandler>
   )
 }
