@@ -9,19 +9,11 @@ import {
   Extrapolate,
 } from 'react-native-reanimated'
 import type { Node } from 'react-native-reanimated'
-import { StyleSheet, Dimensions } from 'react-native'
-import type { ViewStyle } from 'react-native'
+import { Dimensions } from 'react-native'
 
 import { getSizes, colors } from '../../styles'
 
-type MenuStyles = {
-  readonly animated: ViewStyle
-  readonly overlay: ViewStyle
-  readonly mainContents: ViewStyle
-}
-
 type StyleAndAnimationVals = {
-  readonly styles: MenuStyles
   readonly menuSlideXTranslation: Node<number>
   readonly menuSlideYTranslation: Node<number>
   readonly menuScale: Node<number>
@@ -37,11 +29,7 @@ export const getMenuStylesAndAnimationVals = (
   stashDirection: 'TOP' | 'BOTTOM'
 ): StyleAndAnimationVals => {
   const sizes = getSizes()
-  const {
-    labelProtrusion: unscaledLabelProtrusion,
-    9: borderRadius,
-    overlayOpacity,
-  } = sizes
+  const { labelProtrusion: unscaledLabelProtrusion, overlayOpacity } = sizes
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
 
@@ -55,25 +43,6 @@ export const getMenuStylesAndAnimationVals = (
   const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
 
   const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
-
-  const styles = StyleSheet.create({
-    animated: {
-      ...StyleSheet.absoluteFillObject,
-      zIndex: 10,
-    },
-    overlay: {
-      ...StyleSheet.absoluteFillObject,
-      left: labelProtrusion * -1,
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-      borderRadius,
-    },
-    mainContents: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      left: labelProtrusion,
-    },
-  })
 
   // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
@@ -137,7 +106,6 @@ export const getMenuStylesAndAnimationVals = (
   })
 
   return {
-    styles,
     menuSlideXTranslation,
     menuSlideYTranslation,
     menuScale,

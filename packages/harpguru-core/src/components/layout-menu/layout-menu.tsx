@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import { View } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { getApparatusIds } from 'harpstrata'
 import { Entypo } from '@expo/vector-icons'
@@ -64,12 +64,19 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     setFunction: setActiveDisplayMode as (arg0: OptionIds) => void,
   }
 
-  const {
-    styles,
-    labelCounterScale,
-    labelProtrusion,
-  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
+  const { labelCounterScale, labelProtrusion } = getMenuStylesAndAnimationVals(
+    hideMenu,
+    hideLabel,
+    'BOTTOM'
+  )
 
+  const styles = StyleSheet.create({
+    mainContents: {
+      ...StyleSheet.absoluteFillObject,
+      flexDirection: 'row',
+      left: labelProtrusion,
+    },
+  })
   const sizes = getSizes()
 
   return (

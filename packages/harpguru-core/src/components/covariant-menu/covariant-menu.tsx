@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import { View } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { getPitchIds, getPozitionIds } from 'harpstrata'
 import { Feather } from '@expo/vector-icons'
@@ -76,11 +76,19 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     setLockedCovariant(CovariantMembers.RootPitch)
   }
 
-  const {
-    styles,
-    labelCounterScale,
-    labelProtrusion,
-  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
+  const { labelCounterScale, labelProtrusion } = getMenuStylesAndAnimationVals(
+    hideMenu,
+    hideLabel,
+    'TOP'
+  )
+
+  const styles = StyleSheet.create({
+    mainContents: {
+      ...StyleSheet.absoluteFillObject,
+      flexDirection: 'row',
+      left: labelProtrusion,
+    },
+  })
 
   const sizes = getSizes()
 
