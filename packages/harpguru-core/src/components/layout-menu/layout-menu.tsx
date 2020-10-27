@@ -73,7 +73,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
 
   return (
-    <Menu {...menuProps}>
+    <Menu {...menuProps} position={'BOTTOM'}>
       <View style={styles.mainContents}>
         <Option {...apparatusOptionProps} />
         <Option {...displayModeOptionProps} />

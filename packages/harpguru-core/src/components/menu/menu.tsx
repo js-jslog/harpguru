@@ -5,11 +5,13 @@ import { getMenuStylesAndAnimationVals } from '../../utils'
 import { MenuProps } from '../../types'
 
 type LocalMenuProps = MenuProps & {
+  readonly position: 'TOP' | 'BOTTOM'
   readonly children: React.ReactNode
 }
 export const Menu = ({
   hideMenu,
   hideLabel,
+  position,
   children,
 }: LocalMenuProps): React.ReactElement => {
   const {
@@ -19,7 +21,7 @@ export const Menu = ({
     menuScale,
     menuBackgroundColor,
     menuOpacity,
-  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'BOTTOM')
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, position)
 
   return (
     <Animated.View
