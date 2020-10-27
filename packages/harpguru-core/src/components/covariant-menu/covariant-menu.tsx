@@ -1,5 +1,4 @@
 import { useGlobal } from 'reactn'
-import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { getPitchIds, getPozitionIds } from 'harpstrata'
 import { Feather } from '@expo/vector-icons'
@@ -7,6 +6,7 @@ import { Feather } from '@expo/vector-icons'
 import { OptionLock } from '../option-lock'
 import { Option } from '../option'
 import { MenuOpenButton } from '../menu-open-button'
+import { MenuFace } from '../menu-face'
 import { MenuCloseButton } from '../menu-close-button'
 import { Menu } from '../menu'
 import { getMenuStylesAndAnimationVals } from '../../utils'
@@ -82,19 +82,11 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     'TOP'
   )
 
-  const styles = StyleSheet.create({
-    mainContents: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      left: labelProtrusion,
-    },
-  })
-
   const sizes = getSizes()
 
   return (
     <Menu {...menuProps} position={'TOP'}>
-      <View style={styles.mainContents}>
+      <MenuFace openCloseTapHandler={openCloseTapHandler}>
         <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
           <Option {...harpKeyOptionProps} />
         </OptionLock>
@@ -105,7 +97,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
           <Option {...rootPitchOptionProps} />
         </OptionLock>
         <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
-      </View>
+      </MenuFace>
       <MenuOpenButton
         counterScale={labelCounterScale}
         openCloseMenu={openCloseTapHandler}

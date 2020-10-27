@@ -23,13 +23,43 @@ type StyleAndAnimationVals = {
   readonly labelProtrusion: number
 }
 
+type StaticMenuValues = {
+  readonly menuHiddenScale: number
+  readonly menuHiddenYOffsetFactor: number
+  readonly menuScaleTranslationFactor: number
+  readonly labelProtrusion: number
+}
+export const getStaticMenuValues = (): StaticMenuValues => {
+  const sizes = getSizes()
+  const { labelProtrusion: unscaledLabelProtrusion } = sizes
+
+  const menuHiddenScale = 0.2 // 0.5 would have both tabs fill exactly half the screen height
+  const menuHiddenYOffsetFactor = 0.3
+  const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
+
+  const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
+
+  return {
+    menuHiddenScale,
+    menuHiddenYOffsetFactor,
+    menuScaleTranslationFactor,
+    labelProtrusion,
+  }
+}
+
 export const getMenuStylesAndAnimationVals = (
   hideMenu: boolean,
   hideLabel: boolean,
   stashDirection: 'TOP' | 'BOTTOM'
 ): StyleAndAnimationVals => {
   const sizes = getSizes()
-  const { labelProtrusion: unscaledLabelProtrusion, overlayOpacity } = sizes
+  const {
+    menuHiddenScale,
+    menuHiddenYOffsetFactor,
+    menuScaleTranslationFactor,
+    labelProtrusion,
+  } = getStaticMenuValues()
+  const { overlayOpacity } = sizes
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
 
@@ -37,12 +67,6 @@ export const getMenuStylesAndAnimationVals = (
   const deviceShortSide =
     windowWidth < windowHeight ? windowWidth : windowHeight
   const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
-
-  const menuHiddenScale = 0.2 // 0.5 would have both tabs fill exactly half the screen height
-  const menuHiddenYOffsetFactor = 0.3
-  const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
-
-  const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
 
   // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {

@@ -1,12 +1,11 @@
 import { useGlobal } from 'reactn'
-import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { getApparatusIds } from 'harpstrata'
 import { Entypo } from '@expo/vector-icons'
 
 import { Option } from '../option'
 import { MenuOpenButton } from '../menu-open-button'
-import { MenuCloseButton } from '../menu-close-button'
+import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
 import { getMenuStylesAndAnimationVals } from '../../utils'
 import {
@@ -70,23 +69,15 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     'BOTTOM'
   )
 
-  const styles = StyleSheet.create({
-    mainContents: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      left: labelProtrusion,
-    },
-  })
   const sizes = getSizes()
 
   return (
     <Menu {...menuProps} position={'BOTTOM'}>
-      <View style={styles.mainContents}>
+      <MenuFace openCloseTapHandler={openCloseTapHandler}>
         <Option {...apparatusOptionProps} />
         <Option {...displayModeOptionProps} />
         <Option {...experienceModeOptionProps} />
-        <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
-      </View>
+      </MenuFace>
       <MenuOpenButton
         counterScale={labelCounterScale}
         openCloseMenu={openCloseTapHandler}
