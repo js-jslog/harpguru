@@ -87,3 +87,26 @@ test('a 5 item list is put with the first 3 of the inactive options underneith t
 
   expect(actualResult).toStrictEqual(expectedResult)
 })
+
+test('a 6 item list is put with the first 3 of the inactive options underneith the active one at third and the 4th and 5th directly above', () => {
+  const orderedOptionIds = [
+    PitchIds.C,
+    PitchIds.D,
+    PitchIds.E,
+    PitchIds.F,
+    PitchIds.G,
+    PitchIds.A,
+  ]
+  const { C: activeOptionId } = PitchIds
+  const expectedResult = [
+    PitchIds.G,
+    PitchIds.A,
+    PitchIds.C,
+    PitchIds.D,
+    PitchIds.E,
+    PitchIds.F,
+  ]
+  const actualResult = setOptionsInListOfSix(orderedOptionIds, activeOptionId)
+
+  expect(actualResult).toStrictEqual(expectedResult)
+})
