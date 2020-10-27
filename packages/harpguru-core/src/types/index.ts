@@ -28,9 +28,12 @@ export enum CellStates {
   Off,
 }
 
+export type MenuStashPosition = 'TOP' | 'BOTTOM'
+
 export type MenuProps = {
   readonly hideMenu: boolean
   readonly hideLabel: boolean
+  readonly stashPosition: MenuStashPosition
   readonly openCloseTapHandler: () => void
 }
 

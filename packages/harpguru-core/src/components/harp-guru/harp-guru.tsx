@@ -62,6 +62,7 @@ export const HarpGuru = (): ReactElement => {
             menuState !== MenuStates.CovariantMenu &&
             menuState !== MenuStates.NoMenu
           }
+          stashPosition={'TOP'}
           openCloseTapHandler={covariantOpenCloseTapHandler}
         />
         <LayoutMenu
@@ -70,6 +71,7 @@ export const HarpGuru = (): ReactElement => {
             menuState !== MenuStates.LayoutMenu &&
             menuState !== MenuStates.NoMenu
           }
+          stashPosition={'BOTTOM'}
           openCloseTapHandler={layoutOpenCloseTapHandler}
         />
         <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />

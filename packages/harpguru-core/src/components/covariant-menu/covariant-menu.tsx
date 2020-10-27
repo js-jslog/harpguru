@@ -24,7 +24,7 @@ import {
 } from './hooks'
 
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
-  const { hideLabel, hideMenu, openCloseTapHandler } = menuProps
+  const { hideLabel, hideMenu, stashPosition, openCloseTapHandler } = menuProps
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
 
@@ -76,16 +76,16 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     setLockedCovariant(CovariantMembers.RootPitch)
   }
 
-  const { labelCounterScale, labelProtrusion } = getMenuStylesAndAnimationVals(
+  const { labelCounterScale } = getMenuStylesAndAnimationVals(
     hideMenu,
     hideLabel,
-    'TOP'
+    stashPosition
   )
 
   const sizes = getSizes()
 
   return (
-    <Menu {...menuProps} position={'TOP'}>
+    <Menu {...menuProps}>
       <MenuFace openCloseTapHandler={openCloseTapHandler}>
         <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
           <Option {...harpKeyOptionProps} />
@@ -101,7 +101,6 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       <MenuOpenButton
         counterScale={labelCounterScale}
         openCloseMenu={openCloseTapHandler}
-        labelProtrusion={labelProtrusion}
       >
         <Feather name="sliders" size={sizes['7']} color={colors.inertOutline} />
       </MenuOpenButton>

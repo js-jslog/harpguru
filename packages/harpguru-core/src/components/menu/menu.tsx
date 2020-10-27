@@ -7,13 +7,12 @@ import { MenuProps } from '../../types'
 import { getSizes } from '../../styles'
 
 type LocalMenuProps = MenuProps & {
-  readonly position: 'TOP' | 'BOTTOM'
   readonly children: React.ReactNode
 }
 export const Menu = ({
   hideMenu,
   hideLabel,
-  position,
+  stashPosition,
   children,
 }: LocalMenuProps): React.ReactElement => {
   const {
@@ -23,7 +22,7 @@ export const Menu = ({
     menuBackgroundColor,
     menuOpacity,
     labelProtrusion,
-  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, position)
+  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, stashPosition)
 
   const { 9: borderRadius } = getSizes()
   const styles = StyleSheet.create({

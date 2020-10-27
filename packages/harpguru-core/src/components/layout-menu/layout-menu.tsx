@@ -24,7 +24,7 @@ import {
 } from './hooks'
 
 export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
-  const { hideMenu, hideLabel, openCloseTapHandler } = menuProps
+  const { hideMenu, hideLabel, stashPosition, openCloseTapHandler } = menuProps
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
@@ -63,16 +63,16 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     setFunction: setActiveDisplayMode as (arg0: OptionIds) => void,
   }
 
-  const { labelCounterScale, labelProtrusion } = getMenuStylesAndAnimationVals(
+  const { labelCounterScale } = getMenuStylesAndAnimationVals(
     hideMenu,
     hideLabel,
-    'BOTTOM'
+    stashPosition
   )
 
   const sizes = getSizes()
 
   return (
-    <Menu {...menuProps} position={'BOTTOM'}>
+    <Menu {...menuProps}>
       <MenuFace openCloseTapHandler={openCloseTapHandler}>
         <Option {...apparatusOptionProps} />
         <Option {...displayModeOptionProps} />
@@ -81,7 +81,6 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
       <MenuOpenButton
         counterScale={labelCounterScale}
         openCloseMenu={openCloseTapHandler}
-        labelProtrusion={labelProtrusion}
       >
         <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
       </MenuOpenButton>
