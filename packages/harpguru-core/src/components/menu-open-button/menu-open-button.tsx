@@ -6,7 +6,7 @@ import {
   State,
   TapGestureHandler,
 } from 'react-native-gesture-handler'
-import { View, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
 
 import { usePrevious } from '../../hooks'
@@ -65,17 +65,15 @@ export const MenuOpenButton = ({
 
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <View style={styles.label}>
-        <Animated.View
-          style={[
-            {
-              transform: [{ scale: totalScaleValue }],
-            },
-          ]}
-        >
-          {children}
-        </Animated.View>
-      </View>
+      <Animated.View
+        style={[styles.label,
+          {
+            transform: [{ scale: totalScaleValue }],
+          },
+        ]}
+      >
+        {children}
+      </Animated.View>
     </TapGestureHandler>
   )
 }
