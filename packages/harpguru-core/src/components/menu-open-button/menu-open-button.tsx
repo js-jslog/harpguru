@@ -1,15 +1,10 @@
-import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, interpolate, add } from 'react-native-reanimated'
+import Animated, { add } from 'react-native-reanimated'
 import type { Node } from 'react-native-reanimated'
-import {
-  TapGestureHandlerStateChangeEvent,
-  State,
-  TapGestureHandler,
-} from 'react-native-gesture-handler'
+import { TapGestureHandler } from 'react-native-gesture-handler'
 import { StyleSheet } from 'react-native'
 import React from 'react'
 
-import { usePrevious } from '../../hooks'
+import { useTapAnimation } from './hooks'
 
 type ChildProps = {
   readonly children: React.ReactNode
@@ -24,35 +19,6 @@ export const MenuOpenButton = ({
   openCloseMenu,
   labelProtrusion,
 }: ChildProps): React.ReactElement => {
-  const [isTapped, setIsTapped] = React.useState(false)
-  const changedTap = isTapped !== usePrevious(isTapped, isTapped)
-  const tapTransitionValue = useTimingTransition(isTapped, {
-    duration: 100,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const tapAnimationValue = interpolate(tapTransitionValue, {
-    inputRange: [0, 1],
-    outputRange: isTapped ? [1, 5] : [1, 5],
-  })
-  const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
-    const { nativeEvent } = event
-    if (nativeEvent.state === State.BEGAN) setIsTapped(true)
-    if ([State.FAILED, State.CANCELLED].includes(nativeEvent.state))
-      setIsTapped(false)
-    if (nativeEvent.state === State.END) setIsTapped(false)
-  }
-
-  React.useEffect(() => {
-    const postAnimation = setTimeout(() => {
-      if (changedTap === false) return
-      setIsTapped(false)
-      openCloseMenu()
-    }, 100)
-    return () => {
-      clearTimeout(postAnimation)
-    }
-  }, [changedTap, setIsTapped])
-
   const styles = StyleSheet.create({
     label: {
       alignItems: 'center',
@@ -61,12 +27,16 @@ export const MenuOpenButton = ({
     },
   })
 
+  const [tapAnimationValue, handleTapStateChange] = useTapAnimation(
+    openCloseMenu
+  )
   const totalScaleValue = add(tapAnimationValue, counterScale)
 
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
       <Animated.View
-        style={[styles.label,
+        style={[
+          styles.label,
           {
             transform: [{ scale: totalScaleValue }],
           },
