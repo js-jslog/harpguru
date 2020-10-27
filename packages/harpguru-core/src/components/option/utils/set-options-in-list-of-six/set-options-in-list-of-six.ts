@@ -24,6 +24,15 @@ export const setOptionsInListOfSix = (
     return undefined
   })
 
+  const { length } = orderedOptionIds
+  if (length === 5) {
+    return [
+      undefined,
+      ...returnArray.slice(4, length),
+      ...returnArray.slice(0, 4),
+    ] as OptionDisplayList
+  }
+
   return [
     ...returnArray.slice(4),
     ...returnArray.slice(0, 4),
