@@ -3,7 +3,7 @@ import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { getMenuStylesAndAnimationVals } from '../../utils'
+import { getMenuAnimationValues, getMenuLabelProtrusion } from '../../utils'
 import type { MenuProps } from '../../types'
 
 import { useTapAnimation } from './hooks'
@@ -18,11 +18,12 @@ export const MenuOpenButton = ({
   openCloseTapHandler,
   children,
 }: LocalMenuProps): React.ReactElement => {
-  const { labelCounterScale, labelProtrusion } = getMenuStylesAndAnimationVals(
+  const { labelCounterScale } = getMenuAnimationValues(
     hideMenu,
     hideLabel,
     stashPosition
   )
+  const labelProtrusion = getMenuLabelProtrusion()
 
   const styles = StyleSheet.create({
     label: {

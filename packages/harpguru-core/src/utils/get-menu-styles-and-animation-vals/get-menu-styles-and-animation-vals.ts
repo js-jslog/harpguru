@@ -12,6 +12,12 @@ import type { Node } from 'react-native-reanimated'
 import { Dimensions } from 'react-native'
 
 import { getSizes, colors } from '../../styles'
+import {
+  menuHiddenScale,
+  menuScaleTranslationFactor,
+  menuHiddenYOffsetFactor,
+  overlayOpacity,
+} from '../../constants'
 
 type StyleAndAnimationVals = {
   readonly menuSlideXTranslation: Node<number>
@@ -20,46 +26,19 @@ type StyleAndAnimationVals = {
   readonly menuBackgroundColor: Node<number>
   readonly menuOpacity: Node<number>
   readonly labelCounterScale: Node<number>
-  readonly labelProtrusion: number
 }
 
-type StaticMenuValues = {
-  readonly menuHiddenScale: number
-  readonly menuHiddenYOffsetFactor: number
-  readonly menuScaleTranslationFactor: number
-  readonly labelProtrusion: number
-}
-export const getStaticMenuValues = (): StaticMenuValues => {
-  const sizes = getSizes()
-  const { labelProtrusion: unscaledLabelProtrusion } = sizes
-
-  const menuHiddenScale = 0.2 // 0.5 would have both tabs fill exactly half the screen height
-  const menuHiddenYOffsetFactor = 0.3
-  const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
-
+export const getMenuLabelProtrusion = (): number => {
+  const { labelProtrusion: unscaledLabelProtrusion } = getSizes()
   const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
-
-  return {
-    menuHiddenScale,
-    menuHiddenYOffsetFactor,
-    menuScaleTranslationFactor,
-    labelProtrusion,
-  }
+  return labelProtrusion
 }
 
-export const getMenuStylesAndAnimationVals = (
+export const getMenuAnimationValues = (
   hideMenu: boolean,
   hideLabel: boolean,
   stashDirection: 'TOP' | 'BOTTOM'
 ): StyleAndAnimationVals => {
-  const sizes = getSizes()
-  const {
-    menuHiddenScale,
-    menuHiddenYOffsetFactor,
-    menuScaleTranslationFactor,
-    labelProtrusion,
-  } = getStaticMenuValues()
-  const { overlayOpacity } = sizes
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
 
@@ -105,7 +84,7 @@ export const getMenuStylesAndAnimationVals = (
   })
   const hideLabelTranslation = interpolate(hideLabelVal, {
     inputRange: [0, 1],
-    outputRange: [0, multiply(labelProtrusion, outwardXMultiplier)],
+    outputRange: [0, multiply(getMenuLabelProtrusion(), outwardXMultiplier)],
   })
   const menuSlideXTranslation = add(hideMenuXTranslation, hideLabelTranslation)
   const menuSlideYTranslation = hideMenuYTranslation
@@ -136,6 +115,5 @@ export const getMenuStylesAndAnimationVals = (
     menuBackgroundColor,
     menuOpacity,
     labelCounterScale,
-    labelProtrusion,
   }
 }

@@ -11,6 +11,7 @@ import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
 import type { RenderableToneTuples } from '../../types'
 import { getSizes, colors } from '../../styles'
+import { overlayOpacity } from '../../constants'
 
 import { useFlashDisplay } from './hooks'
 
@@ -30,7 +31,6 @@ export const QuizQuestionDisplay = ({
     windowWidth > windowHeight ? windowWidth : windowHeight
 
   const sizes = getSizes()
-  const { overlayOpacity } = sizes
 
   const displayOpacity = interpolate(flashAnimationValue, {
     inputRange: [0, 1],

@@ -2,7 +2,7 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
 import { MenuCloseButton } from '../menu-close-button'
-import { getStaticMenuValues } from '../../utils'
+import { getMenuLabelProtrusion } from '../../utils/'
 
 type MenuFaceProps = {
   readonly children: React.ReactNode
@@ -13,7 +13,7 @@ export const MenuFace = ({
   children,
   openCloseTapHandler,
 }: MenuFaceProps): React.ReactElement => {
-  const { labelProtrusion } = getStaticMenuValues()
+  const labelProtrusion = getMenuLabelProtrusion()
   const styles = StyleSheet.create({
     mainContents: {
       ...StyleSheet.absoluteFillObject,

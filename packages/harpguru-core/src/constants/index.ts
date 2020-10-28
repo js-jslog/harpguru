@@ -1,1 +1,7 @@
 export const tapAnimationDuration = 100
+
+export const overlayOpacity = 0.85
+
+export const menuHiddenScale = 0.2 // 0.5 would have both tabs fill exactly half the screen height
+export const menuHiddenYOffsetFactor = 0.3
+export const menuScaleTranslationFactor = (1 - menuHiddenScale) / 2
