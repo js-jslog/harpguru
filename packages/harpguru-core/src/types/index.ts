@@ -21,14 +21,17 @@ export enum MenuStates {
   NoMenu,
 }
 
+export enum MenuStashPosition {
+  Top,
+  Bottom,
+}
+
 export enum CellStates {
   TappedOn,
   TappedOff,
   On,
   Off,
 }
-
-export type MenuStashPosition = 'TOP' | 'BOTTOM'
 
 export type MenuProps = {
   readonly hideMenu: boolean

@@ -11,7 +11,7 @@ import { HarpFaceMemo } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
 import { ActivityLegend } from '../activity-legend'
 import { setGlobalState, setGlobalReducers } from '../../utils'
-import { MenuStates } from '../../types'
+import { MenuStates, MenuStashPosition } from '../../types'
 import { colors } from '../../styles'
 import { getSizes } from '../../styles'
 
@@ -62,7 +62,7 @@ export const HarpGuru = (): ReactElement => {
             menuState !== MenuStates.CovariantMenu &&
             menuState !== MenuStates.NoMenu
           }
-          stashPosition={'TOP'}
+          stashPosition={MenuStashPosition.Top}
           openCloseTapHandler={covariantOpenCloseTapHandler}
         />
         <LayoutMenu
@@ -71,7 +71,7 @@ export const HarpGuru = (): ReactElement => {
             menuState !== MenuStates.LayoutMenu &&
             menuState !== MenuStates.NoMenu
           }
-          stashPosition={'BOTTOM'}
+          stashPosition={MenuStashPosition.Bottom}
           openCloseTapHandler={layoutOpenCloseTapHandler}
         />
         <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />

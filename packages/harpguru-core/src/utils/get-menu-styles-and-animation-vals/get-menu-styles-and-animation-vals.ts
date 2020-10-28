@@ -11,6 +11,7 @@ import {
 import type { Node } from 'react-native-reanimated'
 import { Dimensions } from 'react-native'
 
+import { MenuStashPosition } from '../../types'
 import { getSizes, colors } from '../../styles'
 import {
   menuHiddenScale,
@@ -37,10 +38,10 @@ export const getScaledMenuLabelProtrusion = (): number => {
 export const getMenuAnimationValues = (
   hideMenu: boolean,
   hideLabel: boolean,
-  stashDirection: 'TOP' | 'BOTTOM'
+  stashPosition: MenuStashPosition
 ): StyleAndAnimationVals => {
   const outwardXMultiplier = 1
-  const outwardYMultiplier = stashDirection === 'TOP' ? -1 : 1
+  const outwardYMultiplier = stashPosition === MenuStashPosition.Top ? -1 : 1
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceShortSide =
