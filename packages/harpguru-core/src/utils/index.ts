@@ -3,8 +3,6 @@ export { setGlobalReducers } from './set-global-reducers'
 export { getHarpFaceFacts } from './get-harp-face-facts'
 export { partiallyApplyNudgeFunction } from './paritally-apply-nudge-function'
 export { getPropsForHarpStrata } from './get-props-for-harp-strata'
-export {
-  getMenuAnimationValues,
-  getScaledMenuLabelProtrusion,
-} from './get-menu-styles-and-animation-vals'
+export { getScaledMenuLabelProtrusion } from './get-scaled-menu-label-protrusion'
+export { getMenuAnimationValues } from './get-menu-animation-values'
 export { getRenderableToneTuples } from './get-renderable-tone-tuples'

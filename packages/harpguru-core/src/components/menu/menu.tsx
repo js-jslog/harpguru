@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native'
 import React from 'react'
 
 import {
-  getMenuAnimationValues,
   getScaledMenuLabelProtrusion,
+  getMenuAnimationValues,
 } from '../../utils'
 import type { MenuProps, ChildrenProps } from '../../types'
 import { getSizes } from '../../styles'
