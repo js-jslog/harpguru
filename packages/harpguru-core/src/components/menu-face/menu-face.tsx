@@ -3,16 +3,12 @@ import React from 'react'
 
 import { MenuCloseButton } from '../menu-close-button'
 import { getScaledMenuLabelProtrusion } from '../../utils/'
-
-type MenuFaceProps = {
-  readonly children: React.ReactNode
-  readonly openCloseTapHandler: () => void
-}
+import type { MenuProps, ChildrenProps } from '../../types'
 
 export const MenuFace = ({
   children,
   openCloseTapHandler,
-}: MenuFaceProps): React.ReactElement => {
+}: MenuProps & ChildrenProps): React.ReactElement => {
   const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
   const styles = StyleSheet.create({
     mainContents: {

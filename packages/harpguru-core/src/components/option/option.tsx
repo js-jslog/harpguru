@@ -6,7 +6,7 @@ import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 
 import { OptionValue } from '../option-value'
-import { OptionIds } from '../../types'
+import type { OptionIds, ChildrenProps } from '../../types'
 import { getSizes } from '../../styles'
 import { usePrevious } from '../../hooks'
 
@@ -21,11 +21,7 @@ type OptionProps = {
   readonly setFunction: (arg0: OptionIds) => void
 }
 
-type TitleProps = {
-  readonly children: React.ReactNode
-}
-
-const OptionTitle = ({ children }: TitleProps): React.ReactElement => {
+const OptionTitle = ({ children }: ChildrenProps): React.ReactElement => {
   const styles = getStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
 }

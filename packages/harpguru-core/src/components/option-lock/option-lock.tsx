@@ -7,19 +7,19 @@ import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { FontAwesome5 } from '@expo/vector-icons'
 
+import type { ChildrenProps } from '../../types'
 import { getSizes, colors } from '../../styles'
 
 type OptionLockProps = {
-  readonly children: React.ReactNode
   readonly locked: boolean
   readonly handleTap: () => void
 }
 
 export const OptionLock = ({
-  children,
   locked,
   handleTap,
-}: OptionLockProps): React.ReactElement => {
+  children,
+}: OptionLockProps & ChildrenProps): React.ReactElement => {
   const { 9: padding, 7: iconSize } = getSizes()
 
   const styles = StyleSheet.create({

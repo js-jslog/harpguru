@@ -40,6 +40,10 @@ export type MenuProps = {
   readonly openCloseTapHandler: () => void
 }
 
+export type ChildrenProps = {
+  readonly children: React.ReactNode
+}
+
 export type SetActiveHarpStrata = (arg0: HarpStrata) => void
 export type SetActiveDisplayMode = (arg0: DisplayModes) => void
 export type Coord = number

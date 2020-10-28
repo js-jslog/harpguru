@@ -6,18 +6,15 @@ import {
   getMenuAnimationValues,
   getScaledMenuLabelProtrusion,
 } from '../../utils'
-import { MenuProps } from '../../types'
+import type { MenuProps, ChildrenProps } from '../../types'
 import { getSizes } from '../../styles'
 
-type LocalMenuProps = MenuProps & {
-  readonly children: React.ReactNode
-}
 export const Menu = ({
   hideMenu,
   hideLabel,
   stashPosition,
   children,
-}: LocalMenuProps): React.ReactElement => {
+}: MenuProps & ChildrenProps): React.ReactElement => {
   const {
     menuSlideXTranslation,
     menuSlideYTranslation,

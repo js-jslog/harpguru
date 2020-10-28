@@ -23,7 +23,6 @@ import {
 } from './hooks'
 
 export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
-  const { openCloseTapHandler } = menuProps
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
@@ -66,7 +65,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
 
   return (
     <Menu {...menuProps}>
-      <MenuFace openCloseTapHandler={openCloseTapHandler}>
+      <MenuFace {...menuProps}>
         <Option {...apparatusOptionProps} />
         <Option {...displayModeOptionProps} />
         <Option {...experienceModeOptionProps} />

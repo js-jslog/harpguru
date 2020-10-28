@@ -22,7 +22,6 @@ import {
 } from './hooks'
 
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
-  const { openCloseTapHandler } = menuProps
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
 
@@ -78,7 +77,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
 
   return (
     <Menu {...menuProps}>
-      <MenuFace openCloseTapHandler={openCloseTapHandler}>
+      <MenuFace {...menuProps}>
         <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
           <Option {...harpKeyOptionProps} />
         </OptionLock>

@@ -7,20 +7,17 @@ import {
   getMenuAnimationValues,
   getScaledMenuLabelProtrusion,
 } from '../../utils'
-import type { MenuProps } from '../../types'
+import type { MenuProps, ChildrenProps } from '../../types'
 
 import { useTapAnimation } from './hooks'
 
-type LocalMenuProps = MenuProps & {
-  readonly children: React.ReactNode
-}
 export const MenuOpenButton = ({
   hideMenu,
   hideLabel,
   stashPosition,
   openCloseTapHandler,
   children,
-}: LocalMenuProps): React.ReactElement => {
+}: MenuProps & ChildrenProps): React.ReactElement => {
   const { labelCounterScale } = getMenuAnimationValues(
     hideMenu,
     hideLabel,
