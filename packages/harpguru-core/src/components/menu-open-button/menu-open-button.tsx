@@ -25,8 +25,8 @@ export const MenuOpenButton = ({
   )
   const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
 
-  const styles = StyleSheet.create({
-    label: {
+  const { style } = StyleSheet.create({
+    style: {
       alignItems: 'center',
       justifyContent: 'center',
       width: scaledLabelProtrusion,
@@ -40,7 +40,7 @@ export const MenuOpenButton = ({
 
   return (
     <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <View style={styles.label}>
+      <View style={style}>
         <Animated.View
           style={[
             {

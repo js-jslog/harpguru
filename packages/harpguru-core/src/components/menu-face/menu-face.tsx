@@ -10,15 +10,15 @@ export const MenuFace = ({
   openCloseTapHandler,
 }: MenuProps & ChildrenProps): React.ReactElement => {
   const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
-  const styles = StyleSheet.create({
-    mainContents: {
+  const { style } = StyleSheet.create({
+    style: {
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
       left: scaledLabelProtrusion,
     },
   })
   return (
-    <View style={styles.mainContents}>
+    <View style={style}>
       {children}
       <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
     </View>
