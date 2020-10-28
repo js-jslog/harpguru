@@ -5,6 +5,6 @@ export { partiallyApplyNudgeFunction } from './paritally-apply-nudge-function'
 export { getPropsForHarpStrata } from './get-props-for-harp-strata'
 export {
   getMenuAnimationValues,
-  getMenuLabelProtrusion,
+  getScaledMenuLabelProtrusion,
 } from './get-menu-styles-and-animation-vals'
 export { getRenderableToneTuples } from './get-renderable-tone-tuples'

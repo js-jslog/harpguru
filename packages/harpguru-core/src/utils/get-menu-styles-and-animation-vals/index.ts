@@ -1,4 +1,4 @@
 export {
   getMenuAnimationValues,
-  getMenuLabelProtrusion,
+  getScaledMenuLabelProtrusion,
 } from './get-menu-styles-and-animation-vals'

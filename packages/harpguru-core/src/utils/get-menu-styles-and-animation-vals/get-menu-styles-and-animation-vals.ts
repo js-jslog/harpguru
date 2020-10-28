@@ -28,10 +28,10 @@ type StyleAndAnimationVals = {
   readonly labelCounterScale: Node<number>
 }
 
-export const getMenuLabelProtrusion = (): number => {
+export const getScaledMenuLabelProtrusion = (): number => {
   const { labelProtrusion: unscaledLabelProtrusion } = getSizes()
-  const labelProtrusion = unscaledLabelProtrusion / menuHiddenScale
-  return labelProtrusion
+  const scaledLabelProtrusion = unscaledLabelProtrusion / menuHiddenScale
+  return scaledLabelProtrusion
 }
 
 export const getMenuAnimationValues = (
@@ -84,7 +84,10 @@ export const getMenuAnimationValues = (
   })
   const hideLabelTranslation = interpolate(hideLabelVal, {
     inputRange: [0, 1],
-    outputRange: [0, multiply(getMenuLabelProtrusion(), outwardXMultiplier)],
+    outputRange: [
+      0,
+      multiply(getScaledMenuLabelProtrusion(), outwardXMultiplier),
+    ],
   })
   const menuSlideXTranslation = add(hideMenuXTranslation, hideLabelTranslation)
   const menuSlideYTranslation = hideMenuYTranslation
