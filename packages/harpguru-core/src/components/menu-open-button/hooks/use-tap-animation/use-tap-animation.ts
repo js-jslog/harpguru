@@ -5,6 +5,7 @@ import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-han
 import React from 'react'
 
 import { usePrevious } from '../../../../hooks'
+import { tapAnimationDuration } from '../../../../constants'
 
 type TapEventHandler = (arg0: TapGestureHandlerStateChangeEvent) => void
 
@@ -14,7 +15,7 @@ export const useTapAnimation = (
   const [isTapped, setIsTapped] = React.useState(false)
   const changedTap = isTapped !== usePrevious(isTapped, isTapped)
   const tapTransitionValue = useTimingTransition(isTapped, {
-    duration: 100,
+    duration: tapAnimationDuration,
     easing: Easing.inOut(Easing.circle),
   })
   const tapAnimationValue = interpolate(tapTransitionValue, {
@@ -34,7 +35,7 @@ export const useTapAnimation = (
       if (changedTap === false) return
       setIsTapped(false)
       openCloseMenu()
-    }, 100)
+    }, tapAnimationDuration)
     return () => {
       clearTimeout(postAnimation)
     }

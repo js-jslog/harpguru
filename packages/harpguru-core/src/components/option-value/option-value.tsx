@@ -6,6 +6,7 @@ import { View, Text, TextStyle } from 'react-native'
 import React, { useState } from 'react'
 
 import { OptionIds } from '../../types'
+import { tapAnimationDuration } from '../../constants'
 
 type OptionValueProps = {
   readonly id: OptionIds | undefined
@@ -22,7 +23,7 @@ export const OptionValue = ({
 }: OptionValueProps): React.ReactElement => {
   const [isTapped, setIsTapped] = useState(false)
   const transitionValue = useTimingTransition(isTapped, {
-    duration: 100,
+    duration: tapAnimationDuration,
     easing: Easing.inOut(Easing.circle),
   })
   const animationValue = interpolate(transitionValue, {
