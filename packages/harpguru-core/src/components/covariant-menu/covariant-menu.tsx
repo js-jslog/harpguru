@@ -89,7 +89,6 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
           <Option {...rootPitchOptionProps} />
         </OptionLock>
-        <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <Feather name="sliders" size={sizes['7']} color={colors.inertOutline} />
