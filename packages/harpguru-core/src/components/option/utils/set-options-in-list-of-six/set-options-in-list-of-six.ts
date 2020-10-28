@@ -39,7 +39,7 @@ export const setOptionsInListOfSix = (
   })
 
   return [
-    ...getRemainder(orderedOptionIds),
+    ...getRemainder(activeFirstOrderedIds),
     ...returnArray,
   ] as OptionDisplayList
 }
