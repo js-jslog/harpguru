@@ -21,11 +21,11 @@ import {
 } from '../../constants'
 
 type StyleAndAnimationVals = {
-  readonly menuSlideXTranslation: Node<number>
-  readonly menuSlideYTranslation: Node<number>
-  readonly menuScale: Node<number>
-  readonly menuBackgroundColor: Node<number>
-  readonly menuOpacity: Node<number>
+  readonly slideX: Node<number>
+  readonly slideY: Node<number>
+  readonly scale: Node<number>
+  readonly backgroundColor: Node<number>
+  readonly opacity: Node<number>
   readonly labelCounterScale: Node<number>
 }
 
@@ -90,34 +90,34 @@ export const getMenuAnimationValues = (
       multiply(getScaledMenuLabelProtrusion(), outwardXMultiplier),
     ],
   })
-  const menuSlideXTranslation = add(hideMenuXTranslation, hideLabelTranslation)
-  const menuSlideYTranslation = hideMenuYTranslation
-  const menuScale = interpolate(hideMenuVal, {
+  const slideX = add(hideMenuXTranslation, hideLabelTranslation)
+  const slideY = hideMenuYTranslation
+  const scale = interpolate(hideMenuVal, {
     inputRange: [0, 1],
     outputRange: [1, menuHiddenScale],
   })
-  const menuBackgroundColor = interpolateColor(hideMenuVal, {
+  const backgroundColor = interpolateColor(hideMenuVal, {
     inputRange: [0, 1],
     outputRange: [colors.pageColor, colors.homeRowsColor],
   })
-  const menuOpacity = interpolate(hideMenuVal, {
+  const opacity = interpolate(hideMenuVal, {
     inputRange: [0, 1],
     outputRange: [overlayOpacity, 1],
   })
 
   // Label animation values
-  const labelCounterScale = interpolate(menuScale, {
+  const labelCounterScale = interpolate(scale, {
     inputRange: [menuHiddenScale, 0.4],
     outputRange: [divide(1, menuHiddenScale), 0],
     extrapolate: Extrapolate.CLAMP,
   })
 
   return {
-    menuSlideXTranslation,
-    menuSlideYTranslation,
-    menuScale,
-    menuBackgroundColor,
-    menuOpacity,
+    slideX,
+    slideY,
+    scale,
+    backgroundColor,
+    opacity,
     labelCounterScale,
   }
 }

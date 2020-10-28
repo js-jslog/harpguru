@@ -16,11 +16,11 @@ export const Menu = ({
   children,
 }: MenuProps & ChildrenProps): React.ReactElement => {
   const {
-    menuSlideXTranslation,
-    menuSlideYTranslation,
-    menuScale,
-    menuBackgroundColor,
-    menuOpacity,
+    slideX,
+    slideY,
+    scale,
+    backgroundColor,
+    opacity,
   } = getMenuAnimationValues(hideMenu, hideLabel, stashPosition)
   const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
 
@@ -45,9 +45,9 @@ export const Menu = ({
         styles.animated,
         {
           transform: [
-            { translateX: menuSlideXTranslation },
-            { translateY: menuSlideYTranslation },
-            { scale: menuScale },
+            { translateX: slideX },
+            { translateY: slideY },
+            { scale: scale },
           ],
         },
       ]}
@@ -56,8 +56,8 @@ export const Menu = ({
         style={[
           styles.overlay,
           {
-            backgroundColor: menuBackgroundColor,
-            opacity: menuOpacity,
+            backgroundColor: backgroundColor,
+            opacity: opacity,
           },
         ]}
       >
