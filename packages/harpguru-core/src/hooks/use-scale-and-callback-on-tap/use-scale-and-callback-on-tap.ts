@@ -10,7 +10,9 @@ import { tapAnimationDuration } from '../../constants'
 type TapEventHandler = (arg0: TapGestureHandlerStateChangeEvent) => void
 
 export const useScaleAndCallbackOnTap = (
-  callback: () => void
+  callback: () => void,
+  scaleIn: [number, number],
+  scaleOut: [number, number]
 ): [Node<number>, TapEventHandler] => {
   const [isTapped, setIsTapped] = React.useState(false)
   const changedTap = isTapped !== usePrevious(isTapped, isTapped)
@@ -20,7 +22,7 @@ export const useScaleAndCallbackOnTap = (
   })
   const tapAnimationValue = interpolate(tapTransitionValue, {
     inputRange: [0, 1],
-    outputRange: isTapped ? [1, 5] : [1, 5],
+    outputRange: isTapped ? scaleIn : scaleOut,
   })
   const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
     const { nativeEvent } = event
