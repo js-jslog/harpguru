@@ -16,7 +16,8 @@ export const MenuCloseButton = ({
   const [tapAnimationValue, handleTapStateChange] = useScaleAndCallbackOnTap(
     openCloseMenu,
     [1, 2],
-    [1, 2]
+    [1, 2],
+    true
   )
 
   return (

@@ -12,7 +12,8 @@ type TapEventHandler = (arg0: TapGestureHandlerStateChangeEvent) => void
 export const useScaleAndCallbackOnTap = (
   callback: () => void,
   scaleIn: [number, number],
-  scaleOut: [number, number]
+  scaleOut: [number, number],
+  shouldAnimateOut: boolean
 ): [Node<number>, TapEventHandler] => {
   const [isTapped, setIsTapped] = React.useState(false)
   const changedTap = isTapped !== usePrevious(isTapped, isTapped)
@@ -29,19 +30,21 @@ export const useScaleAndCallbackOnTap = (
     if (nativeEvent.state === State.BEGAN) setIsTapped(true)
     if ([State.FAILED, State.CANCELLED].includes(nativeEvent.state))
       setIsTapped(false)
-    if (nativeEvent.state === State.END) setIsTapped(false)
+    if (nativeEvent.state !== State.END) return
+    if (!shouldAnimateOut) callback()
+    setIsTapped(false)
   }
 
   React.useEffect(() => {
     const postAnimation = setTimeout(() => {
-      if (changedTap === false) return
+      if (changedTap === false || !shouldAnimateOut) return
       setIsTapped(false)
       callback()
     }, tapAnimationDuration)
     return () => {
       clearTimeout(postAnimation)
     }
-  }, [changedTap, setIsTapped, callback])
+  }, [changedTap, setIsTapped, callback, shouldAnimateOut])
 
   return [tapAnimationValue, handleTapStateChange]
 }

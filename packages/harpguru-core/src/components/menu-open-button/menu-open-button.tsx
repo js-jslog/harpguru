@@ -35,7 +35,8 @@ export const MenuOpenButton = ({
   const [tapAnimationValue, handleTapStateChange] = useScaleAndCallbackOnTap(
     openCloseMenu,
     [1, 5],
-    [1, 5]
+    [1, 5],
+    true
   )
   const totalScaleValue = add(tapAnimationValue, labelCounterScale)
 
