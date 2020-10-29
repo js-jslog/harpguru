@@ -1,11 +1,8 @@
-import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { View, Text } from 'react-native'
 import React from 'react'
 
 import { OptionValue } from '../option-value'
 import type { OptionIds, ChildrenProps } from '../../types'
-import { usePrevious } from '../../hooks'
 
 import { setOptionsInListOfSix } from './utils'
 import { getStyles } from './option-styles'
@@ -28,17 +25,6 @@ export const Option = (props: OptionProps): React.ReactElement => {
 
   const { title, activeOptionId, orderedOptionIds, setFunction } = props
 
-  const previousOptionId = usePrevious(activeOptionId, undefined)
-  const isUpdated = activeOptionId !== previousOptionId
-  const optionUpdatedVal = useTimingTransition(isUpdated, {
-    duration: 300,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const optionUpdateTransition = interpolate(optionUpdatedVal, {
-    inputRange: [0, 1],
-    outputRange: isUpdated ? [2, 1] : [1, 1],
-  })
-
   const visibleOptionList = setOptionsInListOfSix(
     orderedOptionIds,
     activeOptionId
@@ -58,19 +44,11 @@ export const Option = (props: OptionProps): React.ReactElement => {
           isActive={false}
           setFunction={setFunction}
         />
-        <Animated.View
-          style={[
-            {
-              transform: [{ scale: optionUpdateTransition }],
-            },
-          ]}
-        >
-          <OptionValue
-            id={visibleOptionList[2]}
-            isActive={true}
-            setFunction={setFunction}
-          />
-        </Animated.View>
+        <OptionValue
+          id={visibleOptionList[2]}
+          isActive={true}
+          setFunction={setFunction}
+        />
         <OptionValue
           id={visibleOptionList[3]}
           isActive={false}
