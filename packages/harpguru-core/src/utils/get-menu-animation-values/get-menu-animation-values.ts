@@ -43,7 +43,6 @@ export const getMenuAnimationValues = (
     windowWidth < windowHeight ? windowWidth : windowHeight
   const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
 
-  // Animation values
   const hideMenuVal = useTimingTransition(hideMenu, {
     duration: 300,
     easing: Easing.inOut(Easing.ease),
@@ -53,7 +52,6 @@ export const getMenuAnimationValues = (
     easing: Easing.inOut(Easing.ease),
   })
 
-  // Menu animation values
   const hideMenuXTranslation = interpolate(hideMenuVal, {
     inputRange: [0, 1],
     outputRange: [
@@ -100,7 +98,6 @@ export const getMenuAnimationValues = (
     outputRange: [overlayOpacity, 1],
   })
 
-  // Label animation values
   const labelCounterScale = interpolate(scale, {
     inputRange: [menuHiddenScale, 0.4],
     outputRange: [divide(1, menuHiddenScale), 0],
