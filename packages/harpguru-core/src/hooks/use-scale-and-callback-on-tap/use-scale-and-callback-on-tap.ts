@@ -27,16 +27,19 @@ export const useScaleAndCallbackOnTap = (
     outputRange: isTapped ? scaleIn : scaleOut,
   })
   const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
-    const { nativeEvent } = event
-    if (nativeEvent.state === State.BEGAN) setIsTapped(true)
-    if (
-      [State.FAILED, State.CANCELLED, State.UNDETERMINED].includes(
-        nativeEvent.state
-      ) &&
-      isTapped !== false
-    )
-      setIsTapped(false)
-    if (nativeEvent.state !== State.END || shouldAnimateOut) return
+    const {
+      nativeEvent: { state },
+    } = event
+    const tapStart = state === State.BEGAN
+    const tapFail = [
+      State.FAILED,
+      State.CANCELLED,
+      State.UNDETERMINED,
+    ].includes(state)
+    const tapEnd = state === State.END
+    if (tapStart) setIsTapped(true)
+    if (tapFail) setIsTapped(false)
+    if (!tapEnd || shouldAnimateOut) return
     setIsTapped(false)
     callback()
   }
