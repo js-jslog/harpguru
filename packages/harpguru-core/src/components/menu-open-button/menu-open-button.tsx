@@ -12,15 +12,15 @@ import type { MenuProps, ChildrenProps } from '../../types'
 import { useTapAnimation } from './hooks'
 
 export const MenuOpenButton = ({
-  hideMenu,
-  hideLabel,
+  isMenuHidden,
+  isLabelHidden,
   stashPosition,
   openCloseMenu,
   children,
 }: MenuProps & ChildrenProps): React.ReactElement => {
   const { labelCounterScale } = getMenuAnimationValues(
-    hideMenu,
-    hideLabel,
+    isMenuHidden,
+    isLabelHidden,
     stashPosition
   )
   const scaledLabelProtrusion = getScaledMenuLabelProtrusion()

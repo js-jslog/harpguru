@@ -34,8 +34,8 @@ export enum CellStates {
 }
 
 export type MenuProps = {
-  readonly hideMenu: boolean
-  readonly hideLabel: boolean
+  readonly isMenuHidden: boolean
+  readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
   readonly openCloseMenu: () => void
 }
