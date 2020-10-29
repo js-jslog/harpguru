@@ -1,9 +1,4 @@
-import { useState, useEffect } from 'reactn'
-import { useTimingTransition } from 'react-native-redash'
-import Animated, {
-  Easing,
-  interpolate,
-} from 'react-native-reanimated'
+import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
@@ -11,7 +6,9 @@ import React from 'react'
 import { TapAnimationTypes } from '../../types'
 import type { OptionIds } from '../../types'
 import { getSizes, colors } from '../../styles'
-import { useScaleAndCallbackOnTap, usePrevious } from '../../hooks'
+import { useScaleAndCallbackOnTap } from '../../hooks'
+
+import { useScaleOnUpdateAnimation } from './hooks'
 
 type OptionValueProps = {
   readonly id: OptionIds | undefined
@@ -35,50 +32,7 @@ export const OptionValue = ({
     TapAnimationTypes.Safe
   )
 
-  const [shouldDoUpdateAnimation, setShouldDoUpdateAnimation] = useState(false)
-  const [doUpdateAnimation, setDoUpdateAnimation] = useState(false)
-  const previousId = usePrevious(id, undefined)
-  const idChanged = previousId !== id
-
-  const optionUpdatedVal = useTimingTransition(doUpdateAnimation, {
-    duration: 800,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const optionUpdateTransition = interpolate(optionUpdatedVal, {
-    inputRange: [0, 1],
-    outputRange: doUpdateAnimation ? [1.8, 1] : [1, 1],
-  })
-
-  useEffect(() => {
-    if (!idChanged || shouldDoUpdateAnimation === true) return
-    setShouldDoUpdateAnimation(true)
-  }, [idChanged, shouldDoUpdateAnimation, setShouldDoUpdateAnimation])
-
-  useEffect(() => {
-    const timeForUpdateAnimation = setTimeout(() => {
-      if (!shouldDoUpdateAnimation || doUpdateAnimation) return
-      setDoUpdateAnimation(true)
-      setShouldDoUpdateAnimation(false)
-    }, 100)
-    return () => {
-      clearTimeout(timeForUpdateAnimation)
-    }
-  }, [
-    shouldDoUpdateAnimation,
-    doUpdateAnimation,
-    setDoUpdateAnimation,
-    setShouldDoUpdateAnimation,
-  ])
-
-  useEffect(() => {
-    const afterUpdateAnimation = setTimeout(() => {
-      if (!doUpdateAnimation) return
-      setDoUpdateAnimation(false)
-    }, 300)
-    return () => {
-      clearTimeout(afterUpdateAnimation)
-    }
-  }, [doUpdateAnimation, setDoUpdateAnimation])
+  const optionUpdateAnimationValue = useScaleOnUpdateAnimation(id)
 
   const sizes = getSizes()
   const { baseStyle, activeStyle } = StyleSheet.create({
@@ -109,7 +63,11 @@ export const OptionValue = ({
         style={[
           {
             transform: [
-              { scale: isActive ? optionUpdateTransition : tapAnimationValue },
+              {
+                scale: isActive
+                  ? optionUpdateAnimationValue
+                  : tapAnimationValue,
+              },
             ],
           },
         ]}
