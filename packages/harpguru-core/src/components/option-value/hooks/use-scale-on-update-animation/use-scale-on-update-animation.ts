@@ -15,7 +15,7 @@ export const useScaleOnUpdateAnimation = (
   const idChanged = previousId !== id
 
   const animationDuration = 200
-  const scaleFactor = 8
+  const scaleFactor = 3
 
   const transition = useTimingTransition(doUpdateAnimation, {
     duration: animationDuration,
