@@ -29,6 +29,13 @@ export const useScaleAndCallbackOnTap = (
   const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
     const { nativeEvent } = event
     if (nativeEvent.state === State.BEGAN) setIsTapped(true)
+    if (
+      [State.FAILED, State.CANCELLED, State.UNDETERMINED].includes(
+        nativeEvent.state
+      ) &&
+      isTapped !== false
+    )
+      setIsTapped(false)
     if (nativeEvent.state !== State.END || shouldAnimateOut) return
     setIsTapped(false)
     callback()
@@ -43,7 +50,7 @@ export const useScaleAndCallbackOnTap = (
     return () => {
       clearTimeout(returnToOriginalScale)
     }
-  }, [isTapped, setIsTapped, shouldAnimateOut])
+  }, [isTapped, setIsTapped, shouldAnimateOut, setIsTimeForCallback])
 
   React.useEffect(() => {
     const runCallback = setTimeout(() => {
