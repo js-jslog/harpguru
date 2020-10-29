@@ -3,7 +3,8 @@ import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { OptionIds } from '../../types'
+import { TapAnimationTypes } from '../../types'
+import type { OptionIds } from '../../types'
 import { getSizes, colors } from '../../styles'
 import { useScaleAndCallbackOnTap } from '../../hooks'
 
@@ -26,7 +27,7 @@ export const OptionValue = ({
     tapHandlerCallback,
     [1, 1.8],
     [1, 1.8],
-    false
+    TapAnimationTypes.Safe
   )
 
   const sizes = getSizes()

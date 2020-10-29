@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
+import { TapAnimationTypes } from '../../types'
 import type { MenuProps } from '../../types'
 import { getSizes, colors } from '../../styles'
 import { useScaleAndCallbackOnTap } from '../../hooks'
@@ -17,7 +18,7 @@ export const MenuCloseButton = ({
     openCloseMenu,
     [1, 2],
     [1, 2],
-    true
+    TapAnimationTypes.Unsafe
   )
 
   return (

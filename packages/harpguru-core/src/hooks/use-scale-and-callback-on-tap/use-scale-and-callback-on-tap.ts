@@ -4,7 +4,7 @@ import { State } from 'react-native-gesture-handler'
 import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import React from 'react'
 
-import { usePrevious } from '../use-previous'
+import { TapAnimationTypes } from '../../types'
 import { tapAnimationDuration } from '../../constants'
 
 type TapEventHandler = (arg0: TapGestureHandlerStateChangeEvent) => void
@@ -13,10 +13,11 @@ export const useScaleAndCallbackOnTap = (
   callback: () => void,
   scaleIn: [number, number],
   scaleOut: [number, number],
-  shouldAnimateOut: boolean
+  tapAnimationType: TapAnimationTypes
 ): [Node<number>, TapEventHandler] => {
   const [isTapped, setIsTapped] = React.useState(false)
-  const changedTap = isTapped !== usePrevious(isTapped, isTapped)
+  const [isTimeForCallback, setIsTimeForCallback] = React.useState(false)
+  const shouldAnimateOut = tapAnimationType === TapAnimationTypes.Unsafe
   const tapTransitionValue = useTimingTransition(isTapped, {
     duration: tapAnimationDuration,
     easing: Easing.inOut(Easing.circle),
@@ -28,23 +29,32 @@ export const useScaleAndCallbackOnTap = (
   const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
     const { nativeEvent } = event
     if (nativeEvent.state === State.BEGAN) setIsTapped(true)
-    if ([State.FAILED, State.CANCELLED].includes(nativeEvent.state))
-      setIsTapped(false)
-    if (nativeEvent.state !== State.END) return
-    if (!shouldAnimateOut) callback()
+    if (nativeEvent.state !== State.END || shouldAnimateOut) return
     setIsTapped(false)
+    callback()
   }
 
   React.useEffect(() => {
-    const postAnimation = setTimeout(() => {
-      if (changedTap === false || !shouldAnimateOut) return
+    const returnToOriginalScale = setTimeout(() => {
+      if (isTapped === false || !shouldAnimateOut) return
       setIsTapped(false)
+      setIsTimeForCallback(true)
+    }, tapAnimationDuration)
+    return () => {
+      clearTimeout(returnToOriginalScale)
+    }
+  }, [isTapped, setIsTapped, shouldAnimateOut])
+
+  React.useEffect(() => {
+    const runCallback = setTimeout(() => {
+      if (isTimeForCallback === false || !shouldAnimateOut) return
+      setIsTimeForCallback(false)
       callback()
     }, tapAnimationDuration)
     return () => {
-      clearTimeout(postAnimation)
+      clearTimeout(runCallback)
     }
-  }, [changedTap, setIsTapped, callback, shouldAnimateOut])
+  }, [isTimeForCallback, setIsTimeForCallback, shouldAnimateOut, callback])
 
   return [tapAnimationValue, handleTapStateChange]
 }
