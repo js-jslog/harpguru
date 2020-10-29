@@ -1,18 +1,19 @@
 import { putActiveOptionFirst } from '../put-active-option-first'
 import { OptionIds } from '../../../../types'
 
+type OptionDisplayItem = OptionIds | undefined
 type OptionDisplayList = [
-  OptionIds | undefined,
-  OptionIds | undefined,
-  OptionIds | undefined,
-  OptionIds | undefined,
-  OptionIds | undefined,
-  OptionIds | undefined
+  OptionDisplayItem,
+  OptionDisplayItem,
+  OptionIds,
+  OptionDisplayItem,
+  OptionDisplayItem,
+  OptionDisplayItem
 ]
 
-const getRemainder = (
+const getHead = (
   orderedOptionIds: ReadonlyArray<OptionIds>
-): [OptionIds | undefined, OptionIds | undefined] => {
+): [OptionDisplayItem, OptionDisplayItem] => {
   const { length } = orderedOptionIds
   if (length <= 4) {
     return [undefined, undefined]
@@ -21,6 +22,20 @@ const getRemainder = (
   } else {
     return [orderedOptionIds[length - 2], orderedOptionIds[length - 1]]
   }
+}
+
+const getTail = (
+  orderedOptionIds: ReadonlyArray<OptionIds>
+): [OptionDisplayItem, OptionDisplayItem, OptionDisplayItem] => {
+  const tailTemplate = [0, 0, 0]
+  const tail = tailTemplate.map((_, index) => {
+    const indexIgnoringActive = index + 1
+    if (orderedOptionIds[indexIgnoringActive])
+      return orderedOptionIds[indexIgnoringActive]
+    return undefined
+  }) as [OptionDisplayItem, OptionDisplayItem, OptionDisplayItem]
+
+  return tail
 }
 
 export const setOptionsInListOfSix = (
@@ -32,14 +47,8 @@ export const setOptionsInListOfSix = (
     activeOptionId
   )
 
-  const arrayToFill = [0, 0, 0, 0]
-  const returnArray = arrayToFill.map((_, index) => {
-    if (activeFirstOrderedIds[index]) return activeFirstOrderedIds[index]
-    return undefined
-  })
+  const head = getHead(activeFirstOrderedIds)
+  const tail = getTail(activeFirstOrderedIds)
 
-  return [
-    ...getRemainder(activeFirstOrderedIds),
-    ...returnArray,
-  ] as OptionDisplayList
+  return [...head, activeOptionId, ...tail] as OptionDisplayList
 }
