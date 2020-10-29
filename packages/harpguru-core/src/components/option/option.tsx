@@ -88,13 +88,11 @@ export const Option = (props: OptionProps): React.ReactElement => {
             id={visibleOptionList[0]}
             isActive={false}
             setFunction={setFunction}
-            style={styles.distantOptionValue}
           />
           <OptionValue
             id={visibleOptionList[1]}
             isActive={false}
             setFunction={setFunction}
-            style={styles.nextOptionValue}
           />
           <Animated.View
             style={[
@@ -107,26 +105,22 @@ export const Option = (props: OptionProps): React.ReactElement => {
               id={visibleOptionList[2]}
               isActive={true}
               setFunction={setFunction}
-              style={styles.activeOptionValue}
             />
           </Animated.View>
           <OptionValue
             id={visibleOptionList[3]}
             isActive={false}
             setFunction={setFunction}
-            style={styles.nextOptionValue}
           />
           <OptionValue
             id={visibleOptionList[4]}
             isActive={false}
             setFunction={setFunction}
-            style={styles.distantOptionValue}
           />
           <OptionValue
             id={visibleOptionList[5]}
             isActive={false}
             setFunction={setFunction}
-            style={styles.distantOptionValue}
           />
         </View>
       </View>
