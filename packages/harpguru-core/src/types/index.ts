@@ -37,7 +37,7 @@ export type MenuProps = {
   readonly hideMenu: boolean
   readonly hideLabel: boolean
   readonly stashPosition: MenuStashPosition
-  readonly openCloseTapHandler: () => void
+  readonly openCloseMenu: () => void
 }
 
 export type ChildrenProps = {

@@ -15,7 +15,7 @@ export const MenuOpenButton = ({
   hideMenu,
   hideLabel,
   stashPosition,
-  openCloseTapHandler,
+  openCloseMenu,
   children,
 }: MenuProps & ChildrenProps): React.ReactElement => {
   const { labelCounterScale } = getMenuAnimationValues(
@@ -34,7 +34,7 @@ export const MenuOpenButton = ({
   })
 
   const [tapAnimationValue, handleTapStateChange] = useTapAnimation(
-    openCloseTapHandler
+    openCloseMenu
   )
   const totalScaleValue = add(tapAnimationValue, labelCounterScale)
 

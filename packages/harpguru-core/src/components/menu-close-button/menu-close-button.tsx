@@ -11,8 +11,8 @@ import { getSizes, colors } from '../../styles'
 import { tapAnimationDuration } from '../../constants'
 
 export const MenuCloseButton = ({
-  openCloseTapHandler,
-}: Pick<MenuProps, 'openCloseTapHandler'>): React.ReactElement => {
+  openCloseMenu,
+}: Pick<MenuProps, 'openCloseMenu'>): React.ReactElement => {
   const sizes = getSizes()
   const [isTapped, setIsTapped] = React.useState(false)
   const transitionValue = useTimingTransition(isTapped, {
@@ -29,7 +29,7 @@ export const MenuCloseButton = ({
   }: TapGestureHandlerStateChangeEvent) => {
     setIsTapped([State.BEGAN].includes(state))
     if (state !== State.END) return
-    openCloseTapHandler()
+    openCloseMenu()
   }
 
   return (

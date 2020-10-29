@@ -6,8 +6,8 @@ import { getScaledMenuLabelProtrusion } from '../../utils/'
 import type { MenuProps, ChildrenProps } from '../../types'
 
 export const MenuFace = ({
+  openCloseMenu,
   children,
-  openCloseTapHandler,
 }: MenuProps & ChildrenProps): React.ReactElement => {
   const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
   const { style } = StyleSheet.create({
@@ -20,7 +20,7 @@ export const MenuFace = ({
   return (
     <View style={style}>
       {children}
-      <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
+      <MenuCloseButton openCloseMenu={openCloseMenu} />
     </View>
   )
 }
