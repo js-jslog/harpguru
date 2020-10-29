@@ -15,7 +15,7 @@ import { getScaledMenuLabelProtrusion } from '../get-scaled-menu-label-protrusio
 import { MenuStashPosition } from '../../types'
 import { colors } from '../../styles'
 import {
-  menuHiddenScale,
+  menuStashedScale,
   menuScaleTranslationFactor,
   menuHiddenYOffsetFactor,
   overlayOpacity,
@@ -90,7 +90,7 @@ export const getMenuAnimationValues = (
   const slideY = menuYValue
   const scale = interpolate(stashMenuTiming, {
     inputRange: [0, 1],
-    outputRange: [1, menuHiddenScale],
+    outputRange: [1, menuStashedScale],
   })
   const backgroundColor = interpolateColor(stashMenuTiming, {
     inputRange: [0, 1],
@@ -102,8 +102,8 @@ export const getMenuAnimationValues = (
   })
 
   const labelCounterScale = interpolate(scale, {
-    inputRange: [menuHiddenScale, 0.4],
-    outputRange: [divide(1, menuHiddenScale), 0],
+    inputRange: [menuStashedScale, 0.4],
+    outputRange: [divide(1, menuStashedScale), 0],
     extrapolate: Extrapolate.CLAMP,
   })
 

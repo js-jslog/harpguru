@@ -12,14 +12,14 @@ import type { MenuProps, ChildrenProps } from '../../types'
 import { useScaleAndCallbackOnTap } from '../../hooks'
 
 export const MenuOpenButton = ({
-  isMenuHidden,
+  isMenuStashed,
   isLabelHidden,
   stashPosition,
   openCloseMenu,
   children,
 }: MenuProps & ChildrenProps): React.ReactElement => {
   const { labelCounterScale } = getMenuAnimationValues(
-    isMenuHidden,
+    isMenuStashed,
     isLabelHidden,
     stashPosition
   )

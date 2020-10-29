@@ -10,7 +10,7 @@ import type { MenuProps, ChildrenProps } from '../../types'
 import { getSizes } from '../../styles'
 
 export const Menu = ({
-  isMenuHidden,
+  isMenuStashed,
   isLabelHidden,
   stashPosition,
   children,
@@ -21,7 +21,7 @@ export const Menu = ({
     scale,
     backgroundColor,
     opacity,
-  } = getMenuAnimationValues(isMenuHidden, isLabelHidden, stashPosition)
+  } = getMenuAnimationValues(isMenuStashed, isLabelHidden, stashPosition)
   const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
 
   const { 9: borderRadius } = getSizes()

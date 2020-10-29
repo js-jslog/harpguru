@@ -57,7 +57,7 @@ export const HarpGuru = (): ReactElement => {
         <ActivityLegend />
         <HarpFaceMemo />
         <CovariantMenu
-          isMenuHidden={menuState !== MenuStates.CovariantMenu}
+          isMenuStashed={menuState !== MenuStates.CovariantMenu}
           isLabelHidden={
             menuState !== MenuStates.CovariantMenu &&
             menuState !== MenuStates.NoMenu
@@ -66,7 +66,7 @@ export const HarpGuru = (): ReactElement => {
           openCloseMenu={covariantOpenCloseTapHandler}
         />
         <LayoutMenu
-          isMenuHidden={menuState !== MenuStates.LayoutMenu}
+          isMenuStashed={menuState !== MenuStates.LayoutMenu}
           isLabelHidden={
             menuState !== MenuStates.LayoutMenu &&
             menuState !== MenuStates.NoMenu

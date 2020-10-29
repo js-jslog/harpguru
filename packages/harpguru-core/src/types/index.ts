@@ -50,7 +50,7 @@ export enum TapAnimationTypes {
 }
 
 export type MenuProps = {
-  readonly isMenuHidden: boolean
+  readonly isMenuStashed: boolean
   readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
   readonly openCloseMenu: () => void

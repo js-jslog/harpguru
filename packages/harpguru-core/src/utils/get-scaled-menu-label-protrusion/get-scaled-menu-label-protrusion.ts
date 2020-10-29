@@ -1,8 +1,8 @@
 import { getSizes } from '../../styles'
-import { menuHiddenScale } from '../../constants'
+import { menuStashedScale } from '../../constants'
 
 export const getScaledMenuLabelProtrusion = (): number => {
   const { labelProtrusion: unscaledLabelProtrusion } = getSizes()
-  const scaledLabelProtrusion = unscaledLabelProtrusion / menuHiddenScale
+  const scaledLabelProtrusion = unscaledLabelProtrusion / menuStashedScale
   return scaledLabelProtrusion
 }
