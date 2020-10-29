@@ -31,28 +31,31 @@ type MenuAnimationValues = {
 }
 
 export const getMenuAnimationValues = (
-  hideMenu: boolean,
-  hideLabel: boolean,
+  isMenuStashed: boolean,
+  isLabelHidden: boolean,
   stashPosition: MenuStashPosition
 ): MenuAnimationValues => {
-  const outwardXMultiplier = 1
-  const outwardYMultiplier = stashPosition === MenuStashPosition.Top ? -1 : 1
+  const RIGHT = 1
+  const UP = -1
+  const DOWN = 1
+  const stashXDirection = RIGHT
+  const stashYDirection = stashPosition === MenuStashPosition.Top ? -UP : DOWN
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceShortSide =
     windowWidth < windowHeight ? windowWidth : windowHeight
   const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
 
-  const hideMenuVal = useTimingTransition(hideMenu, {
+  const stashMenuTiming = useTimingTransition(isMenuStashed, {
     duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
-  const hideLabelVal = useTimingTransition(hideLabel, {
+  const hideLabelTiming = useTimingTransition(isLabelHidden, {
     duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
 
-  const hideMenuXTranslation = interpolate(hideMenuVal, {
+  const menuXValue = interpolate(stashMenuTiming, {
     inputRange: [0, 1],
     outputRange: [
       0,
@@ -61,39 +64,39 @@ export const getMenuAnimationValues = (
           deviceLongSide,
           multiply(deviceLongSide, menuScaleTranslationFactor)
         ),
-        outwardXMultiplier
+        stashXDirection
       ),
     ],
   })
-  const hideMenuYTranslation = interpolate(hideMenuVal, {
+  const menuYValue = interpolate(stashMenuTiming, {
     inputRange: [0, 1],
     outputRange: [
       0,
       multiply(
         multiply(deviceShortSide, menuHiddenYOffsetFactor),
         menuScaleTranslationFactor,
-        outwardYMultiplier
+        stashYDirection
       ),
     ],
   })
-  const hideLabelTranslation = interpolate(hideLabelVal, {
+  const labelXValue = interpolate(hideLabelTiming, {
     inputRange: [0, 1],
     outputRange: [
       0,
-      multiply(getScaledMenuLabelProtrusion(), outwardXMultiplier),
+      multiply(getScaledMenuLabelProtrusion(), stashXDirection),
     ],
   })
-  const slideX = add(hideMenuXTranslation, hideLabelTranslation)
-  const slideY = hideMenuYTranslation
-  const scale = interpolate(hideMenuVal, {
+  const slideX = add(menuXValue, labelXValue)
+  const slideY = menuYValue
+  const scale = interpolate(stashMenuTiming, {
     inputRange: [0, 1],
     outputRange: [1, menuHiddenScale],
   })
-  const backgroundColor = interpolateColor(hideMenuVal, {
+  const backgroundColor = interpolateColor(stashMenuTiming, {
     inputRange: [0, 1],
     outputRange: [colors.pageColor, colors.homeRowsColor],
   })
-  const opacity = interpolate(hideMenuVal, {
+  const opacity = interpolate(stashMenuTiming, {
     inputRange: [0, 1],
     outputRange: [overlayOpacity, 1],
   })
