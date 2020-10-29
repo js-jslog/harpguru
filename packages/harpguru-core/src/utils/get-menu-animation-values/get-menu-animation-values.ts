@@ -21,7 +21,7 @@ import {
   overlayOpacity,
 } from '../../constants'
 
-type StyleAndAnimationVals = {
+type MenuAnimationValues = {
   readonly slideX: Node<number>
   readonly slideY: Node<number>
   readonly scale: Node<number>
@@ -34,7 +34,7 @@ export const getMenuAnimationValues = (
   hideMenu: boolean,
   hideLabel: boolean,
   stashPosition: MenuStashPosition
-): StyleAndAnimationVals => {
+): MenuAnimationValues => {
   const outwardXMultiplier = 1
   const outwardYMultiplier = stashPosition === MenuStashPosition.Top ? -1 : 1
 
