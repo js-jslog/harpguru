@@ -17,7 +17,7 @@ import { colors } from '../../styles'
 import {
   menuStashedScale,
   menuScaleTranslationFactor,
-  menuHiddenYOffsetFactor,
+  menuStashedYOffsetFactor,
   overlayOpacity,
 } from '../../constants'
 
@@ -55,39 +55,30 @@ export const getMenuAnimationValues = (
     easing: Easing.inOut(Easing.ease),
   })
 
-  const menuXValue = interpolate(stashMenuTiming, {
+  const scaledFullX = multiply(deviceLongSide, menuScaleTranslationFactor)
+  const stashedX = sub(deviceLongSide, scaledFullX)
+  const stashXVector = multiply(stashedX, stashXDirection)
+  const stashXValue = interpolate(stashMenuTiming, {
     inputRange: [0, 1],
-    outputRange: [
-      0,
-      multiply(
-        sub(
-          deviceLongSide,
-          multiply(deviceLongSide, menuScaleTranslationFactor)
-        ),
-        stashXDirection
-      ),
-    ],
+    outputRange: [0, stashXVector],
   })
-  const menuYValue = interpolate(stashMenuTiming, {
+  const stashedY = multiply(deviceShortSide, menuStashedYOffsetFactor)
+  const scaledStashedY = multiply(stashedY, menuScaleTranslationFactor)
+  const stashedYVector = multiply(scaledStashedY, stashYDirection)
+  const stashYValue = interpolate(stashMenuTiming, {
     inputRange: [0, 1],
-    outputRange: [
-      0,
-      multiply(
-        multiply(deviceShortSide, menuHiddenYOffsetFactor),
-        menuScaleTranslationFactor,
-        stashYDirection
-      ),
-    ],
+    outputRange: [0, stashedYVector],
   })
-  const labelXValue = interpolate(hideLabelTiming, {
+  const hideLabelVector = multiply(
+    getScaledMenuLabelProtrusion(),
+    stashXDirection
+  )
+  const hideXValue = interpolate(hideLabelTiming, {
     inputRange: [0, 1],
-    outputRange: [
-      0,
-      multiply(getScaledMenuLabelProtrusion(), stashXDirection),
-    ],
+    outputRange: [0, hideLabelVector],
   })
-  const slideX = add(menuXValue, labelXValue)
-  const slideY = menuYValue
+  const slideX = add(stashXValue, hideXValue)
+  const slideY = stashYValue
   const scale = interpolate(stashMenuTiming, {
     inputRange: [0, 1],
     outputRange: [1, menuStashedScale],
