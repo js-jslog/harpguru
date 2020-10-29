@@ -14,13 +14,16 @@ export const useScaleOnUpdateAnimation = (
   const previousId = usePrevious(id, undefined)
   const idChanged = previousId !== id
 
+  const animationDuration = 200
+  const scaleFactor = 8
+
   const transition = useTimingTransition(doUpdateAnimation, {
-    duration: 500,
+    duration: animationDuration,
     easing: Easing.inOut(Easing.circle),
   })
   const animationValue = interpolate(transition, {
     inputRange: [0, 1],
-    outputRange: doUpdateAnimation ? [1.8, 1] : [1, 1],
+    outputRange: doUpdateAnimation ? [1, scaleFactor] : [1, scaleFactor],
   })
 
   useEffect(() => {
@@ -33,7 +36,7 @@ export const useScaleOnUpdateAnimation = (
       if (!shouldDoUpdateAnimation || doUpdateAnimation) return
       setDoUpdateAnimation(true)
       setShouldDoUpdateAnimation(false)
-    }, 100)
+    }, 0)
     return () => {
       clearTimeout(timeForUpdateAnimation)
     }
@@ -48,7 +51,7 @@ export const useScaleOnUpdateAnimation = (
     const afterUpdateAnimation = setTimeout(() => {
       if (!doUpdateAnimation) return
       setDoUpdateAnimation(false)
-    }, 300)
+    }, animationDuration)
     return () => {
       clearTimeout(afterUpdateAnimation)
     }
