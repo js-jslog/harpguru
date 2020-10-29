@@ -8,8 +8,7 @@ import {
   getScaledMenuLabelProtrusion,
 } from '../../utils'
 import type { MenuProps, ChildrenProps } from '../../types'
-
-import { useTapAnimation } from './hooks'
+import { useScaleAndCallbackOnTap } from '../../hooks'
 
 export const MenuOpenButton = ({
   isMenuHidden,
@@ -33,7 +32,7 @@ export const MenuOpenButton = ({
     },
   })
 
-  const [tapAnimationValue, handleTapStateChange] = useTapAnimation(
+  const [tapAnimationValue, handleTapStateChange] = useScaleAndCallbackOnTap(
     openCloseMenu
   )
   const totalScaleValue = add(tapAnimationValue, labelCounterScale)

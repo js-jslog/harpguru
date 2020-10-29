@@ -1,36 +1,21 @@
-import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, interpolate } from 'react-native-reanimated'
-import { TapGestureHandler, State } from 'react-native-gesture-handler'
-import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
+import Animated from 'react-native-reanimated'
+import { TapGestureHandler } from 'react-native-gesture-handler'
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
 import type { MenuProps } from '../../types'
 import { getSizes, colors } from '../../styles'
-import { tapAnimationDuration } from '../../constants'
+import { useScaleAndCallbackOnTap } from '../../hooks'
 
 export const MenuCloseButton = ({
   openCloseMenu,
 }: Pick<MenuProps, 'openCloseMenu'>): React.ReactElement => {
   const sizes = getSizes()
-  const [isTapped, setIsTapped] = React.useState(false)
-  const transitionValue = useTimingTransition(isTapped, {
-    duration: tapAnimationDuration,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const animationValue = interpolate(transitionValue, {
-    inputRange: [0, 1],
-    outputRange: isTapped ? [1, 0.5] : [1, 0.5],
-  })
 
-  const handleTapAndAnimate = ({
-    nativeEvent: { state },
-  }: TapGestureHandlerStateChangeEvent) => {
-    setIsTapped([State.BEGAN].includes(state))
-    if (state !== State.END) return
-    openCloseMenu()
-  }
+  const [tapAnimationValue, handleTapStateChange] = useScaleAndCallbackOnTap(
+    openCloseMenu
+  )
 
   return (
     <View
@@ -40,7 +25,7 @@ export const MenuCloseButton = ({
         flexDirection: 'row',
       }}
     >
-      <TapGestureHandler onHandlerStateChange={handleTapAndAnimate}>
+      <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
         <View
           style={{
             padding: sizes['6'],
@@ -50,7 +35,7 @@ export const MenuCloseButton = ({
           <Animated.View
             style={[
               {
-                transform: [{ scale: animationValue }],
+                transform: [{ scale: tapAnimationValue }],
               },
             ]}
           >
