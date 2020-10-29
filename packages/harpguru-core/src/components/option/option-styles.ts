@@ -1,4 +1,3 @@
-import { State } from 'react-native-gesture-handler'
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native'
 
 import { getSizes } from '../../styles'
@@ -31,14 +30,4 @@ export const getStyles = (): OptionStyles => {
   })
 
   return styles
-}
-
-export const getDynamicStyles = (
-  state: State
-): { readonly activeSwipeStyle: ViewStyle } => {
-  return StyleSheet.create({
-    activeSwipeStyle: {
-      opacity: state === State.ACTIVE ? 0.5 : 1,
-    },
-  })
 }
