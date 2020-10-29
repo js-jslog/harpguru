@@ -12,6 +12,7 @@ export const useQuizCycle = (menuState: MenuStates): void => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const requestNextQuestion = useDispatch('requestNextQuestion')
   const revealAnswer = useDispatch('revealAnswer')
+  const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
 
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
@@ -60,5 +61,5 @@ export const useQuizCycle = (menuState: MenuStates): void => {
     if (screenBecameFree) return immmediatelyRequestQuestion()
     if (answerGiven) return requestQuestionAheadOfDeadline()
     return setNextQuestionDeadline()
-  }, [quizQuestion, screenBecameFree, answerGiven])
+  }, [quizQuestion, screenBecameFree, answerGiven, bufferedActivityToggles])
 }
