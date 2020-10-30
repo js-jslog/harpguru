@@ -2,12 +2,10 @@ import Animated from 'react-native-reanimated'
 import { StyleSheet } from 'react-native'
 import React from 'react'
 
-import {
-  getScaledMenuLabelProtrusion,
-  getMenuAnimationValues,
-} from '../../utils'
+import { getScaledMenuLabelProtrusion } from '../../utils'
 import type { MenuProps, ChildrenProps } from '../../types'
 import { getSizes } from '../../styles'
+import { useMenuAnimationValues } from '../../hooks'
 
 export const Menu = ({
   isMenuStashed,
@@ -21,7 +19,7 @@ export const Menu = ({
     scale,
     backgroundColor,
     opacity,
-  } = getMenuAnimationValues(isMenuStashed, isLabelHidden, stashPosition)
+  } = useMenuAnimationValues(isMenuStashed, isLabelHidden, stashPosition)
   const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
 
   const { 9: borderRadius } = getSizes()

@@ -11,7 +11,7 @@ import {
 import type { Node } from 'react-native-reanimated'
 import { Dimensions } from 'react-native'
 
-import { getScaledMenuLabelProtrusion } from '../get-scaled-menu-label-protrusion'
+import { getScaledMenuLabelProtrusion } from '../../utils'
 import { MenuStashPosition } from '../../types'
 import { colors } from '../../styles'
 import {
@@ -30,7 +30,7 @@ type MenuAnimationValues = {
   readonly labelCounterScale: Node<number>
 }
 
-export const getMenuAnimationValues = (
+export const useMenuAnimationValues = (
   isMenuStashed: boolean,
   isLabelHidden: boolean,
   stashPosition: MenuStashPosition
