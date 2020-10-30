@@ -46,12 +46,13 @@ export const useMenuAnimationValues = (
     windowWidth < windowHeight ? windowWidth : windowHeight
   const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
 
+  const animationDuration = 300
   const stashMenuTiming = useTimingTransition(isMenuStashed, {
-    duration: 300,
+    duration: animationDuration,
     easing: Easing.inOut(Easing.ease),
   })
   const hideLabelTiming = useTimingTransition(isLabelHidden, {
-    duration: 300,
+    duration: animationDuration,
     easing: Easing.inOut(Easing.ease),
   })
 
