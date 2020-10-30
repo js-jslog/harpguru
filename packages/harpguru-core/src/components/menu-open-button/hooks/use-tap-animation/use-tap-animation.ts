@@ -14,11 +14,11 @@ export const useTapAnimation = (
 ): [Node<number>, TapEventHandler] => {
   const [isTapped, setIsTapped] = React.useState(false)
   const changedTap = isTapped !== usePrevious(isTapped, isTapped)
-  const tapTransitionValue = useTimingTransition(isTapped, {
+  const timingValue = useTimingTransition(isTapped, {
     duration: tapAnimationDuration,
     easing: Easing.inOut(Easing.circle),
   })
-  const tapAnimationValue = interpolate(tapTransitionValue, {
+  const animationValue = interpolate(timingValue, {
     inputRange: [0, 1],
     outputRange: isTapped ? [1, 5] : [1, 5],
   })
@@ -41,5 +41,5 @@ export const useTapAnimation = (
     }
   }, [changedTap, setIsTapped, openCloseMenu])
 
-  return [tapAnimationValue, handleTapStateChange]
+  return [animationValue, handleTapStateChange]
 }

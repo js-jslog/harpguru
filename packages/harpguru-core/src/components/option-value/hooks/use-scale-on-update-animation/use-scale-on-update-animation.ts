@@ -17,11 +17,11 @@ export const useScaleOnUpdateAnimation = (
   const animationDuration = 200
   const scaleFactor = 3
 
-  const transition = useTimingTransition(doUpdateAnimation, {
+  const timingValue = useTimingTransition(doUpdateAnimation, {
     duration: animationDuration,
     easing: Easing.inOut(Easing.circle),
   })
-  const animationValue = interpolate(transition, {
+  const animationValue = interpolate(timingValue, {
     inputRange: [0, 1],
     outputRange: doUpdateAnimation ? [1, scaleFactor] : [1, scaleFactor],
   })

@@ -18,11 +18,11 @@ export const useScaleAndCallbackOnTap = (
   const [isTapped, setIsTapped] = React.useState(false)
   const [isTimeForCallback, setIsTimeForCallback] = React.useState(false)
   const shouldAnimateOut = tapAnimationType === TapAnimationTypes.Unsafe
-  const tapTransitionValue = useTimingTransition(isTapped, {
+  const timingValue = useTimingTransition(isTapped, {
     duration: tapAnimationDuration,
     easing: Easing.inOut(Easing.circle),
   })
-  const tapAnimationValue = interpolate(tapTransitionValue, {
+  const animationValue = interpolate(timingValue, {
     inputRange: [0, 1],
     outputRange: isTapped ? scaleIn : scaleOut,
   })
@@ -66,5 +66,5 @@ export const useScaleAndCallbackOnTap = (
     }
   }, [isTimeForCallback, setIsTimeForCallback, shouldAnimateOut, callback])
 
-  return [tapAnimationValue, handleTapStateChange]
+  return [animationValue, handleTapStateChange]
 }

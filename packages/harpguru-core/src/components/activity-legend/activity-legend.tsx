@@ -94,11 +94,11 @@ const ActivityCell = ({
     },
   })
 
-  const hideActivityCellVal = useTimingTransition(isActive, {
+  const activityCellTiming = useTimingTransition(isActive, {
     duration: 200,
     easing: Easing.inOut(Easing.circle),
   })
-  const hideActivityCellTranslation = interpolate(hideActivityCellVal, {
+  const activityCellAnimation = interpolate(activityCellTiming, {
     inputRange: [0, 1],
     outputRange: [multiply(legendWidth, -1), 0],
   })
@@ -110,7 +110,7 @@ const ActivityCell = ({
           style={[
             styles.cellColor,
             {
-              transform: [{ translateX: hideActivityCellTranslation }],
+              transform: [{ translateX: activityCellAnimation }],
             },
           ]}
         />
