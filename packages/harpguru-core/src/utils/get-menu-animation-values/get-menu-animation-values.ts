@@ -39,7 +39,7 @@ export const getMenuAnimationValues = (
   const UP = -1
   const DOWN = 1
   const stashXDirection = RIGHT
-  const stashYDirection = stashPosition === MenuStashPosition.Top ? -UP : DOWN
+  const stashYDirection = stashPosition === MenuStashPosition.Top ? UP : DOWN
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceShortSide =
