@@ -6,7 +6,6 @@ import {useState, useEffect} from 'react'
 import { DegreeIds, getHarpStrata } from 'harpstrata'
 import type { PitchIds } from 'harpstrata'
 
-import { activateHarpCell } from '../../../../utils/set-global-reducers/utils'
 import { getNextQuizQuestion } from '../../../../utils/get-next-quiz-question'
 import { getPropsForHarpStrata } from '../../../../utils'
 import { ExperienceModes, DisplayModes } from '../../../../types'
@@ -18,7 +17,7 @@ enum QuizStates {
   Wait,
 }
 
-export const useFlashDisplay = (screenFree: boolean): [DegreeIds | PitchIds, Node<number>] => {
+export const useQuizQuestionCycle = (screenFree: boolean): [DegreeIds | PitchIds, Node<number>] => {
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(DegreeIds.Root)
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
@@ -51,10 +50,10 @@ export const useFlashDisplay = (screenFree: boolean): [DegreeIds | PitchIds, Nod
 
   // Immediately move to giving answers if a user answer is given
   useEffect(() => {
-    if (quizState === QuizStates.Wait) return
+    if (quizState !== QuizStates.Listen) return
     setQuizState(QuizStates.Answer)
     // will passing setQuizState cause problems
-  }, [activeHarpStrata, setQuizState])
+  }, [activeHarpStrata, setQuizState, quizState])
 
   // In answer state, the harpstrata should be updated to include the
   // correct answer, and any further modifications to the harpstrata
@@ -72,8 +71,11 @@ export const useFlashDisplay = (screenFree: boolean): [DegreeIds | PitchIds, Nod
       }))
     }
     if (quizState === QuizStates.Answer) {
-      // why doesn't this need active display mode
-      setActiveHarpStrata(activateHarpCell(activeHarpStrata, quizQuestion))
+      // TODO: if the active harpstrata doesn't contain the right answer
+      // then run the following function. We'll need to look at the active
+      // mode to determine whether to look at the active degrees or the
+      // active pitches
+      //setActiveHarpStrata(activateHarpCell(activeHarpStrata, quizQuestion))
       const setNextQuestion = setTimeout(() => {
         setQuizState(QuizStates.Ask)
         setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
@@ -81,7 +83,8 @@ export const useFlashDisplay = (screenFree: boolean): [DegreeIds | PitchIds, Nod
       }, 500)
       return () => clearTimeout(setNextQuestion)
     }
-    return resetActiveHarpStrata()
+    if (activeHarpStrata.isActiveComplex.activeDegreeIds.length > 0) return resetActiveHarpStrata()
+    return
   }, [quizState, activeHarpStrata, setActiveHarpStrata])
 
   const isDisplayPeriod = quizState === QuizStates.Ask

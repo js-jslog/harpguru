@@ -12,7 +12,7 @@ import { getRenderableToneTuples } from '../../utils'
 import type { RenderableToneTuples } from '../../types'
 import { getSizes, colors } from '../../styles'
 
-import { useFlashDisplay } from './hooks'
+import { useQuizQuestionCycle } from './hooks'
 
 type QuizQuestionDisplayProps = {
   readonly screenFree: boolean
@@ -21,9 +21,8 @@ type QuizQuestionDisplayProps = {
 export const QuizQuestionDisplay = ({
   screenFree,
 }: QuizQuestionDisplayProps): React.ReactElement => {
-  const [quizQuestion] = useGlobal('quizQuestion')
+  const [quizQuestion, flashAnimationValue] = useQuizQuestionCycle(screenFree)
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const flashAnimationValue = useFlashDisplay(screenFree)
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =

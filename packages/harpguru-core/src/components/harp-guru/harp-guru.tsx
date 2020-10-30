@@ -19,7 +19,6 @@ import { getSizes } from '../../styles'
 import {
   useFlushBufferedActivityToggles,
   useMenus,
-  useQuizCycle,
 } from './hooks'
 
 setGlobalState()
@@ -50,7 +49,6 @@ export const HarpGuru = (): ReactElement => {
   const sizes = getSizes()
   const { 8: swipeThreshold } = sizes
 
-  useQuizCycle(menuState)
   useFlushBufferedActivityToggles()
 
   return (
