@@ -6,7 +6,6 @@ import {
   multiply,
   add,
   divide,
-  Extrapolate,
 } from 'react-native-reanimated'
 import type { Node } from 'react-native-reanimated'
 import { Dimensions } from 'react-native'
@@ -94,9 +93,8 @@ export const useMenuAnimationValues = (
   })
 
   const labelCounterScale = interpolate(scale, {
-    inputRange: [menuStashedScale, 0.4],
+    inputRange: [menuStashedScale, 1],
     outputRange: [divide(1, menuStashedScale), 0],
-    extrapolate: Extrapolate.CLAMP,
   })
 
   return {
