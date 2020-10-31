@@ -29,9 +29,7 @@ export const useQuizQuestionCycle = (
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const [bufferedActivityToggles] = useGlobal(
-    'bufferedActivityToggles'
-  )
+  const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
 
   const resetActiveHarpStrata = () => {
     if (activeHarpStrata.isActiveComplex.activeDegreeIds.length === 0) return
