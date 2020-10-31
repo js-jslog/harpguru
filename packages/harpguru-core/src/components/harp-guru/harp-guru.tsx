@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler'
 
 import { PanGestureHandler } from 'react-native-gesture-handler'
-import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
@@ -12,7 +11,7 @@ import { HarpFaceMemo } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
 import { ActivityLegend } from '../activity-legend'
 import { setGlobalState, setGlobalReducers } from '../../utils'
-import { MenuStates } from '../../types'
+import { MenuStates, MenuStashPosition } from '../../types'
 import { colors } from '../../styles'
 import { getSizes } from '../../styles'
 
@@ -36,15 +35,11 @@ const styles = StyleSheet.create({
 
 export const HarpGuru = (): ReactElement => {
   const [menuState, handleSwipe, handleTap] = useMenus()
-  const covariantOpenCloseTapHandler = (
-    event: TapGestureHandlerStateChangeEvent
-  ) => {
-    handleTap(MenuStates.CovariantMenu, event)
+  const covariantOpenCloseTapHandler = () => {
+    handleTap(MenuStates.CovariantMenu)
   }
-  const layoutOpenCloseTapHandler = (
-    event: TapGestureHandlerStateChangeEvent
-  ) => {
-    handleTap(MenuStates.LayoutMenu, event)
+  const layoutOpenCloseTapHandler = () => {
+    handleTap(MenuStates.LayoutMenu)
   }
 
   const sizes = getSizes()
@@ -62,20 +57,22 @@ export const HarpGuru = (): ReactElement => {
         <ActivityLegend />
         <HarpFaceMemo />
         <CovariantMenu
-          hideMenu={menuState !== MenuStates.CovariantMenu}
-          hideLabel={
+          isMenuStashed={menuState !== MenuStates.CovariantMenu}
+          isLabelHidden={
             menuState !== MenuStates.CovariantMenu &&
             menuState !== MenuStates.NoMenu
           }
-          openCloseTapHandler={covariantOpenCloseTapHandler}
+          stashPosition={MenuStashPosition.Top}
+          openCloseMenu={covariantOpenCloseTapHandler}
         />
         <LayoutMenu
-          hideMenu={menuState !== MenuStates.LayoutMenu}
-          hideLabel={
+          isMenuStashed={menuState !== MenuStates.LayoutMenu}
+          isLabelHidden={
             menuState !== MenuStates.LayoutMenu &&
             menuState !== MenuStates.NoMenu
           }
-          openCloseTapHandler={layoutOpenCloseTapHandler}
+          stashPosition={MenuStashPosition.Bottom}
+          openCloseMenu={layoutOpenCloseTapHandler}
         />
         <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />
       </View>

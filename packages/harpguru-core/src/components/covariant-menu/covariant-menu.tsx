@@ -1,15 +1,13 @@
 import { useGlobal } from 'reactn'
-import Animated from 'react-native-reanimated'
-import { TapGestureHandler } from 'react-native-gesture-handler'
-import { View } from 'react-native'
 import React from 'react'
 import { getPitchIds, getPozitionIds } from 'harpstrata'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
 import { Option } from '../option'
-import { MenuCloseButton } from '../menu-close-button'
-import { getMenuStylesAndAnimationVals } from '../../utils'
+import { MenuOpenButton } from '../menu-open-button'
+import { MenuFace } from '../menu-face'
+import { Menu } from '../menu'
 import type { MenuProps, OptionIds } from '../../types'
 import { getSizes, colors } from '../../styles'
 import { CovariantMembers } from '../../packages/covariance-series'
@@ -23,11 +21,7 @@ import {
   useSetHarpStrataByRootPitch,
 } from './hooks'
 
-export const CovariantMenu = ({
-  hideLabel,
-  hideMenu,
-  openCloseTapHandler,
-}: MenuProps): React.ReactElement => {
+export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
 
@@ -79,70 +73,24 @@ export const CovariantMenu = ({
     setLockedCovariant(CovariantMembers.RootPitch)
   }
 
-  const {
-    styles,
-    menuSlideXTranslation,
-    menuSlideYTranslation,
-    menuScale,
-    menuBackgroundColor,
-    menuOpacity,
-    labelCounterScale,
-  } = getMenuStylesAndAnimationVals(hideMenu, hideLabel, 'TOP')
-
   const sizes = getSizes()
 
   return (
-    <Animated.View
-      style={[
-        styles.animated,
-        {
-          transform: [
-            { translateX: menuSlideXTranslation },
-            { translateY: menuSlideYTranslation },
-            { scale: menuScale },
-          ],
-        },
-      ]}
-    >
-      <Animated.View
-        style={[
-          styles.overlay,
-          {
-            backgroundColor: menuBackgroundColor,
-            opacity: menuOpacity,
-          },
-        ]}
-      >
-        <View style={styles.mainContents}>
-          <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
-            <Option {...harpKeyOptionProps} />
-          </OptionLock>
-          <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
-            <Option {...pozitionOptionProps} />
-          </OptionLock>
-          <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
-            <Option {...rootPitchOptionProps} />
-          </OptionLock>
-          <MenuCloseButton openCloseTapHandler={openCloseTapHandler} />
-        </View>
-        <TapGestureHandler onHandlerStateChange={openCloseTapHandler}>
-          <View style={styles.label}>
-            <Animated.View
-              style={[
-                {
-                  transform: [{ scale: labelCounterScale }],
-                },
-              ]}
-            >
-              <Feather
-                name="sliders"
-                size={sizes['7']}
-                color={colors.inertOutline}
-              />
-            </Animated.View>
-          </View>
-        </TapGestureHandler>
-      </Animated.View>
-    </Animated.View>
+    <Menu {...menuProps}>
+      <MenuFace {...menuProps}>
+        <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
+          <Option {...harpKeyOptionProps} />
+        </OptionLock>
+        <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
+          <Option {...pozitionOptionProps} />
+        </OptionLock>
+        <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
+          <Option {...rootPitchOptionProps} />
+        </OptionLock>
+      </MenuFace>
+      <MenuOpenButton {...menuProps}>
+        <Feather name="sliders" size={sizes['7']} color={colors.inertOutline} />
+      </MenuOpenButton>
+    </Menu>
   )
 }
