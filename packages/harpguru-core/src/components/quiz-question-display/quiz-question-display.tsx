@@ -16,13 +16,13 @@ import { overlayOpacity } from '../../constants'
 import { useQuizQuestionCycle } from './hooks'
 
 type QuizQuestionDisplayProps = {
-  readonly screenFree: boolean
+  readonly isScreenFree: boolean
 }
 
 export const QuizQuestionDisplay = ({
-  screenFree,
+  isScreenFree,
 }: QuizQuestionDisplayProps): React.ReactElement => {
-  const [quizQuestion, flashAnimationValue] = useQuizQuestionCycle(screenFree)
+  const [quizQuestion, flashAnimationValue] = useQuizQuestionCycle(isScreenFree)
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')

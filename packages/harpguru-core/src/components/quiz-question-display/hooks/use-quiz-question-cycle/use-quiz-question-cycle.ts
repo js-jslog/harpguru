@@ -18,7 +18,7 @@ enum QuizStates {
 }
 
 export const useQuizQuestionCycle = (
-  screenFree: boolean
+  isScreenFree: boolean
 ): [DegreeIds | PitchIds, Node<number>] => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
@@ -53,12 +53,12 @@ export const useQuizQuestionCycle = (
   // Start asking questions when the experience mode is set to Quiz
   // and the screen is clear of menus
   useEffect(() => {
-    if (!screenFree) return setQuizState(QuizStates.Wait)
+    if (!isScreenFree) return setQuizState(QuizStates.Wait)
     if (activeExperienceMode === ExperienceModes.Quiz)
       return setQuizState(QuizStates.Ask)
     if (activeExperienceMode === ExperienceModes.Explore)
       return setQuizState(QuizStates.Wait)
-  }, [activeExperienceMode, screenFree])
+  }, [activeExperienceMode, isScreenFree])
 
   // Time based transitions between states
   // and the associated harpface updates
@@ -122,7 +122,7 @@ export const useQuizQuestionCycle = (
 
   const isDisplayPeriod = quizState === QuizStates.Ask
   const shouldDisplayQuestion =
-    screenFree &&
+    isScreenFree &&
     isDisplayPeriod &&
     activeExperienceMode === ExperienceModes.Quiz
 

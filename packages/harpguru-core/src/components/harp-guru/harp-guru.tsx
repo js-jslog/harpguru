@@ -68,7 +68,7 @@ export const HarpGuru = (): ReactElement => {
           stashPosition={MenuStashPosition.Bottom}
           openCloseMenu={layoutOpenCloseTapHandler}
         />
-        <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />
+        <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
       </View>
     </PanGestureHandler>
   )
