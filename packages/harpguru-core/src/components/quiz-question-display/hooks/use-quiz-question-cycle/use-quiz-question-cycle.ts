@@ -28,6 +28,19 @@ export const useQuizQuestionCycle = (
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
+  const resetActiveHarpStrata = () => {
+    const harpStrataProps = getPropsForHarpStrata(
+      activeHarpStrata,
+      DisplayModes.Degree
+    )
+    setActiveHarpStrata(
+      getHarpStrata({
+        ...harpStrataProps,
+        activeIds: [],
+      })
+    )
+  }
+
   // Start asking questions when the experience mode is set to Quiz
   useEffect(() => {
     console.log('::::::::::::::::::: changed experience mode')
@@ -45,6 +58,7 @@ export const useQuizQuestionCycle = (
   useEffect(() => {
     // Move from asking to listening for answers after 1 second
     if (quizState === QuizStates.Ask) {
+      resetActiveHarpStrata()
       console.log('::::::::::::::::::: ask to listen planned')
       const finishAsking = setTimeout(() => {
         console.log('::::::::::::::::::: ask to listen happening')
@@ -94,18 +108,6 @@ export const useQuizQuestionCycle = (
     if (quizState === QuizStates.Listen) {
       console.log(':::::::::::: harpstrata updated - listen so going to answer')
       return setQuizState(QuizStates.Answer)
-    }
-    const resetActiveHarpStrata = () => {
-      const harpStrataProps = getPropsForHarpStrata(
-        activeHarpStrata,
-        DisplayModes.Degree
-      )
-      setActiveHarpStrata(
-        getHarpStrata({
-          ...harpStrataProps,
-          activeIds: [],
-        })
-      )
     }
     if (quizState === QuizStates.Answer) {
       console.log(':::::::::::: harpstrata updated - bad moment so setting empty')
