@@ -25,11 +25,16 @@ export const useQuizQuestionCycle = (
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(
     DegreeIds.Root
   )
+  const [shouldExtendListen, setShouldExtendListen] = useState(false)
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [bufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
+    'bufferedActivityToggles'
+  )
 
   const resetActiveHarpStrata = () => {
+    setBufferedActivityToggles([])
     if (activeHarpStrata.isActiveComplex.activeDegreeIds.length === 0) return
     const harpStrataProps = getPropsForHarpStrata(
       activeHarpStrata,
@@ -46,6 +51,7 @@ export const useQuizQuestionCycle = (
   const addCorrectAnswer = () => {
     const newHarpStrata = activateHarpCell(activeHarpStrata, quizQuestion)
     setActiveHarpStrata(newHarpStrata)
+    setBufferedActivityToggles([])
   }
 
   // Start asking questions when the experience mode is set to Quiz
@@ -63,13 +69,14 @@ export const useQuizQuestionCycle = (
       resetActiveHarpStrata()
       const finishAsking = setTimeout(() => {
         setQuizState(QuizStates.Listen)
-      }, 1000)
+      }, 1500)
       return () => clearTimeout(finishAsking)
     }
-    if (quizState === QuizStates.Listen) {
+    if (quizState === QuizStates.Listen || shouldExtendListen) {
+      setShouldExtendListen(false)
       const finishListening = setTimeout(() => {
         setQuizState(QuizStates.Answer)
-      }, 10000)
+      }, 5000)
       return () => clearTimeout(finishListening)
     }
     if (quizState === QuizStates.Answer) {
@@ -77,11 +84,11 @@ export const useQuizQuestionCycle = (
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
       const onToNextQuestion = setTimeout(() => {
         setQuizState(QuizStates.Ask)
-      }, 5000)
+      }, 2000)
       return () => clearTimeout(onToNextQuestion)
     }
-    return
-  }, [quizState])
+    return setShouldExtendListen(false)
+  }, [quizState, shouldExtendListen])
 
   // In answer state, the harpstrata should be updated to include the
   // correct answer, and any further modifications to the harpstrata
@@ -92,6 +99,14 @@ export const useQuizQuestionCycle = (
     if (quizState === QuizStates.Ask) return resetActiveHarpStrata()
     return
   }, [activeHarpStrata])
+
+  // Updates to the bufferedActivityToggles should extend the
+  // listen state timeout if it's in listen state.
+  useEffect(() => {
+    if (bufferedActivityToggles.length === 0) return
+    if (quizState === QuizStates.Listen) return setShouldExtendListen(true)
+    return
+  }, [bufferedActivityToggles])
 
   const isDisplayPeriod = quizState === QuizStates.Ask
   const shouldDisplayQuestion =
