@@ -1,7 +1,7 @@
 import type { DegreeIds, PitchIds } from 'harpstrata'
 import { getPitchIds, getDegreeIds } from 'harpstrata'
 
-import { DisplayModes } from '../../types'
+import { DisplayModes } from '../../../../types'
 
 const getOrderedIds = (displayMode: DisplayModes) => {
   if (displayMode === DisplayModes.Pitch) return getPitchIds()

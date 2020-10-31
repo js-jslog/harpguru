@@ -23,6 +23,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Changed
 
+- MAJOR: Quiz mode modified to allow time to answer on all octaves
+- MINOR: Some global state and reducers removed in favour of modularised logic
 - MINOR: Memoisation added to HarpCell
 - MINOR: Default harp setup to popular configuration (major pent in 2nd position)
 

@@ -3,7 +3,6 @@ import { getHarpStrata, PitchIds, PozitionIds, ApparatusIds } from 'harpstrata'
 import { DegreeIds } from 'harpstrata'
 import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 
-import { getNextQuizQuestion } from '../get-next-quiz-question'
 import { DisplayModes, ExperienceModes } from '../../types'
 import { CovariantMembers } from '../../packages/covariance-series'
 
@@ -26,7 +25,6 @@ export const setGlobalState = (): void => {
 
   const state = {
     activeHarpStrata: initialHarpStrata,
-    quizQuestion: getNextQuizQuestion(PitchIds.A, initialDisplayMode),
     activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
     lockedCovariant: initialLockedCovariant,
