@@ -11,7 +11,7 @@ import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
 import { ActivityLegend } from '../activity-legend'
-import { setGlobalState, setGlobalReducers } from '../../utils'
+import { setGlobalState } from '../../utils'
 import { MenuStates } from '../../types'
 import { colors } from '../../styles'
 import { getSizes } from '../../styles'
@@ -19,7 +19,6 @@ import { getSizes } from '../../styles'
 import { useFlushBufferedActivityToggles, useMenus } from './hooks'
 
 setGlobalState()
-setGlobalReducers()
 
 const styles = StyleSheet.create({
   fillScreen: {

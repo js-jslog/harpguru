@@ -6,9 +6,8 @@ import { useState, useEffect } from 'react'
 import { DegreeIds, getHarpStrata } from 'harpstrata'
 import type { PitchIds } from 'harpstrata'
 
-import { activateHarpCell } from '../../../../utils/set-global-reducers/utils'
-import { getNextQuizQuestion } from '../../../../utils/get-next-quiz-question'
-import { getPropsForHarpStrata } from '../../../../utils'
+import { activateHarpCell } from '../../utils'
+import { getPropsForHarpStrata, getNextQuizQuestion } from '../../../../utils'
 import { ExperienceModes, DisplayModes } from '../../../../types'
 
 enum QuizStates {
