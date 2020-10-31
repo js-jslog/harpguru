@@ -30,7 +30,6 @@ export const useQuizQuestionCycle = (
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
   const resetActiveHarpStrata = () => {
-    console.log(':: resetting activeHarpStrata')
     if (activeHarpStrata.isActiveComplex.activeDegreeIds.length === 0) return
     const harpStrataProps = getPropsForHarpStrata(
       activeHarpStrata,
@@ -45,67 +44,42 @@ export const useQuizQuestionCycle = (
   }
 
   const addCorrectAnswer = () => {
-    console.log('::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: adding correct answer')
     const newHarpStrata = activateHarpCell(activeHarpStrata, quizQuestion)
     setActiveHarpStrata(newHarpStrata)
   }
 
   // Start asking questions when the experience mode is set to Quiz
   useEffect(() => {
-    console.log('::::::::::::::::::: changed experience mode or screenFree')
-    if (!screenFree) {
-      console.log('::::::::::::::::::: screen not free so going to wait')
-      return setQuizState(QuizStates.Wait)
-    }
-    if (activeExperienceMode === ExperienceModes.Quiz) {
-      console.log('::::::::::::::::::: update to ask')
+    if (!screenFree) return setQuizState(QuizStates.Wait)
+    if (activeExperienceMode === ExperienceModes.Quiz)
       return setQuizState(QuizStates.Ask)
-    }
-    if (activeExperienceMode === ExperienceModes.Explore) {
-      console.log('::::::::::::::::::: update to wait')
+    if (activeExperienceMode === ExperienceModes.Explore)
       return setQuizState(QuizStates.Wait)
-    }
   }, [activeExperienceMode, screenFree])
 
   useEffect(() => {
     // Move from asking to listening for answers after 1 second
     if (quizState === QuizStates.Ask) {
       resetActiveHarpStrata()
-      console.log('::::::::::::::::::: ask to listen planned')
       const finishAsking = setTimeout(() => {
-        console.log('::::::::::::::::::: ask to listen happening')
         setQuizState(QuizStates.Listen)
       }, 1000)
-      return () => {
-        console.log('::::::::::::::::::: ask to listen cancelled')
-        clearTimeout(finishAsking)
-      }
+      return () => clearTimeout(finishAsking)
     }
     if (quizState === QuizStates.Listen) {
-      console.log('::::::::::::::::::: listen to answer planned')
       const finishListening = setTimeout(() => {
-        console.log('::::::::::::::::::: listen to answer happening')
         setQuizState(QuizStates.Answer)
       }, 10000)
-      return () => {
-        console.log('::::::::::::::::::: listen to answer cancelled')
-        clearTimeout(finishListening)
-      }
+      return () => clearTimeout(finishListening)
     }
     if (quizState === QuizStates.Answer) {
-      console.log('::::::::::::::::::: answer to ask planned')
       addCorrectAnswer()
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
       const onToNextQuestion = setTimeout(() => {
-        console.log('::::::::::::::::::: answer to ask happening')
         setQuizState(QuizStates.Ask)
       }, 5000)
-      return () => {
-        console.log('::::::::::::::::::: answer to ask cancelled')
-        clearTimeout(onToNextQuestion)
-      }
+      return () => clearTimeout(onToNextQuestion)
     }
-    console.log('::::::::::::::::::: quiz state updated with NO EFFECT')
     return
   }, [quizState])
 
@@ -113,20 +87,9 @@ export const useQuizQuestionCycle = (
   // correct answer, and any further modifications to the harpstrata
   // while this is happening should be overwritten
   useEffect(() => {
-    console.log(':::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: harpstrata updated' + activeHarpStrata.isActiveComplex.activeDegreeIds.length)
-    if (quizState === QuizStates.Wait || quizState === QuizStates.Answer) {
-      console.log(':::::::::::: harpstrata updated - wait no effect')
-      return
-    }
-    if (quizState === QuizStates.Listen) {
-      console.log(':::::::::::: harpstrata updated - listen so going to answer')
-      return setQuizState(QuizStates.Answer)
-    }
-    if (quizState === QuizStates.Ask) {
-      console.log(':::::::::::: harpstrata updated - bad moment so setting empty')
-      return resetActiveHarpStrata()
-    }
-    console.log(':::::::::::: harpstrata updated with NO EFFECT')
+    if (quizState === QuizStates.Wait || quizState === QuizStates.Answer) return
+    if (quizState === QuizStates.Listen) return setQuizState(QuizStates.Answer)
+    if (quizState === QuizStates.Ask) return resetActiveHarpStrata()
     return
   }, [activeHarpStrata])
 
