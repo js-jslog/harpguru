@@ -51,6 +51,7 @@ export const useQuizQuestionCycle = (
   }
 
   // Start asking questions when the experience mode is set to Quiz
+  // and the screen is clear of menus
   useEffect(() => {
     if (!screenFree) return setQuizState(QuizStates.Wait)
     if (activeExperienceMode === ExperienceModes.Quiz)
@@ -59,8 +60,11 @@ export const useQuizQuestionCycle = (
       return setQuizState(QuizStates.Wait)
   }, [activeExperienceMode, screenFree])
 
+  // Time based transitions between states
+  // and the associated harpface updates
   useEffect(() => {
-    // Move from asking to listening for answers after 1 second
+    // Clear the harpface of active cells &
+    // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
       resetActiveHarpStrata()
       const finishAsking = setTimeout(() => {
@@ -68,6 +72,10 @@ export const useQuizQuestionCycle = (
       }, 1500)
       return () => clearTimeout(finishAsking)
     }
+    // Clear the state flag for extending the Listen state
+    // and transition to Answer state after a period.
+    // Timeout is cancelled and reset after the state flag
+    // for extension is set to true.
     if (quizState === QuizStates.Listen || shouldExtendListen) {
       setShouldExtendListen(false)
       const finishListening = setTimeout(() => {
@@ -75,6 +83,9 @@ export const useQuizQuestionCycle = (
       }, 5000)
       return () => clearTimeout(finishListening)
     }
+    // Add correct answer to the harpface and invisibly
+    // set a new question in the background, then
+    // transition back to Ask state after a period.
     if (quizState === QuizStates.Answer) {
       addCorrectAnswer()
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
@@ -83,12 +94,15 @@ export const useQuizQuestionCycle = (
       }, 2000)
       return () => clearTimeout(onToNextQuestion)
     }
+    // If we get this far without having returned
+    // it's worth making sure that this state flag
+    // for Listen extension is set to false. It
+    // should only be true for the render immediately
+    // following a toggle buffer update.
     return setShouldExtendListen(false)
   }, [quizState, shouldExtendListen])
 
-  // In answer state, the harpstrata should be updated to include the
-  // correct answer, and any further modifications to the harpstrata
-  // while this is happening should be overwritten
+  // Respond to activeHarpStrata updates
   useEffect(() => {
     if (quizState === QuizStates.Wait || quizState === QuizStates.Answer) return
     if (quizState === QuizStates.Listen) return setQuizState(QuizStates.Answer)
@@ -97,8 +111,10 @@ export const useQuizQuestionCycle = (
   }, [activeHarpStrata])
 
   // Updates to the bufferedActivityToggles should extend the
-  // listen state timeout if it's in listen state.
+  // Listen state timeout *if* we're in Listen state.
   useEffect(() => {
+    // This condition is important to prevent the toggle
+    // buffer flush from driving an early Listen extension
     if (bufferedActivityToggles.length === 0) return
     if (quizState === QuizStates.Listen) return setShouldExtendListen(true)
     return
