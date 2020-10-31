@@ -29,12 +29,11 @@ export const useQuizQuestionCycle = (
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const [bufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
+  const [bufferedActivityToggles] = useGlobal(
     'bufferedActivityToggles'
   )
 
   const resetActiveHarpStrata = () => {
-    setBufferedActivityToggles([])
     if (activeHarpStrata.isActiveComplex.activeDegreeIds.length === 0) return
     const harpStrataProps = getPropsForHarpStrata(
       activeHarpStrata,
@@ -51,7 +50,6 @@ export const useQuizQuestionCycle = (
   const addCorrectAnswer = () => {
     const newHarpStrata = activateHarpCell(activeHarpStrata, quizQuestion)
     setActiveHarpStrata(newHarpStrata)
-    setBufferedActivityToggles([])
   }
 
   // Start asking questions when the experience mode is set to Quiz
