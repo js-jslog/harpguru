@@ -31,6 +31,7 @@ export const useQuizQuestionCycle = (
   // Start asking questions when the experience mode is set to Quiz
   useEffect(() => {
     console.log('::::::::::::::::::: changed experience mode')
+    if (!screenFree) return
     if (activeExperienceMode === ExperienceModes.Quiz) {
       console.log('::::::::::::::::::: update to ask')
       return setQuizState(QuizStates.Ask)
@@ -39,7 +40,7 @@ export const useQuizQuestionCycle = (
       console.log('::::::::::::::::::: update to wait')
       return setQuizState(QuizStates.Wait)
     }
-  }, [activeExperienceMode])
+  }, [activeExperienceMode, screenFree])
 
   useEffect(() => {
     // Move from asking to listening for answers after 1 second
@@ -57,7 +58,7 @@ export const useQuizQuestionCycle = (
     if (quizState === QuizStates.Listen) {
       console.log('::::::::::::::::::: listen to answer planned')
       const finishListening = setTimeout(() => {
-      console.log('::::::::::::::::::: listen to answer happening')
+        console.log('::::::::::::::::::: listen to answer happening')
         setQuizState(QuizStates.Answer)
       }, 5000)
       return () => {
