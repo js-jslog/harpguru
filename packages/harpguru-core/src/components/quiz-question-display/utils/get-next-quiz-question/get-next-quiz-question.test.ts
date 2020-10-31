@@ -1,6 +1,6 @@
 import { PitchIds, isPitchId } from 'harpstrata'
 
-import { DisplayModes } from '../../types'
+import { DisplayModes } from '../../../../types'
 
 import { getNextQuizQuestion } from './get-next-quiz-question'
 
