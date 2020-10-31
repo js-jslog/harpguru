@@ -7,9 +7,9 @@ import { DegreeIds, getHarpStrata } from 'harpstrata'
 import type { PitchIds } from 'harpstrata'
 
 import { activateHarpCell } from '../../../../utils/set-global-reducers/utils'
-import { ExperienceModes, DisplayModes } from '../../../../types'
-import { getPropsForHarpStrata } from '../../../../utils'
 import { getNextQuizQuestion } from '../../../../utils/get-next-quiz-question'
+import { getPropsForHarpStrata } from '../../../../utils'
+import { ExperienceModes, DisplayModes } from '../../../../types'
 
 enum QuizStates {
   Ask,
