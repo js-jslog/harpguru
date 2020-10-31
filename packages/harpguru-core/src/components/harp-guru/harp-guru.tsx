@@ -16,10 +16,7 @@ import { MenuStates } from '../../types'
 import { colors } from '../../styles'
 import { getSizes } from '../../styles'
 
-import {
-  useFlushBufferedActivityToggles,
-  useMenus,
-} from './hooks'
+import { useFlushBufferedActivityToggles, useMenus } from './hooks'
 
 setGlobalState()
 setGlobalReducers()
