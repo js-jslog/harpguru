@@ -1,18 +1,14 @@
 import { useEffect } from 'reactn'
 import { State } from 'react-native-gesture-handler'
-import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { useState } from 'react'
 
 import { MenuStates } from '../../../../types'
 
 type HandleSwipe = (arg0: PanGestureHandlerGestureEvent) => void
-type HandleTap = (
-  arg0: MenuStates,
-  arg1: TapGestureHandlerStateChangeEvent
-) => void
+type OpenCloseMenu = (arg0: MenuStates) => void
 
-export const useMenus = (): [MenuStates, HandleSwipe, HandleTap] => {
+export const useMenus = (): [MenuStates, HandleSwipe, OpenCloseMenu] => {
   const [panState, setPanState] = useState<State>(State.UNDETERMINED)
   const [menuState, setMenuState] = useState<MenuStates>(MenuStates.NoMenu)
   const [translationX, setTranslationX] = useState<number>(0)
@@ -41,11 +37,7 @@ export const useMenus = (): [MenuStates, HandleSwipe, HandleTap] => {
     setTranslationX(0)
   }, [panState])
 
-  const handleTap = (
-    menu: MenuStates,
-    { nativeEvent }: TapGestureHandlerStateChangeEvent
-  ) => {
-    if (nativeEvent.state !== State.END) return
+  const openCloseMenu = (menu: MenuStates) => {
     if (menuState === menu) {
       setMenuState(MenuStates.NoMenu)
     } else {
@@ -59,5 +51,5 @@ export const useMenus = (): [MenuStates, HandleSwipe, HandleTap] => {
     setTranslationY(nativeEvent.translationY)
     setPanState(nativeEvent.state)
   }
-  return [menuState, handleSwipe, handleTap]
+  return [menuState, handleSwipe, openCloseMenu]
 }

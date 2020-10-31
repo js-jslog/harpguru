@@ -39,5 +39,4 @@ export type SizeScheme = {
   readonly rowHeight: number
   readonly fragmentGutter: number
   readonly labelProtrusion: number
-  readonly overlayOpacity: number
 }
