@@ -19,7 +19,6 @@ test('A component is rendered with the Degree or Pitch value in its text view de
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
@@ -34,7 +33,6 @@ test('A component is rendered with the Degree or Pitch value in its text view de
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Pitch]
     if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
@@ -50,7 +48,6 @@ test('A component is rendered with an a11y role of button', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
@@ -68,7 +65,6 @@ test('A component is rendered without an a11y role of button if it has no conten
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
@@ -119,7 +115,6 @@ test('A snapshot of a populated cell', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
@@ -137,7 +132,6 @@ test('A snapshot of an active cell', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [activeCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
@@ -155,7 +149,6 @@ test('A snapshot of an empty cell', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
@@ -173,7 +166,6 @@ test('A snapshot of an inactive cell in Explore mode', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
@@ -193,7 +185,6 @@ test('A snapshot of an inactive cell in Quiz mode', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Quiz]
-    if (stateItem === 'quizQuestion') return [DegreeIds.Root]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
