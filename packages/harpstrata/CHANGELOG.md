@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.3.0...HEAD) - yyyy-mm-dd
 
+### Changed
+
+- MINOR: Improved presentatability of option enums
+
 ## [v7.3.0](https://github.com/js-jslog/harpguru/releases/tag/v1.3.0) - 2020-09-13
 
 ### Added
