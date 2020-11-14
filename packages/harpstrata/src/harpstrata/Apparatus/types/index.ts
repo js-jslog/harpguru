@@ -2,11 +2,11 @@ import { InteractionMatrix } from '../Interaction'
 import { HalfstepIndexMatrix } from '../HalfstepIndex'
 
 export enum ApparatusIds {
-  MajorDiatonic = 'MAJOR-DIATONIC',
-  CountryTuned = 'COUNTRY-TUNED',
-  NaturalMinor = 'NATURAL-MINOR',
-  WildeTuned = 'WILDE-TUNED',
-  PowerBender = 'POWER-BENDER',
+  MajorDiatonic = 'Major diatonic',
+  CountryTuned = 'Country tuned',
+  NaturalMinor = 'Natural minor',
+  WildeTuned = 'Wilde tuned',
+  PowerBender = 'Power bender',
 }
 
 export type Apparatus = {
