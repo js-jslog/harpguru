@@ -14,18 +14,11 @@ import type { DisplayModes, ExperienceModes } from './types'
 // is the best workaround I can figure out for now.
 
 declare module 'reactn/default' {
-  export interface Reducers {
-    requestNextQuestion: (
-      global: State
-    ) => Pick<State, 'quizQuestion' | 'activeHarpStrata'>
-    revealAnswer: (global: State) => Pick<State, 'activeHarpStrata'>
-  }
-
   export interface State {
-    quizQuestion: DegreeIds | PitchIds
     activeHarpStrata: HarpStrata
     activeExperienceMode: ExperienceModes
     activeDisplayMode: DisplayModes
     lockedCovariant: CovariantMembers
+    bufferedActivityToggles: ReadonlyArray<DegreeIds>
   }
 }

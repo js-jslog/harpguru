@@ -1,14 +1,8 @@
 import { setGlobal } from 'reactn'
-import {
-  getHarpStrata,
-  getApparatusIds,
-  getPozitionIds,
-  getPitchIds,
-  PitchIds,
-} from 'harpstrata'
-import type { ActiveIds, HarpStrataProps, HarpStrata } from 'harpstrata'
+import { getHarpStrata, PitchIds, PozitionIds, ApparatusIds } from 'harpstrata'
+import { DegreeIds } from 'harpstrata'
+import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 
-import { getNextQuizQuestion } from '../get-next-quiz-question'
 import { DisplayModes, ExperienceModes } from '../../types'
 import { CovariantMembers } from '../../packages/covariance-series'
 
@@ -18,16 +12,11 @@ export const setGlobalState = (): void => {
   const { globalTuple } = espyGlobalTuple()
   if (globalTuple[0].activeHarpStrata !== undefined) return
 
-  const [initialApparatusId] = getApparatusIds()
-  const [initialPozitionId] = getPozitionIds()
-  const [initialPitchId] = getPitchIds()
-  const initialActiveIds: ActiveIds = []
-
   const initialHarpStrataProps: HarpStrataProps = {
-    apparatusId: initialApparatusId,
-    pozitionId: initialPozitionId,
-    harpKeyId: initialPitchId,
-    activeIds: initialActiveIds,
+    apparatusId: ApparatusIds.MajorDiatonic,
+    pozitionId: PozitionIds.Second,
+    harpKeyId: PitchIds.C,
+    activeIds: [],
   }
   const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
   const { Explore: initialExperienceMode } = ExperienceModes
@@ -36,10 +25,16 @@ export const setGlobalState = (): void => {
 
   const state = {
     activeHarpStrata: initialHarpStrata,
-    quizQuestion: getNextQuizQuestion(PitchIds.A, initialDisplayMode),
     activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
     lockedCovariant: initialLockedCovariant,
+    bufferedActivityToggles: [
+      DegreeIds.Root,
+      DegreeIds.Second,
+      DegreeIds.Third,
+      DegreeIds.Fifth,
+      DegreeIds.Sixth,
+    ],
   }
   setGlobal(state)
 }

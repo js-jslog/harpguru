@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler'
 
 import { PanGestureHandler } from 'react-native-gesture-handler'
-import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
@@ -11,15 +10,14 @@ import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
 import { ActivityLegend } from '../activity-legend'
-import { setGlobalState, setGlobalReducers } from '../../utils'
-import { MenuStates } from '../../types'
+import { setGlobalState } from '../../utils'
+import { MenuStates, MenuStashPosition } from '../../types'
 import { colors } from '../../styles'
 import { getSizes } from '../../styles'
 
-import { useMenus, useQuizCycle } from './hooks'
+import { useFlushBufferedActivityToggles, useMenus } from './hooks'
 
 setGlobalState()
-setGlobalReducers()
 
 const styles = StyleSheet.create({
   fillScreen: {
@@ -32,17 +30,17 @@ const styles = StyleSheet.create({
 
 export const HarpGuru = (): ReactElement => {
   const [menuState, handleSwipe, handleTap] = useMenus()
-  const covariantTapHandler = (event: TapGestureHandlerStateChangeEvent) => {
-    handleTap(MenuStates.CovariantMenu, event)
+  const covariantOpenCloseTapHandler = () => {
+    handleTap(MenuStates.CovariantMenu)
   }
-  const layoutTapHandler = (event: TapGestureHandlerStateChangeEvent) => {
-    handleTap(MenuStates.LayoutMenu, event)
+  const layoutOpenCloseTapHandler = () => {
+    handleTap(MenuStates.LayoutMenu)
   }
 
   const sizes = getSizes()
   const { 8: swipeThreshold } = sizes
 
-  useQuizCycle(menuState)
+  useFlushBufferedActivityToggles()
 
   return (
     <PanGestureHandler
@@ -53,22 +51,24 @@ export const HarpGuru = (): ReactElement => {
         <ActivityLegend />
         <HarpFaceMemo />
         <CovariantMenu
-          hideMenu={menuState !== MenuStates.CovariantMenu}
-          hideLabel={
+          isMenuStashed={menuState !== MenuStates.CovariantMenu}
+          isLabelHidden={
             menuState !== MenuStates.CovariantMenu &&
             menuState !== MenuStates.NoMenu
           }
-          tapHandler={covariantTapHandler}
+          stashPosition={MenuStashPosition.Top}
+          openCloseMenu={covariantOpenCloseTapHandler}
         />
         <LayoutMenu
-          hideMenu={menuState !== MenuStates.LayoutMenu}
-          hideLabel={
+          isMenuStashed={menuState !== MenuStates.LayoutMenu}
+          isLabelHidden={
             menuState !== MenuStates.LayoutMenu &&
             menuState !== MenuStates.NoMenu
           }
-          tapHandler={layoutTapHandler}
+          stashPosition={MenuStashPosition.Bottom}
+          openCloseMenu={layoutOpenCloseTapHandler}
         />
-        <QuizQuestionDisplay screenFree={menuState === MenuStates.NoMenu} />
+        <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
       </View>
     </PanGestureHandler>
   )

@@ -4,6 +4,7 @@ import { render } from '@testing-library/react-native'
 
 import { DisplayModes, ExperienceModes } from '../../../../types'
 import { inactiveCellsHarpStrata } from '../../../../test-resources'
+import { CovariantMembers } from '../../../../packages/covariance-series'
 
 import { getHarpCells } from './get-harp-cells'
 
@@ -13,8 +14,9 @@ mockUseGlobal.mockImplementation((stateItem: string) => {
   if (stateItem === 'activeHarpStrata')
     return [inactiveCellsHarpStrata, jest.fn()]
   if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-  if (stateItem === 'quizQuestion') return [DegreeIds.Root]
   if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+  if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
+  if (stateItem === 'bufferedActivityToggles') return [[]]
   return undefined
 })
 

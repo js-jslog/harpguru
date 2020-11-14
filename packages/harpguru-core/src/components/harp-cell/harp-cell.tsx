@@ -7,54 +7,38 @@ import {
 } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
-import { IsActiveIds } from 'harpstrata'
-import type { DegreeIds, PitchIds } from 'harpstrata'
 
-import { RenderedTone } from '../rendered-tone'
-import { getRenderableToneTuples } from '../../utils'
-import { Coord, DisplayModes } from '../../types'
+import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
+import { MemoHarpCellAccessible } from '../harp-cell-accessible'
 
+import { getBaseHarpCellStyles } from './utils'
 import {
-  useToggleHarpCell,
-  useStyles,
   useSetPozitionRoot,
   usePositionAnalysis,
+  useTapRerenderLogic,
 } from './hooks'
 
-export type YXCoord = [Coord, Coord]
+import type { YXCoord } from './types'
 
 type HarpCellProps = {
   readonly yxCoord: YXCoord
 }
 
-const getToneSource = (
-  degreeId: DegreeIds | undefined,
-  pitchId: PitchIds | undefined,
-  activeDisplayMode: DisplayModes
-): DegreeIds | PitchIds | undefined => {
-  if (degreeId === undefined && pitchId === undefined) return undefined
-  if (activeDisplayMode === DisplayModes.Degree) return degreeId
-  return pitchId
-}
-
 export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const toggleHarpCell = useToggleHarpCell()
-  const setPozitionRoot = useSetPozitionRoot()
   const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
     yxCoord
   )
-  const toneSource = getToneSource(thisDegreeId, thisPitchId, activeDisplayMode)
-  const toneTuples = getRenderableToneTuples(toneSource)
-  const styles = useStyles(yxCoord)
+  const baseHarpCellStyles = getBaseHarpCellStyles()
+  const setPozitionRoot = useSetPozitionRoot()
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const [cellState, tapHandler] = useTapRerenderLogic(
+    thisDegreeId,
+    thisIsActiveId
+  )
 
-  const handleTapStateChange = ({
-    nativeEvent,
-  }: TapGestureHandlerStateChangeEvent) => {
-    if (nativeEvent.state !== State.END) return
-
-    toggleHarpCell(thisDegreeId)
-  }
+  if (thisDegreeId === undefined || thisPitchId === undefined)
+    return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
 
   const handleLongPressStateChange = ({
     nativeEvent,
@@ -64,33 +48,31 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
     setPozitionRoot(thisPitchId)
   }
 
-  const renderedTone = (
-    <RenderedTone
-      toneTuples={toneTuples}
-      isActive={thisIsActiveId === IsActiveIds.Active}
-      isQuestion={false}
-      splitType={'SLANT'}
-    />
-  )
+  const handleTapStateChange = ({
+    nativeEvent,
+  }: TapGestureHandlerStateChangeEvent) => {
+    tapHandler(nativeEvent)
+  }
 
-  const accessibleContent = (
-    <LongPressGestureHandler onHandlerStateChange={handleLongPressStateChange}>
+  const harpCellAccessibleProps = {
+    degreeId: thisDegreeId,
+    pitchId: thisPitchId,
+    displayMode: activeDisplayMode,
+    activeExperienceMode: activeExperienceMode,
+    cellState,
+    baseStyles: baseHarpCellStyles,
+  }
+
+  return (
+    <LongPressGestureHandler
+      onHandlerStateChange={handleLongPressStateChange}
+      minDurationMs={1000}
+    >
       <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-        <View accessible={true} accessibilityRole="button" style={styles.cell}>
-          {renderedTone}
+        <View>
+          <MemoHarpCellAccessible {...harpCellAccessibleProps} />
         </View>
       </TapGestureHandler>
     </LongPressGestureHandler>
   )
-
-  const inAccessibleContent = (
-    <View accessible={false} style={styles.cell}>
-      <View style={styles.cell} />
-    </View>
-  )
-
-  const content =
-    thisDegreeId === undefined ? inAccessibleContent : accessibleContent
-
-  return content
 }

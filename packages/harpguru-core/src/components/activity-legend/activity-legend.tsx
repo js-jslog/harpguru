@@ -77,6 +77,7 @@ const ActivityCell = ({
   toneTuples,
   isActive,
 }: ActivityCellProps): React.ReactElement => {
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const sizes = getSizes()
   const { 9: legendWidth } = sizes
 
@@ -93,11 +94,11 @@ const ActivityCell = ({
     },
   })
 
-  const hideActivityCellVal = useTimingTransition(isActive, {
+  const activityCellTiming = useTimingTransition(isActive, {
     duration: 200,
     easing: Easing.inOut(Easing.circle),
   })
-  const hideActivityCellTranslation = interpolate(hideActivityCellVal, {
+  const activityCellAnimation = interpolate(activityCellTiming, {
     inputRange: [0, 1],
     outputRange: [multiply(legendWidth, -1), 0],
   })
@@ -109,7 +110,7 @@ const ActivityCell = ({
           style={[
             styles.cellColor,
             {
-              transform: [{ translateX: hideActivityCellTranslation }],
+              transform: [{ translateX: activityCellAnimation }],
             },
           ]}
         />
@@ -118,6 +119,7 @@ const ActivityCell = ({
           isActive={isActive}
           isQuestion={false}
           splitType={'FLAT'}
+          activeExperienceMode={activeExperienceMode}
         />
       </View>
     </>

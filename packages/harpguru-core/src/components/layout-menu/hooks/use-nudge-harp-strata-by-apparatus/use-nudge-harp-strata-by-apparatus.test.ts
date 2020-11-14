@@ -21,10 +21,15 @@ const naturalMinorHarpProps = {
   ...baseHarpStrataProps,
   apparatusId: ApparatusIds.NaturalMinor,
 }
+const powerBenderHarpProps = {
+  ...baseHarpStrataProps,
+  apparatusId: ApparatusIds.PowerBender,
+}
 
 const majorDiatonicHarp = getHarpStrata(majorDiatonicHarpProps)
 const countryTunedHarp = getHarpStrata(countryTunedHarpProps)
 const naturalMinorHarp = getHarpStrata(naturalMinorHarpProps)
+const powerBenderHarp = getHarpStrata(powerBenderHarpProps)
 
 test('provides incremented HarpStrata by apparatus', () => {
   const setActiveHarpStrata = jest.fn()
@@ -46,11 +51,11 @@ test('provides decremented HarpStrata by apparatus', () => {
 
 // NOTE: the next two tests were testing across array limits when they were written
 // if functionality is being enhanced in this area you will want to check that the
-// natural minor harp is still the last in the list and major diatonic is still the
+// power bender harp is still the last in the list and major diatonic is still the
 // first. Its a safe bet that the major diatonic will always be the first.
 test('provides incremented HarpStrata by apparatus across array limit', () => {
   const setActiveHarpStrata = jest.fn()
-  mockUseGlobal.mockReturnValue([naturalMinorHarp, setActiveHarpStrata])
+  mockUseGlobal.mockReturnValue([powerBenderHarp, setActiveHarpStrata])
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   nudgeHarpStrataByApparatus('UP')
 
@@ -63,5 +68,5 @@ test('provides decremented HarpStrata by apparatus across array limit', () => {
   const nudgeHarpStrataByApparatus = useNudgeHarpStrataByApparatus()
   nudgeHarpStrataByApparatus('DOWN')
 
-  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(naturalMinorHarp)
+  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(powerBenderHarp)
 })

@@ -10,6 +10,7 @@ export const getHarpCells = (
 ): React.ReactElement[] => {
   const harpCells = xRange.map((xCoord) => {
     const yxCoord: YXCoord = [yCoord, xCoord]
+
     return <HarpCell key={xCoord} yxCoord={yxCoord} />
   })
 

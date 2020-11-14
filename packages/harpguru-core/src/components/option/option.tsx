@@ -1,93 +1,70 @@
-import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, interpolate } from 'react-native-reanimated'
-import {
-  PanGestureHandler,
-  PanGestureHandlerGestureEvent,
-  State,
-} from 'react-native-gesture-handler'
 import { View, Text } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 
-import { getSizes } from '../../styles'
-import { usePrevious } from '../../hooks'
+import { OptionValue } from '../option-value'
+import type { OptionIds, ChildrenProps } from '../../types'
 
-import { getStyles, getDynamicStyles } from './option-styles'
+import { setOptionsInListOfSix } from './utils'
+import { getStyles } from './option-styles'
 
 type OptionProps = {
   readonly title: string
-  readonly optionId: string
+  readonly activeOptionId: OptionIds
+  readonly orderedOptionIds: ReadonlyArray<OptionIds>
   readonly nudgeFunction: (arg0: 'UP' | 'DOWN') => void
+  readonly setFunction: (arg0: OptionIds) => void
 }
 
-export const Option = (props: OptionProps): React.ReactElement => {
-  const [state, setState] = useState(State.UNDETERMINED)
-  const [translationY, setTranslationY] = useState(0)
-  const previousState = usePrevious(state, State.UNDETERMINED)
-  const styles = getStyles()
-  const sizes = getSizes()
-  const { 8: swipeThreshold } = sizes
-
-  const { title, optionId, nudgeFunction } = props
-
-  const dynamicStyles = getDynamicStyles(state)
-
-  if (state === State.END && previousState === State.ACTIVE) {
-    if (translationY > 0) {
-      nudgeFunction('UP')
-    } else {
-      nudgeFunction('DOWN')
-    }
-  }
-
-  const handlePozitionSwipe = ({
-    nativeEvent,
-  }: PanGestureHandlerGestureEvent) => {
-    setState(nativeEvent.state)
-    setTranslationY(nativeEvent.translationY)
-  }
-
-  const previousOptionId = usePrevious(optionId, '')
-  const isUpdated = optionId !== previousOptionId
-  const optionUpdatedVal = useTimingTransition(isUpdated, {
-    duration: 300,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const optionUpdateTransition = interpolate(optionUpdatedVal, {
-    inputRange: [0, 1],
-    outputRange: isUpdated ? [2, 1] : [1, 1],
-  })
-
-  return (
-    <PanGestureHandler
-      shouldCancelWhenOutside={true}
-      activeOffsetY={[swipeThreshold * -1, swipeThreshold]}
-      onHandlerStateChange={handlePozitionSwipe}
-    >
-      <View style={[styles.option, dynamicStyles.activeSwipeStyle]}>
-        <OptionTitle>{title}</OptionTitle>
-        <Animated.View
-          style={[
-            {
-              transform: [{ scale: optionUpdateTransition }],
-            },
-          ]}
-        >
-          <OptionValue>{optionId}</OptionValue>
-        </Animated.View>
-      </View>
-    </PanGestureHandler>
-  )
-}
-
-type ChildProps = {
-  readonly children: React.ReactNode
-}
-
-const OptionTitle = ({ children }: ChildProps): React.ReactElement => {
+const OptionTitle = ({ children }: ChildrenProps): React.ReactElement => {
   const styles = getStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
 }
-const OptionValue = ({ children }: ChildProps): React.ReactElement => {
+
+export const Option = (props: OptionProps): React.ReactElement => {
   const styles = getStyles()
-  return <Text style={styles.optionValue}>{children}</Text>
+
+  const { title, activeOptionId, orderedOptionIds, setFunction } = props
+
+  const visibleOptionList = setOptionsInListOfSix(
+    orderedOptionIds,
+    activeOptionId
+  )
+
+  return (
+    <View style={styles.option}>
+      <OptionTitle>{title}</OptionTitle>
+      <View style={styles.optionValues}>
+        <OptionValue
+          id={visibleOptionList[0]}
+          isActive={false}
+          setFunction={setFunction}
+        />
+        <OptionValue
+          id={visibleOptionList[1]}
+          isActive={false}
+          setFunction={setFunction}
+        />
+        <OptionValue
+          id={visibleOptionList[2]}
+          isActive={true}
+          setFunction={setFunction}
+        />
+        <OptionValue
+          id={visibleOptionList[3]}
+          isActive={false}
+          setFunction={setFunction}
+        />
+        <OptionValue
+          id={visibleOptionList[4]}
+          isActive={false}
+          setFunction={setFunction}
+        />
+        <OptionValue
+          id={visibleOptionList[5]}
+          isActive={false}
+          setFunction={setFunction}
+        />
+      </View>
+    </View>
+  )
 }

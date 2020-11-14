@@ -11,25 +11,25 @@ import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
 import type { RenderableToneTuples } from '../../types'
 import { getSizes, colors } from '../../styles'
+import { overlayOpacity } from '../../constants'
 
-import { useFlashDisplay } from './hooks'
+import { useQuizQuestionCycle } from './hooks'
 
 type QuizQuestionDisplayProps = {
-  readonly screenFree: boolean
+  readonly isScreenFree: boolean
 }
 
 export const QuizQuestionDisplay = ({
-  screenFree,
+  isScreenFree,
 }: QuizQuestionDisplayProps): React.ReactElement => {
-  const [quizQuestion] = useGlobal('quizQuestion')
-  const flashAnimationValue = useFlashDisplay(screenFree)
+  const [quizQuestion, flashAnimationValue] = useQuizQuestionCycle(isScreenFree)
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const guaranteeOffScreenWidth =
     windowWidth > windowHeight ? windowWidth : windowHeight
 
   const sizes = getSizes()
-  const { overlayOpacity } = sizes
 
   const displayOpacity = interpolate(flashAnimationValue, {
     inputRange: [0, 1],
@@ -94,6 +94,7 @@ export const QuizQuestionDisplay = ({
               isActive={false}
               isQuestion={true}
               splitType={'FLAT'}
+              activeExperienceMode={activeExperienceMode}
             />
           </View>
         </View>

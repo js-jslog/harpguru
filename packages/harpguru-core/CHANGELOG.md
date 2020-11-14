@@ -13,7 +13,56 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v1.0.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v4.0.0...HEAD) - yyyy-mm-dd
+
+### Changed
+
+- MINOR: Improved presentatability of option enums
+
+### Fixed
+
+- MINOR: Update quiz question every time Ask state is entered
+
+## [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v4.0.0) - 31-10-19
+
+### Added
+
+- MAJOR: Buffer for harp cell activity updates
+- MINOR: Add animations to harp-cell toggleing
+- MINOR: Add animations to menu interactions
+
+### Changed
+
+- MAJOR: Quiz mode modified to allow time to answer on all octaves
+- MINOR: Some global state and reducers removed in favour of modularised logic
+- MINOR: Memoisation added to HarpCell
+- MINOR: Default harp setup to popular configuration (major pent in 2nd position)
+
+### Removed
+
+- MAJOR: Option swipe selection
+
+## [v2.1.0](https://github.com/js-jslog/harpguru/releases/tag/v3.2.0) - 2020-10-19
+
+### Changed
+
+- MINOR: Menu swipe handler no longer blocks with expensive update on BEGIN state
+
+## [v2.0.0](https://github.com/js-jslog/harpguru/releases/tag/v2.0.0) - 2020-10-10
+
+### Added
+
+- MINOR: Added multiple selectable options above and below selected one
+
+### Changed
+
+- MAJOR: Replaced the whole menu close tap, with a dedicated close button
+- MAJOR: Long press root pitch change now considers which covariant is locked when setting next HarpStrata
+- MINOR: Moved the covariant lock icons and improved their tap handler catchment area
+
+### Fixed
+
+- MINOR: Correct failing test from unchecked introduction of new apparatus
 
 ## [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v1.0.0) - 2020-09-06
 
@@ -66,7 +115,10 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v1.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v4.0.0...HEAD)
+- [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v4.0.0)
+- [v2.1.0](https://github.com/js-jslog/harpguru/releases/tag/v3.2.0)
+- [v2.0.0](https://github.com/js-jslog/harpguru/releases/tag/v2.0.0)
 - [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v1.0.0)
 - [v0.1.0](https://github.com/js-jslog/harpguru/releases/tag/v0.1.0)
 - [harpguru-core.v0.1.0](https://github.com/js-jslog/harpnative/releases/tag/harpguru-core.v0.1.0)
