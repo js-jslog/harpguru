@@ -54,8 +54,10 @@ export const useQuizQuestionCycle = (
   // and the screen is clear of menus
   useEffect(() => {
     if (!isScreenFree) return setQuizState(QuizStates.Wait)
-    if (activeExperienceMode === ExperienceModes.Quiz)
+    if (activeExperienceMode === ExperienceModes.Quiz) {
+      setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
       return setQuizState(QuizStates.Ask)
+    }
     if (activeExperienceMode === ExperienceModes.Explore)
       return setQuizState(QuizStates.Wait)
   }, [activeExperienceMode, isScreenFree])
