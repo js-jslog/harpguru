@@ -6,13 +6,13 @@ import type {
 } from 'harpstrata'
 
 export enum DisplayModes {
-  Degree = 'DEGREE',
-  Pitch = 'PITCH',
+  Degree = 'Degree',
+  Pitch = 'Pitch',
 }
 
 export enum ExperienceModes {
-  Explore = 'EXPLORE',
-  Quiz = 'QUIZ',
+  Explore = 'Explore',
+  Quiz = 'Quiz',
 }
 
 export enum MenuStates {
