@@ -19,6 +19,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: Improved presentatability of option enums
 
+### Fixed
+
+- MINOR: Update quiz question every time Ask state is entered
+
 ## [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v4.0.0) - 31-10-19
 
 ### Added
