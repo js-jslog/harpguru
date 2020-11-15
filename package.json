@@ -7,7 +7,7 @@
     "lint": "lerna run lint --npm-client=yarn --stream",
     "ci": "lerna run ci --npm-client=yarn --stream",
     "prettier": "lerna run prettier --npm-client=yarn --stream",
-    "postinstall": "cd ./packages/harpguru-expo-boilerplate && expo-yarn-workspaces postinstall && husky install"
+    "postinstall": "husky install && cd ./packages/harpguru-expo-boilerplate && expo-yarn-workspaces postinstall"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
