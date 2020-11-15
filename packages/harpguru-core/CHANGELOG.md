@@ -19,7 +19,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: Improved presentatability of option enums
 - MINOR: Ensure package dependencies are explicitly required
-- MINOR: Remove devDependencies (hoisted to workspace development context)
+- MINOR: Remove unimported devDependencies (hoisted to workspace development context)
 
 ### Fixed
 
