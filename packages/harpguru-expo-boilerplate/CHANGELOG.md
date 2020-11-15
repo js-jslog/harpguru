@@ -15,6 +15,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v4.0.0...master) - yyyy-mm-dd
 
+### Changed
+
+- MINOR: Ensure package dependencies are explicitly required
+- MINOR: Remove devDependencies (hoisted to workspace development context)
+
 ## [v2.3.0](https://github.com/js-jslog/harpguru/releases/tag/v4.0.0) - 2020-10-31
 
 ### Changed

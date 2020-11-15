@@ -18,10 +18,14 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Changed
 
 - MINOR: Improved presentatability of option enums
+- MINOR: Ensure package dependencies are explicitly required
+- MINOR: Remove devDependencies (hoisted to workspace development context)
 
 ### Fixed
 
 - MINOR: Update quiz question every time Ask state is entered
+- MINOR: Correct harpstrata dependency major version (far ahead of publishing - hence minor)
+- MINOR: Add missing peer dependency, implicitly already included in workspace (far ahead of publishing - hence minor)
 
 ## [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v4.0.0) - 31-10-19
 
