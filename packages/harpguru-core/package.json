@@ -12,6 +12,7 @@
     "prettier": "prettier --write ."
   },
   "peerDependencies": {
+    "@expo/vector-icons": "^10.0.2",
     "react": "16.11.0",
     "react-native": "0.62.0"
   },
@@ -22,6 +23,9 @@
     "react-native-reanimated": "~1.9.0",
     "react-native-redash": "^14.1.1",
     "reactn": "^2.2.7"
+  },
+  "devDependencies": {
+    "@testing-library/react-native": "^5.0.3"
   },
   "jest": {
     "preset": "@testing-library/react-native",
