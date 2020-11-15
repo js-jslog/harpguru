@@ -29,6 +29,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-native": "^3.8.1",
     "expo-yarn-workspaces": "^1.2.1",
+    "husky": "^5.0.0-beta.0",
     "jest": "24.9.0",
     "lerna": "^3.22.1",
     "metro-react-native-babel-preset": "^0.63.0",
