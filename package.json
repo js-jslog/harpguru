@@ -5,6 +5,8 @@
     "start": "lerna run start --scope harpguru-expo-boilerplate --npm-client=yarn --stream",
     "test": "lerna run test --npm-client=yarn --stream",
     "testPreCommit": "lerna run test --npm-client=yarn --stream -- --onlyChanged",
+    "tsc": "lerna run tsc --npm-client=yarn --stream",
+    "tscPreCommit": "lerna run tsc --npm-client=yarn --stream -- --incremental",
     "lint": "lerna run lint --npm-client=yarn --stream",
     "ci": "lerna run ci --npm-client=yarn --stream",
     "prettier": "lerna run prettier --npm-client=yarn --stream",
@@ -36,7 +38,7 @@
     "metro-react-native-babel-preset": "^0.63.0",
     "prettier": "^2.0.5",
     "react-test-renderer": "16.11.0",
-    "typescript": "~3.9.5"
+    "typescript": "4"
   },
   "workspaces": [
     "packages/*"
