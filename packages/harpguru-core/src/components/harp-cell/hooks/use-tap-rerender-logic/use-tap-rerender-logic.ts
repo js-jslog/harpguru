@@ -19,8 +19,12 @@ export const useTapRerenderLogic = (
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
   const isGloballyActive = thisIsActiveId === IsActiveIds.Active
   const isLocallyActive =
-    (!isGloballyActive && bufferedActivityToggles.includes(thisDegreeId)) ||
-    (isGloballyActive && !bufferedActivityToggles.includes(thisDegreeId))
+    (thisDegreeId !== undefined &&
+      !isGloballyActive &&
+      bufferedActivityToggles.includes(thisDegreeId)) ||
+    (thisDegreeId !== undefined &&
+      isGloballyActive &&
+      !bufferedActivityToggles.includes(thisDegreeId))
 
   const initialCellState = isGloballyActive ? CellStates.On : CellStates.Off
   const [cellState, setCellState] = React.useState(initialCellState)
