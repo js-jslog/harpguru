@@ -20,6 +20,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: Improved presentatability of option enums
 - MINOR: Remove devDependencies (hoisted to workspace development context)
 
+### Fixed
+
+- MINOR: Add necessary import for reactn global state and fix consequentially highlighted but practically impotent linting error
+
 ## [v7.3.0](https://github.com/js-jslog/harpguru/releases/tag/v1.3.0) - 2020-09-13
 
 ### Added
