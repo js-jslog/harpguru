@@ -3,6 +3,7 @@
   "version": "3.0.0",
   "description": "A React Native implementation of the HarpGuru concept; a UI to aid the understanding of harmonica music theory",
   "main": "./src/index.ts",
+  "types": "./src/index.d.ts",
   "author": "js-jslog <josephsinfield@yahoo.com>",
   "license": "UNLICENSED",
   "scripts": {
