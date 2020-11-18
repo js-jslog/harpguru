@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v4.0.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: Include type definition exports so that consumers benefit from polyfills and reactn global state definition
+
 ### Changed
 
 - MINOR: Improved presentatability of option enums
