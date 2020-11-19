@@ -10,7 +10,8 @@
     "lint-file": "lerna run lint-file --npm-client=yarn -- --no-error-on-unmatched-pattern",
     "ci": "lerna run ci --npm-client=yarn --stream",
     "prettier": "prettier --write .",
-    "precommit": "lint-staged && lerna run tsc --npm-client=yarn --stream -- --incremental",
+    "pre-commit": "lint-staged && lerna run tsc --npm-client=yarn --stream -- --incremental",
+    "pre-push": "yarn lint-packages && yarn tsc && yarn test",
     "postinstall": "husky install && cd ./packages/harpguru-expo-boilerplate && expo-yarn-workspaces postinstall"
   },
   "devDependencies": {
