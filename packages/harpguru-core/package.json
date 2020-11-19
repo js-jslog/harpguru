@@ -10,9 +10,7 @@
     "test": "jest",
     "tsc": "tsc",
     "lint": "eslint --ext .ts,.tsx .",
-    "ci": "yarn lint && yarn tsc",
-    "precommit": "lint-staged",
-    "prettier": "prettier --write ."
+    "ci": "yarn lint && yarn tsc"
   },
   "peerDependencies": {
     "@expo/vector-icons": "^10.0.2",

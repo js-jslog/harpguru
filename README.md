@@ -27,7 +27,7 @@ This is somewhat achievable using the `import/no-extraneous-dependencies` eslint
 
 ### Impotent version number
 
-A related, and from what I can tell *general*, problem with Lerna, is that the symlinked local dependencies are included in their latest form, regarless of the version number included in their dependant's package.json.
+A related, and from what I can tell _general_, problem with Lerna, is that the symlinked local dependencies are included in their latest form, regarless of the version number included in their dependant's package.json.
 
 The problem here is that if the dependant were to be published for use outside the workspace context, it is possible that a very different version of the dependency than the one active in the workspace context would be installed.
 
