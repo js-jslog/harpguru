@@ -10,6 +10,7 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "tsc": "tsc",
+    "tsc-incremental": "tsc --incremental",
     "lint": "eslint --ext .ts,.tsx .",
     "lint-file": "eslint --ext .ts,.tsx",
     "ci": "yarn lint && yarn tsc",

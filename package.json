@@ -4,15 +4,14 @@
   "scripts": {
     "start": "lerna run start --scope harpguru-expo-boilerplate --npm-client=yarn --stream",
     "test": "lerna run test --npm-client=yarn --stream",
-    "testPreCommit": "lerna run test --npm-client=yarn --stream -- --onlyChanged",
     "test-find-related": "lerna run test --npm-client=yarn --stream -- --findRelatedTests",
     "tsc": "lerna run tsc --npm-client=yarn --stream",
-    "tscPreCommit": "lerna run tsc --npm-client=yarn --stream -- --incremental",
+    "tsc-incremental": "lerna run tsc-incremental --npm-client=yarn --stream",
     "lint-packages": "lerna run lint --npm-client=yarn --stream",
     "lint-file": "lerna run lint-file --npm-client=yarn -- --no-error-on-unmatched-pattern",
     "ci": "lerna run ci --npm-client=yarn --stream",
     "prettier": "prettier --write .",
-    "precommit": "lint-staged",
+    "precommit": "lint-staged && yarn tsc-incremental",
     "postinstall": "husky install && cd ./packages/harpguru-expo-boilerplate && expo-yarn-workspaces postinstall"
   },
   "devDependencies": {
