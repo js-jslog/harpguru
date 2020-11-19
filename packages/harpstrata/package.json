@@ -8,7 +8,6 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx .",
-    "ci": "yarn lint && yarn tsc",
-    "prettier": "prettier --write ."
+    "ci": "yarn lint && yarn tsc"
   }
 }
