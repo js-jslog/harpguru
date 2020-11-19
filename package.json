@@ -6,7 +6,7 @@
     "test": "lerna run test --npm-client=yarn --stream",
     "test-find-related": "lerna run test --npm-client=yarn --stream -- --findRelatedTests",
     "tsc": "lerna run tsc --npm-client=yarn --stream",
-    "tsc-incremental": "lerna run tsc-incremental --npm-client=yarn --stream",
+    "tsc-incremental": "lerna run tsc --npm-client=yarn --stream -- --incremental",
     "lint-packages": "lerna run lint --npm-client=yarn --stream",
     "lint-file": "lerna run lint-file --npm-client=yarn -- --no-error-on-unmatched-pattern",
     "ci": "lerna run ci --npm-client=yarn --stream",
