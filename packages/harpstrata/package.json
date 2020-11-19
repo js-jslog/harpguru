@@ -10,6 +10,7 @@
     "tsc": "tsc",
     "lint": "eslint --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc",
+    "precommit": "lint-staged",
     "prettier": "prettier --write ."
   }
 }
