@@ -6,7 +6,7 @@ import type { Degree, DegreeRow } from '../../../../Degree'
 import { DegreeIds } from '../../../../Degree'
 
 export const getMatrixGivenDegree = (props: IsActiveProps): IsActiveMatrix => {
-  const { degreeMatrix: sji, activeIds } = props
+  const { degreeMatrix, activeIds } = props
   const activeDegreeIds = activeIds as ReadonlyArray<DegreeIds>
   const mapDegree = (degree: Degree | undefined): IsActiveIds | undefined => {
     if (degree === undefined) return undefined
@@ -17,7 +17,7 @@ export const getMatrixGivenDegree = (props: IsActiveProps): IsActiveMatrix => {
   const mapDegreeRow = (degreeRow: DegreeRow): IsActiveRow =>
     degreeRow.map(mapDegree)
 
-  const isActiveMatrix: IsActiveMatrix = sji.map(mapDegreeRow)
+  const isActiveMatrix: IsActiveMatrix = degreeMatrix.map(mapDegreeRow)
   return isActiveMatrix
 }
 
