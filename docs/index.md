@@ -4,5 +4,5 @@ The documentation for this project exists at this point only to explain the tech
 
 For details on the API's and what to expect when _using_ the packages, please view the appropriate README.md files in each package root.
 
-- [ Lerna & Yarn workspaces ](lerna-and-yarn-workpaces.md)
+- [ Lerna & Yarn workspaces ](lerna-and-yarn-workspaces.md)
 - [ Git hooks ](git-hooks.md)
