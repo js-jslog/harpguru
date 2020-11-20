@@ -41,7 +41,7 @@
     "metro-react-native-babel-preset": "^0.63.0",
     "prettier": "^2.0.5",
     "react-test-renderer": "16.11.0",
-    "typescript": "4"
+    "typescript": "^4.1.2"
   },
   "workspaces": [
     "packages/*"
