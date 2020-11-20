@@ -1,7 +1,7 @@
 {
   "**/*.+(ts|tsx)": [
     "prettier --write",
-    "yarn lint-file",
+    "yarn lint-file --fix",
     "yarn test-find-related"
   ],
   "**/*.+(js|json|md)": ["prettier --write"]
