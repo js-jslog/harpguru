@@ -2,21 +2,21 @@
 
 Two git hooks have been implemented with similar but slightly different goals in mind.
 
-## Precommit
+## Pre-commit
 
-During precommit, it is desirable to fix all of the formatting and linting issues, and check the _relevant_ tests and typescript compilations.
+During pre-commit, it is desirable to fix all of the formatting and linting issues, and check the _relevant_ tests and typescript compilations.
 
 Speed is important at this stage since keeping commits small and frequent is a priority for me.
 
 The tools seem to be available to achieve this for the formatting and linting, they are mostly there for the testing, but the typescript analysis is still quite a bit slower than I would like.
 
-Still all of these tasks are being completed during precommit and I have not stopped using it yet.
+Still all of these tasks are being completed during pre-commit and I have not stopped using it yet.
 
-To a large degree the ability to complete the associated scripts here is thanks to the [lint-staged](https://preview.npmjs.com/package/lint-staged) package. It doesn't seem possible to integrate the tsc analysis in to lint-staged which is part of the reason that it is the weak link in this chain. I have given a detailed description of how lint-staged has been used to achieve my precommit requirements below, since it's implementations with each dependency is not consistent and their justifications deserve recording for when decisions need to be made at a later date.
+To a large degree the ability to complete the associated scripts here is thanks to the [lint-staged](https://preview.npmjs.com/package/lint-staged) package. It doesn't seem possible to integrate the tsc analysis in to lint-staged which is part of the reason that it is the weak link in this chain. I have given a detailed description of how lint-staged has been used to achieve my pre-commit requirements below, since it's implementations with each dependency is not consistent and their justifications deserve recording for when decisions need to be made at a later date.
 
-## Prepush
+## Pre-push
 
-During prepush we want the same analysis to take place, but we want it to be project wide incase anything slipped through the lint-staged refined version. We also don't want _any_ files to be rewritten automatically. If a failure has occurred then I want to know it. That's useful information for improving the precommit actions in the future.
+During pre-push we want the same analysis to take place, but we want it to be project wide incase anything slipped through the lint-staged refined version. We also don't want _any_ files to be rewritten automatically. If a failure has occurred then I want to know it. That's useful information for improving the pre-commit actions in the future.
 
 ## Use of lint-staged & lerna run
 
