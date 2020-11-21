@@ -19,6 +19,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: Improved presentatability of option enums
 - MINOR: Remove devDependencies (hoisted to workspace development context)
+- MINOR: Move dev config to monorepo root and create lint-stage friendly run scripts
 
 ### Fixed
 

@@ -8,9 +8,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "test": "jest",
+    "tsc": "tsc",
     "lint": "eslint --ext .ts,.tsx .",
-    "ci": "yarn lint && yarn tsc",
-    "prettier": "prettier --write ."
+    "lint-file": "eslint --ext .ts,.tsx",
+    "ci": "yarn lint && yarn tsc"
   },
   "peerDependencies": {
     "@expo/vector-icons": "^10.0.2",

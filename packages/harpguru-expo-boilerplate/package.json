@@ -9,9 +9,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+    "tsc": "tsc",
     "lint": "eslint --ext .ts,.tsx .",
+    "lint-file": "eslint --ext .ts,.tsx",
     "ci": "yarn lint && yarn tsc",
-    "prettier": "prettier --write .",
     "build-android-aad": "expo build:android -t app-bundle --clear-credentials",
     "build-android-apk": "expo build:android -t apk --clear-credentials"
   },

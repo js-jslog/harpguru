@@ -4,10 +4,15 @@
   "scripts": {
     "start": "lerna run start --scope harpguru-expo-boilerplate --npm-client=yarn --stream",
     "test": "lerna run test --npm-client=yarn --stream",
-    "lint": "lerna run lint --npm-client=yarn --stream",
+    "test-find-related": "lerna run test --npm-client=yarn --stream -- --findRelatedTests",
+    "tsc": "lerna run tsc --npm-client=yarn --stream",
+    "lint-packages": "lerna run lint --npm-client=yarn --stream",
+    "lint-file": "lerna run lint-file --npm-client=yarn -- --no-error-on-unmatched-pattern",
     "ci": "lerna run ci --npm-client=yarn --stream",
-    "prettier": "lerna run prettier --npm-client=yarn --stream",
-    "postinstall": "cd ./packages/harpguru-expo-boilerplate && expo-yarn-workspaces postinstall"
+    "prettier": "prettier --write .",
+    "pre-commit": "lint-staged && lerna run tsc --npm-client=yarn --stream -- --incremental",
+    "pre-push": "yarn lint-packages && yarn tsc && yarn test",
+    "postinstall": "husky install && cd ./packages/harpguru-expo-boilerplate && expo-yarn-workspaces postinstall"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -26,15 +31,17 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jest": "^23.13.2",
-    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-native": "^3.8.1",
     "expo-yarn-workspaces": "^1.2.1",
+    "husky": "^5.0.0-beta.0",
     "jest": "24.9.0",
     "lerna": "^3.22.1",
+    "lint-staged": "^10.5.1",
     "metro-react-native-babel-preset": "^0.63.0",
     "prettier": "^2.0.5",
     "react-test-renderer": "16.11.0",
-    "typescript": "~3.9.5"
+    "typescript": "^4.1.2"
   },
   "workspaces": [
     "packages/*"

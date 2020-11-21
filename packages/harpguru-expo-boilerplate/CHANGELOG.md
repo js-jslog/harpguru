@@ -19,6 +19,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: Ensure package dependencies are explicitly required
 - MINOR: Remove devDependencies (hoisted to workspace development context)
+- MINOR: Move dev config to monorepo root and create lint-stage friendly run scripts
 
 ## [v2.3.0](https://github.com/js-jslog/harpguru/releases/tag/v4.0.0) - 2020-10-31
 
