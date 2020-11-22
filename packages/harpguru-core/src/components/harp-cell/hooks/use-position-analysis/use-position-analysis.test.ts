@@ -1,5 +1,6 @@
 import { useGlobal } from 'reactn'
-import type { Degree, IsActiveIds, Pitch } from 'harpstrata'
+import type { Degree, Pitch } from 'harpstrata'
+import { IsActiveIds } from 'harpstrata'
 
 import type { YXCoord } from '../../../harp-cell'
 import { inactiveCellsHarpStrata as activeHarpStrata } from '../../../../test-resources'
@@ -16,20 +17,14 @@ const {
 const {
   pitchMatrix: [, , , [, , , y3x3Pitch]],
 } = activeHarpStrata
-const {
-  isActiveComplex: {
-    isActiveMatrix: [, , , [, , , y3x3IsActive]],
-  },
-} = activeHarpStrata
 
 const ourDegree = <Degree>y3x3Degree
 const ourPitch = <Pitch>y3x3Pitch
-const ourIsActive = <IsActiveIds>y3x3IsActive
 
 test('thisIsActiveId provides the isActiveId if available and undefined otherwise', () => {
   const ourCoord: YXCoord = [3, 3]
   const { thisIsActiveId } = usePositionAnalysis(ourCoord)
-  expect(thisIsActiveId).toBe(ourIsActive)
+  expect(thisIsActiveId).toBe(IsActiveIds.Inactive)
 
   const emptyCoord: YXCoord = [0, 0]
   const { thisIsActiveId: emptyIsActiveId } = usePositionAnalysis(emptyCoord)

@@ -48,7 +48,5 @@ export type {
   ActiveDegreeIds,
   ActivePitchIds,
   ActiveIds,
-  IsActiveMatrix,
-  IsActiveRow,
   IsActiveComplex,
 } from './IsActive'

@@ -7,3 +7,8 @@ export type IsActiveProps = {
   pitchMatrix: PitchMatrix
   activeIds: ActiveIds
 }
+
+export enum IsActiveIds {
+  Active = 'ACTIVE',
+  Inactive = 'INACTIVE',
+}
