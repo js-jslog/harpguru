@@ -6,10 +6,10 @@ const {
   C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
     degreeMatrix,
     pitchMatrix,
-    isActiveComplex,
+    activeDegreeIds,
+    activePitchIds,
   },
 } = EXAMPLE_STRATA
-const { activeDegreeIds, activePitchIds } = isActiveComplex
 
 test('getIsActiveComplex returns the first pozition C major diatonic IsActiveComplex with C major pentatonic scale degrees active', () => {
   const isActiveProps = {
@@ -17,16 +17,26 @@ test('getIsActiveComplex returns the first pozition C major diatonic IsActiveCom
     pitchMatrix,
     activeIds: activeDegreeIds,
   }
-  const actualIsActiveComplex = getIsActiveComplex(isActiveProps)
-  const expectedIsActiveComplex = isActiveComplex
+  const {
+    activeDegreeIds: actualActiveDegreeIds,
+    activePitchIds: actualActivePitchIds,
+  } = getIsActiveComplex(isActiveProps)
+  const expectedActiveDegreeIds = activeDegreeIds
+  const expectedActivePitchIds = activePitchIds
 
-  expect(actualIsActiveComplex).toStrictEqual(expectedIsActiveComplex)
+  expect(actualActiveDegreeIds).toStrictEqual(expectedActiveDegreeIds)
+  expect(actualActivePitchIds).toStrictEqual(expectedActivePitchIds)
 })
 
 test('getIsActiveComplex returns the first pozition C major diatonic IsActiveComplex with C major pentatonic scale pitches active', () => {
   const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: activePitchIds }
-  const actualIsActiveComplex = getIsActiveComplex(isActiveProps)
-  const expectedIsActiveComplex = isActiveComplex
+  const {
+    activeDegreeIds: actualActiveDegreeIds,
+    activePitchIds: actualActivePitchIds,
+  } = getIsActiveComplex(isActiveProps)
+  const expectedActiveDegreeIds = activeDegreeIds
+  const expectedActivePitchIds = activePitchIds
 
-  expect(actualIsActiveComplex).toStrictEqual(expectedIsActiveComplex)
+  expect(actualActiveDegreeIds).toStrictEqual(expectedActiveDegreeIds)
+  expect(actualActivePitchIds).toStrictEqual(expectedActivePitchIds)
 })

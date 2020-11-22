@@ -19,7 +19,7 @@ export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
 
   const degreeMatrix = getDegreeMatrix(halfstepIndexMatrix, rootOffset)
   const pitchMatrix = getPitchMatrix(halfstepIndexMatrix, pitchId)
-  const isActiveComplex = getIsActiveComplex({
+  const { activeDegreeIds, activePitchIds } = getIsActiveComplex({
     degreeMatrix,
     pitchMatrix,
     activeIds: activeIds,
@@ -32,7 +32,8 @@ export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
     apparatus,
     degreeMatrix,
     pitchMatrix,
-    isActiveComplex,
+    activeDegreeIds,
+    activePitchIds,
     pozitionId,
     rootPitchId,
     harpKeyId,

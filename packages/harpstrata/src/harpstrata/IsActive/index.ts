@@ -1,5 +1,4 @@
 export { getIsActiveComplex } from './IsActiveComplex'
-export type { IsActiveComplex } from './IsActiveComplex'
 
 export type { ActiveDegreeIds, ActivePitchIds, ActiveIds } from './ActiveIds'
 

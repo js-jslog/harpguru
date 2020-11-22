@@ -32,7 +32,7 @@ test('that the global state is defined', () => {
   setGlobalState()
   const { globalTuple } = espyGlobalTuple()
   const [global] = globalTuple
-  expect(global.activeHarpStrata.isActiveComplex.activePitchIds.length).toBe(0)
+  expect(global.activeHarpStrata.activePitchIds.length).toBe(0)
 })
 
 test('that the global state is not redefined if it already exists', () => {
@@ -43,5 +43,5 @@ test('that the global state is not redefined if it already exists', () => {
   setGlobalState()
   const { globalTuple } = espyGlobalTuple()
   const [global] = globalTuple
-  expect(global.activeHarpStrata.isActiveComplex.activePitchIds.length).toBe(1)
+  expect(global.activeHarpStrata.activePitchIds.length).toBe(1)
 })

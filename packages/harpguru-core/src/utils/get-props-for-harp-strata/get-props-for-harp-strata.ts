@@ -11,9 +11,7 @@ export const getPropsForHarpStrata = (
   } = harpStrata
   const { pozitionId } = harpStrata
   const { harpKeyId } = harpStrata
-  const {
-    isActiveComplex: { activePitchIds, activeDegreeIds },
-  } = harpStrata
+  const { activePitchIds, activeDegreeIds } = harpStrata
 
   if (displayMode === DisplayModes.Degree) {
     return { apparatusId, pozitionId, harpKeyId, activeIds: activeDegreeIds }

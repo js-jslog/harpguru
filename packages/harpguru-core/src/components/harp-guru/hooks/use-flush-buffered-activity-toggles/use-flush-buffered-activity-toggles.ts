@@ -19,7 +19,7 @@ export const useFlushBufferedActivityToggles = (): void => {
         apparatus: { id: apparatusId },
         pozitionId,
         harpKeyId,
-        isActiveComplex: { activeDegreeIds },
+        activeDegreeIds,
       } = activeHarpStrata
       const newActiveDegreeIds = batchToggleDegreeIds(
         activeDegreeIds,

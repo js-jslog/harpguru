@@ -97,10 +97,8 @@ test.skip('A press of the componenet results in toggled active ids in the harpst
     },
   } = setActiveHarpStrata
   const {
-    isActiveComplex: {
-      activeDegreeIds: newDegreeIds,
-      activePitchIds: newPitchIds,
-    },
+    activeDegreeIds: newDegreeIds,
+    activePitchIds: newPitchIds,
   } = newHarpStrata
 
   const expectedDegreeIds = [DegreeIds.Second]

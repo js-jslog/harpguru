@@ -58,10 +58,8 @@ const {
   C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
     degreeMatrix,
     pitchMatrix,
-    isActiveComplex: {
-      activePitchIds: examplePitchIds,
-      activeDegreeIds: exampleDegreeIds,
-    },
+    activeDegreeIds: exampleDegreeIds,
+    activePitchIds: examplePitchIds,
   },
 } = EXAMPLE_STRATA
 

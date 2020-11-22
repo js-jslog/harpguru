@@ -32,7 +32,7 @@ export const useQuizQuestionCycle = (
   )
 
   const resetActiveHarpStrata = () => {
-    if (activeHarpStrata.isActiveComplex.activeDegreeIds.length === 0) return
+    if (activeHarpStrata.activeDegreeIds.length === 0) return
     const harpStrataProps = getPropsForHarpStrata(
       activeHarpStrata,
       DisplayModes.Degree

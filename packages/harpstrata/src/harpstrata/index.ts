@@ -44,9 +44,4 @@ export {
 } from './Covariant'
 
 export { IsActiveIds } from './IsActive'
-export type {
-  ActiveDegreeIds,
-  ActivePitchIds,
-  ActiveIds,
-  IsActiveComplex,
-} from './IsActive'
+export type { ActiveDegreeIds, ActivePitchIds, ActiveIds } from './IsActive'
