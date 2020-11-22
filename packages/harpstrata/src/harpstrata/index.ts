@@ -1,3 +1,5 @@
+import 'react-native-console-time-polyfill'
+
 export type { HarpStrataProps, HarpStrata } from './HarpStrata'
 export {
   getApparatusIds,
