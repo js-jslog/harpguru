@@ -1,11 +1,6 @@
 import { useGlobal } from 'reactn'
-import type {
-  IsActiveIds,
-  DegreeIds,
-  PitchIds,
-  Pitch,
-  Degree,
-} from 'harpstrata'
+import type { DegreeIds, PitchIds, Pitch, Degree } from 'harpstrata'
+import { IsActiveIds } from 'harpstrata'
 
 import type { YXCoord } from '../../../harp-cell'
 
@@ -22,7 +17,7 @@ export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
   const {
     degreeMatrix,
     pitchMatrix,
-    isActiveComplex: { isActiveMatrix },
+    isActiveComplex: { activeDegreeIds },
   } = activeHarpStrata
   const [yCoord, xCoord] = yxCoord
   const {
@@ -31,11 +26,13 @@ export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
   const {
     [yCoord]: { [xCoord]: thisPitch },
   } = pitchMatrix
-  const {
-    [yCoord]: { [xCoord]: thisIsActiveId },
-  } = isActiveMatrix
   const { id: thisDegreeId } = thisDegree || { id: undefined }
   const { id: thisPitchId } = thisPitch || { id: undefined }
+  const thisIsActiveId = (() => {
+    if (thisDegreeId === undefined) return undefined
+    if (activeDegreeIds.includes(thisDegreeId)) return IsActiveIds.Active
+    return IsActiveIds.Inactive
+  })()
   return {
     thisDegree,
     thisPitch,
