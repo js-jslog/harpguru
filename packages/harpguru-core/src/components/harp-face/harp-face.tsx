@@ -8,7 +8,6 @@ import { getHarpFaceFacts } from '../../utils'
 import { getStyles } from './harp-face-styles'
 
 export const HarpFace = (): React.ReactElement => {
-  console.time('HarpFace')
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const styles = getStyles(activeHarpStrata)
@@ -21,7 +20,6 @@ export const HarpFace = (): React.ReactElement => {
     return <HarpFaceFragment key={index} {...harpFaceFragmentProps} />
   })
 
-  console.timeEnd('HarpFace')
   return <View style={styles.face}>{fragments}</View>
 }
 

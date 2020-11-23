@@ -7,7 +7,6 @@ import { getCovariantSet } from '../../Covariant'
 import { getApparatus } from '../../Apparatus'
 
 export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
-  console.time('getHarpStrata function')
   const { apparatusId, pozitionId, harpKeyId, activeIds } = props
 
   const apparatus = getApparatus(apparatusId)
@@ -27,7 +26,6 @@ export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
 
   const { rootPitchId } = getCovariantSet({ pozitionId, harpKeyId })
 
-  console.timeEnd('getHarpStrata function')
   return {
     apparatus,
     degreeMatrix,
