@@ -1,4 +1,4 @@
-export { getIsActiveComplex } from './IsActiveComplex'
+export { getActiveIdsPair } from './ActiveIds'
 
 export type { ActiveDegreeIds, ActivePitchIds, ActiveIds } from './ActiveIds'
 
