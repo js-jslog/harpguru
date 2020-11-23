@@ -1,4 +1,4 @@
-import { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../types'
+import { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../../types'
 import type { IsActiveProps } from '../../types'
 import { PitchIds, getPitch } from '../../../Pitch'
 import { EXAMPLE_STRATA } from '../../../HarpStrata'

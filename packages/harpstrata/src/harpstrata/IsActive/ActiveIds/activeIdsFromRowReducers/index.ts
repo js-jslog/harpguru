@@ -1,4 +1,4 @@
-import type { ActivePitchIds, ActiveDegreeIds } from '../types'
+import type { ActivePitchIds, ActiveDegreeIds } from '../../types'
 import type { Pitch, PitchRow } from '../../../Pitch'
 import type { Degree, DegreeRow } from '../../../Degree'
 
