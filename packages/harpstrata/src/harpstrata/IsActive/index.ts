@@ -1,4 +1,4 @@
-export { getActiveIdsPair } from './ActiveIds'
+export { getActiveIdsPair } from './utils'
 
 export type { ActiveDegreeIds, ActivePitchIds, ActiveIds } from './types'
 export { IsActiveIds } from './types'
