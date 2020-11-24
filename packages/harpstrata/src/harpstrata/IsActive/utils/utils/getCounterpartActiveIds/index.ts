@@ -6,7 +6,7 @@ import type {
   IsActiveProps,
   ActivePitchIds,
   ActiveDegreeIds,
-} from '../../types'
+} from '../../../types'
 
 export const getCounterpartDegreeIds = (
   props: IsActiveProps
