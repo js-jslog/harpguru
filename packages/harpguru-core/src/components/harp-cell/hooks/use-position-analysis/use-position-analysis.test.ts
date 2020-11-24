@@ -1,34 +1,40 @@
 import { useGlobal } from 'reactn'
 import type { Degree, Pitch } from 'harpstrata'
-import { IsActiveIds } from 'harpstrata'
 
 import type { YXCoord } from '../../../harp-cell'
-import { inactiveCellsHarpStrata as activeHarpStrata } from '../../../../test-resources'
+import {
+  inactiveCellsHarpStrata,
+  activeCellsHarpStrata,
+} from '../../../../test-resources'
 
 import { usePositionAnalysis } from './index'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
-mockUseGlobal.mockReturnValue([activeHarpStrata])
 
 const {
   degreeMatrix: [, , , [, , , y3x3Degree]],
-} = activeHarpStrata
+} = inactiveCellsHarpStrata
 const {
   pitchMatrix: [, , , [, , , y3x3Pitch]],
-} = activeHarpStrata
+} = inactiveCellsHarpStrata
 
 const ourDegree = <Degree>y3x3Degree
 const ourPitch = <Pitch>y3x3Pitch
 
-test('thisIsActiveId provides the isActiveId if available and undefined otherwise', () => {
+test('thisIsActive is true if the cell is active or false otherwise', () => {
   const ourCoord: YXCoord = [3, 3]
-  const { thisIsActiveId } = usePositionAnalysis(ourCoord)
-  expect(thisIsActiveId).toBe(IsActiveIds.Inactive)
+  mockUseGlobal.mockReturnValue([activeCellsHarpStrata])
+  const { thisIsActive: active } = usePositionAnalysis(ourCoord)
+  expect(active).toBe(true)
+
+  mockUseGlobal.mockReturnValue([inactiveCellsHarpStrata])
+  const { thisIsActive: inactive } = usePositionAnalysis(ourCoord)
+  expect(inactive).toBe(false)
 
   const emptyCoord: YXCoord = [0, 0]
-  const { thisIsActiveId: emptyIsActiveId } = usePositionAnalysis(emptyCoord)
-  expect(emptyIsActiveId).toBe(undefined)
+  const { thisIsActive: empty } = usePositionAnalysis(emptyCoord)
+  expect(empty).toBe(false)
 })
 
 test('thisDegreeId and thisPitchId provide an id when available and undefined otherwise', () => {

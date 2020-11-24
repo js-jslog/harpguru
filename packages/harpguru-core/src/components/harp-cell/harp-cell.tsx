@@ -25,7 +25,7 @@ type HarpCellProps = {
 }
 
 export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
-  const { thisDegreeId, thisPitchId, thisIsActiveId } = usePositionAnalysis(
+  const { thisDegreeId, thisPitchId, thisIsActive } = usePositionAnalysis(
     yxCoord
   )
   const baseHarpCellStyles = getBaseHarpCellStyles()
@@ -34,7 +34,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [cellState, tapHandler] = useTapRerenderLogic(
     thisDegreeId,
-    thisIsActiveId
+    thisIsActive
   )
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
