@@ -43,12 +43,4 @@ export {
   areRootPitchControllers,
 } from './Covariant'
 
-export { IsActiveIds } from './IsActive'
-export type {
-  ActiveDegreeIds,
-  ActivePitchIds,
-  ActiveIds,
-  IsActiveMatrix,
-  IsActiveRow,
-  IsActiveComplex,
-} from './IsActive'
+export type { ActiveDegreeIds, ActivePitchIds, ActiveIds } from './IsActive'

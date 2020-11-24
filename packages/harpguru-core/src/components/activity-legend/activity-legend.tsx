@@ -30,10 +30,7 @@ const getToneSource = (
 export const ActivityLegend = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const {
-    rootPitchId,
-    isActiveComplex: { activePitchIds },
-  } = activeHarpStrata
+  const { rootPitchId, activePitchIds } = activeHarpStrata
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
   const sizes = getSizes()

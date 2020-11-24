@@ -1,8 +1,8 @@
 import { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../types'
-import type { IsActiveProps } from '../../types'
-import { PitchIds, getPitch } from '../../../Pitch'
-import { EXAMPLE_STRATA } from '../../../HarpStrata'
-import { DegreeIds, getDegree } from '../../../Degree'
+import type { IsActiveProps } from '../types'
+import { PitchIds, getPitch } from '../../Pitch'
+import { EXAMPLE_STRATA } from '../../HarpStrata'
+import { DegreeIds, getDegree } from '../../Degree'
 
 import { getActiveIdsPair } from './index'
 
@@ -58,10 +58,8 @@ const {
   C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
     degreeMatrix,
     pitchMatrix,
-    isActiveComplex: {
-      activePitchIds: examplePitchIds,
-      activeDegreeIds: exampleDegreeIds,
-    },
+    activeDegreeIds: exampleDegreeIds,
+    activePitchIds: examplePitchIds,
   },
 } = EXAMPLE_STRATA
 

@@ -1,11 +1,5 @@
 import { useGlobal } from 'reactn'
-import type {
-  IsActiveIds,
-  DegreeIds,
-  PitchIds,
-  Pitch,
-  Degree,
-} from 'harpstrata'
+import type { DegreeIds, PitchIds, Pitch, Degree } from 'harpstrata'
 
 import type { YXCoord } from '../../../harp-cell'
 
@@ -14,16 +8,12 @@ export type PositionFacts = {
   readonly thisPitch: Pitch | undefined
   readonly thisDegreeId: DegreeIds | undefined
   readonly thisPitchId: PitchIds | undefined
-  readonly thisIsActiveId: IsActiveIds | undefined
+  readonly thisIsActive: boolean
 }
 
 export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const {
-    degreeMatrix,
-    pitchMatrix,
-    isActiveComplex: { isActiveMatrix },
-  } = activeHarpStrata
+  const { degreeMatrix, pitchMatrix, activeDegreeIds } = activeHarpStrata
   const [yCoord, xCoord] = yxCoord
   const {
     [yCoord]: { [xCoord]: thisDegree },
@@ -31,16 +21,18 @@ export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
   const {
     [yCoord]: { [xCoord]: thisPitch },
   } = pitchMatrix
-  const {
-    [yCoord]: { [xCoord]: thisIsActiveId },
-  } = isActiveMatrix
   const { id: thisDegreeId } = thisDegree || { id: undefined }
   const { id: thisPitchId } = thisPitch || { id: undefined }
+  const thisIsActive = (() => {
+    if (thisDegreeId === undefined) return false
+    if (activeDegreeIds.includes(thisDegreeId)) return true
+    return false
+  })()
   return {
     thisDegree,
     thisPitch,
     thisDegreeId,
     thisPitchId,
-    thisIsActiveId,
+    thisIsActive,
   }
 }

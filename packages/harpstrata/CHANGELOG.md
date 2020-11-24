@@ -20,6 +20,12 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: Improved presentatability of option enums
 - MINOR: Remove devDependencies (hoisted to workspace development context)
 - MINOR: Move dev config to monorepo root and create lint-stage friendly run scripts
+- MINOR: Flatten cell activity part of the harpstrata object
+- MAJOR: Change the object denoting cell activity from custom type to boolean
+
+### Removed
+
+- MAJOR: Remove the matrix identifying the activity of the cells across the harp face
 
 ### Fixed
 

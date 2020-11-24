@@ -4,7 +4,7 @@ import {
   State,
 } from 'react-native-gesture-handler'
 import React from 'react'
-import { DegreeIds, IsActiveIds } from 'harpstrata'
+import { DegreeIds } from 'harpstrata'
 
 import { useAddBufferedActivityToggle } from '../use-add-buffered-activity-toggle'
 import { CellStates } from '../../../../types'
@@ -14,10 +14,10 @@ type TapHandler = (arg0: GestureHandlerStateChangeNativeEvent) => void
 
 export const useTapRerenderLogic = (
   thisDegreeId: DegreeIds | undefined,
-  thisIsActiveId: IsActiveIds | undefined
+  thisIsActive: boolean
 ): [CellStates, TapHandler] => {
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-  const isGloballyActive = thisIsActiveId === IsActiveIds.Active
+  const isGloballyActive = thisIsActive
   const isLocallyActive =
     (thisDegreeId !== undefined &&
       !isGloballyActive &&
@@ -53,7 +53,7 @@ export const useTapRerenderLogic = (
   // of the cells render logic is already associated with it's CellState and
   // it will be easier to grasp the logic if it is centred on a single value.
   React.useEffect(() => {
-    if (thisIsActiveId === undefined) return
+    if (thisDegreeId === undefined) return
     const relevantState = isGloballyActive ? CellStates.On : CellStates.Off
     if (cellState !== relevantState) {
       setCellState(relevantState)

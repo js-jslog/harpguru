@@ -1,7 +1,7 @@
-import { PitchIds, getPitch } from '../../../Pitch'
-import type { PitchRow } from '../../../Pitch'
-import { DegreeIds, getDegree } from '../../../Degree'
-import type { DegreeRow } from '../../../Degree'
+import { PitchIds, getPitch } from '../../../../Pitch'
+import type { PitchRow } from '../../../../Pitch'
+import { DegreeIds, getDegree } from '../../../../Degree'
+import type { DegreeRow } from '../../../../Degree'
 
 import type { RowAccumulator } from './index'
 import { activeIdsFromPitchRow, activeIdsFromDegreeRow } from './index'

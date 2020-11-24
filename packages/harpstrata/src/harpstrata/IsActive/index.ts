@@ -1,9 +1,5 @@
-export { getIsActiveComplex } from './IsActiveComplex'
-export type { IsActiveComplex } from './IsActiveComplex'
+export { getActiveIdsPair } from './getActiveIdsPair'
 
-export type { ActiveDegreeIds, ActivePitchIds, ActiveIds } from './ActiveIds'
+export type { ActiveDegreeIds, ActivePitchIds, ActiveIds } from './types'
 
-export { IsActiveIds } from './IsActiveMatrix'
-export type { IsActiveMatrix, IsActiveRow } from './IsActiveMatrix'
-
-export { EXAMPLE_IS_ACTIVE_COMPLEXES } from './testResources'
+export { EXAMPLE_IS_ACTIVE_IDS_PAIR } from './testResources'
