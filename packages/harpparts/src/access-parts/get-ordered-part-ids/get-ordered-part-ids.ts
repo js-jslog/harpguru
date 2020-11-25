@@ -22,8 +22,10 @@ const getRelevantPartList = (
 
 export const getOrderedPartIds = (
   partType: OrderableParts
-): ReadonlyArray<OrderablePartId | undefined> => {
-  return Object.values(getRelevantPartList(partType)).map(
-    (part) => part && part.id
-  )
+): ReadonlyArray<OrderablePartId> => {
+  return Object.values(getRelevantPartList(partType)).map((part) => {
+    if (part === undefined)
+      throw 'An undefined object was found in the harppart list'
+    return part.id
+  })
 }
