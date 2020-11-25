@@ -1,1 +1,1 @@
-export type { HalfstepIndex } from './types'
+export type { HarpFaceMatrix, HarpFaceRow, HalfstepIndex } from './types'
