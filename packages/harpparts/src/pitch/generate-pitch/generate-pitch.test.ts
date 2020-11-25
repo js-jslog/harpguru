@@ -1,21 +1,21 @@
 import { PitchIds, NoteFoundations } from '../types'
 import type { Pitch } from '../types'
 
-import { getPitch } from './get-pitch'
+import { generatePitch } from './generate-pitch'
 
-test('getPitch function can return a C pitch', () => {
+test('generatePitch function can return a C pitch', () => {
   const C_PITCH: Pitch = {
     id: PitchIds.C,
     contextualDisplayValues: {
       natural: NoteFoundations.C,
     },
   } as const
-  const actualPitch = getPitch(C_PITCH.id)
+  const actualPitch = generatePitch(C_PITCH.id)
 
   expect(actualPitch).toStrictEqual(C_PITCH)
 })
 
-test('getPitch function can return a Db pitch', () => {
+test('generatePitch function can return a Db pitch', () => {
   const DB_PITCH: Pitch = {
     id: PitchIds.Db,
     contextualDisplayValues: {
@@ -23,7 +23,7 @@ test('getPitch function can return a Db pitch', () => {
       sharp: NoteFoundations.C,
     },
   } as const
-  const actualPitch = getPitch(DB_PITCH.id)
+  const actualPitch = generatePitch(DB_PITCH.id)
 
   expect(actualPitch).toStrictEqual(DB_PITCH)
 })

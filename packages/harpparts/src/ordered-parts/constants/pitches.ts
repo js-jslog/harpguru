@@ -1,17 +1,17 @@
-import { PitchIds, getPitch } from '../../pitch'
+import { PitchIds, generatePitch } from '../../pitch'
 import type { Pitch } from '../../pitch'
 
 export const ORDERED_PITCHES: Record<PitchIds, Pitch> = {
-  [PitchIds.Ab]: getPitch(PitchIds.Ab),
-  [PitchIds.A]: getPitch(PitchIds.A),
-  [PitchIds.Bb]: getPitch(PitchIds.Bb),
-  [PitchIds.B]: getPitch(PitchIds.B),
-  [PitchIds.C]: getPitch(PitchIds.C),
-  [PitchIds.Db]: getPitch(PitchIds.Db),
-  [PitchIds.D]: getPitch(PitchIds.D),
-  [PitchIds.Eb]: getPitch(PitchIds.Eb),
-  [PitchIds.E]: getPitch(PitchIds.E),
-  [PitchIds.F]: getPitch(PitchIds.F),
-  [PitchIds.Gb]: getPitch(PitchIds.Gb),
-  [PitchIds.G]: getPitch(PitchIds.G),
+  [PitchIds.Ab]: generatePitch(PitchIds.Ab),
+  [PitchIds.A]: generatePitch(PitchIds.A),
+  [PitchIds.Bb]: generatePitch(PitchIds.Bb),
+  [PitchIds.B]: generatePitch(PitchIds.B),
+  [PitchIds.C]: generatePitch(PitchIds.C),
+  [PitchIds.Db]: generatePitch(PitchIds.Db),
+  [PitchIds.D]: generatePitch(PitchIds.D),
+  [PitchIds.Eb]: generatePitch(PitchIds.Eb),
+  [PitchIds.E]: generatePitch(PitchIds.E),
+  [PitchIds.F]: generatePitch(PitchIds.F),
+  [PitchIds.Gb]: generatePitch(PitchIds.Gb),
+  [PitchIds.G]: generatePitch(PitchIds.G),
 } as const

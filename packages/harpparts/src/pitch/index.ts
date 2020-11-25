@@ -1,4 +1,4 @@
-export { getPitch } from './get-pitch'
+export { generatePitch } from './generate-pitch'
 
 export type { Pitch, NaturalPitch, UnnaturalPitch } from './types'
 

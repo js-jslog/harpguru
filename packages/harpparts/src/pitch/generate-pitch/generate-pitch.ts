@@ -52,7 +52,7 @@ const pitchMap: Record<
   },
 }
 
-export const getPitch = (pitchId: PitchIds): Pitch => {
+export const generatePitch = (pitchId: PitchIds): Pitch => {
   const pitch = {
     id: pitchId,
     contextualDisplayValues: pitchMap[pitchId],

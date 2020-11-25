@@ -1,4 +1,4 @@
-import { getPitch } from '../get-pitch'
+import { generatePitch } from '../generate-pitch'
 import { PozitionIds } from '../../harpstrata'
 
 import { isPitchId, isNaturalPitch } from './typeguards'
@@ -14,8 +14,8 @@ test('isPitchId returns true for a PitchIds and false otherwise', () => {
 })
 
 test('isNaturalPitch returns true for a natural Pitch and false otherwise', () => {
-  const c = getPitch(PitchIds.C)
-  const db = getPitch(PitchIds.Db)
+  const c = generatePitch(PitchIds.C)
+  const db = generatePitch(PitchIds.Db)
 
   expect(isNaturalPitch(c)).toBeTruthy()
   expect(isNaturalPitch(db)).toBeFalsy()
