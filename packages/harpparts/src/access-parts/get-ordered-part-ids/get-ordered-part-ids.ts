@@ -6,16 +6,24 @@ import {
   ORDERED_POZITIONS,
 } from '../constants'
 
+type IDdPart = {
+  readonly id: OrderablePartId
+}
+
+const getRelevantPartList = (
+  partType: OrderableParts
+): Partial<Record<Partial<OrderablePartId>, IDdPart>> => {
+  if (partType === OrderableParts.Apparatus) return ORDERED_APPARATUS
+  if (partType === OrderableParts.Degrees) return ORDERED_DEGREES
+  if (partType === OrderableParts.Pitches) return ORDERED_PITCHES
+  if (partType === OrderableParts.Pozitions) return ORDERED_POZITIONS
+  throw 'An orderable part type without an implemented ordered list has been requested'
+}
+
 export const getOrderedPartIds = (
   partType: OrderableParts
-): ReadonlyArray<OrderablePartId> => {
-  if (partType === OrderableParts.Apparatus)
-    return Object.values(ORDERED_APPARATUS).map((part) => part.id)
-  if (partType === OrderableParts.Degrees)
-    return Object.values(ORDERED_DEGREES).map((part) => part.id)
-  if (partType === OrderableParts.Pitches)
-    return Object.values(ORDERED_PITCHES).map((part) => part.id)
-  if (partType === OrderableParts.Pozitions)
-    return Object.values(ORDERED_POZITIONS).map((part) => part.id)
-  throw 'this is not acceptable'
+): ReadonlyArray<OrderablePartId | undefined> => {
+  return Object.values(getRelevantPartList(partType)).map(
+    (part) => part && part.id
+  )
 }
