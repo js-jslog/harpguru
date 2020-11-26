@@ -11,16 +11,24 @@ import type { ApparatusIds } from '../../apparatus'
 
 import { getOrderedPartIds } from './get-ordered-part-ids'
 
-export const getApparatusIds = (): ReadonlyArray<ApparatusIds> => {
-  return getOrderedPartIds(ORDERED_APPARATUS) as ReadonlyArray<ApparatusIds>
+export const getApparatusIds = (
+  apparatusIds?: ApparatusIds
+): ReadonlyArray<ApparatusIds> => {
+  return getOrderedPartIds(ORDERED_APPARATUS, apparatusIds) as ReadonlyArray<
+    ApparatusIds
+  >
 }
 
-export const getDegreeIds = (): ReadonlyArray<DegreeIds> => {
-  return getOrderedPartIds(ORDERED_DEGREES) as ReadonlyArray<DegreeIds>
+export const getDegreeIds = (
+  degreeIds?: DegreeIds
+): ReadonlyArray<DegreeIds> => {
+  return getOrderedPartIds(ORDERED_DEGREES, degreeIds) as ReadonlyArray<
+    DegreeIds
+  >
 }
 
-export const getPitchIds = (): ReadonlyArray<PitchIds> => {
-  return getOrderedPartIds(ORDERED_PITCHES) as ReadonlyArray<PitchIds>
+export const getPitchIds = (pitchId?: PitchIds): ReadonlyArray<PitchIds> => {
+  return getOrderedPartIds(ORDERED_PITCHES, pitchId) as ReadonlyArray<PitchIds>
 }
 
 export const getPozitionIds = (
