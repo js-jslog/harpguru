@@ -2,7 +2,7 @@
   "name": "harpparts",
   "version": "7.3.0",
   "description": "A library of foundational concepts for building virtual harps",
-  "main": "./src/harpstrata/index.ts",
+  "main": "./src/index.ts",
   "author": "js-jslog <josephsinfield@yahoo.com>",
   "license": "UNLICENSED",
   "scripts": {

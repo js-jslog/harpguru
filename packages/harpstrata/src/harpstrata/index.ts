@@ -1,7 +1,6 @@
 export type { HarpStrataProps, HarpStrata } from './HarpStrata'
 export {
   getApparatusIds,
-  getPozitionIds,
   getPitchIds,
   getDegreeIds,
   getHarpStrata,
@@ -20,10 +19,6 @@ export type {
 
 export { DegreeIds } from './Degree'
 export type { Degree, DegreeRow, DegreeMatrix } from './Degree'
-
-export { PozitionIds } from './Pozition'
-export type { Pozition } from './Pozition'
-export { isPozitionId } from './Pozition'
 
 export { PitchIds, getPitch } from './Pitch'
 export type { Pitch, NaturalPitch, UnnaturalPitch } from './Pitch'

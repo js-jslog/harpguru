@@ -1,4 +1,5 @@
-import { PozitionIds } from '../../Pozition'
+import { PozitionIds } from 'harpparts'
+
 import { PitchIds, EXAMPLE_PITCH_MATRICES } from '../../Pitch'
 import { EXAMPLE_IS_ACTIVE_IDS_PAIR } from '../../IsActive'
 import type { HarpStrata } from '../../HarpStrata'

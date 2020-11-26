@@ -1,4 +1,5 @@
-import type { HarpKeyControllers, PozitionIds, PitchIds } from 'harpstrata'
+import type { HarpKeyControllers, PitchIds } from 'harpstrata'
+import type { PozitionIds } from 'harpparts'
 
 import type { HarpKeyCovariancePrimer } from '../../covariance-series-types'
 import { CovariantMembers } from '../../covariance-series-types'

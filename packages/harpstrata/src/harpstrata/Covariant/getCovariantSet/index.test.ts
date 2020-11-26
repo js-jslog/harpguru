@@ -1,9 +1,10 @@
+import { PozitionIds } from 'harpparts'
+
 import type {
   HarpKeyControllers,
   RootPitchControllers,
   PozitionControllers,
 } from '../types'
-import { PozitionIds } from '../../Pozition'
 import { PitchIds } from '../../Pitch'
 
 import { getCovariantSet } from './index'

@@ -1,11 +1,7 @@
 import { useGlobal } from 'reactn'
-import {
-  getPozitionIds,
-  getCovariantSet,
-  getHarpStrata,
-  PozitionIds,
-} from 'harpstrata'
+import { getCovariantSet, getHarpStrata } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
+import { PozitionIds, getPozitionIds } from 'harpparts'
 
 import {
   partiallyApplyNudgeFunction,

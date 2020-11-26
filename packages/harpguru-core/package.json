@@ -15,6 +15,7 @@
   },
   "peerDependencies": {
     "@expo/vector-icons": "^10.0.2",
+    "harpparts": "^7.0.0",
     "react": "16.11.0",
     "react-native": "0.62.0"
   },

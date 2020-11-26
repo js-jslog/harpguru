@@ -2,7 +2,6 @@ import { State } from 'reactn/default'
 import { setGlobal } from 'reactn'
 import {
   getApparatusIds,
-  getPozitionIds,
   getPitchIds,
   ActiveIds,
   PitchIds,
@@ -10,6 +9,7 @@ import {
   HarpStrata,
   getHarpStrata,
 } from 'harpstrata'
+import { getPozitionIds } from 'harpparts'
 import { act } from '@testing-library/react-native'
 
 import { espyGlobalTuple } from './state-informant'

@@ -1,6 +1,7 @@
+import { PozitionIds } from 'harpparts'
+
 import { PitchIds } from '../types'
 import { getPitch } from '../getPitch'
-import { PozitionIds } from '../../Pozition'
 
 import { isPitchId, isNaturalPitch } from './index'
 

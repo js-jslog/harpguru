@@ -1,5 +1,6 @@
-import { PitchIds, PozitionIds } from 'harpstrata'
+import { PitchIds } from 'harpstrata'
 import type { RootPitchControllers } from 'harpstrata'
+import { PozitionIds } from 'harpparts'
 
 import { CovariantMembers } from '../../covariance-series-types'
 

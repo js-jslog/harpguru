@@ -1,5 +1,5 @@
 import { generatePitch } from '../generate-pitch'
-import { PozitionIds } from '../../harpstrata'
+import { PozitionIds } from '../../pozition'
 
 import { isPitchId, isNaturalPitch } from './typeguards'
 

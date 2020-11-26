@@ -1,6 +1,7 @@
-import { PozitionIds } from '../types'
+import { getPozition } from '../index'
+import { PozitionIds } from '../../pozition'
 
-import { getPozition, getPozitionByOffset } from './index'
+import { getPozitionByOffset } from './get-pozition-by-offset'
 
 const first = getPozition(PozitionIds.First)
 const third = getPozition(PozitionIds.Third)

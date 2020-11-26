@@ -1,5 +1,6 @@
+import { getPozition } from 'harpparts'
+
 import type { HarpStrataProps, HarpStrata } from '../types'
-import { getPozition } from '../../Pozition'
 import { getPitchMatrix, getPitch } from '../../Pitch'
 import { getActiveIdsPair } from '../../IsActive'
 import { getDegreeMatrix } from '../../Degree'

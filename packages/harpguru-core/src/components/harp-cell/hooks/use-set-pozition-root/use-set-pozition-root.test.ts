@@ -3,12 +3,12 @@ import {
   PitchIds,
   HarpStrataProps,
   ApparatusIds,
-  PozitionIds,
   ActiveIds,
   HarpStrata,
   getHarpStrata,
   DegreeIds,
 } from 'harpstrata'
+import { PozitionIds } from 'harpparts'
 
 import { CovariantMembers } from '../../../../packages/covariance-series'
 

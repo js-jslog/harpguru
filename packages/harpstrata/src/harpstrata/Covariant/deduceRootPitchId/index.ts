@@ -1,5 +1,6 @@
+import { getPozition } from 'harpparts'
+
 import { RootPitchControllers } from '../types'
-import { getPozition } from '../../Pozition'
 import type { PitchIds } from '../../Pitch'
 import { getAscendingPitchIds } from '../../OrderedIds'
 

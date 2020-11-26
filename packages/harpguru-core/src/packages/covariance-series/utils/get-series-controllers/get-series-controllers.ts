@@ -1,10 +1,6 @@
 import type { CovariantControllers } from 'harpstrata'
-import {
-  getPitchIds,
-  getPozitionIds,
-  isPitchId,
-  isPozitionId,
-} from 'harpstrata'
+import { getPitchIds, isPitchId } from 'harpstrata'
+import { getPozitionIds, isPozitionId } from 'harpparts'
 
 import { getCovariantControllers } from '../get-covariant-controllers'
 import type { CovariancePrimer } from '../../covariance-series-types'

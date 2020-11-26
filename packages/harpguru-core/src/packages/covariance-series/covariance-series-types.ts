@@ -1,4 +1,5 @@
-import type { CovariantSet, PitchIds, PozitionIds } from 'harpstrata'
+import type { CovariantSet, PitchIds } from 'harpstrata'
+import { PozitionIds } from 'harpparts'
 
 export enum CovariantMembers {
   HarpKey = 'harpKeyId',

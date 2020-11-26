@@ -1,7 +1,8 @@
 import { setGlobal } from 'reactn'
-import { getHarpStrata, PitchIds, PozitionIds, ApparatusIds } from 'harpstrata'
+import { getHarpStrata, PitchIds, ApparatusIds } from 'harpstrata'
 import { DegreeIds } from 'harpstrata'
 import type { HarpStrataProps, HarpStrata } from 'harpstrata'
+import { PozitionIds } from 'harpparts'
 
 import { DisplayModes, ExperienceModes } from '../../types'
 import { CovariantMembers } from '../../packages/covariance-series'

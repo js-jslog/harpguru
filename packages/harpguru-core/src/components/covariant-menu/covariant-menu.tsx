@@ -1,6 +1,7 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
-import { getPitchIds, getPozitionIds } from 'harpstrata'
+import { getPitchIds } from 'harpstrata'
+import { getPozitionIds } from 'harpparts'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'

@@ -1,4 +1,5 @@
-import type { PozitionIds } from '../../Pozition'
+import type { PozitionIds } from 'harpparts'
+
 import type { PitchIds, PitchMatrix } from '../../Pitch'
 import type { ActiveIds, ActiveDegreeIds, ActivePitchIds } from '../../IsActive'
 import type { DegreeMatrix } from '../../Degree'

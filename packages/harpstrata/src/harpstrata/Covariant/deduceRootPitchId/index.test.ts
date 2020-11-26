@@ -1,4 +1,5 @@
-import { PozitionIds } from '../../Pozition'
+import { PozitionIds } from 'harpparts'
+
 import { PitchIds } from '../../Pitch'
 
 import { deduceRootPitchId } from './index'

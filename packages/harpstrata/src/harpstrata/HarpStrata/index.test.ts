@@ -1,8 +1,9 @@
-import { PozitionIds } from '../Pozition'
+import { PozitionIds, getPozitionIds } from 'harpparts'
+
 import { PitchIds } from '../Pitch'
 import { ApparatusIds } from '../Apparatus'
 
-import { getApparatusIds, getPozitionIds, getPitchIds } from './index'
+import { getApparatusIds, getPitchIds } from './index'
 
 test('getApparatusIds function returns an array with a major diatonic as one of the values', () => {
   expect(getApparatusIds().includes(ApparatusIds.MajorDiatonic)).toBeTruthy()

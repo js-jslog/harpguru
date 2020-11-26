@@ -23,6 +23,10 @@ export const getPitchIds = (): ReadonlyArray<PitchIds> => {
   return getOrderedPartIds(ORDERED_PITCHES) as ReadonlyArray<PitchIds>
 }
 
-export const getPozitionIds = (): ReadonlyArray<PozitionIds> => {
-  return getOrderedPartIds(ORDERED_POZITIONS) as ReadonlyArray<PozitionIds>
+export const getPozitionIds = (
+  pozitionId?: PozitionIds
+): ReadonlyArray<PozitionIds> => {
+  return getOrderedPartIds(ORDERED_POZITIONS, pozitionId) as ReadonlyArray<
+    PozitionIds
+  >
 }

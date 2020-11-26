@@ -78,10 +78,6 @@ Returns an array of id's of the various `Apparatus` objects which can be represe
 
 Returns an array of id's of the complete list of `PitchIds` which exist in an octave. The id from which can be fed in to the `getHarpStrata` next. A `PitchIds` parameter can optionally be provided to indicate what the origin id of the list should be.
 
-### getPozitionIds(?PozitionIds) => PozitionIds[]
-
-Returns an array of id's of the complete list of `PozitionIds` which can be taken on a harp. The id from which can be fed in to the `getHarpStrata` next. A `PozitionIds` parameter can optionally be provided to indicate what the origin id of the list should be.
-
 ### getCovariantSet(CovariantControllers) => CovariantSet
 
 Returns the complete set of covariant members given any 2 of the set. The covariant members are harp key, pozition & root pitch. Given any two of these the third can be deduced.

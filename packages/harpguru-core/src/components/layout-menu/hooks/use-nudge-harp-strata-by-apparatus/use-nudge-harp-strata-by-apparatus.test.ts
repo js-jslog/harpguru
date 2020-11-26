@@ -1,5 +1,6 @@
 import { useGlobal } from 'reactn'
-import { ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
+import { ApparatusIds, PitchIds, getHarpStrata } from 'harpstrata'
+import { PozitionIds } from 'harpparts'
 
 import { useNudgeHarpStrataByApparatus } from './use-nudge-harp-strata-by-apparatus'
 
