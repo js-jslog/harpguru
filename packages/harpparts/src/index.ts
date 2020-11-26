@@ -1,3 +1,4 @@
+export { DegreeIds } from './degree'
 export { PozitionIds, isPozitionId } from './pozition'
 export type { Pozition } from './pozition'
 export {

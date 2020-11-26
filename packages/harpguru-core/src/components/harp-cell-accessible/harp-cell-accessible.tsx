@@ -1,7 +1,8 @@
 import Animated from 'react-native-reanimated'
 import { View, ViewStyle } from 'react-native'
 import React from 'react'
-import type { DegreeIds, PitchIds } from 'harpstrata'
+import type { PitchIds } from 'harpstrata'
+import type { DegreeIds } from 'harpparts'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'

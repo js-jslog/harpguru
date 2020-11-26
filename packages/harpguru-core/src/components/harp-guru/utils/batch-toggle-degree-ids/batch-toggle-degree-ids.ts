@@ -1,4 +1,4 @@
-import type { DegreeIds } from 'harpstrata'
+import type { DegreeIds } from 'harpparts'
 
 export const batchToggleDegreeIds = (
   activeDegreeIds: ReadonlyArray<DegreeIds>,

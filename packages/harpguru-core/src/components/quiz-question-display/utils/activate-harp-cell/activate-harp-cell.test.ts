@@ -1,6 +1,6 @@
-import { DegreeIds, ApparatusIds, PitchIds, getHarpStrata } from 'harpstrata'
+import { ApparatusIds, PitchIds, getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps, ActiveIds } from 'harpstrata'
-import { PozitionIds } from 'harpparts'
+import { DegreeIds, PozitionIds } from 'harpparts'
 
 import { activateHarpCell } from './activate-harp-cell'
 

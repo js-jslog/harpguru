@@ -1,7 +1,6 @@
-import { PozitionIds } from 'harpparts'
+import { DegreeIds, PozitionIds } from 'harpparts'
 
 import { PitchIds } from '../../Pitch'
-import { DegreeIds } from '../../Degree'
 
 import { getAscendingEnumValues, getDescendingEnumValues } from './index'
 

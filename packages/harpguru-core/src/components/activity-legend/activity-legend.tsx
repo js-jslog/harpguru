@@ -8,7 +8,8 @@ import Animated, {
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { getDegreeIds, getPitchIds } from 'harpstrata'
-import type { DegreeIds, PitchIds } from 'harpstrata'
+import type { PitchIds } from 'harpstrata'
+import type { DegreeIds } from 'harpparts'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'

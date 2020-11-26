@@ -1,6 +1,8 @@
+import { DegreeIds } from 'harpparts'
+
 import { PitchIds, getPitch } from '../../../../Pitch'
 import type { PitchRow } from '../../../../Pitch'
-import { DegreeIds, getDegree } from '../../../../Degree'
+import { getDegree } from '../../../../Degree'
 import type { DegreeRow } from '../../../../Degree'
 
 import type { RowAccumulator } from './index'

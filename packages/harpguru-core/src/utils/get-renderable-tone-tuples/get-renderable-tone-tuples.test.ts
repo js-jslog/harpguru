@@ -1,4 +1,5 @@
-import { DegreeIds, PitchIds } from 'harpstrata'
+import { PitchIds } from 'harpstrata'
+import { DegreeIds } from 'harpparts'
 
 import { getRenderableToneTuples } from './get-renderable-tone-tuples'
 

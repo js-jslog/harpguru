@@ -1,4 +1,5 @@
-import { DegreeIds } from '../types'
+import { DegreeIds } from 'harpparts'
+
 import type { Degree } from '../types'
 
 import { getDegree } from './index'

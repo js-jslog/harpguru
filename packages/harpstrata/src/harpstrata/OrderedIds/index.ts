@@ -1,5 +1,6 @@
+import { DegreeIds } from 'harpparts'
+
 import { PitchIds } from '../Pitch'
-import { DegreeIds } from '../Degree'
 
 import {
   getAscendingEnumValues,

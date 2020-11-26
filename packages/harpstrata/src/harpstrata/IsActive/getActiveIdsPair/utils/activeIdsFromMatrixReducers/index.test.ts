@@ -1,6 +1,8 @@
+import { DegreeIds } from 'harpparts'
+
 import { PitchIds, getPitch } from '../../../../Pitch'
 import type { PitchMatrix } from '../../../../Pitch'
-import { DegreeIds, getDegree } from '../../../../Degree'
+import { getDegree } from '../../../../Degree'
 import type { DegreeMatrix } from '../../../../Degree'
 
 import type { MatrixAccumulator } from './index'

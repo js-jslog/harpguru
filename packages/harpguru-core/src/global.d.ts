@@ -1,5 +1,6 @@
 import 'reactn'
-import type { HarpStrata, DegreeIds } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
+import type { DegreeIds } from 'harpparts'
 
 import type { CovariantMembers } from './packages/covariance-series'
 

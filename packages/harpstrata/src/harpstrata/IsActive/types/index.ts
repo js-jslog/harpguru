@@ -1,6 +1,7 @@
+import { DegreeIds } from 'harpparts'
+
 import type { PitchMatrix } from '../../Pitch'
 import { PitchIds } from '../../Pitch'
-import { DegreeIds } from '../../Degree'
 import type { DegreeMatrix } from '../../Degree'
 
 export type ActiveDegreeIds = ReadonlyArray<DegreeIds>

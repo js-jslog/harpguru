@@ -17,7 +17,6 @@ export type {
   HalfstepIndexMatrix,
 } from './Apparatus'
 
-export { DegreeIds } from './Degree'
 export type { Degree, DegreeRow, DegreeMatrix } from './Degree'
 
 export { PitchIds, getPitch } from './Pitch'

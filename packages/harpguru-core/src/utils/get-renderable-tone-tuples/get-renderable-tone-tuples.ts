@@ -1,5 +1,6 @@
 import { isPitchId, isNaturalPitch, getPitch } from 'harpstrata'
-import type { PitchIds, DegreeIds } from 'harpstrata'
+import type { PitchIds } from 'harpstrata'
+import type { DegreeIds } from 'harpparts'
 
 import type { RenderableToneTuples } from '../../types'
 

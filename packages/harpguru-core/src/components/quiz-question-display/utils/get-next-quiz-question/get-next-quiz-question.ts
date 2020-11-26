@@ -1,5 +1,6 @@
-import type { DegreeIds, PitchIds } from 'harpstrata'
+import type { PitchIds } from 'harpstrata'
 import { getPitchIds, getDegreeIds } from 'harpstrata'
+import { DegreeIds } from 'harpparts'
 
 import { DisplayModes } from '../../../../types'
 

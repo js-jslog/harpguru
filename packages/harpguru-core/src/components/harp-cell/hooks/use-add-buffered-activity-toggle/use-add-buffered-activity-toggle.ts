@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import type { DegreeIds } from 'harpstrata'
+import type { DegreeIds } from 'harpparts'
 
 type BufferToggleFunction = (arg0: DegreeIds) => void
 

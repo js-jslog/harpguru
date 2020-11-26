@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import { DegreeIds } from 'harpstrata'
+import { DegreeIds } from 'harpparts'
 import { render } from '@testing-library/react-native'
 
 import { DisplayModes, ExperienceModes } from '../../../../types'

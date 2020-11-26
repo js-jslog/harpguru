@@ -1,6 +1,8 @@
+import { DegreeIds } from 'harpparts'
+
 import type { IsActiveProps } from '../../../types'
 import { PitchIds, getPitch } from '../../../../Pitch'
-import { DegreeIds, getDegree } from '../../../../Degree'
+import { getDegree } from '../../../../Degree'
 
 import { getCounterpartDegreeIds, getCounterpartPitchIds } from './index'
 

@@ -1,4 +1,4 @@
-import { DegreeIds } from 'harpstrata'
+import { DegreeIds } from 'harpparts'
 
 import { batchToggleDegreeIds } from './batch-toggle-degree-ids'
 
