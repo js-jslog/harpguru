@@ -34,3 +34,25 @@ test('getOrderedPartIds can return some PozitionIds', () => {
   expect(orderedPozitionIds.length).toBeTruthy()
   expect(orderedPozitionIds).toContain(PozitionIds.First)
 })
+
+test('getOrderedPartIds can return an ordered list by origin', () => {
+  const orderedPozitionIds = getOrderedPartIds(
+    ORDERED_POZITIONS,
+    PozitionIds.Tenth
+  )
+  const expectedPozitionIds = [
+    PozitionIds.Tenth,
+    PozitionIds.Eleventh,
+    PozitionIds.Twelfth,
+    PozitionIds.First,
+    PozitionIds.Second,
+    PozitionIds.Third,
+    PozitionIds.Fourth,
+    PozitionIds.Fifth,
+    PozitionIds.Sixth,
+    PozitionIds.Seventh,
+    PozitionIds.Eighth,
+    PozitionIds.Ninth,
+  ]
+  expect(orderedPozitionIds).toStrictEqual(expectedPozitionIds)
+})
