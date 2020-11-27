@@ -1,4 +1,4 @@
-import { getCovariantSet } from 'harpstrata'
+import { getCovariantSet } from 'harpcovariance'
 
 import { getSeriesControllers } from '../get-series-controllers'
 import type {

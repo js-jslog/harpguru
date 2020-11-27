@@ -1,4 +1,4 @@
-import type { CovariantControllers } from 'harpstrata'
+import type { CovariantControllers } from 'harpcovariance'
 
 import { getRootPitchControllers } from '../get-root-pitch-controllers'
 import { getPozitionControllers } from '../get-pozition-controllers'

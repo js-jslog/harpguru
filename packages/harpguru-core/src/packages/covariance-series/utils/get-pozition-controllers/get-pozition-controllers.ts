@@ -1,4 +1,4 @@
-import type { PozitionControllers } from 'harpstrata'
+import type { PozitionControllers } from 'harpcovariance'
 
 import type { PozitionCovariancePrimer } from '../../covariance-series-types'
 import { CovariantMembers } from '../../covariance-series-types'
