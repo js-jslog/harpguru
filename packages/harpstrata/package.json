@@ -12,7 +12,7 @@
     "lint-file": "eslint --ext .ts,.tsx",
     "ci": "yarn lint && yarn tsc"
   },
-  "dependencies": {
+  "peerDependencies": {
     "harpparts": "^7.0.0"
   }
 }
