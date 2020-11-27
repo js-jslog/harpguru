@@ -1,6 +1,7 @@
 import { useGlobal } from 'reactn'
 import { getCovariantSet, getHarpStrata } from 'harpstrata'
-import type { HarpStrata, PitchIds } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
+import type { PitchIds } from 'harpparts'
 
 import { getPropsForHarpStrata } from '../../../../utils'
 import { CovariantMembers } from '../../../../packages/covariance-series'

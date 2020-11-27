@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
-import type { ApparatusIds } from 'harpstrata'
+import type { ApparatusIds } from 'harpparts'
 
 import { getPropsForHarpStrata } from '../../../../utils'
 import { DisplayModes } from '../../../../types'

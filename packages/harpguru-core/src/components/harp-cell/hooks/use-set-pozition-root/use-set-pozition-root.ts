@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 import { getHarpStrata, getCovariantSet } from 'harpstrata'
-import type { PitchIds } from 'harpstrata'
+import type { PitchIds } from 'harpparts'
 
 import { getPropsForHarpStrata } from '../../../../utils'
 import { DisplayModes } from '../../../../types'

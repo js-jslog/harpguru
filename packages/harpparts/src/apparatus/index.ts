@@ -7,3 +7,6 @@ export {
 } from './constants'
 export { ApparatusIds } from './types'
 export type { Apparatus } from './types'
+
+export { InteractionIds } from './types'
+export type { Interaction } from './types'

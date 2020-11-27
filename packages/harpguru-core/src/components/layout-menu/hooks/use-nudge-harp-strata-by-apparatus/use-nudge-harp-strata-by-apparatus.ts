@@ -1,6 +1,8 @@
 import { useGlobal } from 'reactn'
-import { getHarpStrata, getApparatusIds } from 'harpstrata'
-import type { HarpStrata, ApparatusIds } from 'harpstrata'
+import { getHarpStrata } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
+import { getApparatusIds } from 'harpparts'
+import type { ApparatusIds } from 'harpparts'
 
 import {
   partiallyApplyNudgeFunction,

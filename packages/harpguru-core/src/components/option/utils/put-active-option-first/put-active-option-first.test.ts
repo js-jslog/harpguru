@@ -1,4 +1,4 @@
-import { PitchIds, getPitchIds } from 'harpstrata'
+import { PitchIds, getPitchIds } from 'harpparts'
 
 import { putActiveOptionFirst } from './put-active-option-first'
 

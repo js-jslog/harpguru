@@ -1,5 +1,5 @@
-import { InteractionIds } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
+import { InteractionIds } from 'harpparts'
 
 import type { Coord } from '../../../../types'
 

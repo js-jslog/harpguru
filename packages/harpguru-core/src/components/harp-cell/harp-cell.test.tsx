@@ -1,7 +1,6 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
-import { PitchIds } from 'harpstrata'
-import { DegreeIds } from 'harpparts'
+import { DegreeIds, PitchIds } from 'harpparts'
 import { render, fireEvent } from '@testing-library/react-native'
 
 import { DisplayModes, ExperienceModes } from '../../types'

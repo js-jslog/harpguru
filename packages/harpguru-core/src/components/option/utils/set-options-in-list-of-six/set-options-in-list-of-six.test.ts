@@ -1,4 +1,4 @@
-import { PitchIds } from 'harpstrata'
+import { PitchIds } from 'harpparts'
 
 import { setOptionsInListOfSix } from './set-options-in-list-of-six'
 

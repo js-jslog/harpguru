@@ -1,5 +1,5 @@
-import type { ApparatusIds, HarpStrata, PitchIds } from 'harpstrata'
-import type { PozitionIds } from 'harpparts'
+import type { HarpStrata } from 'harpstrata'
+import type { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
 
 export enum DisplayModes {
   Degree = 'Degree',

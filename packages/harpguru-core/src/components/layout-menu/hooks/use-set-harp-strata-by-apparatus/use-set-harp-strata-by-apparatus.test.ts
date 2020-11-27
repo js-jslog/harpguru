@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
-import { ApparatusIds, PitchIds, getHarpStrata } from 'harpstrata'
-import { PozitionIds } from 'harpparts'
+import { getHarpStrata } from 'harpstrata'
+import { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
 
 import { useSetHarpStrataByApparatus } from './use-set-harp-strata-by-apparatus'
 

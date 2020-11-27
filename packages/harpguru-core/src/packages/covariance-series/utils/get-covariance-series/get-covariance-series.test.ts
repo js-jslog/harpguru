@@ -1,5 +1,4 @@
-import { PitchIds } from 'harpstrata'
-import { PozitionIds } from 'harpparts'
+import { PitchIds, PozitionIds } from 'harpparts'
 
 import {
   CovarianceSeries,
