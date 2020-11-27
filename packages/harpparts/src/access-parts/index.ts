@@ -6,3 +6,4 @@ export {
   getPozitionIds,
 } from './get-ordered-part-ids'
 export { getPozitionByOffset } from './get-pozition-by-offset'
+export { reversePreserveOrigin } from './reverse-preserve-origin'

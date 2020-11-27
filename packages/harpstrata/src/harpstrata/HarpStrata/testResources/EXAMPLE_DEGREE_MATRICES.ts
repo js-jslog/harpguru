@@ -1,7 +1,5 @@
-import { DegreeIds } from 'harpparts'
-
-import type { DegreeMatrix } from '../types'
-import { getDegree } from '../getDegree'
+import { getDegree, DegreeIds } from 'harpparts'
+import type { HarpFaceMatrix, Degree } from 'harpparts'
 
 const root = getDegree(DegreeIds.Root)
 const flat2 = getDegree(DegreeIds.Flat2)
@@ -17,7 +15,7 @@ const flat7 = getDegree(DegreeIds.Flat7)
 const seventh = getDegree(DegreeIds.Seventh)
 
 // prettier-ignore
-const MAJOR_DIATONIC_FIRST_POZITION: DegreeMatrix = [
+const MAJOR_DIATONIC_FIRST_POZITION: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat7     ],
   [ flat3    , undefined, undefined, flat3    , flat5    , flat7    , undefined, flat3    , flat5    , seventh   ],
   [ root     , third    , fifth    , root     , third    , fifth    , root     , third    , fifth    , root      ],
@@ -28,7 +26,7 @@ const MAJOR_DIATONIC_FIRST_POZITION: DegreeMatrix = [
 ] as const
 
 // prettier-ignore
-const MAJOR_DIATONIC_SECOND_POZITION: DegreeMatrix = [
+const MAJOR_DIATONIC_SECOND_POZITION: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat3     ],
   [ flat6    , undefined, undefined, flat6    , seventh  , flat3    , undefined, flat6    , seventh  , third     ],
   [ fourth   , sixth    , root     , fourth   , sixth    , root     , fourth   , sixth    , root     , fourth    ],

@@ -1,10 +1,10 @@
+import type { Degree, Pitch, HarpFaceRow } from 'harpparts'
+
 import type { ActivePitchIds, ActiveDegreeIds } from '../../../types'
-import type { Pitch, PitchRow } from '../../../../Pitch'
-import type { Degree, DegreeRow } from '../../../../Degree'
 
 export type RowAccumulator = {
-  readonly degreeRow: DegreeRow
-  readonly pitchRow: PitchRow
+  readonly degreeRow: HarpFaceRow<Degree>
+  readonly pitchRow: HarpFaceRow<Pitch>
   readonly activeDegreeIds: ActiveDegreeIds
   readonly activePitchIds: ActivePitchIds
 }

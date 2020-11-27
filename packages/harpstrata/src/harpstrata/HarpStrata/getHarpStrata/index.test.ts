@@ -1,9 +1,7 @@
-import { PozitionIds } from 'harpparts'
+import { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
 
 import { getHarpStrata } from '../index'
-import { PitchIds } from '../../Pitch'
 import { EXAMPLE_STRATA } from '../../HarpStrata'
-import { ApparatusIds } from '../../Apparatus'
 
 test('getHarpStrata can return a first pozition C major diatonic HarpStrata with C major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
   const {

@@ -1,6 +1,5 @@
-import { PitchIds } from '../types'
-import type { PitchMatrix } from '../types'
-import { getPitch } from '../getPitch'
+import { PitchIds, getPitch } from 'harpparts'
+import type { HarpFaceMatrix, Pitch } from 'harpparts'
 
 const c = getPitch(PitchIds.C)
 const db = getPitch(PitchIds.Db)
@@ -16,7 +15,7 @@ const bb = getPitch(PitchIds.Bb)
 const b = getPitch(PitchIds.B)
 
 // prettier-ignore
-const MAJOR_DIATONIC_C_HARMONICA: PitchMatrix = [
+const MAJOR_DIATONIC_C_HARMONICA: HarpFaceMatrix<Pitch> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, bb        ],
   [ eb       , undefined, undefined, eb       , gb       , bb       , undefined, eb       , gb       , b         ],
   [ c        , e        , g        , c        , e        , g        , c        , e        , g        , c         ],
@@ -27,7 +26,7 @@ const MAJOR_DIATONIC_C_HARMONICA: PitchMatrix = [
 ] as const
 
 // prettier-ignore
-const MAJOR_DIATONIC_F_HARMONICA: PitchMatrix = [
+const MAJOR_DIATONIC_F_HARMONICA: HarpFaceMatrix<Pitch> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, eb        ],
   [ ab       , undefined, undefined, ab       , b        , eb       , undefined, ab       , b        , e         ],
   [ f        , a        , c        , f        , a        , c        , f        , a        , c        , f         ],

@@ -1,27 +1,5 @@
 export type { HarpStrataProps, HarpStrata } from './HarpStrata'
-export {
-  getApparatusIds,
-  getPitchIds,
-  getDegreeIds,
-  getHarpStrata,
-} from './HarpStrata'
-
-export { ApparatusIds, InteractionIds } from './Apparatus'
-export type {
-  Apparatus,
-  Interaction,
-  InteractionRow,
-  InteractionMatrix,
-  HalfstepIndex,
-  HalfstepIndexRow,
-  HalfstepIndexMatrix,
-} from './Apparatus'
-
-export type { Degree, DegreeRow, DegreeMatrix } from './Degree'
-
-export { PitchIds, getPitch } from './Pitch'
-export type { Pitch, NaturalPitch, UnnaturalPitch } from './Pitch'
-export { isPitchId, isNaturalPitch } from './Pitch'
+export { getHarpStrata } from './HarpStrata'
 
 export { getCovariantSet } from './Covariant'
 export type {

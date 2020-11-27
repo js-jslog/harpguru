@@ -1,9 +1,5 @@
-import { DegreeIds } from 'harpparts'
-
-import { PitchIds, getPitch } from '../../../../Pitch'
-import type { PitchRow } from '../../../../Pitch'
-import { getDegree } from '../../../../Degree'
-import type { DegreeRow } from '../../../../Degree'
+import { getDegree, DegreeIds, getPitch, PitchIds } from 'harpparts'
+import type { HarpFaceRow, Degree, Pitch } from 'harpparts'
 
 import type { RowAccumulator } from './index'
 import { activeIdsFromPitchRow, activeIdsFromDegreeRow } from './index'
@@ -18,8 +14,8 @@ const second = getDegree(DegreeIds.Second)
 const third = getDegree(DegreeIds.Third)
 const fourth = getDegree(DegreeIds.Fourth)
 
-const degreeRow: DegreeRow = [root, second, third, fourth]
-const pitchRow: PitchRow = [c, d, e, f]
+const degreeRow: HarpFaceRow<Degree> = [root, second, third, fourth]
+const pitchRow: HarpFaceRow<Pitch> = [c, d, e, f]
 
 test('activeIdsFromPitchRow operates as a reducer to contribute to the counterpart `activePitchIds` part of its accumulator object', () => {
   const activePitchIds = [PitchIds.D, PitchIds.F]

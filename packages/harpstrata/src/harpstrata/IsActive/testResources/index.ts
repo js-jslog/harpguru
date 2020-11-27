@@ -1,7 +1,6 @@
-import { DegreeIds } from 'harpparts'
+import { DegreeIds, PitchIds } from 'harpparts'
 
 import type { ActivePitchIds, ActiveDegreeIds } from '../types'
-import { PitchIds } from '../../Pitch'
 
 const MAJOR_PENTATONIC_SCALE_DEGREE_IDS: ActiveDegreeIds = [
   DegreeIds.Root,

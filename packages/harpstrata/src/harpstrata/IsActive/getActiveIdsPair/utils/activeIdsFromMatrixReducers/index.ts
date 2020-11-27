@@ -1,22 +1,22 @@
+import type { HarpFaceRow, HarpFaceMatrix, Degree, Pitch } from 'harpparts'
+
 import type { RowAccumulator } from '../activeIdsFromRowReducers'
 import {
   activeIdsFromPitchRow,
   activeIdsFromDegreeRow,
 } from '../activeIdsFromRowReducers'
 import type { ActivePitchIds, ActiveDegreeIds } from '../../../types'
-import type { PitchRow, PitchMatrix } from '../../../../Pitch'
-import type { DegreeRow, DegreeMatrix } from '../../../../Degree'
 
 export type MatrixAccumulator = {
-  readonly degreeMatrix: DegreeMatrix
-  readonly pitchMatrix: PitchMatrix
+  readonly degreeMatrix: HarpFaceMatrix<Degree>
+  readonly pitchMatrix: HarpFaceMatrix<Pitch>
   readonly activeDegreeIds: ActiveDegreeIds
   readonly activePitchIds: ActivePitchIds
 }
 
 export const activeIdsFromPitchMatrix = (
   accumulator: MatrixAccumulator,
-  nextPitchRow: PitchRow
+  nextPitchRow: HarpFaceRow<Pitch>
 ): MatrixAccumulator => {
   const { degreeMatrix, activePitchIds, activeDegreeIds } = accumulator
   const [thisDegreeRow, ...remainingDegreeMatrix] = degreeMatrix
@@ -45,7 +45,7 @@ export const activeIdsFromPitchMatrix = (
 
 export const activeIdsFromDegreeMatrix = (
   accumulator: MatrixAccumulator,
-  nextDegreeRow: DegreeRow
+  nextDegreeRow: HarpFaceRow<Degree>
 ): MatrixAccumulator => {
   const { pitchMatrix, activePitchIds, activeDegreeIds } = accumulator
   const [thisPitchRow, ...remainingPitchMatrix] = pitchMatrix

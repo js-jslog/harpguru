@@ -1,6 +1,4 @@
-import type { PozitionIds } from 'harpparts'
-
-import type { PitchIds } from '../../Pitch'
+import type { PitchIds, PozitionIds } from 'harpparts'
 
 export type CovariantSet = {
   readonly harpKeyId: PitchIds

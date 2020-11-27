@@ -1,9 +1,5 @@
-import { DegreeIds } from 'harpparts'
-
-import { PitchIds, getPitch } from '../../../../Pitch'
-import type { PitchMatrix } from '../../../../Pitch'
-import { getDegree } from '../../../../Degree'
-import type { DegreeMatrix } from '../../../../Degree'
+import { getDegree, DegreeIds, PitchIds, getPitch } from 'harpparts'
+import type { HarpFaceMatrix, Degree, Pitch } from 'harpparts'
 
 import type { MatrixAccumulator } from './index'
 import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from './index'
@@ -24,11 +20,11 @@ const fifth = getDegree(DegreeIds.Fifth)
 const sixth = getDegree(DegreeIds.Sixth)
 const seventh = getDegree(DegreeIds.Seventh)
 
-const degreeMatrix: DegreeMatrix = [
+const degreeMatrix: HarpFaceMatrix<Degree> = [
   [root, second, third, fourth],
   [fifth, sixth, seventh, root],
 ]
-const pitchMatrix: PitchMatrix = [
+const pitchMatrix: HarpFaceMatrix<Pitch> = [
   [c, d, e, f],
   [g, a, b, c],
 ]

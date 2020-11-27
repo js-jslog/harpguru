@@ -1,10 +1,8 @@
-import { DegreeIds } from 'harpparts'
+import { getDegree, DegreeIds, PitchIds, getPitch } from 'harpparts'
 
 import { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../types'
 import type { IsActiveProps } from '../types'
-import { PitchIds, getPitch } from '../../Pitch'
 import { EXAMPLE_STRATA } from '../../HarpStrata'
-import { getDegree } from '../../Degree'
 
 import { getActiveIdsPair } from './index'
 

@@ -1,8 +1,10 @@
-import { DegreeIds } from 'harpparts'
-
-import type { PitchMatrix } from '../../Pitch'
-import { PitchIds } from '../../Pitch'
-import type { DegreeMatrix } from '../../Degree'
+import type {
+  Degree,
+  DegreeIds,
+  Pitch,
+  PitchIds,
+  HarpFaceMatrix,
+} from 'harpparts'
 
 export type ActiveDegreeIds = ReadonlyArray<DegreeIds>
 export type ActivePitchIds = ReadonlyArray<PitchIds>
@@ -15,7 +17,7 @@ export type ActiveIdsPair = {
 }
 
 export type IsActiveProps = {
-  degreeMatrix: DegreeMatrix
-  pitchMatrix: PitchMatrix
+  degreeMatrix: HarpFaceMatrix<Degree>
+  pitchMatrix: HarpFaceMatrix<Pitch>
   activeIds: ActiveIds
 }
