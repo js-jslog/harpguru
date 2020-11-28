@@ -1,3 +1,3 @@
-export { getDegreeMatrix } from './getDegreeMatrix'
-export { getPitchMatrix } from './getPitchMatrix'
+export { getDegreeMatrix } from './get-degree-matrix'
+export { getPitchMatrix } from './get-pitch-matrix'
 export { getActiveIdsPair } from './get-active-ids-pair'

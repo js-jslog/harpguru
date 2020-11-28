@@ -1,10 +1,10 @@
 import type { HarpFaceRow, HarpFaceMatrix, Degree, Pitch } from 'harpparts'
 
-import type { RowAccumulator } from '../activeIdsFromRowReducers'
+import type { RowAccumulator } from '../active-ids-from-row-reducers'
 import {
   activeIdsFromPitchRow,
   activeIdsFromDegreeRow,
-} from '../activeIdsFromRowReducers'
+} from '../active-ids-from-row-reducers'
 import type { ActivePitchIds, ActiveDegreeIds } from '../../../types'
 
 export type MatrixAccumulator = {

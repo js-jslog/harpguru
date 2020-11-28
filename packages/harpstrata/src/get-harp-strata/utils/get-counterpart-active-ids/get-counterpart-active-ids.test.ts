@@ -2,7 +2,10 @@ import { getDegree, DegreeIds, PitchIds, getPitch } from 'harpparts'
 
 import type { IsActiveProps } from '../../../types'
 
-import { getCounterpartDegreeIds, getCounterpartPitchIds } from './index'
+import {
+  getCounterpartDegreeIds,
+  getCounterpartPitchIds,
+} from './get-counterpart-active-ids'
 
 const c = getPitch(PitchIds.C)
 const d = getPitch(PitchIds.D)

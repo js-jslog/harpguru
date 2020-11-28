@@ -1,1 +1,1 @@
-export { getActiveIdsPair } from './getActiveIdsPair'
+export { getActiveIdsPair } from './get-active-ids-pair'

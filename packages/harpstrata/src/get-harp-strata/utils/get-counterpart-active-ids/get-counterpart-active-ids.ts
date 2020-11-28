@@ -1,7 +1,7 @@
 import {
   activeIdsFromPitchMatrix,
   activeIdsFromDegreeMatrix,
-} from '../activeIdsFromMatrixReducers'
+} from '../active-ids-from-matrix-reducers'
 import type {
   IsActiveProps,
   ActivePitchIds,

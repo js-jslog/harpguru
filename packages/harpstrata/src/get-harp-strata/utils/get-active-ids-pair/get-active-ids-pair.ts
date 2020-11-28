@@ -3,7 +3,7 @@ import { DegreeIds } from 'harpparts'
 import {
   getCounterpartDegreeIds,
   getCounterpartPitchIds,
-} from '../getCounterpartActiveIds'
+} from '../get-counterpart-active-ids'
 import type {
   IsActiveProps,
   ActiveIdsPair,
