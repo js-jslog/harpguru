@@ -2,7 +2,7 @@ import { getDegree, DegreeIds, PitchIds, getPitch } from 'harpparts'
 
 import { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../types'
 import type { IsActiveProps } from '../types'
-import { EXAMPLE_STRATA } from '../../HarpStrata'
+import { EXAMPLE_STRATA } from '../get-harp-strata/testResources'
 
 import { getActiveIdsPair } from './index'
 

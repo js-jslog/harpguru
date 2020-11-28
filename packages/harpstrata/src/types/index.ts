@@ -3,12 +3,27 @@ import type {
   Apparatus,
   ApparatusIds,
   Degree,
+  DegreeIds,
   PitchIds,
   Pitch,
   PozitionIds,
 } from 'harpparts'
 
-import type { ActiveIds, ActiveDegreeIds, ActivePitchIds } from '../../IsActive'
+export type ActiveDegreeIds = ReadonlyArray<DegreeIds>
+export type ActivePitchIds = ReadonlyArray<PitchIds>
+
+export type ActiveIds = ActivePitchIds | ActiveDegreeIds
+
+export type ActiveIdsPair = {
+  readonly activeDegreeIds: ActiveDegreeIds
+  readonly activePitchIds: ActivePitchIds
+}
+
+export type IsActiveProps = {
+  degreeMatrix: HarpFaceMatrix<Degree>
+  pitchMatrix: HarpFaceMatrix<Pitch>
+  activeIds: ActiveIds
+}
 
 export type HarpStrataProps = {
   readonly apparatusId: ApparatusIds
