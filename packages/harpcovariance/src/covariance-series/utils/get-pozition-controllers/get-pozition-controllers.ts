@@ -1,7 +1,6 @@
-import type { PozitionControllers } from 'harpcovariance'
-
 import type { PozitionCovariancePrimer } from '../../covariance-series-types'
 import { CovariantMembers } from '../../covariance-series-types'
+import type { PozitionControllers } from '../../../Covariant'
 
 export const getPozitionControllers = (
   props: PozitionCovariancePrimer

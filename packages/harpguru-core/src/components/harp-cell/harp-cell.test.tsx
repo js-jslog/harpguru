@@ -1,6 +1,7 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
 import { DegreeIds, PitchIds } from 'harpparts'
+import { CovariantMembers } from 'harpcovariance'
 import { render, fireEvent } from '@testing-library/react-native'
 
 import { DisplayModes, ExperienceModes } from '../../types'
@@ -8,7 +9,6 @@ import {
   inactiveCellsHarpStrata,
   activeCellsHarpStrata,
 } from '../../test-resources'
-import { CovariantMembers } from '../../packages/covariance-series'
 
 import { HarpCell } from './harp-cell'
 

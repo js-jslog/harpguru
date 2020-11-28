@@ -2,7 +2,7 @@ import { useGlobal } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 import { PozitionIds, getPozitionIds } from 'harpparts'
-import { getCovariantSet } from 'harpcovariance'
+import { getCovariantSet, CovariantMembers } from 'harpcovariance'
 
 import {
   partiallyApplyNudgeFunction,
@@ -10,7 +10,6 @@ import {
 } from '../../../../utils'
 import { DisplayModes } from '../../../../types'
 import type { SetActiveHarpStrata } from '../../../../types'
-import { CovariantMembers } from '../../../../packages/covariance-series'
 
 export const useNudgeHarpStrataByPozition = (): ((
   arg0: 'UP' | 'DOWN'

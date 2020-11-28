@@ -1,9 +1,9 @@
 import { useGlobal } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 import { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
+import { CovariantMembers } from 'harpcovariance'
 
 import { DisplayModes } from '../../../../types'
-import { CovariantMembers } from '../../../../packages/covariance-series'
 
 import { useNudgeHarpStrataByHarpKey } from './use-nudge-harp-strata-by-harp-key'
 

@@ -11,3 +11,5 @@ export {
   arePozitionControllers,
   areRootPitchControllers,
 } from './Covariant'
+
+export { CovariantMembers } from './covariance-series'

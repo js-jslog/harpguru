@@ -1,8 +1,7 @@
 import 'reactn'
 import type { HarpStrata } from 'harpstrata'
 import type { DegreeIds } from 'harpparts'
-
-import type { CovariantMembers } from './packages/covariance-series'
+import type { CovariantMembers } from 'harpcovariance'
 
 import type { DisplayModes, ExperienceModes } from './types'
 

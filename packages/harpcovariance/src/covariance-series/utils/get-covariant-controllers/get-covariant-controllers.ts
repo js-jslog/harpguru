@@ -1,5 +1,3 @@
-import type { CovariantControllers } from 'harpcovariance'
-
 import { getRootPitchControllers } from '../get-root-pitch-controllers'
 import { getPozitionControllers } from '../get-pozition-controllers'
 import { getHarpKeyControllers } from '../get-harp-key-controllers'
@@ -9,6 +7,7 @@ import {
   isHarpKeyCovariancePrimer,
   isPozitionCovariancePrimer,
 } from '../../covariance-series-typeguards'
+import type { CovariantControllers } from '../../../Covariant'
 
 export const getCovariantControllers = (
   props: CovariancePrimer

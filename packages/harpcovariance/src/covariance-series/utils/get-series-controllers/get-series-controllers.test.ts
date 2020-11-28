@@ -1,11 +1,11 @@
 import { PitchIds, PozitionIds } from 'harpparts'
+
+import { CovariantMembers } from '../../covariance-series-types'
 import type {
   HarpKeyControllers,
   PozitionControllers,
   RootPitchControllers,
-} from 'harpcovariance'
-
-import { CovariantMembers } from '../../covariance-series-types'
+} from '../../../Covariant'
 
 import { getSeriesControllers } from './get-series-controllers'
 

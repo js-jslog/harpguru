@@ -2,10 +2,9 @@ import { useGlobal } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 import { PozitionIds } from 'harpparts'
-import { getCovariantSet } from 'harpcovariance'
+import { getCovariantSet, CovariantMembers } from 'harpcovariance'
 
 import { getPropsForHarpStrata } from '../../../../utils'
-import { CovariantMembers } from '../../../../packages/covariance-series'
 
 const getNextCovariantSet = (
   activeHarpStrata: HarpStrata,

@@ -2,9 +2,9 @@ import { setGlobal } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 import { ApparatusIds, DegreeIds, PitchIds, PozitionIds } from 'harpparts'
+import { CovariantMembers } from 'harpcovariance'
 
 import { DisplayModes, ExperienceModes } from '../../types'
-import { CovariantMembers } from '../../packages/covariance-series'
 
 import { espyGlobalTuple } from './state-informant'
 

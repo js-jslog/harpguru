@@ -6,8 +6,7 @@ import {
   getHarpStrata,
 } from 'harpstrata'
 import { ApparatusIds, DegreeIds, PitchIds, PozitionIds } from 'harpparts'
-
-import { CovariantMembers } from '../../../../packages/covariance-series'
+import { CovariantMembers } from 'harpcovariance'
 
 import { useSetPozitionRoot } from './index'
 

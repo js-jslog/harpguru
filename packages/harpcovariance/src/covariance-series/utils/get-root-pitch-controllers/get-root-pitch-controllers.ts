@@ -1,9 +1,9 @@
 import { PozitionIds } from 'harpparts'
 import type { PitchIds } from 'harpparts'
-import type { RootPitchControllers } from 'harpcovariance'
 
 import type { RootPitchCovariancePrimer } from '../../covariance-series-types'
 import { CovariantMembers } from '../../covariance-series-types'
+import type { RootPitchControllers } from '../../../Covariant'
 
 export const getRootPitchControllers = (
   props: RootPitchCovariancePrimer

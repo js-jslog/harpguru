@@ -1,11 +1,11 @@
 import { useGlobal } from 'reactn'
 import 'react-native'
 import React from 'react'
+import { CovariantMembers } from 'harpcovariance'
 import { render } from '@testing-library/react-native'
 
 import { DisplayModes, ExperienceModes } from '../../types'
 import { inactiveCellsHarpStrata } from '../../test-resources'
-import { CovariantMembers } from '../../packages/covariance-series'
 
 import { HarpFace } from './harp-face'
 

@@ -1,11 +1,10 @@
 import { useGlobal } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 import type { PitchIds } from 'harpparts'
-import { getCovariantSet } from 'harpcovariance'
+import { getCovariantSet, CovariantMembers } from 'harpcovariance'
 
 import { getPropsForHarpStrata } from '../../../../utils'
 import { DisplayModes } from '../../../../types'
-import { CovariantMembers } from '../../../../packages/covariance-series'
 
 type SetPozitionRoot = (arg0: PitchIds | undefined) => void
 
