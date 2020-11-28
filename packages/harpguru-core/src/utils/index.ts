@@ -1,6 +1,5 @@
 export { setGlobalState } from './set-global-state'
 export { getHarpFaceFacts } from './get-harp-face-facts'
 export { partiallyApplyNudgeFunction } from './paritally-apply-nudge-function'
-export { getPropsForHarpStrata } from './get-props-for-harp-strata'
 export { getScaledMenuLabelProtrusion } from './get-scaled-menu-label-protrusion'
 export { getRenderableToneTuples } from './get-renderable-tone-tuples'

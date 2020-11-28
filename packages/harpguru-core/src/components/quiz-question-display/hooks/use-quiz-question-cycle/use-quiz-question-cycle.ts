@@ -3,13 +3,12 @@ import { useTimingTransition } from 'react-native-redash'
 import { Easing } from 'react-native-reanimated'
 import type { Node } from 'react-native-reanimated'
 import { useState, useEffect } from 'react'
-import { getHarpStrata } from 'harpstrata'
+import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import { DegreeIds } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
 import { activateHarpCell, getNextQuizQuestion } from '../../utils'
-import { getPropsForHarpStrata } from '../../../../utils'
-import { ExperienceModes, DisplayModes } from '../../../../types'
+import { ExperienceModes } from '../../../../types'
 
 enum QuizStates {
   Ask,
@@ -34,10 +33,7 @@ export const useQuizQuestionCycle = (
 
   const resetActiveHarpStrata = () => {
     if (activeHarpStrata.activeDegreeIds.length === 0) return
-    const harpStrataProps = getPropsForHarpStrata(
-      activeHarpStrata,
-      DisplayModes.Degree
-    )
+    const harpStrataProps = getPropsForHarpStrata(activeHarpStrata, 'DEGREE')
     setActiveHarpStrata(
       getHarpStrata({
         ...harpStrataProps,

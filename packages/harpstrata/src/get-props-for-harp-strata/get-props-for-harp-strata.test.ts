@@ -1,8 +1,7 @@
-import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps, ActiveIds, HarpStrata } from 'harpstrata'
 import { ApparatusIds, DegreeIds, PitchIds, PozitionIds } from 'harpparts'
 
-import { DisplayModes } from '../../types'
+import { getHarpStrata } from '../get-harp-strata'
 
 import { getPropsForHarpStrata } from './get-props-for-harp-strata'
 
@@ -23,7 +22,7 @@ test('given a HarpStrata, getPropsForHarpStrata supplies the props to generate t
 
   const derivedHarpStrataProps = getPropsForHarpStrata(
     sourceHarpStrata,
-    DisplayModes.Pitch
+    'PITCH'
   )
 
   expect(getHarpStrata(derivedHarpStrataProps)).toStrictEqual(sourceHarpStrata)
@@ -41,7 +40,7 @@ test('the `activeIds` array is made of pitches when the display mode is Pitch', 
 
   const derivedHarpStrataProps = getPropsForHarpStrata(
     sourceHarpStrata,
-    DisplayModes.Pitch
+    'PITCH'
   )
   const expectedActiveIds = [PitchIds.C]
   const { activeIds: actualActiveIds } = derivedHarpStrataProps
@@ -57,7 +56,7 @@ test('the `activeIds` array is made of Degrees when the display mode is Degree',
 
   const derivedHarpStrataProps = getPropsForHarpStrata(
     sourceHarpStrata,
-    DisplayModes.Degree
+    'DEGREE'
   )
   const expectedActiveIds = [DegreeIds.Root]
   const { activeIds: actualActiveIds } = derivedHarpStrataProps

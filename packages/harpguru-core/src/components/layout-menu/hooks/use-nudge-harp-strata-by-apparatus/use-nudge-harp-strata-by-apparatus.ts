@@ -1,14 +1,10 @@
 import { useGlobal } from 'reactn'
-import { getHarpStrata } from 'harpstrata'
+import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 import { getApparatusIds } from 'harpparts'
 import type { ApparatusIds } from 'harpparts'
 
-import {
-  partiallyApplyNudgeFunction,
-  getPropsForHarpStrata,
-} from '../../../../utils'
-import { DisplayModes } from '../../../../types'
+import { partiallyApplyNudgeFunction } from '../../../../utils'
 import type { SetActiveHarpStrata } from '../../../../types'
 
 export const useNudgeHarpStrataByApparatus = (): ((
@@ -44,7 +40,7 @@ const nudgeHarpStrataByApparatus = (
         id: getNextId(apparatusId, direction),
       },
     },
-    DisplayModes.Degree
+    'DEGREE'
   )
 
   setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))

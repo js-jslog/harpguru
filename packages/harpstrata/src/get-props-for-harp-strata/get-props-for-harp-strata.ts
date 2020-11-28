@@ -1,10 +1,8 @@
-import type { HarpStrata, HarpStrataProps } from 'harpstrata'
-
-import { DisplayModes } from '../../types'
+import type { HarpStrata, HarpStrataProps } from '../get-harp-strata'
 
 export const getPropsForHarpStrata = (
   harpStrata: HarpStrata,
-  displayMode: DisplayModes
+  mode: 'DEGREE' | 'PITCH'
 ): HarpStrataProps => {
   const {
     apparatus: { id: apparatusId },
@@ -13,7 +11,7 @@ export const getPropsForHarpStrata = (
   const { harpKeyId } = harpStrata
   const { activePitchIds, activeDegreeIds } = harpStrata
 
-  if (displayMode === DisplayModes.Degree) {
+  if (mode === 'DEGREE') {
     return { apparatusId, pozitionId, harpKeyId, activeIds: activeDegreeIds }
   }
 
