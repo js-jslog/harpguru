@@ -2,7 +2,7 @@ import type { PitchIds, PozitionIds } from 'harpparts'
 
 import type { HarpKeyCovariancePrimer } from '../../covariance-series-types'
 import { CovariantMembers } from '../../covariance-series-types'
-import type { HarpKeyControllers } from '../../../Covariant'
+import type { HarpKeyControllers } from '../../../covariant-set'
 
 export const getHarpKeyControllers = (
   props: HarpKeyCovariancePrimer

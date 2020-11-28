@@ -5,7 +5,7 @@ import type {
   HarpKeyControllers,
   PozitionControllers,
   RootPitchControllers,
-} from '../../../Covariant'
+} from '../../../covariant-set'
 
 import { getCovariantControllers } from './get-covariant-controllers'
 

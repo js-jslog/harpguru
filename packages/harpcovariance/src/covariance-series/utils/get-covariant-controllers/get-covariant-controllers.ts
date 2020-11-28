@@ -7,7 +7,7 @@ import {
   isHarpKeyCovariancePrimer,
   isPozitionCovariancePrimer,
 } from '../../covariance-series-typeguards'
-import type { CovariantControllers } from '../../../Covariant'
+import type { CovariantControllers } from '../../../covariant-set'
 
 export const getCovariantControllers = (
   props: CovariancePrimer

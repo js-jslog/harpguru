@@ -3,7 +3,7 @@ import type { PitchIds } from 'harpparts'
 
 import type { RootPitchCovariancePrimer } from '../../covariance-series-types'
 import { CovariantMembers } from '../../covariance-series-types'
-import type { RootPitchControllers } from '../../../Covariant'
+import type { RootPitchControllers } from '../../../covariant-set'
 
 export const getRootPitchControllers = (
   props: RootPitchCovariancePrimer

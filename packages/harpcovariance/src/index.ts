@@ -1,2 +1,2 @@
-export { getCovariantSet } from './Covariant'
+export { getCovariantSet } from './covariant-set'
 export { CovariantMembers } from './covariance-series'

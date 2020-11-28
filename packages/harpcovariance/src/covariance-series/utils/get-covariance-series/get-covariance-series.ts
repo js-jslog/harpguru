@@ -3,7 +3,7 @@ import type {
   CovarianceSeries,
   CovariancePrimer,
 } from '../../covariance-series-types'
-import { getCovariantSet } from '../../../Covariant'
+import { getCovariantSet } from '../../../covariant-set'
 
 export const getCovarianceSeries = (
   props: CovariancePrimer

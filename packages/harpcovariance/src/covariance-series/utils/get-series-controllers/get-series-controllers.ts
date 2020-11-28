@@ -2,7 +2,7 @@ import { getPitchIds, isPitchId, getPozitionIds, isPozitionId } from 'harpparts'
 
 import { getCovariantControllers } from '../get-covariant-controllers'
 import type { CovariancePrimer } from '../../covariance-series-types'
-import type { CovariantControllers } from '../../../Covariant'
+import type { CovariantControllers } from '../../../covariant-set'
 
 export const getSeriesControllers = (
   props: CovariancePrimer
