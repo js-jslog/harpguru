@@ -1,6 +1,6 @@
 import { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
 
-import { EXAMPLE_STRATA } from '../testResources'
+import { EXAMPLE_STRATA } from './testResources'
 
 import { getHarpStrata } from './index'
 

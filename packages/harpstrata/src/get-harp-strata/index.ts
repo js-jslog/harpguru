@@ -1,4 +1,4 @@
-export { getHarpStrata } from './getHarpStrata'
+export { getHarpStrata } from './get-harp-strata'
 
 export type { HarpStrataProps, HarpStrata } from '../types'
 

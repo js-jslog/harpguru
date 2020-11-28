@@ -1,10 +1,11 @@
 import { getApparatus, getPitch, getPozition } from 'harpparts'
 import { getCovariantSet } from 'harpcovariance'
 
-import { getPitchMatrix } from '../getPitchMatrix'
-import { getDegreeMatrix } from '../getDegreeMatrix'
-import type { HarpStrataProps, HarpStrata } from '../../types'
-import { getActiveIdsPair } from '../../get-active-ids-pair'
+import type { HarpStrataProps, HarpStrata } from '../types'
+import { getActiveIdsPair } from '../get-active-ids-pair'
+
+import { getPitchMatrix } from './getPitchMatrix'
+import { getDegreeMatrix } from './getDegreeMatrix'
 
 export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
   const { apparatusId, pozitionId, harpKeyId, activeIds } = props
