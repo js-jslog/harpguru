@@ -1,13 +1,15 @@
 import { DegreeIds } from 'harpparts'
 
+import {
+  getCounterpartDegreeIds,
+  getCounterpartPitchIds,
+} from '../getCounterpartActiveIds'
 import type {
   IsActiveProps,
   ActiveIdsPair,
   ActivePitchIds,
   ActiveDegreeIds,
-} from '../types'
-
-import { getCounterpartDegreeIds, getCounterpartPitchIds } from './utils'
+} from '../../../types'
 
 export const getActiveIdsPair = (props: IsActiveProps): ActiveIdsPair => {
   const { activeIds } = props
