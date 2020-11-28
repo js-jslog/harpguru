@@ -7,9 +7,3 @@ export type {
   PozitionControllers,
   RootPitchControllers,
 } from './types'
-
-export {
-  areHarpKeyControllers,
-  arePozitionControllers,
-  areRootPitchControllers,
-} from './typeguards'
