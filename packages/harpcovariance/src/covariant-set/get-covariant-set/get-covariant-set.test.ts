@@ -6,7 +6,7 @@ import type {
   PozitionControllers,
 } from '../types'
 
-import { getCovariantSet } from './index'
+import { getCovariantSet } from './get-covariant-set'
 
 test('getCovariantSet returns the root pitch along with the input controller members of the set', () => {
   const { C: harpKeyId } = PitchIds

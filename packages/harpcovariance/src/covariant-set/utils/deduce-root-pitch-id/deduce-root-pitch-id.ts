@@ -1,7 +1,7 @@
 import { getPitchIds, getPozition } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
-import { RootPitchControllers } from '../types'
+import { RootPitchControllers } from '../../types'
 
 export const deduceRootPitchId = (props: RootPitchControllers): PitchIds => {
   const { harpKeyId, pozitionId } = props

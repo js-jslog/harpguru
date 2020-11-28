@@ -1,12 +1,10 @@
+import { deduceRootPitchId, deducePozitionId, deduceHarpKeyId } from '../utils'
 import type { CovariantControllers, CovariantSet } from '../types'
 import {
   areHarpKeyControllers,
   areRootPitchControllers,
   arePozitionControllers,
 } from '../typeguards'
-import { deduceRootPitchId } from '../deduceRootPitchId'
-import { deducePozitionId } from '../deducePozitionId'
-import { deduceHarpKeyId } from '../deduceHarpKeyId'
 
 export const getCovariantSet = (
   controlVariables: CovariantControllers

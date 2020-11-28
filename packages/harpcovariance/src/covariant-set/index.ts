@@ -1,4 +1,4 @@
-export { getCovariantSet } from './getCovariantSet'
+export { getCovariantSet } from './get-covariant-set'
 
 export type {
   CovariantSet,
