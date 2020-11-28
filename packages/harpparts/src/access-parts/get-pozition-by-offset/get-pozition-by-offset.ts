@@ -1,4 +1,5 @@
-import { getPozition, getPozitionIds } from '../index'
+import { getPozitionIds } from '../get-ordered-part-ids'
+import { getPozition } from '../get-harp-part'
 import type { HalfstepIndex } from '../../types'
 import type { Pozition, PozitionIds } from '../../pozition'
 
