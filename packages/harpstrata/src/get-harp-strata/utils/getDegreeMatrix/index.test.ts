@@ -1,6 +1,6 @@
 import { ApparatusIds, getApparatus, getDegree, DegreeIds } from 'harpparts'
 
-import { EXAMPLE_DEGREE_MATRICES } from '../testResources'
+import { EXAMPLE_DEGREE_MATRICES } from '../../testResources'
 
 import { getDegreeMatrix } from './index'
 

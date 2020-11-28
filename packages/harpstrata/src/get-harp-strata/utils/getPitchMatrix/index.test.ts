@@ -1,6 +1,6 @@
 import { getApparatus, ApparatusIds, getPitch, PitchIds } from 'harpparts'
 
-import { EXAMPLE_PITCH_MATRICES } from '../testResources'
+import { EXAMPLE_PITCH_MATRICES } from '../../testResources'
 
 import { getPitchMatrix } from './index'
 
