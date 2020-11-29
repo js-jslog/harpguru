@@ -6,7 +6,7 @@ import Animated, {
   interpolate,
   Easing,
 } from 'react-native-reanimated'
-import { StyleSheet, View, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
@@ -80,7 +80,9 @@ export const ScaleNotification = (): ReactElement => {
     >
       <View style={styles.overlay}>
         <View style={styles.mainContents}>
-          <View style={styles.message}>${isNewScale}</View>
+          <View style={styles.message}>
+            <Text>${isNewScale}</Text>
+          </View>
         </View>
       </View>
     </Animated.View>
