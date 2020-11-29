@@ -27,6 +27,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: Move dev config to monorepo root and create lint-stage friendly run scripts
 - MINOR: Determine cell activity from active ids list rather than remove activity matrix
 - MINOR: Adapt to modifications in object returned from the harpstrata package
+- MINOR: Import from new harpparts and harpcovariance packages where they have removed functionality from elsewhere
+- MINOR: Implementation of matrix types using generic HarpFaceMatrix rather than dedicated types like DegreeMatrix
+
+### Removed
+
+- MINOR: Unused local covariance package (moved to harpcovariance; still unused, but more at home)
+- MINOR: Some harpstrata related functionality which has been correctly moved to that package
 
 ### Fixed
 
