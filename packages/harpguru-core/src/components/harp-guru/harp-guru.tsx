@@ -5,6 +5,7 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
+import { ScaleNotification } from '../scale-notification'
 import { QuizQuestionDisplay } from '../quiz-question-display'
 import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
@@ -69,6 +70,7 @@ export const HarpGuru = (): ReactElement => {
           openCloseMenu={layoutOpenCloseTapHandler}
         />
         <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
+        <ScaleNotification />
       </View>
     </PanGestureHandler>
   )
