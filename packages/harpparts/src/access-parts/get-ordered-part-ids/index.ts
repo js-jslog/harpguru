@@ -3,7 +3,9 @@ import {
   ORDERED_DEGREES,
   ORDERED_PITCHES,
   ORDERED_POZITIONS,
+  ORDERED_SCALES,
 } from '../constants'
+import type { ScaleIds } from '../../scale'
 import type { PozitionIds } from '../../pozition'
 import type { PitchIds } from '../../pitch'
 import type { DegreeIds } from '../../degree'
@@ -37,4 +39,8 @@ export const getPozitionIds = (
   return getOrderedPartIds(ORDERED_POZITIONS, pozitionId) as ReadonlyArray<
     PozitionIds
   >
+}
+
+export const getScaleIds = (scaleId?: ScaleIds): ReadonlyArray<ScaleIds> => {
+  return getOrderedPartIds(ORDERED_SCALES, scaleId) as ReadonlyArray<ScaleIds>
 }

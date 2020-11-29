@@ -15,6 +15,8 @@ export {
   getPitch,
   getPozitionIds,
   getPozition,
+  getScaleIds,
+  getScale,
   getPozitionByOffset,
   reversePreserveOrigin,
 } from './access-parts'
