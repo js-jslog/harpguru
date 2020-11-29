@@ -1,4 +1,4 @@
-import { PitchIds, isPitchId } from 'harpstrata'
+import { PitchIds, isPitchId } from 'harpparts'
 
 import { DisplayModes } from '../../../../types'
 

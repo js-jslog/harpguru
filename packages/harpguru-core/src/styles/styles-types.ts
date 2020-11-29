@@ -1,4 +1,4 @@
-import { DegreeIds } from 'harpstrata'
+import { DegreeIds } from 'harpparts'
 
 type DegreeColors = {
   readonly [DegreeIds.Root]: string

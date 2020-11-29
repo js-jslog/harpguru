@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import type { Degree, Pitch } from 'harpstrata'
+import type { Degree, Pitch } from 'harpparts'
 
 import type { YXCoord } from '../../../harp-cell'
 import {

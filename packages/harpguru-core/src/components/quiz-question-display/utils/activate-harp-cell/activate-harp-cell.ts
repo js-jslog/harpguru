@@ -1,18 +1,14 @@
-import { getHarpStrata, isPitchId } from 'harpstrata'
-import type { HarpStrata, DegreeIds, PitchIds } from 'harpstrata'
-
-import { getPropsForHarpStrata } from '../../../../utils'
-import { DisplayModes } from '../../../../types'
+import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
+import { isPitchId } from 'harpparts'
+import type { DegreeIds, PitchIds } from 'harpparts'
 
 export const activateHarpCell = (
   harpStrata: HarpStrata,
   cellId: DegreeIds | PitchIds
 ): HarpStrata => {
   if (isPitchId(cellId)) {
-    const harpStrataProps = getPropsForHarpStrata(
-      harpStrata,
-      DisplayModes.Pitch
-    )
+    const harpStrataProps = getPropsForHarpStrata(harpStrata, 'PITCH')
     const { activeIds } = harpStrataProps
     const newActiveIds = [...activeIds, cellId].filter((item, index, self) => {
       return self.indexOf(item) === index
@@ -22,7 +18,7 @@ export const activateHarpCell = (
       activeIds: newActiveIds,
     })
   }
-  const harpStrataProps = getPropsForHarpStrata(harpStrata, DisplayModes.Degree)
+  const harpStrataProps = getPropsForHarpStrata(harpStrata, 'DEGREE')
   const { activeIds } = harpStrataProps
   const newActiveIds = [...activeIds, cellId].filter((item, index, self) => {
     return self.indexOf(item) === index

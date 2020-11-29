@@ -1,4 +1,4 @@
-import type { DegreeIds, PitchIds } from 'harpstrata'
+import type { DegreeIds, PitchIds } from 'harpparts'
 
 import { DisplayModes } from '../../../../types'
 

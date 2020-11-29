@@ -19,6 +19,8 @@
     "react-native": "0.62.0"
   },
   "dependencies": {
+    "harpcovariance": "^7.0.0",
+    "harpparts": "^7.0.0",
     "harpstrata": "^7.0.0",
     "react-dom": "16.11.0",
     "react-native-gesture-handler": "~1.6.0",

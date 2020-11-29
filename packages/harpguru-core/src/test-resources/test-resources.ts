@@ -1,11 +1,6 @@
-import {
-  ApparatusIds,
-  PozitionIds,
-  PitchIds,
-  DegreeIds,
-  getHarpStrata,
-} from 'harpstrata'
+import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps, ActiveIds } from 'harpstrata'
+import { ApparatusIds, PitchIds, DegreeIds, PozitionIds } from 'harpparts'
 
 const allActiveDegrees = [
   DegreeIds.Root,

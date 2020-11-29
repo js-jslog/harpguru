@@ -1,9 +1,6 @@
 import { useGlobal } from 'reactn'
-import { getHarpStrata } from 'harpstrata'
-import type { ApparatusIds } from 'harpstrata'
-
-import { getPropsForHarpStrata } from '../../../../utils'
-import { DisplayModes } from '../../../../types'
+import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
+import type { ApparatusIds } from 'harpparts'
 
 export const useSetHarpStrataByApparatus = (): ((
   arg0: ApparatusIds
@@ -19,7 +16,7 @@ export const useSetHarpStrataByApparatus = (): ((
           id: apparatusId,
         },
       },
-      DisplayModes.Degree
+      'DEGREE'
     )
 
     setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))

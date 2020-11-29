@@ -1,13 +1,3 @@
-# WARNING
-
-All of the v7.x.x tags have been made on a feature branch, _not_ on the master branch.
-
-The reason for this is explained in [this commit](https://github.com/js-jslog/harpstrata/pull/39/commits/7a429452036ef2c620958e86d877a611f59e6edd)
-
-[This is the pull request with all of the commits relating to the move to a monorepo architecture](https://github.com/js-jslog/harpstrata/pull/39)
-
-If this doesn't work out the tags for v8.x.x will likely be back on the master branch as though none of this ever happened.
-
 # HarpStrata
 
 A library for generating a layered representation of various harmonica layouts played in various positions
@@ -40,52 +30,20 @@ The assumptions which will hold of all layouts presented from this library are t
 - There is in principle no restriction on the number of holes which might be presented
 - Any `undefined` values in the matrix represents interactions with holes which are not possible (for instance, a triple bend on hole 1 of a traditional major diatonic harmonica)
 
-## Key concepts
-
-### Apparatus
-
-The `Apparatus` is the physical harp which is being represented. The relative pitch relationships as well as the types of bends which are availble on each hole is governed by the `Apparatus` you are using.
-
-### Interaction
-
-`Interaction` is the name given to the way in which you get various pitches from a single hole. All holes have at least a blow and a draw `Interaction`. Others have bends of various kinds. Each of these has a name.
-
-### Pozition
-
-The `Pozition` the harp is played in effects the location of the root note of the harp and therefore the role that any `Interaction` has.
-
-`Pozition` is a deliberate misspelling of the word "position". This is the result of "Position" being a reserved word in Typescript. From this point on, the word "pozition" will always be spelled with a "z".
-
-### Pitch
-
-`Pitch` represents the tone which is produced at each hole interaction. It is also used to identify what key a harmonica is in. This simply refers to the `Pitch` which is at the first position root degree.
-
-### IsActive
-
-Represents whether the given position in the matrix is considered active or not. Making holes active / inactive represents whether they are important for the current view on the harp. The consuming library will benefit from highlighting the active ones. For example, a user considering a major pentatonic scale will want to only see the relevant holes highlighted.
-
-### HarpStrata
-
-A composition of all of the above concepts representing a particular harp being viewed in a particular way. All of the input variables are also included in the HarpStrata so that we know how to produce the same HarpStrata again.
-
 ## API
-
-### getHarps() => ApparatusIds[]
-
-Returns an array of id's of the various `Apparatus` objects which can be represented with HarpStrata. The id from which can be fed in to the `getHarpStrata` next.
-
-### getPitchIds(?PitchIds) => PitchIds[]
-
-Returns an array of id's of the complete list of `PitchIds` which exist in an octave. The id from which can be fed in to the `getHarpStrata` next. A `PitchIds` parameter can optionally be provided to indicate what the origin id of the list should be.
-
-### getPozitionIds(?PozitionIds) => PozitionIds[]
-
-Returns an array of id's of the complete list of `PozitionIds` which can be taken on a harp. The id from which can be fed in to the `getHarpStrata` next. A `PozitionIds` parameter can optionally be provided to indicate what the origin id of the list should be.
-
-### getCovariantSet(CovariantControllers) => CovariantSet
-
-Returns the complete set of covariant members given any 2 of the set. The covariant members are harp key, pozition & root pitch. Given any two of these the third can be deduced.
 
 ### getHarpStrata(HarpStrataProps) => HarpStrata
 
-Requires an `ApparatusIds` id object as well as a `PozitionIds`, `PitchIds` and `ActiveIds` object from which to deduce the `DegreeMatrix`, `PitchMatrix` and `IsActiveComplex` components of the returned `HarpStrata`.
+Requires an `ApparatusIds` id object as well as a `PozitionIds`, `PitchIds` and `ActiveIds` object from which to deduce the `DegreeMatrix` and `PitchMatrix` components of the returned `HarpStrata`. Will also determine the counterpart active ids for any `Degree` or `Pitch` set given in `ActiveIds`.
+
+### getPropsForHarpStrata(HarpStrata, 'DEGREE' | 'PICH') => HarpStrataProps
+
+Requires a `HarpStrata` from which to identify the props which would have produced it from a call to `getHarpStrata`. Since either a set of `Degree`'s or `Pitch`'s could have been used to produce any given `HarpStrata`, the function also requests identification of which of these `ActiveIds` should be presumed to be used.
+
+# Pre-monorepo origins
+
+This package was imported from the head of a feature branch from a dedicated (and published) package called harpstrata.
+
+[This is the pull request with all of the commits relating to the move to a monorepo architecture](https://github.com/js-jslog/harpstrata/pull/39)
+
+There is a long explanation about the branch and it's purpose in [this commit](https://github.com/js-jslog/harpstrata/pull/39/commits/7a429452036ef2c620958e86d877a611f59e6edd)

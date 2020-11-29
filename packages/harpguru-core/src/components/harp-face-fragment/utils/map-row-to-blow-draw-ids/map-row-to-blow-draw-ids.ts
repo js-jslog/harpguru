@@ -1,8 +1,8 @@
-import { InteractionIds } from 'harpstrata'
-import type { InteractionRow } from 'harpstrata'
+import { InteractionIds } from 'harpparts'
+import type { HarpFaceRow, Interaction } from 'harpparts'
 
 export const mapRowToBlowDrawIds = (
-  row: InteractionRow
+  row: HarpFaceRow<Interaction>
 ): InteractionIds | undefined => {
   const [firstInteraction] = row
   const { id } = firstInteraction || { id: undefined }

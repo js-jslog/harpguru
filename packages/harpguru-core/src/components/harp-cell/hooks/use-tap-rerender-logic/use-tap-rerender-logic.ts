@@ -4,7 +4,7 @@ import {
   State,
 } from 'react-native-gesture-handler'
 import React from 'react'
-import { DegreeIds } from 'harpstrata'
+import { DegreeIds } from 'harpparts'
 
 import { useAddBufferedActivityToggle } from '../use-add-buffered-activity-toggle'
 import { CellStates } from '../../../../types'

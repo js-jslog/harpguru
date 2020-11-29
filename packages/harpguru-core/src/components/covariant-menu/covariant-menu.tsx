@@ -1,6 +1,7 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
-import { getPitchIds, getPozitionIds } from 'harpstrata'
+import { getPitchIds, getPozitionIds } from 'harpparts'
+import { CovariantMembers } from 'harpcovariance'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
@@ -10,7 +11,6 @@ import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
 import type { MenuProps, OptionIds } from '../../types'
 import { getSizes, colors } from '../../styles'
-import { CovariantMembers } from '../../packages/covariance-series'
 
 import {
   useNudgeHarpStrataByHarpKey,

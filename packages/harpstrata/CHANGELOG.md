@@ -26,6 +26,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Removed
 
 - MAJOR: Remove the matrix identifying the activity of the cells across the harp face
+- MAJOR: All the basic concepts which have been moved to the harpparts package
 
 ### Fixed
 

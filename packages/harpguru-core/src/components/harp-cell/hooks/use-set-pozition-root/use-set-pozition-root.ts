@@ -1,10 +1,7 @@
 import { useGlobal } from 'reactn'
-import { getHarpStrata, getCovariantSet } from 'harpstrata'
-import type { PitchIds } from 'harpstrata'
-
-import { getPropsForHarpStrata } from '../../../../utils'
-import { DisplayModes } from '../../../../types'
-import { CovariantMembers } from '../../../../packages/covariance-series'
+import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
+import type { PitchIds } from 'harpparts'
+import { getCovariantSet, CovariantMembers } from 'harpcovariance'
 
 type SetPozitionRoot = (arg0: PitchIds | undefined) => void
 
@@ -17,7 +14,7 @@ export const useSetPozitionRoot = (): SetPozitionRoot => {
   } = activeHarpStrata
   const activeHarpStrataProps = getPropsForHarpStrata(
     activeHarpStrata,
-    DisplayModes.Degree
+    'DEGREE'
   )
   return (newRootPitchId: PitchIds | undefined) => {
     if (newRootPitchId === undefined) return

@@ -7,8 +7,8 @@ import Animated, {
 } from 'react-native-reanimated'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
-import { getDegreeIds, getPitchIds } from 'harpstrata'
-import type { DegreeIds, PitchIds } from 'harpstrata'
+import { getDegreeIds, getPitchIds } from 'harpparts'
+import type { DegreeIds, PitchIds } from 'harpparts'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'

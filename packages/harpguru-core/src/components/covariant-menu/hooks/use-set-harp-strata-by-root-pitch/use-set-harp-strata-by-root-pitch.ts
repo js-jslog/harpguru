@@ -1,9 +1,10 @@
 import { useGlobal } from 'reactn'
-import { getCovariantSet, getHarpStrata, PitchIds } from 'harpstrata'
+import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
+import type { PitchIds } from 'harpparts'
+import { getCovariantSet, CovariantMembers } from 'harpcovariance'
 
-import { getPropsForHarpStrata } from '../../../../utils'
-import { CovariantMembers } from '../../../../packages/covariance-series'
+import { DisplayModes } from '../../../../types'
 
 const getNextCovariantSet = (
   activeHarpStrata: HarpStrata,
@@ -45,7 +46,7 @@ export const useSetHarpStrataByRootPitch = (): ((arg0: PitchIds) => void) => {
         harpKeyId: nextCovariantSet.harpKeyId,
         pozitionId: nextCovariantSet.pozitionId,
       },
-      activeDisplayMode
+      activeDisplayMode === DisplayModes.Degree ? 'DEGREE' : 'PITCH'
     )
 
     setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))

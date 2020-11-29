@@ -1,16 +1,12 @@
 import { useGlobal } from 'reactn'
 import {
-  PitchIds,
   HarpStrataProps,
-  ApparatusIds,
-  PozitionIds,
   ActiveIds,
   HarpStrata,
   getHarpStrata,
-  DegreeIds,
 } from 'harpstrata'
-
-import { CovariantMembers } from '../../../../packages/covariance-series'
+import { ApparatusIds, DegreeIds, PitchIds, PozitionIds } from 'harpparts'
+import { CovariantMembers } from 'harpcovariance'
 
 import { useSetPozitionRoot } from './index'
 

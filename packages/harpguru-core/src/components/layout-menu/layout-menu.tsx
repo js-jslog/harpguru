@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
-import { getApparatusIds } from 'harpstrata'
+import { getApparatusIds } from 'harpparts'
 import { Entypo } from '@expo/vector-icons'
 
 import { Option } from '../option'

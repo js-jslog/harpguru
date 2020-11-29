@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import { DegreeIds } from 'harpstrata'
+import { DegreeIds } from 'harpparts'
 
 import { useAddBufferedActivityToggle } from './use-add-buffered-activity-toggle'
 

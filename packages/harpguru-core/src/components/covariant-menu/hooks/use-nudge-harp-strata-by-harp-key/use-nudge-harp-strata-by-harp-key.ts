@@ -1,19 +1,13 @@
 import { useGlobal } from 'reactn'
-import {
-  getCovariantSet,
-  getHarpStrata,
-  getPitchIds,
-  PitchIds,
-} from 'harpstrata'
+import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
+import { getPitchIds } from 'harpparts'
+import type { PitchIds } from 'harpparts'
+import { getCovariantSet, CovariantMembers } from 'harpcovariance'
 
-import {
-  partiallyApplyNudgeFunction,
-  getPropsForHarpStrata,
-} from '../../../../utils'
+import { partiallyApplyNudgeFunction } from '../../../../utils'
 import type { SetActiveHarpStrata } from '../../../../types'
 import { DisplayModes } from '../../../../types'
-import { CovariantMembers } from '../../../../packages/covariance-series'
 
 export const useNudgeHarpStrataByHarpKey = (): ((
   arg0: 'UP' | 'DOWN'
@@ -91,7 +85,7 @@ const nudgeHarpStrataByHarpKey = (
       harpKeyId: nextCovariantSet.harpKeyId,
       pozitionId: nextCovariantSet.pozitionId,
     },
-    activeDisplayMode
+    activeDisplayMode === DisplayModes.Pitch ? 'PITCH' : 'DEGREE'
   )
 
   setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))

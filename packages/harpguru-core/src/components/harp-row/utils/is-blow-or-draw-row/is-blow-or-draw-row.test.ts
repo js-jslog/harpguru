@@ -1,4 +1,5 @@
-import { getHarpStrata, ApparatusIds, PozitionIds, PitchIds } from 'harpstrata'
+import { getHarpStrata } from 'harpstrata'
+import { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
 
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './is-blow-or-draw-row'
 

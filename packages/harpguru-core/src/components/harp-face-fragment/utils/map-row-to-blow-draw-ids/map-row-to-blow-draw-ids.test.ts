@@ -1,4 +1,4 @@
-import { InteractionIds } from 'harpstrata'
+import { InteractionIds } from 'harpparts'
 
 import { inactiveCellsHarpStrata } from '../../../../test-resources'
 

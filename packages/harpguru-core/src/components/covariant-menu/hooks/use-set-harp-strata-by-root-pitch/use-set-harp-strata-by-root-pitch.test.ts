@@ -1,8 +1,10 @@
 import { useGlobal } from 'reactn'
-import { ApparatusIds, PozitionIds, PitchIds, getHarpStrata } from 'harpstrata'
+import { getHarpStrata } from 'harpstrata'
+import { PozitionIds } from 'harpparts'
+import { ApparatusIds, PitchIds } from 'harpparts'
+import { CovariantMembers } from 'harpcovariance'
 
 import { DisplayModes } from '../../../../types'
-import { CovariantMembers } from '../../../../packages/covariance-series'
 
 import { useSetHarpStrataByRootPitch } from './use-set-harp-strata-by-root-pitch'
 
