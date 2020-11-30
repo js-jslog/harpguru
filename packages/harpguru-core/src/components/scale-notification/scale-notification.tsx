@@ -14,7 +14,7 @@ import { getSizes, colors } from '../../styles'
 import { usePrevious } from '../../hooks'
 import { overlayOpacity } from '../../constants'
 
-import { doScalesMatch } from './utils'
+import { doScalesMatch, getScaleLabel } from './utils'
 
 export const ScaleNotification = (): ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
@@ -28,7 +28,10 @@ export const ScaleNotification = (): ReactElement => {
       ? false
       : !doScalesMatch(activeDegreeIds, previousActiveDegreeIds)
 
+  const scaleLabel = getScaleLabel(activeDegreeIds)
+
   useEffect(() => {
+    if (scaleLabel === undefined) return
     if (isNewScale === true) {
       setShouldDisplay(true)
       const finishShowing = setTimeout(() => {
@@ -43,9 +46,7 @@ export const ScaleNotification = (): ReactElement => {
       return () => clearTimeout(finishShowing)
     }
     return
-  }, [isNewScale, shouldDisplay])
-
-  //const scaleName = getScaleName(activeDegreeIds)
+  }, [isNewScale, scaleLabel, shouldDisplay])
 
   const flashAnimationValue = useTimingTransition(shouldDisplay, {
     duration: 200,
@@ -101,7 +102,7 @@ export const ScaleNotification = (): ReactElement => {
       <View style={styles.overlay}>
         <View style={styles.mainContents}>
           <View style={styles.message}>
-            <Text>{isNewScale.toString()}</Text>
+            <Text>{scaleLabel}</Text>
           </View>
         </View>
       </View>
