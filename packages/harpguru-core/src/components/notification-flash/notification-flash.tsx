@@ -4,6 +4,7 @@ import Animated, {
   cond,
   interpolate,
   Easing,
+  multiply,
 } from 'react-native-reanimated'
 import { StyleSheet, View, Dimensions } from 'react-native'
 import React from 'react'
@@ -15,10 +16,12 @@ import { overlayOpacity } from '../../constants'
 
 type NotificationFlashProps = ChildrenProps & {
   readonly shouldDisplay: boolean
+  readonly additionalScaleFactor?: number
 }
 
 export const NotificationFlash = ({
   shouldDisplay,
+  additionalScaleFactor = 1,
   children,
 }: NotificationFlashProps): ReactElement => {
   const flashAnimationValue = useTimingTransition(shouldDisplay, {
@@ -101,18 +104,19 @@ export const NotificationFlash = ({
         style={[
           styles.animated,
           {
-            transform: [{ translateX: translateX }],
+            transform: [
+              {
+                translateX: translateX,
+                scale: multiply(messageScale, additionalScaleFactor),
+              },
+            ],
             opacity: displayOpacity,
           },
         ]}
       >
         <View style={styles.overlay}>
           <View style={styles.mainContents}>
-            <View style={styles.message}>
-              <Animated.View style={[{ transform: [{ scale: messageScale }] }]}>
-                {children}
-              </Animated.View>
-            </View>
+            <View style={styles.message}>{children}</View>
           </View>
         </View>
       </Animated.View>
