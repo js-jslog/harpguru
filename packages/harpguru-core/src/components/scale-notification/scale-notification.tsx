@@ -94,7 +94,6 @@ export const ScaleNotification = (): ReactElement => {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-evenly',
-      transform: [{ scale: sizes['3'] }],
     },
   })
 
@@ -117,6 +116,7 @@ export const ScaleNotification = (): ReactElement => {
                   color: 'black',
                   textShadowColor: 'white',
                   textShadowRadius: 1,
+                  fontSize: sizes['8'],
                 }}
               >
                 {scaleLabel}
