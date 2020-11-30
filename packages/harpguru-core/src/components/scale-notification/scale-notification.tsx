@@ -1,4 +1,4 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useState } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
 import Animated, {
   greaterThan,
@@ -7,7 +7,7 @@ import Animated, {
   Easing,
 } from 'react-native-reanimated'
 import { StyleSheet, Text, View, Dimensions } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import type { ReactElement } from 'react'
 
 import { getSizes, colors } from '../../styles'
@@ -21,13 +21,33 @@ export const ScaleNotification = (): ReactElement => {
   const { activeDegreeIds } = activeHarpStrata
   const previousActiveDegreeIds = usePrevious(activeDegreeIds, activeDegreeIds)
 
+  const [shouldDisplay, setShouldDisplay] = useState(false)
+
   const isNewScale =
     previousActiveDegreeIds === undefined
       ? false
       : !doScalesMatch(activeDegreeIds, previousActiveDegreeIds)
+
+  useEffect(() => {
+    if (isNewScale === true) {
+      setShouldDisplay(true)
+      const finishShowing = setTimeout(() => {
+        setShouldDisplay(false)
+      }, 500)
+      return () => clearTimeout(finishShowing)
+    }
+    if (isNewScale === false && shouldDisplay === true) {
+      const finishShowing = setTimeout(() => {
+        setShouldDisplay(false)
+      }, 500)
+      return () => clearTimeout(finishShowing)
+    }
+    return
+  }, [isNewScale, shouldDisplay])
+
   //const scaleName = getScaleName(activeDegreeIds)
 
-  const flashAnimationValue = useTimingTransition(isNewScale, {
+  const flashAnimationValue = useTimingTransition(shouldDisplay, {
     duration: 200,
     easing: Easing.inOut(Easing.ease),
   })
@@ -81,7 +101,7 @@ export const ScaleNotification = (): ReactElement => {
       <View style={styles.overlay}>
         <View style={styles.mainContents}>
           <View style={styles.message}>
-            <Text>${isNewScale}</Text>
+            <Text>{isNewScale.toString()}</Text>
           </View>
         </View>
       </View>

@@ -4,8 +4,8 @@ import { doScalesMatch } from './do-scales-match'
 
 const { Root, Second, Third } = DegreeIds
 
-test('empty scales arent considered a match', () => {
-  expect(doScalesMatch([], [])).toBeFalsy()
+test('empty scales are considered a match', () => {
+  expect(doScalesMatch([], [])).toBeTruthy()
 })
 
 test('simple scale matches', () => {
