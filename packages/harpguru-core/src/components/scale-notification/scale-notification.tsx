@@ -10,7 +10,7 @@ import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import React, { useEffect } from 'react'
 import type { ReactElement } from 'react'
 
-import { getSizes, colors } from '../../styles'
+import { getSizes } from '../../styles'
 import { usePrevious } from '../../hooks'
 import { overlayOpacity } from '../../constants'
 
@@ -49,7 +49,7 @@ export const ScaleNotification = (): ReactElement => {
   }, [isNewScale, scaleLabel, shouldDisplay])
 
   const flashAnimationValue = useTimingTransition(shouldDisplay, {
-    duration: 200,
+    duration: 500,
     easing: Easing.inOut(Easing.ease),
   })
 
@@ -83,7 +83,7 @@ export const ScaleNotification = (): ReactElement => {
     overlay: {
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
-      backgroundColor: colors.pageColor,
+      backgroundColor: '#efcded',
     },
     mainContents: {
       ...StyleSheet.absoluteFillObject,
@@ -112,7 +112,7 @@ export const ScaleNotification = (): ReactElement => {
         <View style={styles.mainContents}>
           <View style={styles.message}>
             <Animated.View style={[{ transform: [{ scale: messageScale }] }]}>
-              <Text>{scaleLabel}</Text>
+              <Text style={{ color: 'white' }}>{scaleLabel}</Text>
             </Animated.View>
           </View>
         </View>
