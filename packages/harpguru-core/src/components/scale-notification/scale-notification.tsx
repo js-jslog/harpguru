@@ -1,18 +1,11 @@
 import { useGlobal, useState } from 'reactn'
-import { useTimingTransition } from 'react-native-redash'
-import Animated, {
-  greaterThan,
-  cond,
-  interpolate,
-  Easing,
-} from 'react-native-reanimated'
-import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import { Text } from 'react-native'
 import React, { useEffect } from 'react'
 import type { ReactElement } from 'react'
 
-import { getSizes, colors } from '../../styles'
+import { NotificationFlash } from '../notification-flash'
+import { getSizes } from '../../styles'
 import { usePrevious } from '../../hooks'
-import { overlayOpacity } from '../../constants'
 
 import { doScalesMatch, getScaleLabel } from './utils'
 
@@ -48,110 +41,20 @@ export const ScaleNotification = (): ReactElement => {
     return
   }, [isNewScale, scaleLabel, shouldDisplay])
 
-  const flashAnimationValue = useTimingTransition(shouldDisplay, {
-    duration: 500,
-    easing: Easing.inOut(Easing.ease),
-  })
-
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const guaranteeOffScreenWidth =
-    windowWidth > windowHeight ? windowWidth : windowHeight
-  const displayOpacity = interpolate(flashAnimationValue, {
-    inputRange: [0, 1],
-    outputRange: [0, overlayOpacity],
-  })
-  const explosiveOpacity = shouldDisplay
-    ? interpolate(flashAnimationValue, {
-      inputRange: [0, 1],
-      outputRange: [overlayOpacity, 0],
-    })
-    : interpolate(flashAnimationValue, {
-      inputRange: [0, 1],
-      outputRange: [0, 0],
-    })
-  const messageScale = shouldDisplay
-    ? interpolate(flashAnimationValue, {
-      inputRange: [0, 1],
-      outputRange: [1, 2],
-    })
-    : interpolate(flashAnimationValue, {
-      inputRange: [0, 1],
-      outputRange: [3, 2],
-    })
-  const translateX = cond(
-    greaterThan(flashAnimationValue, 0),
-    0,
-    guaranteeOffScreenWidth
-  )
   const sizes = getSizes()
-  const styles = StyleSheet.create({
-    animated: {
-      ...StyleSheet.absoluteFillObject,
-      zIndex: 10,
-    },
-    overlay: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      backgroundColor: colors.pageColor,
-    },
-    overlay2: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      backgroundColor: '#efcded',
-    },
-    mainContents: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-    },
-    message: {
-      flex: 1,
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'space-evenly',
-    },
-  })
 
   return (
-    <>
-      <Animated.View
-        style={[
-          styles.animated,
-          {
-            transform: [{ translateX: translateX }],
-            opacity: explosiveOpacity,
-          },
-        ]}
+    <NotificationFlash shouldDisplay={shouldDisplay}>
+      <Text
+        style={{
+          color: 'black',
+          textShadowColor: 'white',
+          textShadowRadius: 1,
+          fontSize: sizes['8'],
+        }}
       >
-        <View style={styles.overlay2} />
-      </Animated.View>
-      <Animated.View
-        style={[
-          styles.animated,
-          {
-            transform: [{ translateX: translateX }],
-            opacity: displayOpacity,
-          },
-        ]}
-      >
-        <View style={styles.overlay}>
-          <View style={styles.mainContents}>
-            <View style={styles.message}>
-              <Animated.View style={[{ transform: [{ scale: messageScale }] }]}>
-                <Text
-                  style={{
-                    color: 'black',
-                    textShadowColor: 'white',
-                    textShadowRadius: 1,
-                    fontSize: sizes['8'],
-                  }}
-                >
-                  {scaleLabel}
-                </Text>
-              </Animated.View>
-            </View>
-          </View>
-        </View>
-      </Animated.View>
-    </>
+        {scaleLabel || 'test'}
+      </Text>
+    </NotificationFlash>
   )
 }
