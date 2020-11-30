@@ -60,6 +60,10 @@ export const ScaleNotification = (): ReactElement => {
     inputRange: [0, 1],
     outputRange: [0, overlayOpacity],
   })
+  const messageScale = interpolate(flashAnimationValue, {
+    inputRange: [0, 1],
+    outputRange: [1, 2],
+  })
   const translateX = cond(
     greaterThan(flashAnimationValue, 0),
     0,
@@ -102,7 +106,9 @@ export const ScaleNotification = (): ReactElement => {
       <View style={styles.overlay}>
         <View style={styles.mainContents}>
           <View style={styles.message}>
-            <Text>{scaleLabel}</Text>
+            <Animated.View style={[{ transform: [{ scale: messageScale }] }]}>
+              <Text>{scaleLabel}</Text>
+            </Animated.View>
           </View>
         </View>
       </View>
