@@ -85,7 +85,7 @@ export const ScaleNotification = (): ReactElement => {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-evenly',
-      transform: [{ scale: sizes['5'] }],
+      transform: [{ scale: sizes['3'] }],
     },
   })
 
