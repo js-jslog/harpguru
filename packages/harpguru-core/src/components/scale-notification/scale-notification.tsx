@@ -112,7 +112,15 @@ export const ScaleNotification = (): ReactElement => {
         <View style={styles.mainContents}>
           <View style={styles.message}>
             <Animated.View style={[{ transform: [{ scale: messageScale }] }]}>
-              <Text style={{ color: 'white' }}>{scaleLabel}</Text>
+              <Text
+                style={{
+                  color: 'black',
+                  textShadowColor: 'white',
+                  textShadowRadius: 1,
+                }}
+              >
+                {scaleLabel}
+              </Text>
             </Animated.View>
           </View>
         </View>
