@@ -60,10 +60,15 @@ export const ScaleNotification = (): ReactElement => {
     inputRange: [0, 1],
     outputRange: [0, overlayOpacity],
   })
-  const messageScale = interpolate(flashAnimationValue, {
-    inputRange: [0, 1],
-    outputRange: [1, 2],
-  })
+  const messageScale = shouldDisplay
+    ? interpolate(flashAnimationValue, {
+      inputRange: [0, 1],
+      outputRange: [1, 2],
+    })
+    : interpolate(flashAnimationValue, {
+      inputRange: [0, 1],
+      outputRange: [3, 2],
+    })
   const translateX = cond(
     greaterThan(flashAnimationValue, 0),
     0,
