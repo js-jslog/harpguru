@@ -10,7 +10,7 @@ import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import React, { useEffect } from 'react'
 import type { ReactElement } from 'react'
 
-import { getSizes } from '../../styles'
+import { getSizes, colors } from '../../styles'
 import { usePrevious } from '../../hooks'
 import { overlayOpacity } from '../../constants'
 
@@ -60,6 +60,15 @@ export const ScaleNotification = (): ReactElement => {
     inputRange: [0, 1],
     outputRange: [0, overlayOpacity],
   })
+  const explosiveOpacity = shouldDisplay
+    ? interpolate(flashAnimationValue, {
+      inputRange: [0, 1],
+      outputRange: [overlayOpacity, 0],
+    })
+    : interpolate(flashAnimationValue, {
+      inputRange: [0, 1],
+      outputRange: [0, 0],
+    })
   const messageScale = shouldDisplay
     ? interpolate(flashAnimationValue, {
       inputRange: [0, 1],
@@ -83,6 +92,11 @@ export const ScaleNotification = (): ReactElement => {
     overlay: {
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
+      backgroundColor: colors.pageColor,
+    },
+    overlay2: {
+      ...StyleSheet.absoluteFillObject,
+      flexDirection: 'row',
       backgroundColor: '#efcded',
     },
     mainContents: {
@@ -98,33 +112,46 @@ export const ScaleNotification = (): ReactElement => {
   })
 
   return (
-    <Animated.View
-      style={[
-        styles.animated,
-        {
-          transform: [{ translateX: translateX }],
-          opacity: displayOpacity,
-        },
-      ]}
-    >
-      <View style={styles.overlay}>
-        <View style={styles.mainContents}>
-          <View style={styles.message}>
-            <Animated.View style={[{ transform: [{ scale: messageScale }] }]}>
-              <Text
-                style={{
-                  color: 'black',
-                  textShadowColor: 'white',
-                  textShadowRadius: 1,
-                  fontSize: sizes['8'],
-                }}
-              >
-                {scaleLabel}
-              </Text>
-            </Animated.View>
+    <>
+      <Animated.View
+        style={[
+          styles.animated,
+          {
+            transform: [{ translateX: translateX }],
+            opacity: explosiveOpacity,
+          },
+        ]}
+      >
+        <View style={styles.overlay2} />
+      </Animated.View>
+      <Animated.View
+        style={[
+          styles.animated,
+          {
+            transform: [{ translateX: translateX }],
+            opacity: displayOpacity,
+          },
+        ]}
+      >
+        <View style={styles.overlay}>
+          <View style={styles.mainContents}>
+            <View style={styles.message}>
+              <Animated.View style={[{ transform: [{ scale: messageScale }] }]}>
+                <Text
+                  style={{
+                    color: 'black',
+                    textShadowColor: 'white',
+                    textShadowRadius: 1,
+                    fontSize: sizes['8'],
+                  }}
+                >
+                  {scaleLabel}
+                </Text>
+              </Animated.View>
+            </View>
           </View>
         </View>
-      </View>
-    </Animated.View>
+      </Animated.View>
+    </>
   )
 }
