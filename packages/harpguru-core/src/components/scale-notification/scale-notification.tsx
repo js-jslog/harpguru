@@ -28,7 +28,7 @@ export const ScaleNotification = (): ReactElement => {
           fontSize: sizes['8'],
         }}
       >
-        {scaleLabel || 'test'}
+        {scaleLabel}
       </Text>
     </NotificationFlash>
   )
