@@ -1,22 +1,15 @@
-import { useGlobal } from 'reactn'
 import { useEffect, useState } from 'react'
 
-import { doScalesMatch, getScaleLabel } from '../../utils'
 import { usePrevious } from '../../../../hooks'
 
-export const useScaleLabelForNotification = (): string | undefined => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const { activeDegreeIds } = activeHarpStrata
-  const previousActiveDegreeIds = usePrevious(activeDegreeIds, activeDegreeIds)
+export const useShouldDisplayScaleLabel = (
+  scaleLabel: string | undefined
+): boolean => {
+  const previousScaleLabel = usePrevious(scaleLabel, scaleLabel)
 
   const [shouldDisplay, setShouldDisplay] = useState(false)
 
-  const isNewScale =
-    previousActiveDegreeIds === undefined
-      ? false
-      : !doScalesMatch(activeDegreeIds, previousActiveDegreeIds)
-
-  const scaleLabel = getScaleLabel(activeDegreeIds)
+  const isNewScale = scaleLabel !== previousScaleLabel
 
   useEffect(() => {
     if (scaleLabel === undefined) return
@@ -36,6 +29,5 @@ export const useScaleLabelForNotification = (): string | undefined => {
     return
   }, [isNewScale, scaleLabel, shouldDisplay])
 
-  if (shouldDisplay === true) return scaleLabel
-  return undefined
+  return shouldDisplay
 }
