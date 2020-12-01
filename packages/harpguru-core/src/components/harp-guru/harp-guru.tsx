@@ -26,6 +26,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  fillScreenShifted: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: colors.pageColor,
+    justifyContent: 'center',
+    alignItems: 'center',
+    transform: [{ translateX: 500 }],
+  },
 })
 
 export const HarpGuru = (): ReactElement => {
@@ -43,33 +50,63 @@ export const HarpGuru = (): ReactElement => {
   useFlushBufferedActivityToggles()
 
   return (
-    <PanGestureHandler
-      activeOffsetX={[swipeThreshold * -1, swipeThreshold]}
-      onHandlerStateChange={handleSwipe}
-    >
-      <View style={styles.fillScreen}>
-        <ActivityLegend />
-        <HarpFaceMemo />
-        <CovariantMenu
-          isMenuStashed={menuState !== MenuStates.CovariantMenu}
-          isLabelHidden={
-            menuState !== MenuStates.CovariantMenu &&
-            menuState !== MenuStates.NoMenu
-          }
-          stashPosition={MenuStashPosition.Top}
-          openCloseMenu={covariantOpenCloseTapHandler}
-        />
-        <LayoutMenu
-          isMenuStashed={menuState !== MenuStates.LayoutMenu}
-          isLabelHidden={
-            menuState !== MenuStates.LayoutMenu &&
-            menuState !== MenuStates.NoMenu
-          }
-          stashPosition={MenuStashPosition.Bottom}
-          openCloseMenu={layoutOpenCloseTapHandler}
-        />
-        <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
-      </View>
-    </PanGestureHandler>
+    <>
+      <PanGestureHandler
+        activeOffsetX={[swipeThreshold * -1, swipeThreshold]}
+        onHandlerStateChange={handleSwipe}
+      >
+        <View style={styles.fillScreen}>
+          <ActivityLegend />
+          <HarpFaceMemo />
+          <CovariantMenu
+            isMenuStashed={menuState !== MenuStates.CovariantMenu}
+            isLabelHidden={
+              menuState !== MenuStates.CovariantMenu &&
+              menuState !== MenuStates.NoMenu
+            }
+            stashPosition={MenuStashPosition.Top}
+            openCloseMenu={covariantOpenCloseTapHandler}
+          />
+          <LayoutMenu
+            isMenuStashed={menuState !== MenuStates.LayoutMenu}
+            isLabelHidden={
+              menuState !== MenuStates.LayoutMenu &&
+              menuState !== MenuStates.NoMenu
+            }
+            stashPosition={MenuStashPosition.Bottom}
+            openCloseMenu={layoutOpenCloseTapHandler}
+          />
+          <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
+        </View>
+      </PanGestureHandler>
+      <PanGestureHandler
+        activeOffsetX={[swipeThreshold * -1, swipeThreshold]}
+        onHandlerStateChange={handleSwipe}
+      >
+        <View style={styles.fillScreenShifted}>
+          <ActivityLegend />
+          <HarpFaceMemo />
+          <CovariantMenu
+            isMenuStashed={menuState !== MenuStates.CovariantMenu}
+            isLabelHidden={
+              menuState !== MenuStates.CovariantMenu &&
+              menuState !== MenuStates.NoMenu
+            }
+            stashPosition={MenuStashPosition.Top}
+            openCloseMenu={covariantOpenCloseTapHandler}
+          />
+          <LayoutMenu
+            isMenuStashed={menuState !== MenuStates.LayoutMenu}
+            isLabelHidden={
+              menuState !== MenuStates.LayoutMenu &&
+              menuState !== MenuStates.NoMenu
+            }
+            stashPosition={MenuStashPosition.Bottom}
+            openCloseMenu={layoutOpenCloseTapHandler}
+          />
+          <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
+        </View>
+      </PanGestureHandler>
+    </>
   )
 }
