@@ -6,6 +6,13 @@ export enum ScaleIds {
   MajorPentatonic,
   MinorPentatonic,
   Major,
+  Mixolydian,
+  Dorian,
+  Aeolian,
+  Phrygian,
+  Locrian,
+  Lydian,
+  HarmonicMinor,
 }
 
 export type Scale = {

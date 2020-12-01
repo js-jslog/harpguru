@@ -5,6 +5,13 @@ import {
   MAJOR_PENTATONIC,
   MINOR_PENTATONIC,
   MAJOR,
+  MIXOLYDIAN,
+  DORIAN,
+  AEOLIAN,
+  PHRYGIAN,
+  LOCRIAN,
+  LYDIAN,
+  HARMONIC_MINOR,
 } from '../../scale'
 import type { Scale } from '../../scale'
 
@@ -14,3 +21,10 @@ ORDERED_SCALES.set(ScaleIds.MinorTriad, MINOR_TRIAD)
 ORDERED_SCALES.set(ScaleIds.MajorPentatonic, MAJOR_PENTATONIC)
 ORDERED_SCALES.set(ScaleIds.MinorPentatonic, MINOR_PENTATONIC)
 ORDERED_SCALES.set(ScaleIds.Major, MAJOR)
+ORDERED_SCALES.set(ScaleIds.Mixolydian, MIXOLYDIAN)
+ORDERED_SCALES.set(ScaleIds.Dorian, DORIAN)
+ORDERED_SCALES.set(ScaleIds.Aeolian, AEOLIAN)
+ORDERED_SCALES.set(ScaleIds.Phrygian, PHRYGIAN)
+ORDERED_SCALES.set(ScaleIds.Locrian, LOCRIAN)
+ORDERED_SCALES.set(ScaleIds.Lydian, LYDIAN)
+ORDERED_SCALES.set(ScaleIds.HarmonicMinor, HARMONIC_MINOR)
