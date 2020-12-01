@@ -1,17 +1,17 @@
 import 'react-native-gesture-handler'
 
-import { createProvider, getGlobal } from 'reactn'
+import { createProvider } from 'reactn'
 import React from 'react'
 import type { ReactElement } from 'react'
 
 import { HarpGuruPage } from '../harp-guru-page'
-import { setGlobalState } from '../../utils'
 
-setGlobalState()
+import { getInitialGlobalState } from './utils'
 
 export const HarpGuru = (): ReactElement => {
-  const Provider1 = createProvider(getGlobal())
-  const Provider2 = createProvider(getGlobal())
+  const initialGlobalState = getInitialGlobalState()
+  const Provider1 = createProvider(initialGlobalState)
+  const Provider2 = createProvider(initialGlobalState)
 
   return (
     <>
