@@ -19,19 +19,20 @@ export const HarpGuru = (): ReactElement => {
   const pageInFrame = useValue<0 | 1>(0)
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
+  const deviceShortSide =
+    windowWidth < windowHeight ? windowWidth : windowHeight
 
   const pageTransition = withTimingTransition(pageInFrame, {
     duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
-  const page0X = interpolate(pageTransition, {
+  const page0Y = interpolate(pageTransition, {
     inputRange: [0, 1],
-    outputRange: [0, deviceLongSide * 2],
+    outputRange: [0, deviceShortSide * -2],
   })
-  const page1X = interpolate(pageTransition, {
+  const page1Y = interpolate(pageTransition, {
     inputRange: [0, 1],
-    outputRange: [deviceLongSide * 2, 0],
+    outputRange: [deviceShortSide * -2, 0],
   })
 
   return (
@@ -41,7 +42,7 @@ export const HarpGuru = (): ReactElement => {
           style={[
             { ...StyleSheet.absoluteFillObject },
             {
-              transform: [{ translateX: page0X }],
+              transform: [{ translateY: page0Y }],
             },
           ]}
         >
@@ -53,7 +54,7 @@ export const HarpGuru = (): ReactElement => {
           style={[
             { ...StyleSheet.absoluteFillObject },
             {
-              transform: [{ translateX: page1X }],
+              transform: [{ translateY: page1Y }],
             },
           ]}
         >
