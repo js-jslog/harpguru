@@ -48,10 +48,6 @@ export const HarpGuruPage = ({
     },
   })
 
-  const handleTapStateChange = () => {
-    pageInFrame.setValue(nextPage)
-  }
-
   return (
     <PanGestureHandler
       activeOffsetX={[swipeThreshold * -1, swipeThreshold]}
@@ -82,7 +78,7 @@ export const HarpGuruPage = ({
         <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
         <NextPageButton
           stashPosition={MenuStashPosition.Bottom}
-          getNextPage={handleTapStateChange}
+          getNextPage={() => pageInFrame.setValue(nextPage)}
         />
       </View>
     </PanGestureHandler>
