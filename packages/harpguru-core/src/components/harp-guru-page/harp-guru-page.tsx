@@ -17,11 +17,7 @@ import { getSizes } from '../../styles'
 
 import { useMenus } from './hooks'
 
-type HarpGuruPageProps = {
-  readonly shifted: boolean
-}
-
-export const HarpGuruPage = ({ shifted }: HarpGuruPageProps): ReactElement => {
+export const HarpGuruPage = (): ReactElement => {
   const [menuState, handleSwipe, handleTap] = useMenus()
   const covariantOpenCloseTapHandler = () => {
     handleTap(MenuStates.CovariantMenu)
@@ -39,7 +35,6 @@ export const HarpGuruPage = ({ shifted }: HarpGuruPageProps): ReactElement => {
       backgroundColor: colors.pageColor,
       justifyContent: 'center',
       alignItems: 'center',
-      transform: [{ translateX: shifted ? 500 : 0 }],
     },
   })
 
