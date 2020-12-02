@@ -1,4 +1,3 @@
-export { setGlobalState } from './set-global-state'
 export { getHarpFaceFacts } from './get-harp-face-facts'
 export { partiallyApplyNudgeFunction } from './paritally-apply-nudge-function'
 export { getScaledMenuLabelProtrusion } from './get-scaled-menu-label-protrusion'
