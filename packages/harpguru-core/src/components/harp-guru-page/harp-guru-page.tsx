@@ -20,13 +20,13 @@ import { getSizes } from '../../styles'
 import { useMenus } from './hooks'
 
 type HarpGuruPageProps = {
-  readonly pageInFrame: Value<0 | 1>
-  readonly otherPage: 0 | 1
+  readonly pageInFrame: Value<0 | 1 | 2>
+  readonly nextPage: 0 | 1 | 2
 }
 
 export const HarpGuruPage = ({
   pageInFrame,
-  otherPage,
+  nextPage,
 }: HarpGuruPageProps): ReactElement => {
   const [menuState, handleSwipe, handleTap] = useMenus()
   const covariantOpenCloseTapHandler = () => {
@@ -49,7 +49,7 @@ export const HarpGuruPage = ({
   })
 
   const handleTapStateChange = () => {
-    pageInFrame.setValue(otherPage)
+    pageInFrame.setValue(nextPage)
   }
 
   return (

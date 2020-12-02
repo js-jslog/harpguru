@@ -14,9 +14,10 @@ import { getInitialGlobalState } from './utils'
 const initialGlobalState = getInitialGlobalState()
 const Provider1 = createProvider(initialGlobalState)
 const Provider2 = createProvider(initialGlobalState)
+const Provider3 = createProvider(initialGlobalState)
 
 export const HarpGuru = (): ReactElement => {
-  const pageInFrame = useValue<0 | 1>(0)
+  const pageInFrame = useValue<0 | 1 | 2>(0)
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceShortSide =
@@ -26,13 +27,18 @@ export const HarpGuru = (): ReactElement => {
     duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
+  const offscreen = deviceShortSide * -2
   const page0Y = interpolate(pageTransition, {
-    inputRange: [0, 1],
-    outputRange: [0, deviceShortSide * -2],
+    inputRange: [0, 1, 2],
+    outputRange: [0, offscreen, offscreen],
   })
   const page1Y = interpolate(pageTransition, {
-    inputRange: [0, 1],
-    outputRange: [deviceShortSide * -2, 0],
+    inputRange: [0, 1, 2],
+    outputRange: [offscreen, 0, offscreen],
+  })
+  const page2Y = interpolate(pageTransition, {
+    inputRange: [0, 1, 2],
+    outputRange: [offscreen, offscreen, 0],
   })
 
   return (
@@ -46,7 +52,7 @@ export const HarpGuru = (): ReactElement => {
             },
           ]}
         >
-          <HarpGuruPage pageInFrame={pageInFrame} otherPage={1} />
+          <HarpGuruPage pageInFrame={pageInFrame} nextPage={1} />
         </Animated.View>
       </Provider1>
       <Provider2>
@@ -58,9 +64,21 @@ export const HarpGuru = (): ReactElement => {
             },
           ]}
         >
-          <HarpGuruPage pageInFrame={pageInFrame} otherPage={0} />
+          <HarpGuruPage pageInFrame={pageInFrame} nextPage={2} />
         </Animated.View>
       </Provider2>
+      <Provider3>
+        <Animated.View
+          style={[
+            { ...StyleSheet.absoluteFillObject },
+            {
+              transform: [{ translateY: page2Y }],
+            },
+          ]}
+        >
+          <HarpGuruPage pageInFrame={pageInFrame} nextPage={0} />
+        </Animated.View>
+      </Provider3>
     </>
   )
 }
