@@ -1,17 +1,19 @@
-import { setGlobal } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 import { ApparatusIds, DegreeIds, PitchIds, PozitionIds } from 'harpparts'
 import { CovariantMembers } from 'harpcovariance'
 
-import { DisplayModes, ExperienceModes } from '../../types'
+import { DisplayModes, ExperienceModes } from '../../../../types'
 
-import { espyGlobalTuple } from './state-informant'
+type GlobalState = {
+  activeHarpStrata: HarpStrata
+  activeExperienceMode: ExperienceModes
+  activeDisplayMode: DisplayModes
+  lockedCovariant: CovariantMembers
+  bufferedActivityToggles: ReadonlyArray<DegreeIds>
+}
 
-export const setGlobalState = (): void => {
-  const { globalTuple } = espyGlobalTuple()
-  if (globalTuple[0].activeHarpStrata !== undefined) return
-
+export const getInitialGlobalState = (): GlobalState => {
   const initialHarpStrataProps: HarpStrataProps = {
     apparatusId: ApparatusIds.MajorDiatonic,
     pozitionId: PozitionIds.Second,
@@ -36,5 +38,5 @@ export const setGlobalState = (): void => {
       DegreeIds.Sixth,
     ],
   }
-  setGlobal(state)
+  return state
 }

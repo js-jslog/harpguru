@@ -36,9 +36,18 @@ export const useMenuAnimationValues = (
 ): MenuAnimationValues => {
   const RIGHT = 1
   const UP = -1
+  const MIDDLE = 0
   const DOWN = 1
   const stashXDirection = RIGHT
-  const stashYDirection = stashPosition === MenuStashPosition.Top ? UP : DOWN
+  const stashMap: Record<
+    MenuStashPosition,
+    typeof UP | typeof MIDDLE | typeof DOWN
+  > = {
+    [MenuStashPosition.Top]: UP,
+    [MenuStashPosition.Middle]: MIDDLE,
+    [MenuStashPosition.Bottom]: DOWN,
+  }
+  const { [stashPosition]: stashYDirection } = stashMap
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceShortSide =
