@@ -71,7 +71,7 @@ export const HarpGuruPage = ({
             menuState !== MenuStates.LayoutMenu &&
             menuState !== MenuStates.NoMenu
           }
-          stashPosition={MenuStashPosition.Bottom}
+          stashPosition={MenuStashPosition.Middle}
           openCloseMenu={layoutOpenCloseTapHandler}
         />
         <ToggleBufferFlusher />
