@@ -28,7 +28,7 @@ export const NextPageButton = ({
   return (
     <Menu {...menuLikeProps}>
       <MenuOpenButton {...menuLikeProps}>
-        <Feather name="sliders" size={sizes['7']} color={colors.inertOutline} />
+        <Feather name="copy" size={sizes['7']} color={colors.inertOutline} />
       </MenuOpenButton>
     </Menu>
   )
