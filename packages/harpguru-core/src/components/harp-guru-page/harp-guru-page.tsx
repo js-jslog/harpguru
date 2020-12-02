@@ -1,16 +1,14 @@
 import 'react-native-gesture-handler'
 
 import type { Value } from 'react-native-reanimated'
-import {
-  PanGestureHandler,
-  TapGestureHandler,
-} from 'react-native-gesture-handler'
+import { PanGestureHandler } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
 import { QuizQuestionDisplay } from '../quiz-question-display'
+import { NextPageButton } from '../next-page-button'
 import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
@@ -82,9 +80,10 @@ export const HarpGuruPage = ({
         />
         <ToggleBufferFlusher />
         <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
-        <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-          <View style={{ height: 100, width: 100, backgroundColor: 'black' }} />
-        </TapGestureHandler>
+        <NextPageButton
+          stashPosition={MenuStashPosition.Bottom}
+          getNextPage={handleTapStateChange}
+        />
       </View>
     </PanGestureHandler>
   )
