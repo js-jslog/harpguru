@@ -1,6 +1,10 @@
 import 'react-native-gesture-handler'
 
-import { PanGestureHandler } from 'react-native-gesture-handler'
+import type { Value } from 'react-native-reanimated'
+import {
+  PanGestureHandler,
+  TapGestureHandler,
+} from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
@@ -17,7 +21,15 @@ import { getSizes } from '../../styles'
 
 import { useMenus } from './hooks'
 
-export const HarpGuruPage = (): ReactElement => {
+type HarpGuruPageProps = {
+  readonly pageInFrame: Value<0 | 1>
+  readonly otherPage: 0 | 1
+}
+
+export const HarpGuruPage = ({
+  pageInFrame,
+  otherPage,
+}: HarpGuruPageProps): ReactElement => {
   const [menuState, handleSwipe, handleTap] = useMenus()
   const covariantOpenCloseTapHandler = () => {
     handleTap(MenuStates.CovariantMenu)
@@ -37,6 +49,10 @@ export const HarpGuruPage = (): ReactElement => {
       alignItems: 'center',
     },
   })
+
+  const handleTapStateChange = () => {
+    pageInFrame.setValue(otherPage)
+  }
 
   return (
     <PanGestureHandler
@@ -66,6 +82,9 @@ export const HarpGuruPage = (): ReactElement => {
         />
         <ToggleBufferFlusher />
         <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
+        <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
+          <View style={{ height: 100, width: 100, backgroundColor: 'black' }} />
+        </TapGestureHandler>
       </View>
     </PanGestureHandler>
   )

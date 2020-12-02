@@ -3,8 +3,7 @@ import 'react-native-gesture-handler'
 import { createProvider } from 'reactn'
 import { withTimingTransition, useValue } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
-import { TapGestureHandler } from 'react-native-gesture-handler'
-import { View, Dimensions, StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
@@ -35,10 +34,6 @@ export const HarpGuru = (): ReactElement => {
     outputRange: [deviceLongSide * 2, 0],
   })
 
-  const handleTapStateChange = () => {
-    pageInFrame.setValue(1)
-  }
-
   return (
     <>
       <Provider1>
@@ -50,7 +45,7 @@ export const HarpGuru = (): ReactElement => {
             },
           ]}
         >
-          <HarpGuruPage />
+          <HarpGuruPage pageInFrame={pageInFrame} otherPage={1} />
         </Animated.View>
       </Provider1>
       <Provider2>
@@ -62,12 +57,9 @@ export const HarpGuru = (): ReactElement => {
             },
           ]}
         >
-          <HarpGuruPage />
+          <HarpGuruPage pageInFrame={pageInFrame} otherPage={0} />
         </Animated.View>
       </Provider2>
-      <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-        <View style={{ height: 100, width: 100, backgroundColor: 'black' }} />
-      </TapGestureHandler>
     </>
   )
 }
