@@ -19,8 +19,8 @@ import { colors, getSizes } from '../../styles'
 import { useMenus } from './hooks'
 
 type HarpGuruPageProps = {
-  readonly pageInFrame: Value<0 | 1 | 2>
-  readonly nextPage: 0 | 1 | 2
+  readonly pageInFrame: Value<1 | 2 | 3>
+  readonly nextPage: 1 | 2 | 3
 }
 
 export const HarpGuruPage = ({
