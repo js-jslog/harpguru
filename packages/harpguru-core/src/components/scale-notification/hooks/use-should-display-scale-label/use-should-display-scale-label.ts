@@ -1,13 +1,17 @@
+import { useGlobal } from 'reactn'
 import { useEffect, useState } from 'react'
 
+import { ExperienceModes } from '../../../../types'
 import { usePrevious } from '../../../../hooks'
 
 export const useShouldDisplayScaleLabel = (
   scaleLabel: string | undefined
 ): boolean => {
   const previousScaleLabel = usePrevious(scaleLabel, scaleLabel)
-
   const [shouldDisplay, setShouldDisplay] = useState(false)
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+
+  if (activeExperienceMode === ExperienceModes.Quiz) return false
 
   const isNewScale = scaleLabel !== previousScaleLabel
 
