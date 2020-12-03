@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-import { colors, getSizes } from '../../../styles'
+import { colors, harpguruColors, getSizes } from '../../../styles'
 
 type PageNumberTagProps = {
   readonly thisPage: number
@@ -20,7 +20,7 @@ export const PageNumberTag = ({
         position: 'absolute',
         bottom: 0,
         right: 0,
-        backgroundColor: '#efcded',
+        backgroundColor: harpguruColors.gold,
         width: sizes['9'],
         height: sizes['8'],
       }}
