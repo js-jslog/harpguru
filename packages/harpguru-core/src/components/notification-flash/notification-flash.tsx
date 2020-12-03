@@ -26,23 +26,17 @@ export const NotificationFlash = ({
   ] = useFlashAnimationValues(shouldDisplay)
 
   const styles = StyleSheet.create({
-    animated: {
-      ...StyleSheet.absoluteFillObject,
-      zIndex: 10,
-    },
     messageUnderlay: {
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
+      zIndex: 10,
       backgroundColor: colors.pageColor,
     },
-    flashOverlay: {
+    explosionOverlay: {
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
+      zIndex: 10,
       backgroundColor: '#efcded',
-    },
-    mainContents: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
     },
     message: {
       flex: 1,
@@ -56,18 +50,16 @@ export const NotificationFlash = ({
     <>
       <Animated.View
         style={[
-          styles.animated,
+          styles.explosionOverlay,
           {
             transform: [{ translateX: translateX }],
             opacity: explosionOpacity,
           },
         ]}
-      >
-        <View style={styles.flashOverlay} />
-      </Animated.View>
+      />
       <Animated.View
         style={[
-          styles.animated,
+          styles.messageUnderlay,
           {
             transform: [
               {
@@ -79,11 +71,7 @@ export const NotificationFlash = ({
           },
         ]}
       >
-        <View style={styles.messageUnderlay}>
-          <View style={styles.mainContents}>
-            <View style={styles.message}>{children}</View>
-          </View>
-        </View>
+        <View style={styles.message}>{children}</View>
       </Animated.View>
     </>
   )
