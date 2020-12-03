@@ -27,13 +27,7 @@ export const HarpGuruPage = ({
   pageOnDisplay,
   thisPage,
 }: HarpGuruPageProps): ReactElement => {
-  const [menuState, handleSwipe, handleTap] = useMenus()
-  const covariantOpenCloseTapHandler = () => {
-    handleTap(MenuStates.CovariantMenu)
-  }
-  const layoutOpenCloseTapHandler = () => {
-    handleTap(MenuStates.LayoutMenu)
-  }
+  const [menuState, handleMenuSwipe, handleManuTap] = useMenus()
 
   const nextPageNumberMap = {
     1: 2,
@@ -56,7 +50,7 @@ export const HarpGuruPage = ({
   return (
     <PanGestureHandler
       activeOffsetX={[swipeThreshold * -1, swipeThreshold]}
-      onHandlerStateChange={handleSwipe}
+      onHandlerStateChange={handleMenuSwipe}
     >
       <View style={styles.fillScreen}>
         <ActivityLegend />
@@ -68,7 +62,7 @@ export const HarpGuruPage = ({
             menuState !== MenuStates.NoMenu
           }
           stashPosition={MenuStashPosition.Top}
-          openCloseMenu={covariantOpenCloseTapHandler}
+          openCloseMenu={() => handleManuTap(MenuStates.CovariantMenu)}
         />
         <LayoutMenu
           isMenuStashed={menuState !== MenuStates.LayoutMenu}
@@ -77,7 +71,7 @@ export const HarpGuruPage = ({
             menuState !== MenuStates.NoMenu
           }
           stashPosition={MenuStashPosition.Middle}
-          openCloseMenu={layoutOpenCloseTapHandler}
+          openCloseMenu={() => handleManuTap(MenuStates.LayoutMenu)}
         />
         <ToggleBufferFlusher />
         <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
