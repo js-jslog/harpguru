@@ -65,12 +65,12 @@ export const NotificationFlash = ({
       ...StyleSheet.absoluteFillObject,
       zIndex: 10,
     },
-    overlay: {
+    messageUnderlay: {
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
       backgroundColor: colors.pageColor,
     },
-    overlay2: {
+    flashOverlay: {
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
       backgroundColor: '#efcded',
@@ -98,7 +98,7 @@ export const NotificationFlash = ({
           },
         ]}
       >
-        <View style={styles.overlay2} />
+        <View style={styles.flashOverlay} />
       </Animated.View>
       <Animated.View
         style={[
@@ -114,7 +114,7 @@ export const NotificationFlash = ({
           },
         ]}
       >
-        <View style={styles.overlay}>
+        <View style={styles.messageUnderlay}>
           <View style={styles.mainContents}>
             <View style={styles.message}>{children}</View>
           </View>
