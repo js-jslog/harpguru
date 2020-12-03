@@ -10,12 +10,12 @@ import { useFlashAnimationValues } from './hooks'
 
 type NotificationFlashProps = ChildrenProps & {
   readonly shouldDisplay: boolean
-  readonly additionalScaleFactor?: number
+  readonly messageScaleMultiplier?: number
 }
 
 export const NotificationFlash = ({
   shouldDisplay,
-  additionalScaleFactor = 1,
+  messageScaleMultiplier = 1,
   children,
 }: NotificationFlashProps): ReactElement => {
   const [
@@ -64,7 +64,7 @@ export const NotificationFlash = ({
             transform: [
               {
                 translateX: translateX,
-                scale: multiply(messageScale, additionalScaleFactor),
+                scale: multiply(messageScale, messageScaleMultiplier),
               },
             ],
             opacity: messageUnderlayOpacity,

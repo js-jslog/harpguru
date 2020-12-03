@@ -37,7 +37,7 @@ export const QuizQuestionDisplay = ({
   return (
     <NotificationFlash
       shouldDisplay={shouldDisplay}
-      additionalScaleFactor={sizes['3']}
+      messageScaleMultiplier={sizes['3']}
     >
       <RenderedTone
         toneTuples={selectToneVersionForDisplay(toneTuples)}
