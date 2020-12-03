@@ -18,6 +18,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Added
 
 - MAJOR: Split this package out from harpstrata to make dedicated package for harp parts concepts
+- MINOR: Add scales objects to API
 
 ## [v7.3.0](https://github.com/js-jslog/harpguru/releases/tag/v1.3.0) - 2020-09-13
 

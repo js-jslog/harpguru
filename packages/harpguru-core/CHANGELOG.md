@@ -19,6 +19,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: Include type definition exports so that consumers benefit from polyfills and reactn global state definition
 - MAJOR: Add multiple screens of harp-guru
+- MAJOR: Add active scale flash notification
 
 ### Changed
 
