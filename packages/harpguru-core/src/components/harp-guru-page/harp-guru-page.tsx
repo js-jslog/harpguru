@@ -19,13 +19,13 @@ import { colors, getSizes } from '../../styles'
 import { useMenus } from './hooks'
 
 type HarpGuruPageProps = {
-  readonly pageInFrame: Value<1 | 2 | 3>
-  readonly nextPage: 1 | 2 | 3
+  readonly pageOnDisplay: Value<1 | 2 | 3>
+  readonly thisPage: 1 | 2 | 3
 }
 
 export const HarpGuruPage = ({
-  pageInFrame,
-  nextPage,
+  pageOnDisplay,
+  thisPage,
 }: HarpGuruPageProps): ReactElement => {
   const [menuState, handleSwipe, handleTap] = useMenus()
   const covariantOpenCloseTapHandler = () => {
@@ -34,6 +34,12 @@ export const HarpGuruPage = ({
   const layoutOpenCloseTapHandler = () => {
     handleTap(MenuStates.LayoutMenu)
   }
+
+  const nextPageNumberMap = {
+    1: 2,
+    2: 3,
+    3: 1,
+  } as const
 
   const sizes = getSizes()
   const { 8: swipeThreshold } = sizes
@@ -77,7 +83,9 @@ export const HarpGuruPage = ({
         <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
         <NextPageButton
           stashPosition={MenuStashPosition.Bottom}
-          getNextPage={() => pageInFrame.setValue(nextPage)}
+          getNextPage={() =>
+            pageOnDisplay.setValue(nextPageNumberMap[thisPage])
+          }
         />
         <View
           style={{
@@ -102,7 +110,7 @@ export const HarpGuruPage = ({
                 color: colors.pageColor,
               }}
             >
-              {nextPage}
+              {thisPage}
             </Text>
             <Text
               style={{

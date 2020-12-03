@@ -52,7 +52,7 @@ export const HarpGuru = (): ReactElement => {
             },
           ]}
         >
-          <HarpGuruPage pageInFrame={pageInFrame} nextPage={1} />
+          <HarpGuruPage pageOnDisplay={pageInFrame} thisPage={3} />
         </Animated.View>
       </Provider3>
       <Provider2>
@@ -64,7 +64,7 @@ export const HarpGuru = (): ReactElement => {
             },
           ]}
         >
-          <HarpGuruPage pageInFrame={pageInFrame} nextPage={3} />
+          <HarpGuruPage pageOnDisplay={pageInFrame} thisPage={2} />
         </Animated.View>
       </Provider2>
       <Provider1>
@@ -76,7 +76,7 @@ export const HarpGuru = (): ReactElement => {
             },
           ]}
         >
-          <HarpGuruPage pageInFrame={pageInFrame} nextPage={2} />
+          <HarpGuruPage pageOnDisplay={pageInFrame} thisPage={1} />
         </Animated.View>
       </Provider1>
     </>
