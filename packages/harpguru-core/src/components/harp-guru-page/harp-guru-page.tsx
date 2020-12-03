@@ -8,7 +8,6 @@ import type { ReactElement } from 'react'
 
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
 import { QuizQuestionDisplay } from '../quiz-question-display'
-import { PageNumberTag } from '../page-number-tag'
 import { NextPageButton } from '../next-page-button'
 import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
@@ -77,12 +76,13 @@ export const HarpGuruPage = ({
         <ToggleBufferFlusher />
         <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
         <NextPageButton
+          thisPage={thisPage}
+          totalPages={3}
           stashPosition={MenuStashPosition.Bottom}
           getNextPage={() =>
             pageOnDisplay.setValue(nextPageNumberMap[thisPage])
           }
         />
-        <PageNumberTag thisPage={thisPage} totalPages={3} />
       </View>
     </PanGestureHandler>
   )
