@@ -90,15 +90,29 @@ export const HarpGuruPage = ({
             height: sizes['8'],
           }}
         >
-          <Text
+          <View
             style={{
-              fontSize: sizes['8'],
-              color: colors.pageColor,
+              flexDirection: 'row',
               alignSelf: 'center',
             }}
           >
-            {nextPage}/3
-          </Text>
+            <Text
+              style={{
+                fontSize: sizes['8'],
+                color: colors.pageColor,
+              }}
+            >
+              {nextPage}
+            </Text>
+            <Text
+              style={{
+                fontSize: sizes['7'],
+                color: colors.pageColor,
+              }}
+            >
+              of 3
+            </Text>
+          </View>
         </View>
       </View>
     </PanGestureHandler>
