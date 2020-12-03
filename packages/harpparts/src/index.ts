@@ -3,6 +3,7 @@ export type { Apparatus, Interaction } from './apparatus'
 export { DegreeIds } from './degree'
 export { PitchIds, isPitchId, isNaturalPitch } from './pitch'
 export { PozitionIds, isPozitionId } from './pozition'
+export { ScaleIds } from './scale'
 export type { Degree } from './degree'
 export type { Pitch } from './pitch'
 export type { Pozition } from './pozition'
@@ -15,6 +16,8 @@ export {
   getPitch,
   getPozitionIds,
   getPozition,
+  getScaleIds,
+  getScale,
   getPozitionByOffset,
   reversePreserveOrigin,
 } from './access-parts'

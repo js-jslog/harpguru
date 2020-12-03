@@ -1,7 +1,4 @@
 import { useGlobal } from 'reactn'
-import { useTimingTransition } from 'react-native-redash'
-import { Easing } from 'react-native-reanimated'
-import type { Node } from 'react-native-reanimated'
 import { useState, useEffect } from 'react'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import { DegreeIds } from 'harpparts'
@@ -19,7 +16,7 @@ enum QuizStates {
 
 export const useQuizQuestionCycle = (
   isScreenFree: boolean
-): [DegreeIds | PitchIds, Node<number>] => {
+): [DegreeIds | PitchIds, boolean] => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
@@ -125,10 +122,5 @@ export const useQuizQuestionCycle = (
     isDisplayPeriod &&
     activeExperienceMode === ExperienceModes.Quiz
 
-  const flashAnimationValue = useTimingTransition(shouldDisplayQuestion, {
-    duration: 200,
-    easing: Easing.inOut(Easing.ease),
-  })
-
-  return [quizQuestion, flashAnimationValue]
+  return [quizQuestion, shouldDisplayQuestion]
 }

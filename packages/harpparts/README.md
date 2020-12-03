@@ -26,6 +26,10 @@ The `Pozition` the harp is played in effects the location of the root note of th
 
 `Degree` represents the tone which is produced at each hole interaction, as considered from the context of a scale.
 
+### Scale
+
+`Scale` is an array of `DegreeIds` representing the scale degrees in each given scale along with a name identifying the scale.
+
 ### HarpFaceMatrix
 
 A matrix of harp parts, identifying which are relevant at any given hole interaction position on a harmonica.
