@@ -11,11 +11,11 @@ export const useShouldDisplayScaleLabel = (
   const [shouldDisplay, setShouldDisplay] = useState(false)
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
 
-  if (activeExperienceMode === ExperienceModes.Quiz) return false
-
   const isNewScale = scaleLabel !== previousScaleLabel
 
   useEffect(() => {
+    if (activeExperienceMode === ExperienceModes.Quiz)
+      return setShouldDisplay(false)
     if (scaleLabel === undefined) return
     if (isNewScale === true) {
       setShouldDisplay(true)
