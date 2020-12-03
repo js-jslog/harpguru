@@ -7,6 +7,7 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
+import { ScaleNotification } from '../scale-notification'
 import { QuizQuestionDisplay } from '../quiz-question-display'
 import { NextPageButton } from '../next-page-button'
 import { LayoutMenu } from '../layout-menu'
@@ -82,6 +83,7 @@ export const HarpGuruPage = ({
           }
         />
         <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
+        <ScaleNotification />
         <ToggleBufferFlusher />
       </View>
     </PanGestureHandler>
