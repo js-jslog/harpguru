@@ -2,12 +2,13 @@ import 'react-native-gesture-handler'
 
 import type { Value } from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
 import { QuizQuestionDisplay } from '../quiz-question-display'
+import { PageNumberTag } from '../page-number-tag'
 import { NextPageButton } from '../next-page-button'
 import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
@@ -81,41 +82,7 @@ export const HarpGuruPage = ({
             pageOnDisplay.setValue(nextPageNumberMap[thisPage])
           }
         />
-        <View
-          style={{
-            zIndex: 10,
-            position: 'absolute',
-            bottom: 0,
-            right: 0,
-            backgroundColor: '#efcded',
-            width: sizes['9'],
-            height: sizes['8'],
-          }}
-        >
-          <View
-            style={{
-              flexDirection: 'row',
-              alignSelf: 'center',
-            }}
-          >
-            <Text
-              style={{
-                fontSize: sizes['8'],
-                color: colors.pageColor,
-              }}
-            >
-              {thisPage}
-            </Text>
-            <Text
-              style={{
-                fontSize: sizes['7'],
-                color: colors.pageColor,
-              }}
-            >
-              of 3
-            </Text>
-          </View>
-        </View>
+        <PageNumberTag thisPage={thisPage} totalPages={3} />
       </View>
     </PanGestureHandler>
   )
