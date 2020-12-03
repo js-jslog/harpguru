@@ -73,8 +73,6 @@ export const HarpGuruPage = ({
           stashPosition={MenuStashPosition.Middle}
           openCloseMenu={() => handleManuTap(MenuStates.LayoutMenu)}
         />
-        <ToggleBufferFlusher />
-        <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
         <NextPageButton
           thisPage={thisPage}
           totalPages={3}
@@ -83,6 +81,8 @@ export const HarpGuruPage = ({
             pageOnDisplay.setValue(nextPageNumberMap[thisPage])
           }
         />
+        <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
+        <ToggleBufferFlusher />
       </View>
     </PanGestureHandler>
   )
