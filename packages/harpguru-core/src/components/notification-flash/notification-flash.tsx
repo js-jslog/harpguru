@@ -1,18 +1,12 @@
-import { useTimingTransition } from 'react-native-redash'
-import Animated, {
-  greaterThan,
-  cond,
-  interpolate,
-  Easing,
-  multiply,
-} from 'react-native-reanimated'
-import { StyleSheet, View, Dimensions } from 'react-native'
+import Animated, { multiply } from 'react-native-reanimated'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
 import { ChildrenProps } from '../../types'
 import { colors } from '../../styles'
-import { overlayOpacity } from '../../constants'
+
+import { useFlashAnimationValues } from './hooks'
 
 type NotificationFlashProps = ChildrenProps & {
   readonly shouldDisplay: boolean
@@ -24,42 +18,13 @@ export const NotificationFlash = ({
   additionalScaleFactor = 1,
   children,
 }: NotificationFlashProps): ReactElement => {
-  const flashAnimationValue = useTimingTransition(shouldDisplay, {
-    duration: 500,
-    easing: Easing.inOut(Easing.ease),
-  })
+  const [
+    translateX,
+    messageScale,
+    explosionOpacity,
+    displayOpacity,
+  ] = useFlashAnimationValues(shouldDisplay)
 
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const guaranteeOffScreenWidth =
-    windowWidth > windowHeight ? windowWidth : windowHeight
-
-  const displayOpacity = interpolate(flashAnimationValue, {
-    inputRange: [0, 1],
-    outputRange: [0, overlayOpacity],
-  })
-  const explosiveOpacity = shouldDisplay
-    ? interpolate(flashAnimationValue, {
-      inputRange: [0, 1],
-      outputRange: [overlayOpacity, 0],
-    })
-    : interpolate(flashAnimationValue, {
-      inputRange: [0, 1],
-      outputRange: [0, 0],
-    })
-  const messageScale = shouldDisplay
-    ? interpolate(flashAnimationValue, {
-      inputRange: [0, 1],
-      outputRange: [1, 2],
-    })
-    : interpolate(flashAnimationValue, {
-      inputRange: [0, 1],
-      outputRange: [3, 2],
-    })
-  const translateX = cond(
-    greaterThan(flashAnimationValue, 0),
-    0,
-    guaranteeOffScreenWidth
-  )
   const styles = StyleSheet.create({
     animated: {
       ...StyleSheet.absoluteFillObject,
@@ -94,7 +59,7 @@ export const NotificationFlash = ({
           styles.animated,
           {
             transform: [{ translateX: translateX }],
-            opacity: explosiveOpacity,
+            opacity: explosionOpacity,
           },
         ]}
       >
