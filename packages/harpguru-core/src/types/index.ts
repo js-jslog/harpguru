@@ -73,3 +73,5 @@ export type OptionIds =
   | ExperienceModes
   | PitchIds
   | PozitionIds
+
+export type PageNumber = 1 | 2 | 3

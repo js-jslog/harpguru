@@ -14,28 +14,27 @@ import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
 import { ActivityLegend } from '../activity-legend'
-import { MenuStates, MenuStashPosition } from '../../types'
-import { colors } from '../../styles'
-import { getSizes } from '../../styles'
+import { MenuStates, MenuStashPosition, PageNumber } from '../../types'
+import { colors, getSizes } from '../../styles'
 
 import { useMenus } from './hooks'
 
 type HarpGuruPageProps = {
-  readonly pageInFrame: Value<0 | 1 | 2>
-  readonly nextPage: 0 | 1 | 2
+  readonly pageOnDisplay: Value<PageNumber>
+  readonly thisPage: PageNumber
 }
 
 export const HarpGuruPage = ({
-  pageInFrame,
-  nextPage,
+  pageOnDisplay,
+  thisPage,
 }: HarpGuruPageProps): ReactElement => {
-  const [menuState, handleSwipe, handleTap] = useMenus()
-  const covariantOpenCloseTapHandler = () => {
-    handleTap(MenuStates.CovariantMenu)
-  }
-  const layoutOpenCloseTapHandler = () => {
-    handleTap(MenuStates.LayoutMenu)
-  }
+  const [menuState, handleMenuSwipe, handleManuTap] = useMenus()
+
+  const nextPageNumberMap: Record<PageNumber, PageNumber> = {
+    1: 2,
+    2: 3,
+    3: 1,
+  } as const
 
   const sizes = getSizes()
   const { 8: swipeThreshold } = sizes
@@ -52,7 +51,7 @@ export const HarpGuruPage = ({
   return (
     <PanGestureHandler
       activeOffsetX={[swipeThreshold * -1, swipeThreshold]}
-      onHandlerStateChange={handleSwipe}
+      onHandlerStateChange={handleMenuSwipe}
     >
       <View style={styles.fillScreen}>
         <ActivityLegend />
@@ -64,7 +63,7 @@ export const HarpGuruPage = ({
             menuState !== MenuStates.NoMenu
           }
           stashPosition={MenuStashPosition.Top}
-          openCloseMenu={covariantOpenCloseTapHandler}
+          openCloseMenu={() => handleManuTap(MenuStates.CovariantMenu)}
         />
         <LayoutMenu
           isMenuStashed={menuState !== MenuStates.LayoutMenu}
@@ -73,15 +72,19 @@ export const HarpGuruPage = ({
             menuState !== MenuStates.NoMenu
           }
           stashPosition={MenuStashPosition.Middle}
-          openCloseMenu={layoutOpenCloseTapHandler}
+          openCloseMenu={() => handleManuTap(MenuStates.LayoutMenu)}
         />
-        <ToggleBufferFlusher />
-        <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
         <NextPageButton
+          thisPage={thisPage}
+          totalPages={3}
           stashPosition={MenuStashPosition.Bottom}
-          getNextPage={() => pageInFrame.setValue(nextPage)}
+          getNextPage={() =>
+            pageOnDisplay.setValue(nextPageNumberMap[thisPage])
+          }
         />
+        <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
         <ScaleNotification />
+        <ToggleBufferFlusher />
       </View>
     </PanGestureHandler>
   )

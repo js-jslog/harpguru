@@ -1,2 +1,2 @@
-export { colors, getSizes } from './styles'
+export { colors, harpguruColors, getSizes } from './styles'
 export type { SizeScheme } from './styles-types'

@@ -4,7 +4,7 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { ChildrenProps } from '../../types'
-import { colors } from '../../styles'
+import { colors, harpguruColors } from '../../styles'
 
 import { useFlashAnimationValues } from './hooks'
 
@@ -36,7 +36,7 @@ export const NotificationFlash = ({
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'row',
       zIndex: 10,
-      backgroundColor: '#efcded',
+      backgroundColor: harpguruColors.pink,
     },
     message: {
       flex: 1,
