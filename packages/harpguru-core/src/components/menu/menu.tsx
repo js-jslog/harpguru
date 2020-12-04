@@ -4,13 +4,14 @@ import React from 'react'
 
 import { getScaledMenuLabelProtrusion } from '../../utils'
 import type { MenuProps, ChildrenProps } from '../../types'
-import { getSizes } from '../../styles'
+import { colors, getSizes } from '../../styles'
 import { useMenuAnimationValues } from '../../hooks'
 
 export const Menu = ({
   isMenuStashed,
   isLabelHidden,
   stashPosition,
+  overrideBackgroundColor = false,
   children,
 }: MenuProps & ChildrenProps): React.ReactElement => {
   const {
@@ -54,7 +55,9 @@ export const Menu = ({
         style={[
           styles.overlay,
           {
-            backgroundColor: backgroundColor,
+            backgroundColor: overrideBackgroundColor
+              ? colors.inertOutline
+              : backgroundColor,
             opacity: opacity,
           },
         ]}

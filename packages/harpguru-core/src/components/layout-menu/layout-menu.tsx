@@ -71,7 +71,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
         <Option {...experienceModeOptionProps} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
-        <Entypo name="cog" size={sizes['7']} color={colors.pageColor} />
+        <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
       </MenuOpenButton>
     </Menu>
   )
