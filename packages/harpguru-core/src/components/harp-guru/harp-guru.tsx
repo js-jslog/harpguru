@@ -11,10 +11,9 @@ import { HarpGuruPage } from '../harp-guru-page'
 
 import { getInitialGlobalState } from './utils'
 
-const initialGlobalState = getInitialGlobalState()
-const Provider1 = createProvider(initialGlobalState)
-const Provider2 = createProvider(initialGlobalState)
-const Provider3 = createProvider(initialGlobalState)
+const Provider1 = createProvider(getInitialGlobalState(1))
+const Provider2 = createProvider(getInitialGlobalState(2))
+const Provider3 = createProvider(getInitialGlobalState(3))
 
 export const HarpGuru = (): ReactElement => {
   const pageInFrame = useValue<1 | 2 | 3>(1)
