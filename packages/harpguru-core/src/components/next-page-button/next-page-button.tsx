@@ -6,7 +6,7 @@ import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
 import { MenuStashPosition, PageNumber } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, colors } from '../../styles'
+import { getSizes, harpguruColors } from '../../styles'
 
 type NextPageButtonProps = {
   readonly thisPage: PageNumber
@@ -48,7 +48,8 @@ export const NextPageButton = ({
           <Text
             style={{
               fontSize: sizes['7'],
-              color: colors.inertOutline,
+              fontWeight: 'bold',
+              color: harpguruColors.pink,
             }}
           >
             {thisPage}
@@ -56,10 +57,11 @@ export const NextPageButton = ({
           <Text
             style={{
               fontSize: sizes['6'],
-              color: colors.inertOutline,
+              fontWeight: 'normal',
+              color: harpguruColors.pink,
             }}
           >
-            of {totalPages}
+            / {totalPages}
           </Text>
         </View>
       </MenuOpenButton>

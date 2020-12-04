@@ -13,7 +13,7 @@ import {
   ExperienceModes,
   DisplayModes,
 } from '../../types'
-import { getSizes, colors } from '../../styles'
+import { colors, getSizes } from '../../styles'
 import { useNudgeDisplayMode } from '../../hooks'
 
 import {
@@ -71,7 +71,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
         <Option {...experienceModeOptionProps} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
-        <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
+        <Entypo name="cog" size={sizes['7']} color={colors.pageColor} />
       </MenuOpenButton>
     </Menu>
   )
