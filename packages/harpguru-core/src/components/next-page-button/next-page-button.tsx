@@ -4,13 +4,13 @@ import React from 'react'
 
 import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
-import { MenuStashPosition } from '../../types'
+import { MenuStashPosition, PageNumber } from '../../types'
 import type { MenuProps } from '../../types'
 import { getSizes, colors } from '../../styles'
 
 type NextPageButtonProps = {
-  readonly thisPage: number
-  readonly totalPages: number
+  readonly thisPage: PageNumber
+  readonly totalPages: PageNumber
   readonly stashPosition: MenuStashPosition
   readonly getNextPage: () => void
 }

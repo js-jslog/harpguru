@@ -8,6 +8,7 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { HarpGuruPage } from '../harp-guru-page'
+import { PageNumber } from '../../types'
 
 import { getInitialGlobalState } from './utils'
 
@@ -16,7 +17,7 @@ const Provider2 = createProvider(getInitialGlobalState(2))
 const Provider3 = createProvider(getInitialGlobalState(3))
 
 export const HarpGuru = (): ReactElement => {
-  const pageInFrame = useValue<1 | 2 | 3>(1)
+  const pageInFrame = useValue<PageNumber>(1)
 
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceShortSide =

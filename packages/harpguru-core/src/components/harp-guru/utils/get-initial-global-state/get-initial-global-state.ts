@@ -10,7 +10,7 @@ import {
 } from 'harpparts'
 import { CovariantMembers } from 'harpcovariance'
 
-import { DisplayModes, ExperienceModes } from '../../../../types'
+import { DisplayModes, ExperienceModes, PageNumber } from '../../../../types'
 
 type GlobalState = {
   activeHarpStrata: HarpStrata
@@ -20,10 +20,10 @@ type GlobalState = {
   bufferedActivityToggles: ReadonlyArray<DegreeIds>
 }
 
-export const getInitialGlobalState = (pageNumber: 1 | 2 | 3): GlobalState => {
+export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const { MajorDiatonic: apparatusId } = ApparatusIds
   const { C: harpKeyId } = PitchIds
-  const pozitionMap: Record<1 | 2 | 3, PozitionIds> = {
+  const pozitionMap: Record<PageNumber, PozitionIds> = {
     1: PozitionIds.Second,
     2: PozitionIds.First,
     3: PozitionIds.Third,

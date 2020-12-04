@@ -14,14 +14,14 @@ import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
 import { CovariantMenu } from '../covariant-menu'
 import { ActivityLegend } from '../activity-legend'
-import { MenuStates, MenuStashPosition } from '../../types'
+import { MenuStates, MenuStashPosition, PageNumber } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import { useMenus } from './hooks'
 
 type HarpGuruPageProps = {
-  readonly pageOnDisplay: Value<1 | 2 | 3>
-  readonly thisPage: 1 | 2 | 3
+  readonly pageOnDisplay: Value<PageNumber>
+  readonly thisPage: PageNumber
 }
 
 export const HarpGuruPage = ({
@@ -30,7 +30,7 @@ export const HarpGuruPage = ({
 }: HarpGuruPageProps): ReactElement => {
   const [menuState, handleMenuSwipe, handleManuTap] = useMenus()
 
-  const nextPageNumberMap = {
+  const nextPageNumberMap: Record<PageNumber, PageNumber> = {
     1: 2,
     2: 3,
     3: 1,
