@@ -94,7 +94,7 @@ export const useMenuAnimationValues = (
   })
   const backgroundColor = interpolateColor(stashMenuTiming, {
     inputRange: [0, 1],
-    outputRange: [colors.pageColor, colors.homeRowsColor],
+    outputRange: [colors.pageColor, colors.inertOutline],
   })
   const opacity = interpolate(stashMenuTiming, {
     inputRange: [0, 1],

@@ -10,7 +10,7 @@ import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
 import type { MenuProps, OptionIds } from '../../types'
-import { getSizes, colors } from '../../styles'
+import { colors, getSizes } from '../../styles'
 
 import {
   useNudgeHarpStrataByHarpKey,
@@ -89,7 +89,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         </OptionLock>
       </MenuFace>
       <MenuOpenButton {...menuProps}>
-        <Feather name="sliders" size={sizes['7']} color={colors.inertOutline} />
+        <Feather name="sliders" size={sizes['7']} color={colors.pageColor} />
       </MenuOpenButton>
     </Menu>
   )
