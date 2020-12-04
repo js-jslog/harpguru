@@ -12,7 +12,7 @@ A monorepo containing the component packages to run and build the harpguru appli
 - Update the dependencies on other harpguru packages if they exist
   - You can test this by running a `yarn install` at the end. If you have the wrong dependencies then they will be installed in local `node_modules` folders.
 - Update app.json in harpguru-expo-boilerplate package
-- Set `expo.version` to the version number the project is about to be tagged with (minus the leading 'v')
-- Increment `expo.android.versionCode`
+  - Set `expo.version` to the version number the project is about to be tagged with (minus the leading 'v')
+  - Increment `expo.android.versionCode`
 - Tag harpguru and push
 - Check that the links in the CHANGELOG.md files find the new tag destination
