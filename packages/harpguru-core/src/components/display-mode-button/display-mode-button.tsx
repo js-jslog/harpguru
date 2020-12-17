@@ -9,6 +9,8 @@ import { DisplayModes, MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
 import { getSizes, harpguruColors } from '../../styles'
 
+import { useNudgeDisplayMode } from './hooks'
+
 type DisplayModeButtonProps = {
   readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
@@ -25,17 +27,13 @@ export const DisplayModeButton = ({
   // This is really a hacky workaround, but it's cheap and effective.
   // eslint-disable-next-line no-empty-pattern
   const [] = useGlobal('activeHarpStrata')
-  const [activeDisplayMode, setActiveDisplayMode] = useGlobal(
-    'activeDisplayMode'
-  )
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const nudgeDisplayMode = useNudgeDisplayMode()
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: isLabelHidden,
     stashPosition,
-    openCloseMenu:
-      activeDisplayMode === DisplayModes.Pitch
-        ? () => setActiveDisplayMode(DisplayModes.Degree)
-        : () => setActiveDisplayMode(DisplayModes.Pitch),
+    openCloseMenu: () => nudgeDisplayMode('DOWN'),
   }
 
   const sizes = getSizes()
