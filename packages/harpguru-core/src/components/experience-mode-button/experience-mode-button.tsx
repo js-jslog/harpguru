@@ -9,6 +9,8 @@ import { ExperienceModes, MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
 import { getSizes, harpguruColors } from '../../styles'
 
+import { useNudgeExperienceMode } from './hooks'
+
 type ExperienceModeButtonProps = {
   readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
@@ -25,17 +27,13 @@ export const ExperienceModeButton = ({
   // This is really a hacky workaround, but it's cheap and effective.
   // eslint-disable-next-line no-empty-pattern
   const [] = useGlobal('activeHarpStrata')
-  const [activeExperienceMode, setActiveExperienceMode] = useGlobal(
-    'activeExperienceMode'
-  )
+  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const nudgeExperienceMode = useNudgeExperienceMode()
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: isLabelHidden,
     stashPosition,
-    openCloseMenu:
-      activeExperienceMode === ExperienceModes.Explore
-        ? () => setActiveExperienceMode(ExperienceModes.Quiz)
-        : () => setActiveExperienceMode(ExperienceModes.Explore),
+    openCloseMenu: () => nudgeExperienceMode('DOWN'),
   }
 
   const sizes = getSizes()
