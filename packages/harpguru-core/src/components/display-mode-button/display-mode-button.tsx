@@ -1,11 +1,11 @@
 import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
-import { MaterialIcons, Feather } from '@expo/vector-icons'
+import { MaterialIcons } from '@expo/vector-icons'
 
 import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
-import { DisplayModes, MenuStashPosition } from '../../types'
+import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
 import { getSizes, harpguruColors } from '../../styles'
 
@@ -27,7 +27,6 @@ export const DisplayModeButton = ({
   // This is really a hacky workaround, but it's cheap and effective.
   // eslint-disable-next-line no-empty-pattern
   const [] = useGlobal('activeHarpStrata')
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const nudgeDisplayMode = useNudgeDisplayMode()
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
@@ -38,16 +37,13 @@ export const DisplayModeButton = ({
 
   const sizes = getSizes()
 
-  const activeLabelIcon =
-    activeDisplayMode === DisplayModes.Pitch ? (
-      <MaterialIcons
-        name="music-note"
-        size={sizes['7']}
-        color={harpguruColors['gold']}
-      />
-    ) : (
-      <Feather name="hash" size={sizes['7']} color={harpguruColors['gold']} />
-    )
+  const activeLabelIcon = (
+    <MaterialIcons
+      name="music-note"
+      size={sizes['7']}
+      color={harpguruColors['gold']}
+    />
+  )
 
   return (
     <Menu {...menuLikeProps}>
