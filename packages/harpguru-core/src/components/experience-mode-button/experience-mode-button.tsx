@@ -54,7 +54,7 @@ export const ExperienceModeButton = ({
     )
 
   return (
-    <Menu {...menuLikeProps} overrideBackgroundColor={true}>
+    <Menu {...menuLikeProps}>
       <MenuOpenButton {...menuLikeProps}>
         <View
           style={{

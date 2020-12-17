@@ -38,7 +38,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
         <Option {...apparatusOptionProps} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
-        <Entypo name="cog" size={sizes['7']} color={colors.inertOutline} />
+        <Entypo name="cog" size={sizes['7']} color={colors.homeRowsColor} />
       </MenuOpenButton>
     </Menu>
   )

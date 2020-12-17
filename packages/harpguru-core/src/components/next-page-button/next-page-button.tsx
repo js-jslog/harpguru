@@ -38,7 +38,7 @@ export const NextPageButton = ({
   const sizes = getSizes()
 
   return (
-    <Menu {...menuLikeProps} overrideBackgroundColor={true}>
+    <Menu {...menuLikeProps}>
       <MenuOpenButton {...menuLikeProps}>
         <View
           style={{

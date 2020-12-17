@@ -52,7 +52,6 @@ export type MenuProps = {
   readonly isMenuStashed: boolean
   readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
-  readonly overrideBackgroundColor?: boolean
   readonly openCloseMenu: () => void
 }
 
