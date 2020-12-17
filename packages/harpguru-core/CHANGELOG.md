@@ -15,6 +15,14 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v5.1.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MAJOR: Quick access option buttons for display and experience mode
+
+### Removed
+
+- MAJOR: Display and experience mode options from the layout menu
+
 ## [v4.1.0](https://github.com/js-jslog/harpguru/releases/tag/v5.1.0) - 2020-12-04
 
 ### Changed
