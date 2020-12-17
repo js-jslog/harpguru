@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
-import { MaterialIcons } from '@expo/vector-icons'
+import { MaterialIcons, Feather } from '@expo/vector-icons'
 
 import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
@@ -40,6 +40,17 @@ export const DisplayModeButton = ({
 
   const sizes = getSizes()
 
+  const activeLabelIcon =
+    activeDisplayMode === DisplayModes.Pitch ? (
+      <MaterialIcons
+        name="music-note"
+        size={sizes['7']}
+        color={harpguruColors['gold']}
+      />
+    ) : (
+      <Feather name="hash" size={sizes['7']} color={harpguruColors['gold']} />
+    )
+
   return (
     <Menu {...menuLikeProps} overrideBackgroundColor={true}>
       <MenuOpenButton {...menuLikeProps}>
@@ -48,11 +59,7 @@ export const DisplayModeButton = ({
             flexDirection: 'row',
           }}
         >
-          <MaterialIcons
-            name="music-note"
-            size={sizes['7']}
-            color={harpguruColors['gold']}
-          />
+          {activeLabelIcon}
         </View>
       </MenuOpenButton>
     </Menu>
