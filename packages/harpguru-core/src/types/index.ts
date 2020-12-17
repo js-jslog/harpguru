@@ -18,9 +18,11 @@ export enum MenuStates {
 }
 
 export enum MenuStashPosition {
-  Top,
-  Middle,
-  Bottom,
+  First,
+  Second,
+  Third,
+  Fourth,
+  Fifth,
 }
 
 export enum CellStates {
@@ -50,7 +52,6 @@ export type MenuProps = {
   readonly isMenuStashed: boolean
   readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
-  readonly overrideBackgroundColor?: boolean
   readonly openCloseMenu: () => void
 }
 
