@@ -12,6 +12,8 @@ import { QuizQuestionDisplay } from '../quiz-question-display'
 import { NextPageButton } from '../next-page-button'
 import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
+import { DisplayModeButton } from '../display-mode-button'
+import { DisplayModeButton as ExperienceModeButton } from '../display-mode-button'
 import { CovariantMenu } from '../covariant-menu'
 import { ActivityLegend } from '../activity-legend'
 import { MenuStates, MenuStashPosition, PageNumber } from '../../types'
@@ -62,7 +64,7 @@ export const HarpGuruPage = ({
             menuState !== MenuStates.CovariantMenu &&
             menuState !== MenuStates.NoMenu
           }
-          stashPosition={MenuStashPosition.Top}
+          stashPosition={MenuStashPosition.First}
           openCloseMenu={() => handleManuTap(MenuStates.CovariantMenu)}
         />
         <LayoutMenu
@@ -71,13 +73,21 @@ export const HarpGuruPage = ({
             menuState !== MenuStates.LayoutMenu &&
             menuState !== MenuStates.NoMenu
           }
-          stashPosition={MenuStashPosition.Middle}
+          stashPosition={MenuStashPosition.Second}
           openCloseMenu={() => handleManuTap(MenuStates.LayoutMenu)}
+        />
+        <DisplayModeButton
+          isLabelHidden={menuState !== MenuStates.NoMenu}
+          stashPosition={MenuStashPosition.Third}
+        />
+        <ExperienceModeButton
+          isLabelHidden={menuState !== MenuStates.NoMenu}
+          stashPosition={MenuStashPosition.Fourth}
         />
         <NextPageButton
           thisPage={thisPage}
           totalPages={3}
-          stashPosition={MenuStashPosition.Bottom}
+          stashPosition={MenuStashPosition.Fifth}
           getNextPage={() =>
             pageOnDisplay.setValue(nextPageNumberMap[thisPage])
           }

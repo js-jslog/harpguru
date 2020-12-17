@@ -18,9 +18,11 @@ export enum MenuStates {
 }
 
 export enum MenuStashPosition {
-  Top,
-  Middle,
-  Bottom,
+  First,
+  Second,
+  Third,
+  Fourth,
+  Fifth,
 }
 
 export enum CellStates {
