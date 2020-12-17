@@ -1,6 +1,7 @@
 import { useGlobal } from 'reactn'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
+import { MaterialIcons } from '@expo/vector-icons'
 
 import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
@@ -47,15 +48,11 @@ export const DisplayModeButton = ({
             flexDirection: 'row',
           }}
         >
-          <Text
-            style={{
-              fontSize: sizes['7'],
-              fontWeight: 'bold',
-              color: harpguruColors.pink,
-            }}
-          >
-            display
-          </Text>
+          <MaterialIcons
+            name="music-note"
+            size={sizes['7']}
+            color={harpguruColors['gold']}
+          />
         </View>
       </MenuOpenButton>
     </Menu>
