@@ -12,7 +12,9 @@ export const HarpFace = (): React.ReactElement => {
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const styles = getStyles(activeHarpStrata)
   const { octaveColumnGroups } = getHarpFaceFacts(activeHarpStrata)
-  const fragments = octaveColumnGroups.map((xRange, index) => {
+  // eslint-disable-next-line
+  const columnRanges = false ? [octaveColumnGroups.flat()] : octaveColumnGroups
+  const fragments = columnRanges.map((xRange, index) => {
     const harpFaceFragmentProps = {
       activeDisplayMode,
       xRange,
