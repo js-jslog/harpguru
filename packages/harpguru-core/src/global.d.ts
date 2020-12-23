@@ -12,5 +12,6 @@ declare module 'reactn/default' {
     activeDisplayMode: DisplayModes
     lockedCovariant: CovariantMembers
     bufferedActivityToggles: ReadonlyArray<DegreeIds>
+    fragmentHarpFaceByOctaves: boolean
   }
 }

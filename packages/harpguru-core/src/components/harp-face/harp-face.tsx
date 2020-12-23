@@ -10,10 +10,12 @@ import { getStyles } from './harp-face-styles'
 export const HarpFace = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const styles = getStyles(activeHarpStrata)
   const { octaveColumnGroups } = getHarpFaceFacts(activeHarpStrata)
-  // eslint-disable-next-line
-  const columnRanges = false ? [octaveColumnGroups.flat()] : octaveColumnGroups
+  const columnRanges = fragmentHarpFaceByOctaves
+    ? octaveColumnGroups
+    : [octaveColumnGroups.flat()]
   const fragments = columnRanges.map((xRange, index) => {
     const harpFaceFragmentProps = {
       activeDisplayMode,

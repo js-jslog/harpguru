@@ -17,6 +17,7 @@ mockUseGlobal.mockImplementation((stateItem: string) => {
   if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
   if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
   if (stateItem === 'bufferedActivityToggles') return [[]]
+  if (stateItem === 'fragmentHarpFaceByOctaves') return [true]
   return undefined
 })
 

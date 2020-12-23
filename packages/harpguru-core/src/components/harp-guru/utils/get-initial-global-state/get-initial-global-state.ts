@@ -18,6 +18,7 @@ type GlobalState = {
   activeDisplayMode: DisplayModes
   lockedCovariant: CovariantMembers
   bufferedActivityToggles: ReadonlyArray<DegreeIds>
+  fragmentHarpFaceByOctaves: boolean
 }
 
 export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
@@ -66,6 +67,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     activeDisplayMode: initialDisplayMode,
     lockedCovariant: initialLockedCovariant,
     bufferedActivityToggles: thisPozitionDegrees,
+    fragmentHarpFaceByOctaves: true,
   }
 
   return state
