@@ -35,21 +35,28 @@ export const useMenuAnimationValues = (
   stashPosition: MenuStashPosition
 ): MenuAnimationValues => {
   const RIGHT = 1
-  const UP1 = -2
-  const UP2 = -1
-  const MIDDLE = 0
+  const UP1 = -3
+  const UP2 = -2
+  const UP3 = -1
   const DOWN1 = 1
   const DOWN2 = 2
+  const DOWN3 = 3
   const stashXDirection = RIGHT
   const stashMap: Record<
     MenuStashPosition,
-    typeof UP1 | typeof UP2 | typeof MIDDLE | typeof DOWN1 | typeof DOWN2
+    | typeof UP1
+    | typeof UP2
+    | typeof UP3
+    | typeof DOWN1
+    | typeof DOWN2
+    | typeof DOWN3
   > = {
     [MenuStashPosition.First]: UP1,
     [MenuStashPosition.Second]: UP2,
-    [MenuStashPosition.Third]: MIDDLE,
+    [MenuStashPosition.Third]: UP3,
     [MenuStashPosition.Fourth]: DOWN1,
     [MenuStashPosition.Fifth]: DOWN2,
+    [MenuStashPosition.Sixth]: DOWN3,
   }
   const { [stashPosition]: stashYDirection } = stashMap
 

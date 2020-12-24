@@ -23,6 +23,7 @@ export enum MenuStashPosition {
   Third,
   Fourth,
   Fifth,
+  Sixth,
 }
 
 export enum CellStates {

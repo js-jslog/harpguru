@@ -84,10 +84,14 @@ export const HarpGuruPage = ({
           isLabelHidden={menuState !== MenuStates.NoMenu}
           stashPosition={MenuStashPosition.Fourth}
         />
+        <ExperienceModeButton
+          isLabelHidden={menuState !== MenuStates.NoMenu}
+          stashPosition={MenuStashPosition.Fifth}
+        />
         <NextPageButton
           thisPage={thisPage}
           totalPages={3}
-          stashPosition={MenuStashPosition.Fifth}
+          stashPosition={MenuStashPosition.Sixth}
           getNextPage={() =>
             pageOnDisplay.setValue(nextPageNumberMap[thisPage])
           }
