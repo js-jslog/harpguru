@@ -12,6 +12,7 @@ import { QuizQuestionDisplay } from '../quiz-question-display'
 import { NextPageButton } from '../next-page-button'
 import { LayoutMenu } from '../layout-menu'
 import { HarpFaceMemo } from '../harp-face'
+import { FragmentationButton } from '../fragmentation-button'
 import { ExperienceModeButton } from '../experience-mode-button'
 import { DisplayModeButton } from '../display-mode-button'
 import { CovariantMenu } from '../covariant-menu'
@@ -80,7 +81,7 @@ export const HarpGuruPage = ({
           isLabelHidden={menuState !== MenuStates.NoMenu}
           stashPosition={MenuStashPosition.Third}
         />
-        <ExperienceModeButton
+        <FragmentationButton
           isLabelHidden={menuState !== MenuStates.NoMenu}
           stashPosition={MenuStashPosition.Fourth}
         />
