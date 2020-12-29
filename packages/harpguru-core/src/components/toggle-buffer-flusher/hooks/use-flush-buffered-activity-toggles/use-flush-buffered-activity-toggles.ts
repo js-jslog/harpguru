@@ -1,48 +1,80 @@
 import { useGlobal } from 'reactn'
 import { unstable_batchedUpdates } from 'react-native'
-import { useEffect } from 'react'
-import type { HarpStrataProps } from 'harpstrata'
+import { useEffect, useState } from 'react'
+import type { HarpStrata, HarpStrataProps } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
+import type { DegreeIds } from 'harpparts'
 
 import { batchToggleDegreeIds } from '../../utils'
 
-export const useFlushBufferedActivityToggles = (): void => {
+export const useFlushBufferedActivityToggles = (): ((
+  arg0: boolean
+) => void) => {
   const [bufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
     'bufferedActivityToggles'
   )
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const [shouldForceFlush, setShouldForceFlush] = useState<boolean>(true)
+
+  const flushBufferedToggles = (
+    bufferedActivityTogglesLocal: ReadonlyArray<DegreeIds>,
+    setBufferedActivityTogglesLocal: (arg0: ReadonlyArray<DegreeIds>) => void,
+    activeHarpStrataLocal: HarpStrata,
+    setActiveHarpStrataLocal: (arg0: HarpStrata) => void
+  ) => {
+    if (bufferedActivityTogglesLocal.length === 0) return
+    const {
+      apparatus: { id: apparatusId },
+      pozitionId,
+      harpKeyId,
+      activeDegreeIds,
+    } = activeHarpStrataLocal
+    const newActiveDegreeIds = batchToggleDegreeIds(
+      activeDegreeIds,
+      bufferedActivityTogglesLocal
+    )
+    const newHarpStrataProps: HarpStrataProps = {
+      apparatusId,
+      pozitionId,
+      harpKeyId,
+      activeIds: newActiveDegreeIds,
+    }
+    unstable_batchedUpdates(() => {
+      setActiveHarpStrataLocal(getHarpStrata(newHarpStrataProps))
+      setBufferedActivityTogglesLocal([])
+    })
+  }
 
   useEffect(() => {
-    const flushBufferedToggles = setTimeout(() => {
-      if (bufferedActivityToggles.length === 0) return
-      const {
-        apparatus: { id: apparatusId },
-        pozitionId,
-        harpKeyId,
-        activeDegreeIds,
-      } = activeHarpStrata
-      const newActiveDegreeIds = batchToggleDegreeIds(
-        activeDegreeIds,
-        bufferedActivityToggles
+    if (shouldForceFlush) {
+      const immediatelyFlushBufferedToggles = flushBufferedToggles
+      immediatelyFlushBufferedToggles(
+        bufferedActivityToggles,
+        setBufferedActivityToggles,
+        activeHarpStrata,
+        setActiveHarpStrata
       )
-      const newHarpStrataProps: HarpStrataProps = {
-        apparatusId,
-        pozitionId,
-        harpKeyId,
-        activeIds: newActiveDegreeIds,
-      }
-      unstable_batchedUpdates(() => {
-        setActiveHarpStrata(getHarpStrata(newHarpStrataProps))
-        setBufferedActivityToggles([])
-      })
+      setShouldForceFlush(false)
+      return
+    }
+    const delayedFlushBufferedToggles = setTimeout(() => {
+      flushBufferedToggles(
+        bufferedActivityToggles,
+        setBufferedActivityToggles,
+        activeHarpStrata,
+        setActiveHarpStrata
+      )
     }, 1000)
     return () => {
-      clearTimeout(flushBufferedToggles)
+      clearTimeout(delayedFlushBufferedToggles)
     }
   }, [
     bufferedActivityToggles,
     setBufferedActivityToggles,
     setActiveHarpStrata,
     activeHarpStrata,
+    shouldForceFlush,
   ])
+
+  return setShouldForceFlush
 }
