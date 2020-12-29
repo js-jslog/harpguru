@@ -5,6 +5,7 @@ import { DegreeIds } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
 import { activateHarpCell, getNextQuizQuestion } from '../../utils'
+import { useFlushBufferedActivityToggles } from '../../../toggle-buffer-flusher'
 import { ExperienceModes } from '../../../../types'
 
 enum QuizStates {
@@ -21,6 +22,7 @@ export const useQuizQuestionCycle = (
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
+  const setShouldForceFlush = useFlushBufferedActivityToggles()
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
   const [shouldExtendListen, setShouldExtendListen] = useState(false)
@@ -112,7 +114,12 @@ export const useQuizQuestionCycle = (
     // This condition is important to prevent the toggle
     // buffer flush from driving an early Listen extension
     if (bufferedActivityToggles.length === 0) return
-    if (quizState === QuizStates.Listen) return setShouldExtendListen(true)
+    if (
+      quizState === QuizStates.Listen &&
+      bufferedActivityToggles.every((degree) => degree === quizQuestion)
+    )
+      return setShouldExtendListen(true)
+    if (quizState === QuizStates.Listen) return setShouldForceFlush(true)
     return
   }, [bufferedActivityToggles])
 
