@@ -47,15 +47,22 @@ export const useFlushBufferedActivityToggles = (): ((
 
   useEffect(() => {
     if (shouldForceFlush) {
-      const immediatelyFlushBufferedToggles = flushBufferedToggles
-      immediatelyFlushBufferedToggles(
-        bufferedActivityToggles,
-        setBufferedActivityToggles,
-        activeHarpStrata,
-        setActiveHarpStrata
-      )
-      setShouldForceFlush(false)
-      return
+      // The "immediate" flush still requires a short
+      // delay so that the user doesn't experience a
+      // freeze in feedback if they try to hit multiple
+      // cells.
+      const immediatelyFlushBufferedToggles = setTimeout(() => {
+        flushBufferedToggles(
+          bufferedActivityToggles,
+          setBufferedActivityToggles,
+          activeHarpStrata,
+          setActiveHarpStrata
+        )
+        setShouldForceFlush(false)
+      }, 500)
+      return () => {
+        clearTimeout(immediatelyFlushBufferedToggles)
+      }
     }
     const delayedFlushBufferedToggles = setTimeout(() => {
       flushBufferedToggles(
