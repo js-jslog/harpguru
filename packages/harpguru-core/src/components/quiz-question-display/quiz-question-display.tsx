@@ -9,7 +9,7 @@ import { getSizes } from '../../styles'
 
 import { useQuizQuestionCycle } from './hooks'
 
-type FlushOverrides = [(arg0: boolean) => void, (arg0: boolean) => void]
+type FlushOverrides = [(arg0: boolean) => void, (arg0: false | number) => void]
 
 type QuizQuestionDisplayProps = {
   readonly isScreenFree: boolean

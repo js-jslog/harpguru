@@ -9,14 +9,16 @@ import { batchToggleDegreeIds } from '../../utils'
 
 export const useFlushBufferedActivityToggles = (): [
   (arg0: boolean) => void,
-  (arg0: boolean) => void
+  (arg0: false | number) => void
 ] => {
   const [bufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
     'bufferedActivityToggles'
   )
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [isOverridden, setIsOverridden] = useState<boolean>(false)
-  const [shouldForceFlush, setShouldForceFlush] = useState<boolean>(false)
+  const [shouldForceFlush, setShouldForceFlush] = useState<false | number>(
+    false
+  )
 
   const flushBufferedToggles = (
     bufferedActivityTogglesLocal: ReadonlyArray<DegreeIds>,
@@ -49,7 +51,7 @@ export const useFlushBufferedActivityToggles = (): [
 
   useEffect(() => {
     if (!isOverridden) return
-    if (!shouldForceFlush) return
+    if (shouldForceFlush === false) return
     const overriddenFlushBufferedToggles = setTimeout(() => {
       flushBufferedToggles(
         bufferedActivityToggles,
@@ -58,7 +60,7 @@ export const useFlushBufferedActivityToggles = (): [
         setActiveHarpStrata
       )
       setShouldForceFlush(false)
-    }, 500)
+    }, shouldForceFlush)
     return () => {
       clearTimeout(overriddenFlushBufferedToggles)
     }

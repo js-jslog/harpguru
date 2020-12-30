@@ -15,7 +15,7 @@ enum QuizStates {
   Wait,
 }
 
-type FlushOverrides = [(arg0: boolean) => void, (arg0: boolean) => void]
+type FlushOverrides = [(arg0: boolean) => void, (arg0: false | number) => void]
 
 export const useQuizQuestionCycle = (
   isScreenFree: boolean,
@@ -69,7 +69,7 @@ export const useQuizQuestionCycle = (
     // Clear the harpface of active cells &
     // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
-      setShouldForceFlush(true)
+      setShouldForceFlush(0)
       resetActiveHarpStrata()
       const finishAsking = setTimeout(() => {
         setQuizState(QuizStates.ListenTimeout)
@@ -117,14 +117,14 @@ export const useQuizQuestionCycle = (
     if (bufferedActivityToggles.length === 0) return
     if (quizState === QuizStates.ListenTimeout) {
       setQuizState(QuizStates.Listen)
-      return setShouldForceFlush(true)
+      return setShouldForceFlush(10000)
     }
     if (
       quizState === QuizStates.Listen &&
       bufferedActivityToggles.every((degree) => degree === quizQuestion)
     )
-      return setShouldForceFlush(true)
-    if (quizState === QuizStates.Listen) return setShouldForceFlush(true)
+      return setShouldForceFlush(10000)
+    if (quizState === QuizStates.Listen) return setShouldForceFlush(500)
     return
   }, [bufferedActivityToggles])
 
