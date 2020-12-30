@@ -9,6 +9,7 @@ import { ExperienceModes } from '../../../../types'
 
 enum QuizStates {
   Ask,
+  ListenTimeout,
   Listen,
   Answer,
   Wait,
@@ -79,12 +80,7 @@ export const useQuizQuestionCycle = (
     // and transition to Answer state after a period.
     // Timeout is cancelled and reset after the state flag
     // for extension is set to true.
-    // TODO: address or make explicit the fact that this
-    // timeout value needs to be higher than the timeouts
-    // being set in the toggle flushing, otherwise it will
-    // be this timeout that flushes the buffer when it reveals
-    // the answer
-    if (quizState === QuizStates.Listen) {
+    if (quizState === QuizStates.ListenTimeout) {
       const finishListening = setTimeout(() => {
         setQuizState(QuizStates.Answer)
       }, 5000)
@@ -116,8 +112,13 @@ export const useQuizQuestionCycle = (
   // Listen state timeout *if* we're in Listen state.
   useEffect(() => {
     // This condition is important to prevent the toggle
-    // buffer flush from driving an early Listen extension
+    // buffer flush from driving an early ListenTimeout
+    // to Listen transition
     if (bufferedActivityToggles.length === 0) return
+    if (quizState === QuizStates.ListenTimeout) {
+      setQuizState(QuizStates.Listen)
+      return setShouldForceFlush(true)
+    }
     if (
       quizState === QuizStates.Listen &&
       bufferedActivityToggles.every((degree) => degree === quizQuestion)
