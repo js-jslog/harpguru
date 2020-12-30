@@ -9,14 +9,21 @@ import { getSizes } from '../../styles'
 
 import { useQuizQuestionCycle } from './hooks'
 
+type FlushOverrides = [(arg0: boolean) => void, (arg0: boolean) => void]
+
 type QuizQuestionDisplayProps = {
   readonly isScreenFree: boolean
+  readonly flushOverrides: FlushOverrides
 }
 
 export const QuizQuestionDisplay = ({
   isScreenFree,
+  flushOverrides,
 }: QuizQuestionDisplayProps): React.ReactElement => {
-  const [quizQuestion, shouldDisplay] = useQuizQuestionCycle(isScreenFree)
+  const [quizQuestion, shouldDisplay] = useQuizQuestionCycle(
+    isScreenFree,
+    flushOverrides
+  )
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
 
   const toneTuples = getRenderableToneTuples(quizQuestion)

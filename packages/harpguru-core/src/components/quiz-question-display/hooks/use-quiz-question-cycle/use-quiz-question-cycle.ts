@@ -5,7 +5,6 @@ import { DegreeIds } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
 import { activateHarpCell, getNextQuizQuestion } from '../../utils'
-import { useFlushBufferedActivityToggles } from '../../../toggle-buffer-flusher'
 import { ExperienceModes } from '../../../../types'
 
 enum QuizStates {
@@ -15,17 +14,17 @@ enum QuizStates {
   Wait,
 }
 
+type FlushOverrides = [(arg0: boolean) => void, (arg0: boolean) => void]
+
 export const useQuizQuestionCycle = (
-  isScreenFree: boolean
+  isScreenFree: boolean,
+  flushOverrides: FlushOverrides
 ): [DegreeIds | PitchIds, boolean] => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-  const [
-    setIsOverridden,
-    setShouldForceFlush,
-  ] = useFlushBufferedActivityToggles()
+  const [setIsOverridden, setShouldForceFlush] = flushOverrides
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(

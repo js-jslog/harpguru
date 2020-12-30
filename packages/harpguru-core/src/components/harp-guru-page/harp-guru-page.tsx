@@ -6,7 +6,7 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
+import { useFlushBufferedActivityToggles } from '../toggle-buffer-flusher'
 import { ScaleNotification } from '../scale-notification'
 import { QuizQuestionDisplay } from '../quiz-question-display'
 import { NextPageButton } from '../next-page-button'
@@ -50,6 +50,8 @@ export const HarpGuruPage = ({
     },
   })
 
+  const flushOverrides = useFlushBufferedActivityToggles()
+
   return (
     <PanGestureHandler
       activeOffsetX={[swipeThreshold * -1, swipeThreshold]}
@@ -92,9 +94,11 @@ export const HarpGuruPage = ({
             pageOnDisplay.setValue(nextPageNumberMap[thisPage])
           }
         />
-        <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
+        <QuizQuestionDisplay
+          isScreenFree={menuState === MenuStates.NoMenu}
+          flushOverrides={flushOverrides}
+        />
         <ScaleNotification />
-        <ToggleBufferFlusher />
       </View>
     </PanGestureHandler>
   )
