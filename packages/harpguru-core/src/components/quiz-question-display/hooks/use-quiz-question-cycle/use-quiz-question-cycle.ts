@@ -92,6 +92,10 @@ export const useQuizQuestionCycle = (
     // Add correct answer to the harpface and invisibly
     // set a new question in the background, then
     // transition back to Ask state after a period.
+    // TODO: deal with the fact that this effect will be
+    // entered multiple times more cell interactions occur
+    // while the answer is being given, and that will lead
+    // to the next question being displayed too
     if (quizState === QuizStates.Answer) {
       addCorrectAnswer()
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
