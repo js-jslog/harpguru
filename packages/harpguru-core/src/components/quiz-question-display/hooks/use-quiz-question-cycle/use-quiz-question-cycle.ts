@@ -68,6 +68,7 @@ export const useQuizQuestionCycle = (
     // Clear the harpface of active cells &
     // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
+      setShouldForceFlush(true)
       resetActiveHarpStrata()
       const finishAsking = setTimeout(() => {
         setQuizState(QuizStates.Listen)
@@ -92,10 +93,6 @@ export const useQuizQuestionCycle = (
     // Add correct answer to the harpface and invisibly
     // set a new question in the background, then
     // transition back to Ask state after a period.
-    // TODO: deal with the fact that this effect will be
-    // entered multiple times more cell interactions occur
-    // while the answer is being given, and that will lead
-    // to the next question being displayed too
     if (quizState === QuizStates.Answer) {
       addCorrectAnswer()
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
@@ -105,7 +102,7 @@ export const useQuizQuestionCycle = (
       return () => clearTimeout(onToNextQuestion)
     }
     return
-  }, [quizState, bufferedActivityToggles])
+  }, [quizState])
 
   // Respond to activeHarpStrata updates
   useEffect(() => {
@@ -125,7 +122,7 @@ export const useQuizQuestionCycle = (
       quizState === QuizStates.Listen &&
       bufferedActivityToggles.every((degree) => degree === quizQuestion)
     )
-      return
+      return setShouldForceFlush(true)
     if (quizState === QuizStates.Listen) return setShouldForceFlush(true)
     return
   }, [bufferedActivityToggles])

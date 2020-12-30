@@ -57,6 +57,7 @@ export const useFlushBufferedActivityToggles = (): [
         activeHarpStrata,
         setActiveHarpStrata
       )
+      setShouldForceFlush(false)
     }, 500)
     return () => {
       clearTimeout(overriddenFlushBufferedToggles)
