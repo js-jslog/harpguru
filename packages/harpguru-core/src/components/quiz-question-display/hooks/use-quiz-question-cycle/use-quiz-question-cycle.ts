@@ -117,7 +117,9 @@ export const useQuizQuestionCycle = (
     if (bufferedActivityToggles.length === 0) return
     if (quizState === QuizStates.ListenTimeout) {
       setQuizState(QuizStates.Listen)
-      return setShouldForceFlush(10000)
+      if (bufferedActivityToggles.every((degree) => degree === quizQuestion))
+        return setShouldForceFlush(10000)
+      return setShouldForceFlush(500)
     }
     if (
       quizState === QuizStates.Listen &&
