@@ -72,7 +72,7 @@ export const useQuizQuestionCycle = (
       setShouldForceFlush(true)
       resetActiveHarpStrata()
       const finishAsking = setTimeout(() => {
-        setQuizState(QuizStates.Listen)
+        setQuizState(QuizStates.ListenTimeout)
       }, 1500)
       return () => clearTimeout(finishAsking)
     }
