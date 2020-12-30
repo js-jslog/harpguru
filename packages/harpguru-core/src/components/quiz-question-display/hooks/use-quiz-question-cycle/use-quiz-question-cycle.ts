@@ -22,10 +22,12 @@ export const useQuizQuestionCycle = (
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-  const setShouldForceFlush = useFlushBufferedActivityToggles()
+  const [
+    setIsOverridden,
+    setShouldForceFlush,
+  ] = useFlushBufferedActivityToggles()
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
-  const [shouldExtendListen, setShouldExtendListen] = useState(false)
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(
     getNextQuizQuestion(DegreeIds.Root, activeDisplayMode)
   )
@@ -51,11 +53,14 @@ export const useQuizQuestionCycle = (
   useEffect(() => {
     if (!isScreenFree) return setQuizState(QuizStates.Wait)
     if (activeExperienceMode === ExperienceModes.Quiz) {
+      setIsOverridden(true)
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
       return setQuizState(QuizStates.Ask)
     }
-    if (activeExperienceMode === ExperienceModes.Explore)
+    if (activeExperienceMode === ExperienceModes.Explore) {
+      setIsOverridden(false)
       return setQuizState(QuizStates.Wait)
+    }
   }, [activeExperienceMode, isScreenFree])
 
   // Time based transitions between states
@@ -74,8 +79,12 @@ export const useQuizQuestionCycle = (
     // and transition to Answer state after a period.
     // Timeout is cancelled and reset after the state flag
     // for extension is set to true.
-    if (quizState === QuizStates.Listen || shouldExtendListen) {
-      setShouldExtendListen(false)
+    // TODO: address or make explicit the fact that this
+    // timeout value needs to be higher than the timeouts
+    // being set in the toggle flushing, otherwise it will
+    // be this timeout that flushes the buffer when it reveals
+    // the answer
+    if (quizState === QuizStates.Listen) {
       const finishListening = setTimeout(() => {
         setQuizState(QuizStates.Answer)
       }, 5000)
@@ -92,13 +101,8 @@ export const useQuizQuestionCycle = (
       }, 2000)
       return () => clearTimeout(onToNextQuestion)
     }
-    // If we get this far without having returned
-    // it's worth making sure that this state flag
-    // for Listen extension is set to false. It
-    // should only be true for the render immediately
-    // following a toggle buffer update.
-    return setShouldExtendListen(false)
-  }, [quizState, shouldExtendListen])
+    return
+  }, [quizState, bufferedActivityToggles])
 
   // Respond to activeHarpStrata updates
   useEffect(() => {
@@ -118,7 +122,7 @@ export const useQuizQuestionCycle = (
       quizState === QuizStates.Listen &&
       bufferedActivityToggles.every((degree) => degree === quizQuestion)
     )
-      return setShouldExtendListen(true)
+      return
     if (quizState === QuizStates.Listen) return setShouldForceFlush(true)
     return
   }, [bufferedActivityToggles])

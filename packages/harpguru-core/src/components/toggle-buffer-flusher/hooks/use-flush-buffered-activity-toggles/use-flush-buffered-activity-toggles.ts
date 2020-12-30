@@ -7,14 +7,16 @@ import type { DegreeIds } from 'harpparts'
 
 import { batchToggleDegreeIds } from '../../utils'
 
-export const useFlushBufferedActivityToggles = (): ((
-  arg0: boolean
-) => void) => {
+export const useFlushBufferedActivityToggles = (): [
+  (arg0: boolean) => void,
+  (arg0: boolean) => void
+] => {
   const [bufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
     'bufferedActivityToggles'
   )
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
-  const [shouldForceFlush, setShouldForceFlush] = useState<boolean>(true)
+  const [isOverridden, setIsOverridden] = useState<boolean>(false)
+  const [shouldForceFlush, setShouldForceFlush] = useState<boolean>(false)
 
   const flushBufferedToggles = (
     bufferedActivityTogglesLocal: ReadonlyArray<DegreeIds>,
@@ -46,25 +48,31 @@ export const useFlushBufferedActivityToggles = (): ((
   }
 
   useEffect(() => {
-    if (shouldForceFlush) {
-      // The "immediate" flush still requires a short
-      // delay so that the user doesn't experience a
-      // freeze in feedback if they try to hit multiple
-      // cells.
-      const immediatelyFlushBufferedToggles = setTimeout(() => {
-        flushBufferedToggles(
-          bufferedActivityToggles,
-          setBufferedActivityToggles,
-          activeHarpStrata,
-          setActiveHarpStrata
-        )
-        setShouldForceFlush(false)
-      }, 500)
-      return () => {
-        clearTimeout(immediatelyFlushBufferedToggles)
-      }
+    if (!isOverridden) return
+    if (!shouldForceFlush) return
+    const overriddenFlushBufferedToggles = setTimeout(() => {
+      flushBufferedToggles(
+        bufferedActivityToggles,
+        setBufferedActivityToggles,
+        activeHarpStrata,
+        setActiveHarpStrata
+      )
+    }, 500)
+    return () => {
+      clearTimeout(overriddenFlushBufferedToggles)
     }
-    const delayedFlushBufferedToggles = setTimeout(() => {
+  }, [
+    bufferedActivityToggles,
+    setBufferedActivityToggles,
+    setActiveHarpStrata,
+    activeHarpStrata,
+    isOverridden,
+    shouldForceFlush,
+  ])
+
+  useEffect(() => {
+    if (isOverridden) return
+    const regularFlushBufferedToggles = setTimeout(() => {
       flushBufferedToggles(
         bufferedActivityToggles,
         setBufferedActivityToggles,
@@ -73,15 +81,16 @@ export const useFlushBufferedActivityToggles = (): ((
       )
     }, 1000)
     return () => {
-      clearTimeout(delayedFlushBufferedToggles)
+      clearTimeout(regularFlushBufferedToggles)
     }
   }, [
     bufferedActivityToggles,
     setBufferedActivityToggles,
     setActiveHarpStrata,
     activeHarpStrata,
+    isOverridden,
     shouldForceFlush,
   ])
 
-  return setShouldForceFlush
+  return [setIsOverridden, setShouldForceFlush]
 }
