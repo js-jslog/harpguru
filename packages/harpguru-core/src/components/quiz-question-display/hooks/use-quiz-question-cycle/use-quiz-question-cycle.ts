@@ -90,6 +90,7 @@ export const useQuizQuestionCycle = (
     // set a new question in the background, then
     // transition back to Ask state after a period.
     if (quizState === QuizStates.Answer) {
+      setShouldForceFlush(0)
       addCorrectAnswer()
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
       const onToNextQuestion = setTimeout(() => {
@@ -117,16 +118,33 @@ export const useQuizQuestionCycle = (
     if (bufferedActivityToggles.length === 0) return
     if (quizState === QuizStates.ListenTimeout) {
       setQuizState(QuizStates.Listen)
-      if (bufferedActivityToggles.every((degree) => degree === quizQuestion))
-        return setShouldForceFlush(10000)
-      return setShouldForceFlush(500)
+      if (bufferedActivityToggles.every((degree) => degree === quizQuestion)) {
+        const flushAfterCorrectAnswerTimeout = setTimeout(() => {
+          setShouldForceFlush(0)
+        }, 3000)
+        return () => clearTimeout(flushAfterCorrectAnswerTimeout)
+      } else {
+        const flushAfterIncorrectAnswerTimeout = setTimeout(() => {
+          setShouldForceFlush(0)
+        }, 500)
+        return () => clearTimeout(flushAfterIncorrectAnswerTimeout)
+      }
     }
     if (
       quizState === QuizStates.Listen &&
       bufferedActivityToggles.every((degree) => degree === quizQuestion)
-    )
-      return setShouldForceFlush(10000)
-    if (quizState === QuizStates.Listen) return setShouldForceFlush(500)
+    ) {
+      const flushAfterCorrectAnswerTimeout = setTimeout(() => {
+        setShouldForceFlush(0)
+      }, 3000)
+      return () => clearTimeout(flushAfterCorrectAnswerTimeout)
+    }
+    if (quizState === QuizStates.Listen) {
+      const flushAfterIncorrectAnswerTimeout = setTimeout(() => {
+        setShouldForceFlush(0)
+      }, 500)
+      return () => clearTimeout(flushAfterIncorrectAnswerTimeout)
+    }
     return
   }, [bufferedActivityToggles])
 
