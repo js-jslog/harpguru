@@ -4,7 +4,11 @@ import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import { DegreeIds } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
-import { activateHarpCell, getNextQuizQuestion } from '../../utils'
+import {
+  activateHarpCell,
+  getNextQuizQuestion,
+  hasToggledIncorrectCell,
+} from '../../utils'
 import { ExperienceModes } from '../../../../types'
 
 enum QuizStates {
@@ -116,9 +120,15 @@ export const useQuizQuestionCycle = (
     // buffer flush from driving an early ListenTimeout
     // to Listen transition
     if (bufferedActivityToggles.length === 0) return
+    const toggleEvalProps = {
+      toggleBuffer: bufferedActivityToggles,
+      quizQuestion,
+      harpKeyId: activeHarpStrata.harpKeyId,
+      pozitionId: activeHarpStrata.pozitionId,
+    }
     if (quizState === QuizStates.ListenTimeout) {
       setQuizState(QuizStates.Listen)
-      if (bufferedActivityToggles.every((degree) => degree === quizQuestion)) {
+      if (hasToggledIncorrectCell(toggleEvalProps)) {
         const flushAfterCorrectAnswerTimeout = setTimeout(() => {
           setShouldForceFlush(0)
         }, 3000)
@@ -132,7 +142,7 @@ export const useQuizQuestionCycle = (
     }
     if (
       quizState === QuizStates.Listen &&
-      bufferedActivityToggles.every((degree) => degree === quizQuestion)
+      hasToggledIncorrectCell(toggleEvalProps)
     ) {
       const flushAfterCorrectAnswerTimeout = setTimeout(() => {
         setShouldForceFlush(0)
