@@ -87,8 +87,6 @@ export const useQuizQuestionCycle = (
     // Clear the harpface of active cells &
     // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
-      setShouldForceFlush(0)
-      resetActiveHarpStrata()
       const finishAsking = setTimeout(() => {
         setQuizState(QuizStates.ListenTimeout)
       }, 1500)
@@ -108,10 +106,10 @@ export const useQuizQuestionCycle = (
     // set a new question in the background, then
     // transition back to Ask state after a period.
     if (quizState === QuizStates.Answer) {
-      setShouldForceFlush(0)
       addCorrectAnswer()
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
       const onToNextQuestion = setTimeout(() => {
+        resetActiveHarpStrata()
         setQuizState(QuizStates.Ask)
       }, 2000)
       return () => clearTimeout(onToNextQuestion)
