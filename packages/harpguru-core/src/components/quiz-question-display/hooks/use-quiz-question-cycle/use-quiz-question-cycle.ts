@@ -52,6 +52,20 @@ export const useQuizQuestionCycle = (
     setActiveHarpStrata(newHarpStrata)
   }
 
+  const flushAfterCorrectAnswerTimeout = () => {
+    const timeout = setTimeout(() => {
+      setShouldForceFlush(0)
+    }, 3000)
+    return () => clearTimeout(timeout)
+  }
+
+  const flushAfterIncorrectAnswerTimeout = () => {
+    const timeout = setTimeout(() => {
+      setShouldForceFlush(0)
+    }, 500)
+    return () => clearTimeout(timeout)
+  }
+
   // Start asking questions when the experience mode is set to Quiz
   // and the screen is clear of menus
   useEffect(() => {
@@ -128,32 +142,18 @@ export const useQuizQuestionCycle = (
     }
     if (quizState === QuizStates.ListenTimeout) {
       setQuizState(QuizStates.Listen)
-      if (hasToggledIncorrectCell(toggleEvalProps)) {
-        const flushAfterCorrectAnswerTimeout = setTimeout(() => {
-          setShouldForceFlush(0)
-        }, 3000)
-        return () => clearTimeout(flushAfterCorrectAnswerTimeout)
-      } else {
-        const flushAfterIncorrectAnswerTimeout = setTimeout(() => {
-          setShouldForceFlush(0)
-        }, 500)
-        return () => clearTimeout(flushAfterIncorrectAnswerTimeout)
-      }
+      if (hasToggledIncorrectCell(toggleEvalProps))
+        return flushAfterCorrectAnswerTimeout()
+      return flushAfterIncorrectAnswerTimeout()
     }
     if (
       quizState === QuizStates.Listen &&
       hasToggledIncorrectCell(toggleEvalProps)
     ) {
-      const flushAfterCorrectAnswerTimeout = setTimeout(() => {
-        setShouldForceFlush(0)
-      }, 3000)
-      return () => clearTimeout(flushAfterCorrectAnswerTimeout)
+      return flushAfterCorrectAnswerTimeout()
     }
     if (quizState === QuizStates.Listen) {
-      const flushAfterIncorrectAnswerTimeout = setTimeout(() => {
-        setShouldForceFlush(0)
-      }, 500)
-      return () => clearTimeout(flushAfterIncorrectAnswerTimeout)
+      return flushAfterIncorrectAnswerTimeout()
     }
     return
   }, [bufferedActivityToggles])
