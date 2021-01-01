@@ -1,6 +1,7 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import { useState, useEffect } from 'react'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
 import { DegreeIds } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
@@ -26,7 +27,7 @@ export const useQuizQuestionCycle = (
   flushOverrides: FlushOverrides
 ): [DegreeIds | PitchIds, boolean] => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
   const [setIsOverridden, setShouldForceFlush] = flushOverrides
@@ -36,21 +37,20 @@ export const useQuizQuestionCycle = (
     getNextQuizQuestion(DegreeIds.Root, activeDisplayMode)
   )
 
-  const resetActiveHarpStrata = () => {
-    if (activeHarpStrata.activeDegreeIds.length === 0) return
+  const resetActiveHarpStrata = useDispatch((activeHarpStrata): HarpStrata => {
+    if (activeHarpStrata.activeDegreeIds.length === 0) activeHarpStrata
     const harpStrataProps = getPropsForHarpStrata(activeHarpStrata, 'DEGREE')
-    setActiveHarpStrata(
-      getHarpStrata({
-        ...harpStrataProps,
-        activeIds: [],
-      })
-    )
-  }
+    return getHarpStrata({
+      ...harpStrataProps,
+      activeIds: [],
+    })
+  }, 'activeHarpStrata')
 
-  const addCorrectAnswer = () => {
-    const newHarpStrata = activateHarpCell(activeHarpStrata, quizQuestion)
-    setActiveHarpStrata(newHarpStrata)
-  }
+  const addCorrectAnswer = useDispatch(
+    (activeHarpStrata): HarpStrata =>
+      activateHarpCell(activeHarpStrata, quizQuestion),
+    'activeHarpStrata'
+  )
 
   const flushAfterCorrectAnswerTimeout = () => {
     const timeout = setTimeout(() => {
@@ -128,7 +128,10 @@ export const useQuizQuestionCycle = (
     const ignoreStates = [QuizStates.Answer, QuizStates.Wait]
     if (ignoreStates.includes(quizState)) return
     const listeningStates = [QuizStates.ListenTimeout, QuizStates.Listen]
-    if (!listeningStates.includes(quizState)) return resetActiveHarpStrata()
+    if (!listeningStates.includes(quizState)) {
+      resetActiveHarpStrata()
+      return
+    }
     return setQuizState(QuizStates.Answer)
   }, [activeHarpStrata])
 
