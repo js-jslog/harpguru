@@ -130,9 +130,8 @@ export const useQuizQuestionCycle = (
   // Updates to the bufferedActivityToggles should extend the
   // Listen state timeout *if* we're in Listen state.
   useEffect(() => {
-    // This condition is important to prevent the toggle
-    // buffer flush from driving an early ListenTimeout
-    // to Listen transition
+    // This condition is important to prevent the buffer clear
+    // that happens after flushing to cause an infinite loop.
     if (bufferedActivityToggles.length === 0) return
     const toggleEvalProps = {
       toggleBuffer: bufferedActivityToggles,
@@ -140,19 +139,16 @@ export const useQuizQuestionCycle = (
       harpKeyId: activeHarpStrata.harpKeyId,
       pozitionId: activeHarpStrata.pozitionId,
     }
-    if (quizState === QuizStates.ListenTimeout) {
+    if (
+      quizState === QuizStates.ListenTimeout ||
+      quizState === QuizStates.Listen
+    ) {
+      // If it's already `Listen` then this will cause no
+      // effect in the `quizState` driven effect so it's
+      // safe to blindly reassign it here.
       setQuizState(QuizStates.Listen)
       if (hasToggledIncorrectCell(toggleEvalProps))
         return flushAfterIncorrectAnswerTimeout()
-      return flushAfterCorrectAnswerTimeout()
-    }
-    if (
-      quizState === QuizStates.Listen &&
-      hasToggledIncorrectCell(toggleEvalProps)
-    ) {
-      return flushAfterIncorrectAnswerTimeout()
-    }
-    if (quizState === QuizStates.Listen) {
       return flushAfterCorrectAnswerTimeout()
     }
     return
