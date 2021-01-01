@@ -143,17 +143,17 @@ export const useQuizQuestionCycle = (
     if (quizState === QuizStates.ListenTimeout) {
       setQuizState(QuizStates.Listen)
       if (hasToggledIncorrectCell(toggleEvalProps))
-        return flushAfterCorrectAnswerTimeout()
-      return flushAfterIncorrectAnswerTimeout()
+        return flushAfterIncorrectAnswerTimeout()
+      return flushAfterCorrectAnswerTimeout()
     }
     if (
       quizState === QuizStates.Listen &&
       hasToggledIncorrectCell(toggleEvalProps)
     ) {
-      return flushAfterCorrectAnswerTimeout()
+      return flushAfterIncorrectAnswerTimeout()
     }
     if (quizState === QuizStates.Listen) {
-      return flushAfterIncorrectAnswerTimeout()
+      return flushAfterCorrectAnswerTimeout()
     }
     return
   }, [bufferedActivityToggles])
