@@ -2,12 +2,12 @@ import { getHarpStrata } from 'harpstrata'
 import type { DegreeIds, PitchIds, PozitionIds } from 'harpparts'
 import { isPitchId, getApparatusIds } from 'harpparts'
 
-type ForDegreeIdsQuestions = {
+type ForDegreeQuestion = {
   readonly toggleBuffer: ReadonlyArray<DegreeIds>
   readonly quizQuestion: DegreeIds
 }
 
-type ForPitchIdsQuestions = {
+type ForPitchQuestion = {
   readonly toggleBuffer: ReadonlyArray<DegreeIds>
   readonly quizQuestion: PitchIds
   readonly harpKeyId: PitchIds
@@ -15,14 +15,14 @@ type ForPitchIdsQuestions = {
 }
 
 const isAPitchQuestion = (
-  props: ForDegreeIdsQuestions | ForPitchIdsQuestions
-): props is ForPitchIdsQuestions => {
+  props: ForDegreeQuestion | ForPitchQuestion
+): props is ForPitchQuestion => {
   const { quizQuestion } = props
   return isPitchId(quizQuestion)
 }
 
 export const hasToggledIncorrectCell = (
-  props: ForDegreeIdsQuestions | ForPitchIdsQuestions
+  props: ForDegreeQuestion | ForPitchQuestion
 ): boolean => {
   const { toggleBuffer, quizQuestion } = props
   if (!isAPitchQuestion(props))
