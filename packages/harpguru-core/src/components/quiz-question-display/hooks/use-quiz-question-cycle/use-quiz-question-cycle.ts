@@ -127,31 +127,32 @@ export const useQuizQuestionCycle = (
     return
   }, [activeHarpStrata])
 
-  // Updates to the bufferedActivityToggles should extend the
-  // Listen state timeout *if* we're in Listen state.
+  // Updates to the bufferedActivityToggles should always flush
+  // immediately so that the harpstrata can be reset to blank,
+  // unless we're in a listening state where the user is actually
+  // supposed to be interacting with the harp face.
   useEffect(() => {
     // This condition is important to prevent the buffer clear
     // that happens after flushing to cause an infinite loop.
     if (bufferedActivityToggles.length === 0) return
+
+    const listeningStates = [QuizStates.ListenTimeout, QuizStates.Listen]
+    if (!listeningStates.includes(quizState)) return setShouldForceFlush(0)
+
+    // If it's already `Listen` then this will cause no
+    // effect in the `quizState` driven effect so it's
+    // safe to blindly reassign it here.
+    setQuizState(QuizStates.Listen)
+
     const toggleEvalProps = {
       toggleBuffer: bufferedActivityToggles,
       quizQuestion,
       harpKeyId: activeHarpStrata.harpKeyId,
       pozitionId: activeHarpStrata.pozitionId,
     }
-    if (
-      quizState === QuizStates.ListenTimeout ||
-      quizState === QuizStates.Listen
-    ) {
-      // If it's already `Listen` then this will cause no
-      // effect in the `quizState` driven effect so it's
-      // safe to blindly reassign it here.
-      setQuizState(QuizStates.Listen)
-      if (hasToggledIncorrectCell(toggleEvalProps))
-        return flushAfterIncorrectAnswerTimeout()
-      return flushAfterCorrectAnswerTimeout()
-    }
-    return
+    if (hasToggledIncorrectCell(toggleEvalProps))
+      return flushAfterIncorrectAnswerTimeout()
+    return flushAfterCorrectAnswerTimeout()
   }, [bufferedActivityToggles])
 
   const isDisplayPeriod = quizState === QuizStates.Ask
