@@ -119,12 +119,18 @@ export const useQuizQuestionCycle = (
     return
   }, [quizState])
 
-  // Respond to activeHarpStrata updates
+  // Often, the activeHarpStrata will only have been updated because
+  // of the need to flush the toggle buffer and update the harpface
+  // in preparation for clearing it down again. The only exception to
+  // this is when the toggle buffer has been flushed from one of the
+  // listening states or in the Answer state where we're actually then
+  // either using this as a cue to move to the Answer state or displaying
+  // a correct answer.
   useEffect(() => {
-    if (quizState === QuizStates.Wait || quizState === QuizStates.Answer) return
-    if (quizState === QuizStates.Listen) return setQuizState(QuizStates.Answer)
-    if (quizState === QuizStates.Ask) return resetActiveHarpStrata()
-    return
+    const listeningStates = [QuizStates.ListenTimeout, QuizStates.Listen]
+    if (!listeningStates.includes(quizState) && quizState !== QuizStates.Answer)
+      return resetActiveHarpStrata()
+    return setQuizState(QuizStates.Answer)
   }, [activeHarpStrata])
 
   // Updates to the bufferedActivityToggles should always flush
