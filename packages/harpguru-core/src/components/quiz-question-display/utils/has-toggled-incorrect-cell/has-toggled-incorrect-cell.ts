@@ -2,20 +2,38 @@ import { getHarpStrata } from 'harpstrata'
 import type { DegreeIds, PitchIds, PozitionIds } from 'harpparts'
 import { isPitchId, getApparatusIds } from 'harpparts'
 
+type ForDegreeIdsQuestions = {
+  readonly toggleBuffer: ReadonlyArray<DegreeIds>
+  readonly quizQuestion: DegreeIds
+}
+
+type ForPitchIdsQuestions = {
+  readonly toggleBuffer: ReadonlyArray<DegreeIds>
+  readonly quizQuestion: PitchIds
+  readonly harpKeyId: PitchIds
+  readonly pozitionId: PozitionIds
+}
+
+const isAPitchQuestion = (
+  props: ForDegreeIdsQuestions | ForPitchIdsQuestions
+): props is ForPitchIdsQuestions => {
+  const { quizQuestion } = props
+  return isPitchId(quizQuestion)
+}
+
 export const hasToggledIncorrectCell = (
-  toggleBuffer: ReadonlyArray<DegreeIds>,
-  quizQuestion: DegreeIds | PitchIds,
-  harpKeyId: PitchIds,
-  pozitionId: PozitionIds
+  props: ForDegreeIdsQuestions | ForPitchIdsQuestions
 ): boolean => {
-  if (!isPitchId(quizQuestion))
+  const { toggleBuffer, quizQuestion } = props
+  if (!isAPitchQuestion(props))
     return !toggleBuffer.every((degree) => degree === quizQuestion)
 
+  const { pozitionId, harpKeyId } = props
   const surrogateHarpStrata = getHarpStrata({
     apparatusId: getApparatusIds()[0],
     pozitionId,
     harpKeyId,
-    activeIds: [quizQuestion],
+    activeIds: [quizQuestion] as ReadonlyArray<PitchIds>,
   })
 
   const {
