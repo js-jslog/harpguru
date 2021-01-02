@@ -20,7 +20,9 @@ export const useFlushBufferedActivityToggles = (): [
     ({
       bufferedActivityToggles,
       activeHarpStrata,
-    }: Pick<GlobalState, 'bufferedActivityToggles' | 'activeHarpStrata'>) => {
+    }: Pick<GlobalState, 'bufferedActivityToggles' | 'activeHarpStrata'>):
+      | undefined
+      | Pick<GlobalState, 'bufferedActivityToggles' | 'activeHarpStrata'> => {
       if (bufferedActivityToggles.length === 0) return
       const {
         apparatus: { id: apparatusId },
@@ -48,13 +50,8 @@ export const useFlushBufferedActivityToggles = (): [
   useEffect(() => {
     if (!isOverridden) return
     if (shouldForceFlush === false) return
-    const overriddenFlushBufferedToggles = setTimeout(() => {
-      flushBufferedToggles()
-      setShouldForceFlush(false)
-    }, shouldForceFlush)
-    return () => {
-      clearTimeout(overriddenFlushBufferedToggles)
-    }
+    flushBufferedToggles()
+    setShouldForceFlush(false)
   }, [isOverridden, shouldForceFlush])
 
   useEffect(() => {
