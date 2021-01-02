@@ -2,14 +2,10 @@ import { useGlobal, useDispatch } from 'reactn'
 import { useState, useEffect } from 'react'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
-import { DegreeIds } from 'harpparts'
+import { DegreeIds, isPitchId } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
-import {
-  activateHarpCell,
-  getNextQuizQuestion,
-  hasToggledIncorrectCell,
-} from '../../utils'
+import { getNextQuizQuestion, hasToggledIncorrectCell } from '../../utils'
 import { ExperienceModes } from '../../../../types'
 
 enum QuizStates {
@@ -46,25 +42,15 @@ export const useQuizQuestionCycle = (
     })
   }, 'activeHarpStrata')
 
-  const addCorrectAnswer = useDispatch(
-    (activeHarpStrata): HarpStrata =>
-      activateHarpCell(activeHarpStrata, quizQuestion),
-    'activeHarpStrata'
+  const bufferCorrectAnswer = useDispatch(
+    (bufferedActivityToggles): ReadonlyArray<DegreeIds> => {
+      // TODO: need to make this work with pitch questions too
+      if (isPitchId(quizQuestion))
+        throw new Error('Cant handle giving pitch answers yet')
+      return [...bufferedActivityToggles, quizQuestion]
+    },
+    'bufferedActivityToggles'
   )
-
-  const flushAfterCorrectAnswerTimeout = () => {
-    const timeout = setTimeout(() => {
-      setShouldForceFlush(0)
-    }, 3000)
-    return () => clearTimeout(timeout)
-  }
-
-  const flushAfterIncorrectAnswerTimeout = () => {
-    const timeout = setTimeout(() => {
-      setShouldForceFlush(0)
-    }, 500)
-    return () => clearTimeout(timeout)
-  }
 
   // Start asking questions when the experience mode is set to Quiz
   // and the screen is clear of menus
@@ -87,29 +73,35 @@ export const useQuizQuestionCycle = (
     // Clear the harpface of active cells &
     // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
+      setShouldForceFlush(0)
+      resetActiveHarpStrata()
       const finishAsking = setTimeout(() => {
         setQuizState(QuizStates.ListenTimeout)
       }, 1500)
       return () => clearTimeout(finishAsking)
     }
-    // Clear the state flag for extending the Listen state
-    // and transition to Answer state after a period.
-    // Timeout is cancelled and reset after the state flag
-    // for extension is set to true.
+
+    // TODO: this might not be necessary if I just
+    // add the correct conditions to the buffer
+    // driven useEffect, now that it also has
+    // quizState driving it.
     if (quizState === QuizStates.ListenTimeout) {
+      setShouldForceFlush(0)
+      resetActiveHarpStrata()
       const finishListening = setTimeout(() => {
         setQuizState(QuizStates.Answer)
       }, 5000)
       return () => clearTimeout(finishListening)
     }
-    // Add correct answer to the harpface and invisibly
+    // Add correct answer to the buffer and flush this
+    // along with anything else found there and then
     // set a new question in the background, then
     // transition back to Ask state after a period.
     if (quizState === QuizStates.Answer) {
-      addCorrectAnswer()
+      bufferCorrectAnswer()
+      setShouldForceFlush(0)
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
       const onToNextQuestion = setTimeout(() => {
-        resetActiveHarpStrata()
         setQuizState(QuizStates.Ask)
       }, 2000)
       return () => clearTimeout(onToNextQuestion)
@@ -117,51 +109,39 @@ export const useQuizQuestionCycle = (
     return
   }, [quizState])
 
-  // Often, the activeHarpStrata will only have been updated because
-  // of the need to flush the toggle buffer and update the harpface
-  // in preparation for clearing it down again. The exceptions to
-  // this are when the toggle buffer has been flushed from one of the
-  // listening states where we are using this as a cue to move to the
-  // Answer state, or when we are actually already in the Answer state
-  // or the Wait state where we want to do nothing.
-  useEffect(() => {
-    const ignoreStates = [QuizStates.Answer, QuizStates.Wait]
-    if (ignoreStates.includes(quizState)) return
-    const listeningStates = [QuizStates.ListenTimeout, QuizStates.Listen]
-    if (!listeningStates.includes(quizState)) {
-      resetActiveHarpStrata()
-      return
-    }
-    return setQuizState(QuizStates.Answer)
-  }, [activeHarpStrata])
-
-  // Updates to the bufferedActivityToggles should always flush
-  // immediately so that the harpstrata can be reset to blank,
-  // unless we're in a listening state where the user is actually
-  // supposed to be interacting with the harp face.
   useEffect(() => {
     // This condition is important to prevent the buffer clear
-    // that happens after flushing to cause an infinite loop.
+    // that happens after flushing to cause an infinite loop here.
     if (bufferedActivityToggles.length === 0) return
 
-    const listeningStates = [QuizStates.ListenTimeout, QuizStates.Listen]
-    if (!listeningStates.includes(quizState)) return setShouldForceFlush(0)
+    if (quizState === QuizStates.ListenTimeout)
+      return setQuizState(QuizStates.Listen)
 
-    // If it's already `Listen` then this will cause no
-    // effect in the `quizState` driven effect so it's
-    // safe to blindly reassign it here.
-    setQuizState(QuizStates.Listen)
-
+    const transitionToAnswerState = () => {
+      setQuizState(
+        (quizState: QuizStates): QuizStates => {
+          if (
+            quizState === QuizStates.ListenTimeout ||
+            quizState === QuizStates.Listen
+          )
+            return QuizStates.Answer
+          return quizState
+        }
+      )
+    }
     const toggleEvalProps = {
       toggleBuffer: bufferedActivityToggles,
       quizQuestion,
       harpKeyId: activeHarpStrata.harpKeyId,
       pozitionId: activeHarpStrata.pozitionId,
     }
-    if (hasToggledIncorrectCell(toggleEvalProps))
-      return flushAfterIncorrectAnswerTimeout()
-    return flushAfterCorrectAnswerTimeout()
-  }, [bufferedActivityToggles])
+    const answerImmediately = hasToggledIncorrectCell(toggleEvalProps)
+    if (answerImmediately) return transitionToAnswerState()
+    const timeout = setTimeout(() => {
+      transitionToAnswerState()
+    }, 3000)
+    return () => clearTimeout(timeout)
+  }, [bufferedActivityToggles, activeHarpStrata, quizState])
 
   const isDisplayPeriod = quizState === QuizStates.Ask
   const shouldDisplayQuestion =
