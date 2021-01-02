@@ -1,99 +1,71 @@
-import { useGlobal } from 'reactn'
-import { unstable_batchedUpdates } from 'react-native'
+import { useGlobal, useDispatch } from 'reactn'
 import { useEffect, useState } from 'react'
-import type { HarpStrata, HarpStrataProps } from 'harpstrata'
+import type { HarpStrataProps } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
-import type { DegreeIds } from 'harpparts'
 
 import { batchToggleDegreeIds } from '../../utils'
+import type { GlobalState } from '../../../../types'
 
 export const useFlushBufferedActivityToggles = (): [
   (arg0: boolean) => void,
   (arg0: false | number) => void
 ] => {
-  const [bufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
-    'bufferedActivityToggles'
-  )
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+  const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
   const [isOverridden, setIsOverridden] = useState<boolean>(false)
   const [shouldForceFlush, setShouldForceFlush] = useState<false | number>(
     false
   )
 
-  const flushBufferedToggles = (
-    bufferedActivityTogglesLocal: ReadonlyArray<DegreeIds>,
-    setBufferedActivityTogglesLocal: (arg0: ReadonlyArray<DegreeIds>) => void,
-    activeHarpStrataLocal: HarpStrata,
-    setActiveHarpStrataLocal: (arg0: HarpStrata) => void
-  ) => {
-    if (bufferedActivityTogglesLocal.length === 0) return
-    const {
-      apparatus: { id: apparatusId },
-      pozitionId,
-      harpKeyId,
-      activeDegreeIds,
-    } = activeHarpStrataLocal
-    const newActiveDegreeIds = batchToggleDegreeIds(
-      activeDegreeIds,
-      bufferedActivityTogglesLocal
-    )
-    const newHarpStrataProps: HarpStrataProps = {
-      apparatusId,
-      pozitionId,
-      harpKeyId,
-      activeIds: newActiveDegreeIds,
+  const flushBufferedToggles = useDispatch(
+    ({
+      bufferedActivityToggles,
+      activeHarpStrata,
+    }: Pick<GlobalState, 'bufferedActivityToggles' | 'activeHarpStrata'>) => {
+      if (bufferedActivityToggles.length === 0) return
+      const {
+        apparatus: { id: apparatusId },
+        pozitionId,
+        harpKeyId,
+        activeDegreeIds,
+      } = activeHarpStrata
+      const newActiveDegreeIds = batchToggleDegreeIds(
+        activeDegreeIds,
+        bufferedActivityToggles
+      )
+      const newHarpStrataProps: HarpStrataProps = {
+        apparatusId,
+        pozitionId,
+        harpKeyId,
+        activeIds: newActiveDegreeIds,
+      }
+      return {
+        bufferedActivityToggles: [],
+        activeHarpStrata: getHarpStrata(newHarpStrataProps),
+      }
     }
-    unstable_batchedUpdates(() => {
-      setActiveHarpStrataLocal(getHarpStrata(newHarpStrataProps))
-      setBufferedActivityTogglesLocal([])
-    })
-  }
+  )
 
   useEffect(() => {
     if (!isOverridden) return
     if (shouldForceFlush === false) return
     const overriddenFlushBufferedToggles = setTimeout(() => {
-      flushBufferedToggles(
-        bufferedActivityToggles,
-        setBufferedActivityToggles,
-        activeHarpStrata,
-        setActiveHarpStrata
-      )
+      flushBufferedToggles()
       setShouldForceFlush(false)
     }, shouldForceFlush)
     return () => {
       clearTimeout(overriddenFlushBufferedToggles)
     }
-  }, [
-    bufferedActivityToggles,
-    setBufferedActivityToggles,
-    setActiveHarpStrata,
-    activeHarpStrata,
-    isOverridden,
-    shouldForceFlush,
-  ])
+  }, [isOverridden, shouldForceFlush])
 
   useEffect(() => {
     if (isOverridden) return
     const regularFlushBufferedToggles = setTimeout(() => {
-      flushBufferedToggles(
-        bufferedActivityToggles,
-        setBufferedActivityToggles,
-        activeHarpStrata,
-        setActiveHarpStrata
-      )
+      flushBufferedToggles()
     }, 1000)
     return () => {
       clearTimeout(regularFlushBufferedToggles)
     }
-  }, [
-    bufferedActivityToggles,
-    setBufferedActivityToggles,
-    setActiveHarpStrata,
-    activeHarpStrata,
-    isOverridden,
-    shouldForceFlush,
-  ])
+  }, [bufferedActivityToggles, isOverridden])
 
   return [setIsOverridden, setShouldForceFlush]
 }
