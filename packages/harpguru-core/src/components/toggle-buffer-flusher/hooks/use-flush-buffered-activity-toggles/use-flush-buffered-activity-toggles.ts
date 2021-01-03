@@ -1,4 +1,5 @@
 import { useGlobal, useDispatch } from 'reactn'
+import { unstable_batchedUpdates } from 'react-native'
 import { useEffect, useState } from 'react'
 import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
@@ -51,14 +52,31 @@ export const useFlushBufferedActivityToggles = (): [
     bufferedActivityToggles: ReadonlyArray<DegreeIds>
   ) => {
     if (bufferedActivityToggles.length === 0) return
-    // It is essential that the harpstrata update is the last thing to
-    // happen. Otherwise the scale notification flash won't happen. I
-    // think this might be because the `usePrevious` hook in that
-    // component is somehow missing a step in it's history and not
-    // seeing the change. You can test this by printing out the
-    // current and previous scale label values each time it renders.
+    // The use of batched updates is absolutely essential here.
+    // There are multiple problems, currently with no other solution:
 
-    // It is a complete mystery why this problem was introduced at
+    // 1. The initial load of the app takes 3 times as long.
+    // Presumably this is because it takes 3 times as long to
+    // run these updates when not done in batch. That might be
+    // because each is producing it's own set of rerenders, and
+    // may result in wasted, unviewed renders.
+
+    // 2. The `activeHarpStrata` update must be made *after* the
+    // resetting of the `bufferedActivityToggles`, otherwise the
+    // scale flash notification component operate at all.
+    // This makes sense on face value, given the speculation in
+    // the previous point above. However, I've made a reproducable
+    // I've got an incomplete theory about why that is following
+    // observation which adds some mystery to this which is that
+    // the `usePrevious` hook in the scale notification component
+    // fails to return a different value to the *current* value on
+    // each render. Possibly what's happening is something like
+    // the `usePrevious` is *seeing* each update to the variables,
+    // but is only getting to render on the second one because they
+    // happen in such quick succession. Very speculative and I'd be
+    // interested to discover the truth.
+
+    // It is also a complete mystery why this problem was introduced at
     // commit 9a2d523b43741ae3bf44b390b3371cb3a7d38a08 when only the
     // quiz cycle component was modified there and the problem isn't
     // resolved if you remove that component from the app entirely..
@@ -67,8 +85,10 @@ export const useFlushBufferedActivityToggles = (): [
     // batch processing from this toggle flush hook, which seems like
     // something which would be much more likely to be the cause of
     // such an issue.
-    emptyBufferedToggles()
-    updateActiveHarpStrata(bufferedActivityToggles)
+    unstable_batchedUpdates(() => {
+      updateActiveHarpStrata(bufferedActivityToggles)
+      emptyBufferedToggles()
+    })
   }
 
   useEffect(() => {
