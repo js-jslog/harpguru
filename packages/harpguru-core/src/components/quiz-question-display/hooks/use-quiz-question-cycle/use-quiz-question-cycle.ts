@@ -1,4 +1,5 @@
 import { useGlobal, useDispatch } from 'reactn'
+import { unstable_batchedUpdates } from 'react-native'
 import { useState, useEffect } from 'react'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
@@ -33,7 +34,7 @@ export const useQuizQuestionCycle = (
     getNextQuizQuestion(DegreeIds.Root, activeDisplayMode)
   )
 
-  const resetActiveHarpStrata = useDispatch((activeHarpStrata): HarpStrata => {
+  const clearHarpFace = useDispatch((activeHarpStrata): HarpStrata => {
     if (activeHarpStrata.activeDegreeIds.length === 0) activeHarpStrata
     const harpStrataProps = getPropsForHarpStrata(activeHarpStrata, 'DEGREE')
     return getHarpStrata({
@@ -51,6 +52,21 @@ export const useQuizQuestionCycle = (
     },
     'bufferedActivityToggles'
   )
+
+  const batchAnswerActions = () => {
+    unstable_batchedUpdates(() => {
+      bufferCorrectAnswer()
+      setShouldForceFlush(0)
+      setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
+    })
+  }
+
+  const batchReset = () => {
+    unstable_batchedUpdates(() => {
+      setShouldForceFlush(0)
+      clearHarpFace()
+    })
+  }
 
   // Start asking questions when the experience mode is set to Quiz
   // and the screen is clear of menus
@@ -73,8 +89,7 @@ export const useQuizQuestionCycle = (
     // Clear the harpface of active cells &
     // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
-      setShouldForceFlush(0)
-      resetActiveHarpStrata()
+      batchReset()
       const finishAsking = setTimeout(() => {
         setQuizState(QuizStates.ListenTimeout)
       }, 1500)
@@ -86,8 +101,7 @@ export const useQuizQuestionCycle = (
     // driven useEffect, now that it also has
     // quizState driving it.
     if (quizState === QuizStates.ListenTimeout) {
-      setShouldForceFlush(0)
-      resetActiveHarpStrata()
+      batchReset()
       const finishListening = setTimeout(() => {
         setQuizState(QuizStates.Answer)
       }, 5000)
@@ -98,9 +112,7 @@ export const useQuizQuestionCycle = (
     // set a new question in the background, then
     // transition back to Ask state after a period.
     if (quizState === QuizStates.Answer) {
-      bufferCorrectAnswer()
-      setShouldForceFlush(0)
-      setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
+      batchAnswerActions()
       const onToNextQuestion = setTimeout(() => {
         setQuizState(QuizStates.Ask)
       }, 2000)
