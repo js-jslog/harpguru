@@ -8,6 +8,7 @@ export type GlobalState = {
   readonly activeDisplayMode: DisplayModes
   readonly lockedCovariant: CovariantMembers
   readonly bufferedActivityToggles: ReadonlyArray<DegreeIds>
+  readonly isOverridden: boolean
 }
 
 export enum DisplayModes {

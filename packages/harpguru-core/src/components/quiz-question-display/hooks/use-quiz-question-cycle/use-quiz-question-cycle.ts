@@ -8,6 +8,7 @@ import type { PitchIds } from 'harpparts'
 
 import { getNextQuizQuestion, hasToggledIncorrectCell } from '../../utils'
 import { ExperienceModes } from '../../../../types'
+import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
 enum QuizStates {
   Ask,
@@ -17,17 +18,15 @@ enum QuizStates {
   Wait,
 }
 
-type FlushOverrides = [(arg0: boolean) => void, (arg0: false | number) => void]
-
 export const useQuizQuestionCycle = (
-  isScreenFree: boolean,
-  flushOverrides: FlushOverrides
+  isScreenFree: boolean
 ): [DegreeIds | PitchIds, boolean] => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-  const [setIsOverridden, setShouldForceFlush] = flushOverrides
+  const [isOverridden, setIsOverridden] = useGlobal('isOverridden')
+  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(
@@ -43,27 +42,28 @@ export const useQuizQuestionCycle = (
     })
   }, 'activeHarpStrata')
 
-  const bufferCorrectAnswer = useDispatch(
-    (bufferedActivityToggles): ReadonlyArray<DegreeIds> => {
-      // TODO: need to make this work with pitch questions too
-      if (isPitchId(quizQuestion))
-        throw new Error('Cant handle giving pitch answers yet')
-      return [...bufferedActivityToggles, quizQuestion]
-    },
-    'bufferedActivityToggles'
-  )
+  const bufferCorrectAnswer = (
+    bufferedActivityToggles: ReadonlyArray<DegreeIds>
+  ): ReadonlyArray<DegreeIds> => {
+    // TODO: need to make this work with pitch questions too
+    if (isPitchId(quizQuestion))
+      throw new Error('Cant handle giving pitch answers yet')
+    return [...bufferedActivityToggles, quizQuestion]
+  }
 
   const batchAnswerActions = () => {
     unstable_batchedUpdates(() => {
-      bufferCorrectAnswer()
-      setShouldForceFlush(0)
+      flushBufferedActivityToggles(bufferCorrectAnswer(bufferedActivityToggles))
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
     })
   }
 
+  // TODO: consider replacing this with subsequent
+  // calls to flushBufferedActivityToggles but with
+  // the relevant toggles to deactivate everything.
   const batchReset = () => {
     unstable_batchedUpdates(() => {
-      setShouldForceFlush(0)
+      flushBufferedActivityToggles(bufferedActivityToggles)
       clearHarpFace()
     })
   }
@@ -86,6 +86,7 @@ export const useQuizQuestionCycle = (
   // Time based transitions between states
   // and the associated harpface updates
   useEffect(() => {
+    if (!isOverridden) return
     // Clear the harpface of active cells &
     // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
@@ -119,11 +120,12 @@ export const useQuizQuestionCycle = (
       return () => clearTimeout(onToNextQuestion)
     }
     return
-  }, [quizState])
+  }, [quizState, isOverridden])
 
   useEffect(() => {
     // This condition is important to prevent the buffer clear
     // that happens after flushing to cause an infinite loop here.
+    if (!isOverridden) return
     if (bufferedActivityToggles.length === 0) return
 
     if (quizState === QuizStates.ListenTimeout)
@@ -153,7 +155,7 @@ export const useQuizQuestionCycle = (
       transitionToAnswerState()
     }, 3000)
     return () => clearTimeout(timeout)
-  }, [bufferedActivityToggles, activeHarpStrata, quizState])
+  }, [bufferedActivityToggles, activeHarpStrata, quizState, isOverridden])
 
   const isDisplayPeriod = quizState === QuizStates.Ask
   const shouldDisplayQuestion =

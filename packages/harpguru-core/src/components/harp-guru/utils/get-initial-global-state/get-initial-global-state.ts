@@ -62,6 +62,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     activeDisplayMode: initialDisplayMode,
     lockedCovariant: initialLockedCovariant,
     bufferedActivityToggles: thisPozitionDegrees,
+    isOverridden: false,
   }
 
   return state
