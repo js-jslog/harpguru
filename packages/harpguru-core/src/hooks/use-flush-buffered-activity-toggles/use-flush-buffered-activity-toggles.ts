@@ -5,6 +5,7 @@ import { getHarpStrata } from 'harpstrata'
 import type { DegreeIds } from 'harpparts'
 
 // TODO: obviously this is not the right place to import this from
+import type { GlobalState } from '../../types'
 import { batchToggleDegreeIds } from '../../components/toggle-buffer-flusher/utils'
 
 const flushBufferedActivityToggles = (
@@ -93,4 +94,36 @@ export const useFlushBufferedActivityToggles = (): ((
       emptyBufferedToggles,
       bufferedActivityToggles
     )
+}
+
+export const useFlushBufferedActivityTogglesSingleDispatch = (): (() => void) => {
+  const updateActiveHarpStrata = useDispatch((global: GlobalState) => {
+    const { activeHarpStrata, bufferedActivityToggles } = global
+
+    if (bufferedActivityToggles.length === 0) return
+
+    const {
+      apparatus: { id: apparatusId },
+      pozitionId,
+      harpKeyId,
+      activeDegreeIds,
+    } = activeHarpStrata
+    const newActiveDegreeIds = batchToggleDegreeIds(
+      activeDegreeIds,
+      bufferedActivityToggles
+    )
+    const newHarpStrataProps: HarpStrataProps = {
+      apparatusId,
+      pozitionId,
+      harpKeyId,
+      activeIds: newActiveDegreeIds,
+    }
+
+    return {
+      activeHarpStrata: getHarpStrata(newHarpStrataProps),
+      bufferedActivityToggles: [],
+    }
+  })
+
+  return () => updateActiveHarpStrata()
 }
