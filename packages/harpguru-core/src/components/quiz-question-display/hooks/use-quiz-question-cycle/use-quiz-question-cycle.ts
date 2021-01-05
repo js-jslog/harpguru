@@ -8,7 +8,7 @@ import type { PitchIds } from 'harpparts'
 
 import { getNextQuizQuestion, hasToggledIncorrectCell } from '../../utils'
 import { ExperienceModes } from '../../../../types'
-import { useFlushBufferedActivityToggles } from '../../../../hooks'
+import { useFlushBufferedActivityTogglesSingleDispatch } from '../../../../hooks'
 
 enum QuizStates {
   Ask,
@@ -26,7 +26,7 @@ export const useQuizQuestionCycle = (
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
   const [isOverridden, setIsOverridden] = useGlobal('isOverridden')
-  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
+  const flushBufferedActivityToggles = useFlushBufferedActivityTogglesSingleDispatch()
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(
@@ -42,18 +42,20 @@ export const useQuizQuestionCycle = (
     })
   }, 'activeHarpStrata')
 
-  const bufferCorrectAnswer = (
-    bufferedActivityToggles: ReadonlyArray<DegreeIds>
-  ): ReadonlyArray<DegreeIds> => {
-    // TODO: need to make this work with pitch questions too
-    if (isPitchId(quizQuestion))
-      throw new Error('Cant handle giving pitch answers yet')
-    return [...bufferedActivityToggles, quizQuestion]
-  }
+  const bufferCorrectAnswer = useDispatch(
+    (bufferedActivityToggles: ReadonlyArray<DegreeIds>) => {
+      // TODO: need to make this work with pitch questions too
+      if (isPitchId(quizQuestion))
+        throw new Error('Cant handle giving pitch answers yet')
+      return [...bufferedActivityToggles, quizQuestion]
+    },
+    'bufferedActivityToggles'
+  )
 
   const batchAnswerActions = () => {
     unstable_batchedUpdates(() => {
-      flushBufferedActivityToggles(bufferCorrectAnswer(bufferedActivityToggles))
+      bufferCorrectAnswer()
+      flushBufferedActivityToggles()
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
     })
   }
@@ -63,7 +65,7 @@ export const useQuizQuestionCycle = (
   // the relevant toggles to deactivate everything.
   const batchReset = () => {
     unstable_batchedUpdates(() => {
-      flushBufferedActivityToggles(bufferedActivityToggles)
+      flushBufferedActivityToggles()
       clearHarpFace()
     })
   }
