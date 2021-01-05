@@ -1,17 +1,17 @@
 import { useGlobal } from 'reactn'
 import { useEffect } from 'react'
 
-import { useFlushBufferedActivityToggles } from '../../../../hooks'
+import { useFlushBufferedActivityTogglesSingleDispatch } from '../../../../hooks'
 
 export const useRegularFlushBufferedToggles = (): void => {
   const [isOverridden] = useGlobal('isOverridden')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
+  const flushBufferedActivityToggles = useFlushBufferedActivityTogglesSingleDispatch()
 
   useEffect(() => {
     if (isOverridden) return
     const regularFlushBufferedToggles = setTimeout(() => {
-      flushBufferedActivityToggles(bufferedActivityToggles)
+      flushBufferedActivityToggles()
     }, 1000)
     return () => {
       clearTimeout(regularFlushBufferedToggles)

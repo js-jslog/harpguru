@@ -125,5 +125,9 @@ export const useFlushBufferedActivityTogglesSingleDispatch = (): (() => void) =>
     }
   })
 
-  return () => updateActiveHarpStrata()
+  return () => {
+    unstable_batchedUpdates(() => {
+      updateActiveHarpStrata()
+    })
+  }
 }
