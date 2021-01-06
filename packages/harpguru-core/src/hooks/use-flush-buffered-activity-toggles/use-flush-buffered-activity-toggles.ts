@@ -4,9 +4,8 @@ import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
 import type { DegreeIds } from 'harpparts'
 
-// TODO: obviously this is not the right place to import this from
+import { batchToggleDegreeIds } from '../../utils'
 import type { GlobalState } from '../../types'
-import { batchToggleDegreeIds } from '../../components/toggle-buffer-flusher/utils'
 
 const flushBufferedActivityToggles = (
   updateActiveHarpStrata: (arg0: ReadonlyArray<DegreeIds>) => void,
