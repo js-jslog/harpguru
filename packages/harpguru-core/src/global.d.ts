@@ -12,6 +12,6 @@ declare module 'reactn/default' {
     activeDisplayMode: DisplayModes
     lockedCovariant: CovariantMembers
     bufferedActivityToggles: ReadonlyArray<DegreeIds>
-    toggleBufferFlushChannel: FlushChannels
+    flushChannel: FlushChannels
   }
 }

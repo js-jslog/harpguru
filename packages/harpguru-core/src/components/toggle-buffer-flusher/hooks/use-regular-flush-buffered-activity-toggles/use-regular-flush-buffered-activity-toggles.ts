@@ -5,17 +5,17 @@ import { FlushChannels } from '../../../../types'
 import { useFlushBufferedActivityTogglesSingleDispatch } from '../../../../hooks'
 
 export const useRegularFlushBufferedToggles = (): void => {
-  const [toggleBufferFlushChannel] = useGlobal('toggleBufferFlushChannel')
+  const [flushChannel] = useGlobal('flushChannel')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
   const flushBufferedActivityToggles = useFlushBufferedActivityTogglesSingleDispatch()
 
   useEffect(() => {
-    if (toggleBufferFlushChannel === FlushChannels.Regular) return
+    if (flushChannel === FlushChannels.Regular) return
     const regularFlushBufferedToggles = setTimeout(() => {
       flushBufferedActivityToggles()
     }, 1000)
     return () => {
       clearTimeout(regularFlushBufferedToggles)
     }
-  }, [bufferedActivityToggles, toggleBufferFlushChannel])
+  }, [bufferedActivityToggles, flushChannel])
 }

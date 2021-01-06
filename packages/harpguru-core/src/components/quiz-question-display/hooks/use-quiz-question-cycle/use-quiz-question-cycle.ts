@@ -23,9 +23,7 @@ export const useQuizQuestionCycle = (
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-  const [toggleBufferFlushChannel, setToggleBufferFlushChannel] = useGlobal(
-    'toggleBufferFlushChannel'
-  )
+  const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
   const flushBufferedActivityToggles = useFlushBufferedActivityTogglesSingleDispatch()
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
@@ -99,12 +97,12 @@ export const useQuizQuestionCycle = (
   useEffect(() => {
     if (!isScreenFree) return setQuizState(QuizStates.Wait)
     if (activeExperienceMode === ExperienceModes.Quiz) {
-      setToggleBufferFlushChannel(FlushChannels.Quiz)
+      setFlushChannel(FlushChannels.Quiz)
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
       return setQuizState(QuizStates.Ask)
     }
     if (activeExperienceMode === ExperienceModes.Explore) {
-      setToggleBufferFlushChannel(FlushChannels.Regular)
+      setFlushChannel(FlushChannels.Regular)
       return setQuizState(QuizStates.Wait)
     }
   }, [activeExperienceMode, isScreenFree])
@@ -112,7 +110,7 @@ export const useQuizQuestionCycle = (
   // Time based transitions between states
   // and the associated harpface updates
   useEffect(() => {
-    if (!toggleBufferFlushChannel) return
+    if (!flushChannel) return
     // Clear the harpface of active cells &
     // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
@@ -146,12 +144,12 @@ export const useQuizQuestionCycle = (
       return () => clearTimeout(onToNextQuestion)
     }
     return
-  }, [quizState, toggleBufferFlushChannel])
+  }, [quizState, flushChannel])
 
   useEffect(() => {
     // This condition is important to prevent the buffer clear
     // that happens after flushing to cause an infinite loop here.
-    if (!toggleBufferFlushChannel) return
+    if (!flushChannel) return
     if (bufferedActivityToggles.length === 0) return
 
     if (quizState === QuizStates.ListenTimeout)
@@ -181,12 +179,7 @@ export const useQuizQuestionCycle = (
       transitionToAnswerState()
     }, 3000)
     return () => clearTimeout(timeout)
-  }, [
-    bufferedActivityToggles,
-    activeHarpStrata,
-    quizState,
-    toggleBufferFlushChannel,
-  ])
+  }, [bufferedActivityToggles, activeHarpStrata, quizState, flushChannel])
 
   const isDisplayPeriod = quizState === QuizStates.Ask
   const shouldDisplayQuestion =

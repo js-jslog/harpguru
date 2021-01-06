@@ -8,7 +8,7 @@ export type GlobalState = {
   readonly activeDisplayMode: DisplayModes
   readonly lockedCovariant: CovariantMembers
   readonly bufferedActivityToggles: ReadonlyArray<DegreeIds>
-  readonly toggleBufferFlushChannel: FlushChannels
+  readonly flushChannel: FlushChannels
 }
 
 export enum DisplayModes {
