@@ -5,7 +5,7 @@ import { DegreeIds, isPitchId } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
 import { getNextQuizQuestion, hasToggledIncorrectCell } from '../../utils'
-import { ExperienceModes } from '../../../../types'
+import { ExperienceModes, FlushChannels } from '../../../../types'
 import { useFlushBufferedActivityTogglesSingleDispatch } from '../../../../hooks'
 
 enum QuizStates {
@@ -23,7 +23,9 @@ export const useQuizQuestionCycle = (
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-  const [isOverridden, setIsOverridden] = useGlobal('isOverridden')
+  const [toggleBufferFlushChannel, setToggleBufferFlushChannel] = useGlobal(
+    'toggleBufferFlushChannel'
+  )
   const flushBufferedActivityToggles = useFlushBufferedActivityTogglesSingleDispatch()
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
@@ -97,12 +99,12 @@ export const useQuizQuestionCycle = (
   useEffect(() => {
     if (!isScreenFree) return setQuizState(QuizStates.Wait)
     if (activeExperienceMode === ExperienceModes.Quiz) {
-      setIsOverridden(true)
+      setToggleBufferFlushChannel(FlushChannels.Quiz)
       setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
       return setQuizState(QuizStates.Ask)
     }
     if (activeExperienceMode === ExperienceModes.Explore) {
-      setIsOverridden(false)
+      setToggleBufferFlushChannel(FlushChannels.Regular)
       return setQuizState(QuizStates.Wait)
     }
   }, [activeExperienceMode, isScreenFree])
@@ -110,7 +112,7 @@ export const useQuizQuestionCycle = (
   // Time based transitions between states
   // and the associated harpface updates
   useEffect(() => {
-    if (!isOverridden) return
+    if (!toggleBufferFlushChannel) return
     // Clear the harpface of active cells &
     // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
@@ -144,12 +146,12 @@ export const useQuizQuestionCycle = (
       return () => clearTimeout(onToNextQuestion)
     }
     return
-  }, [quizState, isOverridden])
+  }, [quizState, toggleBufferFlushChannel])
 
   useEffect(() => {
     // This condition is important to prevent the buffer clear
     // that happens after flushing to cause an infinite loop here.
-    if (!isOverridden) return
+    if (!toggleBufferFlushChannel) return
     if (bufferedActivityToggles.length === 0) return
 
     if (quizState === QuizStates.ListenTimeout)
@@ -179,7 +181,12 @@ export const useQuizQuestionCycle = (
       transitionToAnswerState()
     }, 3000)
     return () => clearTimeout(timeout)
-  }, [bufferedActivityToggles, activeHarpStrata, quizState, isOverridden])
+  }, [
+    bufferedActivityToggles,
+    activeHarpStrata,
+    quizState,
+    toggleBufferFlushChannel,
+  ])
 
   const isDisplayPeriod = quizState === QuizStates.Ask
   const shouldDisplayQuestion =

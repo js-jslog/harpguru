@@ -14,6 +14,7 @@ import {
   DisplayModes,
   ExperienceModes,
   PageNumber,
+  FlushChannels,
 } from '../../../../types'
 
 export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
@@ -62,7 +63,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     activeDisplayMode: initialDisplayMode,
     lockedCovariant: initialLockedCovariant,
     bufferedActivityToggles: thisPozitionDegrees,
-    isOverridden: false,
+    toggleBufferFlushChannel: FlushChannels.Regular,
   }
 
   return state
