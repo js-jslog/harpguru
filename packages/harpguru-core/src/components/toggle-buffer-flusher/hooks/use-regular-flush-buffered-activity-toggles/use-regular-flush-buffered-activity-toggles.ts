@@ -2,12 +2,12 @@ import { useGlobal } from 'reactn'
 import { useEffect } from 'react'
 
 import { FlushChannels } from '../../../../types'
-import { useFlushBufferedActivityTogglesSingleDispatch } from '../../../../hooks'
+import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
 export const useRegularFlushBufferedToggles = (): void => {
   const [flushChannel] = useGlobal('flushChannel')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-  const flushBufferedActivityToggles = useFlushBufferedActivityTogglesSingleDispatch()
+  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
 
   useEffect(() => {
     if (flushChannel === FlushChannels.Regular) return

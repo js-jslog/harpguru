@@ -6,7 +6,7 @@ import type { PitchIds } from 'harpparts'
 
 import { getNextQuizQuestion, hasToggledIncorrectCell } from '../../utils'
 import { ExperienceModes, FlushChannels } from '../../../../types'
-import { useFlushBufferedActivityTogglesSingleDispatch } from '../../../../hooks'
+import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
 enum QuizStates {
   Ask,
@@ -24,7 +24,7 @@ export const useQuizQuestionCycle = (
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
   const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
-  const flushBufferedActivityToggles = useFlushBufferedActivityTogglesSingleDispatch()
+  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(
