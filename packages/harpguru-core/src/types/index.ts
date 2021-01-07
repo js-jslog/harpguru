@@ -8,6 +8,7 @@ export type GlobalState = {
   readonly activeDisplayMode: DisplayModes
   readonly lockedCovariant: CovariantMembers
   readonly bufferedActivityToggles: ReadonlyArray<DegreeIds>
+  readonly flushChannel: FlushChannels
 }
 
 export enum DisplayModes {
@@ -18,6 +19,11 @@ export enum DisplayModes {
 export enum ExperienceModes {
   Explore = 'Explore',
   Quiz = 'Quiz',
+}
+
+export enum FlushChannels {
+  Regular,
+  Quiz,
 }
 
 export enum MenuStates {
