@@ -10,7 +10,7 @@ export const useRegularFlushBufferedToggles = (): void => {
   const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
 
   useEffect(() => {
-    if (flushChannel === FlushChannels.Regular) return
+    if (flushChannel !== FlushChannels.Regular) return
     const regularFlushBufferedToggles = setTimeout(() => {
       flushBufferedActivityToggles()
     }, 1000)

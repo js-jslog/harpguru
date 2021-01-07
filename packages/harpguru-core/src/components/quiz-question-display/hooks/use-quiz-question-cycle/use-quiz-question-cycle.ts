@@ -110,7 +110,7 @@ export const useQuizQuestionCycle = (
   // Time based transitions between states
   // and the associated harpface updates
   useEffect(() => {
-    if (!flushChannel) return
+    if (flushChannel !== FlushChannels.Quiz) return
     // Clear the harpface of active cells &
     // transition to Listen after a period
     if (quizState === QuizStates.Ask) {
@@ -149,7 +149,7 @@ export const useQuizQuestionCycle = (
   useEffect(() => {
     // This condition is important to prevent the buffer clear
     // that happens after flushing to cause an infinite loop here.
-    if (!flushChannel) return
+    if (flushChannel !== FlushChannels.Quiz) return
     if (bufferedActivityToggles.length === 0) return
 
     if (quizState === QuizStates.ListenTimeout)
