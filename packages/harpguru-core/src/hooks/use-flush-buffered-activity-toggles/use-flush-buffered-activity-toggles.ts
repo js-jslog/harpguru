@@ -46,7 +46,7 @@ export const useFlushBufferedActivityToggles = (): (() => void) => {
   // Possibly if I were actually returning
   // a Promise here rather than a function
   // which runs the Promise then things would
-  // work better. Lot's to consider, but this
+  // work better. Lots to consider, but this
   // at least appears to work well.
   return () => {
     unstable_batchedUpdates(() => {
