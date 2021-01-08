@@ -10,7 +10,6 @@ import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
 enum QuizStates {
   Ask,
-  ListenTimeout,
   Listen,
   Answer,
   Wait,
@@ -60,7 +59,7 @@ export const useQuizQuestionCycle = (
   // during the Ask state if relevant.
   const bufferClearingToggles = useDispatch((global) => {
     const { activeHarpStrata, bufferedActivityToggles } = global
-    if (activeHarpStrata.activeDegreeIds.length === 0) activeHarpStrata
+    if (activeHarpStrata.activeDegreeIds.length === 0) return
     return {
       bufferedActivityToggles: [
         ...bufferedActivityToggles,
@@ -116,22 +115,11 @@ export const useQuizQuestionCycle = (
     if (quizState === QuizStates.Ask) {
       resetHarpFace()
       const finishAsking = setTimeout(() => {
-        setQuizState(QuizStates.ListenTimeout)
+        setQuizState(QuizStates.Listen)
       }, 1500)
       return () => clearTimeout(finishAsking)
     }
 
-    // TODO: this might not be necessary if I just
-    // add the correct conditions to the buffer
-    // driven useEffect, now that it also has
-    // quizState driving it.
-    if (quizState === QuizStates.ListenTimeout) {
-      resetHarpFace()
-      const finishListening = setTimeout(() => {
-        setQuizState(QuizStates.Answer)
-      }, 5000)
-      return () => clearTimeout(finishListening)
-    }
     // Add correct answer to the buffer and flush this
     // along with anything else found there and then
     // set a new question in the background, then
@@ -146,23 +134,31 @@ export const useQuizQuestionCycle = (
     return
   }, [quizState, flushChannel])
 
+  // Effect to handle the logic while in Listen state.
+  // The Listen state is the only one for which it's
+  // operations depend on how the user is interacting
+  // with the `bufferedActivityToggles`. Hense it's the
+  // only one with actions dependent on this property.
   useEffect(() => {
-    // This condition is important to prevent the buffer clear
-    // that happens after flushing to cause an infinite loop here.
     if (flushChannel !== FlushChannels.Quiz) return
-    if (bufferedActivityToggles.length === 0) return
+    if (quizState !== QuizStates.Listen) return
 
-    if (quizState === QuizStates.ListenTimeout)
-      return setQuizState(QuizStates.Listen)
+    // If we've *just* entered Listen state
+    if (bufferedActivityToggles.length === 0) {
+      resetHarpFace()
+      const finishListening = setTimeout(() => {
+        setQuizState(QuizStates.Answer)
+      }, 5000)
+      return () => clearTimeout(finishListening)
+    }
 
+    // Else if we've started answering then prepare to transition
+    // to the Answer state conditional on whether we've been
+    // answering correctly or not.
     const transitionToAnswerState = () => {
       setQuizState(
         (quizState: QuizStates): QuizStates => {
-          if (
-            quizState === QuizStates.ListenTimeout ||
-            quizState === QuizStates.Listen
-          )
-            return QuizStates.Answer
+          if (quizState === QuizStates.Listen) return QuizStates.Answer
           return quizState
         }
       )
