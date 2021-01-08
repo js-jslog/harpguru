@@ -4,7 +4,11 @@ import { useState, useEffect } from 'react'
 import { DegreeIds, isPitchId } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
-import { getNextQuizQuestion, hasToggledIncorrectCell } from '../../utils'
+import {
+  getNextQuizQuestion,
+  hasToggledIncorrectCell,
+  getCounterpartDegreeId,
+} from '../../utils'
 import { ExperienceModes, FlushChannels } from '../../../../types'
 import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
@@ -73,15 +77,26 @@ export const useQuizQuestionCycle = (
     flushBufferedActivityToggles()
   }
 
-  const bufferCorrectAnswer = useDispatch(
-    (bufferedActivityToggles: ReadonlyArray<DegreeIds>) => {
-      // TODO: need to make this work with pitch questions too
-      if (isPitchId(quizQuestion))
-        throw new Error('Cant handle giving pitch answers yet')
-      return [...bufferedActivityToggles, quizQuestion]
-    },
-    'bufferedActivityToggles'
-  )
+  const bufferCorrectAnswer = useDispatch((global) => {
+    const { activeHarpStrata } = global
+    const { harpKeyId, pozitionId } = activeHarpStrata
+    if (isPitchId(quizQuestion)) {
+      const counterpartDegreeId = getCounterpartDegreeId({
+        pitchId: quizQuestion,
+        harpKeyId: harpKeyId,
+        pozitionId: pozitionId,
+      })
+      return {
+        bufferClearingToggles: [
+          ...bufferedActivityToggles,
+          counterpartDegreeId,
+        ],
+      }
+    }
+    return {
+      bufferedActivityToggles: [...bufferedActivityToggles, quizQuestion],
+    }
+  })
 
   const batchAnswerActions = () => {
     unstable_batchedUpdates(() => {
