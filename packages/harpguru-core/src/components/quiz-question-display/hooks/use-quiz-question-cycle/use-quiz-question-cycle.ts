@@ -171,17 +171,6 @@ export const useQuizQuestionCycle = (
       return () => clearTimeout(finishListening)
     }
 
-    // Else if we've started answering then prepare to transition
-    // to the Answer state conditional on whether we've been
-    // answering correctly or not.
-    const transitionToAnswerState = () => {
-      setQuizState(
-        (quizState: QuizStates): QuizStates => {
-          if (quizState === QuizStates.Listen) return QuizStates.Answer
-          return quizState
-        }
-      )
-    }
     const toggleEvalProps = {
       toggleBuffer: bufferedActivityToggles,
       quizQuestion,
@@ -189,9 +178,9 @@ export const useQuizQuestionCycle = (
       pozitionId: activeHarpStrata.pozitionId,
     }
     const answerImmediately = hasToggledIncorrectCell(toggleEvalProps)
-    if (answerImmediately) return transitionToAnswerState()
+    if (answerImmediately) return setQuizState(QuizStates.Answer)
     const timeout = setTimeout(() => {
-      transitionToAnswerState()
+      setQuizState(QuizStates.Answer)
     }, 3000)
     return () => clearTimeout(timeout)
   }, [bufferedActivityToggles, activeHarpStrata, quizState, flushChannel])
