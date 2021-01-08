@@ -1,6 +1,7 @@
-import { getHarpStrata } from 'harpstrata'
 import type { DegreeIds, PitchIds, PozitionIds } from 'harpparts'
-import { isPitchId, getApparatusIds } from 'harpparts'
+import { isPitchId } from 'harpparts'
+
+import { getCounterpartDegreeId } from '../get-counterpart-degree-id'
 
 type ForDegreeQuestion = {
   readonly toggleBuffer: ReadonlyArray<DegreeIds>
@@ -29,16 +30,12 @@ export const hasToggledIncorrectCell = (
     return !toggleBuffer.every((degree) => degree === quizQuestion)
 
   const { pozitionId, harpKeyId } = props
-  const surrogateHarpStrata = getHarpStrata({
-    apparatusId: getApparatusIds()[0],
-    pozitionId,
-    harpKeyId,
-    activeIds: [quizQuestion] as ReadonlyArray<PitchIds>,
-  })
 
-  const {
-    activeDegreeIds: { [0]: counterpartDegreeQuizQuestion },
-  } = surrogateHarpStrata
+  const counterpartDegreeQuizQuestion = getCounterpartDegreeId({
+    pitchId: quizQuestion as PitchIds,
+    harpKeyId,
+    pozitionId,
+  })
 
   return !toggleBuffer.every(
     (degree) => degree === counterpartDegreeQuizQuestion
