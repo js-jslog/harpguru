@@ -49,8 +49,8 @@ export const useQuizQuestionCycle = (
   // receive the same 'inactive' props it already had and the
   // memo will leave it unrendered. Forcing multiple renders
   // feels janky, so the alternative is to deal with one render
-  // during the transition back to ask, and another render
-  // during the transition to ListenTimeout. That's why you'll
+  // during the transition back to Ask, and another render
+  // during the transition to Listen. That's why you'll
   // see another call to the clear function there. The user
   // doesn't have a chance to buffer another toggle during
   // that period in the current design because there is a
