@@ -9,7 +9,7 @@ import {
   hasToggledIncorrectCell,
   getCounterpartDegreeId,
 } from '../../utils'
-import { ExperienceModes, FlushChannels } from '../../../../types'
+import { ExperienceModes, FlushChannels, GlobalState } from '../../../../types'
 import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
 enum QuizStates {
@@ -61,7 +61,9 @@ export const useQuizQuestionCycle = (
   // press-blocking flash notification, so the next clear
   // function will be guaranteed to clear the cells flushed
   // during the Ask state if relevant.
-  const bufferClearingToggles = useDispatch((global) => {
+  const bufferClearingToggles = useDispatch((global: GlobalState):
+    | Pick<GlobalState, 'bufferedActivityToggles'>
+    | undefined => {
     const { activeHarpStrata, bufferedActivityToggles } = global
     if (activeHarpStrata.activeDegreeIds.length === 0) return
     return {
@@ -77,26 +79,28 @@ export const useQuizQuestionCycle = (
     flushBufferedActivityToggles()
   }
 
-  const bufferCorrectAnswer = useDispatch((global) => {
-    const { activeHarpStrata } = global
-    const { harpKeyId, pozitionId } = activeHarpStrata
-    if (isPitchId(quizQuestion)) {
-      const counterpartDegreeId = getCounterpartDegreeId({
-        pitchId: quizQuestion,
-        harpKeyId: harpKeyId,
-        pozitionId: pozitionId,
-      })
+  const bufferCorrectAnswer = useDispatch(
+    (global: GlobalState): Pick<GlobalState, 'bufferedActivityToggles'> => {
+      const { activeHarpStrata } = global
+      const { harpKeyId, pozitionId } = activeHarpStrata
+      if (isPitchId(quizQuestion)) {
+        const counterpartDegreeId = getCounterpartDegreeId({
+          pitchId: quizQuestion,
+          harpKeyId: harpKeyId,
+          pozitionId: pozitionId,
+        })
+        return {
+          bufferedActivityToggles: [
+            ...bufferedActivityToggles,
+            counterpartDegreeId,
+          ],
+        }
+      }
       return {
-        bufferClearingToggles: [
-          ...bufferedActivityToggles,
-          counterpartDegreeId,
-        ],
+        bufferedActivityToggles: [...bufferedActivityToggles, quizQuestion],
       }
     }
-    return {
-      bufferedActivityToggles: [...bufferedActivityToggles, quizQuestion],
-    }
-  })
+  )
 
   const batchAnswerActions = () => {
     unstable_batchedUpdates(() => {
