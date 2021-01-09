@@ -1,13 +1,14 @@
 import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
+import { useDimensions } from '@react-native-community/hooks'
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
 
 import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { getSizes2, harpguruColors } from '../../styles'
 
 import { useToggleFragmentHarpFace } from './hooks'
 
@@ -20,13 +21,7 @@ export const FragmentationButton = ({
   isLabelHidden,
   stashPosition,
 }: FragmentationButtonProps): React.ReactElement => {
-  // This line only exists to make sure that this tab rerenders
-  // when the harpstrata changes just like the other menu tabs
-  // if it doesn't then it's possible that the tabs' protrusions
-  // will become unequal after the screen is resized.
-  // This is really a hacky workaround, but it's cheap and effective.
-  // eslint-disable-next-line no-empty-pattern
-  const [] = useGlobal('activeHarpStrata')
+  const dimensions = useDimensions()
   const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const toggleFragmentHarpFace = useToggleFragmentHarpFace()
   const menuLikeProps: MenuProps = {
@@ -36,7 +31,7 @@ export const FragmentationButton = ({
     openCloseMenu: () => toggleFragmentHarpFace(),
   }
 
-  const sizes = getSizes()
+  const sizes = getSizes2(dimensions.window)
 
   const activeLabelIcon =
     fragmentHarpFaceByOctaves === true ? (
