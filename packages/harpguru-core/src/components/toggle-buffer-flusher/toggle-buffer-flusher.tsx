@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { useFlushBufferedActivityToggles } from './hooks'
+import { useRegularFlushBufferedToggles } from './hooks'
 
 export const ToggleBufferFlusher = (): React.ReactElement => {
-  useFlushBufferedActivityToggles()
+  useRegularFlushBufferedToggles()
 
   return <></>
 }
