@@ -2,18 +2,17 @@ import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
-import { useDimensions } from '@react-native-community/hooks'
 import { AntDesign } from '@expo/vector-icons'
 
 import { TapAnimationTypes } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, colors } from '../../styles'
-import { useScaleAndCallbackOnTap } from '../../hooks'
+import { colors } from '../../styles'
+import { useSizes, useScaleAndCallbackOnTap } from '../../hooks'
 
 export const MenuCloseButton = ({
   openCloseMenu,
 }: Pick<MenuProps, 'openCloseMenu'>): React.ReactElement => {
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
 
   const [tapAnimationValue, handleTapStateChange] = useScaleAndCallbackOnTap(
     openCloseMenu,

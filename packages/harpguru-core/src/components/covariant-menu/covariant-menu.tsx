@@ -2,7 +2,6 @@ import { useGlobal } from 'reactn'
 import React from 'react'
 import { getPitchIds, getPozitionIds } from 'harpparts'
 import { CovariantMembers } from 'harpcovariance'
-import { useDimensions } from '@react-native-community/hooks'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
@@ -11,7 +10,8 @@ import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
 import type { MenuProps, OptionIds } from '../../types'
-import { colors, getSizes } from '../../styles'
+import { colors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import {
   useNudgeHarpStrataByHarpKey,
@@ -74,7 +74,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     setLockedCovariant(CovariantMembers.RootPitch)
   }
 
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
 
   return (
     <Menu {...menuProps}>

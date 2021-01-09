@@ -1,7 +1,6 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
 import { getApparatusIds } from 'harpparts'
-import { useDimensions } from '@react-native-community/hooks'
 import { Entypo } from '@expo/vector-icons'
 
 import { Option } from '../option'
@@ -9,7 +8,8 @@ import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
 import { MenuProps, OptionIds } from '../../types'
-import { colors, getSizes } from '../../styles'
+import { colors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import {
   useNudgeHarpStrataByApparatus,
@@ -31,7 +31,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     setFunction: setHarpStrataByApparatus as (arg0: OptionIds) => void,
   }
 
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
 
   return (
     <Menu {...menuProps}>

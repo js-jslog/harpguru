@@ -1,14 +1,14 @@
 import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
-import { useDimensions } from '@react-native-community/hooks'
 import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons'
 
 import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
 import { ExperienceModes, MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { harpguruColors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import { useNudgeExperienceMode } from './hooks'
 
@@ -30,7 +30,7 @@ export const ExperienceModeButton = ({
     openCloseMenu: () => nudgeExperienceMode('DOWN'),
   }
 
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
 
   const activeLabelIcon =
     activeExperienceMode === ExperienceModes.Explore ? (

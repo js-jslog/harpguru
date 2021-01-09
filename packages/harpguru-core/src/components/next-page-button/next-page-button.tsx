@@ -1,12 +1,12 @@
 import { Text, View } from 'react-native'
 import React from 'react'
-import { useDimensions } from '@react-native-community/hooks'
 
 import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
 import { MenuStashPosition, PageNumber } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { harpguruColors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 type NextPageButtonProps = {
   readonly thisPage: PageNumber
@@ -28,7 +28,7 @@ export const NextPageButton = ({
     openCloseMenu: getNextPage,
   }
 
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
 
   return (
     <Menu {...menuLikeProps}>

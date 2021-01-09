@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
-import { useDimensions } from '@react-native-community/hooks'
 
 import type { Coord } from '../../types'
-import { getSizes, colors } from '../../styles'
+import { colors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './utils'
 
@@ -18,7 +18,7 @@ export const getStyles = (
   yCoord: Coord,
   activeHarpStrata: HarpStrata
 ): HarpRowStyles => {
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
   const { 0: borderWidth, 6: borderRadius } = sizes
 
   const styles = StyleSheet.create<HarpRowStyles>({

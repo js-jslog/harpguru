@@ -1,7 +1,6 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native'
-import { useDimensions } from '@react-native-community/hooks'
 
-import { getSizes } from '../../../styles'
+import { useSizes } from '../../../hooks'
 
 type OptionStyles = {
   readonly option: ViewStyle
@@ -10,7 +9,7 @@ type OptionStyles = {
 }
 
 export const useStyles = (): OptionStyles => {
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
 
   const styles = StyleSheet.create({
     option: {

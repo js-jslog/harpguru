@@ -1,17 +1,16 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
-import { useDimensions } from '@react-native-community/hooks'
 
 import { getHarpFaceFacts } from '../../../utils'
-import { getSizes } from '../../../styles'
+import { useSizes } from '../../../hooks'
 
 type HarpFaceStyles = {
   readonly face: ViewStyle
 }
 
 export const useStyles = (activeHarpStrata: HarpStrata): HarpFaceStyles => {
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
   const { columnWidth, rowHeight, fragmentGutter } = sizes
   const { columnCount, rowCount, octaveColumnGroups } = getHarpFaceFacts(
     activeHarpStrata

@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle, TextStyle } from 'react-native'
-import { useDimensions } from '@react-native-community/hooks'
 
-import { getSizes, colors } from '../../../styles'
+import { colors } from '../../../styles'
+import { useSizes } from '../../../hooks'
 
 type HoleNumberStyles = {
   readonly cell: ViewStyle
@@ -12,7 +12,7 @@ type HoleNumberStyles = {
 const { holeNumbersColor } = colors
 
 export const useStyles = (): HoleNumberStyles => {
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
   const { 6: fontSize, 8: width } = sizes
 
   const styles = StyleSheet.create<HoleNumberStyles>({

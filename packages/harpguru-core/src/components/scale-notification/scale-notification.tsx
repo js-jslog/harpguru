@@ -2,10 +2,9 @@ import { useGlobal } from 'reactn'
 import { Text } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
-import { useDimensions } from '@react-native-community/hooks'
 
 import { NotificationFlash } from '../notification-flash'
-import { getSizes } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import { getScaleLabel } from './utils'
 import { useShouldDisplayScaleLabel } from './hooks'
@@ -17,7 +16,7 @@ export const ScaleNotification = (): ReactElement => {
 
   const shouldDisplay = useShouldDisplayScaleLabel(scaleLabel)
 
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
 
   return (
     <NotificationFlash shouldDisplay={shouldDisplay}>

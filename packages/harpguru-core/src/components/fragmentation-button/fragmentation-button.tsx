@@ -1,14 +1,14 @@
 import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
-import { useDimensions } from '@react-native-community/hooks'
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
 
 import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { harpguruColors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import { useToggleFragmentHarpFace } from './hooks'
 
@@ -30,7 +30,7 @@ export const FragmentationButton = ({
     openCloseMenu: () => toggleFragmentHarpFace(),
   }
 
-  const sizes = getSizes(useDimensions().window)
+  const sizes = useSizes()
 
   const activeLabelIcon =
     fragmentHarpFaceByOctaves === true ? (
