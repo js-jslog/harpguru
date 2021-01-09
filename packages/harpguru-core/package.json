@@ -19,6 +19,7 @@
     "react-native": "0.62.0"
   },
   "dependencies": {
+    "@react-native-community/hooks": "^2.6.0",
     "harpcovariance": "^8.0.0",
     "harpparts": "^8.0.0",
     "harpstrata": "^8.0.0",
