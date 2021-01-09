@@ -3,7 +3,7 @@ import type { HarpStrata } from 'harpstrata'
 import type { DegreeIds } from 'harpparts'
 import type { CovariantMembers } from 'harpcovariance'
 
-import type { DisplayModes, ExperienceModes } from './types'
+import type { DisplayModes, ExperienceModes, FlushChannels } from './types'
 
 declare module 'reactn/default' {
   export interface State {
@@ -13,5 +13,6 @@ declare module 'reactn/default' {
     lockedCovariant: CovariantMembers
     bufferedActivityToggles: ReadonlyArray<DegreeIds>
     fragmentHarpFaceByOctaves: boolean
+    flushChannel: FlushChannels
   }
 }

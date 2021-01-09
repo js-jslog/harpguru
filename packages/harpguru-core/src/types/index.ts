@@ -1,5 +1,16 @@
 import type { HarpStrata } from 'harpstrata'
-import type { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
+import type { ApparatusIds, DegreeIds, PitchIds, PozitionIds } from 'harpparts'
+import type { CovariantMembers } from 'harpcovariance'
+
+export type GlobalState = {
+  readonly activeHarpStrata: HarpStrata
+  readonly activeExperienceMode: ExperienceModes
+  readonly activeDisplayMode: DisplayModes
+  readonly lockedCovariant: CovariantMembers
+  readonly bufferedActivityToggles: ReadonlyArray<DegreeIds>
+  readonly fragmentHarpFaceByOctaves: boolean
+  readonly flushChannel: FlushChannels
+}
 
 export enum DisplayModes {
   Degree = 'Degree',
@@ -9,6 +20,11 @@ export enum DisplayModes {
 export enum ExperienceModes {
   Explore = 'Explore',
   Quiz = 'Quiz',
+}
+
+export enum FlushChannels {
+  Regular,
+  Quiz,
 }
 
 export enum MenuStates {

@@ -19,6 +19,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MAJOR: Quick access option buttons for display and experience mode
 
+### Chaned
+
+- MINOR: Flush toggles differently in Quiz mode to Explore mode to improve experience
+
 ### Removed
 
 - MAJOR: Display and experience mode options from the layout menu

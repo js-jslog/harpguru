@@ -97,9 +97,9 @@ export const HarpGuruPage = ({
             pageOnDisplay.setValue(nextPageNumberMap[thisPage])
           }
         />
+        <ToggleBufferFlusher />
         <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
         <ScaleNotification />
-        <ToggleBufferFlusher />
       </View>
     </PanGestureHandler>
   )

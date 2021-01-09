@@ -3,23 +3,19 @@ import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 import {
   ApparatusIds,
   PozitionIds,
-  DegreeIds,
   PitchIds,
   ScaleIds,
   getScale,
 } from 'harpparts'
 import { CovariantMembers } from 'harpcovariance'
 
-import { DisplayModes, ExperienceModes, PageNumber } from '../../../../types'
-
-type GlobalState = {
-  activeHarpStrata: HarpStrata
-  activeExperienceMode: ExperienceModes
-  activeDisplayMode: DisplayModes
-  lockedCovariant: CovariantMembers
-  bufferedActivityToggles: ReadonlyArray<DegreeIds>
-  fragmentHarpFaceByOctaves: boolean
-}
+import {
+  GlobalState,
+  DisplayModes,
+  ExperienceModes,
+  PageNumber,
+  FlushChannels,
+} from '../../../../types'
 
 export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const { MajorDiatonic: apparatusId } = ApparatusIds
@@ -68,6 +64,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     lockedCovariant: initialLockedCovariant,
     bufferedActivityToggles: thisPozitionDegrees,
     fragmentHarpFaceByOctaves: true,
+    flushChannel: FlushChannels.Regular,
   }
 
   return state
