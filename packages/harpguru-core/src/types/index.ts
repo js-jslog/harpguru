@@ -8,6 +8,7 @@ export type GlobalState = {
   readonly activeDisplayMode: DisplayModes
   readonly lockedCovariant: CovariantMembers
   readonly bufferedActivityToggles: ReadonlyArray<DegreeIds>
+  readonly fragmentHarpFaceByOctaves: boolean
   readonly flushChannel: FlushChannels
 }
 
@@ -38,6 +39,7 @@ export enum MenuStashPosition {
   Third,
   Fourth,
   Fifth,
+  Sixth,
 }
 
 export enum CellStates {

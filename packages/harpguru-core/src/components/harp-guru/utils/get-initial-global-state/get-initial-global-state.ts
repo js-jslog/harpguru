@@ -63,6 +63,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     activeDisplayMode: initialDisplayMode,
     lockedCovariant: initialLockedCovariant,
     bufferedActivityToggles: thisPozitionDegrees,
+    fragmentHarpFaceByOctaves: true,
     flushChannel: FlushChannels.Regular,
   }
 

@@ -11,16 +11,32 @@ import { HarpFace } from './harp-face'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
-mockUseGlobal.mockImplementation((stateItem: string) => {
-  if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
-  if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-  if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-  if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
-  if (stateItem === 'bufferedActivityToggles') return [[]]
-  return undefined
+
+test('A component is rendered with fragmented face', () => {
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
+    if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'fragmentHarpFaceByOctaves') return [true]
+    return undefined
+  })
+  const { container } = render(<HarpFace />)
+
+  expect(container).toMatchSnapshot()
 })
 
-test('A component is rendered', () => {
+test('A component is rendered with unfragmented face', () => {
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
+    if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'fragmentHarpFaceByOctaves') return [false]
+    return undefined
+  })
   const { container } = render(<HarpFace />)
 
   expect(container).toMatchSnapshot()
