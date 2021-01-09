@@ -18,6 +18,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Added
 
 - MAJOR: Quick access option buttons for display and experience mode
+- MINOR: Ability choose whether the harpface is fragmented at the octaves or not
 
 ### Chaned
 
