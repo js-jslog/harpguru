@@ -1,4 +1,4 @@
-import { useDimensions } from '@react-native-community/hooks'
+import { useWindowDimensions } from 'use-dimensions'
 
 import { SizeScheme } from '../../styles'
 
@@ -24,9 +24,7 @@ const relativeFragmentGutterWidth = 7
 const relativeLabelProtrusion = 9
 
 export const useSizes = (): SizeScheme => {
-  const {
-    window: { width: windowWidth, height: windowHeight },
-  } = useDimensions()
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions()
   const deviceWidth = windowWidth > windowHeight ? windowWidth : windowHeight
   const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
 
