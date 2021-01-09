@@ -31,6 +31,9 @@ export const ExperienceModeButton = ({
   }
 
   const sizes = useSizes()
+  console.log(
+    '::::::::::::::::::::::::::::: ExperienceModeButton: ' + sizes['10']
+  )
 
   const activeLabelIcon =
     activeExperienceMode === ExperienceModes.Explore ? (

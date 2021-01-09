@@ -17,6 +17,7 @@ export const ScaleNotification = (): ReactElement => {
   const shouldDisplay = useShouldDisplayScaleLabel(scaleLabel)
 
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: ScaleNotification: ' + sizes['10'])
 
   return (
     <NotificationFlash shouldDisplay={shouldDisplay}>

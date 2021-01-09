@@ -33,6 +33,9 @@ export const QuizQuestionDisplay = ({
   }
 
   const sizes = useSizes()
+  console.log(
+    '::::::::::::::::::::::::::::: QuizQuestionDisplay: ' + sizes['10']
+  )
 
   return (
     <NotificationFlash

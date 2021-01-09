@@ -9,7 +9,8 @@ export const getAccessibleStyles = (
   degreeId: DegreeIds,
   isActive: boolean
 ): ViewStyle => {
-  const { 1: borderWidth, 2: elevation } = useSizes()
+  const { 1: borderWidth, 2: elevation, 10: testi } = useSizes()
+  console.log('::::::::::::::::::::::::::::: getAccessibleStyles: ' + testi)
   const { degreeColors, pageColor, inertOutline, activeOutline } = colors
   const { [degreeId]: degreeColor } = degreeColors
 

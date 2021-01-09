@@ -13,6 +13,7 @@ export const MenuCloseButton = ({
   openCloseMenu,
 }: Pick<MenuProps, 'openCloseMenu'>): React.ReactElement => {
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: MenuCloseButton: ' + sizes['10'])
 
   const [tapAnimationValue, handleTapStateChange] = useScaleAndCallbackOnTap(
     openCloseMenu,

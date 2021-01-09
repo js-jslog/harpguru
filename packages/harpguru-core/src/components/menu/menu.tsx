@@ -24,7 +24,8 @@ export const Menu = ({
   } = useMenuAnimationValues(isMenuStashed, isLabelHidden, stashPosition)
   const scaledLabelProtrusion = useScaledMenuLabelProtrusion()
 
-  const { 9: borderRadius } = useSizes()
+  const { 9: borderRadius, 10: testi } = useSizes()
+  console.log('::::::::::::::::::::::::::::: Menu: ' + testi)
   const styles = StyleSheet.create({
     animated: {
       ...StyleSheet.absoluteFillObject,

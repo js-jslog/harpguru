@@ -75,6 +75,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
   }
 
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: CovariantMenu: ' + sizes['10'])
 
   return (
     <Menu {...menuProps}>

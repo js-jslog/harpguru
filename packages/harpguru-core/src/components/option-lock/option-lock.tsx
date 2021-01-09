@@ -21,7 +21,8 @@ export const OptionLock = ({
   handleTap,
   children,
 }: OptionLockProps & ChildrenProps): React.ReactElement => {
-  const { 9: padding, 7: iconSize } = useSizes()
+  const { 9: padding, 7: iconSize, 10: testi } = useSizes()
+  console.log('::::::::::::::::::::::::::::: OptionLock: ' + testi)
 
   const styles = StyleSheet.create({
     fillColumn: {

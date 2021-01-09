@@ -41,6 +41,7 @@ export const HarpGuruPage = ({
   } as const
 
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: HarpGuruPage: ' + sizes['10'])
   const { 8: swipeThreshold } = sizes
 
   const styles = StyleSheet.create({

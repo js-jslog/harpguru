@@ -24,6 +24,7 @@ export const RenderedTone = ({
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: RenderedTone: ' + sizes['10'])
   const { 7: noteFontSize, 5: modifierTopMargin, 6: modifierFontSize } = sizes
   const { pageColor, inertOutline: borderColor } = colors
 

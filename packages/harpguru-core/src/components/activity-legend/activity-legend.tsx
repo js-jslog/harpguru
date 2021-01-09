@@ -35,6 +35,7 @@ export const ActivityLegend = (): React.ReactElement => {
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: ActivityLegend: ' + sizes['10'])
   const { 9: legendWidth } = sizes
 
   const activityCells = orderedPitchIds.map((pitchId, index) => {
@@ -77,6 +78,7 @@ const ActivityCell = ({
 }: ActivityCellProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: ActivityCell: ' + sizes['10'])
   const { 9: legendWidth } = sizes
 
   const styles = StyleSheet.create({

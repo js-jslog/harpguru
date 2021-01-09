@@ -35,6 +35,7 @@ export const OptionValue = ({
   const optionUpdateAnimationValue = useScaleOnUpdateAnimation(id)
 
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: OptionValue: ' + sizes['10'])
   const { baseStyle, activeStyle } = StyleSheet.create({
     baseStyle: {
       alignSelf: 'center',

@@ -13,6 +13,9 @@ const { holeNumbersColor } = colors
 
 export const useStyles = (): HoleNumberStyles => {
   const sizes = useSizes()
+  console.log(
+    '::::::::::::::::::::::::::::: useStyles (holenumber): ' + sizes['10']
+  )
   const { 6: fontSize, 8: width } = sizes
 
   const styles = StyleSheet.create<HoleNumberStyles>({

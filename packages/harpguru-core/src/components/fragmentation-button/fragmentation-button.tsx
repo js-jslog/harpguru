@@ -31,6 +31,9 @@ export const FragmentationButton = ({
   }
 
   const sizes = useSizes()
+  console.log(
+    '::::::::::::::::::::::::::::: FragmentationButton: ' + sizes['10']
+  )
 
   const activeLabelIcon =
     fragmentHarpFaceByOctaves === true ? (

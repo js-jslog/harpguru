@@ -19,6 +19,9 @@ export const getStyles = (
   activeHarpStrata: HarpStrata
 ): HarpRowStyles => {
   const sizes = useSizes()
+  console.log(
+    '::::::::::::::::::::::::::::: getStyles (harprow styles): ' + sizes['10']
+  )
   const { 0: borderWidth, 6: borderRadius } = sizes
 
   const styles = StyleSheet.create<HarpRowStyles>({

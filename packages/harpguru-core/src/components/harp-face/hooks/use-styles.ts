@@ -11,6 +11,9 @@ type HarpFaceStyles = {
 
 export const useStyles = (activeHarpStrata: HarpStrata): HarpFaceStyles => {
   const sizes = useSizes()
+  console.log(
+    '::::::::::::::::::::::::::::: useStyles (harpface): ' + sizes['10']
+  )
   const { columnWidth, rowHeight, fragmentGutter } = sizes
   const { columnCount, rowCount, octaveColumnGroups } = getHarpFaceFacts(
     activeHarpStrata

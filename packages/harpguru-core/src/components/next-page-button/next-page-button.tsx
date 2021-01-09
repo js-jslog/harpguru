@@ -29,6 +29,7 @@ export const NextPageButton = ({
   }
 
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: NextPageButton: ' + sizes['10'])
 
   return (
     <Menu {...menuLikeProps}>

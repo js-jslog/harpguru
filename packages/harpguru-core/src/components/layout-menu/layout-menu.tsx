@@ -32,6 +32,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   }
 
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: LayoutMenu: ' + sizes['10'])
 
   return (
     <Menu {...menuProps}>

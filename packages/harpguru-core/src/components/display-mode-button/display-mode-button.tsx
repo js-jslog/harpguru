@@ -29,6 +29,7 @@ export const DisplayModeButton = ({
   }
 
   const sizes = useSizes()
+  console.log('::::::::::::::::::::::::::::: DisplayModeButton: ' + sizes['10'])
 
   const activeLabelIcon = (
     <MaterialIcons

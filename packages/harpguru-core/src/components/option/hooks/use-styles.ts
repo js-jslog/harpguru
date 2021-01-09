@@ -10,6 +10,9 @@ type OptionStyles = {
 
 export const useStyles = (): OptionStyles => {
   const sizes = useSizes()
+  console.log(
+    '::::::::::::::::::::::::::::: useStyles (Option): ' + sizes['10']
+  )
 
   const styles = StyleSheet.create({
     option: {

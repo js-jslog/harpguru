@@ -5,6 +5,9 @@ import { useSizes } from '../../../../hooks'
 
 export const getBaseHarpCellStyles = (): ViewStyle => {
   const sizes = useSizes()
+  console.log(
+    '::::::::::::::::::::::::::::: getBaseHarpCellStyles: ' + sizes['10']
+  )
   const { 6: borderRadius } = sizes
   const width = sizes['8'] + sizes['5']
   const height = sizes['8'] + sizes['5']
