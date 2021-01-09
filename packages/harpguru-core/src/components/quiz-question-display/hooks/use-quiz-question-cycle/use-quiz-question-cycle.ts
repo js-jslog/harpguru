@@ -12,6 +12,10 @@ import {
 import { ExperienceModes, FlushChannels, GlobalState } from '../../../../types'
 import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
+// Ask - display the question
+// Listen - allow user to input answers
+// Answer - show the correct answers
+// Wait - Be inactive whilst not in quiz mode or menus are open
 enum QuizStates {
   Ask,
   Listen,
@@ -125,12 +129,10 @@ export const useQuizQuestionCycle = (
     }
   }, [activeExperienceMode, isScreenFree])
 
-  // Time based transitions between states
-  // and the associated harpface updates
+  // Non-interactive state transitions
   useEffect(() => {
     if (flushChannel !== FlushChannels.Quiz) return
-    // Clear the harpface of active cells &
-    // transition to Listen after a period
+
     if (quizState === QuizStates.Ask) {
       resetHarpFace()
       const finishAsking = setTimeout(() => {
@@ -139,10 +141,6 @@ export const useQuizQuestionCycle = (
       return () => clearTimeout(finishAsking)
     }
 
-    // Add correct answer to the buffer and flush this
-    // along with anything else found there and then
-    // set a new question in the background, then
-    // transition back to Ask state after a period.
     if (quizState === QuizStates.Answer) {
       batchAnswerActions()
       const onToNextQuestion = setTimeout(() => {
@@ -153,11 +151,10 @@ export const useQuizQuestionCycle = (
     return
   }, [quizState, flushChannel])
 
-  // Effect to handle the logic while in Listen state.
-  // The Listen state is the only one for which it's
-  // operations depend on how the user is interacting
-  // with the `bufferedActivityToggles`. Hense it's the
-  // only one with actions dependent on this property.
+  // Interactive state transitions.
+  // ie: just the Listen state
+  //  - transitions out to Answer state
+  //  - restarting the clock for state timeout if answer is correct
   useEffect(() => {
     if (flushChannel !== FlushChannels.Quiz) return
     if (quizState !== QuizStates.Listen) return
