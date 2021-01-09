@@ -3,9 +3,9 @@ import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { getScaledMenuLabelProtrusion } from '../../utils'
 import { TapAnimationTypes } from '../../types'
 import type { MenuProps, ChildrenProps } from '../../types'
+import { useScaledMenuLabelProtrusion } from '../../hooks'
 import { useScaleAndCallbackOnTap, useMenuAnimationValues } from '../../hooks'
 
 export const MenuOpenButton = ({
@@ -20,7 +20,7 @@ export const MenuOpenButton = ({
     isLabelHidden,
     stashPosition
   )
-  const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
+  const scaledLabelProtrusion = useScaledMenuLabelProtrusion()
 
   const { style } = StyleSheet.create({
     style: {

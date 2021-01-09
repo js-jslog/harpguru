@@ -9,6 +9,7 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { getDegreeIds, getPitchIds } from 'harpparts'
 import type { DegreeIds, PitchIds } from 'harpparts'
+import { useDimensions } from '@react-native-community/hooks'
 
 import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
@@ -33,7 +34,7 @@ export const ActivityLegend = (): React.ReactElement => {
   const { rootPitchId, activePitchIds } = activeHarpStrata
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
   const { 9: legendWidth } = sizes
 
   const activityCells = orderedPitchIds.map((pitchId, index) => {
@@ -75,7 +76,7 @@ const ActivityCell = ({
   isActive,
 }: ActivityCellProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
   const { 9: legendWidth } = sizes
 
   const styles = StyleSheet.create({

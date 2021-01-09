@@ -5,6 +5,7 @@ import { PanGestureHandler } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
+import { useDimensions } from '@react-native-community/hooks'
 
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
 import { ScaleNotification } from '../scale-notification'
@@ -39,7 +40,7 @@ export const HarpGuruPage = ({
     3: 1,
   } as const
 
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
   const { 8: swipeThreshold } = sizes
 
   const styles = StyleSheet.create({

@@ -2,6 +2,7 @@ import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import { useDimensions } from '@react-native-community/hooks'
 
 import { TapAnimationTypes } from '../../types'
 import type { OptionIds } from '../../types'
@@ -34,7 +35,7 @@ export const OptionValue = ({
 
   const optionUpdateAnimationValue = useScaleOnUpdateAnimation(id)
 
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
   const { baseStyle, activeStyle } = StyleSheet.create({
     baseStyle: {
       alignSelf: 'center',

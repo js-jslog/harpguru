@@ -1,5 +1,6 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
+import { useDimensions } from '@react-native-community/hooks'
 
 import { RenderedTone } from '../rendered-tone'
 import { NotificationFlash } from '../notification-flash'
@@ -32,7 +33,7 @@ export const QuizQuestionDisplay = ({
     return [toneTuples[1]]
   }
 
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
 
   return (
     <NotificationFlash

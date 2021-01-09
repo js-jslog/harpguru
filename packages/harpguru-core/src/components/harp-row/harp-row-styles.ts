@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
+import { useDimensions } from '@react-native-community/hooks'
 
 import type { Coord } from '../../types'
 import { getSizes, colors } from '../../styles'
@@ -17,7 +18,7 @@ export const getStyles = (
   yCoord: Coord,
   activeHarpStrata: HarpStrata
 ): HarpRowStyles => {
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
   const { 0: borderWidth, 6: borderRadius } = sizes
 
   const styles = StyleSheet.create<HarpRowStyles>({

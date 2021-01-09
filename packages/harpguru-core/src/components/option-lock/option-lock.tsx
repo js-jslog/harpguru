@@ -5,6 +5,7 @@ import {
 } from 'react-native-gesture-handler'
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
+import { useDimensions } from '@react-native-community/hooks'
 import { FontAwesome5 } from '@expo/vector-icons'
 
 import type { ChildrenProps } from '../../types'
@@ -20,7 +21,7 @@ export const OptionLock = ({
   handleTap,
   children,
 }: OptionLockProps & ChildrenProps): React.ReactElement => {
-  const { 9: padding, 7: iconSize } = getSizes()
+  const { 9: padding, 7: iconSize } = getSizes(useDimensions().window)
 
   const styles = StyleSheet.create({
     fillColumn: {

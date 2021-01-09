@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
+import { useDimensions } from '@react-native-community/hooks'
 
 import { getSizes } from '../../../../styles'
 
 export const getBaseHarpCellStyles = (): ViewStyle => {
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
   const { 6: borderRadius } = sizes
   const width = sizes['8'] + sizes['5']
   const height = sizes['8'] + sizes['5']

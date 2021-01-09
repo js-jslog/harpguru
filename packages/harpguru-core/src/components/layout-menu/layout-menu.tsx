@@ -1,6 +1,7 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
 import { getApparatusIds } from 'harpparts'
+import { useDimensions } from '@react-native-community/hooks'
 import { Entypo } from '@expo/vector-icons'
 
 import { Option } from '../option'
@@ -30,7 +31,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     setFunction: setHarpStrataByApparatus as (arg0: OptionIds) => void,
   }
 
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
 
   return (
     <Menu {...menuProps}>

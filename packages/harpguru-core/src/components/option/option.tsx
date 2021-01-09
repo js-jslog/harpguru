@@ -5,7 +5,7 @@ import { OptionValue } from '../option-value'
 import type { OptionIds, ChildrenProps } from '../../types'
 
 import { setOptionsInListOfSix } from './utils'
-import { getStyles } from './option-styles'
+import { useStyles } from './hooks'
 
 type OptionProps = {
   readonly title: string
@@ -16,12 +16,12 @@ type OptionProps = {
 }
 
 const OptionTitle = ({ children }: ChildrenProps): React.ReactElement => {
-  const styles = getStyles()
+  const styles = useStyles()
   return <Text style={styles.optionTitle}>{children}</Text>
 }
 
 export const Option = (props: OptionProps): React.ReactElement => {
-  const styles = getStyles()
+  const styles = useStyles()
 
   const { title, activeOptionId, orderedOptionIds, setFunction } = props
 

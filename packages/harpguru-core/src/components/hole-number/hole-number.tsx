@@ -27,11 +27,10 @@ type HoleNumberProps = {
   readonly xCoord: Coord
 }
 
-import { getStyles } from './hole-number-styles'
-
-const styles = getStyles()
+import { useStyles } from './hooks'
 
 export function HoleNumber({ xCoord }: HoleNumberProps): ReactElement {
+  const styles = useStyles()
   const holeNumber: HoleNumberIds = `${xCoord + 1}` as HoleNumberIds
 
   return (

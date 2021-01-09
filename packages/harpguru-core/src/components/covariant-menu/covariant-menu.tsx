@@ -2,6 +2,7 @@ import { useGlobal } from 'reactn'
 import React from 'react'
 import { getPitchIds, getPozitionIds } from 'harpparts'
 import { CovariantMembers } from 'harpcovariance'
+import { useDimensions } from '@react-native-community/hooks'
 import { Feather } from '@expo/vector-icons'
 
 import { OptionLock } from '../option-lock'
@@ -73,7 +74,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     setLockedCovariant(CovariantMembers.RootPitch)
   }
 
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
 
   return (
     <Menu {...menuProps}>

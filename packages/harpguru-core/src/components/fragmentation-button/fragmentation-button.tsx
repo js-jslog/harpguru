@@ -8,7 +8,7 @@ import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes2, harpguruColors } from '../../styles'
+import { getSizes, harpguruColors } from '../../styles'
 
 import { useToggleFragmentHarpFace } from './hooks'
 
@@ -21,7 +21,6 @@ export const FragmentationButton = ({
   isLabelHidden,
   stashPosition,
 }: FragmentationButtonProps): React.ReactElement => {
-  const dimensions = useDimensions()
   const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const toggleFragmentHarpFace = useToggleFragmentHarpFace()
   const menuLikeProps: MenuProps = {
@@ -31,7 +30,7 @@ export const FragmentationButton = ({
     openCloseMenu: () => toggleFragmentHarpFace(),
   }
 
-  const sizes = getSizes2(dimensions.window)
+  const sizes = getSizes(useDimensions().window)
 
   const activeLabelIcon =
     fragmentHarpFaceByOctaves === true ? (

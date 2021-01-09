@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import { useDimensions } from '@react-native-community/hooks'
 
 import { ExperienceModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
@@ -22,7 +23,7 @@ export const RenderedTone = ({
 }: RenderedToneProps): React.ReactElement => {
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
-  const sizes = getSizes()
+  const sizes = getSizes(useDimensions().window)
   const { 7: noteFontSize, 5: modifierTopMargin, 6: modifierFontSize } = sizes
   const { pageColor, inertOutline: borderColor } = colors
 
