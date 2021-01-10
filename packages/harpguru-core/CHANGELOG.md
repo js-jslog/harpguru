@@ -20,9 +20,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MAJOR: Quick access option buttons for display and experience mode
 - MINOR: Ability choose whether the harpface is fragmented at the octaves or not
 
-### Chaned
+### Changed
 
 - MINOR: Flush toggles differently in Quiz mode to Explore mode to improve experience
+- MINOR: Only setup the first page with buffered toggles to flush on app initialisation
 
 ### Removed
 
