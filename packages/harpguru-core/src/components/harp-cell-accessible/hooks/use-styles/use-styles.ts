@@ -5,7 +5,7 @@ import type { DegreeIds } from 'harpparts'
 import { colors } from '../../../../styles'
 import { useSizes } from '../../../../hooks'
 
-export const getAccessibleStyles = (
+export const useStyles = (
   degreeId: DegreeIds,
   isActive: boolean
 ): ViewStyle => {

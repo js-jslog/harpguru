@@ -11,9 +11,9 @@ import React from 'react'
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
 
-import { getBaseHarpCellStyles } from './utils'
 import {
   useSetPozitionRoot,
+  useStyles,
   usePositionAnalysis,
   useTapRerenderLogic,
 } from './hooks'
@@ -28,7 +28,7 @@ export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
   const { thisDegreeId, thisPitchId, thisIsActive } = usePositionAnalysis(
     yxCoord
   )
-  const baseHarpCellStyles = getBaseHarpCellStyles()
+  const baseHarpCellStyles = useStyles()
   const setPozitionRoot = useSetPozitionRoot()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')

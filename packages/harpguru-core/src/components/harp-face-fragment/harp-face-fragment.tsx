@@ -6,7 +6,7 @@ import { HoleNumberRow } from '../hole-number-row'
 import type { XRange } from '../../types'
 
 import { getHarpRows } from './utils'
-import { getStyles } from './harp-face-fragment-styles'
+import { useStyles } from './hooks'
 
 type HarpFaceFragmentProps = {
   readonly xRange: XRange
@@ -17,7 +17,7 @@ export const HarpFaceFragment = ({
 }: HarpFaceFragmentProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const harpRows = getHarpRows(xRange, activeHarpStrata)
-  const styles = getStyles(xRange, activeHarpStrata)
+  const styles = useStyles(xRange, activeHarpStrata)
 
   return (
     <View style={styles.fragment}>
