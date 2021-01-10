@@ -4,7 +4,7 @@
     "slug": "harp-guru",
     "platforms": ["ios", "android", "web"],
     "version": "5.1.0",
-    "orientation": "portrait",
+    "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
