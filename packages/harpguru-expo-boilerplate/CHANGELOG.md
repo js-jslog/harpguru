@@ -17,7 +17,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Changed
 
-- MINOR: Set initial app orientation as landscape in metadata rather than portrait
+- MAJOR: Set initial app orientation as landscape in metadata rather than portrait
 
 ## [v2.4.0](https://github.com/js-jslog/harpguru/releases/tag/v5.0.0) - 2020-12-04
 
