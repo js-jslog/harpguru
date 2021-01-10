@@ -1,6 +1,6 @@
 {
   "name": "harpguru-expo-boilerplate",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "description": "An expo based boilerplate to run the harpguru-core app",
   "main": "__generated__/AppEntry.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "dependencies": {
     "expo": "^38.0.0",
     "expo-screen-orientation": "~1.1.1",
-    "harpguru-core": "^4.0.0",
+    "harpguru-core": "^5.0.0",
     "react": "16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz"
   },
