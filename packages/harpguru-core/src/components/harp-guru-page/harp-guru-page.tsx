@@ -77,22 +77,31 @@ export const HarpGuruPage = ({
           stashPosition={MenuStashPosition.Second}
           openCloseMenu={() => handleManuTap(MenuStates.LayoutMenu)}
         />
-        <DisplayModeButton
-          isLabelHidden={menuState !== MenuStates.NoMenu}
+        <LayoutMenu
+          isMenuStashed={menuState !== MenuStates.LayoutMenu}
+          isLabelHidden={
+            menuState !== MenuStates.LayoutMenu &&
+            menuState !== MenuStates.NoMenu
+          }
           stashPosition={MenuStashPosition.Third}
+          openCloseMenu={() => handleManuTap(MenuStates.LayoutMenu)}
         />
-        <FragmentationButton
+        <DisplayModeButton
           isLabelHidden={menuState !== MenuStates.NoMenu}
           stashPosition={MenuStashPosition.Fourth}
         />
-        <ExperienceModeButton
+        <FragmentationButton
           isLabelHidden={menuState !== MenuStates.NoMenu}
           stashPosition={MenuStashPosition.Fifth}
+        />
+        <ExperienceModeButton
+          isLabelHidden={menuState !== MenuStates.NoMenu}
+          stashPosition={MenuStashPosition.Sixth}
         />
         <NextPageButton
           thisPage={thisPage}
           totalPages={3}
-          stashPosition={MenuStashPosition.Sixth}
+          stashPosition={MenuStashPosition.Seventh}
           getNextPage={() =>
             pageOnDisplay.setValue(nextPageNumberMap[thisPage])
           }
