@@ -30,6 +30,7 @@ export enum FlushChannels {
 export enum MenuStates {
   LayoutMenu,
   CovariantMenu,
+  ScalesMenu,
   NoMenu,
 }
 

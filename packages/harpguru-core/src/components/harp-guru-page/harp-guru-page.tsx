@@ -7,6 +7,7 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
+import { ScalesMenu } from '../scales-menu'
 import { ScaleNotification } from '../scale-notification'
 import { QuizQuestionDisplay } from '../quiz-question-display'
 import { NextPageButton } from '../next-page-button'
@@ -77,14 +78,14 @@ export const HarpGuruPage = ({
           stashPosition={MenuStashPosition.Second}
           openCloseMenu={() => handleManuTap(MenuStates.LayoutMenu)}
         />
-        <LayoutMenu
-          isMenuStashed={menuState !== MenuStates.LayoutMenu}
+        <ScalesMenu
+          isMenuStashed={menuState !== MenuStates.ScalesMenu}
           isLabelHidden={
-            menuState !== MenuStates.LayoutMenu &&
+            menuState !== MenuStates.ScalesMenu &&
             menuState !== MenuStates.NoMenu
           }
           stashPosition={MenuStashPosition.Third}
-          openCloseMenu={() => handleManuTap(MenuStates.LayoutMenu)}
+          openCloseMenu={() => handleManuTap(MenuStates.ScalesMenu)}
         />
         <DisplayModeButton
           isLabelHidden={menuState !== MenuStates.NoMenu}
