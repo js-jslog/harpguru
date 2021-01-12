@@ -1,9 +1,9 @@
-import { useDispatch, useGlobal, useState } from 'reactn'
+import { useDispatch, useState } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { View, Text, StyleSheet } from 'react-native'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { getScale, getScaleIds } from 'harpparts'
 import type { DegreeIds } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -12,17 +12,15 @@ import { OptionList } from '../option-list'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import { FlushChannels, MenuProps } from '../../types'
+import { MenuProps } from '../../types'
 import type { GlobalState } from '../../types'
 import { colors, getSizes } from '../../styles'
-import { useFlushBufferedActivityToggles } from '../../hooks'
 
 import { rebufferForInput } from './utils'
+import { useFlushTogglesFromScalesMenu } from './hooks'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
-  const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
-  const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
 
   const rebufferForScale = useDispatch(
     (
@@ -43,21 +41,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   )
 
   const { isMenuStashed } = menuProps
-
-  useEffect(() => {
-    if (!isMenuStashed) {
-      setFlushChannel(FlushChannels.ScalesMenu)
-    } else {
-      setFlushChannel(FlushChannels.Regular)
-    }
-  }, [isMenuStashed, setFlushChannel])
-
-  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
-  useEffect(() => {
-    if (flushChannel !== FlushChannels.ScalesMenu) return
-    if (bufferedActivityToggles.length === 0) return
-    flushBufferedActivityToggles()
-  }, [bufferedActivityToggles, flushChannel])
+  useFlushTogglesFromScalesMenu({ isMenuStashed: isMenuStashed })
 
   const scales = getScaleIds().map((id) => getScale(id))
 
