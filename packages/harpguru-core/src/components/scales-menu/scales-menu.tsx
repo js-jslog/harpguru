@@ -14,13 +14,13 @@ import { Menu } from '../menu'
 import { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
-import { useFlushTogglesFromScalesMenu } from './hooks'
+import { useDispatchAndFlushScaleToggles } from './hooks'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
 
   const { isMenuStashed } = menuProps
-  const rebufferForScale = useFlushTogglesFromScalesMenu({
+  const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
     isMenuStashed: isMenuStashed,
   })
 
@@ -115,7 +115,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
         <Animated.View style={styles.listsection}>
           <OptionList
             scales={scales}
-            tapHandler={(arg0) => rebufferForScale(arg0)}
+            tapHandler={(arg0) => dispatchAndFlushScaleToggles(arg0)}
           />
         </Animated.View>
       </MenuFace>

@@ -1,1 +1,1 @@
-export { useFlushTogglesFromScalesMenu } from './use-flush-toggles-from-scales-menu'
+export { useDispatchAndFlushScaleToggles } from './use-dispatch-and-flush-scale-toggles'

@@ -8,7 +8,7 @@ import { FlushChannels } from '../../../types'
 import type { GlobalState, MenuProps } from '../../../types'
 import { useFlushBufferedActivityToggles } from '../../../hooks'
 
-export const useFlushTogglesFromScalesMenu = ({
+export const useDispatchAndFlushScaleToggles = ({
   isMenuStashed,
 }: Pick<MenuProps, 'isMenuStashed'>): Dispatcher<GlobalState> => {
   const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
