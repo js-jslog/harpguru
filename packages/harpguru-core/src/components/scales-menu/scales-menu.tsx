@@ -1,6 +1,6 @@
 import { useDispatch, useGlobal } from 'reactn'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
-import { Text, SafeAreaView, StyleSheet } from 'react-native'
+import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
 import { getScale, getScaleIds } from 'harpparts'
 import type { DegreeIds, Scale } from 'harpparts'
@@ -58,10 +58,38 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const scales = getScaleIds().map((id) => getScale(id))
 
+  const styles = StyleSheet.create({
+    left: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      transform: [{ rotate: '-90deg' }],
+    },
+    textwrapper: {
+      paddingBottom: sizes['10'],
+      alignItems: 'center',
+      // TODO: make this the width of the screen
+      width: 1000,
+    },
+    lefttext: {
+      fontSize: sizes['9'],
+    },
+    right: {
+      flex: 10,
+    },
+  })
+
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
-        <List scales={scales} tapHandler={(arg0) => rebufferForScale(arg0)} />
+        <View style={styles.left}>
+          <View style={styles.textwrapper}>
+            <Text style={styles.lefttext}>Scales</Text>
+          </View>
+        </View>
+        <View style={styles.right}>
+          <List scales={scales} tapHandler={(arg0) => rebufferForScale(arg0)} />
+        </View>
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <MaterialIcons
