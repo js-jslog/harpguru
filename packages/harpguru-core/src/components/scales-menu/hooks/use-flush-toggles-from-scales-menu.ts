@@ -1,13 +1,16 @@
-import { useGlobal } from 'reactn'
+import type Dispatcher from 'reactn/types/dispatcher'
+import { useGlobal, useDispatch } from 'reactn'
 import { useEffect } from 'react'
+import type { DegreeIds } from 'harpparts'
 
+import { rebufferForInput } from '../utils'
 import { FlushChannels } from '../../../types'
-import type { MenuProps } from '../../../types'
+import type { GlobalState, MenuProps } from '../../../types'
 import { useFlushBufferedActivityToggles } from '../../../hooks'
 
 export const useFlushTogglesFromScalesMenu = ({
   isMenuStashed,
-}: Pick<MenuProps, 'isMenuStashed'>): void => {
+}: Pick<MenuProps, 'isMenuStashed'>): Dispatcher<GlobalState> => {
   const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
 
@@ -25,4 +28,22 @@ export const useFlushTogglesFromScalesMenu = ({
     if (bufferedActivityToggles.length === 0) return
     flushBufferedActivityToggles()
   }, [bufferedActivityToggles, flushChannel])
+
+  return useDispatch(
+    (
+      global: GlobalState,
+      _dipatch,
+      targetActiveDegrees: ReadonlyArray<DegreeIds>
+    ): Pick<GlobalState, 'bufferedActivityToggles'> => {
+      const { activeHarpStrata } = global
+      const { activeDegreeIds } = activeHarpStrata
+
+      return {
+        bufferedActivityToggles: rebufferForInput(
+          activeDegreeIds,
+          targetActiveDegrees
+        ),
+      }
+    }
+  )
 }

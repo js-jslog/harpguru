@@ -1,11 +1,10 @@
-import { useDispatch, useState } from 'reactn'
+import { useState } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { getScale, getScaleIds } from 'harpparts'
-import type { DegreeIds } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import { OptionList } from '../option-list'
@@ -13,35 +12,17 @@ import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
 import { MenuProps } from '../../types'
-import type { GlobalState } from '../../types'
 import { colors, getSizes } from '../../styles'
 
-import { rebufferForInput } from './utils'
 import { useFlushTogglesFromScalesMenu } from './hooks'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
 
-  const rebufferForScale = useDispatch(
-    (
-      global: GlobalState,
-      _dipatch,
-      targetActiveDegrees: ReadonlyArray<DegreeIds>
-    ): Pick<GlobalState, 'bufferedActivityToggles'> => {
-      const { activeHarpStrata } = global
-      const { activeDegreeIds } = activeHarpStrata
-
-      return {
-        bufferedActivityToggles: rebufferForInput(
-          activeDegreeIds,
-          targetActiveDegrees
-        ),
-      }
-    }
-  )
-
   const { isMenuStashed } = menuProps
-  useFlushTogglesFromScalesMenu({ isMenuStashed: isMenuStashed })
+  const rebufferForScale = useFlushTogglesFromScalesMenu({
+    isMenuStashed: isMenuStashed,
+  })
 
   const scales = getScaleIds().map((id) => getScale(id))
 
