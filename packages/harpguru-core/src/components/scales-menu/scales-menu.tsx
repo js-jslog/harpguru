@@ -1,4 +1,6 @@
-import { useDispatch, useGlobal } from 'reactn'
+import { useDispatch, useGlobal, useState } from 'reactn'
+import { useTimingTransition } from 'react-native-redash'
+import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
@@ -58,38 +60,95 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const scales = getScaleIds().map((id) => getScale(id))
 
+  enum VisibleOption {
+    Scales,
+    Chords,
+  }
+  const [visibleOption, setVisibleOption] = useState<VisibleOption>(
+    VisibleOption.Scales
+  )
+  const animationDuration = 300
+  const scalesTitleVisibleTiming = useTimingTransition(
+    visibleOption === VisibleOption.Scales,
+    {
+      duration: animationDuration,
+      easing: Easing.inOut(Easing.ease),
+    }
+  )
+  const scalesTitleOpacity = interpolate(scalesTitleVisibleTiming, {
+    inputRange: [0, 1],
+    outputRange: [0, 1],
+  })
+  const chordsTitleOpacity = interpolate(scalesTitleVisibleTiming, {
+    inputRange: [0, 1],
+    outputRange: [1, 0],
+  })
+
   const styles = StyleSheet.create({
     titlesection: {
       flex: 1,
-      justifyContent: 'flex-end',
+      justifyContent: 'center',
       alignItems: 'center',
       transform: [{ rotate: '-90deg' }],
     },
     titlewrapper: {
-      paddingBottom: sizes['10'],
-      alignItems: 'center',
-      // TODO: make this the width of the screen
-      width: 1000,
+      position: 'absolute',
     },
     titletext: {
       fontSize: sizes['9'],
     },
     listsection: {
-      flex: 10,
+      flex: 3,
     },
   })
-
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
         <View style={styles.titlesection}>
-          <View style={styles.titlewrapper}>
-            <Text style={styles.titletext}>Scales</Text>
-          </View>
+          <Animated.View
+            style={[
+              styles.titlewrapper,
+              {
+                opacity: scalesTitleOpacity,
+              },
+            ]}
+          >
+            <TouchableOpacity
+              onPress={() =>
+                setVisibleOption((visibleOption) => {
+                  if (visibleOption === VisibleOption.Scales)
+                    return VisibleOption.Chords
+                  return VisibleOption.Scales
+                })
+              }
+            >
+              <Text style={styles.titletext}>Scales</Text>
+            </TouchableOpacity>
+          </Animated.View>
+          <Animated.View
+            style={[
+              styles.titlewrapper,
+              {
+                opacity: chordsTitleOpacity,
+              },
+            ]}
+          >
+            <TouchableOpacity
+              onPress={() =>
+                setVisibleOption((visibleOption) => {
+                  if (visibleOption === VisibleOption.Scales)
+                    return VisibleOption.Chords
+                  return VisibleOption.Scales
+                })
+              }
+            >
+              <Text style={styles.titletext}>Chords</Text>
+            </TouchableOpacity>
+          </Animated.View>
         </View>
-        <View style={styles.listsection}>
+        <Animated.View style={styles.listsection}>
           <List scales={scales} tapHandler={(arg0) => rebufferForScale(arg0)} />
-        </View>
+        </Animated.View>
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <MaterialIcons
