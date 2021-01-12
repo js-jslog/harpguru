@@ -3,7 +3,7 @@ import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 import { Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
 import { getScale, getScaleIds } from 'harpparts'
-import type { DegreeIds } from 'harpparts'
+import type { DegreeIds, Scale } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import { MenuOpenButton } from '../menu-open-button'
@@ -17,13 +17,6 @@ import { rebufferForInput } from './utils'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
-
-  const styles = StyleSheet.create({
-    title: {
-      alignSelf: 'center',
-      fontSize: 64,
-    },
-  })
 
   const rebufferForScale = useDispatch(
     (
@@ -45,28 +38,10 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const scales = getScaleIds().map((id) => getScale(id))
 
-  const List = () => {
-    return (
-      <SafeAreaView>
-        <FlatList
-          scrollEnabled={true}
-          initialNumToRender={18}
-          data={scales}
-          renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => rebufferForScale(item.degrees)}>
-              <Text style={styles.title}>{item.label}</Text>
-            </TouchableOpacity>
-          )}
-          keyExtractor={(item) => `${item.id}`}
-        />
-      </SafeAreaView>
-    )
-  }
-
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
-        <List />
+        <List scales={scales} tapHandler={(arg0) => rebufferForScale(arg0)} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <MaterialIcons
@@ -76,5 +51,33 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
         />
       </MenuOpenButton>
     </Menu>
+  )
+}
+
+type ListProps = {
+  readonly scales: ReadonlyArray<Scale>
+  readonly tapHandler: (arg0: ReadonlyArray<DegreeIds>) => void
+}
+
+const List = ({ scales, tapHandler }: ListProps): React.ReactElement => {
+  const styles = StyleSheet.create({
+    title: {
+      alignSelf: 'center',
+      fontSize: 64,
+    },
+  })
+
+  return (
+    <SafeAreaView>
+      <FlatList
+        data={scales}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => tapHandler(item.degrees)}>
+            <Text style={styles.title}>{item.label}</Text>
+          </TouchableOpacity>
+        )}
+        keyExtractor={(item) => `${item.id}`}
+      />
+    </SafeAreaView>
   )
 }
