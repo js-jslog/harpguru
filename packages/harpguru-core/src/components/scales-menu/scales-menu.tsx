@@ -60,15 +60,21 @@ type ListProps = {
 }
 
 const List = ({ scales, tapHandler }: ListProps): React.ReactElement => {
+  const sizes = getSizes()
+
   const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
     title: {
       alignSelf: 'center',
-      fontSize: 64,
+      fontSize: sizes['8'],
+      lineHeight: sizes['10'],
     },
   })
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={scales}
         renderItem={({ item }) => (
