@@ -1,7 +1,7 @@
-import { useDispatch } from 'reactn'
+import { useDispatch, useGlobal } from 'reactn'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 import { Text, SafeAreaView, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { getScale, getScaleIds } from 'harpparts'
 import type { DegreeIds, Scale } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -9,14 +9,17 @@ import { MaterialIcons } from '@expo/vector-icons'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import { MenuProps } from '../../types'
+import { FlushChannels, MenuProps } from '../../types'
 import type { GlobalState } from '../../types'
 import { colors, getSizes } from '../../styles'
+import { useFlushBufferedActivityToggles } from '../../hooks'
 
 import { rebufferForInput } from './utils'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
+  const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
+  const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
 
   const rebufferForScale = useDispatch(
     (
@@ -35,6 +38,23 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
       }
     }
   )
+
+  const { isMenuStashed } = menuProps
+
+  useEffect(() => {
+    if (!isMenuStashed) {
+      setFlushChannel(FlushChannels.ScalesMenu)
+    } else {
+      setFlushChannel(FlushChannels.Regular)
+    }
+  }, [isMenuStashed, setFlushChannel])
+
+  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
+  useEffect(() => {
+    if (flushChannel !== FlushChannels.ScalesMenu) return
+    if (bufferedActivityToggles.length === 0) return
+    flushBufferedActivityToggles()
+  }, [bufferedActivityToggles, flushChannel])
 
   const scales = getScaleIds().map((id) => getScale(id))
 
