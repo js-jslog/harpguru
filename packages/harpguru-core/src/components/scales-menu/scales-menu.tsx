@@ -1,13 +1,14 @@
 import { useDispatch, useGlobal, useState } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { View, Text, StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
 import { getScale, getScaleIds } from 'harpparts'
-import type { DegreeIds, Scale } from 'harpparts'
+import type { DegreeIds } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
 
+import { OptionList } from '../option-list'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
@@ -147,7 +148,10 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
           </Animated.View>
         </View>
         <Animated.View style={styles.listsection}>
-          <List scales={scales} tapHandler={(arg0) => rebufferForScale(arg0)} />
+          <OptionList
+            scales={scales}
+            tapHandler={(arg0) => rebufferForScale(arg0)}
+          />
         </Animated.View>
       </MenuFace>
       <MenuOpenButton {...menuProps}>
@@ -158,39 +162,5 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
         />
       </MenuOpenButton>
     </Menu>
-  )
-}
-
-type ListProps = {
-  readonly scales: ReadonlyArray<Scale>
-  readonly tapHandler: (arg0: ReadonlyArray<DegreeIds>) => void
-}
-
-const List = ({ scales, tapHandler }: ListProps): React.ReactElement => {
-  const sizes = getSizes()
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    title: {
-      alignSelf: 'center',
-      fontSize: sizes['8'],
-      lineHeight: sizes['10'],
-    },
-  })
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={scales}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => tapHandler(item.degrees)}>
-            <Text style={styles.title}>{item.label}</Text>
-          </TouchableOpacity>
-        )}
-        keyExtractor={(item) => `${item.id}`}
-      />
-    </SafeAreaView>
   )
 }
