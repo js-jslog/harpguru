@@ -18,13 +18,12 @@ import { useDispatchAndFlushScaleToggles } from './hooks'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
+  const scales = getScaleIds().map((id) => getScale(id))
 
   const { isMenuStashed } = menuProps
   const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
     isMenuStashed: isMenuStashed,
   })
-
-  const scales = getScaleIds().map((id) => getScale(id))
 
   enum VisibleOption {
     Scales,
