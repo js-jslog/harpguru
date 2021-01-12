@@ -59,22 +59,22 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const scales = getScaleIds().map((id) => getScale(id))
 
   const styles = StyleSheet.create({
-    left: {
+    titlesection: {
       flex: 1,
       justifyContent: 'flex-end',
       alignItems: 'center',
       transform: [{ rotate: '-90deg' }],
     },
-    textwrapper: {
+    titlewrapper: {
       paddingBottom: sizes['10'],
       alignItems: 'center',
       // TODO: make this the width of the screen
       width: 1000,
     },
-    lefttext: {
+    titletext: {
       fontSize: sizes['9'],
     },
-    right: {
+    listsection: {
       flex: 10,
     },
   })
@@ -82,12 +82,12 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
-        <View style={styles.left}>
-          <View style={styles.textwrapper}>
-            <Text style={styles.lefttext}>Scales</Text>
+        <View style={styles.titlesection}>
+          <View style={styles.titlewrapper}>
+            <Text style={styles.titletext}>Scales</Text>
           </View>
         </View>
-        <View style={styles.right}>
+        <View style={styles.listsection}>
           <List scales={scales} tapHandler={(arg0) => rebufferForScale(arg0)} />
         </View>
       </MenuFace>
