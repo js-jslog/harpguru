@@ -2,10 +2,10 @@ import { useState } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { View, Text, StyleSheet } from 'react-native'
+import { Dimensions, View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { getScale, getScaleIds } from 'harpparts'
-import { MaterialIcons } from '@expo/vector-icons'
+import { AntDesign, MaterialIcons } from '@expo/vector-icons'
 
 import { OptionList } from '../option-list'
 import { MenuOpenButton } from '../menu-open-button'
@@ -19,6 +19,9 @@ import { useDispatchAndFlushScaleToggles } from './hooks'
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
   const scales = getScaleIds().map((id) => getScale(id))
+  // TODO: turn this in to a util since it's used elsewhere
+  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
+  const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
 
   const { isMenuStashed } = menuProps
   const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
@@ -50,14 +53,21 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   })
 
   const styles = StyleSheet.create({
-    titlesection: {
+    titlesectionrotator: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
       transform: [{ rotate: '-90deg' }],
     },
+    titlesectionspacer: {
+      height: 20,
+      width: deviceHeight,
+      justifyContent: 'space-between',
+      flexDirection: 'row',
+    },
     titlewrapper: {
       position: 'absolute',
+      alignSelf: 'center',
     },
     titletext: {
       fontSize: sizes['9'],
@@ -69,47 +79,57 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
-        <View style={styles.titlesection}>
-          <Animated.View
-            style={[
-              styles.titlewrapper,
-              {
-                opacity: scalesTitleOpacity,
-              },
-            ]}
-          >
-            <TouchableOpacity
-              onPress={() =>
-                setVisibleOption((visibleOption) => {
-                  if (visibleOption === VisibleOption.Scales)
-                    return VisibleOption.Chords
-                  return VisibleOption.Scales
-                })
-              }
-            >
-              <Text style={styles.titletext}>Scales</Text>
-            </TouchableOpacity>
-          </Animated.View>
-          <Animated.View
-            style={[
-              styles.titlewrapper,
-              {
-                opacity: chordsTitleOpacity,
-              },
-            ]}
-          >
-            <TouchableOpacity
-              onPress={() =>
-                setVisibleOption((visibleOption) => {
-                  if (visibleOption === VisibleOption.Scales)
-                    return VisibleOption.Chords
-                  return VisibleOption.Scales
-                })
-              }
-            >
-              <Text style={styles.titletext}>Chords</Text>
-            </TouchableOpacity>
-          </Animated.View>
+        <View style={styles.titlesectionrotator}>
+          <View style={styles.titlesectionspacer}>
+            <View>
+              <TouchableOpacity
+                onPress={() =>
+                  setVisibleOption((visibleOption) => {
+                    if (visibleOption === VisibleOption.Scales)
+                      return VisibleOption.Chords
+                    return VisibleOption.Scales
+                  })
+                }
+              >
+                <AntDesign name="left" size={sizes['9']} color="black" />
+              </TouchableOpacity>
+            </View>
+            <View>
+              <Animated.View
+                style={[
+                  styles.titlewrapper,
+                  {
+                    opacity: scalesTitleOpacity,
+                  },
+                ]}
+              >
+                <Text style={styles.titletext}>Scales</Text>
+              </Animated.View>
+              <Animated.View
+                style={[
+                  styles.titlewrapper,
+                  {
+                    opacity: chordsTitleOpacity,
+                  },
+                ]}
+              >
+                <Text style={styles.titletext}>Chords</Text>
+              </Animated.View>
+            </View>
+            <View>
+              <TouchableOpacity
+                onPress={() =>
+                  setVisibleOption((visibleOption) => {
+                    if (visibleOption === VisibleOption.Scales)
+                      return VisibleOption.Chords
+                    return VisibleOption.Scales
+                  })
+                }
+              >
+                <AntDesign name="right" size={sizes['9']} color="black" />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
         <Animated.View style={styles.listsection}>
           <OptionList
