@@ -79,10 +79,12 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   })
   const titlesList = ['Scales', 'Chords']
   const titlesComponents = titlesList.map((title, index) => {
+    const outputRange = index === 1 ? [1, 0] : [0, 1]
     return (
       <OptionListTitle
         title={title}
         animatedValue={chordsTitleOpacity}
+        outputRange={outputRange}
         key={index}
       />
     )

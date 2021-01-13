@@ -1,4 +1,4 @@
-import Animated from 'react-native-reanimated'
+import Animated, { interpolate } from 'react-native-reanimated'
 import type { Node } from 'react-native-reanimated'
 import { Text, StyleSheet } from 'react-native'
 import React from 'react'
@@ -8,11 +8,13 @@ import { getSizes } from '../../styles'
 type Props = {
   readonly title: string
   readonly animatedValue: Node<number>
+  readonly outputRange: ReadonlyArray<number>
 }
 
 export const OptionListTitle = ({
   title,
   animatedValue,
+  outputRange,
 }: Props): React.ReactElement => {
   const sizes = getSizes()
 
@@ -26,12 +28,17 @@ export const OptionListTitle = ({
     },
   })
 
+  const transition = interpolate(animatedValue, {
+    inputRange: [0, 1],
+    outputRange: outputRange,
+  })
+
   return (
     <Animated.View
       style={[
         styles.titlewrapper,
         {
-          opacity: animatedValue,
+          opacity: transition,
         },
       ]}
     >
