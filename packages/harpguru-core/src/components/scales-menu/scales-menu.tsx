@@ -76,21 +76,19 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
       flex: 3,
     },
   })
+  const toggleVisibleOption = (): void => {
+    setVisibleOption((visibleOption) => {
+      if (visibleOption === VisibleOption.Scales) return VisibleOption.Chords
+      return VisibleOption.Scales
+    })
+  }
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
         <View style={styles.titlesectionrotator}>
           <View style={styles.titlesectionspacer}>
             <View>
-              <TouchableOpacity
-                onPress={() =>
-                  setVisibleOption((visibleOption) => {
-                    if (visibleOption === VisibleOption.Scales)
-                      return VisibleOption.Chords
-                    return VisibleOption.Scales
-                  })
-                }
-              >
+              <TouchableOpacity onPress={() => toggleVisibleOption()}>
                 <AntDesign name="left" size={sizes['9']} color="black" />
               </TouchableOpacity>
             </View>
@@ -117,15 +115,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
               </Animated.View>
             </View>
             <View>
-              <TouchableOpacity
-                onPress={() =>
-                  setVisibleOption((visibleOption) => {
-                    if (visibleOption === VisibleOption.Scales)
-                      return VisibleOption.Chords
-                    return VisibleOption.Scales
-                  })
-                }
-              >
+              <TouchableOpacity onPress={() => toggleVisibleOption()}>
                 <AntDesign name="right" size={sizes['9']} color="black" />
               </TouchableOpacity>
             </View>
