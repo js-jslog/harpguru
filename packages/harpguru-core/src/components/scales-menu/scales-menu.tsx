@@ -44,10 +44,10 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
       easing: Easing.inOut(Easing.ease),
     }
   )
-  const scalesTitleOpacity = interpolate(scalesTitleVisibleTiming, {
-    inputRange: [0, 1],
-    outputRange: [0, 1],
-  })
+  //const scalesTitleOpacity = interpolate(scalesTitleVisibleTiming, {
+  //  inputRange: [0, 1],
+  //  outputRange: [0, 1],
+  //})
   const chordsTitleOpacity = interpolate(scalesTitleVisibleTiming, {
     inputRange: [0, 1],
     outputRange: [1, 0],
@@ -77,6 +77,16 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
       flex: 3,
     },
   })
+  const titlesList = ['Scales', 'Chords']
+  const titlesComponents = titlesList.map((title, index) => {
+    return (
+      <OptionListTitle
+        title={title}
+        animatedValue={chordsTitleOpacity}
+        key={index}
+      />
+    )
+  })
   const toggleVisibleOption = (): void => {
     setVisibleOption((visibleOption) => {
       if (visibleOption === VisibleOption.Scales) return VisibleOption.Chords
@@ -93,16 +103,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
                 <AntDesign name="left" size={sizes['9']} color="black" />
               </TouchableOpacity>
             </View>
-            <View>
-              <OptionListTitle
-                title={'Scales'}
-                animatedValue={chordsTitleOpacity}
-              />
-              <OptionListTitle
-                title={'Chords'}
-                animatedValue={scalesTitleOpacity}
-              />
-            </View>
+            <View>{titlesComponents}</View>
             <View>
               <TouchableOpacity onPress={() => toggleVisibleOption()}>
                 <AntDesign name="right" size={sizes['9']} color="black" />
