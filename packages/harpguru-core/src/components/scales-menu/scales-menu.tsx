@@ -2,11 +2,12 @@ import { useState } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Dimensions, View, Text, StyleSheet } from 'react-native'
+import { Dimensions, View, StyleSheet } from 'react-native'
 import React from 'react'
 import { getScale, getScaleIds } from 'harpparts'
 import { AntDesign, MaterialIcons } from '@expo/vector-icons'
 
+import { OptionListTitle } from '../option-list-title'
 import { OptionList } from '../option-list'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
@@ -93,26 +94,14 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
               </TouchableOpacity>
             </View>
             <View>
-              <Animated.View
-                style={[
-                  styles.titlewrapper,
-                  {
-                    opacity: scalesTitleOpacity,
-                  },
-                ]}
-              >
-                <Text style={styles.titletext}>Scales</Text>
-              </Animated.View>
-              <Animated.View
-                style={[
-                  styles.titlewrapper,
-                  {
-                    opacity: chordsTitleOpacity,
-                  },
-                ]}
-              >
-                <Text style={styles.titletext}>Chords</Text>
-              </Animated.View>
+              <OptionListTitle
+                title={'Scales'}
+                animatedValue={chordsTitleOpacity}
+              />
+              <OptionListTitle
+                title={'Chords'}
+                animatedValue={scalesTitleOpacity}
+              />
             </View>
             <View>
               <TouchableOpacity onPress={() => toggleVisibleOption()}>
