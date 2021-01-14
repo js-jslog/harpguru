@@ -8,13 +8,15 @@ import { getSizes } from '../../styles'
 type Props = {
   readonly title: string
   readonly animatedValue: Node<number>
-  readonly outputRange: ReadonlyArray<number>
+  readonly selfIndex: number
+  readonly totalItems: number
 }
 
 export const OptionListTitle = ({
   title,
   animatedValue,
-  outputRange,
+  selfIndex,
+  totalItems,
 }: Props): React.ReactElement => {
   const sizes = getSizes()
 
@@ -27,6 +29,10 @@ export const OptionListTitle = ({
       fontSize: sizes['9'],
     },
   })
+
+  const head = new Array(selfIndex).fill(0)
+  const tail = new Array(totalItems - selfIndex - 1).fill(0)
+  const outputRange = [...head, 1, ...tail]
 
   const transition = interpolate(animatedValue, {
     inputRange: [0, 1],

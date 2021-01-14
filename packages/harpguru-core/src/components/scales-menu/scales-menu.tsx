@@ -56,13 +56,13 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     },
   })
   const titlesList = ['Scales', 'Chords']
-  const titlesComponents = titlesList.map((title, index) => {
-    const outputRange = index === 1 ? [1, 0] : [0, 1]
+  const titlesComponents = titlesList.map((title, index, array) => {
     return (
       <OptionListTitle
         title={title}
         animatedValue={transitionValue}
-        outputRange={outputRange}
+        selfIndex={index}
+        totalItems={array.length}
         key={index}
       />
     )
@@ -76,13 +76,13 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
     isMenuStashed: isMenuStashed,
   })
-  const listComponents = [scales, chords].map((scale, index) => {
-    const outputRange = index === 1 ? [1, 0] : [0, 1]
+  const listComponents = [scales, chords].map((scale, index, array) => {
     return (
       <OptionList
         scales={scale}
         animatedValue={transitionValue}
-        outputRange={outputRange}
+        selfIndex={index}
+        totalItems={array.length}
         tapHandler={(arg0) => dispatchAndFlushScaleToggles(arg0)}
         key={index}
       />
