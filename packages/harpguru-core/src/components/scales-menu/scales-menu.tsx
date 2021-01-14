@@ -1,6 +1,5 @@
-import { useState } from 'reactn'
-import { useTimingTransition } from 'react-native-redash'
-import { Easing, interpolate } from 'react-native-reanimated'
+import { withTimingTransition } from 'react-native-redash'
+import { cond, Easing, eq, Value } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Dimensions, View, StyleSheet } from 'react-native'
 import React from 'react'
@@ -25,28 +24,11 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const { isMenuStashed } = menuProps
 
-  enum VisibleOption {
-    Scales,
-    Chords,
-  }
-  const [visibleOption, setVisibleOption] = useState<VisibleOption>(
-    VisibleOption.Scales
-  )
   const animationDuration = 300
-  const scalesTitleVisibleTiming = useTimingTransition(
-    visibleOption === VisibleOption.Scales,
-    {
-      duration: animationDuration,
-      easing: Easing.inOut(Easing.ease),
-    }
-  )
-  //const scalesTitleOpacity = interpolate(scalesTitleVisibleTiming, {
-  //  inputRange: [0, 1],
-  //  outputRange: [0, 1],
-  //})
-  const chordsTitleOpacity = interpolate(scalesTitleVisibleTiming, {
-    inputRange: [0, 1],
-    outputRange: [1, 0],
+  const animationValue = new Value<number>(0)
+  const transitionValue = withTimingTransition(animationValue, {
+    duration: animationDuration,
+    easing: Easing.inOut(Easing.ease),
   })
 
   const styles = StyleSheet.create({
@@ -79,7 +61,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionListTitle
         title={title}
-        animatedValue={chordsTitleOpacity}
+        animatedValue={transitionValue}
         outputRange={outputRange}
         key={index}
       />
@@ -99,7 +81,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionList
         scales={scale}
-        animatedValue={chordsTitleOpacity}
+        animatedValue={transitionValue}
         outputRange={outputRange}
         tapHandler={(arg0) => dispatchAndFlushScaleToggles(arg0)}
         key={index}
@@ -107,10 +89,8 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     )
   })
   const toggleVisibleOption = (): void => {
-    setVisibleOption((visibleOption) => {
-      if (visibleOption === VisibleOption.Scales) return VisibleOption.Chords
-      return VisibleOption.Scales
-    })
+    const setValue = cond(eq(animationValue, 1), 0, 1)
+    animationValue.setValue(setValue)
   }
   return (
     <Menu {...menuProps}>
