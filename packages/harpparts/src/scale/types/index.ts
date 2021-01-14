@@ -19,4 +19,10 @@ export type Scale = {
   readonly id: ScaleIds
   readonly label: string
   readonly degrees: ReadonlyArray<DegreeIds>
+  readonly category: ScaleCategory
+}
+
+export enum ScaleCategory {
+  Scale,
+  Chord,
 }

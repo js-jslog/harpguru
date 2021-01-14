@@ -12,5 +12,5 @@ export {
   LYDIAN,
   HARMONIC_MINOR,
 } from './constants'
-export { ScaleIds } from './types'
+export { ScaleIds, ScaleCategory } from './types'
 export type { Scale } from './types'
