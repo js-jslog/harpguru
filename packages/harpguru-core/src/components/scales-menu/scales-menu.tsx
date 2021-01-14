@@ -77,9 +77,12 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     isMenuStashed: isMenuStashed,
   })
   const listComponents = [scales, chords].map((scale, index, array) => {
+    const labels = scale.map((s) => s.label)
+    const callbackParams = scale.map((s) => s.degrees)
     return (
       <OptionList
-        scales={scale}
+        labels={labels}
+        callbackParams={callbackParams}
         animatedValue={transitionValue}
         selfIndex={index}
         totalItems={array.length}

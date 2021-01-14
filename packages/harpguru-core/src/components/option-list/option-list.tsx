@@ -3,12 +3,13 @@ import type { Node } from 'react-native-reanimated'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 import { Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
-import type { DegreeIds, Scale } from 'harpparts'
+import type { DegreeIds } from 'harpparts'
 
 import { getSizes } from '../../styles'
 
 type ListProps = {
-  readonly scales: ReadonlyArray<Scale>
+  readonly labels: ReadonlyArray<string>
+  readonly callbackParams: ReadonlyArray<ReadonlyArray<DegreeIds>>
   readonly tapHandler: (arg0: ReadonlyArray<DegreeIds>) => void
   readonly animatedValue: Node<number>
   readonly selfIndex: number
@@ -16,7 +17,8 @@ type ListProps = {
 }
 
 export const OptionList = ({
-  scales,
+  labels,
+  callbackParams,
   tapHandler,
   animatedValue,
   selfIndex,
@@ -49,6 +51,10 @@ export const OptionList = ({
     outputRange: outputRange,
   })
 
+  const data = labels.map((label, index) => ({
+    label,
+    callbackParam: callbackParams[index],
+  }))
   return (
     <Animated.View
       style={[
@@ -60,13 +66,13 @@ export const OptionList = ({
     >
       <SafeAreaView>
         <FlatList
-          data={scales}
+          data={data}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => tapHandler(item.degrees)}>
+            <TouchableOpacity onPress={() => tapHandler(item.callbackParam)}>
               <Text style={styles.optionText}>{item.label}</Text>
             </TouchableOpacity>
           )}
-          keyExtractor={(item) => `${item.id}`}
+          keyExtractor={(item) => `${item.label}`}
         />
       </SafeAreaView>
     </Animated.View>
