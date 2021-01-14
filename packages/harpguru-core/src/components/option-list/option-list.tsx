@@ -3,27 +3,26 @@ import type { Node } from 'react-native-reanimated'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 import { Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
-import type { DegreeIds } from 'harpparts'
 
 import { getSizes } from '../../styles'
 
-type ListProps = {
+type ListProps<T> = {
   readonly labels: ReadonlyArray<string>
-  readonly callbackParams: ReadonlyArray<ReadonlyArray<DegreeIds>>
-  readonly tapHandler: (arg0: ReadonlyArray<DegreeIds>) => void
+  readonly callbackParams: ReadonlyArray<T>
+  readonly tapHandler: (arg0: T) => void
   readonly animatedValue: Node<number>
   readonly selfIndex: number
   readonly totalItems: number
 }
 
-export const OptionList = ({
+export const OptionList = <T extends unknown>({
   labels,
   callbackParams,
   tapHandler,
   animatedValue,
   selfIndex,
   totalItems,
-}: ListProps): React.ReactElement => {
+}: ListProps<T>): React.ReactElement => {
   const sizes = getSizes()
 
   if (selfIndex > totalItems - 1)
