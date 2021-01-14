@@ -1,6 +1,6 @@
 import { useState } from 'reactn'
 import { useTimingTransition } from 'react-native-redash'
-import Animated, { Easing, interpolate } from 'react-native-reanimated'
+import { Easing, interpolate } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Dimensions, View, StyleSheet } from 'react-native'
 import React from 'react'
@@ -19,20 +19,11 @@ import { useDispatchAndFlushScaleToggles } from './hooks'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
-  const scales = getScaleIds()
-    .map((id) => getScale(id))
-    .filter((scale) => scale.category === ScaleCategory.Scale)
-  const chords = getScaleIds()
-    .map((id) => getScale(id))
-    .filter((scale) => scale.category === ScaleCategory.Chord)
   // TODO: turn this in to a util since it's used elsewhere
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
 
   const { isMenuStashed } = menuProps
-  const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
-    isMenuStashed: isMenuStashed,
-  })
 
   enum VisibleOption {
     Scales,
@@ -94,8 +85,16 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
       />
     )
   })
-  const listList = [scales, chords]
-  const listComponents = listList.map((scale, index) => {
+  const scales = getScaleIds()
+    .map((id) => getScale(id))
+    .filter((scale) => scale.category === ScaleCategory.Scale)
+  const chords = getScaleIds()
+    .map((id) => getScale(id))
+    .filter((scale) => scale.category === ScaleCategory.Chord)
+  const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
+    isMenuStashed: isMenuStashed,
+  })
+  const listComponents = [scales, chords].map((scale, index) => {
     return (
       <OptionList
         scales={scale}
@@ -128,9 +127,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
             </View>
           </View>
         </View>
-        <Animated.View style={styles.listsection}>
-          {listComponents}
-        </Animated.View>
+        <View style={styles.listsection}>{listComponents}</View>
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <MaterialIcons

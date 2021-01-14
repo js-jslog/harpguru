@@ -1,6 +1,5 @@
-import Animated from 'react-native-reanimated'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
-import { Text, SafeAreaView, StyleSheet } from 'react-native'
+import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
 import type { DegreeIds, Scale } from 'harpparts'
 
@@ -18,19 +17,12 @@ export const OptionList = ({
   const sizes = getSizes()
 
   const styles = StyleSheet.create({
-    flexissuer: {
-      flexDirection: 'row',
-    },
     absolute: {
       position: 'absolute',
       height: '100%',
       width: '100%',
-      alignSelf: 'center',
     },
-    fullflex: {
-      flex: 1,
-    },
-    title: {
+    optionText: {
       alignSelf: 'center',
       fontSize: sizes['8'],
       lineHeight: sizes['10'],
@@ -38,22 +30,18 @@ export const OptionList = ({
   })
 
   return (
-    <Animated.View style={styles.absolute}>
-      <Animated.View style={styles.flexissuer}>
-        <Animated.View style={styles.fullflex}>
-          <SafeAreaView style={{}}>
-            <FlatList
-              data={scales}
-              renderItem={({ item }) => (
-                <TouchableOpacity onPress={() => tapHandler(item.degrees)}>
-                  <Text style={styles.title}>{item.label}</Text>
-                </TouchableOpacity>
-              )}
-              keyExtractor={(item) => `${item.id}`}
-            />
-          </SafeAreaView>
-        </Animated.View>
-      </Animated.View>
-    </Animated.View>
+    <View style={styles.absolute}>
+      <SafeAreaView>
+        <FlatList
+          data={scales}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => tapHandler(item.degrees)}>
+              <Text style={styles.optionText}>{item.label}</Text>
+            </TouchableOpacity>
+          )}
+          keyExtractor={(item) => `${item.id}`}
+        />
+      </SafeAreaView>
+    </View>
   )
 }
