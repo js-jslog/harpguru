@@ -4,7 +4,7 @@ import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Dimensions, View, StyleSheet } from 'react-native'
 import React from 'react'
-import { getScale, getScaleIds } from 'harpparts'
+import { getScale, getScaleIds, ScaleCategory } from 'harpparts'
 import { AntDesign, MaterialIcons } from '@expo/vector-icons'
 
 import { OptionListTitle } from '../option-list-title'
@@ -19,7 +19,12 @@ import { useDispatchAndFlushScaleToggles } from './hooks'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
-  const scales = getScaleIds().map((id) => getScale(id))
+  const scales = getScaleIds()
+    .map((id) => getScale(id))
+    .filter((scale) => scale.category === ScaleCategory.Scale)
+  const chords = getScaleIds()
+    .map((id) => getScale(id))
+    .filter((scale) => scale.category === ScaleCategory.Chord)
   // TODO: turn this in to a util since it's used elsewhere
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
@@ -89,6 +94,16 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
       />
     )
   })
+  const listList = [scales, chords]
+  const listComponents = listList.map((scale, index) => {
+    return (
+      <OptionList
+        scales={scale}
+        tapHandler={(arg0) => dispatchAndFlushScaleToggles(arg0)}
+        key={index}
+      />
+    )
+  })
   const toggleVisibleOption = (): void => {
     setVisibleOption((visibleOption) => {
       if (visibleOption === VisibleOption.Scales) return VisibleOption.Chords
@@ -114,10 +129,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
           </View>
         </View>
         <Animated.View style={styles.listsection}>
-          <OptionList
-            scales={scales}
-            tapHandler={(arg0) => dispatchAndFlushScaleToggles(arg0)}
-          />
+          {listComponents}
         </Animated.View>
       </MenuFace>
       <MenuOpenButton {...menuProps}>
