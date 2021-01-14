@@ -1,5 +1,10 @@
 import { getOutputRange } from './get-output-range'
 
+test('that an error is thrown if an range is below 1', () => {
+  expect(() => getOutputRange(1, 0)).toThrow(
+    'Only range lengths greater than 0 are valid'
+  )
+})
 test('that an error is thrown if an index outside the appropriate range is given', () => {
   expect(() => getOutputRange(1, 1)).toThrow('Index outside of range given')
   expect(() => getOutputRange(-1, 1)).toThrow('Index outside of range given')
