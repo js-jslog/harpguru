@@ -1,5 +1,7 @@
+import Animated, { interpolate } from 'react-native-reanimated'
+import type { Node } from 'react-native-reanimated'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
+import { Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
 import type { DegreeIds, Scale } from 'harpparts'
 
@@ -8,11 +10,15 @@ import { getSizes } from '../../styles'
 type ListProps = {
   readonly scales: ReadonlyArray<Scale>
   readonly tapHandler: (arg0: ReadonlyArray<DegreeIds>) => void
+  readonly animatedValue: Node<number>
+  readonly outputRange: ReadonlyArray<number>
 }
 
 export const OptionList = ({
   scales,
   tapHandler,
+  animatedValue,
+  outputRange,
 }: ListProps): React.ReactElement => {
   const sizes = getSizes()
 
@@ -29,8 +35,20 @@ export const OptionList = ({
     },
   })
 
+  const transition = interpolate(animatedValue, {
+    inputRange: [0, 1],
+    outputRange: outputRange,
+  })
+
   return (
-    <View style={styles.absolute}>
+    <Animated.View
+      style={[
+        styles.absolute,
+        {
+          opacity: transition,
+        },
+      ]}
+    >
       <SafeAreaView>
         <FlatList
           data={scales}
@@ -42,6 +60,6 @@ export const OptionList = ({
           keyExtractor={(item) => `${item.id}`}
         />
       </SafeAreaView>
-    </View>
+    </Animated.View>
   )
 }

@@ -95,9 +95,12 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     isMenuStashed: isMenuStashed,
   })
   const listComponents = [scales, chords].map((scale, index) => {
+    const outputRange = index === 1 ? [1, 0] : [0, 1]
     return (
       <OptionList
         scales={scale}
+        animatedValue={chordsTitleOpacity}
+        outputRange={outputRange}
         tapHandler={(arg0) => dispatchAndFlushScaleToggles(arg0)}
         key={index}
       />
