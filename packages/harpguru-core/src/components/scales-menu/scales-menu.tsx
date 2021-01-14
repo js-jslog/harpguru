@@ -6,14 +6,13 @@ import React from 'react'
 import { getScale, getScaleIds, ScaleCategory } from 'harpparts'
 import { AntDesign, MaterialIcons } from '@expo/vector-icons'
 
-import { OptionListTitle } from '../option-list-title'
-import { OptionList } from '../option-list'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
 import { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
+import { getOptionListComponents } from './utils'
 import { useDispatchAndFlushScaleToggles } from './hooks'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
@@ -55,18 +54,6 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
       flex: 3,
     },
   })
-  const titlesList = ['Scales', 'Chords']
-  const titlesComponents = titlesList.map((title, index, array) => {
-    return (
-      <OptionListTitle
-        title={title}
-        animatedValue={transitionValue}
-        selfIndex={index}
-        totalItems={array.length}
-        key={index}
-      />
-    )
-  })
   const scales = getScaleIds()
     .map((id) => getScale(id))
     .filter((scale) => scale.category === ScaleCategory.Scale)
@@ -76,22 +63,22 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
     isMenuStashed: isMenuStashed,
   })
-  const listComponents = [scales, chords].map((scale, index, array) => {
-    const items = scale.map((scale) => ({
-      label: scale.label,
-      callbackParam: scale.degrees,
+  const titles = [scales, chords].map((list) =>
+    list[0].category === ScaleCategory.Scale ? 'Scales' : 'Chords'
+  )
+  const itemsz = [scales, chords].map((list) =>
+    list.map((item) => ({
+      label: item.label,
+      callbackParam: item.degrees,
     }))
-    return (
-      <OptionList
-        items={items}
-        animatedValue={transitionValue}
-        selfIndex={index}
-        totalItems={array.length}
-        tapHandler={(arg0) => dispatchAndFlushScaleToggles(arg0)}
-        key={index}
-      />
-    )
-  })
+  )
+  const [
+    optionListTitleComponents,
+    optionListComponents,
+  ] = getOptionListComponents(titles, itemsz, transitionValue, (arg0) =>
+    dispatchAndFlushScaleToggles(arg0)
+  )
+
   const toggleVisibleOption = (): void => {
     const setValue = cond(eq(animationValue, 1), 0, 1)
     animationValue.setValue(setValue)
@@ -106,7 +93,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
                 <AntDesign name="left" size={sizes['9']} color="black" />
               </TouchableOpacity>
             </View>
-            <View>{titlesComponents}</View>
+            <View>{optionListTitleComponents}</View>
             <View>
               <TouchableOpacity onPress={() => toggleVisibleOption()}>
                 <AntDesign name="right" size={sizes['9']} color="black" />
@@ -114,7 +101,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
             </View>
           </View>
         </View>
-        <View style={styles.listsection}>{listComponents}</View>
+        <View style={styles.listsection}>{optionListComponents}</View>
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <MaterialIcons

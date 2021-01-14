@@ -14,7 +14,7 @@ type ListProps<T> = {
   readonly totalItems: number
 }
 
-type Item<T> = {
+export type Item<T> = {
   readonly label: string
   readonly callbackParam: T
 }
