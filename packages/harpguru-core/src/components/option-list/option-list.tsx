@@ -7,17 +7,20 @@ import React from 'react'
 import { getSizes } from '../../styles'
 
 type ListProps<T> = {
-  readonly labels: ReadonlyArray<string>
-  readonly callbackParams: ReadonlyArray<T>
+  readonly items: ReadonlyArray<Item<T>>
   readonly tapHandler: (arg0: T) => void
   readonly animatedValue: Node<number>
   readonly selfIndex: number
   readonly totalItems: number
 }
 
+type Item<T> = {
+  readonly label: string
+  readonly callbackParam: T
+}
+
 export const OptionList = <T extends unknown>({
-  labels,
-  callbackParams,
+  items,
   tapHandler,
   animatedValue,
   selfIndex,
@@ -50,10 +53,6 @@ export const OptionList = <T extends unknown>({
     outputRange: outputRange,
   })
 
-  const data = labels.map((label, index) => ({
-    label,
-    callbackParam: callbackParams[index],
-  }))
   return (
     <Animated.View
       style={[
@@ -65,7 +64,7 @@ export const OptionList = <T extends unknown>({
     >
       <SafeAreaView>
         <FlatList
-          data={data}
+          data={items}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() => tapHandler(item.callbackParam)}>
               <Text style={styles.optionText}>{item.label}</Text>
