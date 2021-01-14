@@ -2,6 +2,7 @@ import { getOutputRange } from './get-output-range'
 
 test('that an error is thrown if an index outside the appropriate range is given', () => {
   expect(() => getOutputRange(1, 1)).toThrow('Index outside of range given')
+  expect(() => getOutputRange(-1, 1)).toThrow('Index outside of range given')
 })
 
 test('that output ranges for a range of 1 can be produced', () => {
