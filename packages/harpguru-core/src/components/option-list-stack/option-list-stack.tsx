@@ -11,11 +11,20 @@ import { OptionList } from '../option-list'
 import type { Item } from '../option-list'
 import { colors, getSizes } from '../../styles'
 
-// TODO: Find a way to make this more generic. It needs to be able to
-// accept lists which each have different callback parameter types.
+// TODO: Find a way to improve this. It needs to be able to
+// accept lists which each have different callback parameter types,
+// but without becoming too clunky. I don't really mind having all of
+// the possible types listed here and guarded for but it's not ideal.
+// The `string` version doesn't have any application yet, it's just
+// to confirm that I've found *an* approach.
 type OptionListStackProps = {
-  readonly stackPropsz: ReadonlyArray<OptionListProps<ReadonlyArray<DegreeIds>>>
+  readonly stackPropsz: ReadonlyArray<
+    OptionListPropsDegreeBuffer | OptionListPropsString
+  >
 }
+
+type OptionListPropsDegreeBuffer = OptionListProps<ReadonlyArray<DegreeIds>>
+type OptionListPropsString = OptionListProps<string>
 
 type OptionListProps<T> = {
   readonly title: string
@@ -47,17 +56,38 @@ const OptionListStackLocal = ({
     }
   )
 
+  function isForString(
+    x: OptionListPropsString | OptionListPropsDegreeBuffer
+  ): x is OptionListPropsString {
+    return typeof x.title === 'string'
+  }
+
   const optionListComponents = stackPropsz.map((items, index, array) => {
-    return (
-      <OptionList
-        items={items.items}
-        animatedValue={transitionValue}
-        selfIndex={index}
-        totalItems={array.length}
-        tapHandler={items.itemTapHandler}
-        key={index}
-      />
-    )
+    if (isForString(items)) {
+      const i = items as OptionListPropsString
+      return (
+        <OptionList
+          items={i.items}
+          animatedValue={transitionValue}
+          selfIndex={index}
+          totalItems={array.length}
+          tapHandler={i.itemTapHandler}
+          key={index}
+        />
+      )
+    } else {
+      const i = items as OptionListPropsDegreeBuffer
+      return (
+        <OptionList
+          items={i.items}
+          animatedValue={transitionValue}
+          selfIndex={index}
+          totalItems={array.length}
+          tapHandler={i.itemTapHandler}
+          key={index}
+        />
+      )
+    }
   })
 
   const sizes = getSizes()
