@@ -95,35 +95,26 @@ const OptionListStackLocal = ({
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
   const deviceWidth = windowHeight < windowWidth ? windowWidth : windowHeight
-  // TODO: name, format and or comment this to explain what it's doing and
-  // why it works. Explain that the 4 is intrinsically tied to the flex
-  // ratios of 1 : 3 currently selected. If these change then there'll be
-  // trouble, but there's absolutely no reason to change them now. In fact,
-  // flex isn't even required here now I think. The elements are basically
-  // absolutely positioned.
-  const rotatedContentVerticalOffset = (deviceHeight - deviceWidth / 4) / 2
   const styles = StyleSheet.create({
     titlesectionrotator: {
-      flex: 1,
-      justifyContent: 'flex-start',
-      alignItems: 'center',
       transform: [{ rotate: '-90deg' }],
     },
     titlesectionspacer: {
-      paddingTop: rotatedContentVerticalOffset + sizes['11'],
+      paddingTop: sizes['11'],
       width: deviceHeight,
       justifyContent: 'space-between',
       flexDirection: 'row',
     },
-    titlewrapper: {
-      position: 'absolute',
-      alignSelf: 'center',
-    },
-    titletext: {
-      fontSize: sizes['9'],
-    },
     listsection: {
-      flex: 3,
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      // This is based on the offset of the titlesectionspacer
+      // and the font size of the title text together with the
+      // font size again as a spacer. It would be nice to tie
+      // these sizes together somehow.
+      width: deviceWidth - sizes['11'] - sizes['9'] - sizes['9'],
+      height: deviceHeight,
     },
   })
   const toggleVisibleOption = (): void => {
