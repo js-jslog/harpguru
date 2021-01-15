@@ -64,15 +64,23 @@ const OptionListStackLocal = ({
   // TODO: turn this in to a util since it's used elsewhere
   const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
   const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
+  const deviceWidth = windowHeight < windowWidth ? windowWidth : windowHeight
+  // TODO: name, format and or comment this to explain what it's doing and
+  // why it works. Explain that the 4 is intrinsically tied to the flex
+  // ratios of 1 : 3 currently selected. If these change then there'll be
+  // trouble, but there's absolutely no reason to change them now. In fact,
+  // flex isn't even required here now I think. The elements are basically
+  // absolutely positioned.
+  const rotatedContentVerticalOffset = (deviceHeight - deviceWidth / 4) / 2
   const styles = StyleSheet.create({
     titlesectionrotator: {
       flex: 1,
-      justifyContent: 'center',
+      justifyContent: 'flex-start',
       alignItems: 'center',
       transform: [{ rotate: '-90deg' }],
     },
     titlesectionspacer: {
-      height: sizes['4'],
+      paddingTop: rotatedContentVerticalOffset + sizes['11'],
       width: deviceHeight,
       justifyContent: 'space-between',
       flexDirection: 'row',
