@@ -26,6 +26,10 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
     isMenuStashed: isMenuStashed,
   })
+  const itemTapHandler = React.useCallback(
+    (arg0: ReadonlyArray<DegreeIds>) => dispatchAndFlushScaleToggles(arg0),
+    []
+  )
   const titles = [scales, chords].map((list) =>
     list[0].category === ScaleCategory.Scale ? 'Scales' : 'Chords'
   )
@@ -40,14 +44,12 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     {
       title: titles[0],
       items: itemsz[0],
-      itemTapHandler: (arg0: ReadonlyArray<DegreeIds>) =>
-        dispatchAndFlushScaleToggles(arg0),
+      itemTapHandler,
     },
     {
       title: titles[1],
       items: itemsz[1],
-      itemTapHandler: (arg0: ReadonlyArray<DegreeIds>) =>
-        dispatchAndFlushScaleToggles(arg0),
+      itemTapHandler,
     },
   ]
   return (

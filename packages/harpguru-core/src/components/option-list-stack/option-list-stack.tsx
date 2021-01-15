@@ -21,7 +21,7 @@ type OptionListProps<T> = {
   readonly itemTapHandler: (arg0: T) => void
 }
 
-export const OptionListStack = ({
+const OptionListStackLocal = ({
   stackPropsz,
 }: OptionListStackProps): React.ReactElement => {
   const animationDuration = 300
@@ -111,3 +111,18 @@ export const OptionListStack = ({
     </>
   )
 }
+
+const areEqual = (
+  { stackPropsz: prevProps }: OptionListStackProps,
+  { stackPropsz: nextProps }: OptionListStackProps
+) => {
+  // TODO: Add more tests
+  // Tests whether another list has been added to the stack
+  if (prevProps.length !== nextProps.length) return false
+  // If we want to include this test then we need to ensure that React.useCallback
+  // wraps the tap handlers being passed in.
+  if (prevProps[0].itemTapHandler !== nextProps[0].itemTapHandler) return false
+  return true
+}
+
+export const OptionListStack = React.memo(OptionListStackLocal, areEqual)
