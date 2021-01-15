@@ -11,6 +11,8 @@ import { OptionList } from '../option-list'
 import type { Item } from '../option-list'
 import { getSizes } from '../../styles'
 
+// TODO: Find a way to make this more generic. It needs to be able to
+// accept lists which each have different callback parameter types.
 type OptionListStackProps = {
   readonly stackPropsz: ReadonlyArray<OptionListProps<ReadonlyArray<DegreeIds>>>
 }
