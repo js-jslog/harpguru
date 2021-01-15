@@ -96,16 +96,14 @@ const OptionListStackLocal = ({
   const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
   const deviceWidth = windowHeight < windowWidth ? windowWidth : windowHeight
   const styles = StyleSheet.create({
-    titlesectionrotator: {
+    titleSection: {
       transform: [{ rotate: '-90deg' }],
-    },
-    titlesectionspacer: {
       paddingTop: sizes['11'],
       width: deviceHeight,
       justifyContent: 'space-between',
       flexDirection: 'row',
     },
-    listsection: {
+    liatSection: {
       position: 'absolute',
       top: 0,
       right: 0,
@@ -123,30 +121,24 @@ const OptionListStackLocal = ({
   }
   return (
     <>
-      <View style={styles.titlesectionrotator}>
-        <View style={styles.titlesectionspacer}>
-          <View>
-            <TouchableOpacity onPress={() => toggleVisibleOption()}>
-              <AntDesign
-                name="left"
-                size={sizes['9']}
-                color={colors.inertOutline}
-              />
-            </TouchableOpacity>
-          </View>
-          <View>{optionListTitleComponents}</View>
-          <View>
-            <TouchableOpacity onPress={() => toggleVisibleOption()}>
-              <AntDesign
-                name="right"
-                size={sizes['9']}
-                color={colors.inertOutline}
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
+      <View style={styles.titleSection}>
+        <TouchableOpacity onPress={() => toggleVisibleOption()}>
+          <AntDesign
+            name="left"
+            size={sizes['9']}
+            color={colors.inertOutline}
+          />
+        </TouchableOpacity>
+        <View>{optionListTitleComponents}</View>
+        <TouchableOpacity onPress={() => toggleVisibleOption()}>
+          <AntDesign
+            name="right"
+            size={sizes['9']}
+            color={colors.inertOutline}
+          />
+        </TouchableOpacity>
       </View>
-      <View style={styles.listsection}>{optionListComponents}</View>
+      <View style={styles.liatSection}>{optionListComponents}</View>
     </>
   )
 }
