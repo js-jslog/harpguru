@@ -1,6 +1,6 @@
 import type Dispatcher from 'reactn/types/dispatcher'
 import { useGlobal, useDispatch } from 'reactn'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import type { DegreeIds } from 'harpparts'
 
 import { rebufferForInput } from '../utils'
@@ -29,21 +29,24 @@ export const useDispatchAndFlushScaleToggles = ({
     flushBufferedActivityToggles()
   }, [bufferedActivityToggles, flushChannel])
 
-  return useDispatch(
-    (
-      global: GlobalState,
-      _dipatch,
-      targetActiveDegrees: ReadonlyArray<DegreeIds>
-    ): Pick<GlobalState, 'bufferedActivityToggles'> => {
-      const { activeHarpStrata } = global
-      const { activeDegreeIds } = activeHarpStrata
+  return React.useCallback(
+    useDispatch(
+      (
+        global: GlobalState,
+        _dipatch,
+        targetActiveDegrees: ReadonlyArray<DegreeIds>
+      ): Pick<GlobalState, 'bufferedActivityToggles'> => {
+        const { activeHarpStrata } = global
+        const { activeDegreeIds } = activeHarpStrata
 
-      return {
-        bufferedActivityToggles: rebufferForInput(
-          activeDegreeIds,
-          targetActiveDegrees
-        ),
+        return {
+          bufferedActivityToggles: rebufferForInput(
+            activeDegreeIds,
+            targetActiveDegrees
+          ),
+        }
       }
-    }
+    ),
+    [useDispatch]
   )
 }

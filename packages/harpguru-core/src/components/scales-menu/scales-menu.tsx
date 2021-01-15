@@ -28,7 +28,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   })
   const itemTapHandler = React.useCallback(
     (arg0: ReadonlyArray<DegreeIds>) => dispatchAndFlushScaleToggles(arg0),
-    []
+    [dispatchAndFlushScaleToggles]
   )
   const titles = [scales, chords].map((list) =>
     list[0].category === ScaleCategory.Scale ? 'Scales' : 'Chords'
