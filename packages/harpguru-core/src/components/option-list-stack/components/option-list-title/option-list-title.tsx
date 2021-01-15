@@ -2,7 +2,7 @@ import Animated, { interpolate } from 'react-native-reanimated'
 import { Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-import type { ListTitleProps } from '../../types'
+import type { TitleProps, AnimationProps } from '../../types'
 import { colors, getSizes } from '../../../../styles'
 
 export const OptionListTitle = ({
@@ -10,7 +10,7 @@ export const OptionListTitle = ({
   animatedValue,
   selfIndex,
   totalItems,
-}: ListTitleProps): React.ReactElement => {
+}: TitleProps & AnimationProps): React.ReactElement => {
   const sizes = getSizes()
 
   const styles = StyleSheet.create({

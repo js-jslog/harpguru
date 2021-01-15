@@ -3,16 +3,16 @@ import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 import { Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
 
-import type { ListProps } from '../../types'
+import type { ListProps, AnimationProps } from '../../types'
 import { colors, getSizes } from '../../../../styles'
 
 export const OptionList = <T extends unknown>({
   items,
-  tapHandler,
+  itemTapHandler,
   animatedValue,
   selfIndex,
   totalItems,
-}: ListProps<T>): React.ReactElement => {
+}: ListProps<T> & AnimationProps): React.ReactElement => {
   const sizes = getSizes()
 
   if (selfIndex > totalItems - 1)
@@ -54,7 +54,9 @@ export const OptionList = <T extends unknown>({
         <FlatList
           data={items}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => tapHandler(item.callbackParam)}>
+            <TouchableOpacity
+              onPress={() => itemTapHandler(item.callbackParam)}
+            >
               <Text style={styles.optionText}>{item.label}</Text>
             </TouchableOpacity>
           )}

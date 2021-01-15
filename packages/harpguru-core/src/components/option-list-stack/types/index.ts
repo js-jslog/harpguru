@@ -7,32 +7,25 @@ import type { DegreeIds } from 'harpparts'
 // the possible types listed here and guarded for but it's not ideal.
 // The `string` version doesn't have any application yet, it's just
 // to confirm that I've found *an* approach.
-export type OptionListStackProps = {
-  readonly stackPropsz: ReadonlyArray<
-    OptionListPropsDegreeBuffer | OptionListPropsString
-  >
+export type OptionStackProps = {
+  readonly stackPropsz: ReadonlyArray<OptionProps_Scales | OptionProps_Dummy>
 }
 
-export type OptionListPropsDegreeBuffer = OptionListProps<
-  ReadonlyArray<DegreeIds>
->
-export type OptionListPropsString = OptionListProps<string>
+export type OptionProps_Scales = OptionProps<ReadonlyArray<DegreeIds>>
+export type OptionProps_Dummy = OptionProps<string>
 
-type OptionListProps<T> = {
+type OptionProps<T> = TitleProps & ListProps<T>
+
+export type TitleProps = {
   readonly title: string
-  readonly items: ReadonlyArray<Item<T>>
-  readonly itemTapHandler: (arg0: T) => void
-}
-export type ListTitleProps = {
-  readonly title: string
-  readonly animatedValue: Node<number>
-  readonly selfIndex: number
-  readonly totalItems: number
 }
 
 export type ListProps<T> = {
   readonly items: ReadonlyArray<Item<T>>
-  readonly tapHandler: (arg0: T) => void
+  readonly itemTapHandler: (arg0: T) => void
+}
+
+export type AnimationProps = {
   readonly animatedValue: Node<number>
   readonly selfIndex: number
   readonly totalItems: number

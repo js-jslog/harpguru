@@ -10,14 +10,14 @@ import { colors, getSizes } from '../../styles'
 import { OptionList, OptionListTitle } from './components'
 
 import type {
-  OptionListStackProps,
-  OptionListPropsString,
-  OptionListPropsDegreeBuffer,
+  OptionProps_Scales,
+  OptionProps_Dummy,
+  OptionStackProps,
 } from './types'
 
 const OptionListStackLocal = ({
   stackPropsz,
-}: OptionListStackProps): React.ReactElement => {
+}: OptionStackProps): React.ReactElement => {
   const animationDuration = 300
   const animationValue = new Value<number>(0)
   const transitionValue = withTimingTransition(animationValue, {
@@ -39,34 +39,34 @@ const OptionListStackLocal = ({
     }
   )
 
-  function isForString(
-    x: OptionListPropsString | OptionListPropsDegreeBuffer
-  ): x is OptionListPropsString {
-    return typeof x.title === 'string'
+  function isDummy(
+    x: OptionProps_Scales | OptionProps_Dummy
+  ): x is OptionProps_Dummy {
+    return x.title === 'TOTAL_DUMMY'
   }
 
   const optionListComponents = stackPropsz.map((items, index, array) => {
-    if (isForString(items)) {
-      const i = items as OptionListPropsString
+    if (isDummy(items)) {
+      const i = items as OptionProps_Dummy
       return (
         <OptionList
           items={i.items}
           animatedValue={transitionValue}
           selfIndex={index}
           totalItems={array.length}
-          tapHandler={i.itemTapHandler}
+          itemTapHandler={i.itemTapHandler}
           key={index}
         />
       )
     } else {
-      const i = items as OptionListPropsDegreeBuffer
+      const i = items as OptionProps_Scales
       return (
         <OptionList
           items={i.items}
           animatedValue={transitionValue}
           selfIndex={index}
           totalItems={array.length}
-          tapHandler={i.itemTapHandler}
+          itemTapHandler={i.itemTapHandler}
           key={index}
         />
       )
@@ -128,8 +128,8 @@ const OptionListStackLocal = ({
 }
 
 const areEqual = (
-  { stackPropsz: prevProps }: OptionListStackProps,
-  { stackPropsz: nextProps }: OptionListStackProps
+  { stackPropsz: prevProps }: OptionStackProps,
+  { stackPropsz: nextProps }: OptionStackProps
 ) => {
   // TODO: Add more tests
   // Tests whether another list has been added to the stack
