@@ -21,11 +21,10 @@ export const OptionListTitle = ({
   const sizes = getSizes()
 
   const styles = StyleSheet.create({
-    titlewrapper: {
-      position: 'absolute',
+    titleWrapper: {
       alignSelf: 'center',
     },
-    titletext: {
+    titleText: {
       fontSize: sizes['9'],
       color: colors.inertOutline,
     },
@@ -43,13 +42,13 @@ export const OptionListTitle = ({
   return (
     <Animated.View
       style={[
-        styles.titlewrapper,
+        styles.titleWrapper,
         {
           opacity: transition,
         },
       ]}
     >
-      <Text style={styles.titletext}>{title}</Text>
+      <Text style={styles.titleText}>{title}</Text>
     </Animated.View>
   )
 }

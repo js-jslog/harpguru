@@ -103,7 +103,8 @@ const OptionListStackLocal = ({
       justifyContent: 'space-between',
       flexDirection: 'row',
     },
-    liatSection: {
+    listSection: {
+      fontSize: sizes['9'],
       position: 'absolute',
       top: 0,
       right: 0,
@@ -138,7 +139,7 @@ const OptionListStackLocal = ({
           />
         </TouchableOpacity>
       </View>
-      <View style={styles.liatSection}>{optionListComponents}</View>
+      <View style={styles.listSection}>{optionListComponents}</View>
     </>
   )
 }

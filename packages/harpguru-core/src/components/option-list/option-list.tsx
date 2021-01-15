@@ -32,8 +32,7 @@ export const OptionList = <T extends unknown>({
     throw Error('`selfIndex` will not fit in to list of size `totalItems`')
 
   const styles = StyleSheet.create({
-    absolute: {
-      position: 'absolute',
+    listWrapper: {
       height: '100%',
       width: '100%',
     },
@@ -58,7 +57,7 @@ export const OptionList = <T extends unknown>({
   return (
     <Animated.View
       style={[
-        styles.absolute,
+        styles.listWrapper,
         {
           opacity: transition,
         },
