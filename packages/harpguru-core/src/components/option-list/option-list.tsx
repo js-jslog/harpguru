@@ -4,7 +4,7 @@ import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 import { Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { getSizes } from '../../styles'
+import { colors, getSizes } from '../../styles'
 
 type ListProps<T> = {
   readonly items: ReadonlyArray<Item<T>>
@@ -38,9 +38,11 @@ export const OptionList = <T extends unknown>({
       width: '100%',
     },
     optionText: {
-      alignSelf: 'center',
+      alignSelf: 'flex-end',
+      paddingRight: sizes['11'],
       fontSize: sizes['8'],
       lineHeight: sizes['10'],
+      color: colors.inertOutline,
     },
   })
 

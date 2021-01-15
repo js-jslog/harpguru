@@ -17,6 +17,7 @@ const relativeSizes: Omit<
   8: 29.034,
   9: 46.979,
   10: 76.013,
+  11: 122.989,
 } as const
 
 const relativeColumnWidth = 9
@@ -61,6 +62,7 @@ export const getSizes = (): SizeScheme => {
     8: seedSize * relativeSizes[8],
     9: seedSize * relativeSizes[9],
     10: seedSize * relativeSizes[10],
+    11: seedSize * relativeSizes[11],
     columnWidth: seedSize * columnWidth,
     rowHeight: seedSize * columnWidth,
     fragmentGutter: seedSize * fragmentGutter,

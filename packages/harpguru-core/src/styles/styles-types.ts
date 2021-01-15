@@ -35,6 +35,7 @@ export type SizeScheme = {
   readonly 8: number
   readonly 9: number
   readonly 10: number
+  readonly 11: number
   readonly columnWidth: number
   readonly rowHeight: number
   readonly fragmentGutter: number

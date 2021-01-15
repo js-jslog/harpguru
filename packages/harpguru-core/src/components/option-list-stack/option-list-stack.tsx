@@ -9,7 +9,7 @@ import { AntDesign } from '@expo/vector-icons'
 import { OptionListTitle } from '../option-list-title'
 import { OptionList } from '../option-list'
 import type { Item } from '../option-list'
-import { getSizes } from '../../styles'
+import { colors, getSizes } from '../../styles'
 
 // TODO: Find a way to make this more generic. It needs to be able to
 // accept lists which each have different callback parameter types.
@@ -72,7 +72,7 @@ const OptionListStackLocal = ({
       transform: [{ rotate: '-90deg' }],
     },
     titlesectionspacer: {
-      height: 20,
+      height: sizes['4'],
       width: deviceHeight,
       justifyContent: 'space-between',
       flexDirection: 'row',
@@ -98,13 +98,21 @@ const OptionListStackLocal = ({
         <View style={styles.titlesectionspacer}>
           <View>
             <TouchableOpacity onPress={() => toggleVisibleOption()}>
-              <AntDesign name="left" size={sizes['9']} color="black" />
+              <AntDesign
+                name="left"
+                size={sizes['9']}
+                color={colors.inertOutline}
+              />
             </TouchableOpacity>
           </View>
           <View>{optionListTitleComponents}</View>
           <View>
             <TouchableOpacity onPress={() => toggleVisibleOption()}>
-              <AntDesign name="right" size={sizes['9']} color="black" />
+              <AntDesign
+                name="right"
+                size={sizes['9']}
+                color={colors.inertOutline}
+              />
             </TouchableOpacity>
           </View>
         </View>

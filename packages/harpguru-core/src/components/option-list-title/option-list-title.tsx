@@ -3,7 +3,7 @@ import type { Node } from 'react-native-reanimated'
 import { Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { getSizes } from '../../styles'
+import { colors, getSizes } from '../../styles'
 
 type Props = {
   readonly title: string
@@ -27,6 +27,7 @@ export const OptionListTitle = ({
     },
     titletext: {
       fontSize: sizes['9'],
+      color: colors.inertOutline,
     },
   })
 
