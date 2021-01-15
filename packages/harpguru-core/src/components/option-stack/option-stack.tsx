@@ -7,7 +7,7 @@ import { AntDesign } from '@expo/vector-icons'
 
 import { colors, getSizes } from '../../styles'
 
-import { OptionList, OptionListTitle } from './components'
+import { Title, List } from './components'
 
 import type {
   OptionProps_Scales,
@@ -28,7 +28,7 @@ const OptionStackLocal = ({
   const optionListTitleComponents = stackPropsz.map(
     (stackProps, index, array) => {
       return (
-        <OptionListTitle
+        <Title
           title={stackProps.title}
           animatedValue={transitionValue}
           selfIndex={index}
@@ -49,7 +49,7 @@ const OptionStackLocal = ({
     if (isDummy(items)) {
       const i = items as OptionProps_Dummy
       return (
-        <OptionList
+        <List
           items={i.items}
           animatedValue={transitionValue}
           selfIndex={index}
@@ -61,7 +61,7 @@ const OptionStackLocal = ({
     } else {
       const i = items as OptionProps_Scales
       return (
-        <OptionList
+        <List
           items={i.items}
           animatedValue={transitionValue}
           selfIndex={index}

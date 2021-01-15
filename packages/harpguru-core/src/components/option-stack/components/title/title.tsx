@@ -5,7 +5,7 @@ import React from 'react'
 import type { TitleProps, AnimationProps } from '../../types'
 import { colors, getSizes } from '../../../../styles'
 
-export const OptionListTitle = ({
+export const Title = ({
   title,
   animatedValue,
   selfIndex,

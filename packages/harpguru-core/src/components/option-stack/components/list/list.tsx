@@ -6,7 +6,7 @@ import React from 'react'
 import type { ListProps, AnimationProps } from '../../types'
 import { colors, getSizes } from '../../../../styles'
 
-export const OptionList = <T extends unknown>({
+export const List = <T extends unknown>({
   items,
   itemTapHandler,
   animatedValue,
