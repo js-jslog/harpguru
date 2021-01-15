@@ -15,7 +15,7 @@ import type {
   OptionStackProps,
 } from './types'
 
-const OptionListStackLocal = ({
+const OptionStackLocal = ({
   stackPropsz,
 }: OptionStackProps): React.ReactElement => {
   const animationDuration = 300
@@ -140,4 +140,4 @@ const areEqual = (
   return true
 }
 
-export const OptionListStack = React.memo(OptionListStackLocal, areEqual)
+export const OptionStack = React.memo(OptionStackLocal, areEqual)
