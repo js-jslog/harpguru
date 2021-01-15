@@ -20,6 +20,7 @@ export const List = <T extends unknown>({
 
   const styles = StyleSheet.create({
     listWrapper: {
+      position: 'absolute',
       height: '100%',
       width: '100%',
     },

@@ -15,6 +15,7 @@ export const Title = ({
 
   const styles = StyleSheet.create({
     titleWrapper: {
+      position: 'absolute',
       alignSelf: 'center',
     },
     titleText: {
