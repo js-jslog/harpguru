@@ -3,34 +3,17 @@ import { cond, Easing, eq, Value } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Dimensions, View, StyleSheet } from 'react-native'
 import React from 'react'
-import type { DegreeIds } from 'harpparts'
 import { AntDesign } from '@expo/vector-icons'
 
-import { OptionListTitle } from '../option-list-title'
-import { OptionList } from '../option-list'
-import type { Item } from '../option-list'
 import { colors, getSizes } from '../../styles'
 
-// TODO: Find a way to improve this. It needs to be able to
-// accept lists which each have different callback parameter types,
-// but without becoming too clunky. I don't really mind having all of
-// the possible types listed here and guarded for but it's not ideal.
-// The `string` version doesn't have any application yet, it's just
-// to confirm that I've found *an* approach.
-type OptionListStackProps = {
-  readonly stackPropsz: ReadonlyArray<
-    OptionListPropsDegreeBuffer | OptionListPropsString
-  >
-}
+import { OptionList, OptionListTitle } from './components'
 
-type OptionListPropsDegreeBuffer = OptionListProps<ReadonlyArray<DegreeIds>>
-type OptionListPropsString = OptionListProps<string>
-
-type OptionListProps<T> = {
-  readonly title: string
-  readonly items: ReadonlyArray<Item<T>>
-  readonly itemTapHandler: (arg0: T) => void
-}
+import type {
+  OptionListStackProps,
+  OptionListPropsString,
+  OptionListPropsDegreeBuffer,
+} from './types'
 
 const OptionListStackLocal = ({
   stackPropsz,

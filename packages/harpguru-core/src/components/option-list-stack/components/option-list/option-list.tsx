@@ -1,23 +1,10 @@
 import Animated, { interpolate } from 'react-native-reanimated'
-import type { Node } from 'react-native-reanimated'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 import { Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { colors, getSizes } from '../../styles'
-
-type ListProps<T> = {
-  readonly items: ReadonlyArray<Item<T>>
-  readonly tapHandler: (arg0: T) => void
-  readonly animatedValue: Node<number>
-  readonly selfIndex: number
-  readonly totalItems: number
-}
-
-export type Item<T> = {
-  readonly label: string
-  readonly callbackParam: T
-}
+import type { ListProps } from '../../types'
+import { colors, getSizes } from '../../../../styles'
 
 export const OptionList = <T extends unknown>({
   items,

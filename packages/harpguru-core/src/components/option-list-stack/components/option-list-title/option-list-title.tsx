@@ -1,23 +1,16 @@
 import Animated, { interpolate } from 'react-native-reanimated'
-import type { Node } from 'react-native-reanimated'
 import { Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { colors, getSizes } from '../../styles'
-
-type Props = {
-  readonly title: string
-  readonly animatedValue: Node<number>
-  readonly selfIndex: number
-  readonly totalItems: number
-}
+import type { ListTitleProps } from '../../types'
+import { colors, getSizes } from '../../../../styles'
 
 export const OptionListTitle = ({
   title,
   animatedValue,
   selfIndex,
   totalItems,
-}: Props): React.ReactElement => {
+}: ListTitleProps): React.ReactElement => {
   const sizes = getSizes()
 
   const styles = StyleSheet.create({
