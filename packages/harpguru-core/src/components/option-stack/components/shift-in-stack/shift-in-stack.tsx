@@ -72,7 +72,7 @@ export const PreviousInStack = (props: Props): React.ReactElement => {
       pointerEvents={prevPointerEvents}
       style={[{ opacity: prevPointerOpacity }]}
     >
-      <TouchableOpacity onPress={() => prevInStack()}>
+      <TouchableOpacity onPress={prevInStack}>
         <AntDesign
           name="left"
           size={styles.titleFontSize}
@@ -95,7 +95,7 @@ export const NextInStack = (props: Props): React.ReactElement => {
       pointerEvents={nextPointerEvents}
       style={[{ opacity: nextPointerOpacity }]}
     >
-      <TouchableOpacity onPress={() => nextInStack()}>
+      <TouchableOpacity onPress={nextInStack}>
         <AntDesign
           name="right"
           size={styles.titleFontSize}
