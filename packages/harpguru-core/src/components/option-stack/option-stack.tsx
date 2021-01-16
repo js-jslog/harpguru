@@ -9,75 +9,19 @@ import { colors } from '../../styles'
 import { getStyles } from './utils'
 import {
   useFoundationAnimationValues,
-  useInterpolateTransitionValue,
+  useTitleStack,
+  useListStack,
 } from './hooks'
-import { Title, List } from './components'
 
-import type {
-  OptionProps_Scales,
-  OptionProps_Dummy,
-  OptionStackProps,
-} from './types'
+import type { OptionStackProps } from './types'
 
-const OptionStackLocal = ({
-  stackPropsz,
-}: OptionStackProps): React.ReactElement => {
+const OptionStackLocal = (props: OptionStackProps): React.ReactElement => {
   const { animationValue, transitionValue } = useFoundationAnimationValues()
 
-  const optionListTitleComponents = stackPropsz.map(
-    (stackProps, index, array) => {
-      return (
-        <Title
-          title={stackProps.title}
-          animationValue={useInterpolateTransitionValue(
-            array.length,
-            index,
-            transitionValue
-          )}
-          key={index}
-        />
-      )
-    }
-  )
+  const titleStack = useTitleStack(props, transitionValue)
+  const listStack = useListStack(props, transitionValue)
 
-  function isDummy(
-    x: OptionProps_Scales | OptionProps_Dummy
-  ): x is OptionProps_Dummy {
-    return x.title === 'TOTAL_DUMMY'
-  }
-
-  const optionListComponents = stackPropsz.map((items, index, array) => {
-    if (isDummy(items)) {
-      const i = items as OptionProps_Dummy
-      return (
-        <List
-          items={i.items}
-          animationValue={useInterpolateTransitionValue(
-            array.length,
-            index,
-            transitionValue
-          )}
-          itemTapHandler={i.itemTapHandler}
-          key={index}
-        />
-      )
-    } else {
-      const i = items as OptionProps_Scales
-      return (
-        <List
-          items={i.items}
-          animationValue={useInterpolateTransitionValue(
-            array.length,
-            index,
-            transitionValue
-          )}
-          itemTapHandler={i.itemTapHandler}
-          key={index}
-        />
-      )
-    }
-  })
-
+  const { stackPropsz } = props
   const toggleVisibleOption = (): void => {
     const setValue = cond(eq(animationValue, 1), 0, 1)
     animationValue.setValue(setValue)
@@ -110,7 +54,7 @@ const OptionStackLocal = ({
             />
           </TouchableOpacity>
         </Animated.View>
-        <View>{optionListTitleComponents}</View>
+        <View>{titleStack}</View>
         <Animated.View
           pointerEvents={nextPointerEvents}
           style={[{ opacity: nextPointerOpacity }]}
@@ -124,7 +68,7 @@ const OptionStackLocal = ({
           </TouchableOpacity>
         </Animated.View>
       </View>
-      <View style={styles.listSection}>{optionListComponents}</View>
+      <View style={styles.listSection}>{listStack}</View>
     </>
   )
 }
