@@ -1,18 +1,18 @@
-import type { Node } from 'react-native-reanimated'
 import React from 'react'
 
 import { useInterpolateTransitionValue } from '../use-interpolate-transition-value'
 import type {
   OptionStackProps,
+  WithTransition,
   OptionProps_Scales,
   OptionProps_Dummy,
 } from '../../types'
 import { List } from '../../components'
 
-export const useListStack = (
-  { stackPropsz }: OptionStackProps,
-  foundationTransitionValue: Node<number>
-): ReadonlyArray<React.ReactElement> => {
+export const useListStack = ({
+  stackPropsz,
+  transitionValue,
+}: OptionStackProps & WithTransition): ReadonlyArray<React.ReactElement> => {
   function isDummy(
     x: OptionProps_Scales | OptionProps_Dummy
   ): x is OptionProps_Dummy {
@@ -28,7 +28,7 @@ export const useListStack = (
           transitionValue={useInterpolateTransitionValue(
             array.length,
             index,
-            foundationTransitionValue
+            transitionValue
           )}
           itemTapHandler={i.itemTapHandler}
           key={index}
@@ -42,7 +42,7 @@ export const useListStack = (
           transitionValue={useInterpolateTransitionValue(
             array.length,
             index,
-            foundationTransitionValue
+            transitionValue
           )}
           itemTapHandler={i.itemTapHandler}
           key={index}

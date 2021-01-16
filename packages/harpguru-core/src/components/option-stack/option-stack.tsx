@@ -14,8 +14,14 @@ import type { OptionStackProps } from './types'
 const OptionStackLocal = (props: OptionStackProps): React.ReactElement => {
   const { stackState, stackStateTransition } = useFoundationAnimationValues()
 
-  const titleStack = useTitleStack(props, stackStateTransition)
-  const listStack = useListStack(props, stackStateTransition)
+  const titleStack = useTitleStack({
+    ...props,
+    transitionValue: stackStateTransition,
+  })
+  const listStack = useListStack({
+    ...props,
+    transitionValue: stackStateTransition,
+  })
 
   const styles = getStyles()
   return (
