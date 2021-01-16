@@ -1,10 +1,5 @@
-import Animated, { cond, eq } from 'react-native-reanimated'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
-import { AntDesign } from '@expo/vector-icons'
-
-import { colors } from '../../styles'
 
 import { getStyles } from './utils'
 import {
@@ -12,6 +7,7 @@ import {
   useTitleStack,
   useListStack,
 } from './hooks'
+import { PreviousInStack, NextInStack } from './components'
 
 import type { OptionStackProps } from './types'
 
@@ -21,52 +17,13 @@ const OptionStackLocal = (props: OptionStackProps): React.ReactElement => {
   const titleStack = useTitleStack(props, transitionValue)
   const listStack = useListStack(props, transitionValue)
 
-  const { stackPropsz } = props
-  const toggleVisibleOption = (): void => {
-    const setValue = cond(eq(animationValue, 1), 0, 1)
-    animationValue.setValue(setValue)
-  }
-  const prevPointerEvents = cond(eq(animationValue, 0), 'none', 'auto')
-  const nextPointerEvents = cond(
-    eq(animationValue, stackPropsz.length - 1),
-    'none',
-    'auto'
-  )
-  const prevPointerOpacity = cond(eq(animationValue, 0), 0.2, 1)
-  const nextPointerOpacity = cond(
-    eq(animationValue, stackPropsz.length - 1),
-    0.2,
-    1
-  )
   const styles = getStyles()
   return (
     <>
       <View style={styles.titleSection}>
-        <Animated.View
-          pointerEvents={prevPointerEvents}
-          style={[{ opacity: prevPointerOpacity }]}
-        >
-          <TouchableOpacity onPress={() => toggleVisibleOption()}>
-            <AntDesign
-              name="left"
-              size={styles.titleFontSize}
-              color={colors.inertOutline}
-            />
-          </TouchableOpacity>
-        </Animated.View>
+        <PreviousInStack {...props} activeLayerValue={animationValue} />
         <View>{titleStack}</View>
-        <Animated.View
-          pointerEvents={nextPointerEvents}
-          style={[{ opacity: nextPointerOpacity }]}
-        >
-          <TouchableOpacity onPress={() => toggleVisibleOption()}>
-            <AntDesign
-              name="right"
-              size={styles.titleFontSize}
-              color={colors.inertOutline}
-            />
-          </TouchableOpacity>
-        </Animated.View>
+        <NextInStack {...props} activeLayerValue={animationValue} />
       </View>
       <View style={styles.listSection}>{listStack}</View>
     </>
