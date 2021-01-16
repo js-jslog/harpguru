@@ -43,7 +43,7 @@ const OptionStackLocal = ({
       return (
         <Title
           title={stackProps.title}
-          animatedValue={transition}
+          animationValue={transition}
           key={index}
         />
       )
@@ -68,7 +68,7 @@ const OptionStackLocal = ({
       return (
         <List
           items={i.items}
-          animatedValue={transition}
+          animationValue={transition}
           itemTapHandler={i.itemTapHandler}
           key={index}
         />
@@ -78,7 +78,7 @@ const OptionStackLocal = ({
       return (
         <List
           items={i.items}
-          animatedValue={transition}
+          animationValue={transition}
           itemTapHandler={i.itemTapHandler}
           key={index}
         />

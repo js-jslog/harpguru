@@ -26,7 +26,7 @@ export type ListProps<T> = {
 }
 
 export type AnimationProps = {
-  readonly animatedValue: Node<number>
+  readonly animationValue: Node<number>
 }
 
 type Item<T> = {

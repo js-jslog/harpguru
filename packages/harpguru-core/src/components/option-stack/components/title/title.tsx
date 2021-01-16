@@ -7,7 +7,7 @@ import type { TitleProps, AnimationProps } from '../../types'
 
 export const Title = ({
   title,
-  animatedValue,
+  animationValue,
 }: TitleProps & AnimationProps): React.ReactElement => {
   const styles = getStyles()
 
@@ -16,7 +16,7 @@ export const Title = ({
       style={[
         styles.titleWrapper,
         {
-          opacity: animatedValue,
+          opacity: animationValue,
         },
       ]}
     >

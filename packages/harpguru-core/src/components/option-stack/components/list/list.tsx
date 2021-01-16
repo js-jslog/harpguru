@@ -9,7 +9,7 @@ import type { ListProps, AnimationProps } from '../../types'
 export const List = <T extends unknown>({
   items,
   itemTapHandler,
-  animatedValue,
+  animationValue,
 }: ListProps<T> & AnimationProps): React.ReactElement => {
   const styles = getStyles()
 
@@ -18,7 +18,7 @@ export const List = <T extends unknown>({
       style={[
         styles.listWrapper,
         {
-          opacity: animatedValue,
+          opacity: animationValue,
         },
       ]}
     >
