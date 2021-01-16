@@ -12,18 +12,18 @@ import { PreviousInStack, NextInStack } from './components'
 import type { OptionStackProps } from './types'
 
 const OptionStackLocal = (props: OptionStackProps): React.ReactElement => {
-  const { animationValue, transitionValue } = useFoundationAnimationValues()
+  const { stackState, stackStateTransition } = useFoundationAnimationValues()
 
-  const titleStack = useTitleStack(props, transitionValue)
-  const listStack = useListStack(props, transitionValue)
+  const titleStack = useTitleStack(props, stackStateTransition)
+  const listStack = useListStack(props, stackStateTransition)
 
   const styles = getStyles()
   return (
     <>
       <View style={styles.titleSection}>
-        <PreviousInStack {...props} activeLayerValue={animationValue} />
+        <PreviousInStack {...props} activeLayerValue={stackState} />
         <View>{titleStack}</View>
-        <NextInStack {...props} activeLayerValue={animationValue} />
+        <NextInStack {...props} activeLayerValue={stackState} />
       </View>
       <View style={styles.listSection}>{listStack}</View>
     </>
