@@ -2,7 +2,6 @@ import Animated, {
   cond,
   eq,
   sub,
-  Value,
   Node,
   add,
   interpolate,
@@ -12,14 +11,13 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
 import { getStyles } from '../../utils'
-import type { OptionStackProps } from '../../types'
+import type {
+  OptionStackProps,
+  WithStateValue,
+  WithTransition,
+} from '../../types'
 import { useInterpolateTransitionValue } from '../../hooks'
 import { colors } from '../../../../styles'
-
-type Props = OptionStackProps & {
-  readonly activeLayerValue: Value<number>
-  readonly transitionValue: Node<number>
-}
 
 type PointerProperties = {
   readonly prevInStack: () => void
@@ -30,19 +28,21 @@ type PointerProperties = {
   readonly nextPointerOpacity: Node<number>
 }
 
-const usePointerProperties = (props: Props): PointerProperties => {
-  const { stackPropsz, activeLayerValue, transitionValue } = props
+const usePointerProperties = (
+  props: OptionStackProps & WithStateValue & WithTransition
+): PointerProperties => {
+  const { stackPropsz, stateValue, transitionValue } = props
   const prevInStack = (): void => {
-    const setValue = sub(activeLayerValue, 1)
-    activeLayerValue.setValue(setValue)
+    const setValue = sub(stateValue, 1)
+    stateValue.setValue(setValue)
   }
   const nextInStack = (): void => {
-    const setValue = add(activeLayerValue, 1)
-    activeLayerValue.setValue(setValue)
+    const setValue = add(stateValue, 1)
+    stateValue.setValue(setValue)
   }
-  const prevPointerEvents = cond(eq(activeLayerValue, 0), 'none', 'auto')
+  const prevPointerEvents = cond(eq(stateValue, 0), 'none', 'auto')
   const nextPointerEvents = cond(
-    eq(activeLayerValue, stackPropsz.length - 1),
+    eq(stateValue, stackPropsz.length - 1),
     'none',
     'auto'
   )
@@ -75,7 +75,9 @@ const usePointerProperties = (props: Props): PointerProperties => {
   }
 }
 
-export const PreviousInStack = (props: Props): React.ReactElement => {
+export const PreviousInStack = (
+  props: OptionStackProps & WithStateValue & WithTransition
+): React.ReactElement => {
   const {
     prevInStack,
     prevPointerEvents,
@@ -98,7 +100,9 @@ export const PreviousInStack = (props: Props): React.ReactElement => {
   )
 }
 
-export const NextInStack = (props: Props): React.ReactElement => {
+export const NextInStack = (
+  props: OptionStackProps & WithStateValue & WithTransition
+): React.ReactElement => {
   const {
     nextInStack,
     nextPointerEvents,

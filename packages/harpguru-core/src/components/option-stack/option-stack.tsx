@@ -23,13 +23,13 @@ const OptionStackLocal = (props: OptionStackProps): React.ReactElement => {
       <View style={styles.titleSection}>
         <PreviousInStack
           {...props}
-          activeLayerValue={stackState}
+          stateValue={stackState}
           transitionValue={stackStateTransition}
         />
         <View>{titleStack}</View>
         <NextInStack
           {...props}
-          activeLayerValue={stackState}
+          stateValue={stackState}
           transitionValue={stackStateTransition}
         />
       </View>

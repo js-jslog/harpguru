@@ -4,13 +4,13 @@ import { Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
 import { getStyles } from '../../utils'
-import type { ListProps, AnimationProps } from '../../types'
+import type { ListProps, WithTransition } from '../../types'
 
 export const List = <T extends unknown>({
   items,
   itemTapHandler,
-  animationValue,
-}: ListProps<T> & AnimationProps): React.ReactElement => {
+  transitionValue,
+}: ListProps<T> & WithTransition): React.ReactElement => {
   const styles = getStyles()
 
   return (
@@ -18,7 +18,7 @@ export const List = <T extends unknown>({
       style={[
         styles.listWrapper,
         {
-          opacity: animationValue,
+          opacity: transitionValue,
         },
       ]}
     >

@@ -13,7 +13,7 @@ export const useTitleStack = (
     return (
       <Title
         title={stackProps.title}
-        animationValue={useInterpolateTransitionValue(
+        transitionValue={useInterpolateTransitionValue(
           array.length,
           index,
           foundationTransitionValue

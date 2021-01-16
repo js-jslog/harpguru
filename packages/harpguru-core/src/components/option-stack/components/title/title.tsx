@@ -3,12 +3,12 @@ import { Text } from 'react-native'
 import React from 'react'
 
 import { getStyles } from '../../utils'
-import type { TitleProps, AnimationProps } from '../../types'
+import type { TitleProps, WithTransition } from '../../types'
 
 export const Title = ({
   title,
-  animationValue,
-}: TitleProps & AnimationProps): React.ReactElement => {
+  transitionValue,
+}: TitleProps & WithTransition): React.ReactElement => {
   const styles = getStyles()
 
   return (
@@ -16,7 +16,7 @@ export const Title = ({
       style={[
         styles.titleWrapper,
         {
-          opacity: animationValue,
+          opacity: transitionValue,
         },
       ]}
     >

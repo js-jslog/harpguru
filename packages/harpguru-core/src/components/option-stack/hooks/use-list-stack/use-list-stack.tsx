@@ -25,7 +25,7 @@ export const useListStack = (
       return (
         <List
           items={i.items}
-          animationValue={useInterpolateTransitionValue(
+          transitionValue={useInterpolateTransitionValue(
             array.length,
             index,
             foundationTransitionValue
@@ -39,7 +39,7 @@ export const useListStack = (
       return (
         <List
           items={i.items}
-          animationValue={useInterpolateTransitionValue(
+          transitionValue={useInterpolateTransitionValue(
             array.length,
             index,
             foundationTransitionValue

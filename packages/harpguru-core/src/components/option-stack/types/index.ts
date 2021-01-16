@@ -1,4 +1,4 @@
-import type { Node } from 'react-native-reanimated'
+import type { Node, Value } from 'react-native-reanimated'
 import type { DegreeIds } from 'harpparts'
 
 // TODO: Find a way to improve this. It needs to be able to
@@ -25,8 +25,12 @@ export type ListProps<T> = {
   readonly itemTapHandler: (arg0: T) => void
 }
 
-export type AnimationProps = {
-  readonly animationValue: Node<number>
+export type WithTransition = {
+  readonly transitionValue: Node<number>
+}
+
+export type WithStateValue = {
+  readonly stateValue: Value<number>
 }
 
 type Item<T> = {
