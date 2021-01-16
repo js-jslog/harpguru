@@ -1,12 +1,13 @@
 import { withTimingTransition } from 'react-native-redash'
 import Animated, { cond, Easing, eq, Value } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Dimensions, View, StyleSheet } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
-import { colors, getSizes } from '../../styles'
+import { colors } from '../../styles'
 
+import { getStyles } from './utils'
 import { Title, List } from './components'
 
 import type {
@@ -73,32 +74,6 @@ const OptionStackLocal = ({
     }
   })
 
-  const sizes = getSizes()
-  // TODO: turn this in to a util since it's used elsewhere
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
-  const deviceWidth = windowHeight < windowWidth ? windowWidth : windowHeight
-  const styles = StyleSheet.create({
-    titleSection: {
-      transform: [{ rotate: '-90deg' }],
-      paddingTop: sizes['11'],
-      width: deviceHeight,
-      justifyContent: 'space-between',
-      flexDirection: 'row',
-    },
-    listSection: {
-      fontSize: sizes['9'],
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      // This is based on the offset of the titlesectionspacer
-      // and the font size of the title text together with the
-      // font size again as a spacer. It would be nice to tie
-      // these sizes together somehow.
-      width: deviceWidth - sizes['11'] - sizes['9'] - sizes['9'],
-      height: deviceHeight,
-    },
-  })
   const toggleVisibleOption = (): void => {
     const setValue = cond(eq(animationValue, 1), 0, 1)
     animationValue.setValue(setValue)
@@ -115,6 +90,7 @@ const OptionStackLocal = ({
     0.2,
     1
   )
+  const styles = getStyles()
   return (
     <>
       <View style={styles.titleSection}>
@@ -125,7 +101,7 @@ const OptionStackLocal = ({
           <TouchableOpacity onPress={() => toggleVisibleOption()}>
             <AntDesign
               name="left"
-              size={sizes['9']}
+              size={styles.titleFontSize}
               color={colors.inertOutline}
             />
           </TouchableOpacity>
@@ -138,7 +114,7 @@ const OptionStackLocal = ({
           <TouchableOpacity onPress={() => toggleVisibleOption()}>
             <AntDesign
               name="right"
-              size={sizes['9']}
+              size={styles.titleFontSize}
               color={colors.inertOutline}
             />
           </TouchableOpacity>
