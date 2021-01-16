@@ -1,5 +1,11 @@
 import { withTimingTransition } from 'react-native-redash'
-import Animated, { cond, Easing, eq, Value } from 'react-native-reanimated'
+import Animated, {
+  cond,
+  Easing,
+  eq,
+  interpolate,
+  Value,
+} from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
@@ -7,7 +13,7 @@ import { AntDesign } from '@expo/vector-icons'
 
 import { colors } from '../../styles'
 
-import { getStyles } from './utils'
+import { getInputRange, getOutputRange, getStyles } from './utils'
 import { Title, List } from './components'
 
 import type {
@@ -28,12 +34,16 @@ const OptionStackLocal = ({
 
   const optionListTitleComponents = stackPropsz.map(
     (stackProps, index, array) => {
+      const inputRange = getInputRange(array.length)
+      const outputRange = getOutputRange(index, array.length)
+      const transition = interpolate(transitionValue, {
+        inputRange,
+        outputRange,
+      })
       return (
         <Title
           title={stackProps.title}
-          animatedValue={transitionValue}
-          selfIndex={index}
-          totalItems={array.length}
+          animatedValue={transition}
           key={index}
         />
       )
@@ -47,14 +57,18 @@ const OptionStackLocal = ({
   }
 
   const optionListComponents = stackPropsz.map((items, index, array) => {
+    const inputRange = getInputRange(array.length)
+    const outputRange = getOutputRange(index, array.length)
+    const transition = interpolate(transitionValue, {
+      inputRange,
+      outputRange,
+    })
     if (isDummy(items)) {
       const i = items as OptionProps_Dummy
       return (
         <List
           items={i.items}
-          animatedValue={transitionValue}
-          selfIndex={index}
-          totalItems={array.length}
+          animatedValue={transition}
           itemTapHandler={i.itemTapHandler}
           key={index}
         />
@@ -64,9 +78,7 @@ const OptionStackLocal = ({
       return (
         <List
           items={i.items}
-          animatedValue={transitionValue}
-          selfIndex={index}
-          totalItems={array.length}
+          animatedValue={transition}
           itemTapHandler={i.itemTapHandler}
           key={index}
         />
