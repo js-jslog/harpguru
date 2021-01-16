@@ -1,5 +1,4 @@
-import { withTimingTransition } from 'react-native-redash'
-import Animated, { cond, Easing, eq, Value } from 'react-native-reanimated'
+import Animated, { cond, eq } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
@@ -8,7 +7,10 @@ import { AntDesign } from '@expo/vector-icons'
 import { colors } from '../../styles'
 
 import { getStyles } from './utils'
-import { useInterpolateTransitionValue } from './hooks'
+import {
+  useFoundationAnimationValues,
+  useInterpolateTransitionValue,
+} from './hooks'
 import { Title, List } from './components'
 
 import type {
@@ -20,12 +22,7 @@ import type {
 const OptionStackLocal = ({
   stackPropsz,
 }: OptionStackProps): React.ReactElement => {
-  const animationDuration = 300
-  const animationValue = new Value<number>(0)
-  const transitionValue = withTimingTransition(animationValue, {
-    duration: animationDuration,
-    easing: Easing.inOut(Easing.ease),
-  })
+  const { animationValue, transitionValue } = useFoundationAnimationValues()
 
   const optionListTitleComponents = stackPropsz.map(
     (stackProps, index, array) => {
