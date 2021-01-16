@@ -1,5 +1,5 @@
 import { withTimingTransition } from 'react-native-redash'
-import { cond, Easing, eq, Value } from 'react-native-reanimated'
+import Animated, { cond, Easing, eq, Value } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Dimensions, View, StyleSheet } from 'react-native'
 import React from 'react'
@@ -103,24 +103,46 @@ const OptionStackLocal = ({
     const setValue = cond(eq(animationValue, 1), 0, 1)
     animationValue.setValue(setValue)
   }
+  const prevPointerEvents = cond(eq(animationValue, 0), 'none', 'auto')
+  const nextPointerEvents = cond(
+    eq(animationValue, stackPropsz.length - 1),
+    'none',
+    'auto'
+  )
+  const prevPointerOpacity = cond(eq(animationValue, 0), 0.2, 1)
+  const nextPointerOpacity = cond(
+    eq(animationValue, stackPropsz.length - 1),
+    0.2,
+    1
+  )
   return (
     <>
       <View style={styles.titleSection}>
-        <TouchableOpacity onPress={() => toggleVisibleOption()}>
-          <AntDesign
-            name="left"
-            size={sizes['9']}
-            color={colors.inertOutline}
-          />
-        </TouchableOpacity>
+        <Animated.View
+          pointerEvents={prevPointerEvents}
+          style={[{ opacity: prevPointerOpacity }]}
+        >
+          <TouchableOpacity onPress={() => toggleVisibleOption()}>
+            <AntDesign
+              name="left"
+              size={sizes['9']}
+              color={colors.inertOutline}
+            />
+          </TouchableOpacity>
+        </Animated.View>
         <View>{optionListTitleComponents}</View>
-        <TouchableOpacity onPress={() => toggleVisibleOption()}>
-          <AntDesign
-            name="right"
-            size={sizes['9']}
-            color={colors.inertOutline}
-          />
-        </TouchableOpacity>
+        <Animated.View
+          pointerEvents={nextPointerEvents}
+          style={[{ opacity: nextPointerOpacity }]}
+        >
+          <TouchableOpacity onPress={() => toggleVisibleOption()}>
+            <AntDesign
+              name="right"
+              size={sizes['9']}
+              color={colors.inertOutline}
+            />
+          </TouchableOpacity>
+        </Animated.View>
       </View>
       <View style={styles.listSection}>{optionListComponents}</View>
     </>
