@@ -21,9 +21,17 @@ const OptionStackLocal = (props: OptionStackProps): React.ReactElement => {
   return (
     <>
       <View style={styles.titleSection}>
-        <PreviousInStack {...props} activeLayerValue={stackState} />
+        <PreviousInStack
+          {...props}
+          activeLayerValue={stackState}
+          transitionValue={stackStateTransition}
+        />
         <View>{titleStack}</View>
-        <NextInStack {...props} activeLayerValue={stackState} />
+        <NextInStack
+          {...props}
+          activeLayerValue={stackState}
+          transitionValue={stackStateTransition}
+        />
       </View>
       <View style={styles.listSection}>{listStack}</View>
     </>

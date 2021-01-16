@@ -5,6 +5,7 @@ import Animated, {
   Value,
   Node,
   add,
+  interpolate,
 } from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import React from 'react'
@@ -12,10 +13,12 @@ import { AntDesign } from '@expo/vector-icons'
 
 import { getStyles } from '../../utils'
 import type { OptionStackProps } from '../../types'
+import { useInterpolateTransitionValue } from '../../hooks'
 import { colors } from '../../../../styles'
 
 type Props = OptionStackProps & {
   readonly activeLayerValue: Value<number>
+  readonly transitionValue: Node<number>
 }
 
 type PointerProperties = {
@@ -28,7 +31,7 @@ type PointerProperties = {
 }
 
 const usePointerProperties = (props: Props): PointerProperties => {
-  const { stackPropsz, activeLayerValue } = props
+  const { stackPropsz, activeLayerValue, transitionValue } = props
   const prevInStack = (): void => {
     const setValue = sub(activeLayerValue, 1)
     activeLayerValue.setValue(setValue)
@@ -43,11 +46,23 @@ const usePointerProperties = (props: Props): PointerProperties => {
     'none',
     'auto'
   )
-  const prevPointerOpacity = cond(eq(activeLayerValue, 0), 0.2, 1)
-  const nextPointerOpacity = cond(
-    eq(activeLayerValue, stackPropsz.length - 1),
-    0.2,
-    1
+  const prevPointerOpacity = interpolate(
+    useInterpolateTransitionValue(stackPropsz.length, 0, transitionValue),
+    {
+      inputRange: [0, 1],
+      outputRange: [1, 0],
+    }
+  )
+  const nextPointerOpacity = interpolate(
+    useInterpolateTransitionValue(
+      stackPropsz.length,
+      stackPropsz.length - 1,
+      transitionValue
+    ),
+    {
+      inputRange: [0, 1],
+      outputRange: [1, 0],
+    }
   )
 
   return {
