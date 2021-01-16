@@ -7,21 +7,16 @@ import type {
   OptionProps_Scales,
   OptionProps_Dummy,
 } from '../../types'
+import { isOptionProps_Scales } from '../../types'
 import { List } from '../../components'
 
 export const useListStack = ({
   stackPropsz,
   transitionValue,
 }: OptionStackProps & WithTransition): ReadonlyArray<React.ReactElement> => {
-  function isDummy(
-    x: OptionProps_Scales | OptionProps_Dummy
-  ): x is OptionProps_Dummy {
-    return x.title === 'TOTAL_DUMMY'
-  }
-
   const listStack = stackPropsz.map((items, index, array) => {
-    if (isDummy(items)) {
-      const i = items as OptionProps_Dummy
+    if (isOptionProps_Scales(items)) {
+      const i = items as OptionProps_Scales
       return (
         <List
           items={i.items}
@@ -35,7 +30,7 @@ export const useListStack = ({
         />
       )
     } else {
-      const i = items as OptionProps_Scales
+      const i = items as OptionProps_Dummy
       return (
         <List
           items={i.items}
