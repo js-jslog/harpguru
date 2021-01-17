@@ -42,7 +42,7 @@ test('that two stacks of different lengths are identified as not equal', () => {
     optionPropsz: [optionProps, optionProps],
   }
 
-  expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
+  expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toThrow()
 })
 
 test('that two distinct stack props with identical option props are identified as equal', () => {
@@ -91,7 +91,7 @@ test('that two identical (other than title) option props are identified as not e
     optionPropsz: [optionProps1, optionProps1],
   }
 
-  expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
+  expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toThrow()
   expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
 })
 
@@ -122,7 +122,7 @@ test('that two identical (other than useSubTitle) option props are identified as
     optionPropsz: [optionProps1, optionProps1],
   }
 
-  expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
+  expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toThrow()
   expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
 })
 
@@ -161,7 +161,7 @@ test('that two identical (other than items length) option props are identified a
     optionPropsz: [optionProps1, optionProps1],
   }
 
-  expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
+  expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toThrow()
   expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
 })
 
@@ -190,6 +190,6 @@ test('that two identical (other than itemTapHandler) option props are identified
     optionPropsz: [optionProps1, optionProps1],
   }
 
-  expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
+  expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toThrow()
   expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
 })

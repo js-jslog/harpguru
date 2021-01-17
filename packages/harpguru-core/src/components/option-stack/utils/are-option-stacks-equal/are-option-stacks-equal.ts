@@ -5,7 +5,15 @@ export const areOptionStacksEqual = (
   { optionPropsz: nextPropsz }: OptionStackProps
 ): boolean => {
   // Tests whether another option has been added to the stack
-  if (prevPropsz.length !== nextPropsz.length) return false
+  if (prevPropsz.length !== nextPropsz.length)
+    throw Error(`
+    The memoised OptionStack components should be initialised with
+    parameters which never go stale. Please check the params provided
+    to this OptionStack.
+
+    The number of options in the stack has changed during this render
+    from ${prevPropsz.length} to ${nextPropsz.length}
+  `)
 
   // It's important to return this early before the iterative
   // tests which happen later are performed so that we can
@@ -18,7 +26,14 @@ export const areOptionStacksEqual = (
     ({ items: prevItems }, index) =>
       prevItems.length === nextPropsz[index].items.length
   )
-  if (!areListLengthsEqual) return false
+  if (!areListLengthsEqual)
+    throw Error(`
+    The memoised OptionStack components should be initialised with
+    parameters which never go stale. Please check the params provided
+    to this OptionStack.
+
+    One of the option lists has changed length during this render.
+  `)
 
   const areTitlesEqual = prevPropsz.every(
     (prevProps, index) => prevProps.title === nextPropsz[index].title
@@ -32,5 +47,19 @@ export const areOptionStacksEqual = (
       prevProps.itemTapHandler === nextPropsz[index].itemTapHandler
   )
 
-  return areTitlesEqual && areUseSubTitlesEqual && areItemTapHandlersEqual
+  if (
+    (areTitlesEqual && areUseSubTitlesEqual && areItemTapHandlersEqual) ===
+    false
+  )
+    throw Error(`
+    The memoised OptionStack components should be initialised with
+    parameters which never go stale. Please check the params provided
+    to this OptionStack.
+
+    areTitlesEqual: ${areUseSubTitlesEqual}
+    areUseSubTitlesEqual: ${areUseSubTitlesEqual}
+    areItemTapHandlersEqual: ${areUseSubTitlesEqual}
+  `)
+
+  return true
 }
