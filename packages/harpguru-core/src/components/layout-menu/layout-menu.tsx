@@ -21,7 +21,9 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     callbackParam: id,
   }))
   // TODO: check whether I actually need to use a memoised
-  // callback here.
+  // callback here. It doesn't at the moment, but I need to
+  // check again once the `areEqual` function on the option-stack
+  // is fully implemented.
   const useSubTitle = React.useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const {

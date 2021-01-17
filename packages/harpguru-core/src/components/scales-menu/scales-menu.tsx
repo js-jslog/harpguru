@@ -1,5 +1,11 @@
+import { useGlobal } from 'reactn'
 import React from 'react'
-import { getScale, getScaleIds, ScaleCategory } from 'harpparts'
+import {
+  getScale,
+  getScaleByDegreeIds,
+  getScaleIds,
+  ScaleCategory,
+} from 'harpparts'
 import type { DegreeIds } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
 
@@ -17,6 +23,16 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const { isMenuStashed } = menuProps
 
+  // TODO: check whether I actually need to use a memoised
+  // callback here. It doesn't at the moment, but I need to
+  // check again once the `areEqual` function on the option-stack
+  // is fully implemented.
+  const useSubTitle = React.useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { activeDegreeIds } = activeHarpStrata
+    const scaleLabel = getScaleByDegreeIds(activeDegreeIds)
+    return scaleLabel || ''
+  }, [useGlobal])
   const scales = getScaleIds()
     .map((id) => getScale(id))
     .filter((scale) => scale.category === ScaleCategory.Scale)
@@ -43,11 +59,13 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const optionStackPropsz = [
     {
       title: titles[0],
+      useSubTitle,
       items: itemsz[0],
       itemTapHandler,
     },
     {
       title: titles[1],
+      useSubTitle,
       items: itemsz[1],
       itemTapHandler,
     },
