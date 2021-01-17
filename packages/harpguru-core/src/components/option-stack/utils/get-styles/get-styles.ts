@@ -1,8 +1,8 @@
 import type { TextStyle, ViewStyle } from 'react-native'
 import { StyleSheet } from 'react-native'
 
-import { getWindowDimensions } from '../../../../utils'
 import { colors, getSizes } from '../../../../styles'
+import { getWindowDimensions } from '../../../../packages/get-window-dimensions'
 
 type OptionStackStyles = {
   titleFontSize: number

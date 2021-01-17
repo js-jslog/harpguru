@@ -1,5 +1,5 @@
 import { SizeScheme } from '../styles-types'
-import { getWindowDimensions } from '../../utils'
+import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 const relativeSizes: Omit<
   SizeScheme,

@@ -2,7 +2,7 @@ import { useTimingTransition } from 'react-native-redash'
 import { greaterThan, cond, interpolate, Easing } from 'react-native-reanimated'
 import type Animation from 'react-native-reanimated'
 
-import { getWindowDimensions } from '../../../../utils'
+import { getWindowDimensions } from '../../../../packages/get-window-dimensions'
 import { overlayOpacity } from '../../../../constants'
 
 type FlashAnimationValues = [
