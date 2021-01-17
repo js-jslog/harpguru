@@ -12,6 +12,7 @@ export const TitleStack = ({
     return (
       <Title
         title={stackProps.title}
+        useSubTitle={stackProps.useSubTitle}
         transitionValue={useInterpolateTransitionValue(
           array.length,
           index,

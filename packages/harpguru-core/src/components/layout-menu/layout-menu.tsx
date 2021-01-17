@@ -1,4 +1,4 @@
-import { useDispatch } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import React from 'react'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
@@ -20,6 +20,18 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     label: id,
     callbackParam: id,
   }))
+  // TODO: check whether I actually need to use a memoised
+  // callback here.
+  const useSubTitle = React.useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const {
+      apparatus: { id: apparatusId },
+    } = activeHarpStrata
+    return apparatusId
+  }, [useGlobal])
+  // TODO: This replaces a hook found locally in this component.
+  // That hook had tests. It *might* be worth pulling this out
+  // and including similar tests for it.
   const itemTapHandler = React.useCallback(
     useDispatch(
       (
@@ -47,7 +59,8 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   const optionStackPropsz = [
     {
       title: 'Tuning',
-      items: items,
+      useSubTitle,
+      items,
       itemTapHandler,
     },
   ]

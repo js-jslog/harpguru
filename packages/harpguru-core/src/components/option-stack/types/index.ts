@@ -20,6 +20,7 @@ type OptionProps<T> = TitleProps & ListProps<T>
 
 export type TitleProps = {
   readonly title: string
+  readonly useSubTitle?: () => string
 }
 
 export type ListProps<T> = {
