@@ -1,6 +1,5 @@
-import { DegreeIds } from 'harpparts'
-
-import { doesArrayContainAllElements } from '../does-array-contain-all-elements'
+import { doesArrayContainAllElements } from '../../packages/does-array-contain-all-elements'
+import { DegreeIds } from '../../degree'
 
 export const doScalesMatch = (
   scale1: ReadonlyArray<DegreeIds>,

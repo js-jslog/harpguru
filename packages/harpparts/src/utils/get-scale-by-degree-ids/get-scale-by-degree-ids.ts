@@ -1,9 +1,8 @@
-import { getScaleIds, getScale } from 'harpparts'
-import type { DegreeIds } from 'harpparts'
-
 import { doScalesMatch } from '../do-scales-match'
+import type { DegreeIds } from '../../degree'
+import { getScaleIds, getScale } from '../../access-parts'
 
-export const getScaleLabel = (
+export const getScaleByDegreeIds = (
   degreeIds: ReadonlyArray<DegreeIds>
 ): string | undefined => {
   const matchingScales = getScaleIds().filter((scaleId) => {

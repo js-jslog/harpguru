@@ -1,4 +1,4 @@
-import { DegreeIds } from 'harpparts'
+import { DegreeIds } from '../../degree'
 
 import { doScalesMatch } from './do-scales-match'
 

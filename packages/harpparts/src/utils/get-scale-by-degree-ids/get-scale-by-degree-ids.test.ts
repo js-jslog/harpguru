@@ -1,22 +1,24 @@
-import { DegreeIds, ScaleIds, getScale } from 'harpparts'
+import { ScaleIds } from '../../scale'
+import { DegreeIds } from '../../degree'
+import { getScale } from '../../access-parts'
 
-import { getScaleLabel } from './get-scale-label'
+import { getScaleByDegreeIds } from './get-scale-by-degree-ids'
 
 const { Root, Third, Fifth } = DegreeIds
 
 test('an ordered match to be recognised', () => {
   const degreeIds = [Root, Third, Fifth]
   const { label: expectedScaleLabel } = getScale(ScaleIds.MajorTriad)
-  expect(getScaleLabel(degreeIds)).toBe(expectedScaleLabel)
+  expect(getScaleByDegreeIds(degreeIds)).toBe(expectedScaleLabel)
 })
 
 test('an unordered match to be recognised', () => {
   const degreeIds = [Third, Root, Fifth]
   const { label: expectedScaleLabel } = getScale(ScaleIds.MajorTriad)
-  expect(getScaleLabel(degreeIds)).toBe(expectedScaleLabel)
+  expect(getScaleByDegreeIds(degreeIds)).toBe(expectedScaleLabel)
 })
 
 test('a non-match to be unorecognised', () => {
   const degreeIds = [Root, Third]
-  expect(getScaleLabel(degreeIds)).toBeUndefined()
+  expect(getScaleByDegreeIds(degreeIds)).toBeUndefined()
 })
