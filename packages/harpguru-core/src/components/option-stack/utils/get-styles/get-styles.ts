@@ -1,6 +1,7 @@
 import type { TextStyle, ViewStyle } from 'react-native'
-import { Dimensions, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 
+import { getWindowDimensions } from '../../../../utils'
 import { colors, getSizes } from '../../../../styles'
 
 type OptionStackStyles = {
@@ -18,15 +19,12 @@ export const getStyles = (): OptionStackStyles => {
   const sizes = getSizes()
   const { ['9']: titleFontSize } = sizes
   const { ['11']: gutterSize } = sizes
-  // TODO: turn this in to a util since it's used elsewhere
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
-  const deviceWidth = windowHeight < windowWidth ? windowWidth : windowHeight
+  const { shortEdge, longEdge } = getWindowDimensions()
   const styles = StyleSheet.create({
     titleSection: {
       transform: [{ rotate: '-90deg' }],
       paddingTop: gutterSize,
-      width: deviceHeight,
+      width: shortEdge,
       justifyContent: 'space-between',
       flexDirection: 'row',
     },
@@ -49,8 +47,8 @@ export const getStyles = (): OptionStackStyles => {
       position: 'absolute',
       top: 0,
       right: 0,
-      width: deviceWidth - gutterSize - titleFontSize * 2,
-      height: deviceHeight,
+      width: longEdge - gutterSize - titleFontSize * 2,
+      height: shortEdge,
     },
     listWrapper: {
       position: 'absolute',

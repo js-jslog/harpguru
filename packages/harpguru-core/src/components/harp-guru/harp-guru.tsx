@@ -3,11 +3,12 @@ import 'react-native-gesture-handler'
 import { createProvider } from 'reactn'
 import { withTimingTransition, useValue } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
-import { Dimensions, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
 import { HarpGuruPage } from '../harp-guru-page'
+import { getWindowDimensions } from '../../utils'
 import { PageNumber } from '../../types'
 
 import { getInitialGlobalState } from './utils'
@@ -19,15 +20,13 @@ const Provider3 = createProvider(getInitialGlobalState(3))
 export const HarpGuru = (): ReactElement => {
   const pageInFrame = useValue<PageNumber>(1)
 
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const deviceShortSide =
-    windowWidth < windowHeight ? windowWidth : windowHeight
+  const { shortEdge } = getWindowDimensions()
 
   const pageTransition = withTimingTransition(pageInFrame, {
     duration: 300,
     easing: Easing.inOut(Easing.ease),
   })
-  const offscreen = deviceShortSide
+  const offscreen = shortEdge
   const page1Y = interpolate(pageTransition, {
     inputRange: [1, 2, 3],
     outputRange: [0, offscreen, offscreen],

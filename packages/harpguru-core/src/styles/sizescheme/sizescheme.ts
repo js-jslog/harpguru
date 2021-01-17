@@ -1,6 +1,5 @@
-import { Dimensions } from 'react-native'
-
 import { SizeScheme } from '../styles-types'
+import { getWindowDimensions } from '../../utils'
 
 const relativeSizes: Omit<
   SizeScheme,
@@ -25,9 +24,7 @@ const relativeFragmentGutterWidth = 7
 const relativeLabelProtrusion = 9
 
 export const getSizes = (): SizeScheme => {
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const deviceWidth = windowWidth > windowHeight ? windowWidth : windowHeight
-  const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
+  const { shortEdge, longEdge } = getWindowDimensions()
 
   const {
     [relativeColumnWidth]: columnWidth,
@@ -38,12 +35,12 @@ export const getSizes = (): SizeScheme => {
   const labelGrace = fragmentGutter
 
   const widthRequirements =
-    deviceWidth /
+    longEdge /
     (columnWidth * 10 +
       fragmentGutter * 3 +
       labelProtrusion * 2 +
       labelGrace * 2)
-  const heightRequirements = deviceHeight / (rowHeight * 7)
+  const heightRequirements = shortEdge / (rowHeight * 7)
 
   const seedSize =
     widthRequirements > heightRequirements

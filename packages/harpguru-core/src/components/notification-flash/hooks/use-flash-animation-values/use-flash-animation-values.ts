@@ -1,8 +1,8 @@
 import { useTimingTransition } from 'react-native-redash'
 import { greaterThan, cond, interpolate, Easing } from 'react-native-reanimated'
 import type Animation from 'react-native-reanimated'
-import { Dimensions } from 'react-native'
 
+import { getWindowDimensions } from '../../../../utils'
 import { overlayOpacity } from '../../../../constants'
 
 type FlashAnimationValues = [
@@ -20,9 +20,8 @@ export const useFlashAnimationValues = (
     easing: Easing.inOut(Easing.ease),
   })
 
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const guaranteeOffScreenWidth =
-    windowWidth > windowHeight ? windowWidth : windowHeight
+  const { longEdge } = getWindowDimensions()
+  const guaranteeOffScreenWidth = longEdge
 
   const messageUnderlayOpacity = interpolate(flashAnimationValue, {
     inputRange: [0, 1],

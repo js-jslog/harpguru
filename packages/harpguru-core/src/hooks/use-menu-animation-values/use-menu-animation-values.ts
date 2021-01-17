@@ -8,9 +8,8 @@ import {
   divide,
 } from 'react-native-reanimated'
 import type { Node } from 'react-native-reanimated'
-import { Dimensions } from 'react-native'
 
-import { getScaledMenuLabelProtrusion } from '../../utils'
+import { getWindowDimensions, getScaledMenuLabelProtrusion } from '../../utils'
 import { MenuStashPosition } from '../../types'
 import { colors } from '../../styles'
 import {
@@ -63,11 +62,7 @@ export const useMenuAnimationValues = (
   }
   const { [stashPosition]: stashYDirection } = stashMap
 
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const deviceShortSide =
-    windowWidth < windowHeight ? windowWidth : windowHeight
-  const deviceLongSide = windowWidth > windowHeight ? windowWidth : windowHeight
-
+  const { shortEdge, longEdge } = getWindowDimensions()
   const animationDuration = 300
   const stashMenuTiming = useTimingTransition(isMenuStashed, {
     duration: animationDuration,
@@ -78,14 +73,14 @@ export const useMenuAnimationValues = (
     easing: Easing.inOut(Easing.ease),
   })
 
-  const scaledFullX = multiply(deviceLongSide, menuScaleTranslationFactor)
-  const stashedX = sub(deviceLongSide, scaledFullX)
+  const scaledFullX = multiply(longEdge, menuScaleTranslationFactor)
+  const stashedX = sub(longEdge, scaledFullX)
   const stashXVector = multiply(stashedX, stashXDirection)
   const stashXValue = interpolate(stashMenuTiming, {
     inputRange: [0, 1],
     outputRange: [0, stashXVector],
   })
-  const stashedY = multiply(deviceShortSide, menuStashedYOffsetFactor)
+  const stashedY = multiply(shortEdge, menuStashedYOffsetFactor)
   const scaledStashedY = multiply(stashedY, menuScaleTranslationFactor)
   const stashedYVector = multiply(scaledStashedY, stashYDirection)
   const stashYValue = interpolate(stashMenuTiming, {
