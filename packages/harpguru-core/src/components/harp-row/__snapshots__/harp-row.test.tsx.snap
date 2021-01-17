@@ -21,8 +21,8 @@ exports[`A snapshot of a blow home row 1`] = `
         "borderColor": "#555",
         "borderLeftWidth": 0,
         "borderRightWidth": 0,
-        "borderTopLeftRadius": 12.72824377016166,
-        "borderTopRightRadius": 12.72824377016166,
+        "borderTopLeftRadius": 22.63930291919421,
+        "borderTopRightRadius": 22.63930291919421,
         "borderTopWidth": 0,
         "flex": 1,
         "flexDirection": "row",
@@ -53,16 +53,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -86,7 +86,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -109,11 +109,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -146,16 +146,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -179,7 +179,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -202,11 +202,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -239,16 +239,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -272,7 +272,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -295,11 +295,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -332,16 +332,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -365,7 +365,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -388,11 +388,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -425,16 +425,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -458,7 +458,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -481,11 +481,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -518,16 +518,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -551,7 +551,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -574,11 +574,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -611,16 +611,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -644,7 +644,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -667,11 +667,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -704,16 +704,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -737,7 +737,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -760,11 +760,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -797,16 +797,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -830,7 +830,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -853,11 +853,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -890,16 +890,16 @@ exports[`A snapshot of a blow home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -923,7 +923,7 @@ exports[`A snapshot of a blow home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -946,11 +946,11 @@ exports[`A snapshot of a blow home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -979,8 +979,8 @@ exports[`A snapshot of a draw home row 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": "#ddd",
-        "borderBottomLeftRadius": 12.72824377016166,
-        "borderBottomRightRadius": 12.72824377016166,
+        "borderBottomLeftRadius": 22.63930291919421,
+        "borderBottomRightRadius": 22.63930291919421,
         "borderBottomWidth": 0,
         "borderColor": "#555",
         "borderLeftWidth": 0,
@@ -1017,16 +1017,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1050,7 +1050,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1073,11 +1073,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1110,16 +1110,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1143,7 +1143,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1166,11 +1166,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1203,16 +1203,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1236,7 +1236,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1259,11 +1259,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1296,16 +1296,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1329,7 +1329,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1352,11 +1352,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1389,16 +1389,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1422,7 +1422,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1445,11 +1445,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1482,16 +1482,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1515,7 +1515,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1538,11 +1538,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1575,16 +1575,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1608,7 +1608,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1631,11 +1631,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1668,16 +1668,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1701,7 +1701,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1724,11 +1724,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1761,16 +1761,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1794,7 +1794,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1817,11 +1817,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1854,16 +1854,16 @@ exports[`A snapshot of a draw home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -1887,7 +1887,7 @@ exports[`A snapshot of a draw home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -1910,11 +1910,11 @@ exports[`A snapshot of a draw home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
@@ -1963,11 +1963,11 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 12.72824377016166,
+          "borderRadius": 22.63930291919421,
           "flexDirection": "row",
-          "height": 41.189469109428465,
+          "height": 73.26233572263678,
           "justifyContent": "center",
-          "width": 41.189469109428465,
+          "width": 73.26233572263678,
         }
       }
     />
@@ -1976,11 +1976,11 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 12.72824377016166,
+          "borderRadius": 22.63930291919421,
           "flexDirection": "row",
-          "height": 41.189469109428465,
+          "height": 73.26233572263678,
           "justifyContent": "center",
-          "width": 41.189469109428465,
+          "width": 73.26233572263678,
         }
       }
     />
@@ -1989,11 +1989,11 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 12.72824377016166,
+          "borderRadius": 22.63930291919421,
           "flexDirection": "row",
-          "height": 41.189469109428465,
+          "height": 73.26233572263678,
           "justifyContent": "center",
-          "width": 41.189469109428465,
+          "width": 73.26233572263678,
         }
       }
     />
@@ -2002,11 +2002,11 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 12.72824377016166,
+          "borderRadius": 22.63930291919421,
           "flexDirection": "row",
-          "height": 41.189469109428465,
+          "height": 73.26233572263678,
           "justifyContent": "center",
-          "width": 41.189469109428465,
+          "width": 73.26233572263678,
         }
       }
     />
@@ -2015,11 +2015,11 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 12.72824377016166,
+          "borderRadius": 22.63930291919421,
           "flexDirection": "row",
-          "height": 41.189469109428465,
+          "height": 73.26233572263678,
           "justifyContent": "center",
-          "width": 41.189469109428465,
+          "width": 73.26233572263678,
         }
       }
     />
@@ -2028,11 +2028,11 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 12.72824377016166,
+          "borderRadius": 22.63930291919421,
           "flexDirection": "row",
-          "height": 41.189469109428465,
+          "height": 73.26233572263678,
           "justifyContent": "center",
-          "width": 41.189469109428465,
+          "width": 73.26233572263678,
         }
       }
     />
@@ -2041,11 +2041,11 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 12.72824377016166,
+          "borderRadius": 22.63930291919421,
           "flexDirection": "row",
-          "height": 41.189469109428465,
+          "height": 73.26233572263678,
           "justifyContent": "center",
-          "width": 41.189469109428465,
+          "width": 73.26233572263678,
         }
       }
     />
@@ -2054,11 +2054,11 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 12.72824377016166,
+          "borderRadius": 22.63930291919421,
           "flexDirection": "row",
-          "height": 41.189469109428465,
+          "height": 73.26233572263678,
           "justifyContent": "center",
-          "width": 41.189469109428465,
+          "width": 73.26233572263678,
         }
       }
     />
@@ -2067,11 +2067,11 @@ exports[`A snapshot of a non-home row 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 12.72824377016166,
+          "borderRadius": 22.63930291919421,
           "flexDirection": "row",
-          "height": 41.189469109428465,
+          "height": 73.26233572263678,
           "justifyContent": "center",
-          "width": 41.189469109428465,
+          "width": 73.26233572263678,
         }
       }
     />
@@ -2098,16 +2098,16 @@ exports[`A snapshot of a non-home row 1`] = `
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 12.72824377016166,
+                "borderRadius": 22.63930291919421,
                 "flexDirection": "row",
-                "height": 41.189469109428465,
+                "height": 73.26233572263678,
                 "justifyContent": "center",
-                "width": 41.189469109428465,
+                "width": 73.26233572263678,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 1.1477226122778774,
+                "borderWidth": 2.0414159530382516,
                 "elevation": 0,
               },
             ]
@@ -2131,7 +2131,7 @@ exports[`A snapshot of a non-home row 1`] = `
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 20.594734554714233,
+                  "fontSize": 36.63116786131839,
                 }
               }
             >
@@ -2154,11 +2154,11 @@ exports[`A snapshot of a non-home row 1`] = `
             <Text
               style={
                 Object {
-                  "bottom": 7.866490784552572,
+                  "bottom": 13.991864942124177,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 12.72824377016166,
-                  "left": 7.866490784552572,
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
                 }
               }
             >
