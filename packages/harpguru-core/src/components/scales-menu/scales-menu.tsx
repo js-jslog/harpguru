@@ -50,6 +50,8 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     list[0].category === ScaleCategory.Scale ? 'Scales' : 'Chords'
   )
   const itemsz = [scales, chords].map((list) => [
+    // TODO: I think having a dedicated
+    // clear all button would be better
     {
       label: 'Clear all',
       callbackParam: [],
