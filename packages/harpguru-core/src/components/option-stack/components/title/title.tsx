@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { Text } from 'react-native'
 import React from 'react'
@@ -10,6 +11,11 @@ export const Title = ({
   transitionValue,
 }: TitleProps & WithTransition): React.ReactElement => {
   const styles = getStyles()
+  const [
+    {
+      apparatus: { id: apparatusId },
+    },
+  ] = useGlobal('activeHarpStrata')
 
   return (
     <Animated.View
@@ -21,6 +27,7 @@ export const Title = ({
       ]}
     >
       <Text style={styles.titleText}>{title}</Text>
+      <Text style={styles.subTitleText}>{apparatusId}</Text>
     </Animated.View>
   )
 }

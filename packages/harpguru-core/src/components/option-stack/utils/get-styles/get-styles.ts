@@ -8,6 +8,7 @@ type OptionStackStyles = {
   titleSection: ViewStyle
   titleWrapper: ViewStyle
   titleText: TextStyle
+  subTitleText: TextStyle
   listSection: ViewStyle
   listWrapper: ViewStyle
   optionText: TextStyle
@@ -36,6 +37,12 @@ export const getStyles = (): OptionStackStyles => {
     titleText: {
       fontSize: titleFontSize,
       color: colors.inertOutline,
+      alignSelf: 'center',
+    },
+    subTitleText: {
+      fontSize: sizes['8'],
+      color: colors.inertOutline,
+      alignSelf: 'center',
     },
     listSection: {
       fontSize: titleFontSize,
