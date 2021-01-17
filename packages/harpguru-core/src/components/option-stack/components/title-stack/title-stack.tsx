@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { useInterpolateTransitionValue } from '../use-interpolate-transition-value'
+import { Title } from '../title'
 import type { OptionStackProps, WithTransition } from '../../types'
-import { Title } from '../../components'
+import { useInterpolateTransitionValue } from '../../hooks'
 
-export const useTitleStack = ({
+export const TitleStack = ({
   stackPropsz,
   transitionValue,
-}: OptionStackProps & WithTransition): ReadonlyArray<React.ReactElement> => {
+}: OptionStackProps & WithTransition): React.ReactElement => {
   const titleStack = stackPropsz.map((stackProps, index, array) => {
     return (
       <Title
@@ -22,5 +22,5 @@ export const useTitleStack = ({
     )
   })
 
-  return titleStack
+  return <>{titleStack}</>
 }

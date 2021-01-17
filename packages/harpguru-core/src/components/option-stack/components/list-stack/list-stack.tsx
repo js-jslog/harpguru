@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useInterpolateTransitionValue } from '../use-interpolate-transition-value'
+import { List } from '../list'
 import type {
   OptionStackProps,
   WithTransition,
@@ -8,12 +8,12 @@ import type {
   OptionProps_Dummy,
 } from '../../types'
 import { isOptionProps_Scales } from '../../types'
-import { List } from '../../components'
+import { useInterpolateTransitionValue } from '../../hooks'
 
-export const useListStack = ({
+export const ListStack = ({
   stackPropsz,
   transitionValue,
-}: OptionStackProps & WithTransition): ReadonlyArray<React.ReactElement> => {
+}: OptionStackProps & WithTransition): React.ReactElement => {
   const listStack = stackPropsz.map((items, index, array) => {
     if (isOptionProps_Scales(items)) {
       const i = items as OptionProps_Scales
@@ -46,5 +46,5 @@ export const useListStack = ({
     }
   })
 
-  return listStack
+  return <>{listStack}</>
 }

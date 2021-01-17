@@ -2,26 +2,25 @@ import { View } from 'react-native'
 import React from 'react'
 
 import { getStyles } from './utils'
+import { useFoundationAnimationValues } from './hooks'
 import {
-  useFoundationAnimationValues,
-  useTitleStack,
-  useListStack,
-} from './hooks'
-import { PreviousInStack, NextInStack } from './components'
+  TitleStack,
+  ListStack,
+  PreviousInStack,
+  NextInStack,
+} from './components'
 
 import type { OptionStackProps } from './types'
 
 const OptionStackLocal = (props: OptionStackProps): React.ReactElement => {
   const { stackState, stackStateTransition } = useFoundationAnimationValues()
 
-  const titleStack = useTitleStack({
-    ...props,
-    transitionValue: stackStateTransition,
-  })
-  const listStack = useListStack({
-    ...props,
-    transitionValue: stackStateTransition,
-  })
+  const titleStack = (
+    <TitleStack {...props} transitionValue={stackStateTransition} />
+  )
+  const listStack = (
+    <ListStack {...props} transitionValue={stackStateTransition} />
+  )
 
   const styles = getStyles()
   return (
