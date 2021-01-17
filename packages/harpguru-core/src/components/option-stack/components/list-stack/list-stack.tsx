@@ -16,30 +16,30 @@ export const ListStack = ({
 }: OptionStackProps & WithTransition): React.ReactElement => {
   const listStack = optionPropsz.map((optionProps, index, array) => {
     if (isOptionProps_Scales(optionProps)) {
-      const i = optionProps as OptionProps_Scales
+      const scalesOptionProps = optionProps as OptionProps_Scales
       return (
         <List
-          items={i.items}
+          items={scalesOptionProps.items}
           transitionValue={useInterpolateTransitionValue(
             array.length,
             index,
             transitionValue
           )}
-          itemTapHandler={i.itemTapHandler}
+          itemTapHandler={scalesOptionProps.itemTapHandler}
           key={index}
         />
       )
     } else {
-      const i = optionProps as OptionProps_Apparatus
+      const apparatusOptionProps = optionProps as OptionProps_Apparatus
       return (
         <List
-          items={i.items}
+          items={apparatusOptionProps.items}
           transitionValue={useInterpolateTransitionValue(
             array.length,
             index,
             transitionValue
           )}
-          itemTapHandler={i.itemTapHandler}
+          itemTapHandler={apparatusOptionProps.itemTapHandler}
           key={index}
         />
       )
