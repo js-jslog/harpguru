@@ -49,12 +49,16 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const titles = [scales, chords].map((list) =>
     list[0].category === ScaleCategory.Scale ? 'Scales' : 'Chords'
   )
-  const itemsz = [scales, chords].map((list) =>
-    list.map((item) => ({
+  const itemsz = [scales, chords].map((list) => [
+    {
+      label: 'Clear all',
+      callbackParam: [],
+    },
+    ...list.map((item) => ({
       label: item.label,
       callbackParam: item.degrees,
-    }))
-  )
+    })),
+  ])
 
   const optionStackPropsz = [
     {
