@@ -40,7 +40,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     }))
   )
 
-  const optionListStackProps = [
+  const optionStackPropsz = [
     {
       title: titles[0],
       items: itemsz[0],
@@ -55,7 +55,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
-        <OptionStack stackPropsz={optionListStackProps} />
+        <OptionStack stackPropsz={optionStackPropsz} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <MaterialIcons

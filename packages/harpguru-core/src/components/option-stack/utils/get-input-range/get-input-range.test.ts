@@ -12,8 +12,8 @@ test('that an error is thrown if an range is below 1', () => {
   )
 })
 
-test('that an input range of 1 can be produced', () => {
-  expect(getInputRange(1)).toStrictEqual([0])
+test('that an input range of 1 can be produced (see comment in code for explanation of strange expectation here)', () => {
+  expect(getInputRange(1)).toStrictEqual([1, 1])
 })
 
 test('that an input range of 2 can be produced', () => {

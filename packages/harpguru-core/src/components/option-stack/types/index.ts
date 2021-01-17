@@ -1,11 +1,11 @@
 import type { Node, Value } from 'react-native-reanimated'
-import type { DegreeIds } from 'harpparts'
+import type { ApparatusIds, DegreeIds } from 'harpparts'
 
 export type OptionStackProps = {
-  readonly stackPropsz: ReadonlyArray<OptionProps_Scales | OptionProps_Dummy>
+  readonly stackPropsz: ReadonlyArray<OptionProps_All>
 }
 
-export type OptionProps_All = OptionProps_Scales | OptionProps_Dummy
+export type OptionProps_All = OptionProps_Scales | OptionProps_Apparatus
 
 export type OptionProps_Scales = OptionProps<ReadonlyArray<DegreeIds>>
 export function isOptionProps_Scales(
@@ -14,7 +14,7 @@ export function isOptionProps_Scales(
   const { items } = props
   return Array.isArray(items)
 }
-export type OptionProps_Dummy = OptionProps<string>
+export type OptionProps_Apparatus = OptionProps<ApparatusIds>
 
 type OptionProps<T> = TitleProps & ListProps<T>
 

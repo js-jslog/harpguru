@@ -5,7 +5,7 @@ import type {
   OptionStackProps,
   WithTransition,
   OptionProps_Scales,
-  OptionProps_Dummy,
+  OptionProps_Apparatus,
 } from '../../types'
 import { isOptionProps_Scales } from '../../types'
 import { useInterpolateTransitionValue } from '../../hooks'
@@ -30,7 +30,7 @@ export const ListStack = ({
         />
       )
     } else {
-      const i = items as OptionProps_Dummy
+      const i = items as OptionProps_Apparatus
       return (
         <List
           items={i.items}

@@ -10,8 +10,8 @@ test('that an error is thrown if an index outside the appropriate range is given
   expect(() => getOutputRange(-1, 1)).toThrow('Index outside of range given')
 })
 
-test('that output ranges for a range of 1 can be produced', () => {
-  expect(getOutputRange(0, 1)).toStrictEqual([1])
+test('that output range for a range of 1 can be produced (see comment in code for explanation of strange expectation here)', () => {
+  expect(getOutputRange(0, 1)).toStrictEqual([1, 1])
 })
 
 test('that output ranges for a range of 2 can be produced', () => {
