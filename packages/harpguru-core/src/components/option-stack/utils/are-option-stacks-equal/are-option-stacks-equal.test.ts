@@ -83,10 +83,10 @@ test('that two identical (other than itemTapHandler) option props are identified
   const optionProps1 = baseOptionProps
   const optionProps2 = { ...baseOptionProps, itemTapHandler: itemTapHandler2 }
   const stackProps1: OptionStackProps = {
-    optionPropsz: [optionProps1],
+    optionPropsz: [optionProps1, optionProps1],
   }
   const stackProps2: OptionStackProps = {
-    optionPropsz: [optionProps2],
+    optionPropsz: [optionProps1, optionProps2],
   }
 
   expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
