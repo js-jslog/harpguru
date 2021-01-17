@@ -5,14 +5,14 @@ import type { OptionStackProps, WithTransition } from '../../types'
 import { useInterpolateTransitionValue } from '../../hooks'
 
 export const TitleStack = ({
-  stackPropsz,
+  optionPropsz,
   transitionValue,
 }: OptionStackProps & WithTransition): React.ReactElement => {
-  const titleStack = stackPropsz.map((stackProps, index, array) => {
+  const titleStack = optionPropsz.map((optionProps, index, array) => {
     return (
       <Title
-        title={stackProps.title}
-        useSubTitle={stackProps.useSubTitle}
+        title={optionProps.title}
+        useSubTitle={optionProps.useSubTitle}
         transitionValue={useInterpolateTransitionValue(
           array.length,
           index,

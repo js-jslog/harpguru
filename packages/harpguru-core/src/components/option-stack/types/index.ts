@@ -2,7 +2,7 @@ import type { Node, Value } from 'react-native-reanimated'
 import type { ApparatusIds, DegreeIds } from 'harpparts'
 
 export type OptionStackProps = {
-  readonly stackPropsz: ReadonlyArray<OptionProps_All>
+  readonly optionPropsz: ReadonlyArray<OptionProps_All>
 }
 
 export type OptionProps_All = OptionProps_Scales | OptionProps_Apparatus

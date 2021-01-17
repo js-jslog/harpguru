@@ -11,12 +11,12 @@ import { isOptionProps_Scales } from '../../types'
 import { useInterpolateTransitionValue } from '../../hooks'
 
 export const ListStack = ({
-  stackPropsz,
+  optionPropsz,
   transitionValue,
 }: OptionStackProps & WithTransition): React.ReactElement => {
-  const listStack = stackPropsz.map((items, index, array) => {
-    if (isOptionProps_Scales(items)) {
-      const i = items as OptionProps_Scales
+  const listStack = optionPropsz.map((optionProps, index, array) => {
+    if (isOptionProps_Scales(optionProps)) {
+      const i = optionProps as OptionProps_Scales
       return (
         <List
           items={i.items}
@@ -30,7 +30,7 @@ export const ListStack = ({
         />
       )
     } else {
-      const i = items as OptionProps_Apparatus
+      const i = optionProps as OptionProps_Apparatus
       return (
         <List
           items={i.items}

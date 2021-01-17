@@ -69,7 +69,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
-        <OptionStack stackPropsz={optionStackPropsz} />
+        <OptionStack optionPropsz={optionStackPropsz} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <Entypo name="cog" size={sizes['7']} color={colors.homeRowsColor} />

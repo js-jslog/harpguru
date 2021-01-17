@@ -31,7 +31,7 @@ type PointerProperties = {
 const usePointerProperties = (
   props: OptionStackProps & WithStateValue & WithTransition
 ): PointerProperties => {
-  const { stackPropsz, stateValue, transitionValue } = props
+  const { optionPropsz, stateValue, transitionValue } = props
   const prevInStack = (): void => {
     const setValue = sub(stateValue, 1)
     stateValue.setValue(setValue)
@@ -42,12 +42,12 @@ const usePointerProperties = (
   }
   const prevPointerEvents = cond(eq(stateValue, 0), 'none', 'auto')
   const nextPointerEvents = cond(
-    eq(stateValue, stackPropsz.length - 1),
+    eq(stateValue, optionPropsz.length - 1),
     'none',
     'auto'
   )
   const prevPointerOpacity = interpolate(
-    useInterpolateTransitionValue(stackPropsz.length, 0, transitionValue),
+    useInterpolateTransitionValue(optionPropsz.length, 0, transitionValue),
     {
       inputRange: [0, 1],
       outputRange: [1, 0],
@@ -55,8 +55,8 @@ const usePointerProperties = (
   )
   const nextPointerOpacity = interpolate(
     useInterpolateTransitionValue(
-      stackPropsz.length,
-      stackPropsz.length - 1,
+      optionPropsz.length,
+      optionPropsz.length - 1,
       transitionValue
     ),
     {
