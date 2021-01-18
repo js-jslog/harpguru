@@ -21,27 +21,26 @@ import { useDispatchAndFlushScaleToggles } from './hooks'
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
 
-  const { isMenuStashed } = menuProps
-
   const useSubTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { activeDegreeIds } = activeHarpStrata
     const scaleLabel = getScaleByDegreeIds(activeDegreeIds)
     return scaleLabel || ''
   }, [useGlobal])
+  const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
+    isMenuStashed: menuProps.isMenuStashed,
+  })
+  const itemTapHandler = useCallback(
+    (arg0: ReadonlyArray<DegreeIds>) => dispatchAndFlushScaleToggles(arg0),
+    [dispatchAndFlushScaleToggles]
+  )
+
   const scales = getScaleIds()
     .map((id) => getScale(id))
     .filter((scale) => scale.category === ScaleCategory.Scale)
   const chords = getScaleIds()
     .map((id) => getScale(id))
     .filter((scale) => scale.category === ScaleCategory.Chord)
-  const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
-    isMenuStashed: isMenuStashed,
-  })
-  const itemTapHandler = useCallback(
-    (arg0: ReadonlyArray<DegreeIds>) => dispatchAndFlushScaleToggles(arg0),
-    [dispatchAndFlushScaleToggles]
-  )
   const titles = [scales, chords].map((list) =>
     list[0].category === ScaleCategory.Scale ? 'Scales' : 'Chords'
   )
