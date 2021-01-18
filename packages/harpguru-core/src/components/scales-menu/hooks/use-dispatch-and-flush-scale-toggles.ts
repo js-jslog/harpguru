@@ -1,6 +1,6 @@
 import type Dispatcher from 'reactn/types/dispatcher'
 import { useGlobal, useDispatch } from 'reactn'
-import React, { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import type { DegreeIds } from 'harpparts'
 
 import { rebufferForInput } from '../utils'
@@ -29,7 +29,7 @@ export const useDispatchAndFlushScaleToggles = ({
     flushBufferedActivityToggles()
   }, [bufferedActivityToggles, flushChannel])
 
-  return React.useCallback(
+  return useCallback(
     useDispatch(
       (
         global: GlobalState,

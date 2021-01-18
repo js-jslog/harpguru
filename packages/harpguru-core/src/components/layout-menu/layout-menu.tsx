@@ -1,5 +1,5 @@
 import { useGlobal, useDispatch } from 'reactn'
-import React from 'react'
+import React, { useCallback } from 'react'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 import { getApparatusIds } from 'harpparts'
@@ -20,11 +20,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     label: id,
     callbackParam: id,
   }))
-  // TODO: check whether I actually need to use a memoised
-  // callback here. It doesn't at the moment, but I need to
-  // check again once the `areEqual` function on the option-stack
-  // is fully implemented.
-  const useSubTitle = React.useCallback(() => {
+  const useSubTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const {
       apparatus: { id: apparatusId },
@@ -34,7 +30,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   // TODO: This replaces a hook found locally in this component.
   // That hook had tests. It *might* be worth pulling this out
   // and including similar tests for it.
-  const itemTapHandler = React.useCallback(
+  const itemTapHandler = useCallback(
     useDispatch(
       (
         global: GlobalState,

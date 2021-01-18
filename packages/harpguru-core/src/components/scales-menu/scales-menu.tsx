@@ -1,5 +1,5 @@
 import { useGlobal } from 'reactn'
-import React from 'react'
+import React, { useCallback } from 'react'
 import {
   getScale,
   getScaleByDegreeIds,
@@ -23,11 +23,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const { isMenuStashed } = menuProps
 
-  // TODO: check whether I actually need to use a memoised
-  // callback here. It doesn't at the moment, but I need to
-  // check again once the `areEqual` function on the option-stack
-  // is fully implemented.
-  const useSubTitle = React.useCallback(() => {
+  const useSubTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { activeDegreeIds } = activeHarpStrata
     const scaleLabel = getScaleByDegreeIds(activeDegreeIds)
@@ -42,7 +38,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
     isMenuStashed: isMenuStashed,
   })
-  const itemTapHandler = React.useCallback(
+  const itemTapHandler = useCallback(
     (arg0: ReadonlyArray<DegreeIds>) => dispatchAndFlushScaleToggles(arg0),
     [dispatchAndFlushScaleToggles]
   )
