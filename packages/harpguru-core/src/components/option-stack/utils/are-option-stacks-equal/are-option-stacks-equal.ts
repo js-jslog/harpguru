@@ -81,8 +81,8 @@ The memoised OptionStack components should be initialised with
 parameters which never go stale. Please check the params provided
 to this OptionStack.
 
-areTitlesEqual: ${areUseSubTitlesEqual}
+areTitlesEqual: ${areTitlesEqual}
 areUseSubTitlesEqual: ${areUseSubTitlesEqual}
-areItemTapHandlersEqual: ${areUseSubTitlesEqual}
+areItemTapHandlersEqual: ${areItemTapHandlersEqual}
   `)
 }
