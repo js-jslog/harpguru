@@ -1,1 +1,1 @@
-export { getNewHarpStrataByApparatusForDispatcher } from './use-set-harp-strata-by-apparatus'
+export { getNewHarpStrataByApparatusForDispatcher } from './get-new-harpstrata-by-apparatus-for-dispatcher'

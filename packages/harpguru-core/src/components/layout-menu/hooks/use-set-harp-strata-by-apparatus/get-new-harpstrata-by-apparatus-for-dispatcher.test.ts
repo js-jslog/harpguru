@@ -3,7 +3,7 @@ import { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
 
-import { getNewHarpStrataByApparatusForDispatcher } from './use-set-harp-strata-by-apparatus'
+import { getNewHarpStrataByApparatusForDispatcher } from './get-new-harpstrata-by-apparatus-for-dispatcher'
 
 const baseHarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
