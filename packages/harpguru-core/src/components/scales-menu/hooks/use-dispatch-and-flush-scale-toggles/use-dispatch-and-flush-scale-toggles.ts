@@ -3,10 +3,10 @@ import { useGlobal, useDispatch } from 'reactn'
 import { useCallback, useEffect } from 'react'
 import type { DegreeIds } from 'harpparts'
 
-import { rebufferForInput } from '../utils'
-import { FlushChannels } from '../../../types'
-import type { GlobalState, MenuProps } from '../../../types'
-import { useFlushBufferedActivityToggles } from '../../../hooks'
+import { rebufferForInput } from '../../utils'
+import { FlushChannels } from '../../../../types'
+import type { GlobalState, MenuProps } from '../../../../types'
+import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
 export const useDispatchAndFlushScaleToggles = ({
   isMenuStashed,
