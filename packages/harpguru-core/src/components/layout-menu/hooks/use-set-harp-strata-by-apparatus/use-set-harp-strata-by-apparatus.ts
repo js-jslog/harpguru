@@ -1,26 +1,25 @@
-import { useGlobal } from 'reactn'
+import Dispatcher from 'reactn/types/dispatcher'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
+import type { HarpStrataProps } from 'harpstrata'
 import type { ApparatusIds } from 'harpparts'
 
-export const useSetHarpStrataByApparatus = (): ((
-  arg0: ApparatusIds
-) => void) => {
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
+import { DisplayModes, GlobalState } from '../../../../types'
 
-  const setHarpStrataByApparatus = (apparatusId: ApparatusIds) => {
-    const nextHarpStrataProps = getPropsForHarpStrata(
-      {
-        ...activeHarpStrata,
-        apparatus: {
-          ...activeHarpStrata.apparatus,
-          id: apparatusId,
-        },
-      },
-      'DEGREE'
-    )
+export const getNewHarpStrataByApparatusForDispatcher = (
+  global: GlobalState,
+  _dipatch: Dispatcher,
+  apparatusId: ApparatusIds
+): Pick<GlobalState, 'activeHarpStrata'> => {
+  const { activeHarpStrata, activeDisplayMode } = global
 
-    setActiveHarpStrata(getHarpStrata(nextHarpStrataProps))
+  const newHarpStrataProps: HarpStrataProps = {
+    ...getPropsForHarpStrata(
+      activeHarpStrata,
+      activeDisplayMode === DisplayModes.Pitch ? 'PITCH' : 'DEGREE'
+    ),
+    apparatusId,
   }
-
-  return setHarpStrataByApparatus
+  return {
+    activeHarpStrata: getHarpStrata(newHarpStrataProps),
+  }
 }

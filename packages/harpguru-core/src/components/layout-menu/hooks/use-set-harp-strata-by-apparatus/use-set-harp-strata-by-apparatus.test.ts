@@ -1,11 +1,9 @@
-import { useGlobal } from 'reactn'
 import { getHarpStrata } from 'harpstrata'
 import { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
 
-import { useSetHarpStrataByApparatus } from './use-set-harp-strata-by-apparatus'
+import type { GlobalState } from '../../../../types'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
+import { getNewHarpStrataByApparatusForDispatcher } from './use-set-harp-strata-by-apparatus'
 
 const baseHarpStrataProps = {
   apparatusId: ApparatusIds.MajorDiatonic,
@@ -28,19 +26,35 @@ const countryTunedHarp = getHarpStrata(countryTunedHarpProps)
 const naturalMinorHarp = getHarpStrata(naturalMinorHarpProps)
 
 test('provides HarpStrata updated apparatus set to natural minor', () => {
-  const setActiveHarpStrata = jest.fn()
-  mockUseGlobal.mockReturnValue([countryTunedHarp, setActiveHarpStrata])
-  const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
-  setHarpStrataByApparatus(ApparatusIds.NaturalMinor)
+  const inputGlobal = {
+    activeHarpStrata: countryTunedHarp,
+  } as GlobalState
+  const unusedDispatcher = jest.fn()
 
-  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(naturalMinorHarp)
+  const {
+    activeHarpStrata: newActiveHarpStrata,
+  } = getNewHarpStrataByApparatusForDispatcher(
+    inputGlobal,
+    unusedDispatcher,
+    ApparatusIds.NaturalMinor
+  )
+
+  expect(newActiveHarpStrata).toStrictEqual(naturalMinorHarp)
 })
 
 test('provides HarpStrata updated by apparatus to major diatonic', () => {
-  const setActiveHarpStrata = jest.fn()
-  mockUseGlobal.mockReturnValue([countryTunedHarp, setActiveHarpStrata])
-  const setHarpStrataByApparatus = useSetHarpStrataByApparatus()
-  setHarpStrataByApparatus(ApparatusIds.MajorDiatonic)
+  const inputGlobal = {
+    activeHarpStrata: countryTunedHarp,
+  } as GlobalState
+  const unusedDispatcher = jest.fn()
 
-  expect(setActiveHarpStrata.mock.calls[0][0]).toStrictEqual(majorDiatonicHarp)
+  const {
+    activeHarpStrata: newActiveHarpStrata,
+  } = getNewHarpStrataByApparatusForDispatcher(
+    inputGlobal,
+    unusedDispatcher,
+    ApparatusIds.MajorDiatonic
+  )
+
+  expect(newActiveHarpStrata).toStrictEqual(majorDiatonicHarp)
 })

@@ -1,17 +1,16 @@
 import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
-import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
-import type { HarpStrataProps } from 'harpstrata'
 import { getApparatusIds } from 'harpparts'
-import type { ApparatusIds } from 'harpparts'
 import { Entypo } from '@expo/vector-icons'
 
 import { OptionStack } from '../option-stack'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import { DisplayModes, GlobalState, MenuProps } from '../../types'
+import { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
+
+import { getNewHarpStrataByApparatusForDispatcher } from './hooks'
 
 export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
@@ -27,30 +26,8 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     } = activeHarpStrata
     return apparatusId
   }, [useGlobal])
-  // TODO: This replaces a hook found locally in this component.
-  // That hook had tests. It *might* be worth pulling this out
-  // and including similar tests for it.
   const itemTapHandler = useCallback(
-    useDispatch(
-      (
-        global: GlobalState,
-        _dipatch,
-        apparatusId: ApparatusIds
-      ): Pick<GlobalState, 'activeHarpStrata'> => {
-        const { activeHarpStrata, activeDisplayMode } = global
-
-        const newHarpStrataProps: HarpStrataProps = {
-          ...getPropsForHarpStrata(
-            activeHarpStrata,
-            activeDisplayMode === DisplayModes.Pitch ? 'PITCH' : 'DEGREE'
-          ),
-          apparatusId,
-        }
-        return {
-          activeHarpStrata: getHarpStrata(newHarpStrataProps),
-        }
-      }
-    ),
+    useDispatch(getNewHarpStrataByApparatusForDispatcher),
     [useDispatch]
   )
 
