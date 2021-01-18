@@ -10,7 +10,7 @@ import { Menu } from '../menu'
 import { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
-import { getNewHarpStrataByApparatusForDispatcher } from './hooks'
+import { getNewHarpStrataByApparatusForDispatcher } from './utils'
 
 export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
