@@ -25,13 +25,13 @@ export const areOptionStacksEqual = (
     if (!isProd()) return false
 
     throw Error(`
-                The memoised OptionStack components should be initialised with
-                parameters which never go stale. Please check the params provided
-                to this OptionStack.
+The memoised OptionStack components should be initialised with
+parameters which never go stale. Please check the params provided
+to this OptionStack.
 
-                  The number of options in the stack has changed during this render
-                from ${prevPropsz.length} to ${nextPropsz.length}
-                `)
+The number of options in the stack has changed during this render
+from ${prevPropsz.length} to ${nextPropsz.length}
+    `)
   }
 
   // It's important to return this early before the iterative
@@ -49,12 +49,12 @@ export const areOptionStacksEqual = (
     if (!isProd()) return false
 
     throw Error(`
-                The memoised OptionStack components should be initialised with
-                parameters which never go stale. Please check the params provided
-                to this OptionStack.
+The memoised OptionStack components should be initialised with
+parameters which never go stale. Please check the params provided
+to this OptionStack.
 
-                  One of the option lists has changed length during this render.
-                  `)
+One of the option lists has changed length during this render.
+    `)
   }
 
   const areTitlesEqual = prevPropsz.every(
@@ -77,12 +77,12 @@ export const areOptionStacksEqual = (
   if (!isProd()) return false
 
   throw Error(`
-              The memoised OptionStack components should be initialised with
-              parameters which never go stale. Please check the params provided
-              to this OptionStack.
+The memoised OptionStack components should be initialised with
+parameters which never go stale. Please check the params provided
+to this OptionStack.
 
-                areTitlesEqual: ${areUseSubTitlesEqual}
-              areUseSubTitlesEqual: ${areUseSubTitlesEqual}
-              areItemTapHandlersEqual: ${areUseSubTitlesEqual}
-              `)
+areTitlesEqual: ${areUseSubTitlesEqual}
+areUseSubTitlesEqual: ${areUseSubTitlesEqual}
+areItemTapHandlersEqual: ${areUseSubTitlesEqual}
+  `)
 }
