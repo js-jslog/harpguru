@@ -40,7 +40,7 @@ from ${prevPropsz.length} to ${nextPropsz.length}
   // in case the arrays aren't the same length
   //
   // (this is relevant *once* we have more granular tests of
-  // the items included here) TODO: add these
+  // the items included here)
   const areListLengthsEqual = prevPropsz.every(
     ({ items: prevItems }, index) =>
       prevItems.length === nextPropsz[index].items.length
