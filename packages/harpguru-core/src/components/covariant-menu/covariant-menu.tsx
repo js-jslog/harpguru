@@ -1,92 +1,61 @@
-import { useGlobal } from 'reactn'
-import React from 'react'
-import { getPitchIds, getPozitionIds } from 'harpparts'
-import { CovariantMembers } from 'harpcovariance'
+import { useGlobal, useDispatch } from 'reactn'
+import React, { useCallback } from 'react'
+import { PozitionIds } from 'harpparts'
+import type { CovariancePrimer } from 'harpcovariance'
+import { getCovarianceSeries, CovariantMembers } from 'harpcovariance'
 import { Feather } from '@expo/vector-icons'
 
-import { OptionLock } from '../option-lock'
-import { Option } from '../option'
+import { MemoOptionStack } from '../option-stack'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import type { MenuProps, OptionIds } from '../../types'
+import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
-import {
-  useNudgeHarpStrataByHarpKey,
-  useNudgeHarpStrataByPozition,
-  useNudgeHarpStrataByRootPitch,
-  useSetHarpStrataByHarpKey,
-  useSetHarpStrataByPozition,
-  useSetHarpStrataByRootPitch,
-} from './hooks'
+import { getNewHarpStrataForDispatcher } from './utils'
 
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const [lockedCovariant, setLockedCovariant] = useGlobal('lockedCovariant')
-
-  const orderedPitchIds = getPitchIds()
-  const orderedPozitionIds = getPozitionIds()
-
   const { harpKeyId } = activeHarpStrata
-  const nudgeHarpStrataByHarpKey = useNudgeHarpStrataByHarpKey()
-  const setHarpStrataByHarpKey = useSetHarpStrataByHarpKey()
-  const harpKeyOptionProps = {
-    title: 'Harp Key',
-    activeOptionId: harpKeyId,
-    orderedOptionIds: orderedPitchIds,
-    nudgeFunction: nudgeHarpStrataByHarpKey,
-    setFunction: setHarpStrataByHarpKey as (arg0: OptionIds) => void,
-  }
-  const harpKeyIsLocked = lockedCovariant === CovariantMembers.HarpKey
-  const lockHarpKey = () => {
-    setLockedCovariant(CovariantMembers.HarpKey)
-  }
 
-  const { pozitionId } = activeHarpStrata
-  const nudgeHarpStrataByPozition = useNudgeHarpStrataByPozition()
-  const setHarpStrataByPozition = useSetHarpStrataByPozition()
-  const pozitionOptionProps = {
-    title: 'Position',
-    activeOptionId: pozitionId,
-    orderedOptionIds: orderedPozitionIds,
-    nudgeFunction: nudgeHarpStrataByPozition,
-    setFunction: setHarpStrataByPozition as (arg0: OptionIds) => void,
+  const covariancePrimer: CovariancePrimer = {
+    lockedType: CovariantMembers.HarpKey,
+    variedType: CovariantMembers.Pozition,
+    lockedValue: harpKeyId,
+    variedValue: PozitionIds.First,
   }
-  const pozitionIsLocked = lockedCovariant === CovariantMembers.Pozition
-  const lockPozition = () => {
-    setLockedCovariant(CovariantMembers.Pozition)
-  }
+  const covarianceSeries = getCovarianceSeries(covariancePrimer)
 
-  const { rootPitchId } = activeHarpStrata
-  const nudgeHarpStrataByRootPitch = useNudgeHarpStrataByRootPitch()
-  const setHarpStrataByRootPitch = useSetHarpStrataByRootPitch()
-  const rootPitchOptionProps = {
-    title: 'Root Pitch',
-    activeOptionId: rootPitchId,
-    orderedOptionIds: orderedPitchIds,
-    nudgeFunction: nudgeHarpStrataByRootPitch,
-    setFunction: setHarpStrataByRootPitch as (arg0: OptionIds) => void,
-  }
-  const rootPitchIsLocked = lockedCovariant === CovariantMembers.RootPitch
-  const lockRootPitch = () => {
-    setLockedCovariant(CovariantMembers.RootPitch)
-  }
+  const items = covarianceSeries.map((item) => ({
+    label: item.pozitionId,
+    callbackParam: { harpKeyId: item.harpKeyId, pozitionId: item.pozitionId },
+  }))
+
+  const itemTapHandler = useCallback(
+    useDispatch(getNewHarpStrataForDispatcher),
+    [useDispatch]
+  )
+
+  const useSubTitle = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { harpKeyId } = activeHarpStrata
+    return harpKeyId
+  }, [useGlobal])
 
   const sizes = getSizes()
 
+  const optionPropsz = [
+    {
+      title: 'Harp key',
+      useSubTitle,
+      items,
+      itemTapHandler,
+    },
+  ]
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
-        <OptionLock locked={harpKeyIsLocked} handleTap={lockHarpKey}>
-          <Option {...harpKeyOptionProps} />
-        </OptionLock>
-        <OptionLock locked={pozitionIsLocked} handleTap={lockPozition}>
-          <Option {...pozitionOptionProps} />
-        </OptionLock>
-        <OptionLock locked={rootPitchIsLocked} handleTap={lockRootPitch}>
-          <Option {...rootPitchOptionProps} />
-        </OptionLock>
+        <MemoOptionStack optionPropsz={optionPropsz} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <Feather

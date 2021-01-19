@@ -1,12 +1,33 @@
 import type { Node, Value } from 'react-native-reanimated'
+import type { HarpStrataProps } from 'harpstrata'
 import type { ApparatusIds, DegreeIds } from 'harpparts'
 
 export type OptionStackProps = {
   readonly optionPropsz: ReadonlyArray<OptionProps_All>
 }
 
-export type OptionProps_All = OptionProps_Scales | OptionProps_Apparatus
+export type OptionProps_All =
+  | OptionProps_Covariants
+  | OptionProps_Scales
+  | OptionProps_Apparatus
 
+export type OptionProps_Covariants = OptionProps<
+  Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
+>
+export function isOptionProps_Covariants(
+  props: OptionProps_All
+): props is OptionProps_Covariants {
+  const { items } = props
+  if (items.length === 0) return false
+  const [firstItem] = items
+  const { callbackParam } = firstItem
+  const tempCallbackParam = callbackParam as Pick<
+    HarpStrataProps,
+    'harpKeyId' | 'pozitionId'
+  >
+  if (tempCallbackParam.harpKeyId === undefined) return false
+  return true
+}
 export type OptionProps_Scales = OptionProps<ReadonlyArray<DegreeIds>>
 export function isOptionProps_Scales(
   props: OptionProps_All
