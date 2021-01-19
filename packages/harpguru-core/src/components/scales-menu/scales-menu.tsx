@@ -20,7 +20,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const useSubTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { activeDegreeIds } = activeHarpStrata
-    const scaleLabel = getScaleByDegreeIds(activeDegreeIds)
+    const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
     return scaleLabel || ''
   }, [useGlobal])
   const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({

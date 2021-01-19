@@ -12,9 +12,7 @@ import { useShouldDisplayScaleLabel } from './hooks'
 export const ScaleNotification = (): ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const { activeDegreeIds } = activeHarpStrata
-  // TODO: this function should probably return a scale now
-  // rather than just the label.
-  const scaleLabel = getScaleByDegreeIds(activeDegreeIds)
+  const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
 
   const shouldDisplay = useShouldDisplayScaleLabel(scaleLabel)
 

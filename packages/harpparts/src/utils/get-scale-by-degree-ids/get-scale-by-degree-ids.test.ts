@@ -8,14 +8,16 @@ const { Root, Third, Fifth } = DegreeIds
 
 test('an ordered match to be recognised', () => {
   const degreeIds = [Root, Third, Fifth]
-  const { label: expectedScaleLabel } = getScale(ScaleIds.MajorTriad)
-  expect(getScaleByDegreeIds(degreeIds)).toBe(expectedScaleLabel)
+  const expectedScale = getScale(ScaleIds.MajorTriad)
+  const actualScale = getScaleByDegreeIds(degreeIds) || {}
+  expect(actualScale).toBe(expectedScale)
 })
 
 test('an unordered match to be recognised', () => {
   const degreeIds = [Third, Root, Fifth]
-  const { label: expectedScaleLabel } = getScale(ScaleIds.MajorTriad)
-  expect(getScaleByDegreeIds(degreeIds)).toBe(expectedScaleLabel)
+  const expectedScale = getScale(ScaleIds.MajorTriad)
+  const actualScale = getScaleByDegreeIds(degreeIds) || {}
+  expect(actualScale).toBe(expectedScale)
 })
 
 test('a non-match to be unorecognised', () => {
