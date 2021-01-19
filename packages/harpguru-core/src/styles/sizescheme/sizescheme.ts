@@ -3,7 +3,11 @@ import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 const relativeSizes: Omit<
   SizeScheme,
-  'columnWidth' | 'rowHeight' | 'fragmentGutter' | 'labelProtrusion'
+  | 'columnWidth'
+  | 'rowHeight'
+  | 'fragmentGutter'
+  | 'labelProtrusion'
+  | 'labelIconSize'
 > = {
   0: 0,
   1: 1,
@@ -22,6 +26,7 @@ const relativeSizes: Omit<
 const relativeColumnWidth = 9
 const relativeFragmentGutterWidth = 7
 const relativeLabelProtrusion = 9
+const relativeLabelIconSize = 7
 
 export const getSizes = (): SizeScheme => {
   const { shortEdge, longEdge } = getWindowDimensions()
@@ -30,6 +35,7 @@ export const getSizes = (): SizeScheme => {
     [relativeColumnWidth]: columnWidth,
     [relativeFragmentGutterWidth]: fragmentGutter,
     [relativeLabelProtrusion]: labelProtrusion,
+    [relativeLabelIconSize]: labelIconSize,
   } = relativeSizes
   const rowHeight = columnWidth
   const labelGrace = fragmentGutter
@@ -64,6 +70,7 @@ export const getSizes = (): SizeScheme => {
     rowHeight: seedSize * columnWidth,
     fragmentGutter: seedSize * fragmentGutter,
     labelProtrusion: seedSize * labelProtrusion,
+    labelIconSize: seedSize * labelIconSize,
   } as const
 
   return absoluteSizes

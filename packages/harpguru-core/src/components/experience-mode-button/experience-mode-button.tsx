@@ -42,13 +42,13 @@ export const ExperienceModeButton = ({
     activeExperienceMode === ExperienceModes.Explore ? (
       <MaterialCommunityIcons
         name="moon-full"
-        size={sizes['7']}
+        size={sizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     ) : (
       <FontAwesome
         name="question-circle"
-        size={sizes['7']}
+        size={sizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     )

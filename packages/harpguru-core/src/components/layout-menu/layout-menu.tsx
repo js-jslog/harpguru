@@ -45,7 +45,11 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
         <MemoOptionStack optionPropsz={optionStackPropsz} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
-        <Entypo name="cog" size={sizes['7']} color={colors.homeRowsColor} />
+        <Entypo
+          name="cog"
+          size={sizes.labelIconSize}
+          color={colors.homeRowsColor}
+        />
       </MenuOpenButton>
     </Menu>
   )

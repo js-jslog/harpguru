@@ -41,7 +41,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
       <MenuOpenButton {...menuProps}>
         <MaterialIcons
           name="linear-scale"
-          size={sizes['7']}
+          size={sizes.labelIconSize}
           color={colors.homeRowsColor}
         />
       </MenuOpenButton>

@@ -91,7 +91,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       <MenuOpenButton {...menuProps}>
         <Feather
           name="sliders"
-          size={sizes['7']}
+          size={sizes.labelIconSize}
           color={colors.homeRowsColor}
         />
       </MenuOpenButton>
