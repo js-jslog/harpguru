@@ -15,6 +15,18 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v6.0.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: A menu for scales and chords
+
+### Changed
+
+- MINOR: The tuning menu layout
+
+### Removed
+
+- MAJOR: Pan gesture handlers for opening and closing menus
+
 ## [v5.0.0](https://github.com/js-jslog/harpguru/releases/tag/v6.0.0) - 2020-01-10
 
 ### Added
