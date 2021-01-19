@@ -97,6 +97,6 @@ export const LYDIAN: Scale = {
 export const HARMONIC_MINOR: Scale = {
   id: ScaleIds.HarmonicMinor,
   label: 'Harmonic minor',
-  degrees: [Root, Second, Flat3, Fifth, Fifth, Flat6, Seventh],
+  degrees: [Root, Second, Flat3, Fourth, Fifth, Flat6, Seventh],
   category: ScaleCategory.Scale,
 }
