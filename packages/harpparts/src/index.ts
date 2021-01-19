@@ -3,7 +3,8 @@ export type { Apparatus, Interaction } from './apparatus'
 export { DegreeIds } from './degree'
 export { PitchIds, isPitchId, isNaturalPitch } from './pitch'
 export { PozitionIds, isPozitionId } from './pozition'
-export { ScaleIds } from './scale'
+export { ScaleIds, ScaleCategory } from './scale'
+export type { Scale } from './scale'
 export type { Degree } from './degree'
 export type { Pitch } from './pitch'
 export type { Pozition } from './pozition'
@@ -21,5 +22,6 @@ export {
   getPozitionByOffset,
   reversePreserveOrigin,
 } from './access-parts'
+export { getScaleByDegreeIds } from './utils'
 
 export type { HarpFaceMatrix, HarpFaceRow, HalfstepIndex } from './types'

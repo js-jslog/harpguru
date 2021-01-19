@@ -1,10 +1,13 @@
-import { Dimensions } from 'react-native'
-
 import { SizeScheme } from '../styles-types'
+import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 const relativeSizes: Omit<
   SizeScheme,
-  'columnWidth' | 'rowHeight' | 'fragmentGutter' | 'labelProtrusion'
+  | 'columnWidth'
+  | 'rowHeight'
+  | 'fragmentGutter'
+  | 'labelProtrusion'
+  | 'labelIconSize'
 > = {
   0: 0,
   1: 1,
@@ -17,32 +20,33 @@ const relativeSizes: Omit<
   8: 29.034,
   9: 46.979,
   10: 76.013,
+  11: 122.989,
 } as const
 
 const relativeColumnWidth = 9
 const relativeFragmentGutterWidth = 7
 const relativeLabelProtrusion = 9
+const relativeLabelIconSize = 7
 
 export const getSizes = (): SizeScheme => {
-  const { width: windowWidth, height: windowHeight } = Dimensions.get('window')
-  const deviceWidth = windowWidth > windowHeight ? windowWidth : windowHeight
-  const deviceHeight = windowHeight < windowWidth ? windowHeight : windowWidth
+  const { shortEdge, longEdge } = getWindowDimensions()
 
   const {
     [relativeColumnWidth]: columnWidth,
     [relativeFragmentGutterWidth]: fragmentGutter,
     [relativeLabelProtrusion]: labelProtrusion,
+    [relativeLabelIconSize]: labelIconSize,
   } = relativeSizes
   const rowHeight = columnWidth
   const labelGrace = fragmentGutter
 
   const widthRequirements =
-    deviceWidth /
+    longEdge /
     (columnWidth * 10 +
       fragmentGutter * 3 +
       labelProtrusion * 2 +
       labelGrace * 2)
-  const heightRequirements = deviceHeight / (rowHeight * 7)
+  const heightRequirements = shortEdge / (rowHeight * 7)
 
   const seedSize =
     widthRequirements > heightRequirements
@@ -61,10 +65,12 @@ export const getSizes = (): SizeScheme => {
     8: seedSize * relativeSizes[8],
     9: seedSize * relativeSizes[9],
     10: seedSize * relativeSizes[10],
+    11: seedSize * relativeSizes[11],
     columnWidth: seedSize * columnWidth,
     rowHeight: seedSize * columnWidth,
     fragmentGutter: seedSize * fragmentGutter,
     labelProtrusion: seedSize * labelProtrusion,
+    labelIconSize: seedSize * labelIconSize,
   } as const
 
   return absoluteSizes

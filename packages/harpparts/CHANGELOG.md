@@ -15,6 +15,12 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v5.0.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: Property to scale objects to identify category (scale or chord)
+- MINOR: More scales and chords
+- MINOR: Function to recover Scale constant from it's scale degrees
+
 ## [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v5.0.0) - 2020-12-04
 
 ### Added

@@ -3,8 +3,15 @@ import { DegreeIds } from '../../degree'
 export enum ScaleIds {
   MajorTriad,
   MinorTriad,
+  MajorSeventh,
+  MinorSeventh,
+  DiminishedChord,
+  DiminishedSeventh,
+  AugmentedChord,
+  AugmentedSeventh,
   MajorPentatonic,
   MinorPentatonic,
+  Blues,
   Major,
   Mixolydian,
   Dorian,
@@ -13,10 +20,18 @@ export enum ScaleIds {
   Locrian,
   Lydian,
   HarmonicMinor,
+  DiminishedScale,
+  WholeTone,
 }
 
 export type Scale = {
   readonly id: ScaleIds
   readonly label: string
   readonly degrees: ReadonlyArray<DegreeIds>
+  readonly category: ScaleCategory
+}
+
+export enum ScaleCategory {
+  Scale,
+  Chord,
 }

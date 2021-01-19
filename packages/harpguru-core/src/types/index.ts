@@ -25,11 +25,13 @@ export enum ExperienceModes {
 export enum FlushChannels {
   Regular,
   Quiz,
+  ScalesMenu,
 }
 
 export enum MenuStates {
   LayoutMenu,
   CovariantMenu,
+  ScalesMenu,
   NoMenu,
 }
 
@@ -40,6 +42,7 @@ export enum MenuStashPosition {
   Fourth,
   Fifth,
   Sixth,
+  Seventh,
 }
 
 export enum CellStates {

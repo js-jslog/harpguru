@@ -40,7 +40,7 @@ export const DisplayModeButton = ({
   const activeLabelIcon = (
     <MaterialIcons
       name="music-note"
-      size={sizes['7']}
+      size={sizes.labelIconSize}
       color={harpguruColors['gold']}
     />
   )
