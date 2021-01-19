@@ -29,6 +29,11 @@ export const useDispatchAndFlushScaleToggles = ({
     flushBufferedActivityToggles()
   }, [bufferedActivityToggles, flushChannel])
 
+  // This has to be wrapped in a memo because we are trying to
+  // ensure that nothing which doesn't need to be recreated is
+  // being recreated before being passed to the option-stack.
+  // This ensures that the option-stack UX is persistant and
+  // doesn't rerender unless absolutely necessary.
   return useCallback(
     useDispatch(
       (
