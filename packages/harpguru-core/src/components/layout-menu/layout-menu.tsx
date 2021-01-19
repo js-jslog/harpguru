@@ -3,7 +3,7 @@ import React, { useCallback } from 'react'
 import { getApparatusIds } from 'harpparts'
 import { Entypo } from '@expo/vector-icons'
 
-import { OptionStack } from '../option-stack'
+import { MemoOptionStack } from '../option-stack'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
@@ -42,7 +42,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
-        <OptionStack optionPropsz={optionStackPropsz} />
+        <MemoOptionStack optionPropsz={optionStackPropsz} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <Entypo name="cog" size={sizes['7']} color={colors.homeRowsColor} />

@@ -12,7 +12,7 @@ import {
 
 import type { OptionStackProps } from './types'
 
-const OptionStackLocal = (props: OptionStackProps): React.ReactElement => {
+export const OptionStack = (props: OptionStackProps): React.ReactElement => {
   const { stackState, stackStateTransition } = useFoundationAnimationValues()
 
   const titleStack = (
@@ -43,4 +43,4 @@ const OptionStackLocal = (props: OptionStackProps): React.ReactElement => {
   )
 }
 
-export const OptionStack = React.memo(OptionStackLocal, areOptionStacksEqual)
+export const MemoOptionStack = React.memo(OptionStack, areOptionStacksEqual)

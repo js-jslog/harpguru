@@ -4,7 +4,7 @@ import { getScaleByDegreeIds } from 'harpparts'
 import type { DegreeIds } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
 
-import { OptionStack } from '../option-stack'
+import { MemoOptionStack } from '../option-stack'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
@@ -36,7 +36,7 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
-        <OptionStack {...optionStackProps} />
+        <MemoOptionStack {...optionStackProps} />
       </MenuFace>
       <MenuOpenButton {...menuProps}>
         <MaterialIcons
