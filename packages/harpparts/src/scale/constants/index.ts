@@ -31,6 +31,48 @@ export const MINOR_TRIAD: Scale = {
   category: ScaleCategory.Chord,
 }
 
+export const MAJOR_SEVENTH: Scale = {
+  id: ScaleIds.MajorSeventh,
+  label: 'Major seventh',
+  degrees: [Root, Third, Fifth, Seventh],
+  category: ScaleCategory.Chord,
+}
+
+export const MINOR_SEVENTH: Scale = {
+  id: ScaleIds.MajorSeventh,
+  label: 'Minor seventh',
+  degrees: [Root, Flat3, Fifth, Seventh],
+  category: ScaleCategory.Chord,
+}
+
+export const DIMINISHED_CHORD: Scale = {
+  id: ScaleIds.DiminishedChord,
+  label: 'Diminished chord',
+  degrees: [Root, Flat3, Flat5],
+  category: ScaleCategory.Chord,
+}
+
+export const DIMINISHED_SEVENTH: Scale = {
+  id: ScaleIds.DiminishedSeventh,
+  label: 'Diminished seventh',
+  degrees: [Root, Flat3, Flat5, Sixth],
+  category: ScaleCategory.Chord,
+}
+
+export const AUGMENTED_CHORD: Scale = {
+  id: ScaleIds.AugmentedChord,
+  label: 'Augmented chord',
+  degrees: [Root, Third, Flat6],
+  category: ScaleCategory.Chord,
+}
+
+export const AUGMENTED_SEVENTH: Scale = {
+  id: ScaleIds.AugmentedSeventh,
+  label: 'Augmented seventh',
+  degrees: [Root, Flat3, Flat6, Flat7],
+  category: ScaleCategory.Chord,
+}
+
 export const MAJOR_PENTATONIC: Scale = {
   id: ScaleIds.MajorPentatonic,
   label: 'Major pentatonic',

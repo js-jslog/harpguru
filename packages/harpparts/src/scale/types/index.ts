@@ -3,6 +3,12 @@ import { DegreeIds } from '../../degree'
 export enum ScaleIds {
   MajorTriad,
   MinorTriad,
+  MajorSeventh,
+  MinorSeventh,
+  DiminishedChord,
+  DiminishedSeventh,
+  AugmentedChord,
+  AugmentedSeventh,
   MajorPentatonic,
   MinorPentatonic,
   Blues,
