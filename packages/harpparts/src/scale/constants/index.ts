@@ -45,6 +45,13 @@ export const MINOR_PENTATONIC: Scale = {
   category: ScaleCategory.Scale,
 }
 
+export const BLUES: Scale = {
+  id: ScaleIds.Blues,
+  label: 'Blues scale',
+  degrees: [Root, Flat3, Fourth, Flat5, Fifth, Flat7],
+  category: ScaleCategory.Scale,
+}
+
 export const MAJOR: Scale = {
   id: ScaleIds.Major,
   label: 'Major (Ionian)',
@@ -98,5 +105,19 @@ export const HARMONIC_MINOR: Scale = {
   id: ScaleIds.HarmonicMinor,
   label: 'Harmonic minor',
   degrees: [Root, Second, Flat3, Fourth, Fifth, Flat6, Seventh],
+  category: ScaleCategory.Scale,
+}
+
+export const DIMINISHED_SCALE: Scale = {
+  id: ScaleIds.DiminishedScale,
+  label: 'Diminished scale',
+  degrees: [Root, Second, Flat3, Fifth, Flat6, Sixth, Seventh],
+  category: ScaleCategory.Scale,
+}
+
+export const WHOLE_TONE: Scale = {
+  id: ScaleIds.WholeTone,
+  label: 'Whole tone scale',
+  degrees: [Root, Second, Third, Flat5, Flat6, Flat7],
   category: ScaleCategory.Scale,
 }
