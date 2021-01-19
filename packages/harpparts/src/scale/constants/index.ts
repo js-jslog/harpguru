@@ -69,7 +69,7 @@ export const AUGMENTED_CHORD: Scale = {
 export const AUGMENTED_SEVENTH: Scale = {
   id: ScaleIds.AugmentedSeventh,
   label: 'Augmented seventh',
-  degrees: [Root, Flat3, Flat6, Flat7],
+  degrees: [Root, Third, Flat6, Flat7],
   category: ScaleCategory.Chord,
 }
 
