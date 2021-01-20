@@ -1,7 +1,6 @@
 import { useGlobal } from 'reactn'
 import React from 'react'
 import { DegreeIds, PitchIds } from 'harpparts'
-import { CovariantMembers } from 'harpcovariance'
 import { render, fireEvent } from '@testing-library/react-native'
 
 import { DisplayModes, ExperienceModes } from '../../types'
@@ -20,7 +19,6 @@ test('A component is rendered with the Degree or Pitch value in its text view de
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     return undefined
   })
@@ -34,7 +32,6 @@ test('A component is rendered with the Degree or Pitch value in its text view de
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Pitch]
-    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     return undefined
   })
@@ -49,7 +46,6 @@ test('A component is rendered with an a11y role of button', () => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     return undefined
   })
@@ -66,7 +62,6 @@ test('A component is rendered without an a11y role of button if it has no conten
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     return undefined
   })
@@ -114,7 +109,6 @@ test('A snapshot of a populated cell', () => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     return undefined
   })
@@ -131,7 +125,6 @@ test('A snapshot of an active cell', () => {
     if (stateItem === 'activeHarpStrata') return [activeCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     return undefined
   })
@@ -148,7 +141,6 @@ test('A snapshot of an empty cell', () => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     return undefined
   })
@@ -165,7 +157,6 @@ test('A snapshot of an inactive cell in Explore mode', () => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     return undefined
   })
@@ -184,7 +175,6 @@ test('A snapshot of an inactive cell in Quiz mode', () => {
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Quiz]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-    if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     return undefined
   })

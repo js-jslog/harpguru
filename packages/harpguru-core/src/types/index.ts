@@ -1,12 +1,10 @@
 import type { HarpStrata } from 'harpstrata'
-import type { ApparatusIds, DegreeIds, PitchIds, PozitionIds } from 'harpparts'
-import type { CovariantMembers } from 'harpcovariance'
+import type { DegreeIds } from 'harpparts'
 
 export type GlobalState = {
   readonly activeHarpStrata: HarpStrata
   readonly activeExperienceMode: ExperienceModes
   readonly activeDisplayMode: DisplayModes
-  readonly lockedCovariant: CovariantMembers
   readonly bufferedActivityToggles: ReadonlyArray<DegreeIds>
   readonly fragmentHarpFaceByOctaves: boolean
   readonly flushChannel: FlushChannels
@@ -88,12 +86,5 @@ type RenderableToneTuple = [string, string] | ['', '']
 export type RenderableToneTuples =
   | [RenderableToneTuple, RenderableToneTuple]
   | [RenderableToneTuple]
-
-export type OptionIds =
-  | ApparatusIds
-  | DisplayModes
-  | ExperienceModes
-  | PitchIds
-  | PozitionIds
 
 export type PageNumber = 1 | 2 | 3

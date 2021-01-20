@@ -1,7 +1,6 @@
 import { useGlobal } from 'reactn'
 import 'react-native'
 import React from 'react'
-import { CovariantMembers } from 'harpcovariance'
 import { render } from '@testing-library/react-native'
 
 import { DisplayModes, ExperienceModes } from '../../types'
@@ -15,7 +14,6 @@ mockUseGlobal.mockImplementation((stateItem: string) => {
   if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
   if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
   if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-  if (stateItem === 'lockedCovariant') return [CovariantMembers.HarpKey]
   if (stateItem === 'bufferedActivityToggles') return [[]]
   return undefined
 })
