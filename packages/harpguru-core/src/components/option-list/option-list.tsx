@@ -3,15 +3,15 @@ import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
 import { Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
-import { getStyles } from '../../utils'
+import { getOptionStyles } from '../../utils'
 import type { ListProps, WithTransition } from '../../types'
 
-export const List = <T extends unknown>({
+export const OptionList = <T extends unknown>({
   items,
   itemTapHandler,
   transitionValue,
 }: ListProps<T> & WithTransition): React.ReactElement => {
-  const styles = getStyles()
+  const styles = getOptionStyles()
 
   return (
     <Animated.View

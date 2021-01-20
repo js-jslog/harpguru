@@ -1,38 +1,37 @@
 import { View } from 'react-native'
 import React from 'react'
 
-import { areOptionStacksEqual, getStyles } from './utils'
-import { useFoundationAnimationValues } from './hooks'
-import {
-  TitleStack,
-  ListStack,
-  PreviousInStack,
-  NextInStack,
-} from './components'
+import { OptionTitleStack } from '../option-title-stack'
+import { OptionStackPrevious } from '../option-stack-previous'
+import { OptionStackNext } from '../option-stack-next'
+import { OptionListStack } from '../option-list-stack'
+import { getOptionStyles } from '../../utils'
+import type { OptionStackProps } from '../../types'
 
-import type { OptionStackProps } from './types'
+import { areOptionStacksEqual } from './utils'
+import { useFoundationAnimationValues } from './hooks'
 
 export const OptionStack = (props: OptionStackProps): React.ReactElement => {
   const { stackState, stackStateTransition } = useFoundationAnimationValues()
 
   const titleStack = (
-    <TitleStack {...props} transitionValue={stackStateTransition} />
+    <OptionTitleStack {...props} transitionValue={stackStateTransition} />
   )
   const listStack = (
-    <ListStack {...props} transitionValue={stackStateTransition} />
+    <OptionListStack {...props} transitionValue={stackStateTransition} />
   )
 
-  const styles = getStyles()
+  const styles = getOptionStyles()
   return (
     <>
       <View style={styles.titleSection}>
-        <PreviousInStack
+        <OptionStackPrevious
           {...props}
           stateValue={stackState}
           transitionValue={stackStateTransition}
         />
         <View>{titleStack}</View>
-        <NextInStack
+        <OptionStackNext
           {...props}
           stateValue={stackState}
           transitionValue={stackStateTransition}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { List } from '../list'
+import { OptionList } from '../option-list'
 import type {
   OptionStackProps,
   WithTransition,
@@ -9,9 +9,9 @@ import type {
   OptionProps_Apparatus,
 } from '../../types'
 import { isOptionProps_Covariants, isOptionProps_Scales } from '../../types'
-import { useInterpolateTransitionValue } from '../../hooks'
+import { useInterpolateOptionStackTransitionValue } from '../../hooks'
 
-export const ListStack = ({
+export const OptionListStack = ({
   optionPropsz,
   transitionValue,
 }: OptionStackProps & WithTransition): React.ReactElement => {
@@ -19,9 +19,9 @@ export const ListStack = ({
     if (isOptionProps_Covariants(optionProps)) {
       const scalesOptionProps = optionProps as OptionProps_Covariants
       return (
-        <List
+        <OptionList
           items={scalesOptionProps.items}
-          transitionValue={useInterpolateTransitionValue(
+          transitionValue={useInterpolateOptionStackTransitionValue(
             array.length,
             index,
             transitionValue
@@ -33,9 +33,9 @@ export const ListStack = ({
     } else if (isOptionProps_Scales(optionProps)) {
       const scalesOptionProps = optionProps as OptionProps_Scales
       return (
-        <List
+        <OptionList
           items={scalesOptionProps.items}
-          transitionValue={useInterpolateTransitionValue(
+          transitionValue={useInterpolateOptionStackTransitionValue(
             array.length,
             index,
             transitionValue
@@ -47,9 +47,9 @@ export const ListStack = ({
     } else {
       const apparatusOptionProps = optionProps as OptionProps_Apparatus
       return (
-        <List
+        <OptionList
           items={apparatusOptionProps.items}
-          transitionValue={useInterpolateTransitionValue(
+          transitionValue={useInterpolateOptionStackTransitionValue(
             array.length,
             index,
             transitionValue

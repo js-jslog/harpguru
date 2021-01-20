@@ -1,5 +1,5 @@
 import { isProd } from '../is-prod'
-import type { OptionStackProps } from '../../types'
+import type { OptionStackProps } from '../../../../types'
 
 // This function is deliberately configured to behave differently
 // in dev and prod modes. The reason for this is simple. When these

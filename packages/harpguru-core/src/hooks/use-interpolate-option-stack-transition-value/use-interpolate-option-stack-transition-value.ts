@@ -3,7 +3,7 @@ import type { Node } from 'react-native-reanimated'
 
 import { getInputRange, getOutputRange } from '../../utils'
 
-export const useInterpolateTransitionValue = (
+export const useInterpolateOptionStackTransitionValue = (
   rangeLength: number,
   index: number,
   transitionValue: Node<number>

@@ -1,10 +1,10 @@
 import type { TextStyle, ViewStyle } from 'react-native'
 import { StyleSheet } from 'react-native'
 
-import { colors, getSizes } from '../../../../styles'
-import { getWindowDimensions } from '../../../../packages/get-window-dimensions'
+import { colors, getSizes } from '../../styles'
+import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
-type OptionStackStyles = {
+type OptionStyles = {
   titleFontSize: number
   titleSection: ViewStyle
   titleWrapper: ViewStyle
@@ -15,7 +15,7 @@ type OptionStackStyles = {
   optionText: TextStyle
 }
 
-export const getStyles = (): OptionStackStyles => {
+export const getOptionStyles = (): OptionStyles => {
   const sizes = getSizes()
   const { ['9']: titleFontSize } = sizes
   const { ['11']: gutterSize } = sizes

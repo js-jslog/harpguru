@@ -1,19 +1,19 @@
 import React from 'react'
 
-import { Title } from '../title'
+import { OptionTitle } from '../option-title'
 import type { OptionStackProps, WithTransition } from '../../types'
-import { useInterpolateTransitionValue } from '../../hooks'
+import { useInterpolateOptionStackTransitionValue } from '../../hooks'
 
-export const TitleStack = ({
+export const OptionTitleStack = ({
   optionPropsz,
   transitionValue,
 }: OptionStackProps & WithTransition): React.ReactElement => {
   const titleStack = optionPropsz.map((optionProps, index, array) => {
     return (
-      <Title
+      <OptionTitle
         title={optionProps.title}
         useSubTitle={optionProps.useSubTitle}
-        transitionValue={useInterpolateTransitionValue(
+        transitionValue={useInterpolateOptionStackTransitionValue(
           array.length,
           index,
           transitionValue

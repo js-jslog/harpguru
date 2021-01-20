@@ -1,7 +1,7 @@
 import { DegreeIds } from 'harpparts'
 
 import * as isProdWrapper from '../is-prod/is-prod'
-import type { OptionProps_Scales, OptionStackProps } from '../../types'
+import type { OptionProps_Scales, OptionStackProps } from '../../../../types'
 
 import { areOptionStacksEqual } from './are-option-stacks-equal'
 

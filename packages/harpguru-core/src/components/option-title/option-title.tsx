@@ -2,15 +2,15 @@ import Animated from 'react-native-reanimated'
 import { Text } from 'react-native'
 import React from 'react'
 
-import { getStyles } from '../../utils'
+import { getOptionStyles } from '../../utils'
 import type { TitleProps, WithTransition } from '../../types'
 
-export const Title = ({
+export const OptionTitle = ({
   title,
   useSubTitle = () => '',
   transitionValue,
 }: TitleProps & WithTransition): React.ReactElement => {
-  const styles = getStyles()
+  const styles = getOptionStyles()
   const subTitle = useSubTitle()
 
   return (
