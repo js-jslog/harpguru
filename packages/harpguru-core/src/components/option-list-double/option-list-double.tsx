@@ -9,9 +9,13 @@ import type { ListProps, WithTransition } from '../../types'
 export const OptionListDouble = <T extends unknown>({
   items,
   itemTapHandler,
+  useLeftColumnLabel = () => '',
+  useRightColumnLabel = () => '',
   transitionValue,
 }: ListProps<T> & WithTransition): React.ReactElement => {
   const styles = getOptionStyles()
+  const leftColumnLabel = useLeftColumnLabel()
+  const rightColumnLabel = useRightColumnLabel()
 
   return (
     <Animated.View
@@ -22,7 +26,9 @@ export const OptionListDouble = <T extends unknown>({
         },
       ]}
     >
-      <SafeAreaView>
+      <Text style={styles.leftColumnLabel}>{leftColumnLabel}</Text>
+      <Text style={styles.rightColumnLabel}>{rightColumnLabel}</Text>
+      <SafeAreaView style={styles.listStackable}>
         <FlatList
           contentContainerStyle={styles.listContent}
           data={items}

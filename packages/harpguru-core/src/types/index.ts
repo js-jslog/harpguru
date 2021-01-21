@@ -135,6 +135,8 @@ export type TitleProps = {
 export type ListProps<T> = {
   readonly items: ReadonlyArray<Item<T>>
   readonly itemTapHandler: (arg0: T) => void
+  readonly useLeftColumnLabel?: () => string
+  readonly useRightColumnLabel?: () => string
 }
 
 export type WithTransition = {

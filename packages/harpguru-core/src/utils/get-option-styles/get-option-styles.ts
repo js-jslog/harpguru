@@ -13,6 +13,8 @@ type OptionStyles = {
   listSection: ViewStyle
   listStackable: ViewStyle
   listContent: ViewStyle
+  leftColumnLabel: TextStyle
+  rightColumnLabel: TextStyle
   optionText: TextStyle
   optionTextDouble: TextStyle
 }
@@ -59,6 +61,12 @@ export const getOptionStyles = (): OptionStyles => {
     listContent: {
       alignItems: 'flex-end',
       paddingRight: gutterSize,
+    },
+    leftColumnLabel: {
+      position: 'absolute',
+    },
+    rightColumnLabel: {
+      position: 'absolute',
     },
     optionText: {
       fontSize: sizes['8'],

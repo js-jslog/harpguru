@@ -77,6 +77,24 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     return rootPitchId
   }, [useGlobal])
 
+  const useHarpKeyLabel = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { harpKeyId } = activeHarpStrata
+    return `Harp key - ${harpKeyId}`
+  }, [useGlobal])
+
+  const usePozitionLabel = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { pozitionId } = activeHarpStrata
+    return `Position - ${pozitionId}`
+  }, [useGlobal])
+
+  const useRootPitchLabel = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { rootPitchId } = activeHarpStrata
+    return `Song key - ${rootPitchId}`
+  }, [useGlobal])
+
   const sizes = getSizes()
 
   const optionPropsz = [
@@ -85,18 +103,24 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       useSubTitle: useHarpKeySubtitle,
       items: harpKeyItems,
       itemTapHandler,
+      useLeftColumnLabel: usePozitionLabel,
+      useRightColumnLabel: useRootPitchLabel,
     },
     {
       title: 'Position',
       useSubTitle: usePozitionSubtitle,
       items: pozitionItems,
       itemTapHandler,
+      useLeftColumnLabel: useRootPitchLabel,
+      useRightColumnLabel: useHarpKeyLabel,
     },
     {
       title: 'Song key',
       useSubTitle: useRootPitchSubtitle,
       items: rootPitchItems,
       itemTapHandler,
+      useLeftColumnLabel: useRootPitchLabel,
+      useRightColumnLabel: useHarpKeyLabel,
     },
   ]
   return (
