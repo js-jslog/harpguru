@@ -1,4 +1,4 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -9,7 +9,7 @@ import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
 import { getSizes, harpguruColors } from '../../styles'
 
-import { useNudgeDisplayMode } from './hooks'
+import { getNewDisplayModeForDispatcher } from './utils'
 
 type DisplayModeButtonProps = {
   readonly isLabelHidden: boolean
@@ -27,12 +27,15 @@ export const DisplayModeButton = ({
   // This is really a hacky workaround, but it's cheap and effective.
   // eslint-disable-next-line no-empty-pattern
   const [] = useGlobal('activeHarpStrata')
-  const nudgeDisplayMode = useNudgeDisplayMode()
+  const nudgeDisplayMode = useDispatch(
+    getNewDisplayModeForDispatcher,
+    'activeDisplayMode'
+  )
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: isLabelHidden,
     stashPosition,
-    openCloseMenu: () => nudgeDisplayMode('DOWN'),
+    openCloseMenu: () => nudgeDisplayMode(),
   }
 
   const sizes = getSizes()
