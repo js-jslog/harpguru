@@ -17,16 +17,18 @@ export const OptionListDoubleStack = ({
 }: OptionStackProps & WithTransition): React.ReactElement => {
   const listStack = optionPropsz.map((optionProps, index, array) => {
     if (isOptionProps_Covariants(optionProps)) {
-      const scalesOptionProps = optionProps as OptionProps_Covariants
+      const covariantOptionProps = optionProps as OptionProps_Covariants
       return (
         <OptionListDouble
-          items={scalesOptionProps.items}
+          items={covariantOptionProps.items}
+          useLeftColumnLabel={covariantOptionProps.useLeftColumnLabel}
+          useRightColumnLabel={covariantOptionProps.useRightColumnLabel}
           transitionValue={useInterpolateOptionStackTransitionValue(
             array.length,
             index,
             transitionValue
           )}
-          itemTapHandler={scalesOptionProps.itemTapHandler}
+          itemTapHandler={covariantOptionProps.itemTapHandler}
           key={index}
         />
       )
@@ -35,6 +37,8 @@ export const OptionListDoubleStack = ({
       return (
         <OptionListDouble
           items={scalesOptionProps.items}
+          useLeftColumnLabel={scalesOptionProps.useLeftColumnLabel}
+          useRightColumnLabel={scalesOptionProps.useRightColumnLabel}
           transitionValue={useInterpolateOptionStackTransitionValue(
             array.length,
             index,
@@ -49,6 +53,8 @@ export const OptionListDoubleStack = ({
       return (
         <OptionListDouble
           items={apparatusOptionProps.items}
+          useLeftColumnLabel={apparatusOptionProps.useLeftColumnLabel}
+          useRightColumnLabel={apparatusOptionProps.useRightColumnLabel}
           transitionValue={useInterpolateOptionStackTransitionValue(
             array.length,
             index,

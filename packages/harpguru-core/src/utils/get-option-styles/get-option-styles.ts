@@ -63,10 +63,20 @@ export const getOptionStyles = (): OptionStyles => {
       paddingRight: gutterSize,
     },
     leftColumnLabel: {
+      transform: [{ rotate: '-90deg' }],
+      fontSize: sizes['8'],
+      color: colors.inertOutline,
       position: 'absolute',
+      top: shortEdge / 2,
+      right: gutterSize + sizes['10'] + sizes['10'],
     },
     rightColumnLabel: {
+      transform: [{ rotate: '-90deg' }],
+      fontSize: sizes['8'],
+      color: colors.inertOutline,
       position: 'absolute',
+      top: shortEdge / 2,
+      right: 0,
     },
     optionText: {
       fontSize: sizes['8'],
