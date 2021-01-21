@@ -5,6 +5,7 @@ import { OptionTitleStack } from '../option-title-stack'
 import { OptionStackPrevious } from '../option-stack-previous'
 import { OptionStackNext } from '../option-stack-next'
 import { OptionListStack } from '../option-list-stack'
+//import { OptionListDoubleStack } from '../option-list-double-stack'
 import { getOptionStyles } from '../../utils'
 import type { OptionStackProps } from '../../types'
 
@@ -19,6 +20,7 @@ export const OptionStack = (props: OptionStackProps): React.ReactElement => {
   )
   const listStack = (
     <OptionListStack {...props} transitionValue={stackStateTransition} />
+    //<OptionListDoubleStack {...props} transitionValue={stackStateTransition} />
   )
 
   const styles = getOptionStyles()
