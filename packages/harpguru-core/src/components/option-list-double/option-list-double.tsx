@@ -16,7 +16,7 @@ export const OptionListDouble = <T extends unknown>({
   return (
     <Animated.View
       style={[
-        styles.listWrapper,
+        styles.listStackable,
         {
           opacity: transitionValue,
         },
@@ -24,13 +24,16 @@ export const OptionListDouble = <T extends unknown>({
     >
       <SafeAreaView>
         <FlatList
+          contentContainerStyle={styles.listContent}
           data={items}
           numColumns={2}
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => itemTapHandler(item.callbackParam)}
             >
-              <Text style={styles.optionText}>{item.label}</Text>
+              <Text style={[styles.optionText, styles.optionTextDouble]}>
+                {item.label}
+              </Text>
             </TouchableOpacity>
           )}
           keyExtractor={(item) => `${item.label}`}

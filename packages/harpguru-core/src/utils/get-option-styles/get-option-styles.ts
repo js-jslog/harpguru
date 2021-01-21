@@ -11,8 +11,10 @@ type OptionStyles = {
   titleText: TextStyle
   subTitleText: TextStyle
   listSection: ViewStyle
-  listWrapper: ViewStyle
+  listStackable: ViewStyle
+  listContent: ViewStyle
   optionText: TextStyle
+  optionTextDouble: TextStyle
 }
 
 export const getOptionStyles = (): OptionStyles => {
@@ -43,24 +45,28 @@ export const getOptionStyles = (): OptionStyles => {
       alignSelf: 'center',
     },
     listSection: {
-      fontSize: titleFontSize,
       position: 'absolute',
       top: 0,
       right: 0,
       width: longEdge - gutterSize - titleFontSize * 2,
       height: shortEdge,
     },
-    listWrapper: {
+    listStackable: {
       position: 'absolute',
       height: '100%',
       width: '100%',
     },
-    optionText: {
-      alignSelf: 'flex-end',
+    listContent: {
+      alignItems: 'flex-end',
       paddingRight: gutterSize,
+    },
+    optionText: {
       fontSize: sizes['8'],
       lineHeight: sizes['10'],
       color: colors.inertOutline,
+    },
+    optionTextDouble: {
+      width: sizes['10'],
     },
   })
 

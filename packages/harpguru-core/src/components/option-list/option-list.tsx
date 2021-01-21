@@ -16,7 +16,7 @@ export const OptionList = <T extends unknown>({
   return (
     <Animated.View
       style={[
-        styles.listWrapper,
+        styles.listStackable,
         {
           opacity: transitionValue,
         },
@@ -24,6 +24,7 @@ export const OptionList = <T extends unknown>({
     >
       <SafeAreaView>
         <FlatList
+          contentContainerStyle={styles.listContent}
           data={items}
           renderItem={({ item }) => (
             <TouchableOpacity
