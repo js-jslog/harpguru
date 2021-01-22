@@ -14,7 +14,9 @@ type OptionStyles = {
   listStackable: ViewStyle
   listContent: ViewStyle
   leftColumnLabel: TextStyle
+  leftColumnLabelStackable: ViewStyle
   rightColumnLabel: TextStyle
+  rightColumnLabelStackable: ViewStyle
   optionText: TextStyle
   optionTextDouble: TextStyle
 }
@@ -62,21 +64,36 @@ export const getOptionStyles = (): OptionStyles => {
       alignItems: 'flex-end',
       paddingRight: gutterSize,
     },
-    leftColumnLabel: {
+    leftColumnLabelStackable: {
       transform: [{ rotate: '-90deg' }],
+      position: 'absolute',
+      right: 0,
+      width: shortEdge,
+      height: shortEdge,
+    },
+    leftColumnLabel: {
       fontSize: sizes['8'],
       color: colors.inertOutline,
+      alignSelf: 'center',
       position: 'absolute',
-      top: shortEdge / 2,
-      right: gutterSize + sizes['10'] + sizes['10'],
+      bottom: 0,
+      paddingBottom:
+        gutterSize + sizes['10'] + sizes['10'] + sizes['8'] + sizes['8'],
+    },
+    rightColumnLabelStackable: {
+      transform: [{ rotate: '-90deg' }],
+      position: 'absolute',
+      right: 0,
+      width: shortEdge,
+      height: shortEdge,
     },
     rightColumnLabel: {
-      transform: [{ rotate: '-90deg' }],
       fontSize: sizes['8'],
       color: colors.inertOutline,
+      alignSelf: 'center',
       position: 'absolute',
-      top: shortEdge / 2,
-      right: 0,
+      bottom: 0,
+      paddingBottom: gutterSize - sizes['8'],
     },
     optionText: {
       fontSize: sizes['8'],

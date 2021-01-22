@@ -1,6 +1,6 @@
 import Animated from 'react-native-reanimated'
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
-import { Text, SafeAreaView } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
@@ -26,8 +26,12 @@ export const OptionListDouble = <T extends unknown>({
         },
       ]}
     >
-      <Text style={styles.leftColumnLabel}>{leftColumnLabel}</Text>
-      <Text style={styles.rightColumnLabel}>{rightColumnLabel}</Text>
+      <View style={styles.leftColumnLabelStackable}>
+        <Text style={styles.leftColumnLabel}>{leftColumnLabel}</Text>
+      </View>
+      <View style={styles.rightColumnLabelStackable}>
+        <Text style={styles.rightColumnLabel}>{rightColumnLabel}</Text>
+      </View>
       <SafeAreaView style={styles.listStackable}>
         <FlatList
           contentContainerStyle={styles.listContent}
