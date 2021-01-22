@@ -46,7 +46,7 @@ export const OptionListDouble = <T extends unknown, K extends OptionTypes>({
               </Text>
             </TouchableOpacity>
           )}
-          keyExtractor={(item) => `${item.label}`}
+          keyExtractor={(item, index) => `${item.label}-${index}`}
         />
       </SafeAreaView>
     </Animated.View>
