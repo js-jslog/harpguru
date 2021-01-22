@@ -180,8 +180,8 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       useItems: useRootPitchItems,
       twoColumns: true,
       itemTapHandler,
-      useLeftColumnLabel: useRootPitchLabel,
-      useRightColumnLabel: useHarpKeyLabel,
+      useLeftColumnLabel: useHarpKeyLabel,
+      useRightColumnLabel: usePozitionLabel,
     },
   ]
   return (
