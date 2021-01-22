@@ -17,16 +17,17 @@ export const OptionListStack = ({
 }: OptionStackProps & WithTransition): React.ReactElement => {
   const listStack = optionPropsz.map((optionProps, index, array) => {
     if (isOptionProps_Covariants(optionProps)) {
-      const scalesOptionProps = optionProps as OptionProps_Covariants
+      const covariantsOptionProps = optionProps as OptionProps_Covariants
       return (
         <OptionList
-          items={scalesOptionProps.items}
+          items={covariantsOptionProps.items}
+          twoColumns={covariantsOptionProps.twoColumns}
+          itemTapHandler={covariantsOptionProps.itemTapHandler}
           transitionValue={useInterpolateOptionStackTransitionValue(
             array.length,
             index,
             transitionValue
           )}
-          itemTapHandler={scalesOptionProps.itemTapHandler}
           key={index}
         />
       )
@@ -35,12 +36,13 @@ export const OptionListStack = ({
       return (
         <OptionList
           items={scalesOptionProps.items}
+          twoColumns={scalesOptionProps.twoColumns}
+          itemTapHandler={scalesOptionProps.itemTapHandler}
           transitionValue={useInterpolateOptionStackTransitionValue(
             array.length,
             index,
             transitionValue
           )}
-          itemTapHandler={scalesOptionProps.itemTapHandler}
           key={index}
         />
       )
@@ -49,12 +51,13 @@ export const OptionListStack = ({
       return (
         <OptionList
           items={apparatusOptionProps.items}
+          twoColumns={apparatusOptionProps.twoColumns}
+          itemTapHandler={apparatusOptionProps.itemTapHandler}
           transitionValue={useInterpolateOptionStackTransitionValue(
             array.length,
             index,
             transitionValue
           )}
-          itemTapHandler={apparatusOptionProps.itemTapHandler}
           key={index}
         />
       )

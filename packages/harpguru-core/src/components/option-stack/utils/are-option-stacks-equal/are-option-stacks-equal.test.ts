@@ -20,6 +20,7 @@ describe('OptionStack params equality check in dev mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const stackProps: OptionStackProps = {
@@ -39,6 +40,7 @@ describe('OptionStack params equality check in dev mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const stackProps1: OptionStackProps = {
@@ -61,6 +63,7 @@ describe('OptionStack params equality check in dev mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const stackProps1: OptionStackProps = {
@@ -83,6 +86,7 @@ describe('OptionStack params equality check in dev mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const optionProps1 = baseOptionProps
@@ -114,6 +118,7 @@ describe('OptionStack params equality check in dev mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const optionProps1 = baseOptionProps
@@ -153,6 +158,7 @@ describe('OptionStack params equality check in dev mode', () => {
     const baseOptionProps: OptionProps_Scales = {
       title: 'Scales',
       items: items1,
+      twoColumns: false,
       itemTapHandler,
     }
     const optionProps1 = baseOptionProps
@@ -182,6 +188,7 @@ describe('OptionStack params equality check in dev mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler: itemTapHandler1,
     }
     const optionProps1 = baseOptionProps
@@ -207,6 +214,7 @@ describe('OptionStack params equality check in dev mode', () => {
     const baseOptionProps: OptionProps_Scales = {
       title: 'Scales',
       items: [{ ...item1 }],
+      twoColumns: false,
       itemTapHandler: itemTapHandler,
     }
     const optionProps1 = baseOptionProps
@@ -228,6 +236,7 @@ describe('OptionStack params equality check in dev mode', () => {
     const baseOptionProps: OptionProps_Scales = {
       title: 'Scales',
       items: [{ ...item1 }],
+      twoColumns: false,
       itemTapHandler: itemTapHandler,
     }
     const optionProps1 = baseOptionProps
@@ -267,6 +276,7 @@ describe('OptionStack params equality check in production mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const stackProps: OptionStackProps = {
@@ -286,6 +296,7 @@ describe('OptionStack params equality check in production mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const stackProps1: OptionStackProps = {
@@ -308,6 +319,7 @@ describe('OptionStack params equality check in production mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const stackProps1: OptionStackProps = {
@@ -330,6 +342,7 @@ describe('OptionStack params equality check in production mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const optionProps1 = baseOptionProps
@@ -361,6 +374,7 @@ describe('OptionStack params equality check in production mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler,
     }
     const optionProps1 = baseOptionProps
@@ -400,6 +414,7 @@ describe('OptionStack params equality check in production mode', () => {
     const baseOptionProps: OptionProps_Scales = {
       title: 'Scales',
       items: items1,
+      twoColumns: false,
       itemTapHandler,
     }
     const optionProps1 = baseOptionProps
@@ -429,6 +444,7 @@ describe('OptionStack params equality check in production mode', () => {
           callbackParam: [DegreeIds.Root],
         },
       ],
+      twoColumns: false,
       itemTapHandler: itemTapHandler1,
     }
     const optionProps1 = baseOptionProps
@@ -454,6 +470,7 @@ describe('OptionStack params equality check in production mode', () => {
     const baseOptionProps: OptionProps_Scales = {
       title: 'Scales',
       items: [{ ...item1 }],
+      twoColumns: false,
       itemTapHandler: itemTapHandler,
     }
     const optionProps1 = baseOptionProps
@@ -475,6 +492,7 @@ describe('OptionStack params equality check in production mode', () => {
     const baseOptionProps: OptionProps_Scales = {
       title: 'Scales',
       items: [{ ...item1 }],
+      twoColumns: false,
       itemTapHandler: itemTapHandler,
     }
     const optionProps1 = baseOptionProps

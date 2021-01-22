@@ -21,6 +21,8 @@ export const OptionListDoubleStack = ({
       return (
         <OptionListDouble
           items={covariantOptionProps.items}
+          twoColumns={covariantOptionProps.twoColumns}
+          itemTapHandler={covariantOptionProps.itemTapHandler}
           useLeftColumnLabel={covariantOptionProps.useLeftColumnLabel}
           useRightColumnLabel={covariantOptionProps.useRightColumnLabel}
           transitionValue={useInterpolateOptionStackTransitionValue(
@@ -28,7 +30,6 @@ export const OptionListDoubleStack = ({
             index,
             transitionValue
           )}
-          itemTapHandler={covariantOptionProps.itemTapHandler}
           key={index}
         />
       )
@@ -37,6 +38,8 @@ export const OptionListDoubleStack = ({
       return (
         <OptionListDouble
           items={scalesOptionProps.items}
+          twoColumns={scalesOptionProps.twoColumns}
+          itemTapHandler={scalesOptionProps.itemTapHandler}
           useLeftColumnLabel={scalesOptionProps.useLeftColumnLabel}
           useRightColumnLabel={scalesOptionProps.useRightColumnLabel}
           transitionValue={useInterpolateOptionStackTransitionValue(
@@ -44,7 +47,6 @@ export const OptionListDoubleStack = ({
             index,
             transitionValue
           )}
-          itemTapHandler={scalesOptionProps.itemTapHandler}
           key={index}
         />
       )
@@ -53,6 +55,8 @@ export const OptionListDoubleStack = ({
       return (
         <OptionListDouble
           items={apparatusOptionProps.items}
+          twoColumns={apparatusOptionProps.twoColumns}
+          itemTapHandler={apparatusOptionProps.itemTapHandler}
           useLeftColumnLabel={apparatusOptionProps.useLeftColumnLabel}
           useRightColumnLabel={apparatusOptionProps.useRightColumnLabel}
           transitionValue={useInterpolateOptionStackTransitionValue(
@@ -60,7 +64,6 @@ export const OptionListDoubleStack = ({
             index,
             transitionValue
           )}
-          itemTapHandler={apparatusOptionProps.itemTapHandler}
           key={index}
         />
       )

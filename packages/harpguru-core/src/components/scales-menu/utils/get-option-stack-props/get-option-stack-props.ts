@@ -32,12 +32,14 @@ export const getOptionStackProps = (
       title: titles[0],
       useSubTitle,
       items: itemsz[0],
+      twoColumns: false,
       itemTapHandler,
     },
     {
       title: titles[1],
       useSubTitle,
       items: itemsz[1],
+      twoColumns: false,
       itemTapHandler,
     },
   ]

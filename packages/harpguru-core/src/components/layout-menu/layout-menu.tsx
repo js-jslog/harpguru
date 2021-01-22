@@ -36,6 +36,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
       title: 'Tuning',
       useSubTitle,
       items,
+      twoColumns: false,
       itemTapHandler,
     },
   ]
