@@ -25,10 +25,24 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     variedValue: PozitionIds.First,
   }
   const harpKeySeries = getCovarianceSeries(harpKeyPrimer)
-  const harpKeyItems = harpKeySeries.map((item) => ({
-    label: item.pozitionId,
-    callbackParam: { harpKeyId: item.harpKeyId, pozitionId: item.pozitionId },
-  }))
+  const harpKeyItems = harpKeySeries
+    .map((item) => [
+      {
+        label: item.pozitionId,
+        callbackParam: {
+          harpKeyId: item.harpKeyId,
+          pozitionId: item.pozitionId,
+        },
+      },
+      {
+        label: item.rootPitchId,
+        callbackParam: {
+          harpKeyId: item.harpKeyId,
+          pozitionId: item.pozitionId,
+        },
+      },
+    ])
+    .flat()
 
   const pozitionPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.Pozition,
@@ -37,10 +51,24 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     variedValue: PitchIds.A,
   }
   const pozitionSeries = getCovarianceSeries(pozitionPrimer)
-  const pozitionItems = pozitionSeries.map((item) => ({
-    label: item.rootPitchId,
-    callbackParam: { harpKeyId: item.harpKeyId, pozitionId: item.pozitionId },
-  }))
+  const pozitionItems = pozitionSeries
+    .map((item) => [
+      {
+        label: item.rootPitchId,
+        callbackParam: {
+          harpKeyId: item.harpKeyId,
+          pozitionId: item.pozitionId,
+        },
+      },
+      {
+        label: item.harpKeyId,
+        callbackParam: {
+          harpKeyId: item.harpKeyId,
+          pozitionId: item.pozitionId,
+        },
+      },
+    ])
+    .flat()
 
   const rootPitchPrimer: CovariancePrimer = {
     lockedType: CovariantMembers.RootPitch,
@@ -49,10 +77,24 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     variedValue: PitchIds.A,
   }
   const rootPitchSeries = getCovarianceSeries(rootPitchPrimer)
-  const rootPitchItems = rootPitchSeries.map((item) => ({
-    label: item.harpKeyId,
-    callbackParam: { harpKeyId: item.harpKeyId, pozitionId: item.pozitionId },
-  }))
+  const rootPitchItems = rootPitchSeries
+    .map((item) => [
+      {
+        label: item.harpKeyId,
+        callbackParam: {
+          harpKeyId: item.harpKeyId,
+          pozitionId: item.pozitionId,
+        },
+      },
+      {
+        label: item.pozitionId,
+        callbackParam: {
+          harpKeyId: item.harpKeyId,
+          pozitionId: item.pozitionId,
+        },
+      },
+    ])
+    .flat()
 
   const itemTapHandler = useCallback(
     useDispatch(getNewHarpStrataForDispatcher),

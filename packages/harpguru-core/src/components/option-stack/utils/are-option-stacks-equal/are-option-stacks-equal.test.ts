@@ -199,6 +199,52 @@ describe('OptionStack params equality check in dev mode', () => {
     expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
     expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
   })
+
+  test('that option props with distinct but matching items in the list changed are identified equal', () => {
+    const itemTapHandler = jest.fn()
+    const item1 = { label: 'item1', callbackParam: [DegreeIds.Root] }
+    const item2 = { label: 'item1', callbackParam: [DegreeIds.Root] }
+    const baseOptionProps: OptionProps_Scales = {
+      title: 'Scales',
+      items: [{ ...item1 }],
+      itemTapHandler: itemTapHandler,
+    }
+    const optionProps1 = baseOptionProps
+    const optionProps2 = { ...baseOptionProps, items: [{ ...item2 }] }
+    const stackProps1: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps1],
+    }
+    const stackProps2: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps2],
+    }
+
+    expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toBeTruthy()
+  })
+
+  test('that option props with a single item in the list changed are identified as not equal', () => {
+    const itemTapHandler = jest.fn()
+    const item1 = { label: 'item1', callbackParam: [DegreeIds.Root] }
+    const item2 = { label: 'item2', callbackParam: [DegreeIds.Root] }
+    const baseOptionProps: OptionProps_Scales = {
+      title: 'Scales',
+      items: [{ ...item1 }],
+      itemTapHandler: itemTapHandler,
+    }
+    const optionProps1 = baseOptionProps
+    const optionProps2 = { ...baseOptionProps, items: [{ ...item2 }] }
+    const stackProps1: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps1],
+    }
+    const stackProps2: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps2],
+    }
+    const stackPropsControl: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps1],
+    }
+
+    expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
+    expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
+  })
 })
 
 describe('OptionStack params equality check in production mode', () => {
@@ -387,6 +433,52 @@ describe('OptionStack params equality check in production mode', () => {
     }
     const optionProps1 = baseOptionProps
     const optionProps2 = { ...baseOptionProps, itemTapHandler: itemTapHandler2 }
+    const stackProps1: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps1],
+    }
+    const stackProps2: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps2],
+    }
+    const stackPropsControl: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps1],
+    }
+
+    expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toThrow()
+    expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
+  })
+
+  test('that option props with distinct but matching items in the list changed are identified equal', () => {
+    const itemTapHandler = jest.fn()
+    const item1 = { label: 'item1', callbackParam: [DegreeIds.Root] }
+    const item2 = { label: 'item1', callbackParam: [DegreeIds.Root] }
+    const baseOptionProps: OptionProps_Scales = {
+      title: 'Scales',
+      items: [{ ...item1 }],
+      itemTapHandler: itemTapHandler,
+    }
+    const optionProps1 = baseOptionProps
+    const optionProps2 = { ...baseOptionProps, items: [{ ...item2 }] }
+    const stackProps1: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps1],
+    }
+    const stackProps2: OptionStackProps = {
+      optionPropsz: [optionProps1, optionProps2],
+    }
+
+    expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toBeTruthy()
+  })
+
+  test('that option props with a single item in the list changed are identified as not equal', () => {
+    const itemTapHandler = jest.fn()
+    const item1 = { label: 'item1', callbackParam: [DegreeIds.Root] }
+    const item2 = { label: 'item2', callbackParam: [DegreeIds.Root] }
+    const baseOptionProps: OptionProps_Scales = {
+      title: 'Scales',
+      items: [{ ...item1 }],
+      itemTapHandler: itemTapHandler,
+    }
+    const optionProps1 = baseOptionProps
+    const optionProps2 = { ...baseOptionProps, items: [{ ...item2 }] }
     const stackProps1: OptionStackProps = {
       optionPropsz: [optionProps1, optionProps1],
     }

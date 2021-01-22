@@ -1,5 +1,9 @@
 import { isProd } from '../is-prod'
-import type { OptionStackProps } from '../../../../types'
+import {
+  isOptionProps_Covariants,
+  isOptionProps_Scales,
+  OptionStackProps,
+} from '../../../../types'
 
 // This function is deliberately configured to behave differently
 // in dev and prod modes. The reason for this is simple. When these
@@ -57,6 +61,8 @@ One of the option lists has changed length during this render.
     `)
   }
 
+  // TODO: change all of these checks to `some` to prevent unnecessary
+  // completion of the iteration.
   const areTitlesEqual = prevPropsz.every(
     (prevProps, index) => prevProps.title === nextPropsz[index].title
   )
@@ -68,9 +74,30 @@ One of the option lists has changed length during this render.
     (prevProps, index) =>
       prevProps.itemTapHandler === nextPropsz[index].itemTapHandler
   )
+  const areAllItemsEqual = prevPropsz.every((prevProps, index) => {
+    if (isOptionProps_Covariants(prevProps)) {
+      const { [index]: nextProps } = nextPropsz
+      const { items: prevItems } = prevProps
+      const { items: nextItems } = nextProps
+      return !prevItems.some((prevItem, index) => prevItem !== nextItems[index])
+    }
+    if (isOptionProps_Scales(prevProps)) {
+      const { [index]: nextProps } = nextPropsz
+      const { items: prevItems } = prevProps
+      const { items: nextItems } = nextProps
+      return !prevItems.some((prevItem, index) => prevItem !== nextItems[index])
+    }
+    const { [index]: nextProps } = nextPropsz
+    const { items: prevItems } = prevProps
+    const { items: nextItems } = nextProps
+    return !prevItems.some((prevItem, index) => prevItem !== nextItems[index])
+  })
 
   if (
-    (areTitlesEqual && areUseSubTitlesEqual && areItemTapHandlersEqual) === true
+    (areTitlesEqual &&
+      areUseSubTitlesEqual &&
+      areItemTapHandlersEqual &&
+      areAllItemsEqual) === true
   )
     return true
 
