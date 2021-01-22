@@ -7,7 +7,7 @@ import { getOptionStyles } from '../../utils'
 import type { ListProps, OptionTypes, WithTransition } from '../../types'
 
 export const OptionListDouble = <T extends unknown, K extends OptionTypes>({
-  items,
+  useItems,
   itemTapHandler,
   useLeftColumnLabel = () => '',
   useRightColumnLabel = () => '',
@@ -35,7 +35,7 @@ export const OptionListDouble = <T extends unknown, K extends OptionTypes>({
       <SafeAreaView style={styles.listStackable}>
         <FlatList
           contentContainerStyle={styles.listContent}
-          data={items}
+          data={useItems()}
           numColumns={2}
           renderItem={({ item }) => (
             <TouchableOpacity

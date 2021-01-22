@@ -16,86 +16,98 @@ import { colors, getSizes } from '../../styles'
 import { getNewHarpStrataForDispatcher } from './utils'
 
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
+  const useHarpKeyItems = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { harpKeyId } = activeHarpStrata
+    const harpKeyPrimer: CovariancePrimer = {
+      lockedType: CovariantMembers.HarpKey,
+      variedType: CovariantMembers.Pozition,
+      lockedValue: harpKeyId,
+      variedValue: PozitionIds.First,
+    }
+    const harpKeySeries = getCovarianceSeries(harpKeyPrimer)
+    const harpKeyItems = harpKeySeries
+      .map((item) => [
+        {
+          label: item.pozitionId,
+          callbackParam: {
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          },
+        },
+        {
+          label: item.rootPitchId,
+          callbackParam: {
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          },
+        },
+      ])
+      .flat()
+    return harpKeyItems
+  }, [useGlobal])
 
-  const harpKeyPrimer: CovariancePrimer = {
-    lockedType: CovariantMembers.HarpKey,
-    variedType: CovariantMembers.Pozition,
-    lockedValue: harpKeyId,
-    variedValue: PozitionIds.First,
-  }
-  const harpKeySeries = getCovarianceSeries(harpKeyPrimer)
-  const harpKeyItems = harpKeySeries
-    .map((item) => [
-      {
-        label: item.pozitionId,
-        callbackParam: {
-          harpKeyId: item.harpKeyId,
-          pozitionId: item.pozitionId,
+  const usePozitionItems = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { pozitionId } = activeHarpStrata
+    const pozitionPrimer: CovariancePrimer = {
+      lockedType: CovariantMembers.Pozition,
+      variedType: CovariantMembers.RootPitch,
+      lockedValue: pozitionId,
+      variedValue: PitchIds.A,
+    }
+    const pozitionSeries = getCovarianceSeries(pozitionPrimer)
+    const pozitionItems = pozitionSeries
+      .map((item) => [
+        {
+          label: item.rootPitchId,
+          callbackParam: {
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          },
         },
-      },
-      {
-        label: item.rootPitchId,
-        callbackParam: {
-          harpKeyId: item.harpKeyId,
-          pozitionId: item.pozitionId,
+        {
+          label: item.harpKeyId,
+          callbackParam: {
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          },
         },
-      },
-    ])
-    .flat()
+      ])
+      .flat()
+    return pozitionItems
+  }, [useGlobal])
 
-  const pozitionPrimer: CovariancePrimer = {
-    lockedType: CovariantMembers.Pozition,
-    variedType: CovariantMembers.RootPitch,
-    lockedValue: pozitionId,
-    variedValue: PitchIds.A,
-  }
-  const pozitionSeries = getCovarianceSeries(pozitionPrimer)
-  const pozitionItems = pozitionSeries
-    .map((item) => [
-      {
-        label: item.rootPitchId,
-        callbackParam: {
-          harpKeyId: item.harpKeyId,
-          pozitionId: item.pozitionId,
+  const useRootPitchItems = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { rootPitchId } = activeHarpStrata
+    const rootPitchPrimer: CovariancePrimer = {
+      lockedType: CovariantMembers.RootPitch,
+      variedType: CovariantMembers.HarpKey,
+      lockedValue: rootPitchId,
+      variedValue: PitchIds.A,
+    }
+    const rootPitchSeries = getCovarianceSeries(rootPitchPrimer)
+    const rootPitchItems = rootPitchSeries
+      .map((item) => [
+        {
+          label: item.harpKeyId,
+          callbackParam: {
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          },
         },
-      },
-      {
-        label: item.harpKeyId,
-        callbackParam: {
-          harpKeyId: item.harpKeyId,
-          pozitionId: item.pozitionId,
+        {
+          label: item.pozitionId,
+          callbackParam: {
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          },
         },
-      },
-    ])
-    .flat()
-
-  const rootPitchPrimer: CovariancePrimer = {
-    lockedType: CovariantMembers.RootPitch,
-    variedType: CovariantMembers.HarpKey,
-    lockedValue: rootPitchId,
-    variedValue: PitchIds.A,
-  }
-  const rootPitchSeries = getCovarianceSeries(rootPitchPrimer)
-  const rootPitchItems = rootPitchSeries
-    .map((item) => [
-      {
-        label: item.harpKeyId,
-        callbackParam: {
-          harpKeyId: item.harpKeyId,
-          pozitionId: item.pozitionId,
-        },
-      },
-      {
-        label: item.pozitionId,
-        callbackParam: {
-          harpKeyId: item.harpKeyId,
-          pozitionId: item.pozitionId,
-        },
-      },
-    ])
-    .flat()
+      ])
+      .flat()
+    return rootPitchItems
+  }, [useGlobal])
 
   const itemTapHandler = useCallback(
     useDispatch(getNewHarpStrataForDispatcher),
@@ -145,7 +157,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       title: 'Harp key',
       useSubTitle: useHarpKeySubtitle,
       optionType: OptionTypes.Covariants,
-      items: harpKeyItems,
+      useItems: useHarpKeyItems,
       twoColumns: true,
       itemTapHandler,
       useLeftColumnLabel: usePozitionLabel,
@@ -155,7 +167,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       title: 'Position',
       useSubTitle: usePozitionSubtitle,
       optionType: OptionTypes.Covariants,
-      items: pozitionItems,
+      useItems: usePozitionItems,
       twoColumns: true,
       itemTapHandler,
       useLeftColumnLabel: useRootPitchLabel,
@@ -165,7 +177,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       title: 'Song key',
       useSubTitle: useRootPitchSubtitle,
       optionType: OptionTypes.Covariants,
-      items: rootPitchItems,
+      useItems: useRootPitchItems,
       twoColumns: true,
       itemTapHandler,
       useLeftColumnLabel: useRootPitchLabel,

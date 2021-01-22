@@ -21,7 +21,7 @@ export const OptionListStack = ({
       return (
         <OptionList
           optionType={covariantsOptionProps.optionType}
-          items={covariantsOptionProps.items}
+          useItems={covariantsOptionProps.useItems}
           twoColumns={covariantsOptionProps.twoColumns}
           itemTapHandler={covariantsOptionProps.itemTapHandler}
           transitionValue={useInterpolateOptionStackTransitionValue(
@@ -37,7 +37,7 @@ export const OptionListStack = ({
       return (
         <OptionList
           optionType={scalesOptionProps.optionType}
-          items={scalesOptionProps.items}
+          useItems={scalesOptionProps.useItems}
           twoColumns={scalesOptionProps.twoColumns}
           itemTapHandler={scalesOptionProps.itemTapHandler}
           transitionValue={useInterpolateOptionStackTransitionValue(
@@ -53,7 +53,7 @@ export const OptionListStack = ({
       return (
         <OptionList
           optionType={apparatusOptionProps.optionType}
-          items={apparatusOptionProps.items}
+          useItems={apparatusOptionProps.useItems}
           twoColumns={apparatusOptionProps.twoColumns}
           itemTapHandler={apparatusOptionProps.itemTapHandler}
           transitionValue={useInterpolateOptionStackTransitionValue(

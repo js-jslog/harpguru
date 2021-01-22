@@ -142,7 +142,7 @@ export type TitleProps = {
 
 export type ListProps<T, K extends OptionTypes> = {
   readonly optionType: K
-  readonly items: ReadonlyArray<Item<T>>
+  readonly useItems: () => ReadonlyArray<Item<T>>
   readonly twoColumns: boolean
   readonly itemTapHandler: (arg0: T) => void
   readonly useLeftColumnLabel?: () => string

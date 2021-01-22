@@ -7,7 +7,7 @@ import { getOptionStyles } from '../../utils'
 import type { ListProps, OptionTypes, WithTransition } from '../../types'
 
 export const OptionList = <T extends unknown, K extends OptionTypes>({
-  items,
+  useItems,
   itemTapHandler,
   transitionValue,
 }: ListProps<T, K> & WithTransition): React.ReactElement => {
@@ -25,7 +25,7 @@ export const OptionList = <T extends unknown, K extends OptionTypes>({
       <SafeAreaView>
         <FlatList
           contentContainerStyle={styles.listContent}
-          data={items}
+          data={useItems()}
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => itemTapHandler(item.callbackParam)}

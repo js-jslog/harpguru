@@ -1,9 +1,5 @@
 import { isProd } from '../is-prod'
-import {
-  isOptionProps_Covariants,
-  isOptionProps_Scales,
-  OptionStackProps,
-} from '../../../../types'
+import type { OptionStackProps } from '../../../../types'
 
 // This function is deliberately configured to behave differently
 // in dev and prod modes. The reason for this is simple. When these
@@ -38,29 +34,6 @@ from ${prevPropsz.length} to ${nextPropsz.length}
     `)
   }
 
-  // It's important to return this early before the iterative
-  // tests which happen later are performed so that we can
-  // don't have to confuse that logic with protective statements
-  // in case the arrays aren't the same length
-  //
-  // (this is relevant *once* we have more granular tests of
-  // the items included here)
-  const areListLengthsEqual = prevPropsz.every(
-    ({ items: prevItems }, index) =>
-      prevItems.length === nextPropsz[index].items.length
-  )
-  if (!areListLengthsEqual) {
-    if (!isProd()) return false
-
-    throw Error(`
-The memoised OptionStack components should be initialised with
-parameters which never go stale. Please check the params provided
-to this OptionStack.
-
-One of the option lists has changed length during this render.
-    `)
-  }
-
   // TODO: change all of these checks to `some` to prevent unnecessary
   // completion of the iteration.
   const areTitlesEqual = prevPropsz.every(
@@ -70,34 +43,18 @@ One of the option lists has changed length during this render.
     (prevProps, index) =>
       prevProps.useSubTitle === nextPropsz[index].useSubTitle
   )
+  // TODO: Add check that the useItems functions are identical
+  // and update the layout and scales menu's to wrap their
+  // useItems function is callback memos and see that without
+  // them the animation values are reset each time a value is
+  // selected.
   const areItemTapHandlersEqual = prevPropsz.every(
     (prevProps, index) =>
       prevProps.itemTapHandler === nextPropsz[index].itemTapHandler
   )
-  const areAllItemsEqual = prevPropsz.every((prevProps, index) => {
-    if (isOptionProps_Covariants(prevProps)) {
-      const { [index]: nextProps } = nextPropsz
-      const { items: prevItems } = prevProps
-      const { items: nextItems } = nextProps
-      return !prevItems.some((prevItem, index) => prevItem !== nextItems[index])
-    }
-    if (isOptionProps_Scales(prevProps)) {
-      const { [index]: nextProps } = nextPropsz
-      const { items: prevItems } = prevProps
-      const { items: nextItems } = nextProps
-      return !prevItems.some((prevItem, index) => prevItem !== nextItems[index])
-    }
-    const { [index]: nextProps } = nextPropsz
-    const { items: prevItems } = prevProps
-    const { items: nextItems } = nextProps
-    return !prevItems.some((prevItem, index) => prevItem !== nextItems[index])
-  })
 
   if (
-    (areTitlesEqual &&
-      areUseSubTitlesEqual &&
-      areItemTapHandlersEqual &&
-      areAllItemsEqual) === true
+    (areTitlesEqual && areUseSubTitlesEqual && areItemTapHandlersEqual) === true
   )
     return true
 
