@@ -1,7 +1,11 @@
 import { getScale, getScaleIds, ScaleCategory } from 'harpparts'
 import type { DegreeIds } from 'harpparts'
 
-import type { OptionStackProps } from '../../../../types'
+import {
+  OptionProps_Scales,
+  OptionStackProps,
+  OptionTypes,
+} from '../../../../types'
 
 export const getOptionStackProps = (
   useSubTitle: () => string,
@@ -27,10 +31,11 @@ export const getOptionStackProps = (
     })),
   ])
 
-  const optionPropsz = [
+  const optionPropsz: ReadonlyArray<OptionProps_Scales> = [
     {
       title: titles[0],
       useSubTitle,
+      optionType: OptionTypes.Scales,
       items: itemsz[0],
       twoColumns: false,
       itemTapHandler,
@@ -38,6 +43,7 @@ export const getOptionStackProps = (
     {
       title: titles[1],
       useSubTitle,
+      optionType: OptionTypes.Scales,
       items: itemsz[1],
       twoColumns: false,
       itemTapHandler,

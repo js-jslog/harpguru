@@ -4,15 +4,15 @@ import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
-import type { ListProps, WithTransition } from '../../types'
+import type { ListProps, OptionTypes, WithTransition } from '../../types'
 
-export const OptionListDouble = <T extends unknown>({
+export const OptionListDouble = <T extends unknown, K extends OptionTypes>({
   items,
   itemTapHandler,
   useLeftColumnLabel = () => '',
   useRightColumnLabel = () => '',
   transitionValue,
-}: ListProps<T> & WithTransition): React.ReactElement => {
+}: ListProps<T, K> & WithTransition): React.ReactElement => {
   const styles = getOptionStyles()
   const leftColumnLabel = useLeftColumnLabel()
   const rightColumnLabel = useRightColumnLabel()

@@ -90,6 +90,12 @@ export type RenderableToneTuples =
 
 export type PageNumber = 1 | 2 | 3
 
+export enum OptionTypes {
+  Covariants,
+  Apparatus,
+  Scales,
+}
+
 export type OptionStackProps = {
   readonly optionPropsz: ReadonlyArray<OptionProps_All>
 }
@@ -100,39 +106,42 @@ export type OptionProps_All =
   | OptionProps_Apparatus
 
 export type OptionProps_Covariants = OptionProps<
-  Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
+  Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>,
+  OptionTypes.Covariants
 >
 export function isOptionProps_Covariants(
   props: OptionProps_All
 ): props is OptionProps_Covariants {
-  const { items } = props
-  if (items.length === 0) return false
-  const [firstItem] = items
-  const { callbackParam } = firstItem
-  const tempCallbackParam = callbackParam as Pick<
-    HarpStrataProps,
-    'harpKeyId' | 'pozitionId'
-  >
-  if (tempCallbackParam.harpKeyId === undefined) return false
-  return true
+  return props.optionType === OptionTypes.Covariants
 }
-export type OptionProps_Scales = OptionProps<ReadonlyArray<DegreeIds>>
+export type OptionProps_Apparatus = OptionProps<
+  ApparatusIds,
+  OptionTypes.Apparatus
+>
+export function isOptionProps_Apparatus(
+  props: OptionProps_All
+): props is OptionProps_Apparatus {
+  return props.optionType === OptionTypes.Apparatus
+}
+export type OptionProps_Scales = OptionProps<
+  ReadonlyArray<DegreeIds>,
+  OptionTypes.Scales
+>
 export function isOptionProps_Scales(
   props: OptionProps_All
 ): props is OptionProps_Scales {
-  const { items } = props
-  return Array.isArray(items)
+  return props.optionType === OptionTypes.Scales
 }
-export type OptionProps_Apparatus = OptionProps<ApparatusIds>
 
-type OptionProps<T> = TitleProps & ListProps<T>
+type OptionProps<T, K extends OptionTypes> = TitleProps & ListProps<T, K>
 
 export type TitleProps = {
   readonly title: string
   readonly useSubTitle?: () => string
 }
 
-export type ListProps<T> = {
+export type ListProps<T, K extends OptionTypes> = {
+  readonly optionType: K
   readonly items: ReadonlyArray<Item<T>>
   readonly twoColumns: boolean
   readonly itemTapHandler: (arg0: T) => void

@@ -7,7 +7,8 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import { MenuProps } from '../../types'
+import { MenuProps, OptionTypes } from '../../types'
+import type { OptionProps_Apparatus } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import { getNewHarpStrataByApparatusForDispatcher } from './utils'
@@ -31,10 +32,11 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     [useDispatch]
   )
 
-  const optionStackPropsz = [
+  const optionStackPropsz: ReadonlyArray<OptionProps_Apparatus> = [
     {
       title: 'Tuning',
       useSubTitle,
+      optionType: OptionTypes.Apparatus,
       items,
       twoColumns: false,
       itemTapHandler,

@@ -9,7 +9,8 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import type { MenuProps } from '../../types'
+import { MenuProps, OptionTypes } from '../../types'
+import type { OptionProps_Covariants } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import { getNewHarpStrataForDispatcher } from './utils'
@@ -139,10 +140,11 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const sizes = getSizes()
 
-  const optionPropsz = [
+  const optionPropsz: ReadonlyArray<OptionProps_Covariants> = [
     {
       title: 'Harp key',
       useSubTitle: useHarpKeySubtitle,
+      optionType: OptionTypes.Covariants,
       items: harpKeyItems,
       twoColumns: true,
       itemTapHandler,
@@ -152,6 +154,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     {
       title: 'Position',
       useSubTitle: usePozitionSubtitle,
+      optionType: OptionTypes.Covariants,
       items: pozitionItems,
       twoColumns: true,
       itemTapHandler,
@@ -161,6 +164,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     {
       title: 'Song key',
       useSubTitle: useRootPitchSubtitle,
+      optionType: OptionTypes.Covariants,
       items: rootPitchItems,
       twoColumns: true,
       itemTapHandler,

@@ -20,6 +20,7 @@ export const OptionListStack = ({
       const covariantsOptionProps = optionProps as OptionProps_Covariants
       return (
         <OptionList
+          optionType={covariantsOptionProps.optionType}
           items={covariantsOptionProps.items}
           twoColumns={covariantsOptionProps.twoColumns}
           itemTapHandler={covariantsOptionProps.itemTapHandler}
@@ -35,6 +36,7 @@ export const OptionListStack = ({
       const scalesOptionProps = optionProps as OptionProps_Scales
       return (
         <OptionList
+          optionType={scalesOptionProps.optionType}
           items={scalesOptionProps.items}
           twoColumns={scalesOptionProps.twoColumns}
           itemTapHandler={scalesOptionProps.itemTapHandler}
@@ -50,6 +52,7 @@ export const OptionListStack = ({
       const apparatusOptionProps = optionProps as OptionProps_Apparatus
       return (
         <OptionList
+          optionType={apparatusOptionProps.optionType}
           items={apparatusOptionProps.items}
           twoColumns={apparatusOptionProps.twoColumns}
           itemTapHandler={apparatusOptionProps.itemTapHandler}
