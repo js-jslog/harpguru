@@ -1,5 +1,8 @@
 import { useGlobal, useDispatch } from 'reactn'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { Text } from 'react-native'
 import React, { useCallback } from 'react'
+import type { HarpStrataProps } from 'harpstrata'
 import { PitchIds, PozitionIds } from 'harpparts'
 import type { CovariancePrimer } from 'harpcovariance'
 import { getCovarianceSeries, CovariantMembers } from 'harpcovariance'
@@ -9,13 +12,50 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import { MenuProps, OptionTypes } from '../../types'
-import type { OptionProps_Covariants } from '../../types'
+import { getOptionStyles } from '../../utils'
+import type { ListItemProps_Double, MenuProps, OptionProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import { getNewHarpStrataForDispatcher } from './utils'
 
+const ListItem = (
+  props: ListItemProps_Double<Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>>
+): React.ReactElement => {
+  const { side } = props
+  const styles = getOptionStyles()
+  const sideStyle =
+    side === 'LEFT' ? styles.optionSelectedLeft : styles.optionSelectedRight
+  const textElement = props.isSelected ? (
+    <Text
+      style={[
+        styles.optionText,
+        styles.optionTextDouble,
+        styles.optionSelected,
+        sideStyle,
+      ]}
+    >
+      {props.label}
+    </Text>
+  ) : (
+    <Text style={[styles.optionText, styles.optionTextDouble]}>
+      {props.label}
+    </Text>
+  )
+  return (
+    <TouchableOpacity
+      disabled={props.isSelected ? true : false}
+      onPress={() => props.itemTapHandler(props.callbackParam)}
+    >
+      {textElement}
+    </TouchableOpacity>
+  )
+}
+
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
+  const itemTapHandler = useCallback(
+    useDispatch(getNewHarpStrataForDispatcher),
+    [useDispatch]
+  )
   const useHarpKeyItems = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
@@ -27,23 +67,31 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     }
     const harpKeySeries = getCovarianceSeries(harpKeyPrimer)
     const harpKeyItems = harpKeySeries
-      .map((item) => [
-        {
-          label: item.pozitionId,
-          isSelected: item.pozitionId === pozitionId,
-          callbackParam: {
+      .map((item, index) => [
+        <ListItem
+          key={`${index}-0`}
+          label={item.pozitionId}
+          isSelected={item.pozitionId === pozitionId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
-          },
-        },
-        {
-          label: item.rootPitchId,
-          isSelected: item.rootPitchId === rootPitchId,
-          callbackParam: {
+          }}
+          twoColumns={true}
+          side={'LEFT'}
+        />,
+        <ListItem
+          key={`${index}-1`}
+          label={item.rootPitchId}
+          isSelected={item.rootPitchId === rootPitchId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
-          },
-        },
+          }}
+          twoColumns={true}
+          side={'RIGHT'}
+        />,
       ])
       .flat()
     return harpKeyItems
@@ -60,23 +108,31 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     }
     const pozitionSeries = getCovarianceSeries(pozitionPrimer)
     const pozitionItems = pozitionSeries
-      .map((item) => [
-        {
-          label: item.rootPitchId,
-          isSelected: item.rootPitchId === rootPitchId,
-          callbackParam: {
+      .map((item, index) => [
+        <ListItem
+          key={`${index}-0`}
+          label={item.rootPitchId}
+          isSelected={item.rootPitchId === rootPitchId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
-          },
-        },
-        {
-          label: item.harpKeyId,
-          isSelected: item.harpKeyId === harpKeyId,
-          callbackParam: {
+          }}
+          twoColumns={true}
+          side={'LEFT'}
+        />,
+        <ListItem
+          key={`${index}-1`}
+          label={item.harpKeyId}
+          isSelected={item.harpKeyId === harpKeyId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
-          },
-        },
+          }}
+          twoColumns={true}
+          side={'RIGHT'}
+        />,
       ])
       .flat()
     return pozitionItems
@@ -93,32 +149,35 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     }
     const rootPitchSeries = getCovarianceSeries(rootPitchPrimer)
     const rootPitchItems = rootPitchSeries
-      .map((item) => [
-        {
-          label: item.harpKeyId,
-          isSelected: item.harpKeyId === harpKeyId,
-          callbackParam: {
+      .map((item, index) => [
+        <ListItem
+          key={`${index}-0`}
+          label={item.harpKeyId}
+          isSelected={item.harpKeyId === harpKeyId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
-          },
-        },
-        {
-          label: item.pozitionId,
-          isSelected: item.pozitionId === pozitionId,
-          callbackParam: {
+          }}
+          twoColumns={true}
+          side={'LEFT'}
+        />,
+        <ListItem
+          key={`${index}-1`}
+          label={item.pozitionId}
+          isSelected={item.pozitionId === pozitionId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
-          },
-        },
+          }}
+          twoColumns={true}
+          side={'RIGHT'}
+        />,
       ])
       .flat()
     return rootPitchItems
   }, [useGlobal])
-
-  const itemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataForDispatcher),
-    [useDispatch]
-  )
 
   const useHarpKeySubtitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
@@ -158,34 +217,28 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const sizes = getSizes()
 
-  const optionPropsz: ReadonlyArray<OptionProps_Covariants> = [
+  const optionPropsz: ReadonlyArray<OptionProps> = [
     {
       title: 'Harp key',
       useSubTitle: useHarpKeySubtitle,
-      optionType: OptionTypes.Covariants,
       useItems: useHarpKeyItems,
       twoColumns: true,
-      itemTapHandler,
       useLeftColumnLabel: usePozitionLabel,
       useRightColumnLabel: useRootPitchLabel,
     },
     {
       title: 'Position',
       useSubTitle: usePozitionSubtitle,
-      optionType: OptionTypes.Covariants,
       useItems: usePozitionItems,
       twoColumns: true,
-      itemTapHandler,
       useLeftColumnLabel: useRootPitchLabel,
       useRightColumnLabel: useHarpKeyLabel,
     },
     {
       title: 'Song key',
       useSubTitle: useRootPitchSubtitle,
-      optionType: OptionTypes.Covariants,
       useItems: useRootPitchItems,
       twoColumns: true,
-      itemTapHandler,
       useLeftColumnLabel: useHarpKeyLabel,
       useRightColumnLabel: usePozitionLabel,
     },

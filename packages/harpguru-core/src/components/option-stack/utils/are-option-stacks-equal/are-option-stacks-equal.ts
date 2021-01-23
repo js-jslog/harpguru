@@ -48,15 +48,11 @@ from ${prevPropsz.length} to ${nextPropsz.length}
   // useItems function is callback memos and see that without
   // them the animation values are reset each time a value is
   // selected.
-  const areItemTapHandlersEqual = prevPropsz.every(
-    (prevProps, index) =>
-      prevProps.itemTapHandler === nextPropsz[index].itemTapHandler
-  )
+  // Don't forget to include `areUseItems...` in the error message below.
+  // TODO: Add check for the twoColumns, useLeftColumnLabel and useRightColumnLabel
+  // too.
 
-  if (
-    (areTitlesEqual && areUseSubTitlesEqual && areItemTapHandlersEqual) === true
-  )
-    return true
+  if ((areTitlesEqual && areUseSubTitlesEqual) === true) return true
 
   if (!isProd()) return false
 
@@ -67,6 +63,5 @@ to this OptionStack.
 
 areTitlesEqual: ${areTitlesEqual}
 areUseSubTitlesEqual: ${areUseSubTitlesEqual}
-areItemTapHandlersEqual: ${areItemTapHandlersEqual}
   `)
 }

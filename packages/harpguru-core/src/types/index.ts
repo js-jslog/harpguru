@@ -1,6 +1,6 @@
 import type { Node, Value } from 'react-native-reanimated'
-import type { HarpStrata, HarpStrataProps } from 'harpstrata'
-import type { ApparatusIds, DegreeIds } from 'harpparts'
+import type { HarpStrata } from 'harpstrata'
+import type { DegreeIds } from 'harpparts'
 
 export type GlobalState = {
   readonly activeHarpStrata: HarpStrata
@@ -90,61 +90,20 @@ export type RenderableToneTuples =
 
 export type PageNumber = 1 | 2 | 3
 
-export enum OptionTypes {
-  Covariants,
-  Apparatus,
-  Scales,
-}
-
 export type OptionStackProps = {
-  readonly optionPropsz: ReadonlyArray<OptionProps_All>
+  readonly optionPropsz: ReadonlyArray<OptionProps>
 }
 
-export type OptionProps_All =
-  | OptionProps_Covariants
-  | OptionProps_Scales
-  | OptionProps_Apparatus
+export type OptionProps = OptionTitleProps & OptionListProps
 
-export type OptionProps_Covariants = OptionProps<
-  Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>,
-  OptionTypes.Covariants
->
-export function isOptionProps_Covariants(
-  props: OptionProps_All
-): props is OptionProps_Covariants {
-  return props.optionType === OptionTypes.Covariants
-}
-export type OptionProps_Apparatus = OptionProps<
-  ApparatusIds,
-  OptionTypes.Apparatus
->
-export function isOptionProps_Apparatus(
-  props: OptionProps_All
-): props is OptionProps_Apparatus {
-  return props.optionType === OptionTypes.Apparatus
-}
-export type OptionProps_Scales = OptionProps<
-  ReadonlyArray<DegreeIds>,
-  OptionTypes.Scales
->
-export function isOptionProps_Scales(
-  props: OptionProps_All
-): props is OptionProps_Scales {
-  return props.optionType === OptionTypes.Scales
-}
-
-type OptionProps<T, K extends OptionTypes> = TitleProps & ListProps<T, K>
-
-export type TitleProps = {
+export type OptionTitleProps = {
   readonly title: string
   readonly useSubTitle?: () => string
 }
 
-export type ListProps<T, K extends OptionTypes> = {
-  readonly optionType: K
-  readonly useItems: () => ReadonlyArray<Item<T>>
+export type OptionListProps = {
+  readonly useItems: () => ReadonlyArray<React.ReactElement>
   readonly twoColumns: boolean
-  readonly itemTapHandler: (arg0: T) => void
   readonly useLeftColumnLabel?: () => string
   readonly useRightColumnLabel?: () => string
 }
@@ -157,8 +116,25 @@ export type WithStateValue = {
   readonly stateValue: Value<number>
 }
 
-type Item<T> = {
+export type ListItemProps<T> = ListItemProps_Single<T> | ListItemProps_Double<T>
+
+export type ListItemProps_Single<T> = {
   readonly label: string
   readonly isSelected: boolean
+  readonly itemTapHandler: (arg0: T) => void
   readonly callbackParam: T
+  readonly twoColumns: false
+}
+export function isListItemProps_Single<T>(
+  props: ListItemProps<T>
+): props is ListItemProps_Single<T> {
+  return !props.twoColumns
+}
+export type ListItemProps_Double<T> = {
+  readonly label: string
+  readonly isSelected: boolean
+  readonly itemTapHandler: (arg0: T) => void
+  readonly callbackParam: T
+  readonly twoColumns: true
+  readonly side: 'LEFT' | 'RIGHT'
 }

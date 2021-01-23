@@ -1,11 +1,4 @@
-import { DegreeIds } from 'harpparts'
-
 import * as isProdWrapper from '../is-prod/is-prod'
-import {
-  OptionProps_Scales,
-  OptionStackProps,
-  OptionTypes,
-} from '../../../../types'
 
 import { areOptionStacksEqual } from './are-option-stacks-equal'
 
@@ -15,21 +8,12 @@ import { areOptionStacksEqual } from './are-option-stacks-equal'
 
 describe('OptionStack params equality check in dev mode', () => {
   test('that two actually identical option props are identified as equal', () => {
-    const itemTapHandler = jest.fn()
-    const optionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const optionProps = {
       title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
-    const stackProps: OptionStackProps = {
+    const stackProps = {
       optionPropsz: [optionProps],
     }
 
@@ -37,24 +21,15 @@ describe('OptionStack params equality check in dev mode', () => {
   })
 
   test('that two stacks of different lengths are identified as not equal', () => {
-    const itemTapHandler = jest.fn()
-    const optionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const optionProps = {
       title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
-    const stackProps1: OptionStackProps = {
+    const stackProps1 = {
       optionPropsz: [optionProps],
     }
-    const stackProps2: OptionStackProps = {
+    const stackProps2 = {
       optionPropsz: [optionProps, optionProps],
     }
 
@@ -62,24 +37,15 @@ describe('OptionStack params equality check in dev mode', () => {
   })
 
   test('that two distinct stack props with identical option props are identified as equal', () => {
-    const itemTapHandler = jest.fn()
-    const optionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const optionProps = {
       title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
-    const stackProps1: OptionStackProps = {
+    const stackProps1 = {
       optionPropsz: [optionProps],
     }
-    const stackProps2: OptionStackProps = {
+    const stackProps2 = {
       optionPropsz: [optionProps],
     }
 
@@ -87,29 +53,20 @@ describe('OptionStack params equality check in dev mode', () => {
   })
 
   test('that two identical (other than title) option props are identified as not equal', () => {
-    const itemTapHandler = jest.fn()
-    const baseOptionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const baseOptionProps = {
       title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
     const optionProps1 = baseOptionProps
     const optionProps2 = { ...baseOptionProps, title: 'Not scales' }
-    const stackProps1: OptionStackProps = {
+    const stackProps1 = {
       optionPropsz: [optionProps1, optionProps1],
     }
-    const stackProps2: OptionStackProps = {
+    const stackProps2 = {
       optionPropsz: [optionProps1, optionProps2],
     }
-    const stackPropsControl: OptionStackProps = {
+    const stackPropsControl = {
       optionPropsz: [optionProps1, optionProps1],
     }
 
@@ -118,64 +75,23 @@ describe('OptionStack params equality check in dev mode', () => {
   })
 
   test('that two identical (other than useSubTitle) option props are identified as not equal', () => {
-    const itemTapHandler = jest.fn()
     const useSubTitle1 = jest.fn()
     const useSubTitle2 = jest.fn()
-    const baseOptionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const baseOptionProps = {
       title: 'Scales',
       useSubTitle: useSubTitle1,
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
     const optionProps1 = baseOptionProps
     const optionProps2 = { ...baseOptionProps, useSubTitle: useSubTitle2 }
-    const stackProps1: OptionStackProps = {
+    const stackProps1 = {
       optionPropsz: [optionProps1, optionProps1],
     }
-    const stackProps2: OptionStackProps = {
+    const stackProps2 = {
       optionPropsz: [optionProps1, optionProps2],
     }
-    const stackPropsControl: OptionStackProps = {
-      optionPropsz: [optionProps1, optionProps1],
-    }
-
-    expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
-    expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
-  })
-
-  test('that two identical (other than itemTapHandler) option props are identified as not equal', () => {
-    const itemTapHandler1 = jest.fn()
-    const itemTapHandler2 = jest.fn()
-    const baseOptionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
-      title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
-      twoColumns: false,
-      itemTapHandler: itemTapHandler1,
-    }
-    const optionProps1 = baseOptionProps
-    const optionProps2 = { ...baseOptionProps, itemTapHandler: itemTapHandler2 }
-    const stackProps1: OptionStackProps = {
-      optionPropsz: [optionProps1, optionProps1],
-    }
-    const stackProps2: OptionStackProps = {
-      optionPropsz: [optionProps1, optionProps2],
-    }
-    const stackPropsControl: OptionStackProps = {
+    const stackPropsControl = {
       optionPropsz: [optionProps1, optionProps1],
     }
 
@@ -195,21 +111,12 @@ describe('OptionStack params equality check in production mode', () => {
   })
 
   test('that two actually identical option props are identified as equal', () => {
-    const itemTapHandler = jest.fn()
-    const optionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const optionProps = {
       title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
-    const stackProps: OptionStackProps = {
+    const stackProps = {
       optionPropsz: [optionProps],
     }
 
@@ -217,24 +124,15 @@ describe('OptionStack params equality check in production mode', () => {
   })
 
   test('that two stacks of different lengths are identified as not equal', () => {
-    const itemTapHandler = jest.fn()
-    const optionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const optionProps = {
       title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
-    const stackProps1: OptionStackProps = {
+    const stackProps1 = {
       optionPropsz: [optionProps],
     }
-    const stackProps2: OptionStackProps = {
+    const stackProps2 = {
       optionPropsz: [optionProps, optionProps],
     }
 
@@ -242,24 +140,15 @@ describe('OptionStack params equality check in production mode', () => {
   })
 
   test('that two distinct stack props with identical option props are identified as equal', () => {
-    const itemTapHandler = jest.fn()
-    const optionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const optionProps = {
       title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
-    const stackProps1: OptionStackProps = {
+    const stackProps1 = {
       optionPropsz: [optionProps],
     }
-    const stackProps2: OptionStackProps = {
+    const stackProps2 = {
       optionPropsz: [optionProps],
     }
 
@@ -267,29 +156,20 @@ describe('OptionStack params equality check in production mode', () => {
   })
 
   test('that two identical (other than title) option props are identified as not equal', () => {
-    const itemTapHandler = jest.fn()
-    const baseOptionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const baseOptionProps = {
       title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
     const optionProps1 = baseOptionProps
     const optionProps2 = { ...baseOptionProps, title: 'Not scales' }
-    const stackProps1: OptionStackProps = {
+    const stackProps1 = {
       optionPropsz: [optionProps1, optionProps1],
     }
-    const stackProps2: OptionStackProps = {
+    const stackProps2 = {
       optionPropsz: [optionProps1, optionProps2],
     }
-    const stackPropsControl: OptionStackProps = {
+    const stackPropsControl = {
       optionPropsz: [optionProps1, optionProps1],
     }
 
@@ -298,64 +178,23 @@ describe('OptionStack params equality check in production mode', () => {
   })
 
   test('that two identical (other than useSubTitle) option props are identified as not equal', () => {
-    const itemTapHandler = jest.fn()
     const useSubTitle1 = jest.fn()
     const useSubTitle2 = jest.fn()
-    const baseOptionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
+    const baseOptionProps = {
       title: 'Scales',
       useSubTitle: useSubTitle1,
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
+      useItems: jest.fn(),
       twoColumns: false,
-      itemTapHandler,
     }
     const optionProps1 = baseOptionProps
     const optionProps2 = { ...baseOptionProps, useSubTitle: useSubTitle2 }
-    const stackProps1: OptionStackProps = {
+    const stackProps1 = {
       optionPropsz: [optionProps1, optionProps1],
     }
-    const stackProps2: OptionStackProps = {
+    const stackProps2 = {
       optionPropsz: [optionProps1, optionProps2],
     }
-    const stackPropsControl: OptionStackProps = {
-      optionPropsz: [optionProps1, optionProps1],
-    }
-
-    expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toThrow()
-    expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
-  })
-
-  test('that two identical (other than itemTapHandler) option props are identified as not equal', () => {
-    const itemTapHandler1 = jest.fn()
-    const itemTapHandler2 = jest.fn()
-    const baseOptionProps: OptionProps_Scales = {
-      optionType: OptionTypes.Scales,
-      title: 'Scales',
-      useItems: () => [
-        {
-          label: 'item1',
-          isSelected: false,
-          callbackParam: [DegreeIds.Root],
-        },
-      ],
-      twoColumns: false,
-      itemTapHandler: itemTapHandler1,
-    }
-    const optionProps1 = baseOptionProps
-    const optionProps2 = { ...baseOptionProps, itemTapHandler: itemTapHandler2 }
-    const stackProps1: OptionStackProps = {
-      optionPropsz: [optionProps1, optionProps1],
-    }
-    const stackProps2: OptionStackProps = {
-      optionPropsz: [optionProps1, optionProps2],
-    }
-    const stackPropsControl: OptionStackProps = {
+    const stackPropsControl = {
       optionPropsz: [optionProps1, optionProps1],
     }
 

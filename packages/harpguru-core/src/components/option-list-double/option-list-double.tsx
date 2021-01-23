@@ -1,18 +1,17 @@
 import Animated from 'react-native-reanimated'
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
+import { FlatList } from 'react-native-gesture-handler'
 import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
-import type { ListProps, OptionTypes, WithTransition } from '../../types'
+import type { OptionListProps, WithTransition } from '../../types'
 
-export const OptionListDouble = <T extends unknown, K extends OptionTypes>({
+export const OptionListDouble = ({
   useItems,
-  itemTapHandler,
   useLeftColumnLabel = () => '',
   useRightColumnLabel = () => '',
   transitionValue,
-}: ListProps<T, K> & WithTransition): React.ReactElement => {
+}: OptionListProps & WithTransition): React.ReactElement => {
   const styles = getOptionStyles()
   const leftColumnLabel = useLeftColumnLabel()
   const rightColumnLabel = useRightColumnLabel()
@@ -37,37 +36,8 @@ export const OptionListDouble = <T extends unknown, K extends OptionTypes>({
           contentContainerStyle={styles.listContent}
           data={useItems()}
           numColumns={2}
-          renderItem={({ item, index }) => {
-            const sideStyle =
-              index % 2 === 0
-                ? styles.optionSelectedLeft
-                : styles.optionSelectedRight
-            const textElement = item.isSelected ? (
-              <Text
-                style={[
-                  styles.optionText,
-                  styles.optionTextDouble,
-                  styles.optionSelected,
-                  sideStyle,
-                ]}
-              >
-                {item.label}
-              </Text>
-            ) : (
-              <Text style={[styles.optionText, styles.optionTextDouble]}>
-                {item.label}
-              </Text>
-            )
-            return (
-              <TouchableOpacity
-                disabled={item.isSelected ? true : false}
-                onPress={() => itemTapHandler(item.callbackParam)}
-              >
-                {textElement}
-              </TouchableOpacity>
-            )
-          }}
-          keyExtractor={(item, index) => `${item.label}-${index}`}
+          renderItem={({ item }) => <>{item}</>}
+          keyExtractor={(_item, index) => `${index}`}
         />
       </SafeAreaView>
     </Animated.View>

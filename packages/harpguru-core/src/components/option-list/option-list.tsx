@@ -1,16 +1,15 @@
 import Animated from 'react-native-reanimated'
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
-import { Text, SafeAreaView } from 'react-native'
+import { FlatList } from 'react-native-gesture-handler'
+import { SafeAreaView } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
-import type { ListProps, OptionTypes, WithTransition } from '../../types'
+import type { OptionListProps, WithTransition } from '../../types'
 
-export const OptionList = <T extends unknown, K extends OptionTypes>({
+export const OptionList = ({
   useItems,
-  itemTapHandler,
   transitionValue,
-}: ListProps<T, K> & WithTransition): React.ReactElement => {
+}: OptionListProps & WithTransition): React.ReactElement => {
   const styles = getOptionStyles()
 
   return (
@@ -26,24 +25,8 @@ export const OptionList = <T extends unknown, K extends OptionTypes>({
         <FlatList
           contentContainerStyle={styles.listContent}
           data={useItems()}
-          renderItem={({ item }) => {
-            const textElement = item.isSelected ? (
-              <Text style={[styles.optionText, { fontWeight: 'bold' }]}>
-                {item.label}
-              </Text>
-            ) : (
-              <Text style={styles.optionText}>{item.label}</Text>
-            )
-            return (
-              <TouchableOpacity
-                disabled={item.isSelected ? true : false}
-                onPress={() => itemTapHandler(item.callbackParam)}
-              >
-                {textElement}
-              </TouchableOpacity>
-            )
-          }}
-          keyExtractor={(item) => `${item.label}`}
+          renderItem={({ item }) => <>{item}</>}
+          keyExtractor={(_item, index) => `${index}`}
         />
       </SafeAreaView>
     </Animated.View>

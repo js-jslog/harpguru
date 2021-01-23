@@ -3,13 +3,13 @@ import { Text } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
-import type { TitleProps, WithTransition } from '../../types'
+import type { OptionTitleProps, WithTransition } from '../../types'
 
 export const OptionTitle = ({
   title,
   useSubTitle = () => '',
   transitionValue,
-}: TitleProps & WithTransition): React.ReactElement => {
+}: OptionTitleProps & WithTransition): React.ReactElement => {
   const styles = getOptionStyles()
   const subTitle = useSubTitle()
 
