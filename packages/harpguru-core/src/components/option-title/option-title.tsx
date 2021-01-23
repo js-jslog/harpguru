@@ -1,5 +1,5 @@
 import Animated from 'react-native-reanimated'
-import { Text } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
@@ -22,6 +22,7 @@ export const OptionTitle = ({
         },
       ]}
     >
+      <View style={styles.columnLabelHighlight} />
       <Text style={styles.titleText}>{title}</Text>
       <Text style={styles.subTitleText}>{subTitle}</Text>
     </Animated.View>
