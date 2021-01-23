@@ -24,11 +24,11 @@ export const OptionStackPrevious = (
   return (
     <Animated.View
       pointerEvents={prevPointerEvents}
-      style={[{ opacity: prevPointerOpacity }]}
+      style={[{ opacity: prevPointerOpacity }, styles.stackPrevious]}
     >
       <TouchableOpacity onPress={prevInStack}>
         <AntDesign
-          name="left"
+          name="down"
           size={styles.titleFontSize}
           color={colors.inertOutline}
         />

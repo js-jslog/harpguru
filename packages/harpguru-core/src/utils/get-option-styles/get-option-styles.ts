@@ -9,6 +9,8 @@ type OptionStyles = {
   titleSection: ViewStyle
   titleWrapper: ViewStyle
   titleText: TextStyle
+  stackNext: ViewStyle
+  stackPrevious: ViewStyle
   listSection: ViewStyle
   listStackable: ViewStyle
   listContent: ViewStyle
@@ -29,28 +31,45 @@ export const getOptionStyles = (): OptionStyles => {
   const sizes = getSizes()
   const { ['9']: titleFontSize } = sizes
   const { ['11']: gutterSize } = sizes
-  const { shortEdge, longEdge } = getWindowDimensions()
+  const { shortEdge } = getWindowDimensions()
   const styles = StyleSheet.create({
     titleSection: {
-      transform: [{ rotate: '-90deg' }],
-      paddingTop: gutterSize,
-      width: shortEdge,
-      justifyContent: 'space-between',
-      flexDirection: 'row',
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      right: 0,
+      left: sizes['9'],
+      alignItems: 'flex-start',
+      justifyContent: 'center',
     },
     titleWrapper: {
       position: 'absolute',
-      alignSelf: 'center',
+      justifyContent: 'center',
     },
     titleText: {
       fontSize: titleFontSize,
     },
+    stackNext: {
+      position: 'absolute',
+      top: sizes['9'],
+      left: sizes['9'],
+    },
+    stackPrevious: {
+      position: 'absolute',
+      bottom: sizes['9'],
+      left: sizes['9'],
+    },
     listSection: {
       position: 'absolute',
       top: 0,
+      bottom: 0,
       right: 0,
-      width: longEdge - gutterSize - titleFontSize * 2,
-      height: shortEdge,
+      // TODO: Explain this size through semantic
+      // variable names. It is the left gutter, plus
+      // the amount that the pointers are pushed in
+      // (which happens to be the same), plus the width
+      // of the pointers
+      left: sizes['9'] * 2 + titleFontSize,
     },
     listStackable: {
       position: 'absolute',

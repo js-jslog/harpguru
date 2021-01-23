@@ -151,6 +151,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       <OptionLabel
         title={'Harp key'}
         subtitle={harpKeyId}
+        alignItems={'center'}
         labelIsTitle={true}
       />
     )
@@ -163,6 +164,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       <OptionLabel
         title={'Position'}
         subtitle={pozitionId}
+        alignItems={'center'}
         labelIsTitle={true}
       />
     )
@@ -175,6 +177,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       <OptionLabel
         title={'Song key'}
         subtitle={rootPitchId}
+        alignItems={'center'}
         labelIsTitle={true}
       />
     )
@@ -187,6 +190,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       <OptionLabel
         title={'Harp key'}
         subtitle={harpKeyId}
+        alignItems={'center'}
         labelIsTitle={false}
       />
     )
@@ -199,6 +203,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       <OptionLabel
         title={'Position'}
         subtitle={pozitionId}
+        alignItems={'center'}
         labelIsTitle={false}
       />
     )
@@ -211,6 +216,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       <OptionLabel
         title={'Song key'}
         subtitle={rootPitchId}
+        alignItems={'center'}
         labelIsTitle={false}
       />
     )
