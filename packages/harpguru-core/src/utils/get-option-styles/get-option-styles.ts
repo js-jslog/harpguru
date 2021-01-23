@@ -34,17 +34,13 @@ export const getOptionStyles = (): OptionStyles => {
   const { shortEdge } = getWindowDimensions()
   const styles = StyleSheet.create({
     titleSection: {
-      position: 'absolute',
-      top: 0,
-      bottom: 0,
-      right: 0,
-      left: sizes['9'],
+      flex: 1,
       alignItems: 'flex-start',
       justifyContent: 'center',
     },
     titleWrapper: {
       position: 'absolute',
-      justifyContent: 'center',
+      left: sizes['9'],
     },
     titleText: {
       fontSize: titleFontSize,
@@ -67,9 +63,7 @@ export const getOptionStyles = (): OptionStyles => {
       left: 0,
     },
     listStackable: {
-      position: 'absolute',
-      height: '100%',
-      width: '100%',
+      ...StyleSheet.absoluteFillObject,
     },
     listContent: {
       alignItems: 'flex-end',
