@@ -1,4 +1,5 @@
 import { useGlobal, useDispatch } from 'reactn'
+import { Text, View } from 'react-native'
 import React, { useCallback } from 'react'
 import { PitchIds, PozitionIds } from 'harpparts'
 import type { CovariancePrimer } from 'harpcovariance'
@@ -10,6 +11,7 @@ import { OptionItem } from '../option-item'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
+import { getOptionStyles } from '../../utils'
 import type { MenuProps, OptionProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
@@ -164,19 +166,40 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
   const useHarpKeyLabel = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId } = activeHarpStrata
-    return `Harp key - ${harpKeyId}`
+    const styles = getOptionStyles()
+    return (
+      <View style={{ alignItems: 'center' }}>
+        <View style={styles.columnLabelHighlight} />
+        <Text style={styles.columnLabelTitle}>Harp key</Text>
+        <Text style={styles.columnLabelSub}>{harpKeyId}</Text>
+      </View>
+    )
   }, [useGlobal])
 
   const usePozitionLabel = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { pozitionId } = activeHarpStrata
-    return `Position - ${pozitionId}`
+    const styles = getOptionStyles()
+    return (
+      <View style={{ alignItems: 'center' }}>
+        <View style={styles.columnLabelHighlight} />
+        <Text style={styles.columnLabelTitle}>Position</Text>
+        <Text style={styles.columnLabelSub}>{pozitionId}</Text>
+      </View>
+    )
   }, [useGlobal])
 
   const useRootPitchLabel = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { rootPitchId } = activeHarpStrata
-    return `Song key - ${rootPitchId}`
+    const styles = getOptionStyles()
+    return (
+      <View style={{ alignItems: 'center' }}>
+        <View style={styles.columnLabelHighlight} />
+        <Text style={styles.columnLabelTitle}>Song key</Text>
+        <Text style={styles.columnLabelSub}>{rootPitchId}</Text>
+      </View>
+    )
   }, [useGlobal])
 
   const sizes = getSizes()

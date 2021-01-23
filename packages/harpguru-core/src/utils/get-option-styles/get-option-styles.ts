@@ -13,10 +13,11 @@ type OptionStyles = {
   listSection: ViewStyle
   listStackable: ViewStyle
   listContent: ViewStyle
-  leftColumnLabel: TextStyle
   leftColumnLabelStackable: ViewStyle
-  rightColumnLabel: TextStyle
   rightColumnLabelStackable: ViewStyle
+  columnLabelTitle: TextStyle
+  columnLabelSub: TextStyle
+  columnLabelHighlight: ViewStyle
   optionHighlight: ViewStyle
   optionText: TextStyle
   optionTextDouble: TextStyle
@@ -70,35 +71,36 @@ export const getOptionStyles = (): OptionStyles => {
       paddingRight: gutterSize,
     },
     leftColumnLabelStackable: {
-      transform: [{ rotate: '-90deg' }],
       position: 'absolute',
-      right: 0,
-      width: shortEdge,
+      right: gutterSize + sizes['10'] * 2 + sizes['7'],
       height: shortEdge,
-    },
-    leftColumnLabel: {
-      fontSize: sizes['8'],
-      color: colors.inertOutline,
-      alignSelf: 'center',
-      position: 'absolute',
-      bottom: 0,
-      paddingBottom:
-        gutterSize + sizes['10'] + sizes['10'] + sizes['8'] + sizes['8'],
+      alignItems: 'flex-end',
+      justifyContent: 'center',
     },
     rightColumnLabelStackable: {
-      transform: [{ rotate: '-90deg' }],
       position: 'absolute',
       right: 0,
-      width: shortEdge,
+      width: gutterSize - sizes['7'],
       height: shortEdge,
+      alignItems: 'flex-start',
+      justifyContent: 'center',
     },
-    rightColumnLabel: {
+    columnLabelTitle: {
+      fontSize: sizes['8'],
+      fontWeight: 'bold',
+      color: colors.inertOutline,
+    },
+    columnLabelSub: {
       fontSize: sizes['8'],
       color: colors.inertOutline,
-      alignSelf: 'center',
+    },
+    columnLabelHighlight: {
       position: 'absolute',
+      left: 0,
+      right: 0,
       bottom: 0,
-      paddingBottom: gutterSize - sizes['8'],
+      height: sizes['7'],
+      backgroundColor: harpguruColors.pink,
     },
     optionHighlight: {
       position: 'absolute',

@@ -104,8 +104,8 @@ export type OptionTitleProps = {
 export type OptionListProps = {
   readonly useItems: () => ReadonlyArray<React.ReactElement>
   readonly twoColumns: boolean
-  readonly useLeftColumnLabel?: () => string
-  readonly useRightColumnLabel?: () => string
+  readonly useLeftColumnLabel?: () => React.ReactElement
+  readonly useRightColumnLabel?: () => React.ReactElement
 }
 
 export type WithTransition = {

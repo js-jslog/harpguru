@@ -1,6 +1,6 @@
 import Animated from 'react-native-reanimated'
 import { FlatList } from 'react-native-gesture-handler'
-import { View, Text, SafeAreaView } from 'react-native'
+import { View, SafeAreaView } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
@@ -8,8 +8,8 @@ import type { OptionListProps, WithTransition } from '../../types'
 
 export const OptionListDouble = ({
   useItems,
-  useLeftColumnLabel = () => '',
-  useRightColumnLabel = () => '',
+  useLeftColumnLabel = () => <></>,
+  useRightColumnLabel = () => <></>,
   transitionValue,
 }: OptionListProps & WithTransition): React.ReactElement => {
   const styles = getOptionStyles()
@@ -25,12 +25,8 @@ export const OptionListDouble = ({
         },
       ]}
     >
-      <View style={styles.leftColumnLabelStackable}>
-        <Text style={styles.leftColumnLabel}>{leftColumnLabel}</Text>
-      </View>
-      <View style={styles.rightColumnLabelStackable}>
-        <Text style={styles.rightColumnLabel}>{rightColumnLabel}</Text>
-      </View>
+      <View style={styles.leftColumnLabelStackable}>{leftColumnLabel}</View>
+      <View style={styles.rightColumnLabelStackable}>{rightColumnLabel}</View>
       <SafeAreaView style={styles.listStackable}>
         <FlatList
           contentContainerStyle={styles.listContent}
