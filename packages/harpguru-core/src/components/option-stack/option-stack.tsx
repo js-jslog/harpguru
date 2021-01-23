@@ -40,19 +40,19 @@ export const OptionStack = (props: OptionStackProps): React.ReactElement => {
   return (
     <>
       <View style={styles.titleSection}>
-        <OptionStackNext
-          {...props}
-          stateValue={stackState}
-          transitionValue={stackStateTransition}
-        />
         <>{titleStack}</>
-        <OptionStackPrevious
-          {...props}
-          stateValue={stackState}
-          transitionValue={stackStateTransition}
-        />
       </View>
       <View style={styles.listSection}>{listStack}</View>
+      <OptionStackNext
+        {...props}
+        stateValue={stackState}
+        transitionValue={stackStateTransition}
+      />
+      <OptionStackPrevious
+        {...props}
+        stateValue={stackState}
+        transitionValue={stackStateTransition}
+      />
     </>
   )
 }

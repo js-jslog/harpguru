@@ -64,12 +64,7 @@ export const getOptionStyles = (): OptionStyles => {
       top: 0,
       bottom: 0,
       right: 0,
-      // TODO: Explain this size through semantic
-      // variable names. It is the left gutter, plus
-      // the amount that the pointers are pushed in
-      // (which happens to be the same), plus the width
-      // of the pointers
-      left: sizes['9'] * 2 + titleFontSize,
+      left: 0,
     },
     listStackable: {
       position: 'absolute',
