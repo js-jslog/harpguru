@@ -1,5 +1,4 @@
 import { useGlobal, useDispatch } from 'reactn'
-import { Text, View } from 'react-native'
 import React, { useCallback } from 'react'
 import { PitchIds, PozitionIds } from 'harpparts'
 import type { CovariancePrimer } from 'harpcovariance'
@@ -7,11 +6,11 @@ import { getCovarianceSeries, CovariantMembers } from 'harpcovariance'
 import { Feather } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
+import { OptionLabel } from '../option-label'
 import { OptionItem } from '../option-item'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import { getOptionStyles } from '../../utils'
 import type { MenuProps, OptionProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
@@ -145,60 +144,75 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     return rootPitchItems
   }, [useGlobal])
 
-  const useHarpKeySubtitle = useCallback(() => {
+  const useHarpKeyTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId } = activeHarpStrata
-    return harpKeyId
+    return (
+      <OptionLabel
+        title={'Harp key'}
+        subtitle={harpKeyId}
+        labelIsTitle={true}
+      />
+    )
   }, [useGlobal])
 
-  const usePozitionSubtitle = useCallback(() => {
+  const usePozitionTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { pozitionId } = activeHarpStrata
-    return pozitionId
+    return (
+      <OptionLabel
+        title={'Position'}
+        subtitle={pozitionId}
+        labelIsTitle={true}
+      />
+    )
   }, [useGlobal])
 
-  const useRootPitchSubtitle = useCallback(() => {
+  const useRootPitchTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { rootPitchId } = activeHarpStrata
-    return rootPitchId
+    return (
+      <OptionLabel
+        title={'Song key'}
+        subtitle={rootPitchId}
+        labelIsTitle={true}
+      />
+    )
   }, [useGlobal])
 
   const useHarpKeyLabel = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId } = activeHarpStrata
-    const styles = getOptionStyles()
     return (
-      <View style={{ alignItems: 'center' }}>
-        <View style={styles.columnLabelHighlight} />
-        <Text style={styles.columnLabelTitle}>Harp key</Text>
-        <Text style={styles.columnLabelSub}>{harpKeyId}</Text>
-      </View>
+      <OptionLabel
+        title={'Harp key'}
+        subtitle={harpKeyId}
+        labelIsTitle={false}
+      />
     )
   }, [useGlobal])
 
   const usePozitionLabel = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { pozitionId } = activeHarpStrata
-    const styles = getOptionStyles()
     return (
-      <View style={{ alignItems: 'center' }}>
-        <View style={styles.columnLabelHighlight} />
-        <Text style={styles.columnLabelTitle}>Position</Text>
-        <Text style={styles.columnLabelSub}>{pozitionId}</Text>
-      </View>
+      <OptionLabel
+        title={'Position'}
+        subtitle={pozitionId}
+        labelIsTitle={false}
+      />
     )
   }, [useGlobal])
 
   const useRootPitchLabel = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { rootPitchId } = activeHarpStrata
-    const styles = getOptionStyles()
     return (
-      <View style={{ alignItems: 'center' }}>
-        <View style={styles.columnLabelHighlight} />
-        <Text style={styles.columnLabelTitle}>Song key</Text>
-        <Text style={styles.columnLabelSub}>{rootPitchId}</Text>
-      </View>
+      <OptionLabel
+        title={'Song key'}
+        subtitle={rootPitchId}
+        labelIsTitle={false}
+      />
     )
   }, [useGlobal])
 
@@ -206,24 +220,21 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const optionPropsz: ReadonlyArray<OptionProps> = [
     {
-      title: 'Harp key',
-      useSubTitle: useHarpKeySubtitle,
+      useTitle: useHarpKeyTitle,
       useItems: useHarpKeyItems,
       twoColumns: true,
       useLeftColumnLabel: usePozitionLabel,
       useRightColumnLabel: useRootPitchLabel,
     },
     {
-      title: 'Position',
-      useSubTitle: usePozitionSubtitle,
+      useTitle: usePozitionTitle,
       useItems: usePozitionItems,
       twoColumns: true,
       useLeftColumnLabel: useRootPitchLabel,
       useRightColumnLabel: useHarpKeyLabel,
     },
     {
-      title: 'Song key',
-      useSubTitle: useRootPitchSubtitle,
+      useTitle: useRootPitchTitle,
       useItems: useRootPitchItems,
       twoColumns: true,
       useLeftColumnLabel: useHarpKeyLabel,

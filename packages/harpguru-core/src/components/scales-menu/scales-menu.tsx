@@ -5,6 +5,7 @@ import type { DegreeIds } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
+import { OptionLabel } from '../option-label'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
@@ -17,11 +18,29 @@ import { useDispatchAndFlushScaleToggles } from './hooks'
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
 
-  const useSubTitle = useCallback(() => {
+  const useScalesTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { activeDegreeIds } = activeHarpStrata
     const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
-    return scaleLabel || ''
+    return (
+      <OptionLabel
+        title={'Scales'}
+        subtitle={scaleLabel || ''}
+        labelIsTitle={true}
+      />
+    )
+  }, [useGlobal])
+  const useChordsTitle = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { activeDegreeIds } = activeHarpStrata
+    const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
+    return (
+      <OptionLabel
+        title={'Chords'}
+        subtitle={scaleLabel || ''}
+        labelIsTitle={true}
+      />
+    )
   }, [useGlobal])
   const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
     isMenuStashed: menuProps.isMenuStashed,
@@ -31,7 +50,11 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     [dispatchAndFlushScaleToggles]
   )
 
-  const optionStackProps = getOptionStackProps(useSubTitle, itemTapHandler)
+  const optionStackProps = getOptionStackProps(
+    useScalesTitle,
+    useChordsTitle,
+    itemTapHandler
+  )
 
   return (
     <Menu {...menuProps}>

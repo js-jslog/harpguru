@@ -15,7 +15,8 @@ import type { OptionProps, OptionStackProps } from '../../../../types'
 // needs to have a .tsx extension. Is there any way to
 // resolve that?
 export const getOptionStackProps = (
-  useSubTitle: () => string,
+  useScalesTitle: () => React.ReactElement,
+  useChordsTitle: () => React.ReactElement,
   itemTapHandler: (arg0: ReadonlyArray<DegreeIds>) => void
 ): OptionStackProps => {
   const scales = getScaleIds()
@@ -78,20 +79,15 @@ export const getOptionStackProps = (
       )),
     ]
   }, [useGlobal, chords])
-  const titles = [scales, chords].map((list) =>
-    list[0].category === ScaleCategory.Scale ? 'Scales' : 'Chords'
-  )
 
   const optionPropsz: ReadonlyArray<OptionProps> = [
     {
-      title: titles[0],
-      useSubTitle,
+      useTitle: useScalesTitle,
       useItems: useScaleItems,
       twoColumns: false,
     },
     {
-      title: titles[1],
-      useSubTitle,
+      useTitle: useChordsTitle,
       useItems: useChordItems,
       twoColumns: false,
     },

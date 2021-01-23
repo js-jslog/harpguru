@@ -9,7 +9,7 @@ import { areOptionStacksEqual } from './are-option-stacks-equal'
 describe('OptionStack params equality check in dev mode', () => {
   test('that two actually identical option props are identified as equal', () => {
     const optionProps = {
-      title: 'Scales',
+      useTitle: jest.fn(),
       useItems: jest.fn(),
       twoColumns: false,
     }
@@ -22,7 +22,7 @@ describe('OptionStack params equality check in dev mode', () => {
 
   test('that two stacks of different lengths are identified as not equal', () => {
     const optionProps = {
-      title: 'Scales',
+      useTitle: jest.fn(),
       useItems: jest.fn(),
       twoColumns: false,
     }
@@ -38,7 +38,7 @@ describe('OptionStack params equality check in dev mode', () => {
 
   test('that two distinct stack props with identical option props are identified as equal', () => {
     const optionProps = {
-      title: 'Scales',
+      useTitle: jest.fn(),
       useItems: jest.fn(),
       twoColumns: false,
     }
@@ -54,37 +54,12 @@ describe('OptionStack params equality check in dev mode', () => {
 
   test('that two identical (other than title) option props are identified as not equal', () => {
     const baseOptionProps = {
-      title: 'Scales',
+      useTitle: jest.fn(),
       useItems: jest.fn(),
       twoColumns: false,
     }
     const optionProps1 = baseOptionProps
-    const optionProps2 = { ...baseOptionProps, title: 'Not scales' }
-    const stackProps1 = {
-      optionPropsz: [optionProps1, optionProps1],
-    }
-    const stackProps2 = {
-      optionPropsz: [optionProps1, optionProps2],
-    }
-    const stackPropsControl = {
-      optionPropsz: [optionProps1, optionProps1],
-    }
-
-    expect(areOptionStacksEqual(stackProps1, stackProps2)).toBeFalsy()
-    expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
-  })
-
-  test('that two identical (other than useSubTitle) option props are identified as not equal', () => {
-    const useSubTitle1 = jest.fn()
-    const useSubTitle2 = jest.fn()
-    const baseOptionProps = {
-      title: 'Scales',
-      useSubTitle: useSubTitle1,
-      useItems: jest.fn(),
-      twoColumns: false,
-    }
-    const optionProps1 = baseOptionProps
-    const optionProps2 = { ...baseOptionProps, useSubTitle: useSubTitle2 }
+    const optionProps2 = { ...baseOptionProps, useTitle: jest.fn() }
     const stackProps1 = {
       optionPropsz: [optionProps1, optionProps1],
     }
@@ -112,7 +87,7 @@ describe('OptionStack params equality check in production mode', () => {
 
   test('that two actually identical option props are identified as equal', () => {
     const optionProps = {
-      title: 'Scales',
+      useTitle: jest.fn(),
       useItems: jest.fn(),
       twoColumns: false,
     }
@@ -125,7 +100,7 @@ describe('OptionStack params equality check in production mode', () => {
 
   test('that two stacks of different lengths are identified as not equal', () => {
     const optionProps = {
-      title: 'Scales',
+      useTitle: jest.fn(),
       useItems: jest.fn(),
       twoColumns: false,
     }
@@ -141,7 +116,7 @@ describe('OptionStack params equality check in production mode', () => {
 
   test('that two distinct stack props with identical option props are identified as equal', () => {
     const optionProps = {
-      title: 'Scales',
+      useTitle: jest.fn(),
       useItems: jest.fn(),
       twoColumns: false,
     }
@@ -157,37 +132,12 @@ describe('OptionStack params equality check in production mode', () => {
 
   test('that two identical (other than title) option props are identified as not equal', () => {
     const baseOptionProps = {
-      title: 'Scales',
+      useTitle: jest.fn(),
       useItems: jest.fn(),
       twoColumns: false,
     }
     const optionProps1 = baseOptionProps
-    const optionProps2 = { ...baseOptionProps, title: 'Not scales' }
-    const stackProps1 = {
-      optionPropsz: [optionProps1, optionProps1],
-    }
-    const stackProps2 = {
-      optionPropsz: [optionProps1, optionProps2],
-    }
-    const stackPropsControl = {
-      optionPropsz: [optionProps1, optionProps1],
-    }
-
-    expect(() => areOptionStacksEqual(stackProps1, stackProps2)).toThrow()
-    expect(areOptionStacksEqual(stackProps1, stackPropsControl)).toBeTruthy()
-  })
-
-  test('that two identical (other than useSubTitle) option props are identified as not equal', () => {
-    const useSubTitle1 = jest.fn()
-    const useSubTitle2 = jest.fn()
-    const baseOptionProps = {
-      title: 'Scales',
-      useSubTitle: useSubTitle1,
-      useItems: jest.fn(),
-      twoColumns: false,
-    }
-    const optionProps1 = baseOptionProps
-    const optionProps2 = { ...baseOptionProps, useSubTitle: useSubTitle2 }
+    const optionProps2 = { ...baseOptionProps, useTitle: jest.fn() }
     const stackProps1 = {
       optionPropsz: [optionProps1, optionProps1],
     }

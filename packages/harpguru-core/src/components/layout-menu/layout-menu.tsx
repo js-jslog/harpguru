@@ -4,6 +4,7 @@ import { getApparatusIds } from 'harpparts'
 import { Entypo } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
+import { OptionLabel } from '../option-label'
 import { OptionItem } from '../option-item'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
@@ -16,12 +17,18 @@ import { getNewHarpStrataByApparatusForDispatcher } from './utils'
 export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
 
-  const useSubTitle = useCallback(() => {
+  const useTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const {
       apparatus: { id: apparatusId },
     } = activeHarpStrata
-    return apparatusId
+    return (
+      <OptionLabel
+        title={'Tuning'}
+        subtitle={apparatusId}
+        labelIsTitle={true}
+      />
+    )
   }, [useGlobal])
   const itemTapHandler = useCallback(
     useDispatch(getNewHarpStrataByApparatusForDispatcher),
@@ -47,8 +54,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const optionStackPropsz: ReadonlyArray<OptionProps> = [
     {
-      title: 'Tuning',
-      useSubTitle,
+      useTitle,
       useItems: useItems,
       twoColumns: false,
     },

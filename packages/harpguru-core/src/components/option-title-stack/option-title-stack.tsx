@@ -11,8 +11,7 @@ export const OptionTitleStack = ({
   const titleStack = optionPropsz.map((optionProps, index, array) => {
     return (
       <OptionTitle
-        title={optionProps.title}
-        useSubTitle={optionProps.useSubTitle}
+        useTitle={optionProps.useTitle}
         transitionValue={useInterpolateOptionStackTransitionValue(
           array.length,
           index,

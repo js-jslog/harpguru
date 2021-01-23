@@ -97,8 +97,7 @@ export type OptionStackProps = {
 export type OptionProps = OptionTitleProps & OptionListProps
 
 export type OptionTitleProps = {
-  readonly title: string
-  readonly useSubTitle?: () => string
+  readonly useTitle: () => React.ReactElement
 }
 
 export type OptionListProps = {

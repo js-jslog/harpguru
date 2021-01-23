@@ -37,11 +37,7 @@ from ${prevPropsz.length} to ${nextPropsz.length}
   // TODO: change all of these checks to `some` to prevent unnecessary
   // completion of the iteration.
   const areTitlesEqual = prevPropsz.every(
-    (prevProps, index) => prevProps.title === nextPropsz[index].title
-  )
-  const areUseSubTitlesEqual = prevPropsz.every(
-    (prevProps, index) =>
-      prevProps.useSubTitle === nextPropsz[index].useSubTitle
+    (prevProps, index) => prevProps.useTitle === nextPropsz[index].useTitle
   )
   // TODO: Add check that the useItems functions are identical
   // and update the layout and scales menu's to wrap their
@@ -52,7 +48,7 @@ from ${prevPropsz.length} to ${nextPropsz.length}
   // TODO: Add check for the twoColumns, useLeftColumnLabel and useRightColumnLabel
   // too.
 
-  if ((areTitlesEqual && areUseSubTitlesEqual) === true) return true
+  if (areTitlesEqual === true) return true
 
   if (!isProd()) return false
 
@@ -62,6 +58,5 @@ parameters which never go stale. Please check the params provided
 to this OptionStack.
 
 areTitlesEqual: ${areTitlesEqual}
-areUseSubTitlesEqual: ${areUseSubTitlesEqual}
   `)
 }
