@@ -28,7 +28,14 @@ export const ExperienceModeButton = ({
   // eslint-disable-next-line no-empty-pattern
   const [] = useGlobal('activeHarpStrata')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const nudgeExperienceMode = useDispatch(getNewExperienceModeForDispatcher)
+  // TODO: Figure out why this wasn't typesafe and try to resolve in case
+  // I make the same mistake in other dispatchers. The error when the
+  // second param was removed was the following:
+  // `Error: ReactN global state must be a function, null, objecct, or Promise`
+  const nudgeExperienceMode = useDispatch(
+    getNewExperienceModeForDispatcher,
+    'activeExperienceMode'
+  )
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: isLabelHidden,
