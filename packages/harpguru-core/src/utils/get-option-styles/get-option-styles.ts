@@ -1,7 +1,7 @@
 import type { TextStyle, ViewStyle } from 'react-native'
 import { StyleSheet } from 'react-native'
 
-import { colors, getSizes } from '../../styles'
+import { colors, getSizes, harpguruColors } from '../../styles'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 type OptionStyles = {
@@ -17,6 +17,7 @@ type OptionStyles = {
   leftColumnLabelStackable: ViewStyle
   rightColumnLabel: TextStyle
   rightColumnLabelStackable: ViewStyle
+  optionHighlight: ViewStyle
   optionText: TextStyle
   optionTextDouble: TextStyle
   optionSelected: TextStyle
@@ -43,6 +44,7 @@ export const getOptionStyles = (): OptionStyles => {
     },
     titleText: {
       fontSize: titleFontSize,
+      fontWeight: 'bold',
       color: colors.inertOutline,
       alignSelf: 'center',
     },
@@ -98,6 +100,14 @@ export const getOptionStyles = (): OptionStyles => {
       bottom: 0,
       paddingBottom: gutterSize - sizes['8'],
     },
+    optionHighlight: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: sizes['6'],
+      height: sizes['7'],
+      backgroundColor: harpguruColors.pink,
+    },
     optionText: {
       fontSize: sizes['8'],
       lineHeight: sizes['10'],
@@ -108,9 +118,9 @@ export const getOptionStyles = (): OptionStyles => {
       width: sizes['10'],
     },
     optionSelected: {
-      borderRadius: sizes['9'],
-      backgroundColor: colors.inertOutline,
-      color: colors.pageColor,
+      fontWeight: 'bold',
+      fontSize: sizes['9'],
+      color: colors.inertOutline,
     },
     optionSelectedLeft: {
       borderTopRightRadius: 0,

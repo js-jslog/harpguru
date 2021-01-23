@@ -1,5 +1,5 @@
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Text } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
@@ -14,10 +14,13 @@ import { isListItemProps_Single } from '../../types'
 export function OptionItem<T>(props: ListItemProps<T>): React.ReactElement {
   const styles = getOptionStyles()
   if (isListItemProps_Single(props)) {
-    const textElement = props.isSelected ? (
-      <Text style={[styles.optionText, { fontWeight: 'bold' }]}>
-        {props.label}
-      </Text>
+    const itemElement = props.isSelected ? (
+      <View>
+        <View style={styles.optionHighlight}></View>
+        <Text style={[styles.optionText, styles.optionSelected]}>
+          {props.label}
+        </Text>
+      </View>
     ) : (
       <Text style={styles.optionText}>{props.label}</Text>
     )
@@ -26,24 +29,27 @@ export function OptionItem<T>(props: ListItemProps<T>): React.ReactElement {
         disabled={props.isSelected ? true : false}
         onPress={() => props.itemTapHandler(props.callbackParam)}
       >
-        {textElement}
+        {itemElement}
       </TouchableOpacity>
     )
   }
   const { side } = props
   const sideStyle =
     side === 'LEFT' ? styles.optionSelectedLeft : styles.optionSelectedRight
-  const textElement = props.isSelected ? (
-    <Text
-      style={[
-        styles.optionText,
-        styles.optionTextDouble,
-        styles.optionSelected,
-        sideStyle,
-      ]}
-    >
-      {props.label}
-    </Text>
+  const itemElement = props.isSelected ? (
+    <View>
+      <View style={styles.optionHighlight}></View>
+      <Text
+        style={[
+          styles.optionText,
+          styles.optionTextDouble,
+          styles.optionSelected,
+          sideStyle,
+        ]}
+      >
+        {props.label}
+      </Text>
+    </View>
   ) : (
     <Text style={[styles.optionText, styles.optionTextDouble]}>
       {props.label}
@@ -54,7 +60,7 @@ export function OptionItem<T>(props: ListItemProps<T>): React.ReactElement {
       disabled={props.isSelected ? true : false}
       onPress={() => props.itemTapHandler(props.callbackParam)}
     >
-      {textElement}
+      {itemElement}
     </TouchableOpacity>
   )
 }
