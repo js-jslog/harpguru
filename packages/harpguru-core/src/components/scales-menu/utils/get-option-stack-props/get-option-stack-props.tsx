@@ -1,6 +1,4 @@
 import { useGlobal } from 'reactn'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Text } from 'react-native'
 import React, { useCallback } from 'react'
 import {
   getScale,
@@ -10,34 +8,8 @@ import {
 } from 'harpparts'
 import type { DegreeIds } from 'harpparts'
 
-import { getOptionStyles } from '../../../../utils'
-import type {
-  ListItemProps_Single,
-  OptionProps,
-  OptionStackProps,
-} from '../../../../types'
-
-// TODO: Move this to it's own component to be shared
-const ListItem = (
-  props: ListItemProps_Single<ReadonlyArray<DegreeIds>>
-): React.ReactElement => {
-  const styles = getOptionStyles()
-  const textElement = props.isSelected ? (
-    <Text style={[styles.optionText, { fontWeight: 'bold' }]}>
-      {props.label}
-    </Text>
-  ) : (
-    <Text style={styles.optionText}>{props.label}</Text>
-  )
-  return (
-    <TouchableOpacity
-      disabled={props.isSelected ? true : false}
-      onPress={() => props.itemTapHandler(props.callbackParam)}
-    >
-      {textElement}
-    </TouchableOpacity>
-  )
-}
+import { OptionItem } from '../../../option-item'
+import type { OptionProps, OptionStackProps } from '../../../../types'
 
 // TODO: It's a bit confusing having a getter util which
 // needs to have a .tsx extension. Is there any way to
@@ -59,7 +31,7 @@ export const getOptionStackProps = (
       id: '',
     }
     return [
-      <ListItem
+      <OptionItem
         key={'clear-all-scales'}
         label={'Clear all'}
         isSelected={false}
@@ -68,7 +40,7 @@ export const getOptionStackProps = (
         twoColumns={false}
       />,
       ...scales.map((item, index) => (
-        <ListItem
+        <OptionItem
           key={`${index}`}
           label={item.label}
           isSelected={item.label === activeScaleId}
@@ -86,7 +58,7 @@ export const getOptionStackProps = (
       id: '',
     }
     return [
-      <ListItem
+      <OptionItem
         key={'clear-all-chords'}
         label={'Clear all'}
         isSelected={false}
@@ -95,7 +67,7 @@ export const getOptionStackProps = (
         twoColumns={false}
       />,
       ...chords.map((item, index) => (
-        <ListItem
+        <OptionItem
           key={`${index}`}
           label={item.label}
           isSelected={item.label === activeScaleId}

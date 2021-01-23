@@ -1,55 +1,19 @@
 import { useGlobal, useDispatch } from 'reactn'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Text } from 'react-native'
 import React, { useCallback } from 'react'
-import type { HarpStrataProps } from 'harpstrata'
 import { PitchIds, PozitionIds } from 'harpparts'
 import type { CovariancePrimer } from 'harpcovariance'
 import { getCovarianceSeries, CovariantMembers } from 'harpcovariance'
 import { Feather } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
+import { OptionItem } from '../option-item'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import { getOptionStyles } from '../../utils'
-import type { ListItemProps_Double, MenuProps, OptionProps } from '../../types'
+import type { MenuProps, OptionProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import { getNewHarpStrataForDispatcher } from './utils'
-
-const ListItem = (
-  props: ListItemProps_Double<Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>>
-): React.ReactElement => {
-  const { side } = props
-  const styles = getOptionStyles()
-  const sideStyle =
-    side === 'LEFT' ? styles.optionSelectedLeft : styles.optionSelectedRight
-  const textElement = props.isSelected ? (
-    <Text
-      style={[
-        styles.optionText,
-        styles.optionTextDouble,
-        styles.optionSelected,
-        sideStyle,
-      ]}
-    >
-      {props.label}
-    </Text>
-  ) : (
-    <Text style={[styles.optionText, styles.optionTextDouble]}>
-      {props.label}
-    </Text>
-  )
-  return (
-    <TouchableOpacity
-      disabled={props.isSelected ? true : false}
-      onPress={() => props.itemTapHandler(props.callbackParam)}
-    >
-      {textElement}
-    </TouchableOpacity>
-  )
-}
 
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
   const itemTapHandler = useCallback(
@@ -68,7 +32,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     const harpKeySeries = getCovarianceSeries(harpKeyPrimer)
     const harpKeyItems = harpKeySeries
       .map((item, index) => [
-        <ListItem
+        <OptionItem
           key={`${index}-0`}
           label={item.pozitionId}
           isSelected={item.pozitionId === pozitionId}
@@ -80,7 +44,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
           twoColumns={true}
           side={'LEFT'}
         />,
-        <ListItem
+        <OptionItem
           key={`${index}-1`}
           label={item.rootPitchId}
           isSelected={item.rootPitchId === rootPitchId}
@@ -109,7 +73,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     const pozitionSeries = getCovarianceSeries(pozitionPrimer)
     const pozitionItems = pozitionSeries
       .map((item, index) => [
-        <ListItem
+        <OptionItem
           key={`${index}-0`}
           label={item.rootPitchId}
           isSelected={item.rootPitchId === rootPitchId}
@@ -121,7 +85,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
           twoColumns={true}
           side={'LEFT'}
         />,
-        <ListItem
+        <OptionItem
           key={`${index}-1`}
           label={item.harpKeyId}
           isSelected={item.harpKeyId === harpKeyId}
@@ -150,7 +114,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     const rootPitchSeries = getCovarianceSeries(rootPitchPrimer)
     const rootPitchItems = rootPitchSeries
       .map((item, index) => [
-        <ListItem
+        <OptionItem
           key={`${index}-0`}
           label={item.harpKeyId}
           isSelected={item.harpKeyId === harpKeyId}
@@ -162,7 +126,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
           twoColumns={true}
           side={'LEFT'}
         />,
-        <ListItem
+        <OptionItem
           key={`${index}-1`}
           label={item.pozitionId}
           isSelected={item.pozitionId === pozitionId}
