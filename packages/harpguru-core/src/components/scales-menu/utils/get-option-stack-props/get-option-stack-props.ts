@@ -1,4 +1,11 @@
-import { getScale, getScaleIds, ScaleCategory } from 'harpparts'
+import { useGlobal } from 'reactn'
+import { useCallback } from 'react'
+import {
+  getScale,
+  getScaleByDegreeIds,
+  getScaleIds,
+  ScaleCategory,
+} from 'harpparts'
 import type { DegreeIds } from 'harpparts'
 
 import {
@@ -17,26 +24,54 @@ export const getOptionStackProps = (
   const chords = getScaleIds()
     .map((id) => getScale(id))
     .filter((scale) => scale.category === ScaleCategory.Chord)
+  const useScaleItems = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { activeDegreeIds } = activeHarpStrata
+    const { label: activeScaleId } = getScaleByDegreeIds(activeDegreeIds) || {
+      id: '',
+    }
+    return [
+      {
+        label: 'Clear all',
+        isSelected: false,
+        callbackParam: [],
+      },
+      ...scales.map((item) => ({
+        label: item.label,
+        isSelected: item.label === activeScaleId,
+        callbackParam: item.degrees,
+      })),
+    ]
+  }, [useGlobal, scales])
+  const useChordItems = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { activeDegreeIds } = activeHarpStrata
+    const { label: activeScaleId } = getScaleByDegreeIds(activeDegreeIds) || {
+      id: '',
+    }
+    return [
+      {
+        label: 'Clear all',
+        isSelected: false,
+        callbackParam: [],
+      },
+      ...chords.map((item) => ({
+        label: item.label,
+        isSelected: item.label === activeScaleId,
+        callbackParam: item.degrees,
+      })),
+    ]
+  }, [useGlobal, chords])
   const titles = [scales, chords].map((list) =>
     list[0].category === ScaleCategory.Scale ? 'Scales' : 'Chords'
   )
-  const itemsz = [scales, chords].map((list) => [
-    {
-      label: 'Clear all',
-      callbackParam: [],
-    },
-    ...list.map((item) => ({
-      label: item.label,
-      callbackParam: item.degrees,
-    })),
-  ])
 
   const optionPropsz: ReadonlyArray<OptionProps_Scales> = [
     {
       title: titles[0],
       useSubTitle,
       optionType: OptionTypes.Scales,
-      useItems: () => itemsz[0],
+      useItems: useScaleItems,
       twoColumns: false,
       itemTapHandler,
     },
@@ -44,7 +79,7 @@ export const getOptionStackProps = (
       title: titles[1],
       useSubTitle,
       optionType: OptionTypes.Scales,
-      useItems: () => itemsz[1],
+      useItems: useChordItems,
       twoColumns: false,
       itemTapHandler,
     },

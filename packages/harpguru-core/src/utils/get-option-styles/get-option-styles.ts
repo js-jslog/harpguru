@@ -19,6 +19,9 @@ type OptionStyles = {
   rightColumnLabelStackable: ViewStyle
   optionText: TextStyle
   optionTextDouble: TextStyle
+  optionSelected: TextStyle
+  optionSelectedLeft: TextStyle
+  optionSelectedRight: TextStyle
 }
 
 export const getOptionStyles = (): OptionStyles => {
@@ -101,7 +104,21 @@ export const getOptionStyles = (): OptionStyles => {
       color: colors.inertOutline,
     },
     optionTextDouble: {
+      textAlign: 'center',
       width: sizes['10'],
+    },
+    optionSelected: {
+      borderRadius: sizes['9'],
+      backgroundColor: colors.inertOutline,
+      color: colors.pageColor,
+    },
+    optionSelectedLeft: {
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0,
+    },
+    optionSelectedRight: {
+      borderTopLeftRadius: 0,
+      borderBottomLeftRadius: 0,
     },
   })
 

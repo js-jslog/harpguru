@@ -26,13 +26,23 @@ export const OptionList = <T extends unknown, K extends OptionTypes>({
         <FlatList
           contentContainerStyle={styles.listContent}
           data={useItems()}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              onPress={() => itemTapHandler(item.callbackParam)}
-            >
+          renderItem={({ item }) => {
+            const textElement = item.isSelected ? (
+              <Text style={[styles.optionText, { fontWeight: 'bold' }]}>
+                {item.label}
+              </Text>
+            ) : (
               <Text style={styles.optionText}>{item.label}</Text>
-            </TouchableOpacity>
-          )}
+            )
+            return (
+              <TouchableOpacity
+                disabled={item.isSelected ? true : false}
+                onPress={() => itemTapHandler(item.callbackParam)}
+              >
+                {textElement}
+              </TouchableOpacity>
+            )
+          }}
           keyExtractor={(item) => `${item.label}`}
         />
       </SafeAreaView>

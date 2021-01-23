@@ -16,16 +16,24 @@ import { getNewHarpStrataByApparatusForDispatcher } from './utils'
 export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
   const sizes = getSizes()
 
-  const items = getApparatusIds().map((id) => ({
-    label: id,
-    callbackParam: id,
-  }))
   const useSubTitle = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const {
       apparatus: { id: apparatusId },
     } = activeHarpStrata
     return apparatusId
+  }, [useGlobal])
+  const useItems = useCallback(() => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const {
+      apparatus: { id: apparatusId },
+    } = activeHarpStrata
+    const items = getApparatusIds().map((id) => ({
+      label: id,
+      isSelected: id === apparatusId,
+      callbackParam: id,
+    }))
+    return items
   }, [useGlobal])
   const itemTapHandler = useCallback(
     useDispatch(getNewHarpStrataByApparatusForDispatcher),
@@ -37,7 +45,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
       title: 'Tuning',
       useSubTitle,
       optionType: OptionTypes.Apparatus,
-      useItems: () => items,
+      useItems: useItems,
       twoColumns: false,
       itemTapHandler,
     },

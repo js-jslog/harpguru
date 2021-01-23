@@ -18,7 +18,7 @@ import { getNewHarpStrataForDispatcher } from './utils'
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
   const useHarpKeyItems = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId } = activeHarpStrata
+    const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
     const harpKeyPrimer: CovariancePrimer = {
       lockedType: CovariantMembers.HarpKey,
       variedType: CovariantMembers.Pozition,
@@ -30,6 +30,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       .map((item) => [
         {
           label: item.pozitionId,
+          isSelected: item.pozitionId === pozitionId,
           callbackParam: {
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
@@ -37,6 +38,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         },
         {
           label: item.rootPitchId,
+          isSelected: item.rootPitchId === rootPitchId,
           callbackParam: {
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
@@ -49,7 +51,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const usePozitionItems = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { pozitionId } = activeHarpStrata
+    const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
     const pozitionPrimer: CovariancePrimer = {
       lockedType: CovariantMembers.Pozition,
       variedType: CovariantMembers.RootPitch,
@@ -61,6 +63,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       .map((item) => [
         {
           label: item.rootPitchId,
+          isSelected: item.rootPitchId === rootPitchId,
           callbackParam: {
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
@@ -68,6 +71,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         },
         {
           label: item.harpKeyId,
+          isSelected: item.harpKeyId === harpKeyId,
           callbackParam: {
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
@@ -80,7 +84,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const useRootPitchItems = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { rootPitchId } = activeHarpStrata
+    const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
     const rootPitchPrimer: CovariancePrimer = {
       lockedType: CovariantMembers.RootPitch,
       variedType: CovariantMembers.HarpKey,
@@ -92,6 +96,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       .map((item) => [
         {
           label: item.harpKeyId,
+          isSelected: item.harpKeyId === harpKeyId,
           callbackParam: {
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,
@@ -99,6 +104,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         },
         {
           label: item.pozitionId,
+          isSelected: item.pozitionId === pozitionId,
           callbackParam: {
             harpKeyId: item.harpKeyId,
             pozitionId: item.pozitionId,

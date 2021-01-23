@@ -22,6 +22,7 @@ describe('OptionStack params equality check in dev mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -43,6 +44,7 @@ describe('OptionStack params equality check in dev mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -67,6 +69,7 @@ describe('OptionStack params equality check in dev mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -91,6 +94,7 @@ describe('OptionStack params equality check in dev mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -124,6 +128,7 @@ describe('OptionStack params equality check in dev mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -155,6 +160,7 @@ describe('OptionStack params equality check in dev mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -196,6 +202,7 @@ describe('OptionStack params equality check in production mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -217,6 +224,7 @@ describe('OptionStack params equality check in production mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -241,6 +249,7 @@ describe('OptionStack params equality check in production mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -265,6 +274,7 @@ describe('OptionStack params equality check in production mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -298,6 +308,7 @@ describe('OptionStack params equality check in production mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],
@@ -329,6 +340,7 @@ describe('OptionStack params equality check in production mode', () => {
       useItems: () => [
         {
           label: 'item1',
+          isSelected: false,
           callbackParam: [DegreeIds.Root],
         },
       ],

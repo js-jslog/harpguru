@@ -37,15 +37,36 @@ export const OptionListDouble = <T extends unknown, K extends OptionTypes>({
           contentContainerStyle={styles.listContent}
           data={useItems()}
           numColumns={2}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              onPress={() => itemTapHandler(item.callbackParam)}
-            >
+          renderItem={({ item, index }) => {
+            const sideStyle =
+              index % 2 === 0
+                ? styles.optionSelectedLeft
+                : styles.optionSelectedRight
+            const textElement = item.isSelected ? (
+              <Text
+                style={[
+                  styles.optionText,
+                  styles.optionTextDouble,
+                  styles.optionSelected,
+                  sideStyle,
+                ]}
+              >
+                {item.label}
+              </Text>
+            ) : (
               <Text style={[styles.optionText, styles.optionTextDouble]}>
                 {item.label}
               </Text>
-            </TouchableOpacity>
-          )}
+            )
+            return (
+              <TouchableOpacity
+                disabled={item.isSelected ? true : false}
+                onPress={() => itemTapHandler(item.callbackParam)}
+              >
+                {textElement}
+              </TouchableOpacity>
+            )
+          }}
           keyExtractor={(item, index) => `${item.label}-${index}`}
         />
       </SafeAreaView>

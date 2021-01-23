@@ -159,5 +159,6 @@ export type WithStateValue = {
 
 type Item<T> = {
   readonly label: string
+  readonly isSelected: boolean
   readonly callbackParam: T
 }
