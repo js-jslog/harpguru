@@ -32,40 +32,32 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     }
     const harpKeySeries = getCovarianceSeries(harpKeyPrimer)
     const harpKeyItems = harpKeySeries
-      .map((item, index) => {
-        const {
-          pozitionId: [pozitionLabel, ...pozitionSuperscript],
-        } = item
-        const {
-          rootPitchId: [rootPitchLabel, ...rootPitchSuperscript],
-        } = item
-        return [
-          <OptionItem
-            key={`${index}-0`}
-            label={pozitionLabel}
-            superscript={pozitionSuperscript.join('')}
-            isSelected={item.pozitionId === pozitionId}
-            itemTapHandler={itemTapHandler}
-            callbackParam={{
-              harpKeyId: item.harpKeyId,
-              pozitionId: item.pozitionId,
-            }}
-            twoColumns={true}
-          />,
-          <OptionItem
-            key={`${index}-1`}
-            label={rootPitchLabel}
-            superscript={rootPitchSuperscript.join('')}
-            isSelected={item.rootPitchId === rootPitchId}
-            itemTapHandler={itemTapHandler}
-            callbackParam={{
-              harpKeyId: item.harpKeyId,
-              pozitionId: item.pozitionId,
-            }}
-            twoColumns={true}
-          />,
-        ]
-      })
+      .map((item, index) => [
+        <OptionItem
+          key={`${index}-0`}
+          label={item.pozitionId}
+          isLabelPitchOrPozition={true}
+          isSelected={item.pozitionId === pozitionId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          }}
+          twoColumns={true}
+        />,
+        <OptionItem
+          key={`${index}-1`}
+          label={item.rootPitchId}
+          isLabelPitchOrPozition={true}
+          isSelected={item.rootPitchId === rootPitchId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          }}
+          twoColumns={true}
+        />,
+      ])
       .flat()
     return harpKeyItems
   }, [useGlobal])
@@ -81,40 +73,32 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     }
     const pozitionSeries = getCovarianceSeries(pozitionPrimer)
     const pozitionItems = pozitionSeries
-      .map((item, index) => {
-        const {
-          rootPitchId: [rootPitchLabel, ...rootPitchSuperscript],
-        } = item
-        const {
-          harpKeyId: [harpKeyLabel, ...harpKeySuperscript],
-        } = item
-        return [
-          <OptionItem
-            key={`${index}-0`}
-            label={rootPitchLabel}
-            superscript={rootPitchSuperscript.join('')}
-            isSelected={item.rootPitchId === rootPitchId}
-            itemTapHandler={itemTapHandler}
-            callbackParam={{
-              harpKeyId: item.harpKeyId,
-              pozitionId: item.pozitionId,
-            }}
-            twoColumns={true}
-          />,
-          <OptionItem
-            key={`${index}-1`}
-            label={harpKeyLabel}
-            superscript={harpKeySuperscript.join('')}
-            isSelected={item.harpKeyId === harpKeyId}
-            itemTapHandler={itemTapHandler}
-            callbackParam={{
-              harpKeyId: item.harpKeyId,
-              pozitionId: item.pozitionId,
-            }}
-            twoColumns={true}
-          />,
-        ]
-      })
+      .map((item, index) => [
+        <OptionItem
+          key={`${index}-0`}
+          label={item.rootPitchId}
+          isLabelPitchOrPozition={true}
+          isSelected={item.rootPitchId === rootPitchId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          }}
+          twoColumns={true}
+        />,
+        <OptionItem
+          key={`${index}-1`}
+          label={item.harpKeyId}
+          isLabelPitchOrPozition={true}
+          isSelected={item.harpKeyId === harpKeyId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          }}
+          twoColumns={true}
+        />,
+      ])
       .flat()
     return pozitionItems
   }, [useGlobal])
@@ -130,40 +114,32 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     }
     const rootPitchSeries = getCovarianceSeries(rootPitchPrimer)
     const rootPitchItems = rootPitchSeries
-      .map((item, index) => {
-        const {
-          harpKeyId: [harpKeyLabel, ...harpKeySuperscript],
-        } = item
-        const {
-          pozitionId: [pozitionLabel, ...pozitionSuperscript],
-        } = item
-        return [
-          <OptionItem
-            key={`${index}-0`}
-            label={harpKeyLabel}
-            superscript={harpKeySuperscript.join('')}
-            isSelected={item.harpKeyId === harpKeyId}
-            itemTapHandler={itemTapHandler}
-            callbackParam={{
-              harpKeyId: item.harpKeyId,
-              pozitionId: item.pozitionId,
-            }}
-            twoColumns={true}
-          />,
-          <OptionItem
-            key={`${index}-1`}
-            label={pozitionLabel}
-            superscript={pozitionSuperscript.join('')}
-            isSelected={item.pozitionId === pozitionId}
-            itemTapHandler={itemTapHandler}
-            callbackParam={{
-              harpKeyId: item.harpKeyId,
-              pozitionId: item.pozitionId,
-            }}
-            twoColumns={true}
-          />,
-        ]
-      })
+      .map((item, index) => [
+        <OptionItem
+          key={`${index}-0`}
+          label={item.harpKeyId}
+          isLabelPitchOrPozition={true}
+          isSelected={item.harpKeyId === harpKeyId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          }}
+          twoColumns={true}
+        />,
+        <OptionItem
+          key={`${index}-1`}
+          label={item.pozitionId}
+          isLabelPitchOrPozition={true}
+          isSelected={item.pozitionId === pozitionId}
+          itemTapHandler={itemTapHandler}
+          callbackParam={{
+            harpKeyId: item.harpKeyId,
+            pozitionId: item.pozitionId,
+          }}
+          twoColumns={true}
+        />,
+      ])
       .flat()
     return rootPitchItems
   }, [useGlobal])
