@@ -1,4 +1,3 @@
-import { View } from 'react-native'
 import React from 'react'
 
 import { OptionTitleStack } from '../option-title-stack'
@@ -6,7 +5,6 @@ import type { OptionTitleProps } from '../option-title'
 import { OptionStackPointer } from '../option-stack-pointer'
 import { OptionListStack } from '../option-list-stack'
 import type { OptionListProps } from '../option-list'
-import { getOptionStyles } from '../../utils'
 
 import { areOptionStacksEqual } from './utils'
 import { useFoundationAnimationValues } from './hooks'
@@ -31,13 +29,10 @@ export const OptionStack = (props: OptionStackProps): React.ReactElement => {
     <OptionListStack {...props} transitionValue={stackStateTransition} />
   )
 
-  const styles = getOptionStyles()
   return (
     <>
-      <View style={styles.titleSection}>
-        <>{titleStack}</>
-      </View>
-      <View style={styles.listSection}>{listStack}</View>
+      {titleStack}
+      {listStack}
       <OptionStackPointer
         stackLength={stackLength}
         direction={'NEXT'}

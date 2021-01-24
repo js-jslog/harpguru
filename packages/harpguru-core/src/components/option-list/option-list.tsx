@@ -1,6 +1,6 @@
 import Animated from 'react-native-reanimated'
 import { FlatList } from 'react-native-gesture-handler'
-import { View, SafeAreaView } from 'react-native'
+import { StyleSheet, View, SafeAreaView } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
@@ -26,18 +26,19 @@ export const OptionList = ({
 
   return (
     <Animated.View
-      style={[
-        styles.listStackable,
-        {
-          opacity: transitionValue,
-        },
-      ]}
+      style={{
+        ...StyleSheet.absoluteFillObject,
+        opacity: transitionValue,
+      }}
     >
       <View style={styles.leftColumnLabelStackable}>{leftColumnLabel}</View>
       <View style={styles.rightColumnLabelStackable}>{rightColumnLabel}</View>
-      <SafeAreaView style={styles.listStackable}>
+      <SafeAreaView style={{ ...StyleSheet.absoluteFillObject }}>
         <FlatList
-          contentContainerStyle={styles.listContent}
+          contentContainerStyle={{
+            alignItems: 'flex-end',
+            paddingRight: styles.largeGutter,
+          }}
           data={useItems()}
           numColumns={twoColumns ? 2 : 1}
           renderItem={({ item }) => <>{item}</>}

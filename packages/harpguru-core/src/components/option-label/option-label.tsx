@@ -19,7 +19,7 @@ export const OptionLabel = ({
   const styles = getOptionStyles()
   const titleStyles =
     isLargeTitle === true
-      ? [styles.columnLabelTitle, styles.titleText]
+      ? [styles.columnLabelTitle, { fontSize: styles.largeFont }]
       : [styles.columnLabelTitle]
   return (
     <View style={{ width: '100%' }}>

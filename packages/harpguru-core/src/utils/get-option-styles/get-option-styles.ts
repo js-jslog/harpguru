@@ -7,14 +7,10 @@ type OptionStyles = {
   largeFont: number
   itemWidth: number
   itemHeightTrim: number
-  titleSection: ViewStyle
-  titleWrapper: ViewStyle
-  titleText: TextStyle
+  largeGutter: number
+  smallGutter: number
   stackNext: ViewStyle
   stackPrevious: ViewStyle
-  listSection: ViewStyle
-  listStackable: ViewStyle
-  listContent: ViewStyle
   leftColumnLabelStackable: ViewStyle
   rightColumnLabelStackable: ViewStyle
   columnLabelTitle: TextStyle
@@ -38,18 +34,6 @@ export const getOptionStyles = (): OptionStyles => {
   const { ['7']: internalGutter } = sizes
   const { ['9']: smallGutter } = sizes
   const styles = StyleSheet.create({
-    titleSection: {
-      flex: 1,
-      alignItems: 'flex-start',
-      justifyContent: 'center',
-    },
-    titleWrapper: {
-      position: 'absolute',
-      left: smallGutter,
-    },
-    titleText: {
-      fontSize: largeFont,
-    },
     stackNext: {
       position: 'absolute',
       top: smallGutter,
@@ -59,19 +43,6 @@ export const getOptionStyles = (): OptionStyles => {
       position: 'absolute',
       bottom: smallGutter,
       left: smallGutter,
-    },
-    listSection: {
-      // TODO: Is this section needed if it's
-      // just housing listStackable's which
-      // are themselves absoluteFillObject's?
-      ...StyleSheet.absoluteFillObject,
-    },
-    listStackable: {
-      ...StyleSheet.absoluteFillObject,
-    },
-    listContent: {
-      alignItems: 'flex-end',
-      paddingRight: largeGutter,
     },
     leftColumnLabelStackable: {
       position: 'absolute',
@@ -122,5 +93,12 @@ export const getOptionStyles = (): OptionStyles => {
     },
   })
 
-  return { ...styles, largeFont, itemWidth, itemHeightTrim }
+  return {
+    ...styles,
+    largeFont,
+    itemWidth,
+    itemHeightTrim,
+    largeGutter,
+    smallGutter,
+  }
 }

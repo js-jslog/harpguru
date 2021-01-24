@@ -1,4 +1,5 @@
 import Animated from 'react-native-reanimated'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
@@ -17,13 +18,22 @@ export const OptionTitle = ({
   return (
     <Animated.View
       style={[
-        styles.titleWrapper,
         {
+          ...StyleSheet.absoluteFillObject,
+          alignItems: 'flex-start',
+          justifyContent: 'center',
           opacity: transitionValue,
         },
       ]}
     >
-      {title}
+      <View
+        style={{
+          position: 'absolute',
+          left: styles.smallGutter,
+        }}
+      >
+        {title}
+      </View>
     </Animated.View>
   )
 }
