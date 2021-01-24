@@ -13,6 +13,8 @@ export const OptionListStack = ({
       <OptionList
         useItems={optionProps.useItems}
         twoColumns={optionProps.twoColumns}
+        useLeftColumnLabel={optionProps.useLeftColumnLabel}
+        useRightColumnLabel={optionProps.useRightColumnLabel}
         transitionValue={useInterpolateOptionStackTransitionValue(
           array.length,
           index,

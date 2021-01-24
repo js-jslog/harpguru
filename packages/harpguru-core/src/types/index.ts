@@ -102,7 +102,7 @@ export type OptionTitleProps = {
 
 export type OptionListProps = {
   readonly useItems: () => ReadonlyArray<React.ReactElement>
-  readonly twoColumns: boolean
+  readonly twoColumns?: boolean
   readonly useLeftColumnLabel?: () => React.ReactElement
   readonly useRightColumnLabel?: () => React.ReactElement
 }

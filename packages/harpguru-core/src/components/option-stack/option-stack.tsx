@@ -5,7 +5,6 @@ import { OptionTitleStack } from '../option-title-stack'
 import { OptionStackPrevious } from '../option-stack-previous'
 import { OptionStackNext } from '../option-stack-next'
 import { OptionListStack } from '../option-list-stack'
-import { OptionListDoubleStack } from '../option-list-double-stack'
 import { getOptionStyles } from '../../utils'
 import type { OptionStackProps } from '../../types'
 
@@ -18,21 +17,7 @@ export const OptionStack = (props: OptionStackProps): React.ReactElement => {
   const titleStack = (
     <OptionTitleStack {...props} transitionValue={stackStateTransition} />
   )
-  // TODO: It is not good to presume. The reason for this implementation is
-  // because we are caught between two places at the moment. On the one hand
-  // it seems like the correct implementation will be to allow the lists to
-  // render themselves as either 2 or 1 columns components. While I have this
-  // defensive implementation where the double column list is distinct from
-  // the single column list though, we need to make the presumption at this
-  // layer.
-  const {
-    optionPropsz: {
-      [0]: { twoColumns: presumeAllTwoColumns },
-    },
-  } = props
-  const listStack = presumeAllTwoColumns ? (
-    <OptionListDoubleStack {...props} transitionValue={stackStateTransition} />
-  ) : (
+  const listStack = (
     <OptionListStack {...props} transitionValue={stackStateTransition} />
   )
 
