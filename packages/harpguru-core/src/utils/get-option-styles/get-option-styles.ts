@@ -2,10 +2,9 @@ import type { TextStyle, ViewStyle } from 'react-native'
 import { StyleSheet } from 'react-native'
 
 import { colors, getSizes, harpguruColors } from '../../styles'
-import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 type OptionStyles = {
-  titleFontSize: number
+  largeFont: number
   titleSection: ViewStyle
   titleWrapper: ViewStyle
   titleText: TextStyle
@@ -28,9 +27,14 @@ type OptionStyles = {
 
 export const getOptionStyles = (): OptionStyles => {
   const sizes = getSizes()
-  const { ['9']: titleFontSize } = sizes
-  const { ['11']: gutterSize } = sizes
-  const { shortEdge } = getWindowDimensions()
+  const { ['9']: largeFont } = sizes
+  const { ['8']: smallFont } = sizes
+  const { ['7']: superscriptFont } = sizes
+  const { ['10']: lineHeight } = sizes
+  const { ['7']: highlightHeight } = sizes
+  const { ['11']: largeGutter } = sizes
+  const { ['7']: internalGutter } = sizes
+  const { ['9']: smallGutter } = sizes
   const styles = StyleSheet.create({
     titleSection: {
       flex: 1,
@@ -39,22 +43,25 @@ export const getOptionStyles = (): OptionStyles => {
     },
     titleWrapper: {
       position: 'absolute',
-      left: sizes['9'],
+      left: smallGutter,
     },
     titleText: {
-      fontSize: titleFontSize,
+      fontSize: largeFont,
     },
     stackNext: {
       position: 'absolute',
-      top: sizes['9'],
-      left: sizes['9'],
+      top: smallGutter,
+      left: smallGutter,
     },
     stackPrevious: {
       position: 'absolute',
-      bottom: sizes['9'],
-      left: sizes['9'],
+      bottom: smallGutter,
+      left: smallGutter,
     },
     listSection: {
+      // TODO: can this just be absoluteFillObject too,
+      // and does that mean we don't need thelistSection.
+      // I wonder whether we need the titleSection either.
       position: 'absolute',
       top: 0,
       bottom: 0,
@@ -66,30 +73,30 @@ export const getOptionStyles = (): OptionStyles => {
     },
     listContent: {
       alignItems: 'flex-end',
-      paddingRight: gutterSize,
+      paddingRight: largeGutter,
     },
     leftColumnLabelStackable: {
       position: 'absolute',
-      right: gutterSize + sizes['10'] * 2 + sizes['7'],
-      height: shortEdge,
+      right: largeGutter + lineHeight * 2 + internalGutter,
+      height: '100%',
       alignItems: 'flex-end',
       justifyContent: 'center',
     },
     rightColumnLabelStackable: {
       position: 'absolute',
       right: 0,
-      width: gutterSize - sizes['7'],
-      height: shortEdge,
+      width: largeGutter - internalGutter,
+      height: '100%',
       alignItems: 'flex-start',
       justifyContent: 'center',
     },
     columnLabelTitle: {
-      fontSize: sizes['8'],
+      fontSize: smallFont,
       fontWeight: 'bold',
       color: colors.inertOutline,
     },
     columnLabelSub: {
-      fontSize: sizes['8'],
+      fontSize: smallFont,
       color: colors.inertOutline,
     },
     columnLabelHighlight: {
@@ -97,7 +104,7 @@ export const getOptionStyles = (): OptionStyles => {
       left: 0,
       right: 0,
       bottom: 0,
-      height: sizes['7'],
+      height: highlightHeight,
       backgroundColor: harpguruColors.pink,
     },
     optionHighlight: {
@@ -105,26 +112,26 @@ export const getOptionStyles = (): OptionStyles => {
       left: 0,
       right: 0,
       bottom: sizes['6'],
-      height: sizes['7'],
+      height: highlightHeight,
       backgroundColor: harpguruColors.pink,
     },
     optionText: {
-      fontSize: sizes['8'],
-      lineHeight: sizes['10'],
+      fontSize: smallFont,
+      lineHeight: lineHeight,
       color: colors.inertOutline,
     },
     optionSuperscript: {
-      fontSize: sizes['7'],
+      fontSize: superscriptFont,
     },
     optionTextDouble: {
-      width: sizes['10'],
+      width: lineHeight,
     },
     optionSelected: {
       fontWeight: 'bold',
-      fontSize: sizes['9'],
+      fontSize: largeFont,
       color: colors.inertOutline,
     },
   })
 
-  return { ...styles, titleFontSize }
+  return { ...styles, largeFont }
 }

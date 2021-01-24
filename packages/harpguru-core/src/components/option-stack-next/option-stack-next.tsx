@@ -29,7 +29,7 @@ export const OptionStackNext = (
       <TouchableOpacity onPress={nextInStack}>
         <AntDesign
           name="up"
-          size={styles.titleFontSize}
+          size={styles.largeFont}
           color={colors.inertOutline}
         />
       </TouchableOpacity>
