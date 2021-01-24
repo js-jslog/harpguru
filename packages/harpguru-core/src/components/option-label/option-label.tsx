@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-import { OptionText } from '../option-text'
+import { OptionValue } from '../option-value'
 import { getOptionStyles } from '../../utils'
 
 type OptionLabelProps = {
@@ -27,7 +27,7 @@ export const OptionLabel = ({
   return (
     <View style={{ width: '100%' }}>
       <Text style={[titleStyles]}>{title}</Text>
-      <OptionText
+      <OptionValue
         label={subtitle}
         alignItems={alignItems}
         isSelected={false}

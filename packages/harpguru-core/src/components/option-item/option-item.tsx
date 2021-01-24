@@ -2,7 +2,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
 
-import { OptionText } from '../option-text'
+import { OptionValue } from '../option-value'
 import { getOptionStyles } from '../../utils'
 
 type OptionItemProps<T> = {
@@ -34,7 +34,7 @@ export function OptionItem<T>({
         justifyContent: 'center',
       }}
     >
-      <OptionText
+      <OptionValue
         label={label}
         alignItems={'center'}
         isLabelPitchOrPozition={isLabelPitchOrPozition}

@@ -14,7 +14,7 @@ type OptionTextProps = {
   readonly twoColumns: boolean
 }
 
-export const OptionText = ({
+export const OptionValue = ({
   label,
   alignItems,
   isSelected,
