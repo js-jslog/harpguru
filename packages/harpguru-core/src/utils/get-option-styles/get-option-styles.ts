@@ -5,6 +5,8 @@ import { colors, getSizes, harpguruColors } from '../../styles'
 
 type OptionStyles = {
   largeFont: number
+  itemWidth: number
+  itemHeightTrim: number
   titleSection: ViewStyle
   titleWrapper: ViewStyle
   titleText: TextStyle
@@ -30,7 +32,8 @@ export const getOptionStyles = (): OptionStyles => {
   const { ['9']: largeFont } = sizes
   const { ['8']: smallFont } = sizes
   const { ['7']: superscriptFont } = sizes
-  const { ['10']: lineHeight } = sizes
+  const { ['10']: itemWidth } = sizes
+  const { ['6']: itemHeightTrim } = sizes
   const { ['7']: highlightHeight } = sizes
   const { ['11']: largeGutter } = sizes
   const { ['7']: internalGutter } = sizes
@@ -73,7 +76,7 @@ export const getOptionStyles = (): OptionStyles => {
     },
     leftColumnLabelStackable: {
       position: 'absolute',
-      right: largeGutter + lineHeight * 2 + internalGutter,
+      right: largeGutter + itemWidth * 2 + internalGutter,
       height: '100%',
       alignItems: 'flex-end',
       justifyContent: 'center',
@@ -113,14 +116,13 @@ export const getOptionStyles = (): OptionStyles => {
     },
     optionText: {
       fontSize: smallFont,
-      lineHeight: lineHeight,
       color: colors.inertOutline,
     },
     optionSuperscript: {
       fontSize: superscriptFont,
     },
     optionTextDouble: {
-      width: lineHeight,
+      width: itemWidth,
     },
     optionSelected: {
       fontWeight: 'bold',
@@ -129,5 +131,5 @@ export const getOptionStyles = (): OptionStyles => {
     },
   })
 
-  return { ...styles, largeFont }
+  return { ...styles, largeFont, itemWidth, itemHeightTrim }
 }

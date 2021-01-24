@@ -20,7 +20,13 @@ export function OptionItem<T>({
   const styles = getOptionStyles()
   const highlighStyles = isSelected ? [styles.optionHighlight] : []
   const itemElement = (
-    <View>
+    <View
+      style={{
+        height: styles.itemWidth - styles.itemHeightTrim,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <View style={[...highlighStyles]}></View>
       <OptionText
         label={label}
