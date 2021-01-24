@@ -4,14 +4,14 @@ import React from 'react'
 import { getOptionStyles } from '../../utils'
 import type { WithTransition } from '../../types'
 
-export type OptionTitleProps = {
+export type OptionTitleProps = WithTransition & {
   readonly useTitle: () => React.ReactElement
 }
 
 export const OptionTitle = ({
   useTitle,
   transitionValue,
-}: OptionTitleProps & WithTransition): React.ReactElement => {
+}: OptionTitleProps): React.ReactElement => {
   const styles = getOptionStyles()
   const title = useTitle()
   return (
