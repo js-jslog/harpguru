@@ -9,10 +9,7 @@ type OptionStyles = {
   itemHeightTrim: number
   largeGutter: number
   smallGutter: number
-  stackNext: ViewStyle
-  stackPrevious: ViewStyle
-  leftColumnLabelStackable: ViewStyle
-  rightColumnLabelStackable: ViewStyle
+  internalGutter: number
   columnLabelTitle: TextStyle
   columnLabelSub: TextStyle
   optionHighlight: ViewStyle
@@ -34,31 +31,6 @@ export const getOptionStyles = (): OptionStyles => {
   const { ['7']: internalGutter } = sizes
   const { ['9']: smallGutter } = sizes
   const styles = StyleSheet.create({
-    stackNext: {
-      position: 'absolute',
-      top: smallGutter,
-      left: smallGutter,
-    },
-    stackPrevious: {
-      position: 'absolute',
-      bottom: smallGutter,
-      left: smallGutter,
-    },
-    leftColumnLabelStackable: {
-      position: 'absolute',
-      right: largeGutter + itemWidth * 2 + internalGutter,
-      height: '100%',
-      alignItems: 'flex-end',
-      justifyContent: 'center',
-    },
-    rightColumnLabelStackable: {
-      position: 'absolute',
-      right: 0,
-      width: largeGutter - internalGutter,
-      height: '100%',
-      alignItems: 'flex-start',
-      justifyContent: 'center',
-    },
     columnLabelTitle: {
       fontSize: smallFont,
       fontWeight: 'bold',
@@ -100,5 +72,6 @@ export const getOptionStyles = (): OptionStyles => {
     itemHeightTrim,
     largeGutter,
     smallGutter,
+    internalGutter,
   }
 }

@@ -20,7 +20,24 @@ export const OptionList = ({
   useRightColumnLabel = () => <></>,
   transitionValue,
 }: OptionListProps): React.ReactElement => {
-  const styles = getOptionStyles()
+  const { largeGutter, itemWidth, internalGutter } = getOptionStyles()
+  const { common, left, right } = StyleSheet.create({
+    common: {
+      position: 'absolute',
+      height: '100%',
+      justifyContent: 'center',
+    },
+    left: {
+      right: largeGutter + itemWidth * 2 + internalGutter,
+      alignItems: 'flex-end',
+    },
+    right: {
+      right: 0,
+      width: largeGutter - internalGutter,
+      alignItems: 'flex-start',
+    },
+  })
+
   const leftColumnLabel = useLeftColumnLabel()
   const rightColumnLabel = useRightColumnLabel()
 
@@ -31,13 +48,13 @@ export const OptionList = ({
         opacity: transitionValue,
       }}
     >
-      <View style={styles.leftColumnLabelStackable}>{leftColumnLabel}</View>
-      <View style={styles.rightColumnLabelStackable}>{rightColumnLabel}</View>
+      <View style={[common, left]}>{leftColumnLabel}</View>
+      <View style={[common, right]}>{rightColumnLabel}</View>
       <SafeAreaView style={{ ...StyleSheet.absoluteFillObject }}>
         <FlatList
           contentContainerStyle={{
             alignItems: 'flex-end',
-            paddingRight: styles.largeGutter,
+            paddingRight: largeGutter,
           }}
           data={useItems()}
           numColumns={twoColumns ? 2 : 1}
