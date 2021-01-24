@@ -9,6 +9,7 @@ type OptionLabelProps = {
   readonly subtitle: string
   readonly alignItems: 'flex-start' | 'center' | 'flex-end'
   readonly labelIsTitle: boolean
+  readonly isLabelPitchOrPozition?: boolean
 }
 
 export const OptionLabel = ({
@@ -16,6 +17,7 @@ export const OptionLabel = ({
   subtitle,
   alignItems,
   labelIsTitle,
+  isLabelPitchOrPozition = false,
 }: OptionLabelProps): React.ReactElement => {
   const styles = getOptionStyles()
   const titleStyles =
@@ -31,7 +33,7 @@ export const OptionLabel = ({
         isSelected={false}
         isHighlighted={true}
         twoColumns={false}
-        isLabelPitchOrPozition={true}
+        isLabelPitchOrPozition={isLabelPitchOrPozition}
       />
     </View>
   )

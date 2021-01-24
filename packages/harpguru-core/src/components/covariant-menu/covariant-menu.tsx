@@ -153,6 +153,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         subtitle={harpKeyId}
         alignItems={'center'}
         labelIsTitle={true}
+        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -166,6 +167,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         subtitle={pozitionId}
         alignItems={'center'}
         labelIsTitle={true}
+        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -179,6 +181,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         subtitle={rootPitchId}
         alignItems={'center'}
         labelIsTitle={true}
+        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -192,6 +195,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         subtitle={harpKeyId}
         alignItems={'center'}
         labelIsTitle={false}
+        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -205,6 +209,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         subtitle={pozitionId}
         alignItems={'center'}
         labelIsTitle={false}
+        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -218,6 +223,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         subtitle={rootPitchId}
         alignItems={'center'}
         labelIsTitle={false}
+        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
