@@ -23,8 +23,9 @@ export const OptionText = ({
   twoColumns,
 }: OptionTextProps): React.ReactElement => {
   const styles = getOptionStyles()
+  const extraHighlightStyle = isSelected ? [] : [{ bottom: 0 }]
   const highlight = isHighlighted ? (
-    <View style={[styles.optionHighlight]}></View>
+    <View style={[styles.optionHighlight, ...extraHighlightStyle]}></View>
   ) : (
     <></>
   )

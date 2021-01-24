@@ -101,7 +101,7 @@ export const getOptionStyles = (): OptionStyles => {
       position: 'absolute',
       left: 0,
       right: 0,
-      bottom: 0,
+      bottom: sizes['5'],
       height: highlightHeight,
       backgroundColor: harpguruColors.pink,
     },
