@@ -1,13 +1,13 @@
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
+import type { Pozition, Pitch } from 'harpparts'
 
 import { OptionValue } from '../option-value'
 import { getOptionStyles } from '../../utils'
 
 type OptionItemProps<T> = {
-  readonly label: string
-  readonly isLabelPitchOrPozition?: boolean
+  readonly value: Pozition | Pitch | string
   readonly isSelected: boolean
   readonly itemTapHandler: (arg0: T) => void
   readonly callbackParam: T
@@ -18,8 +18,7 @@ type OptionItemProps<T> = {
 // form of function definition. It's fine, but it's not consistent
 // when I've got function expressions everywhere else.
 export function OptionItem<T>({
-  label,
-  isLabelPitchOrPozition = false,
+  value,
   isSelected,
   itemTapHandler,
   callbackParam,
@@ -35,9 +34,8 @@ export function OptionItem<T>({
       }}
     >
       <OptionValue
-        label={label}
+        value={value}
         alignItems={'center'}
-        isLabelPitchOrPozition={isLabelPitchOrPozition}
         isSelected={isSelected}
         isHighlighted={isSelected}
         twoColumns={twoColumns}

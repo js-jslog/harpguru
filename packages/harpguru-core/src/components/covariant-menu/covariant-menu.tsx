@@ -1,6 +1,6 @@
 import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
-import { PitchIds, PozitionIds } from 'harpparts'
+import { getPitch, getPozition, PitchIds, PozitionIds } from 'harpparts'
 import type { CovariancePrimer } from 'harpcovariance'
 import { getCovarianceSeries, CovariantMembers } from 'harpcovariance'
 import { Feather } from '@expo/vector-icons'
@@ -35,8 +35,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       .map((item, index) => [
         <OptionItem
           key={`${index}-0`}
-          label={item.pozitionId}
-          isLabelPitchOrPozition={true}
+          value={getPozition(item.pozitionId)}
           isSelected={item.pozitionId === pozitionId}
           itemTapHandler={itemTapHandler}
           callbackParam={{
@@ -47,8 +46,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         />,
         <OptionItem
           key={`${index}-1`}
-          label={item.rootPitchId}
-          isLabelPitchOrPozition={true}
+          value={getPitch(item.rootPitchId)}
           isSelected={item.rootPitchId === rootPitchId}
           itemTapHandler={itemTapHandler}
           callbackParam={{
@@ -76,8 +74,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       .map((item, index) => [
         <OptionItem
           key={`${index}-0`}
-          label={item.rootPitchId}
-          isLabelPitchOrPozition={true}
+          value={getPitch(item.rootPitchId)}
           isSelected={item.rootPitchId === rootPitchId}
           itemTapHandler={itemTapHandler}
           callbackParam={{
@@ -88,8 +85,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         />,
         <OptionItem
           key={`${index}-1`}
-          label={item.harpKeyId}
-          isLabelPitchOrPozition={true}
+          value={getPitch(item.harpKeyId)}
           isSelected={item.harpKeyId === harpKeyId}
           itemTapHandler={itemTapHandler}
           callbackParam={{
@@ -117,8 +113,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
       .map((item, index) => [
         <OptionItem
           key={`${index}-0`}
-          label={item.harpKeyId}
-          isLabelPitchOrPozition={true}
+          value={getPitch(item.harpKeyId)}
           isSelected={item.harpKeyId === harpKeyId}
           itemTapHandler={itemTapHandler}
           callbackParam={{
@@ -129,8 +124,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
         />,
         <OptionItem
           key={`${index}-1`}
-          label={item.pozitionId}
-          isLabelPitchOrPozition={true}
+          value={getPozition(item.pozitionId)}
           isSelected={item.pozitionId === pozitionId}
           itemTapHandler={itemTapHandler}
           callbackParam={{
@@ -149,11 +143,10 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     const { harpKeyId } = activeHarpStrata
     return (
       <OptionLabel
-        title={'Harp key'}
-        subtitle={harpKeyId}
+        name={'Harp key'}
+        value={getPitch(harpKeyId)}
         alignItems={'center'}
         labelIsTitle={true}
-        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -163,11 +156,10 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     const { pozitionId } = activeHarpStrata
     return (
       <OptionLabel
-        title={'Position'}
-        subtitle={pozitionId}
+        name={'Position'}
+        value={getPozition(pozitionId)}
         alignItems={'center'}
         labelIsTitle={true}
-        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -177,11 +169,10 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     const { rootPitchId } = activeHarpStrata
     return (
       <OptionLabel
-        title={'Song key'}
-        subtitle={rootPitchId}
+        name={'Song key'}
+        value={getPitch(rootPitchId)}
         alignItems={'center'}
         labelIsTitle={true}
-        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -191,11 +182,10 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     const { harpKeyId } = activeHarpStrata
     return (
       <OptionLabel
-        title={'Harp key'}
-        subtitle={harpKeyId}
+        name={'Harp key'}
+        value={getPitch(harpKeyId)}
         alignItems={'center'}
         labelIsTitle={false}
-        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -205,11 +195,10 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     const { pozitionId } = activeHarpStrata
     return (
       <OptionLabel
-        title={'Position'}
-        subtitle={pozitionId}
+        name={'Position'}
+        value={getPozition(pozitionId)}
         alignItems={'center'}
         labelIsTitle={false}
-        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])
@@ -219,11 +208,10 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     const { rootPitchId } = activeHarpStrata
     return (
       <OptionLabel
-        title={'Song key'}
-        subtitle={rootPitchId}
+        name={'Song key'}
+        value={getPitch(rootPitchId)}
         alignItems={'center'}
         labelIsTitle={false}
-        isLabelPitchOrPozition={true}
       />
     )
   }, [useGlobal])

@@ -20,4 +20,5 @@ export type Pozition = {
   readonly type: HarpPartTypes.Pozition
   readonly id: PozitionIds
   readonly rootOffset: HalfstepIndex
+  readonly simpleSplitValue: [string, string]
 }

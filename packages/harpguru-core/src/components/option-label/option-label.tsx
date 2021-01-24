@@ -1,23 +1,22 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import type { Pozition, Pitch } from 'harpparts'
 
 import { OptionValue } from '../option-value'
 import { getOptionStyles } from '../../utils'
 
 type OptionLabelProps = {
-  readonly title: string
-  readonly subtitle: string
+  readonly name: string
+  readonly value: Pozition | Pitch | string
   readonly alignItems: 'flex-start' | 'center' | 'flex-end'
   readonly labelIsTitle: boolean
-  readonly isLabelPitchOrPozition?: boolean
 }
 
 export const OptionLabel = ({
-  title,
-  subtitle,
+  name,
+  value,
   alignItems,
   labelIsTitle,
-  isLabelPitchOrPozition = false,
 }: OptionLabelProps): React.ReactElement => {
   const styles = getOptionStyles()
   const titleStyles =
@@ -26,14 +25,13 @@ export const OptionLabel = ({
       : [styles.columnLabelTitle]
   return (
     <View style={{ width: '100%' }}>
-      <Text style={[titleStyles]}>{title}</Text>
+      <Text style={[titleStyles]}>{name}</Text>
       <OptionValue
-        label={subtitle}
+        value={value}
         alignItems={alignItems}
         isSelected={false}
         isHighlighted={true}
         twoColumns={false}
-        isLabelPitchOrPozition={isLabelPitchOrPozition}
       />
     </View>
   )

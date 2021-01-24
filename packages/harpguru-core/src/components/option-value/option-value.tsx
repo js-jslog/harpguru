@@ -1,25 +1,23 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import type { Pozition, Pitch } from 'harpparts'
+import { isPozition, isPitch } from 'harpparts'
 
 import { getOptionStyles } from '../../utils'
 
-import { splitSuffixFromPitchOrPozition } from './utils'
-
 type OptionValueProps = {
-  readonly label: string
+  readonly value: Pozition | Pitch | string
   readonly alignItems: 'flex-start' | 'center' | 'flex-end'
   readonly isHighlighted?: boolean
-  readonly isLabelPitchOrPozition?: boolean
   readonly isSelected: boolean
   readonly twoColumns: boolean
 }
 
 export const OptionValue = ({
-  label,
+  value,
   alignItems,
   isSelected,
   isHighlighted = false,
-  isLabelPitchOrPozition,
   twoColumns,
 }: OptionValueProps): React.ReactElement => {
   const styles = getOptionStyles()
@@ -31,9 +29,10 @@ export const OptionValue = ({
   )
   const textSelectedStyles = isSelected ? [styles.optionSelected] : []
   const textDoubledStyles = twoColumns ? [styles.optionTextDouble] : []
-  const [text, superscript] = isLabelPitchOrPozition
-    ? splitSuffixFromPitchOrPozition(label)
-    : [label, '']
+  const [regularscript, superscript] =
+    typeof value !== 'string' && (isPozition(value) || isPitch(value))
+      ? value.simpleSplitValue
+      : [value, '']
   const optionText = (
     <View style={{ width: '100%' }}>
       {highlight}
@@ -47,7 +46,9 @@ export const OptionValue = ({
           textDoubledStyles,
         ]}
       >
-        <Text style={[styles.optionText, ...textSelectedStyles]}>{text}</Text>
+        <Text style={[styles.optionText, ...textSelectedStyles]}>
+          {regularscript}
+        </Text>
         <Text style={[styles.optionText, styles.optionSuperscript]}>
           {superscript}
         </Text>

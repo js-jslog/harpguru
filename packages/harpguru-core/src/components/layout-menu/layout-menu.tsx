@@ -24,8 +24,8 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     } = activeHarpStrata
     return (
       <OptionLabel
-        title={'Tuning'}
-        subtitle={apparatusId}
+        name={'Tuning'}
+        value={apparatusId}
         alignItems={'flex-start'}
         labelIsTitle={true}
       />
@@ -43,7 +43,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     const items = getApparatusIds().map((id, index) => (
       <OptionItem
         key={`${index}`}
-        label={id}
+        value={id}
         isSelected={id === apparatusId}
         itemTapHandler={itemTapHandler}
         callbackParam={id}

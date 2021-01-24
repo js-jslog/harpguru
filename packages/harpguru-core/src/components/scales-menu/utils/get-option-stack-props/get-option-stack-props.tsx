@@ -34,7 +34,7 @@ export const getOptionStackProps = (
     return [
       <OptionItem
         key={'clear-all-scales'}
-        label={'Clear all'}
+        value={'Clear all'}
         isSelected={false}
         itemTapHandler={itemTapHandler}
         callbackParam={[]}
@@ -43,7 +43,7 @@ export const getOptionStackProps = (
       ...scales.map((item, index) => (
         <OptionItem
           key={`${index}`}
-          label={item.label}
+          value={item.label}
           isSelected={item.label === activeScaleId}
           itemTapHandler={itemTapHandler}
           callbackParam={item.degrees}
@@ -61,7 +61,7 @@ export const getOptionStackProps = (
     return [
       <OptionItem
         key={'clear-all-chords'}
-        label={'Clear all'}
+        value={'Clear all'}
         isSelected={false}
         itemTapHandler={itemTapHandler}
         callbackParam={[]}
@@ -70,7 +70,7 @@ export const getOptionStackProps = (
       ...chords.map((item, index) => (
         <OptionItem
           key={`${index}`}
-          label={item.label}
+          value={item.label}
           isSelected={item.label === activeScaleId}
           itemTapHandler={itemTapHandler}
           callbackParam={item.degrees}

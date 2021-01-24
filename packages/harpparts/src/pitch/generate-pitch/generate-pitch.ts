@@ -58,6 +58,7 @@ export const generatePitch = (pitchId: PitchIds): Pitch => {
     type: HarpPartTypes.Pitch,
     id: pitchId,
     contextualDisplayValues: pitchMap[pitchId],
+    simpleSplitValue: [pitchId[0], pitchId[1] || ''],
   } as Pitch
 
   return pitch

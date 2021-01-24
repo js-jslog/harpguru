@@ -24,8 +24,8 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
     return (
       <OptionLabel
-        title={'Scales'}
-        subtitle={scaleLabel || ''}
+        name={'Scales'}
+        value={scaleLabel || ''}
         alignItems={'flex-start'}
         labelIsTitle={true}
       />
@@ -37,8 +37,8 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
     return (
       <OptionLabel
-        title={'Chords'}
-        subtitle={scaleLabel || ''}
+        name={'Chords'}
+        value={scaleLabel || ''}
         alignItems={'flex-start'}
         labelIsTitle={true}
       />

@@ -11,6 +11,7 @@ test('generatePitch function can return a C pitch', () => {
     contextualDisplayValues: {
       natural: NoteFoundations.C,
     },
+    simpleSplitValue: ['C', ''] as [string, string],
   } as const
   const actualPitch = generatePitch(C_PITCH.id)
 
@@ -25,6 +26,7 @@ test('generatePitch function can return a Db pitch', () => {
       flat: NoteFoundations.D,
       sharp: NoteFoundations.C,
     },
+    simpleSplitValue: ['D', 'b'] as [string, string],
   } as const
   const actualPitch = generatePitch(DB_PITCH.id)
 

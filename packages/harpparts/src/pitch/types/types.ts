@@ -37,10 +37,12 @@ export type NaturalPitch = {
   readonly type: HarpPartTypes.Pitch
   readonly id: PitchIds
   readonly contextualDisplayValues: NaturalDisplayValue
+  readonly simpleSplitValue: [string, string]
 }
 export type UnnaturalPitch = {
   readonly type: HarpPartTypes.Pitch
   readonly id: PitchIds
   readonly contextualDisplayValues: UnnaturalDisplayValues
+  readonly simpleSplitValue: [string, string]
 }
 export type Pitch = NaturalPitch | UnnaturalPitch
