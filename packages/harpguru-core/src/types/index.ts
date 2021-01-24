@@ -117,6 +117,7 @@ export type WithStateValue = {
 
 export type ListItemProps<T> = {
   readonly label: string
+  readonly superscript?: string
   readonly isSelected: boolean
   readonly itemTapHandler: (arg0: T) => void
   readonly callbackParam: T

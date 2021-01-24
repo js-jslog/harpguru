@@ -21,10 +21,9 @@ type OptionStyles = {
   columnLabelHighlight: ViewStyle
   optionHighlight: ViewStyle
   optionText: TextStyle
+  optionSuperscript: TextStyle
   optionTextDouble: TextStyle
   optionSelected: TextStyle
-  optionSelectedLeft: TextStyle
-  optionSelectedRight: TextStyle
 }
 
 export const getOptionStyles = (): OptionStyles => {
@@ -114,22 +113,16 @@ export const getOptionStyles = (): OptionStyles => {
       lineHeight: sizes['10'],
       color: colors.inertOutline,
     },
+    optionSuperscript: {
+      fontSize: sizes['7'],
+    },
     optionTextDouble: {
-      textAlign: 'center',
       width: sizes['10'],
     },
     optionSelected: {
       fontWeight: 'bold',
       fontSize: sizes['9'],
       color: colors.inertOutline,
-    },
-    optionSelectedLeft: {
-      borderTopRightRadius: 0,
-      borderBottomRightRadius: 0,
-    },
-    optionSelectedRight: {
-      borderTopLeftRadius: 0,
-      borderBottomLeftRadius: 0,
     },
   })
 

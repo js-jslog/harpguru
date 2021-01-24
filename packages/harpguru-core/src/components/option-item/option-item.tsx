@@ -8,25 +8,42 @@ import type { ListItemProps } from '../../types'
 // TODO: How do I apply this generic without resorting to this
 // form of function definition. It's fine, but it's not consistent
 // when I've got function expressions everywhere else.
-export function OptionItem<T>(props: ListItemProps<T>): React.ReactElement {
+export function OptionItem<T>({
+  label,
+  superscript = '',
+  isSelected,
+  itemTapHandler,
+  callbackParam,
+  twoColumns,
+}: ListItemProps<T>): React.ReactElement {
   const styles = getOptionStyles()
-  const highlighStyles = props.isSelected ? [styles.optionHighlight] : []
-  const textSelectedStyles = props.isSelected ? [styles.optionSelected] : []
-  const textDoubledStyles = props.twoColumns ? [styles.optionTextDouble] : []
+  const highlighStyles = isSelected ? [styles.optionHighlight] : []
+  const textSelectedStyles = isSelected ? [styles.optionSelected] : []
+  const textDoubledStyles = twoColumns ? [styles.optionTextDouble] : []
   const itemElement = (
     <View>
       <View style={[...highlighStyles]}></View>
-      <Text
-        style={[styles.optionText, ...textSelectedStyles, textDoubledStyles]}
+      <View
+        style={[
+          {
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+          },
+          textDoubledStyles,
+        ]}
       >
-        {props.label}
-      </Text>
+        <Text style={[styles.optionText, ...textSelectedStyles]}>{label}</Text>
+        <Text style={[styles.optionText, styles.optionSuperscript]}>
+          {superscript}
+        </Text>
+      </View>
     </View>
   )
   return (
     <TouchableOpacity
-      disabled={props.isSelected ? true : false}
-      onPress={() => props.itemTapHandler(props.callbackParam)}
+      disabled={isSelected ? true : false}
+      onPress={() => itemTapHandler(callbackParam)}
     >
       {itemElement}
     </TouchableOpacity>
