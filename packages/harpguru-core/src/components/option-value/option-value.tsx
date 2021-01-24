@@ -5,7 +5,7 @@ import { getOptionStyles } from '../../utils'
 
 import { splitSuffixFromPitchOrPozition } from './utils'
 
-type OptionTextProps = {
+type OptionValueProps = {
   readonly label: string
   readonly alignItems: 'flex-start' | 'center' | 'flex-end'
   readonly isHighlighted?: boolean
@@ -21,7 +21,7 @@ export const OptionValue = ({
   isHighlighted = false,
   isLabelPitchOrPozition,
   twoColumns,
-}: OptionTextProps): React.ReactElement => {
+}: OptionValueProps): React.ReactElement => {
   const styles = getOptionStyles()
   const extraHighlightStyle = isSelected ? [] : [{ bottom: 0 }]
   const highlight = isHighlighted ? (
