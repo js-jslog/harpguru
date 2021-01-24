@@ -5,12 +5,12 @@ import { colors, getSizes, harpguruColors } from '../../styles'
 
 type OptionStyles = {
   largeFont: number
+  smallFont: number
   itemWidth: number
   itemHeightTrim: number
   largeGutter: number
   smallGutter: number
   internalGutter: number
-  columnLabelTitle: TextStyle
   columnLabelSub: TextStyle
   optionHighlight: ViewStyle
   optionText: TextStyle
@@ -31,11 +31,6 @@ export const getOptionStyles = (): OptionStyles => {
   const { ['7']: internalGutter } = sizes
   const { ['9']: smallGutter } = sizes
   const styles = StyleSheet.create({
-    columnLabelTitle: {
-      fontSize: smallFont,
-      fontWeight: 'bold',
-      color: colors.inertOutline,
-    },
     columnLabelSub: {
       fontSize: smallFont,
       color: colors.inertOutline,
@@ -68,6 +63,7 @@ export const getOptionStyles = (): OptionStyles => {
   return {
     ...styles,
     largeFont,
+    smallFont,
     itemWidth,
     itemHeightTrim,
     largeGutter,
