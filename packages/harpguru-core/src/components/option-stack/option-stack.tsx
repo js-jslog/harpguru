@@ -11,7 +11,7 @@ import { getOptionStyles } from '../../utils'
 import { areOptionStacksEqual } from './utils'
 import { useFoundationAnimationValues } from './hooks'
 
-export type OptionProps = OptionTitleProps & OptionListProps
+type OptionProps = OptionTitleProps & OptionListProps
 
 export type OptionStackProps = {
   readonly optionPropsz: ReadonlyArray<OptionProps>

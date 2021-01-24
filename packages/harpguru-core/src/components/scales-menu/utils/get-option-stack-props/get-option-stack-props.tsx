@@ -8,7 +8,7 @@ import {
 } from 'harpparts'
 import type { DegreeIds } from 'harpparts'
 
-import type { OptionStackProps, OptionProps } from '../../../option-stack'
+import type { OptionStackProps } from '../../../option-stack'
 import { OptionItem } from '../../../option-item'
 
 // TODO: It's a bit confusing having a getter util which
@@ -80,7 +80,7 @@ export const getOptionStackProps = (
     ]
   }, [useGlobal, chords])
 
-  const optionPropsz: ReadonlyArray<OptionProps> = [
+  const optionPropsz = [
     {
       useTitle: useScalesTitle,
       useItems: useScaleItems,
