@@ -1,11 +1,10 @@
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 
+import { OptionText } from '../option-text'
 import { getOptionStyles } from '../../utils'
 import type { ListItemProps } from '../../types'
-
-import { splitSuffixFromPitchOrPozition } from './utils'
 
 // TODO: How do I apply this generic without resorting to this
 // form of function definition. It's fine, but it's not consistent
@@ -20,29 +19,15 @@ export function OptionItem<T>({
 }: ListItemProps<T>): React.ReactElement {
   const styles = getOptionStyles()
   const highlighStyles = isSelected ? [styles.optionHighlight] : []
-  const textSelectedStyles = isSelected ? [styles.optionSelected] : []
-  const textDoubledStyles = twoColumns ? [styles.optionTextDouble] : []
-  const [text, superscript] = isLabelPitchOrPozition
-    ? splitSuffixFromPitchOrPozition(label)
-    : [label, '']
   const itemElement = (
     <View>
       <View style={[...highlighStyles]}></View>
-      <View
-        style={[
-          {
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
-          },
-          textDoubledStyles,
-        ]}
-      >
-        <Text style={[styles.optionText, ...textSelectedStyles]}>{text}</Text>
-        <Text style={[styles.optionText, styles.optionSuperscript]}>
-          {superscript}
-        </Text>
-      </View>
+      <OptionText
+        label={label}
+        isLabelPitchOrPozition={isLabelPitchOrPozition}
+        isSelected={isSelected}
+        twoColumns={twoColumns}
+      />
     </View>
   )
   return (
