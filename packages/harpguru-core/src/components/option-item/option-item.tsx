@@ -18,7 +18,6 @@ export function OptionItem<T>({
   twoColumns,
 }: ListItemProps<T>): React.ReactElement {
   const styles = getOptionStyles()
-  const highlighStyles = isSelected ? [styles.optionHighlight] : []
   const itemElement = (
     <View
       style={{
@@ -27,11 +26,12 @@ export function OptionItem<T>({
         justifyContent: 'center',
       }}
     >
-      <View style={[...highlighStyles]}></View>
       <OptionText
         label={label}
+        alignItems={'center'}
         isLabelPitchOrPozition={isLabelPitchOrPozition}
         isSelected={isSelected}
+        isHighlighted={isSelected}
         twoColumns={twoColumns}
       />
     </View>

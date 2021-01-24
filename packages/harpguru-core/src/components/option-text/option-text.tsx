@@ -7,6 +7,8 @@ import { splitSuffixFromPitchOrPozition } from './utils'
 
 type OptionTextProps = {
   readonly label: string
+  readonly alignItems: 'flex-start' | 'center' | 'flex-end'
+  readonly isHighlighted?: boolean
   readonly isLabelPitchOrPozition?: boolean
   readonly isSelected: boolean
   readonly twoColumns: boolean
@@ -14,31 +16,41 @@ type OptionTextProps = {
 
 export const OptionText = ({
   label,
+  alignItems,
   isSelected,
+  isHighlighted = false,
   isLabelPitchOrPozition,
   twoColumns,
 }: OptionTextProps): React.ReactElement => {
   const styles = getOptionStyles()
+  const highlight = isHighlighted ? (
+    <View style={[styles.optionHighlight]}></View>
+  ) : (
+    <></>
+  )
   const textSelectedStyles = isSelected ? [styles.optionSelected] : []
   const textDoubledStyles = twoColumns ? [styles.optionTextDouble] : []
   const [text, superscript] = isLabelPitchOrPozition
     ? splitSuffixFromPitchOrPozition(label)
     : [label, '']
   const optionText = (
-    <View
-      style={[
-        {
-          flexDirection: 'row',
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-        },
-        textDoubledStyles,
-      ]}
-    >
-      <Text style={[styles.optionText, ...textSelectedStyles]}>{text}</Text>
-      <Text style={[styles.optionText, styles.optionSuperscript]}>
-        {superscript}
-      </Text>
+    <View style={{ width: '100%' }}>
+      {highlight}
+      <View
+        style={[
+          {
+            flexDirection: 'row',
+            alignItems: 'flex-start',
+            justifyContent: alignItems,
+          },
+          textDoubledStyles,
+        ]}
+      >
+        <Text style={[styles.optionText, ...textSelectedStyles]}>{text}</Text>
+        <Text style={[styles.optionText, styles.optionSuperscript]}>
+          {superscript}
+        </Text>
+      </View>
     </View>
   )
   return optionText

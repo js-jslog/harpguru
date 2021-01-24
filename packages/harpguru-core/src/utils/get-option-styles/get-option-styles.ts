@@ -19,7 +19,6 @@ type OptionStyles = {
   rightColumnLabelStackable: ViewStyle
   columnLabelTitle: TextStyle
   columnLabelSub: TextStyle
-  columnLabelHighlight: ViewStyle
   optionHighlight: ViewStyle
   optionText: TextStyle
   optionSuperscript: TextStyle
@@ -98,19 +97,11 @@ export const getOptionStyles = (): OptionStyles => {
       fontSize: smallFont,
       color: colors.inertOutline,
     },
-    columnLabelHighlight: {
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: 0,
-      height: highlightHeight,
-      backgroundColor: harpguruColors.pink,
-    },
     optionHighlight: {
       position: 'absolute',
       left: 0,
       right: 0,
-      bottom: sizes['6'],
+      bottom: 0,
       height: highlightHeight,
       backgroundColor: harpguruColors.pink,
     },

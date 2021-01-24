@@ -23,12 +23,13 @@ export const OptionLabel = ({
       ? [styles.columnLabelTitle, styles.titleText]
       : [styles.columnLabelTitle]
   return (
-    <View style={{ alignItems }}>
-      <View style={styles.columnLabelHighlight} />
+    <View style={{ width: '100%' }}>
       <Text style={[titleStyles]}>{title}</Text>
       <OptionText
         label={subtitle}
+        alignItems={alignItems}
         isSelected={false}
+        isHighlighted={true}
         twoColumns={false}
         isLabelPitchOrPozition={true}
       />
