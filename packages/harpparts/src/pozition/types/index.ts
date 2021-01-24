@@ -1,4 +1,4 @@
 export { PozitionIds } from './types'
 export type { Pozition } from './types'
 
-export { isPozitionId } from './typeguards'
+export { isPozitionId, isPozition } from './typeguards'

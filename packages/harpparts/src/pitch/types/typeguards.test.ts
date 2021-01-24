@@ -1,7 +1,8 @@
 import { generatePitch } from '../generate-pitch'
 import { PozitionIds } from '../../pozition'
+import { getPitch, getPozition } from '../../access-parts'
 
-import { isPitchId, isNaturalPitch } from './typeguards'
+import { isPitchId, isNaturalPitch, isPitch } from './typeguards'
 
 import { PitchIds } from './types'
 
@@ -19,4 +20,12 @@ test('isNaturalPitch returns true for a natural Pitch and false otherwise', () =
 
   expect(isNaturalPitch(c)).toBeTruthy()
   expect(isNaturalPitch(db)).toBeFalsy()
+})
+
+test('isPitch returns true for a Pitch and false otherwise', () => {
+  const pitch = getPitch(PitchIds.A)
+  const pozition = getPozition(PozitionIds.First)
+
+  expect(isPitch(pitch)).toBeTruthy()
+  expect(isPitch(pozition)).toBeFalsy()
 })

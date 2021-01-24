@@ -1,10 +1,12 @@
 import { PitchIds, NoteFoundations } from '../types'
 import type { Pitch } from '../types'
+import { HarpPartTypes } from '../../types'
 
 import { generatePitch } from './generate-pitch'
 
 test('generatePitch function can return a C pitch', () => {
   const C_PITCH: Pitch = {
+    type: HarpPartTypes.Pitch,
     id: PitchIds.C,
     contextualDisplayValues: {
       natural: NoteFoundations.C,
@@ -17,6 +19,7 @@ test('generatePitch function can return a C pitch', () => {
 
 test('generatePitch function can return a Db pitch', () => {
   const DB_PITCH: Pitch = {
+    type: HarpPartTypes.Pitch,
     id: PitchIds.Db,
     contextualDisplayValues: {
       flat: NoteFoundations.D,

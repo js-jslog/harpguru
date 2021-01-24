@@ -1,3 +1,6 @@
+import { HarpPartTypes } from '../../types'
+import type { HarpPart } from '../../types'
+
 import { PitchIds } from './types'
 import type { NaturalPitch, Pitch } from './types'
 
@@ -10,4 +13,8 @@ export const isNaturalPitch = (pitch: Pitch): pitch is NaturalPitch => {
     contextualDisplayValues: { natural },
   } = pitch as NaturalPitch
   return natural !== undefined
+}
+
+export const isPitch = (harppart: HarpPart): harppart is Pitch => {
+  return harppart.type === HarpPartTypes.Pitch
 }
