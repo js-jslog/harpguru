@@ -8,8 +8,8 @@ import {
 } from 'harpparts'
 import type { DegreeIds } from 'harpparts'
 
+import type { OptionStackProps, OptionProps } from '../../../option-stack'
 import { OptionItem } from '../../../option-item'
-import type { OptionProps, OptionStackProps } from '../../../../types'
 
 // TODO: It's a bit confusing having a getter util which
 // needs to have a .tsx extension. Is there any way to

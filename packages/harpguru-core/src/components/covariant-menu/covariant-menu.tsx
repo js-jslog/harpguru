@@ -11,7 +11,7 @@ import { OptionItem } from '../option-item'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import type { MenuProps, OptionProps } from '../../types'
+import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import { getNewHarpStrataForDispatcher } from './utils'
@@ -230,7 +230,7 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
 
   const sizes = getSizes()
 
-  const optionPropsz: ReadonlyArray<OptionProps> = [
+  const optionPropsz = [
     {
       useTitle: useHarpKeyTitle,
       useItems: useHarpKeyItems,

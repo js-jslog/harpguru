@@ -1,7 +1,8 @@
 import React from 'react'
 
+import type { OptionStackProps } from '../option-stack'
 import { OptionList } from '../option-list'
-import type { OptionStackProps, WithTransition } from '../../types'
+import type { WithTransition } from '../../types'
 import { useInterpolateOptionStackTransitionValue } from '../../hooks'
 
 export const OptionListStack = ({

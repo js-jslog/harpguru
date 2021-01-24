@@ -90,36 +90,10 @@ export type RenderableToneTuples =
 
 export type PageNumber = 1 | 2 | 3
 
-export type OptionStackProps = {
-  readonly optionPropsz: ReadonlyArray<OptionProps>
-}
-
-export type OptionProps = OptionTitleProps & OptionListProps
-
-export type OptionTitleProps = {
-  readonly useTitle: () => React.ReactElement
-}
-
-export type OptionListProps = {
-  readonly useItems: () => ReadonlyArray<React.ReactElement>
-  readonly twoColumns?: boolean
-  readonly useLeftColumnLabel?: () => React.ReactElement
-  readonly useRightColumnLabel?: () => React.ReactElement
-}
-
 export type WithTransition = {
   readonly transitionValue: Node<number>
 }
 
 export type WithStateValue = {
   readonly stateValue: Value<number>
-}
-
-export type ListItemProps<T> = {
-  readonly label: string
-  readonly isLabelPitchOrPozition?: boolean
-  readonly isSelected: boolean
-  readonly itemTapHandler: (arg0: T) => void
-  readonly callbackParam: T
-  readonly twoColumns: boolean
 }

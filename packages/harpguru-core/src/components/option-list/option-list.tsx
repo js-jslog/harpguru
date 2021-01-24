@@ -4,7 +4,14 @@ import { View, SafeAreaView } from 'react-native'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
-import type { OptionListProps, WithTransition } from '../../types'
+import type { WithTransition } from '../../types'
+
+export type OptionListProps = {
+  readonly useItems: () => ReadonlyArray<React.ReactElement>
+  readonly twoColumns?: boolean
+  readonly useLeftColumnLabel?: () => React.ReactElement
+  readonly useRightColumnLabel?: () => React.ReactElement
+}
 
 export const OptionList = ({
   useItems,

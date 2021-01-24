@@ -9,7 +9,7 @@ import { OptionItem } from '../option-item'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import type { MenuProps, OptionProps } from '../../types'
+import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import { getNewHarpStrataByApparatusForDispatcher } from './utils'
@@ -53,7 +53,7 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     return items
   }, [useGlobal])
 
-  const optionStackPropsz: ReadonlyArray<OptionProps> = [
+  const optionStackPropsz = [
     {
       useTitle,
       useItems: useItems,

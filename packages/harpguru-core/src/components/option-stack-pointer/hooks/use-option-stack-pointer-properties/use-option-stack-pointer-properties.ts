@@ -1,7 +1,8 @@
 import { cond, eq, sub, Node, add, interpolate } from 'react-native-reanimated'
 
-import { useInterpolateOptionStackTransitionValue } from '../use-interpolate-option-stack-transition-value'
-import { OptionStackProps, WithStateValue, WithTransition } from '../../types'
+import { OptionStackProps } from '../../../option-stack'
+import { WithStateValue, WithTransition } from '../../../../types'
+import { useInterpolateOptionStackTransitionValue } from '../../../../hooks'
 
 type PointerProperties = {
   readonly prevInStack: () => void

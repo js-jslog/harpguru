@@ -2,7 +2,11 @@ import Animated from 'react-native-reanimated'
 import React from 'react'
 
 import { getOptionStyles } from '../../utils'
-import type { OptionTitleProps, WithTransition } from '../../types'
+import type { WithTransition } from '../../types'
+
+export type OptionTitleProps = {
+  readonly useTitle: () => React.ReactElement
+}
 
 export const OptionTitle = ({
   useTitle,

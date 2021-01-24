@@ -4,7 +4,15 @@ import React from 'react'
 
 import { OptionText } from '../option-text'
 import { getOptionStyles } from '../../utils'
-import type { ListItemProps } from '../../types'
+
+type OptionItemProps<T> = {
+  readonly label: string
+  readonly isLabelPitchOrPozition?: boolean
+  readonly isSelected: boolean
+  readonly itemTapHandler: (arg0: T) => void
+  readonly callbackParam: T
+  readonly twoColumns: boolean
+}
 
 // TODO: How do I apply this generic without resorting to this
 // form of function definition. It's fine, but it's not consistent
@@ -16,7 +24,7 @@ export function OptionItem<T>({
   itemTapHandler,
   callbackParam,
   twoColumns,
-}: ListItemProps<T>): React.ReactElement {
+}: OptionItemProps<T>): React.ReactElement {
   const styles = getOptionStyles()
   const itemElement = (
     <View
