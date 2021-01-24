@@ -20,6 +20,9 @@ export type OptionStackProps = {
 
 export const OptionStack = (props: OptionStackProps): React.ReactElement => {
   const { stackState, stackStateTransition } = useFoundationAnimationValues()
+  const {
+    optionPropsz: { length: stackLength },
+  } = props
 
   const titleStack = (
     <OptionTitleStack {...props} transitionValue={stackStateTransition} />
@@ -36,13 +39,13 @@ export const OptionStack = (props: OptionStackProps): React.ReactElement => {
       </View>
       <View style={styles.listSection}>{listStack}</View>
       <OptionStackPointer
-        {...props}
+        stackLength={stackLength}
         direction={'NEXT'}
         stateValue={stackState}
         transitionValue={stackStateTransition}
       />
       <OptionStackPointer
-        {...props}
+        stackLength={stackLength}
         direction={'PREVIOUS'}
         stateValue={stackState}
         transitionValue={stackStateTransition}

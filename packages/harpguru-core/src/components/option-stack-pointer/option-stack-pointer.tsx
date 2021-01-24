@@ -3,19 +3,20 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
-import type { OptionStackProps } from '../option-stack'
 import { getOptionStyles } from '../../utils'
 import type { WithStateValue, WithTransition } from '../../types'
 import { colors } from '../../styles'
 
 import { useOptionStackPointerProperties } from './hooks'
 
-type DirectionProps = {
-  readonly direction: 'NEXT' | 'PREVIOUS'
-}
+export type OptionStackPointerProps = WithStateValue &
+  WithTransition & {
+    readonly stackLength: number
+    readonly direction: 'NEXT' | 'PREVIOUS'
+  }
 
 export const OptionStackPointer = (
-  props: OptionStackProps & WithStateValue & WithTransition & DirectionProps
+  props: OptionStackPointerProps
 ): React.ReactElement => {
   const {
     nextInStack,

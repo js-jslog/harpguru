@@ -1,7 +1,6 @@
 import { cond, eq, sub, Node, add, interpolate } from 'react-native-reanimated'
 
-import { OptionStackProps } from '../../../option-stack'
-import { WithStateValue, WithTransition } from '../../../../types'
+import type { OptionStackPointerProps } from '../../option-stack-pointer'
 import { useInterpolateOptionStackTransitionValue } from '../../../../hooks'
 
 type PointerProperties = {
@@ -14,9 +13,9 @@ type PointerProperties = {
 }
 
 export const useOptionStackPointerProperties = (
-  props: OptionStackProps & WithStateValue & WithTransition
+  props: OptionStackPointerProps
 ): PointerProperties => {
-  const { optionPropsz, stateValue, transitionValue } = props
+  const { stackLength, stateValue, transitionValue } = props
   const prevInStack = (): void => {
     const setValue = sub(stateValue, 1)
     stateValue.setValue(setValue)
@@ -27,16 +26,12 @@ export const useOptionStackPointerProperties = (
   }
   const prevPointerEvents = cond(eq(stateValue, 0), 'none', 'auto')
   const nextPointerEvents = cond(
-    eq(stateValue, optionPropsz.length - 1),
+    eq(stateValue, stackLength - 1),
     'none',
     'auto'
   )
   const prevPointerOpacity = interpolate(
-    useInterpolateOptionStackTransitionValue(
-      optionPropsz.length,
-      0,
-      transitionValue
-    ),
+    useInterpolateOptionStackTransitionValue(stackLength, 0, transitionValue),
     {
       inputRange: [0, 1],
       outputRange: [1, 0],
@@ -44,8 +39,8 @@ export const useOptionStackPointerProperties = (
   )
   const nextPointerOpacity = interpolate(
     useInterpolateOptionStackTransitionValue(
-      optionPropsz.length,
-      optionPropsz.length - 1,
+      stackLength,
+      stackLength - 1,
       transitionValue
     ),
     {
