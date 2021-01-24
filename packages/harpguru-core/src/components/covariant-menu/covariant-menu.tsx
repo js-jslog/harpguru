@@ -144,9 +144,9 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionLabel
         name={'Harp key'}
+        isLargeTitle={true}
         value={getPitch(harpKeyId)}
         alignItems={'center'}
-        labelIsTitle={true}
       />
     )
   }, [useGlobal])
@@ -157,9 +157,9 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionLabel
         name={'Position'}
+        isLargeTitle={true}
         value={getPozition(pozitionId)}
         alignItems={'center'}
-        labelIsTitle={true}
       />
     )
   }, [useGlobal])
@@ -170,9 +170,9 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionLabel
         name={'Song key'}
+        isLargeTitle={true}
         value={getPitch(rootPitchId)}
         alignItems={'center'}
-        labelIsTitle={true}
       />
     )
   }, [useGlobal])
@@ -183,9 +183,9 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionLabel
         name={'Harp key'}
+        isLargeTitle={false}
         value={getPitch(harpKeyId)}
         alignItems={'center'}
-        labelIsTitle={false}
       />
     )
   }, [useGlobal])
@@ -196,9 +196,9 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionLabel
         name={'Position'}
+        isLargeTitle={false}
         value={getPozition(pozitionId)}
         alignItems={'center'}
-        labelIsTitle={false}
       />
     )
   }, [useGlobal])
@@ -209,9 +209,9 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionLabel
         name={'Song key'}
+        isLargeTitle={false}
         value={getPitch(rootPitchId)}
         alignItems={'center'}
-        labelIsTitle={false}
       />
     )
   }, [useGlobal])

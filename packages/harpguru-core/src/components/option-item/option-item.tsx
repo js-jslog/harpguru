@@ -1,17 +1,15 @@
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
-import type { Pozition, Pitch } from 'harpparts'
 
 import { OptionValue } from '../option-value'
+import type { OptionValueProps } from '../option-value'
 import { getOptionStyles } from '../../utils'
 
-type OptionItemProps<T> = {
-  readonly value: Pozition | Pitch | string
+type OptionItemProps<T> = Pick<OptionValueProps, 'value' | 'twoColumns'> & {
   readonly isSelected: boolean
   readonly itemTapHandler: (arg0: T) => void
   readonly callbackParam: T
-  readonly twoColumns: boolean
 }
 
 // TODO: How do I apply this generic without resorting to this
@@ -19,10 +17,10 @@ type OptionItemProps<T> = {
 // when I've got function expressions everywhere else.
 export function OptionItem<T>({
   value,
+  twoColumns,
   isSelected,
   itemTapHandler,
   callbackParam,
-  twoColumns,
 }: OptionItemProps<T>): React.ReactElement {
   const styles = getOptionStyles()
   const itemElement = (
@@ -36,7 +34,7 @@ export function OptionItem<T>({
       <OptionValue
         value={value}
         alignItems={'center'}
-        isSelected={isSelected}
+        isLarge={isSelected}
         isHighlighted={isSelected}
         twoColumns={twoColumns}
       />

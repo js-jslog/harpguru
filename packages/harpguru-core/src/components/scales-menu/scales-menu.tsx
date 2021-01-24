@@ -25,9 +25,9 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionLabel
         name={'Scales'}
+        isLargeTitle={true}
         value={scaleLabel || ''}
         alignItems={'flex-start'}
-        labelIsTitle={true}
       />
     )
   }, [useGlobal])
@@ -38,9 +38,9 @@ export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionLabel
         name={'Chords'}
+        isLargeTitle={true}
         value={scaleLabel || ''}
         alignItems={'flex-start'}
-        labelIsTitle={true}
       />
     )
   }, [useGlobal])

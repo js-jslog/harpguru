@@ -1,26 +1,24 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import type { Pozition, Pitch } from 'harpparts'
 
 import { OptionValue } from '../option-value'
+import type { OptionValueProps } from '../option-value'
 import { getOptionStyles } from '../../utils'
 
-type OptionLabelProps = {
+type OptionLabelProps = Pick<OptionValueProps, 'value' | 'alignItems'> & {
   readonly name: string
-  readonly value: Pozition | Pitch | string
-  readonly alignItems: 'flex-start' | 'center' | 'flex-end'
-  readonly labelIsTitle: boolean
+  readonly isLargeTitle: boolean
 }
 
 export const OptionLabel = ({
   name,
+  isLargeTitle,
   value,
   alignItems,
-  labelIsTitle,
 }: OptionLabelProps): React.ReactElement => {
   const styles = getOptionStyles()
   const titleStyles =
-    labelIsTitle === true
+    isLargeTitle === true
       ? [styles.columnLabelTitle, styles.titleText]
       : [styles.columnLabelTitle]
   return (
@@ -29,8 +27,8 @@ export const OptionLabel = ({
       <OptionValue
         value={value}
         alignItems={alignItems}
-        isSelected={false}
         isHighlighted={true}
+        isLarge={false}
         twoColumns={false}
       />
     </View>

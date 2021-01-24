@@ -5,29 +5,29 @@ import { isPozition, isPitch } from 'harpparts'
 
 import { getOptionStyles } from '../../utils'
 
-type OptionValueProps = {
+export type OptionValueProps = {
   readonly value: Pozition | Pitch | string
   readonly alignItems: 'flex-start' | 'center' | 'flex-end'
   readonly isHighlighted?: boolean
-  readonly isSelected: boolean
+  readonly isLarge: boolean
   readonly twoColumns: boolean
 }
 
 export const OptionValue = ({
   value,
   alignItems,
-  isSelected,
+  isLarge: isLargeValue,
   isHighlighted = false,
   twoColumns,
 }: OptionValueProps): React.ReactElement => {
   const styles = getOptionStyles()
-  const extraHighlightStyle = isSelected ? [] : [{ bottom: 0 }]
+  const extraHighlightStyle = isLargeValue ? [] : [{ bottom: 0 }]
   const highlight = isHighlighted ? (
     <View style={[styles.optionHighlight, ...extraHighlightStyle]}></View>
   ) : (
     <></>
   )
-  const textSelectedStyles = isSelected ? [styles.optionSelected] : []
+  const textSelectedStyles = isLargeValue ? [styles.optionSelected] : []
   const textDoubledStyles = twoColumns ? [styles.optionTextDouble] : []
   const [regularscript, superscript] =
     typeof value !== 'string' && (isPozition(value) || isPitch(value))

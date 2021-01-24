@@ -25,9 +25,9 @@ export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
     return (
       <OptionLabel
         name={'Tuning'}
+        isLargeTitle={true}
         value={apparatusId}
         alignItems={'flex-start'}
-        labelIsTitle={true}
       />
     )
   }, [useGlobal])
