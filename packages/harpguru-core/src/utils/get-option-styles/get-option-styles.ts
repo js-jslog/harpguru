@@ -59,14 +59,10 @@ export const getOptionStyles = (): OptionStyles => {
       left: smallGutter,
     },
     listSection: {
-      // TODO: can this just be absoluteFillObject too,
-      // and does that mean we don't need thelistSection.
-      // I wonder whether we need the titleSection either.
-      position: 'absolute',
-      top: 0,
-      bottom: 0,
-      right: 0,
-      left: 0,
+      // TODO: Is this section needed if it's
+      // just housing listStackable's which
+      // are themselves absoluteFillObject's?
+      ...StyleSheet.absoluteFillObject,
     },
     listStackable: {
       ...StyleSheet.absoluteFillObject,
