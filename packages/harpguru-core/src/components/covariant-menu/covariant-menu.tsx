@@ -43,7 +43,6 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
             pozitionId: item.pozitionId,
           }}
           twoColumns={true}
-          side={'LEFT'}
         />,
         <OptionItem
           key={`${index}-1`}
@@ -55,7 +54,6 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
             pozitionId: item.pozitionId,
           }}
           twoColumns={true}
-          side={'RIGHT'}
         />,
       ])
       .flat()
@@ -84,7 +82,6 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
             pozitionId: item.pozitionId,
           }}
           twoColumns={true}
-          side={'LEFT'}
         />,
         <OptionItem
           key={`${index}-1`}
@@ -96,7 +93,6 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
             pozitionId: item.pozitionId,
           }}
           twoColumns={true}
-          side={'RIGHT'}
         />,
       ])
       .flat()
@@ -125,7 +121,6 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
             pozitionId: item.pozitionId,
           }}
           twoColumns={true}
-          side={'LEFT'}
         />,
         <OptionItem
           key={`${index}-1`}
@@ -137,7 +132,6 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
             pozitionId: item.pozitionId,
           }}
           twoColumns={true}
-          side={'RIGHT'}
         />,
       ])
       .flat()

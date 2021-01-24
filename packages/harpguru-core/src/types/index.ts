@@ -115,25 +115,10 @@ export type WithStateValue = {
   readonly stateValue: Value<number>
 }
 
-export type ListItemProps<T> = ListItemProps_Single<T> | ListItemProps_Double<T>
-
-type ListItemProps_Single<T> = {
+export type ListItemProps<T> = {
   readonly label: string
   readonly isSelected: boolean
   readonly itemTapHandler: (arg0: T) => void
   readonly callbackParam: T
-  readonly twoColumns: false
-}
-export function isListItemProps_Single<T>(
-  props: ListItemProps<T>
-): props is ListItemProps_Single<T> {
-  return !props.twoColumns
-}
-type ListItemProps_Double<T> = {
-  readonly label: string
-  readonly isSelected: boolean
-  readonly itemTapHandler: (arg0: T) => void
-  readonly callbackParam: T
-  readonly twoColumns: true
-  readonly side: 'LEFT' | 'RIGHT'
+  readonly twoColumns: boolean
 }
