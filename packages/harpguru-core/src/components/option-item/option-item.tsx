@@ -4,7 +4,7 @@ import React from 'react'
 
 import { OptionValue } from '../option-value'
 import type { OptionValueProps } from '../option-value'
-import { getOptionStyles } from '../../utils'
+import { getOptionSizes } from '../../utils'
 
 type OptionItemProps<T> = Pick<OptionValueProps, 'value' | 'twoColumns'> & {
   readonly isSelected: boolean
@@ -22,7 +22,7 @@ export function OptionItem<T>({
   itemTapHandler,
   callbackParam,
 }: OptionItemProps<T>): React.ReactElement {
-  const styles = getOptionStyles()
+  const styles = getOptionSizes()
   const itemElement = (
     <View
       style={{

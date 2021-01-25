@@ -3,7 +3,7 @@ import React from 'react'
 
 import { OptionValue } from '../option-value'
 import type { OptionValueProps } from '../option-value'
-import { getOptionStyles } from '../../utils'
+import { getOptionSizes } from '../../utils'
 import { colors } from '../../styles'
 
 type OptionLabelProps = Pick<OptionValueProps, 'value' | 'alignItems'> & {
@@ -17,7 +17,7 @@ export const OptionLabel = ({
   value,
   alignItems,
 }: OptionLabelProps): React.ReactElement => {
-  const { smallFont, largeFont } = getOptionStyles()
+  const { smallFont, largeFont } = getOptionSizes()
   const { base, large } = StyleSheet.create({
     base: {
       fontSize: smallFont,

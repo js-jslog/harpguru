@@ -2,7 +2,7 @@ import Animated from 'react-native-reanimated'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { getOptionStyles } from '../../utils'
+import { getOptionSizes } from '../../utils'
 import type { WithTransition } from '../../types'
 
 export type OptionTitleProps = WithTransition & {
@@ -13,7 +13,7 @@ export const OptionTitle = ({
   useTitle,
   transitionValue,
 }: OptionTitleProps): React.ReactElement => {
-  const styles = getOptionStyles()
+  const styles = getOptionSizes()
   const title = useTitle()
   return (
     <Animated.View

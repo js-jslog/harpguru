@@ -13,7 +13,7 @@ type OptionStyles = {
   highlightOffset: number
 }
 
-export const getOptionStyles = (): OptionStyles => {
+export const getOptionSizes = (): OptionStyles => {
   const sizes = getSizes()
   const { ['9']: largeFont } = sizes
   const { ['8']: smallFont } = sizes

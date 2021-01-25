@@ -3,7 +3,7 @@ import { FlatList } from 'react-native-gesture-handler'
 import { StyleSheet, View, SafeAreaView } from 'react-native'
 import React from 'react'
 
-import { getOptionStyles } from '../../utils'
+import { getOptionSizes } from '../../utils'
 import type { WithTransition } from '../../types'
 
 export type OptionListProps = WithTransition & {
@@ -20,7 +20,7 @@ export const OptionList = ({
   useRightColumnLabel = () => <></>,
   transitionValue,
 }: OptionListProps): React.ReactElement => {
-  const { largeGutter, itemWidth, internalGutter } = getOptionStyles()
+  const { largeGutter, itemWidth, internalGutter } = getOptionSizes()
   const { common, left, right } = StyleSheet.create({
     common: {
       position: 'absolute',

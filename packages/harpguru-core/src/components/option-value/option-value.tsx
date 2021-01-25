@@ -3,7 +3,7 @@ import React from 'react'
 import type { Pozition, Pitch } from 'harpparts'
 import { isPozition, isPitch } from 'harpparts'
 
-import { getOptionStyles } from '../../utils'
+import { getOptionSizes } from '../../utils'
 import { harpguruColors, colors } from '../../styles'
 
 export type OptionValueProps = {
@@ -28,7 +28,7 @@ export const OptionValue = ({
     itemWidth,
     largeFont,
     superscriptFont,
-  } = getOptionStyles()
+  } = getOptionSizes()
   const {
     textWrapperBase,
     highlightStyle,
