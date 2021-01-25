@@ -39,16 +39,29 @@ from ${prevPropsz.length} to ${nextPropsz.length}
   const areTitlesEqual = prevPropsz.every(
     (prevProps, index) => prevProps.useTitle === nextPropsz[index].useTitle
   )
-  // TODO: Add check that the useItems functions are identical
-  // and update the layout and scales menu's to wrap their
-  // useItems function is callback memos and see that without
-  // them the animation values are reset each time a value is
-  // selected.
-  // Don't forget to include `areUseItems...` in the error message below.
-  // TODO: Add check for the twoColumns, useLeftColumnLabel and useRightColumnLabel
-  // too.
+  const areItemsEqual = !prevPropsz.some(
+    (prevProps, index) => prevProps.useItems !== nextPropsz[index].useItems
+  )
+  const areTwoColumnsEqual = !prevPropsz.some(
+    (prevProps, index) => prevProps.twoColumns !== nextPropsz[index].twoColumns
+  )
+  const areLeftColumnLabelsEqual = !prevPropsz.some(
+    (prevProps, index) =>
+      prevProps.useLeftColumnLabel !== nextPropsz[index].useLeftColumnLabel
+  )
+  const areRightColumnLabelsEqual = !prevPropsz.some(
+    (prevProps, index) =>
+      prevProps.useRightColumnLabel !== nextPropsz[index].useRightColumnLabel
+  )
 
-  if (areTitlesEqual === true) return true
+  if (
+    (areTitlesEqual &&
+      areItemsEqual &&
+      areTwoColumnsEqual &&
+      areLeftColumnLabelsEqual &&
+      areRightColumnLabelsEqual) === true
+  )
+    return true
 
   if (!isProd()) return false
 
@@ -58,5 +71,9 @@ parameters which never go stale. Please check the params provided
 to this OptionStack.
 
 areTitlesEqual: ${areTitlesEqual}
+areItemsEqual: ${areItemsEqual}
+areTwoColumnsEqual: ${areTwoColumnsEqual}
+areLeftColumnLabelsEqual: ${areLeftColumnLabelsEqual}
+areRightColumnLabelsEqual: ${areRightColumnLabelsEqual}
   `)
 }
