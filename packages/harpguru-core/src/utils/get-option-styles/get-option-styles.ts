@@ -1,7 +1,4 @@
-import type { TextStyle, ViewStyle } from 'react-native'
-import { StyleSheet } from 'react-native'
-
-import { colors, getSizes, harpguruColors } from '../../styles'
+import { getSizes } from '../../styles'
 
 type OptionStyles = {
   largeFont: number
@@ -11,12 +8,9 @@ type OptionStyles = {
   largeGutter: number
   smallGutter: number
   internalGutter: number
-  columnLabelSub: TextStyle
-  optionHighlight: ViewStyle
-  optionText: TextStyle
-  optionSuperscript: TextStyle
-  optionTextDouble: TextStyle
-  optionSelected: TextStyle
+  highlightHeight: number
+  highlightOffset: number
+  superscriptFont: number
 }
 
 export const getOptionStyles = (): OptionStyles => {
@@ -27,41 +21,12 @@ export const getOptionStyles = (): OptionStyles => {
   const { ['10']: itemWidth } = sizes
   const { ['6']: itemHeightTrim } = sizes
   const { ['7']: highlightHeight } = sizes
+  const { ['5']: highlightOffset } = sizes
   const { ['11']: largeGutter } = sizes
   const { ['7']: internalGutter } = sizes
   const { ['9']: smallGutter } = sizes
-  const styles = StyleSheet.create({
-    columnLabelSub: {
-      fontSize: smallFont,
-      color: colors.inertOutline,
-    },
-    optionHighlight: {
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: sizes['5'],
-      height: highlightHeight,
-      backgroundColor: harpguruColors.pink,
-    },
-    optionText: {
-      fontSize: smallFont,
-      color: colors.inertOutline,
-    },
-    optionSuperscript: {
-      fontSize: superscriptFont,
-    },
-    optionTextDouble: {
-      width: itemWidth,
-    },
-    optionSelected: {
-      fontWeight: 'bold',
-      fontSize: largeFont,
-      color: colors.inertOutline,
-    },
-  })
 
   return {
-    ...styles,
     largeFont,
     smallFont,
     itemWidth,
@@ -69,5 +34,8 @@ export const getOptionStyles = (): OptionStyles => {
     largeGutter,
     smallGutter,
     internalGutter,
+    highlightHeight,
+    highlightOffset,
+    superscriptFont,
   }
 }
