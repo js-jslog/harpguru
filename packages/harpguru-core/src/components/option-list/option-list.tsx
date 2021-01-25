@@ -5,6 +5,7 @@ import React from 'react'
 
 import { getOptionSizes } from '../../utils'
 import type { WithTransition } from '../../types'
+import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 export type OptionListProps = WithTransition & {
   readonly useItems: () => ReadonlyArray<React.ReactElement>
@@ -21,6 +22,7 @@ export const OptionList = ({
   transitionValue,
 }: OptionListProps): React.ReactElement => {
   const { largeGutter, itemWidth, internalGutter } = getOptionSizes()
+  const { longEdge } = getWindowDimensions()
   const { common, left, right } = StyleSheet.create({
     common: {
       position: 'absolute',
@@ -32,8 +34,7 @@ export const OptionList = ({
       alignItems: 'flex-end',
     },
     right: {
-      right: 0,
-      width: largeGutter - internalGutter,
+      left: longEdge - largeGutter + internalGutter,
       alignItems: 'flex-start',
     },
   })
