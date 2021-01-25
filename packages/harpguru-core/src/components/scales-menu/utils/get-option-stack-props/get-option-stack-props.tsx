@@ -19,18 +19,15 @@ export const getOptionStackProps = (
   useChordsTitle: () => React.ReactElement,
   itemTapHandler: (arg0: ReadonlyArray<DegreeIds>) => void
 ): OptionStackProps => {
-  const scales = getScaleIds()
-    .map((id) => getScale(id))
-    .filter((scale) => scale.category === ScaleCategory.Scale)
-  const chords = getScaleIds()
-    .map((id) => getScale(id))
-    .filter((scale) => scale.category === ScaleCategory.Chord)
   const useScaleItems = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { activeDegreeIds } = activeHarpStrata
     const { label: activeScaleId } = getScaleByDegreeIds(activeDegreeIds) || {
       id: '',
     }
+    const scales = getScaleIds()
+      .map((id) => getScale(id))
+      .filter((scale) => scale.category === ScaleCategory.Scale)
     return [
       <OptionItem
         key={'clear-all-scales'}
@@ -51,13 +48,16 @@ export const getOptionStackProps = (
         />
       )),
     ]
-  }, [useGlobal, scales])
+  }, [useGlobal])
   const useChordItems = useCallback(() => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { activeDegreeIds } = activeHarpStrata
     const { label: activeScaleId } = getScaleByDegreeIds(activeDegreeIds) || {
       id: '',
     }
+    const chords = getScaleIds()
+      .map((id) => getScale(id))
+      .filter((scale) => scale.category === ScaleCategory.Chord)
     return [
       <OptionItem
         key={'clear-all-chords'}
@@ -78,7 +78,7 @@ export const getOptionStackProps = (
         />
       )),
     ]
-  }, [useGlobal, chords])
+  }, [useGlobal])
 
   const optionPropsz = [
     {
