@@ -34,24 +34,22 @@ from ${prevPropsz.length} to ${nextPropsz.length}
     `)
   }
 
-  // TODO: change all of these checks to `some` to prevent unnecessary
-  // completion of the iteration.
   const areTitlesEqual = prevPropsz.every(
     (prevProps, index) => prevProps.useTitle === nextPropsz[index].useTitle
   )
-  const areItemsEqual = !prevPropsz.some(
-    (prevProps, index) => prevProps.useItems !== nextPropsz[index].useItems
+  const areItemsEqual = prevPropsz.every(
+    (prevProps, index) => prevProps.useItems === nextPropsz[index].useItems
   )
-  const areTwoColumnsEqual = !prevPropsz.some(
-    (prevProps, index) => prevProps.twoColumns !== nextPropsz[index].twoColumns
+  const areTwoColumnsEqual = prevPropsz.every(
+    (prevProps, index) => prevProps.twoColumns === nextPropsz[index].twoColumns
   )
-  const areLeftColumnLabelsEqual = !prevPropsz.some(
+  const areLeftColumnLabelsEqual = prevPropsz.every(
     (prevProps, index) =>
-      prevProps.useLeftColumnLabel !== nextPropsz[index].useLeftColumnLabel
+      prevProps.useLeftColumnLabel === nextPropsz[index].useLeftColumnLabel
   )
-  const areRightColumnLabelsEqual = !prevPropsz.some(
+  const areRightColumnLabelsEqual = prevPropsz.every(
     (prevProps, index) =>
-      prevProps.useRightColumnLabel !== nextPropsz[index].useRightColumnLabel
+      prevProps.useRightColumnLabel === nextPropsz[index].useRightColumnLabel
   )
 
   if (
