@@ -10,31 +10,21 @@ import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
 import type { UseGlobal } from '../../../../types'
 
-type CovariantMenuItems = {
-  readonly useHarpKeyItems: (
-    arg0: UseGlobal
-  ) => ReadonlyArray<
-    React.ReactElement<
-      OptionItemProps<Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>>
-    >
+type UseCovariantItems = (
+  arg0: UseGlobal
+) => ReadonlyArray<
+  React.ReactElement<
+    OptionItemProps<Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>>
   >
-  readonly usePozitionItems: (
-    arg0: UseGlobal
-  ) => ReadonlyArray<
-    React.ReactElement<
-      OptionItemProps<Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>>
-    >
-  >
-  readonly useRootPitchItems: (
-    arg0: UseGlobal
-  ) => ReadonlyArray<
-    React.ReactElement<
-      OptionItemProps<Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>>
-    >
-  >
+>
+
+type CovariantItems = {
+  readonly useHarpKeyItems: UseCovariantItems
+  readonly usePozitionItems: UseCovariantItems
+  readonly useRootPitchItems: UseCovariantItems
 }
 
-export const useCovariantItems = (): CovariantMenuItems => {
+export const useCovariantItems = (): CovariantItems => {
   // TODO: consider moving this back to menu and
   // pass in as a parameter
   const itemTapHandler = useCallback(
