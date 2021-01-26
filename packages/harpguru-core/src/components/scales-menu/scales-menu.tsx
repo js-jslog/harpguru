@@ -1,6 +1,5 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
-import type { DegreeIds } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
@@ -10,19 +9,20 @@ import { Menu } from '../menu'
 import { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
+import { getTogglesForDispatcher } from './utils'
 import { useScalesTitles, useScalesItemsz } from './hooks'
-import { useDispatchAndFlushScaleToggles } from './hooks'
+import { useImmediatelyFlushToggles } from './hooks'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
   const { useScalesTitle, useChordsTitle } = useScalesTitles()
   const { useScalesItems, useChordsItems } = useScalesItemsz()
-  const dispatchAndFlushScaleToggles = useDispatchAndFlushScaleToggles({
+  useImmediatelyFlushToggles({
     isMenuStashed: menuProps.isMenuStashed,
   })
-  const itemTapHandler = useCallback(
-    (arg0: ReadonlyArray<DegreeIds>) => dispatchAndFlushScaleToggles(arg0),
-    [dispatchAndFlushScaleToggles]
-  )
+  const itemTapHandler = useCallback(useDispatch(getTogglesForDispatcher), [
+    useDispatch,
+    getTogglesForDispatcher,
+  ])
 
   const useScalesTitleMemo = useCallback(() => useScalesTitle(useGlobal), [
     useGlobal,
