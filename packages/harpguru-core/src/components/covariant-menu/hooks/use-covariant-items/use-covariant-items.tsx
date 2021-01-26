@@ -8,13 +8,13 @@ import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
 import type { UseGlobal } from '../../../../types'
 
-type CovariantItemType = Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
-type CovariantItemTapHandler = (arg0: CovariantItemType) => void
+type ItemCallback = Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
+type ItemTapHandler = (arg0: ItemCallback) => void
 
 type UseCovariantItems = (
   arg0: UseGlobal,
-  arg1: CovariantItemTapHandler
-) => ReadonlyArray<React.ReactElement<OptionItemProps<CovariantItemType>>>
+  arg1: ItemTapHandler
+) => ReadonlyArray<React.ReactElement<OptionItemProps<ItemCallback>>>
 
 type CovariantItems = {
   readonly useHarpKeyItems: UseCovariantItems
@@ -25,7 +25,7 @@ type CovariantItems = {
 export const useCovariantItems = (): CovariantItems => {
   const useHarpKeyItems = (
     useGlobal: UseGlobal,
-    itemTapHandler: CovariantItemTapHandler
+    itemTapHandler: ItemTapHandler
   ) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
@@ -67,7 +67,7 @@ export const useCovariantItems = (): CovariantItems => {
 
   const usePozitionItems = (
     useGlobal: UseGlobal,
-    itemTapHandler: CovariantItemTapHandler
+    itemTapHandler: ItemTapHandler
   ) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
@@ -109,7 +109,7 @@ export const useCovariantItems = (): CovariantItems => {
 
   const useRootPitchItems = (
     useGlobal: UseGlobal,
-    itemTapHandler: CovariantItemTapHandler
+    itemTapHandler: ItemTapHandler
   ) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
