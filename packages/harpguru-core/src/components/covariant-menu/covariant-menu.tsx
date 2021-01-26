@@ -1,244 +1,90 @@
-import { useGlobal, useDispatch } from 'reactn'
+import { useGlobal } from 'reactn'
 import React, { useCallback } from 'react'
-import { getPitch, getPozition, PitchIds, PozitionIds } from 'harpparts'
-import type { CovariancePrimer } from 'harpcovariance'
-import { getCovarianceSeries, CovariantMembers } from 'harpcovariance'
 import { Feather } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
-import { OptionLabel } from '../option-label'
-import { OptionItem } from '../option-item'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
 import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
-import { getNewHarpStrataForDispatcher } from './utils'
+import {
+  useCovariantTitles,
+  useCovariantItems,
+  useCovariantLabels,
+} from './hooks'
 
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
-  const itemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataForDispatcher),
-    [useDispatch]
-  )
-  const useHarpKeyItems = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
-    const harpKeyPrimer: CovariancePrimer = {
-      lockedType: CovariantMembers.HarpKey,
-      variedType: CovariantMembers.Pozition,
-      lockedValue: harpKeyId,
-      variedValue: PozitionIds.First,
-    }
-    const harpKeySeries = getCovarianceSeries(harpKeyPrimer)
-    const harpKeyItems = harpKeySeries
-      .map((item, index) => [
-        <OptionItem
-          key={`${index}-0`}
-          value={getPozition(item.pozitionId)}
-          isSelected={item.pozitionId === pozitionId}
-          itemTapHandler={itemTapHandler}
-          callbackParam={{
-            harpKeyId: item.harpKeyId,
-            pozitionId: item.pozitionId,
-          }}
-          twoColumns={true}
-        />,
-        <OptionItem
-          key={`${index}-1`}
-          value={getPitch(item.rootPitchId)}
-          isSelected={item.rootPitchId === rootPitchId}
-          itemTapHandler={itemTapHandler}
-          callbackParam={{
-            harpKeyId: item.harpKeyId,
-            pozitionId: item.pozitionId,
-          }}
-          twoColumns={true}
-        />,
-      ])
-      .flat()
-    return harpKeyItems
-  }, [useGlobal])
+  const {
+    useHarpKeyTitle,
+    usePozitionTitle,
+    useRootPitchTitle,
+  } = useCovariantTitles()
+  const {
+    useHarpKeyItems,
+    usePozitionItems,
+    useRootPitchItems,
+  } = useCovariantItems()
+  const {
+    useHarpKeyLabel,
+    usePozitionLabel,
+    useRootPitchLabel,
+  } = useCovariantLabels()
 
-  const usePozitionItems = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
-    const pozitionPrimer: CovariancePrimer = {
-      lockedType: CovariantMembers.Pozition,
-      variedType: CovariantMembers.RootPitch,
-      lockedValue: pozitionId,
-      variedValue: PitchIds.A,
-    }
-    const pozitionSeries = getCovarianceSeries(pozitionPrimer)
-    const pozitionItems = pozitionSeries
-      .map((item, index) => [
-        <OptionItem
-          key={`${index}-0`}
-          value={getPitch(item.rootPitchId)}
-          isSelected={item.rootPitchId === rootPitchId}
-          itemTapHandler={itemTapHandler}
-          callbackParam={{
-            harpKeyId: item.harpKeyId,
-            pozitionId: item.pozitionId,
-          }}
-          twoColumns={true}
-        />,
-        <OptionItem
-          key={`${index}-1`}
-          value={getPitch(item.harpKeyId)}
-          isSelected={item.harpKeyId === harpKeyId}
-          itemTapHandler={itemTapHandler}
-          callbackParam={{
-            harpKeyId: item.harpKeyId,
-            pozitionId: item.pozitionId,
-          }}
-          twoColumns={true}
-        />,
-      ])
-      .flat()
-    return pozitionItems
-  }, [useGlobal])
+  const useHarpKeyTitleMemo = useCallback(() => useHarpKeyTitle(), [useGlobal])
 
-  const useRootPitchItems = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
-    const rootPitchPrimer: CovariancePrimer = {
-      lockedType: CovariantMembers.RootPitch,
-      variedType: CovariantMembers.HarpKey,
-      lockedValue: rootPitchId,
-      variedValue: PitchIds.A,
-    }
-    const rootPitchSeries = getCovarianceSeries(rootPitchPrimer)
-    const rootPitchItems = rootPitchSeries
-      .map((item, index) => [
-        <OptionItem
-          key={`${index}-0`}
-          value={getPitch(item.harpKeyId)}
-          isSelected={item.harpKeyId === harpKeyId}
-          itemTapHandler={itemTapHandler}
-          callbackParam={{
-            harpKeyId: item.harpKeyId,
-            pozitionId: item.pozitionId,
-          }}
-          twoColumns={true}
-        />,
-        <OptionItem
-          key={`${index}-1`}
-          value={getPozition(item.pozitionId)}
-          isSelected={item.pozitionId === pozitionId}
-          itemTapHandler={itemTapHandler}
-          callbackParam={{
-            harpKeyId: item.harpKeyId,
-            pozitionId: item.pozitionId,
-          }}
-          twoColumns={true}
-        />,
-      ])
-      .flat()
-    return rootPitchItems
-  }, [useGlobal])
+  const usePozitionTitleMemo = useCallback(() => usePozitionTitle(), [
+    useGlobal,
+  ])
 
-  const useHarpKeyTitle = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId } = activeHarpStrata
-    return (
-      <OptionLabel
-        name={'Harp key'}
-        isLargeTitle={true}
-        value={getPitch(harpKeyId)}
-        alignItems={'center'}
-      />
-    )
-  }, [useGlobal])
+  const useRootPitchTitleMemo = useCallback(() => useRootPitchTitle(), [
+    useGlobal,
+  ])
 
-  const usePozitionTitle = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { pozitionId } = activeHarpStrata
-    return (
-      <OptionLabel
-        name={'Position'}
-        isLargeTitle={true}
-        value={getPozition(pozitionId)}
-        alignItems={'center'}
-      />
-    )
-  }, [useGlobal])
+  const useHarpKeyItemsMemo = useCallback(() => useHarpKeyItems(), [useGlobal])
 
-  const useRootPitchTitle = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { rootPitchId } = activeHarpStrata
-    return (
-      <OptionLabel
-        name={'Song key'}
-        isLargeTitle={true}
-        value={getPitch(rootPitchId)}
-        alignItems={'center'}
-      />
-    )
-  }, [useGlobal])
+  const usePozitionItemsMemo = useCallback(() => usePozitionItems(), [
+    useGlobal,
+  ])
 
-  const useHarpKeyLabel = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId } = activeHarpStrata
-    return (
-      <OptionLabel
-        name={'Harp key'}
-        isLargeTitle={false}
-        value={getPitch(harpKeyId)}
-        alignItems={'center'}
-      />
-    )
-  }, [useGlobal])
+  const useRootPitchItemsMemo = useCallback(() => useRootPitchItems(), [
+    useGlobal,
+  ])
 
-  const usePozitionLabel = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { pozitionId } = activeHarpStrata
-    return (
-      <OptionLabel
-        name={'Position'}
-        isLargeTitle={false}
-        value={getPozition(pozitionId)}
-        alignItems={'center'}
-      />
-    )
-  }, [useGlobal])
+  const useHarpKeyLabelMemo = useCallback(() => useHarpKeyLabel(), [useGlobal])
 
-  const useRootPitchLabel = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { rootPitchId } = activeHarpStrata
-    return (
-      <OptionLabel
-        name={'Song key'}
-        isLargeTitle={false}
-        value={getPitch(rootPitchId)}
-        alignItems={'center'}
-      />
-    )
-  }, [useGlobal])
+  const usePozitionLabelMemo = useCallback(() => usePozitionLabel(), [
+    useGlobal,
+  ])
+
+  const useRootPitchLabelMemo = useCallback(() => useRootPitchLabel(), [
+    useGlobal,
+  ])
 
   const sizes = getSizes()
 
   const optionPropsz = [
     {
-      useTitle: useHarpKeyTitle,
-      useItems: useHarpKeyItems,
+      useTitle: useHarpKeyTitleMemo,
+      useItems: useHarpKeyItemsMemo,
       twoColumns: true,
-      useLeftColumnLabel: usePozitionLabel,
-      useRightColumnLabel: useRootPitchLabel,
+      useLeftColumnLabel: usePozitionLabelMemo,
+      useRightColumnLabel: useRootPitchLabelMemo,
     },
     {
-      useTitle: usePozitionTitle,
-      useItems: usePozitionItems,
+      useTitle: usePozitionTitleMemo,
+      useItems: usePozitionItemsMemo,
       twoColumns: true,
-      useLeftColumnLabel: useRootPitchLabel,
-      useRightColumnLabel: useHarpKeyLabel,
+      useLeftColumnLabel: useRootPitchLabelMemo,
+      useRightColumnLabel: useHarpKeyLabelMemo,
     },
     {
-      useTitle: useRootPitchTitle,
-      useItems: useRootPitchItems,
+      useTitle: useRootPitchTitleMemo,
+      useItems: useRootPitchItemsMemo,
       twoColumns: true,
-      useLeftColumnLabel: useHarpKeyLabel,
-      useRightColumnLabel: usePozitionLabel,
+      useLeftColumnLabel: useHarpKeyLabelMemo,
+      useRightColumnLabel: usePozitionLabelMemo,
     },
   ]
   return (

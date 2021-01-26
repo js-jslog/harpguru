@@ -6,7 +6,10 @@ import type { OptionValueProps } from '../option-value'
 import { getOptionSizes } from '../../utils'
 import { colors } from '../../styles'
 
-type OptionLabelProps = Pick<OptionValueProps, 'value' | 'alignItems'> & {
+export type OptionLabelProps = Pick<
+  OptionValueProps,
+  'value' | 'alignItems'
+> & {
   readonly name: string
   readonly isLargeTitle: boolean
 }

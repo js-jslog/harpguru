@@ -1,0 +1,59 @@
+import { useGlobal } from 'reactn'
+import React from 'react'
+import { getPitch, getPozition } from 'harpparts'
+
+import { OptionLabel } from '../../../option-label'
+import type { OptionLabelProps } from '../../../option-label'
+
+type CovariantMenuLabels = {
+  readonly useHarpKeyLabel: () => React.ReactElement<OptionLabelProps>
+  readonly usePozitionLabel: () => React.ReactElement<OptionLabelProps>
+  readonly useRootPitchLabel: () => React.ReactElement<OptionLabelProps>
+}
+
+export const useCovariantLabels = (): CovariantMenuLabels => {
+  const useHarpKeyLabel = () => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { harpKeyId } = activeHarpStrata
+    return (
+      <OptionLabel
+        name={'Harp key'}
+        isLargeTitle={false}
+        value={getPitch(harpKeyId)}
+        alignItems={'center'}
+      />
+    )
+  }
+
+  const usePozitionLabel = () => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { pozitionId } = activeHarpStrata
+    return (
+      <OptionLabel
+        name={'Position'}
+        isLargeTitle={false}
+        value={getPozition(pozitionId)}
+        alignItems={'center'}
+      />
+    )
+  }
+
+  const useRootPitchLabel = () => {
+    const [activeHarpStrata] = useGlobal('activeHarpStrata')
+    const { rootPitchId } = activeHarpStrata
+    return (
+      <OptionLabel
+        name={'Song key'}
+        isLargeTitle={false}
+        value={getPitch(rootPitchId)}
+        alignItems={'center'}
+      />
+    )
+  }
+
+  return {
+    useHarpKeyLabel,
+    usePozitionLabel,
+    useRootPitchLabel,
+  }
+}

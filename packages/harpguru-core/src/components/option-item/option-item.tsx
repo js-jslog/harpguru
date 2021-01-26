@@ -6,7 +6,10 @@ import { OptionValue } from '../option-value'
 import type { OptionValueProps } from '../option-value'
 import { getOptionSizes } from '../../utils'
 
-type OptionItemProps<T> = Pick<OptionValueProps, 'value' | 'twoColumns'> & {
+export type OptionItemProps<T> = Pick<
+  OptionValueProps,
+  'value' | 'twoColumns'
+> & {
   readonly isSelected: boolean
   readonly itemTapHandler: (arg0: T) => void
   readonly callbackParam: T
