@@ -23,7 +23,7 @@ export const OptionItem = <T extends unknown>({
   callbackParam,
 }: OptionItemProps<T>): React.ReactElement => {
   const { itemWidth, itemHeightTrim } = getOptionSizes()
-  const itemElement = (
+  const displayElement = (
     <View
       style={{
         height: itemWidth - itemHeightTrim,
@@ -45,7 +45,7 @@ export const OptionItem = <T extends unknown>({
       disabled={isSelected ? true : false}
       onPress={() => itemTapHandler(callbackParam)}
     >
-      {itemElement}
+      {displayElement}
     </TouchableOpacity>
   )
 }
