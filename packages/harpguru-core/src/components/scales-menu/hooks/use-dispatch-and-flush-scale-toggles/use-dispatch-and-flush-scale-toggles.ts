@@ -1,9 +1,8 @@
 import type Dispatcher from 'reactn/types/dispatcher'
 import { useGlobal, useDispatch } from 'reactn'
 import { useCallback, useEffect } from 'react'
-import type { DegreeIds } from 'harpparts'
 
-import { rebufferForInput } from '../../utils'
+import { getTogglesForDispatcher } from '../../utils'
 import { FlushChannels } from '../../../../types'
 import type { GlobalState, MenuProps } from '../../../../types'
 import { useFlushBufferedActivityToggles } from '../../../../hooks'
@@ -34,24 +33,8 @@ export const useDispatchAndFlushScaleToggles = ({
   // being recreated before being passed to the option-stack.
   // This ensures that the option-stack UX is persistant and
   // doesn't rerender unless absolutely necessary.
-  return useCallback(
-    useDispatch(
-      (
-        global: GlobalState,
-        _dipatch,
-        targetActiveDegrees: ReadonlyArray<DegreeIds>
-      ): Pick<GlobalState, 'bufferedActivityToggles'> => {
-        const { activeHarpStrata } = global
-        const { activeDegreeIds } = activeHarpStrata
-
-        return {
-          bufferedActivityToggles: rebufferForInput(
-            activeDegreeIds,
-            targetActiveDegrees
-          ),
-        }
-      }
-    ),
-    [useDispatch]
-  )
+  return useCallback(useDispatch(getTogglesForDispatcher), [
+    useDispatch,
+    getTogglesForDispatcher,
+  ])
 }
