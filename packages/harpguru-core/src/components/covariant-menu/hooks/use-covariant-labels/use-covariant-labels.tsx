@@ -4,11 +4,18 @@ import { getPitch, getPozition } from 'harpparts'
 
 import { OptionLabel } from '../../../option-label'
 import type { OptionLabelProps } from '../../../option-label'
+import type { UseGlobal } from '../../../../types'
 
 type CovariantMenuLabels = {
-  readonly useHarpKeyLabel: () => React.ReactElement<OptionLabelProps>
-  readonly usePozitionLabel: () => React.ReactElement<OptionLabelProps>
-  readonly useRootPitchLabel: () => React.ReactElement<OptionLabelProps>
+  readonly useHarpKeyLabel: (
+    arg0: UseGlobal
+  ) => React.ReactElement<OptionLabelProps>
+  readonly usePozitionLabel: (
+    arg0: UseGlobal
+  ) => React.ReactElement<OptionLabelProps>
+  readonly useRootPitchLabel: (
+    arg0: UseGlobal
+  ) => React.ReactElement<OptionLabelProps>
 }
 
 export const useCovariantLabels = (): CovariantMenuLabels => {

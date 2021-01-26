@@ -1,3 +1,4 @@
+import type { StateTuple } from 'reactn/types/use-global'
 import type { Node, Value } from 'react-native-reanimated'
 import type { HarpStrata } from 'harpstrata'
 import type { DegreeIds } from 'harpparts'
@@ -10,6 +11,14 @@ export type GlobalState = {
   readonly fragmentHarpFaceByOctaves: boolean
   readonly flushChannel: FlushChannels
 }
+
+// TODO: See if this can be replaced with or use `reactn/types/use-global`
+export type UseGlobal = <
+  G extends GlobalState,
+  Property extends keyof G = keyof G
+>(
+  property: Property
+) => StateTuple<G, Property>
 
 export enum DisplayModes {
   Degree = 'Degree',

@@ -32,35 +32,44 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     useRootPitchLabel,
   } = useCovariantLabels()
 
-  const useHarpKeyTitleMemo = useCallback(() => useHarpKeyTitle(), [useGlobal])
-
-  const usePozitionTitleMemo = useCallback(() => usePozitionTitle(), [
+  const useHarpKeyTitleMemo = useCallback(() => useHarpKeyTitle(useGlobal), [
     useGlobal,
   ])
 
-  const useRootPitchTitleMemo = useCallback(() => useRootPitchTitle(), [
+  const usePozitionTitleMemo = useCallback(() => usePozitionTitle(useGlobal), [
     useGlobal,
   ])
 
-  const useHarpKeyItemsMemo = useCallback(() => useHarpKeyItems(), [useGlobal])
+  const useRootPitchTitleMemo = useCallback(
+    () => useRootPitchTitle(useGlobal),
+    [useGlobal]
+  )
 
-  const usePozitionItemsMemo = useCallback(() => usePozitionItems(), [
+  const useHarpKeyItemsMemo = useCallback(() => useHarpKeyItems(useGlobal), [
     useGlobal,
   ])
 
-  const useRootPitchItemsMemo = useCallback(() => useRootPitchItems(), [
+  const usePozitionItemsMemo = useCallback(() => usePozitionItems(useGlobal), [
     useGlobal,
   ])
 
-  const useHarpKeyLabelMemo = useCallback(() => useHarpKeyLabel(), [useGlobal])
+  const useRootPitchItemsMemo = useCallback(
+    () => useRootPitchItems(useGlobal),
+    [useGlobal]
+  )
 
-  const usePozitionLabelMemo = useCallback(() => usePozitionLabel(), [
+  const useHarpKeyLabelMemo = useCallback(() => useHarpKeyLabel(useGlobal), [
     useGlobal,
   ])
 
-  const useRootPitchLabelMemo = useCallback(() => useRootPitchLabel(), [
+  const usePozitionLabelMemo = useCallback(() => usePozitionLabel(useGlobal), [
     useGlobal,
   ])
+
+  const useRootPitchLabelMemo = useCallback(
+    () => useRootPitchLabel(useGlobal),
+    [useGlobal]
+  )
 
   const sizes = getSizes()
 
