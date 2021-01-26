@@ -23,7 +23,7 @@ export const useCovariantTitles = (): CovariantMenuTitles => {
     const { harpKeyId } = activeHarpStrata
     return (
       <OptionLabel
-        name={'Harp key'}
+        title={'Harp key'}
         isLargeTitle={true}
         value={getPitch(harpKeyId)}
         alignItems={'center'}
@@ -36,7 +36,7 @@ export const useCovariantTitles = (): CovariantMenuTitles => {
     const { pozitionId } = activeHarpStrata
     return (
       <OptionLabel
-        name={'Position'}
+        title={'Position'}
         isLargeTitle={true}
         value={getPozition(pozitionId)}
         alignItems={'center'}
@@ -49,7 +49,7 @@ export const useCovariantTitles = (): CovariantMenuTitles => {
     const { rootPitchId } = activeHarpStrata
     return (
       <OptionLabel
-        name={'Song key'}
+        title={'Song key'}
         isLargeTitle={true}
         value={getPitch(rootPitchId)}
         alignItems={'center'}

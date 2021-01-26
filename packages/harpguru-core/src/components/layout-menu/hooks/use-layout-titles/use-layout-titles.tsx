@@ -16,7 +16,7 @@ export const useLayoutTitles = (): LayoutMenuTitles => {
     } = activeHarpStrata
     return (
       <OptionLabel
-        name={'Tuning'}
+        title={'Tuning'}
         isLargeTitle={true}
         value={apparatusId}
         alignItems={'flex-start'}

@@ -21,7 +21,7 @@ export const useScalesTitles = (): ScalesMenuTitles => {
     const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
     return (
       <OptionLabel
-        name={'Scales'}
+        title={'Scales'}
         isLargeTitle={true}
         value={scaleLabel || ''}
         alignItems={'flex-start'}
@@ -35,7 +35,7 @@ export const useScalesTitles = (): ScalesMenuTitles => {
     const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
     return (
       <OptionLabel
-        name={'Chords'}
+        title={'Chords'}
         isLargeTitle={true}
         value={scaleLabel || ''}
         alignItems={'flex-start'}

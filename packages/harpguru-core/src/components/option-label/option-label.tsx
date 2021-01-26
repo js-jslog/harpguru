@@ -10,12 +10,12 @@ export type OptionLabelProps = Pick<
   OptionValueProps,
   'value' | 'alignItems'
 > & {
-  readonly name: string
+  readonly title: string
   readonly isLargeTitle: boolean
 }
 
 export const OptionLabel = ({
-  name,
+  title,
   isLargeTitle,
   value,
   alignItems,
@@ -34,7 +34,7 @@ export const OptionLabel = ({
   const titleStyles = isLargeTitle === true ? [base, large] : [base]
   return (
     <View style={{ width: '100%' }}>
-      <Text style={titleStyles}>{name}</Text>
+      <Text style={titleStyles}>{title}</Text>
       <OptionValue
         value={value}
         alignItems={alignItems}
