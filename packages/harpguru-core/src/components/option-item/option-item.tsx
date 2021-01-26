@@ -22,11 +22,11 @@ export const OptionItem = <T extends unknown>({
   itemTapHandler,
   callbackParam,
 }: OptionItemProps<T>): React.ReactElement => {
-  const styles = getOptionSizes()
+  const { itemWidth, itemHeightTrim } = getOptionSizes()
   const itemElement = (
     <View
       style={{
-        height: styles.itemWidth - styles.itemHeightTrim,
+        height: itemWidth - itemHeightTrim,
         alignItems: 'center',
         justifyContent: 'center',
       }}
