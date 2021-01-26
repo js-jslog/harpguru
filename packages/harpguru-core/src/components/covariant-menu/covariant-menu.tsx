@@ -1,4 +1,4 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
 import { Feather } from '@expo/vector-icons'
 
@@ -9,6 +9,7 @@ import { Menu } from '../menu'
 import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
+import { getNewHarpStrataForDispatcher } from './utils'
 import {
   useCovariantTitles,
   useCovariantItems,
@@ -16,6 +17,10 @@ import {
 } from './hooks'
 
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
+  const itemTapHandler = useCallback(
+    useDispatch(getNewHarpStrataForDispatcher),
+    [useDispatch, getNewHarpStrataForDispatcher]
+  )
   const {
     useHarpKeyTitle,
     usePozitionTitle,
@@ -45,17 +50,19 @@ export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal]
   )
 
-  const useHarpKeyItemsMemo = useCallback(() => useHarpKeyItems(useGlobal), [
-    useGlobal,
-  ])
+  const useHarpKeyItemsMemo = useCallback(
+    () => useHarpKeyItems(useGlobal, itemTapHandler),
+    [useGlobal, itemTapHandler]
+  )
 
-  const usePozitionItemsMemo = useCallback(() => usePozitionItems(useGlobal), [
-    useGlobal,
-  ])
+  const usePozitionItemsMemo = useCallback(
+    () => usePozitionItems(useGlobal, itemTapHandler),
+    [useGlobal, itemTapHandler]
+  )
 
   const useRootPitchItemsMemo = useCallback(
-    () => useRootPitchItems(useGlobal),
-    [useGlobal]
+    () => useRootPitchItems(useGlobal, itemTapHandler),
+    [useGlobal, itemTapHandler]
   )
 
   const useHarpKeyLabelMemo = useCallback(() => useHarpKeyLabel(useGlobal), [

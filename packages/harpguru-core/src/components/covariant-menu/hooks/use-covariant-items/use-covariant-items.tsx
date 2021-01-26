@@ -1,22 +1,20 @@
-import { useDispatch } from 'reactn'
-import React, { useCallback } from 'react'
+import React from 'react'
 import type { HarpStrataProps } from 'harpstrata'
 import { PozitionIds, PitchIds, getPozition, getPitch } from 'harpparts'
 import type { CovariancePrimer } from 'harpcovariance'
 import { getCovarianceSeries, CovariantMembers } from 'harpcovariance'
 
-import { getNewHarpStrataForDispatcher } from '../../utils'
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
 import type { UseGlobal } from '../../../../types'
 
+type CovariantItemType = Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
+type CovariantItemTapHandler = (arg0: CovariantItemType) => void
+
 type UseCovariantItems = (
-  arg0: UseGlobal
-) => ReadonlyArray<
-  React.ReactElement<
-    OptionItemProps<Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>>
-  >
->
+  arg0: UseGlobal,
+  arg1: CovariantItemTapHandler
+) => ReadonlyArray<React.ReactElement<OptionItemProps<CovariantItemType>>>
 
 type CovariantItems = {
   readonly useHarpKeyItems: UseCovariantItems
@@ -25,13 +23,10 @@ type CovariantItems = {
 }
 
 export const useCovariantItems = (): CovariantItems => {
-  // TODO: consider moving this back to menu and
-  // pass in as a parameter
-  const itemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataForDispatcher),
-    [useDispatch]
-  )
-  const useHarpKeyItems = (useGlobal: UseGlobal) => {
+  const useHarpKeyItems = (
+    useGlobal: UseGlobal,
+    itemTapHandler: CovariantItemTapHandler
+  ) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
     const harpKeyPrimer: CovariancePrimer = {
@@ -70,7 +65,10 @@ export const useCovariantItems = (): CovariantItems => {
     return harpKeyItems
   }
 
-  const usePozitionItems = (useGlobal: UseGlobal) => {
+  const usePozitionItems = (
+    useGlobal: UseGlobal,
+    itemTapHandler: CovariantItemTapHandler
+  ) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
     const pozitionPrimer: CovariancePrimer = {
@@ -109,7 +107,10 @@ export const useCovariantItems = (): CovariantItems => {
     return pozitionItems
   }
 
-  const useRootPitchItems = (useGlobal: UseGlobal) => {
+  const useRootPitchItems = (
+    useGlobal: UseGlobal,
+    itemTapHandler: CovariantItemTapHandler
+  ) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
     const rootPitchPrimer: CovariancePrimer = {
