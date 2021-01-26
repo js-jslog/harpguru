@@ -2,7 +2,8 @@ import Dispatcher from 'reactn/types/dispatcher'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 
-import { DisplayModes, GlobalState } from '../../../../types'
+import type { GlobalState } from '../../../../types'
+import { DisplayModes } from '../../../../types'
 
 export const getNewHarpStrataForDispatcher = (
   global: GlobalState,
