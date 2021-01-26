@@ -21,11 +21,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Changed
 
+- MAJOR: The covariant menu layout and workflow
 - MINOR: The tuning menu layout
 
 ### Removed
 
 - MAJOR: Pan gesture handlers for opening and closing menus
+- MAJOR: Long press handler to change root pitch location
 
 ## [v5.0.0](https://github.com/js-jslog/harpguru/releases/tag/v6.0.0) - 2020-01-10
 
