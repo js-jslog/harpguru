@@ -1,25 +1,34 @@
-import { useGlobal } from 'reactn'
-import React, { useCallback } from 'react'
+import React from 'react'
+import type { DegreeIds } from 'harpparts'
 import {
   getScale,
   getScaleByDegreeIds,
   getScaleIds,
   ScaleCategory,
 } from 'harpparts'
-import type { DegreeIds } from 'harpparts'
 
-import type { OptionStackProps } from '../../../option-stack'
 import { OptionItem } from '../../../option-item'
+import type { OptionItemProps } from '../../../option-item'
+import type { UseGlobal } from '../../../../types'
 
-// TODO: It's a bit confusing having a getter util which
-// needs to have a .tsx extension. Is there any way to
-// resolve that?
-export const getOptionStackProps = (
-  useScalesTitle: () => React.ReactElement,
-  useChordsTitle: () => React.ReactElement,
-  itemTapHandler: (arg0: ReadonlyArray<DegreeIds>) => void
-): OptionStackProps => {
-  const useScaleItems = useCallback(() => {
+type ItemCallback = ReadonlyArray<DegreeIds>
+type ItemTapHandler = (arg0: ReadonlyArray<DegreeIds>) => void
+
+type UseScalesItems = (
+  arg0: UseGlobal,
+  arg1: ItemTapHandler
+) => ReadonlyArray<React.ReactElement<OptionItemProps<ItemCallback>>>
+
+type ScalesItemsz = {
+  readonly useScalesItems: UseScalesItems
+  readonly useChordsItems: UseScalesItems
+}
+
+export const useScalesItemsz = (): ScalesItemsz => {
+  const useScalesItems = (
+    useGlobal: UseGlobal,
+    itemTapHandler: ItemTapHandler
+  ) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { activeDegreeIds } = activeHarpStrata
     const { label: activeScaleId } = getScaleByDegreeIds(activeDegreeIds) || {
@@ -48,8 +57,12 @@ export const getOptionStackProps = (
         />
       )),
     ]
-  }, [useGlobal])
-  const useChordItems = useCallback(() => {
+  }
+
+  const useChordsItems = (
+    useGlobal: UseGlobal,
+    itemTapHandler: ItemTapHandler
+  ) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { activeDegreeIds } = activeHarpStrata
     const { label: activeScaleId } = getScaleByDegreeIds(activeDegreeIds) || {
@@ -78,20 +91,7 @@ export const getOptionStackProps = (
         />
       )),
     ]
-  }, [useGlobal])
+  }
 
-  const optionPropsz = [
-    {
-      useTitle: useScalesTitle,
-      useItems: useScaleItems,
-      twoColumns: false,
-    },
-    {
-      useTitle: useChordsTitle,
-      useItems: useChordItems,
-      twoColumns: false,
-    },
-  ]
-
-  return { optionPropsz }
+  return { useScalesItems, useChordsItems }
 }
