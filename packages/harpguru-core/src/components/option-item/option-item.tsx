@@ -15,16 +15,13 @@ export type OptionItemProps<T> = Pick<
   readonly callbackParam: T
 }
 
-// TODO: How do I apply this generic without resorting to this
-// form of function definition. It's fine, but it's not consistent
-// when I've got function expressions everywhere else.
-export function OptionItem<T>({
+export const OptionItem = <T extends unknown>({
   value,
   twoColumns,
   isSelected,
   itemTapHandler,
   callbackParam,
-}: OptionItemProps<T>): React.ReactElement {
+}: OptionItemProps<T>): React.ReactElement => {
   const styles = getOptionSizes()
   const itemElement = (
     <View
