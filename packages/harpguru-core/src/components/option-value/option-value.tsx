@@ -17,7 +17,7 @@ export type OptionValueProps = {
 export const OptionValue = ({
   value,
   alignItems,
-  isLarge: isLargeValue,
+  isLarge,
   isHighlighted = false,
   twoColumns,
 }: OptionValueProps): React.ReactElement => {
@@ -66,13 +66,13 @@ export const OptionValue = ({
       fontSize: superscriptFont,
     },
   })
-  const extraHighlightStyle = isLargeValue ? [] : [{ bottom: 0 }]
+  const extraHighlightStyle = isLarge ? [] : [{ bottom: 0 }]
   const highlight = isHighlighted ? (
     <View style={[highlightStyle, extraHighlightStyle]}></View>
   ) : (
     <></>
   )
-  const isLargeStyle = isLargeValue ? [largeStyle] : []
+  const isLargeStyle = isLarge ? [largeStyle] : []
   const isTwoColumnsStyle = twoColumns ? [twoColumnsStyle] : []
   const [regularscript, superscript] =
     typeof value !== 'string' && (isPozition(value) || isPitch(value))
