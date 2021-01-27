@@ -1,5 +1,5 @@
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
 import { OptionValue } from '../option-value'
@@ -23,14 +23,15 @@ export const OptionItem = <T extends unknown>({
   callbackParam,
 }: OptionItemProps<T>): React.ReactElement => {
   const { itemWidth, itemHeightTrim } = getOptionSizes()
+  const { itemAlignment } = StyleSheet.create({
+    itemAlignment: {
+      height: itemWidth - itemHeightTrim,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  })
   const displayElement = (
-    <View
-      style={{
-        height: itemWidth - itemHeightTrim,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <View style={itemAlignment}>
       <OptionValue
         value={value}
         alignItems={'center'}
