@@ -12,7 +12,6 @@ export type GlobalState = {
   readonly flushChannel: FlushChannels
 }
 
-// TODO: See if this can be replaced with or use `reactn/types/use-global`
 export type UseGlobal = <
   G extends GlobalState,
   Property extends keyof G = keyof G
