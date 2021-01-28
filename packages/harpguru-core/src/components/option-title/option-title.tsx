@@ -13,27 +13,23 @@ export const OptionTitle = ({
   useTitle,
   transitionValue,
 }: OptionTitleProps): React.ReactElement => {
-  const styles = getOptionSizes()
   const title = useTitle()
+
+  const styles = getOptionSizes()
+  const { wrapper, gutterSpacer } = StyleSheet.create({
+    wrapper: {
+      ...StyleSheet.absoluteFillObject,
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+    },
+    gutterSpacer: {
+      position: 'absolute',
+      left: styles.smallGutter,
+    },
+  })
   return (
-    <Animated.View
-      style={[
-        {
-          ...StyleSheet.absoluteFillObject,
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-          opacity: transitionValue,
-        },
-      ]}
-    >
-      <View
-        style={{
-          position: 'absolute',
-          left: styles.smallGutter,
-        }}
-      >
-        {title}
-      </View>
+    <Animated.View style={[wrapper, { opacity: transitionValue }]}>
+      <View style={gutterSpacer}>{title}</View>
     </Animated.View>
   )
 }
