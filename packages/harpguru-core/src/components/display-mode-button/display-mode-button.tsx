@@ -1,4 +1,3 @@
-import { useWindowDimensions } from 'use-dimensions'
 import { useDispatch } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
@@ -21,7 +20,6 @@ export const DisplayModeButton = ({
   isLabelHidden,
   stashPosition,
 }: DisplayModeButtonProps): React.ReactElement => {
-  useWindowDimensions()
   const nudgeDisplayMode = useDispatch(
     getNewDisplayModeForDispatcher,
     'activeDisplayMode'

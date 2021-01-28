@@ -1,4 +1,3 @@
-import { useWindowDimensions } from 'use-dimensions'
 import { useGlobal, useDispatch } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
@@ -21,7 +20,6 @@ export const ExperienceModeButton = ({
   isLabelHidden,
   stashPosition,
 }: ExperienceModeButtonProps): React.ReactElement => {
-  useWindowDimensions()
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const nudgeExperienceMode = useDispatch(
     getNewExperienceModeForDispatcher,

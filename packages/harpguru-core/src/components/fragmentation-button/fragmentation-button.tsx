@@ -1,4 +1,3 @@
-import { useWindowDimensions } from 'use-dimensions'
 import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
@@ -21,7 +20,6 @@ export const FragmentationButton = ({
   isLabelHidden,
   stashPosition,
 }: FragmentationButtonProps): React.ReactElement => {
-  useWindowDimensions()
   const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const toggleFragmentHarpFace = useToggleFragmentHarpFace()
   const menuLikeProps: MenuProps = {

@@ -1,4 +1,3 @@
-import { useWindowDimensions } from 'use-dimensions'
 import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -15,7 +14,6 @@ import { useScalesTitles, useScalesItemsz } from './hooks'
 import { useImmediatelyFlushToggles } from './hooks'
 
 export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
-  useWindowDimensions()
   const { useScalesTitle, useChordsTitle } = useScalesTitles()
   const { useScalesItems, useChordsItems } = useScalesItemsz()
   useImmediatelyFlushToggles({

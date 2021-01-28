@@ -1,4 +1,3 @@
-import { useWindowDimensions } from 'use-dimensions'
 import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
 import { Feather } from '@expo/vector-icons'
@@ -18,7 +17,6 @@ import {
 } from './hooks'
 
 export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
-  useWindowDimensions()
   const itemTapHandler = useCallback(
     useDispatch(getNewHarpStrataForDispatcher),
     [useDispatch, getNewHarpStrataForDispatcher]

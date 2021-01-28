@@ -1,4 +1,3 @@
-import { useWindowDimensions } from 'use-dimensions'
 import { Text, View } from 'react-native'
 import React from 'react'
 
@@ -21,7 +20,6 @@ export const NextPageButton = ({
   stashPosition,
   getNextPage,
 }: NextPageButtonProps): React.ReactElement => {
-  useWindowDimensions()
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: false,
