@@ -67,7 +67,7 @@ export const OptionValue = ({
     },
   })
   const extraHighlightStyle = isLarge ? [] : [{ bottom: 0 }]
-  const highlight = isHighlighted ? (
+  const highlightElement = isHighlighted ? (
     <View style={[highlightStyle, extraHighlightStyle]}></View>
   ) : (
     <></>
@@ -80,7 +80,7 @@ export const OptionValue = ({
       : [value, '']
   const optionText = (
     <View style={{ width: '100%' }}>
-      {highlight}
+      {highlightElement}
       <View style={[textWrapperBase, isTwoColumnsStyle]}>
         <Text style={[textStyle, isLargeStyle]}>{regularscript}</Text>
         <Text style={[textStyle, superScriptStyle]}>{superscript}</Text>
