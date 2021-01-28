@@ -3,6 +3,7 @@ import { FlatList } from 'react-native-gesture-handler'
 import { StyleSheet, View, SafeAreaView } from 'react-native'
 import React from 'react'
 
+import { OptionLabelProps } from '../option-label'
 import { getOptionSizes } from '../../utils'
 import type { WithTransition } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
@@ -10,8 +11,8 @@ import { getWindowDimensions } from '../../packages/get-window-dimensions'
 export type OptionListProps = WithTransition & {
   readonly useItems: () => ReadonlyArray<React.ReactElement>
   readonly twoColumns?: boolean
-  readonly useLeftColumnLabel?: () => React.ReactElement
-  readonly useRightColumnLabel?: () => React.ReactElement
+  readonly useLeftColumnLabel?: () => React.ReactElement<OptionLabelProps>
+  readonly useRightColumnLabel?: () => React.ReactElement<OptionLabelProps>
 }
 
 export const OptionList = ({
