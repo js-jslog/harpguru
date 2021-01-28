@@ -6,7 +6,7 @@ import { usePrevious } from '../../../../hooks'
 
 export const useShouldDisplayScaleLabel = (
   scaleLabel: string | undefined,
-  isSCalesMenu: boolean
+  isScalesMenu: boolean
 ): boolean => {
   const previousScaleLabel = usePrevious(scaleLabel, scaleLabel)
   const [shouldDisplay, setShouldDisplay] = useState(false)
@@ -15,6 +15,7 @@ export const useShouldDisplayScaleLabel = (
   const isNewScale = scaleLabel !== previousScaleLabel
 
   useEffect(() => {
+    if (isScalesMenu) return setShouldDisplay(false)
     if (activeExperienceMode === ExperienceModes.Quiz)
       return setShouldDisplay(false)
     if (scaleLabel === undefined) return
@@ -32,7 +33,13 @@ export const useShouldDisplayScaleLabel = (
       return () => clearTimeout(finishShowing)
     }
     return
-  }, [isNewScale, scaleLabel, shouldDisplay])
+  }, [
+    isNewScale,
+    scaleLabel,
+    shouldDisplay,
+    activeExperienceMode,
+    isScalesMenu,
+  ])
 
-  return shouldDisplay && !isSCalesMenu
+  return shouldDisplay
 }
