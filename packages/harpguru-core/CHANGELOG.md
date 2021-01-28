@@ -18,6 +18,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Added
 
 - MINOR: A menu for scales and chords
+- MINOR: Simplified dynamic sizing implemented
 
 ### Changed
 

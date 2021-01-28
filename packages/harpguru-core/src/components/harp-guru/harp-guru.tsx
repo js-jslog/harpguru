@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler'
 
+import { useWindowDimensions } from 'use-dimensions'
 import { createProvider } from 'reactn'
 import { withTimingTransition, useValue } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
@@ -18,6 +19,8 @@ const Provider2 = createProvider(getInitialGlobalState(2))
 const Provider3 = createProvider(getInitialGlobalState(3))
 
 export const HarpGuru = (): ReactElement => {
+  useWindowDimensions()
+
   const pageInFrame = useValue<PageNumber>(1)
 
   const { shortEdge } = getWindowDimensions()
