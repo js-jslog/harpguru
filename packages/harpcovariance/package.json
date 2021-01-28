@@ -1,6 +1,6 @@
 {
   "name": "harpcovariance",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "description": "A library for determining covarying properties of a harp",
   "main": "./src/index.ts",
   "author": "js-jslog <josephsinfield@yahoo.com>",

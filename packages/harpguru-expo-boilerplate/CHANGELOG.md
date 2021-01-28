@@ -15,11 +15,18 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v6.0.0...master) - yyyy-mm-dd
 
-## [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v6.0.0) - 2020-01-10
+## [v3.1.0](https://github.com/js-jslog/harpguru/releases/tag/v7.0.0) - 2021-01-28
+
+### Changed
+
+- MINOR: Increment android version number to 11 to build new version
+
+## [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v6.0.0) - 2021-01-10
 
 ### Changed
 
 - MAJOR: Set initial app orientation as landscape in metadata rather than portrait
+- MINOR: Increment android version number to 10 to build new version
 
 ## [v2.4.0](https://github.com/js-jslog/harpguru/releases/tag/v5.0.0) - 2020-12-04
 
@@ -28,6 +35,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: Ensure package dependencies are explicitly required
 - MINOR: Remove devDependencies (hoisted to workspace development context)
 - MINOR: Move dev config to monorepo root and create lint-stage friendly run scripts
+- MINOR: Increment android version number to 9 to build new version
 
 ## [v2.3.0](https://github.com/js-jslog/harpguru/releases/tag/v4.0.0) - 2020-10-31
 
@@ -126,7 +134,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v6.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v7.0.0...HEAD)
+- [v3.1.0](https://github.com/js-jslog/harpguru/releases/tag/v7.0.0)
 - [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v6.0.0)
 - [v2.4.0](https://github.com/js-jslog/harpguru/releases/tag/v5.0.0)
 - [v2.3.0](https://github.com/js-jslog/harpguru/releases/tag/v4.0.0)

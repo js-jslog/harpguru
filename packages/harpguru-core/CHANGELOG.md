@@ -13,7 +13,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v6.0.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v7.0.0...HEAD) - yyyy-mm-dd
+
+## [v6.0.0](https://github.com/js-jslog/harpguru/releases/tag/v7.0.0) - 2021-01-28
 
 ### Added
 
@@ -31,7 +33,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MAJOR: Pan gesture handlers for opening and closing menus
 - MAJOR: Long press handler to change root pitch location
 
-## [v5.0.0](https://github.com/js-jslog/harpguru/releases/tag/v6.0.0) - 2020-01-10
+## [v5.0.0](https://github.com/js-jslog/harpguru/releases/tag/v6.0.0) - 2021-01-10
 
 ### Added
 
@@ -176,7 +178,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v6.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v7.0.0...HEAD)
+- [v6.0.0](https://github.com/js-jslog/harpguru/releases/tag/v7.0.0)
 - [v5.0.0](https://github.com/js-jslog/harpguru/releases/tag/v6.0.0)
 - [v4.1.0](https://github.com/js-jslog/harpguru/releases/tag/v5.1.0)
 - [v4.0.0](https://github.com/js-jslog/harpguru/releases/tag/v5.0.0)
