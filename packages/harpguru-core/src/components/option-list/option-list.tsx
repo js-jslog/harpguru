@@ -3,7 +3,7 @@ import { FlatList } from 'react-native-gesture-handler'
 import { StyleSheet, View, SafeAreaView } from 'react-native'
 import React from 'react'
 
-import { OptionLabelProps } from '../option-label'
+import type { OptionLabelProps } from '../option-label'
 import { getOptionSizes } from '../../utils'
 import type { WithTransition } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
