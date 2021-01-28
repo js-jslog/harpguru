@@ -1,16 +1,23 @@
+import type { StateTuple } from 'reactn/types/use-global'
+import type { Node, Value } from 'react-native-reanimated'
 import type { HarpStrata } from 'harpstrata'
-import type { ApparatusIds, DegreeIds, PitchIds, PozitionIds } from 'harpparts'
-import type { CovariantMembers } from 'harpcovariance'
+import type { DegreeIds } from 'harpparts'
 
 export type GlobalState = {
   readonly activeHarpStrata: HarpStrata
   readonly activeExperienceMode: ExperienceModes
   readonly activeDisplayMode: DisplayModes
-  readonly lockedCovariant: CovariantMembers
   readonly bufferedActivityToggles: ReadonlyArray<DegreeIds>
   readonly fragmentHarpFaceByOctaves: boolean
   readonly flushChannel: FlushChannels
 }
+
+export type UseGlobal = <
+  G extends GlobalState,
+  Property extends keyof G = keyof G
+>(
+  property: Property
+) => StateTuple<G, Property>
 
 export enum DisplayModes {
   Degree = 'Degree',
@@ -89,11 +96,12 @@ export type RenderableToneTuples =
   | [RenderableToneTuple, RenderableToneTuple]
   | [RenderableToneTuple]
 
-export type OptionIds =
-  | ApparatusIds
-  | DisplayModes
-  | ExperienceModes
-  | PitchIds
-  | PozitionIds
-
 export type PageNumber = 1 | 2 | 3
+
+export type WithTransition = {
+  readonly transitionValue: Node<number>
+}
+
+export type WithStateValue = {
+  readonly stateValue: Value<number>
+}

@@ -1,5 +1,7 @@
 export { batchToggleDegreeIds } from './batch-toggle-degree-ids'
 export { getHarpFaceFacts } from './get-harp-face-facts'
-export { partiallyApplyNudgeFunction } from './paritally-apply-nudge-function'
 export { getScaledMenuLabelProtrusion } from './get-scaled-menu-label-protrusion'
 export { getRenderableToneTuples } from './get-renderable-tone-tuples'
+export { getOptionSizes } from './get-option-sizes'
+export { getInputRange } from './get-input-range'
+export { getOutputRange } from './get-output-range'

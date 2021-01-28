@@ -1,3 +1,4 @@
+import { HarpPartTypes } from '../../types'
 import type { HalfstepIndex } from '../../types'
 
 export enum PozitionIds {
@@ -16,6 +17,8 @@ export enum PozitionIds {
 }
 
 export type Pozition = {
+  readonly type: HarpPartTypes.Pozition
   readonly id: PozitionIds
   readonly rootOffset: HalfstepIndex
+  readonly simpleSplitValue: [string, string]
 }

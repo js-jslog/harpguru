@@ -1,5 +1,5 @@
 import { isProd } from '../is-prod'
-import type { OptionStackProps } from '../../types'
+import type { OptionStackProps } from '../../option-stack'
 
 // This function is deliberately configured to behave differently
 // in dev and prod modes. The reason for this is simple. When these
@@ -34,43 +34,30 @@ from ${prevPropsz.length} to ${nextPropsz.length}
     `)
   }
 
-  // It's important to return this early before the iterative
-  // tests which happen later are performed so that we can
-  // don't have to confuse that logic with protective statements
-  // in case the arrays aren't the same length
-  //
-  // (this is relevant *once* we have more granular tests of
-  // the items included here)
-  const areListLengthsEqual = prevPropsz.every(
-    ({ items: prevItems }, index) =>
-      prevItems.length === nextPropsz[index].items.length
-  )
-  if (!areListLengthsEqual) {
-    if (!isProd()) return false
-
-    throw Error(`
-The memoised OptionStack components should be initialised with
-parameters which never go stale. Please check the params provided
-to this OptionStack.
-
-One of the option lists has changed length during this render.
-    `)
-  }
-
   const areTitlesEqual = prevPropsz.every(
-    (prevProps, index) => prevProps.title === nextPropsz[index].title
+    (prevProps, index) => prevProps.useTitle === nextPropsz[index].useTitle
   )
-  const areUseSubTitlesEqual = prevPropsz.every(
-    (prevProps, index) =>
-      prevProps.useSubTitle === nextPropsz[index].useSubTitle
+  const areItemsEqual = prevPropsz.every(
+    (prevProps, index) => prevProps.useItems === nextPropsz[index].useItems
   )
-  const areItemTapHandlersEqual = prevPropsz.every(
+  const areTwoColumnsEqual = prevPropsz.every(
+    (prevProps, index) => prevProps.twoColumns === nextPropsz[index].twoColumns
+  )
+  const areLeftColumnLabelsEqual = prevPropsz.every(
     (prevProps, index) =>
-      prevProps.itemTapHandler === nextPropsz[index].itemTapHandler
+      prevProps.useLeftColumnLabel === nextPropsz[index].useLeftColumnLabel
+  )
+  const areRightColumnLabelsEqual = prevPropsz.every(
+    (prevProps, index) =>
+      prevProps.useRightColumnLabel === nextPropsz[index].useRightColumnLabel
   )
 
   if (
-    (areTitlesEqual && areUseSubTitlesEqual && areItemTapHandlersEqual) === true
+    (areTitlesEqual &&
+      areItemsEqual &&
+      areTwoColumnsEqual &&
+      areLeftColumnLabelsEqual &&
+      areRightColumnLabelsEqual) === true
   )
     return true
 
@@ -82,7 +69,9 @@ parameters which never go stale. Please check the params provided
 to this OptionStack.
 
 areTitlesEqual: ${areTitlesEqual}
-areUseSubTitlesEqual: ${areUseSubTitlesEqual}
-areItemTapHandlersEqual: ${areItemTapHandlersEqual}
+areItemsEqual: ${areItemsEqual}
+areTwoColumnsEqual: ${areTwoColumnsEqual}
+areLeftColumnLabelsEqual: ${areLeftColumnLabelsEqual}
+areRightColumnLabelsEqual: ${areRightColumnLabelsEqual}
   `)
 }

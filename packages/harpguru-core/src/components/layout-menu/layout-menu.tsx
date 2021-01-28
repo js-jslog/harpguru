@@ -1,44 +1,40 @@
 import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
-import { getApparatusIds } from 'harpparts'
 import { Entypo } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
 import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
 import { Menu } from '../menu'
-import { MenuProps } from '../../types'
+import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import { getNewHarpStrataByApparatusForDispatcher } from './utils'
+import { useLayoutTitles, useLayoutItems } from './hooks'
 
 export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
-  const sizes = getSizes()
-
-  const items = getApparatusIds().map((id) => ({
-    label: id,
-    callbackParam: id,
-  }))
-  const useSubTitle = useCallback(() => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const {
-      apparatus: { id: apparatusId },
-    } = activeHarpStrata
-    return apparatusId
-  }, [useGlobal])
+  const { useTitle } = useLayoutTitles()
+  const { useItems } = useLayoutItems()
   const itemTapHandler = useCallback(
     useDispatch(getNewHarpStrataByApparatusForDispatcher),
-    [useDispatch]
+    [useDispatch, getNewHarpStrataByApparatusForDispatcher]
   )
+
+  const useTitleMemo = useCallback(() => useTitle(useGlobal), [useGlobal])
+  const useItemsMemo = useCallback(() => useItems(useGlobal, itemTapHandler), [
+    useGlobal,
+    itemTapHandler,
+  ])
 
   const optionStackPropsz = [
     {
-      title: 'Tuning',
-      useSubTitle,
-      items,
-      itemTapHandler,
+      useTitle: useTitleMemo,
+      useItems: useItemsMemo,
+      twoColumns: false,
     },
   ]
+
+  const sizes = getSizes()
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>

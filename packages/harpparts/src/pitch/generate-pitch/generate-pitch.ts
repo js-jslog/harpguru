@@ -4,6 +4,7 @@ import type {
   NaturalDisplayValue,
   UnnaturalDisplayValues,
 } from '../types'
+import { HarpPartTypes } from '../../types'
 
 const pitchMap: Record<
   PitchIds,
@@ -54,8 +55,10 @@ const pitchMap: Record<
 
 export const generatePitch = (pitchId: PitchIds): Pitch => {
   const pitch = {
+    type: HarpPartTypes.Pitch,
     id: pitchId,
     contextualDisplayValues: pitchMap[pitchId],
+    simpleSplitValue: [pitchId[0], pitchId[1] || ''],
   } as Pitch
 
   return pitch

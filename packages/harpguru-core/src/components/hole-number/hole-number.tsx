@@ -31,7 +31,7 @@ import { getStyles } from './hole-number-styles'
 
 const styles = getStyles()
 
-export function HoleNumber({ xCoord }: HoleNumberProps): ReactElement {
+export const HoleNumber = ({ xCoord }: HoleNumberProps): ReactElement => {
   const holeNumber: HoleNumberIds = `${xCoord + 1}` as HoleNumberIds
 
   return (

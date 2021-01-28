@@ -7,7 +7,6 @@ import {
   ScaleIds,
   getScale,
 } from 'harpparts'
-import { CovariantMembers } from 'harpcovariance'
 
 import {
   GlobalState,
@@ -36,7 +35,6 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
   const { Explore: initialExperienceMode } = ExperienceModes
   const { Degree: initialDisplayMode } = DisplayModes
-  const { Pozition: initialLockedCovariant } = CovariantMembers
 
   const thisPozitionDegrees =
     pageNumber === 1 ? getScale(ScaleIds.MajorPentatonic).degrees : []
@@ -45,7 +43,6 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     activeHarpStrata: initialHarpStrata,
     activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
-    lockedCovariant: initialLockedCovariant,
     bufferedActivityToggles: thisPozitionDegrees,
     fragmentHarpFaceByOctaves: true,
     flushChannel: FlushChannels.Regular,

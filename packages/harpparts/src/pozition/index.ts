@@ -1,7 +1,7 @@
 export { PozitionIds } from './types'
 export type { Pozition } from './types'
 
-export { isPozitionId } from './types'
+export { isPozitionId, isPozition } from './types'
 
 export {
   FIRST,

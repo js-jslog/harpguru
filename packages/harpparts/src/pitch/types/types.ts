@@ -1,3 +1,5 @@
+import { HarpPartTypes } from '../../types'
+
 export enum PitchIds {
   A = 'A',
   Bb = 'Bb',
@@ -32,11 +34,15 @@ export type UnnaturalDisplayValues = {
 }
 
 export type NaturalPitch = {
+  readonly type: HarpPartTypes.Pitch
   readonly id: PitchIds
   readonly contextualDisplayValues: NaturalDisplayValue
+  readonly simpleSplitValue: [string, string]
 }
 export type UnnaturalPitch = {
+  readonly type: HarpPartTypes.Pitch
   readonly id: PitchIds
   readonly contextualDisplayValues: UnnaturalDisplayValues
+  readonly simpleSplitValue: [string, string]
 }
 export type Pitch = NaturalPitch | UnnaturalPitch

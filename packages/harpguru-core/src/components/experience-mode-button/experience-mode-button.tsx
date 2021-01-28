@@ -1,4 +1,4 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons'
@@ -9,7 +9,7 @@ import { ExperienceModes, MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
 import { getSizes, harpguruColors } from '../../styles'
 
-import { useNudgeExperienceMode } from './hooks'
+import { getNewExperienceModeForDispatcher } from './utils'
 
 type ExperienceModeButtonProps = {
   readonly isLabelHidden: boolean
@@ -28,12 +28,15 @@ export const ExperienceModeButton = ({
   // eslint-disable-next-line no-empty-pattern
   const [] = useGlobal('activeHarpStrata')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const nudgeExperienceMode = useNudgeExperienceMode()
+  const nudgeExperienceMode = useDispatch(
+    getNewExperienceModeForDispatcher,
+    'activeExperienceMode'
+  )
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: isLabelHidden,
     stashPosition,
-    openCloseMenu: () => nudgeExperienceMode('DOWN'),
+    openCloseMenu: () => nudgeExperienceMode(),
   }
 
   const sizes = getSizes()

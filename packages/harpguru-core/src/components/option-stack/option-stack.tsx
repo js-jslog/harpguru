@@ -1,44 +1,50 @@
-import { View } from 'react-native'
 import React from 'react'
 
-import { areOptionStacksEqual, getStyles } from './utils'
-import { useFoundationAnimationValues } from './hooks'
-import {
-  TitleStack,
-  ListStack,
-  PreviousInStack,
-  NextInStack,
-} from './components'
+import { OptionTitleStack } from '../option-title-stack'
+import type { OptionTitleProps } from '../option-title'
+import { OptionStackPointer } from '../option-stack-pointer'
+import { OptionListStack } from '../option-list-stack'
+import type { OptionListProps } from '../option-list'
 
-import type { OptionStackProps } from './types'
+import { areOptionStacksEqual } from './utils'
+import { useFoundationAnimationValues } from './hooks'
+
+type OptionProps = Omit<OptionTitleProps, 'transitionValue'> &
+  Omit<OptionListProps, 'transitionValue'>
+
+export type OptionStackProps = {
+  readonly optionPropsz: ReadonlyArray<OptionProps>
+}
 
 export const OptionStack = (props: OptionStackProps): React.ReactElement => {
   const { stackState, stackStateTransition } = useFoundationAnimationValues()
+  const {
+    optionPropsz: { length: stackLength },
+  } = props
 
   const titleStack = (
-    <TitleStack {...props} transitionValue={stackStateTransition} />
+    <OptionTitleStack {...props} transitionValue={stackStateTransition} />
   )
   const listStack = (
-    <ListStack {...props} transitionValue={stackStateTransition} />
+    <OptionListStack {...props} transitionValue={stackStateTransition} />
   )
 
-  const styles = getStyles()
   return (
     <>
-      <View style={styles.titleSection}>
-        <PreviousInStack
-          {...props}
-          stateValue={stackState}
-          transitionValue={stackStateTransition}
-        />
-        <View>{titleStack}</View>
-        <NextInStack
-          {...props}
-          stateValue={stackState}
-          transitionValue={stackStateTransition}
-        />
-      </View>
-      <View style={styles.listSection}>{listStack}</View>
+      {titleStack}
+      {listStack}
+      <OptionStackPointer
+        stackLength={stackLength}
+        direction={'NEXT'}
+        stateValue={stackState}
+        transitionValue={stackStateTransition}
+      />
+      <OptionStackPointer
+        stackLength={stackLength}
+        direction={'PREVIOUS'}
+        stateValue={stackState}
+        transitionValue={stackStateTransition}
+      />
     </>
   )
 }
