@@ -24,6 +24,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MAJOR: The covariant menu layout and workflow
 - MINOR: The tuning menu layout
 - MINOR: Scale notification flash no longer active when in the scales menu
+- MINOR: Simplified dynamic sizing implemented
 
 ### Removed
 
