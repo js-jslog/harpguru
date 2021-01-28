@@ -5,7 +5,8 @@ import { ExperienceModes } from '../../../../types'
 import { usePrevious } from '../../../../hooks'
 
 export const useShouldDisplayScaleLabel = (
-  scaleLabel: string | undefined
+  scaleLabel: string | undefined,
+  isSCalesMenu: boolean
 ): boolean => {
   const previousScaleLabel = usePrevious(scaleLabel, scaleLabel)
   const [shouldDisplay, setShouldDisplay] = useState(false)
@@ -33,5 +34,5 @@ export const useShouldDisplayScaleLabel = (
     return
   }, [isNewScale, scaleLabel, shouldDisplay])
 
-  return shouldDisplay
+  return shouldDisplay && !isSCalesMenu
 }

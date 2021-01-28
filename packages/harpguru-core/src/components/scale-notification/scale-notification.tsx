@@ -9,12 +9,18 @@ import { getSizes } from '../../styles'
 
 import { useShouldDisplayScaleLabel } from './hooks'
 
-export const ScaleNotification = (): ReactElement => {
+type ScaleNotificationProps = {
+  readonly isScalesMenu: boolean
+}
+
+export const ScaleNotification = ({
+  isScalesMenu,
+}: ScaleNotificationProps): ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const { activeDegreeIds } = activeHarpStrata
   const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
 
-  const shouldDisplay = useShouldDisplayScaleLabel(scaleLabel)
+  const shouldDisplay = useShouldDisplayScaleLabel(scaleLabel, isScalesMenu)
 
   const sizes = getSizes()
 

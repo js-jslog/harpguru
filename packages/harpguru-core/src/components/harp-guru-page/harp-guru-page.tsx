@@ -97,7 +97,7 @@ export const HarpGuruPage = ({
       />
       <ToggleBufferFlusher />
       <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
-      <ScaleNotification />
+      <ScaleNotification isScalesMenu={menuState === MenuStates.ScalesMenu} />
     </View>
   )
 }
