@@ -10810,6 +10810,11 @@ url-parse@^1.4.4:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
+use-dimensions@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/use-dimensions/-/use-dimensions-1.0.3.tgz#0b026ea3515626e9d738399069a4dacedd397192"
+  integrity sha512-uR4zIbaAkaqUo+aagxG0dL+BSM/3ybSVqNQs1aA6nAo8ta0wX9KiZlp609gI/QBY9cXQNoflP/Sw5sIYo6iXRA==
+
 use-force-update@^1.0.5:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/use-force-update/-/use-force-update-1.0.7.tgz#f5e672633f5a398b25c33b2287150918bcb3526b"

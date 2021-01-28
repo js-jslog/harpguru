@@ -1,3 +1,4 @@
+import { useWindowDimensions } from 'use-dimensions'
 import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
 import { Entypo } from '@expo/vector-icons'
@@ -13,6 +14,7 @@ import { getNewHarpStrataByApparatusForDispatcher } from './utils'
 import { useLayoutTitles, useLayoutItems } from './hooks'
 
 export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
+  useWindowDimensions()
   const { useTitle } = useLayoutTitles()
   const { useItems } = useLayoutItems()
   const itemTapHandler = useCallback(
