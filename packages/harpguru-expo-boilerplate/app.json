@@ -3,7 +3,7 @@
     "name": "Harp Guru",
     "slug": "harp-guru",
     "platforms": ["ios", "android", "web"],
-    "version": "8.1.0",
+    "version": "8.2.0",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
@@ -23,7 +23,7 @@
     },
     "android": {
       "package": "com.jslog.harpguru",
-      "versionCode": 13,
+      "versionCode": 14,
       "permissions": []
     }
   }
