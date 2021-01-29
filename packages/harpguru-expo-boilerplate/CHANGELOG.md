@@ -13,7 +13,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.0.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.1.0...master) - yyyy-mm-dd
+
+## [v4.1.0](https://github.com/js-jslog/harpguru/releases/tag/v8.1.0) - 2021-01-29
+
+- MINOR: Increment android version number to 13 to build new version
 
 ## [v4.0.0](https://github.com/js-jslog/harpguru/releases/tag/v8.0.0) - 2021-01-29
 
