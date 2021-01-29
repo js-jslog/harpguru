@@ -18,6 +18,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Changed
 
 - MAJOR: Upgrade expo sdk to v39
+- MAJOR: Upgrade expo sdk to v40
 
 ## [v3.1.0](https://github.com/js-jslog/harpguru/releases/tag/v7.0.0) - 2021-01-28
 
