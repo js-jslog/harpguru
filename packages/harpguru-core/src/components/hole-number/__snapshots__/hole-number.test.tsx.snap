@@ -2,34 +2,24 @@
 
 exports[`A snapshot of HoleNumber 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
-      "flex": 1,
+      "alignItems": "center",
+      "height": 0,
+      "justifyContent": "center",
+      "width": 59.270470780512596,
     }
   }
 >
-  <View
+  <Text
     style={
       Object {
-        "alignItems": "center",
-        "height": 0,
-        "justifyContent": "center",
-        "width": 59.270470780512596,
+        "color": "#555",
+        "fontSize": 22.63930291919421,
       }
     }
   >
-    <Text
-      style={
-        Object {
-          "color": "#555",
-          "fontSize": 22.63930291919421,
-        }
-      }
-    >
-      1
-    </Text>
-  </View>
+    1
+  </Text>
 </View>
 `;

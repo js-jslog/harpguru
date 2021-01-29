@@ -20,9 +20,9 @@ test('A component is rendered with fragmented face', () => {
     if (stateItem === 'fragmentHarpFaceByOctaves') return [true]
     return undefined
   })
-  const { container } = render(<HarpFace />)
+  const { toJSON } = render(<HarpFace />)
 
-  expect(container).toMatchSnapshot()
+  expect(toJSON()).toMatchSnapshot()
 })
 
 test('A component is rendered with unfragmented face', () => {
@@ -34,7 +34,7 @@ test('A component is rendered with unfragmented face', () => {
     if (stateItem === 'fragmentHarpFaceByOctaves') return [false]
     return undefined
   })
-  const { container } = render(<HarpFace />)
+  const { toJSON } = render(<HarpFace />)
 
-  expect(container).toMatchSnapshot()
+  expect(toJSON()).toMatchSnapshot()
 })
