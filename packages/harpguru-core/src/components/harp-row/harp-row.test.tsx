@@ -28,25 +28,25 @@ test('The first 3 holes of a blow row from a major diatonic harmonica can be ren
 })
 
 test('A snapshot of a non-home row', () => {
-  const { container } = render(
+  const { toJSON } = render(
     <HarpRow yCoord={0} xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
   )
 
-  expect(container).toMatchSnapshot()
+  expect(toJSON()).toMatchSnapshot()
 })
 
 test('A snapshot of a blow home row', () => {
-  const { container } = render(
+  const { toJSON } = render(
     <HarpRow yCoord={2} xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
   )
 
-  expect(container).toMatchSnapshot()
+  expect(toJSON()).toMatchSnapshot()
 })
 
 test('A snapshot of a draw home row', () => {
-  const { container } = render(
+  const { toJSON } = render(
     <HarpRow yCoord={3} xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
   )
 
-  expect(container).toMatchSnapshot()
+  expect(toJSON()).toMatchSnapshot()
 })

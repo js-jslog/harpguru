@@ -17,11 +17,11 @@
     "build-android-apk": "expo build:android -t apk --clear-credentials"
   },
   "dependencies": {
-    "expo": "^38.0.0",
-    "expo-screen-orientation": "~1.1.1",
+    "expo": "^39.0.0",
+    "expo-screen-orientation": "~2.0.0",
     "harpguru-core": "^6.0.0",
-    "react": "16.11.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz"
+    "react": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz"
   },
   "private": true
 }

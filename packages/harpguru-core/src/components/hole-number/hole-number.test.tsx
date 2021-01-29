@@ -9,6 +9,6 @@ test('HoleNumber renders a dom element with the expected value included', () => 
 })
 
 test('A snapshot of HoleNumber', () => {
-  const { container } = render(<HoleNumber xCoord={0} />)
-  expect(container).toMatchSnapshot()
+  const { toJSON } = render(<HoleNumber xCoord={0} />)
+  expect(toJSON()).toMatchSnapshot()
 })

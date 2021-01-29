@@ -116,8 +116,8 @@ test('A snapshot of a populated cell', () => {
     yxCoord: [3, 0] as [3, 0],
   }
 
-  const { container } = render(<HarpCell {...harpCellProps} />)
-  expect(container).toMatchSnapshot()
+  const { toJSON } = render(<HarpCell {...harpCellProps} />)
+  expect(toJSON()).toMatchSnapshot()
 })
 
 test('A snapshot of an active cell', () => {
@@ -132,8 +132,8 @@ test('A snapshot of an active cell', () => {
     yxCoord: [3, 0] as [3, 0],
   }
 
-  const { container } = render(<HarpCell {...harpCellProps} />)
-  expect(container).toMatchSnapshot()
+  const { toJSON } = render(<HarpCell {...harpCellProps} />)
+  expect(toJSON()).toMatchSnapshot()
 })
 
 test('A snapshot of an empty cell', () => {
@@ -148,8 +148,8 @@ test('A snapshot of an empty cell', () => {
     yxCoord: [0, 0] as [0, 0],
   }
 
-  const { container } = render(<HarpCell {...harpFaceProps} />)
-  expect(container).toMatchSnapshot()
+  const { toJSON } = render(<HarpCell {...harpFaceProps} />)
+  expect(toJSON()).toMatchSnapshot()
 })
 
 test('A snapshot of an inactive cell in Explore mode', () => {
@@ -164,8 +164,8 @@ test('A snapshot of an inactive cell in Explore mode', () => {
     yxCoord: [3, 0] as [3, 0],
   }
 
-  const { container } = render(<HarpCell {...harpCellProps} />)
-  expect(container).toMatchSnapshot()
+  const { toJSON } = render(<HarpCell {...harpCellProps} />)
+  expect(toJSON()).toMatchSnapshot()
 })
 
 // The important difference between this and the previous is just that
@@ -182,6 +182,6 @@ test('A snapshot of an inactive cell in Quiz mode', () => {
     yxCoord: [3, 0] as [3, 0],
   }
 
-  const { container } = render(<HarpCell {...harpCellProps} />)
-  expect(container).toMatchSnapshot()
+  const { toJSON } = render(<HarpCell {...harpCellProps} />)
+  expect(toJSON()).toMatchSnapshot()
 })

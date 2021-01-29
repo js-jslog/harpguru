@@ -19,9 +19,9 @@ mockUseGlobal.mockImplementation((stateItem: string) => {
 })
 
 test('A snapshot of a HarpFaceFragment', () => {
-  const { container } = render(
+  const { toJSON } = render(
     <HarpFaceFragment xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
   )
 
-  expect(container).toMatchSnapshot()
+  expect(toJSON()).toMatchSnapshot()
 })

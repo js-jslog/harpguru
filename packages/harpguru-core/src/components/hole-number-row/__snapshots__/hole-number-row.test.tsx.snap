@@ -2,235 +2,225 @@
 
 exports[`A snapshot of HoleNumberRow 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
-      "flex": 1,
+      "backgroundColor": "red",
+      "flex": 0,
+      "flexDirection": "row",
+      "justifyContent": "space-around",
+      "zIndex": 3,
     }
   }
 >
   <View
     style={
       Object {
-        "backgroundColor": "red",
-        "flex": 0,
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-        "zIndex": 3,
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
       }
     }
   >
-    <View
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        1
-      </Text>
-    </View>
-    <View
+      1
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
+      }
+    }
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        2
-      </Text>
-    </View>
-    <View
+      2
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
+      }
+    }
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        3
-      </Text>
-    </View>
-    <View
+      3
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
+      }
+    }
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        4
-      </Text>
-    </View>
-    <View
+      4
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
+      }
+    }
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        5
-      </Text>
-    </View>
-    <View
+      5
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
+      }
+    }
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        6
-      </Text>
-    </View>
-    <View
+      6
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
+      }
+    }
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        7
-      </Text>
-    </View>
-    <View
+      7
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
+      }
+    }
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        8
-      </Text>
-    </View>
-    <View
+      8
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
+      }
+    }
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        9
-      </Text>
-    </View>
-    <View
+      9
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 0,
+        "justifyContent": "center",
+        "width": 59.270470780512596,
+      }
+    }
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "height": 0,
-          "justifyContent": "center",
-          "width": 59.270470780512596,
+          "color": "#555",
+          "fontSize": 22.63930291919421,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#555",
-            "fontSize": 22.63930291919421,
-          }
-        }
-      >
-        10
-      </Text>
-    </View>
+      10
+    </Text>
   </View>
 </View>
 `;

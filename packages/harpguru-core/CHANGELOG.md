@@ -15,6 +15,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v7.0.0...HEAD) - yyyy-mm-dd
 
+### Changed
+
+- MAJOR: Upgrade react peer dependency requirement from 16.11 to 16.13
+- MAJOR: Upgrade react-native peer dependency requirement from 0.62 to 0.63
+
 ## [v6.0.0](https://github.com/js-jslog/harpguru/releases/tag/v7.0.0) - 2021-01-28
 
 ### Added

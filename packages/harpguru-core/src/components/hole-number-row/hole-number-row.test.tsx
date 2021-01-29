@@ -23,9 +23,9 @@ test('HoleNumberRow returns a 10 hole sequence', () => {
 })
 
 test('A snapshot of HoleNumberRow', () => {
-  const { container } = render(
+  const { toJSON } = render(
     <HoleNumberRow xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
   )
 
-  expect(container).toMatchSnapshot()
+  expect(toJSON()).toMatchSnapshot()
 })
