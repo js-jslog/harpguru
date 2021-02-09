@@ -13,6 +13,8 @@
     "lint": "eslint --ext .ts,.tsx .",
     "lint-file": "eslint --ext .ts,.tsx",
     "ci": "yarn lint && yarn tsc",
+    "build-ios-archive": "expo build:ios -t archive --clear-credentials",
+    "build-ios-simulator": "expo build:ios -t simulator --clear-credentials",
     "build-android-aad": "expo build:android -t app-bundle --clear-credentials",
     "build-android-apk": "expo build:android -t apk --clear-credentials"
   },
