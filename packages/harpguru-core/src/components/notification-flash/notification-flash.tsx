@@ -63,8 +63,8 @@ export const NotificationFlash = ({
           {
             transform: [
               {
-                translateX: translateX,
                 scale: multiply(messageScale, messageScaleMultiplier),
+                translateX: translateX,
               },
             ],
             opacity: messageUnderlayOpacity,
