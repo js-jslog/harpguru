@@ -8,7 +8,7 @@ type HoleNumberRowStyles = {
 export const getStyles = (): HoleNumberRowStyles => {
   const styles = StyleSheet.create<HoleNumberRowStyles>({
     row: {
-      flex: 0,
+      height: 0,
       backgroundColor: 'red',
       flexDirection: 'row',
       justifyContent: 'space-around',
