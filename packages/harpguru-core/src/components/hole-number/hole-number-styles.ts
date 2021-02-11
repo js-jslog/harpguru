@@ -19,7 +19,8 @@ export const getStyles = (): HoleNumberStyles => {
       justifyContent: 'center',
       alignItems: 'center',
       width,
-      height: 0,
+      height: fontSize,
+      top: fontSize / -2,
     },
     text: {
       fontSize,

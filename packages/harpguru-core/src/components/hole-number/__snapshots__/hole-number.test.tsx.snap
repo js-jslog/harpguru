@@ -5,8 +5,9 @@ exports[`A snapshot of HoleNumber 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "height": 0,
+      "height": 22.63930291919421,
       "justifyContent": "center",
+      "top": -11.319651459597106,
       "width": 59.270470780512596,
     }
   }
