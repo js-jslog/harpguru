@@ -42,10 +42,17 @@ export const Menu = ({
       style={[
         styles.animated,
         {
+          // WARNING: the order these transforms are listed is
+          // important. I think the size of the translations
+          // will be reduced proportionally to the scaling if
+          // the scaling is performed first. This is platform
+          // independent.
           transform: [
-            { translateX: slideX },
-            { translateY: slideY },
-            { scale: scale },
+            {
+              translateY: slideY,
+              translateX: slideX,
+              scale: scale,
+            },
           ],
         },
       ]}
