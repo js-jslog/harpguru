@@ -63,6 +63,11 @@ export const NotificationFlash = ({
           {
             transform: [
               {
+                // WARNING: in iOS only; the scale *must* be performed before the
+                // translation, or the translation will not be observed at all.
+                // I do not have a good explanation for this and it doesn't seem
+                // to conform to the observation of the other comment added in
+                // this commit.
                 scale: multiply(messageScale, messageScaleMultiplier),
                 translateX: translateX,
               },
