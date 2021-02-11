@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.0.0...HEAD) - yyyy-mm-dd
 
+### Fixed
+
+MINOR: Ensure that menu's are swept aside so they don't invisibly block touches to the app below
+
 ## [v7.0.0](https://github.com/js-jslog/harpguru/releases/tag/v8.0.0) - 2021-01-29
 
 ### Changed
