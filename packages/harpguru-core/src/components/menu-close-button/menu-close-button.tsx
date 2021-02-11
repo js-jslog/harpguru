@@ -1,6 +1,6 @@
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { StyleSheet, View } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
@@ -22,35 +22,30 @@ export const MenuCloseButton = ({
   )
 
   return (
-    <View
-      style={{
-        ...StyleSheet.absoluteFillObject,
-        justifyContent: 'flex-end',
-        flexDirection: 'row',
-      }}
-    >
-      <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-        <View
-          style={{
-            padding: sizes['6'],
-            height: sizes['10'],
-          }}
+    <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          padding: sizes['6'],
+          height: sizes['10'],
+        }}
+      >
+        <Animated.View
+          style={[
+            {
+              transform: [{ scale: tapAnimationValue }],
+            },
+          ]}
         >
-          <Animated.View
-            style={[
-              {
-                transform: [{ scale: tapAnimationValue }],
-              },
-            ]}
-          >
-            <AntDesign
-              name="close"
-              size={sizes['9']}
-              color={colors.inertOutline}
-            />
-          </Animated.View>
-        </View>
-      </TapGestureHandler>
-    </View>
+          <AntDesign
+            name="close"
+            size={sizes['9']}
+            color={colors.inertOutline}
+          />
+        </Animated.View>
+      </View>
+    </TapGestureHandler>
   )
 }
