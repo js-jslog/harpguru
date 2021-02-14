@@ -9,13 +9,13 @@ import { getSizes } from '../../styles'
 
 import { useQuizQuestionCycle } from './hooks'
 
-type QuizQuestionDisplayProps = {
+type NotifyOfQuizQuestionProps = {
   readonly isScreenFree: boolean
 }
 
-export const QuizQuestionDisplay = ({
+export const NotifyOfQuizQuestion = ({
   isScreenFree,
-}: QuizQuestionDisplayProps): React.ReactElement => {
+}: NotifyOfQuizQuestionProps): React.ReactElement => {
   const [quizQuestion, shouldDisplay] = useQuizQuestionCycle(isScreenFree)
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
 

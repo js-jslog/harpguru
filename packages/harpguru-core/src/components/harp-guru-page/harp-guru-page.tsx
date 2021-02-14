@@ -6,8 +6,8 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
-import { ScaleNotification } from '../scale-notification'
-import { QuizQuestionDisplay } from '../quiz-question-display'
+import { NotifyOfScale } from '../notify-of-scale'
+import { NotifyOfQuizQuestion } from '../notify-of-quiz-question'
 import { MenuTabNextPage } from '../menu-tab-next-page'
 import { MenuTabFragmentation } from '../menu-tab-fragmentation'
 import { MenuTabExperienceMode } from '../menu-tab-experience-mode'
@@ -96,8 +96,8 @@ export const HarpGuruPage = ({
         getNextPage={() => pageOnDisplay.setValue(nextPageNumberMap[thisPage])}
       />
       <ToggleBufferFlusher />
-      <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
-      <ScaleNotification isScalesMenu={menuState === MenuStates.ScalesMenu} />
+      <NotifyOfQuizQuestion isScreenFree={menuState === MenuStates.NoMenu} />
+      <NotifyOfScale isScalesMenu={menuState === MenuStates.ScalesMenu} />
     </View>
   )
 }
