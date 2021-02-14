@@ -1,7 +1,7 @@
-import { useGlobal } from 'reactn'
+import { useDispatch } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
-import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
+import { MaterialIcons } from '@expo/vector-icons'
 
 import { MenuOpenButton } from '../menu-open-button'
 import { Menu } from '../menu'
@@ -9,42 +9,37 @@ import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
 import { getSizes, harpguruColors } from '../../styles'
 
-import { useToggleFragmentHarpFace } from './hooks'
+import { getNewDisplayModeForDispatcher } from './utils'
 
-type FragmentationButtonProps = {
+type DisplayModeButtonProps = {
   readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
 }
 
-export const FragmentationButton = ({
+export const MenuTabDisplayMode = ({
   isLabelHidden,
   stashPosition,
-}: FragmentationButtonProps): React.ReactElement => {
-  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
-  const toggleFragmentHarpFace = useToggleFragmentHarpFace()
+}: DisplayModeButtonProps): React.ReactElement => {
+  const nudgeDisplayMode = useDispatch(
+    getNewDisplayModeForDispatcher,
+    'activeDisplayMode'
+  )
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: isLabelHidden,
     stashPosition,
-    openCloseMenu: () => toggleFragmentHarpFace(),
+    openCloseMenu: () => nudgeDisplayMode(),
   }
 
   const sizes = getSizes()
 
-  const activeLabelIcon =
-    fragmentHarpFaceByOctaves === true ? (
-      <MaterialIcons
-        name="view-column"
-        size={sizes.labelIconSize}
-        color={harpguruColors['gold']}
-      />
-    ) : (
-      <FontAwesome
-        name="square"
-        size={sizes.labelIconSize}
-        color={harpguruColors['gold']}
-      />
-    )
+  const activeLabelIcon = (
+    <MaterialIcons
+      name="music-note"
+      size={sizes.labelIconSize}
+      color={harpguruColors['gold']}
+    />
+  )
 
   return (
     <Menu {...menuLikeProps}>

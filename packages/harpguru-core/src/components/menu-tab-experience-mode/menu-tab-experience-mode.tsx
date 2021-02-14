@@ -16,7 +16,7 @@ type ExperienceModeButtonProps = {
   readonly stashPosition: MenuStashPosition
 }
 
-export const ExperienceModeButton = ({
+export const MenuTabExperienceMode = ({
   isLabelHidden,
   stashPosition,
 }: ExperienceModeButtonProps): React.ReactElement => {

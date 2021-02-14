@@ -14,7 +14,7 @@ type NextPageButtonProps = {
   readonly getNextPage: () => void
 }
 
-export const NextPageButton = ({
+export const MenuTabNextPage = ({
   thisPage,
   totalPages,
   stashPosition,
