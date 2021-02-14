@@ -11,7 +11,7 @@ import { getSizes, harpguruColors } from '../../styles'
 
 import { useToggleFragmentHarpFace } from './hooks'
 
-type FragmentationButtonProps = {
+type MenuTabFragmentationProps = {
   readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
 }
@@ -19,7 +19,7 @@ type FragmentationButtonProps = {
 export const MenuTabFragmentation = ({
   isLabelHidden,
   stashPosition,
-}: FragmentationButtonProps): React.ReactElement => {
+}: MenuTabFragmentationProps): React.ReactElement => {
   const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const toggleFragmentHarpFace = useToggleFragmentHarpFace()
   const menuLikeProps: MenuProps = {

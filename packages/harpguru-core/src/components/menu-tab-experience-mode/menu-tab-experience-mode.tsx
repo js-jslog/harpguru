@@ -11,7 +11,7 @@ import { getSizes, harpguruColors } from '../../styles'
 
 import { getNewExperienceModeForDispatcher } from './utils'
 
-type ExperienceModeButtonProps = {
+type MenuTabExperienceModeProps = {
   readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
 }
@@ -19,7 +19,7 @@ type ExperienceModeButtonProps = {
 export const MenuTabExperienceMode = ({
   isLabelHidden,
   stashPosition,
-}: ExperienceModeButtonProps): React.ReactElement => {
+}: MenuTabExperienceModeProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const nudgeExperienceMode = useDispatch(
     getNewExperienceModeForDispatcher,

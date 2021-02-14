@@ -11,7 +11,7 @@ import { getSizes, harpguruColors } from '../../styles'
 
 import { getNewDisplayModeForDispatcher } from './utils'
 
-type DisplayModeButtonProps = {
+type MenuTabDisplayModeProps = {
   readonly isLabelHidden: boolean
   readonly stashPosition: MenuStashPosition
 }
@@ -19,7 +19,7 @@ type DisplayModeButtonProps = {
 export const MenuTabDisplayMode = ({
   isLabelHidden,
   stashPosition,
-}: DisplayModeButtonProps): React.ReactElement => {
+}: MenuTabDisplayModeProps): React.ReactElement => {
   const nudgeDisplayMode = useDispatch(
     getNewDisplayModeForDispatcher,
     'activeDisplayMode'

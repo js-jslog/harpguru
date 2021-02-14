@@ -7,7 +7,7 @@ import { MenuStashPosition, PageNumber } from '../../types'
 import type { MenuProps } from '../../types'
 import { getSizes, harpguruColors } from '../../styles'
 
-type NextPageButtonProps = {
+type MenuTabNextPageProps = {
   readonly thisPage: PageNumber
   readonly totalPages: PageNumber
   readonly stashPosition: MenuStashPosition
@@ -19,7 +19,7 @@ export const MenuTabNextPage = ({
   totalPages,
   stashPosition,
   getNextPage,
-}: NextPageButtonProps): React.ReactElement => {
+}: MenuTabNextPageProps): React.ReactElement => {
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: false,
