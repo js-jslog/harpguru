@@ -16,7 +16,7 @@ import {
   useCovariantLabels,
 } from './hooks'
 
-export const CovariantMenu = (menuProps: MenuProps): React.ReactElement => {
+export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
   const itemTapHandler = useCallback(
     useDispatch(getNewHarpStrataForDispatcher),
     [useDispatch, getNewHarpStrataForDispatcher]

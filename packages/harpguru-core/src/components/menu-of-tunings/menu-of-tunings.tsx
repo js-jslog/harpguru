@@ -12,7 +12,7 @@ import { colors, getSizes } from '../../styles'
 import { getNewHarpStrataByApparatusForDispatcher } from './utils'
 import { useLayoutTitles, useLayoutItems } from './hooks'
 
-export const LayoutMenu = (menuProps: MenuProps): React.ReactElement => {
+export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
   const { useTitle } = useLayoutTitles()
   const { useItems } = useLayoutItems()
   const itemTapHandler = useCallback(

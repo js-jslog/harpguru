@@ -13,7 +13,7 @@ import { getTogglesForDispatcher } from './utils'
 import { useScalesTitles, useScalesItemsz } from './hooks'
 import { useImmediatelyFlushToggles } from './hooks'
 
-export const ScalesMenu = (menuProps: MenuProps): React.ReactElement => {
+export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
   const { useScalesTitle, useChordsTitle } = useScalesTitles()
   const { useScalesItems, useChordsItems } = useScalesItemsz()
   useImmediatelyFlushToggles({
