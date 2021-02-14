@@ -3,8 +3,8 @@ import React, { useCallback } from 'react'
 import { Entypo } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
-import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
+import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
@@ -40,13 +40,13 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
       <MenuFace {...menuProps}>
         <MemoOptionStack optionPropsz={optionStackPropsz} />
       </MenuFace>
-      <MenuOpenButton {...menuProps}>
+      <MenuAccessOpen {...menuProps}>
         <Entypo
           name="cog"
           size={sizes.labelIconSize}
           color={colors.homeRowsColor}
         />
-      </MenuOpenButton>
+      </MenuAccessOpen>
     </Menu>
   )
 }

@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import React from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
 
-import { MenuOpenButton } from '../menu-open-button'
+import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
@@ -43,7 +43,7 @@ export const MenuTabDisplayMode = ({
 
   return (
     <Menu {...menuLikeProps}>
-      <MenuOpenButton {...menuLikeProps}>
+      <MenuAccessOpen {...menuLikeProps}>
         <View
           style={{
             flexDirection: 'row',
@@ -51,7 +51,7 @@ export const MenuTabDisplayMode = ({
         >
           {activeLabelIcon}
         </View>
-      </MenuOpenButton>
+      </MenuAccessOpen>
     </Menu>
   )
 }

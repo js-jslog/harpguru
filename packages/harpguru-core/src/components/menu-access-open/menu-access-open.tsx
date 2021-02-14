@@ -8,7 +8,7 @@ import { TapAnimationTypes } from '../../types'
 import type { MenuProps, ChildrenProps } from '../../types'
 import { useScaleAndCallbackOnTap, useMenuAnimationValues } from '../../hooks'
 
-export const MenuOpenButton = ({
+export const MenuAccessOpen = ({
   isMenuStashed,
   isLabelHidden,
   stashPosition,

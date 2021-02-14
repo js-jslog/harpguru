@@ -9,7 +9,7 @@ import type { MenuProps } from '../../types'
 import { getSizes, colors } from '../../styles'
 import { useScaleAndCallbackOnTap } from '../../hooks'
 
-export const MenuCloseButton = ({
+export const MenuAccessClose = ({
   openCloseMenu,
 }: Pick<MenuProps, 'openCloseMenu'>): React.ReactElement => {
   const sizes = getSizes()

@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import React from 'react'
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
 
-import { MenuOpenButton } from '../menu-open-button'
+import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
@@ -48,7 +48,7 @@ export const MenuTabFragmentation = ({
 
   return (
     <Menu {...menuLikeProps}>
-      <MenuOpenButton {...menuLikeProps}>
+      <MenuAccessOpen {...menuLikeProps}>
         <View
           style={{
             flexDirection: 'row',
@@ -56,7 +56,7 @@ export const MenuTabFragmentation = ({
         >
           {activeLabelIcon}
         </View>
-      </MenuOpenButton>
+      </MenuAccessOpen>
     </Menu>
   )
 }

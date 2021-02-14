@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native'
 import React from 'react'
 
-import { MenuOpenButton } from '../menu-open-button'
+import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuStashPosition, PageNumber } from '../../types'
 import type { MenuProps } from '../../types'
@@ -31,7 +31,7 @@ export const MenuTabNextPage = ({
 
   return (
     <Menu {...menuLikeProps}>
-      <MenuOpenButton {...menuLikeProps}>
+      <MenuAccessOpen {...menuLikeProps}>
         <View
           style={{
             flexDirection: 'row',
@@ -56,7 +56,7 @@ export const MenuTabNextPage = ({
             / {totalPages}
           </Text>
         </View>
-      </MenuOpenButton>
+      </MenuAccessOpen>
     </Menu>
   )
 }

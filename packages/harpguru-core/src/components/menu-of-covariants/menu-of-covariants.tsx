@@ -3,8 +3,8 @@ import React, { useCallback } from 'react'
 import { Feather } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
-import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
+import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
@@ -108,13 +108,13 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
       <MenuFace {...menuProps}>
         <MemoOptionStack optionPropsz={optionPropsz} />
       </MenuFace>
-      <MenuOpenButton {...menuProps}>
+      <MenuAccessOpen {...menuProps}>
         <Feather
           name="sliders"
           size={sizes.labelIconSize}
           color={colors.homeRowsColor}
         />
-      </MenuOpenButton>
+      </MenuAccessOpen>
     </Menu>
   )
 }

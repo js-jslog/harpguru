@@ -3,8 +3,8 @@ import React, { useCallback } from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
-import { MenuOpenButton } from '../menu-open-button'
 import { MenuFace } from '../menu-face'
+import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
@@ -59,13 +59,13 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
       <MenuFace {...menuProps}>
         <MemoOptionStack optionPropsz={optionStackPropsz} />
       </MenuFace>
-      <MenuOpenButton {...menuProps}>
+      <MenuAccessOpen {...menuProps}>
         <MaterialIcons
           name="linear-scale"
           size={sizes.labelIconSize}
           color={colors.homeRowsColor}
         />
-      </MenuOpenButton>
+      </MenuAccessOpen>
     </Menu>
   )
 }
