@@ -1,6 +1,6 @@
 import Animated, { interpolate } from 'react-native-reanimated'
 import { FlatList } from 'react-native-gesture-handler'
-import { StyleSheet, View, SafeAreaView } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
 import type { OptionLabelProps } from '../option-label'
@@ -62,18 +62,16 @@ export const OptionList = ({
     >
       <View style={[common, left]}>{leftColumnLabel}</View>
       <View style={[common, right]}>{rightColumnLabel}</View>
-      <SafeAreaView style={{ ...StyleSheet.absoluteFillObject }}>
-        <FlatList
-          contentContainerStyle={{
-            alignItems: 'flex-end',
-            paddingRight: largeGutter,
-          }}
-          data={useItems()}
-          numColumns={twoColumns ? 2 : 1}
-          renderItem={({ item }) => <>{item}</>}
-          keyExtractor={(_item, index) => `${index}`}
-        />
-      </SafeAreaView>
+      <FlatList
+        contentContainerStyle={{
+          alignItems: 'flex-end',
+          paddingRight: largeGutter,
+        }}
+        data={useItems()}
+        numColumns={twoColumns ? 2 : 1}
+        renderItem={({ item }) => <>{item}</>}
+        keyExtractor={(_item, index) => `${index}`}
+      />
     </Animated.View>
   )
 }
