@@ -6,16 +6,16 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
-import { ScalesMenu } from '../scales-menu'
-import { ScaleNotification } from '../scale-notification'
-import { QuizQuestionDisplay } from '../quiz-question-display'
-import { NextPageButton } from '../next-page-button'
-import { LayoutMenu } from '../layout-menu'
+import { NotifyOfScale } from '../notify-of-scale'
+import { NotifyOfQuizQuestion } from '../notify-of-quiz-question'
+import { MenuTabNextPage } from '../menu-tab-next-page'
+import { MenuTabFragmentation } from '../menu-tab-fragmentation'
+import { MenuTabExperienceMode } from '../menu-tab-experience-mode'
+import { MenuTabDisplayMode } from '../menu-tab-display-mode'
+import { MenuOfTunings } from '../menu-of-tunings'
+import { MenuOfScales } from '../menu-of-scales'
+import { MenuOfCovariants } from '../menu-of-covariants'
 import { HarpFaceMemo } from '../harp-face'
-import { FragmentationButton } from '../fragmentation-button'
-import { ExperienceModeButton } from '../experience-mode-button'
-import { DisplayModeButton } from '../display-mode-button'
-import { CovariantMenu } from '../covariant-menu'
 import { ActivityLegend } from '../activity-legend'
 import { MenuStates, MenuStashPosition, PageNumber } from '../../types'
 import { colors } from '../../styles'
@@ -52,7 +52,7 @@ export const HarpGuruPage = ({
     <View style={styles.fillScreen}>
       <ActivityLegend />
       <HarpFaceMemo />
-      <CovariantMenu
+      <MenuOfCovariants
         isMenuStashed={menuState !== MenuStates.CovariantMenu}
         isLabelHidden={
           menuState !== MenuStates.CovariantMenu &&
@@ -61,7 +61,7 @@ export const HarpGuruPage = ({
         stashPosition={MenuStashPosition.First}
         openCloseMenu={() => handleManuTap(MenuStates.CovariantMenu)}
       />
-      <LayoutMenu
+      <MenuOfTunings
         isMenuStashed={menuState !== MenuStates.LayoutMenu}
         isLabelHidden={
           menuState !== MenuStates.LayoutMenu && menuState !== MenuStates.NoMenu
@@ -69,7 +69,7 @@ export const HarpGuruPage = ({
         stashPosition={MenuStashPosition.Second}
         openCloseMenu={() => handleManuTap(MenuStates.LayoutMenu)}
       />
-      <ScalesMenu
+      <MenuOfScales
         isMenuStashed={menuState !== MenuStates.ScalesMenu}
         isLabelHidden={
           menuState !== MenuStates.ScalesMenu && menuState !== MenuStates.NoMenu
@@ -77,27 +77,27 @@ export const HarpGuruPage = ({
         stashPosition={MenuStashPosition.Third}
         openCloseMenu={() => handleManuTap(MenuStates.ScalesMenu)}
       />
-      <DisplayModeButton
+      <MenuTabDisplayMode
         isLabelHidden={menuState !== MenuStates.NoMenu}
         stashPosition={MenuStashPosition.Fourth}
       />
-      <FragmentationButton
+      <MenuTabFragmentation
         isLabelHidden={menuState !== MenuStates.NoMenu}
         stashPosition={MenuStashPosition.Fifth}
       />
-      <ExperienceModeButton
+      <MenuTabExperienceMode
         isLabelHidden={menuState !== MenuStates.NoMenu}
         stashPosition={MenuStashPosition.Sixth}
       />
-      <NextPageButton
+      <MenuTabNextPage
         thisPage={thisPage}
         totalPages={3}
         stashPosition={MenuStashPosition.Seventh}
         getNextPage={() => pageOnDisplay.setValue(nextPageNumberMap[thisPage])}
       />
       <ToggleBufferFlusher />
-      <QuizQuestionDisplay isScreenFree={menuState === MenuStates.NoMenu} />
-      <ScaleNotification isScalesMenu={menuState === MenuStates.ScalesMenu} />
+      <NotifyOfQuizQuestion isScreenFree={menuState === MenuStates.NoMenu} />
+      <NotifyOfScale isScalesMenu={menuState === MenuStates.ScalesMenu} />
     </View>
   )
 }

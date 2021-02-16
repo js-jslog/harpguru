@@ -1,7 +1,7 @@
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { MenuCloseButton } from '../menu-close-button'
+import { MenuAccessClose } from '../menu-access-close'
 import { getScaledMenuLabelProtrusion } from '../../utils/'
 import type { MenuProps, ChildrenProps } from '../../types'
 
@@ -20,7 +20,7 @@ export const MenuFace = ({
   return (
     <View style={style}>
       {children}
-      <MenuCloseButton openCloseMenu={openCloseMenu} />
+      <MenuAccessClose openCloseMenu={openCloseMenu} />
     </View>
   )
 }
