@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.3.0...HEAD) - yyyy-mm-dd
 
+### Fixed
+
+MINOR: Add missing quiz questions
+
 ## [v7.1.0](https://github.com/js-jslog/harpguru/releases/tag/v8.3.0) - 2021-02-11
 
 ### Fixed
