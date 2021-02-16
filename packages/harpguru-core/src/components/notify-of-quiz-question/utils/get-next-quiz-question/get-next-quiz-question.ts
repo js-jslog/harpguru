@@ -13,7 +13,7 @@ export const getNextQuizQuestion = (
   displayMode: DisplayModes
 ): DegreeIds | PitchIds => {
   const ids = getOrderedIds(displayMode)
-  const max = ids.length - 1
+  const { length: max } = ids
   const random = Math.floor(Math.random() * max)
   const { [random]: next } = ids
 
