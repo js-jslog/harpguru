@@ -6,6 +6,7 @@ import {
   PitchIds,
   ScaleIds,
   getScale,
+  getDegreeIds,
 } from 'harpparts'
 
 import {
@@ -46,6 +47,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     bufferedActivityToggles: thisPozitionDegrees,
     fragmentHarpFaceByOctaves: true,
     flushChannel: FlushChannels.Regular,
+    activeQuizDegrees: getDegreeIds(),
   }
 
   return state
