@@ -15,4 +15,5 @@ export enum DegreeIds {
 
 export type Degree = {
   readonly id: DegreeIds
+  readonly simpleSplitValue: [string, string]
 }

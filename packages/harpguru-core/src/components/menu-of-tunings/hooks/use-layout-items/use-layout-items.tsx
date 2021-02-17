@@ -15,11 +15,14 @@ type UseLayoutItems = (
 ) => ReadonlyArray<React.ReactElement<OptionItemProps<ItemCallback>>>
 
 type LayoutItems = {
-  readonly useItems: UseLayoutItems
+  readonly useTuningItems: UseLayoutItems
 }
 
 export const useLayoutItems = (): LayoutItems => {
-  const useItems = (useGlobal: UseGlobal, itemTapHandler: ItemTapHandler) => {
+  const useTuningItems = (
+    useGlobal: UseGlobal,
+    itemTapHandler: ItemTapHandler
+  ) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const {
       apparatus: { id: apparatusId },
@@ -37,5 +40,5 @@ export const useLayoutItems = (): LayoutItems => {
     return items
   }
 
-  return { useItems }
+  return { useTuningItems }
 }

@@ -10,26 +10,48 @@ import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import { getNewHarpStrataByApparatusForDispatcher } from './utils'
-import { useLayoutTitles, useLayoutItems } from './hooks'
+import {
+  useLayoutTitles,
+  useLayoutItems,
+  useQuizQuestionTitle,
+  useQuizQuestionItems,
+} from './hooks'
 
 export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
-  const { useTitle } = useLayoutTitles()
-  const { useItems } = useLayoutItems()
+  const { useTuningTitle } = useLayoutTitles()
+  const { useTuningItems } = useLayoutItems()
   const itemTapHandler = useCallback(
     useDispatch(getNewHarpStrataByApparatusForDispatcher),
     [useDispatch, getNewHarpStrataByApparatusForDispatcher]
   )
 
-  const useTitleMemo = useCallback(() => useTitle(useGlobal), [useGlobal])
-  const useItemsMemo = useCallback(() => useItems(useGlobal, itemTapHandler), [
+  const useTuningTitleMemo = useCallback(() => useTuningTitle(useGlobal), [
     useGlobal,
-    itemTapHandler,
   ])
+  const useTuningItemsMemo = useCallback(
+    () => useTuningItems(useGlobal, itemTapHandler),
+    [useGlobal, itemTapHandler]
+  )
+
+  const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
+  const quizQuestionTapHandler = useCallback(
+    useDispatch(() => ({ activeQuizDegrees: [] })),
+    [useDispatch]
+  )
+  const useQuizQuestionItemsMemo = useCallback(
+    () => useQuizQuestionItems(useGlobal, quizQuestionTapHandler),
+    [useGlobal, quizQuestionTapHandler]
+  )
 
   const optionStackPropsz = [
     {
-      useTitle: useTitleMemo,
-      useItems: useItemsMemo,
+      useTitle: useTuningTitleMemo,
+      useItems: useTuningItemsMemo,
+      twoColumns: false,
+    },
+    {
+      useTitle: useQuizQuestionTitleMemo,
+      useItems: useQuizQuestionItemsMemo,
       twoColumns: false,
     },
   ]

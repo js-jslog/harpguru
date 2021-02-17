@@ -5,11 +5,13 @@ import type { OptionLabelProps } from '../../../option-label'
 import type { UseGlobal } from '../../../../types'
 
 type LayoutMenuTitles = {
-  readonly useTitle: (arg0: UseGlobal) => React.ReactElement<OptionLabelProps>
+  readonly useTuningTitle: (
+    arg0: UseGlobal
+  ) => React.ReactElement<OptionLabelProps>
 }
 
 export const useLayoutTitles = (): LayoutMenuTitles => {
-  const useTitle = (useGlobal: UseGlobal) => {
+  const useTuningTitle = (useGlobal: UseGlobal) => {
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const {
       apparatus: { id: apparatusId },
@@ -24,5 +26,5 @@ export const useLayoutTitles = (): LayoutMenuTitles => {
     )
   }
 
-  return { useTitle }
+  return { useTuningTitle }
 }

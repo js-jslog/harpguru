@@ -1,13 +1,12 @@
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
-import type { Pozition, Pitch } from 'harpparts'
-import { isPozition, isPitch } from 'harpparts'
+import type { Pozition, Pitch, Degree } from 'harpparts'
 
 import { getOptionSizes } from '../../utils'
 import { harpguruColors, colors } from '../../styles'
 
 export type OptionValueProps = {
-  readonly value: Pozition | Pitch | string
+  readonly value: Pozition | Degree | Pitch | string
   readonly alignItems: 'flex-start' | 'center' | 'flex-end'
   readonly isHighlighted?: boolean
   readonly isLarge: boolean
@@ -75,9 +74,7 @@ export const OptionValue = ({
   const isLargeStyle = isLarge ? [largeStyle] : []
   const isTwoColumnsStyle = twoColumns ? [twoColumnsStyle] : []
   const [regularscript, superscript] =
-    typeof value !== 'string' && (isPozition(value) || isPitch(value))
-      ? value.simpleSplitValue
-      : [value, '']
+    typeof value !== 'string' ? value.simpleSplitValue : [value, '']
   const optionText = (
     <View style={{ width: '100%' }}>
       {highlightElement}
