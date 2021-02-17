@@ -1,12 +1,12 @@
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
-import type { Pozition, Pitch, Degree } from 'harpparts'
+import type { Pozition, Pitch } from 'harpparts'
 
 import { getOptionSizes } from '../../utils'
 import { harpguruColors, colors } from '../../styles'
 
 export type OptionValueProps = {
-  readonly value: Pozition | Degree | Pitch | string
+  readonly value: Pozition | Pitch | string
   readonly alignItems: 'flex-start' | 'center' | 'flex-end'
   readonly isHighlighted?: boolean
   readonly isLarge: boolean

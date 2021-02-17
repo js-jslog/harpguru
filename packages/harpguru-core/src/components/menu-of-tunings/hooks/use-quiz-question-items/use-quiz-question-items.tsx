@@ -21,7 +21,7 @@ export const useQuizQuestionItems = (
   const items = getDegreeIds().map((id, index) => (
     <OptionItem
       key={`${index}`}
-      value={getDegree(id)}
+      value={getDegree(id).label}
       isSelected={activeQuizDegrees.includes(id)}
       itemTapHandler={itemTapHandler}
       callbackParam={id}
