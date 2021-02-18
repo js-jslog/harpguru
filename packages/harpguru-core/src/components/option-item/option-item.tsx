@@ -11,6 +11,7 @@ export type OptionItemProps<T> = Pick<
   'value' | 'twoColumns'
 > & {
   readonly isSelected: boolean
+  readonly isMultiSelect?: boolean
   readonly itemTapHandler: (arg0: T) => void
   readonly callbackParam: T
 }
@@ -19,6 +20,7 @@ export const OptionItem = <T extends unknown>({
   value,
   twoColumns,
   isSelected,
+  isMultiSelect = false,
   itemTapHandler,
   callbackParam,
 }: OptionItemProps<T>): React.ReactElement => {
@@ -35,7 +37,7 @@ export const OptionItem = <T extends unknown>({
       <OptionValue
         value={value}
         alignItems={'center'}
-        isLarge={isSelected}
+        isLarge={isSelected && !isMultiSelect}
         isHighlighted={isSelected}
         twoColumns={twoColumns}
       />
@@ -43,7 +45,7 @@ export const OptionItem = <T extends unknown>({
   )
   return (
     <TouchableOpacity
-      disabled={isSelected ? true : false}
+      disabled={isSelected && !isMultiSelect ? true : false}
       onPress={() => itemTapHandler(callbackParam)}
     >
       {displayElement}

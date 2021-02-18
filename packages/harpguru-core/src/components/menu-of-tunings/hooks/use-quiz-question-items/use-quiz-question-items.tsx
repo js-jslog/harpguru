@@ -23,6 +23,7 @@ export const useQuizQuestionItems = (
       key={`${index}`}
       value={getDegree(id).label}
       isSelected={activeQuizDegrees.includes(id)}
+      isMultiSelect={true}
       itemTapHandler={itemTapHandler}
       callbackParam={id}
       twoColumns={false}
