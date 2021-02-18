@@ -9,7 +9,10 @@ import { Menu } from '../menu'
 import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
-import { getNewHarpStrataByApparatusForDispatcher } from './utils'
+import {
+  getNewHarpStrataByApparatusForDispatcher,
+  getToggledActiveQuizDegrees,
+} from './utils'
 import {
   useLayoutTitles,
   useLayoutItems,
@@ -35,8 +38,8 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
 
   const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
   const quizQuestionTapHandler = useCallback(
-    useDispatch(() => ({ activeQuizDegrees: [] })),
-    [useDispatch]
+    useDispatch(getToggledActiveQuizDegrees),
+    [useDispatch, getToggledActiveQuizDegrees]
   )
   const useQuizQuestionItemsMemo = useCallback(
     () => useQuizQuestionItems(useGlobal, quizQuestionTapHandler),
