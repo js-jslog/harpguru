@@ -29,5 +29,18 @@ export const useQuizQuestionItems = (
       twoColumns={false}
     />
   ))
-  return items
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [, setActiveQuizDegrees] = useGlobal('activeQuizDegrees')
+  const syncWithHarpTapHandler = () =>
+    setActiveQuizDegrees(activeHarpStrata.activeDegreeIds)
+  const headerItem = (
+    <OptionItem
+      value={'Sync with active harp'}
+      isSelected={false}
+      itemTapHandler={syncWithHarpTapHandler}
+      callbackParam={undefined}
+      twoColumns={false}
+    />
+  )
+  return [headerItem, ...items]
 }
