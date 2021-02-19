@@ -11,6 +11,7 @@ type RenderedToneProps = {
   readonly isQuestion: boolean
   readonly splitType: 'FLAT' | 'SLANT'
   readonly activeExperienceMode: ExperienceModes
+  readonly overrideSizes?: [7, 5, 6] | [10, 8, 9]
 }
 
 export const RenderedTone = ({
@@ -19,11 +20,16 @@ export const RenderedTone = ({
   isQuestion,
   splitType,
   activeExperienceMode,
+  overrideSizes = [7, 5, 6],
 }: RenderedToneProps): React.ReactElement => {
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
   const sizes = getSizes()
-  const { 7: noteFontSize, 5: modifierTopMargin, 6: modifierFontSize } = sizes
+  const {
+    [overrideSizes[0]]: noteFontSize,
+    [overrideSizes[1]]: modifierTopMargin,
+    [overrideSizes[2]]: modifierFontSize,
+  } = sizes
   const { pageColor, inertOutline: borderColor } = colors
 
   const styles = StyleSheet.create({

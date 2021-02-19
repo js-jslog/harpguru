@@ -1,4 +1,4 @@
-import Animated, { multiply } from 'react-native-reanimated'
+import Animated from 'react-native-reanimated'
 import { StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
@@ -10,12 +10,10 @@ import { useFlashAnimationValues } from './hooks'
 
 type NotificationFlashProps = ChildrenProps & {
   readonly shouldDisplay: boolean
-  readonly messageScaleMultiplier?: number
 }
 
 export const NotificationFlash = ({
   shouldDisplay,
-  messageScaleMultiplier = 1,
   children,
 }: NotificationFlashProps): ReactElement => {
   const [
@@ -76,7 +74,7 @@ export const NotificationFlash = ({
                 // I do not have a good explanation for this and it doesn't seem
                 // to conform to the observation of the other comment added in
                 // this commit.
-                scale: multiply(messageScale, messageScaleMultiplier),
+                scale: messageScale,
                 translateX: translateX,
               },
             ],
