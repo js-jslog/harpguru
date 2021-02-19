@@ -14,15 +14,13 @@ import {
   getToggledActiveQuizDegrees,
 } from './utils'
 import {
-  useLayoutTitles,
-  useLayoutItems,
   useQuizQuestionTitle,
   useQuizQuestionItems,
+  useTuningTitle,
+  useTuningItems,
 } from './hooks'
 
 export const MenuOfSettings = (menuProps: MenuProps): React.ReactElement => {
-  const { useTuningTitle } = useLayoutTitles()
-  const { useTuningItems } = useLayoutItems()
   const itemTapHandler = useCallback(
     useDispatch(getNewHarpStrataByApparatusForDispatcher),
     [useDispatch, getNewHarpStrataByApparatusForDispatcher]
