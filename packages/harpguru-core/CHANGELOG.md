@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.3.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+MINOR: Menu for limiting the range of quiz questions (effective for degrees only)
+
 ### Fixed
 
 MINOR: Add missing quiz questions

@@ -10,6 +10,7 @@ export type GlobalState = {
   readonly bufferedActivityToggles: ReadonlyArray<DegreeIds>
   readonly fragmentHarpFaceByOctaves: boolean
   readonly flushChannel: FlushChannels
+  readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
 }
 
 export type UseGlobal = <

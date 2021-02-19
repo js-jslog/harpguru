@@ -1,13 +1,13 @@
-import { DegreeIds } from 'harpparts'
+import { DegreeIds, getDegree } from 'harpparts'
 
 import { arrayHasRoot } from './array-has-root'
 
 test('Reduce a single row matrix to identify whether it contains any roots', () => {
   const degreeMatrix = [
     [
-      { id: DegreeIds.Root },
-      { id: DegreeIds.Second },
-      { id: DegreeIds.Fourth },
+      getDegree(DegreeIds.Root),
+      getDegree(DegreeIds.Second),
+      getDegree(DegreeIds.Fourth),
     ],
   ]
   const expectedRootsMatrix = [true]
@@ -20,12 +20,12 @@ test('Reduce a single row matrix to identify whether it contains any roots', () 
 test('Reduce a multidimensional simple degreeMatrix to identify which rows have roots', () => {
   const degreeMatrix = [
     [
-      { id: DegreeIds.Root },
-      { id: DegreeIds.Second },
-      { id: DegreeIds.Fourth },
+      getDegree(DegreeIds.Root),
+      getDegree(DegreeIds.Second),
+      getDegree(DegreeIds.Fourth),
     ],
-    [{ id: DegreeIds.Root }, undefined, { id: DegreeIds.Root }],
-    [{ id: DegreeIds.Second }, undefined, { id: DegreeIds.Third }],
+    [getDegree(DegreeIds.Root), undefined, getDegree(DegreeIds.Root)],
+    [getDegree(DegreeIds.Second), undefined, getDegree(DegreeIds.Third)],
   ]
   const expectedRootsMatrix = [true, true, false]
 

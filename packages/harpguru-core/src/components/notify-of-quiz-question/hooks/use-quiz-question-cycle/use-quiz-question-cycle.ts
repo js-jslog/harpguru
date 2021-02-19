@@ -31,11 +31,12 @@ export const useQuizQuestionCycle = (
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
   const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
+  const [activeQuizDegrees] = useGlobal('activeQuizDegrees')
   const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(
-    getNextQuizQuestion(DegreeIds.Root, activeDisplayMode)
+    getNextQuizQuestion(DegreeIds.Root, activeQuizDegrees, activeDisplayMode)
   )
 
   // This function is involved in a quirk which requires some
@@ -110,7 +111,9 @@ export const useQuizQuestionCycle = (
     unstable_batchedUpdates(() => {
       bufferCorrectAnswer()
       flushBufferedActivityToggles()
-      setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
+      setQuizQuestion(
+        getNextQuizQuestion(quizQuestion, activeQuizDegrees, activeDisplayMode)
+      )
     })
   }
 
@@ -120,7 +123,9 @@ export const useQuizQuestionCycle = (
     if (!isScreenFree) return setQuizState(QuizStates.Wait)
     if (activeExperienceMode === ExperienceModes.Quiz) {
       setFlushChannel(FlushChannels.Quiz)
-      setQuizQuestion(getNextQuizQuestion(quizQuestion, activeDisplayMode))
+      setQuizQuestion(
+        getNextQuizQuestion(quizQuestion, activeQuizDegrees, activeDisplayMode)
+      )
       return setQuizState(QuizStates.Ask)
     }
     if (activeExperienceMode === ExperienceModes.Explore) {

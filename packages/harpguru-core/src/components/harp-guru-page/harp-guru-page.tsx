@@ -12,7 +12,7 @@ import { MenuTabNextPage } from '../menu-tab-next-page'
 import { MenuTabFragmentation } from '../menu-tab-fragmentation'
 import { MenuTabExperienceMode } from '../menu-tab-experience-mode'
 import { MenuTabDisplayMode } from '../menu-tab-display-mode'
-import { MenuOfTunings } from '../menu-of-tunings'
+import { MenuOfSettings } from '../menu-of-settings'
 import { MenuOfScales } from '../menu-of-scales'
 import { MenuOfCovariants } from '../menu-of-covariants'
 import { HarpFaceMemo } from '../harp-face'
@@ -61,7 +61,7 @@ export const HarpGuruPage = ({
         stashPosition={MenuStashPosition.First}
         openCloseMenu={() => handleManuTap(MenuStates.CovariantMenu)}
       />
-      <MenuOfTunings
+      <MenuOfSettings
         isMenuStashed={menuState !== MenuStates.LayoutMenu}
         isLabelHidden={
           menuState !== MenuStates.LayoutMenu && menuState !== MenuStates.NoMenu

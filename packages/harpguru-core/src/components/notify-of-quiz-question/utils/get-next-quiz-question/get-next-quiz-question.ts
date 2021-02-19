@@ -1,4 +1,4 @@
-import type { PitchIds } from 'harpparts'
+import { isPitchId, PitchIds } from 'harpparts'
 import { DegreeIds, getPitchIds, getDegreeIds } from 'harpparts'
 
 import { DisplayModes } from '../../../../types'
@@ -10,6 +10,7 @@ const getOrderedIds = (displayMode: DisplayModes) => {
 
 export const getNextQuizQuestion = (
   previous: string,
+  activeQuizDegrees: ReadonlyArray<DegreeIds>,
   displayMode: DisplayModes
 ): DegreeIds | PitchIds => {
   const ids = getOrderedIds(displayMode)
@@ -17,7 +18,12 @@ export const getNextQuizQuestion = (
   const random = Math.floor(Math.random() * max)
   const { [random]: next } = ids
 
-  if (next === previous) return getNextQuizQuestion(previous, displayMode)
+  if (activeQuizDegrees.length === 1) return activeQuizDegrees[0]
+  if (next === previous)
+    return getNextQuizQuestion(previous, activeQuizDegrees, displayMode)
+  if (activeQuizDegrees.length === 0) return next
+  if (!isPitchId(next) && !activeQuizDegrees.includes(next))
+    return getNextQuizQuestion(previous, activeQuizDegrees, displayMode)
 
   return next
 }

@@ -12,5 +12,6 @@ declare module 'reactn/default' {
     bufferedActivityToggles: ReadonlyArray<DegreeIds>
     fragmentHarpFaceByOctaves: boolean
     flushChannel: FlushChannels
+    activeQuizDegrees: ReadonlyArray<DegreeIds>
   }
 }
