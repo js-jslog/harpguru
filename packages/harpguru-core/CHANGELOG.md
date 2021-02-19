@@ -23,6 +23,7 @@ MINOR: Menu for limiting the range of quiz questions (effective for degrees only
 
 MINOR: Add missing quiz questions
 MINOR: Fix positioning of option list on devices with notches
+MINOR: Prevent notification messages spilling over in to next page
 
 ## [v7.1.0](https://github.com/js-jslog/harpguru/releases/tag/v8.3.0) - 2021-02-11
 

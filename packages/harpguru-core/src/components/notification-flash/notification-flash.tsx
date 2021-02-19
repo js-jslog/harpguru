@@ -1,5 +1,5 @@
 import Animated, { multiply } from 'react-native-reanimated'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
@@ -22,24 +22,23 @@ export const NotificationFlash = ({
     translateX,
     messageScale,
     explosionOpacity,
-    messageUnderlayOpacity,
+    messageOpacity,
   ] = useFlashAnimationValues(shouldDisplay)
 
   const styles = StyleSheet.create({
-    messageUnderlay: {
+    pinkExplosion: {
       ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      zIndex: 10,
-      backgroundColor: colors.pageColor,
-    },
-    explosionOverlay: {
-      ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
       zIndex: 10,
       backgroundColor: harpguruColors.pink,
     },
+    messageUnderlay: {
+      ...StyleSheet.absoluteFillObject,
+      zIndex: 11,
+      backgroundColor: colors.pageColor,
+    },
     message: {
-      flex: 1,
+      ...StyleSheet.absoluteFillObject,
+      zIndex: 12,
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-evenly',
@@ -50,7 +49,7 @@ export const NotificationFlash = ({
     <>
       <Animated.View
         style={[
-          styles.explosionOverlay,
+          styles.pinkExplosion,
           {
             transform: [{ translateX: translateX }],
             opacity: explosionOpacity,
@@ -60,6 +59,15 @@ export const NotificationFlash = ({
       <Animated.View
         style={[
           styles.messageUnderlay,
+          {
+            transform: [{ translateX: translateX }],
+            opacity: messageOpacity,
+          },
+        ]}
+      />
+      <Animated.View
+        style={[
+          styles.message,
           {
             transform: [
               {
@@ -72,11 +80,11 @@ export const NotificationFlash = ({
                 translateX: translateX,
               },
             ],
-            opacity: messageUnderlayOpacity,
+            opacity: messageOpacity,
           },
         ]}
       >
-        <View style={styles.message}>{children}</View>
+        {children}
       </Animated.View>
     </>
   )

@@ -23,7 +23,7 @@ export const useFlashAnimationValues = (
   const { longEdge } = getWindowDimensions()
   const guaranteeOffScreenWidth = longEdge
 
-  const messageUnderlayOpacity = interpolate(flashAnimationValue, {
+  const messageOpacity = interpolate(flashAnimationValue, {
     inputRange: [0, 1],
     outputRange: [0, overlayOpacity],
   })
@@ -50,5 +50,5 @@ export const useFlashAnimationValues = (
     0,
     guaranteeOffScreenWidth
   )
-  return [translateX, messageScale, explosionOpacity, messageUnderlayOpacity]
+  return [translateX, messageScale, explosionOpacity, messageOpacity]
 }
