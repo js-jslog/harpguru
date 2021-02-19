@@ -26,7 +26,7 @@ export const NotificationFlash = ({
   ] = useFlashAnimationValues(shouldDisplay)
 
   const styles = StyleSheet.create({
-    wrapper: {
+    backgroundwrapper: {
       ...StyleSheet.absoluteFillObject,
       zIndex: 10,
       justifyContent: 'center',
@@ -39,6 +39,10 @@ export const NotificationFlash = ({
       ...StyleSheet.absoluteFillObject,
       backgroundColor: colors.pageColor,
     },
+    messageWrapper: {
+      ...StyleSheet.absoluteFillObject,
+      zIndex: 11,
+    },
     message: {
       flex: 1,
       flexDirection: 'column',
@@ -48,36 +52,45 @@ export const NotificationFlash = ({
   })
 
   return (
-    <Animated.View
-      style={[
-        styles.wrapper,
-        {
-          transform: [{ translateX: translateX }],
-        },
-      ]}
-    >
+    <>
       <Animated.View
         style={[
-          styles.pinkExplosion,
+          styles.backgroundwrapper,
           {
-            opacity: explosionOpacity,
+            transform: [{ translateX: translateX }],
           },
         ]}
-      />
+      >
+        <Animated.View
+          style={[
+            styles.pinkExplosion,
+            {
+              opacity: explosionOpacity,
+            },
+          ]}
+        />
+        <Animated.View
+          style={[
+            styles.messageUnderlay,
+            {
+              opacity: messageOpacity,
+            },
+          ]}
+        />
+      </Animated.View>
       <Animated.View
         style={[
-          styles.messageUnderlay,
-          {
-            opacity: messageOpacity,
-          },
-        ]}
-      />
-      <Animated.View
-        style={[
+          styles.messageWrapper,
           {
             transform: [
               {
+                // WARNING: in iOS only; the scale *must* be performed before the
+                // translation, or the translation will not be observed at all.
+                // I do not have a good explanation for this and it doesn't seem
+                // to conform to the observation of the other comment added in
+                // this commit.
                 scale: multiply(messageScale, messageScaleMultiplier),
+                translateX: translateX,
               },
             ],
             opacity: messageOpacity,
@@ -86,6 +99,6 @@ export const NotificationFlash = ({
       >
         <View style={styles.message}>{children}</View>
       </Animated.View>
-    </Animated.View>
+    </>
   )
 }
