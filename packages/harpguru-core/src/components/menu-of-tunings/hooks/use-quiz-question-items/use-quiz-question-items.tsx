@@ -4,6 +4,7 @@ import type { DegreeIds } from 'harpparts'
 
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
+import { OptionBreak } from '../../../option-break'
 import type { UseGlobal } from '../../../../types'
 
 type ItemCallback = DegreeIds
@@ -52,5 +53,6 @@ export const useQuizQuestionItems = (
       twoColumns={false}
     />
   )
-  return [syncItem, clearItem, ...items]
+  const breakItem = <OptionBreak />
+  return [syncItem, clearItem, breakItem, ...items]
 }

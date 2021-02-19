@@ -9,6 +9,7 @@ import {
 
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
+import { OptionBreak } from '../../../option-break'
 import type { UseGlobal } from '../../../../types'
 
 type ItemCallback = ReadonlyArray<DegreeIds>
@@ -46,6 +47,7 @@ export const useScalesItemsz = (): ScalesItemsz => {
         callbackParam={[]}
         twoColumns={false}
       />,
+      <OptionBreak key={'option-break-scales'} />,
       ...scales.map((item, index) => (
         <OptionItem
           key={`${index}`}
@@ -80,6 +82,7 @@ export const useScalesItemsz = (): ScalesItemsz => {
         callbackParam={[]}
         twoColumns={false}
       />,
+      <OptionBreak key={'option-break-chords'} />,
       ...chords.map((item, index) => (
         <OptionItem
           key={`${index}`}
