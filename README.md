@@ -17,3 +17,22 @@ A monorepo containing the component packages to run and build the harpguru appli
   - Increment `expo.android.versionCode`
 - Tag harpguru and push
 - Check that the links in the CHANGELOG.md files find the new tag destination
+
+# Testing guide
+
+## iOS simulator
+
+A simulator build can be created from the harpguru-expo-boilerplate package (see package.json).
+
+Double click the tar file produced to extract a `harpguru.app` file.
+
+To load this app in to a simulated device, first you need to acquire the device id and the command xcode to install the app to it.
+
+eg:
+
+```
+xcrun simctl list # to recover the device id
+xcrun simctl install <device id> <path to app file>
+# eg
+xcrun simctl install 74F3E445-D2CF-4CC3-916D-70A7D5C432F3 ~/Desktop/harp-guru.app
+```
