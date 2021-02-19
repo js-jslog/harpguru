@@ -29,8 +29,6 @@ export const NotifyOfScale = ({
       <Text
         style={{
           color: 'black',
-          textShadowColor: 'white',
-          textShadowRadius: 1,
           fontSize: sizes['8'],
         }}
       >
