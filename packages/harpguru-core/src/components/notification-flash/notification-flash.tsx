@@ -26,13 +26,18 @@ export const NotificationFlash = ({
   ] = useFlashAnimationValues(shouldDisplay)
 
   const styles = StyleSheet.create({
+    wrapper: {
+      ...StyleSheet.absoluteFillObject,
+      zIndex: 10,
+      justifyContent: 'center',
+    },
+    pinkExplosion: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: harpguruColors.pink,
+    },
     messageUnderlay: {
       ...StyleSheet.absoluteFillObject,
       backgroundColor: colors.pageColor,
-    },
-    explosionOverlay: {
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: harpguruColors.pink,
     },
     message: {
       flex: 1,
@@ -45,11 +50,7 @@ export const NotificationFlash = ({
   return (
     <Animated.View
       style={[
-        {
-          ...StyleSheet.absoluteFillObject,
-          zIndex: 10,
-          justifyContent: 'center',
-        },
+        styles.wrapper,
         {
           transform: [{ translateX: translateX }],
         },
@@ -57,7 +58,7 @@ export const NotificationFlash = ({
     >
       <Animated.View
         style={[
-          styles.explosionOverlay,
+          styles.pinkExplosion,
           {
             opacity: explosionOpacity,
           },
