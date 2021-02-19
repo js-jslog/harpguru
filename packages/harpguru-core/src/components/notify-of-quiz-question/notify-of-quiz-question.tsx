@@ -5,7 +5,6 @@ import { RenderedTone } from '../rendered-tone'
 import { NotificationFlash } from '../notification-flash'
 import { getRenderableToneTuples } from '../../utils'
 import type { RenderableToneTuples } from '../../types'
-import { getSizes } from '../../styles'
 
 import { useQuizQuestionCycle } from './hooks'
 
@@ -32,19 +31,15 @@ export const NotifyOfQuizQuestion = ({
     return [toneTuples[1]]
   }
 
-  const sizes = getSizes()
-
   return (
-    <NotificationFlash
-      shouldDisplay={shouldDisplay}
-      messageScaleMultiplier={sizes['3']}
-    >
+    <NotificationFlash shouldDisplay={shouldDisplay}>
       <RenderedTone
         toneTuples={selectToneVersionForDisplay(toneTuples)}
         isActive={false}
         isQuestion={true}
         splitType={'FLAT'}
         activeExperienceMode={activeExperienceMode}
+        isLarge={true}
       />
     </NotificationFlash>
   )

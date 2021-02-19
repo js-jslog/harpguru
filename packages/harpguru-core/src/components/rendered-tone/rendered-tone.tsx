@@ -11,6 +11,7 @@ type RenderedToneProps = {
   readonly isQuestion: boolean
   readonly splitType: 'FLAT' | 'SLANT'
   readonly activeExperienceMode: ExperienceModes
+  readonly isLarge?: boolean
 }
 
 export const RenderedTone = ({
@@ -19,11 +20,17 @@ export const RenderedTone = ({
   isQuestion,
   splitType,
   activeExperienceMode,
+  isLarge = false,
 }: RenderedToneProps): React.ReactElement => {
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
   const sizes = getSizes()
   const { 7: noteFontSize, 5: modifierTopMargin, 6: modifierFontSize } = sizes
+  const {
+    10: largeNoteFontSize,
+    8: largeModifierTopMargin,
+    9: largeModifierFontSize,
+  } = sizes
   const { pageColor, inertOutline: borderColor } = colors
 
   const styles = StyleSheet.create({
@@ -49,14 +56,14 @@ export const RenderedTone = ({
     note: {
       display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
-      fontSize: noteFontSize,
+      fontSize: isLarge ? largeNoteFontSize : noteFontSize,
     },
     modifier: {
-      bottom: modifierTopMargin,
-      left: modifierTopMargin,
+      bottom: isLarge ? largeModifierTopMargin : modifierTopMargin,
+      left: isLarge ? largeModifierTopMargin : modifierTopMargin,
       display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
-      fontSize: modifierFontSize,
+      fontSize: isLarge ? largeModifierFontSize : modifierFontSize,
     },
   })
 
