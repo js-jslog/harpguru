@@ -11,7 +11,7 @@ type RenderedToneProps = {
   readonly isQuestion: boolean
   readonly splitType: 'FLAT' | 'SLANT'
   readonly activeExperienceMode: ExperienceModes
-  readonly isLarge?: boolean
+  readonly overrideSizes?: [7, 5, 6] | [10, 8, 9]
 }
 
 export const RenderedTone = ({
@@ -20,16 +20,15 @@ export const RenderedTone = ({
   isQuestion,
   splitType,
   activeExperienceMode,
-  isLarge = false,
+  overrideSizes = [7, 5, 6],
 }: RenderedToneProps): React.ReactElement => {
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
   const sizes = getSizes()
-  const { 7: noteFontSize, 5: modifierTopMargin, 6: modifierFontSize } = sizes
   const {
-    10: largeNoteFontSize,
-    8: largeModifierTopMargin,
-    9: largeModifierFontSize,
+    [overrideSizes[0]]: noteFontSize,
+    [overrideSizes[1]]: modifierTopMargin,
+    [overrideSizes[2]]: modifierFontSize,
   } = sizes
   const { pageColor, inertOutline: borderColor } = colors
 
@@ -56,14 +55,14 @@ export const RenderedTone = ({
     note: {
       display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
-      fontSize: isLarge ? largeNoteFontSize : noteFontSize,
+      fontSize: noteFontSize,
     },
     modifier: {
-      bottom: isLarge ? largeModifierTopMargin : modifierTopMargin,
-      left: isLarge ? largeModifierTopMargin : modifierTopMargin,
+      bottom: modifierTopMargin,
+      left: modifierTopMargin,
       display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
-      fontSize: isLarge ? largeModifierFontSize : modifierFontSize,
+      fontSize: modifierFontSize,
     },
   })
 

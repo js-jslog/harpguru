@@ -39,7 +39,7 @@ export const NotifyOfQuizQuestion = ({
         isQuestion={true}
         splitType={'FLAT'}
         activeExperienceMode={activeExperienceMode}
-        isLarge={true}
+        overrideSizes={[10, 8, 9]}
       />
     </NotificationFlash>
   )
