@@ -30,13 +30,20 @@ export const HarpGuru = (): ReactElement => {
     easing: Easing.inOut(Easing.ease),
   })
   const offscreen = shortEdge
+  // The strange decimal stopoff on the way to the next integer
+  // in each of these is to allow the animation to appear to
+  // take the page just barely out of frame, but to then take
+  // it a great distance away at the end. This means the animation
+  // is as smooth as possible, but the page is well out of the
+  // way in case any animated objects move outside of it's page
+  // frame towards interferring with the next page.
   const page1Y = interpolate(pageTransition, {
-    inputRange: [1, 2, 3],
-    outputRange: [0, offscreen, offscreen],
+    inputRange: [1, 1.9, 2, 3],
+    outputRange: [0, offscreen, offscreen * 10, offscreen * 10],
   })
   const page2Y = interpolate(pageTransition, {
-    inputRange: [1, 2, 3],
-    outputRange: [0, 0, offscreen],
+    inputRange: [1, 2, 2.9, 3],
+    outputRange: [0, 0, offscreen, offscreen * 10],
   })
   const page3Y = interpolate(pageTransition, {
     inputRange: [1, 2, 3],

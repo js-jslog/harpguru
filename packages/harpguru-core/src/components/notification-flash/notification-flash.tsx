@@ -1,5 +1,5 @@
 import Animated from 'react-native-reanimated'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
@@ -24,25 +24,19 @@ export const NotificationFlash = ({
   ] = useFlashAnimationValues(shouldDisplay)
 
   const styles = StyleSheet.create({
-    backgroundwrapper: {
-      ...StyleSheet.absoluteFillObject,
-      zIndex: 10,
-      justifyContent: 'center',
-    },
     pinkExplosion: {
       ...StyleSheet.absoluteFillObject,
+      zIndex: 10,
       backgroundColor: harpguruColors.pink,
     },
     messageUnderlay: {
       ...StyleSheet.absoluteFillObject,
+      zIndex: 11,
       backgroundColor: colors.pageColor,
     },
-    messageWrapper: {
-      ...StyleSheet.absoluteFillObject,
-      zIndex: 11,
-    },
     message: {
-      flex: 1,
+      ...StyleSheet.absoluteFillObject,
+      zIndex: 12,
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-evenly',
@@ -53,32 +47,25 @@ export const NotificationFlash = ({
     <>
       <Animated.View
         style={[
-          styles.backgroundwrapper,
+          styles.pinkExplosion,
           {
             transform: [{ translateX: translateX }],
+            opacity: explosionOpacity,
           },
         ]}
-      >
-        <Animated.View
-          style={[
-            styles.pinkExplosion,
-            {
-              opacity: explosionOpacity,
-            },
-          ]}
-        />
-        <Animated.View
-          style={[
-            styles.messageUnderlay,
-            {
-              opacity: messageOpacity,
-            },
-          ]}
-        />
-      </Animated.View>
+      />
       <Animated.View
         style={[
-          styles.messageWrapper,
+          styles.messageUnderlay,
+          {
+            transform: [{ translateX: translateX }],
+            opacity: messageOpacity,
+          },
+        ]}
+      />
+      <Animated.View
+        style={[
+          styles.message,
           {
             transform: [
               {
@@ -95,7 +82,7 @@ export const NotificationFlash = ({
           },
         ]}
       >
-        <View style={styles.message}>{children}</View>
+        {children}
       </Animated.View>
     </>
   )
