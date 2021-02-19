@@ -22,7 +22,7 @@ export const NotificationFlash = ({
     translateX,
     messageScale,
     explosionOpacity,
-    messageUnderlayOpacity,
+    messageOpacity,
   ] = useFlashAnimationValues(shouldDisplay)
 
   const styles = StyleSheet.create({
@@ -68,7 +68,7 @@ export const NotificationFlash = ({
         style={[
           styles.messageUnderlay,
           {
-            opacity: messageUnderlayOpacity,
+            opacity: messageOpacity,
           },
         ]}
       />
@@ -80,7 +80,7 @@ export const NotificationFlash = ({
                 scale: multiply(messageScale, messageScaleMultiplier),
               },
             ],
-            opacity: messageUnderlayOpacity,
+            opacity: messageOpacity,
           },
         ]}
       >
