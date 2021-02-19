@@ -28,14 +28,10 @@ export const NotificationFlash = ({
   const styles = StyleSheet.create({
     messageUnderlay: {
       ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      zIndex: 10,
       backgroundColor: colors.pageColor,
     },
     explosionOverlay: {
       ...StyleSheet.absoluteFillObject,
-      flexDirection: 'row',
-      zIndex: 10,
       backgroundColor: harpguruColors.pink,
     },
     message: {
@@ -47,12 +43,22 @@ export const NotificationFlash = ({
   })
 
   return (
-    <>
+    <Animated.View
+      style={[
+        {
+          ...StyleSheet.absoluteFillObject,
+          zIndex: 10,
+          justifyContent: 'center',
+        },
+        {
+          transform: [{ translateX: translateX }],
+        },
+      ]}
+    >
       <Animated.View
         style={[
           styles.explosionOverlay,
           {
-            transform: [{ translateX: translateX }],
             opacity: explosionOpacity,
           },
         ]}
@@ -61,15 +67,16 @@ export const NotificationFlash = ({
         style={[
           styles.messageUnderlay,
           {
+            opacity: messageUnderlayOpacity,
+          },
+        ]}
+      />
+      <Animated.View
+        style={[
+          {
             transform: [
               {
-                // WARNING: in iOS only; the scale *must* be performed before the
-                // translation, or the translation will not be observed at all.
-                // I do not have a good explanation for this and it doesn't seem
-                // to conform to the observation of the other comment added in
-                // this commit.
                 scale: multiply(messageScale, messageScaleMultiplier),
-                translateX: translateX,
               },
             ],
             opacity: messageUnderlayOpacity,
@@ -78,6 +85,6 @@ export const NotificationFlash = ({
       >
         <View style={styles.message}>{children}</View>
       </Animated.View>
-    </>
+    </Animated.View>
   )
 }
