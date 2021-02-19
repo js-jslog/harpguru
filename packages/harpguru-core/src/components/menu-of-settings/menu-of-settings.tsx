@@ -20,7 +20,7 @@ import {
   useQuizQuestionItems,
 } from './hooks'
 
-export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
+export const MenuOfSettings = (menuProps: MenuProps): React.ReactElement => {
   const { useTuningTitle } = useLayoutTitles()
   const { useTuningItems } = useLayoutItems()
   const itemTapHandler = useCallback(
