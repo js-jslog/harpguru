@@ -42,7 +42,6 @@ export const NotificationFlash = ({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-evenly',
-      backgroundColor: 'red',
     },
   })
 
