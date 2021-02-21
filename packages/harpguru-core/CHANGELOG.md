@@ -19,23 +19,23 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Added
 
-MINOR: Menu for limiting the range of quiz questions (effective for degrees only)
+- MINOR: Menu for limiting the range of quiz questions (effective for degrees only)
 
 ### Fixed
 
-MINOR: Add missing quiz questions
-MINOR: Fix positioning of option list on devices with notches
-MINOR: Prevent notification messages spilling over in to next page
-MINOR: Avoid overscaling quiz question text to preserve resolution
+- MINOR: Add missing quiz questions
+- MINOR: Fix positioning of option list on devices with notches
+- MINOR: Prevent notification messages spilling over in to next page
+- MINOR: Avoid overscaling quiz question text to preserve resolution
 
 ## [v7.1.0](https://github.com/js-jslog/harpguru/releases/tag/v8.3.0) - 2021-02-11
 
 ### Fixed
 
-MINOR: Ensure that menu's are swept aside so they don't invisibly block touches to the app below
-MINOR: Ensure that option list stacks are moved aside to prevent blocking touches to other lists in same stack
-MINOR: Improve menu close button container size to prevent blocking touches to other parts of the menus
-MINOR: Alter styling of hole number row to make visible in iOS
+- MINOR: Ensure that menu's are swept aside so they don't invisibly block touches to the app below
+- MINOR: Ensure that option list stacks are moved aside to prevent blocking touches to other lists in same stack
+- MINOR: Improve menu close button container size to prevent blocking touches to other parts of the menus
+- MINOR: Alter styling of hole number row to make visible in iOS
 
 ## [v7.0.0](https://github.com/js-jslog/harpguru/releases/tag/v8.0.0) - 2021-01-29
 
