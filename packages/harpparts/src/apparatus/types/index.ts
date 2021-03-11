@@ -22,6 +22,8 @@ export enum ApparatusIds {
   NaturalMinor = 'Natural minor',
   WildeTuned = 'Wilde tuned',
   PowerBender = 'Power bender',
+  PowerDraw = 'Power draw',
+  WoozleMinor = 'Woozle minor',
 }
 
 export type Apparatus = {

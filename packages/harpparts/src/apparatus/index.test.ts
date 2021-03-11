@@ -7,6 +7,7 @@ import {
   NATURAL_MINOR_APPARATUS,
   WILDE_TUNED_APPARATUS,
   POWER_BENDER_APPARATUS,
+  POWER_DRAW_APPARATUS,
 } from './constants'
 
 // TODO: These tests all belong elsewhere but we haven't built up the context for them to
@@ -63,6 +64,7 @@ test('Each of the apparatus halfstep matrices have parity with their interaction
     NATURAL_MINOR_APPARATUS,
     WILDE_TUNED_APPARATUS,
     POWER_BENDER_APPARATUS,
+    POWER_DRAW_APPARATUS,
   ].forEach((apparatus) => {
     const hasParity = matricesHaveParity(
       apparatus.halfstepIndexMatrix,
