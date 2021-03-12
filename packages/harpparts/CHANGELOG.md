@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v7.0.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: Add Power draw and Woozle minor with their half valved versions
+
 ## [v8.1.0](https://github.com/js-jslog/harpguru/releases/tag/v7.0.0) - 2021-01-28
 
 ### Added
