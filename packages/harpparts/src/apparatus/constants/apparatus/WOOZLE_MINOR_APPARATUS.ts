@@ -6,7 +6,7 @@ import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 // prettier-ignore
 const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
   //    1          2          3          4          5          6          7          8          9         10
-  [ 3        , undefined, undefined       , 15       , 18       , 22       , 23       , undefined, 32       , 37        ], 
+  [ undefined, undefined, 11       , undefined, 18       , undefined, 23       , undefined, 32       , 37        ], 
   [ 0        , 3        , 7        , 12       , 15       , 19       , 21       , 24       , 27       , 33        ],
   [ 2        , 7        , 10       , 14       , 17       , 21       , 22       , 26       , 31       , 36        ],
   [ 1        , 6        , 9        , 13       , 16       , 20       , undefined, 25       , 30       , 35        ],
@@ -17,7 +17,7 @@ const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
 // prettier-ignore
 const interactionMatrix: HarpFaceMatrix<Interaction> = [
   //    1          2          3          4          5          6          7          8          9         10
-  [ OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1, OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1 ],
+  [ OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1, OVERBLOW1, OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1 ],
   [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
   [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
   [ BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , BEND1     ],
