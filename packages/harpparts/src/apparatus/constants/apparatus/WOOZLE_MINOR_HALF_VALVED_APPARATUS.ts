@@ -6,7 +6,7 @@ import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 // prettier-ignore
 const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
   //    1          2          3          4          5          6          7          8          9         10
-  [ 0        , 2        , 6        , 11       , 14       , 18       , 20       , 23       , 26       , 32        ], 
+  [ -1       , 2        , 6        , 11       , 14       , 18       , 20       , 23       , 26       , 32        ], 
   [ 0        , 3        , 7        , 12       , 15       , 19       , 21       , 24       , 27       , 33        ],
   [ 2        , 7        , 10       , 14       , 17       , 21       , 22       , 26       , 31       , 36        ],
   [ 1        , 6        , 9        , 13       , 16       , 20       , undefined, 25       , 30       , 35        ],
