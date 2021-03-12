@@ -7,6 +7,7 @@ import {
   POWER_BENDER_APPARATUS,
   POWER_DRAW_APPARATUS,
   WOOZLE_MINOR_APPARATUS,
+  WOOZLE_MINOR_HALF_VALVED_APPARATUS,
 } from '../../apparatus'
 import type { Apparatus } from '../../apparatus'
 
@@ -18,3 +19,7 @@ ORDERED_APPARATUS.set(ApparatusIds.WildeTuned, WILDE_TUNED_APPARATUS)
 ORDERED_APPARATUS.set(ApparatusIds.PowerBender, POWER_BENDER_APPARATUS)
 ORDERED_APPARATUS.set(ApparatusIds.PowerDraw, POWER_DRAW_APPARATUS)
 ORDERED_APPARATUS.set(ApparatusIds.WoozleMinor, WOOZLE_MINOR_APPARATUS)
+ORDERED_APPARATUS.set(
+  ApparatusIds.WoozleMinorHalfValved,
+  WOOZLE_MINOR_HALF_VALVED_APPARATUS
+)

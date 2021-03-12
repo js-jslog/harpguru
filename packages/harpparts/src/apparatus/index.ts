@@ -6,6 +6,7 @@ export {
   POWER_BENDER_APPARATUS,
   POWER_DRAW_APPARATUS,
   WOOZLE_MINOR_APPARATUS,
+  WOOZLE_MINOR_HALF_VALVED_APPARATUS,
 } from './constants'
 export { ApparatusIds } from './types'
 export type { Apparatus } from './types'

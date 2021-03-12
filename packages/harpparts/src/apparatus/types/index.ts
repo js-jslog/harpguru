@@ -24,6 +24,7 @@ export enum ApparatusIds {
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
   WoozleMinor = 'Woozle minor',
+  WoozleMinorHalfValved = 'Woozle minor (half valved)',
 }
 
 export type Apparatus = {
