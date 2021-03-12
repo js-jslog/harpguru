@@ -23,6 +23,7 @@ export enum ApparatusIds {
   WildeTuned = 'Wilde tuned',
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
+  PowerDrawHalfValved = 'Power draw (half valved)',
   WoozleMinor = 'Woozle minor',
   WoozleMinorHalfValved = 'Woozle minor (half valved)',
 }
