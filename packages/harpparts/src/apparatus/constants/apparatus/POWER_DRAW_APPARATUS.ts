@@ -7,9 +7,9 @@ import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
   //    1          2          3          4          5          6          7          8          9         10
   [ 3        , undefined, undefined, 15       , 18       , 22       , undefined, 27       , 32       , 37        ], 
-  [ 0        , 4        , 7        , 12       , 16       , 19       , 24       , 24       , 28       , 33        ],
+  [ 0        , 4        , 7        , 12       , 16       , 19       , 21       , 24       , 28       , 33        ],
   [ 2        , 7        , 11       , 14       , 17       , 21       , 23       , 26       , 31       , 36        ],
-  [ 1        , 6        , 10       , 13       , undefined, 20       , 25       , 25       , 30       , 35        ],
+  [ 1        , 6        , 10       , 13       , undefined, 20       , 22       , 25       , 30       , 35        ],
   [ undefined, 5        , 9        , undefined, undefined, undefined, undefined, undefined, 29       , 34        ],
   [ undefined, undefined, 8        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
