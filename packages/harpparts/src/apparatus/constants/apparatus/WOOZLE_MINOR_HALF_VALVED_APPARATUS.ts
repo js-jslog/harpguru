@@ -1,4 +1,4 @@
-import { BLOW, BLOWBEND1, DRAW, BEND1, BEND2, BEND3 } from '../interaction'
+import { BLOW, DRAW, BEND1, BEND2, BEND3, VALVEBEND } from '../interaction'
 import { ApparatusIds } from '../../types'
 import type { Apparatus, Interaction } from '../../types'
 import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
@@ -17,7 +17,7 @@ const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
 // prettier-ignore
 const interactionMatrix: HarpFaceMatrix<Interaction> = [
   //    1          2          3          4          5          6          7          8          9         10
-  [ BLOWBEND1, BLOWBEND1, BLOWBEND1, BLOWBEND1, BLOWBEND1, BLOWBEND1, BLOWBEND1, BLOWBEND1, BLOWBEND1, BLOWBEND1 ],
+  [ VALVEBEND, VALVEBEND, VALVEBEND, VALVEBEND, VALVEBEND, VALVEBEND, VALVEBEND, VALVEBEND, VALVEBEND, VALVEBEND ],
   [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
   [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
   [ BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , BEND1     ],

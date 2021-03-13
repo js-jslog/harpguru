@@ -10,6 +10,7 @@ export enum InteractionIds {
   BlowBend2 = 'BLOWBEND2',
   OverDraw1 = 'OVERDRAW1',
   OverBlow1 = 'OVERBLOW1',
+  ValveBend = 'VALVEBEND',
 }
 
 export type Interaction = {

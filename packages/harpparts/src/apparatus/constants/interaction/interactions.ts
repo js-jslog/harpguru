@@ -10,3 +10,4 @@ export const BLOWBEND1: Interaction = { id: InteractionIds.BlowBend1 } as const
 export const BLOWBEND2: Interaction = { id: InteractionIds.BlowBend2 } as const
 export const OVERDRAW1: Interaction = { id: InteractionIds.OverDraw1 } as const
 export const OVERBLOW1: Interaction = { id: InteractionIds.OverBlow1 } as const
+export const VALVEBEND: Interaction = { id: InteractionIds.ValveBend } as const

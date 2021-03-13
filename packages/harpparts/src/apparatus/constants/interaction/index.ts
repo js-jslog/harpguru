@@ -8,4 +8,5 @@ export {
   BLOWBEND2,
   OVERDRAW1,
   OVERBLOW1,
+  VALVEBEND,
 } from './interactions'
