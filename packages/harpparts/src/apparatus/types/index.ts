@@ -10,6 +10,7 @@ export enum InteractionIds {
   BlowBend2 = 'BLOWBEND2',
   OverDraw1 = 'OVERDRAW1',
   OverBlow1 = 'OVERBLOW1',
+  ValveBend = 'VALVEBEND',
 }
 
 export type Interaction = {
@@ -22,6 +23,10 @@ export enum ApparatusIds {
   NaturalMinor = 'Natural minor',
   WildeTuned = 'Wilde tuned',
   PowerBender = 'Power bender',
+  PowerDraw = 'Power draw',
+  PowerDrawHalfValved = 'Power draw (half valved)',
+  WoozleMinor = 'Woozle minor',
+  WoozleMinorHalfValved = 'Woozle minor (half valved)',
 }
 
 export type Apparatus = {
