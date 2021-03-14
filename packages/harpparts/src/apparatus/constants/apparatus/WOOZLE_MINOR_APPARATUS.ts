@@ -22,7 +22,7 @@ const interactionMatrix: HarpFaceMatrix<Interaction> = [
   [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
   [ BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , BEND1     ],
   [ undefined, BEND2    , BEND2    , undefined, undefined, undefined, undefined, undefined, BEND2    , BEND2     ],
-  [ undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, BEND3, undefined ],
+  [ undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, BEND3    , undefined ],
 ] as const
 
 export const WOOZLE_MINOR_APPARATUS: Apparatus = {
