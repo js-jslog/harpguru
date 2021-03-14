@@ -17,7 +17,7 @@ const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
 // prettier-ignore
 const interactionMatrix: HarpFaceMatrix<Interaction> = [
   //    1          2          3          4          5          6          7          8          9         10
-  [ OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1, OVERBLOW1, OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1 ],
+  [ undefined, undefined, OVERBLOW1, undefined, OVERBLOW1, undefined, OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1 ],
   [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
   [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
   [ BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , BEND1     ],
