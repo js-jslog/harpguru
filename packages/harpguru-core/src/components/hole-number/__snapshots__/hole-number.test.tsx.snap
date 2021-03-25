@@ -13,6 +13,7 @@ exports[`A snapshot of HoleNumber 1`] = `
   }
 >
   <Text
+    allowFontScaling={false}
     style={
       Object {
         "color": "#555",

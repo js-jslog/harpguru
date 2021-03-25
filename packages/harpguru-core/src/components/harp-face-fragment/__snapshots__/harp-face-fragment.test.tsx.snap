@@ -1961,6 +1961,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
@@ -1983,6 +1984,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
@@ -2005,6 +2007,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
@@ -2027,6 +2030,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
@@ -2049,6 +2053,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
@@ -2071,6 +2076,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
@@ -2093,6 +2099,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
@@ -2115,6 +2122,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
@@ -2137,6 +2145,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
@@ -2159,6 +2168,7 @@ exports[`A snapshot of a HarpFaceFragment 1`] = `
       }
     >
       <Text
+        allowFontScaling={false}
         style={
           Object {
             "color": "#555",
