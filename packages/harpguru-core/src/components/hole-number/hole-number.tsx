@@ -1,7 +1,8 @@
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
+import { TextWithoutOSScale } from '../text-without-os-scale'
 import type { Coord } from '../../types'
 
 export enum HoleNumberIds {
@@ -36,7 +37,7 @@ export const HoleNumber = ({ xCoord }: HoleNumberProps): ReactElement => {
 
   return (
     <View style={styles.cell}>
-      <Text style={styles.text}>{holeNumber}</Text>
+      <TextWithoutOSScale style={styles.text}>{holeNumber}</TextWithoutOSScale>
     </View>
   )
 }

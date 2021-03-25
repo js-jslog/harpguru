@@ -1,7 +1,8 @@
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import type { Pozition, Pitch } from 'harpparts'
 
+import { TextWithoutOSScale } from '../text-without-os-scale'
 import { getOptionSizes } from '../../utils'
 import { harpguruColors, colors } from '../../styles'
 
@@ -79,8 +80,12 @@ export const OptionValue = ({
     <View style={{ width: '100%' }}>
       {highlightElement}
       <View style={[textWrapperBase, isTwoColumnsStyle]}>
-        <Text style={[textStyle, isLargeStyle]}>{regularscript}</Text>
-        <Text style={[textStyle, superScriptStyle]}>{superscript}</Text>
+        <TextWithoutOSScale style={[textStyle, isLargeStyle]}>
+          {regularscript}
+        </TextWithoutOSScale>
+        <TextWithoutOSScale style={[textStyle, superScriptStyle]}>
+          {superscript}
+        </TextWithoutOSScale>
       </View>
     </View>
   )
