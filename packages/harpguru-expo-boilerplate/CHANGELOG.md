@@ -13,7 +13,14 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.5.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.6.0...master) - yyyy-mm-dd
+
+## [v4.6.0](https://github.com/js-jslog/harpguru/releases/tag/v8.6.0) - 2021-03-25
+
+### Changed
+
+- MINOR: Increment android version number to 18 to build new production candidate
+- MINOR: Minor bump iOS version to 8.6.0 to build new production candidate
 
 ## [v4.5.0](https://github.com/js-jslog/harpguru/releases/tag/v8.5.0) - 2021-03-14
 
@@ -184,7 +191,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v8.5.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v8.6.0...HEAD)
+- [v4.6.0](https://github.com/js-jslog/harpguru/releases/tag/v8.6.0)
 - [v4.5.0](https://github.com/js-jslog/harpguru/releases/tag/v8.5.0)
 - [v4.4.1](https://github.com/js-jslog/harpguru/releases/tag/v8.4.1)
 - [v4.4.0](https://github.com/js-jslog/harpguru/releases/tag/v8.4.0)
