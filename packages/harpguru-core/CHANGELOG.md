@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.4.0...HEAD) - yyyy-mm-dd
 
+### Fixed
+
+- MINOR: Remove unnecessary OS font scaling on large menu text
+
 ## [v7.2.0](https://github.com/js-jslog/harpguru/releases/tag/v8.4.0) - 2021-02-19
 
 ### Added
