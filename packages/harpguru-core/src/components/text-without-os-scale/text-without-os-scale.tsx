@@ -3,16 +3,12 @@ import React from 'react'
 
 import type { ChildrenProps } from '../../types'
 
-const defaultProps: TextProps = {
-  allowFontScaling: false,
-}
-
 export const TextWithoutOSScale = ({
   children,
   ...props
 }: ChildrenProps & TextProps): React.ReactElement => {
   return (
-    <Text {...defaultProps} {...props}>
+    <Text allowFontScaling={false} {...props}>
       {children}
     </Text>
   )
