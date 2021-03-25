@@ -1,6 +1,7 @@
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
+import { TextWithoutOSScale } from '../text-without-os-scale'
 import { OptionValue } from '../option-value'
 import type { OptionValueProps } from '../option-value'
 import { getOptionSizes } from '../../utils'
@@ -34,7 +35,7 @@ export const OptionLabel = ({
   const titleStyles = isLargeTitle === true ? [base, large] : [base]
   return (
     <View style={{ width: '100%' }}>
-      <Text style={titleStyles}>{title}</Text>
+      <TextWithoutOSScale style={titleStyles}>{title}</TextWithoutOSScale>
       <OptionValue
         value={value}
         alignItems={alignItems}
