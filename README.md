@@ -18,6 +18,30 @@ A monorepo containing the component packages to run and build the harpguru appli
 - Tag harpguru and push
 - Check that the links in the CHANGELOG.md files find the new tag destination
 
+# Build guide
+
+## iOS build
+
+Expected questions and answers:
+
+```
+? You are removing certificate used by @jslog/harp-guru. Do you want to continue? Yes
+Removing Distribution Certificate...
+
+Removing Provisioning Profile for @jslog/harp-guru (com.jslog.harpguru)
+Removing Provisioning Profile...
+
+? Do you also want to revoke it on Apple Developer Portal? No
+? Removing this key/cert will disable notifications in @jslog/harp-guru. Do you want to continue? No
+Aborting
+? Do you have access to the Apple account that will be used for submitting this app to the App Store? Yes
+Please enter your Apple Developer Program account credentials. These credentials are needed to manage certificates, keys and
+provisioning profiles in your Apple Developer account.
+The password is only used to authenticate with Apple and never stored
+Learn more here
+? Apple ID:
+```
+
 # Testing guide
 
 ## iOS simulator
