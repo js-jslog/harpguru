@@ -25,6 +25,26 @@ test('ascendingExclusiveRange can return an empty array when there is no range',
 test('ascendingExclusiveRange can return a multi integar range', () => {
   expect(ascendingExclusiveRange(1, 10)).toStrictEqual([2, 3, 4, 5, 6, 7, 8, 9])
   expect(ascendingExclusiveRange(10, 1)).toStrictEqual([2, 3, 4, 5, 6, 7, 8, 9])
+  expect(ascendingExclusiveRange(-10, -1)).toStrictEqual([
+    -9,
+    -8,
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+  ])
+  expect(ascendingExclusiveRange(-1, -10)).toStrictEqual([
+    -9,
+    -8,
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+  ])
   expect(ascendingExclusiveRange(1, -3)).toStrictEqual([-2, -1, 0])
   expect(ascendingExclusiveRange(-3, 1)).toStrictEqual([-2, -1, 0])
   expect(ascendingExclusiveRange(3, -3)).toStrictEqual([-2, -1, 0, 1, 2])
@@ -56,5 +76,33 @@ test('ascendingExclusiveRange can return a multi integar range', () => {
     18,
     19,
     20,
+  ])
+  expect(ascendingExclusiveRange(-8, -21)).toStrictEqual([
+    -20,
+    -19,
+    -18,
+    -17,
+    -16,
+    -15,
+    -14,
+    -13,
+    -12,
+    -11,
+    -10,
+    -9,
+  ])
+  expect(ascendingExclusiveRange(-21, -8)).toStrictEqual([
+    -20,
+    -19,
+    -18,
+    -17,
+    -16,
+    -15,
+    -14,
+    -13,
+    -12,
+    -11,
+    -10,
+    -9,
   ])
 })
