@@ -2,7 +2,9 @@ import { ascendingExclusiveRange } from './ascending-exclusive-range'
 
 test('ascendingExclusiveRange can return a simple 1 integar range', () => {
   expect(ascendingExclusiveRange(0, 2)).toStrictEqual([1])
+  expect(ascendingExclusiveRange(2, 0)).toStrictEqual([1])
   expect(ascendingExclusiveRange(1, 3)).toStrictEqual([2])
+  expect(ascendingExclusiveRange(3, 1)).toStrictEqual([2])
 })
 
 test('ascendingExclusiveRange can return an empty array when there is no range', () => {
