@@ -1,5 +1,14 @@
 import type { HarpFaceMatrix, HalfstepIndex } from '../../types'
 
+export type Hole = {
+  readonly blow: HalfstepIndex
+  readonly draw: HalfstepIndex
+  readonly bends?: HalfstepIndex[]
+  readonly blowBends?: HalfstepIndex[]
+  readonly overblow?: [HalfstepIndex]
+  readonly overdraw?: [HalfstepIndex]
+}
+
 export enum InteractionIds {
   Blow = 'BLOW',
   Draw = 'DRAW',
