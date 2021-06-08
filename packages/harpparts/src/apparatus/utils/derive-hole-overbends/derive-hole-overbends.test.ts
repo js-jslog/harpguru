@@ -31,3 +31,16 @@ test('deriveHoleOverbends adds an overdraw', () => {
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
+
+// This behaviour may not actually be correct, but I'm waiting for Woozle to do
+// an experiment to confirm whether overbends occur in this situation.
+test('deriveHoleOverbends adds no overbends when the reeds are the same', () => {
+  const holeInput: Hole = {
+    blow: 8,
+    draw: 8,
+  }
+
+  const actualHoleOutput = deriveHoleOverbends(holeInput)
+
+  expect(actualHoleOutput).toStrictEqual(holeInput)
+})
