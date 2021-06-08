@@ -5,8 +5,8 @@ export type Hole = {
   readonly draw: HalfstepIndex
   readonly bends?: HalfstepIndex[]
   readonly blowBends?: HalfstepIndex[]
-  readonly overblow?: [HalfstepIndex]
-  readonly overdraw?: [HalfstepIndex]
+  readonly overblow?: HalfstepIndex[]
+  readonly overdraw?: HalfstepIndex[]
 }
 
 export enum InteractionIds {
