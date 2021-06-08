@@ -9,40 +9,31 @@ export const filterPointlessOverbends = (
   const rightHole = array[index + 1] || undefined
 
   const leftAdjacentSimpleTones = leftHole
-    ? [
-      leftHole.blow,
-      leftHole.draw,
-      ...(leftHole.bends || []),
-      ...(leftHole.blowBends || []),
-    ]
+    ? [leftHole.blow, leftHole.draw, ...leftHole.bends, ...leftHole.blowBends]
     : []
   const rightAdjacentSimpleTones = rightHole
     ? [
       rightHole.blow,
       rightHole.draw,
-      ...(rightHole.bends || []),
-      ...(rightHole.blowBends || []),
+      ...rightHole.bends,
+      ...rightHole.blowBends,
     ]
     : []
 
-  const filteredOverblows = hole.overblow
-    ? hole.overblow.filter(
-      (tone) =>
-        !leftAdjacentSimpleTones.includes(tone) &&
-          !rightAdjacentSimpleTones.includes(tone)
-    )
-    : undefined
-  const filteredOverdraws = hole.overdraw
-    ? hole.overdraw.filter(
-      (tone) =>
-        !leftAdjacentSimpleTones.includes(tone) &&
-          !rightAdjacentSimpleTones.includes(tone)
-    )
-    : undefined
+  const filteredOverblows = hole.overblows.filter(
+    (tone) =>
+      !leftAdjacentSimpleTones.includes(tone) &&
+      !rightAdjacentSimpleTones.includes(tone)
+  )
+  const filteredOverdraws = hole.overdraws.filter(
+    (tone) =>
+      !leftAdjacentSimpleTones.includes(tone) &&
+      !rightAdjacentSimpleTones.includes(tone)
+  )
 
   return {
     ...hole,
-    overblow: filteredOverblows,
-    overdraw: filteredOverdraws,
+    overblows: filteredOverblows,
+    overdraws: filteredOverdraws,
   }
 }

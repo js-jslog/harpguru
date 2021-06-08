@@ -7,12 +7,16 @@ test('filterPointlessOverbends returns a single hole unmodified', () => {
     {
       blow: 9,
       draw: 10,
+      bends: [],
+      blowBends: [],
+      overblows: [],
+      overdraws: [],
     },
   ]
 
   const output = filterPointlessOverbends(input[0], 0, input)
 
-  expect(output).toEqual(input[0])
+  expect(output).toStrictEqual(input[0])
 })
 
 test('filterPointlessOverbends returns a filtered out overbend if the hole to the right has an easier version', () => {
@@ -20,22 +24,31 @@ test('filterPointlessOverbends returns a filtered out overbend if the hole to th
     {
       blow: 9,
       draw: 10,
-      overblow: [11],
+      bends: [],
+      blowBends: [],
+      overblows: [11],
+      overdraws: [],
     },
     {
       blow: 11,
       draw: 12,
-      overblow: [13],
+      bends: [],
+      blowBends: [],
+      overblows: [13],
+      overdraws: [],
     },
   ]
 
   const expectedOutput = {
     blow: 9,
     draw: 10,
-    overblow: [],
+    bends: [],
+    blowBends: [],
+    overblows: [],
+    overdraws: [],
   }
 
   const actualOutput = filterPointlessOverbends(input[0], 0, input)
 
-  expect(actualOutput).toEqual(expectedOutput)
+  expect(actualOutput).toStrictEqual(expectedOutput)
 })

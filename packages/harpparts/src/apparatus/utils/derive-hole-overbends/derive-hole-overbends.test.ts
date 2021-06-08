@@ -6,11 +6,15 @@ test('deriveHoleOverbends adds an overblow', () => {
   const holeInput: Hole = {
     blow: 9,
     draw: 10,
+    bends: [],
+    blowBends: [],
+    overblows: [],
+    overdraws: [],
   }
 
-  const expectedHoleOutput = {
+  const expectedHoleOutput: Hole = {
     ...holeInput,
-    overblow: [11],
+    overblows: [11],
   }
   const actualHoleOutput = deriveHoleOverbends(holeInput)
 
@@ -21,11 +25,15 @@ test('deriveHoleOverbends adds an overdraw', () => {
   const holeInput: Hole = {
     blow: 1,
     draw: 0,
+    bends: [],
+    blowBends: [],
+    overblows: [],
+    overdraws: [],
   }
 
-  const expectedHoleOutput = {
+  const expectedHoleOutput: Hole = {
     ...holeInput,
-    overdraw: [2],
+    overdraws: [2],
   }
   const actualHoleOutput = deriveHoleOverbends(holeInput)
 
@@ -38,6 +46,10 @@ test('deriveHoleOverbends adds no overbends when the reeds are the same', () => 
   const holeInput: Hole = {
     blow: 8,
     draw: 8,
+    bends: [],
+    blowBends: [],
+    overblows: [],
+    overdraws: [],
   }
 
   const actualHoleOutput = deriveHoleOverbends(holeInput)
