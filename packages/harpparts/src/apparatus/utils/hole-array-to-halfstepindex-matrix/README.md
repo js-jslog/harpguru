@@ -7,3 +7,5 @@ We're going to have to know how many times through the hole array we'll need to 
 So we can produce a y-axis array derived from the longest bend / overdraw + longest blowbend / overblow.
 
 Then for each y-axis we map the hole-array specifying which index of the bend / overdraw and blowbend / overblow. We will have had to have a validation step beforehand to make sure that there are no bends and overdraws on the same hole for example.
+
+We will also need an anchor point on each matrix to understand how far through the hole's properties we are. The blow row will probably do.
