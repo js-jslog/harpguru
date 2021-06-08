@@ -1,8 +1,8 @@
 import type { Hole } from '../../types'
 
-import { filterPointlessOverbends } from './filter-pointless-overbends'
+import { filterOverbendsMapCallback } from './filter-overbends-map-callback'
 
-test('filterPointlessOverbends returns a single hole unmodified', () => {
+test('filterOverbendsMapCallback returns a single hole unmodified', () => {
   const input: [Hole] = [
     {
       blow: 9,
@@ -14,12 +14,12 @@ test('filterPointlessOverbends returns a single hole unmodified', () => {
     },
   ]
 
-  const output = filterPointlessOverbends(input[0], 0, input)
+  const output = filterOverbendsMapCallback(input[0], 0, input)
 
   expect(output).toStrictEqual(input[0])
 })
 
-test('filterPointlessOverbends returns a filtered out overbend if the hole to the right has an easier version', () => {
+test('filterOverbendsMapCallback returns a filtered out overbend if the hole to the right has an easier version', () => {
   const input: Hole[] = [
     {
       blow: 9,
@@ -48,7 +48,7 @@ test('filterPointlessOverbends returns a filtered out overbend if the hole to th
     overdraws: [],
   }
 
-  const actualOutput = filterPointlessOverbends(input[0], 0, input)
+  const actualOutput = filterOverbendsMapCallback(input[0], 0, input)
 
   expect(actualOutput).toStrictEqual(expectedOutput)
 })
