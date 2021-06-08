@@ -19,7 +19,7 @@ test('filterOverbendsMapCallback returns a single hole unmodified', () => {
   expect(output).toStrictEqual(input[0])
 })
 
-test('filterOverbendsMapCallback returns a filtered out overbend if the hole to the right or left has an easier version', () => {
+test('filterOverbendsMapCallback filters an overblow if theres an alternative blow to the right or left', () => {
   const input: Hole[] = [
     {
       blow: 9,
@@ -50,6 +50,231 @@ test('filterOverbendsMapCallback returns a filtered out overbend if the hole to 
   const expectedOutput = {
     blow: 9,
     draw: 10,
+    bends: [],
+    blowBends: [],
+    overblows: [],
+    overdraws: [],
+  }
+
+  expect(filterOverbendsMapCallback(input[0], 0, input)).toStrictEqual(
+    expectedOutput
+  )
+  expect(filterOverbendsMapCallback(input[2], 2, input)).toStrictEqual(
+    expectedOutput
+  )
+})
+
+test('filterOverbendsMapCallback filters an overblow if theres an alternative draw to the right or left', () => {
+  const input: Hole[] = [
+    {
+      blow: 9,
+      draw: 10,
+      bends: [],
+      blowBends: [],
+      overblows: [11],
+      overdraws: [],
+    },
+    {
+      blow: 10,
+      draw: 11,
+      bends: [],
+      blowBends: [],
+      overblows: [12],
+      overdraws: [],
+    },
+    {
+      blow: 9,
+      draw: 10,
+      bends: [],
+      blowBends: [],
+      overblows: [11],
+      overdraws: [],
+    },
+  ]
+
+  const expectedOutput = {
+    blow: 9,
+    draw: 10,
+    bends: [],
+    blowBends: [],
+    overblows: [],
+    overdraws: [],
+  }
+
+  expect(filterOverbendsMapCallback(input[0], 0, input)).toStrictEqual(
+    expectedOutput
+  )
+  expect(filterOverbendsMapCallback(input[2], 2, input)).toStrictEqual(
+    expectedOutput
+  )
+})
+
+test('filterOverbendsMapCallback filters an overblow if theres an alternative bend to the right or left', () => {
+  const input: Hole[] = [
+    {
+      blow: 9,
+      draw: 10,
+      bends: [],
+      blowBends: [],
+      overblows: [11],
+      overdraws: [],
+    },
+    {
+      blow: 10,
+      draw: 14,
+      bends: [11, 12, 13],
+      blowBends: [],
+      overblows: [15],
+      overdraws: [],
+    },
+    {
+      blow: 9,
+      draw: 10,
+      bends: [],
+      blowBends: [],
+      overblows: [11],
+      overdraws: [],
+    },
+  ]
+
+  const expectedOutput = {
+    blow: 9,
+    draw: 10,
+    bends: [],
+    blowBends: [],
+    overblows: [],
+    overdraws: [],
+  }
+
+  expect(filterOverbendsMapCallback(input[0], 0, input)).toStrictEqual(
+    expectedOutput
+  )
+  expect(filterOverbendsMapCallback(input[2], 2, input)).toStrictEqual(
+    expectedOutput
+  )
+})
+
+test('filterOverbendsMapCallback filters an overdraw if theres an alternative blow to the right or left', () => {
+  const input: Hole[] = [
+    {
+      blow: 10,
+      draw: 9,
+      bends: [],
+      blowBends: [],
+      overblows: [],
+      overdraws: [11],
+    },
+    {
+      blow: 11,
+      draw: 10,
+      bends: [],
+      blowBends: [],
+      overblows: [],
+      overdraws: [12],
+    },
+    {
+      blow: 10,
+      draw: 9,
+      bends: [],
+      blowBends: [],
+      overblows: [],
+      overdraws: [11],
+    },
+  ]
+
+  const expectedOutput = {
+    blow: 10,
+    draw: 9,
+    bends: [],
+    blowBends: [],
+    overblows: [],
+    overdraws: [],
+  }
+
+  expect(filterOverbendsMapCallback(input[0], 0, input)).toStrictEqual(
+    expectedOutput
+  )
+  expect(filterOverbendsMapCallback(input[2], 2, input)).toStrictEqual(
+    expectedOutput
+  )
+})
+
+test('filterOverbendsMapCallback filters an overdraw if theres an alternative draw to the right or left', () => {
+  const input: Hole[] = [
+    {
+      blow: 10,
+      draw: 9,
+      bends: [],
+      blowBends: [],
+      overblows: [],
+      overdraws: [11],
+    },
+    {
+      blow: 12,
+      draw: 11,
+      bends: [],
+      blowBends: [],
+      overblows: [],
+      overdraws: [13],
+    },
+    {
+      blow: 10,
+      draw: 9,
+      bends: [],
+      blowBends: [],
+      overblows: [],
+      overdraws: [11],
+    },
+  ]
+
+  const expectedOutput = {
+    blow: 10,
+    draw: 9,
+    bends: [],
+    blowBends: [],
+    overblows: [],
+    overdraws: [],
+  }
+
+  expect(filterOverbendsMapCallback(input[0], 0, input)).toStrictEqual(
+    expectedOutput
+  )
+  expect(filterOverbendsMapCallback(input[2], 2, input)).toStrictEqual(
+    expectedOutput
+  )
+})
+
+test('filterOverbendsMapCallback filters an overdraw if theres an alternative blowbend to the right or left', () => {
+  const input: Hole[] = [
+    {
+      blow: 10,
+      draw: 9,
+      bends: [],
+      blowBends: [],
+      overblows: [],
+      overdraws: [11],
+    },
+    {
+      blow: 14,
+      draw: 10,
+      bends: [],
+      blowBends: [11, 12, 13],
+      overblows: [],
+      overdraws: [15],
+    },
+    {
+      blow: 10,
+      draw: 9,
+      bends: [],
+      blowBends: [],
+      overblows: [],
+      overdraws: [11],
+    },
+  ]
+
+  const expectedOutput = {
+    blow: 10,
+    draw: 9,
     bends: [],
     blowBends: [],
     overblows: [],
