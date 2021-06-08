@@ -6,7 +6,7 @@ export const reedPairToHole = (reedPair: ReedPair): Hole => {
     blow,
     draw,
     bends: [],
-    blowBends: [],
+    blowbends: [],
     overblows: [],
     overdraws: [],
   }

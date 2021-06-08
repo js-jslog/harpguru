@@ -7,7 +7,7 @@ test('insertHoleOverbends adds an overblow', () => {
     blow: 9,
     draw: 10,
     bends: [],
-    blowBends: [],
+    blowbends: [],
     overblows: [],
     overdraws: [],
   }
@@ -26,7 +26,7 @@ test('insertHoleOverbends adds an overdraw', () => {
     blow: 1,
     draw: 0,
     bends: [],
-    blowBends: [],
+    blowbends: [],
     overblows: [],
     overdraws: [],
   }
@@ -47,7 +47,7 @@ test('insertHoleOverbends adds no overbends when the reeds are the same', () => 
     blow: 8,
     draw: 8,
     bends: [],
-    blowBends: [],
+    blowbends: [],
     overblows: [],
     overdraws: [],
   }
