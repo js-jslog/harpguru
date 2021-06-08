@@ -1,5 +1,47 @@
 import type { HarpFaceMatrix, HalfstepIndex } from '../../types'
 
+export type ReedArray = [
+  [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ],
+  [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ]
+]
+
+export type ReedPair = [HalfstepIndex, HalfstepIndex]
+
+export type ReedPairArray = [
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair
+]
+
 export type Hole = {
   readonly blow: HalfstepIndex
   readonly draw: HalfstepIndex
@@ -8,6 +50,19 @@ export type Hole = {
   readonly overblows: HalfstepIndex[]
   readonly overdraws: HalfstepIndex[]
 }
+
+export type HoleArray = [
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole
+]
 
 export enum InteractionIds {
   Blow = 'BLOW',
