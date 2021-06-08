@@ -1,8 +1,8 @@
 import type { Hole } from '../../types'
 
-import { deriveHoleBends } from './derive-hole-bends'
+import { insertHoleBends } from './insert-hole-bends'
 
-test('deriveHoleBends adds no bends', () => {
+test('insertHoleBends adds no bends', () => {
   const holeInput: Hole = {
     blow: 9,
     draw: 10,
@@ -12,12 +12,12 @@ test('deriveHoleBends adds no bends', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = deriveHoleBends(holeInput)
+  const actualHoleOutput = insertHoleBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(holeInput)
 })
 
-test('deriveHoleBends adds a simple single bend', () => {
+test('insertHoleBends adds a simple single bend', () => {
   const holeInput: Hole = {
     blow: 0,
     draw: 2,
@@ -35,12 +35,12 @@ test('deriveHoleBends adds a simple single bend', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = deriveHoleBends(holeInput)
+  const actualHoleOutput = insertHoleBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('deriveHoleBends adds a triple bend', () => {
+test('insertHoleBends adds a triple bend', () => {
   const holeInput: Hole = {
     blow: 25,
     draw: 29,
@@ -58,12 +58,12 @@ test('deriveHoleBends adds a triple bend', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = deriveHoleBends(holeInput)
+  const actualHoleOutput = insertHoleBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('deriveHoleBends adds no blow bends', () => {
+test('insertHoleBends adds no blow bends', () => {
   const holeInput: Hole = {
     blow: 20,
     draw: 19,
@@ -73,12 +73,12 @@ test('deriveHoleBends adds no blow bends', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = deriveHoleBends(holeInput)
+  const actualHoleOutput = insertHoleBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(holeInput)
 })
 
-test('deriveHoleBends adds a simple single blow bend', () => {
+test('insertHoleBends adds a simple single blow bend', () => {
   const holeInput: Hole = {
     blow: 9,
     draw: 11,
@@ -96,12 +96,12 @@ test('deriveHoleBends adds a simple single blow bend', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = deriveHoleBends(holeInput)
+  const actualHoleOutput = insertHoleBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('deriveHoleBends adds a triple blow bend', () => {
+test('insertHoleBends adds a triple blow bend', () => {
   const holeInput: Hole = {
     blow: 12,
     draw: 8,
@@ -119,12 +119,12 @@ test('deriveHoleBends adds a triple blow bend', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = deriveHoleBends(holeInput)
+  const actualHoleOutput = insertHoleBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('deriveHoleBends adds no bends on 2 identical reeds', () => {
+test('insertHoleBends adds no bends on 2 identical reeds', () => {
   const holeInput: Hole = {
     blow: 18,
     draw: 18,
@@ -134,7 +134,7 @@ test('deriveHoleBends adds no bends on 2 identical reeds', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = deriveHoleBends(holeInput)
+  const actualHoleOutput = insertHoleBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(holeInput)
 })
