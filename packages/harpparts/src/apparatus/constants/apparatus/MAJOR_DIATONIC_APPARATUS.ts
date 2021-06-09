@@ -66,6 +66,10 @@ import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 // 1. Each `index` in collaboration with the MatrixSpec will reveal which of the Hole's details to include. That will mean that the MatrixSpec will need to be included in each mapping function some how.
 // 2. The bend / overdraw & blowbend / overblow areas will be inspected and whichever (if either) has a value in will be naively included. This will be acceptable because there will be a validation step before we get to this step which will make sure that Holes only have either bends or overdraws and only either blowbends or overblows
 
+// Things taht need to be validated in the Hole objects
+// only bends & overblows or blowbends & overdraws
+// all bend arrays are sequenced and ascending with no gaps
+
 // prettier-ignore
 const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
   //    1          2          3          4          5          6          7          8          9         10
