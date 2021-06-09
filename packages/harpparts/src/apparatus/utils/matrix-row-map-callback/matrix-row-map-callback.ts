@@ -1,7 +1,7 @@
 import type { Hole, MatrixSpecs } from '../../types'
 
 export const matrixRowMapCallback = (
-  { blowRow }: MatrixSpecs,
+  { height, blowRow }: MatrixSpecs,
   currentRow: number,
   hole: Hole
 ): number => {
@@ -13,7 +13,7 @@ export const matrixRowMapCallback = (
       hole.blowbends[currentRow] || hole.overblows[blowRow - currentRow - 1]
     )
   return (
-    hole.bends[currentRow - drawRow - 1] ||
+    hole.bends[height - currentRow - 1] ||
     hole.overdraws[currentRow - drawRow - 1]
   )
 }
