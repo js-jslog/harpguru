@@ -5,7 +5,7 @@ export type Accumulator = {
   readonly biggestDraw: number
 }
 
-export const findBiggestBendsReducerCallback = (
+export const biggestBendsReducerCallback = (
   accumulator: Accumulator,
   currentValue: Hole
 ): Accumulator => {
