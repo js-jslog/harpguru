@@ -51,6 +51,20 @@ import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 //   - Nothing else. Bends and valve bends have their own benefits which aren't made redundant by adjacent siblings.
 
 // Define function which takes the array of Hole definitions and produces a halfstepIndexMatrix and an interactionMatrix
+// We will acquire the matrix specs from a function which will tell us how high the matrix needs to be and which row is
+// the blow row. The width is just defined by the number of holes.
+// Then we can create an array where each element represents a row, initially as an empty array:
+//
+// eg
+// [
+//   [],
+//   [],
+//   [],
+// ]
+//
+// Then we map this array using a function which maps the Hole[] in to a halfstepindex[] using the following rules:
+// 1. Each `index` in collaboration with the MatrixSpec will reveal which of the Hole's details to include. That will mean that the MatrixSpec will need to be included in each mapping function some how.
+// 2. The bend / overdraw & blowbend / overblow areas will be inspected and whichever (if either) has a value in will be naively included. This will be acceptable because there will be a validation step before we get to this step which will make sure that Holes only have either bends or overdraws and only either blowbends or overblows
 
 // prettier-ignore
 const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
