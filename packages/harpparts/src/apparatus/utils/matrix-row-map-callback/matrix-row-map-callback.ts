@@ -9,5 +9,5 @@ export const matrixRowMapCallback = (
   if (currentRow === blowRow) return hole.blow
   if (currentRow === drawRow) return hole.draw
   if (currentRow < blowRow) return hole.blowbends[0] || hole.overblows[0]
-  return hole.bends[0] || hole.overdraws[0]
+  return hole.bends[currentRow - drawRow - 1] || hole.overdraws[0]
 }
