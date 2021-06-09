@@ -1,6 +1,6 @@
 import type { Hole } from '../../types'
 
-export type Accumulator = {
+type Accumulator = {
   readonly biggestBlow: number
   readonly biggestDraw: number
 }
