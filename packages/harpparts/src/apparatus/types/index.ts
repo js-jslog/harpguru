@@ -64,6 +64,11 @@ export type HoleArray = [
   Hole
 ]
 
+export type MatrixSpecs = {
+  readonly height: number
+  readonly blowRow: number
+}
+
 export enum InteractionIds {
   Blow = 'BLOW',
   Draw = 'DRAW',
