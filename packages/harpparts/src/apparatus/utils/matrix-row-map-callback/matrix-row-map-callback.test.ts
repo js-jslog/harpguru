@@ -142,9 +142,9 @@ test('matrixRowMapCallback can map a holes blow, draw and bend tiers with multi 
     blowRow: 3,
   }
 
-  //  expect(matrixRowMapCallback(matrixSpecs, 0, hole)).toBeFalsy()
-  //  expect(matrixRowMapCallback(matrixSpecs, 1, hole)).toBe(hole.blowbends[0])
-  //  expect(matrixRowMapCallback(matrixSpecs, 2, hole)).toBe(hole.blowbends[1])
+  expect(matrixRowMapCallback(matrixSpecs, 0, hole)).toBeFalsy()
+  expect(matrixRowMapCallback(matrixSpecs, 1, hole)).toBe(hole.blowbends[0])
+  expect(matrixRowMapCallback(matrixSpecs, 2, hole)).toBe(hole.blowbends[1])
   expect(matrixRowMapCallback(matrixSpecs, 3, hole)).toBe(hole.blow)
   expect(matrixRowMapCallback(matrixSpecs, 4, hole)).toBe(hole.draw)
   expect(matrixRowMapCallback(matrixSpecs, 5, hole)).toBe(hole.overdraws[0])

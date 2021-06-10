@@ -10,7 +10,10 @@ export const matrixRowMapCallback = (
   if (currentRow === blowRow) return hole.blow
   if (currentRow === drawRow) return hole.draw
   if (currentRow < blowRow)
-    return blowbends[currentRow] || overblows[blowRow - currentRow - 1]
+    return (
+      blowbends.slice().reverse()[blowRow - currentRow - 1] ||
+      overblows[blowRow - currentRow - 1]
+    )
   return (
     bends.slice().reverse()[currentRow - drawRow - 1] ||
     overdraws[currentRow - drawRow - 1]
