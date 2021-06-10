@@ -123,9 +123,9 @@ test('matrixRowMapCallback can map a holes blow, draw, and undefined bend tiers 
   expect(matrixRowMapCallback(matrixSpecs, 2, hole)).toBe(hole.overblows[0])
   expect(matrixRowMapCallback(matrixSpecs, 3, hole)).toBe(hole.blow)
   expect(matrixRowMapCallback(matrixSpecs, 4, hole)).toBe(hole.draw)
-  //  expect(matrixRowMapCallback(matrixSpecs, 5, hole)).toBe(hole.bends[1])
-  //  expect(matrixRowMapCallback(matrixSpecs, 6, hole)).toBe(hole.bends[0])
-  //  expect(matrixRowMapCallback(matrixSpecs, 7, hole)).toBeFalsy()
+  expect(matrixRowMapCallback(matrixSpecs, 5, hole)).toBe(hole.bends[1])
+  expect(matrixRowMapCallback(matrixSpecs, 6, hole)).toBe(hole.bends[0])
+  expect(matrixRowMapCallback(matrixSpecs, 7, hole)).toBeFalsy()
 })
 
 test('matrixRowMapCallback can map a holes blow, draw and bend tiers with multi level bends present (upper harp)', () => {
