@@ -1,10 +1,11 @@
 import type { Hole, MatrixSpecs } from '../../types'
+import { HalfstepIndex } from '../../../types'
 
 export const halfstepIndexRowMapCallback = (
   { blowRow }: MatrixSpecs,
   currentRow: number,
   hole: Hole
-): number => {
+): HalfstepIndex | undefined => {
   const drawRow = blowRow + 1
   const { bends, blowbends, overblows, overdraws } = hole
   if (currentRow === blowRow) return hole.blow
@@ -12,12 +13,14 @@ export const halfstepIndexRowMapCallback = (
   if (currentRow < blowRow)
     return (
       [...blowbends].reverse()[blowRow - currentRow - 1] ||
-      overblows[blowRow - currentRow - 1]
+      overblows[blowRow - currentRow - 1] ||
+      undefined
     )
   if (currentRow > drawRow)
     return (
       [...bends].reverse()[currentRow - drawRow - 1] ||
-      overdraws[currentRow - drawRow - 1]
+      overdraws[currentRow - drawRow - 1] ||
+      undefined
     )
 
   const errorMessage = `
