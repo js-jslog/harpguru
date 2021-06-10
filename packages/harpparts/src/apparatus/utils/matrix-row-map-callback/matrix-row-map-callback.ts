@@ -14,8 +14,18 @@ export const matrixRowMapCallback = (
       [...blowbends].reverse()[blowRow - currentRow - 1] ||
       overblows[blowRow - currentRow - 1]
     )
-  return (
-    [...bends].reverse()[currentRow - drawRow - 1] ||
-    overdraws[currentRow - drawRow - 1]
-  )
+  if (currentRow > drawRow)
+    return (
+      [...bends].reverse()[currentRow - drawRow - 1] ||
+      overdraws[currentRow - drawRow - 1]
+    )
+
+  const errorMessage = `
+    Current row is somehow not related to blow and draw rows as expected.
+
+    blowRow: ${blowRow}
+    drawRow: ${drawRow}
+    currentRow: ${currentRow}
+  `
+  throw new Error(errorMessage)
 }
