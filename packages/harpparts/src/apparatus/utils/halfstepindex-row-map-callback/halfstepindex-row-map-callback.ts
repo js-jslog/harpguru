@@ -1,6 +1,6 @@
 import type { Hole, MatrixSpecs } from '../../types'
 
-export const matrixRowMapCallback = (
+export const halfstepIndexRowMapCallback = (
   { blowRow }: MatrixSpecs,
   currentRow: number,
   hole: Hole
