@@ -26,9 +26,9 @@ const {
 
 // prettier-ignore
 const reedArray: ReedArray = [
-  //    1          2          3          4          5          6          7          8          9         10
-  [ c1       , e1       , g1       , c2       , e2       , g2       , c3       , e3       , g3       , c4        ],
-  [ d1       , g1       , b1       , d2       , f2       , a2       , b2       , d3       , f3       , a3        ],
+  // 1    2    3    4    5    6    7    8    9   10
+  [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+  [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
 ]
 const { halfstepindexMatrix, interactionMatrix } = reedArrayToMatrices(
   reedArray
