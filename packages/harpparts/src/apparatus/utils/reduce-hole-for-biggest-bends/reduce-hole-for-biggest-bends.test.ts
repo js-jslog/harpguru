@@ -1,8 +1,8 @@
 import type { Hole } from '../../types'
 
-import { biggestBendsReducerCallback } from './biggest-bends-reducer-callback'
+import { reduceHoleForBiggestBends } from './reduce-hole-for-biggest-bends'
 
-test('biggestBendsReducerCallback returns accumulator when no bends', () => {
+test('reduceHoleForBiggestBends returns accumulator when no bends', () => {
   const accumulator = {
     biggestBlow: 5,
     biggestDraw: 5,
@@ -16,12 +16,12 @@ test('biggestBendsReducerCallback returns accumulator when no bends', () => {
     overdraws: [],
   }
 
-  const output = biggestBendsReducerCallback(accumulator, currentValue)
+  const output = reduceHoleForBiggestBends(accumulator, currentValue)
 
   expect(output).toStrictEqual(accumulator)
 })
 
-test('biggestBendsReducerCallback returns accumulator when all bends are smaller than accumulator', () => {
+test('reduceHoleForBiggestBends returns accumulator when all bends are smaller than accumulator', () => {
   const accumulator = {
     biggestBlow: 5,
     biggestDraw: 5,
@@ -35,12 +35,12 @@ test('biggestBendsReducerCallback returns accumulator when all bends are smaller
     overdraws: [],
   }
 
-  const output = biggestBendsReducerCallback(accumulator, currentValue)
+  const output = reduceHoleForBiggestBends(accumulator, currentValue)
 
   expect(output).toStrictEqual(accumulator)
 })
 
-test('biggestBendsReducerCallback adds new biggestBlow when blowbends are bigger', () => {
+test('reduceHoleForBiggestBends adds new biggestBlow when blowbends are bigger', () => {
   const accumulator = {
     biggestBlow: 1,
     biggestDraw: 4,
@@ -59,12 +59,12 @@ test('biggestBendsReducerCallback adds new biggestBlow when blowbends are bigger
     biggestDraw: 4,
   }
 
-  const output = biggestBendsReducerCallback(accumulator, currentValue)
+  const output = reduceHoleForBiggestBends(accumulator, currentValue)
 
   expect(output).toStrictEqual(expectedOutput)
 })
 
-test('biggestBendsReducerCallback adds new biggestBlow when overblows are bigger', () => {
+test('reduceHoleForBiggestBends adds new biggestBlow when overblows are bigger', () => {
   const accumulator = {
     biggestBlow: 0,
     biggestDraw: 0,
@@ -83,12 +83,12 @@ test('biggestBendsReducerCallback adds new biggestBlow when overblows are bigger
     biggestDraw: 0,
   }
 
-  const output = biggestBendsReducerCallback(accumulator, currentValue)
+  const output = reduceHoleForBiggestBends(accumulator, currentValue)
 
   expect(output).toStrictEqual(expectedOutput)
 })
 
-test('biggestBendsReducerCallback adds new biggestDraw when bends are bigger', () => {
+test('reduceHoleForBiggestBends adds new biggestDraw when bends are bigger', () => {
   const accumulator = {
     biggestBlow: 4,
     biggestDraw: 1,
@@ -107,12 +107,12 @@ test('biggestBendsReducerCallback adds new biggestDraw when bends are bigger', (
     biggestDraw: 3,
   }
 
-  const output = biggestBendsReducerCallback(accumulator, currentValue)
+  const output = reduceHoleForBiggestBends(accumulator, currentValue)
 
   expect(output).toStrictEqual(expectedOutput)
 })
 
-test('biggestBendsReducerCallback adds new biggestDraw when overdraws are bigger', () => {
+test('reduceHoleForBiggestBends adds new biggestDraw when overdraws are bigger', () => {
   const accumulator = {
     biggestBlow: 0,
     biggestDraw: 0,
@@ -131,7 +131,7 @@ test('biggestBendsReducerCallback adds new biggestDraw when overdraws are bigger
     biggestDraw: 1,
   }
 
-  const output = biggestBendsReducerCallback(accumulator, currentValue)
+  const output = reduceHoleForBiggestBends(accumulator, currentValue)
 
   expect(output).toStrictEqual(expectedOutput)
 })

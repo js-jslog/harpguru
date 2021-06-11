@@ -1,9 +1,9 @@
-import { biggestBendsReducerCallback } from '../biggest-bends-reducer-callback'
+import { reduceHoleForBiggestBends } from '../reduce-hole-for-biggest-bends'
 import type { HoleArray, MatrixSpecs } from '../../types'
 
 export const deriveMatrixSpecs = (holeArray: HoleArray): MatrixSpecs => {
   const { biggestBlow, biggestDraw } = holeArray.reduce(
-    biggestBendsReducerCallback,
+    reduceHoleForBiggestBends,
     {
       biggestBlow: 0,
       biggestDraw: 0,
