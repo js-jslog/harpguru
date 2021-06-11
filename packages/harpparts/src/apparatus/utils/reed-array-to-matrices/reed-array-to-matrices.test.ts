@@ -1,4 +1,5 @@
 import type { ReedArray } from '../../types'
+import { ReedTuningPitches } from '../../types'
 import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 import {
   BLOW,
@@ -15,12 +16,34 @@ import type { Interaction } from '../../../interaction'
 
 import { reedArrayToMatrices } from './reed-array-to-matrices'
 
-test('reedArrayToMatrices works as expected for major diatonic', () => {
+const {
+  c1,
+  d1,
+  e1,
+  g1,
+  b1,
+  c2,
+  d2,
+  e2,
+  f2,
+  g2,
+  a2,
+  b2,
+  d3,
+  e3,
+  f3,
+  g3,
+  a3,
+  c3,
+  c4,
+} = ReedTuningPitches
+
+test('reedArrayToMatrices works as expected for a Richter tuned harp', () => {
   // prettier-ignore
   const reedArray: ReedArray = [
     //    1          2          3          4          5          6          7          8          9         10
-    [ 0        , 4        , 7        , 12       , 16       , 19       , 24       , 28       , 31       , 36        ],
-    [ 2        , 7        , 11       , 14       , 17       , 21       , 23       , 26       , 29       , 33        ],
+    [ c1       , e1       , g1       , c2       , e2       , g2       , c3       , e3       , g3       , c4        ],
+    [ d1       , g1       , b1       , d2       , f2       , a2       , b2       , d3       , f3       , a3        ],
   ]
   // prettier-ignore
   const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
