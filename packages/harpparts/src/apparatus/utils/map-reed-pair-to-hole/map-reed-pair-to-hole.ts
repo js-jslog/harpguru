@@ -1,6 +1,6 @@
 import type { ReedPair, Hole } from '../../types'
 
-export const reedPairToHole = (reedPair: ReedPair): Hole => {
+export const mapReedPairToHole = (reedPair: ReedPair): Hole => {
   const [blow, draw] = reedPair
   return {
     blow,
