@@ -1,7 +1,15 @@
-import { BLOW, DRAW, BEND1, BEND2, BEND3, OVERBLOW1 } from '../interaction'
 import { ApparatusIds } from '../../types'
-import type { Apparatus, Interaction } from '../../types'
+import type { Apparatus } from '../../types'
 import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
+import {
+  BLOW,
+  DRAW,
+  BEND1,
+  BEND2,
+  BEND3,
+  OVERBLOW1,
+} from '../../../interaction'
+import type { Interaction } from '../../../interaction'
 
 // prettier-ignore
 const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [

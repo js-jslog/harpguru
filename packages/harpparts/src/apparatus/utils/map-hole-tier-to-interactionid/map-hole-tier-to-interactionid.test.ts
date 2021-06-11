@@ -1,5 +1,4 @@
 import type { Hole, MatrixSpecs } from '../../types'
-// TODO: don't want to import like this
 import {
   BLOW,
   DRAW,
@@ -17,7 +16,7 @@ import {
   OVERDRAW2,
   OVERBLOW1,
   OVERBLOW2,
-} from '../../constants/interaction'
+} from '../../../interaction'
 
 import { mapHoleTierToInteractionid } from './map-hole-tier-to-interactionid'
 

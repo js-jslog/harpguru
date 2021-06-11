@@ -1,5 +1,5 @@
-import type { Hole, MatrixSpecs, Interaction } from '../../types'
-// TODO: don't want to import like this
+import type { Hole, MatrixSpecs } from '../../types'
+import type { Interaction } from '../../../interaction'
 import {
   BLOW,
   DRAW,
@@ -17,7 +17,7 @@ import {
   OVERDRAW2,
   OVERBLOW1,
   OVERBLOW2,
-} from '../../constants/interaction'
+} from '../../../interaction'
 
 export const mapHoleTierToInteractionid = (
   { blowRow }: MatrixSpecs,

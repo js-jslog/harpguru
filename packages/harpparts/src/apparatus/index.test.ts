@@ -1,6 +1,7 @@
 import type { HalfstepIndex, HarpFaceMatrix, HarpFaceRow } from '../types'
+import type { Interaction } from '../interaction'
 
-import type { ApparatusIds, Interaction } from './types'
+import type { ApparatusIds } from './types'
 import {
   MAJOR_DIATONIC_APPARATUS,
   COUNTRY_TUNED_APPARATUS,
