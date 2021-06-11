@@ -7,15 +7,11 @@ import { mapHoleTierToInteractionid } from '../map-hole-tier-to-interactionid'
 import { mapHoleTierToHalfstepindex } from '../map-hole-tier-to-halstepindex'
 import { deriveMatrixSpecs } from '../derive-matrix-specs/derive-matrix-specs'
 import type { HoleArray, ReedArray } from '../../types'
-import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
-import type { Interaction } from '../../../interaction'
+import type { Apparatus } from '../../types'
 
-type Matrices = {
-  halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex>
-  interactionMatrix: HarpFaceMatrix<Interaction>
-}
-
-export const reedArrayToMatrices = (reedArray: ReedArray): Matrices => {
+export const reedArrayToMatrices = (
+  reedArray: ReedArray
+): Pick<Apparatus, 'halfstepIndexMatrix' | 'interactionMatrix'> => {
   const holeArray = pivotReedArray(reedArray)
     .map(mapReedPairToHole)
     .map(mapHoleToIncludeBends)
