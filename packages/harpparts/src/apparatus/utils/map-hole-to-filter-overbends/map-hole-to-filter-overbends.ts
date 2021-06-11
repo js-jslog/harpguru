@@ -1,6 +1,6 @@
 import type { Hole } from '../../types'
 
-export const filterOverbendsMapCallback = (
+export const mapHoleToFilterOverbends = (
   hole: Hole,
   index: number,
   array: Hole[]
