@@ -1,8 +1,8 @@
 import type { Hole } from '../../types'
 
-import { insertHoleBends } from './insert-hole-bends'
+import { mapHoleToIncludeBends } from './map-hole-to-include-bends'
 
-test('insertHoleBends adds no bends', () => {
+test('mapHoleToIncludeBends adds no bends', () => {
   const holeInput: Hole = {
     blow: 9,
     draw: 10,
@@ -12,12 +12,12 @@ test('insertHoleBends adds no bends', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = insertHoleBends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(holeInput)
 })
 
-test('insertHoleBends adds a simple single bend', () => {
+test('mapHoleToIncludeBends adds a simple single bend', () => {
   const holeInput: Hole = {
     blow: 0,
     draw: 2,
@@ -35,12 +35,12 @@ test('insertHoleBends adds a simple single bend', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = insertHoleBends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('insertHoleBends adds a triple bend', () => {
+test('mapHoleToIncludeBends adds a triple bend', () => {
   const holeInput: Hole = {
     blow: 25,
     draw: 29,
@@ -58,12 +58,12 @@ test('insertHoleBends adds a triple bend', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = insertHoleBends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('insertHoleBends adds no blow bends', () => {
+test('mapHoleToIncludeBends adds no blow bends', () => {
   const holeInput: Hole = {
     blow: 20,
     draw: 19,
@@ -73,12 +73,12 @@ test('insertHoleBends adds no blow bends', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = insertHoleBends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(holeInput)
 })
 
-test('insertHoleBends adds a simple single blow bend', () => {
+test('mapHoleToIncludeBends adds a simple single blow bend', () => {
   const holeInput: Hole = {
     blow: 9,
     draw: 11,
@@ -96,12 +96,12 @@ test('insertHoleBends adds a simple single blow bend', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = insertHoleBends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('insertHoleBends adds a triple blow bend', () => {
+test('mapHoleToIncludeBends adds a triple blow bend', () => {
   const holeInput: Hole = {
     blow: 12,
     draw: 8,
@@ -119,12 +119,12 @@ test('insertHoleBends adds a triple blow bend', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = insertHoleBends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('insertHoleBends adds no bends on 2 identical reeds', () => {
+test('mapHoleToIncludeBends adds no bends on 2 identical reeds', () => {
   const holeInput: Hole = {
     blow: 18,
     draw: 18,
@@ -134,7 +134,7 @@ test('insertHoleBends adds no bends on 2 identical reeds', () => {
     overdraws: [],
   }
 
-  const actualHoleOutput = insertHoleBends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeBends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(holeInput)
 })
