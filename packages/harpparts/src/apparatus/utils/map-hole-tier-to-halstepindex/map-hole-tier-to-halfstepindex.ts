@@ -3,8 +3,8 @@ import { HalfstepIndex } from '../../../types'
 
 export const mapHoleTierToHalfstepindex = (
   { blowRow }: MatrixSpecs,
-  currentRow: number,
-  hole: Hole
+  hole: Hole,
+  currentRow: number
 ): HalfstepIndex | undefined => {
   const drawRow = blowRow + 1
   const { bends, blowbends, overblows, overdraws } = hole

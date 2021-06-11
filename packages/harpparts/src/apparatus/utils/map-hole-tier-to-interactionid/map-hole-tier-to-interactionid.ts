@@ -21,8 +21,8 @@ import {
 
 export const mapHoleTierToInteractionid = (
   { blowRow }: MatrixSpecs,
-  currentRow: number,
-  hole: Hole
+  hole: Hole,
+  currentRow: number
 ): Interaction | undefined => {
   const drawRow = blowRow + 1
   const { bends, blowbends, overblows, overdraws } = hole
