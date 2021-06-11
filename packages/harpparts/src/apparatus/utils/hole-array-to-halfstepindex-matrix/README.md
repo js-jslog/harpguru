@@ -1,11 +1,32 @@
-Convert a hole array to halfstepindex matrix
+# Convert reed array to hole array
 
-I'd like to use a series of maps or a reduce or something.
+1. Start with a reed array
+2. pivotReedArray to get reed pair array
+3. reedPairToHole map reed pair array to hole array
+4. insertHoleBends map holes to more detailed holes
+5. insertHoleOverbends map holes to more detailed holes
+6. filterOverbendsMapCallback map holes out of redundant overblows
+7. \*(Validate the hole array - not constructed yet)
+8. Finish with hole array
 
-We're going to have to know how many times through the hole array we'll need to pass. Once for each interaction type which will exist.
+# Prepare go build matrices
 
-So we can produce a y-axis array derived from the longest bend / overdraw + longest blowbend / overblow.
+1. deriveMatrixSpecs
+2. produce an empty array of the required height
 
-Then for each y-axis we map the hole-array specifying which index of the bend / overdraw and blowbend / overblow. We will have had to have a validation step beforehand to make sure that there are no bends and overdraws on the same hole for example.
+# Build the halfstepindex matrix
 
-We will also need an anchor point on each matrix to understand how far through the hole's properties we are. The blow row will probably do.
+1. halfstepindexRowMapCallback to produce the halfstepindex matrix from the empty array
+
+# Build the interactionid matrix
+
+1. interactionidRowMapCallback to produce the interactionid matrix from the empty array
+
+Laying the plan out like this I can see that some of the functions could do with renaming for consistency:
+
+- reedPairToHole -> mapReedPairToHole
+- insertHoleBends -> mapHoleToIncludeBends
+- insertHoleOverbends -> mapHoleToIncludeOverbends
+- filterOverbendsMapCallback -> mapHoleToFilterOverbends
+
+And the intended name of this function itself should change since it's now going to be starting with a reed array rather than a hole array
