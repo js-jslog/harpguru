@@ -11,7 +11,7 @@ import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 import type { Interaction } from '../../../interaction'
 
 type Matrices = {
-  halfstepindexMatrix: HarpFaceMatrix<HalfstepIndex>
+  halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex>
   interactionMatrix: HarpFaceMatrix<Interaction>
 }
 
@@ -26,7 +26,7 @@ export const reedArrayToMatrices = (reedArray: ReedArray): Matrices => {
 
   const matrixPrimer = new Array(matrixSpecs.height).fill(undefined)
 
-  const halfstepindexMatrix = matrixPrimer.map((_, index) =>
+  const halfstepIndexMatrix = matrixPrimer.map((_, index) =>
     holeArray.map(
       mapHoleTierToHalfstepindex.bind(undefined, matrixSpecs, index)
     )
@@ -37,7 +37,7 @@ export const reedArrayToMatrices = (reedArray: ReedArray): Matrices => {
     )
   )
   return {
-    halfstepindexMatrix,
+    halfstepIndexMatrix,
     interactionMatrix,
   }
 }

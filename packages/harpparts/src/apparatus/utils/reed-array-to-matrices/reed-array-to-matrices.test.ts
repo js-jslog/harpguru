@@ -71,6 +71,5 @@ test('reedArrayToMatrices works as expected for a Richter tuned harp', () => {
   ] as const
 
   const matrices = reedArrayToMatrices(reedArray)
-  expect(matrices.halfstepindexMatrix).toStrictEqual(halfstepIndexMatrix)
-  expect(matrices.interactionMatrix).toStrictEqual(interactionMatrix)
+  expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
