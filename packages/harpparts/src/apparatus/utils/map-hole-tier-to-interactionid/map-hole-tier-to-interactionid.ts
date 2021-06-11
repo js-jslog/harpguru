@@ -1,45 +1,45 @@
-import type { Hole, MatrixSpecs } from '../../types'
-import { InteractionIds } from '../../types'
+import type { Hole, MatrixSpecs, Interaction } from '../../types'
+// TODO: don't want to import like this
+import {
+  BLOW,
+  DRAW,
+  BEND1,
+  BEND2,
+  BEND3,
+  BEND4,
+  BEND5,
+  BLOWBEND1,
+  BLOWBEND2,
+  BLOWBEND3,
+  BLOWBEND4,
+  BLOWBEND5,
+  OVERDRAW1,
+  OVERDRAW2,
+  OVERBLOW1,
+  OVERBLOW2,
+} from '../../constants/interaction'
 
 export const mapHoleTierToInteractionid = (
   { blowRow }: MatrixSpecs,
   currentRow: number,
   hole: Hole
-): InteractionIds | undefined => {
-  const {
-    Blow,
-    Draw,
-    Bend1,
-    Bend2,
-    Bend3,
-    Bend4,
-    Bend5,
-    BlowBend1,
-    BlowBend2,
-    BlowBend3,
-    BlowBend4,
-    BlowBend5,
-    OverDraw1,
-    OverDraw2,
-    OverBlow1,
-    OverBlow2,
-  } = InteractionIds
+): Interaction | undefined => {
   const drawRow = blowRow + 1
   const { bends, blowbends, overblows, overdraws } = hole
 
-  const bendInteractions = [Bend1, Bend2, Bend3, Bend4, Bend5]
-  const overblowInteractions = [OverBlow1, OverBlow2]
+  const bendInteractions = [BEND1, BEND2, BEND3, BEND4, BEND5]
+  const overblowInteractions = [OVERBLOW1, OVERBLOW2]
   const blowbendInteractions = [
-    BlowBend1,
-    BlowBend2,
-    BlowBend3,
-    BlowBend4,
-    BlowBend5,
+    BLOWBEND1,
+    BLOWBEND2,
+    BLOWBEND3,
+    BLOWBEND4,
+    BLOWBEND5,
   ]
-  const overdrawInteractions = [OverDraw1, OverDraw2]
+  const overdrawInteractions = [OVERDRAW1, OVERDRAW2]
 
-  if (currentRow === blowRow) return Blow
-  if (currentRow === drawRow) return Draw
+  if (currentRow === blowRow) return BLOW
+  if (currentRow === drawRow) return DRAW
   if (currentRow < blowRow) {
     const distance = blowRow - currentRow - 1
     if ([...blowbends].reverse()[distance])
