@@ -16,8 +16,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow and draw tiers with no ben
     blowRow: 0,
   }
 
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 0)).toBe(hole.blow)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 1)).toBe(hole.draw)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 0, hole)).toBe(hole.blow)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 1, hole)).toBe(hole.draw)
 })
 
 test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with single level bends present (lower harp)', () => {
@@ -34,12 +34,12 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blowRow: 1,
   }
 
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 0)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 0, hole)).toBe(
     hole.overblows[0]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 1)).toBe(hole.blow)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 2)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 3)).toBe(hole.bends[0])
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 1, hole)).toBe(hole.blow)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 2, hole)).toBe(hole.draw)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(hole.bends[0])
 })
 
 test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with single level bends present (upper harp)', () => {
@@ -56,12 +56,12 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blowRow: 1,
   }
 
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 0)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 0, hole)).toBe(
     hole.blowbends[0]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 1)).toBe(hole.blow)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 2)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 3)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 1, hole)).toBe(hole.blow)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 2, hole)).toBe(hole.draw)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(
     hole.overdraws[0]
   )
 })
@@ -80,16 +80,16 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blowRow: 2,
   }
 
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 0)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 0, hole)).toBe(
     hole.overblows[1]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 1)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 1, hole)).toBe(
     hole.overblows[0]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 2)).toBe(hole.blow)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 3)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 4)).toBe(hole.bends[1])
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 5)).toBe(hole.bends[0])
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 2, hole)).toBe(hole.blow)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(hole.draw)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 4, hole)).toBe(hole.bends[1])
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 5, hole)).toBe(hole.bends[0])
 })
 
 test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with multi level bends present (upper harp)', () => {
@@ -106,18 +106,18 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blowRow: 2,
   }
 
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 0)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 0, hole)).toBe(
     hole.blowbends[0]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 1)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 1, hole)).toBe(
     hole.blowbends[1]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 2)).toBe(hole.blow)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 3)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 4)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 2, hole)).toBe(hole.blow)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(hole.draw)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 4, hole)).toBe(
     hole.overdraws[0]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 5)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 5, hole)).toBe(
     hole.overdraws[1]
   )
 })
@@ -136,18 +136,18 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw, and undefined bend 
     blowRow: 3,
   }
 
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 0)).toBeFalsy()
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 1)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 0, hole)).toBeFalsy()
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 1, hole)).toBe(
     hole.overblows[1]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 2)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 2, hole)).toBe(
     hole.overblows[0]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 3)).toBe(hole.blow)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 4)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 5)).toBe(hole.bends[1])
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 6)).toBe(hole.bends[0])
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 7)).toBeFalsy()
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(hole.blow)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 4, hole)).toBe(hole.draw)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 5, hole)).toBe(hole.bends[1])
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 6, hole)).toBe(hole.bends[0])
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 7, hole)).toBeFalsy()
 })
 
 test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with multi level bends present (upper harp)', () => {
@@ -164,20 +164,20 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blowRow: 3,
   }
 
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 0)).toBeFalsy()
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 1)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 0, hole)).toBeFalsy()
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 1, hole)).toBe(
     hole.blowbends[0]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 2)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 2, hole)).toBe(
     hole.blowbends[1]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 3)).toBe(hole.blow)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 4)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 5)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(hole.blow)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 4, hole)).toBe(hole.draw)
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 5, hole)).toBe(
     hole.overdraws[0]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 6)).toBe(
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 6, hole)).toBe(
     hole.overdraws[1]
   )
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, hole, 7)).toBeFalsy()
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 7, hole)).toBeFalsy()
 })
