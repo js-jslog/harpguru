@@ -1,7 +1,7 @@
 import type { Hole, MatrixSpecs } from '../../types'
 import { InteractionIds } from '../../types'
 
-export const interactionIdRowMapCallback = (
+export const mapHoleTierToInteractionid = (
   { blowRow }: MatrixSpecs,
   currentRow: number,
   hole: Hole
