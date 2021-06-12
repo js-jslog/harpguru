@@ -1,5 +1,5 @@
-import { ascendingExclusiveRange } from '../ascending-exclusive-range'
 import type { Hole } from '../../types'
+import { ascendingExclusiveRange } from '../../../packages/ascending-exclusive-range'
 
 export const mapHoleToIncludeBends = (holeInput: Hole): Hole => {
   const bendRange = ascendingExclusiveRange(holeInput.blow, holeInput.draw)
