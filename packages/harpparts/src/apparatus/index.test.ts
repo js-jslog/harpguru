@@ -14,17 +14,6 @@ import {
   WOOZLE_MINOR_HALF_VALVED_APPARATUS,
 } from './constants'
 
-// TODO: These tests all belong elsewhere but we haven't built up the context for them to
-// be moved yet. I've removed the internals of the first 2 tests since their functions will
-// be replaced but you can recreate their intentions from the test descriptions.
-test('getActiveApparatusIds function returns an array of the available apparatus Ids', () => {
-  expect(true).toBeTruthy()
-})
-
-test('getApparatus function can return a major diatonic apparatus', () => {
-  expect(true).toBeTruthy()
-})
-
 // TODO: I've adapted the internals of this so that it still works, but we'll want to move
 // and slightly rewrite this once able. It would be nice to not have to manually add the new
 // apparatus's to the list for example but rather just be assured that if the package is making
