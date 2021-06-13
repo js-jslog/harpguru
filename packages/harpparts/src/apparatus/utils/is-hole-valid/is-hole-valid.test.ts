@@ -74,7 +74,7 @@ test('isHoleValid returns true when there are 5 bends on a hole', () => {
   expect(isHoleValid(hole)).toBeTruthy()
 })
 
-test('isHoleValid returns falase when there are more than 5 bends on a hole', () => {
+test('isHoleValid returns false when there are more than 5 bends on a hole', () => {
   const hole: Hole = {
     blow: 0,
     draw: 7,
