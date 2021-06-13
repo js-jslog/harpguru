@@ -6,6 +6,7 @@ export enum HoleErrors {
   TooManyBends,
   TooManyBlowbends,
   TooManyOverblows,
+  TooManyOverdraws,
 }
 
 export const isHoleValid = (hole: Hole): HoleErrors[] => {
@@ -26,6 +27,8 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
     hole.blowbends.length > bendLimit ? [HoleErrors.TooManyBlowbends] : []
   const tooManyOverblows =
     hole.overblows.length > overbendLimit ? [HoleErrors.TooManyOverblows] : []
+  const tooManyOverdraws =
+    hole.overdraws.length > overbendLimit ? [HoleErrors.TooManyOverdraws] : []
 
   return [
     ...conflictingDrawBends,
@@ -33,5 +36,6 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
     ...tooManyBends,
     ...tooManyBlowbends,
     ...tooManyOverblows,
+    ...tooManyOverdraws,
   ]
 }
