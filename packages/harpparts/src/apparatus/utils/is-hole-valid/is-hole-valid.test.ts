@@ -16,23 +16,23 @@ test('isHoleValid returns no errors with no bends', () => {
 
 test('isHoleValid returns no errors when blowbends and overdraws are both available', () => {
   const hole: Hole = {
-    blow: 0,
+    blow: 3,
     draw: 1,
     bends: [],
-    blowbends: [1],
+    blowbends: [2],
     overblows: [],
-    overdraws: [1],
+    overdraws: [4],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
 
 test('isHoleValid returns no errors when bends and overblows are both available', () => {
   const hole: Hole = {
-    blow: 0,
-    draw: 1,
-    bends: [1],
+    blow: 1,
+    draw: 3,
+    bends: [2],
     blowbends: [],
-    overblows: [1],
+    overblows: [4],
     overdraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
@@ -40,23 +40,23 @@ test('isHoleValid returns no errors when bends and overblows are both available'
 
 test('isHoleValid returns an error when bends and overdraws are both available', () => {
   const hole: Hole = {
-    blow: 0,
-    draw: 1,
-    bends: [1],
+    blow: 1,
+    draw: 3,
+    bends: [2],
     blowbends: [],
     overblows: [],
-    overdraws: [1],
+    overdraws: [2],
   }
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.ConflictingDrawBends])
 })
 
 test('isHoleValid returns an error when blowbends and overblows are both available', () => {
   const hole: Hole = {
-    blow: 0,
+    blow: 3,
     draw: 1,
     bends: [],
-    blowbends: [1],
-    overblows: [1],
+    blowbends: [2],
+    overblows: [2],
     overdraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.ConflictingBlowBends])
@@ -88,8 +88,8 @@ test('isHoleValid returns an error when there are more than 5 bends on a hole', 
 
 test('isHoleValid returns no errors when there are 5 blowbends on a hole', () => {
   const hole: Hole = {
-    blow: 0,
-    draw: 6,
+    blow: 6,
+    draw: 0,
     bends: [],
     blowbends: [1, 2, 3, 4, 5],
     overblows: [],
@@ -98,10 +98,10 @@ test('isHoleValid returns no errors when there are 5 blowbends on a hole', () =>
   expect(isHoleValid(hole)).toStrictEqual([])
 })
 
-test('isHoleValid returns an error when there are more than 5 bends on a hole', () => {
+test('isHoleValid returns an error when there are more than 5 blowbends on a hole', () => {
   const hole: Hole = {
-    blow: 0,
-    draw: 7,
+    blow: 7,
+    draw: 0,
     bends: [],
     blowbends: [1, 2, 3, 4, 5, 6],
     overblows: [],
