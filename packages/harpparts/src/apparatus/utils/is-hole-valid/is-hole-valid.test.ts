@@ -215,3 +215,51 @@ test('isHoleValid returns an error when the blowbends are not consecutive', () =
     HoleErrors.NonconsecutiveBlowbends,
   ])
 })
+
+test('isHoleValid returns no errors when all the overblows are consecutive', () => {
+  const hole: Hole = {
+    blow: 0,
+    draw: 4,
+    bends: [],
+    blowbends: [],
+    overblows: [5, 6],
+    overdraws: [],
+  }
+  expect(isHoleValid(hole)).toStrictEqual([])
+})
+
+test('isHoleValid returns an error when the overblows are not consecutive', () => {
+  const hole: Hole = {
+    blow: 0,
+    draw: 4,
+    bends: [],
+    blowbends: [],
+    overblows: [5, 7],
+    overdraws: [],
+  }
+  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.NonconsecutiveOverblows])
+})
+
+test('isHoleValid returns no errors when all the overdraws are consecutive', () => {
+  const hole: Hole = {
+    blow: 4,
+    draw: 0,
+    bends: [],
+    blowbends: [],
+    overblows: [],
+    overdraws: [5, 6],
+  }
+  expect(isHoleValid(hole)).toStrictEqual([])
+})
+
+test('isHoleValid returns an error when the overdraws are not consecutive', () => {
+  const hole: Hole = {
+    blow: 4,
+    draw: 0,
+    bends: [],
+    blowbends: [],
+    overblows: [],
+    overdraws: [5, 7],
+  }
+  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.NonconsecutiveOverdraws])
+})
