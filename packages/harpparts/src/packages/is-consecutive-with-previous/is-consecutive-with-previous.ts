@@ -1,8 +1,16 @@
+export enum Direction {
+  Ascending,
+  Descending,
+}
+
 export const isConsecutiveWithPrevious = (
+  direction: Direction,
   element: number,
   index: number,
   array: number[]
 ): boolean => {
   if (index === 0) return true
-  return element === array[index - 1] + 1 || element === array[index - 1] - 1
+  const { [index - 1]: prev } = array
+  const shift = direction === Direction.Ascending ? 1 : -1
+  return element === prev + shift
 }
