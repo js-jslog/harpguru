@@ -9,17 +9,16 @@ export enum HoleErrors {
 export const isHoleValid = (hole: Hole): HoleErrors[] => {
   const bendLimit = 5
 
-  const errorArray = []
-
-  const hasConflictingDrawBends =
+  const conflictingDrawBends =
     hole.bends.length > 0 && hole.overdraws.length > 0
-  const hasConflictingBlowBends =
+      ? [HoleErrors.ConflictingDrawBends]
+      : []
+  const conflictingBlowBends =
     hole.blowbends.length > 0 && hole.overblows.length > 0
-  const hasTooManyBends = hole.bends.length > bendLimit
+      ? [HoleErrors.ConflictingBlowBends]
+      : []
+  const tooManyBends =
+    hole.bends.length > bendLimit ? [HoleErrors.TooManyBends] : []
 
-  if (hasConflictingDrawBends) errorArray.push(HoleErrors.ConflictingDrawBends)
-  if (hasConflictingBlowBends) errorArray.push(HoleErrors.ConflictingBlowBends)
-  if (hasTooManyBends) errorArray.push(HoleErrors.TooManyBends)
-
-  return errorArray
+  return [...conflictingDrawBends, ...conflictingBlowBends, ...tooManyBends]
 }
