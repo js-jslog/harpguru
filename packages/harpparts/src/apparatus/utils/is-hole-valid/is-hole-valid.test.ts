@@ -187,7 +187,7 @@ test('isHoleValid returns an error when the bends are not consecutive', () => {
   ])
 })
 
-test('isHoleValid returns no errors when all the overblows are consecutive', () => {
+test('isHoleValid returns no errors when all the blowbends are consecutive', () => {
   const hole: Hole = {
     blow: 4,
     draw: 0,
@@ -199,7 +199,7 @@ test('isHoleValid returns no errors when all the overblows are consecutive', () 
   expect(isHoleValid(hole)).toStrictEqual([])
 })
 
-test('isHoleValid returns an error when the bends are not consecutive', () => {
+test('isHoleValid returns an error when the blowbends are not consecutive', () => {
   const hole: Hole = {
     blow: 4,
     draw: 0,
