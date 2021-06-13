@@ -61,3 +61,27 @@ test('isHoleValid returns false when blowbends and overblows are both available'
   }
   expect(isHoleValid(hole)).toBeFalsy()
 })
+
+test('isHoleValid returns true when there are 5 bends on a hole', () => {
+  const hole: Hole = {
+    blow: 0,
+    draw: 6,
+    bends: [1, 2, 3, 4, 5],
+    blowbends: [],
+    overblows: [],
+    overdraws: [],
+  }
+  expect(isHoleValid(hole)).toBeTruthy()
+})
+
+test('isHoleValid returns falase when there are more than 5 bends on a hole', () => {
+  const hole: Hole = {
+    blow: 0,
+    draw: 7,
+    bends: [1, 2, 3, 4, 5, 6],
+    blowbends: [],
+    overblows: [],
+    overdraws: [],
+  }
+  expect(isHoleValid(hole)).toBeFalsy()
+})
