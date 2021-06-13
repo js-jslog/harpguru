@@ -1,7 +1,15 @@
 import type { Hole } from '../../types'
 
-export const isHoleValid = (hole: Hole): boolean => {
+export enum HoleErrors {
+  ConflictingDrawBends,
+  ConflictingBlowBends,
+  TooManyBends,
+}
+
+export const isHoleValid = (hole: Hole): HoleErrors[] => {
   const bendLimit = 5
+
+  const errorArray = []
 
   const hasConflictingDrawBends =
     hole.bends.length > 0 && hole.overdraws.length > 0
@@ -9,7 +17,9 @@ export const isHoleValid = (hole: Hole): boolean => {
     hole.blowbends.length > 0 && hole.overblows.length > 0
   const hasTooManyBends = hole.bends.length > bendLimit
 
-  return (
-    !hasConflictingDrawBends && !hasConflictingBlowBends && !hasTooManyBends
-  )
+  if (hasConflictingDrawBends) errorArray.push(HoleErrors.ConflictingDrawBends)
+  if (hasConflictingBlowBends) errorArray.push(HoleErrors.ConflictingBlowBends)
+  if (hasTooManyBends) errorArray.push(HoleErrors.TooManyBends)
+
+  return errorArray
 }
