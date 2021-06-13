@@ -158,7 +158,7 @@ test('isHoleValid returns an error when there are more than 2 overdraws on a hol
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyOverdraws])
 })
 
-test('isHoleValid returns no errors when all the bends are consecutive', () => {
+test('isHoleValid returns no errors when all the bends are consecutively ascending', () => {
   const hole: Hole = {
     blow: 0,
     draw: 4,
@@ -170,7 +170,7 @@ test('isHoleValid returns no errors when all the bends are consecutive', () => {
   expect(isHoleValid(hole)).toStrictEqual([])
 })
 
-test('isHoleValid returns an error when the bends are not consecutive', () => {
+test('isHoleValid returns an error when the bends are not consecutively ascending', () => {
   const hole: Hole = {
     blow: 0,
     draw: 4,
@@ -179,6 +179,9 @@ test('isHoleValid returns an error when the bends are not consecutive', () => {
     overblows: [],
     overdraws: [],
   }
+  expect(isHoleValid({ ...hole, bends: [2, 1, 0] })).toStrictEqual([
+    HoleErrors.NonconsecutiveBends,
+  ])
   expect(isHoleValid({ ...hole, bends: [1, 1, 3] })).toStrictEqual([
     HoleErrors.NonconsecutiveBends,
   ])
@@ -187,7 +190,7 @@ test('isHoleValid returns an error when the bends are not consecutive', () => {
   ])
 })
 
-test('isHoleValid returns no errors when all the blowbends are consecutive', () => {
+test('isHoleValid returns no errors when all the blowbends are consecutively ascending', () => {
   const hole: Hole = {
     blow: 4,
     draw: 0,
@@ -199,7 +202,7 @@ test('isHoleValid returns no errors when all the blowbends are consecutive', () 
   expect(isHoleValid(hole)).toStrictEqual([])
 })
 
-test('isHoleValid returns an error when the blowbends are not consecutive', () => {
+test('isHoleValid returns an error when the blowbends are not consecutively ascending', () => {
   const hole: Hole = {
     blow: 4,
     draw: 0,
@@ -208,6 +211,9 @@ test('isHoleValid returns an error when the blowbends are not consecutive', () =
     overblows: [],
     overdraws: [],
   }
+  expect(isHoleValid({ ...hole, blowbends: [2, 1, 0] })).toStrictEqual([
+    HoleErrors.NonconsecutiveBlowbends,
+  ])
   expect(isHoleValid({ ...hole, blowbends: [1, 1, 3] })).toStrictEqual([
     HoleErrors.NonconsecutiveBlowbends,
   ])
@@ -216,7 +222,7 @@ test('isHoleValid returns an error when the blowbends are not consecutive', () =
   ])
 })
 
-test('isHoleValid returns no errors when all the overblows are consecutive', () => {
+test('isHoleValid returns no errors when all the overblows are consecutively ascending', () => {
   const hole: Hole = {
     blow: 0,
     draw: 4,
@@ -228,19 +234,24 @@ test('isHoleValid returns no errors when all the overblows are consecutive', () 
   expect(isHoleValid(hole)).toStrictEqual([])
 })
 
-test('isHoleValid returns an error when the overblows are not consecutive', () => {
+test('isHoleValid returns an error when the overblows are not consecutively ascending', () => {
   const hole: Hole = {
     blow: 0,
     draw: 4,
     bends: [],
     blowbends: [],
-    overblows: [5, 7],
+    overblows: [],
     overdraws: [],
   }
-  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.NonconsecutiveOverblows])
+  expect(isHoleValid({ ...hole, overblows: [6, 5] })).toStrictEqual([
+    HoleErrors.NonconsecutiveOverblows,
+  ])
+  expect(isHoleValid({ ...hole, overblows: [5, 7] })).toStrictEqual([
+    HoleErrors.NonconsecutiveOverblows,
+  ])
 })
 
-test('isHoleValid returns no errors when all the overdraws are consecutive', () => {
+test('isHoleValid returns no errors when all the overdraws are consecutively ascending', () => {
   const hole: Hole = {
     blow: 4,
     draw: 0,
@@ -252,14 +263,19 @@ test('isHoleValid returns no errors when all the overdraws are consecutive', () 
   expect(isHoleValid(hole)).toStrictEqual([])
 })
 
-test('isHoleValid returns an error when the overdraws are not consecutive', () => {
+test('isHoleValid returns an error when the overdraws are not consecutively ascending', () => {
   const hole: Hole = {
     blow: 4,
     draw: 0,
     bends: [],
     blowbends: [],
     overblows: [],
-    overdraws: [5, 7],
+    overdraws: [],
   }
-  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.NonconsecutiveOverdraws])
+  expect(isHoleValid({ ...hole, overdraws: [6, 5] })).toStrictEqual([
+    HoleErrors.NonconsecutiveOverdraws,
+  ])
+  expect(isHoleValid({ ...hole, overdraws: [5, 7] })).toStrictEqual([
+    HoleErrors.NonconsecutiveOverdraws,
+  ])
 })

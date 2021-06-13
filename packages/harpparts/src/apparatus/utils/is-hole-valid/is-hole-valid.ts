@@ -20,7 +20,7 @@ export enum HoleErrors {
 export const isHoleValid = (hole: Hole): HoleErrors[] => {
   const bendLimit = 5
   const overbendLimit = 2
-  const { Ascending, Descending } = Direction
+  const { Ascending } = Direction
 
   const conflictingDrawBends =
     hole.bends.length > 0 && hole.overdraws.length > 0
@@ -38,32 +38,26 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
     hole.overblows.length > overbendLimit ? [HoleErrors.TooManyOverblows] : []
   const tooManyOverdraws =
     hole.overdraws.length > overbendLimit ? [HoleErrors.TooManyOverdraws] : []
-  const nonconsecutiveBends =
-    !hole.bends.every(isConsecutiveWithPrevious.bind(undefined, Ascending)) &&
-    !hole.bends.every(isConsecutiveWithPrevious.bind(undefined, Descending))
-      ? [HoleErrors.NonconsecutiveBends]
-      : []
-  const nonconsecutiveBlowbends =
-    !hole.blowbends.every(
-      isConsecutiveWithPrevious.bind(undefined, Ascending)
-    ) &&
-    !hole.blowbends.every(isConsecutiveWithPrevious.bind(undefined, Descending))
-      ? [HoleErrors.NonconsecutiveBlowbends]
-      : []
-  const nonconsecutiveOverblows =
-    !hole.overblows.every(
-      isConsecutiveWithPrevious.bind(undefined, Ascending)
-    ) &&
-    !hole.overblows.every(isConsecutiveWithPrevious.bind(undefined, Descending))
-      ? [HoleErrors.NonconsecutiveOverblows]
-      : []
-  const nonconsecutiveOverdraws =
-    !hole.overdraws.every(
-      isConsecutiveWithPrevious.bind(undefined, Ascending)
-    ) &&
-    !hole.overdraws.every(isConsecutiveWithPrevious.bind(undefined, Descending))
-      ? [HoleErrors.NonconsecutiveOverdraws]
-      : []
+  const nonconsecutiveBends = !hole.bends.every(
+    isConsecutiveWithPrevious.bind(undefined, Ascending)
+  )
+    ? [HoleErrors.NonconsecutiveBends]
+    : []
+  const nonconsecutiveBlowbends = !hole.blowbends.every(
+    isConsecutiveWithPrevious.bind(undefined, Ascending)
+  )
+    ? [HoleErrors.NonconsecutiveBlowbends]
+    : []
+  const nonconsecutiveOverblows = !hole.overblows.every(
+    isConsecutiveWithPrevious.bind(undefined, Ascending)
+  )
+    ? [HoleErrors.NonconsecutiveOverblows]
+    : []
+  const nonconsecutiveOverdraws = !hole.overdraws.every(
+    isConsecutiveWithPrevious.bind(undefined, Ascending)
+  )
+    ? [HoleErrors.NonconsecutiveOverdraws]
+    : []
 
   return [
     ...conflictingDrawBends,
