@@ -1,4 +1,8 @@
 import type { Hole } from '../../types'
+import {
+  isConsecutiveWithPrevious,
+  Direction,
+} from '../../../packages/is-consecutive-with-previous'
 
 export enum HoleErrors {
   ConflictingDrawBends,
@@ -7,6 +11,7 @@ export enum HoleErrors {
   TooManyBlowbends,
   TooManyOverblows,
   TooManyOverdraws,
+  NonconsecutiveBends,
 }
 
 export const isHoleValid = (hole: Hole): HoleErrors[] => {
@@ -29,6 +34,15 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
     hole.overblows.length > overbendLimit ? [HoleErrors.TooManyOverblows] : []
   const tooManyOverdraws =
     hole.overdraws.length > overbendLimit ? [HoleErrors.TooManyOverdraws] : []
+  const nonconsecutiveBends =
+    !hole.bends.every(
+      isConsecutiveWithPrevious.bind(undefined, Direction.Ascending)
+    ) &&
+    !hole.bends.every(
+      isConsecutiveWithPrevious.bind(undefined, Direction.Descending)
+    )
+      ? [HoleErrors.NonconsecutiveBends]
+      : []
 
   return [
     ...conflictingDrawBends,
@@ -37,5 +51,6 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
     ...tooManyBlowbends,
     ...tooManyOverblows,
     ...tooManyOverdraws,
+    ...nonconsecutiveBends,
   ]
 }
