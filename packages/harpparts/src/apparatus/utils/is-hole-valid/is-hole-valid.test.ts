@@ -85,3 +85,27 @@ test('isHoleValid returns an error when there are more than 5 bends on a hole', 
   }
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyBends])
 })
+
+test('isHoleValid returns no errors when there are 5 blowbends on a hole', () => {
+  const hole: Hole = {
+    blow: 0,
+    draw: 6,
+    bends: [],
+    blowbends: [1, 2, 3, 4, 5],
+    overblows: [],
+    overdraws: [],
+  }
+  expect(isHoleValid(hole)).toStrictEqual([])
+})
+
+test('isHoleValid returns an error when there are more than 5 bends on a hole', () => {
+  const hole: Hole = {
+    blow: 0,
+    draw: 7,
+    bends: [],
+    blowbends: [1, 2, 3, 4, 5, 6],
+    overblows: [],
+    overdraws: [],
+  }
+  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyBlowbends])
+})
