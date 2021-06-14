@@ -5,16 +5,16 @@ import {
 } from '../../../packages/is-consecutive-with-previous'
 
 export enum HoleErrors {
-  ConflictingDrawBends,
-  ConflictingBlowBends,
-  TooManyBends,
-  TooManyBlowbends,
-  TooManyOverblows,
-  TooManyOverdraws,
-  NonconsecutiveBends,
-  NonconsecutiveBlowbends,
-  NonconsecutiveOverblows,
-  NonconsecutiveOverdraws,
+  ConflictingDrawBends = 'CONFLICTING_DRAW_BENDS',
+  ConflictingBlowBends = 'CONFLICTING_BLOW_BENDS',
+  TooManyBends = 'TOO_MANY_BENDS',
+  TooManyBlowbends = 'TOO_MANY_BLOWBENDS',
+  TooManyOverblows = 'TOO_MANY_OVERBLOWS',
+  TooManyOverdraws = 'TOO_MANY_OVERDRAWS',
+  NonconsecutiveBends = 'NONCONSECUTIVE_BENDS',
+  NonconsecutiveBlowbends = 'NONCONSECUTIVE_BLOWBENDS',
+  NonconsecutiveOverblows = 'NONCONSECUTIVE_OVERBLOWS',
+  NonconsecutiveOverdraws = 'NONCONSECUTIVE_OVERDRAWS',
 }
 
 export const isHoleValid = (hole: Hole): HoleErrors[] => {
