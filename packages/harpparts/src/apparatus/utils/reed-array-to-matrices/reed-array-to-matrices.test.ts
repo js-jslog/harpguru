@@ -1,3 +1,4 @@
+import { HoleErrors } from '../is-hole-valid'
 import type { ReedArray } from '../../types'
 import { ReedTuningPitches } from '../../types'
 import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
@@ -37,6 +38,27 @@ const {
   c3,
   c4,
 } = ReedTuningPitches
+
+test('reedArrayToMatrices throws errors as expected when any error is encountered', () => {
+  const reedArray: ReedArray = [
+    // 1    2    3    4    5    6    7    8    9   10
+    [c1, d3, c1, d3, c1, d3, c1, d3, c1, d3],
+    [d3, c1, d3, c1, d3, c1, d3, c1, d3, c1],
+  ]
+
+  expect(() => reedArrayToMatrices(reedArray)).toThrow(
+    `Hole 0: ${HoleErrors.TooManyBends}`
+  )
+  expect(() => reedArrayToMatrices(reedArray)).toThrow(
+    `Hole 1: ${HoleErrors.TooManyBlowbends}`
+  )
+  expect(() => reedArrayToMatrices(reedArray)).toThrow(
+    `Hole 8: ${HoleErrors.TooManyBends}`
+  )
+  expect(() => reedArrayToMatrices(reedArray)).toThrow(
+    `Hole 9: ${HoleErrors.TooManyBlowbends}`
+  )
+})
 
 test('reedArrayToMatrices works as expected for a Richter tuned harp', () => {
   // prettier-ignore

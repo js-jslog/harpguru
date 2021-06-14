@@ -5,6 +5,7 @@ import { mapHoleToIncludeBends } from '../map-hole-to-include-bends'
 import { mapHoleToFilterOverbends } from '../map-hole-to-filter-overbends'
 import { mapHoleTierToInteractionid } from '../map-hole-tier-to-interactionid'
 import { mapHoleTierToHalfstepindex } from '../map-hole-tier-to-halstepindex'
+import { getHoleArrayErrorMessages } from '../get-hole-array-error-messages'
 import { deriveMatrixSpecs } from '../derive-matrix-specs/derive-matrix-specs'
 import type { HoleArray, ReedArray } from '../../types'
 import type { Apparatus } from '../../types'
@@ -17,6 +18,15 @@ export const reedArrayToMatrices = (
     .map(mapHoleToIncludeBends)
     .map(mapHoleToIncludeOverbends)
     .map(mapHoleToFilterOverbends) as HoleArray
+
+  const holeErrorMessages = getHoleArrayErrorMessages(holeArray)
+  if (holeErrorMessages.length > 0)
+    throw new Error(`
+    The following issues with the hole array
+    produced were detected:
+
+    ${JSON.stringify(holeErrorMessages)}
+  `)
 
   const matrixSpecs = deriveMatrixSpecs(holeArray)
 
