@@ -8,7 +8,7 @@ import type { HalfstepIndex, HarpFaceMatrix, HarpFaceRow } from './types'
 // The parity checking logic actually needs to be improved quite a lot too.
 // It would also be nice to get all the results of the partiy check in before the test fails too.
 // We need to check that this test fails if a reed config is made available which is leads to a hole array error.
-test('Each of the apparatus halfstep matrices have parity with their interaction matrices, and no errors are thrown in the process', () => {
+test('Each of the apparatus halfstep matrices have parity with their interaction matrices, and no errors are thrown in the process of producing them', () => {
   const matricesHaveParity = (
     matrixA: HarpFaceMatrix<HalfstepIndex>,
     matrixB: HarpFaceMatrix<Interaction>,
