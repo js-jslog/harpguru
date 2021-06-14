@@ -1,5 +1,5 @@
 import { HoleErrors } from '../is-hole-valid'
-import type { ReedArray } from '../../types'
+import { ApparatusIds, ReedArray } from '../../types'
 import { ReedTuningPitches } from '../../types'
 import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 import {
@@ -38,6 +38,7 @@ const {
   c3,
   c4,
 } = ReedTuningPitches
+const { MajorDiatonic } = ApparatusIds
 
 test('reedArrayToMatrices throws errors as expected when any error is encountered', () => {
   const reedArray: ReedArray = [
@@ -46,16 +47,19 @@ test('reedArrayToMatrices throws errors as expected when any error is encountere
     [d3, c1, d3, c1, d3, c1, d3, c1, d3, c1],
   ]
 
-  expect(() => reedArrayToMatrices(reedArray)).toThrow(
+  expect(() => reedArrayToMatrices(reedArray, MajorDiatonic)).toThrow(
+    MajorDiatonic
+  )
+  expect(() => reedArrayToMatrices(reedArray, MajorDiatonic)).toThrow(
     `Hole 0: ${HoleErrors.TooManyBends}`
   )
-  expect(() => reedArrayToMatrices(reedArray)).toThrow(
+  expect(() => reedArrayToMatrices(reedArray, MajorDiatonic)).toThrow(
     `Hole 1: ${HoleErrors.TooManyBlowbends}`
   )
-  expect(() => reedArrayToMatrices(reedArray)).toThrow(
+  expect(() => reedArrayToMatrices(reedArray, MajorDiatonic)).toThrow(
     `Hole 8: ${HoleErrors.TooManyBends}`
   )
-  expect(() => reedArrayToMatrices(reedArray)).toThrow(
+  expect(() => reedArrayToMatrices(reedArray, MajorDiatonic)).toThrow(
     `Hole 9: ${HoleErrors.TooManyBlowbends}`
   )
 })
@@ -92,6 +96,6 @@ test('reedArrayToMatrices works as expected for a Richter tuned harp', () => {
     [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const matrices = reedArrayToMatrices(reedArray)
+  const matrices = reedArrayToMatrices(reedArray, MajorDiatonic)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
