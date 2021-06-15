@@ -44,7 +44,7 @@ const {
   c3,
   c4,
 } = ReedTuningPitches
-const { MajorDiatonic, CountryTuned } = ApparatusIds
+const { MajorDiatonic, CountryTuned, PowerBender } = ApparatusIds
 
 test('reedArrayToMatrices throws errors as expected when any error is encountered', () => {
   const reedArray: ReedArray = [
@@ -179,7 +179,7 @@ test('reedArrayToMatrices works as expected for a Natrual Minor tuned harp', () 
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
-test('reedArrayToMatrices works as expected for a  tuned harp', () => {
+test('reedArrayToMatrices works as expected for a Power Bender  tuned harp', () => {
   // prettier-ignore
   const reedArray: ReedArray = [
     // 1    2    3    4    5    6    7    8    9   10
@@ -209,6 +209,6 @@ test('reedArrayToMatrices works as expected for a  tuned harp', () => {
     [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const matrices = reedArrayToMatrices(reedArray, CountryTuned)
+  const matrices = reedArrayToMatrices(reedArray, PowerBender)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
