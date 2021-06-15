@@ -31,7 +31,9 @@ const reedArray: ReedArray = [
   [ d1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , f3 , a3 ],
 ]
 
+const { CountryTuned: id } = ApparatusIds
+
 export const COUNTRY_TUNED_APPARATUS: Apparatus = {
-  id: ApparatusIds.CountryTuned,
-  ...reedArrayToMatrices(reedArray, ApparatusIds.CountryTuned),
+  id,
+  ...reedArrayToMatrices(reedArray, id),
 } as const

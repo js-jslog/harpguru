@@ -30,7 +30,9 @@ const reedArray: ReedArray = [
   [ d1 , g1 , b1 , d2 , e2 , g2 , b2 , d3 , g3 , c4 ],
 ]
 
+const { PowerBender: id } = ApparatusIds
+
 export const POWER_BENDER_APPARATUS: Apparatus = {
-  id: ApparatusIds.PowerBender,
-  ...reedArrayToMatrices(reedArray, ApparatusIds.PowerBender),
+  id,
+  ...reedArrayToMatrices(reedArray, id),
 } as const

@@ -31,7 +31,9 @@ const reedArray: ReedArray = [
   [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
 ]
 
+const { NaturalMinor: id } = ApparatusIds
+
 export const NATURAL_MINOR_APPARATUS: Apparatus = {
-  id: ApparatusIds.NaturalMinor,
-  ...reedArrayToMatrices(reedArray, ApparatusIds.NaturalMinor),
+  id,
+  ...reedArrayToMatrices(reedArray, id),
 } as const

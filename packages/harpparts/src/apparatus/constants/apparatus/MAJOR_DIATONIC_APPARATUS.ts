@@ -31,7 +31,9 @@ const reedArray: ReedArray = [
   [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
 ]
 
+const { MajorDiatonic: id } = ApparatusIds
+
 export const MAJOR_DIATONIC_APPARATUS: Apparatus = {
-  id: ApparatusIds.MajorDiatonic,
-  ...reedArrayToMatrices(reedArray, ApparatusIds.MajorDiatonic),
+  id,
+  ...reedArrayToMatrices(reedArray, id),
 } as const
