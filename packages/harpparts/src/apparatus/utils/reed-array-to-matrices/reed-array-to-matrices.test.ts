@@ -109,48 +109,16 @@ test('reedArrayToMatrices works as expected for a Country tuned harp', () => {
     [ d1 , g1 , b1 , d2 , gb2 , a2 , b2 , d3 , f3 , a3 ],
   ]
 
+  // prettier-ignore
   const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
     //    1          2          3          4          5          6          7          8          9         10
-    [
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      34,
-    ],
-    [3, undefined, undefined, 15, undefined, 22, undefined, 27, 30, 35],
-    [0, 4, 7, 12, 16, 19, 24, 28, 31, 36],
-    [2, 7, 11, 14, 18, 21, 23, 26, 29, 33],
-    [1, 6, 10, 13, 17, 20, 25, undefined, 32, 37],
-    [
-      undefined,
-      5,
-      9,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ],
-    [
-      undefined,
-      undefined,
-      8,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-    ],
+    [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 34        ],
+    [ 3        , undefined, undefined, 15       , undefined, 22       , undefined, 27       , 30       , 35        ],
+    [ 0        , 4        , 7        , 12       , 16       , 19       , 24       , 28       , 31       , 36        ],
+    [ 2        , 7        , 11       , 14       , 18       , 21       , 23       , 26       , 29       , 33        ],
+    [ 1        , 6        , 10       , 13       , 17       , 20       , 25       , undefined, 32       , 37        ],
+    [ undefined, 5        , 9        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ undefined, undefined, 8        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
   // prettier-ignore
