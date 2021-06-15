@@ -44,7 +44,13 @@ const {
   c3,
   c4,
 } = ReedTuningPitches
-const { MajorDiatonic, CountryTuned, PowerBender, PowerDraw } = ApparatusIds
+const {
+  MajorDiatonic,
+  CountryTuned,
+  PowerBender,
+  PowerDraw,
+  WildeTuned,
+} = ApparatusIds
 
 test('reedArrayToMatrices throws errors as expected when any error is encountered', () => {
   const reedArray: ReedArray = [
@@ -244,5 +250,39 @@ test('reedArrayToMatrices works as expected for a Power Draw tuned harp', () => 
   ] as const
 
   const matrices = reedArrayToMatrices(reedArray, PowerDraw)
+  expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
+})
+
+test('reedArrayToMatrices works as expected for a Wilde tuned harp', () => {
+  // prettier-ignore
+  const reedArray: ReedArray = [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , c2 , e2 , e2 , g2 , c3 , e3 , a3 ],
+    [ d1 , g1 , b1 , d2 , f2 , g2 , b2 , d3 , g3 , c4 ],
+  ]
+
+  // prettier-ignore
+  const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
+    //    1          2          3          4          5          6          7          8          9         10
+    [ 3        , undefined, undefined, 15       , undefined, undefined, undefined, 27       , 32       , 37        ],
+    [ 0        , 4        , 7        , 12       , 16       , 16       , 19       , 24       , 28       , 33        ],
+    [ 2        , 7        , 11       , 14       , 17       , 19       , 23       , 26       , 31       , 36        ],
+    [ 1        , 6        , 10       , 13       , undefined, 18       , 22       , 25       , 30       , 35        ],
+    [ undefined, 5        , 9        , undefined, undefined, 17       , 21       , undefined, 29       , 34        ],
+    [ undefined, undefined, 8        , undefined, undefined, undefined, 20       , undefined, undefined, undefined ],
+  ] as const
+
+  // prettier-ignore
+  const interactionMatrix: HarpFaceMatrix<Interaction> = [
+    //    1          2          3          4          5          6          7          8          9         10
+    [ OVERBLOW1, undefined, undefined, OVERBLOW1, undefined, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1 ],
+    [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
+    [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
+    [ BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , BEND1    , BEND1    , BEND1     ],
+    [ undefined, BEND2    , BEND2    , undefined, undefined, BEND2    , BEND2    , undefined, BEND2    , BEND2     ],
+    [ undefined, undefined, BEND3    , undefined, undefined, undefined, BEND3    , undefined, undefined, undefined ],
+  ] as const
+
+  const matrices = reedArrayToMatrices(reedArray, WildeTuned)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
