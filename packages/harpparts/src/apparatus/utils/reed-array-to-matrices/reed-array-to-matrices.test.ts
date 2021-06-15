@@ -179,7 +179,7 @@ test('reedArrayToMatrices works as expected for a Natrual Minor tuned harp', () 
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
-test('reedArrayToMatrices works as expected for a Power Bender  tuned harp', () => {
+test('reedArrayToMatrices works as expected for a Power Bender tuned harp', () => {
   // prettier-ignore
   const reedArray: ReedArray = [
     // 1    2    3    4    5    6    7    8    9   10
