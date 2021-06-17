@@ -1,4 +1,5 @@
-import type { ReedArray, ReedPairArray } from '../../types'
+import type { ReedPairArray } from '../../types'
+import type { ReedArray } from '../../../tuning'
 
 export const pivotReedArray = (reedArray: ReedArray): ReedPairArray => {
   const [blowRow, drawRow] = reedArray

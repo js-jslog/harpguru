@@ -7,8 +7,9 @@ import { mapHoleTierToInteractionid } from '../map-hole-tier-to-interactionid'
 import { mapHoleTierToHalfstepindex } from '../map-hole-tier-to-halstepindex'
 import { getHoleArrayErrorMessages } from '../get-hole-array-error-messages'
 import { deriveMatrixSpecs } from '../derive-matrix-specs/derive-matrix-specs'
-import type { ApparatusIds, HoleArray, ReedArray } from '../../types'
+import type { ApparatusIds, HoleArray } from '../../types'
 import type { Apparatus } from '../../types'
+import type { ReedArray } from '../../../tuning'
 
 export const reedArrayToMatrices = (
   reedArray: ReedArray,
