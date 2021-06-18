@@ -7,4 +7,5 @@ export {
   WILDE_TUNED_TUNING,
   WOOZLE_MINOR_TUNING,
 } from './constants'
-export type { ReedArray } from './types'
+export type { Tuning, ReedArray } from './types'
+export { TuningIds } from './types'

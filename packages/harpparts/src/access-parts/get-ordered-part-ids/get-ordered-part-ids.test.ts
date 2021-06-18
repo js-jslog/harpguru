@@ -1,20 +1,20 @@
 import {
-  ORDERED_APPARATUS,
+  ORDERED_TUNINGS,
   ORDERED_DEGREES,
   ORDERED_PITCHES,
   ORDERED_POZITIONS,
 } from '../constants'
+import { TuningIds } from '../../tuning'
 import { PozitionIds } from '../../pozition'
 import { PitchIds } from '../../pitch'
 import { DegreeIds } from '../../degree'
-import { ApparatusIds } from '../../apparatus'
 
 import { getOrderedPartIds } from './get-ordered-part-ids'
 
-test('getOrderedPartIds can returns some ApparatusIds', () => {
-  const orderedApparatusIds = getOrderedPartIds(ORDERED_APPARATUS)
-  expect(orderedApparatusIds.length).toBeTruthy()
-  expect(orderedApparatusIds).toContain(ApparatusIds.MajorDiatonic)
+test('getOrderedPartIds can returns some TuningIds', () => {
+  const orderedTuningIds = getOrderedPartIds(ORDERED_TUNINGS)
+  expect(orderedTuningIds.length).toBeTruthy()
+  expect(orderedTuningIds).toContain(TuningIds.MajorDiatonic)
 })
 
 test('getOrderedPartIds can return some DegreeIds', () => {

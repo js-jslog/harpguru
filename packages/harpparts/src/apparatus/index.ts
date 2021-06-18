@@ -7,5 +7,5 @@ export {
   POWER_DRAW_APPARATUS,
   WOOZLE_MINOR_APPARATUS,
 } from './constants'
-export { ApparatusIds } from './types'
 export type { Apparatus } from './types'
+export { buildApparatus } from './utils'

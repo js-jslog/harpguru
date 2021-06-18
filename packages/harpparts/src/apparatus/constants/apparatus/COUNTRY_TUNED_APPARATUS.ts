@@ -1,11 +1,10 @@
 import { reedArrayToMatrices } from '../../utils'
-import { ApparatusIds } from '../../types'
 import type { Apparatus } from '../../types'
 import { COUNTRY_TUNED_TUNING } from '../../../tuning'
 
-const { CountryTuned: id } = ApparatusIds
+const { id, reedArray } = COUNTRY_TUNED_TUNING
 
 export const COUNTRY_TUNED_APPARATUS: Apparatus = {
-  id,
-  ...reedArrayToMatrices(COUNTRY_TUNED_TUNING, id),
+  id: id,
+  ...reedArrayToMatrices(reedArray, id),
 } as const

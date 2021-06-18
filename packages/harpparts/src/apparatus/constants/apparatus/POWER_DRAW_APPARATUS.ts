@@ -1,11 +1,10 @@
 import { reedArrayToMatrices } from '../../utils'
-import { ApparatusIds } from '../../types'
 import type { Apparatus } from '../../types'
 import { POWER_DRAW_TUNING } from '../../../tuning'
 
-const { PowerDraw: id } = ApparatusIds
+const { id, reedArray } = POWER_DRAW_TUNING
 
 export const POWER_DRAW_APPARATUS: Apparatus = {
-  id,
-  ...reedArrayToMatrices(POWER_DRAW_TUNING, id),
+  id: id,
+  ...reedArrayToMatrices(reedArray, id),
 } as const

@@ -1,11 +1,10 @@
 import { reedArrayToMatrices } from '../../utils'
-import { ApparatusIds } from '../../types'
 import type { Apparatus } from '../../types'
 import { WOOZLE_MINOR_TUNING } from '../../../tuning'
 
-const { WoozleMinor: id } = ApparatusIds
+const { id, reedArray } = WOOZLE_MINOR_TUNING
 
 export const WOOZLE_MINOR_APPARATUS: Apparatus = {
-  id,
-  ...reedArrayToMatrices(WOOZLE_MINOR_TUNING, id),
+  id: id,
+  ...reedArrayToMatrices(reedArray, id),
 } as const

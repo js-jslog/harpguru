@@ -1,5 +1,4 @@
 import { HoleErrors } from '../is-hole-valid'
-import { ApparatusIds } from '../../types'
 import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 import type { ReedArray } from '../../../tuning'
 import {
@@ -26,36 +25,27 @@ import type { Interaction } from '../../../interaction'
 
 import { reedArrayToMatrices } from './reed-array-to-matrices'
 
-const {
-  MajorDiatonic,
-  CountryTuned,
-  PowerBender,
-  PowerDraw,
-  WildeTuned,
-  WoozleMinor,
-} = ApparatusIds
-
 test('reedArrayToMatrices throws errors as expected when any error is encountered', () => {
   const invalidReedArray: ReedArray = [
     // 1    2    3    4    5    6    7    8    9   10
     [0, 20, 0, 20, 0, 20, 0, 20, 0, 20],
     [20, 0, 20, 0, 20, 0, 20, 0, 20, 0],
   ]
-  expect(() => reedArrayToMatrices(invalidReedArray, MajorDiatonic)).toThrow(
-    MajorDiatonic
-  )
-  expect(() => reedArrayToMatrices(invalidReedArray, MajorDiatonic)).toThrow(
-    `Hole 0: ${HoleErrors.TooManyBends}`
-  )
-  expect(() => reedArrayToMatrices(invalidReedArray, MajorDiatonic)).toThrow(
-    `Hole 1: ${HoleErrors.TooManyBlowbends}`
-  )
-  expect(() => reedArrayToMatrices(invalidReedArray, MajorDiatonic)).toThrow(
-    `Hole 8: ${HoleErrors.TooManyBends}`
-  )
-  expect(() => reedArrayToMatrices(invalidReedArray, MajorDiatonic)).toThrow(
-    `Hole 9: ${HoleErrors.TooManyBlowbends}`
-  )
+  expect(() =>
+    reedArrayToMatrices(invalidReedArray, MAJOR_DIATONIC_TUNING.id)
+  ).toThrow(MAJOR_DIATONIC_TUNING.id)
+  expect(() =>
+    reedArrayToMatrices(invalidReedArray, MAJOR_DIATONIC_TUNING.id)
+  ).toThrow(`Hole 0: ${HoleErrors.TooManyBends}`)
+  expect(() =>
+    reedArrayToMatrices(invalidReedArray, MAJOR_DIATONIC_TUNING.id)
+  ).toThrow(`Hole 1: ${HoleErrors.TooManyBlowbends}`)
+  expect(() =>
+    reedArrayToMatrices(invalidReedArray, MAJOR_DIATONIC_TUNING.id)
+  ).toThrow(`Hole 8: ${HoleErrors.TooManyBends}`)
+  expect(() =>
+    reedArrayToMatrices(invalidReedArray, MAJOR_DIATONIC_TUNING.id)
+  ).toThrow(`Hole 9: ${HoleErrors.TooManyBlowbends}`)
 })
 
 test('reedArrayToMatrices works as expected for a Richter tuned harp', () => {
@@ -83,7 +73,8 @@ test('reedArrayToMatrices works as expected for a Richter tuned harp', () => {
     [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const matrices = reedArrayToMatrices(MAJOR_DIATONIC_TUNING, MajorDiatonic)
+  const { id, reedArray } = MAJOR_DIATONIC_TUNING
+  const matrices = reedArrayToMatrices(reedArray, id)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -113,7 +104,8 @@ test('reedArrayToMatrices works as expected for a Country tuned harp', () => {
   ] as const
   // prettier-ignore
 
-  const matrices = reedArrayToMatrices(COUNTRY_TUNED_TUNING, CountryTuned)
+  const { id, reedArray } = COUNTRY_TUNED_TUNING
+  const matrices = reedArrayToMatrices(reedArray, id)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -142,7 +134,8 @@ test('reedArrayToMatrices works as expected for a Natrual Minor tuned harp', () 
     [ undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const matrices = reedArrayToMatrices(NATURAL_MINOR_TUNING, CountryTuned)
+  const { id, reedArray } = NATURAL_MINOR_TUNING
+  const matrices = reedArrayToMatrices(reedArray, id)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -169,7 +162,8 @@ test('reedArrayToMatrices works as expected for a Power Bender tuned harp', () =
     [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const matrices = reedArrayToMatrices(POWER_BENDER_TUNING, PowerBender)
+  const { id, reedArray } = POWER_BENDER_TUNING
+  const matrices = reedArrayToMatrices(reedArray, id)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -196,7 +190,8 @@ test('reedArrayToMatrices works as expected for a Power Draw tuned harp', () => 
     [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const matrices = reedArrayToMatrices(POWER_DRAW_TUNING, PowerDraw)
+  const { id, reedArray } = POWER_DRAW_TUNING
+  const matrices = reedArrayToMatrices(reedArray, id)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -223,7 +218,8 @@ test('reedArrayToMatrices works as expected for a Wilde tuned harp', () => {
     [ undefined, undefined, BEND3    , undefined, undefined, undefined, BEND3    , undefined, undefined, undefined ],
   ] as const
 
-  const matrices = reedArrayToMatrices(WILDE_TUNED_TUNING, WildeTuned)
+  const { id, reedArray } = WILDE_TUNED_TUNING
+  const matrices = reedArrayToMatrices(reedArray, id)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -250,6 +246,7 @@ test('reedArrayToMatrices works as expected for a Woozle Minor tuned harp', () =
     [ undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, BEND3    , undefined ],
   ] as const
 
-  const matrices = reedArrayToMatrices(WOOZLE_MINOR_TUNING, WoozleMinor)
+  const { id, reedArray } = WOOZLE_MINOR_TUNING
+  const matrices = reedArrayToMatrices(reedArray, id)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })

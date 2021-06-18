@@ -1,11 +1,10 @@
 import { reedArrayToMatrices } from '../../utils'
-import { ApparatusIds } from '../../types'
 import type { Apparatus } from '../../types'
 import { WILDE_TUNED_TUNING } from '../../../tuning'
 
-const { WildeTuned: id } = ApparatusIds
+const { id, reedArray } = WILDE_TUNED_TUNING
 
 export const WILDE_TUNED_APPARATUS: Apparatus = {
-  id,
-  ...reedArrayToMatrices(WILDE_TUNED_TUNING, id),
+  id: id,
+  ...reedArrayToMatrices(reedArray, id),
 } as const

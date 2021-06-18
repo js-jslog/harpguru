@@ -1,5 +1,20 @@
 import type { HalfstepIndex } from '../../types'
 
+export enum TuningIds {
+  MajorDiatonic = 'Major diatonic',
+  CountryTuned = 'Country tuned',
+  NaturalMinor = 'Natural minor',
+  WildeTuned = 'Wilde tuned',
+  PowerBender = 'Power bender',
+  PowerDraw = 'Power draw',
+  WoozleMinor = 'Woozle minor',
+}
+
+export type Tuning = {
+  readonly id: TuningIds
+  readonly reedArray: ReedArray
+}
+
 export type ReedArray = [
   [
     HalfstepIndex,

@@ -7,13 +7,13 @@ import { mapHoleTierToInteractionid } from '../map-hole-tier-to-interactionid'
 import { mapHoleTierToHalfstepindex } from '../map-hole-tier-to-halstepindex'
 import { getHoleArrayErrorMessages } from '../get-hole-array-error-messages'
 import { deriveMatrixSpecs } from '../derive-matrix-specs/derive-matrix-specs'
-import type { ApparatusIds, HoleArray } from '../../types'
+import type { HoleArray } from '../../types'
 import type { Apparatus } from '../../types'
-import type { ReedArray } from '../../../tuning'
+import type { TuningIds, ReedArray } from '../../../tuning'
 
 export const reedArrayToMatrices = (
   reedArray: ReedArray,
-  apparatusId: ApparatusIds
+  apparatusId: TuningIds
 ): Pick<Apparatus, 'halfstepIndexMatrix' | 'interactionMatrix'> => {
   const holeArray = pivotReedArray(reedArray)
     .map(mapReedPairToHole)

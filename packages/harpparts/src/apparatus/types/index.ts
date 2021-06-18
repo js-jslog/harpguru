@@ -1,4 +1,5 @@
 import type { HarpFaceMatrix, HalfstepIndex } from '../../types'
+import { TuningIds } from '../../tuning'
 import type { Interaction } from '../../interaction'
 
 export type ReedPair = [HalfstepIndex, HalfstepIndex]
@@ -43,20 +44,8 @@ export type MatrixSpecs = {
   readonly blowRow: number
 }
 
-export enum ApparatusIds {
-  MajorDiatonic = 'Major diatonic',
-  CountryTuned = 'Country tuned',
-  NaturalMinor = 'Natural minor',
-  WildeTuned = 'Wilde tuned',
-  PowerBender = 'Power bender',
-  PowerDraw = 'Power draw',
-  PowerDrawHalfValved = 'Power draw (half valved)',
-  WoozleMinor = 'Woozle minor',
-  WoozleMinorHalfValved = 'Woozle minor (half valved)',
-}
-
 export type Apparatus = {
-  readonly id: ApparatusIds
+  readonly id: TuningIds
   readonly halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex>
   readonly interactionMatrix: HarpFaceMatrix<Interaction>
 }
