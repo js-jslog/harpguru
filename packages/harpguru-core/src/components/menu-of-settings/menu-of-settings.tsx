@@ -10,7 +10,7 @@ import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
 import {
-  getNewHarpStrataByApparatusForDispatcher,
+  getNewHarpStrataByTuningForDispatcher,
   getToggledActiveQuizDegrees,
 } from './utils'
 import {
@@ -22,8 +22,8 @@ import {
 
 export const MenuOfSettings = (menuProps: MenuProps): React.ReactElement => {
   const itemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataByApparatusForDispatcher),
-    [useDispatch, getNewHarpStrataByApparatusForDispatcher]
+    useDispatch(getNewHarpStrataByTuningForDispatcher),
+    [useDispatch, getNewHarpStrataByTuningForDispatcher]
   )
 
   const useTuningTitleMemo = useCallback(() => useTuningTitle(useGlobal), [

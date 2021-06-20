@@ -1,13 +1,13 @@
 import React from 'react'
-import type { ApparatusIds } from 'harpparts'
-import { getApparatusIds } from 'harpparts'
+import type { TuningIds } from 'harpparts'
+import { getTuningIds } from 'harpparts'
 
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
 import type { UseGlobal } from '../../../../types'
 
-type ItemCallback = ApparatusIds
-type ItemTapHandler = (arg0: ApparatusIds) => void
+type ItemCallback = TuningIds
+type ItemTapHandler = (arg0: TuningIds) => void
 
 type TuningItems = ReadonlyArray<
   React.ReactElement<OptionItemProps<ItemCallback>>
@@ -19,13 +19,13 @@ export const useTuningItems = (
 ): TuningItems => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const {
-    apparatus: { id: apparatusId },
+    apparatus: { tuningId },
   } = activeHarpStrata
-  const items = getApparatusIds().map((id, index) => (
+  const items = getTuningIds().map((id, index) => (
     <OptionItem
       key={`${index}`}
       value={id}
-      isSelected={id === apparatusId}
+      isSelected={id === tuningId}
       itemTapHandler={itemTapHandler}
       callbackParam={id}
       twoColumns={false}

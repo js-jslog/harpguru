@@ -7,12 +7,13 @@ import { mapHoleTierToInteractionid } from '../map-hole-tier-to-interactionid'
 import { mapHoleTierToHalfstepindex } from '../map-hole-tier-to-halstepindex'
 import { getHoleArrayErrorMessages } from '../get-hole-array-error-messages'
 import { deriveMatrixSpecs } from '../derive-matrix-specs/derive-matrix-specs'
-import type { ApparatusIds, HoleArray, ReedArray } from '../../types'
+import type { HoleArray } from '../../types'
 import type { Apparatus } from '../../types'
+import type { TuningIds, ReedArray } from '../../../tuning'
 
 export const reedArrayToMatrices = (
   reedArray: ReedArray,
-  apparatusId: ApparatusIds
+  tuningId: TuningIds
 ): Pick<Apparatus, 'halfstepIndexMatrix' | 'interactionMatrix'> => {
   const holeArray = pivotReedArray(reedArray)
     .map(mapReedPairToHole)
@@ -24,7 +25,7 @@ export const reedArrayToMatrices = (
   if (holeErrorMessages.length > 0)
     throw new Error(`
     The following issues with the hole array
-    produced for ${apparatusId} were detected:
+    produced for ${tuningId} were detected:
 
     ${JSON.stringify(holeErrorMessages)}
   `)

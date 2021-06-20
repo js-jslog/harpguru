@@ -1,12 +1,12 @@
 import { getHarpStrata } from 'harpstrata'
-import { ApparatusIds, PitchIds, PozitionIds } from 'harpparts'
+import { TuningIds, PitchIds, PozitionIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
 
 import { getNewHarpStrataForDispatcher } from './get-new-harpstrata-for-dispatcher'
 
 const baseHarpStrataProps = {
-  apparatusId: ApparatusIds.MajorDiatonic,
+  tuningId: TuningIds.MajorDiatonic,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
   activeIds: [],
