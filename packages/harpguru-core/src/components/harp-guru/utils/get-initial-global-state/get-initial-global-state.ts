@@ -1,7 +1,7 @@
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 import {
-  ApparatusIds,
+  TuningIds,
   PozitionIds,
   PitchIds,
   ScaleIds,
@@ -18,7 +18,7 @@ import {
 } from '../../../../types'
 
 export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
-  const { MajorDiatonic: tuningId } = ApparatusIds
+  const { MajorDiatonic: tuningId } = TuningIds
   const { C: harpKeyId } = PitchIds
   const pozitionMap: Record<PageNumber, PozitionIds> = {
     1: PozitionIds.Second,

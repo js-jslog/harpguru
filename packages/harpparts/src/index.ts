@@ -1,4 +1,4 @@
-export { TuningIds as ApparatusIds } from './tuning'
+export { TuningIds } from './tuning'
 export type { Apparatus } from './apparatus'
 export { buildApparatus as getApparatus } from './apparatus'
 export { InteractionIds } from './interaction'

@@ -1,7 +1,7 @@
 import type {
   HarpFaceMatrix,
   Apparatus,
-  ApparatusIds,
+  TuningIds,
   Degree,
   DegreeIds,
   PitchIds,
@@ -26,7 +26,7 @@ export type IsActiveProps = {
 }
 
 export type HarpStrataProps = {
-  readonly tuningId: ApparatusIds
+  readonly tuningId: TuningIds
   readonly pozitionId: PozitionIds
   readonly harpKeyId: PitchIds
   readonly activeIds: ActiveIds

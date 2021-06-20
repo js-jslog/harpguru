@@ -34,7 +34,7 @@ The assumptions which will hold of all layouts presented from this library are t
 
 ### getHarpStrata(HarpStrataProps) => HarpStrata
 
-Requires an `ApparatusIds` id object as well as a `PozitionIds`, `PitchIds` and `ActiveIds` object from which to deduce the `DegreeMatrix` and `PitchMatrix` components of the returned `HarpStrata`. Will also determine the counterpart active ids for any `Degree` or `Pitch` set given in `ActiveIds`.
+Requires a `TuningIds` id object as well as a `PozitionIds`, `PitchIds` and `ActiveIds` object from which to deduce the `DegreeMatrix` and `PitchMatrix` components of the returned `HarpStrata`. Will also determine the counterpart active ids for any `Degree` or `Pitch` set given in `ActiveIds`.
 
 ### getPropsForHarpStrata(HarpStrata, 'DEGREE' | 'PICH') => HarpStrataProps
 
