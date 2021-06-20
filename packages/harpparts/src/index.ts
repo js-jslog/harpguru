@@ -12,7 +12,7 @@ export type { Degree } from './degree'
 export type { Pitch } from './pitch'
 export type { Pozition } from './pozition'
 export {
-  getTuningIds as getApparatusIds,
+  getTuningIds,
   getDegreeIds,
   getDegree,
   getPitchIds,

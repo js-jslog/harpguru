@@ -1,6 +1,6 @@
 import React from 'react'
 import type { TuningIds } from 'harpparts'
-import { getApparatusIds } from 'harpparts'
+import { getTuningIds } from 'harpparts'
 
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
@@ -21,7 +21,7 @@ export const useTuningItems = (
   const {
     apparatus: { tuningId: apparatusId },
   } = activeHarpStrata
-  const items = getApparatusIds().map((id, index) => (
+  const items = getTuningIds().map((id, index) => (
     <OptionItem
       key={`${index}`}
       value={id}
