@@ -23,11 +23,11 @@ export const getTuningIds = (
 }
 
 export const getDegreeIds = (
-  degreeIds?: DegreeIds
+  degreeId?: DegreeIds
 ): ReadonlyArray<DegreeIds> => {
   return getOrderedPartIds(
     ORDERED_DEGREES,
-    degreeIds
+    degreeId
   ) as ReadonlyArray<DegreeIds>
 }
 
