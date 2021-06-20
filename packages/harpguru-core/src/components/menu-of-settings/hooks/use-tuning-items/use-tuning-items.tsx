@@ -19,13 +19,13 @@ export const useTuningItems = (
 ): TuningItems => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const {
-    apparatus: { tuningId: apparatusId },
+    apparatus: { tuningId },
   } = activeHarpStrata
   const items = getTuningIds().map((id, index) => (
     <OptionItem
       key={`${index}`}
       value={id}
-      isSelected={id === apparatusId}
+      isSelected={id === tuningId}
       itemTapHandler={itemTapHandler}
       callbackParam={id}
       twoColumns={false}

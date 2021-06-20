@@ -14,11 +14,11 @@ import type { DegreeIds } from '../../degree'
 import { getOrderedPartIds } from './get-ordered-part-ids'
 
 export const getTuningIds = (
-  apparatusIds?: TuningIds
+  tuningId?: TuningIds
 ): ReadonlyArray<TuningIds> => {
   return getOrderedPartIds(
     ORDERED_TUNINGS,
-    apparatusIds
+    tuningId
   ) as ReadonlyArray<TuningIds>
 }
 

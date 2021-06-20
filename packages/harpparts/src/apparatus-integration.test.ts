@@ -13,12 +13,12 @@ test('From each of the available tunings, both the halfstepindex interaction mat
   const matricesHaveParity = (
     matrixA: HarpFaceMatrix<HalfstepIndex>,
     matrixB: HarpFaceMatrix<Interaction>,
-    apparatusId: TuningIds
+    tuningId: TuningIds
   ): boolean => {
     const matrix1dsMatch = matrixA.length === matrixB.length
     const matrix2dsMatch = matrixA[0].length === matrixB[0].length
     if (!matrix1dsMatch || !matrix2dsMatch) {
-      console.log(`Matrices lengths don't match in ${apparatusId}`)
+      console.log(`Matrices lengths don't match in ${tuningId}`)
       return false
     }
 
@@ -34,7 +34,7 @@ test('From each of the available tunings, both the halfstepindex interaction mat
 
             if (noParityA || noParityB) {
               console.log(
-                `Mismatch found at YX (${indexY},${indexX}) in ${apparatusId}`
+                `Mismatch found at YX (${indexY},${indexX}) in ${tuningId}`
               )
             }
 

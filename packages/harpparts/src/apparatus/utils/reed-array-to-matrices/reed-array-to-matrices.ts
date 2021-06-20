@@ -13,7 +13,7 @@ import type { TuningIds, ReedArray } from '../../../tuning'
 
 export const reedArrayToMatrices = (
   reedArray: ReedArray,
-  apparatusId: TuningIds
+  tuningId: TuningIds
 ): Pick<Apparatus, 'halfstepIndexMatrix' | 'interactionMatrix'> => {
   const holeArray = pivotReedArray(reedArray)
     .map(mapReedPairToHole)
@@ -25,7 +25,7 @@ export const reedArrayToMatrices = (
   if (holeErrorMessages.length > 0)
     throw new Error(`
     The following issues with the hole array
-    produced for ${apparatusId} were detected:
+    produced for ${tuningId} were detected:
 
     ${JSON.stringify(holeErrorMessages)}
   `)
