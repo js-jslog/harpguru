@@ -1,4 +1,4 @@
-import { TuningIds, getApparatus, getDegree, DegreeIds } from 'harpparts'
+import { TuningIds, buildApparatus, getDegree, DegreeIds } from 'harpparts'
 
 import { EXAMPLE_DEGREE_MATRICES } from '../../testResources'
 
@@ -8,7 +8,7 @@ const fourth = getDegree(DegreeIds.Fourth)
 const third = getDegree(DegreeIds.Third)
 const seventh = getDegree(DegreeIds.Seventh)
 
-const MAJOR_DIATONIC_APPARATUS = getApparatus(TuningIds.MajorDiatonic)
+const MAJOR_DIATONIC_APPARATUS = buildApparatus(TuningIds.MajorDiatonic)
 
 test('getDegreeMatrix function maps a simple 2d array of 0s to 4th degrees (6) when halfsetp offset is 7', () => {
   const expectedArray = [[fourth], [fourth]]
