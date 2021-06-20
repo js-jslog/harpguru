@@ -5,10 +5,10 @@ import type { TuningIds } from 'harpparts'
 
 import { DisplayModes, GlobalState } from '../../../../types'
 
-export const getNewHarpStrataByApparatusForDispatcher = (
+export const getNewHarpStrataByTuningForDispatcher = (
   global: GlobalState,
   _dipatch: Dispatcher,
-  apparatusId: TuningIds
+  tuningId: TuningIds
 ): Pick<GlobalState, 'activeHarpStrata'> => {
   const { activeHarpStrata, activeDisplayMode } = global
 
@@ -17,7 +17,7 @@ export const getNewHarpStrataByApparatusForDispatcher = (
       activeHarpStrata,
       activeDisplayMode === DisplayModes.Pitch ? 'PITCH' : 'DEGREE'
     ),
-    tuningId: apparatusId,
+    tuningId,
   }
   return {
     activeHarpStrata: getHarpStrata(newHarpStrataProps),
