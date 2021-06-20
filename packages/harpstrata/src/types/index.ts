@@ -26,7 +26,7 @@ export type IsActiveProps = {
 }
 
 export type HarpStrataProps = {
-  readonly apparatusId: ApparatusIds
+  readonly tuningId: ApparatusIds
   readonly pozitionId: PozitionIds
   readonly harpKeyId: PitchIds
   readonly activeIds: ActiveIds

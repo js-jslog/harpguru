@@ -12,7 +12,7 @@ export const getCounterpartDegreeId = (props: Props): DegreeIds => {
   const { pitchId, harpKeyId, pozitionId } = props
 
   const surrogateHarpStrata = getHarpStrata({
-    apparatusId: getApparatusIds()[0],
+    tuningId: getApparatusIds()[0],
     pozitionId,
     harpKeyId,
     activeIds: [pitchId],

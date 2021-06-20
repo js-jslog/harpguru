@@ -11,7 +11,7 @@ test('getHarpStrata can return a first pozition C major diatonic HarpStrata with
   const { activeDegreeIds, activePitchIds } = expectedStrata
 
   const harpStrataPropsBase = {
-    apparatusId: ApparatusIds.MajorDiatonic,
+    tuningId: ApparatusIds.MajorDiatonic,
     pozitionId: PozitionIds.First,
     harpKeyId: PitchIds.C,
     activeIds: [],
@@ -39,7 +39,7 @@ test('getHarpStrata can return a second pozition C major diatonic HarpStrata wit
   const { activeDegreeIds, activePitchIds } = expectedStrata
 
   const harpStrataPropsBase = {
-    apparatusId: ApparatusIds.MajorDiatonic,
+    tuningId: ApparatusIds.MajorDiatonic,
     pozitionId: PozitionIds.Second,
     harpKeyId: PitchIds.C,
     activeIds: [],

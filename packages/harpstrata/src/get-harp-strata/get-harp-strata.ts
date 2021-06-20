@@ -6,9 +6,9 @@ import type { HarpStrataProps, HarpStrata } from '../types'
 import { getDegreeMatrix, getPitchMatrix, getActiveIdsPair } from './utils'
 
 export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
-  const { apparatusId, pozitionId, harpKeyId, activeIds } = props
+  const { tuningId, pozitionId, harpKeyId, activeIds } = props
 
-  const apparatus = getApparatus(apparatusId)
+  const apparatus = getApparatus(tuningId)
   const { rootOffset } = getPozition(pozitionId)
   const pitch = getPitch(harpKeyId)
 

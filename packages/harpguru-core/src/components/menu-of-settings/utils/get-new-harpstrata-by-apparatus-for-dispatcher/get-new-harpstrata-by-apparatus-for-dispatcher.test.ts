@@ -6,7 +6,7 @@ import type { GlobalState } from '../../../../types'
 import { getNewHarpStrataByApparatusForDispatcher } from './get-new-harpstrata-by-apparatus-for-dispatcher'
 
 const baseHarpStrataProps = {
-  apparatusId: ApparatusIds.MajorDiatonic,
+  tuningId: ApparatusIds.MajorDiatonic,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
   activeIds: [],
@@ -14,11 +14,11 @@ const baseHarpStrataProps = {
 const majorDiatonicHarpProps = baseHarpStrataProps
 const countryTunedHarpProps = {
   ...baseHarpStrataProps,
-  apparatusId: ApparatusIds.CountryTuned,
+  tuningId: ApparatusIds.CountryTuned,
 }
 const naturalMinorHarpProps = {
   ...baseHarpStrataProps,
-  apparatusId: ApparatusIds.NaturalMinor,
+  tuningId: ApparatusIds.NaturalMinor,
 }
 
 const majorDiatonicHarp = getHarpStrata(majorDiatonicHarpProps)

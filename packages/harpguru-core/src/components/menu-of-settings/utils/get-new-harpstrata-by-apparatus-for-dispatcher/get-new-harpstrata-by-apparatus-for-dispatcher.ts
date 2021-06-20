@@ -17,7 +17,7 @@ export const getNewHarpStrataByApparatusForDispatcher = (
       activeHarpStrata,
       activeDisplayMode === DisplayModes.Pitch ? 'PITCH' : 'DEGREE'
     ),
-    apparatusId,
+    tuningId: apparatusId,
   }
   return {
     activeHarpStrata: getHarpStrata(newHarpStrataProps),

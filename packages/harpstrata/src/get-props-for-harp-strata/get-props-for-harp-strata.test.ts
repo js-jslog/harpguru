@@ -6,7 +6,7 @@ import { getHarpStrata } from '../get-harp-strata'
 import { getPropsForHarpStrata } from './get-props-for-harp-strata'
 
 const baseHarpStrataProps: HarpStrataProps = {
-  apparatusId: ApparatusIds.MajorDiatonic,
+  tuningId: ApparatusIds.MajorDiatonic,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
   activeIds: [] as ActiveIds,
