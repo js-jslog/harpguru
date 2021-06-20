@@ -6,7 +6,7 @@ import { getTuning } from '../../../access-parts'
 export const buildApparatus = (tuningId: TuningIds): Apparatus => {
   const tuning = getTuning(tuningId)
   return {
-    id: tuning.id,
+    tuningId: tuning.id,
     ...reedArrayToMatrices(tuning.reedArray, tuning.id),
   }
 }

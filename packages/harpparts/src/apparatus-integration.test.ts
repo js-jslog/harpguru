@@ -52,7 +52,7 @@ test('From each of the available tunings, both the halfstepindex interaction mat
       const hasParity = matricesHaveParity(
         apparatus.halfstepIndexMatrix,
         apparatus.interactionMatrix,
-        apparatus.id
+        apparatus.tuningId
       )
       expect(hasParity).toBeTruthy()
     })

@@ -9,7 +9,7 @@ export const useTuningTitle = (
 ): React.ReactElement<OptionLabelProps> => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const {
-    apparatus: { id: apparatusId },
+    apparatus: { tuningId: apparatusId },
   } = activeHarpStrata
   return (
     <OptionLabel

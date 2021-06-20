@@ -19,7 +19,7 @@ export const useTuningItems = (
 ): TuningItems => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const {
-    apparatus: { id: apparatusId },
+    apparatus: { tuningId: apparatusId },
   } = activeHarpStrata
   const items = getApparatusIds().map((id, index) => (
     <OptionItem

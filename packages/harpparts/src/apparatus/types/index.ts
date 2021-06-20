@@ -45,7 +45,7 @@ export type MatrixSpecs = {
 }
 
 export type Apparatus = {
-  readonly id: TuningIds
+  readonly tuningId: TuningIds
   readonly halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex>
   readonly interactionMatrix: HarpFaceMatrix<Interaction>
 }

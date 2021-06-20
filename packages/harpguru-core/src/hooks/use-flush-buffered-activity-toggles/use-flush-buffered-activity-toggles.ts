@@ -13,7 +13,7 @@ export const useFlushBufferedActivityToggles = (): (() => void) => {
     if (bufferedActivityToggles.length === 0) return
 
     const {
-      apparatus: { id: apparatusId },
+      apparatus: { tuningId: apparatusId },
       pozitionId,
       harpKeyId,
       activeDegreeIds,
