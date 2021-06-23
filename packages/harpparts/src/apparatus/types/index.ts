@@ -21,6 +21,7 @@ export type Hole = {
   readonly blow: HalfstepIndex
   readonly draw: HalfstepIndex
   readonly bends: HalfstepIndex[]
+  readonly valvebends?: HalfstepIndex[]
   readonly blowbends: HalfstepIndex[]
   readonly overblows: HalfstepIndex[]
   readonly overdraws: HalfstepIndex[]
