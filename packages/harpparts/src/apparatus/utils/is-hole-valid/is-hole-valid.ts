@@ -15,6 +15,8 @@ export enum HoleErrors {
   NonconsecutiveBlowbends = 'NONCONSECUTIVE_BLOWBENDS',
   NonconsecutiveOverblows = 'NONCONSECUTIVE_OVERBLOWS',
   NonconsecutiveOverdraws = 'NONCONSECUTIVE_OVERDRAWS',
+  ConflictingValvedBlowBends = 'CONFLICTING_VALVED_BLOW_BENDS',
+  ConflictingValvedDrawBends = 'CONFLICTING_VALVED_DRAW_BENDS',
 }
 
 export const isHoleValid = (hole: Hole): HoleErrors[] => {
@@ -58,6 +60,16 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
   )
     ? [HoleErrors.NonconsecutiveOverdraws]
     : []
+  const conflictingValvedBlowBends =
+    hole.valvedblows.length > 0 &&
+    (hole.blowbends.length > 0 || hole.overblows.length > 0)
+      ? [HoleErrors.ConflictingValvedBlowBends]
+      : []
+  const conflictingValvedDrawBends =
+    hole.valveddraws.length > 0 &&
+    (hole.bends.length > 0 || hole.overdraws.length > 0)
+      ? [HoleErrors.ConflictingValvedDrawBends]
+      : []
 
   return [
     ...conflictingDrawBends,
@@ -70,5 +82,7 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
     ...nonconsecutiveBlowbends,
     ...nonconsecutiveOverblows,
     ...nonconsecutiveOverdraws,
+    ...conflictingValvedBlowBends,
+    ...conflictingValvedDrawBends,
   ]
 }

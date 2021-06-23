@@ -303,7 +303,7 @@ test('isHoleValid returns no errors when all the overdraws are consecutively asc
   expect(isHoleValid(hole)).toStrictEqual([])
 })
 
-test('isHoleValid returns an error when the overdraws are not consecutively ascending', () => {
+test('isHoleValid returns an error when there are valved blow bends along with sympathetic blow bends', () => {
   const hole: Hole = {
     blow: 4,
     draw: 0,
@@ -314,10 +314,33 @@ test('isHoleValid returns an error when the overdraws are not consecutively asce
     valvedblows: [],
     valveddraws: [],
   }
-  expect(isHoleValid({ ...hole, overdraws: [6, 5] })).toStrictEqual([
-    HoleErrors.NonconsecutiveOverdraws,
-  ])
-  expect(isHoleValid({ ...hole, overdraws: [5, 7] })).toStrictEqual([
-    HoleErrors.NonconsecutiveOverdraws,
-  ])
+  expect(
+    isHoleValid({ ...hole, blowbends: [1, 2, 3], valvedblows: [3] })
+  ).toStrictEqual([HoleErrors.ConflictingValvedBlowBends])
+  // Strictly this hole doesn't make sense because an overblow would not exist on it,
+  // but it serves the purpose
+  expect(
+    isHoleValid({ ...hole, overblows: [1], valvedblows: [3] })
+  ).toStrictEqual([HoleErrors.ConflictingValvedBlowBends])
+})
+
+test('isHoleValid returns an error when there are valved draw bends along with sympathetic draw bends', () => {
+  const hole: Hole = {
+    blow: 0,
+    draw: 4,
+    bends: [],
+    blowbends: [],
+    overblows: [],
+    overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
+  }
+  expect(
+    isHoleValid({ ...hole, bends: [1, 2, 3], valveddraws: [3] })
+  ).toStrictEqual([HoleErrors.ConflictingValvedDrawBends])
+  // Strictly this hole doesn't make sense because an overdraw would not exist on it,
+  // but it serves the purpose
+  expect(
+    isHoleValid({ ...hole, overdraws: [1], valveddraws: [3] })
+  ).toStrictEqual([HoleErrors.ConflictingValvedDrawBends])
 })
