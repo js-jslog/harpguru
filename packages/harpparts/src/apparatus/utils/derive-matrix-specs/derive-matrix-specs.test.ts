@@ -10,6 +10,8 @@ test('deriveMatrixSpecs works on a simple hole array', () => {
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const holeArray: HoleArray = [
@@ -43,6 +45,8 @@ test('deriveMatrixSpecs works on a simple hole array with some bends', () => {
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const holeArray: HoleArray = [
@@ -76,6 +80,8 @@ test('deriveMatrixSpecs works on a simple hole array with some blowbends', () =>
     blowbends: [10, 11],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const holeArray: HoleArray = [
@@ -109,6 +115,8 @@ test('deriveMatrixSpecs works on a simple hole array with some overblows', () =>
     blowbends: [],
     overblows: [11],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const holeArray: HoleArray = [
@@ -142,6 +150,8 @@ test('deriveMatrixSpecs works on a simple hole array with some overdraws', () =>
     blowbends: [],
     overblows: [],
     overdraws: [11],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const holeArray: HoleArray = [
@@ -175,6 +185,8 @@ test('deriveMatrixSpecs works on a simple hole array with some bends and overblo
     blowbends: [],
     overblows: [12],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const holeArray: HoleArray = [
@@ -208,6 +220,8 @@ test('deriveMatrixSpecs works on a simple hole array with some overdraws and blo
     blowbends: [10, 11],
     overblows: [],
     overdraws: [13],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const holeArray: HoleArray = [

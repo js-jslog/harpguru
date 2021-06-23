@@ -10,6 +10,8 @@ test('mapHoleToIncludeOverbends adds an overblow', () => {
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedHoleOutput: Hole = {
@@ -29,6 +31,8 @@ test('mapHoleToIncludeOverbends adds an overdraw', () => {
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedHoleOutput: Hole = {
@@ -50,6 +54,8 @@ test('mapHoleToIncludeOverbends adds no overbends when the reeds are the same', 
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const actualHoleOutput = mapHoleToIncludeOverbends(holeInput)

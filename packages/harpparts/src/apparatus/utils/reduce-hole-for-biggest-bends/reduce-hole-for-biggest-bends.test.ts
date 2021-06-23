@@ -14,6 +14,8 @@ test('reduceHoleForBiggestBends returns accumulator when no bends', () => {
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const output = reduceHoleForBiggestBends(accumulator, currentValue)
@@ -33,6 +35,8 @@ test('reduceHoleForBiggestBends returns accumulator when all bends are smaller t
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const output = reduceHoleForBiggestBends(accumulator, currentValue)
@@ -52,6 +56,8 @@ test('reduceHoleForBiggestBends adds new biggestBlow when blowbends are bigger',
     blowbends: [10, 11],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedOutput = {
@@ -76,6 +82,8 @@ test('reduceHoleForBiggestBends adds new biggestBlow when overblows are bigger',
     blowbends: [],
     overblows: [11],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedOutput = {
@@ -100,6 +108,8 @@ test('reduceHoleForBiggestBends adds new biggestDraw when bends are bigger', () 
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedOutput = {
@@ -124,6 +134,8 @@ test('reduceHoleForBiggestBends adds new biggestDraw when overdraws are bigger',
     blowbends: [],
     overblows: [],
     overdraws: [11],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedOutput = {

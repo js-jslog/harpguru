@@ -28,6 +28,8 @@ test('mapHoleTierToInteractionid can map a holes blow and draw tiers with no ben
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   const matrixSpecs: MatrixSpecs = {
     height: 2,
@@ -46,6 +48,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
     blowbends: [],
     overblows: [3],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   const matrixSpecs: MatrixSpecs = {
     height: 4,
@@ -66,6 +70,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
     blowbends: [1],
     overblows: [],
     overdraws: [3],
+    valvedblows: [],
+    valveddraws: [],
   }
   const matrixSpecs: MatrixSpecs = {
     height: 4,
@@ -86,6 +92,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
     blowbends: [],
     overblows: [4, 5],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   const matrixSpecs: MatrixSpecs = {
     height: 6,
@@ -108,6 +116,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
     blowbends: [1, 2],
     overblows: [],
     overdraws: [4, 5],
+    valvedblows: [],
+    valveddraws: [],
   }
   const matrixSpecs: MatrixSpecs = {
     height: 6,
@@ -130,6 +140,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw, and undefined bend 
     blowbends: [],
     overblows: [7, 8],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   const matrixSpecs: MatrixSpecs = {
     height: 11,
@@ -157,6 +169,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
     blowbends: [1, 2, 3, 4, 5],
     overblows: [],
     overdraws: [7, 8],
+    valvedblows: [],
+    valveddraws: [],
   }
   const matrixSpecs: MatrixSpecs = {
     height: 11,

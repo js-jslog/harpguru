@@ -10,6 +10,8 @@ test('isHoleValid returns no errors with no bends', () => {
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -22,6 +24,8 @@ test('isHoleValid returns no errors when blowbends and overdraws are both availa
     blowbends: [2],
     overblows: [],
     overdraws: [4],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -34,6 +38,8 @@ test('isHoleValid returns no errors when bends and overblows are both available'
     blowbends: [],
     overblows: [4],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -46,6 +52,8 @@ test('isHoleValid returns an error when bends and overdraws are both available',
     blowbends: [],
     overblows: [],
     overdraws: [2],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.ConflictingDrawBends])
 })
@@ -58,6 +66,8 @@ test('isHoleValid returns an error when blowbends and overblows are both availab
     blowbends: [2],
     overblows: [2],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.ConflictingBlowBends])
 })
@@ -70,6 +80,8 @@ test('isHoleValid returns no errors when there are 5 bends on a hole', () => {
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -82,6 +94,8 @@ test('isHoleValid returns an error when there are more than 5 bends on a hole', 
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyBends])
 })
@@ -94,6 +108,8 @@ test('isHoleValid returns no errors when there are 5 blowbends on a hole', () =>
     blowbends: [1, 2, 3, 4, 5],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -106,6 +122,8 @@ test('isHoleValid returns an error when there are more than 5 blowbends on a hol
     blowbends: [1, 2, 3, 4, 5, 6],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyBlowbends])
 })
@@ -118,6 +136,8 @@ test('isHoleValid returns no errors when there are 2 overblows on a hole', () =>
     blowbends: [],
     overblows: [3, 4],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -130,6 +150,8 @@ test('isHoleValid returns an error when there are more than 2 overblows on a hol
     blowbends: [],
     overblows: [3, 4, 5],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyOverblows])
 })
@@ -142,6 +164,8 @@ test('isHoleValid returns no errors when there are 2 overdraws on a hole', () =>
     blowbends: [],
     overblows: [],
     overdraws: [3, 4],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -154,6 +178,8 @@ test('isHoleValid returns an error when there are more than 2 overdraws on a hol
     blowbends: [],
     overblows: [],
     overdraws: [3, 4, 5],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyOverdraws])
 })
@@ -166,6 +192,8 @@ test('isHoleValid returns no errors when all the bends are consecutively ascendi
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -178,6 +206,8 @@ test('isHoleValid returns an error when the bends are not consecutively ascendin
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid({ ...hole, bends: [2, 1, 0] })).toStrictEqual([
     HoleErrors.NonconsecutiveBends,
@@ -198,6 +228,8 @@ test('isHoleValid returns no errors when all the blowbends are consecutively asc
     blowbends: [1, 2, 3],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -210,6 +242,8 @@ test('isHoleValid returns an error when the blowbends are not consecutively asce
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid({ ...hole, blowbends: [2, 1, 0] })).toStrictEqual([
     HoleErrors.NonconsecutiveBlowbends,
@@ -230,6 +264,8 @@ test('isHoleValid returns no errors when all the overblows are consecutively asc
     blowbends: [],
     overblows: [5, 6],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -242,6 +278,8 @@ test('isHoleValid returns an error when the overblows are not consecutively asce
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid({ ...hole, overblows: [6, 5] })).toStrictEqual([
     HoleErrors.NonconsecutiveOverblows,
@@ -259,6 +297,8 @@ test('isHoleValid returns no errors when all the overdraws are consecutively asc
     blowbends: [],
     overblows: [],
     overdraws: [5, 6],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid(hole)).toStrictEqual([])
 })
@@ -271,6 +311,8 @@ test('isHoleValid returns an error when the overdraws are not consecutively asce
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   expect(isHoleValid({ ...hole, overdraws: [6, 5] })).toStrictEqual([
     HoleErrors.NonconsecutiveOverdraws,

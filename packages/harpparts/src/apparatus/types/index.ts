@@ -24,8 +24,8 @@ export type Hole = {
   readonly blowbends: HalfstepIndex[]
   readonly overblows: HalfstepIndex[]
   readonly overdraws: HalfstepIndex[]
-  readonly valvedblows?: HalfstepIndex[]
-  readonly valveddraws?: HalfstepIndex[]
+  readonly valvedblows: HalfstepIndex[]
+  readonly valveddraws: HalfstepIndex[]
 }
 
 export type HoleArray = [

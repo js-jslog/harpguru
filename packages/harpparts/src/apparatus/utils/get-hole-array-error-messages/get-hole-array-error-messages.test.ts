@@ -11,6 +11,8 @@ test('getHoleArrayErrorMessages returns empty array when no errors are found', (
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   const holeArray = [
     hole,
@@ -37,6 +39,8 @@ test('getHoleArrayErrorMessages returns an array containing an error message for
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   const hole: Hole = {
     blow: 0,
@@ -45,6 +49,8 @@ test('getHoleArrayErrorMessages returns an array containing an error message for
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
   const holeArray = [
     errorHole,

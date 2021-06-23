@@ -11,6 +11,8 @@ test('mapHoleToFilterOverbends returns a single hole unmodified', () => {
       blowbends: [],
       overblows: [],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
   ]
 
@@ -28,6 +30,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative blow
       blowbends: [],
       overblows: [11],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 11,
@@ -36,6 +40,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative blow
       blowbends: [],
       overblows: [13],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 9,
@@ -44,6 +50,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative blow
       blowbends: [],
       overblows: [11],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
   ]
 
@@ -54,6 +62,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative blow
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   expect(mapHoleToFilterOverbends(input[0], 0, input)).toStrictEqual(
@@ -73,6 +83,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative draw
       blowbends: [],
       overblows: [11],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 10,
@@ -81,6 +93,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative draw
       blowbends: [],
       overblows: [12],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 9,
@@ -89,6 +103,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative draw
       blowbends: [],
       overblows: [11],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
   ]
 
@@ -99,6 +115,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative draw
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   expect(mapHoleToFilterOverbends(input[0], 0, input)).toStrictEqual(
@@ -118,6 +136,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative bend
       blowbends: [],
       overblows: [11],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 10,
@@ -126,6 +146,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative bend
       blowbends: [],
       overblows: [15],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 9,
@@ -134,6 +156,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative bend
       blowbends: [],
       overblows: [11],
       overdraws: [],
+      valvedblows: [],
+      valveddraws: [],
     },
   ]
 
@@ -144,6 +168,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative bend
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   expect(mapHoleToFilterOverbends(input[0], 0, input)).toStrictEqual(
@@ -163,6 +189,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
       blowbends: [],
       overblows: [],
       overdraws: [11],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 11,
@@ -171,6 +199,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
       blowbends: [],
       overblows: [],
       overdraws: [12],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 10,
@@ -179,6 +209,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
       blowbends: [],
       overblows: [],
       overdraws: [11],
+      valvedblows: [],
+      valveddraws: [],
     },
   ]
 
@@ -189,6 +221,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   expect(mapHoleToFilterOverbends(input[0], 0, input)).toStrictEqual(
@@ -208,6 +242,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative draw
       blowbends: [],
       overblows: [],
       overdraws: [11],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 12,
@@ -216,6 +252,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative draw
       blowbends: [],
       overblows: [],
       overdraws: [13],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 10,
@@ -224,6 +262,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative draw
       blowbends: [],
       overblows: [],
       overdraws: [11],
+      valvedblows: [],
+      valveddraws: [],
     },
   ]
 
@@ -234,6 +274,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative draw
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   expect(mapHoleToFilterOverbends(input[0], 0, input)).toStrictEqual(
@@ -253,6 +295,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
       blowbends: [],
       overblows: [],
       overdraws: [11],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 14,
@@ -261,6 +305,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
       blowbends: [11, 12, 13],
       overblows: [],
       overdraws: [15],
+      valvedblows: [],
+      valveddraws: [],
     },
     {
       blow: 10,
@@ -269,6 +315,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
       blowbends: [],
       overblows: [],
       overdraws: [11],
+      valvedblows: [],
+      valveddraws: [],
     },
   ]
 
@@ -279,6 +327,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
     blowbends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   expect(mapHoleToFilterOverbends(input[0], 0, input)).toStrictEqual(
