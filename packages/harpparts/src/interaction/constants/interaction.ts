@@ -17,4 +17,9 @@ export const OVERDRAW1: Interaction = { id: InteractionIds.OverDraw1 } as const
 export const OVERDRAW2: Interaction = { id: InteractionIds.OverDraw2 } as const
 export const OVERBLOW1: Interaction = { id: InteractionIds.OverBlow1 } as const
 export const OVERBLOW2: Interaction = { id: InteractionIds.OverBlow2 } as const
-export const VALVEBEND: Interaction = { id: InteractionIds.ValveBend } as const
+export const VALVEDBLOW1: Interaction = {
+  id: InteractionIds.ValvedBlow1,
+} as const
+export const VALVEDDRAW1: Interaction = {
+  id: InteractionIds.ValvedDraw1,
+} as const

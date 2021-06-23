@@ -15,7 +15,8 @@ export enum InteractionIds {
   OverDraw2 = 'OVERDRAW2',
   OverBlow1 = 'OVERBLOW1',
   OverBlow2 = 'OVERBLOW2',
-  ValveBend = 'VALVEBEND',
+  ValvedBlow1 = 'VALVEDBEND1',
+  ValvedDraw1 = 'VALVEDDRAW1',
 }
 
 export type Interaction = {

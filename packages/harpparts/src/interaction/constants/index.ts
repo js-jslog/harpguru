@@ -15,5 +15,6 @@ export {
   OVERDRAW2,
   OVERBLOW1,
   OVERBLOW2,
-  VALVEBEND,
+  VALVEDBLOW1,
+  VALVEDDRAW1,
 } from './interaction'
