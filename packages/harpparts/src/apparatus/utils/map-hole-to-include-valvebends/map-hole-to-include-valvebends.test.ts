@@ -2,60 +2,67 @@ import type { Hole } from '../../types'
 
 import { mapHoleToIncludeValvebends } from './map-hole-to-include-valvebends'
 
-test('mapHoleToIncludeValvebends adds a valvebend when draw is higher than blow', () => {
+test('mapHoleToIncludeValvebends adds a valved blow bend when the blow reed is lower', () => {
   const holeInput: Hole = {
     blow: 9,
     draw: 10,
     bends: [],
     blowbends: [],
-    valvebends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedHoleOutput: Hole = {
     ...holeInput,
-    valvebends: [8],
+    valvedblows: [8],
   }
   const actualHoleOutput = mapHoleToIncludeValvebends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('mapHoleToIncludeValvebends adds a valvebend when blow is higher than draw', () => {
+test('mapHoleToIncludeValvebends adds a valved draw bend when draw reed is lower', () => {
   const holeInput: Hole = {
-    blow: 1,
-    draw: 0,
+    blow: 10,
+    draw: 9,
     bends: [],
     blowbends: [],
-    valvebends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedHoleOutput: Hole = {
     ...holeInput,
-    valvebends: [0],
+    valveddraws: [8],
   }
   const actualHoleOutput = mapHoleToIncludeValvebends(holeInput)
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('mapHoleToIncludeValvebends adds a valvebend when the reeds are the same', () => {
+// The way I see it, if you're halfvalving normally but your hole would have no bends
+// for the unvalved reed then you might as well go full valved.
+// This is an edge case anyway.
+test('mapHoleToIncludeValvebends adds both a valved blow and a valved draw bend when the reeds are the same', () => {
   const holeInput: Hole = {
     blow: 8,
     draw: 8,
     bends: [],
     blowbends: [],
-    valvebends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedHoleOutput: Hole = {
     ...holeInput,
-    valvebends: [7],
+    valvedblows: [7],
+    valveddraws: [7],
   }
   const actualHoleOutput = mapHoleToIncludeValvebends(holeInput)
 
@@ -65,17 +72,18 @@ test('mapHoleToIncludeValvebends adds a valvebend when the reeds are the same', 
 test('mapHoleToIncludeValvebends adds a valvebend when the blow reed is 0', () => {
   const holeInput: Hole = {
     blow: 0,
-    draw: 1,
+    draw: 2,
     bends: [],
     blowbends: [],
-    valvebends: [],
     overblows: [],
     overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
   }
 
   const expectedHoleOutput: Hole = {
     ...holeInput,
-    valvebends: [-1],
+    valvedblows: [-1],
   }
   const actualHoleOutput = mapHoleToIncludeValvebends(holeInput)
 
