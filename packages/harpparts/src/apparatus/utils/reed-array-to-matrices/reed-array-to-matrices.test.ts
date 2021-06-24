@@ -21,6 +21,7 @@ import {
   OVERDRAW1,
   OVERBLOW1,
   VALVEDBLOW1,
+  VALVEDDRAW1,
 } from '../../../interaction'
 import type { Interaction } from '../../../interaction'
 
@@ -304,6 +305,36 @@ test('reedArrayToMatrices works as expected for a half-valved Woozle Minor tuned
   ] as const
 
   const { id, reedArray } = WOOZLE_MINOR_TUNING
+  const matrices = reedArrayToMatrices(reedArray, id, true)
+  expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
+})
+
+test('reedArrayToMatrices works as expected for a half-valved Richter tuned harp', () => {
+  // prettier-ignore
+  const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
+    //    1          2          3          4          5          6          7          8          9         10
+    [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 34        ],
+    [ -1       , 3        , 6        , 11       , 15       , 18       , undefined, 27       , 30       , 35        ],
+    [ 0        , 4        , 7        , 12       , 16       , 19       , 24       , 28       , 31       , 36        ],
+    [ 2        , 7        , 11       , 14       , 17       , 21       , 23       , 26       , 29       , 33        ],
+    [ 1        , 6        , 10       , 13       , undefined, 20       , 22       , 25       , 28       , 32        ],
+    [ undefined, 5        , 9        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ undefined, undefined, 8        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+  ] as const
+
+  // prettier-ignore
+  const interactionMatrix: HarpFaceMatrix<Interaction> = [
+    //     1            2            3            4            5            6            7            8            9           10
+    [ undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , BLOWBEND2   ],
+    [ VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, undefined  , BLOWBEND1  , BLOWBEND1  , BLOWBEND1   ],
+    [ BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW        ],
+    [ DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW        ],
+    [ BEND1      , BEND1      , BEND1      , BEND1      , undefined  , BEND1      , VALVEDDRAW1, VALVEDDRAW1, VALVEDDRAW1, VALVEDDRAW1 ],
+    [ undefined  , BEND2      , BEND2      , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
+    [ undefined  , undefined  , BEND3      , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
+  ] as const
+
+  const { id, reedArray } = MAJOR_DIATONIC_TUNING
   const matrices = reedArrayToMatrices(reedArray, id, true)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
