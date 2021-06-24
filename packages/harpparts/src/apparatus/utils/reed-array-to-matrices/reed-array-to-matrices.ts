@@ -1,8 +1,10 @@
 import { pivotReedArray } from '../pivot-reed-array'
 import { mapReedPairToHole } from '../map-reed-pair-to-hole'
+import { mapHoleToIncludeValvebends } from '../map-hole-to-include-valvebends'
 import { mapHoleToIncludeOverbends } from '../map-hole-to-include-overbends'
 import { mapHoleToIncludeBends } from '../map-hole-to-include-bends'
 import { mapHoleToFilterOverbends } from '../map-hole-to-filter-overbends'
+import { mapHoleToFilterIfValved } from '../map-hole-to-filter-if-valved'
 import { mapHoleTierToInteractionid } from '../map-hole-tier-to-interactionid'
 import { mapHoleTierToHalfstepindex } from '../map-hole-tier-to-halstepindex'
 import { getHoleArrayErrorMessages } from '../get-hole-array-error-messages'
@@ -13,13 +15,16 @@ import type { TuningIds, ReedArray } from '../../../tuning'
 
 export const reedArrayToMatrices = (
   reedArray: ReedArray,
-  tuningId: TuningIds
+  tuningId: TuningIds,
+  isHalfValved?: boolean
 ): Pick<Apparatus, 'halfstepIndexMatrix' | 'interactionMatrix'> => {
   const holeArray = pivotReedArray(reedArray)
     .map(mapReedPairToHole)
     .map(mapHoleToIncludeBends)
     .map(mapHoleToIncludeOverbends)
-    .map(mapHoleToFilterOverbends) as HoleArray
+    .map(mapHoleToFilterOverbends)
+    .map((hole) => (isHalfValved ? mapHoleToIncludeValvebends(hole) : hole))
+    .map(mapHoleToFilterIfValved) as HoleArray
 
   const holeErrorMessages = getHoleArrayErrorMessages(holeArray)
   if (holeErrorMessages.length > 0)
