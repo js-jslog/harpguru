@@ -147,3 +147,55 @@ test('reduceHoleForBiggestBends adds new biggestDraw when overdraws are bigger',
 
   expect(output).toStrictEqual(expectedOutput)
 })
+
+test('reduceHoleForBiggestBends adds new biggestBlow when valved blows are bigger', () => {
+  const accumulator = {
+    biggestBlow: 0,
+    biggestDraw: 0,
+  }
+  const currentValue: Hole = {
+    blow: 9,
+    draw: 10,
+    bends: [],
+    blowbends: [],
+    overblows: [],
+    overdraws: [],
+    valvedblows: [8],
+    valveddraws: [],
+  }
+
+  const expectedOutput = {
+    biggestBlow: 1,
+    biggestDraw: 0,
+  }
+
+  const output = reduceHoleForBiggestBends(accumulator, currentValue)
+
+  expect(output).toStrictEqual(expectedOutput)
+})
+
+test('reduceHoleForBiggestBends adds new biggestDraw when valved draws are bigger', () => {
+  const accumulator = {
+    biggestBlow: 0,
+    biggestDraw: 0,
+  }
+  const currentValue: Hole = {
+    blow: 10,
+    draw: 9,
+    bends: [],
+    blowbends: [],
+    overblows: [],
+    overdraws: [],
+    valvedblows: [],
+    valveddraws: [8],
+  }
+
+  const expectedOutput = {
+    biggestBlow: 0,
+    biggestDraw: 1,
+  }
+
+  const output = reduceHoleForBiggestBends(accumulator, currentValue)
+
+  expect(output).toStrictEqual(expectedOutput)
+})

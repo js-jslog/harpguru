@@ -14,11 +14,12 @@ export const reduceHoleForBiggestBends = (
     blowbends: { length: currBlowbends },
     overblows: { length: currOverblows },
     overdraws: { length: currOverdraws },
+    valvedblows: { length: currValvedblows },
+    valveddraws: { length: currValveddraws },
   } = currentValue
   const { biggestBlow: accBigBlow, biggestDraw: accBigDraw } = accumulator
-  const currBigBlow =
-    currBlowbends > currOverblows ? currBlowbends : currOverblows
-  const currBigDraw = currBends > currOverdraws ? currBends : currOverdraws
+  const currBigBlow = currBlowbends || currOverblows || currValvedblows
+  const currBigDraw = currBends || currOverdraws || currValveddraws
 
   return {
     ...accumulator,
