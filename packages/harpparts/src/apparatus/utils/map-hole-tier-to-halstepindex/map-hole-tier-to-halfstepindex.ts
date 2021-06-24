@@ -7,21 +7,34 @@ export const mapHoleTierToHalfstepindex = (
   hole: Hole
 ): HalfstepIndex | undefined => {
   const drawRow = blowRow + 1
-  const { bends, blowbends, overblows, overdraws } = hole
+  const {
+    bends,
+    blowbends,
+    overblows,
+    overdraws,
+    valvedblows,
+    valveddraws,
+  } = hole
   if (currentRow === blowRow) return hole.blow
   if (currentRow === drawRow) return hole.draw
-  if (currentRow < blowRow)
+  if (currentRow < blowRow) {
+    const distance = blowRow - currentRow - 1
     return (
-      [...blowbends].reverse()[blowRow - currentRow - 1] ||
-      overblows[blowRow - currentRow - 1] ||
+      [...blowbends].reverse()[distance] ||
+      overblows[distance] ||
+      valvedblows.reverse()[distance] ||
       undefined
     )
-  if (currentRow > drawRow)
+  }
+  if (currentRow > drawRow) {
+    const distance = currentRow - drawRow - 1
     return (
-      [...bends].reverse()[currentRow - drawRow - 1] ||
-      overdraws[currentRow - drawRow - 1] ||
+      [...bends].reverse()[distance] ||
+      overdraws[distance] ||
+      valveddraws.reverse()[distance] ||
       undefined
     )
+  }
 
   const errorMessage = `
     Current row is somehow not related to blow and draw rows as expected.
