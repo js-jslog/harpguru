@@ -267,7 +267,7 @@ test('reedArrayToMatrices works as expected for a half-valved Power Draw tuned h
 
   // prettier-ignore
   const interactionMatrix: HarpFaceMatrix<Interaction> = [
-    //    1          2          3          4          5          6          7          8          9         10
+    //     1            2            3            4            5            6            7            8            9           10
     [ VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1 ],
     [ BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW        ],
     [ DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW        ],
@@ -295,7 +295,7 @@ test('reedArrayToMatrices works as expected for a half-valved Woozle Minor tuned
 
   // prettier-ignore
   const interactionMatrix: HarpFaceMatrix<Interaction> = [
-    //    1          2          3          4          5          6          7          8          9         10
+    //     1            2            3            4            5            6            7            8            9           10
     [ VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1 ],
     [ BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW        ],
     [ DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW        ],
