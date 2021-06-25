@@ -5,8 +5,8 @@ export const mapReedPairToHole = (reedPair: ReedPair): Hole => {
   return {
     blow,
     draw,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],

@@ -6,8 +6,8 @@ test('mapHoleToFilterIfValved returns a hole without valved bends unchanged', ()
   const input1: Hole = {
     blow: 9,
     draw: 10,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [11],
     overdraws: [],
     valvedblows: [],
@@ -20,8 +20,8 @@ test('mapHoleToFilterIfValved returns a hole without valved bends unchanged', ()
   const input2: Hole = {
     blow: 9,
     draw: 11,
-    bends: [10],
     blowbends: [],
+    bends: [10],
     overblows: [12],
     overdraws: [],
     valvedblows: [],
@@ -34,8 +34,8 @@ test('mapHoleToFilterIfValved returns a hole without valved bends unchanged', ()
   const input3: Hole = {
     blow: 10,
     draw: 8,
-    bends: [],
     blowbends: [9],
+    bends: [],
     overblows: [],
     overdraws: [11],
     valvedblows: [],
@@ -50,8 +50,8 @@ test('mapHoleToFilterIfValved removes blow type bends when a valved blow bend is
   const input1: Hole = {
     blow: 9,
     draw: 11,
-    bends: [10],
     blowbends: [],
+    bends: [10],
     overblows: [12],
     overdraws: [],
     valvedblows: [8],
@@ -70,8 +70,8 @@ test('mapHoleToFilterIfValved removes blow type bends when a valved blow bend is
   const input2: Hole = {
     blow: 10,
     draw: 7,
-    bends: [],
     blowbends: [8, 9],
+    bends: [],
     overblows: [],
     overdraws: [11],
     valvedblows: [9],
@@ -86,8 +86,8 @@ test('mapHoleToFilterIfValved removes draw type bends when a valved draw bend is
   const input1: Hole = {
     blow: 10,
     draw: 7,
-    bends: [],
     blowbends: [8, 9],
+    bends: [],
     overblows: [],
     overdraws: [11],
     valvedblows: [],
@@ -106,8 +106,8 @@ test('mapHoleToFilterIfValved removes draw type bends when a valved draw bend is
   const input2: Hole = {
     blow: 9,
     draw: 11,
-    bends: [10],
     blowbends: [],
+    bends: [10],
     overblows: [12],
     overdraws: [],
     valvedblows: [],
@@ -125,8 +125,8 @@ test('mapHoleToFilterIfValved removes draw & blow type bends when both valve ben
   const input1: Hole = {
     blow: 10,
     draw: 7,
-    bends: [],
     blowbends: [8, 9],
+    bends: [],
     overblows: [],
     overdraws: [11],
     valvedblows: [9],
@@ -139,8 +139,8 @@ test('mapHoleToFilterIfValved removes draw & blow type bends when both valve ben
   const input2: Hole = {
     blow: 9,
     draw: 11,
-    bends: [10],
     blowbends: [],
+    bends: [10],
     overblows: [12],
     overdraws: [],
     valvedblows: [8],

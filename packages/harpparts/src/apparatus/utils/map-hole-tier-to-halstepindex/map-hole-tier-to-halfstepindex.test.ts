@@ -6,8 +6,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow and draw tiers with no ben
   const hole: Hole = {
     blow: 0,
     draw: 1,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -26,8 +26,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 0,
     draw: 2,
-    bends: [1],
     blowbends: [],
+    bends: [1],
     overblows: [3],
     overdraws: [],
     valvedblows: [],
@@ -50,8 +50,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 2,
     draw: 0,
-    bends: [],
     blowbends: [1],
+    bends: [],
     overblows: [],
     overdraws: [3],
     valvedblows: [],
@@ -76,8 +76,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 0,
     draw: 3,
-    bends: [1, 2],
     blowbends: [],
+    bends: [1, 2],
     overblows: [4, 5],
     overdraws: [],
     valvedblows: [],
@@ -104,8 +104,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 3,
     draw: 0,
-    bends: [],
     blowbends: [1, 2],
+    bends: [],
     overblows: [],
     overdraws: [4, 5],
     valvedblows: [],
@@ -136,8 +136,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw, and undefined bend 
   const hole: Hole = {
     blow: 0,
     draw: 3,
-    bends: [1, 2],
     blowbends: [],
+    bends: [1, 2],
     overblows: [4, 5],
     overdraws: [],
     valvedblows: [],
@@ -166,8 +166,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 3,
     draw: 0,
-    bends: [],
     blowbends: [1, 2],
+    bends: [],
     overblows: [],
     overdraws: [4, 5],
     valvedblows: [],
@@ -200,8 +200,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and valvedblows tier
   const hole: Hole = {
     blow: 0,
     draw: 2,
-    bends: [1],
     blowbends: [],
+    bends: [1],
     overblows: [],
     overdraws: [],
     valvedblows: [-1],
@@ -224,8 +224,8 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and valveddraws tier
   const hole: Hole = {
     blow: 15,
     draw: 13,
-    bends: [],
     blowbends: [14],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],

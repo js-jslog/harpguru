@@ -6,8 +6,8 @@ test('mapHoleToIncludeBends adds no bends', () => {
   const holeInput: Hole = {
     blow: 9,
     draw: 10,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -23,8 +23,8 @@ test('mapHoleToIncludeBends adds a simple single bend', () => {
   const holeInput: Hole = {
     blow: 0,
     draw: 2,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -33,8 +33,8 @@ test('mapHoleToIncludeBends adds a simple single bend', () => {
   const expectedHoleOutput: Hole = {
     blow: 0,
     draw: 2,
-    bends: [1],
     blowbends: [],
+    bends: [1],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -50,8 +50,8 @@ test('mapHoleToIncludeBends adds a triple bend', () => {
   const holeInput: Hole = {
     blow: 25,
     draw: 29,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -60,8 +60,8 @@ test('mapHoleToIncludeBends adds a triple bend', () => {
   const expectedHoleOutput: Hole = {
     blow: 25,
     draw: 29,
-    bends: [26, 27, 28],
     blowbends: [],
+    bends: [26, 27, 28],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -77,8 +77,8 @@ test('mapHoleToIncludeBends adds no blow bends', () => {
   const holeInput: Hole = {
     blow: 20,
     draw: 19,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -94,8 +94,8 @@ test('mapHoleToIncludeBends adds a simple single blow bend', () => {
   const holeInput: Hole = {
     blow: 9,
     draw: 11,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -104,8 +104,8 @@ test('mapHoleToIncludeBends adds a simple single blow bend', () => {
   const expectedHoleOutput: Hole = {
     blow: 9,
     draw: 11,
-    bends: [10],
     blowbends: [],
+    bends: [10],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -121,8 +121,8 @@ test('mapHoleToIncludeBends adds a triple blow bend', () => {
   const holeInput: Hole = {
     blow: 12,
     draw: 8,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -131,8 +131,8 @@ test('mapHoleToIncludeBends adds a triple blow bend', () => {
   const expectedHoleOutput: Hole = {
     blow: 12,
     draw: 8,
-    bends: [],
     blowbends: [9, 10, 11],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -148,8 +148,8 @@ test('mapHoleToIncludeBends adds no bends on 2 identical reeds', () => {
   const holeInput: Hole = {
     blow: 18,
     draw: 18,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],

@@ -7,8 +7,8 @@ test('getHoleArrayErrorMessages returns empty array when no errors are found', (
   const hole: Hole = {
     blow: 0,
     draw: 1,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -35,8 +35,8 @@ test('getHoleArrayErrorMessages returns an array containing an error message for
   const errorHole: Hole = {
     blow: 0,
     draw: 3,
-    bends: [2, 1],
     blowbends: [],
+    bends: [2, 1],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -45,8 +45,8 @@ test('getHoleArrayErrorMessages returns an array containing an error message for
   const hole: Hole = {
     blow: 0,
     draw: 1,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],

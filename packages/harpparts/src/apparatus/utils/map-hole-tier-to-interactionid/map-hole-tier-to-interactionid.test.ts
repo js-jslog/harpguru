@@ -26,8 +26,8 @@ test('mapHoleTierToInteractionid can map a holes blow and draw tiers with no ben
   const hole: Hole = {
     blow: 0,
     draw: 1,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -46,8 +46,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 0,
     draw: 2,
-    bends: [1],
     blowbends: [],
+    bends: [1],
     overblows: [3],
     overdraws: [],
     valvedblows: [],
@@ -68,8 +68,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 2,
     draw: 0,
-    bends: [],
     blowbends: [1],
+    bends: [],
     overblows: [],
     overdraws: [3],
     valvedblows: [],
@@ -90,8 +90,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 0,
     draw: 3,
-    bends: [1, 2],
     blowbends: [],
+    bends: [1, 2],
     overblows: [4, 5],
     overdraws: [],
     valvedblows: [],
@@ -114,8 +114,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 3,
     draw: 0,
-    bends: [],
     blowbends: [1, 2],
+    bends: [],
     overblows: [],
     overdraws: [4, 5],
     valvedblows: [],
@@ -138,8 +138,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw, and undefined bend 
   const hole: Hole = {
     blow: 0,
     draw: 6,
-    bends: [1, 2, 3, 4, 5],
     blowbends: [],
+    bends: [1, 2, 3, 4, 5],
     overblows: [7, 8],
     overdraws: [],
     valvedblows: [],
@@ -167,8 +167,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
   const hole: Hole = {
     blow: 6,
     draw: 0,
-    bends: [],
     blowbends: [1, 2, 3, 4, 5],
+    bends: [],
     overblows: [],
     overdraws: [7, 8],
     valvedblows: [],
@@ -196,8 +196,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and valve blow bend 
   const hole: Hole = {
     blow: 0,
     draw: 2,
-    bends: [1],
     blowbends: [],
+    bends: [1],
     overblows: [],
     overdraws: [],
     valvedblows: [-1],
@@ -218,8 +218,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and valved draw bend
   const hole: Hole = {
     blow: 2,
     draw: 0,
-    bends: [],
     blowbends: [1],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],

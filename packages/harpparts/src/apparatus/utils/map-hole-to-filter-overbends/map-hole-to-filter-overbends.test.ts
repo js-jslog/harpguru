@@ -7,8 +7,8 @@ test('mapHoleToFilterOverbends returns a single hole unmodified', () => {
     {
       blow: 9,
       draw: 10,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [],
       overdraws: [],
       valvedblows: [],
@@ -26,8 +26,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative blow
     {
       blow: 9,
       draw: 10,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [11],
       overdraws: [],
       valvedblows: [],
@@ -36,8 +36,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative blow
     {
       blow: 11,
       draw: 12,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [13],
       overdraws: [],
       valvedblows: [],
@@ -46,8 +46,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative blow
     {
       blow: 9,
       draw: 10,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [11],
       overdraws: [],
       valvedblows: [],
@@ -58,8 +58,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative blow
   const expectedOutput = {
     blow: 9,
     draw: 10,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -79,8 +79,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative draw
     {
       blow: 9,
       draw: 10,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [11],
       overdraws: [],
       valvedblows: [],
@@ -89,8 +89,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative draw
     {
       blow: 10,
       draw: 11,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [12],
       overdraws: [],
       valvedblows: [],
@@ -99,8 +99,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative draw
     {
       blow: 9,
       draw: 10,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [11],
       overdraws: [],
       valvedblows: [],
@@ -111,8 +111,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative draw
   const expectedOutput = {
     blow: 9,
     draw: 10,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -132,8 +132,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative bend
     {
       blow: 9,
       draw: 10,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [11],
       overdraws: [],
       valvedblows: [],
@@ -142,8 +142,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative bend
     {
       blow: 10,
       draw: 14,
-      bends: [11, 12, 13],
       blowbends: [],
+      bends: [11, 12, 13],
       overblows: [15],
       overdraws: [],
       valvedblows: [],
@@ -152,8 +152,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative bend
     {
       blow: 9,
       draw: 10,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [11],
       overdraws: [],
       valvedblows: [],
@@ -164,8 +164,8 @@ test('mapHoleToFilterOverbends filters an overblow if theres an alternative bend
   const expectedOutput = {
     blow: 9,
     draw: 10,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -185,8 +185,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
     {
       blow: 10,
       draw: 9,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [],
       overdraws: [11],
       valvedblows: [],
@@ -195,8 +195,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
     {
       blow: 11,
       draw: 10,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [],
       overdraws: [12],
       valvedblows: [],
@@ -205,8 +205,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
     {
       blow: 10,
       draw: 9,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [],
       overdraws: [11],
       valvedblows: [],
@@ -217,8 +217,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
   const expectedOutput = {
     blow: 10,
     draw: 9,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -238,8 +238,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative draw
     {
       blow: 10,
       draw: 9,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [],
       overdraws: [11],
       valvedblows: [],
@@ -248,8 +248,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative draw
     {
       blow: 12,
       draw: 11,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [],
       overdraws: [13],
       valvedblows: [],
@@ -258,8 +258,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative draw
     {
       blow: 10,
       draw: 9,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [],
       overdraws: [11],
       valvedblows: [],
@@ -270,8 +270,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative draw
   const expectedOutput = {
     blow: 10,
     draw: 9,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -291,8 +291,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
     {
       blow: 10,
       draw: 9,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [],
       overdraws: [11],
       valvedblows: [],
@@ -301,8 +301,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
     {
       blow: 14,
       draw: 10,
-      bends: [],
       blowbends: [11, 12, 13],
+      bends: [],
       overblows: [],
       overdraws: [15],
       valvedblows: [],
@@ -311,8 +311,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
     {
       blow: 10,
       draw: 9,
-      bends: [],
       blowbends: [],
+      bends: [],
       overblows: [],
       overdraws: [11],
       valvedblows: [],
@@ -323,8 +323,8 @@ test('mapHoleToFilterOverbends filters an overdraw if theres an alternative blow
   const expectedOutput = {
     blow: 10,
     draw: 9,
-    bends: [],
     blowbends: [],
+    bends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
