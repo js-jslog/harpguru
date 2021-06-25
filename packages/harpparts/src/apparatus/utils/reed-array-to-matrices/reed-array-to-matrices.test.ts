@@ -13,13 +13,13 @@ import {
 import {
   BLOW,
   DRAW,
-  BEND1,
-  BEND2,
-  BEND3,
   BLOWBEND1,
   BLOWBEND2,
-  OVERDRAW1,
+  DRAWBEND1,
+  DRAWBEND2,
+  DRAWBEND3,
   OVERBLOW1,
+  OVERDRAW1,
   VALVEDBLOW1,
   VALVEDDRAW1,
 } from '../../../interaction'
@@ -70,9 +70,9 @@ test('reedArrayToMatrices works as expected for a Richter tuned harp', () => {
     [ OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1, undefined, BLOWBEND1, BLOWBEND1, BLOWBEND1 ],
     [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
     [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
-    [ BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , OVERDRAW1, undefined, OVERDRAW1, OVERDRAW1 ],
-    [ undefined, BEND2    , BEND2    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
-    [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, undefined, DRAWBEND1, OVERDRAW1, undefined, OVERDRAW1, OVERDRAW1 ],
+    [ undefined, DRAWBEND2, DRAWBEND2, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
   const { id, reedArray } = MAJOR_DIATONIC_TUNING
@@ -100,9 +100,9 @@ test('reedArrayToMatrices works as expected for a Country tuned harp', () => {
     [ OVERBLOW1, undefined, undefined, OVERBLOW1, undefined, OVERBLOW1, undefined, BLOWBEND1, BLOWBEND1, BLOWBEND1 ],
     [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
     [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
-    [ BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , OVERDRAW1, undefined, OVERDRAW1, OVERDRAW1 ],
-    [ undefined, BEND2    , BEND2    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
-    [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, OVERDRAW1, undefined, OVERDRAW1, OVERDRAW1 ],
+    [ undefined, DRAWBEND2, DRAWBEND2, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
   // prettier-ignore
 
@@ -131,9 +131,9 @@ test('reedArrayToMatrices works as expected for a Natrual Minor tuned harp', () 
     [ undefined, undefined, OVERBLOW1, undefined, OVERBLOW1, undefined, BLOWBEND1, undefined, BLOWBEND1, BLOWBEND1 ],
     [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
     [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
-    [ BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , OVERDRAW1, OVERDRAW1, OVERDRAW1, OVERDRAW1 ],
-    [ undefined, BEND2    , BEND2    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
-    [ undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, OVERDRAW1, OVERDRAW1, OVERDRAW1, OVERDRAW1 ],
+    [ undefined, DRAWBEND2, DRAWBEND2, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
   const { id, reedArray } = NATURAL_MINOR_TUNING
@@ -159,9 +159,9 @@ test('reedArrayToMatrices works as expected for a Power Bender tuned harp', () =
     [ OVERBLOW1, undefined, undefined, undefined, undefined, OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1 ],
     [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
     [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
-    [ BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1     ],
-    [ undefined, BEND2    , BEND2    , undefined, undefined, undefined, undefined, undefined, BEND2    , BEND2     ],
-    [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1 ],
+    [ undefined, DRAWBEND2, DRAWBEND2, undefined, undefined, undefined, undefined, undefined, DRAWBEND2, DRAWBEND2 ],
+    [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
   const { id, reedArray } = POWER_BENDER_TUNING
@@ -187,9 +187,9 @@ test('reedArrayToMatrices works as expected for a Power Draw tuned harp', () => 
     [ OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1 ],
     [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
     [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
-    [ BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , BEND1    , BEND1    , BEND1     ],
-    [ undefined, BEND2    , BEND2    , undefined, undefined, undefined, undefined, undefined, BEND2    , BEND2     ],
-    [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+    [ DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, undefined, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1 ],
+    [ undefined, DRAWBEND2, DRAWBEND2, undefined, undefined, undefined, undefined, undefined, DRAWBEND2, DRAWBEND2 ],
+    [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
   const { id, reedArray } = POWER_DRAW_TUNING
@@ -215,9 +215,9 @@ test('reedArrayToMatrices works as expected for a Wilde tuned harp', () => {
     [ OVERBLOW1, undefined, undefined, OVERBLOW1, undefined, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1 ],
     [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
     [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
-    [ BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , BEND1    , BEND1    , BEND1     ],
-    [ undefined, BEND2    , BEND2    , undefined, undefined, BEND2    , BEND2    , undefined, BEND2    , BEND2     ],
-    [ undefined, undefined, BEND3    , undefined, undefined, undefined, BEND3    , undefined, undefined, undefined ],
+    [ DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, undefined, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1 ],
+    [ undefined, DRAWBEND2, DRAWBEND2, undefined, undefined, DRAWBEND2, DRAWBEND2, undefined, DRAWBEND2, DRAWBEND2 ],
+    [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, DRAWBEND3, undefined, undefined, undefined ],
   ] as const
 
   const { id, reedArray } = WILDE_TUNED_TUNING
@@ -243,9 +243,9 @@ test('reedArrayToMatrices works as expected for a Woozle Minor tuned harp', () =
     [ undefined, undefined, OVERBLOW1, undefined, OVERBLOW1, undefined, OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1 ],
     [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
     [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
-    [ BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , BEND1     ],
-    [ undefined, BEND2    , BEND2    , undefined, undefined, undefined, undefined, undefined, BEND2    , BEND2     ],
-    [ undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, BEND3    , undefined ],
+    [ DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, undefined, DRAWBEND1, DRAWBEND1, DRAWBEND1 ],
+    [ undefined, DRAWBEND2, DRAWBEND2, undefined, undefined, undefined, undefined, undefined, DRAWBEND2, DRAWBEND2 ],
+    [ undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, DRAWBEND3, undefined ],
   ] as const
 
   const { id, reedArray } = WOOZLE_MINOR_TUNING
@@ -271,9 +271,9 @@ test('reedArrayToMatrices works as expected for a half-valved Power Draw tuned h
     [ VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1 ],
     [ BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW        ],
     [ DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW        ],
-    [ BEND1      , BEND1      , BEND1      , BEND1      , undefined  , BEND1      , BEND1      , BEND1      , BEND1      , BEND1       ],
-    [ undefined  , BEND2      , BEND2      , undefined  , undefined  , undefined  , undefined  , undefined  , BEND2      , BEND2       ],
-    [ undefined  , undefined  , BEND3      , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
+    [ DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , undefined  , DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , DRAWBEND1   ],
+    [ undefined  , DRAWBEND2  , DRAWBEND2  , undefined  , undefined  , undefined  , undefined  , undefined  , DRAWBEND2  , DRAWBEND2   ],
+    [ undefined  , undefined  , DRAWBEND3  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
   ] as const
 
   const { id, reedArray } = POWER_DRAW_TUNING
@@ -299,9 +299,9 @@ test('reedArrayToMatrices works as expected for a half-valved Woozle Minor tuned
     [ VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1 ],
     [ BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW        ],
     [ DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW        ],
-    [ BEND1      , BEND1      , BEND1      , BEND1      , BEND1      , BEND1      , undefined  , BEND1      , BEND1      , BEND1       ],
-    [ undefined  , BEND2      , BEND2      , undefined  , undefined  , undefined  , undefined  , undefined  , BEND2      , BEND2       ],
-    [ undefined  , BEND3      , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , BEND3      , undefined   ],
+    [ DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , undefined  , DRAWBEND1  , DRAWBEND1  , DRAWBEND1   ],
+    [ undefined  , DRAWBEND2  , DRAWBEND2  , undefined  , undefined  , undefined  , undefined  , undefined  , DRAWBEND2  , DRAWBEND2   ],
+    [ undefined  , DRAWBEND3  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , DRAWBEND3  , undefined   ],
   ] as const
 
   const { id, reedArray } = WOOZLE_MINOR_TUNING
@@ -329,9 +329,9 @@ test('reedArrayToMatrices works as expected for a half-valved Richter tuned harp
     [ VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, VALVEDBLOW1, undefined  , BLOWBEND1  , BLOWBEND1  , BLOWBEND1   ],
     [ BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW       , BLOW        ],
     [ DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW       , DRAW        ],
-    [ BEND1      , BEND1      , BEND1      , BEND1      , undefined  , BEND1      , VALVEDDRAW1, VALVEDDRAW1, VALVEDDRAW1, VALVEDDRAW1 ],
-    [ undefined  , BEND2      , BEND2      , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
-    [ undefined  , undefined  , BEND3      , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
+    [ DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , DRAWBEND1  , undefined  , DRAWBEND1  , VALVEDDRAW1, VALVEDDRAW1, VALVEDDRAW1, VALVEDDRAW1 ],
+    [ undefined  , DRAWBEND2  , DRAWBEND2  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
+    [ undefined  , undefined  , DRAWBEND3  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
   ] as const
 
   const { id, reedArray } = MAJOR_DIATONIC_TUNING

@@ -2,20 +2,20 @@ import type { Hole, MatrixSpecs } from '../../types'
 import {
   BLOW,
   DRAW,
-  BEND1,
-  BEND2,
-  BEND3,
-  BEND4,
-  BEND5,
   BLOWBEND1,
   BLOWBEND2,
   BLOWBEND3,
   BLOWBEND4,
   BLOWBEND5,
-  OVERDRAW1,
-  OVERDRAW2,
+  DRAWBEND1,
+  DRAWBEND2,
+  DRAWBEND3,
+  DRAWBEND4,
+  DRAWBEND5,
   OVERBLOW1,
   OVERBLOW2,
+  OVERDRAW1,
+  OVERDRAW2,
   VALVEDBLOW1,
   VALVEDDRAW1,
 } from '../../../interaction'
@@ -61,7 +61,7 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
   expect(mapHoleTierToInteractionid(matrixSpecs, 0, hole)).toBe(OVERBLOW1)
   expect(mapHoleTierToInteractionid(matrixSpecs, 1, hole)).toBe(BLOW)
   expect(mapHoleTierToInteractionid(matrixSpecs, 2, hole)).toBe(DRAW)
-  expect(mapHoleTierToInteractionid(matrixSpecs, 3, hole)).toBe(BEND1)
+  expect(mapHoleTierToInteractionid(matrixSpecs, 3, hole)).toBe(DRAWBEND1)
 })
 
 test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with single level bends present (upper harp)', () => {
@@ -106,8 +106,8 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with 
   expect(mapHoleTierToInteractionid(matrixSpecs, 1, hole)).toBe(OVERBLOW1)
   expect(mapHoleTierToInteractionid(matrixSpecs, 2, hole)).toBe(BLOW)
   expect(mapHoleTierToInteractionid(matrixSpecs, 3, hole)).toBe(DRAW)
-  expect(mapHoleTierToInteractionid(matrixSpecs, 4, hole)).toBe(BEND1)
-  expect(mapHoleTierToInteractionid(matrixSpecs, 5, hole)).toBe(BEND2)
+  expect(mapHoleTierToInteractionid(matrixSpecs, 4, hole)).toBe(DRAWBEND1)
+  expect(mapHoleTierToInteractionid(matrixSpecs, 5, hole)).toBe(DRAWBEND2)
 })
 
 test('mapHoleTierToInteractionid can map a holes blow, draw and bend tiers with multi level bends present (upper harp)', () => {
@@ -155,11 +155,11 @@ test('mapHoleTierToInteractionid can map a holes blow, draw, and undefined bend 
   expect(mapHoleTierToInteractionid(matrixSpecs, 2, hole)).toBe(OVERBLOW1)
   expect(mapHoleTierToInteractionid(matrixSpecs, 3, hole)).toBe(BLOW)
   expect(mapHoleTierToInteractionid(matrixSpecs, 4, hole)).toBe(DRAW)
-  expect(mapHoleTierToInteractionid(matrixSpecs, 5, hole)).toBe(BEND1)
-  expect(mapHoleTierToInteractionid(matrixSpecs, 6, hole)).toBe(BEND2)
-  expect(mapHoleTierToInteractionid(matrixSpecs, 7, hole)).toBe(BEND3)
-  expect(mapHoleTierToInteractionid(matrixSpecs, 8, hole)).toBe(BEND4)
-  expect(mapHoleTierToInteractionid(matrixSpecs, 9, hole)).toBe(BEND5)
+  expect(mapHoleTierToInteractionid(matrixSpecs, 5, hole)).toBe(DRAWBEND1)
+  expect(mapHoleTierToInteractionid(matrixSpecs, 6, hole)).toBe(DRAWBEND2)
+  expect(mapHoleTierToInteractionid(matrixSpecs, 7, hole)).toBe(DRAWBEND3)
+  expect(mapHoleTierToInteractionid(matrixSpecs, 8, hole)).toBe(DRAWBEND4)
+  expect(mapHoleTierToInteractionid(matrixSpecs, 9, hole)).toBe(DRAWBEND5)
   expect(mapHoleTierToInteractionid(matrixSpecs, 10, hole)).toBeFalsy()
 })
 
@@ -211,7 +211,7 @@ test('mapHoleTierToInteractionid can map a holes blow, draw and valve blow bend 
   expect(mapHoleTierToInteractionid(matrixSpecs, 0, hole)).toBe(VALVEDBLOW1)
   expect(mapHoleTierToInteractionid(matrixSpecs, 1, hole)).toBe(BLOW)
   expect(mapHoleTierToInteractionid(matrixSpecs, 2, hole)).toBe(DRAW)
-  expect(mapHoleTierToInteractionid(matrixSpecs, 3, hole)).toBe(BEND1)
+  expect(mapHoleTierToInteractionid(matrixSpecs, 3, hole)).toBe(DRAWBEND1)
 })
 
 test('mapHoleTierToInteractionid can map a holes blow, draw and valved draw bend with single level bends present (upper harp)', () => {

@@ -3,20 +3,20 @@ import type { Interaction } from '../../../interaction'
 import {
   BLOW,
   DRAW,
-  BEND1,
-  BEND2,
-  BEND3,
-  BEND4,
-  BEND5,
   BLOWBEND1,
   BLOWBEND2,
   BLOWBEND3,
   BLOWBEND4,
   BLOWBEND5,
-  OVERDRAW1,
-  OVERDRAW2,
+  DRAWBEND1,
+  DRAWBEND2,
+  DRAWBEND3,
+  DRAWBEND4,
+  DRAWBEND5,
   OVERBLOW1,
   OVERBLOW2,
+  OVERDRAW1,
+  OVERDRAW2,
   VALVEDBLOW1,
   VALVEDDRAW1,
 } from '../../../interaction'
@@ -45,7 +45,13 @@ export const mapHoleTierToInteractionid = (
     BLOWBEND4,
     BLOWBEND5,
   ]
-  const drawbendInteractions = [BEND1, BEND2, BEND3, BEND4, BEND5]
+  const drawbendInteractions = [
+    DRAWBEND1,
+    DRAWBEND2,
+    DRAWBEND3,
+    DRAWBEND4,
+    DRAWBEND5,
+  ]
   const overdrawInteractions = [OVERDRAW1, OVERDRAW2]
   const valvedDrawInteractions = [VALVEDDRAW1]
 
