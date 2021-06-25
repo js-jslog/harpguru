@@ -7,7 +7,7 @@ test('mapHoleTierToHalfstepindex can map a holes blow and draw tiers with no ben
     blow: 0,
     draw: 1,
     blowbends: [],
-    bends: [],
+    drawbends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],
@@ -27,7 +27,7 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blow: 0,
     draw: 2,
     blowbends: [],
-    bends: [1],
+    drawbends: [1],
     overblows: [3],
     overdraws: [],
     valvedblows: [],
@@ -43,7 +43,9 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
   )
   expect(mapHoleTierToHalfstepindex(matrixSpecs, 1, hole)).toBe(hole.blow)
   expect(mapHoleTierToHalfstepindex(matrixSpecs, 2, hole)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(hole.bends[0])
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(
+    hole.drawbends[0]
+  )
 })
 
 test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with single level bends present (upper harp)', () => {
@@ -51,7 +53,7 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blow: 2,
     draw: 0,
     blowbends: [1],
-    bends: [],
+    drawbends: [],
     overblows: [],
     overdraws: [3],
     valvedblows: [],
@@ -77,7 +79,7 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blow: 0,
     draw: 3,
     blowbends: [],
-    bends: [1, 2],
+    drawbends: [1, 2],
     overblows: [4, 5],
     overdraws: [],
     valvedblows: [],
@@ -96,8 +98,12 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
   )
   expect(mapHoleTierToHalfstepindex(matrixSpecs, 2, hole)).toBe(hole.blow)
   expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, 4, hole)).toBe(hole.bends[1])
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, 5, hole)).toBe(hole.bends[0])
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 4, hole)).toBe(
+    hole.drawbends[1]
+  )
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 5, hole)).toBe(
+    hole.drawbends[0]
+  )
 })
 
 test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with multi level bends present (upper harp)', () => {
@@ -105,7 +111,7 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blow: 3,
     draw: 0,
     blowbends: [1, 2],
-    bends: [],
+    drawbends: [],
     overblows: [],
     overdraws: [4, 5],
     valvedblows: [],
@@ -137,7 +143,7 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw, and undefined bend 
     blow: 0,
     draw: 3,
     blowbends: [],
-    bends: [1, 2],
+    drawbends: [1, 2],
     overblows: [4, 5],
     overdraws: [],
     valvedblows: [],
@@ -157,8 +163,12 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw, and undefined bend 
   )
   expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(hole.blow)
   expect(mapHoleTierToHalfstepindex(matrixSpecs, 4, hole)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, 5, hole)).toBe(hole.bends[1])
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, 6, hole)).toBe(hole.bends[0])
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 5, hole)).toBe(
+    hole.drawbends[1]
+  )
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 6, hole)).toBe(
+    hole.drawbends[0]
+  )
   expect(mapHoleTierToHalfstepindex(matrixSpecs, 7, hole)).toBeFalsy()
 })
 
@@ -167,7 +177,7 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and bend tiers with 
     blow: 3,
     draw: 0,
     blowbends: [1, 2],
-    bends: [],
+    drawbends: [],
     overblows: [],
     overdraws: [4, 5],
     valvedblows: [],
@@ -201,7 +211,7 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and valvedblows tier
     blow: 0,
     draw: 2,
     blowbends: [],
-    bends: [1],
+    drawbends: [1],
     overblows: [],
     overdraws: [],
     valvedblows: [-1],
@@ -217,7 +227,9 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and valvedblows tier
   )
   expect(mapHoleTierToHalfstepindex(matrixSpecs, 1, hole)).toBe(hole.blow)
   expect(mapHoleTierToHalfstepindex(matrixSpecs, 2, hole)).toBe(hole.draw)
-  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(hole.bends[0])
+  expect(mapHoleTierToHalfstepindex(matrixSpecs, 3, hole)).toBe(
+    hole.drawbends[0]
+  )
 })
 
 test('mapHoleTierToHalfstepindex can map a holes blow, draw and valveddraws tiers with single level bends present (upper harp)', () => {
@@ -225,7 +237,7 @@ test('mapHoleTierToHalfstepindex can map a holes blow, draw and valveddraws tier
     blow: 15,
     draw: 13,
     blowbends: [14],
-    bends: [],
+    drawbends: [],
     overblows: [],
     overdraws: [],
     valvedblows: [],

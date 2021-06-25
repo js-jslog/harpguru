@@ -8,8 +8,8 @@ export const mapHoleTierToHalfstepindex = (
 ): HalfstepIndex | undefined => {
   const drawRow = blowRow + 1
   const {
-    bends,
     blowbends,
+    drawbends,
     overblows,
     overdraws,
     valvedblows,
@@ -29,7 +29,7 @@ export const mapHoleTierToHalfstepindex = (
   if (currentRow > drawRow) {
     const distance = currentRow - drawRow - 1
     return (
-      [...bends].reverse()[distance] ||
+      [...drawbends].reverse()[distance] ||
       overdraws[distance] ||
       valveddraws.reverse()[distance] ||
       undefined

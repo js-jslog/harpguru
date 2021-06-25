@@ -9,14 +9,19 @@ export const mapHoleToFilterOverbends = (
   const rightHole = array[index + 1] || undefined
 
   const leftAdjacentSimpleTones = leftHole
-    ? [leftHole.blow, leftHole.draw, ...leftHole.bends, ...leftHole.blowbends]
+    ? [
+      leftHole.blow,
+      leftHole.draw,
+      ...leftHole.blowbends,
+      ...leftHole.drawbends,
+    ]
     : []
   const rightAdjacentSimpleTones = rightHole
     ? [
       rightHole.blow,
       rightHole.draw,
-      ...rightHole.bends,
       ...rightHole.blowbends,
+      ...rightHole.drawbends,
     ]
     : []
 

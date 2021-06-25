@@ -10,8 +10,8 @@ export const reduceHoleForBiggestBends = (
   currentValue: Hole
 ): Accumulator => {
   const {
-    bends: { length: currBends },
     blowbends: { length: currBlowbends },
+    drawbends: { length: currDrawbends },
     overblows: { length: currOverblows },
     overdraws: { length: currOverdraws },
     valvedblows: { length: currValvedblows },
@@ -24,7 +24,7 @@ export const reduceHoleForBiggestBends = (
   // possible to have a bend and an overdraw on the same hole, because
   // it would not necessariliy find the largest of the two.
   const currBigBlow = currBlowbends || currOverblows || currValvedblows
-  const currBigDraw = currBends || currOverdraws || currValveddraws
+  const currBigDraw = currDrawbends || currOverdraws || currValveddraws
 
   return {
     ...accumulator,

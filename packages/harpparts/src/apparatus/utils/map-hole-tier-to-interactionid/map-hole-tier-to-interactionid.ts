@@ -28,15 +28,14 @@ export const mapHoleTierToInteractionid = (
 ): Interaction | undefined => {
   const drawRow = blowRow + 1
   const {
-    bends,
     blowbends,
+    drawbends,
     overblows,
     overdraws,
     valvedblows,
     valveddraws,
   } = hole
 
-  const bendInteractions = [BEND1, BEND2, BEND3, BEND4, BEND5]
   const overblowInteractions = [OVERBLOW1, OVERBLOW2]
   const valvedBlowInteractions = [VALVEDBLOW1]
   const blowbendInteractions = [
@@ -46,6 +45,7 @@ export const mapHoleTierToInteractionid = (
     BLOWBEND4,
     BLOWBEND5,
   ]
+  const drawbendInteractions = [BEND1, BEND2, BEND3, BEND4, BEND5]
   const overdrawInteractions = [OVERDRAW1, OVERDRAW2]
   const valvedDrawInteractions = [VALVEDDRAW1]
 
@@ -62,7 +62,8 @@ export const mapHoleTierToInteractionid = (
   }
   if (currentRow > drawRow) {
     const distance = currentRow - drawRow - 1
-    if ([...bends].reverse()[distance]) return bendInteractions[distance]
+    if ([...drawbends].reverse()[distance])
+      return drawbendInteractions[distance]
     if (overdraws[distance]) return overdrawInteractions[distance]
     if ([...valveddraws].reverse()[distance])
       return valvedDrawInteractions[distance]

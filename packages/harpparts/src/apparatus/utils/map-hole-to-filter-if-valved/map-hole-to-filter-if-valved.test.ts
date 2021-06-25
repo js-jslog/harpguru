@@ -7,7 +7,7 @@ test('mapHoleToFilterIfValved returns a hole without valved bends unchanged', ()
     blow: 9,
     draw: 10,
     blowbends: [],
-    bends: [],
+    drawbends: [],
     overblows: [11],
     overdraws: [],
     valvedblows: [],
@@ -21,7 +21,7 @@ test('mapHoleToFilterIfValved returns a hole without valved bends unchanged', ()
     blow: 9,
     draw: 11,
     blowbends: [],
-    bends: [10],
+    drawbends: [10],
     overblows: [12],
     overdraws: [],
     valvedblows: [],
@@ -35,7 +35,7 @@ test('mapHoleToFilterIfValved returns a hole without valved bends unchanged', ()
     blow: 10,
     draw: 8,
     blowbends: [9],
-    bends: [],
+    drawbends: [],
     overblows: [],
     overdraws: [11],
     valvedblows: [],
@@ -51,7 +51,7 @@ test('mapHoleToFilterIfValved removes blow type bends when a valved blow bend is
     blow: 9,
     draw: 11,
     blowbends: [],
-    bends: [10],
+    drawbends: [10],
     overblows: [12],
     overdraws: [],
     valvedblows: [8],
@@ -71,7 +71,7 @@ test('mapHoleToFilterIfValved removes blow type bends when a valved blow bend is
     blow: 10,
     draw: 7,
     blowbends: [8, 9],
-    bends: [],
+    drawbends: [],
     overblows: [],
     overdraws: [11],
     valvedblows: [9],
@@ -87,7 +87,7 @@ test('mapHoleToFilterIfValved removes draw type bends when a valved draw bend is
     blow: 10,
     draw: 7,
     blowbends: [8, 9],
-    bends: [],
+    drawbends: [],
     overblows: [],
     overdraws: [11],
     valvedblows: [],
@@ -107,7 +107,7 @@ test('mapHoleToFilterIfValved removes draw type bends when a valved draw bend is
     blow: 9,
     draw: 11,
     blowbends: [],
-    bends: [10],
+    drawbends: [10],
     overblows: [12],
     overdraws: [],
     valvedblows: [],
@@ -115,7 +115,7 @@ test('mapHoleToFilterIfValved removes draw type bends when a valved draw bend is
   }
 
   const output2 = mapHoleToFilterIfValved(input2)
-  expect(output2).toStrictEqual({ ...input2, bends: [] })
+  expect(output2).toStrictEqual({ ...input2, drawbends: [] })
 })
 
 // This is testing full valving which may or may not even be a setup which
@@ -126,7 +126,7 @@ test('mapHoleToFilterIfValved removes draw & blow type bends when both valve ben
     blow: 10,
     draw: 7,
     blowbends: [8, 9],
-    bends: [],
+    drawbends: [],
     overblows: [],
     overdraws: [11],
     valvedblows: [9],
@@ -140,7 +140,7 @@ test('mapHoleToFilterIfValved removes draw & blow type bends when both valve ben
     blow: 9,
     draw: 11,
     blowbends: [],
-    bends: [10],
+    drawbends: [10],
     overblows: [12],
     overdraws: [],
     valvedblows: [8],
@@ -148,5 +148,5 @@ test('mapHoleToFilterIfValved removes draw & blow type bends when both valve ben
   }
 
   const output2 = mapHoleToFilterIfValved(input2)
-  expect(output2).toStrictEqual({ ...input2, bends: [], overblows: [] })
+  expect(output2).toStrictEqual({ ...input2, drawbends: [], overblows: [] })
 })

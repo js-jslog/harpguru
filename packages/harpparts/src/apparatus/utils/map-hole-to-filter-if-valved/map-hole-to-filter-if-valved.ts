@@ -8,7 +8,7 @@ export const mapHoleToFilterIfValved = (hole: Hole): Hole => {
   const filteredFurtherForDraws =
     filteredForBlows.valveddraws.length === 0
       ? filteredForBlows
-      : { ...filteredForBlows, bends: [], overdraws: [] }
+      : { ...filteredForBlows, drawbends: [], overdraws: [] }
 
   return filteredFurtherForDraws
 }

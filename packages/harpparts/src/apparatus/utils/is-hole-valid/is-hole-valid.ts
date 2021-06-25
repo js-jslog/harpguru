@@ -24,31 +24,31 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
   const overbendLimit = 2
   const { Ascending } = Direction
 
-  const conflictingDrawBends =
-    hole.bends.length > 0 && hole.overdraws.length > 0
-      ? [HoleErrors.ConflictingDrawBends]
-      : []
   const conflictingBlowBends =
     hole.blowbends.length > 0 && hole.overblows.length > 0
       ? [HoleErrors.ConflictingBlowBends]
       : []
-  const tooManyBends =
-    hole.bends.length > bendLimit ? [HoleErrors.TooManyBends] : []
+  const conflictingDrawBends =
+    hole.drawbends.length > 0 && hole.overdraws.length > 0
+      ? [HoleErrors.ConflictingDrawBends]
+      : []
   const tooManyBlowbends =
     hole.blowbends.length > bendLimit ? [HoleErrors.TooManyBlowbends] : []
+  const tooManyDrawbends =
+    hole.drawbends.length > bendLimit ? [HoleErrors.TooManyBends] : []
   const tooManyOverblows =
     hole.overblows.length > overbendLimit ? [HoleErrors.TooManyOverblows] : []
   const tooManyOverdraws =
     hole.overdraws.length > overbendLimit ? [HoleErrors.TooManyOverdraws] : []
-  const nonconsecutiveBends = !hole.bends.every(
-    isConsecutiveWithPrevious.bind(undefined, Ascending)
-  )
-    ? [HoleErrors.NonconsecutiveBends]
-    : []
   const nonconsecutiveBlowbends = !hole.blowbends.every(
     isConsecutiveWithPrevious.bind(undefined, Ascending)
   )
     ? [HoleErrors.NonconsecutiveBlowbends]
+    : []
+  const nonconsecutiveDrawbends = !hole.drawbends.every(
+    isConsecutiveWithPrevious.bind(undefined, Ascending)
+  )
+    ? [HoleErrors.NonconsecutiveBends]
     : []
   const nonconsecutiveOverblows = !hole.overblows.every(
     isConsecutiveWithPrevious.bind(undefined, Ascending)
@@ -67,18 +67,18 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
       : []
   const conflictingValvedDrawBends =
     hole.valveddraws.length > 0 &&
-    (hole.bends.length > 0 || hole.overdraws.length > 0)
+    (hole.drawbends.length > 0 || hole.overdraws.length > 0)
       ? [HoleErrors.ConflictingValvedDrawBends]
       : []
 
   return [
     ...conflictingDrawBends,
     ...conflictingBlowBends,
-    ...tooManyBends,
+    ...tooManyDrawbends,
     ...tooManyBlowbends,
     ...tooManyOverblows,
     ...tooManyOverdraws,
-    ...nonconsecutiveBends,
+    ...nonconsecutiveDrawbends,
     ...nonconsecutiveBlowbends,
     ...nonconsecutiveOverblows,
     ...nonconsecutiveOverdraws,

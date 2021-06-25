@@ -20,8 +20,8 @@ export type ReedPairArray = [
 export type Hole = {
   readonly blow: HalfstepIndex
   readonly draw: HalfstepIndex
-  readonly bends: HalfstepIndex[]
   readonly blowbends: HalfstepIndex[]
+  readonly drawbends: HalfstepIndex[]
   readonly overblows: HalfstepIndex[]
   readonly overdraws: HalfstepIndex[]
   readonly valvedblows: HalfstepIndex[]
