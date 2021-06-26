@@ -1,5 +1,5 @@
 import { getHarpStrata } from 'harpstrata'
-import { TuningIds, PitchIds, PozitionIds } from 'harpparts'
+import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
 
@@ -7,6 +7,7 @@ import { getNewHarpStrataByTuningForDispatcher } from './get-new-harpstrata-by-t
 
 const baseHarpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
+  valvingId: ValvingIds.NotValved,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
   activeIds: [],

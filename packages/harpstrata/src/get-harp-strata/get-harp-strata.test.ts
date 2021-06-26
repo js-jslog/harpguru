@@ -1,4 +1,4 @@
-import { TuningIds, PitchIds, PozitionIds } from 'harpparts'
+import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import { EXAMPLE_STRATA } from './testResources'
 
@@ -12,6 +12,7 @@ test('getHarpStrata can return a first pozition C major diatonic HarpStrata with
 
   const harpStrataPropsBase = {
     tuningId: TuningIds.MajorDiatonic,
+    valvingId: ValvingIds.NotValved,
     pozitionId: PozitionIds.First,
     harpKeyId: PitchIds.C,
     activeIds: [],
@@ -40,6 +41,7 @@ test('getHarpStrata can return a second pozition C major diatonic HarpStrata wit
 
   const harpStrataPropsBase = {
     tuningId: TuningIds.MajorDiatonic,
+    valvingId: ValvingIds.NotValved,
     pozitionId: PozitionIds.Second,
     harpKeyId: PitchIds.C,
     activeIds: [],
