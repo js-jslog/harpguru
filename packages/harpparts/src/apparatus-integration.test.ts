@@ -1,7 +1,7 @@
 import type { TuningIds } from './tuning'
 import type { Interaction } from './interaction'
 import { buildApparatus } from './apparatus'
-import { getTuningIds } from './access-parts'
+import { getTuningIds, getValvingIds } from './access-parts'
 
 import type { HalfstepIndex, HarpFaceMatrix, HarpFaceRow } from './types'
 
@@ -47,7 +47,10 @@ test('From each of the available tunings, both the halfstepindex interaction mat
     return !matricesDoNotHaveParity
   }
   getTuningIds()
-    .map((tuningId) => buildApparatus(tuningId))
+    .map((tuningId) =>
+      getValvingIds().map((valvingId) => buildApparatus(tuningId, valvingId))
+    )
+    .flat()
     .forEach((apparatus) => {
       const hasParity = matricesHaveParity(
         apparatus.halfstepIndexMatrix,

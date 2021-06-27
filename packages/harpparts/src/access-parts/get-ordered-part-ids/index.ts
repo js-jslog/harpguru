@@ -1,10 +1,12 @@
 import {
   ORDERED_TUNINGS,
+  ORDERED_VALVINGS,
   ORDERED_DEGREES,
   ORDERED_PITCHES,
   ORDERED_POZITIONS,
   ORDERED_SCALES,
 } from '../constants'
+import type { ValvingIds } from '../../valving'
 import type { TuningIds } from '../../tuning'
 import type { ScaleIds } from '../../scale'
 import type { PozitionIds } from '../../pozition'
@@ -20,6 +22,15 @@ export const getTuningIds = (
     ORDERED_TUNINGS,
     tuningId
   ) as ReadonlyArray<TuningIds>
+}
+
+export const getValvingIds = (
+  valvingId?: ValvingIds
+): ReadonlyArray<ValvingIds> => {
+  return getOrderedPartIds(
+    ORDERED_VALVINGS,
+    valvingId
+  ) as ReadonlyArray<ValvingIds>
 }
 
 export const getDegreeIds = (

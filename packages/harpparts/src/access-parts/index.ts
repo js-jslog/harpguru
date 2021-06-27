@@ -7,6 +7,7 @@ export {
 } from './get-harp-part'
 export {
   getTuningIds,
+  getValvingIds,
   getDegreeIds,
   getPitchIds,
   getPozitionIds,

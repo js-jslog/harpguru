@@ -1,4 +1,5 @@
 export { ORDERED_TUNINGS } from './tunings'
+export { ORDERED_VALVINGS } from './valvings'
 export { ORDERED_PITCHES } from './pitches'
 export { ORDERED_DEGREES } from './degrees'
 export { ORDERED_POZITIONS } from './pozitions'

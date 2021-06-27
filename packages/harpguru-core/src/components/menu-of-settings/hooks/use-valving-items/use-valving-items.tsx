@@ -1,5 +1,5 @@
 import React from 'react'
-import { ValvingIds } from 'harpparts'
+import { getValvingIds, ValvingIds } from 'harpparts'
 
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
@@ -12,8 +12,6 @@ type ValvingItems = ReadonlyArray<
   React.ReactElement<OptionItemProps<ItemCallback>>
 >
 
-const { NotValved, HalfValved } = ValvingIds
-
 export const useValvingItems = (
   useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
@@ -22,7 +20,7 @@ export const useValvingItems = (
   const {
     apparatus: { valvingId },
   } = activeHarpStrata
-  const items = [NotValved, HalfValved].map((id, index) => (
+  const items = getValvingIds().map((id, index) => (
     <OptionItem
       key={`${index}`}
       value={id}

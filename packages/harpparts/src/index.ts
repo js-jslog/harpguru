@@ -1,6 +1,7 @@
 export { TuningIds } from './tuning'
 export type { Apparatus } from './apparatus'
-export { buildApparatus, ValvingIds } from './apparatus'
+export { buildApparatus } from './apparatus'
+export { ValvingIds } from './valving'
 export { InteractionIds } from './interaction'
 export type { Interaction } from './interaction'
 export { DegreeIds } from './degree'
@@ -13,6 +14,7 @@ export type { Pitch } from './pitch'
 export type { Pozition } from './pozition'
 export {
   getTuningIds,
+  getValvingIds,
   getDegreeIds,
   getDegree,
   getPitchIds,

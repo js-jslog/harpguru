@@ -1,3 +1,4 @@
+import { ValvingIds } from '../../valving'
 import type { HarpFaceMatrix, HalfstepIndex } from '../../types'
 import { TuningIds } from '../../tuning'
 import type { Interaction } from '../../interaction'
@@ -44,11 +45,6 @@ export type HoleArray = [
 export type MatrixSpecs = {
   readonly height: number
   readonly blowRow: number
-}
-
-export enum ValvingIds {
-  NotValved = 'Not valved',
-  HalfValved = 'Half valved',
 }
 
 export type Apparatus = {

@@ -1,6 +1,6 @@
 import { reedArrayToMatrices } from '../reed-array-to-matrices'
 import type { Apparatus } from '../../types'
-import { ValvingIds } from '../../types'
+import { ValvingIds } from '../../../valving'
 import type { TuningIds } from '../../../tuning'
 import { getTuning } from '../../../access-parts'
 
