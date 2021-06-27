@@ -1,5 +1,5 @@
 import { getHarpStrata } from 'harpstrata'
-import { DegreeIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
+import { DegreeIds, getValvingIds, PitchIds, PozitionIds } from 'harpparts'
 import { getTuningIds } from 'harpparts'
 
 type Props = {
@@ -13,7 +13,7 @@ export const getCounterpartDegreeId = (props: Props): DegreeIds => {
 
   const surrogateHarpStrata = getHarpStrata({
     tuningId: getTuningIds()[0],
-    valvingId: ValvingIds.NotValved,
+    valvingId: getValvingIds()[0],
     pozitionId,
     harpKeyId,
     activeIds: [pitchId],
