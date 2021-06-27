@@ -6,7 +6,7 @@ import { getTuning } from '../../../access-parts'
 
 export const buildApparatus = (
   tuningId: TuningIds,
-  valvingId: ValvingIds = ValvingIds.NotValved
+  valvingId: ValvingIds
 ): Apparatus => {
   const tuning = getTuning(tuningId)
   return {

@@ -1,4 +1,10 @@
-import { buildApparatus, TuningIds, getPitch, PitchIds } from 'harpparts'
+import {
+  buildApparatus,
+  TuningIds,
+  getPitch,
+  PitchIds,
+  ValvingIds,
+} from 'harpparts'
 
 import { EXAMPLE_PITCH_MATRICES } from '../../testResources'
 
@@ -18,7 +24,8 @@ test('getPitchMatrix function maps a simple 2d array of 0s to the input key pitc
 test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic pitchMatrix for a C harmonica', () => {
   const { MAJOR_DIATONIC_C_HARMONICA } = EXAMPLE_PITCH_MATRICES
   const actualArray = getPitchMatrix(
-    buildApparatus(TuningIds.MajorDiatonic).halfstepIndexMatrix,
+    buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
+      .halfstepIndexMatrix,
     c.id
   )
 
@@ -28,7 +35,8 @@ test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic
 test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic pitchMatrix for a F harmonica', () => {
   const { MAJOR_DIATONIC_F_HARMONICA } = EXAMPLE_PITCH_MATRICES
   const actualArray = getPitchMatrix(
-    buildApparatus(TuningIds.MajorDiatonic).halfstepIndexMatrix,
+    buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
+      .halfstepIndexMatrix,
     PitchIds.F
   )
 
