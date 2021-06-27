@@ -11,19 +11,24 @@ import { getHoleArrayErrorMessages } from '../get-hole-array-error-messages'
 import { deriveMatrixSpecs } from '../derive-matrix-specs/derive-matrix-specs'
 import type { HoleArray } from '../../types'
 import type { Apparatus } from '../../types'
+import { ValvingIds } from '../../../valving'
 import type { TuningIds, ReedArray } from '../../../tuning'
 
 export const reedArrayToMatrices = (
   reedArray: ReedArray,
   tuningId: TuningIds,
-  isHalfValved?: boolean
+  valvingId: ValvingIds
 ): Pick<Apparatus, 'halfstepIndexMatrix' | 'interactionMatrix'> => {
   const holeArray = pivotReedArray(reedArray)
     .map(mapReedPairToHole)
     .map(mapHoleToIncludeBends)
     .map(mapHoleToIncludeOverbends)
     .map(mapHoleToFilterOverbends)
-    .map((hole) => (isHalfValved ? mapHoleToIncludeValvebends(hole) : hole))
+    .map((hole) =>
+      valvingId === ValvingIds.HalfValved
+        ? mapHoleToIncludeValvebends(hole)
+        : hole
+    )
     .map(mapHoleToFilterIfValved) as HoleArray
 
   const holeErrorMessages = getHoleArrayErrorMessages(holeArray)

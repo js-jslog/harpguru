@@ -12,10 +12,6 @@ export const buildApparatus = (
   return {
     tuningId: tuning.id,
     valvingId,
-    ...reedArrayToMatrices(
-      tuning.reedArray,
-      tuning.id,
-      valvingId === ValvingIds.HalfValved
-    ),
+    ...reedArrayToMatrices(tuning.reedArray, tuning.id, valvingId),
   }
 }
