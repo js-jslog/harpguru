@@ -5,7 +5,7 @@ import type { HarpStrataProps } from 'harpstrata'
 import type { GlobalState } from '../../../../types'
 import { DisplayModes } from '../../../../types'
 
-export const getNewHarpStrataForDispatcher = (
+export const getNewHarpStrataByCovariantsForDispatcher = (
   global: GlobalState,
   _dipatch: Dispatcher,
   partialHarpStrata: Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
