@@ -7,7 +7,7 @@ test('matricesHaveParity returns true for simple parity matrices', () => {
   ]
 
   expect(matricesHaveParity(matrixA, matrixA)[0]).toBeTruthy()
-  expect(matricesHaveParity(matrixA, matrixA)[1]).toEqual(
+  expect(JSON.stringify(matricesHaveParity(matrixA, matrixA)[1])).toEqual(
     expect.stringContaining('[]')
   )
 })
@@ -23,7 +23,7 @@ test('matricesHaveParity returns false for matrices with mismatched 1st row leng
   ]
 
   expect(matricesHaveParity(matrixA, matrixB)[0]).toBeFalsy()
-  expect(matricesHaveParity(matrixA, matrixB)[1]).toEqual(
+  expect(JSON.stringify(matricesHaveParity(matrixA, matrixB)[1])).toEqual(
     expect.stringContaining('[2, 5] vs [2, 4]')
   )
 })
@@ -39,7 +39,7 @@ test('matricesHaveParity returns false for matrices with mismatched 1st row popu
   ]
 
   expect(matricesHaveParity(matrixA, matrixB)[0]).toBeFalsy()
-  expect(matricesHaveParity(matrixA, matrixB)[1]).toEqual(
+  expect(JSON.stringify(matricesHaveParity(matrixA, matrixB)[1])).toEqual(
     expect.stringContaining('(0,4)')
   )
 })
@@ -55,7 +55,7 @@ test('matricesHaveParity returns false for matrices with mismatched 2nd row popu
   ]
 
   expect(matricesHaveParity(matrixA, matrixB)[0]).toBeFalsy()
-  expect(matricesHaveParity(matrixA, matrixB)[1]).toEqual(
+  expect(JSON.stringify(matricesHaveParity(matrixA, matrixB)[1])).toEqual(
     expect.stringContaining('(1,4)')
   )
 })
@@ -71,10 +71,10 @@ test('matricesHaveParity returns both types of error message if relevant', () =>
   ]
 
   expect(matricesHaveParity(matrixA, matrixB)[0]).toBeFalsy()
-  expect(matricesHaveParity(matrixA, matrixB)[1]).toEqual(
+  expect(JSON.stringify(matricesHaveParity(matrixA, matrixB)[1])).toEqual(
     expect.stringContaining('[2, 5] vs [2, 4]')
   )
-  expect(matricesHaveParity(matrixA, matrixB)[1]).toEqual(
+  expect(JSON.stringify(matricesHaveParity(matrixA, matrixB)[1])).toEqual(
     expect.stringContaining('(1,3)')
   )
 })

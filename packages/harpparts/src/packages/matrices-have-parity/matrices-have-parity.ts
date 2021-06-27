@@ -1,7 +1,7 @@
 export const matricesHaveParity = (
-  matrixA: (unknown | undefined)[][],
-  matrixB: (unknown | undefined)[][]
-): [boolean, string] => {
+  matrixA: ReadonlyArray<ReadonlyArray<unknown | undefined>>,
+  matrixB: ReadonlyArray<ReadonlyArray<unknown | undefined>>
+): [boolean, ReadonlyArray<string>] => {
   const mismatchMessages: string[] = []
   const matrix1dsMatch = matrixA.length === matrixB.length
   const matrix2dsMatch = matrixA[0].length === matrixB[0].length
@@ -25,5 +25,5 @@ export const matricesHaveParity = (
     })
   })
 
-  return [mismatchMessages.length === 0, JSON.stringify(mismatchMessages)]
+  return [mismatchMessages.length === 0, mismatchMessages]
 }
