@@ -25,6 +25,71 @@ const MAJOR_DIATONIC_FIRST_POZITION: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, flat6 , undefined   , undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
 
+const MAJOR_DIATONIC_FIRST_POZITION_HALF_VALVED: HarpFaceMatrix<Degree> = [
+  [
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    flat7,
+  ],
+  [
+    seventh,
+    flat3,
+    flat5,
+    seventh,
+    flat3,
+    flat5,
+    undefined,
+    flat3,
+    flat5,
+    seventh,
+  ],
+  [root, third, fifth, root, third, fifth, root, third, fifth, root],
+  [
+    second,
+    fifth,
+    seventh,
+    second,
+    fourth,
+    sixth,
+    seventh,
+    second,
+    fourth,
+    sixth,
+  ],
+  [flat2, flat5, flat7, flat2, undefined, flat6, flat7, flat2, third, flat6],
+  [
+    undefined,
+    fourth,
+    sixth,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+  ],
+  [
+    undefined,
+    undefined,
+    flat6,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+  ],
+] as const
+
 // prettier-ignore
 const MAJOR_DIATONIC_SECOND_POZITION: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat3     ],
@@ -38,5 +103,6 @@ const MAJOR_DIATONIC_SECOND_POZITION: HarpFaceMatrix<Degree> = [
 
 export const EXAMPLE_DEGREE_MATRICES = {
   MAJOR_DIATONIC_FIRST_POZITION,
+  MAJOR_DIATONIC_FIRST_POZITION_HALF_VALVED,
   MAJOR_DIATONIC_SECOND_POZITION,
 } as const

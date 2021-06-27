@@ -26,6 +26,17 @@ const MAJOR_DIATONIC_C_HARMONICA: HarpFaceMatrix<Pitch> = [
 ] as const
 
 // prettier-ignore
+const MAJOR_DIATONIC_C_HARMONICA_HALF_VALVED: HarpFaceMatrix<Pitch> = [
+  [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, bb        ],
+  [ b        , eb       , gb       , b        , eb       , gb       , undefined, eb       , gb       , b         ],
+  [ c        , e        , g        , c        , e        , g        , c        , e        , g        , c         ],
+  [ d        , g        , b        , d        , f        , a        , b        , d        , f        , a         ],
+  [ db       , gb       , bb       , db       , undefined, ab       , bb       , db       , e        , ab        ],
+  [ undefined, f        , a        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+  [ undefined, undefined, ab       , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+] as const
+
+// prettier-ignore
 const MAJOR_DIATONIC_F_HARMONICA: HarpFaceMatrix<Pitch> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, eb        ],
   [ ab       , undefined, undefined, ab       , b        , eb       , undefined, ab       , b        , e         ],
@@ -38,5 +49,6 @@ const MAJOR_DIATONIC_F_HARMONICA: HarpFaceMatrix<Pitch> = [
 
 export const EXAMPLE_PITCH_MATRICES = {
   MAJOR_DIATONIC_C_HARMONICA,
+  MAJOR_DIATONIC_C_HARMONICA_HALF_VALVED,
   MAJOR_DIATONIC_F_HARMONICA,
 } as const
