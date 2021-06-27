@@ -7,6 +7,7 @@ import {
   ScaleIds,
   getScale,
   getDegreeIds,
+  ValvingIds,
 } from 'harpparts'
 
 import {
@@ -19,6 +20,7 @@ import {
 
 export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const { MajorDiatonic: tuningId } = TuningIds
+  const { NotValved: valvingId } = ValvingIds
   const { C: harpKeyId } = PitchIds
   const pozitionMap: Record<PageNumber, PozitionIds> = {
     1: PozitionIds.Second,
@@ -29,6 +31,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
 
   const initialHarpStrataProps: HarpStrataProps = {
     tuningId,
+    valvingId,
     pozitionId,
     harpKeyId,
     activeIds: [],

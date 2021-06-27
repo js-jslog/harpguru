@@ -1,10 +1,11 @@
 import { getHarpStrata } from 'harpstrata'
-import { TuningIds, PitchIds, PozitionIds } from 'harpparts'
+import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './is-blow-or-draw-row'
 
 const harpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
+  valvingId: ValvingIds.NotValved,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
   activeIds: [],

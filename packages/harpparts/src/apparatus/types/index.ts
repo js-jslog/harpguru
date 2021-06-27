@@ -46,8 +46,14 @@ export type MatrixSpecs = {
   readonly blowRow: number
 }
 
+export enum ValvingIds {
+  NotValved = 'Not valved',
+  HalfValved = 'Half valved',
+}
+
 export type Apparatus = {
   readonly tuningId: TuningIds
+  readonly valvingId: ValvingIds
   readonly halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex>
   readonly interactionMatrix: HarpFaceMatrix<Interaction>
 }
