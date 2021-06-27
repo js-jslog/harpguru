@@ -18,7 +18,9 @@ test('From each of the available tunings, both the halfstepindex interaction mat
       expect(hasParity).toBeTruthy()
       expect(errorMessages).toStrictEqual([])
     })
+})
 
+test('Double check that misaligned apparatus matrices *would* produce failing errors here', () => {
   const [hasParity, errorMessages] = matricesHaveParity(
     buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
       .halfstepIndexMatrix,
