@@ -11,6 +11,7 @@ import { colors, getSizes } from '../../styles'
 
 import {
   getNewHarpStrataByTuningForDispatcher,
+  getNewHarpStrataByValvingForDispatcher,
   getToggledActiveQuizDegrees,
 } from './utils'
 import {
@@ -18,20 +19,33 @@ import {
   useQuizQuestionItems,
   useTuningTitle,
   useTuningItems,
+  useValvingTitle,
+  useValvingItems,
 } from './hooks'
 
 export const MenuOfSettings = (menuProps: MenuProps): React.ReactElement => {
-  const itemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataByTuningForDispatcher),
-    [useDispatch, getNewHarpStrataByTuningForDispatcher]
-  )
-
   const useTuningTitleMemo = useCallback(() => useTuningTitle(useGlobal), [
     useGlobal,
   ])
+  const tuningItemTapHandler = useCallback(
+    useDispatch(getNewHarpStrataByTuningForDispatcher),
+    [useDispatch, getNewHarpStrataByTuningForDispatcher]
+  )
   const useTuningItemsMemo = useCallback(
-    () => useTuningItems(useGlobal, itemTapHandler),
-    [useGlobal, itemTapHandler]
+    () => useTuningItems(useGlobal, tuningItemTapHandler),
+    [useGlobal, tuningItemTapHandler]
+  )
+
+  const useValvingTitleMemo = useCallback(() => useValvingTitle(useGlobal), [
+    useGlobal,
+  ])
+  const valvingItemTapHandler = useCallback(
+    useDispatch(getNewHarpStrataByValvingForDispatcher),
+    [useDispatch, getNewHarpStrataByValvingForDispatcher]
+  )
+  const useValvingItemsMemo = useCallback(
+    () => useValvingItems(useGlobal, valvingItemTapHandler),
+    [useGlobal, valvingItemTapHandler]
   )
 
   const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
@@ -48,6 +62,11 @@ export const MenuOfSettings = (menuProps: MenuProps): React.ReactElement => {
     {
       useTitle: useTuningTitleMemo,
       useItems: useTuningItemsMemo,
+      twoColumns: false,
+    },
+    {
+      useTitle: useValvingTitleMemo,
+      useItems: useValvingItemsMemo,
       twoColumns: false,
     },
     {

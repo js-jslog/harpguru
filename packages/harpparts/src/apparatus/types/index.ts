@@ -47,8 +47,8 @@ export type MatrixSpecs = {
 }
 
 export enum ValvingIds {
-  NotValved,
-  HalfValved,
+  NotValved = 'Not valved',
+  HalfValved = 'Half valved',
 }
 
 export type Apparatus = {
