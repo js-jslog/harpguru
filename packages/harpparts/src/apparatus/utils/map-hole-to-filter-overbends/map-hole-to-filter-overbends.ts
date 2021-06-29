@@ -14,6 +14,8 @@ export const mapHoleToFilterOverbends = (
       leftHole.draw,
       ...leftHole.blowbends,
       ...leftHole.drawbends,
+      ...leftHole.valvedblows,
+      ...leftHole.valveddraws,
     ]
     : []
   const rightAdjacentSimpleTones = rightHole
@@ -22,6 +24,8 @@ export const mapHoleToFilterOverbends = (
       rightHole.draw,
       ...rightHole.blowbends,
       ...rightHole.drawbends,
+      ...rightHole.valvedblows,
+      ...rightHole.valveddraws,
     ]
     : []
 

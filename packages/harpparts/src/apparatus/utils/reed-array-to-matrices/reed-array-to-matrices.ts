@@ -22,8 +22,8 @@ export const reedArrayToMatrices = (
     .map(mapReedPairToHole)
     .map(mapHoleToIncludeBends)
     .map(mapHoleToIncludeOverbends.bind(undefined, valvingId))
-    .map(mapHoleToFilterOverbends)
-    .map(mapHoleToIncludeValvebends.bind(undefined, valvingId)) as HoleArray
+    .map(mapHoleToIncludeValvebends.bind(undefined, valvingId))
+    .map(mapHoleToFilterOverbends) as HoleArray
 
   const holeErrorMessages = getHoleArrayErrorMessages(holeArray)
   if (holeErrorMessages.length > 0)
