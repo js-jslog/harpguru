@@ -2,7 +2,7 @@ import type { Hole } from '../../types'
 
 import { mapHoleToIncludeBends } from './map-hole-to-include-bends'
 
-test('mapHoleToIncludeBends adds no bends', () => {
+test('mapHoleToIncludeBends adds no bends when reeds are one semitone apart', () => {
   const holeInput: Hole = {
     blow: 9,
     draw: 10,
@@ -73,7 +73,7 @@ test('mapHoleToIncludeBends adds a triple bend', () => {
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-test('mapHoleToIncludeBends adds no blow bends', () => {
+test('mapHoleToIncludeBends adds no blow bends when reeds are one semitone apart', () => {
   const holeInput: Hole = {
     blow: 20,
     draw: 19,
