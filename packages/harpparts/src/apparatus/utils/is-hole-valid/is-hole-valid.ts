@@ -5,10 +5,10 @@ import {
 } from '../../../packages/is-consecutive-with-previous'
 
 export enum HoleErrors {
-  ConflictingDrawbends = 'CONFLICTING_DRAW_BENDS',
   ConflictingBlowbends = 'CONFLICTING_BLOW_BENDS',
-  TooManyBends = 'TOO_MANY_BENDS',
+  ConflictingDrawbends = 'CONFLICTING_DRAW_BENDS',
   TooManyBlowbends = 'TOO_MANY_BLOWBENDS',
+  TooManyDrawbends = 'TOO_MANY_BENDS',
   TooManyOverblows = 'TOO_MANY_OVERBLOWS',
   TooManyOverdraws = 'TOO_MANY_OVERDRAWS',
   NonconsecutiveBends = 'NONCONSECUTIVE_BENDS',
@@ -35,7 +35,7 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
   const tooManyBlowbends =
     hole.blowbends.length > bendLimit ? [HoleErrors.TooManyBlowbends] : []
   const tooManyDrawbends =
-    hole.drawbends.length > bendLimit ? [HoleErrors.TooManyBends] : []
+    hole.drawbends.length > bendLimit ? [HoleErrors.TooManyDrawbends] : []
   const tooManyOverblows =
     hole.overblows.length > overbendLimit ? [HoleErrors.TooManyOverblows] : []
   const tooManyOverdraws =
@@ -72,14 +72,14 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
       : []
 
   return [
-    ...conflictingDrawbends,
     ...conflictingBlowbends,
-    ...tooManyDrawbends,
+    ...conflictingDrawbends,
     ...tooManyBlowbends,
+    ...tooManyDrawbends,
     ...tooManyOverblows,
     ...tooManyOverdraws,
-    ...nonconsecutiveDrawbends,
     ...nonconsecutiveBlowbends,
+    ...nonconsecutiveDrawbends,
     ...nonconsecutiveOverblows,
     ...nonconsecutiveOverdraws,
     ...conflictingValvedblowbends,

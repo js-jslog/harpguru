@@ -47,7 +47,7 @@ test('reedArrayToMatrices throws errors as expected when any error is encountere
       MAJOR_DIATONIC_TUNING.id,
       ValvingIds.NotValved
     )
-  ).toThrow(`Hole 0: ${HoleErrors.TooManyBends}`)
+  ).toThrow(`Hole 0: ${HoleErrors.TooManyDrawbends}`)
   expect(() =>
     reedArrayToMatrices(
       invalidReedArray,
@@ -61,7 +61,7 @@ test('reedArrayToMatrices throws errors as expected when any error is encountere
       MAJOR_DIATONIC_TUNING.id,
       ValvingIds.NotValved
     )
-  ).toThrow(`Hole 8: ${HoleErrors.TooManyBends}`)
+  ).toThrow(`Hole 8: ${HoleErrors.TooManyDrawbends}`)
   expect(() =>
     reedArrayToMatrices(
       invalidReedArray,

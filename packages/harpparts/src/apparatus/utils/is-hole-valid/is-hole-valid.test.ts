@@ -97,7 +97,7 @@ test('isHoleValid returns an error when there are more than 5 bends on a hole', 
     valvedblows: [],
     valveddraws: [],
   }
-  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyBends])
+  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyDrawbends])
 })
 
 test('isHoleValid returns no errors when there are 5 blowbends on a hole', () => {
