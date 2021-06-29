@@ -1,6 +1,12 @@
 import type { Hole } from '../../types'
+import { ValvingIds } from '../../../valving'
 
-export const mapHoleToIncludeValvebends = (holeInput: Hole): Hole => {
+export const mapHoleToIncludeValvebends = (
+  valvingId: ValvingIds,
+  holeInput: Hole
+): Hole => {
+  if (valvingId === ValvingIds.NotValved) return holeInput
+
   const { blow, draw } = holeInput
 
   if (blow === draw)

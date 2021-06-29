@@ -1,6 +1,27 @@
 import type { Hole } from '../../types'
+import { ValvingIds } from '../../../valving'
 
 import { mapHoleToIncludeValvebends } from './map-hole-to-include-valvebends'
+
+test('mapHoleToIncludeValvebends returns the input hole if there is no valving', () => {
+  const holeInput: Hole = {
+    blow: 9,
+    draw: 10,
+    blowbends: [],
+    drawbends: [],
+    overblows: [],
+    overdraws: [],
+    valvedblows: [],
+    valveddraws: [],
+  }
+
+  const actualHoleOutput = mapHoleToIncludeValvebends(
+    ValvingIds.NotValved,
+    holeInput
+  )
+
+  expect(actualHoleOutput).toStrictEqual(holeInput)
+})
 
 test('mapHoleToIncludeValvebends adds a valved blow bend when the blow reed is lower', () => {
   const holeInput: Hole = {
@@ -18,7 +39,10 @@ test('mapHoleToIncludeValvebends adds a valved blow bend when the blow reed is l
     ...holeInput,
     valvedblows: [8],
   }
-  const actualHoleOutput = mapHoleToIncludeValvebends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeValvebends(
+    ValvingIds.HalfValved,
+    holeInput
+  )
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
@@ -39,7 +63,10 @@ test('mapHoleToIncludeValvebends adds a valved draw bend when draw reed is lower
     ...holeInput,
     valveddraws: [8],
   }
-  const actualHoleOutput = mapHoleToIncludeValvebends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeValvebends(
+    ValvingIds.HalfValved,
+    holeInput
+  )
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
@@ -64,7 +91,10 @@ test('mapHoleToIncludeValvebends adds both a valved blow and a valved draw bend 
     valvedblows: [7],
     valveddraws: [7],
   }
-  const actualHoleOutput = mapHoleToIncludeValvebends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeValvebends(
+    ValvingIds.HalfValved,
+    holeInput
+  )
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
@@ -85,7 +115,10 @@ test('mapHoleToIncludeValvebends adds a valvebend when the blow reed is 0', () =
     ...holeInput,
     valvedblows: [-1],
   }
-  const actualHoleOutput = mapHoleToIncludeValvebends(holeInput)
+  const actualHoleOutput = mapHoleToIncludeValvebends(
+    ValvingIds.HalfValved,
+    holeInput
+  )
 
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })

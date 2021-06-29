@@ -24,11 +24,7 @@ export const reedArrayToMatrices = (
     .map(mapHoleToIncludeBends)
     .map(mapHoleToIncludeOverbends)
     .map(mapHoleToFilterOverbends)
-    .map((hole) =>
-      valvingId === ValvingIds.HalfValved
-        ? mapHoleToIncludeValvebends(hole)
-        : hole
-    )
+    .map(mapHoleToIncludeValvebends.bind(undefined, valvingId))
     .map(mapHoleToFilterIfValved) as HoleArray
 
   const holeErrorMessages = getHoleArrayErrorMessages(holeArray)
