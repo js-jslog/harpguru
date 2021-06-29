@@ -5,8 +5,8 @@ import {
 } from '../../../packages/is-consecutive-with-previous'
 
 export enum HoleErrors {
-  ConflictingDrawBends = 'CONFLICTING_DRAW_BENDS',
-  ConflictingBlowBends = 'CONFLICTING_BLOW_BENDS',
+  ConflictingDrawbends = 'CONFLICTING_DRAW_BENDS',
+  ConflictingBlowbends = 'CONFLICTING_BLOW_BENDS',
   TooManyBends = 'TOO_MANY_BENDS',
   TooManyBlowbends = 'TOO_MANY_BLOWBENDS',
   TooManyOverblows = 'TOO_MANY_OVERBLOWS',
@@ -15,8 +15,8 @@ export enum HoleErrors {
   NonconsecutiveBlowbends = 'NONCONSECUTIVE_BLOWBENDS',
   NonconsecutiveOverblows = 'NONCONSECUTIVE_OVERBLOWS',
   NonconsecutiveOverdraws = 'NONCONSECUTIVE_OVERDRAWS',
-  ConflictingValvedBlowBends = 'CONFLICTING_VALVED_BLOW_BENDS',
-  ConflictingValvedDrawBends = 'CONFLICTING_VALVED_DRAW_BENDS',
+  ConflictingValvedblowbends = 'CONFLICTING_VALVED_BLOW_BENDS',
+  ConflictingValveddrawbends = 'CONFLICTING_VALVED_DRAW_BENDS',
 }
 
 export const isHoleValid = (hole: Hole): HoleErrors[] => {
@@ -24,13 +24,13 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
   const overbendLimit = 2
   const { Ascending } = Direction
 
-  const conflictingBlowBends =
+  const conflictingBlowbends =
     hole.blowbends.length > 0 && hole.overblows.length > 0
-      ? [HoleErrors.ConflictingBlowBends]
+      ? [HoleErrors.ConflictingBlowbends]
       : []
-  const conflictingDrawBends =
+  const conflictingDrawbends =
     hole.drawbends.length > 0 && hole.overdraws.length > 0
-      ? [HoleErrors.ConflictingDrawBends]
+      ? [HoleErrors.ConflictingDrawbends]
       : []
   const tooManyBlowbends =
     hole.blowbends.length > bendLimit ? [HoleErrors.TooManyBlowbends] : []
@@ -60,20 +60,20 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
   )
     ? [HoleErrors.NonconsecutiveOverdraws]
     : []
-  const conflictingValvedBlowBends =
+  const conflictingValvedblowbends =
     hole.valvedblows.length > 0 &&
     (hole.blowbends.length > 0 || hole.overblows.length > 0)
-      ? [HoleErrors.ConflictingValvedBlowBends]
+      ? [HoleErrors.ConflictingValvedblowbends]
       : []
-  const conflictingValvedDrawBends =
+  const conflictingValveddrawbends =
     hole.valveddraws.length > 0 &&
     (hole.drawbends.length > 0 || hole.overdraws.length > 0)
-      ? [HoleErrors.ConflictingValvedDrawBends]
+      ? [HoleErrors.ConflictingValveddrawbends]
       : []
 
   return [
-    ...conflictingDrawBends,
-    ...conflictingBlowBends,
+    ...conflictingDrawbends,
+    ...conflictingBlowbends,
     ...tooManyDrawbends,
     ...tooManyBlowbends,
     ...tooManyOverblows,
@@ -82,7 +82,7 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
     ...nonconsecutiveBlowbends,
     ...nonconsecutiveOverblows,
     ...nonconsecutiveOverdraws,
-    ...conflictingValvedBlowBends,
-    ...conflictingValvedDrawBends,
+    ...conflictingValvedblowbends,
+    ...conflictingValveddrawbends,
   ]
 }

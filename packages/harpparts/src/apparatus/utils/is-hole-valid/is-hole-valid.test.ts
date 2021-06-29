@@ -55,7 +55,7 @@ test('isHoleValid returns an error when bends and overdraws are both available',
     valvedblows: [],
     valveddraws: [],
   }
-  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.ConflictingDrawBends])
+  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.ConflictingDrawbends])
 })
 
 test('isHoleValid returns an error when blowbends and overblows are both available', () => {
@@ -69,7 +69,7 @@ test('isHoleValid returns an error when blowbends and overblows are both availab
     valvedblows: [],
     valveddraws: [],
   }
-  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.ConflictingBlowBends])
+  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.ConflictingBlowbends])
 })
 
 test('isHoleValid returns no errors when there are 5 bends on a hole', () => {
@@ -316,12 +316,12 @@ test('isHoleValid returns an error when there are valved blow bends along with s
   }
   expect(
     isHoleValid({ ...hole, blowbends: [1, 2, 3], valvedblows: [3] })
-  ).toStrictEqual([HoleErrors.ConflictingValvedBlowBends])
+  ).toStrictEqual([HoleErrors.ConflictingValvedblowbends])
   // Strictly this hole doesn't make sense because an overblow would not exist on it,
   // but it serves the purpose
   expect(
     isHoleValid({ ...hole, overblows: [1], valvedblows: [3] })
-  ).toStrictEqual([HoleErrors.ConflictingValvedBlowBends])
+  ).toStrictEqual([HoleErrors.ConflictingValvedblowbends])
 })
 
 test('isHoleValid returns an error when there are valved draw bends along with sympathetic draw bends', () => {
@@ -337,10 +337,10 @@ test('isHoleValid returns an error when there are valved draw bends along with s
   }
   expect(
     isHoleValid({ ...hole, drawbends: [1, 2, 3], valveddraws: [3] })
-  ).toStrictEqual([HoleErrors.ConflictingValvedDrawBends])
+  ).toStrictEqual([HoleErrors.ConflictingValveddrawbends])
   // Strictly this hole doesn't make sense because an overdraw would not exist on it,
   // but it serves the purpose
   expect(
     isHoleValid({ ...hole, overdraws: [1], valveddraws: [3] })
-  ).toStrictEqual([HoleErrors.ConflictingValvedDrawBends])
+  ).toStrictEqual([HoleErrors.ConflictingValveddrawbends])
 })
