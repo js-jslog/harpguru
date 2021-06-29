@@ -71,9 +71,10 @@ test('mapHoleToIncludeValvebends adds a valved draw bend when draw reed is lower
   expect(actualHoleOutput).toStrictEqual(expectedHoleOutput)
 })
 
-// The way I see it, if you're halfvalving normally but your hole would have no bends
-// for the unvalved reed then you might as well go full valved.
-// This is an edge case anyway.
+// Half-valving should usually place the valve on the higher of the two reeds. When they are both
+// the same, where should the valve go? I argue that you might as well have a valve on each reed
+// since otherwise you have no bends at all. Valving is the only way to get any kind of bend in
+// this situation.
 test('mapHoleToIncludeValvebends adds both a valved blow and a valved draw bend when the reeds are the same', () => {
   const holeInput: Hole = {
     blow: 8,
