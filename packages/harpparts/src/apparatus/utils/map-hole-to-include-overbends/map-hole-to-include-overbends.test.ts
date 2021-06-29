@@ -90,8 +90,6 @@ test('mapHoleToIncludeOverbends adds no overdraw when the hole is halfvalved', (
   expect(actualHoleOutput).toStrictEqual(holeInput)
 })
 
-// This behaviour may not actually be correct, but I'm waiting for Woozle to do
-// an experiment to confirm whether overbends occur in this situation.
 test('mapHoleToIncludeOverbends adds no overbends when the reeds are the same', () => {
   const holeInput: Hole = {
     blow: 8,
