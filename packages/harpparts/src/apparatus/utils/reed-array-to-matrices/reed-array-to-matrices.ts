@@ -22,7 +22,7 @@ export const reedArrayToMatrices = (
   const holeArray = pivotReedArray(reedArray)
     .map(mapReedPairToHole)
     .map(mapHoleToIncludeBends)
-    .map(mapHoleToIncludeOverbends)
+    .map(mapHoleToIncludeOverbends.bind(undefined, valvingId))
     .map(mapHoleToFilterOverbends)
     .map(mapHoleToIncludeValvebends.bind(undefined, valvingId))
     .map(mapHoleToFilterIfValved) as HoleArray
