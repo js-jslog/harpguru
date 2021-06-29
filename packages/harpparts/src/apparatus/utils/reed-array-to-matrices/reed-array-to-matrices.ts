@@ -4,7 +4,6 @@ import { mapHoleToIncludeValvebends } from '../map-hole-to-include-valvebends'
 import { mapHoleToIncludeOverbends } from '../map-hole-to-include-overbends'
 import { mapHoleToIncludeBends } from '../map-hole-to-include-bends'
 import { mapHoleToFilterOverbends } from '../map-hole-to-filter-overbends'
-import { mapHoleToFilterIfValved } from '../map-hole-to-filter-if-valved'
 import { mapHoleTierToInteractionid } from '../map-hole-tier-to-interactionid'
 import { mapHoleTierToHalfstepindex } from '../map-hole-tier-to-halstepindex'
 import { getHoleArrayErrorMessages } from '../get-hole-array-error-messages'
@@ -24,8 +23,7 @@ export const reedArrayToMatrices = (
     .map(mapHoleToIncludeBends)
     .map(mapHoleToIncludeOverbends.bind(undefined, valvingId))
     .map(mapHoleToFilterOverbends)
-    .map(mapHoleToIncludeValvebends.bind(undefined, valvingId))
-    .map(mapHoleToFilterIfValved) as HoleArray
+    .map(mapHoleToIncludeValvebends.bind(undefined, valvingId)) as HoleArray
 
   const holeErrorMessages = getHoleArrayErrorMessages(holeArray)
   if (holeErrorMessages.length > 0)
