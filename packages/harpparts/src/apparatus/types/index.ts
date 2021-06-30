@@ -3,9 +3,9 @@ import type { HarpFaceMatrix, HalfstepIndex } from '../../types'
 import { TuningIds } from '../../tuning'
 import type { Interaction } from '../../interaction'
 
-export type ReedPair = [HalfstepIndex, HalfstepIndex]
+export type ReedPair = readonly [HalfstepIndex, HalfstepIndex]
 
-export type ReedPairArray = [
+export type ReedPairArray = readonly [
   ReedPair,
   ReedPair,
   ReedPair,
@@ -29,7 +29,7 @@ export type Hole = {
   readonly valveddraws: HalfstepIndex[]
 }
 
-export type HoleArray = [
+export type HoleArray = readonly [
   Hole,
   Hole,
   Hole,

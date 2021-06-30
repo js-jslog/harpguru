@@ -76,7 +76,7 @@ export const POWER_DRAW_TUNING: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , e1 , g1 , c2 , e2 , g2 , a2 , c3 , e3 , a3 ],
     [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d3 , g3 , c4 ],
-  ], // TODO: How do we define ReedArray as a non-mutable type. I can't make this `as const` for some reason.
+  ],
 }
 
 export const WILDE_TUNED_TUNING: Tuning = {

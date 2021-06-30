@@ -15,8 +15,8 @@ export type Tuning = {
   readonly reedArray: ReedArray
 }
 
-export type ReedArray = [
-  [
+export type ReedArray = readonly [
+  readonly [
     HalfstepIndex,
     HalfstepIndex,
     HalfstepIndex,
@@ -28,7 +28,7 @@ export type ReedArray = [
     HalfstepIndex,
     HalfstepIndex
   ],
-  [
+  readonly [
     HalfstepIndex,
     HalfstepIndex,
     HalfstepIndex,
