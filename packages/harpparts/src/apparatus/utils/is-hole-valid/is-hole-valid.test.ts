@@ -184,6 +184,34 @@ test('isHoleValid returns an error when there are more than 2 overdraws on a hol
   expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyOverdraws])
 })
 
+test('isHoleValid returns an error when there are more than 2 valveddblows on a hole', () => {
+  const hole: Hole = {
+    blow: 4,
+    draw: 6,
+    blowbends: [],
+    drawbends: [],
+    overblows: [],
+    overdraws: [],
+    valvedblows: [1, 2, 3],
+    valveddraws: [],
+  }
+  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyValvedblows])
+})
+
+test('isHoleValid returns an error when there are more than 2 valveddraws on a hole', () => {
+  const hole: Hole = {
+    blow: 2,
+    draw: 0,
+    blowbends: [],
+    drawbends: [],
+    overblows: [],
+    overdraws: [],
+    valvedblows: [],
+    valveddraws: [-3, -2, -1],
+  }
+  expect(isHoleValid(hole)).toStrictEqual([HoleErrors.TooManyValveddraws])
+})
+
 test('isHoleValid returns no errors when all the bends are consecutively ascending', () => {
   const hole: Hole = {
     blow: 0,

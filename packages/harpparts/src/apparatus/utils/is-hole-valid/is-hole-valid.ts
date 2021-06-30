@@ -11,6 +11,8 @@ export enum HoleErrors {
   TooManyDrawbends = 'TOO_MANY_BENDS',
   TooManyOverblows = 'TOO_MANY_OVERBLOWS',
   TooManyOverdraws = 'TOO_MANY_OVERDRAWS',
+  TooManyValvedblows = 'TOO_MANY_VALVEDBLOWS',
+  TooManyValveddraws = 'TOO_MANY_VALVEDDRAWS',
   NonconsecutiveBends = 'NONCONSECUTIVE_BENDS',
   NonconsecutiveBlowbends = 'NONCONSECUTIVE_BLOWBENDS',
   NonconsecutiveOverblows = 'NONCONSECUTIVE_OVERBLOWS',
@@ -29,6 +31,7 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
   // unachievable interactions.
   const bendLimit = 5
   const overbendLimit = 2
+  const valvedbendLimit = 2
   const { Ascending } = Direction
 
   const conflictingBlowbends =
@@ -47,6 +50,14 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
     hole.overblows.length > overbendLimit ? [HoleErrors.TooManyOverblows] : []
   const tooManyOverdraws =
     hole.overdraws.length > overbendLimit ? [HoleErrors.TooManyOverdraws] : []
+  const tooManyValvedblows =
+    hole.valvedblows.length > valvedbendLimit
+      ? [HoleErrors.TooManyValvedblows]
+      : []
+  const tooManyValveddraws =
+    hole.valveddraws.length > valvedbendLimit
+      ? [HoleErrors.TooManyValveddraws]
+      : []
   const nonconsecutiveBlowbends = !hole.blowbends.every(
     isConsecutiveWithPrevious.bind(undefined, Ascending)
   )
@@ -85,6 +96,8 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
     ...tooManyDrawbends,
     ...tooManyOverblows,
     ...tooManyOverdraws,
+    ...tooManyValvedblows,
+    ...tooManyValveddraws,
     ...nonconsecutiveBlowbends,
     ...nonconsecutiveDrawbends,
     ...nonconsecutiveOverblows,
