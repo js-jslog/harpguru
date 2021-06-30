@@ -5,20 +5,20 @@ import {
 } from '../../../packages/is-consecutive-with-previous'
 
 export enum HoleErrors {
-  ConflictingBlowbends = 'CONFLICTING_BLOW_BENDS',
-  ConflictingDrawbends = 'CONFLICTING_DRAW_BENDS',
+  ConflictingBlowbends = 'CONFLICTING_BLOWBENDS',
+  ConflictingDrawbends = 'CONFLICTING_DRAWBENDS',
   TooManyBlowbends = 'TOO_MANY_BLOWBENDS',
-  TooManyDrawbends = 'TOO_MANY_BENDS',
+  TooManyDrawbends = 'TOO_MANY_DRAWBENDS',
   TooManyOverblows = 'TOO_MANY_OVERBLOWS',
   TooManyOverdraws = 'TOO_MANY_OVERDRAWS',
   TooManyValvedblows = 'TOO_MANY_VALVEDBLOWS',
   TooManyValveddraws = 'TOO_MANY_VALVEDDRAWS',
-  NonconsecutiveBends = 'NONCONSECUTIVE_BENDS',
+  NonconsecutiveDrawbends = 'NONCONSECUTIVE_DRAWBENDS',
   NonconsecutiveBlowbends = 'NONCONSECUTIVE_BLOWBENDS',
   NonconsecutiveOverblows = 'NONCONSECUTIVE_OVERBLOWS',
   NonconsecutiveOverdraws = 'NONCONSECUTIVE_OVERDRAWS',
-  ConflictingValvedblowbends = 'CONFLICTING_VALVED_BLOW_BENDS',
-  ConflictingValveddrawbends = 'CONFLICTING_VALVED_DRAW_BENDS',
+  ConflictingValvedblows = 'CONFLICTING_VALVED_BLOWS',
+  ConflictingValveddraws = 'CONFLICTING_VALVED_DRAWS',
 }
 
 export const isHoleValid = (hole: Hole): HoleErrors[] => {
@@ -66,7 +66,7 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
   const nonconsecutiveDrawbends = !hole.drawbends.every(
     isConsecutiveWithPrevious.bind(undefined, Ascending)
   )
-    ? [HoleErrors.NonconsecutiveBends]
+    ? [HoleErrors.NonconsecutiveDrawbends]
     : []
   const nonconsecutiveOverblows = !hole.overblows.every(
     isConsecutiveWithPrevious.bind(undefined, Ascending)
@@ -81,12 +81,12 @@ export const isHoleValid = (hole: Hole): HoleErrors[] => {
   const conflictingValvedblowbends =
     hole.valvedblows.length > 0 &&
     (hole.blowbends.length > 0 || hole.overblows.length > 0)
-      ? [HoleErrors.ConflictingValvedblowbends]
+      ? [HoleErrors.ConflictingValvedblows]
       : []
   const conflictingValveddrawbends =
     hole.valveddraws.length > 0 &&
     (hole.drawbends.length > 0 || hole.overdraws.length > 0)
-      ? [HoleErrors.ConflictingValveddrawbends]
+      ? [HoleErrors.ConflictingValveddraws]
       : []
 
   return [

@@ -67,6 +67,6 @@ test('getHoleArrayErrorMessages returns an array containing an error message for
   const holeArrayErrorMessages = getHoleArrayErrorMessages(holeArray)
 
   expect(holeArrayErrorMessages).toStrictEqual([
-    `Hole 0: ${HoleErrors.NonconsecutiveBends}`,
+    `Hole 0: ${HoleErrors.NonconsecutiveDrawbends}`,
   ])
 })
