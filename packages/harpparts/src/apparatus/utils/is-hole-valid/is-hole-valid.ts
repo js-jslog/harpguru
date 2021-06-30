@@ -20,6 +20,13 @@ export enum HoleErrors {
 }
 
 export const isHoleValid = (hole: Hole): HoleErrors[] => {
+  // These limits are defined based on the experiments of
+  // Woozle Effect and define either the point at which bends
+  // can no longer be reached or are a proxy definition for
+  // when reeds are set so far apart that sympathetic bends
+  // can't even be started. Either way, the hole which is
+  // the subject to these checks *is* invalid as it represnets
+  // unachievable interactions.
   const bendLimit = 5
   const overbendLimit = 2
   const { Ascending } = Direction
