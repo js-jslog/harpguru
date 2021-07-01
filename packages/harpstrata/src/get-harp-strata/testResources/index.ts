@@ -1,4 +1,4 @@
-export { EXAMPLE_STRATA } from './EXAMPLE_STRATA'
-export { EXAMPLE_DEGREE_MATRICES } from './EXAMPLE_DEGREE_MATRICES'
-export { EXAMPLE_PITCH_MATRICES } from './EXAMPLE_PITCH_MATRICES'
-export { EXAMPLE_IS_ACTIVE_IDS_PAIR } from './EXAMPLE_IS_ACTIVE_IDS_PAIR'
+export { EXAMPLE_STRATA } from './example-strata'
+export { EXAMPLE_DEGREE_MATRICES } from './example-degree-matrices'
+export { EXAMPLE_PITCH_MATRICES } from './example-pitch-matrices'
+export { EXAMPLE_IS_ACTIVE_IDS_PAIR } from './example-is-active-ids-pair'

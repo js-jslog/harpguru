@@ -8,9 +8,9 @@ import {
 
 import type { HarpStrata } from '../../types'
 
-import { EXAMPLE_PITCH_MATRICES } from './EXAMPLE_PITCH_MATRICES'
-import { EXAMPLE_IS_ACTIVE_IDS_PAIR } from './EXAMPLE_IS_ACTIVE_IDS_PAIR'
-import { EXAMPLE_DEGREE_MATRICES } from './EXAMPLE_DEGREE_MATRICES'
+import { EXAMPLE_PITCH_MATRICES } from './example-pitch-matrices'
+import { EXAMPLE_IS_ACTIVE_IDS_PAIR } from './example-is-active-ids-pair'
+import { EXAMPLE_DEGREE_MATRICES } from './example-degree-matrices'
 
 const cMajorDiatonicFirstPozitionCMajorPentatonic: HarpStrata = {
   apparatus: buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved),
