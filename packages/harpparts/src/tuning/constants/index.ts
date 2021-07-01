@@ -37,7 +37,7 @@ export const MAJOR_DIATONIC_TUNING: Tuning = {
     [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
     [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
   ],
-}
+} as const
 
 export const COUNTRY_TUNED_TUNING: Tuning = {
   id: TuningIds.CountryTuned,
@@ -47,7 +47,7 @@ export const COUNTRY_TUNED_TUNING: Tuning = {
     [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
     [ d1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , f3 , a3 ],
   ],
-}
+} as const
 
 export const NATURAL_MINOR_TUNING: Tuning = {
   id: TuningIds.NaturalMinor,
@@ -57,7 +57,7 @@ export const NATURAL_MINOR_TUNING: Tuning = {
     [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
     [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
   ],
-}
+} as const
 
 export const POWER_BENDER_TUNING: Tuning = {
   id: TuningIds.PowerBender,
@@ -67,7 +67,7 @@ export const POWER_BENDER_TUNING: Tuning = {
     [ c1 , e1 , g1 , c2 , d2 , f2 , a2 , c3 , e3 , a3 ],
     [ d1 , g1 , b1 , d2 , e2 , g2 , b2 , d3 , g3 , c4 ],
   ],
-}
+} as const
 
 export const POWER_DRAW_TUNING: Tuning = {
   id: TuningIds.PowerDraw,
@@ -77,7 +77,7 @@ export const POWER_DRAW_TUNING: Tuning = {
     [ c1 , e1 , g1 , c2 , e2 , g2 , a2 , c3 , e3 , a3 ],
     [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d3 , g3 , c4 ],
   ],
-}
+} as const
 
 export const WILDE_TUNED_TUNING: Tuning = {
   id: TuningIds.WildeTuned,
@@ -87,7 +87,7 @@ export const WILDE_TUNED_TUNING: Tuning = {
     [ c1 , e1 , g1 , c2 , e2 , e2 , g2 , c3 , e3 , a3 ],
     [ d1 , g1 , b1 , d2 , f2 , g2 , b2 , d3 , g3 , c4 ],
   ],
-}
+} as const
 
 export const WOOZLE_MINOR_TUNING: Tuning = {
   id: TuningIds.WoozleMinor,
@@ -97,4 +97,4 @@ export const WOOZLE_MINOR_TUNING: Tuning = {
     [ c1 , eb1, g1 , c2 , eb2, g2 , a2 , c3 , eb3, a3 ],
     [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , g3 , c4 ],
   ],
-}
+} as const
