@@ -1,6 +1,6 @@
 import { ValvingIds } from '../../valving'
 import type { Valving } from '../../valving'
 
-export const ORDERED_VALVINGS = new Map<ValvingIds, Valving>()
-ORDERED_VALVINGS.set(ValvingIds.NotValved, { id: ValvingIds.NotValved })
-ORDERED_VALVINGS.set(ValvingIds.HalfValved, { id: ValvingIds.HalfValved })
+export const orderedValvings = new Map<ValvingIds, Valving>()
+orderedValvings.set(ValvingIds.NotValved, { id: ValvingIds.NotValved })
+orderedValvings.set(ValvingIds.HalfValved, { id: ValvingIds.HalfValved })
