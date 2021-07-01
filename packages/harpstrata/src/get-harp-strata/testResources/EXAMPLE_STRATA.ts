@@ -12,54 +12,77 @@ import { EXAMPLE_PITCH_MATRICES } from './EXAMPLE_PITCH_MATRICES'
 import { EXAMPLE_IS_ACTIVE_IDS_PAIR } from './EXAMPLE_IS_ACTIVE_IDS_PAIR'
 import { EXAMPLE_DEGREE_MATRICES } from './EXAMPLE_DEGREE_MATRICES'
 
-const C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: HarpStrata = {
+const cMajorDiatonicFirstPozitionCMajorPentatonic: HarpStrata = {
   apparatus: buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved),
-  degreeMatrix: EXAMPLE_DEGREE_MATRICES.MAJOR_DIATONIC_FIRST_POZITION,
-  pitchMatrix: EXAMPLE_PITCH_MATRICES.MAJOR_DIATONIC_C_HARMONICA,
+  degreeMatrix:
+    EXAMPLE_DEGREE_MATRICES.majorDiatonic.firstPozition.notValved.degreeMatrix,
+  pitchMatrix: EXAMPLE_PITCH_MATRICES.majorDiatonic.cHarp.notValved.pitchMatrix,
   activeDegreeIds:
-    EXAMPLE_IS_ACTIVE_IDS_PAIR
-      .C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC.activeDegreeIds,
+    EXAMPLE_IS_ACTIVE_IDS_PAIR.cHarp.firstPozition.cMajorPentatonic
+      .activeDegreeIds,
   activePitchIds:
-    EXAMPLE_IS_ACTIVE_IDS_PAIR
-      .C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC.activePitchIds,
+    EXAMPLE_IS_ACTIVE_IDS_PAIR.cHarp.firstPozition.cMajorPentatonic
+      .activePitchIds,
   pozitionId: PozitionIds.First,
   rootPitchId: PitchIds.C,
   harpKeyId: PitchIds.C,
 } as const
 
-const C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC_HALF_VALVED: HarpStrata = {
+const cMajorDiatonicFirstPozitionCMajorPentatonicHalfValved: HarpStrata = {
   apparatus: buildApparatus(TuningIds.MajorDiatonic, ValvingIds.HalfValved),
   degreeMatrix:
-    EXAMPLE_DEGREE_MATRICES.MAJOR_DIATONIC_FIRST_POZITION_HALF_VALVED,
-  pitchMatrix: EXAMPLE_PITCH_MATRICES.MAJOR_DIATONIC_C_HARMONICA_HALF_VALVED,
+    EXAMPLE_DEGREE_MATRICES.majorDiatonic.firstPozition.halfValved.degreeMatrix,
+  pitchMatrix:
+    EXAMPLE_PITCH_MATRICES.majorDiatonic.cHarp.halfValved.pitchMatrix,
   activeDegreeIds:
-    EXAMPLE_IS_ACTIVE_IDS_PAIR
-      .C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC.activeDegreeIds,
+    EXAMPLE_IS_ACTIVE_IDS_PAIR.cHarp.firstPozition.cMajorPentatonic
+      .activeDegreeIds,
   activePitchIds:
-    EXAMPLE_IS_ACTIVE_IDS_PAIR
-      .C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC.activePitchIds,
+    EXAMPLE_IS_ACTIVE_IDS_PAIR.cHarp.firstPozition.cMajorPentatonic
+      .activePitchIds,
   pozitionId: PozitionIds.First,
   rootPitchId: PitchIds.C,
   harpKeyId: PitchIds.C,
 } as const
 
-const C_MAJOR_DIATONIC_SECOND_POZITION_G_MAJOR_PENTATONIC: HarpStrata = {
+const cMajorDiatonicSecondPozitionGMajorPentatonic: HarpStrata = {
   apparatus: buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved),
-  degreeMatrix: EXAMPLE_DEGREE_MATRICES.MAJOR_DIATONIC_SECOND_POZITION,
-  pitchMatrix: EXAMPLE_PITCH_MATRICES.MAJOR_DIATONIC_C_HARMONICA,
+  degreeMatrix:
+    EXAMPLE_DEGREE_MATRICES.majorDiatonic.secondPozition.notValved.degreeMatrix,
+  pitchMatrix: EXAMPLE_PITCH_MATRICES.majorDiatonic.cHarp.notValved.pitchMatrix,
   activeDegreeIds:
-    EXAMPLE_IS_ACTIVE_IDS_PAIR
-      .C_MAJOR_DIATONIC_SECOND_POZITION_G_MAJOR_PENTATONIC.activeDegreeIds,
+    EXAMPLE_IS_ACTIVE_IDS_PAIR.cHarp.secondPozition.gMajorPentatonic
+      .activeDegreeIds,
   activePitchIds:
-    EXAMPLE_IS_ACTIVE_IDS_PAIR
-      .C_MAJOR_DIATONIC_SECOND_POZITION_G_MAJOR_PENTATONIC.activePitchIds,
+    EXAMPLE_IS_ACTIVE_IDS_PAIR.cHarp.secondPozition.gMajorPentatonic
+      .activePitchIds,
   pozitionId: PozitionIds.Second,
   rootPitchId: PitchIds.G,
   harpKeyId: PitchIds.C,
 } as const
 
 export const EXAMPLE_STRATA = {
-  C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC,
-  C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC_HALF_VALVED,
-  C_MAJOR_DIATONIC_SECOND_POZITION_G_MAJOR_PENTATONIC,
+  majorDiatonic: {
+    cHarp: {
+      firstPozition: {
+        notValved: {
+          cMajorPentatonic: {
+            harpStrata: cMajorDiatonicFirstPozitionCMajorPentatonic,
+          },
+        },
+        halfValved: {
+          cMajorPentatonic: {
+            harpStrata: cMajorDiatonicFirstPozitionCMajorPentatonicHalfValved,
+          },
+        },
+      },
+      secondPozition: {
+        notValved: {
+          gMajorPentatonic: {
+            harpStrata: cMajorDiatonicSecondPozitionGMajorPentatonic,
+          },
+        },
+      },
+    },
+  },
 } as const

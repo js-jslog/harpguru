@@ -6,7 +6,15 @@ import { getHarpStrata } from './index'
 
 test('getHarpStrata can return a first pozition C major diatonic HarpStrata with C major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
   const {
-    C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: expectedStrata,
+    majorDiatonic: {
+      cHarp: {
+        firstPozition: {
+          notValved: {
+            cMajorPentatonic: { harpStrata: expectedStrata },
+          },
+        },
+      },
+    },
   } = EXAMPLE_STRATA
   const { activeDegreeIds, activePitchIds } = expectedStrata
 
@@ -35,7 +43,15 @@ test('getHarpStrata can return a first pozition C major diatonic HarpStrata with
 
 test('getHarpStrata can return a first pozition C major diatonic half valved HarpStrata with C major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
   const {
-    C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC_HALF_VALVED: expectedStrata,
+    majorDiatonic: {
+      cHarp: {
+        firstPozition: {
+          halfValved: {
+            cMajorPentatonic: { harpStrata: expectedStrata },
+          },
+        },
+      },
+    },
   } = EXAMPLE_STRATA
   const { activeDegreeIds, activePitchIds } = expectedStrata
 
@@ -64,7 +80,15 @@ test('getHarpStrata can return a first pozition C major diatonic half valved Har
 
 test('getHarpStrata can return a second pozition C major diatonic HarpStrata with G major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
   const {
-    C_MAJOR_DIATONIC_SECOND_POZITION_G_MAJOR_PENTATONIC: expectedStrata,
+    majorDiatonic: {
+      cHarp: {
+        secondPozition: {
+          notValved: {
+            gMajorPentatonic: { harpStrata: expectedStrata },
+          },
+        },
+      },
+    },
   } = EXAMPLE_STRATA
   const { activeDegreeIds, activePitchIds } = expectedStrata
 

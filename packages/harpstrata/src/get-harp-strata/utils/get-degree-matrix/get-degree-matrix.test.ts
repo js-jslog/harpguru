@@ -27,13 +27,19 @@ test('getDegreeMatrix function maps a simple 2d array of 0s to 4th degrees (6) w
 })
 
 test('getDegreeMatrix maps a major diatonic halfstepmatrix in to a major diatonic degreematrix in first pozition', () => {
-  const { MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_DEGREE_MATRICES
+  const {
+    majorDiatonic: {
+      firstPozition: {
+        notValved: { degreeMatrix: expectedDegreeMatrix },
+      },
+    },
+  } = EXAMPLE_DEGREE_MATRICES
   const actualArray = getDegreeMatrix(
     majorDiatonicApparatus.halfstepIndexMatrix,
     0
   )
 
-  expect(actualArray).toStrictEqual(MAJOR_DIATONIC_FIRST_POZITION)
+  expect(actualArray).toStrictEqual(expectedDegreeMatrix)
 })
 
 test('getDegreeMatrix function maps a simple 2d array of -1s to 7th degrees (11) when halfsetp offset is 0', () => {

@@ -15,7 +15,7 @@ const flat7 = getDegree(DegreeIds.Flat7)
 const seventh = getDegree(DegreeIds.Seventh)
 
 // prettier-ignore
-const MAJOR_DIATONIC_FIRST_POZITION: HarpFaceMatrix<Degree> = [
+const majorDiatonicFirstPozition: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat7     ],
   [ flat3    , undefined, undefined, flat3    , flat5    , flat7    , undefined, flat3    , flat5    , seventh   ],
   [ root     , third    , fifth    , root     , third    , fifth    , root     , third    , fifth    , root      ],
@@ -26,7 +26,7 @@ const MAJOR_DIATONIC_FIRST_POZITION: HarpFaceMatrix<Degree> = [
 ] as const
 
 // prettier-ignore
-const MAJOR_DIATONIC_FIRST_POZITION_HALF_VALVED: HarpFaceMatrix<Degree> = [
+const majorDiatonicFirstPozitionHalfValved: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat7     ],
   [ seventh  , flat3    , flat5    , seventh  , flat3    , flat5    , undefined, flat3    , flat5    , seventh   ],
   [ root     , third    , fifth    , root     , third    , fifth    , root     , third    , fifth    , root      ],
@@ -37,7 +37,7 @@ const MAJOR_DIATONIC_FIRST_POZITION_HALF_VALVED: HarpFaceMatrix<Degree> = [
 ] as const
 
 // prettier-ignore
-const MAJOR_DIATONIC_SECOND_POZITION: HarpFaceMatrix<Degree> = [
+const majorDiatonicSecondPozition: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat3     ],
   [ flat6    , undefined, undefined, flat6    , seventh  , flat3    , undefined, flat6    , seventh  , third     ],
   [ fourth   , sixth    , root     , fourth   , sixth    , root     , fourth   , sixth    , root     , fourth    ],
@@ -48,7 +48,19 @@ const MAJOR_DIATONIC_SECOND_POZITION: HarpFaceMatrix<Degree> = [
 ] as const
 
 export const EXAMPLE_DEGREE_MATRICES = {
-  MAJOR_DIATONIC_FIRST_POZITION,
-  MAJOR_DIATONIC_FIRST_POZITION_HALF_VALVED,
-  MAJOR_DIATONIC_SECOND_POZITION,
+  majorDiatonic: {
+    firstPozition: {
+      notValved: {
+        degreeMatrix: majorDiatonicFirstPozition,
+      },
+      halfValved: {
+        degreeMatrix: majorDiatonicFirstPozitionHalfValved,
+      },
+    },
+    secondPozition: {
+      notValved: {
+        degreeMatrix: majorDiatonicSecondPozition,
+      },
+    },
+  },
 } as const

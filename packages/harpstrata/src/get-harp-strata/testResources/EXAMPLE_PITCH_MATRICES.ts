@@ -15,7 +15,7 @@ const bb = getPitch(PitchIds.Bb)
 const b = getPitch(PitchIds.B)
 
 // prettier-ignore
-const MAJOR_DIATONIC_C_HARMONICA: HarpFaceMatrix<Pitch> = [
+const cMajorDiatonic: HarpFaceMatrix<Pitch> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, bb        ],
   [ eb       , undefined, undefined, eb       , gb       , bb       , undefined, eb       , gb       , b         ],
   [ c        , e        , g        , c        , e        , g        , c        , e        , g        , c         ],
@@ -26,7 +26,7 @@ const MAJOR_DIATONIC_C_HARMONICA: HarpFaceMatrix<Pitch> = [
 ] as const
 
 // prettier-ignore
-const MAJOR_DIATONIC_C_HARMONICA_HALF_VALVED: HarpFaceMatrix<Pitch> = [
+const cMajorDiatonicHalfValved: HarpFaceMatrix<Pitch> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, bb        ],
   [ b        , eb       , gb       , b        , eb       , gb       , undefined, eb       , gb       , b         ],
   [ c        , e        , g        , c        , e        , g        , c        , e        , g        , c         ],
@@ -37,7 +37,7 @@ const MAJOR_DIATONIC_C_HARMONICA_HALF_VALVED: HarpFaceMatrix<Pitch> = [
 ] as const
 
 // prettier-ignore
-const MAJOR_DIATONIC_F_HARMONICA: HarpFaceMatrix<Pitch> = [
+const fMajorDiatonic: HarpFaceMatrix<Pitch> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, eb        ],
   [ ab       , undefined, undefined, ab       , b        , eb       , undefined, ab       , b        , e         ],
   [ f        , a        , c        , f        , a        , c        , f        , a        , c        , f         ],
@@ -48,7 +48,19 @@ const MAJOR_DIATONIC_F_HARMONICA: HarpFaceMatrix<Pitch> = [
 ] as const
 
 export const EXAMPLE_PITCH_MATRICES = {
-  MAJOR_DIATONIC_C_HARMONICA,
-  MAJOR_DIATONIC_C_HARMONICA_HALF_VALVED,
-  MAJOR_DIATONIC_F_HARMONICA,
+  majorDiatonic: {
+    cHarp: {
+      notValved: {
+        pitchMatrix: cMajorDiatonic,
+      },
+      halfValved: {
+        pitchMatrix: cMajorDiatonicHalfValved,
+      },
+    },
+    fHarp: {
+      notValved: {
+        pitchMatrix: fMajorDiatonic,
+      },
+    },
+  },
 } as const
