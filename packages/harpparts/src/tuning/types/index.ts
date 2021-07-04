@@ -4,11 +4,15 @@ export enum TuningIds {
   MajorDiatonic = 'Major diatonic',
   CountryTuned = 'Country tuned',
   NaturalMinor = 'Natural minor',
+  HarmonicMinor = 'Harmonic minor',
   WildeTuned = 'Wilde tuned',
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
+  PaddyRichter = 'Paddy richter',
   MelodyMaker = 'Melody maker',
   WoozleMinor = 'Woozle minor',
+  AugmentedSpanish = 'Augmented Spanish',
+  SpiralCircular = 'Spiral / Circular',
 }
 
 export type Tuning = {
