@@ -15,6 +15,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.6.0...HEAD) - yyyy-mm-dd
 
+- MAJOR: Remove the halfvalved tuning options in favour of separate menu
+- MINOR: Add valving menu alongside the tuning menu
+
 ## [v7.3.0](https://github.com/js-jslog/harpguru/releases/tag/v8.6.0) - 2021-03-25
 
 ### Fixed
