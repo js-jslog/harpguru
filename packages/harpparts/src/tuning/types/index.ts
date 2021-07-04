@@ -7,6 +7,7 @@ export enum TuningIds {
   WildeTuned = 'Wilde tuned',
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
+  MelodyMaker = 'Melody maker',
   WoozleMinor = 'Woozle minor',
 }
 
