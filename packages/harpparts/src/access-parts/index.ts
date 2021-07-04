@@ -1,12 +1,13 @@
 export {
-  getApparatus,
+  getTuning,
   getDegree,
   getPitch,
   getPozition,
   getScale,
 } from './get-harp-part'
 export {
-  getApparatusIds,
+  getTuningIds,
+  getValvingIds,
   getDegreeIds,
   getPitchIds,
   getPozitionIds,

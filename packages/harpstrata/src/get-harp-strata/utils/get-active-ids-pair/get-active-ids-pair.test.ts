@@ -55,11 +55,21 @@ test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
 })
 
 const {
-  C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
-    degreeMatrix,
-    pitchMatrix,
-    activeDegreeIds: exampleDegreeIds,
-    activePitchIds: examplePitchIds,
+  majorDiatonic: {
+    cHarp: {
+      firstPozition: {
+        notValved: {
+          cMajorPentatonic: {
+            harpStrata: {
+              degreeMatrix,
+              pitchMatrix,
+              activeDegreeIds: exampleDegreeIds,
+              activePitchIds: examplePitchIds,
+            },
+          },
+        },
+      },
+    },
   },
 } = EXAMPLE_STRATA
 

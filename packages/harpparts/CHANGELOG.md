@@ -15,6 +15,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v8.5.0...HEAD) - yyyy-mm-dd
 
+- MAJOR: Replace apparatus getter with apparatus builder function
+- MINOR: Add tuning / valving objects / ids for use in apparatus builder function
+
 ## [v8.2.0](https://github.com/js-jslog/harpguru/releases/tag/v8.5.0) - 2021-03-14
 
 ### Added

@@ -9,7 +9,7 @@ import { Menu } from '../menu'
 import type { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
-import { getNewHarpStrataForDispatcher } from './utils'
+import { getNewHarpStrataByCovariantsForDispatcher } from './utils'
 import {
   useCovariantTitles,
   useCovariantItems,
@@ -18,8 +18,8 @@ import {
 
 export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
   const itemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataForDispatcher),
-    [useDispatch, getNewHarpStrataForDispatcher]
+    useDispatch(getNewHarpStrataByCovariantsForDispatcher),
+    [useDispatch, getNewHarpStrataByCovariantsForDispatcher]
   )
   const {
     useHarpKeyTitle,

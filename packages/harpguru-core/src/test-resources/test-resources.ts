@@ -1,6 +1,12 @@
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps, ActiveIds } from 'harpstrata'
-import { ApparatusIds, PitchIds, DegreeIds, PozitionIds } from 'harpparts'
+import {
+  TuningIds,
+  PitchIds,
+  DegreeIds,
+  PozitionIds,
+  ValvingIds,
+} from 'harpparts'
 
 const allActiveDegrees = [
   DegreeIds.Root,
@@ -18,7 +24,8 @@ const allActiveDegrees = [
 ]
 
 const baseHarpStrataProps: HarpStrataProps = {
-  apparatusId: ApparatusIds.MajorDiatonic,
+  tuningId: TuningIds.MajorDiatonic,
+  valvingId: ValvingIds.NotValved,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
   activeIds: [] as ActiveIds,

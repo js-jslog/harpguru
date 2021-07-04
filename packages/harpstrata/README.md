@@ -30,16 +30,6 @@ The assumptions which will hold of all layouts presented from this library are t
 - There is in principle no restriction on the number of holes which might be presented
 - Any `undefined` values in the matrix represents interactions with holes which are not possible (for instance, a triple bend on hole 1 of a traditional major diatonic harmonica)
 
-## API
-
-### getHarpStrata(HarpStrataProps) => HarpStrata
-
-Requires an `ApparatusIds` id object as well as a `PozitionIds`, `PitchIds` and `ActiveIds` object from which to deduce the `DegreeMatrix` and `PitchMatrix` components of the returned `HarpStrata`. Will also determine the counterpart active ids for any `Degree` or `Pitch` set given in `ActiveIds`.
-
-### getPropsForHarpStrata(HarpStrata, 'DEGREE' | 'PICH') => HarpStrataProps
-
-Requires a `HarpStrata` from which to identify the props which would have produced it from a call to `getHarpStrata`. Since either a set of `Degree`'s or `Pitch`'s could have been used to produce any given `HarpStrata`, the function also requests identification of which of these `ActiveIds` should be presumed to be used.
-
 # Pre-monorepo origins
 
 This package was imported from the head of a feature branch from a dedicated (and published) package called harpstrata.

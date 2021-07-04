@@ -1,46 +1,54 @@
 import {
-  ORDERED_APPARATUS,
-  ORDERED_DEGREES,
-  ORDERED_PITCHES,
-  ORDERED_POZITIONS,
-  ORDERED_SCALES,
+  orderedTunings,
+  orderedValvings,
+  orderedDegrees,
+  orderedPitches,
+  orderedPozitions,
+  orderedScales,
 } from '../constants'
+import type { ValvingIds } from '../../valving'
+import type { TuningIds } from '../../tuning'
 import type { ScaleIds } from '../../scale'
 import type { PozitionIds } from '../../pozition'
 import type { PitchIds } from '../../pitch'
 import type { DegreeIds } from '../../degree'
-import type { ApparatusIds } from '../../apparatus'
 
 import { getOrderedPartIds } from './get-ordered-part-ids'
 
-export const getApparatusIds = (
-  apparatusIds?: ApparatusIds
-): ReadonlyArray<ApparatusIds> => {
-  return getOrderedPartIds(ORDERED_APPARATUS, apparatusIds) as ReadonlyArray<
-    ApparatusIds
-  >
+export const getTuningIds = (
+  tuningId?: TuningIds
+): ReadonlyArray<TuningIds> => {
+  return getOrderedPartIds(orderedTunings, tuningId) as ReadonlyArray<TuningIds>
+}
+
+export const getValvingIds = (
+  valvingId?: ValvingIds
+): ReadonlyArray<ValvingIds> => {
+  return getOrderedPartIds(
+    orderedValvings,
+    valvingId
+  ) as ReadonlyArray<ValvingIds>
 }
 
 export const getDegreeIds = (
-  degreeIds?: DegreeIds
+  degreeId?: DegreeIds
 ): ReadonlyArray<DegreeIds> => {
-  return getOrderedPartIds(ORDERED_DEGREES, degreeIds) as ReadonlyArray<
-    DegreeIds
-  >
+  return getOrderedPartIds(orderedDegrees, degreeId) as ReadonlyArray<DegreeIds>
 }
 
 export const getPitchIds = (pitchId?: PitchIds): ReadonlyArray<PitchIds> => {
-  return getOrderedPartIds(ORDERED_PITCHES, pitchId) as ReadonlyArray<PitchIds>
+  return getOrderedPartIds(orderedPitches, pitchId) as ReadonlyArray<PitchIds>
 }
 
 export const getPozitionIds = (
   pozitionId?: PozitionIds
 ): ReadonlyArray<PozitionIds> => {
-  return getOrderedPartIds(ORDERED_POZITIONS, pozitionId) as ReadonlyArray<
-    PozitionIds
-  >
+  return getOrderedPartIds(
+    orderedPozitions,
+    pozitionId
+  ) as ReadonlyArray<PozitionIds>
 }
 
 export const getScaleIds = (scaleId?: ScaleIds): ReadonlyArray<ScaleIds> => {
-  return getOrderedPartIds(ORDERED_SCALES, scaleId) as ReadonlyArray<ScaleIds>
+  return getOrderedPartIds(orderedScales, scaleId) as ReadonlyArray<ScaleIds>
 }

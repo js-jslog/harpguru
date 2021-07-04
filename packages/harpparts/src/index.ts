@@ -1,5 +1,9 @@
-export { ApparatusIds, InteractionIds } from './apparatus'
-export type { Apparatus, Interaction } from './apparatus'
+export { TuningIds } from './tuning'
+export type { Apparatus } from './apparatus'
+export { buildApparatus } from './apparatus'
+export { ValvingIds } from './valving'
+export { InteractionIds } from './interaction'
+export type { Interaction } from './interaction'
 export { DegreeIds } from './degree'
 export { PitchIds, isPitchId, isNaturalPitch, isPitch } from './pitch'
 export { PozitionIds, isPozitionId, isPozition } from './pozition'
@@ -9,8 +13,8 @@ export type { Degree } from './degree'
 export type { Pitch } from './pitch'
 export type { Pozition } from './pozition'
 export {
-  getApparatusIds,
-  getApparatus,
+  getTuningIds,
+  getValvingIds,
   getDegreeIds,
   getDegree,
   getPitchIds,

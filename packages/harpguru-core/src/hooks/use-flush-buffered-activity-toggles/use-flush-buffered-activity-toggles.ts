@@ -13,7 +13,7 @@ export const useFlushBufferedActivityToggles = (): (() => void) => {
     if (bufferedActivityToggles.length === 0) return
 
     const {
-      apparatus: { id: apparatusId },
+      apparatus: { tuningId, valvingId },
       pozitionId,
       harpKeyId,
       activeDegreeIds,
@@ -23,7 +23,8 @@ export const useFlushBufferedActivityToggles = (): (() => void) => {
       bufferedActivityToggles
     )
     const newHarpStrataProps: HarpStrataProps = {
-      apparatusId,
+      tuningId,
+      valvingId,
       pozitionId,
       harpKeyId,
       activeIds: newActiveDegreeIds,

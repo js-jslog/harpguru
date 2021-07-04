@@ -5,15 +5,27 @@ export const getPropsForHarpStrata = (
   mode: 'DEGREE' | 'PITCH'
 ): HarpStrataProps => {
   const {
-    apparatus: { id: apparatusId },
+    apparatus: { tuningId, valvingId },
   } = harpStrata
   const { pozitionId } = harpStrata
   const { harpKeyId } = harpStrata
   const { activePitchIds, activeDegreeIds } = harpStrata
 
   if (mode === 'DEGREE') {
-    return { apparatusId, pozitionId, harpKeyId, activeIds: activeDegreeIds }
+    return {
+      tuningId,
+      valvingId,
+      pozitionId,
+      harpKeyId,
+      activeIds: activeDegreeIds,
+    }
   }
 
-  return { apparatusId, pozitionId, harpKeyId, activeIds: activePitchIds }
+  return {
+    tuningId,
+    valvingId,
+    pozitionId,
+    harpKeyId,
+    activeIds: activePitchIds,
+  }
 }
