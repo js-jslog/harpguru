@@ -224,12 +224,12 @@ export const AUGMENTED_SPANISH: Tuning = {
 } as const
 
 export const SPIRAL_CIRCULAR: Tuning = {
-  id: TuningIds.AugmentedSpanish,
+  id: TuningIds.SpiralCircular,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , g1 , bb1, d2 , f2 , a2 , c3 , e3 , g3 ],
-    [ d1 , f1 , a1 , c2 , e2 , g2 , bb2, d3 , f3 , a3 ],
+    [ c1 , e1 , g1 , b1 , d2 , f2 , a2 , c3 , e3 , g3 ],
+    [ d1 , f1 , a1 , c2 , e2 , g2 , b2 , d3 , f3 , a3 ],
   ],
 } as const
 
