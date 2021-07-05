@@ -19,7 +19,7 @@ A harp strata represents the various interactions possible on each hole on the f
 
 The matrix at the centre of this table is analogous to one of the representations being discussed. Each hole has multiple possible interactions, and each possible interaction will yield a particular scale degree note.
 
-This matrix represents the first 4 holes of a major diatonic harmonica being played in first position.
+This matrix represents the first 4 holes of a richter tuned harmonica being played in first position.
 
 ### HarpMatrix contract
 
@@ -28,7 +28,7 @@ The assumptions which will hold of all layouts presented from this library are t
 - Elements at position `[0, x]` represent the interactions with the first hole on the harmonica
 - Elements in the array to the right of the 0 column represent interactions with the holes sequentially to the right
 - There is in principle no restriction on the number of holes which might be presented
-- Any `undefined` values in the matrix represents interactions with holes which are not possible (for instance, a triple bend on hole 1 of a traditional major diatonic harmonica)
+- Any `undefined` values in the matrix represents interactions with holes which are not possible (for instance, a triple bend on hole 1 of a traditional richter tuned harmonica)
 
 # Pre-monorepo origins
 

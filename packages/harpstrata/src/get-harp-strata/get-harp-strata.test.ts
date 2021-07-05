@@ -4,9 +4,9 @@ import { EXAMPLE_STRATA } from './testResources'
 
 import { getHarpStrata } from './index'
 
-test('getHarpStrata can return a first pozition C major diatonic HarpStrata with C major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
+test('getHarpStrata can return a first pozition C richter HarpStrata with C major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
   const {
-    majorDiatonic: {
+    richter: {
       cHarp: {
         firstPozition: {
           notValved: {
@@ -19,7 +19,7 @@ test('getHarpStrata can return a first pozition C major diatonic HarpStrata with
   const { activeDegreeIds, activePitchIds } = expectedStrata
 
   const harpStrataPropsBase = {
-    tuningId: TuningIds.MajorDiatonic,
+    tuningId: TuningIds.Richter,
     valvingId: ValvingIds.NotValved,
     pozitionId: PozitionIds.First,
     harpKeyId: PitchIds.C,
@@ -41,9 +41,9 @@ test('getHarpStrata can return a first pozition C major diatonic HarpStrata with
   expect(strataFromPitchIds).toEqual(expectedStrata)
 })
 
-test('getHarpStrata can return a first pozition C major diatonic half valved HarpStrata with C major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
+test('getHarpStrata can return a first pozition C richter half valved HarpStrata with C major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
   const {
-    majorDiatonic: {
+    richter: {
       cHarp: {
         firstPozition: {
           halfValved: {
@@ -56,7 +56,7 @@ test('getHarpStrata can return a first pozition C major diatonic half valved Har
   const { activeDegreeIds, activePitchIds } = expectedStrata
 
   const harpStrataPropsBase = {
-    tuningId: TuningIds.MajorDiatonic,
+    tuningId: TuningIds.Richter,
     valvingId: ValvingIds.HalfValved,
     pozitionId: PozitionIds.First,
     harpKeyId: PitchIds.C,
@@ -78,9 +78,9 @@ test('getHarpStrata can return a first pozition C major diatonic half valved Har
   expect(strataFromPitchIds).toEqual(expectedStrata)
 })
 
-test('getHarpStrata can return a second pozition C major diatonic HarpStrata with G major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
+test('getHarpStrata can return a second pozition C richter HarpStrata with G major pentatonic ActiveIdsPair given either set of ActiveIds', () => {
   const {
-    majorDiatonic: {
+    richter: {
       cHarp: {
         secondPozition: {
           notValved: {
@@ -93,7 +93,7 @@ test('getHarpStrata can return a second pozition C major diatonic HarpStrata wit
   const { activeDegreeIds, activePitchIds } = expectedStrata
 
   const harpStrataPropsBase = {
-    tuningId: TuningIds.MajorDiatonic,
+    tuningId: TuningIds.Richter,
     valvingId: ValvingIds.NotValved,
     pozitionId: PozitionIds.Second,
     harpKeyId: PitchIds.C,

@@ -6,7 +6,7 @@ import type { GlobalState } from '../../../../types'
 import { getNewHarpStrataByTuningForDispatcher } from './get-new-harpstrata-by-tuning-for-dispatcher'
 
 const baseHarpStrataProps = {
-  tuningId: TuningIds.MajorDiatonic,
+  tuningId: TuningIds.Richter,
   valvingId: ValvingIds.NotValved,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
@@ -15,7 +15,7 @@ const baseHarpStrataProps = {
 const majorDiatonicHarpProps = baseHarpStrataProps
 const countryTunedHarpProps = {
   ...baseHarpStrataProps,
-  tuningId: TuningIds.CountryTuned,
+  tuningId: TuningIds.Country,
 }
 const naturalMinorHarpProps = {
   ...baseHarpStrataProps,
@@ -43,7 +43,7 @@ test('provides HarpStrata updated by tuning set to natural minor', () => {
   expect(newActiveHarpStrata).toStrictEqual(naturalMinorHarp)
 })
 
-test('provides HarpStrata updated by tuning to major diatonic', () => {
+test('provides HarpStrata updated by tuning to richter', () => {
   const inputGlobal = {
     activeHarpStrata: countryTunedHarp,
   } as GlobalState
@@ -54,7 +54,7 @@ test('provides HarpStrata updated by tuning to major diatonic', () => {
   } = getNewHarpStrataByTuningForDispatcher(
     inputGlobal,
     unusedDispatcher,
-    TuningIds.MajorDiatonic
+    TuningIds.Richter
   )
 
   expect(newActiveHarpStrata).toStrictEqual(majorDiatonicHarp)

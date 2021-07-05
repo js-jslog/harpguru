@@ -37,8 +37,8 @@ const {
   eb4,
 } = ReedTuningPitches
 
-export const MAJOR_DIATONIC: Tuning = {
-  id: TuningIds.MajorDiatonic,
+export const RICHTER: Tuning = {
+  id: TuningIds.Richter,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -47,8 +47,8 @@ export const MAJOR_DIATONIC: Tuning = {
   ],
 } as const
 
-export const COUNTRY_TUNED: Tuning = {
-  id: TuningIds.CountryTuned,
+export const COUNTRY: Tuning = {
+  id: TuningIds.Country,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -117,8 +117,8 @@ export const MELODY_MAKER: Tuning = {
   ],
 } as const
 
-export const WILDE_TUNED: Tuning = {
-  id: TuningIds.WildeTuned,
+export const WILDE: Tuning = {
+  id: TuningIds.Wilde,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10

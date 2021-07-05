@@ -21,34 +21,32 @@ test('getPitchMatrix function maps a simple 2d array of 0s to the input key pitc
   expect(actualArray).toStrictEqual(expectedArray)
 })
 
-test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic pitchMatrix for a C harmonica', () => {
+test('getPitchMatrix maps a richter halfstepmatrix in to a richter pitchMatrix for a C harmonica', () => {
   const {
-    majorDiatonic: {
+    richter: {
       cHarp: {
         notValved: { pitchMatrix: expectedPitchMatrix },
       },
     },
   } = EXAMPLE_PITCH_MATRICES
   const actualArray = getPitchMatrix(
-    buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
-      .halfstepIndexMatrix,
+    buildApparatus(TuningIds.Richter, ValvingIds.NotValved).halfstepIndexMatrix,
     c.id
   )
 
   expect(actualArray).toStrictEqual(expectedPitchMatrix)
 })
 
-test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic pitchMatrix for a F harmonica', () => {
+test('getPitchMatrix maps a richter halfstepmatrix in to a richter pitchMatrix for a F harmonica', () => {
   const {
-    majorDiatonic: {
+    richter: {
       fHarp: {
         notValved: { pitchMatrix: expectedPitchMatrix },
       },
     },
   } = EXAMPLE_PITCH_MATRICES
   const actualArray = getPitchMatrix(
-    buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
-      .halfstepIndexMatrix,
+    buildApparatus(TuningIds.Richter, ValvingIds.NotValved).halfstepIndexMatrix,
     PitchIds.F
   )
 

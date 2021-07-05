@@ -26,7 +26,7 @@ test('getHarpCells returns an array of HarpCells, the length of the range suppli
 })
 
 test('getHarpCells returns an array of HarpCells, with a sample containing the expected values', () => {
-  // This test should be covering the blow row holes 2, 3 and 4 of a major diatonic tuned c harp
+  // This test should be covering the blow row holes 2, 3 and 4 of a richter tuned c harp
   const yCoord = 2
   const xRange = [1, 2, 3]
   const harpCells = getHarpCells(yCoord, xRange)

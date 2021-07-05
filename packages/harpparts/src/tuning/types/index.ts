@@ -1,11 +1,11 @@
 import type { HalfstepIndex } from '../../types'
 
 export enum TuningIds {
-  MajorDiatonic = 'Major diatonic',
-  CountryTuned = 'Country tuned',
+  Richter = 'Richter (major diatonic)',
+  Country = 'Country',
   NaturalMinor = 'Natural minor',
   HarmonicMinor = 'Harmonic minor',
-  WildeTuned = 'Wilde tuned',
+  Wilde = 'Wilde',
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
   PaddyRichter = 'Paddy richter',

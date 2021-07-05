@@ -6,7 +6,7 @@ import type { GlobalState } from '../../../../types'
 import { getNewHarpStrataByCovariantsForDispatcher } from './get-new-harpstrata-by-covariants-for-dispatcher'
 
 const baseHarpStrataProps = {
-  tuningId: TuningIds.MajorDiatonic,
+  tuningId: TuningIds.Richter,
   valvingId: ValvingIds.NotValved,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
