@@ -37,7 +37,7 @@ const {
   eb4,
 } = ReedTuningPitches
 
-export const MAJOR_DIATONIC_TUNING: Tuning = {
+export const MAJOR_DIATONIC: Tuning = {
   id: TuningIds.MajorDiatonic,
   // prettier-ignore
   reedArray: [
@@ -47,7 +47,7 @@ export const MAJOR_DIATONIC_TUNING: Tuning = {
   ],
 } as const
 
-export const COUNTRY_TUNED_TUNING: Tuning = {
+export const COUNTRY_TUNED: Tuning = {
   id: TuningIds.CountryTuned,
   // prettier-ignore
   reedArray: [
@@ -57,7 +57,7 @@ export const COUNTRY_TUNED_TUNING: Tuning = {
   ],
 } as const
 
-export const NATURAL_MINOR_TUNING: Tuning = {
+export const NATURAL_MINOR: Tuning = {
   id: TuningIds.NaturalMinor,
   // prettier-ignore
   reedArray: [
@@ -67,7 +67,7 @@ export const NATURAL_MINOR_TUNING: Tuning = {
   ],
 } as const
 
-export const HARMONIC_MINOR_TUNING: Tuning = {
+export const HARMONIC_MINOR: Tuning = {
   id: TuningIds.HarmonicMinor,
   // prettier-ignore
   reedArray: [
@@ -77,7 +77,7 @@ export const HARMONIC_MINOR_TUNING: Tuning = {
   ],
 } as const
 
-export const POWER_BENDER_TUNING: Tuning = {
+export const POWER_BENDER: Tuning = {
   id: TuningIds.PowerBender,
   // prettier-ignore
   reedArray: [
@@ -87,7 +87,7 @@ export const POWER_BENDER_TUNING: Tuning = {
   ],
 } as const
 
-export const POWER_DRAW_TUNING: Tuning = {
+export const POWER_DRAW: Tuning = {
   id: TuningIds.PowerDraw,
   // prettier-ignore
   reedArray: [
@@ -97,7 +97,7 @@ export const POWER_DRAW_TUNING: Tuning = {
   ],
 } as const
 
-export const PADDY_RICHTER_TUNING: Tuning = {
+export const PADDY_RICHTER: Tuning = {
   id: TuningIds.PaddyRichter,
   // prettier-ignore
   reedArray: [
@@ -107,7 +107,7 @@ export const PADDY_RICHTER_TUNING: Tuning = {
   ],
 } as const
 
-export const MELODY_MAKER_TUNING: Tuning = {
+export const MELODY_MAKER: Tuning = {
   id: TuningIds.MelodyMaker,
   // prettier-ignore
   reedArray: [
@@ -117,7 +117,7 @@ export const MELODY_MAKER_TUNING: Tuning = {
   ],
 } as const
 
-export const WILDE_TUNED_TUNING: Tuning = {
+export const WILDE_TUNED: Tuning = {
   id: TuningIds.WildeTuned,
   // prettier-ignore
   reedArray: [
@@ -127,7 +127,7 @@ export const WILDE_TUNED_TUNING: Tuning = {
   ],
 } as const
 
-export const WOOZLE_MINOR_TUNING: Tuning = {
+export const WOOZLE_MINOR: Tuning = {
   id: TuningIds.WoozleMinor,
   // prettier-ignore
   reedArray: [
@@ -137,7 +137,7 @@ export const WOOZLE_MINOR_TUNING: Tuning = {
   ],
 } as const
 
-export const AUGMENTED_SPANISH_TUNING: Tuning = {
+export const AUGMENTED_SPANISH: Tuning = {
   id: TuningIds.AugmentedSpanish,
   // prettier-ignore
   reedArray: [
@@ -147,7 +147,7 @@ export const AUGMENTED_SPANISH_TUNING: Tuning = {
   ],
 } as const
 
-export const SPIRAL_CIRCULAR_TUNING: Tuning = {
+export const SPIRAL_CIRCULAR: Tuning = {
   id: TuningIds.AugmentedSpanish,
   // prettier-ignore
   reedArray: [
