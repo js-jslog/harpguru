@@ -1,7 +1,13 @@
 import { TuningIds, TuningCategories, ReedTuningPitches } from '../types'
 import type { Tuning } from '../types'
 
-const { Common, BrendanPower, JoeFilisko, Modal, Other } = TuningCategories
+const {
+  Common,
+  BrendanPower,
+  JoeFilisko,
+  NativeScale,
+  Other,
+} = TuningCategories
 
 const {
   c1,
@@ -256,7 +262,7 @@ export const SPIRAL_CIRCULAR: Tuning = {
 
 export const MIXOLYDIAN: Tuning = {
   id: TuningIds.Mixolydian,
-  category: Modal,
+  category: NativeScale,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -267,7 +273,7 @@ export const MIXOLYDIAN: Tuning = {
 
 export const PHRYGIAN: Tuning = {
   id: TuningIds.Phrygian,
-  category: Modal,
+  category: NativeScale,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -278,7 +284,7 @@ export const PHRYGIAN: Tuning = {
 
 export const LOCRIAN: Tuning = {
   id: TuningIds.Locrian,
-  category: Modal,
+  category: NativeScale,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -289,7 +295,7 @@ export const LOCRIAN: Tuning = {
 
 export const WHOLE_TONE: Tuning = {
   id: TuningIds.WholeTone,
-  category: Other,
+  category: NativeScale,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -300,7 +306,7 @@ export const WHOLE_TONE: Tuning = {
 
 export const DIMINISHED: Tuning = {
   id: TuningIds.Diminished,
-  category: Other,
+  category: NativeScale,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10

@@ -31,7 +31,7 @@ export enum TuningCategories {
   Common = 'Common',
   BrendanPower = 'Brendan Power',
   JoeFilisko = 'Joe Filisko',
-  Modal = 'Modal',
+  NativeScale = 'Native scale',
   Other = 'Other',
 }
 

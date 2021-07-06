@@ -31,9 +31,9 @@ export const useTuningItems = (
   const joeFiliskoTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.JoeFilisko)
-  const modalTunings = getTuningIds()
+  const nativeScaleTunings = getTuningIds()
     .map((id) => getTuning(id))
-    .filter((tuning) => tuning.category === TuningCategories.Modal)
+    .filter((tuning) => tuning.category === TuningCategories.NativeScale)
   const otherTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.Other)
@@ -78,8 +78,11 @@ export const useTuningItems = (
         twoColumns={false}
       />
     )),
-    <OptionBreak title={TuningCategories.Modal} key={'option-break-scales'} />,
-    ...modalTunings.map((tuning, index) => (
+    <OptionBreak
+      title={TuningCategories.NativeScale}
+      key={'option-break-scales'}
+    />,
+    ...nativeScaleTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
         value={tuning.id}
