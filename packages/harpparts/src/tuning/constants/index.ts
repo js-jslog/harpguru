@@ -260,8 +260,8 @@ export const SPIRAL_CIRCULAR: Tuning = {
   ],
 } as const
 
-export const MIXOLYDIAN: Tuning = {
-  id: TuningIds.Mixolydian,
+export const RICHTER_MIXOLYDIAN: Tuning = {
+  id: TuningIds.RichterMixolydian,
   category: NativeScale,
   // prettier-ignore
   reedArray: [
@@ -271,8 +271,8 @@ export const MIXOLYDIAN: Tuning = {
   ],
 } as const
 
-export const DORIAN: Tuning = {
-  id: TuningIds.Dorian,
+export const RICHTER_DORIAN: Tuning = {
+  id: TuningIds.RichterDorian,
   category: NativeScale,
   // prettier-ignore
   reedArray: [
@@ -282,8 +282,8 @@ export const DORIAN: Tuning = {
   ],
 } as const
 
-export const NATRURAL_MINOR_STRAIGHT: Tuning = {
-  id: TuningIds.NaturalMinorStraight,
+export const RICHTER_AEOLIAN: Tuning = {
+  id: TuningIds.RichterAeolian,
   category: NativeScale,
   // prettier-ignore
   reedArray: [
@@ -293,8 +293,8 @@ export const NATRURAL_MINOR_STRAIGHT: Tuning = {
   ],
 } as const
 
-export const PHRYGIAN: Tuning = {
-  id: TuningIds.Phrygian,
+export const RICHTER_PHRYGIAN: Tuning = {
+  id: TuningIds.RichterPhrygian,
   category: NativeScale,
   // prettier-ignore
   reedArray: [
@@ -304,8 +304,8 @@ export const PHRYGIAN: Tuning = {
   ],
 } as const
 
-export const LOCRIAN: Tuning = {
-  id: TuningIds.Locrian,
+export const RICHTER_LOCRIAN: Tuning = {
+  id: TuningIds.RichterLocrian,
   category: NativeScale,
   // prettier-ignore
   reedArray: [
@@ -315,8 +315,8 @@ export const LOCRIAN: Tuning = {
   ],
 } as const
 
-export const LYDIAN: Tuning = {
-  id: TuningIds.Lydian,
+export const RICHTER_LYDIAN: Tuning = {
+  id: TuningIds.RichterLydian,
   category: NativeScale,
   // prettier-ignore
   reedArray: [

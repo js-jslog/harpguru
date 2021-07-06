@@ -19,12 +19,12 @@ import {
   WOOZLE_MINOR,
   AUGMENTED_SPANISH,
   SPIRAL_CIRCULAR,
-  MIXOLYDIAN,
-  DORIAN,
-  NATRURAL_MINOR_STRAIGHT,
-  PHRYGIAN,
-  LOCRIAN,
-  LYDIAN,
+  RICHTER_MIXOLYDIAN,
+  RICHTER_DORIAN,
+  RICHTER_AEOLIAN,
+  RICHTER_PHRYGIAN,
+  RICHTER_LOCRIAN,
+  RICHTER_LYDIAN,
   WHOLE_TONE,
   DIMINISHED,
 } from '../../tuning'
@@ -50,11 +50,11 @@ orderedTunings.set(TuningIds.WillScarlett, WILL_SCARLETT)
 orderedTunings.set(TuningIds.WoozleMinor, WOOZLE_MINOR)
 orderedTunings.set(TuningIds.AugmentedSpanish, AUGMENTED_SPANISH)
 orderedTunings.set(TuningIds.SpiralCircular, SPIRAL_CIRCULAR)
-orderedTunings.set(TuningIds.Mixolydian, MIXOLYDIAN)
-orderedTunings.set(TuningIds.Dorian, DORIAN)
-orderedTunings.set(TuningIds.NaturalMinorStraight, NATRURAL_MINOR_STRAIGHT)
-orderedTunings.set(TuningIds.Phrygian, PHRYGIAN)
-orderedTunings.set(TuningIds.Locrian, LOCRIAN)
-orderedTunings.set(TuningIds.Lydian, LYDIAN)
+orderedTunings.set(TuningIds.RichterMixolydian, RICHTER_MIXOLYDIAN)
+orderedTunings.set(TuningIds.RichterDorian, RICHTER_DORIAN)
+orderedTunings.set(TuningIds.RichterAeolian, RICHTER_AEOLIAN)
+orderedTunings.set(TuningIds.RichterPhrygian, RICHTER_PHRYGIAN)
+orderedTunings.set(TuningIds.RichterLocrian, RICHTER_LOCRIAN)
+orderedTunings.set(TuningIds.RichterLydian, RICHTER_LYDIAN)
 orderedTunings.set(TuningIds.WholeTone, WHOLE_TONE)
 orderedTunings.set(TuningIds.Diminished, DIMINISHED)
