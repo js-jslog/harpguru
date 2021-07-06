@@ -20,6 +20,7 @@ export enum TuningIds {
   WoozleMinor = 'Woozle minor',
   AugmentedSpanish = 'Augmented Spanish',
   SpiralCircular = 'Spiral / Circular',
+  RichterIonian = 'Ionian',
   RichterMixolydian = 'Mixolydian',
   RichterDorian = 'Dorian',
   RichterAeolian = 'Aeolian',

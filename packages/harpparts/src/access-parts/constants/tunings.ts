@@ -19,6 +19,7 @@ import {
   WOOZLE_MINOR,
   AUGMENTED_SPANISH,
   SPIRAL_CIRCULAR,
+  RICHTER_IONIAN,
   RICHTER_MIXOLYDIAN,
   RICHTER_DORIAN,
   RICHTER_AEOLIAN,
@@ -50,6 +51,7 @@ orderedTunings.set(TuningIds.WillScarlett, WILL_SCARLETT)
 orderedTunings.set(TuningIds.WoozleMinor, WOOZLE_MINOR)
 orderedTunings.set(TuningIds.AugmentedSpanish, AUGMENTED_SPANISH)
 orderedTunings.set(TuningIds.SpiralCircular, SPIRAL_CIRCULAR)
+orderedTunings.set(TuningIds.RichterIonian, RICHTER_IONIAN)
 orderedTunings.set(TuningIds.RichterMixolydian, RICHTER_MIXOLYDIAN)
 orderedTunings.set(TuningIds.RichterDorian, RICHTER_DORIAN)
 orderedTunings.set(TuningIds.RichterAeolian, RICHTER_AEOLIAN)
