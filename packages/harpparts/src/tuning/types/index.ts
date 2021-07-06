@@ -14,12 +14,6 @@ export enum TuningIds {
   BluesTwo = 'Blues #2',
   BluesThree = 'Blues #3',
   Chord = 'Chord',
-  EasyThird = 'Easy third',
-  Bagpipe = 'Bagpipe',
-  WillScarlett = 'Will Scarlett',
-  WoozleMinor = 'Woozle minor',
-  AugmentedSpanish = 'Augmented Spanish',
-  SpiralCircular = 'Spiral / Circular',
   RichterIonian = 'Ionian',
   RichterMixolydian = 'Mixolydian',
   RichterDorian = 'Dorian',
@@ -29,6 +23,12 @@ export enum TuningIds {
   RichterLydian = 'Lydian',
   WholeTone = 'Whole tone',
   Diminished = 'Diminished',
+  AugmentedSpanish = 'Augmented Spanish',
+  Bagpipe = 'Bagpipe',
+  EasyThird = 'Easy third',
+  SpiralCircular = 'Spiral / Circular',
+  WillScarlett = 'Will Scarlett',
+  WoozleMinor = 'Woozle minor',
 }
 
 export enum TuningCategories {

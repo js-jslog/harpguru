@@ -13,12 +13,6 @@ import {
   BLUES_TWO,
   BLUES_THREE,
   CHORD,
-  EASY_THIRD,
-  BAGPIPE,
-  WILL_SCARLETT,
-  WOOZLE_MINOR,
-  AUGMENTED_SPANISH,
-  SPIRAL_CIRCULAR,
   RICHTER_IONIAN,
   RICHTER_MIXOLYDIAN,
   RICHTER_DORIAN,
@@ -28,6 +22,12 @@ import {
   RICHTER_LYDIAN,
   WHOLE_TONE,
   DIMINISHED,
+  AUGMENTED_SPANISH,
+  BAGPIPE,
+  EASY_THIRD,
+  SPIRAL_CIRCULAR,
+  WILL_SCARLETT,
+  WOOZLE_MINOR,
 } from '../../tuning'
 import type { Tuning } from '../../tuning'
 
@@ -45,12 +45,6 @@ orderedTunings.set(TuningIds.BluesOne, BLUES_ONE)
 orderedTunings.set(TuningIds.BluesTwo, BLUES_TWO)
 orderedTunings.set(TuningIds.BluesThree, BLUES_THREE)
 orderedTunings.set(TuningIds.Chord, CHORD)
-orderedTunings.set(TuningIds.EasyThird, EASY_THIRD)
-orderedTunings.set(TuningIds.Bagpipe, BAGPIPE)
-orderedTunings.set(TuningIds.WillScarlett, WILL_SCARLETT)
-orderedTunings.set(TuningIds.WoozleMinor, WOOZLE_MINOR)
-orderedTunings.set(TuningIds.AugmentedSpanish, AUGMENTED_SPANISH)
-orderedTunings.set(TuningIds.SpiralCircular, SPIRAL_CIRCULAR)
 orderedTunings.set(TuningIds.RichterIonian, RICHTER_IONIAN)
 orderedTunings.set(TuningIds.RichterMixolydian, RICHTER_MIXOLYDIAN)
 orderedTunings.set(TuningIds.RichterDorian, RICHTER_DORIAN)
@@ -60,3 +54,9 @@ orderedTunings.set(TuningIds.RichterLocrian, RICHTER_LOCRIAN)
 orderedTunings.set(TuningIds.RichterLydian, RICHTER_LYDIAN)
 orderedTunings.set(TuningIds.WholeTone, WHOLE_TONE)
 orderedTunings.set(TuningIds.Diminished, DIMINISHED)
+orderedTunings.set(TuningIds.AugmentedSpanish, AUGMENTED_SPANISH)
+orderedTunings.set(TuningIds.Bagpipe, BAGPIPE)
+orderedTunings.set(TuningIds.EasyThird, EASY_THIRD)
+orderedTunings.set(TuningIds.SpiralCircular, SPIRAL_CIRCULAR)
+orderedTunings.set(TuningIds.WillScarlett, WILL_SCARLETT)
+orderedTunings.set(TuningIds.WoozleMinor, WOOZLE_MINOR)

@@ -165,6 +165,28 @@ export const HARMONIC_MINOR: Tuning = {
   ],
 } as const
 
+export const MELODY_MAKER: Tuning = {
+  id: TuningIds.MelodyMaker,
+  category: Common,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , a1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+    [ d1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , gb3, a3 ],
+  ],
+} as const
+
+export const WILDE: Tuning = {
+  id: TuningIds.Wilde,
+  category: Common,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , c2 , e2 , e2 , g2 , c3 , e3 , a3 ],
+    [ d1 , g1 , b1 , d2 , f2 , g2 , b2 , d3 , g3 , c4 ],
+  ],
+} as const
+
 export const POWER_BENDER: Tuning = {
   id: TuningIds.PowerBender,
   category: BrendanPower,
@@ -242,94 +264,6 @@ export const CHORD: Tuning = {
   ],
 } as const
 
-export const EASY_THIRD: Tuning = {
-  id: TuningIds.EasyThird,
-  category: Other,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
-    [ d1 , f1 , a1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
-  ],
-} as const
-
-export const BAGPIPE: Tuning = {
-  id: TuningIds.Bagpipe,
-  category: Other,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , g1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
-    [ c1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
-  ],
-} as const
-
-export const WILL_SCARLETT: Tuning = {
-  id: TuningIds.WillScarlett,
-  category: Other,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , a1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
-    [ e1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , gb3, a3 ],
-  ],
-} as const
-
-export const MELODY_MAKER: Tuning = {
-  id: TuningIds.MelodyMaker,
-  category: Common,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , a1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
-    [ d1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , gb3, a3 ],
-  ],
-} as const
-
-export const WILDE: Tuning = {
-  id: TuningIds.Wilde,
-  category: Common,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , g1 , c2 , e2 , e2 , g2 , c3 , e3 , a3 ],
-    [ d1 , g1 , b1 , d2 , f2 , g2 , b2 , d3 , g3 , c4 ],
-  ],
-} as const
-
-export const WOOZLE_MINOR: Tuning = {
-  id: TuningIds.WoozleMinor,
-  category: Other,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , eb1, g1 , c2 , eb2, g2 , a2 , c3 , eb3, a3 ],
-    [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , g3 , c4 ],
-  ],
-} as const
-
-export const AUGMENTED_SPANISH: Tuning = {
-  id: TuningIds.AugmentedSpanish,
-  category: Other,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , ab1, c2 , e2 , ab2, c3 , e3 , ab3, c4 ],
-    [ eb1, g1 , b1 , eb2, g2 , b2 , eb3, g3 , b3 , eb4],
-  ],
-} as const
-
-export const SPIRAL_CIRCULAR: Tuning = {
-  id: TuningIds.SpiralCircular,
-  category: Other,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , g1 , b1 , d2 , f2 , a2 , c3 , e3 , g3 ],
-    [ d1 , f1 , a1 , c2 , e2 , g2 , b2 , d3 , f3 , a3 ],
-  ],
-} as const
-
 export const WHOLE_TONE: Tuning = {
   id: TuningIds.WholeTone,
   category: OtherScales,
@@ -349,5 +283,71 @@ export const DIMINISHED: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , eb1, gb1, a1 , c2 , eb2, gb2, a2 , c3 , eb3],
     [ d1 , f1 , ab1, b1 , d2 , f2 , ab2, b2 , d3 , f3 ],
+  ],
+} as const
+
+export const BAGPIPE: Tuning = {
+  id: TuningIds.Bagpipe,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , g1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+    [ c1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
+  ],
+} as const
+
+export const AUGMENTED_SPANISH: Tuning = {
+  id: TuningIds.AugmentedSpanish,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , ab1, c2 , e2 , ab2, c3 , e3 , ab3, c4 ],
+    [ eb1, g1 , b1 , eb2, g2 , b2 , eb3, g3 , b3 , eb4],
+  ],
+} as const
+
+export const EASY_THIRD: Tuning = {
+  id: TuningIds.EasyThird,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+    [ d1 , f1 , a1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
+  ],
+} as const
+
+export const SPIRAL_CIRCULAR: Tuning = {
+  id: TuningIds.SpiralCircular,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , b1 , d2 , f2 , a2 , c3 , e3 , g3 ],
+    [ d1 , f1 , a1 , c2 , e2 , g2 , b2 , d3 , f3 , a3 ],
+  ],
+} as const
+
+export const WILL_SCARLETT: Tuning = {
+  id: TuningIds.WillScarlett,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , a1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+    [ e1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , gb3, a3 ],
+  ],
+} as const
+
+export const WOOZLE_MINOR: Tuning = {
+  id: TuningIds.WoozleMinor,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , c2 , eb2, g2 , a2 , c3 , eb3, a3 ],
+    [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , g3 , c4 ],
   ],
 } as const
