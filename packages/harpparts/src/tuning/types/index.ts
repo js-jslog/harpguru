@@ -21,8 +21,11 @@ export enum TuningIds {
   AugmentedSpanish = 'Augmented Spanish',
   SpiralCircular = 'Spiral / Circular',
   Mixolydian = 'Mixolydian / Dorian cross',
+  Dorian = 'Dorian',
+  NaturalMinorStraight = 'Natural minor (straight)',
   Phrygian = 'Phrygian',
   Locrian = 'Locrian',
+  Lydian = 'Lydian',
   WholeTone = 'Whole tone',
   Diminished = 'Diminished',
 }

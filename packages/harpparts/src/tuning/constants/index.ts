@@ -271,6 +271,28 @@ export const MIXOLYDIAN: Tuning = {
   ],
 } as const
 
+export const DORIAN: Tuning = {
+  id: TuningIds.Dorian,
+  category: NativeScale,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
+    [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
+  ],
+} as const
+
+export const NATRURAL_MINOR_STRAIGHT: Tuning = {
+  id: TuningIds.NaturalMinorStraight,
+  category: NativeScale,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
+    [ d1 , g1 , bb1, d2 , f2 , ab2, bb2, d3 , f3 , ab3],
+  ],
+} as const
+
 export const PHRYGIAN: Tuning = {
   id: TuningIds.Phrygian,
   category: NativeScale,
@@ -290,6 +312,17 @@ export const LOCRIAN: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , eb1, gb1, c2 , eb2, gb2, c3 , eb3, gb3, c4 ],
     [ db1, gb1, bb1, db2, f2 , ab2, bb2, db3, f3 , ab3],
+  ],
+} as const
+
+export const LYDIAN: Tuning = {
+  id: TuningIds.Lydian,
+  category: NativeScale,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+    [ d1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , gb3, a3 ],
   ],
 } as const
 
