@@ -52,15 +52,88 @@ const {
   eb4,
 } = ReedTuningPitches
 
-export const MAJOR_DIATONIC: Tuning = {
-  id: TuningIds.MajorDiatonic,
-  category: Common,
+export const RICHTER_IONIAN: Tuning = {
+  id: TuningIds.RichterIonian,
+  category: RichterModes,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
     [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
   ],
+} as const
+
+export const RICHTER_MIXOLYDIAN: Tuning = {
+  id: TuningIds.RichterMixolydian,
+  category: RichterModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+    [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
+  ],
+} as const
+
+export const RICHTER_DORIAN: Tuning = {
+  id: TuningIds.RichterDorian,
+  category: RichterModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
+    [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
+  ],
+} as const
+
+export const RICHTER_AEOLIAN: Tuning = {
+  id: TuningIds.RichterAeolian,
+  category: RichterModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
+    [ d1 , g1 , bb1, d2 , f2 , ab2, bb2, d3 , f3 , ab3],
+  ],
+} as const
+
+export const RICHTER_PHRYGIAN: Tuning = {
+  id: TuningIds.RichterPhrygian,
+  category: RichterModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
+    [ db1, g1 , bb1, db2, f2 , ab2, bb2, db3, f3 , ab3],
+  ],
+} as const
+
+export const RICHTER_LOCRIAN: Tuning = {
+  id: TuningIds.RichterLocrian,
+  category: RichterModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, gb1, c2 , eb2, gb2, c3 , eb3, gb3, c4 ],
+    [ db1, gb1, bb1, db2, f2 , ab2, bb2, db3, f3 , ab3],
+  ],
+} as const
+
+export const RICHTER_LYDIAN: Tuning = {
+  id: TuningIds.RichterLydian,
+  category: RichterModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+    [ d1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , gb3, a3 ],
+  ],
+} as const
+
+export const MAJOR_DIATONIC: Tuning = {
+  id: TuningIds.MajorDiatonic,
+  category: Common,
+  // prettier-ignore
+  reedArray: RICHTER_IONIAN.reedArray,
 } as const
 
 export const COUNTRY: Tuning = {
@@ -78,11 +151,7 @@ export const NATURAL_MINOR: Tuning = {
   id: TuningIds.NaturalMinor,
   category: Common,
   // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
-    [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
-  ],
+  reedArray: RICHTER_DORIAN.reedArray,
 } as const
 
 export const HARMONIC_MINOR: Tuning = {
@@ -258,83 +327,6 @@ export const SPIRAL_CIRCULAR: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , e1 , g1 , b1 , d2 , f2 , a2 , c3 , e3 , g3 ],
     [ d1 , f1 , a1 , c2 , e2 , g2 , b2 , d3 , f3 , a3 ],
-  ],
-} as const
-
-export const RICHTER_IONIAN: Tuning = {
-  id: TuningIds.RichterIonian,
-  category: RichterModes,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
-    [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
-  ],
-} as const
-
-export const RICHTER_MIXOLYDIAN: Tuning = {
-  id: TuningIds.RichterMixolydian,
-  category: RichterModes,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
-    [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
-  ],
-} as const
-
-export const RICHTER_DORIAN: Tuning = {
-  id: TuningIds.RichterDorian,
-  category: RichterModes,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
-    [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , f3 , a3 ],
-  ],
-} as const
-
-export const RICHTER_AEOLIAN: Tuning = {
-  id: TuningIds.RichterAeolian,
-  category: RichterModes,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
-    [ d1 , g1 , bb1, d2 , f2 , ab2, bb2, d3 , f3 , ab3],
-  ],
-} as const
-
-export const RICHTER_PHRYGIAN: Tuning = {
-  id: TuningIds.RichterPhrygian,
-  category: RichterModes,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , eb1, g1 , c2 , eb2, g2 , c3 , eb3, g3 , c4 ],
-    [ db1, g1 , bb1, db2, f2 , ab2, bb2, db3, f3 , ab3],
-  ],
-} as const
-
-export const RICHTER_LOCRIAN: Tuning = {
-  id: TuningIds.RichterLocrian,
-  category: RichterModes,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , eb1, gb1, c2 , eb2, gb2, c3 , eb3, gb3, c4 ],
-    [ db1, gb1, bb1, db2, f2 , ab2, bb2, db3, f3 , ab3],
-  ],
-} as const
-
-export const RICHTER_LYDIAN: Tuning = {
-  id: TuningIds.RichterLydian,
-  category: RichterModes,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
-    [ d1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , gb3, a3 ],
   ],
 } as const
 
