@@ -31,9 +31,12 @@ export const useTuningItems = (
   const joeFiliskoTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.JoeFilisko)
-  const nativeScaleTunings = getTuningIds()
+  const richterModesTunings = getTuningIds()
     .map((id) => getTuning(id))
-    .filter((tuning) => tuning.category === TuningCategories.NativeScale)
+    .filter((tuning) => tuning.category === TuningCategories.RichterModes)
+  const otherScalesTunings = getTuningIds()
+    .map((id) => getTuning(id))
+    .filter((tuning) => tuning.category === TuningCategories.OtherScales)
   const otherTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.Other)
@@ -79,10 +82,24 @@ export const useTuningItems = (
       />
     )),
     <OptionBreak
-      title={TuningCategories.NativeScale}
+      title={TuningCategories.RichterModes}
       key={'option-break-scales'}
     />,
-    ...nativeScaleTunings.map((tuning, index) => (
+    ...richterModesTunings.map((tuning, index) => (
+      <OptionItem
+        key={`${index}`}
+        value={tuning.id}
+        isSelected={tuning.id === tuningId}
+        itemTapHandler={itemTapHandler}
+        callbackParam={tuning.id}
+        twoColumns={false}
+      />
+    )),
+    <OptionBreak
+      title={TuningCategories.OtherScales}
+      key={'option-break-scales'}
+    />,
+    ...otherScalesTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
         value={tuning.id}

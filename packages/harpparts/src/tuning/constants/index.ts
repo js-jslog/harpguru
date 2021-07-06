@@ -5,7 +5,8 @@ const {
   Common,
   BrendanPower,
   JoeFilisko,
-  NativeScale,
+  RichterModes,
+  OtherScales,
   Other,
 } = TuningCategories
 
@@ -262,7 +263,7 @@ export const SPIRAL_CIRCULAR: Tuning = {
 
 export const RICHTER_IONIAN: Tuning = {
   id: TuningIds.RichterIonian,
-  category: NativeScale,
+  category: RichterModes,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -273,7 +274,7 @@ export const RICHTER_IONIAN: Tuning = {
 
 export const RICHTER_MIXOLYDIAN: Tuning = {
   id: TuningIds.RichterMixolydian,
-  category: NativeScale,
+  category: RichterModes,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -284,7 +285,7 @@ export const RICHTER_MIXOLYDIAN: Tuning = {
 
 export const RICHTER_DORIAN: Tuning = {
   id: TuningIds.RichterDorian,
-  category: NativeScale,
+  category: RichterModes,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -295,7 +296,7 @@ export const RICHTER_DORIAN: Tuning = {
 
 export const RICHTER_AEOLIAN: Tuning = {
   id: TuningIds.RichterAeolian,
-  category: NativeScale,
+  category: RichterModes,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -306,7 +307,7 @@ export const RICHTER_AEOLIAN: Tuning = {
 
 export const RICHTER_PHRYGIAN: Tuning = {
   id: TuningIds.RichterPhrygian,
-  category: NativeScale,
+  category: RichterModes,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -317,7 +318,7 @@ export const RICHTER_PHRYGIAN: Tuning = {
 
 export const RICHTER_LOCRIAN: Tuning = {
   id: TuningIds.RichterLocrian,
-  category: NativeScale,
+  category: RichterModes,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -328,7 +329,7 @@ export const RICHTER_LOCRIAN: Tuning = {
 
 export const RICHTER_LYDIAN: Tuning = {
   id: TuningIds.RichterLydian,
-  category: NativeScale,
+  category: RichterModes,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -339,7 +340,7 @@ export const RICHTER_LYDIAN: Tuning = {
 
 export const WHOLE_TONE: Tuning = {
   id: TuningIds.WholeTone,
-  category: NativeScale,
+  category: OtherScales,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -350,7 +351,7 @@ export const WHOLE_TONE: Tuning = {
 
 export const DIMINISHED: Tuning = {
   id: TuningIds.Diminished,
-  category: NativeScale,
+  category: OtherScales,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
