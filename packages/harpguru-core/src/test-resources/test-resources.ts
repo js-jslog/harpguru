@@ -24,7 +24,7 @@ const allActiveDegrees = [
 ]
 
 const baseHarpStrataProps: HarpStrataProps = {
-  tuningId: TuningIds.Richter,
+  tuningId: TuningIds.MajorDiatonic,
   valvingId: ValvingIds.NotValved,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,

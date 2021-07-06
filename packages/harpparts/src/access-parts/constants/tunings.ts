@@ -1,6 +1,6 @@
 import { TuningIds } from '../../tuning'
 import {
-  RICHTER,
+  MAJOR_DIATONIC,
   COUNTRY,
   NATURAL_MINOR,
   HARMONIC_MINOR,
@@ -32,7 +32,7 @@ import {
 import type { Tuning } from '../../tuning'
 
 export const orderedTunings = new Map<TuningIds, Tuning>()
-orderedTunings.set(TuningIds.Richter, RICHTER)
+orderedTunings.set(TuningIds.MajorDiatonic, MAJOR_DIATONIC)
 orderedTunings.set(TuningIds.Country, COUNTRY)
 orderedTunings.set(TuningIds.NaturalMinor, NATURAL_MINOR)
 orderedTunings.set(TuningIds.HarmonicMinor, HARMONIC_MINOR)

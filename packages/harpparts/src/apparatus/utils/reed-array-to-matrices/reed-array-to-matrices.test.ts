@@ -3,7 +3,7 @@ import { ValvingIds } from '../../../valving'
 import type { HarpFaceMatrix, HalfstepIndex } from '../../../types'
 import type { ReedArray } from '../../../tuning'
 import {
-  RICHTER,
+  MAJOR_DIATONIC,
   COUNTRY,
   NATURAL_MINOR,
   POWER_BENDER,
@@ -35,23 +35,43 @@ test('reedArrayToMatrices throws errors as expected when any error is encountere
     [20, 0, 20, 0, 20, 0, 20, 0, 20, 0],
   ]
   expect(() =>
-    reedArrayToMatrices(invalidReedArray, RICHTER.id, ValvingIds.NotValved)
-  ).toThrow(RICHTER.id)
+    reedArrayToMatrices(
+      invalidReedArray,
+      MAJOR_DIATONIC.id,
+      ValvingIds.NotValved
+    )
+  ).toThrow(MAJOR_DIATONIC.id)
   expect(() =>
-    reedArrayToMatrices(invalidReedArray, RICHTER.id, ValvingIds.NotValved)
+    reedArrayToMatrices(
+      invalidReedArray,
+      MAJOR_DIATONIC.id,
+      ValvingIds.NotValved
+    )
   ).toThrow(`Hole 0: ${HoleErrors.TooManyDrawbends}`)
   expect(() =>
-    reedArrayToMatrices(invalidReedArray, RICHTER.id, ValvingIds.NotValved)
+    reedArrayToMatrices(
+      invalidReedArray,
+      MAJOR_DIATONIC.id,
+      ValvingIds.NotValved
+    )
   ).toThrow(`Hole 1: ${HoleErrors.TooManyBlowbends}`)
   expect(() =>
-    reedArrayToMatrices(invalidReedArray, RICHTER.id, ValvingIds.NotValved)
+    reedArrayToMatrices(
+      invalidReedArray,
+      MAJOR_DIATONIC.id,
+      ValvingIds.NotValved
+    )
   ).toThrow(`Hole 8: ${HoleErrors.TooManyDrawbends}`)
   expect(() =>
-    reedArrayToMatrices(invalidReedArray, RICHTER.id, ValvingIds.NotValved)
+    reedArrayToMatrices(
+      invalidReedArray,
+      MAJOR_DIATONIC.id,
+      ValvingIds.NotValved
+    )
   ).toThrow(`Hole 9: ${HoleErrors.TooManyBlowbends}`)
 })
 
-test('reedArrayToMatrices works as expected for a Richter tuned harp', () => {
+test('reedArrayToMatrices works as expected for a MajorDiatonic tuned harp', () => {
   // prettier-ignore
   const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
     //    1          2          3          4          5          6          7          8          9         10
@@ -76,7 +96,7 @@ test('reedArrayToMatrices works as expected for a Richter tuned harp', () => {
     [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const { id, reedArray } = RICHTER
+  const { id, reedArray } = MAJOR_DIATONIC
   const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
@@ -310,7 +330,7 @@ test('reedArrayToMatrices works as expected for a half-valved Woozle Minor tuned
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
-test('reedArrayToMatrices works as expected for a half-valved Richter tuned harp', () => {
+test('reedArrayToMatrices works as expected for a half-valved major diatonic tuned harp', () => {
   // prettier-ignore
   const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
     //    1          2          3          4          5          6          7          8          9         10
@@ -335,7 +355,7 @@ test('reedArrayToMatrices works as expected for a half-valved Richter tuned harp
     [ undefined  , undefined  , DRAWBEND3  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
   ] as const
 
-  const { id, reedArray } = RICHTER
+  const { id, reedArray } = MAJOR_DIATONIC
   const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.HalfValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })

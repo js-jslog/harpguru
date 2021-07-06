@@ -14,7 +14,7 @@ import { getOrderedPartIds } from './get-ordered-part-ids'
 test('getOrderedPartIds can returns some TuningIds', () => {
   const orderedTuningIds = getOrderedPartIds(orderedTunings)
   expect(orderedTuningIds.length).toBeTruthy()
-  expect(orderedTuningIds).toContain(TuningIds.Richter)
+  expect(orderedTuningIds).toContain(TuningIds.MajorDiatonic)
 })
 
 test('getOrderedPartIds can return some DegreeIds', () => {

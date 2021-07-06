@@ -15,7 +15,7 @@ const flat7 = getDegree(DegreeIds.Flat7)
 const seventh = getDegree(DegreeIds.Seventh)
 
 // prettier-ignore
-const richterFirstPozition: HarpFaceMatrix<Degree> = [
+const majorDiatonicFirstPozition: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat7     ],
   [ flat3    , undefined, undefined, flat3    , flat5    , flat7    , undefined, flat3    , flat5    , seventh   ],
   [ root     , third    , fifth    , root     , third    , fifth    , root     , third    , fifth    , root      ],
@@ -26,7 +26,7 @@ const richterFirstPozition: HarpFaceMatrix<Degree> = [
 ] as const
 
 // prettier-ignore
-const richterFirstPozitionHalfValved: HarpFaceMatrix<Degree> = [
+const majorDiatonicFirstPozitionHalfValved: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat7     ],
   [ seventh  , flat3    , flat5    , seventh  , flat3    , flat5    , undefined, flat3    , flat5    , seventh   ],
   [ root     , third    , fifth    , root     , third    , fifth    , root     , third    , fifth    , root      ],
@@ -37,7 +37,7 @@ const richterFirstPozitionHalfValved: HarpFaceMatrix<Degree> = [
 ] as const
 
 // prettier-ignore
-const richterSecondPozition: HarpFaceMatrix<Degree> = [
+const majorDiatonicSecondPozition: HarpFaceMatrix<Degree> = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat3     ],
   [ flat6    , undefined, undefined, flat6    , seventh  , flat3    , undefined, flat6    , seventh  , third     ],
   [ fourth   , sixth    , root     , fourth   , sixth    , root     , fourth   , sixth    , root     , fourth    ],
@@ -48,18 +48,18 @@ const richterSecondPozition: HarpFaceMatrix<Degree> = [
 ] as const
 
 export const EXAMPLE_DEGREE_MATRICES = {
-  richter: {
+  majorDiatonic: {
     firstPozition: {
       notValved: {
-        degreeMatrix: richterFirstPozition,
+        degreeMatrix: majorDiatonicFirstPozition,
       },
       halfValved: {
-        degreeMatrix: richterFirstPozitionHalfValved,
+        degreeMatrix: majorDiatonicFirstPozitionHalfValved,
       },
     },
     secondPozition: {
       notValved: {
-        degreeMatrix: richterSecondPozition,
+        degreeMatrix: majorDiatonicSecondPozition,
       },
     },
   },

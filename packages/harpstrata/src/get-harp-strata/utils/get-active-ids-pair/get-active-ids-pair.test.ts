@@ -55,7 +55,7 @@ test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
 })
 
 const {
-  richter: {
+  majorDiatonic: {
     cHarp: {
       firstPozition: {
         notValved: {

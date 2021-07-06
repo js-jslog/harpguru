@@ -52,8 +52,8 @@ const {
   eb4,
 } = ReedTuningPitches
 
-export const RICHTER: Tuning = {
-  id: TuningIds.Richter,
+export const MAJOR_DIATONIC: Tuning = {
+  id: TuningIds.MajorDiatonic,
   category: Common,
   // prettier-ignore
   reedArray: [

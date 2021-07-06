@@ -19,7 +19,7 @@ import {
 } from '../../../../types'
 
 export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
-  const { Richter: tuningId } = TuningIds
+  const { MajorDiatonic: tuningId } = TuningIds
   const { NotValved: valvingId } = ValvingIds
   const { C: harpKeyId } = PitchIds
   const pozitionMap: Record<PageNumber, PozitionIds> = {
