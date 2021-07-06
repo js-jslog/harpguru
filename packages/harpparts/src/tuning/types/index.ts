@@ -27,8 +27,17 @@ export enum TuningIds {
   Diminished = 'Diminished',
 }
 
+export enum TuningCategories {
+  Common = 'Common',
+  BrendanPower = 'Brendan Power',
+  JoeFilisko = 'Joe Filisko',
+  Modal = 'Modal',
+  Other = 'Other',
+}
+
 export type Tuning = {
   readonly id: TuningIds
+  readonly category: TuningCategories
   readonly reedArray: ReedArray
 }
 

@@ -1,5 +1,7 @@
-import { TuningIds, ReedTuningPitches } from '../types'
+import { TuningIds, TuningCategories, ReedTuningPitches } from '../types'
 import type { Tuning } from '../types'
+
+const { Common, BrendanPower, JoeFilisko, Modal, Other } = TuningCategories
 
 const {
   c1,
@@ -45,6 +47,7 @@ const {
 
 export const RICHTER: Tuning = {
   id: TuningIds.Richter,
+  category: Common,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -55,6 +58,7 @@ export const RICHTER: Tuning = {
 
 export const COUNTRY: Tuning = {
   id: TuningIds.Country,
+  category: Common,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -65,6 +69,7 @@ export const COUNTRY: Tuning = {
 
 export const NATURAL_MINOR: Tuning = {
   id: TuningIds.NaturalMinor,
+  category: Common,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -75,6 +80,7 @@ export const NATURAL_MINOR: Tuning = {
 
 export const HARMONIC_MINOR: Tuning = {
   id: TuningIds.HarmonicMinor,
+  category: Common,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -85,6 +91,7 @@ export const HARMONIC_MINOR: Tuning = {
 
 export const POWER_BENDER: Tuning = {
   id: TuningIds.PowerBender,
+  category: BrendanPower,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -95,6 +102,7 @@ export const POWER_BENDER: Tuning = {
 
 export const POWER_DRAW: Tuning = {
   id: TuningIds.PowerDraw,
+  category: BrendanPower,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -105,6 +113,7 @@ export const POWER_DRAW: Tuning = {
 
 export const PADDY_RICHTER: Tuning = {
   id: TuningIds.PaddyRichter,
+  category: BrendanPower,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -115,6 +124,7 @@ export const PADDY_RICHTER: Tuning = {
 
 export const BLUES_ONE: Tuning = {
   id: TuningIds.BluesOne,
+  category: JoeFilisko,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -125,6 +135,7 @@ export const BLUES_ONE: Tuning = {
 
 export const BLUES_TWO: Tuning = {
   id: TuningIds.BluesTwo,
+  category: JoeFilisko,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -135,6 +146,7 @@ export const BLUES_TWO: Tuning = {
 
 export const BLUES_THREE: Tuning = {
   id: TuningIds.BluesThree,
+  category: JoeFilisko,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -145,6 +157,7 @@ export const BLUES_THREE: Tuning = {
 
 export const CHORD: Tuning = {
   id: TuningIds.Chord,
+  category: JoeFilisko,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -155,6 +168,7 @@ export const CHORD: Tuning = {
 
 export const EASY_THIRD: Tuning = {
   id: TuningIds.EasyThird,
+  category: Other,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -165,6 +179,7 @@ export const EASY_THIRD: Tuning = {
 
 export const BAGPIPE: Tuning = {
   id: TuningIds.Bagpipe,
+  category: Other,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -175,6 +190,7 @@ export const BAGPIPE: Tuning = {
 
 export const WILL_SCARLETT: Tuning = {
   id: TuningIds.WillScarlett,
+  category: Other,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -185,6 +201,7 @@ export const WILL_SCARLETT: Tuning = {
 
 export const MELODY_MAKER: Tuning = {
   id: TuningIds.MelodyMaker,
+  category: Common,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -195,6 +212,7 @@ export const MELODY_MAKER: Tuning = {
 
 export const WILDE: Tuning = {
   id: TuningIds.Wilde,
+  category: Common,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -205,6 +223,7 @@ export const WILDE: Tuning = {
 
 export const WOOZLE_MINOR: Tuning = {
   id: TuningIds.WoozleMinor,
+  category: Other,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -215,6 +234,7 @@ export const WOOZLE_MINOR: Tuning = {
 
 export const AUGMENTED_SPANISH: Tuning = {
   id: TuningIds.AugmentedSpanish,
+  category: Other,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -225,6 +245,7 @@ export const AUGMENTED_SPANISH: Tuning = {
 
 export const SPIRAL_CIRCULAR: Tuning = {
   id: TuningIds.SpiralCircular,
+  category: Other,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -235,6 +256,7 @@ export const SPIRAL_CIRCULAR: Tuning = {
 
 export const MIXOLYDIAN: Tuning = {
   id: TuningIds.Mixolydian,
+  category: Modal,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -245,6 +267,7 @@ export const MIXOLYDIAN: Tuning = {
 
 export const PHRYGIAN: Tuning = {
   id: TuningIds.Phrygian,
+  category: Modal,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -255,6 +278,7 @@ export const PHRYGIAN: Tuning = {
 
 export const LOCRIAN: Tuning = {
   id: TuningIds.Locrian,
+  category: Modal,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -265,6 +289,7 @@ export const LOCRIAN: Tuning = {
 
 export const WHOLE_TONE: Tuning = {
   id: TuningIds.WholeTone,
+  category: Other,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -275,6 +300,7 @@ export const WHOLE_TONE: Tuning = {
 
 export const DIMINISHED: Tuning = {
   id: TuningIds.Diminished,
+  category: Other,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10

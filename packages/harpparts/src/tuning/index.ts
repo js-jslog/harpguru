@@ -25,4 +25,4 @@ export {
   DIMINISHED,
 } from './constants'
 export type { Tuning, ReedArray } from './types'
-export { TuningIds } from './types'
+export { TuningIds, TuningCategories } from './types'

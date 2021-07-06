@@ -1,4 +1,4 @@
-export { TuningIds } from './tuning'
+export { TuningIds, TuningCategories } from './tuning'
 export type { Apparatus } from './apparatus'
 export { buildApparatus } from './apparatus'
 export { ValvingIds } from './valving'
@@ -14,6 +14,7 @@ export type { Pitch } from './pitch'
 export type { Pozition } from './pozition'
 export {
   getTuningIds,
+  getTuning,
   getValvingIds,
   getDegreeIds,
   getDegree,
