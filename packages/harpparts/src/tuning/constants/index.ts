@@ -3,6 +3,7 @@ import type { Tuning } from '../types'
 
 const {
   Common,
+  Seydel,
   BrendanPower,
   JoeFilisko,
   RichterModes,
@@ -256,13 +257,20 @@ export const MELODY_MAKER: Tuning = {
 
 export const WILDE: Tuning = {
   id: TuningIds.Wilde,
-  category: Common,
+  category: Seydel,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , e1 , g1 , c2 , e2 , e2 , g2 , c3 , e3 , a3 ],
     [ d1 , g1 , b1 , d2 , f2 , g2 , b2 , d3 , g3 , c4 ],
   ],
+} as const
+
+export const CIRCULAR: Tuning = {
+  id: TuningIds.Circular,
+  category: Seydel,
+  // prettier-ignore
+  reedArray: SPIRAL_MIXOLYDIAN.reedArray,
 } as const
 
 export const POWER_BENDER: Tuning = {
@@ -394,17 +402,6 @@ export const EASY_THIRD: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
     [ d1 , f1 , a1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
-  ],
-} as const
-
-export const SPIRAL_CIRCULAR: Tuning = {
-  id: TuningIds.SpiralCircular,
-  category: Other,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10
-    [ c1 , e1 , g1 , b1 , d2 , f2 , a2 , c3 , e3 , g3 ],
-    [ d1 , f1 , a1 , c2 , e2 , g2 , b2 , d3 , f3 , a3 ],
   ],
 } as const
 

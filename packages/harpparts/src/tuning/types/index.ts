@@ -7,6 +7,7 @@ export enum TuningIds {
   HarmonicMinor = 'Harmonic minor',
   MelodyMaker = 'Melody maker',
   Wilde = 'Wilde',
+  Circular = 'Circular/Melody King',
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
   PaddyRichter = 'Paddy richter',
@@ -33,13 +34,13 @@ export enum TuningIds {
   AugmentedSpanish = 'Augmented Spanish',
   Bagpipe = 'Bagpipe',
   EasyThird = 'Easy third',
-  SpiralCircular = 'Spiral / Circular',
   WillScarlett = 'Will Scarlett',
   WoozleMinor = 'Woozle minor',
 }
 
 export enum TuningCategories {
   Common = 'Common',
+  Seydel = 'Seydel',
   BrendanPower = 'Brendan Power',
   JoeFilisko = 'Joe Filisko',
   RichterModes = 'Richter modes',

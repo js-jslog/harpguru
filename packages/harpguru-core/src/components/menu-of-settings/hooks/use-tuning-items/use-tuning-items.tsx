@@ -25,6 +25,9 @@ export const useTuningItems = (
   const commonTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.Common)
+  const seydelTunings = getTuningIds()
+    .map((id) => getTuning(id))
+    .filter((tuning) => tuning.category === TuningCategories.Seydel)
   const brendanPowerTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.BrendanPower)
@@ -47,6 +50,17 @@ export const useTuningItems = (
   return [
     <OptionBreak title={TuningCategories.Common} key={'option-break-scales'} />,
     ...commonTunings.map((tuning, index) => (
+      <OptionItem
+        key={`${index}`}
+        value={tuning.id}
+        isSelected={tuning.id === tuningId}
+        itemTapHandler={itemTapHandler}
+        callbackParam={tuning.id}
+        twoColumns={false}
+      />
+    )),
+    <OptionBreak title={TuningCategories.Seydel} key={'option-break-scales'} />,
+    ...seydelTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
         value={tuning.id}

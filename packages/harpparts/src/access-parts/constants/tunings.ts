@@ -6,6 +6,7 @@ import {
   HARMONIC_MINOR,
   MELODY_MAKER,
   WILDE,
+  CIRCULAR,
   POWER_BENDER,
   POWER_DRAW,
   PADDY_RICHTER,
@@ -32,7 +33,6 @@ import {
   AUGMENTED_SPANISH,
   BAGPIPE,
   EASY_THIRD,
-  SPIRAL_CIRCULAR,
   WILL_SCARLETT,
   WOOZLE_MINOR,
 } from '../../tuning'
@@ -45,6 +45,7 @@ orderedTunings.set(TuningIds.NaturalMinor, NATURAL_MINOR)
 orderedTunings.set(TuningIds.HarmonicMinor, HARMONIC_MINOR)
 orderedTunings.set(TuningIds.MelodyMaker, MELODY_MAKER)
 orderedTunings.set(TuningIds.Wilde, WILDE)
+orderedTunings.set(TuningIds.Circular, CIRCULAR)
 orderedTunings.set(TuningIds.PowerBender, POWER_BENDER)
 orderedTunings.set(TuningIds.PowerDraw, POWER_DRAW)
 orderedTunings.set(TuningIds.PaddyRichter, PADDY_RICHTER)
@@ -71,6 +72,5 @@ orderedTunings.set(TuningIds.Diminished, DIMINISHED)
 orderedTunings.set(TuningIds.AugmentedSpanish, AUGMENTED_SPANISH)
 orderedTunings.set(TuningIds.Bagpipe, BAGPIPE)
 orderedTunings.set(TuningIds.EasyThird, EASY_THIRD)
-orderedTunings.set(TuningIds.SpiralCircular, SPIRAL_CIRCULAR)
 orderedTunings.set(TuningIds.WillScarlett, WILL_SCARLETT)
 orderedTunings.set(TuningIds.WoozleMinor, WOOZLE_MINOR)
