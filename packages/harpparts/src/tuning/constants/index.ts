@@ -6,6 +6,7 @@ const {
   BrendanPower,
   JoeFilisko,
   RichterModes,
+  SpiralModes,
   OtherScales,
   Other,
 } = TuningCategories
@@ -126,6 +127,83 @@ export const RICHTER_LYDIAN: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
     [ d1 , g1 , b1 , d2 , gb2, a2 , b2 , d3 , gb3, a3 ],
+  ],
+} as const
+
+export const SPIRAL_IONIAN: Tuning = {
+  id: TuningIds.SpiralIonian,
+  category: SpiralModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , b1 , d2 , f2 , a2 , c3 , e3 , g3 ],
+    [ d1 , f1 , a1 , c2 , e2 , g2 , b2 , d3 , f3 , a3 ],
+  ],
+} as const
+
+export const SPIRAL_MIXOLYDIAN: Tuning = {
+  id: TuningIds.SpiralMixolydian,
+  category: SpiralModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , bb1, d2 , f2 , a2 , c3 , e3 , g3 ],
+    [ d1 , f1 , a1 , c2 , e2 , g2 , bb2, d3 , f3 , a3 ],
+  ],
+} as const
+
+export const SPIRAL_DORIAN: Tuning = {
+  id: TuningIds.SpiralDorian,
+  category: SpiralModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , bb1, d2 , f2 , a2 , c3 , eb3, g3 ],
+    [ d1 , f1 , a1 , c2 , eb2, g2 , bb2, d3 , f3 , a3 ],
+  ],
+} as const
+
+export const SPIRAL_AEOLIAN: Tuning = {
+  id: TuningIds.SpiralAeolian,
+  category: SpiralModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , bb1, d2 , f2 , ab2, c3 , eb3, g3 ],
+    [ d1 , f1 , ab1, c2 , eb2, g2 , bb2, d3 , f3 , ab3],
+  ],
+} as const
+
+export const SPIRAL_PHRYGIAN: Tuning = {
+  id: TuningIds.SpiralPhrygian,
+  category: SpiralModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , bb1, db2, f2 , ab2, c3 , eb3, g3 ],
+    [ db1, f1 , ab1, c2 , eb2, g2 , bb2, db3, f3 , ab3],
+  ],
+} as const
+
+export const SPIRAL_LOCRIAN: Tuning = {
+  id: TuningIds.SpiralLocrian,
+  category: SpiralModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, gb1, bb1, db2, f2 , ab2, c3 , eb3, gb3],
+    [ db1, f1 , ab1, c2 , eb2, gb2, bb2, db3, f3 , ab3],
+  ],
+} as const
+
+export const SPIRAL_LYDIAN: Tuning = {
+  id: TuningIds.SpiralLydian,
+  category: SpiralModes,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , e1 , g1 , b1 , d2 , gb2, a2 , c3 , e3 , g3 ],
+    [ d1 , gb1, a1 , c2 , e2 , g2 , b2 , d3 , gb3, a3 ],
   ],
 } as const
 

@@ -34,6 +34,9 @@ export const useTuningItems = (
   const richterModesTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.RichterModes)
+  const spiralModesTunings = getTuningIds()
+    .map((id) => getTuning(id))
+    .filter((tuning) => tuning.category === TuningCategories.SpiralModes)
   const otherScalesTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.OtherScales)
@@ -86,6 +89,20 @@ export const useTuningItems = (
       key={'option-break-scales'}
     />,
     ...richterModesTunings.map((tuning, index) => (
+      <OptionItem
+        key={`${index}`}
+        value={tuning.id}
+        isSelected={tuning.id === tuningId}
+        itemTapHandler={itemTapHandler}
+        callbackParam={tuning.id}
+        twoColumns={false}
+      />
+    )),
+    <OptionBreak
+      title={TuningCategories.SpiralModes}
+      key={'option-break-scales'}
+    />,
+    ...spiralModesTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
         value={tuning.id}

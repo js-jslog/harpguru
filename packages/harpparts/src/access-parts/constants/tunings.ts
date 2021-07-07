@@ -20,6 +20,13 @@ import {
   RICHTER_PHRYGIAN,
   RICHTER_LOCRIAN,
   RICHTER_LYDIAN,
+  SPIRAL_IONIAN,
+  SPIRAL_MIXOLYDIAN,
+  SPIRAL_DORIAN,
+  SPIRAL_AEOLIAN,
+  SPIRAL_PHRYGIAN,
+  SPIRAL_LOCRIAN,
+  SPIRAL_LYDIAN,
   WHOLE_TONE,
   DIMINISHED,
   AUGMENTED_SPANISH,
@@ -52,6 +59,13 @@ orderedTunings.set(TuningIds.RichterAeolian, RICHTER_AEOLIAN)
 orderedTunings.set(TuningIds.RichterPhrygian, RICHTER_PHRYGIAN)
 orderedTunings.set(TuningIds.RichterLocrian, RICHTER_LOCRIAN)
 orderedTunings.set(TuningIds.RichterLydian, RICHTER_LYDIAN)
+orderedTunings.set(TuningIds.SpiralIonian, SPIRAL_IONIAN)
+orderedTunings.set(TuningIds.SpiralMixolydian, SPIRAL_MIXOLYDIAN)
+orderedTunings.set(TuningIds.SpiralDorian, SPIRAL_DORIAN)
+orderedTunings.set(TuningIds.SpiralAeolian, SPIRAL_AEOLIAN)
+orderedTunings.set(TuningIds.SpiralPhrygian, SPIRAL_PHRYGIAN)
+orderedTunings.set(TuningIds.SpiralLocrian, SPIRAL_LOCRIAN)
+orderedTunings.set(TuningIds.SpiralLydian, SPIRAL_LYDIAN)
 orderedTunings.set(TuningIds.WholeTone, WHOLE_TONE)
 orderedTunings.set(TuningIds.Diminished, DIMINISHED)
 orderedTunings.set(TuningIds.AugmentedSpanish, AUGMENTED_SPANISH)
