@@ -20,6 +20,7 @@ const {
   MelodyMaker,
   Wilde,
   Circular,
+  OrchestraS,
   PowerBender,
   PowerDraw,
   PaddyRichter,
@@ -309,6 +310,17 @@ export const CIRCULAR: Tuning = {
   category: Seydel,
   // prettier-ignore
   reedArray: SPIRAL_MIXOLYDIAN.reedArray,
+} as const
+
+export const ORCHESTRA_S: Tuning = {
+  id: OrchestraS,
+  category: Seydel,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , f1 , f1 , a1 , c2 , f2 , f2 , a2 , c3 , f3 ],
+    [ d1 , e1 , g1 , bb1, d2 , e2 , g2 , bb2, d3 , e3 ],
+  ],
 } as const
 
 export const POWER_BENDER: Tuning = {
