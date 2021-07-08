@@ -7,6 +7,7 @@ import {
   MELODY_MAKER,
   WILDE,
   CIRCULAR,
+  ORCHESTRA_S,
   POWER_BENDER,
   POWER_DRAW,
   PADDY_RICHTER,
@@ -46,6 +47,7 @@ orderedTunings.set(TuningIds.HarmonicMinor, HARMONIC_MINOR)
 orderedTunings.set(TuningIds.MelodyMaker, MELODY_MAKER)
 orderedTunings.set(TuningIds.Wilde, WILDE)
 orderedTunings.set(TuningIds.Circular, CIRCULAR)
+orderedTunings.set(TuningIds.OrchestraS, ORCHESTRA_S)
 orderedTunings.set(TuningIds.PowerBender, POWER_BENDER)
 orderedTunings.set(TuningIds.PowerDraw, POWER_DRAW)
 orderedTunings.set(TuningIds.PaddyRichter, PADDY_RICHTER)
