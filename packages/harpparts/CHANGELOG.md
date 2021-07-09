@@ -17,6 +17,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MAJOR: Replace apparatus getter with apparatus builder function
 - MINOR: Add tuning / valving objects / ids for use in apparatus builder function
+- MAJOR: Add tuning category and short name property to Tuning type for presentational purposes
+- MAJOR: Renamed several existing tunings by id
+- MINOR: Add many more tunings to the list of availables
+- MINOR: Export tuning getter function for presentational interrogation beyond just it's id
 
 ## [v8.2.0](https://github.com/js-jslog/harpguru/releases/tag/v8.5.0) - 2021-03-14
 
