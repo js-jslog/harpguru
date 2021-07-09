@@ -1,14 +1,14 @@
 import type { HalfstepIndex } from '../../types'
 
 export enum TuningIds {
-  MajorDiatonic = 'Major Diatonic',
+  MajorDiatonic = 'Major diatonic',
   Country = 'Country',
   NaturalMinor = 'Natural minor',
   HarmonicMinor = 'Harmonic minor',
   MelodyMaker = 'Melody maker',
   Wilde = 'Wilde',
-  Circular = 'Circular/Melody King',
-  OrchestraS = 'Orchestra S',
+  Circular = 'Circular/Melody king',
+  OrchestraS = 'Orchestra s',
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
   PaddyRichter = 'Paddy richter',
