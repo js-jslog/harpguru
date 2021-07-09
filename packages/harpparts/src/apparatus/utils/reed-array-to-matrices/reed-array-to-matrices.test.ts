@@ -71,7 +71,7 @@ test('reedArrayToMatrices throws errors as expected when any error is encountere
   ).toThrow(`Hole 9: ${HoleErrors.TooManyBlowbends}`)
 })
 
-test('reedArrayToMatrices works as expected for a MajorDiatonic tuned harp', () => {
+test('reedArrayToMatrices works as expected for a major diatonic tuned harp', () => {
   // prettier-ignore
   const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
     //    1          2          3          4          5          6          7          8          9         10
