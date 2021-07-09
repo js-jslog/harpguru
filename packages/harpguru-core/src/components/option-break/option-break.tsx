@@ -6,10 +6,12 @@ import { getSizes, colors } from '../../styles'
 
 type OptionBreakProps = {
   readonly title?: string
+  readonly isTopPadded?: boolean
 }
 
 export const OptionBreak = ({
   title: titleText,
+  isTopPadded,
 }: OptionBreakProps): React.ReactElement => {
   const sizes = getSizes()
   const { ['5']: breakHeight, ['8']: titleSize, ['10']: breakWidth } = sizes
@@ -18,6 +20,7 @@ export const OptionBreak = ({
 
   const { breakBar, breakWrapper, titleStyle } = StyleSheet.create({
     breakWrapper: {
+      paddingTop: isTopPadded ? titleSize : 0,
       flexDirection: 'row',
     },
     titleStyle: {

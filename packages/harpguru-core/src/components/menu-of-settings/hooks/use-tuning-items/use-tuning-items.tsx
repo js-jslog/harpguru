@@ -48,7 +48,11 @@ export const useTuningItems = (
     .filter((tuning) => tuning.category === TuningCategories.Other)
 
   return [
-    <OptionBreak title={TuningCategories.Common} key={'option-break-common'} />,
+    <OptionBreak
+      title={TuningCategories.Common}
+      isTopPadded={false}
+      key={'option-break-common'}
+    />,
     ...commonTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
@@ -59,7 +63,11 @@ export const useTuningItems = (
         twoColumns={false}
       />
     )),
-    <OptionBreak title={TuningCategories.Seydel} key={'option-break-seydel'} />,
+    <OptionBreak
+      title={TuningCategories.Seydel}
+      isTopPadded={true}
+      key={'option-break-seydel'}
+    />,
     ...seydelTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
@@ -72,6 +80,7 @@ export const useTuningItems = (
     )),
     <OptionBreak
       title={TuningCategories.BrendanPower}
+      isTopPadded={true}
       key={'option-break-brendan-power'}
     />,
     ...brendanPowerTunings.map((tuning, index) => (
@@ -86,6 +95,7 @@ export const useTuningItems = (
     )),
     <OptionBreak
       title={TuningCategories.JoeFilisko}
+      isTopPadded={true}
       key={'option-break-joe-filisko'}
     />,
     ...joeFiliskoTunings.map((tuning, index) => (
@@ -100,6 +110,7 @@ export const useTuningItems = (
     )),
     <OptionBreak
       title={TuningCategories.RichterModes}
+      isTopPadded={true}
       key={'option-break-richter-modes'}
     />,
     ...richterModesTunings.map((tuning, index) => (
@@ -114,6 +125,7 @@ export const useTuningItems = (
     )),
     <OptionBreak
       title={TuningCategories.SpiralModes}
+      isTopPadded={true}
       key={'option-break-spiral-modes'}
     />,
     ...spiralModesTunings.map((tuning, index) => (
@@ -128,6 +140,7 @@ export const useTuningItems = (
     )),
     <OptionBreak
       title={TuningCategories.OtherScales}
+      isTopPadded={true}
       key={'option-break-other-scales'}
     />,
     ...otherScalesTunings.map((tuning, index) => (
@@ -140,7 +153,11 @@ export const useTuningItems = (
         twoColumns={false}
       />
     )),
-    <OptionBreak title={TuningCategories.Other} key={'option-break-other'} />,
+    <OptionBreak
+      title={TuningCategories.Other}
+      isTopPadded={true}
+      key={'option-break-other'}
+    />,
     ...otherTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
