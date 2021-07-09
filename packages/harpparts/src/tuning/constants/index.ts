@@ -96,6 +96,7 @@ const {
 export const RICHTER_IONIAN: Tuning = {
   id: RichterIonian,
   category: RichterModes,
+  shortName: 'Ionian',
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
@@ -106,6 +107,7 @@ export const RICHTER_IONIAN: Tuning = {
 
 export const RICHTER_MIXOLYDIAN: Tuning = {
   id: RichterMixolydian,
+  shortName: 'Mixolydian',
   category: RichterModes,
   // prettier-ignore
   reedArray: [
@@ -117,6 +119,7 @@ export const RICHTER_MIXOLYDIAN: Tuning = {
 
 export const RICHTER_DORIAN: Tuning = {
   id: RichterDorian,
+  shortName: 'Dorian',
   category: RichterModes,
   // prettier-ignore
   reedArray: [
@@ -128,6 +131,7 @@ export const RICHTER_DORIAN: Tuning = {
 
 export const RICHTER_AEOLIAN: Tuning = {
   id: RichterAeolian,
+  shortName: 'Aeolian',
   category: RichterModes,
   // prettier-ignore
   reedArray: [
@@ -139,6 +143,7 @@ export const RICHTER_AEOLIAN: Tuning = {
 
 export const RICHTER_PHRYGIAN: Tuning = {
   id: RichterPhrygian,
+  shortName: 'Phrygian',
   category: RichterModes,
   // prettier-ignore
   reedArray: [
@@ -150,6 +155,7 @@ export const RICHTER_PHRYGIAN: Tuning = {
 
 export const RICHTER_LOCRIAN: Tuning = {
   id: RichterLocrian,
+  shortName: 'Locrian',
   category: RichterModes,
   // prettier-ignore
   reedArray: [
@@ -161,6 +167,7 @@ export const RICHTER_LOCRIAN: Tuning = {
 
 export const RICHTER_LYDIAN: Tuning = {
   id: RichterLydian,
+  shortName: 'Lydian',
   category: RichterModes,
   // prettier-ignore
   reedArray: [
@@ -172,6 +179,7 @@ export const RICHTER_LYDIAN: Tuning = {
 
 export const SPIRAL_IONIAN: Tuning = {
   id: SpiralIonian,
+  shortName: 'Ionian',
   category: SpiralModes,
   // prettier-ignore
   reedArray: [
@@ -183,6 +191,7 @@ export const SPIRAL_IONIAN: Tuning = {
 
 export const SPIRAL_MIXOLYDIAN: Tuning = {
   id: SpiralMixolydian,
+  shortName: 'Mixolydian',
   category: SpiralModes,
   // prettier-ignore
   reedArray: [
@@ -194,6 +203,7 @@ export const SPIRAL_MIXOLYDIAN: Tuning = {
 
 export const SPIRAL_DORIAN: Tuning = {
   id: SpiralDorian,
+  shortName: 'Dorian',
   category: SpiralModes,
   // prettier-ignore
   reedArray: [
@@ -205,6 +215,7 @@ export const SPIRAL_DORIAN: Tuning = {
 
 export const SPIRAL_AEOLIAN: Tuning = {
   id: SpiralAeolian,
+  shortName: 'Aeolian',
   category: SpiralModes,
   // prettier-ignore
   reedArray: [
@@ -216,6 +227,7 @@ export const SPIRAL_AEOLIAN: Tuning = {
 
 export const SPIRAL_PHRYGIAN: Tuning = {
   id: SpiralPhrygian,
+  shortName: 'Phrygian',
   category: SpiralModes,
   // prettier-ignore
   reedArray: [
@@ -227,6 +239,7 @@ export const SPIRAL_PHRYGIAN: Tuning = {
 
 export const SPIRAL_LOCRIAN: Tuning = {
   id: SpiralLocrian,
+  shortName: 'Locrian',
   category: SpiralModes,
   // prettier-ignore
   reedArray: [
@@ -238,6 +251,7 @@ export const SPIRAL_LOCRIAN: Tuning = {
 
 export const SPIRAL_LYDIAN: Tuning = {
   id: SpiralLydian,
+  shortName: 'Lydian',
   category: SpiralModes,
   // prettier-ignore
   reedArray: [

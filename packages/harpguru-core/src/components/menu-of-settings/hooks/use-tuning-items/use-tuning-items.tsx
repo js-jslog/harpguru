@@ -56,7 +56,7 @@ export const useTuningItems = (
     ...commonTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
-        value={tuning.id}
+        value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
         callbackParam={tuning.id}
@@ -71,7 +71,7 @@ export const useTuningItems = (
     ...seydelTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
-        value={tuning.id}
+        value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
         callbackParam={tuning.id}
@@ -86,7 +86,7 @@ export const useTuningItems = (
     ...brendanPowerTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
-        value={tuning.id}
+        value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
         callbackParam={tuning.id}
@@ -101,7 +101,7 @@ export const useTuningItems = (
     ...joeFiliskoTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
-        value={tuning.id}
+        value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
         callbackParam={tuning.id}
@@ -116,7 +116,7 @@ export const useTuningItems = (
     ...richterModesTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
-        value={tuning.id}
+        value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
         callbackParam={tuning.id}
@@ -131,7 +131,7 @@ export const useTuningItems = (
     ...spiralModesTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
-        value={tuning.id}
+        value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
         callbackParam={tuning.id}
@@ -146,7 +146,7 @@ export const useTuningItems = (
     ...otherScalesTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
-        value={tuning.id}
+        value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
         callbackParam={tuning.id}
@@ -161,7 +161,7 @@ export const useTuningItems = (
     ...otherTunings.map((tuning, index) => (
       <OptionItem
         key={`${index}`}
-        value={tuning.id}
+        value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
         callbackParam={tuning.id}

@@ -16,13 +16,13 @@ export enum TuningIds {
   BluesTwo = 'Blues #2',
   BluesThree = 'Blues #3',
   Chord = 'Chord',
-  RichterIonian = 'Ionian',
-  RichterMixolydian = 'Mixolydian',
-  RichterDorian = 'Dorian',
-  RichterAeolian = 'Aeolian',
-  RichterPhrygian = 'Phrygian',
-  RichterLocrian = 'Locrian',
-  RichterLydian = 'Lydian',
+  RichterIonian = 'Ionian (richter)',
+  RichterMixolydian = 'Mixolydian (richter)',
+  RichterDorian = 'Dorian (richter)',
+  RichterAeolian = 'Aeolian (richter)',
+  RichterPhrygian = 'Phrygian (richter)',
+  RichterLocrian = 'Locrian (richter)',
+  RichterLydian = 'Lydian (richter)',
   SpiralIonian = 'Ionian (spiral)',
   SpiralMixolydian = 'Mixolydian (spiral)',
   SpiralDorian = 'Dorian (spiral)',
@@ -52,6 +52,7 @@ export enum TuningCategories {
 
 export type Tuning = {
   readonly id: TuningIds
+  readonly shortName?: string
   readonly category: TuningCategories
   readonly reedArray: ReedArray
 }
