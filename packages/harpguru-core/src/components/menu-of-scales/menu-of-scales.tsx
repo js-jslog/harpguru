@@ -11,38 +11,27 @@ import { colors, getSizes } from '../../styles'
 
 import { getTogglesForDispatcher, getToggledActiveQuizDegrees } from './utils'
 import {
-  useScalesTitles,
-  useScalesItemsz,
+  useScaleTitle,
+  useScaleItems,
   useQuizQuestionTitle,
   useQuizQuestionItems,
 } from './hooks'
 import { useImmediatelyFlushToggles } from './hooks'
 
 export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
-  const { useScalesTitle, useChordsTitle } = useScalesTitles()
-  const { useScalesItems, useChordsItems } = useScalesItemsz()
   useImmediatelyFlushToggles({
     isMenuStashed: menuProps.isMenuStashed,
   })
-  const itemTapHandler = useCallback(useDispatch(getTogglesForDispatcher), [
-    useDispatch,
-    getTogglesForDispatcher,
-  ])
-
-  const useScalesTitleMemo = useCallback(() => useScalesTitle(useGlobal), [
-    useGlobal,
-  ])
-  const useChordsTitleMemo = useCallback(() => useChordsTitle(useGlobal), [
-    useGlobal,
-  ])
-
-  const useScalesItemsMemo = useCallback(
-    () => useScalesItems(useGlobal, itemTapHandler),
-    [useGlobal, itemTapHandler]
+  const scaleItemTapHandler = useCallback(
+    useDispatch(getTogglesForDispatcher),
+    [useDispatch, getTogglesForDispatcher]
   )
-  const useChordsItemsMemo = useCallback(
-    () => useChordsItems(useGlobal, itemTapHandler),
-    [useGlobal, itemTapHandler]
+  const useScalesTitleMemo = useCallback(() => useScaleTitle(useGlobal), [
+    useGlobal,
+  ])
+  const useScalesItemsMemo = useCallback(
+    () => useScaleItems(useGlobal, scaleItemTapHandler),
+    [useGlobal, scaleItemTapHandler]
   )
 
   const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
@@ -59,11 +48,6 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     {
       useTitle: useScalesTitleMemo,
       useItems: useScalesItemsMemo,
-      twoColumns: false,
-    },
-    {
-      useTitle: useChordsTitleMemo,
-      useItems: useChordsItemsMemo,
       twoColumns: false,
     },
     {
