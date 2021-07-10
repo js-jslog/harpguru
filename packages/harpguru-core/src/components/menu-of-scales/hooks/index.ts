@@ -1,3 +1,5 @@
 export { useImmediatelyFlushToggles } from './use-immediately-flush-toggles'
 export { useScalesTitles } from './use-scales-titles'
 export { useScalesItemsz } from './use-scales-itemsz'
+export { useQuizQuestionTitle } from './use-quiz-question-title'
+export { useQuizQuestionItems } from './use-quiz-question-items'

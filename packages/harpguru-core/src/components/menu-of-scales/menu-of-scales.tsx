@@ -9,8 +9,13 @@ import { Menu } from '../menu'
 import { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
-import { getTogglesForDispatcher } from './utils'
-import { useScalesTitles, useScalesItemsz } from './hooks'
+import { getTogglesForDispatcher, getToggledActiveQuizDegrees } from './utils'
+import {
+  useScalesTitles,
+  useScalesItemsz,
+  useQuizQuestionTitle,
+  useQuizQuestionItems,
+} from './hooks'
 import { useImmediatelyFlushToggles } from './hooks'
 
 export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
@@ -40,6 +45,16 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal, itemTapHandler]
   )
 
+  const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
+  const quizQuestionTapHandler = useCallback(
+    useDispatch(getToggledActiveQuizDegrees),
+    [useDispatch, getToggledActiveQuizDegrees]
+  )
+  const useQuizQuestionItemsMemo = useCallback(
+    () => useQuizQuestionItems(useGlobal, quizQuestionTapHandler),
+    [useGlobal, quizQuestionTapHandler]
+  )
+
   const optionStackPropsz = [
     {
       useTitle: useScalesTitleMemo,
@@ -49,6 +64,11 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     {
       useTitle: useChordsTitleMemo,
       useItems: useChordsItemsMemo,
+      twoColumns: false,
+    },
+    {
+      useTitle: useQuizQuestionTitleMemo,
+      useItems: useQuizQuestionItemsMemo,
       twoColumns: false,
     },
   ]

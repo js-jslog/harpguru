@@ -12,11 +12,8 @@ import { colors, getSizes } from '../../styles'
 import {
   getNewHarpStrataByTuningForDispatcher,
   getNewHarpStrataByValvingForDispatcher,
-  getToggledActiveQuizDegrees,
 } from './utils'
 import {
-  useQuizQuestionTitle,
-  useQuizQuestionItems,
   useTuningTitle,
   useTuningItems,
   useValvingTitle,
@@ -48,16 +45,6 @@ export const MenuOfSettings = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal, valvingItemTapHandler]
   )
 
-  const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
-  const quizQuestionTapHandler = useCallback(
-    useDispatch(getToggledActiveQuizDegrees),
-    [useDispatch, getToggledActiveQuizDegrees]
-  )
-  const useQuizQuestionItemsMemo = useCallback(
-    () => useQuizQuestionItems(useGlobal, quizQuestionTapHandler),
-    [useGlobal, quizQuestionTapHandler]
-  )
-
   const optionStackPropsz = [
     {
       useTitle: useTuningTitleMemo,
@@ -67,11 +54,6 @@ export const MenuOfSettings = (menuProps: MenuProps): React.ReactElement => {
     {
       useTitle: useValvingTitleMemo,
       useItems: useValvingItemsMemo,
-      twoColumns: false,
-    },
-    {
-      useTitle: useQuizQuestionTitleMemo,
-      useItems: useQuizQuestionItemsMemo,
       twoColumns: false,
     },
   ]
