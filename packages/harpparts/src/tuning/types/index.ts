@@ -2,16 +2,58 @@ import type { HalfstepIndex } from '../../types'
 
 export enum TuningIds {
   MajorDiatonic = 'Major diatonic',
-  CountryTuned = 'Country tuned',
+  Country = 'Country',
   NaturalMinor = 'Natural minor',
-  WildeTuned = 'Wilde tuned',
+  HarmonicMinor = 'Harmonic minor',
+  MelodyMaker = 'Melody maker',
+  Wilde = 'Wilde',
+  Circular = 'Circular/Melody king',
+  OrchestraS = 'Orchestra s',
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
+  PaddyRichter = 'Paddy richter',
+  BluesOne = 'Blues 1',
+  BluesTwo = 'Blues 2',
+  BluesThree = 'Blues 3',
+  Chord = 'Chord',
+  RichterIonian = 'Ionian (richter)',
+  RichterMixolydian = 'Mixolydian (richter)',
+  RichterDorian = 'Dorian (richter)',
+  RichterAeolian = 'Aeolian (richter)',
+  RichterPhrygian = 'Phrygian (richter)',
+  RichterLocrian = 'Locrian (richter)',
+  RichterLydian = 'Lydian (richter)',
+  SpiralIonian = 'Ionian (spiral)',
+  SpiralMixolydian = 'Mixolydian (spiral)',
+  SpiralDorian = 'Dorian (spiral)',
+  SpiralAeolian = 'Aeolian (spiral)',
+  SpiralPhrygian = 'Phrygian (spiral)',
+  SpiralLocrian = 'Locrian (spiral)',
+  SpiralLydian = 'Lydian (spiral)',
+  WholeTone = 'Whole tone',
+  Diminished = 'Diminished',
+  AugmentedSpanish = 'Augmented Spanish',
+  Bagpipe = 'Bagpipe',
+  EasyThird = 'Easy third',
+  WillScarlett = 'Will Scarlett',
   WoozleMinor = 'Woozle minor',
+}
+
+export enum TuningCategories {
+  Common = 'Common',
+  Seydel = 'Seydel',
+  BrendanPower = 'Brendan Power',
+  JoeFilisko = 'Joe Filisko',
+  RichterModes = 'Richter modes',
+  SpiralModes = 'Spiral modes',
+  OtherScales = 'Other scales',
+  Other = 'Other',
 }
 
 export type Tuning = {
   readonly id: TuningIds
+  readonly shortName?: string
+  readonly category: TuningCategories
   readonly reedArray: ReedArray
 }
 

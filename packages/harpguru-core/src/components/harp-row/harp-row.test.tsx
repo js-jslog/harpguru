@@ -19,7 +19,7 @@ mockUseGlobal.mockImplementation((stateItem: string) => {
   return undefined
 })
 
-test('The first 3 holes of a blow row from a major diatonic harmonica can be rendered', () => {
+test('The first 3 holes of a blow row from a major diatonic tuned harmonica can be rendered', () => {
   const { getByText } = render(<HarpRow yCoord={2} xRange={[0, 1, 2]} />)
 
   expect(getByText(DegreeIds.Root)).toBeTruthy()

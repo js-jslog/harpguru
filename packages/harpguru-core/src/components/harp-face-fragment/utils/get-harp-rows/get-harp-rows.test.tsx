@@ -2,7 +2,7 @@ import { inactiveCellsHarpStrata as activeHarpStrata } from '../../../../test-re
 
 import { getHarpRows } from './get-harp-rows'
 
-test('getHarpRows returns an object with the major diatonic rows split between the blow / draw holes', () => {
+test('getHarpRows returns an object with the rows split between the blow / draw holes', () => {
   const xRange = [0, 1, 2]
   const holeRows = getHarpRows(xRange, activeHarpStrata)
   expect(holeRows.top.length).toBe(3)

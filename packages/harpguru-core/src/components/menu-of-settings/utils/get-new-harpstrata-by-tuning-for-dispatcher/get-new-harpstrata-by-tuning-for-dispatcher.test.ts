@@ -15,7 +15,7 @@ const baseHarpStrataProps = {
 const majorDiatonicHarpProps = baseHarpStrataProps
 const countryTunedHarpProps = {
   ...baseHarpStrataProps,
-  tuningId: TuningIds.CountryTuned,
+  tuningId: TuningIds.Country,
 }
 const naturalMinorHarpProps = {
   ...baseHarpStrataProps,
