@@ -20,7 +20,7 @@ import {
   useValvingItems,
 } from './hooks'
 
-export const MenuOfSettings = (menuProps: MenuProps): React.ReactElement => {
+export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
   const useTuningTitleMemo = useCallback(() => useTuningTitle(useGlobal), [
     useGlobal,
   ])
