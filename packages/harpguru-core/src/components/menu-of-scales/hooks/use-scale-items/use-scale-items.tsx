@@ -46,7 +46,7 @@ export const useScaleItems = (
     />,
     <OptionBreak
       title={'Scales'}
-      isTopPadded={true}
+      isTopPadded={false}
       key={'option-break-scales'}
     />,
     ...scales.map((item, index) => (
