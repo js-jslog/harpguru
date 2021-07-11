@@ -9,7 +9,10 @@ import { Menu } from '../menu'
 import { MenuProps } from '../../types'
 import { colors, getSizes } from '../../styles'
 
-import { getTogglesForDispatcher, getToggledActiveQuizDegrees } from './utils'
+import {
+  getNewBufferedTogglesByTargetScaleForDispatcher,
+  getNewActiveQuizDegreesByToggleForDispatcher,
+} from './utils'
 import {
   useScaleTitle,
   useScaleItems,
@@ -23,8 +26,8 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     isMenuStashed: menuProps.isMenuStashed,
   })
   const scaleItemTapHandler = useCallback(
-    useDispatch(getTogglesForDispatcher),
-    [useDispatch, getTogglesForDispatcher]
+    useDispatch(getNewBufferedTogglesByTargetScaleForDispatcher),
+    [useDispatch, getNewBufferedTogglesByTargetScaleForDispatcher]
   )
   const useScalesTitleMemo = useCallback(() => useScaleTitle(useGlobal), [
     useGlobal,
@@ -36,8 +39,8 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
 
   const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
   const quizQuestionTapHandler = useCallback(
-    useDispatch(getToggledActiveQuizDegrees),
-    [useDispatch, getToggledActiveQuizDegrees]
+    useDispatch(getNewActiveQuizDegreesByToggleForDispatcher),
+    [useDispatch, getNewActiveQuizDegreesByToggleForDispatcher]
   )
   const useQuizQuestionItemsMemo = useCallback(
     () => useQuizQuestionItems(useGlobal, quizQuestionTapHandler),
