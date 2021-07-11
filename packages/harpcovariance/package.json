@@ -13,6 +13,6 @@
     "ci": "yarn lint && yarn tsc"
   },
   "peerDependencies": {
-    "harpparts": "^8.0.0"
+    "harpparts": "^9.0.0"
   }
 }
