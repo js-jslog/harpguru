@@ -4,7 +4,7 @@ import type { DegreeIds } from 'harpparts'
 import { rebufferForInput } from '../rebuffer-for-input'
 import type { GlobalState } from '../../../../types'
 
-export const getTogglesForDispatcher = (
+export const getNewBufferedTogglesByTargetScaleForDispatcher = (
   global: GlobalState,
   _dipatch: Dispatcher,
   targetActiveDegrees: ReadonlyArray<DegreeIds>

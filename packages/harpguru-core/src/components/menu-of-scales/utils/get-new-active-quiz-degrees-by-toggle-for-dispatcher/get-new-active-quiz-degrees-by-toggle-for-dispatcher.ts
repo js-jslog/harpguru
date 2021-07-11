@@ -4,7 +4,7 @@ import type { DegreeIds } from 'harpparts'
 import { toggleDegreeInList } from '../toggle-degree-in-list'
 import type { GlobalState } from '../../../../types'
 
-export const getToggledActiveQuizDegrees = (
+export const getNewActiveQuizDegreesByToggleForDispatcher = (
   global: GlobalState,
   _dipatch: Dispatcher,
   degreeId: DegreeIds

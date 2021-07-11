@@ -20,6 +20,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: Add valving menu alongside the tuning menu
 - MINOR: Add tuning groups to tuning menu
 
+### Changed
+
+- MAJOR: Move quiz question setting to scales menu
+- MAJOR: Collapse scales and chords menus together
+
 ### Removed
 
 - MAJOR: Remove the halfvalved tuning options in favour of separate menu
