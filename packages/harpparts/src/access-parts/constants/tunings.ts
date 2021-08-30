@@ -5,6 +5,7 @@ import {
   NATURAL_MINOR,
   HARMONIC_MINOR,
   MELODY_MAKER,
+  EASY_DIATONIC,
   WILDE,
   CIRCULAR,
   ORCHESTRA_S,
@@ -45,6 +46,7 @@ orderedTunings.set(TuningIds.Country, COUNTRY)
 orderedTunings.set(TuningIds.NaturalMinor, NATURAL_MINOR)
 orderedTunings.set(TuningIds.HarmonicMinor, HARMONIC_MINOR)
 orderedTunings.set(TuningIds.MelodyMaker, MELODY_MAKER)
+orderedTunings.set(TuningIds.EasyDiatonic, EASY_DIATONIC)
 orderedTunings.set(TuningIds.Wilde, WILDE)
 orderedTunings.set(TuningIds.Circular, CIRCULAR)
 orderedTunings.set(TuningIds.OrchestraS, ORCHESTRA_S)
