@@ -41,7 +41,7 @@ export const MAJOR_SEVENTH: Scale = {
 export const MINOR_SEVENTH: Scale = {
   id: ScaleIds.MajorSeventh,
   label: 'Minor seventh',
-  degrees: [Root, Flat3, Fifth, Seventh],
+  degrees: [Root, Flat3, Fifth, Flat7],
   category: ScaleCategory.Chord,
 }
 
