@@ -7,6 +7,7 @@ import {
   MELODY_MAKER,
   EASY_DIATONIC,
   WILDE,
+  WILDE_MINOR,
   CIRCULAR,
   ORCHESTRA_S,
   POWER_BENDER,
@@ -48,6 +49,7 @@ orderedTunings.set(TuningIds.HarmonicMinor, HARMONIC_MINOR)
 orderedTunings.set(TuningIds.MelodyMaker, MELODY_MAKER)
 orderedTunings.set(TuningIds.EasyDiatonic, EASY_DIATONIC)
 orderedTunings.set(TuningIds.Wilde, WILDE)
+orderedTunings.set(TuningIds.WildeMinor, WILDE_MINOR)
 orderedTunings.set(TuningIds.Circular, CIRCULAR)
 orderedTunings.set(TuningIds.OrchestraS, ORCHESTRA_S)
 orderedTunings.set(TuningIds.PowerBender, POWER_BENDER)
