@@ -5,6 +5,7 @@ export enum ScaleIds {
   MinorTriad,
   MajorSeventh,
   MinorSeventh,
+  DominantSeventh,
   DiminishedChord,
   DiminishedSeventh,
   AugmentedChord,

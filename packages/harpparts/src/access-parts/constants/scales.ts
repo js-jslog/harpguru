@@ -4,6 +4,7 @@ import {
   MINOR_TRIAD,
   MAJOR_SEVENTH,
   MINOR_SEVENTH,
+  DOMINANT_SEVENTH,
   DIMINISHED_CHORD,
   DIMINISHED_SEVENTH,
   AUGMENTED_CHORD,
@@ -29,6 +30,7 @@ orderedScales.set(ScaleIds.MajorTriad, MAJOR_TRIAD)
 orderedScales.set(ScaleIds.MinorTriad, MINOR_TRIAD)
 orderedScales.set(ScaleIds.MajorSeventh, MAJOR_SEVENTH)
 orderedScales.set(ScaleIds.MinorSeventh, MINOR_SEVENTH)
+orderedScales.set(ScaleIds.DominantSeventh, DOMINANT_SEVENTH)
 orderedScales.set(ScaleIds.DiminishedChord, DIMINISHED_CHORD)
 orderedScales.set(ScaleIds.DiminishedSeventh, DIMINISHED_SEVENTH)
 orderedScales.set(ScaleIds.AugmentedChord, AUGMENTED_CHORD)
