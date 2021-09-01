@@ -18,7 +18,9 @@ const {
   NaturalMinor,
   HarmonicMinor,
   MelodyMaker,
+  EasyDiatonic,
   Wilde,
+  WildeMinor,
   Circular,
   OrchestraS,
   PowerBender,
@@ -52,6 +54,8 @@ const {
 } = TuningIds
 
 const {
+  a0,
+  b0,
   c1,
   db1,
   d1,
@@ -308,6 +312,17 @@ export const MELODY_MAKER: Tuning = {
   ],
 } as const
 
+export const EASY_DIATONIC: Tuning = {
+  id: EasyDiatonic,
+  category: Common,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ a0 , c1 , e1 , a1 , c2 , e2 , a2 , c3 , e3 , a3 ],
+    [ b0 , d1 , g1 , b1 , d2 , g2 , b2 , d3 , g3 , b3 ],
+  ],
+} as const
+
 export const WILDE: Tuning = {
   id: Wilde,
   category: Seydel,
@@ -316,6 +331,17 @@ export const WILDE: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , e1 , g1 , c2 , e2 , e2 , g2 , c3 , e3 , a3 ],
     [ d1 , g1 , b1 , d2 , f2 , g2 , b2 , d3 , g3 , c4 ],
+  ],
+} as const
+
+export const WILDE_MINOR: Tuning = {
+  id: WildeMinor,
+  category: Seydel,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , eb1, g1 , c2 , eb2, eb2, g2 , c3 , eb3, a3 ],
+    [ d1 , g1 , bb1, d2 , f2 , g2 , bb2, d3 , g3 , c4 ],
   ],
 } as const
 

@@ -6,7 +6,9 @@ export enum TuningIds {
   NaturalMinor = 'Natural minor',
   HarmonicMinor = 'Harmonic minor',
   MelodyMaker = 'Melody maker',
+  EasyDiatonic = 'Easy diatonic',
   Wilde = 'Wilde',
+  WildeMinor = 'Wilde minor',
   Circular = 'Circular/Melody king',
   OrchestraS = 'Orchestra s',
   PowerBender = 'Power bender',
@@ -85,6 +87,9 @@ export type ReedArray = readonly [
 ]
 
 export enum ReedTuningPitches {
+  a0 = -3,
+  bb0 = -2,
+  b0 = -1,
   c1 = 0,
   db1,
   d1,

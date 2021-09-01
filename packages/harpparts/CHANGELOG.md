@@ -17,7 +17,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Added
 
-- MINOR: Add dominant seventh & major minor seventh chords
+- MINOR: Wilde Minor & Easy Diatonic tunings
+- MINOR: Dominant seventh & major minor seventh chords
 
 ### Fixed
 
