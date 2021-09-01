@@ -18,6 +18,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Added
 
 - MINOR: Wilde Minor & Easy Diatonic tunings
+- MINOR: Dominant seventh & major minor seventh chords
+
+### Fixed
+
+- MINOR: Correct definition of minor seventh chord
 
 ## [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v9.0.0) - 2021-07-11
 
