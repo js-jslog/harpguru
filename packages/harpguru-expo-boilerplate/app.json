@@ -3,7 +3,7 @@
     "name": "Harp Guru",
     "slug": "harp-guru",
     "platforms": ["ios", "android", "web"],
-    "version": "9.0.0",
+    "version": "9.1.0",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
@@ -20,12 +20,12 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "com.jslog.harpguru",
-      "buildNumber": "9.0.0",
+      "buildNumber": "9.1.0",
       "supportsTablet": true
     },
     "android": {
       "package": "com.jslog.harpguru",
-      "versionCode": 19,
+      "versionCode": 20,
       "permissions": []
     }
   }
