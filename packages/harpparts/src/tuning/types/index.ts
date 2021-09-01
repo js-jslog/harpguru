@@ -8,7 +8,7 @@ export enum TuningIds {
   MelodyMaker = 'Melody maker',
   EasyDiatonic = 'Easy diatonic',
   Wilde = 'Wilde',
-  WildeMinor = 'WildeMinor',
+  WildeMinor = 'Wilde minor',
   Circular = 'Circular/Melody king',
   OrchestraS = 'Orchestra s',
   PowerBender = 'Power bender',
