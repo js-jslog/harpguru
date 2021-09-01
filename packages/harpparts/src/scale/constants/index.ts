@@ -52,6 +52,13 @@ export const DOMINANT_SEVENTH: Scale = {
   category: ScaleCategory.Chord,
 }
 
+export const MAJOR_MINOR_SEVENTH: Scale = {
+  id: ScaleIds.MajorMinorSeventh,
+  label: 'Major minor seventh',
+  degrees: [Root, Flat3, Fifth, Seventh],
+  category: ScaleCategory.Chord,
+}
+
 export const DIMINISHED_CHORD: Scale = {
   id: ScaleIds.DiminishedChord,
   label: 'Diminished chord',
