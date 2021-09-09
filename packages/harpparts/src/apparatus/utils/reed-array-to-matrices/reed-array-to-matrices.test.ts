@@ -10,6 +10,7 @@ import {
   POWER_DRAW,
   WILDE,
   WOOZLE_MINOR,
+  BABY_FAT,
 } from '../../../tuning'
 import {
   BLOW,
@@ -357,5 +358,33 @@ test('reedArrayToMatrices works as expected for a half-valved major diatonic tun
 
   const { id, reedArray } = MAJOR_DIATONIC
   const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.HalfValved)
+  expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
+})
+
+test('reedArrayToMatrices works as expected for a baby fat tuned harp', () => {
+  // prettier-ignore
+  const halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex> = [
+    //    1          2          3          4          5          6          7
+    [ 3        , undefined, undefined, 15       , 18       , 22       , undefined],
+    [ 0        , 4        , 7        , 12       , 16       , 19       , 24       ],
+    [ 2        , 7        , 11       , 14       , 17       , 21       , 23       ],
+    [ 1        , 6        , 10       , 13       , undefined, 20       , 25       ],
+    [ undefined, 5        , 9        , undefined, undefined, undefined, undefined],
+    [ undefined, undefined, 8        , undefined, undefined, undefined, undefined],
+  ] as const
+
+  // prettier-ignore
+  const interactionMatrix: HarpFaceMatrix<Interaction> = [
+    //    1          2          3          4          5          6          7
+    [ OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1, undefined],
+    [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     ],
+    [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     ],
+    [ DRAWBEND1, DRAWBEND1, DRAWBEND1, DRAWBEND1, undefined, DRAWBEND1, OVERDRAW1],
+    [ undefined, DRAWBEND2, DRAWBEND2, undefined, undefined, undefined, undefined],
+    [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined],
+  ] as const
+
+  const { id, reedArray } = BABY_FAT
+  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })

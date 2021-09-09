@@ -51,6 +51,7 @@ const {
   EasyThird,
   WillScarlett,
   WoozleMinor,
+  BabyFat,
 } = TuningIds
 
 const {
@@ -514,5 +515,16 @@ export const WOOZLE_MINOR: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , eb1, g1 , c2 , eb2, g2 , a2 , c3 , eb3, a3 ],
     [ d1 , g1 , bb1, d2 , f2 , a2 , bb2, d3 , g3 , c4 ],
+  ],
+} as const
+
+export const BABY_FAT: Tuning = {
+  id: BabyFat,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7
+    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 ],
+    [ d1 , g1 , b1 , d2 , f2 , a2 , b2 ],
   ],
 } as const

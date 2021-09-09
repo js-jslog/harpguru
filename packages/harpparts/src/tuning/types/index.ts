@@ -39,6 +39,7 @@ export enum TuningIds {
   EasyThird = 'Easy third',
   WillScarlett = 'Will Scarlett',
   WoozleMinor = 'Woozle minor',
+  BabyFat = 'Baby fat',
 }
 
 export enum TuningCategories {
@@ -59,7 +60,30 @@ export type Tuning = {
   readonly reedArray: ReedArray
 }
 
-export type ReedArray = readonly [
+export type ReedArray = ReedArray7 | ReedArray10
+
+type ReedArray7 = readonly [
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ],
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ]
+]
+
+type ReedArray10 = readonly [
   readonly [
     HalfstepIndex,
     HalfstepIndex,

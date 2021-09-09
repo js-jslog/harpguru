@@ -5,7 +5,19 @@ import type { Interaction } from '../../interaction'
 
 export type ReedPair = readonly [HalfstepIndex, HalfstepIndex]
 
-export type ReedPairArray = readonly [
+export type ReedPairArray = ReedPairArray7 | ReedPairArray10
+
+type ReedPairArray7 = readonly [
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair
+]
+
+type ReedPairArray10 = readonly [
   ReedPair,
   ReedPair,
   ReedPair,
@@ -29,7 +41,11 @@ export type Hole = {
   readonly valveddraws: HalfstepIndex[]
 }
 
-export type HoleArray = readonly [
+export type HoleArray = HoleArray7 | HoleArray10
+
+type HoleArray7 = readonly [Hole, Hole, Hole, Hole, Hole, Hole, Hole]
+
+type HoleArray10 = readonly [
   Hole,
   Hole,
   Hole,
