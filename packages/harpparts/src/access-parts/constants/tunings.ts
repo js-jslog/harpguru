@@ -38,6 +38,7 @@ import {
   EASY_THIRD,
   WILL_SCARLETT,
   WOOZLE_MINOR,
+  BABY_FAT,
 } from '../../tuning'
 import type { Tuning } from '../../tuning'
 
@@ -80,3 +81,4 @@ orderedTunings.set(TuningIds.Bagpipe, BAGPIPE)
 orderedTunings.set(TuningIds.EasyThird, EASY_THIRD)
 orderedTunings.set(TuningIds.WillScarlett, WILL_SCARLETT)
 orderedTunings.set(TuningIds.WoozleMinor, WOOZLE_MINOR)
+orderedTunings.set(TuningIds.BabyFat, BABY_FAT)

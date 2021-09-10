@@ -37,6 +37,12 @@ export {
   SPIRAL_LYDIAN,
   WHOLE_TONE,
   DIMINISHED,
+  BABY_FAT,
 } from './constants'
 export type { Tuning, ReedArray } from './types'
-export { TuningIds, TuningCategories } from './types'
+export {
+  TuningIds,
+  TuningCategories,
+  isReedArray7,
+  isReedArray10,
+} from './types'
