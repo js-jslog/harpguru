@@ -2,10 +2,9 @@ import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
 
-import type { Coord } from '../../types'
-import { getSizes, colors } from '../../styles'
-
-import { isBlowOrDrawRow, isBlowRow, isDrawRow } from './utils'
+import { isBlowOrDrawRow, isBlowRow, isDrawRow } from '../utils'
+import type { Coord } from '../../../types'
+import { useSizes, colors } from '../../../styles'
 
 type HarpRowStyles = {
   readonly row: ViewStyle
@@ -13,11 +12,11 @@ type HarpRowStyles = {
 
 const { homeRowsColor, inertOutline } = colors
 
-export const getStyles = (
+export const useStyles = (
   yCoord: Coord,
   activeHarpStrata: HarpStrata
 ): HarpRowStyles => {
-  const sizes = getSizes()
+  const sizes = useSizes()
   const { 0: borderWidth, 6: borderRadius } = sizes
 
   const styles = StyleSheet.create<HarpRowStyles>({
