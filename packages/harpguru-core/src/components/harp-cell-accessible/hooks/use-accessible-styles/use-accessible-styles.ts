@@ -2,13 +2,13 @@ import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { DegreeIds } from 'harpparts'
 
-import { colors, getSizes } from '../../../../styles'
+import { colors, useSizes } from '../../../../styles'
 
-export const getAccessibleStyles = (
+export const useAccessibleStyles = (
   degreeId: DegreeIds,
   isActive: boolean
 ): ViewStyle => {
-  const { 1: borderWidth, 2: elevation } = getSizes()
+  const { 1: borderWidth, 2: elevation } = useSizes()
   const { degreeColors, pageColor, inertOutline, activeOutline } = colors
   const { [degreeId]: degreeColor } = degreeColors
 

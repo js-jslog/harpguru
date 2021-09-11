@@ -8,8 +8,8 @@ import { getRenderableToneTuples } from '../../utils'
 import { CellStates } from '../../types'
 import type { DisplayModes, ExperienceModes } from '../../types'
 
-import { getAccessibleStyles, getRenderableToneId } from './utils'
-import { useTapAnimationValue } from './hooks'
+import { getRenderableToneId } from './utils'
+import { useAccessibleStyles, useTapAnimationValue } from './hooks'
 
 type HarpCellAccessibleProps = {
   readonly degreeId: DegreeIds
@@ -38,7 +38,7 @@ export const HarpCellAccessible = (
     cellState === CellStates.TappedOn || cellState === CellStates.TappedOff
   const renderableToneId = getRenderableToneId(degreeId, pitchId, displayMode)
   const renderableToneTuples = getRenderableToneTuples(renderableToneId)
-  const accessibleStyles = getAccessibleStyles(degreeId, isActive)
+  const accessibleStyles = useAccessibleStyles(degreeId, isActive)
   const tapAnimationValue = useTapAnimationValue(isTapped)
 
   return (
