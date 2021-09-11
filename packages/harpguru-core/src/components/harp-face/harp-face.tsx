@@ -5,13 +5,13 @@ import React from 'react'
 import { HarpFaceFragment } from '../harp-face-fragment'
 import { getHarpFaceFacts } from '../../utils'
 
-import { getStyles } from './harp-face-styles'
+import { useStyles } from './hooks'
 
 export const HarpFace = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
-  const styles = getStyles(activeHarpStrata)
+  const styles = useStyles(activeHarpStrata)
   const { octaveColumnGroups } = getHarpFaceFacts(activeHarpStrata)
   const columnRanges = fragmentHarpFaceByOctaves
     ? octaveColumnGroups
