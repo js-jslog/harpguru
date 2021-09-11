@@ -35,7 +35,8 @@ export const useSizes = (): SizeScheme => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const { degreeMatrix } = activeHarpStrata
   const { [0]: exampleHarpRow } = degreeMatrix
-  const { length: harpRowLength } = exampleHarpRow
+  const { length: harpRowCount } = degreeMatrix
+  const { length: harpColumnCount } = exampleHarpRow
 
   const {
     [relativeColumnWidth]: columnWidth,
@@ -48,11 +49,11 @@ export const useSizes = (): SizeScheme => {
 
   const widthRequirements =
     longEdge /
-    (columnWidth * harpRowLength +
+    (columnWidth * harpColumnCount +
       fragmentGutter * 3 +
       labelProtrusion * 2 +
       labelGrace * 2)
-  const heightRequirements = shortEdge / (rowHeight * 7)
+  const heightRequirements = shortEdge / (rowHeight * harpRowCount)
 
   const seedSize =
     widthRequirements > heightRequirements
