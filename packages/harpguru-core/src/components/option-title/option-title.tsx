@@ -2,8 +2,8 @@ import Animated from 'react-native-reanimated'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
-import { getOptionSizes } from '../../utils'
 import type { WithTransition } from '../../types'
+import { useOptionSizes } from '../../hooks'
 
 export type OptionTitleProps = WithTransition & {
   readonly useTitle: () => React.ReactElement
@@ -15,7 +15,7 @@ export const OptionTitle = ({
 }: OptionTitleProps): React.ReactElement => {
   const title = useTitle()
 
-  const styles = getOptionSizes()
+  const styles = useOptionSizes()
   const { wrapper, gutterSpacer } = StyleSheet.create({
     wrapper: {
       ...StyleSheet.absoluteFillObject,

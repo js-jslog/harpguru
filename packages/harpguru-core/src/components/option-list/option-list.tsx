@@ -4,9 +4,9 @@ import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
 import type { OptionLabelProps } from '../option-label'
-import { getOptionSizes } from '../../utils'
 import type { WithTransition } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
+import { useOptionSizes } from '../../hooks'
 
 export type OptionListProps = WithTransition & {
   readonly useItems: () => ReadonlyArray<React.ReactElement>
@@ -22,7 +22,7 @@ export const OptionList = ({
   useRightColumnLabel = () => <></>,
   transitionValue,
 }: OptionListProps): React.ReactElement => {
-  const { largeGutter, itemWidth, internalGutter } = getOptionSizes()
+  const { largeGutter, itemWidth, internalGutter } = useOptionSizes()
   const { longEdge } = getWindowDimensions()
   const { common, left, right } = StyleSheet.create({
     common: {

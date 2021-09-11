@@ -4,8 +4,8 @@ import React from 'react'
 import { TextWithoutOSScale } from '../text-without-os-scale'
 import { OptionValue } from '../option-value'
 import type { OptionValueProps } from '../option-value'
-import { getOptionSizes } from '../../utils'
 import { colors } from '../../styles'
+import { useOptionSizes } from '../../hooks'
 
 export type OptionLabelProps = Pick<
   OptionValueProps,
@@ -21,7 +21,7 @@ export const OptionLabel = ({
   value,
   alignItems,
 }: OptionLabelProps): React.ReactElement => {
-  const { smallFont, largeFont } = getOptionSizes()
+  const { smallFont, largeFont } = useOptionSizes()
   const { base, large } = StyleSheet.create({
     base: {
       fontSize: smallFont,

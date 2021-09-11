@@ -1,4 +1,4 @@
-import { getSizes } from '../../styles'
+import { useSizes } from '../../styles'
 
 type OptionStyles = {
   largeFont: number
@@ -13,8 +13,8 @@ type OptionStyles = {
   highlightOffset: number
 }
 
-export const getOptionSizes = (): OptionStyles => {
-  const sizes = getSizes()
+export const useOptionSizes = (): OptionStyles => {
+  const sizes = useSizes()
   const { ['9']: largeFont } = sizes
   const { ['8']: smallFont } = sizes
   const { ['7']: superscriptFont } = sizes

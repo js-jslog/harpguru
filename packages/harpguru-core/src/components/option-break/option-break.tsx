@@ -1,8 +1,8 @@
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
-import { getOptionSizes } from '../../utils'
 import { useSizes, colors } from '../../styles'
+import { useOptionSizes } from '../../hooks'
 
 type OptionBreakProps = {
   readonly title?: string
@@ -15,7 +15,7 @@ export const OptionBreak = ({
 }: OptionBreakProps): React.ReactElement => {
   const sizes = useSizes()
   const { ['5']: breakHeight, ['8']: titleSize, ['10']: breakWidth } = sizes
-  const optionSizes = getOptionSizes()
+  const optionSizes = useOptionSizes()
   const marginSize = optionSizes.itemWidth / 4 - breakHeight / 2
 
   const { breakBar, breakWrapper, titleStyle } = StyleSheet.create({

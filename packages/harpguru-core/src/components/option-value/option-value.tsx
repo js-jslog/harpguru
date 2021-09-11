@@ -3,8 +3,8 @@ import React from 'react'
 import type { Pozition, Pitch } from 'harpparts'
 
 import { TextWithoutOSScale } from '../text-without-os-scale'
-import { getOptionSizes } from '../../utils'
 import { harpguruColors, colors } from '../../styles'
+import { useOptionSizes } from '../../hooks'
 
 export type OptionValueProps = {
   readonly value: Pozition | Pitch | string
@@ -28,7 +28,7 @@ export const OptionValue = ({
     itemWidth,
     largeFont,
     superscriptFont,
-  } = getOptionSizes()
+  } = useOptionSizes()
   const {
     textWrapperBase,
     highlightStyle,
