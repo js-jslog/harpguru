@@ -3,7 +3,7 @@ import React from 'react'
 
 import { ExperienceModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
-import { getSizes, colors } from '../../styles'
+import { useSizes, colors } from '../../styles'
 
 type RenderedToneProps = {
   readonly toneTuples: RenderableToneTuples
@@ -24,7 +24,7 @@ export const RenderedTone = ({
 }: RenderedToneProps): React.ReactElement => {
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
-  const sizes = getSizes()
+  const sizes = useSizes()
   const {
     [overrideSizes[0]]: noteFontSize,
     [overrideSizes[1]]: modifierTopMargin,

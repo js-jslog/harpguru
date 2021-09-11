@@ -4,7 +4,7 @@ import React from 'react'
 
 import { getScaledMenuLabelProtrusion } from '../../utils'
 import type { MenuProps, ChildrenProps } from '../../types'
-import { getSizes } from '../../styles'
+import { useSizes } from '../../styles'
 import { useMenuAnimationValues } from '../../hooks'
 
 export const Menu = ({
@@ -22,7 +22,7 @@ export const Menu = ({
   } = useMenuAnimationValues(isMenuStashed, isLabelHidden, stashPosition)
   const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
 
-  const { 9: borderRadius } = getSizes()
+  const { 9: borderRadius } = useSizes()
   const styles = StyleSheet.create({
     animated: {
       ...StyleSheet.absoluteFillObject,

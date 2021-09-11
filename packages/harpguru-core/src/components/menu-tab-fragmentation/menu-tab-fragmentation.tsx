@@ -7,7 +7,7 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { useSizes, harpguruColors } from '../../styles'
 
 import { useToggleFragmentHarpFace } from './hooks'
 
@@ -29,7 +29,7 @@ export const MenuTabFragmentation = ({
     openCloseMenu: () => toggleFragmentHarpFace(),
   }
 
-  const sizes = getSizes()
+  const sizes = useSizes()
 
   const activeLabelIcon =
     fragmentHarpFaceByOctaves === true ? (

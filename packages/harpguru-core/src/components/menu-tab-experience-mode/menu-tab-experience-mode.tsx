@@ -7,7 +7,7 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { ExperienceModes, MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { useSizes, harpguruColors } from '../../styles'
 
 import { getNewExperienceModeForDispatcher } from './utils'
 
@@ -32,7 +32,7 @@ export const MenuTabExperienceMode = ({
     openCloseMenu: () => nudgeExperienceMode(),
   }
 
-  const sizes = getSizes()
+  const sizes = useSizes()
 
   const activeLabelIcon =
     activeExperienceMode === ExperienceModes.Explore ? (

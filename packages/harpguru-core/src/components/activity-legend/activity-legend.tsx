@@ -14,7 +14,7 @@ import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
 import { DisplayModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
-import { getSizes, colors } from '../../styles'
+import { useSizes, colors } from '../../styles'
 
 const { degreeColors } = colors
 
@@ -33,7 +33,7 @@ export const ActivityLegend = (): React.ReactElement => {
   const { rootPitchId, activePitchIds } = activeHarpStrata
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
-  const sizes = getSizes()
+  const sizes = useSizes()
   const { 9: legendWidth } = sizes
 
   const activityCells = orderedPitchIds.map((pitchId, index) => {
@@ -75,7 +75,7 @@ const ActivityCell = ({
   isActive,
 }: ActivityCellProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const sizes = getSizes()
+  const sizes = useSizes()
   const { 9: legendWidth } = sizes
 
   const styles = StyleSheet.create({

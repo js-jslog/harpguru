@@ -7,7 +7,7 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { useSizes, harpguruColors } from '../../styles'
 
 import { getNewDisplayModeForDispatcher } from './utils'
 
@@ -31,7 +31,7 @@ export const MenuTabDisplayMode = ({
     openCloseMenu: () => nudgeDisplayMode(),
   }
 
-  const sizes = getSizes()
+  const sizes = useSizes()
 
   const activeLabelIcon = (
     <MaterialIcons
