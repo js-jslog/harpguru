@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle, TextStyle } from 'react-native'
 
-import { getSizes, colors } from '../../styles'
+import { useSizes, colors } from '../../../styles'
 
 type HoleNumberStyles = {
   readonly cell: ViewStyle
@@ -10,8 +10,8 @@ type HoleNumberStyles = {
 
 const { holeNumbersColor } = colors
 
-export const getStyles = (): HoleNumberStyles => {
-  const sizes = getSizes()
+export const useStyles = (): HoleNumberStyles => {
+  const sizes = useSizes()
   const { 6: fontSize, 8: width } = sizes
 
   const styles = StyleSheet.create<HoleNumberStyles>({

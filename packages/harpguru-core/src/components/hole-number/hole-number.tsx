@@ -5,6 +5,8 @@ import type { ReactElement } from 'react'
 import { TextWithoutOSScale } from '../text-without-os-scale'
 import type { Coord } from '../../types'
 
+import { useStyles } from './hooks'
+
 export enum HoleNumberIds {
   One = '1',
   Two = '2',
@@ -28,11 +30,8 @@ type HoleNumberProps = {
   readonly xCoord: Coord
 }
 
-import { getStyles } from './hole-number-styles'
-
-const styles = getStyles()
-
 export const HoleNumber = ({ xCoord }: HoleNumberProps): ReactElement => {
+  const styles = useStyles()
   const holeNumber: HoleNumberIds = `${xCoord + 1}` as HoleNumberIds
 
   return (
