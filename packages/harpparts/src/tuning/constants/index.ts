@@ -26,6 +26,7 @@ const {
   PowerBender,
   PowerDraw,
   PaddyRichter,
+  LuckyThirteen,
   BluesOne,
   BluesTwo,
   BluesThree,
@@ -53,11 +54,11 @@ const {
   WoozleMinor,
   BabyFat,
   TwelveNote,
-  ThirteenNote,
   SixteenNote,
 } = TuningIds
 
 const {
+  g0,
   a0,
   b0,
   c1,
@@ -400,6 +401,17 @@ export const PADDY_RICHTER: Tuning = {
   ],
 } as const
 
+export const LUCKY_THIRTEEN: Tuning = {
+  id: LuckyThirteen,
+  category: BrendanPower,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10   11   12   13
+    [ g0 , c1 , c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 ],
+    [ a0 , b0 , d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
+  ],
+} as const
+
 export const BLUES_ONE: Tuning = {
   id: BluesOne,
   category: JoeFilisko,
@@ -540,17 +552,6 @@ export const TWELVE_NOTE: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10   11   12
     [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , c1 , e1 , g1 , c2 , e2 ],
     [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d1 , g1 , b1 , d2 , f2 ],
-  ],
-} as const
-
-export const THIRTEEN_NOTE: Tuning = {
-  id: ThirteenNote,
-  category: Other,
-  // prettier-ignore
-  reedArray: [
-    // 1    2    3    4    5    6    7    8    9   10   11   12
-    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , c1 , e1 , g1 , c2 , e2 , c1 ],
-    [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d1 , g1 , b1 , d2 , f2 , c1 ],
   ],
 } as const
 

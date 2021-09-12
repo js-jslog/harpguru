@@ -14,6 +14,7 @@ export enum TuningIds {
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
   PaddyRichter = 'Paddy richter',
+  LuckyThirteen = 'Lucky thirteen',
   BluesOne = 'Blues 1',
   BluesTwo = 'Blues 2',
   BluesThree = 'Blues 3',
@@ -41,7 +42,6 @@ export enum TuningIds {
   WoozleMinor = 'Woozle minor',
   BabyFat = 'Baby fat',
   TwelveNote = 'Twelve note',
-  ThirteenNote = 'Thirteen note',
   SixteenNote = 'Sixteen note',
 }
 
@@ -222,6 +222,8 @@ export type ReedArray16 = readonly [
 ]
 
 export enum ReedTuningPitches {
+  g0 = -5,
+  ab0 = -4,
   a0 = -3,
   bb0 = -2,
   b0 = -1,
