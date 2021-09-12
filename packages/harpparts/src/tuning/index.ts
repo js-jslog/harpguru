@@ -40,7 +40,7 @@ export {
   DIMINISHED,
   BABY_FAT,
   TWELVE_HOLE_SOLO,
-  SIXTEEN_NOTE,
+  SIXTEEN_HOLE_SOLO,
 } from './constants'
 export type { Tuning, ReedArray } from './types'
 export {

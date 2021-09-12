@@ -42,7 +42,7 @@ export enum TuningIds {
   WoozleMinor = 'Woozle minor',
   BabyFat = 'Baby fat',
   TwelveHoleSolo = 'Twelve hole solo',
-  SixteenNote = 'Sixteen note',
+  SixteenHoleSolo = 'Sixteen hole solo',
 }
 
 export enum TuningCategories {
@@ -275,4 +275,5 @@ export enum ReedTuningPitches {
   a4,
   bb4,
   b4,
+  c5,
 }
