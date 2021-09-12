@@ -5,7 +5,12 @@ import type { Interaction } from '../../interaction'
 
 export type ReedPair = readonly [HalfstepIndex, HalfstepIndex]
 
-export type ReedPairArray = ReedPairArray7 | ReedPairArray10
+export type ReedPairArray =
+  | ReedPairArray7
+  | ReedPairArray10
+  | ReedPairArray12
+  | ReedPairArray13
+  | ReedPairArray16
 
 type ReedPairArray7 = readonly [
   ReedPair,
@@ -30,6 +35,56 @@ type ReedPairArray10 = readonly [
   ReedPair
 ]
 
+type ReedPairArray12 = readonly [
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair
+]
+
+type ReedPairArray13 = readonly [
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair
+]
+
+type ReedPairArray16 = readonly [
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair,
+  ReedPair
+]
+
 export type Hole = {
   readonly blow: HalfstepIndex
   readonly draw: HalfstepIndex
@@ -41,11 +96,66 @@ export type Hole = {
   readonly valveddraws: HalfstepIndex[]
 }
 
-export type HoleArray = HoleArray7 | HoleArray10
+export type HoleArray =
+  | HoleArray7
+  | HoleArray10
+  | HoleArray12
+  | HoleArray13
+  | HoleArray16
 
 type HoleArray7 = readonly [Hole, Hole, Hole, Hole, Hole, Hole, Hole]
 
 type HoleArray10 = readonly [
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole
+]
+
+type HoleArray12 = readonly [
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole
+]
+
+type HoleArray13 = readonly [
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole
+]
+
+type HoleArray16 = readonly [
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
+  Hole,
   Hole,
   Hole,
   Hole,

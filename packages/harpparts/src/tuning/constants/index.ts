@@ -52,6 +52,9 @@ const {
   WillScarlett,
   WoozleMinor,
   BabyFat,
+  TwelveNote,
+  ThirteenNote,
+  SixteenNote,
 } = TuningIds
 
 const {
@@ -526,5 +529,38 @@ export const BABY_FAT: Tuning = {
     // 1    2    3    4    5    6    7
     [ c1 , e1 , g1 , c2 , e2 , g2 , c3 ],
     [ d1 , g1 , b1 , d2 , f2 , a2 , b2 ],
+  ],
+} as const
+
+export const TWELVE_NOTE: Tuning = {
+  id: TwelveNote,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10   11   12
+    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , c1 , e1 , g1 , c2 , e2 ],
+    [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d1 , g1 , b1 , d2 , f2 ],
+  ],
+} as const
+
+export const THIRTEEN_NOTE: Tuning = {
+  id: ThirteenNote,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10   11   12
+    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , c1 , e1 , g1 , c2 , e2 , c1 ],
+    [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d1 , g1 , b1 , d2 , f2 , c1 ],
+  ],
+} as const
+
+export const SIXTEEN_NOTE: Tuning = {
+  id: SixteenNote,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10   11   12   13  14  15  16
+    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , c1 , e1 , g1 , c2 , e2 , c1, c1, c1, c1 ],
+    [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d1 , g1 , b1 , d2 , f2 , c1, c1, c1, c1 ],
   ],
 } as const

@@ -40,6 +40,9 @@ export enum TuningIds {
   WillScarlett = 'Will Scarlett',
   WoozleMinor = 'Woozle minor',
   BabyFat = 'Baby fat',
+  TwelveNote = 'Twelve note',
+  ThirteenNote = 'Thirteen note',
+  SixteenNote = 'Sixteen note',
 }
 
 export enum TuningCategories {
@@ -60,7 +63,12 @@ export type Tuning = {
   readonly reedArray: ReedArray
 }
 
-export type ReedArray = ReedArray7 | ReedArray10
+export type ReedArray =
+  | ReedArray7
+  | ReedArray10
+  | ReedArray12
+  | ReedArray13
+  | ReedArray16
 
 export type ReedArray7 = readonly [
   readonly [
@@ -97,6 +105,109 @@ export type ReedArray10 = readonly [
     HalfstepIndex
   ],
   readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ]
+]
+
+export type ReedArray12 = readonly [
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ],
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ]
+]
+
+export type ReedArray13 = readonly [
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ],
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ]
+]
+
+export type ReedArray16 = readonly [
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ],
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
     HalfstepIndex,
     HalfstepIndex,
     HalfstepIndex,

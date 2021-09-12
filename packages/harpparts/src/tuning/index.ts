@@ -38,6 +38,9 @@ export {
   WHOLE_TONE,
   DIMINISHED,
   BABY_FAT,
+  TWELVE_NOTE,
+  THIRTEEN_NOTE,
+  SIXTEEN_NOTE,
 } from './constants'
 export type { Tuning, ReedArray } from './types'
 export {
@@ -45,4 +48,7 @@ export {
   TuningCategories,
   isReedArray7,
   isReedArray10,
+  isReedArray12,
+  isReedArray13,
+  isReedArray16,
 } from './types'
