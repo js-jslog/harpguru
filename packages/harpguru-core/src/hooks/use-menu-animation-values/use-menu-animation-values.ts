@@ -9,10 +9,10 @@ import {
 } from 'react-native-reanimated'
 import type { Node } from 'react-native-reanimated'
 
-import { getScaledMenuLabelProtrusion } from '../../utils'
 import { MenuStashPosition } from '../../types'
 import { colors } from '../../styles'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
+import { useScaledMenuLabelProtrusion } from '../../hooks'
 import {
   menuStashedScale,
   menuScaleTranslationFactor,
@@ -89,7 +89,7 @@ export const useMenuAnimationValues = (
     outputRange: [0, stashedYVector],
   })
   const hideLabelVector = multiply(
-    getScaledMenuLabelProtrusion(),
+    useScaledMenuLabelProtrusion(),
     stashXDirection
   )
   const hideXValue = interpolate(hideLabelTiming, {
