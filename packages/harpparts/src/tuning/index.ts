@@ -39,7 +39,7 @@ export {
   WHOLE_TONE,
   DIMINISHED,
   BABY_FAT,
-  TWELVE_NOTE,
+  TWELVE_HOLE_SOLO,
   SIXTEEN_NOTE,
 } from './constants'
 export type { Tuning, ReedArray } from './types'

@@ -41,7 +41,7 @@ export enum TuningIds {
   WillScarlett = 'Will Scarlett',
   WoozleMinor = 'Woozle minor',
   BabyFat = 'Baby fat',
-  TwelveNote = 'Twelve note',
+  TwelveHoleSolo = 'Twelve hole solo',
   SixteenNote = 'Sixteen note',
 }
 

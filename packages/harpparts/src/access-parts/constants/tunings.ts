@@ -40,7 +40,7 @@ import {
   WILL_SCARLETT,
   WOOZLE_MINOR,
   BABY_FAT,
-  TWELVE_NOTE,
+  TWELVE_HOLE_SOLO,
   SIXTEEN_NOTE,
 } from '../../tuning'
 import type { Tuning } from '../../tuning'
@@ -86,5 +86,5 @@ orderedTunings.set(TuningIds.EasyThird, EASY_THIRD)
 orderedTunings.set(TuningIds.WillScarlett, WILL_SCARLETT)
 orderedTunings.set(TuningIds.WoozleMinor, WOOZLE_MINOR)
 orderedTunings.set(TuningIds.BabyFat, BABY_FAT)
-orderedTunings.set(TuningIds.TwelveNote, TWELVE_NOTE)
+orderedTunings.set(TuningIds.TwelveHoleSolo, TWELVE_HOLE_SOLO)
 orderedTunings.set(TuningIds.SixteenNote, SIXTEEN_NOTE)

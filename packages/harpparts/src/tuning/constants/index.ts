@@ -53,7 +53,7 @@ const {
   WillScarlett,
   WoozleMinor,
   BabyFat,
-  TwelveNote,
+  TwelveHoleSolo,
   SixteenNote,
 } = TuningIds
 
@@ -544,14 +544,14 @@ export const BABY_FAT: Tuning = {
   ],
 } as const
 
-export const TWELVE_NOTE: Tuning = {
-  id: TwelveNote,
+export const TWELVE_HOLE_SOLO: Tuning = {
+  id: TwelveHoleSolo,
   category: Other,
   // prettier-ignore
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10   11   12
-    [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , c1 , e1 , g1 , c2 , e2 ],
-    [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d1 , g1 , b1 , d2 , f2 ],
+    [ c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 ],
+    [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 ],
   ],
 } as const
 
