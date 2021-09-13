@@ -58,7 +58,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     },
   ]
 
-  const sizes = useSizes()
+  const { dynamicSizes } = useSizes()
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
@@ -67,7 +67,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
       <MenuAccessOpen {...menuProps}>
         <Entypo
           name="cog"
-          size={sizes.labelIconSize}
+          size={dynamicSizes.labelIconSize}
           color={colors.homeRowsColor}
         />
       </MenuAccessOpen>

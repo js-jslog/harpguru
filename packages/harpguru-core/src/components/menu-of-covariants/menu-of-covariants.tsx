@@ -78,7 +78,7 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal]
   )
 
-  const sizes = useSizes()
+  const { dynamicSizes } = useSizes()
 
   const optionPropsz = [
     {
@@ -111,7 +111,7 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
       <MenuAccessOpen {...menuProps}>
         <Feather
           name="sliders"
-          size={sizes.labelIconSize}
+          size={dynamicSizes.labelIconSize}
           color={colors.homeRowsColor}
         />
       </MenuAccessOpen>

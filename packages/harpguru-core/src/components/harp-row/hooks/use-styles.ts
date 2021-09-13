@@ -16,8 +16,8 @@ export const useStyles = (
   yCoord: Coord,
   activeHarpStrata: HarpStrata
 ): HarpRowStyles => {
-  const sizes = useSizes()
-  const { 0: borderWidth, 6: borderRadius } = sizes
+  const { dynamicSizes } = useSizes()
+  const { 0: borderWidth, 6: borderRadius } = dynamicSizes
 
   const styles = StyleSheet.create<HarpRowStyles>({
     row: {

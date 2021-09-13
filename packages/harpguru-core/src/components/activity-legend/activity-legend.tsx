@@ -33,8 +33,8 @@ export const ActivityLegend = (): React.ReactElement => {
   const { rootPitchId, activePitchIds } = activeHarpStrata
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
-  const sizes = useSizes()
-  const { 9: legendWidth } = sizes
+  const { dynamicSizes } = useSizes()
+  const { 9: legendWidth } = dynamicSizes
 
   const activityCells = orderedPitchIds.map((pitchId, index) => {
     const isActive = activePitchIds.indexOf(pitchId) > -1
@@ -75,8 +75,8 @@ const ActivityCell = ({
   isActive,
 }: ActivityCellProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const sizes = useSizes()
-  const { 9: legendWidth } = sizes
+  const { dynamicSizes } = useSizes()
+  const { 9: legendWidth } = dynamicSizes
 
   const styles = StyleSheet.create({
     cell: {

@@ -32,19 +32,19 @@ export const MenuTabExperienceMode = ({
     openCloseMenu: () => nudgeExperienceMode(),
   }
 
-  const sizes = useSizes()
+  const { dynamicSizes } = useSizes()
 
   const activeLabelIcon =
     activeExperienceMode === ExperienceModes.Explore ? (
       <MaterialCommunityIcons
         name="moon-full"
-        size={sizes.labelIconSize}
+        size={dynamicSizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     ) : (
       <FontAwesome
         name="question-circle"
-        size={sizes.labelIconSize}
+        size={dynamicSizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     )

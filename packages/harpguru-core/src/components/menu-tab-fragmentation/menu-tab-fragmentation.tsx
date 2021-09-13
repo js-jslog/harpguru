@@ -29,19 +29,19 @@ export const MenuTabFragmentation = ({
     openCloseMenu: () => toggleFragmentHarpFace(),
   }
 
-  const sizes = useSizes()
+  const { dynamicSizes } = useSizes()
 
   const activeLabelIcon =
     fragmentHarpFaceByOctaves === true ? (
       <MaterialIcons
         name="view-column"
-        size={sizes.labelIconSize}
+        size={dynamicSizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     ) : (
       <FontAwesome
         name="square"
-        size={sizes.labelIconSize}
+        size={dynamicSizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     )

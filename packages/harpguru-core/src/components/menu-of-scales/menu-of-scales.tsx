@@ -60,7 +60,7 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     },
   ]
 
-  const sizes = useSizes()
+  const { dynamicSizes } = useSizes()
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
@@ -69,7 +69,7 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
       <MenuAccessOpen {...menuProps}>
         <MaterialIcons
           name="linear-scale"
-          size={sizes.labelIconSize}
+          size={dynamicSizes.labelIconSize}
           color={colors.homeRowsColor}
         />
       </MenuAccessOpen>

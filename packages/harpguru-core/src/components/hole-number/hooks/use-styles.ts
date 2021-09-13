@@ -11,8 +11,8 @@ type HoleNumberStyles = {
 const { holeNumbersColor } = colors
 
 export const useStyles = (): HoleNumberStyles => {
-  const sizes = useSizes()
-  const { 6: fontSize, 8: width } = sizes
+  const { dynamicSizes } = useSizes()
+  const { 6: fontSize, 8: width } = dynamicSizes
 
   const styles = StyleSheet.create<HoleNumberStyles>({
     cell: {

@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 
-import { SizeScheme } from '../styles-types'
+import { SizeScheme, SizeSchemes } from '../styles-types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 // Here's what we need this hook to provide:
@@ -39,7 +39,7 @@ const relativeFragmentGutterWidth = 7
 const relativeLabelProtrusion = 9
 const relativeLabelIconSize = 7
 
-export const useSizes = (): SizeScheme => {
+export const useSizes = (): SizeSchemes => {
   const { shortEdge, longEdge } = getWindowDimensions()
 
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
@@ -100,38 +100,36 @@ export const useSizes = (): SizeScheme => {
     labelIconSize: dynamicSeedSize * labelIconSize,
   } as const
 
-  // TODO: This code will be uncommented when
-  // it's in a position to be used. First I need
-  // to refactor the return type so that it's
-  // ready to be extended to have static as well
-  // as dynamic sizes in it.
-  //const staticEquivalentColumnCount = 12
-  //const staticSeedSize =
-  //  longEdge /
-  //  (columnWidth * staticEquivalentColumnCount +
-  //    fragmentGutter * roughFragmentGutterCount +
-  //    labelProtrusion * sidesContainingLabelsCount +
-  //    labelGrace * sidesContainingLabelsCount)
+  const staticEquivalentColumnCount = 12
+  const staticSeedSize =
+    longEdge /
+    (columnWidth * staticEquivalentColumnCount +
+      fragmentGutter * roughFragmentGutterCount +
+      labelProtrusion * sidesContainingLabelsCount +
+      labelGrace * sidesContainingLabelsCount)
 
-  //const staticSizes: SizeScheme = {
-  //  0: staticSeedSize * relativeSizes[0],
-  //  1: staticSeedSize * relativeSizes[1],
-  //  2: staticSeedSize * relativeSizes[2],
-  //  3: staticSeedSize * relativeSizes[3],
-  //  4: staticSeedSize * relativeSizes[4],
-  //  5: staticSeedSize * relativeSizes[5],
-  //  6: staticSeedSize * relativeSizes[6],
-  //  7: staticSeedSize * relativeSizes[7],
-  //  8: staticSeedSize * relativeSizes[8],
-  //  9: staticSeedSize * relativeSizes[9],
-  //  10: staticSeedSize * relativeSizes[10],
-  //  11: staticSeedSize * relativeSizes[11],
-  //  columnWidth: staticSeedSize * columnWidth,
-  //  rowHeight: staticSeedSize * columnWidth,
-  //  fragmentGutter: staticSeedSize * fragmentGutter,
-  //  labelProtrusion: staticSeedSize * labelProtrusion,
-  //  labelIconSize: staticSeedSize * labelIconSize,
-  //} as const
+  const staticSizes: SizeScheme = {
+    0: staticSeedSize * relativeSizes[0],
+    1: staticSeedSize * relativeSizes[1],
+    2: staticSeedSize * relativeSizes[2],
+    3: staticSeedSize * relativeSizes[3],
+    4: staticSeedSize * relativeSizes[4],
+    5: staticSeedSize * relativeSizes[5],
+    6: staticSeedSize * relativeSizes[6],
+    7: staticSeedSize * relativeSizes[7],
+    8: staticSeedSize * relativeSizes[8],
+    9: staticSeedSize * relativeSizes[9],
+    10: staticSeedSize * relativeSizes[10],
+    11: staticSeedSize * relativeSizes[11],
+    columnWidth: staticSeedSize * columnWidth,
+    rowHeight: staticSeedSize * columnWidth,
+    fragmentGutter: staticSeedSize * fragmentGutter,
+    labelProtrusion: staticSeedSize * labelProtrusion,
+    labelIconSize: staticSeedSize * labelIconSize,
+  } as const
 
-  return dynamicSizes
+  return {
+    dynamicSizes,
+    staticSizes,
+  }
 }

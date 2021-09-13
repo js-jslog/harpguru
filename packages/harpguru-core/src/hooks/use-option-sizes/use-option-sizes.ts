@@ -14,17 +14,17 @@ type OptionStyles = {
 }
 
 export const useOptionSizes = (): OptionStyles => {
-  const sizes = useSizes()
-  const { ['9']: largeFont } = sizes
-  const { ['8']: smallFont } = sizes
-  const { ['7']: superscriptFont } = sizes
-  const { ['11']: largeGutter } = sizes
-  const { ['9']: smallGutter } = sizes
-  const { ['7']: internalGutter } = sizes
-  const { ['10']: itemWidth } = sizes
-  const { ['6']: itemHeightTrim } = sizes
-  const { ['7']: highlightHeight } = sizes
-  const { ['5']: highlightOffset } = sizes
+  const { dynamicSizes } = useSizes()
+  const { ['9']: largeFont } = dynamicSizes
+  const { ['8']: smallFont } = dynamicSizes
+  const { ['7']: superscriptFont } = dynamicSizes
+  const { ['11']: largeGutter } = dynamicSizes
+  const { ['9']: smallGutter } = dynamicSizes
+  const { ['7']: internalGutter } = dynamicSizes
+  const { ['10']: itemWidth } = dynamicSizes
+  const { ['6']: itemHeightTrim } = dynamicSizes
+  const { ['7']: highlightHeight } = dynamicSizes
+  const { ['5']: highlightOffset } = dynamicSizes
 
   return {
     largeFont,

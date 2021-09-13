@@ -31,12 +31,12 @@ export const MenuTabDisplayMode = ({
     openCloseMenu: () => nudgeDisplayMode(),
   }
 
-  const sizes = useSizes()
+  const { dynamicSizes } = useSizes()
 
   const activeLabelIcon = (
     <MaterialIcons
       name="music-note"
-      size={sizes.labelIconSize}
+      size={dynamicSizes.labelIconSize}
       color={harpguruColors['gold']}
     />
   )
