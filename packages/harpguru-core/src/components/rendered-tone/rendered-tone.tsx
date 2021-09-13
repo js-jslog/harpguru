@@ -21,6 +21,10 @@ export const RenderedTone = ({
   splitType,
   activeExperienceMode,
   // TODO: See whether the static sizes might be a solution to this
+  // TODO: I think I might have some trouble here. This component is
+  // used both in contexts where I would want them to be dynamic &
+  // static (I think). Anyway, this is somewhere I should spend some
+  // attention.
   overrideSizes = [7, 5, 6],
 }: RenderedToneProps): React.ReactElement => {
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz

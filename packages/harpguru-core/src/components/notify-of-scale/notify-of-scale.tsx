@@ -22,14 +22,14 @@ export const NotifyOfScale = ({
 
   const shouldDisplay = useShouldDisplayScaleLabel(scaleLabel, isScalesMenu)
 
-  const { dynamicSizes } = useSizes()
+  const { staticSizes } = useSizes()
 
   return (
     <NotificationFlash shouldDisplay={shouldDisplay}>
       <Text
         style={{
           color: 'black',
-          fontSize: dynamicSizes['8'],
+          fontSize: staticSizes['8'],
         }}
       >
         {scaleLabel}

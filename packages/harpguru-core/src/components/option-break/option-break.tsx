@@ -13,12 +13,12 @@ export const OptionBreak = ({
   title: titleText,
   isTopPadded,
 }: OptionBreakProps): React.ReactElement => {
-  const { dynamicSizes } = useSizes()
+  const { staticSizes } = useSizes()
   const {
     ['5']: breakHeight,
     ['8']: titleSize,
     ['10']: breakWidth,
-  } = dynamicSizes
+  } = staticSizes
   const optionSizes = useOptionSizes()
   const marginSize = optionSizes.itemWidth / 4 - breakHeight / 2
 

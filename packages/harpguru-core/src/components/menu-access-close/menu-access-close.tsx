@@ -12,7 +12,7 @@ import { useScaleAndCallbackOnTap } from '../../hooks'
 export const MenuAccessClose = ({
   openCloseMenu,
 }: Pick<MenuProps, 'openCloseMenu'>): React.ReactElement => {
-  const { dynamicSizes } = useSizes()
+  const { staticSizes } = useSizes()
 
   const [tapAnimationValue, handleTapStateChange] = useScaleAndCallbackOnTap(
     openCloseMenu,
@@ -28,8 +28,8 @@ export const MenuAccessClose = ({
           position: 'absolute',
           top: 0,
           right: 0,
-          padding: dynamicSizes['6'],
-          height: dynamicSizes['10'],
+          padding: staticSizes['6'],
+          height: staticSizes['10'],
         }}
       >
         <Animated.View
@@ -41,7 +41,7 @@ export const MenuAccessClose = ({
         >
           <AntDesign
             name="close"
-            size={dynamicSizes['9']}
+            size={staticSizes['9']}
             color={colors.inertOutline}
           />
         </Animated.View>
