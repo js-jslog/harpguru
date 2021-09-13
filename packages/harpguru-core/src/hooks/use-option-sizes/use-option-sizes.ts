@@ -5,8 +5,7 @@ type OptionStyles = {
   smallFont: number
   superscriptFont: number
   largeGutter: number
-  smallGutterDynamic: number
-  smallGutterStatic: number
+  smallGutter: number
   internalGutter: number
   itemWidth: number
   itemHeightTrim: number
@@ -20,8 +19,7 @@ export const useOptionSizes = (): OptionStyles => {
   const { ['8']: smallFont } = staticSizes
   const { ['7']: superscriptFont } = staticSizes
   const { ['11']: largeGutter } = staticSizes
-  const { ['9']: smallGutterDynamic } = dynamicSizes
-  const { ['9']: smallGutterStatic } = staticSizes
+  const { ['9']: smallGutter } = dynamicSizes
   const { ['7']: internalGutter } = staticSizes
   const { ['10']: itemWidth } = staticSizes
   const { ['6']: itemHeightTrim } = staticSizes
@@ -33,8 +31,7 @@ export const useOptionSizes = (): OptionStyles => {
     smallFont,
     superscriptFont,
     largeGutter,
-    smallGutterDynamic,
-    smallGutterStatic,
+    smallGutter,
     internalGutter,
     itemWidth,
     itemHeightTrim,

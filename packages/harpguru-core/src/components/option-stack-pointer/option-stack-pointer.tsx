@@ -27,18 +27,18 @@ export const OptionStackPointer = (
     prevPointerEvents,
     prevPointerOpacity,
   } = useOptionStackPointerProperties(props)
-  const { smallGutterStatic, largeFont } = useOptionSizes()
+  const { smallGutter, largeFont } = useOptionSizes()
 
   const { common, next, previous } = StyleSheet.create({
     common: {
       position: 'absolute',
-      left: smallGutterStatic,
+      left: smallGutter,
     },
     next: {
-      top: smallGutterStatic,
+      top: smallGutter,
     },
     previous: {
-      bottom: smallGutterStatic,
+      bottom: smallGutter,
     },
   })
 

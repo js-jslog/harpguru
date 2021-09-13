@@ -24,7 +24,7 @@ export const OptionTitle = ({
     },
     gutterSpacer: {
       position: 'absolute',
-      left: styles.smallGutterDynamic,
+      left: styles.smallGutter,
     },
   })
   return (
