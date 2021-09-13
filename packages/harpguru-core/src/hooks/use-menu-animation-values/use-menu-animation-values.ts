@@ -9,10 +9,10 @@ import {
 } from 'react-native-reanimated'
 import type { Node } from 'react-native-reanimated'
 
+import { useScaledMenuLabelProtrusion } from '../use-scaled-menu-label-protrusion'
 import { MenuStashPosition } from '../../types'
 import { colors } from '../../styles'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
-import { useScaledMenuLabelProtrusion } from '../../hooks'
 import {
   menuStashedScale,
   menuScaleTranslationFactor,
