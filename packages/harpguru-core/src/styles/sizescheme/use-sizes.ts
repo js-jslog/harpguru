@@ -3,6 +3,15 @@ import { useGlobal } from 'reactn'
 import { SizeScheme } from '../styles-types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
+// Here's what we need this hook to provide:
+// 1. A set of sizes which updates as the number of columns being presented increases (which is also *possibly* sensitive to the number of rows present too)
+// 2. A set of sizes which do not update as the number of columns being presented increases
+//
+// 1. is for the harpface, the left hand legend and the menu tabs. I want all of these to be harmoneously sized together. If you have the eyesight or the screen size to present all the holes at the same time then you can afford the side panel info to scale along with it
+// 2. is for the menu contents. The text is already large, and nicely so. We don't need it to be bigger or smaller, and having it scale is not the same harmoneous thing as the main page. I want the guttering to move with the main page though so that the left menu items are
+// never obscuring what you can see in the left hand legend
+// 2. may also need to be used in the quiz mode.. it looks like the quiz mode might be behaving strangely now.. the question isn't always displayed. Perhaps that's caused by something else, but it doesn't make sense that the quiz question or the other notifications for that matter should be scaled.
+
 const relativeSizes: Omit<
   SizeScheme,
   | 'columnWidth'
@@ -32,6 +41,7 @@ const relativeLabelIconSize = 7
 
 export const useSizes = (): SizeScheme => {
   const { shortEdge, longEdge } = getWindowDimensions()
+
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const { degreeMatrix } = activeHarpStrata
   const { [0]: exampleHarpRow } = degreeMatrix
@@ -47,38 +57,81 @@ export const useSizes = (): SizeScheme => {
   const rowHeight = columnWidth
   const labelGrace = fragmentGutter
 
-  const widthRequirements =
+  // TODO: It might be better to either count the number of gutters
+  // or base this as a proportion of the number of columns since
+  // this number won't work well as the number of columns and
+  // therefore gutters increases.
+  // We could also set this to 0 if the no-fragment mode is
+  // selected. This would mean that the cell size would grow
+  // when they left fragment mode. That would have advantages
+  // and disadvantages.
+  const roughFragmentGutterCount = 3
+  const sidesContainingLabelsCount = 2
+  const dynamicWidthRequirements =
     longEdge /
     (columnWidth * harpColumnCount +
-      fragmentGutter * 3 +
-      labelProtrusion * 2 +
-      labelGrace * 2)
-  const heightRequirements = shortEdge / (rowHeight * harpRowCount)
+      fragmentGutter * roughFragmentGutterCount +
+      labelProtrusion * sidesContainingLabelsCount +
+      labelGrace * sidesContainingLabelsCount)
+  const dynamicHeightRequirements = shortEdge / (rowHeight * harpRowCount)
 
-  const seedSize =
-    widthRequirements > heightRequirements
-      ? heightRequirements
-      : widthRequirements
+  const dynamicSeedSize =
+    dynamicWidthRequirements > dynamicHeightRequirements
+      ? dynamicHeightRequirements
+      : dynamicWidthRequirements
 
-  const absoluteSizes: SizeScheme = {
-    0: seedSize * relativeSizes[0],
-    1: seedSize * relativeSizes[1],
-    2: seedSize * relativeSizes[2],
-    3: seedSize * relativeSizes[3],
-    4: seedSize * relativeSizes[4],
-    5: seedSize * relativeSizes[5],
-    6: seedSize * relativeSizes[6],
-    7: seedSize * relativeSizes[7],
-    8: seedSize * relativeSizes[8],
-    9: seedSize * relativeSizes[9],
-    10: seedSize * relativeSizes[10],
-    11: seedSize * relativeSizes[11],
-    columnWidth: seedSize * columnWidth,
-    rowHeight: seedSize * columnWidth,
-    fragmentGutter: seedSize * fragmentGutter,
-    labelProtrusion: seedSize * labelProtrusion,
-    labelIconSize: seedSize * labelIconSize,
+  const dynamicSizes: SizeScheme = {
+    0: dynamicSeedSize * relativeSizes[0],
+    1: dynamicSeedSize * relativeSizes[1],
+    2: dynamicSeedSize * relativeSizes[2],
+    3: dynamicSeedSize * relativeSizes[3],
+    4: dynamicSeedSize * relativeSizes[4],
+    5: dynamicSeedSize * relativeSizes[5],
+    6: dynamicSeedSize * relativeSizes[6],
+    7: dynamicSeedSize * relativeSizes[7],
+    8: dynamicSeedSize * relativeSizes[8],
+    9: dynamicSeedSize * relativeSizes[9],
+    10: dynamicSeedSize * relativeSizes[10],
+    11: dynamicSeedSize * relativeSizes[11],
+    columnWidth: dynamicSeedSize * columnWidth,
+    rowHeight: dynamicSeedSize * columnWidth,
+    fragmentGutter: dynamicSeedSize * fragmentGutter,
+    labelProtrusion: dynamicSeedSize * labelProtrusion,
+    labelIconSize: dynamicSeedSize * labelIconSize,
   } as const
 
-  return absoluteSizes
+  // TODO: This code will be uncommented when
+  // it's in a position to be used. First I need
+  // to refactor the return type so that it's
+  // ready to be extended to have static as well
+  // as dynamic sizes in it.
+  //const staticEquivalentColumnCount = 12
+  //const staticSeedSize =
+  //  longEdge /
+  //  (columnWidth * staticEquivalentColumnCount +
+  //    fragmentGutter * roughFragmentGutterCount +
+  //    labelProtrusion * sidesContainingLabelsCount +
+  //    labelGrace * sidesContainingLabelsCount)
+
+  //const staticSizes: SizeScheme = {
+  //  0: staticSeedSize * relativeSizes[0],
+  //  1: staticSeedSize * relativeSizes[1],
+  //  2: staticSeedSize * relativeSizes[2],
+  //  3: staticSeedSize * relativeSizes[3],
+  //  4: staticSeedSize * relativeSizes[4],
+  //  5: staticSeedSize * relativeSizes[5],
+  //  6: staticSeedSize * relativeSizes[6],
+  //  7: staticSeedSize * relativeSizes[7],
+  //  8: staticSeedSize * relativeSizes[8],
+  //  9: staticSeedSize * relativeSizes[9],
+  //  10: staticSeedSize * relativeSizes[10],
+  //  11: staticSeedSize * relativeSizes[11],
+  //  columnWidth: staticSeedSize * columnWidth,
+  //  rowHeight: staticSeedSize * columnWidth,
+  //  fragmentGutter: staticSeedSize * fragmentGutter,
+  //  labelProtrusion: staticSeedSize * labelProtrusion,
+  //  labelIconSize: staticSeedSize * labelIconSize,
+  //} as const
+
+  return dynamicSizes
 }
