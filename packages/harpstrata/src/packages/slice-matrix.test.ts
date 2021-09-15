@@ -6,7 +6,7 @@ test('sliceMatrix returns an identical matrix when no other params are provided'
     [5, 6, 7, 8, 9],
   ]
 
-  expect(sliceMatrix(matrix)).toBe(matrix)
+  expect(sliceMatrix(matrix)).toStrictEqual(matrix)
 })
 
 test('sliceMatrix returns an empty matrix of the same height when end index is 0', () => {
@@ -34,23 +34,52 @@ test('sliceMatrix returns an empty matrix of the same height when end index is 0
   expect(sliceMatrix(inputMatrix3Rows, 1, 0)).toStrictEqual(emptyMatrix3Rows)
 })
 
-test('sliceMatrix returns an empty matrix of the same height if the start index is greater than or equal to the second', () => {
-  const inputMatrix2Rows = [
+test('sliceMatrix returns a matrix with the first column removed', () => {
+  const inputMatrix = [
     [0, 1, 2, 3, 4],
     [5, 6, 7, 8, 9],
   ]
-  const emptyMatrix2Rows = [[], []]
 
-  expect(sliceMatrix(inputMatrix2Rows, 2, 1)).toStrictEqual(emptyMatrix2Rows)
-  expect(sliceMatrix(inputMatrix2Rows, 1, -3)).toStrictEqual(emptyMatrix2Rows)
+  const truncatedMatrix = [
+    [1, 2, 3, 4],
+    [6, 7, 8, 9],
+  ]
 
-  const inputMatrix3Rows = [
+  expect(sliceMatrix(inputMatrix, 1)).toStrictEqual(truncatedMatrix)
+  expect(sliceMatrix(inputMatrix, 1, 10)).toStrictEqual(truncatedMatrix)
+  expect(sliceMatrix(inputMatrix, 1, 5)).toStrictEqual(truncatedMatrix)
+})
+
+test('sliceMatrix returns a matrix with the last column removed', () => {
+  const inputMatrix = [
     [0, 1, 2, 3, 4],
     [5, 6, 7, 8, 9],
+  ]
+
+  const truncatedMatrix = [
+    [0, 1, 2, 3],
+    [5, 6, 7, 8],
+  ]
+
+  expect(sliceMatrix(inputMatrix, undefined, 4)).toStrictEqual(truncatedMatrix)
+  expect(sliceMatrix(inputMatrix, 0, 4)).toStrictEqual(truncatedMatrix)
+  expect(sliceMatrix(inputMatrix, -10, 4)).toStrictEqual(truncatedMatrix)
+  expect(sliceMatrix(inputMatrix, undefined, -1)).toStrictEqual(truncatedMatrix)
+  expect(sliceMatrix(inputMatrix, 0, -1)).toStrictEqual(truncatedMatrix)
+  expect(sliceMatrix(inputMatrix, -10, -1)).toStrictEqual(truncatedMatrix)
+})
+
+test('sliceMatrix returns a matrix with truncations at both ends', () => {
+  const inputMatrix = [
+    [0, 1, 2, 3, 4],
     [5, 6, 7, 8, 9],
   ]
-  const emptyMatrix3Rows = [[], [], []]
 
-  expect(sliceMatrix(inputMatrix3Rows, 2, 1)).toStrictEqual(emptyMatrix3Rows)
-  expect(sliceMatrix(inputMatrix3Rows, 1, -3)).toStrictEqual(emptyMatrix3Rows)
+  const truncatedMatrix = [
+    [1, 2],
+    [6, 7],
+  ]
+
+  expect(sliceMatrix(inputMatrix, 1, 3)).toStrictEqual(truncatedMatrix)
+  expect(sliceMatrix(inputMatrix, 1, -2)).toStrictEqual(truncatedMatrix)
 })

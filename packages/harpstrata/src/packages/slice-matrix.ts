@@ -3,13 +3,8 @@ type Matrix<T> = ReadonlyArray<Row<T>>
 
 export const sliceMatrix = <T>(
   matrix: Matrix<T>,
-  startIndex?: number,
-  endIndex?: number
+  start?: number,
+  end?: number
 ): Matrix<T> => {
-  const start = startIndex !== undefined ? startIndex : 0
-  const end = endIndex !== undefined ? endIndex : matrix.length - 1
-
-  if (start >= end) return matrix.map(() => [])
-
-  return matrix
+  return matrix.map((row: Row<T>) => row.slice(start, end))
 }
