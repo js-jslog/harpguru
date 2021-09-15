@@ -6,12 +6,10 @@ export const sliceMatrix = <T>(
   startIndex?: number,
   endIndex?: number
 ): Matrix<T> => {
-  const emptyMatrix = [[], []]
-
   const start = startIndex !== undefined ? startIndex : 0
   const end = endIndex !== undefined ? endIndex : matrix.length - 1
 
-  if (start >= end) return emptyMatrix
+  if (start >= end) return matrix.map(() => [])
 
   return matrix
 }
