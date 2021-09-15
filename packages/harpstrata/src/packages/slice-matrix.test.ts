@@ -1,37 +1,13 @@
 import { sliceMatrix } from './slice-matrix'
 
-test('sliceMatrix returns an identical matrix when no other params are provided', () => {
+test('sliceMatrix returns the input matrix', () => {
   const matrix = [
     [0, 1, 2, 3, 4],
     [5, 6, 7, 8, 9],
   ]
 
   expect(sliceMatrix(matrix)).toStrictEqual(matrix)
-})
-
-test('sliceMatrix returns an empty matrix of the same height when end index is 0', () => {
-  const inputMatrix2Rows = [
-    [0, 1, 2, 3, 4],
-    [5, 6, 7, 8, 9],
-  ]
-  const emptyMatrix2Rows = [[], []]
-
-  expect(sliceMatrix(inputMatrix2Rows, undefined, 0)).toStrictEqual(
-    emptyMatrix2Rows
-  )
-  expect(sliceMatrix(inputMatrix2Rows, 1, 0)).toStrictEqual(emptyMatrix2Rows)
-
-  const inputMatrix3Rows = [
-    [0, 1, 2, 3, 4],
-    [5, 6, 7, 8, 9],
-    [5, 6, 7, 8, 9],
-  ]
-  const emptyMatrix3Rows = [[], [], []]
-
-  expect(sliceMatrix(inputMatrix3Rows, undefined, 0)).toStrictEqual(
-    emptyMatrix3Rows
-  )
-  expect(sliceMatrix(inputMatrix3Rows, 1, 0)).toStrictEqual(emptyMatrix3Rows)
+  expect(sliceMatrix(matrix, 0, 5)).toStrictEqual(matrix)
 })
 
 test('sliceMatrix returns a matrix with the first column removed', () => {
@@ -82,4 +58,32 @@ test('sliceMatrix returns a matrix with truncations at both ends', () => {
 
   expect(sliceMatrix(inputMatrix, 1, 3)).toStrictEqual(truncatedMatrix)
   expect(sliceMatrix(inputMatrix, 1, -2)).toStrictEqual(truncatedMatrix)
+})
+
+test('sliceMatrix returns a matrix of the same height', () => {
+  const matrix1Row = [[0, 1, 2, 3, 4]]
+  const matrix3Row = [
+    [0, 1, 2, 3, 4],
+    [0, 1, 2, 3, 4],
+  ]
+  const matrix3RowTruncated = [
+    [1, 2, 3, 4],
+    [1, 2, 3, 4],
+  ]
+  const matrix4Row = [
+    [0, 1, 2, 3, 4],
+    [0, 1, 2, 3, 4],
+    [0, 1, 2, 3, 4],
+    [0, 1, 2, 3, 4],
+  ]
+  const matrix4RowTruncated = [
+    [0, 1, 2, 3],
+    [0, 1, 2, 3],
+    [0, 1, 2, 3],
+    [0, 1, 2, 3],
+  ]
+
+  expect(sliceMatrix(matrix1Row)).toStrictEqual(matrix1Row)
+  expect(sliceMatrix(matrix3Row, 1)).toStrictEqual(matrix3RowTruncated)
+  expect(sliceMatrix(matrix4Row, 0, 4)).toStrictEqual(matrix4RowTruncated)
 })
