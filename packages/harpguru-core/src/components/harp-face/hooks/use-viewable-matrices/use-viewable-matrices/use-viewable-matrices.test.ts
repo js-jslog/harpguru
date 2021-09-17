@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import { DegreeIds } from 'harpparts'
 
-import { inactiveCellsHarpStrata } from '../../../../test-resources'
+import { inactiveCellsHarpStrata } from '../../../../../test-resources'
 
 import { useViewableMatrices } from './use-viewable-matrices'
 
@@ -57,6 +57,37 @@ test('Middle columns of degreeMatrix are viewable when columnBounds is [1, 2]', 
   const expectedViewableMatrix = [
     [Root, Second],
     [Second, Third],
+    [Third, Second],
+  ]
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata') return [modifiedHarpStrata]
+    if (stateItem === 'columnBounds') return [[1, 2]]
+    return undefined
+  })
+
+  expect(useViewableMatrices().viewableDegreeMatrix).toStrictEqual(
+    expectedViewableMatrix
+  )
+})
+
+test('Blank rows are removed from the matrix', () => {
+  const { Root, Second, Third } = DegreeIds
+  const simplifiedDegreeMatrix = [
+    [undefined, undefined, undefined, undefined],
+    [Second, Root, Second, Third],
+    [Second, Second, Third, Root],
+    [Second, Third, Second, Root],
+    [Second, Third, Second, Root],
+    [undefined, undefined, undefined, undefined],
+  ]
+  const modifiedHarpStrata = {
+    ...inactiveCellsHarpStrata,
+    degreeMatrix: simplifiedDegreeMatrix,
+  }
+  const expectedViewableMatrix = [
+    [Root, Second],
+    [Second, Third],
+    [Third, Second],
     [Third, Second],
   ]
   mockUseGlobal.mockImplementation((stateItem: string) => {
