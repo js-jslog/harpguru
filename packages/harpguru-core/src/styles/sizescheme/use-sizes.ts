@@ -1,5 +1,4 @@
-import { useGlobal } from 'reactn'
-
+import { useLayoutFacts } from '../use-layout-facts'
 import { SizeScheme, SizeSchemes } from '../styles-types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
@@ -41,12 +40,7 @@ const relativeLabelIconSize = 7
 
 export const useSizes = (): SizeSchemes => {
   const { shortEdge, longEdge } = getWindowDimensions()
-
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const { degreeMatrix } = activeHarpStrata
-  const { [0]: exampleHarpRow } = degreeMatrix
-  const { length: harpRowCount } = degreeMatrix
-  const { length: harpColumnCount } = exampleHarpRow
+  const { harpFaceRowCount, harpFaceColumnCount } = useLayoutFacts()
 
   const {
     [relativeColumnWidth]: columnWidth,
@@ -69,11 +63,11 @@ export const useSizes = (): SizeSchemes => {
   const sidesContainingLabelsCount = 2
   const dynamicWidthRequirements =
     longEdge /
-    (columnWidth * harpColumnCount +
+    (columnWidth * harpFaceColumnCount +
       fragmentGutter * roughFragmentGutterCount +
       labelProtrusion * sidesContainingLabelsCount +
       labelGrace * sidesContainingLabelsCount)
-  const dynamicHeightRequirements = shortEdge / (rowHeight * harpRowCount)
+  const dynamicHeightRequirements = shortEdge / (rowHeight * harpFaceRowCount)
 
   const dynamicSeedSize =
     dynamicWidthRequirements > dynamicHeightRequirements
