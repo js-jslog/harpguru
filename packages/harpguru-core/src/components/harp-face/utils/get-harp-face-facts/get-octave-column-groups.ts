@@ -1,4 +1,4 @@
-import type { XRange } from '../../types'
+import type { XRange } from '../../../../types'
 
 type RootColumnsMask = ReadonlyArray<boolean>
 type ColumnRange = XRange

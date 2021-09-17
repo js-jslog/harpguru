@@ -1,4 +1,4 @@
-import { inactiveCellsHarpStrata as activeHarpStrata } from '../../test-resources'
+import { inactiveCellsHarpStrata as activeHarpStrata } from '../../../../test-resources'
 
 import { getHarpFaceFacts } from './index'
 

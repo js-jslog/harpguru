@@ -1,5 +1,4 @@
 export { batchToggleDegreeIds } from './batch-toggle-degree-ids'
-export { getHarpFaceFacts } from './get-harp-face-facts'
 export { getRenderableToneTuples } from './get-renderable-tone-tuples'
 export { getInputRange } from './get-input-range'
 export { getOutputRange } from './get-output-range'

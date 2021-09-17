@@ -3,8 +3,8 @@ import { View } from 'react-native'
 import React from 'react'
 
 import { HarpFaceFragment } from '../harp-face-fragment'
-import { getHarpFaceFacts } from '../../utils'
 
+import { getHarpFaceFacts } from './utils'
 import { useStyles } from './hooks'
 
 export const HarpFace = (): React.ReactElement => {
