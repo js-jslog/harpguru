@@ -70,15 +70,15 @@ test('Middle columns of degreeMatrix are viewable when columnBounds is [1, 2]', 
   )
 })
 
-test('Blank rows are removed from the matrix', () => {
+test('Blank rows are removed from the viewable matrix even if the broader context isnt empty', () => {
   const { Root, Second, Third } = DegreeIds
   const simplifiedDegreeMatrix = [
-    [undefined, undefined, undefined, undefined],
+    [Second, undefined, undefined, undefined],
     [Second, Root, Second, Third],
     [Second, Second, Third, Root],
     [Second, Third, Second, Root],
     [Second, Third, Second, Root],
-    [undefined, undefined, undefined, undefined],
+    [undefined, undefined, undefined, Second],
   ]
   const modifiedHarpStrata = {
     ...inactiveCellsHarpStrata,
