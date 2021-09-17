@@ -1,11 +1,13 @@
 import { useGlobal } from 'reactn'
-import type { Degree, HarpFaceMatrix } from 'harpparts'
+import type { Degree, Pitch, Interaction, HarpFaceMatrix } from 'harpparts'
 
 import { isPopulatedArray } from '../is-populated-array'
 import { sliceMatrix } from '../../../../../packages/slice-matrix'
 
 type ViewableMatrices = {
   viewableDegreeMatrix: HarpFaceMatrix<Degree>
+  viewablePitchMatrix: HarpFaceMatrix<Pitch>
+  viewableInteractionMatrix: HarpFaceMatrix<Interaction>
 }
 
 export const useViewableMatrices = (): ViewableMatrices => {
@@ -15,19 +17,33 @@ export const useViewableMatrices = (): ViewableMatrices => {
   if (columnBounds === 'FIT')
     return {
       viewableDegreeMatrix: activeHarpStrata.degreeMatrix,
+      viewablePitchMatrix: activeHarpStrata.pitchMatrix,
+      viewableInteractionMatrix: activeHarpStrata.apparatus.interactionMatrix,
     }
 
   const [start, end] = columnBounds
 
-  const limitedColumns = sliceMatrix(
+  const viewableDegreeMatrix = sliceMatrix(
     activeHarpStrata.degreeMatrix,
     start,
     end + 1
-  )
+  ).filter(isPopulatedArray)
 
-  const viewableDegreeMatrix = limitedColumns.filter(isPopulatedArray)
+  const viewablePitchMatrix = sliceMatrix(
+    activeHarpStrata.pitchMatrix,
+    start,
+    end + 1
+  ).filter(isPopulatedArray)
+
+  const viewableInteractionMatrix = sliceMatrix(
+    activeHarpStrata.apparatus.interactionMatrix,
+    start,
+    end + 1
+  ).filter(isPopulatedArray)
 
   return {
     viewableDegreeMatrix,
+    viewablePitchMatrix,
+    viewableInteractionMatrix,
   }
 }
