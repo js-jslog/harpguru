@@ -17,6 +17,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v9.0.0) - 2021-07-11
 
+### Changed
+
+- MINOR: Make sizing logic relative to size of harp being presented
+
 ### Added
 
 - MINOR: Add valving menu alongside the tuning menu
