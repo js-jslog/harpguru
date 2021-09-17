@@ -9,6 +9,7 @@ import { arrayHasRoot } from './array-has-root'
 
 export const useOctaveColumnGroups = (): ColumnRanges => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const { degreeMatrix } = activeHarpStrata
 
   const columnsFirstDegreeMatrix = transposeMatrix(
@@ -17,5 +18,7 @@ export const useOctaveColumnGroups = (): ColumnRanges => {
   const rootColumnsMask = columnsFirstDegreeMatrix.map(arrayHasRoot)
   const octaveColumnGroups = getOctaveColumnGroups(rootColumnsMask)
 
-  return octaveColumnGroups
+  if (fragmentHarpFaceByOctaves) return octaveColumnGroups
+
+  return [octaveColumnGroups.flat()]
 }

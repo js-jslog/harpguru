@@ -8,12 +8,8 @@ import { useStyles, useOctaveColumnGroups } from './hooks'
 
 export const HarpFace = (): React.ReactElement => {
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const styles = useStyles()
-  const octaveColumnGroups = useOctaveColumnGroups()
-  const columnRanges = fragmentHarpFaceByOctaves
-    ? octaveColumnGroups
-    : [octaveColumnGroups.flat()]
+  const columnRanges = useOctaveColumnGroups()
   const fragments = columnRanges.map((xRange, index) => {
     const harpFaceFragmentProps = {
       activeDisplayMode,
