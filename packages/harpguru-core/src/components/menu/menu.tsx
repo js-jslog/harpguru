@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native'
 import React from 'react'
 
 import type { MenuProps, ChildrenProps } from '../../types'
-import { useSizes } from '../../styles'
 import {
   useMenuAnimationValues,
   useScaledMenuLabelProtrusion,
+  useSizes,
 } from '../../hooks'
 
 export const Menu = ({

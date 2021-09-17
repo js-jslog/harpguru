@@ -3,7 +3,8 @@ import React from 'react'
 
 import { ExperienceModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
-import { useSizes, colors } from '../../styles'
+import { colors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 type RenderedToneProps = {
   readonly toneTuples: RenderableToneTuples

@@ -5,7 +5,8 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuStashPosition, PageNumber } from '../../types'
 import type { MenuProps } from '../../types'
-import { useSizes, harpguruColors } from '../../styles'
+import { harpguruColors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 type MenuTabNextPageProps = {
   readonly thisPage: PageNumber

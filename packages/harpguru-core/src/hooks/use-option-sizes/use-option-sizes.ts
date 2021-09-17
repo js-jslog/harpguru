@@ -1,4 +1,4 @@
-import { useSizes } from '../../styles'
+import { useSizes } from '../../hooks'
 
 type OptionStyles = {
   largeFont: number

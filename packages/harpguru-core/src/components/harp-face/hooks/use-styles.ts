@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
-import { useLayoutFacts, useSizes } from '../../../styles'
+import { useLayoutFacts, useSizes } from '../../../hooks'
 
 import { useOctaveColumnGroups } from './use-octave-column-groups'
 

@@ -6,8 +6,8 @@ import { AntDesign } from '@expo/vector-icons'
 
 import { TapAnimationTypes } from '../../types'
 import type { MenuProps } from '../../types'
-import { useSizes, colors } from '../../styles'
-import { useScaleAndCallbackOnTap } from '../../hooks'
+import { colors } from '../../styles'
+import { useScaleAndCallbackOnTap, useSizes } from '../../hooks'
 
 export const MenuAccessClose = ({
   openCloseMenu,

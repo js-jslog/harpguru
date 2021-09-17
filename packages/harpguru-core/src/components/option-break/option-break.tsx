@@ -1,8 +1,8 @@
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
-import { useSizes, colors } from '../../styles'
-import { useOptionSizes } from '../../hooks'
+import { colors } from '../../styles'
+import { useOptionSizes, useSizes } from '../../hooks'
 
 type OptionBreakProps = {
   readonly title?: string

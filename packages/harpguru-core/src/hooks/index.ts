@@ -6,3 +6,5 @@ export { useFlushBufferedActivityToggles } from './use-flush-buffered-activity-t
 export { useInterpolateOptionStackTransitionValue } from './use-interpolate-option-stack-transition-value'
 export { useOptionSizes } from './use-option-sizes'
 export { useViewableMatrices } from './use-viewable-matrices'
+export { useLayoutFacts } from './use-layout-facts'
+export { useSizes } from './use-sizes'

@@ -7,7 +7,8 @@ import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuProps } from '../../types'
-import { colors, useSizes } from '../../styles'
+import { colors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import {
   getNewBufferedTogglesByTargetScaleForDispatcher,

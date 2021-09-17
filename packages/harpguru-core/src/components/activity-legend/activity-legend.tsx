@@ -14,7 +14,8 @@ import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples } from '../../utils'
 import { DisplayModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
-import { useSizes, colors } from '../../styles'
+import { colors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 const { degreeColors } = colors
 

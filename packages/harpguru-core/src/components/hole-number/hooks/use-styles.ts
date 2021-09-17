@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle, TextStyle } from 'react-native'
 
-import { useSizes, colors } from '../../../styles'
+import { colors } from '../../../styles'
+import { useSizes } from '../../../hooks'
 
 type HoleNumberStyles = {
   readonly cell: ViewStyle

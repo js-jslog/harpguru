@@ -7,7 +7,8 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { useSizes, harpguruColors } from '../../styles'
+import { harpguruColors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import { getNewDisplayModeForDispatcher } from './utils'
 

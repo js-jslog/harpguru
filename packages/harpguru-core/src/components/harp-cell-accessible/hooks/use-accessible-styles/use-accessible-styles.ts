@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { DegreeIds } from 'harpparts'
 
-import { colors, useSizes } from '../../../../styles'
+import { colors } from '../../../../styles'
+import { useSizes } from '../../../../hooks'
 
 export const useAccessibleStyles = (
   degreeId: DegreeIds,

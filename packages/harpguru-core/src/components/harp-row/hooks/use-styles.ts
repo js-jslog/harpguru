@@ -4,7 +4,8 @@ import type { HarpStrata } from 'harpstrata'
 
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from '../utils'
 import type { Coord } from '../../../types'
-import { useSizes, colors } from '../../../styles'
+import { colors } from '../../../styles'
+import { useSizes } from '../../../hooks'
 
 type HarpRowStyles = {
   readonly row: ViewStyle
