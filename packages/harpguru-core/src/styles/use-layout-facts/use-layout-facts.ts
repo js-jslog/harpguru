@@ -1,4 +1,4 @@
-import { useGlobal } from 'reactn'
+import { useViewableMatrices } from '../../components/harp-face-fragment/hooks/use-viewable-matrices'
 
 type LayoutFacts = {
   harpFaceRowCount: number
@@ -6,10 +6,9 @@ type LayoutFacts = {
 }
 
 export const useLayoutFacts = (): LayoutFacts => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const { degreeMatrix } = activeHarpStrata
-  const { length: harpFaceRowCount } = degreeMatrix
-  const { [0]: exampleHarpRow } = degreeMatrix
+  const { viewableDegreeMatrix } = useViewableMatrices()
+  const { length: harpFaceRowCount } = viewableDegreeMatrix
+  const { [0]: exampleHarpRow } = viewableDegreeMatrix
   const { length: harpFaceColumnCount } = exampleHarpRow
 
   return {

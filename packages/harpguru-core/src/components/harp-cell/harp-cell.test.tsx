@@ -20,6 +20,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
   const harpCellProps = {
@@ -33,6 +34,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Pitch]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
 
@@ -47,6 +49,7 @@ test('A component is rendered with an a11y role of button', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
   const harpCellProps = {
@@ -63,6 +66,7 @@ test('A component is rendered without an a11y role of button if it has no conten
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
   const harpCellProps = {
@@ -110,6 +114,7 @@ test('A snapshot of a populated cell', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
   const harpCellProps = {
@@ -126,6 +131,7 @@ test('A snapshot of an active cell', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
   const harpCellProps = {
@@ -142,6 +148,7 @@ test('A snapshot of an empty cell', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
   const harpFaceProps = {
@@ -158,6 +165,7 @@ test('A snapshot of an inactive cell in Explore mode', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
   const harpCellProps = {
@@ -176,6 +184,7 @@ test('A snapshot of an inactive cell in Quiz mode', () => {
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Quiz]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
   const harpCellProps = {
