@@ -1,7 +1,6 @@
 import type { ViewStyle } from 'react-native'
 import { StyleSheet } from 'react-native'
 
-import { getFragmentFacts } from '../utils'
 import type { XRange } from '../../../types'
 import { useLayoutFacts, useSizes } from '../../../styles'
 
@@ -13,8 +12,8 @@ export const useStyles = (xRange: XRange): HarpFaceFragmentStyles => {
   const {
     dynamicSizes: { columnWidth, rowHeight },
   } = useSizes()
-  const { columnCount: fragmentColumnCount } = getFragmentFacts(xRange)
   const { harpFaceRowCount } = useLayoutFacts()
+  const { length: fragmentColumnCount } = xRange
 
   const styles = StyleSheet.create<HarpFaceFragmentStyles>({
     fragment: {
