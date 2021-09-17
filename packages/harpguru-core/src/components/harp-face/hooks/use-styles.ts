@@ -1,21 +1,21 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
-import type { HarpStrata } from 'harpstrata'
 
-import { getHarpFaceFacts } from '../utils'
 import { useLayoutFacts, useSizes } from '../../../styles'
+
+import { useOctaveColumnGroups } from './use-octave-column-groups'
 
 type HarpFaceStyles = {
   readonly face: ViewStyle
 }
 
-export const useStyles = (activeHarpStrata: HarpStrata): HarpFaceStyles => {
+export const useStyles = (): HarpFaceStyles => {
   const { dynamicSizes } = useSizes()
   const { columnWidth, rowHeight, fragmentGutter } = dynamicSizes
 
   const { harpFaceRowCount, harpFaceColumnCount } = useLayoutFacts()
 
-  const { octaveColumnGroups } = getHarpFaceFacts(activeHarpStrata)
+  const octaveColumnGroups = useOctaveColumnGroups()
   const { length: groupCount } = octaveColumnGroups
 
   const styles = StyleSheet.create({
