@@ -7,7 +7,7 @@ import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuProps } from '../../types'
-import { colors, getSizes } from '../../styles'
+import { colors, useSizes } from '../../styles'
 
 import {
   getNewBufferedTogglesByTargetScaleForDispatcher,
@@ -60,7 +60,7 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     },
   ]
 
-  const sizes = getSizes()
+  const { dynamicSizes } = useSizes()
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
@@ -69,7 +69,7 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
       <MenuAccessOpen {...menuProps}>
         <MaterialIcons
           name="linear-scale"
-          size={sizes.labelIconSize}
+          size={dynamicSizes.labelIconSize}
           color={colors.homeRowsColor}
         />
       </MenuAccessOpen>

@@ -1,6 +1,16 @@
+import { useGlobal } from 'reactn'
 import { render } from '@testing-library/react-native'
 
+import { activeCellsHarpStrata } from '../../../test-resources'
+
 import { getHoleNumbers } from './get-hole-numbers'
+
+jest.mock('reactn')
+const mockUseGlobal = useGlobal as jest.Mock
+mockUseGlobal.mockImplementation((stateItem: string) => {
+  if (stateItem === 'activeHarpStrata') return [activeCellsHarpStrata]
+  return undefined
+})
 
 test('getHoleNumbers returns an array of HoleNumber components which is the width of the range supplied', () => {
   const xRange = [0, 1, 2, 3, 4, 5, 6, 7]

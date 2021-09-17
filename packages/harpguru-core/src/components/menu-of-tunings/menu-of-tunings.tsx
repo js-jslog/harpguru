@@ -7,7 +7,7 @@ import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import type { MenuProps } from '../../types'
-import { colors, getSizes } from '../../styles'
+import { colors, useSizes } from '../../styles'
 
 import {
   getNewHarpStrataByTuningForDispatcher,
@@ -58,7 +58,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     },
   ]
 
-  const sizes = getSizes()
+  const { dynamicSizes } = useSizes()
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>
@@ -67,7 +67,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
       <MenuAccessOpen {...menuProps}>
         <Entypo
           name="cog"
-          size={sizes.labelIconSize}
+          size={dynamicSizes.labelIconSize}
           color={colors.homeRowsColor}
         />
       </MenuAccessOpen>

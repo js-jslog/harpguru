@@ -42,3 +42,8 @@ export type SizeScheme = {
   readonly labelProtrusion: number
   readonly labelIconSize: number
 }
+
+export type SizeSchemes = {
+  dynamicSizes: SizeScheme
+  staticSizes: SizeScheme
+}

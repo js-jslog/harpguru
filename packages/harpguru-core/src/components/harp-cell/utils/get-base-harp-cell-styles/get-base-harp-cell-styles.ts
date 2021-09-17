@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
-import { getSizes } from '../../../../styles'
+import { useSizes } from '../../../../styles'
 
 export const getBaseHarpCellStyles = (): ViewStyle => {
-  const sizes = getSizes()
-  const { 6: borderRadius } = sizes
-  const width = sizes['8'] + sizes['5']
-  const height = sizes['8'] + sizes['5']
+  const { dynamicSizes } = useSizes()
+  const { 6: borderRadius } = dynamicSizes
+  const width = dynamicSizes['8'] + dynamicSizes['5']
+  const height = dynamicSizes['8'] + dynamicSizes['5']
   const styles = StyleSheet.create({
     cell: {
       flexDirection: 'row',

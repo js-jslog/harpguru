@@ -7,7 +7,7 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { useSizes, harpguruColors } from '../../styles'
 
 import { useToggleFragmentHarpFace } from './hooks'
 
@@ -29,19 +29,19 @@ export const MenuTabFragmentation = ({
     openCloseMenu: () => toggleFragmentHarpFace(),
   }
 
-  const sizes = getSizes()
+  const { dynamicSizes } = useSizes()
 
   const activeLabelIcon =
     fragmentHarpFaceByOctaves === true ? (
       <MaterialIcons
         name="view-column"
-        size={sizes.labelIconSize}
+        size={dynamicSizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     ) : (
       <FontAwesome
         name="square"
-        size={sizes.labelIconSize}
+        size={dynamicSizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     )

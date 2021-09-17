@@ -1,5 +1,7 @@
 export { useMenuAnimationValues } from './use-menu-animation-values'
 export { usePrevious } from './use-previous'
 export { useScaleAndCallbackOnTap } from './use-scale-and-callback-on-tap'
+export { useScaledMenuLabelProtrusion } from './use-scaled-menu-label-protrusion'
 export { useFlushBufferedActivityToggles } from './use-flush-buffered-activity-toggles'
 export { useInterpolateOptionStackTransitionValue } from './use-interpolate-option-stack-transition-value'
+export { useOptionSizes } from './use-option-sizes'

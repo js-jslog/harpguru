@@ -13,6 +13,7 @@ import {
   POWER_BENDER,
   POWER_DRAW,
   PADDY_RICHTER,
+  LUCKY_THIRTEEN,
   BLUES_ONE,
   BLUES_TWO,
   BLUES_THREE,
@@ -39,6 +40,8 @@ import {
   WILL_SCARLETT,
   WOOZLE_MINOR,
   BABY_FAT,
+  TWELVE_HOLE_SOLO,
+  SIXTEEN_HOLE_SOLO,
 } from '../../tuning'
 import type { Tuning } from '../../tuning'
 
@@ -56,6 +59,7 @@ orderedTunings.set(TuningIds.OrchestraS, ORCHESTRA_S)
 orderedTunings.set(TuningIds.PowerBender, POWER_BENDER)
 orderedTunings.set(TuningIds.PowerDraw, POWER_DRAW)
 orderedTunings.set(TuningIds.PaddyRichter, PADDY_RICHTER)
+orderedTunings.set(TuningIds.LuckyThirteen, LUCKY_THIRTEEN)
 orderedTunings.set(TuningIds.BluesOne, BLUES_ONE)
 orderedTunings.set(TuningIds.BluesTwo, BLUES_TWO)
 orderedTunings.set(TuningIds.BluesThree, BLUES_THREE)
@@ -82,3 +86,5 @@ orderedTunings.set(TuningIds.EasyThird, EASY_THIRD)
 orderedTunings.set(TuningIds.WillScarlett, WILL_SCARLETT)
 orderedTunings.set(TuningIds.WoozleMinor, WOOZLE_MINOR)
 orderedTunings.set(TuningIds.BabyFat, BABY_FAT)
+orderedTunings.set(TuningIds.TwelveHoleSolo, TWELVE_HOLE_SOLO)
+orderedTunings.set(TuningIds.SixteenHoleSolo, SIXTEEN_HOLE_SOLO)

@@ -7,7 +7,7 @@ import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import type { MenuProps } from '../../types'
-import { colors, getSizes } from '../../styles'
+import { colors, useSizes } from '../../styles'
 
 import { getNewHarpStrataByCovariantsForDispatcher } from './utils'
 import {
@@ -78,7 +78,7 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal]
   )
 
-  const sizes = getSizes()
+  const { dynamicSizes } = useSizes()
 
   const optionPropsz = [
     {
@@ -111,7 +111,7 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
       <MenuAccessOpen {...menuProps}>
         <Feather
           name="sliders"
-          size={sizes.labelIconSize}
+          size={dynamicSizes.labelIconSize}
           color={colors.homeRowsColor}
         />
       </MenuAccessOpen>

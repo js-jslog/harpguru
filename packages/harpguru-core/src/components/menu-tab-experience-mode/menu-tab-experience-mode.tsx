@@ -7,7 +7,7 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { ExperienceModes, MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { useSizes, harpguruColors } from '../../styles'
 
 import { getNewExperienceModeForDispatcher } from './utils'
 
@@ -32,19 +32,19 @@ export const MenuTabExperienceMode = ({
     openCloseMenu: () => nudgeExperienceMode(),
   }
 
-  const sizes = getSizes()
+  const { dynamicSizes } = useSizes()
 
   const activeLabelIcon =
     activeExperienceMode === ExperienceModes.Explore ? (
       <MaterialCommunityIcons
         name="moon-full"
-        size={sizes.labelIconSize}
+        size={dynamicSizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     ) : (
       <FontAwesome
         name="question-circle"
-        size={sizes.labelIconSize}
+        size={dynamicSizes.labelIconSize}
         color={harpguruColors['gold']}
       />
     )

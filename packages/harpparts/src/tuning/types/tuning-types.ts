@@ -14,6 +14,7 @@ export enum TuningIds {
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
   PaddyRichter = 'Paddy richter',
+  LuckyThirteen = 'Lucky thirteen',
   BluesOne = 'Blues 1',
   BluesTwo = 'Blues 2',
   BluesThree = 'Blues 3',
@@ -40,6 +41,8 @@ export enum TuningIds {
   WillScarlett = 'Will Scarlett',
   WoozleMinor = 'Woozle minor',
   BabyFat = 'Baby fat',
+  TwelveHoleSolo = 'Twelve hole solo',
+  SixteenHoleSolo = 'Sixteen hole solo',
 }
 
 export enum TuningCategories {
@@ -60,7 +63,12 @@ export type Tuning = {
   readonly reedArray: ReedArray
 }
 
-export type ReedArray = ReedArray7 | ReedArray10
+export type ReedArray =
+  | ReedArray7
+  | ReedArray10
+  | ReedArray12
+  | ReedArray13
+  | ReedArray16
 
 export type ReedArray7 = readonly [
   readonly [
@@ -110,7 +118,112 @@ export type ReedArray10 = readonly [
   ]
 ]
 
+export type ReedArray12 = readonly [
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ],
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ]
+]
+
+export type ReedArray13 = readonly [
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ],
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ]
+]
+
+export type ReedArray16 = readonly [
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ],
+  readonly [
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex,
+    HalfstepIndex
+  ]
+]
+
 export enum ReedTuningPitches {
+  g0 = -5,
+  ab0 = -4,
   a0 = -3,
   bb0 = -2,
   b0 = -1,
@@ -162,4 +275,5 @@ export enum ReedTuningPitches {
   a4,
   bb4,
   b4,
+  c5,
 }

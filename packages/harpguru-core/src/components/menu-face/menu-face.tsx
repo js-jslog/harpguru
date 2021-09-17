@@ -2,14 +2,14 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
 import { MenuAccessClose } from '../menu-access-close'
-import { getScaledMenuLabelProtrusion } from '../../utils/'
 import type { MenuProps, ChildrenProps } from '../../types'
+import { useScaledMenuLabelProtrusion } from '../../hooks/'
 
 export const MenuFace = ({
   openCloseMenu,
   children,
 }: MenuProps & ChildrenProps): React.ReactElement => {
-  const scaledLabelProtrusion = getScaledMenuLabelProtrusion()
+  const scaledLabelProtrusion = useScaledMenuLabelProtrusion()
   const { style } = StyleSheet.create({
     style: {
       ...StyleSheet.absoluteFillObject,

@@ -12,6 +12,7 @@ export {
   POWER_BENDER,
   POWER_DRAW,
   PADDY_RICHTER,
+  LUCKY_THIRTEEN,
   BLUES_ONE,
   BLUES_TWO,
   BLUES_THREE,
@@ -38,6 +39,8 @@ export {
   WHOLE_TONE,
   DIMINISHED,
   BABY_FAT,
+  TWELVE_HOLE_SOLO,
+  SIXTEEN_HOLE_SOLO,
 } from './constants'
 export type { Tuning, ReedArray } from './types'
 export {
@@ -45,4 +48,7 @@ export {
   TuningCategories,
   isReedArray7,
   isReedArray10,
+  isReedArray12,
+  isReedArray13,
+  isReedArray16,
 } from './types'

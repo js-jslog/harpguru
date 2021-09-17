@@ -5,7 +5,7 @@ import type { ReactElement } from 'react'
 import { getScaleByDegreeIds } from 'harpparts'
 
 import { NotificationFlash } from '../notification-flash'
-import { getSizes } from '../../styles'
+import { useSizes } from '../../styles'
 
 import { useShouldDisplayScaleLabel } from './hooks'
 
@@ -22,14 +22,14 @@ export const NotifyOfScale = ({
 
   const shouldDisplay = useShouldDisplayScaleLabel(scaleLabel, isScalesMenu)
 
-  const sizes = getSizes()
+  const { staticSizes } = useSizes()
 
   return (
     <NotificationFlash shouldDisplay={shouldDisplay}>
       <Text
         style={{
           color: 'black',
-          fontSize: sizes['8'],
+          fontSize: staticSizes['8'],
         }}
       >
         {scaleLabel}

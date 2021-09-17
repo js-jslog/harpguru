@@ -4,7 +4,7 @@ import React from 'react'
 
 import { OptionValue } from '../option-value'
 import type { OptionValueProps } from '../option-value'
-import { getOptionSizes } from '../../utils'
+import { useOptionSizes } from '../../hooks'
 
 export type OptionItemProps<T> = Pick<
   OptionValueProps,
@@ -24,7 +24,7 @@ export const OptionItem = <T extends unknown>({
   itemTapHandler,
   callbackParam,
 }: OptionItemProps<T>): React.ReactElement => {
-  const { itemWidth, itemHeightTrim } = getOptionSizes()
+  const { itemWidth, itemHeightTrim } = useOptionSizes()
   const { itemAlignment } = StyleSheet.create({
     itemAlignment: {
       height: itemWidth - itemHeightTrim,

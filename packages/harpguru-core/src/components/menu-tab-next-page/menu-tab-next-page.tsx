@@ -5,7 +5,7 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { MenuStashPosition, PageNumber } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, harpguruColors } from '../../styles'
+import { useSizes, harpguruColors } from '../../styles'
 
 type MenuTabNextPageProps = {
   readonly thisPage: PageNumber
@@ -27,7 +27,7 @@ export const MenuTabNextPage = ({
     openCloseMenu: getNextPage,
   }
 
-  const sizes = getSizes()
+  const { dynamicSizes } = useSizes()
 
   return (
     <Menu {...menuLikeProps}>
@@ -39,7 +39,7 @@ export const MenuTabNextPage = ({
         >
           <Text
             style={{
-              fontSize: sizes['7'],
+              fontSize: dynamicSizes['7'],
               fontWeight: 'bold',
               color: harpguruColors.pink,
             }}
@@ -48,7 +48,7 @@ export const MenuTabNextPage = ({
           </Text>
           <Text
             style={{
-              fontSize: sizes['6'],
+              fontSize: dynamicSizes['6'],
               fontWeight: 'normal',
               color: harpguruColors.pink,
             }}

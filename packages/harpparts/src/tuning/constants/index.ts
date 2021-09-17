@@ -26,6 +26,7 @@ const {
   PowerBender,
   PowerDraw,
   PaddyRichter,
+  LuckyThirteen,
   BluesOne,
   BluesTwo,
   BluesThree,
@@ -52,9 +53,12 @@ const {
   WillScarlett,
   WoozleMinor,
   BabyFat,
+  TwelveHoleSolo,
+  SixteenHoleSolo,
 } = TuningIds
 
 const {
+  g0,
   a0,
   b0,
   c1,
@@ -95,7 +99,13 @@ const {
   c3,
   c4,
   d4,
+  e4,
   eb4,
+  f4,
+  g4,
+  a4,
+  b4,
+  c5,
 } = ReedTuningPitches
 
 export const RICHTER_IONIAN: Tuning = {
@@ -397,6 +407,17 @@ export const PADDY_RICHTER: Tuning = {
   ],
 } as const
 
+export const LUCKY_THIRTEEN: Tuning = {
+  id: LuckyThirteen,
+  category: BrendanPower,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10   11   12   13
+    [ g0 , c1 , c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 ],
+    [ a0 , b0 , d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
+  ],
+} as const
+
 export const BLUES_ONE: Tuning = {
   id: BluesOne,
   category: JoeFilisko,
@@ -526,5 +547,27 @@ export const BABY_FAT: Tuning = {
     // 1    2    3    4    5    6    7
     [ c1 , e1 , g1 , c2 , e2 , g2 , c3 ],
     [ d1 , g1 , b1 , d2 , f2 , a2 , b2 ],
+  ],
+} as const
+
+export const TWELVE_HOLE_SOLO: Tuning = {
+  id: TwelveHoleSolo,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10   11   12
+    [ c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 ],
+    [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 ],
+  ],
+} as const
+
+export const SIXTEEN_HOLE_SOLO: Tuning = {
+  id: SixteenHoleSolo,
+  category: Other,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
+    [ c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 , g4 , c5 ],
+    [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 , b4 ],
   ],
 } as const

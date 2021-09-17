@@ -3,7 +3,7 @@ import React from 'react'
 
 import { ExperienceModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
-import { getSizes, colors } from '../../styles'
+import { useSizes, colors } from '../../styles'
 
 type RenderedToneProps = {
   readonly toneTuples: RenderableToneTuples
@@ -20,16 +20,21 @@ export const RenderedTone = ({
   isQuestion,
   splitType,
   activeExperienceMode,
+  // TODO: See whether the static sizes might be a solution to this
+  // TODO: I think I might have some trouble here. This component is
+  // used both in contexts where I would want them to be dynamic &
+  // static (I think). Anyway, this is somewhere I should spend some
+  // attention.
   overrideSizes = [7, 5, 6],
 }: RenderedToneProps): React.ReactElement => {
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
-  const sizes = getSizes()
+  const { dynamicSizes } = useSizes()
   const {
     [overrideSizes[0]]: noteFontSize,
     [overrideSizes[1]]: modifierTopMargin,
     [overrideSizes[2]]: modifierFontSize,
-  } = sizes
+  } = dynamicSizes
   const { pageColor, inertOutline: borderColor } = colors
 
   const styles = StyleSheet.create({
@@ -42,15 +47,15 @@ export const RenderedTone = ({
       ...StyleSheet.absoluteFillObject,
       justifyContent: 'center',
       alignItems: 'center',
-      bottom: splitType === 'SLANT' ? sizes['5'] : 0,
-      right: splitType === 'SLANT' ? sizes['7'] : sizes['7'],
+      bottom: splitType === 'SLANT' ? dynamicSizes['5'] : 0,
+      right: splitType === 'SLANT' ? dynamicSizes['7'] : dynamicSizes['7'],
     },
     flatContentsWrapper: {
       ...StyleSheet.absoluteFillObject,
       justifyContent: 'center',
       alignItems: 'center',
-      top: splitType === 'SLANT' ? sizes['5'] : 0,
-      left: splitType === 'SLANT' ? sizes['6'] : sizes['7'],
+      top: splitType === 'SLANT' ? dynamicSizes['5'] : 0,
+      left: splitType === 'SLANT' ? dynamicSizes['6'] : dynamicSizes['7'],
     },
     note: {
       display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',

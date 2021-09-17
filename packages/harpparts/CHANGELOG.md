@@ -15,9 +15,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v9.1.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: Some alternate length tunings
+
 ### Changed
 
-- MINOR: Permit 7 hole tunings
+- MINOR: Permit alternate length tunings (7, 12 & 16 holes)
 
 ## [v9.1.0](https://github.com/js-jslog/harpguru/releases/tag/v9.1.0) - 2021-09-01
 

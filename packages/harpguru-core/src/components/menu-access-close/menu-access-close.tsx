@@ -6,13 +6,13 @@ import { AntDesign } from '@expo/vector-icons'
 
 import { TapAnimationTypes } from '../../types'
 import type { MenuProps } from '../../types'
-import { getSizes, colors } from '../../styles'
+import { useSizes, colors } from '../../styles'
 import { useScaleAndCallbackOnTap } from '../../hooks'
 
 export const MenuAccessClose = ({
   openCloseMenu,
 }: Pick<MenuProps, 'openCloseMenu'>): React.ReactElement => {
-  const sizes = getSizes()
+  const { staticSizes } = useSizes()
 
   const [tapAnimationValue, handleTapStateChange] = useScaleAndCallbackOnTap(
     openCloseMenu,
@@ -28,8 +28,8 @@ export const MenuAccessClose = ({
           position: 'absolute',
           top: 0,
           right: 0,
-          padding: sizes['6'],
-          height: sizes['10'],
+          padding: staticSizes['6'],
+          height: staticSizes['10'],
         }}
       >
         <Animated.View
@@ -41,7 +41,7 @@ export const MenuAccessClose = ({
         >
           <AntDesign
             name="close"
-            size={sizes['9']}
+            size={staticSizes['9']}
             color={colors.inertOutline}
           />
         </Animated.View>
