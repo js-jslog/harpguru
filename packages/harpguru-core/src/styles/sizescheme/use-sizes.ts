@@ -40,13 +40,17 @@ const relativeLabelProtrusion = 9
 const relativeLabelIconSize = 7
 
 export const useSizes = (): SizeSchemes => {
-  const { shortEdge, longEdge } = getWindowDimensions()
+  //const { shortEdge, longEdge } = getWindowDimensions()
+  const { longEdge } = getWindowDimensions()
 
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const { degreeMatrix } = activeHarpStrata
-  const { [0]: exampleHarpRow } = degreeMatrix
-  const { length: harpRowCount } = degreeMatrix
-  const { length: harpColumnCount } = exampleHarpRow
+  //const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [columnBounds] = useGlobal('columnBounds')
+  //const { degreeMatrix } = activeHarpStrata
+  //const { [0]: exampleHarpRow } = degreeMatrix
+  //const { length: harpRowCount } = degreeMatrix
+  //const { length: harpColumnCount } = exampleHarpRow
+  const [startColumn, endColumn] = columnBounds || [0, 7]
+  const columnCount = endColumn - startColumn + 1
 
   const {
     [relativeColumnWidth]: columnWidth,
@@ -54,7 +58,7 @@ export const useSizes = (): SizeSchemes => {
     [relativeLabelProtrusion]: labelProtrusion,
     [relativeLabelIconSize]: labelIconSize,
   } = relativeSizes
-  const rowHeight = columnWidth
+  //const rowHeight = columnWidth
   const labelGrace = fragmentGutter
 
   // TODO: It might be better to either count the number of gutters
@@ -65,20 +69,24 @@ export const useSizes = (): SizeSchemes => {
   // selected. This would mean that the cell size would grow
   // when they left fragment mode. That would have advantages
   // and disadvantages.
-  const roughFragmentGutterCount = 3
+  // TODO: Temporarily setting this to 5 so that zoomed harp faces
+  // don't look awful. I think we might be undercalculating the width
+  // of some of the constituent parts of the page and at larger sizes
+  // that is creating some real ugliness
+  const roughFragmentGutterCount = 5
   const sidesContainingLabelsCount = 2
   const dynamicWidthRequirements =
     longEdge /
-    (columnWidth * harpColumnCount +
+    (columnWidth * columnCount +
       fragmentGutter * roughFragmentGutterCount +
       labelProtrusion * sidesContainingLabelsCount +
       labelGrace * sidesContainingLabelsCount)
-  const dynamicHeightRequirements = shortEdge / (rowHeight * harpRowCount)
+  //const dynamicHeightRequirements = shortEdge / (rowHeight * harpRowCount)
 
-  const dynamicSeedSize =
-    dynamicWidthRequirements > dynamicHeightRequirements
-      ? dynamicHeightRequirements
-      : dynamicWidthRequirements
+  const dynamicSeedSize = dynamicWidthRequirements
+  //  dynamicWidthRequirements > dynamicHeightRequirements
+  //    ? dynamicHeightRequirements
+  //    : dynamicWidthRequirements
 
   const dynamicSizes: SizeScheme = {
     0: dynamicSeedSize * relativeSizes[0],

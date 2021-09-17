@@ -14,9 +14,11 @@ type HarpFaceFacts = {
 }
 
 export const getHarpFaceFacts = (
-  activeHarpStrata: HarpStrata
+  activeHarpStrata: HarpStrata,
+  columnBounds?: readonly [number, number]
 ): HarpFaceFacts => {
   const { degreeMatrix } = activeHarpStrata
+  const [startColumn, endColumn] = columnBounds || [0, 7]
 
   const { length: rowCount } = degreeMatrix
   const {
@@ -28,10 +30,15 @@ export const getHarpFaceFacts = (
   ) as HarpFaceMatrix<Degree>
   const rootColumnsMask = columnsFirstDegreeMatrix.map(arrayHasRoot)
   const octaveColumnGroups = getOctaveColumnGroups(rootColumnsMask)
+  // TODO: replace this horrible untested cobbling together
+  const mapped = octaveColumnGroups.map((group) => {
+    return group.filter((index) => index >= startColumn && index <= endColumn)
+  })
+  const truncatedOctaveColumnGroups = mapped.filter((group) => group.length > 0)
 
   return {
     rowCount,
     columnCount,
-    octaveColumnGroups,
+    octaveColumnGroups: truncatedOctaveColumnGroups,
   }
 }

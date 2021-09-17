@@ -16,8 +16,9 @@ export const HarpFaceFragment = ({
   xRange,
 }: HarpFaceFragmentProps): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [columnBounds] = useGlobal('columnBounds')
   const harpRows = getHarpRows(xRange, activeHarpStrata)
-  const styles = useStyles(xRange, activeHarpStrata)
+  const styles = useStyles(xRange, activeHarpStrata, columnBounds)
 
   return (
     <View style={styles.fragment}>

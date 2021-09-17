@@ -10,9 +10,13 @@ import { useStyles } from './hooks'
 export const HarpFace = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [columnBounds] = useGlobal('columnBounds')
   const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
-  const styles = useStyles(activeHarpStrata)
-  const { octaveColumnGroups } = getHarpFaceFacts(activeHarpStrata)
+  const styles = useStyles(activeHarpStrata, columnBounds)
+  const { octaveColumnGroups } = getHarpFaceFacts(
+    activeHarpStrata,
+    columnBounds
+  )
   const columnRanges = fragmentHarpFaceByOctaves
     ? octaveColumnGroups
     : [octaveColumnGroups.flat()]

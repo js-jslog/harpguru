@@ -13,7 +13,8 @@ declare module 'reactn/default' {
     fragmentHarpFaceByOctaves: boolean
     flushChannel: FlushChannels
     activeQuizDegrees: ReadonlyArray<DegreeIds>
-    // columnBounds: 'FIT' | [ number, number ]
+    // TODO: consider renaming to inclusiveColumnBounds if that's how they end up being stored
+    columnBounds?: readonly [number, number]
   }
 }
 

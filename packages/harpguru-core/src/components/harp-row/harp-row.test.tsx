@@ -16,6 +16,7 @@ mockUseGlobal.mockImplementation((stateItem: string) => {
   if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
   if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
   if (stateItem === 'bufferedActivityToggles') return [[]]
+  if (stateItem === 'columnBounds') return [[0, 9]]
   return undefined
 })
 

@@ -51,7 +51,8 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     fragmentHarpFaceByOctaves: true,
     flushChannel: FlushChannels.Regular,
     activeQuizDegrees: getDegreeIds(),
-  }
+    columnBounds: [0, 7],
+  } as const
 
   return state
 }

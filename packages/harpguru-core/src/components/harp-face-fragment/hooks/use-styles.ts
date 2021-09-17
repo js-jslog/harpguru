@@ -13,13 +13,14 @@ type HarpFaceFragmentStyles = {
 
 export const useStyles = (
   xRange: XRange,
-  activeHarpStrata: HarpStrata
+  activeHarpStrata: HarpStrata,
+  columnBounds?: readonly [number, number]
 ): HarpFaceFragmentStyles => {
   const {
     dynamicSizes: { columnWidth, rowHeight },
   } = useSizes()
   const { columnCount } = getFragmentFacts(xRange)
-  const { rowCount } = getHarpFaceFacts(activeHarpStrata)
+  const { rowCount } = getHarpFaceFacts(activeHarpStrata, columnBounds)
 
   const styles = StyleSheet.create<HarpFaceFragmentStyles>({
     fragment: {
