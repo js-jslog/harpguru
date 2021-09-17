@@ -42,3 +42,30 @@ test('First column of degreeMatrix is viewable when columnBounds is [0, 0]', () 
     expectedViewableMatrix
   )
 })
+
+test('Middle columns of degreeMatrix are viewable when columnBounds is [1, 2]', () => {
+  const { Root, Second, Third } = DegreeIds
+  const simplifiedDegreeMatrix = [
+    [Second, Root, Second, Third],
+    [Second, Second, Third, Root],
+    [Second, Third, Second, Root],
+  ]
+  const modifiedHarpStrata = {
+    ...inactiveCellsHarpStrata,
+    degreeMatrix: simplifiedDegreeMatrix,
+  }
+  const expectedViewableMatrix = [
+    [Root, Second],
+    [Second, Third],
+    [Third, Second],
+  ]
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata') return [modifiedHarpStrata]
+    if (stateItem === 'columnBounds') return [[1, 2]]
+    return undefined
+  })
+
+  expect(useViewableMatrices().viewableDegreeMatrix).toStrictEqual(
+    expectedViewableMatrix
+  )
+})
