@@ -1,27 +1,16 @@
-import type { HarpStrata } from 'harpstrata'
+import { useGlobal } from 'reactn'
 import type { Degree, HarpFaceMatrix } from 'harpparts'
 
-import { transposeMatrix } from '../../packages/transpose-matrix'
+import { transposeMatrix } from '../../../../packages/transpose-matrix'
 
 import { getOctaveColumnGroups } from './get-octave-column-groups'
 import type { ColumnRanges } from './get-octave-column-groups'
 import { arrayHasRoot } from './array-has-root'
 
-type HarpFaceFacts = {
-  readonly rowCount: number
-  readonly columnCount: number
-  readonly octaveColumnGroups: ColumnRanges
-}
-
-export const getHarpFaceFacts = (
-  activeHarpStrata: HarpStrata
-): HarpFaceFacts => {
+export const useOctaveColumnGroups = (): ColumnRanges => {
+  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const { degreeMatrix } = activeHarpStrata
-
-  const { length: rowCount } = degreeMatrix
-  const {
-    [0]: { length: columnCount },
-  } = degreeMatrix
 
   const columnsFirstDegreeMatrix = transposeMatrix(
     degreeMatrix
@@ -29,9 +18,7 @@ export const getHarpFaceFacts = (
   const rootColumnsMask = columnsFirstDegreeMatrix.map(arrayHasRoot)
   const octaveColumnGroups = getOctaveColumnGroups(rootColumnsMask)
 
-  return {
-    rowCount,
-    columnCount,
-    octaveColumnGroups,
-  }
+  if (fragmentHarpFaceByOctaves) return octaveColumnGroups
+
+  return [octaveColumnGroups.flat()]
 }
