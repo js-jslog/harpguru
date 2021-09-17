@@ -3,9 +3,9 @@ import React from 'react'
 
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
+import { getColors } from '../../utils'
 import { MenuStashPosition, PageNumber } from '../../types'
 import type { MenuProps } from '../../types'
-import { harpguruColors } from '../../styles'
 import { useSizes } from '../../hooks'
 
 type MenuTabNextPageProps = {
@@ -29,6 +29,7 @@ export const MenuTabNextPage = ({
   }
 
   const { dynamicSizes } = useSizes()
+  const { harpguruPink } = getColors()
 
   return (
     <Menu {...menuLikeProps}>
@@ -42,7 +43,7 @@ export const MenuTabNextPage = ({
             style={{
               fontSize: dynamicSizes['7'],
               fontWeight: 'bold',
-              color: harpguruColors.pink,
+              color: harpguruPink,
             }}
           >
             {thisPage}
@@ -51,7 +52,7 @@ export const MenuTabNextPage = ({
             style={{
               fontSize: dynamicSizes['6'],
               fontWeight: 'normal',
-              color: harpguruColors.pink,
+              color: harpguruPink,
             }}
           >
             / {totalPages}

@@ -5,9 +5,9 @@ import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons'
 
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
+import { getColors } from '../../utils'
 import { ExperienceModes, MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { harpguruColors } from '../../styles'
 import { useSizes } from '../../hooks'
 
 import { getNewExperienceModeForDispatcher } from './utils'
@@ -34,19 +34,20 @@ export const MenuTabExperienceMode = ({
   }
 
   const { dynamicSizes } = useSizes()
+  const { harpguruGold } = getColors()
 
   const activeLabelIcon =
     activeExperienceMode === ExperienceModes.Explore ? (
       <MaterialCommunityIcons
         name="moon-full"
         size={dynamicSizes.labelIconSize}
-        color={harpguruColors['gold']}
+        color={harpguruGold}
       />
     ) : (
       <FontAwesome
         name="question-circle"
         size={dynamicSizes.labelIconSize}
-        color={harpguruColors['gold']}
+        color={harpguruGold}
       />
     )
 

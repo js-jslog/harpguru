@@ -1,4 +1,4 @@
-import { DegreeIds } from 'harpparts'
+import type { DegreeIds } from 'harpparts'
 
 type DegreeColors = {
   readonly [DegreeIds.Root]: string
@@ -21,4 +21,7 @@ export type ColorSheme = {
   readonly inertOutline: string
   readonly activeOutline: string
   readonly holeNumbersColor: string
+  readonly harpguruPink: string
+  readonly harpguruGold: string
+  readonly harpguruDarkGold: string
 }

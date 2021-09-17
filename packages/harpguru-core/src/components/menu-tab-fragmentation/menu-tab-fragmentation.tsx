@@ -5,9 +5,9 @@ import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
 
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
+import { getColors } from '../../utils'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { harpguruColors } from '../../styles'
 import { useSizes } from '../../hooks'
 
 import { useToggleFragmentHarpFace } from './hooks'
@@ -31,19 +31,20 @@ export const MenuTabFragmentation = ({
   }
 
   const { dynamicSizes } = useSizes()
+  const { harpguruGold } = getColors()
 
   const activeLabelIcon =
     fragmentHarpFaceByOctaves === true ? (
       <MaterialIcons
         name="view-column"
         size={dynamicSizes.labelIconSize}
-        color={harpguruColors['gold']}
+        color={harpguruGold}
       />
     ) : (
       <FontAwesome
         name="square"
         size={dynamicSizes.labelIconSize}
-        color={harpguruColors['gold']}
+        color={harpguruGold}
       />
     )
 

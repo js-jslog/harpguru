@@ -10,8 +10,8 @@ import {
 import type { Node } from 'react-native-reanimated'
 
 import { useScaledMenuLabelProtrusion } from '../use-scaled-menu-label-protrusion'
+import { getColors } from '../../utils'
 import { MenuStashPosition } from '../../types'
-import { colors } from '../../styles'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 import {
   menuStashedScale,
@@ -34,6 +34,7 @@ export const useMenuAnimationValues = (
   isLabelHidden: boolean,
   stashPosition: MenuStashPosition
 ): MenuAnimationValues => {
+  const colors = getColors()
   const RIGHT = 1
   const UP1 = -3
   const UP2 = -2

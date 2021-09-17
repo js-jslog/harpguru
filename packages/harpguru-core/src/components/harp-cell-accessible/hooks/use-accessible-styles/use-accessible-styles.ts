@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { DegreeIds } from 'harpparts'
 
-import { colors } from '../../../../styles'
+import { getColors } from '../../../../utils'
 import { useSizes } from '../../../../hooks'
 
 export const useAccessibleStyles = (
@@ -12,7 +12,7 @@ export const useAccessibleStyles = (
   const {
     dynamicSizes: { 1: borderWidth, 2: elevation },
   } = useSizes()
-  const { degreeColors, pageColor, inertOutline, activeOutline } = colors
+  const { degreeColors, pageColor, inertOutline, activeOutline } = getColors()
   const { [degreeId]: degreeColor } = degreeColors
 
   const styles = StyleSheet.create({

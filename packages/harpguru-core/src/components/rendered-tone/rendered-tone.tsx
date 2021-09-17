@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
+import { getColors } from '../../utils'
 import { ExperienceModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
-import { colors } from '../../styles'
 import { useSizes } from '../../hooks'
 
 type RenderedToneProps = {
@@ -36,7 +36,7 @@ export const RenderedTone = ({
     [overrideSizes[1]]: modifierTopMargin,
     [overrideSizes[2]]: modifierFontSize,
   } = dynamicSizes
-  const { pageColor, inertOutline: borderColor } = colors
+  const { pageColor, inertOutline: borderColor } = getColors()
 
   const styles = StyleSheet.create({
     naturalContentsWrapper: {

@@ -6,8 +6,8 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
+import { getColors } from '../../utils'
 import type { MenuProps } from '../../types'
-import { colors } from '../../styles'
 import { useSizes } from '../../hooks'
 
 import {
@@ -69,7 +69,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
         <Entypo
           name="cog"
           size={dynamicSizes.labelIconSize}
-          color={colors.homeRowsColor}
+          color={getColors().homeRowsColor}
         />
       </MenuAccessOpen>
     </Menu>
