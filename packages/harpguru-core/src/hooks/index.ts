@@ -5,3 +5,4 @@ export { useScaledMenuLabelProtrusion } from './use-scaled-menu-label-protrusion
 export { useFlushBufferedActivityToggles } from './use-flush-buffered-activity-toggles'
 export { useInterpolateOptionStackTransitionValue } from './use-interpolate-option-stack-transition-value'
 export { useOptionSizes } from './use-option-sizes'
+export { useViewableMatrices } from './use-viewable-matrices'

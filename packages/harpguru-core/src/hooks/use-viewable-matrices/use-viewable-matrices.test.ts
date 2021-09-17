@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import { DegreeIds, InteractionIds, PitchIds } from 'harpparts'
 
-import { inactiveCellsHarpStrata } from '../../../../../test-resources'
+import { inactiveCellsHarpStrata } from '../../test-resources'
 
 import { useViewableMatrices } from './use-viewable-matrices'
 

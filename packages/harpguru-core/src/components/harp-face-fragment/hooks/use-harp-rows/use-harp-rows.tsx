@@ -2,10 +2,10 @@ import { useGlobal } from 'reactn'
 import React, { ReactElement } from 'react'
 import { InteractionIds } from 'harpparts'
 
-import { useViewableMatrices } from '../use-viewable-matrices'
 import { mapRowToBlowDrawIds } from '../map-row-to-blow-draw-ids'
 import { HarpRow } from '../../../harp-row'
 import type { XRange } from '../../../../types'
+import { useViewableMatrices } from '../../../../hooks'
 
 type HarpRows = {
   readonly top: ReactElement[]

@@ -1,8 +1,9 @@
 import { useGlobal } from 'reactn'
 import type { Degree, Pitch, Interaction, HarpFaceMatrix } from 'harpparts'
 
-import { isPopulatedArray } from '../is-populated-array'
-import { sliceMatrix } from '../../../../../packages/slice-matrix'
+import { sliceMatrix } from '../../packages/slice-matrix'
+
+import { isPopulatedArray } from './is-populated-array'
 
 type ViewableMatrices = {
   viewableDegreeMatrix: HarpFaceMatrix<Degree>

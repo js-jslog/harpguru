@@ -1,4 +1,4 @@
-import { useViewableMatrices } from '../../components/harp-face-fragment/hooks/use-viewable-matrices'
+import { useViewableMatrices } from '../../hooks'
 
 type LayoutFacts = {
   harpFaceRowCount: number
