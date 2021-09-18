@@ -42,8 +42,36 @@ test('when fit zoom level is selected the columnBounds is set to FIT', () => {
   expect(sameColumnBounds).toStrictEqual('FIT')
 })
 
-//test('when 7 hole zoom is selected and columnBounds is already 7 holes wide, the original columnBounds is returned', () => {
-//})
+test('when 7 hole zoom is selected and columnBounds is already 7 holes wide, the original columnBounds is returned', () => {
+  const columnBounds1 = [0, 6] as const
+  const columnBounds2 = [1, 7] as const
+  const columnBounds3 = [4, 10] as const
+  const inputGlobal = {
+    activeHarpStrata: majorDiatonicHarp,
+    columnBounds: columnBounds1,
+  } as GlobalState
+  const unusedDispatcher = jest.fn()
+  const { columnBounds: sameColumnBounds1 } = getNewColumnBoundsForDispatcher(
+    inputGlobal,
+    unusedDispatcher,
+    ZoomIds.Seven
+  )
+  const { columnBounds: sameColumnBounds2 } = getNewColumnBoundsForDispatcher(
+    { ...inputGlobal, columnBounds: columnBounds2 },
+    unusedDispatcher,
+    ZoomIds.Seven
+  )
+  const { columnBounds: sameColumnBounds3 } = getNewColumnBoundsForDispatcher(
+    { ...inputGlobal, columnBounds: columnBounds3 },
+    unusedDispatcher,
+    ZoomIds.Seven
+  )
+
+  expect(sameColumnBounds1).toStrictEqual(columnBounds1)
+  expect(sameColumnBounds2).toStrictEqual(columnBounds2)
+  expect(sameColumnBounds3).toStrictEqual(columnBounds3)
+})
+
 //
 //test('when 7 hole zoom is selected from existing FIT columnBounds, 0 index is used as the start column', () => {
 //})
