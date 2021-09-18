@@ -1,22 +1,47 @@
-//import { getHarpStrata } from 'harpstrata'
-//import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
-//
-//import type { GlobalState } from '../../../../types'
+import { getHarpStrata } from 'harpstrata'
+import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
-//import { getNewColumnBoundsForDispatcher } from './get-new-column-bounds-for-dispatcher'
+import { ZoomIds } from '../../hooks/use-zoom-items/use-zoom-items'
+import type { GlobalState } from '../../../../types'
+
+import { getNewColumnBoundsForDispatcher } from './get-new-column-bounds-for-dispatcher'
 
 // TODO: Writing this file has made me realise 2 things:
 //
 // 1. columnBounds should perhaps be called holeBounds
 // 2. there is more functionality here than we need in this dispatcher. The UI should make sure that there are no 7 hole zoom requests to a harp which has less than 7 holes. However this functionality will be important for the callback which runs when the activeHarpStrata is updated to update the columnBounds. I might just house all that functionality under this one function for now in anticipation of trying to have a single function to handle all the situations. I don't know
 
-test('keep me', () => {
-  expect(1).toBe(1)
+const baseHarpStrataProps = {
+  tuningId: TuningIds.MajorDiatonic,
+  valvingId: ValvingIds.NotValved,
+  pozitionId: PozitionIds.First,
+  harpKeyId: PitchIds.C,
+  activeIds: [],
+}
+const majorDiatonicHarpProps = baseHarpStrataProps
+const majorDiatonicHarp = getHarpStrata(majorDiatonicHarpProps)
+
+test('when fit zoom level is selected the columnBounds is set to FIT', () => {
+  const inputGlobal = {
+    activeHarpStrata: majorDiatonicHarp,
+    columnBounds: [0, 1] as const,
+  } as GlobalState
+  const unusedDispatcher = jest.fn()
+  const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
+    inputGlobal,
+    unusedDispatcher,
+    ZoomIds.Fit
+  )
+  const { columnBounds: sameColumnBounds } = getNewColumnBoundsForDispatcher(
+    { ...inputGlobal, columnBounds: 'FIT' },
+    unusedDispatcher,
+    ZoomIds.Fit
+  )
+
+  expect(newColumnBounds).toStrictEqual('FIT')
+  expect(sameColumnBounds).toStrictEqual('FIT')
 })
 
-//test('when fit zoom level is selected the columnBounds is set to FIT', () => {
-//})
-//
 //test('when 7 hole zoom is selected and columnBounds is already 7 holes wide, the original columnBounds is returned', () => {
 //})
 //
