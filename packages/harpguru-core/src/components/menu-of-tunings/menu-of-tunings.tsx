@@ -13,12 +13,15 @@ import { useSizes } from '../../hooks'
 import {
   getNewHarpStrataByTuningForDispatcher,
   getNewHarpStrataByValvingForDispatcher,
+  getNewColumnBoundsForDispatcher,
 } from './utils'
 import {
   useTuningTitle,
   useTuningItems,
   useValvingTitle,
   useValvingItems,
+  useZoomTitle,
+  useZoomItems,
 } from './hooks'
 
 export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
@@ -46,6 +49,18 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal, valvingItemTapHandler]
   )
 
+  const useZoomTitleMemo = useCallback(() => useZoomTitle(useGlobal), [
+    useGlobal,
+  ])
+  const zoomItemTapHandler = useCallback(
+    useDispatch(getNewColumnBoundsForDispatcher),
+    [useDispatch, getNewColumnBoundsForDispatcher]
+  )
+  const useZoomItemsMemo = useCallback(
+    () => useZoomItems(useGlobal, zoomItemTapHandler),
+    [useGlobal, zoomItemTapHandler]
+  )
+
   const optionStackPropsz = [
     {
       useTitle: useTuningTitleMemo,
@@ -55,6 +70,11 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     {
       useTitle: useValvingTitleMemo,
       useItems: useValvingItemsMemo,
+      twoColumns: false,
+    },
+    {
+      useTitle: useZoomTitleMemo,
+      useItems: useZoomItemsMemo,
       twoColumns: false,
     },
   ]
