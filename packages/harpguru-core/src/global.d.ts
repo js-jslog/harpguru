@@ -6,14 +6,14 @@ import type { DisplayModes, ExperienceModes, FlushChannels } from './types'
 
 declare module 'reactn/default' {
   export interface State {
-    activeHarpStrata: HarpStrata
-    activeExperienceMode: ExperienceModes
-    activeDisplayMode: DisplayModes
-    bufferedActivityToggles: ReadonlyArray<DegreeIds>
-    fragmentHarpFaceByOctaves: boolean
-    flushChannel: FlushChannels
-    activeQuizDegrees: ReadonlyArray<DegreeIds>
-    // columnBounds: 'FIT' | [ number, number ]
+    readonly activeHarpStrata: HarpStrata
+    readonly activeExperienceMode: ExperienceModes
+    readonly activeDisplayMode: DisplayModes
+    readonly bufferedActivityToggles: ReadonlyArray<DegreeIds>
+    readonly fragmentHarpFaceByOctaves: boolean
+    readonly flushChannel: FlushChannels
+    readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
+    readonly columnBounds: 'FIT' | readonly [number, number]
   }
 }
 

@@ -6,8 +6,9 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
+import { getColors } from '../../utils'
 import { MenuProps } from '../../types'
-import { colors, useSizes } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import {
   getNewBufferedTogglesByTargetScaleForDispatcher,
@@ -70,7 +71,7 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
         <MaterialIcons
           name="linear-scale"
           size={dynamicSizes.labelIconSize}
-          color={colors.homeRowsColor}
+          color={getColors().homeRowsColor}
         />
       </MenuAccessOpen>
     </Menu>

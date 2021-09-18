@@ -1,6 +1,3853 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`A snapshot of a HarpFaceFragment 1`] = `
+exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows since the double blowbend is not present 1`] = `
+<View
+  style={
+    Object {
+      "height": 619.9946182041224,
+      "width": 929.9919273061836,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              3
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              3
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              7
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              3
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#ddd",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 24.392956838458737,
+        "borderTopRightRadius": 24.392956838458737,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              1
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              3
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              1
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              3
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              1
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              3
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "red",
+        "flexDirection": "row",
+        "height": 0,
+        "justifyContent": "space-around",
+        "zIndex": 3,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 24.392956838458737,
+          "justifyContent": "center",
+          "top": -12.196478419229368,
+          "width": 63.86159683028051,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "#555",
+            "fontSize": 24.392956838458737,
+          }
+        }
+      >
+        1
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 24.392956838458737,
+          "justifyContent": "center",
+          "top": -12.196478419229368,
+          "width": 63.86159683028051,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "#555",
+            "fontSize": 24.392956838458737,
+          }
+        }
+      >
+        2
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 24.392956838458737,
+          "justifyContent": "center",
+          "top": -12.196478419229368,
+          "width": 63.86159683028051,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "#555",
+            "fontSize": 24.392956838458737,
+          }
+        }
+      >
+        3
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 24.392956838458737,
+          "justifyContent": "center",
+          "top": -12.196478419229368,
+          "width": 63.86159683028051,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "#555",
+            "fontSize": 24.392956838458737,
+          }
+        }
+      >
+        4
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 24.392956838458737,
+          "justifyContent": "center",
+          "top": -12.196478419229368,
+          "width": 63.86159683028051,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "#555",
+            "fontSize": 24.392956838458737,
+          }
+        }
+      >
+        5
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 24.392956838458737,
+          "justifyContent": "center",
+          "top": -12.196478419229368,
+          "width": 63.86159683028051,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "#555",
+            "fontSize": 24.392956838458737,
+          }
+        }
+      >
+        6
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 24.392956838458737,
+          "justifyContent": "center",
+          "top": -12.196478419229368,
+          "width": 63.86159683028051,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "#555",
+            "fontSize": 24.392956838458737,
+          }
+        }
+      >
+        7
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 24.392956838458737,
+          "justifyContent": "center",
+          "top": -12.196478419229368,
+          "width": 63.86159683028051,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "#555",
+            "fontSize": 24.392956838458737,
+          }
+        }
+      >
+        8
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 24.392956838458737,
+          "justifyContent": "center",
+          "top": -12.196478419229368,
+          "width": 63.86159683028051,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Object {
+            "color": "#555",
+            "fontSize": 24.392956838458737,
+          }
+        }
+      >
+        9
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#ddd",
+        "borderBottomLeftRadius": 24.392956838458737,
+        "borderBottomRightRadius": 24.392956838458737,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              7
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              4
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              6
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              7
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              4
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              7
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              6
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              6
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              4
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              6
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              6
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
 <View
   style={
     Object {

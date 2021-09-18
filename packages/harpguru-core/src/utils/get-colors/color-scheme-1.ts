@@ -1,6 +1,14 @@
 import { DegreeIds } from 'harpparts'
 
-import type { ColorSheme } from '../styles-types'
+import { harpguruColors } from './harp-guru-colors'
+
+import type { ColorSheme } from './types'
+
+const {
+  pink: harpguruPink,
+  gold: harpguruGold,
+  darkgold: harpguruDarkGold,
+} = harpguruColors
 
 const degreeColors = {
   [DegreeIds.Root]: '#0f9d58',
@@ -30,4 +38,7 @@ export const colors: ColorSheme = {
   inertOutline,
   activeOutline,
   holeNumbersColor,
+  harpguruPink,
+  harpguruGold,
+  harpguruDarkGold,
 } as const

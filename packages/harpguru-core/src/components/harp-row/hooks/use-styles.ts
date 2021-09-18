@@ -3,14 +3,15 @@ import type { ViewStyle } from 'react-native'
 import type { HarpStrata } from 'harpstrata'
 
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from '../utils'
+import { getColors } from '../../../utils'
 import type { Coord } from '../../../types'
-import { useSizes, colors } from '../../../styles'
+import { useSizes } from '../../../hooks'
 
 type HarpRowStyles = {
   readonly row: ViewStyle
 }
 
-const { homeRowsColor, inertOutline } = colors
+const { homeRowsColor, inertOutline } = getColors()
 
 export const useStyles = (
   yCoord: Coord,

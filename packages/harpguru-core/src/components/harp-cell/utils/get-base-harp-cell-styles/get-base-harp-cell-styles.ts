@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
-import { useSizes } from '../../../../styles'
+import { useSizes } from '../../../../hooks'
 
 export const getBaseHarpCellStyles = (): ViewStyle => {
   const { dynamicSizes } = useSizes()

@@ -17,8 +17,8 @@ import { MenuOfScales } from '../menu-of-scales'
 import { MenuOfCovariants } from '../menu-of-covariants'
 import { HarpFaceMemo } from '../harp-face'
 import { ActivityLegend } from '../activity-legend'
+import { getColors } from '../../utils'
 import { MenuStates, MenuStashPosition, PageNumber } from '../../types'
-import { colors } from '../../styles'
 
 import { useMenus } from './hooks'
 
@@ -42,7 +42,7 @@ export const HarpGuruPage = ({
   const styles = StyleSheet.create({
     fillScreen: {
       ...StyleSheet.absoluteFillObject,
-      backgroundColor: colors.pageColor,
+      backgroundColor: getColors().pageColor,
       justifyContent: 'center',
       alignItems: 'center',
     },

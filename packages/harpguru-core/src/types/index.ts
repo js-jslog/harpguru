@@ -11,6 +11,7 @@ export type GlobalState = {
   readonly fragmentHarpFaceByOctaves: boolean
   readonly flushChannel: FlushChannels
   readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
+  readonly columnBounds: 'FIT' | readonly [number, number]
 }
 
 export type UseGlobal = <

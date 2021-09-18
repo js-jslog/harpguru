@@ -1,6 +1,7 @@
 import { useLayoutFacts } from '../use-layout-facts'
-import { SizeScheme, SizeSchemes } from '../styles-types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
+
+import { SizeScheme, SizeSchemes } from './use-sizes-types'
 
 // Here's what we need this hook to provide:
 // 1. A set of sizes which updates as the number of columns being presented increases (which is also *possibly* sensitive to the number of rows present too)

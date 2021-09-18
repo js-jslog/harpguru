@@ -4,10 +4,10 @@ import { View } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
+import { getColors } from '../../utils'
 import { TapAnimationTypes } from '../../types'
 import type { MenuProps } from '../../types'
-import { useSizes, colors } from '../../styles'
-import { useScaleAndCallbackOnTap } from '../../hooks'
+import { useScaleAndCallbackOnTap, useSizes } from '../../hooks'
 
 export const MenuAccessClose = ({
   openCloseMenu,
@@ -42,7 +42,7 @@ export const MenuAccessClose = ({
           <AntDesign
             name="close"
             size={staticSizes['9']}
-            color={colors.inertOutline}
+            color={getColors().inertOutline}
           />
         </Animated.View>
       </View>

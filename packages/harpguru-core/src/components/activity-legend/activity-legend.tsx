@@ -11,12 +11,12 @@ import { getDegreeIds, getPitchIds } from 'harpparts'
 import type { DegreeIds, PitchIds } from 'harpparts'
 
 import { RenderedTone } from '../rendered-tone'
-import { getRenderableToneTuples } from '../../utils'
+import { getRenderableToneTuples, getColors } from '../../utils'
 import { DisplayModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
-import { useSizes, colors } from '../../styles'
+import { useSizes } from '../../hooks'
 
-const { degreeColors } = colors
+const { degreeColors } = getColors()
 
 const getToneSource = (
   degreeId: DegreeIds,

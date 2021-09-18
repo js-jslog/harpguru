@@ -18,6 +18,7 @@ test('A component is rendered with fragmented face', () => {
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     if (stateItem === 'fragmentHarpFaceByOctaves') return [true]
+    if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
   const { toJSON } = render(<HarpFace />)
@@ -32,6 +33,37 @@ test('A component is rendered with unfragmented face', () => {
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
     if (stateItem === 'fragmentHarpFaceByOctaves') return [false]
+    if (stateItem === 'columnBounds') return ['FIT']
+    return undefined
+  })
+  const { toJSON } = render(<HarpFace />)
+
+  expect(toJSON()).toMatchSnapshot()
+})
+
+test('A component is rendered with fragmented and bounded face', () => {
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'fragmentHarpFaceByOctaves') return [true]
+    if (stateItem === 'columnBounds') return [[2, 7]]
+    return undefined
+  })
+  const { toJSON } = render(<HarpFace />)
+
+  expect(toJSON()).toMatchSnapshot()
+})
+
+test('A component is rendered with unfragmented and bounded face', () => {
+  mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
+    if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
+    if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'fragmentHarpFaceByOctaves') return [false]
+    if (stateItem === 'columnBounds') return [[2, 7]]
     return undefined
   })
   const { toJSON } = render(<HarpFace />)

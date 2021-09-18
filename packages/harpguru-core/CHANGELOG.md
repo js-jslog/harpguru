@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v9.0.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: Ability to display just a portion of the harp in the harpface (no UI control yet)
+
 ### Changed
 
 - MINOR: Make sizing adaptive to dimensions of harp being presented

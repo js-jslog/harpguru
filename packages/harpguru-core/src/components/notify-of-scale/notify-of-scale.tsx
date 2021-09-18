@@ -5,7 +5,7 @@ import type { ReactElement } from 'react'
 import { getScaleByDegreeIds } from 'harpparts'
 
 import { NotificationFlash } from '../notification-flash'
-import { useSizes } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import { useShouldDisplayScaleLabel } from './hooks'
 

@@ -1,4 +1,4 @@
-import { useSizes } from '../../styles'
+import { useSizes } from '../use-sizes'
 import { menuStashedScale } from '../../constants'
 
 export const useScaledMenuLabelProtrusion = (): number => {

@@ -1,14 +1,15 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle, TextStyle } from 'react-native'
 
-import { useSizes, colors } from '../../../styles'
+import { getColors } from '../../../utils'
+import { useSizes } from '../../../hooks'
 
 type HoleNumberStyles = {
   readonly cell: ViewStyle
   readonly text: TextStyle
 }
 
-const { holeNumbersColor } = colors
+const { holeNumbersColor } = getColors()
 
 export const useStyles = (): HoleNumberStyles => {
   const { dynamicSizes } = useSizes()

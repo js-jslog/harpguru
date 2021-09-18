@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
+import { getColors } from '../../utils'
 import { ChildrenProps } from '../../types'
-import { colors, harpguruColors } from '../../styles'
 
 import { useFlashAnimationValues } from './hooks'
 
@@ -23,11 +23,13 @@ export const NotificationFlash = ({
     messageOpacity,
   ] = useFlashAnimationValues(shouldDisplay)
 
+  const colors = getColors()
+
   const styles = StyleSheet.create({
     pinkExplosion: {
       ...StyleSheet.absoluteFillObject,
       zIndex: 10,
-      backgroundColor: harpguruColors.pink,
+      backgroundColor: colors.harpguruPink,
     },
     messageUnderlay: {
       ...StyleSheet.absoluteFillObject,

@@ -4,8 +4,8 @@ import { StyleSheet } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
+import { getColors } from '../../utils'
 import type { WithStateValue, WithTransition } from '../../types'
-import { colors } from '../../styles'
 import { useOptionSizes } from '../../hooks'
 
 import { useOptionStackPointerProperties } from './hooks'
@@ -28,6 +28,8 @@ export const OptionStackPointer = (
     prevPointerOpacity,
   } = useOptionStackPointerProperties(props)
   const { smallGutter, largeFont } = useOptionSizes()
+
+  const colors = getColors()
 
   const { common, next, previous } = StyleSheet.create({
     common: {

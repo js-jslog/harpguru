@@ -3,7 +3,7 @@ import React from 'react'
 import type { Pozition, Pitch } from 'harpparts'
 
 import { TextWithoutOSScale } from '../text-without-os-scale'
-import { harpguruColors, colors } from '../../styles'
+import { getColors } from '../../utils'
 import { useOptionSizes } from '../../hooks'
 
 export type OptionValueProps = {
@@ -21,6 +21,7 @@ export const OptionValue = ({
   isHighlighted = false,
   twoColumns,
 }: OptionValueProps): React.ReactElement => {
+  const colors = getColors()
   const {
     highlightOffset,
     highlightHeight,
@@ -48,7 +49,7 @@ export const OptionValue = ({
       right: 0,
       bottom: highlightOffset,
       height: highlightHeight,
-      backgroundColor: harpguruColors.pink,
+      backgroundColor: colors.harpguruPink,
     },
     textStyle: {
       fontSize: smallFont,

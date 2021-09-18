@@ -6,8 +6,9 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
+import { getColors } from '../../utils'
 import type { MenuProps } from '../../types'
-import { colors, useSizes } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import { getNewHarpStrataByCovariantsForDispatcher } from './utils'
 import {
@@ -112,7 +113,7 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
         <Feather
           name="sliders"
           size={dynamicSizes.labelIconSize}
-          color={colors.homeRowsColor}
+          color={getColors().homeRowsColor}
         />
       </MenuAccessOpen>
     </Menu>

@@ -5,9 +5,10 @@ import { MaterialIcons } from '@expo/vector-icons'
 
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
+import { getColors } from '../../utils'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { useSizes, harpguruColors } from '../../styles'
+import { useSizes } from '../../hooks'
 
 import { getNewDisplayModeForDispatcher } from './utils'
 
@@ -32,12 +33,13 @@ export const MenuTabDisplayMode = ({
   }
 
   const { dynamicSizes } = useSizes()
+  const { harpguruGold } = getColors()
 
   const activeLabelIcon = (
     <MaterialIcons
       name="music-note"
       size={dynamicSizes.labelIconSize}
-      color={harpguruColors['gold']}
+      color={harpguruGold}
     />
   )
 

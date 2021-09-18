@@ -2,7 +2,7 @@ import type { ViewStyle } from 'react-native'
 import { StyleSheet } from 'react-native'
 
 import type { XRange } from '../../../types'
-import { useLayoutFacts, useSizes } from '../../../styles'
+import { useLayoutFacts, useSizes } from '../../../hooks'
 
 type HarpFaceFragmentStyles = {
   readonly fragment: ViewStyle
