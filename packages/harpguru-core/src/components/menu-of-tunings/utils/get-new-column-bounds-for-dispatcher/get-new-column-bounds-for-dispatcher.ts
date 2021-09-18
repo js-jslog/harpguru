@@ -21,12 +21,11 @@ export const getNewColumnBoundsForDispatcher = (
       throw Error('TODO: IMPROVE THIS MESSAGE: Unexpected zoomId selected')
     }
     const [startColumn, endColumn] = columnBounds
-    const columnCount = endColumn - startColumn + 1
     if (zoomId === ZoomIds.Seven) {
-      if (columnCount === 7) return columnBounds
+      if (activeColumnCount === 7) return columnBounds
       if (activeColumnCount >= startColumn + 7)
-        return [startColumn, startColumn + 7] as const
-      if (activeColumnCount < 7) return 'FIT'
+        return [startColumn, startColumn + 6] as const
+      if (activeColumnCount < 7) return [0, 6] as const
       if (activeColumnCount < startColumn + 7) {
         const difference = startColumn + 7 - activeColumnCount
         return [startColumn - difference, endColumn - difference] as const

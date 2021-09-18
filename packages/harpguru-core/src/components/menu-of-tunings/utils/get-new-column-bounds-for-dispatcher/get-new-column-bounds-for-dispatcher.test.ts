@@ -1,5 +1,13 @@
 import { getHarpStrata } from 'harpstrata'
-import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
+import {
+  TuningIds,
+  PitchIds,
+  PozitionIds,
+  ValvingIds,
+  DegreeIds,
+  HarpFaceMatrix,
+  Degree,
+} from 'harpparts'
 
 import { ZoomIds } from '../../hooks/use-zoom-items/use-zoom-items'
 import type { GlobalState } from '../../../../types'
@@ -45,7 +53,7 @@ test('when fit zoom level is selected the columnBounds is set to FIT', () => {
 test('when 7 hole zoom is selected and columnBounds is already 7 holes wide, the original columnBounds is returned', () => {
   const columnBounds1 = [0, 6] as const
   const columnBounds2 = [1, 7] as const
-  const columnBounds3 = [4, 10] as const
+  const columnBounds3 = [3, 9] as const
   const inputGlobal = {
     activeHarpStrata: majorDiatonicHarp,
     columnBounds: columnBounds1,
@@ -86,7 +94,42 @@ test('when 7 hole zoom is selected from existing FIT columnBounds, 0 index is us
   expect(newColumnBounds).toStrictEqual([0, 6])
 })
 
-//test('when 7 hole zoom is selected on activeHarpStrata which is less than 7 holes wide, the columnBounds are set to 7 wide with 0 as the start column', () => {
-//})
-//
-//test('when 7 hole zoom is selected and existing start hole is less than 7 holes from the end of the active harp, the start column')
+test('when 7 hole zoom is selected on activeHarpStrata which is less than 7 holes wide, the columnBounds are set to 7 wide with 0 as the start column', () => {
+  const ROOT = {
+    id: DegreeIds.Root,
+    label: 'test',
+  }
+  const simplifiedDegreeMatrix: HarpFaceMatrix<Degree> = [[ROOT, ROOT, ROOT]]
+  const inputGlobal = {
+    activeHarpStrata: {
+      ...majorDiatonicHarp,
+      degreeMatrix: simplifiedDegreeMatrix,
+    },
+    columnBounds: [1, 7] as const,
+  } as GlobalState
+  const unusedDispatcher = jest.fn()
+  const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
+    inputGlobal,
+    unusedDispatcher,
+    ZoomIds.Seven
+  )
+  expect(newColumnBounds).toStrictEqual([0, 6])
+})
+
+test('when 7 hole zoom is selected and columnBounds is set above the end bounds the column bounds are rolled back to the top point', () => {
+  const columnBounds = [4, 10] as const
+  const inputGlobal = {
+    activeHarpStrata: majorDiatonicHarp,
+    columnBounds: columnBounds,
+  } as GlobalState
+  const unusedDispatcher = jest.fn()
+  const {
+    columnBounds: rolledBackColumnBounds,
+  } = getNewColumnBoundsForDispatcher(
+    inputGlobal,
+    unusedDispatcher,
+    ZoomIds.Seven
+  )
+
+  expect(rolledBackColumnBounds).toStrictEqual([3, 9])
+})
