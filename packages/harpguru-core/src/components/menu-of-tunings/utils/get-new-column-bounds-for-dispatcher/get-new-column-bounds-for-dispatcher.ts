@@ -4,10 +4,12 @@ import { ZoomIds } from '../../types'
 import { determineBest7Holes } from '../../../../utils'
 import type { GlobalState } from '../../../../types'
 
+import { determineZoomId } from './determine-zoom-id'
+
 export const getNewColumnBoundsForDispatcher = (
   global: GlobalState,
   _dipatch: Dispatcher,
-  zoomId: ZoomIds
+  zoomId: ZoomIds = determineZoomId(global.columnBounds)
 ): Pick<GlobalState, 'columnBounds'> => {
   const {
     columnBounds,
