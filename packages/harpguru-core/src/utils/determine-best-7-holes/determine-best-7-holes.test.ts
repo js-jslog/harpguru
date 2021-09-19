@@ -12,11 +12,16 @@ test('best 7 holes is the same as input if end bound is less than or equal to ha
   )
 })
 
-test('best 7 holes is shifted down one when the end bound is past the harp length', () => {
+test('best 7 holes is shifted down when the end bound is past the harp length', () => {
   const harpLength = 10
-  const inputColumnBounds = [4, 10] as const
   const expectedColumnBounds = [3, 9] as const
-  expect(determineBest7Holes(harpLength, inputColumnBounds)).toStrictEqual(
+
+  const inputColumnBoundsByOne = [4, 10] as const
+  expect(determineBest7Holes(harpLength, inputColumnBoundsByOne)).toStrictEqual(
     expectedColumnBounds
   )
+  const inputColumnBoundsByMany = [40, 46] as const
+  expect(
+    determineBest7Holes(harpLength, inputColumnBoundsByMany)
+  ).toStrictEqual(expectedColumnBounds)
 })
