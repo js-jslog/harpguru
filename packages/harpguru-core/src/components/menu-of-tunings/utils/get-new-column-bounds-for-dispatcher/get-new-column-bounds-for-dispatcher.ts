@@ -1,6 +1,6 @@
 import Dispatcher from 'reactn/types/dispatcher'
 
-import { ZoomIds } from '../../hooks/use-zoom-items/use-zoom-items'
+import { ZoomIds } from '../../types'
 import { GlobalState } from '../../../../types'
 
 export const getNewColumnBoundsForDispatcher = (

@@ -1,15 +1,9 @@
 import React from 'react'
 
+import { ZoomIds } from '../../types'
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
 import type { UseGlobal } from '../../../../types'
-
-export enum ZoomIds {
-  Fit = 'Fit full harp',
-  Seven = '7 holes',
-  //  Ten = '10 holes',
-  //  Twelve = '12 holes',
-}
 
 type ItemCallback = ZoomIds
 type ItemTapHandler = (arg0: ZoomIds) => void

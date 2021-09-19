@@ -9,7 +9,7 @@ import {
   Degree,
 } from 'harpparts'
 
-import { ZoomIds } from '../../hooks/use-zoom-items/use-zoom-items'
+import { ZoomIds } from '../../types'
 import type { GlobalState } from '../../../../types'
 
 import { getNewColumnBoundsForDispatcher } from './get-new-column-bounds-for-dispatcher'
