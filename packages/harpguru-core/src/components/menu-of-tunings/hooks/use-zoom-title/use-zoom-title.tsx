@@ -10,15 +10,15 @@ export const useZoomTitle = (
   const [columnBounds] = useGlobal('columnBounds')
   const explanatoryText = (() => {
     if (columnBounds === 'FIT') {
-      return 'The harp is currently scaled so that it\'s full length is displayed'
+      return 'Show full harp'
     }
     const [startColumn, endColumn] = columnBounds
     const columnCount = endColumn - startColumn + 1
-    return `The harp is currently scaled so that ${columnCount} holes are displayed at a larger size than usual`
+    return `Limit to ${columnCount} holes`
   })()
   return (
     <OptionLabel
-      title={'Tuning'}
+      title={'Zoom'}
       isLargeTitle={true}
       value={explanatoryText}
       alignItems={'flex-start'}
