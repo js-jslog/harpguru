@@ -3,6 +3,8 @@ export const determineBest7Holes = (
   inputColumnBounds: readonly [number, number]
 ): readonly [number, number] => {
   const [startColumn, endColumn] = inputColumnBounds
+  const boundsLength = endColumn - startColumn + 1
+  if (harpLength <= boundsLength) return [0, 6] as const
   if (endColumn < harpLength) return inputColumnBounds
   if (endColumn >= harpLength) {
     const difference = endColumn - harpLength + 1
