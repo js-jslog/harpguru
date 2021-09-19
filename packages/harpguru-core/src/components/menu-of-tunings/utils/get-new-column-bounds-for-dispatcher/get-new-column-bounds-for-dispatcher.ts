@@ -1,7 +1,8 @@
 import Dispatcher from 'reactn/types/dispatcher'
 
 import { ZoomIds } from '../../types'
-import { GlobalState } from '../../../../types'
+import { determineBest7Holes } from '../../../../utils'
+import type { GlobalState } from '../../../../types'
 
 export const getNewColumnBoundsForDispatcher = (
   global: GlobalState,
@@ -20,20 +21,14 @@ export const getNewColumnBoundsForDispatcher = (
       if (zoomId === ZoomIds.Seven) return [0, 6] as const
       throw Error('TODO: IMPROVE THIS MESSAGE: Unexpected zoomId selected')
     }
-    const [startColumn, endColumn] = columnBounds
     if (zoomId === ZoomIds.Seven) {
-      if (activeColumnCount === 7) return columnBounds
-      if (activeColumnCount >= startColumn + 7)
-        return [startColumn, startColumn + 6] as const
-      if (activeColumnCount < 7) return [0, 6] as const
-      if (activeColumnCount < startColumn + 7) {
-        const difference = startColumn + 7 - activeColumnCount
-        return [startColumn - difference, endColumn - difference] as const
-      }
+      return determineBest7Holes(activeColumnCount, columnBounds)
     }
     throw Error('TODO: IMPROVE THIS MESSAGE: Unexpected scenario has occurred')
   })()
 
+  // TODO: read the documentation - if it's the same value as existing then
+  // I think I should be returning an empty object.
   return {
     columnBounds: newColumnBounds,
   }
