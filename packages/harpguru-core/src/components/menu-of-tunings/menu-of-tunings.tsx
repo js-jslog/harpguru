@@ -6,14 +6,13 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
-import { getColors } from '../../utils'
+import { getColors, getNewColumnBoundsForDispatcher } from '../../utils'
 import type { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
 import {
   getNewHarpStrataByTuningForDispatcher,
   getNewHarpStrataByValvingForDispatcher,
-  getNewColumnBoundsForDispatcher,
 } from './utils'
 import {
   useTuningTitle,

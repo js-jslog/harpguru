@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { ZoomIds } from '../../types'
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
+import { ZoomIds } from '../../../../types'
 import type { UseGlobal } from '../../../../types'
 
 type ItemCallback = ZoomIds

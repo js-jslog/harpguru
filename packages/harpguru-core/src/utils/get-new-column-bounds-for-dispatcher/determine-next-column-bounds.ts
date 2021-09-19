@@ -1,5 +1,6 @@
-import { ZoomIds } from '../../menu-of-tunings/types'
-import { determineBest7Holes } from '../../../utils'
+import { ZoomIds } from '../../types'
+
+import { determineBest7Holes } from './determine-best-7-holes'
 
 export const determineNextColumnBounds = (
   harpLength: number,

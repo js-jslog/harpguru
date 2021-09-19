@@ -10,7 +10,7 @@ import {
 } from 'harpparts'
 
 import { ZoomIds } from '../../types'
-import type { GlobalState } from '../../../../types'
+import type { GlobalState } from '../../types'
 
 import { getNewColumnBoundsForDispatcher } from './get-new-column-bounds-for-dispatcher'
 

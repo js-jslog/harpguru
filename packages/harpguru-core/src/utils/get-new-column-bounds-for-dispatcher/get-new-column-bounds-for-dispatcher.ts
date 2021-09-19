@@ -1,10 +1,10 @@
 import Dispatcher from 'reactn/types/dispatcher'
 
 import { ZoomIds } from '../../types'
-import { determineBest7Holes } from '../../../../utils'
-import type { GlobalState } from '../../../../types'
+import type { GlobalState } from '../../types'
 
 import { determineZoomId } from './determine-zoom-id'
+import { determineNextColumnBounds } from './determine-next-column-bounds'
 
 export const getNewColumnBoundsForDispatcher = (
   global: GlobalState,
@@ -17,17 +17,11 @@ export const getNewColumnBoundsForDispatcher = (
   } = global
   const { [0]: exampleHarpRow } = activeDegreeMatrix
   const { length: activeColumnCount } = exampleHarpRow
-  const newColumnBounds = (() => {
-    if (zoomId === ZoomIds.Fit) return 'FIT'
-    if (columnBounds === 'FIT') {
-      if (zoomId === ZoomIds.Seven) return [0, 6] as const
-      throw Error('TODO: IMPROVE THIS MESSAGE: Unexpected zoomId selected')
-    }
-    if (zoomId === ZoomIds.Seven) {
-      return determineBest7Holes(activeColumnCount, columnBounds)
-    }
-    throw Error('TODO: IMPROVE THIS MESSAGE: Unexpected scenario has occurred')
-  })()
+  const newColumnBounds = determineNextColumnBounds(
+    activeColumnCount,
+    columnBounds,
+    zoomId
+  )
 
   // TODO: read the documentation - if it's the same value as existing then
   // I think I should be returning an empty object.
