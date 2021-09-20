@@ -10,7 +10,7 @@ export const reduceForNewHarpStrataByTuning = (
   global: GlobalState,
   _dispatch: Dispatch,
   tuningId: TuningIds
-): Pick<GlobalState, 'activeHarpStrata'> => {
+): Pick<GlobalState, 'activeHarpStrata' | 'columnBounds'> => {
   const { activeHarpStrata, activeDisplayMode } = global
 
   const newHarpStrataProps: HarpStrataProps = {
