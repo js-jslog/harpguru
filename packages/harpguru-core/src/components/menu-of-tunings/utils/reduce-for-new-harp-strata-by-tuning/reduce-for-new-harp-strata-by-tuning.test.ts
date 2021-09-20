@@ -1,9 +1,10 @@
+import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
 import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
 
-import { getNewHarpStrataByTuningForDispatcher } from './get-new-harpstrata-by-tuning-for-dispatcher'
+import { reduceForNewHarpStrataByTuning } from './reduce-for-new-harp-strata-by-tuning'
 
 const baseHarpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
@@ -29,12 +30,13 @@ const naturalMinorHarp = getHarpStrata(naturalMinorHarpProps)
 test('provides HarpStrata updated by tuning set to natural minor', () => {
   const inputGlobal = {
     activeHarpStrata: countryTunedHarp,
+    columnBounds: 'FIT',
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
   const {
     activeHarpStrata: newActiveHarpStrata,
-  } = getNewHarpStrataByTuningForDispatcher(
+  } = reduceForNewHarpStrataByTuning(
     inputGlobal,
     unusedDispatcher,
     TuningIds.NaturalMinor
@@ -46,12 +48,13 @@ test('provides HarpStrata updated by tuning set to natural minor', () => {
 test('provides HarpStrata updated by tuning to major diatonic', () => {
   const inputGlobal = {
     activeHarpStrata: countryTunedHarp,
+    columnBounds: 'FIT',
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
   const {
     activeHarpStrata: newActiveHarpStrata,
-  } = getNewHarpStrataByTuningForDispatcher(
+  } = reduceForNewHarpStrataByTuning(
     inputGlobal,
     unusedDispatcher,
     TuningIds.MajorDiatonic

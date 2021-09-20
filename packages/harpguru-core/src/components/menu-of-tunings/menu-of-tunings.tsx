@@ -11,8 +11,8 @@ import type { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
 import {
-  getNewHarpStrataByTuningForDispatcher,
-  getNewHarpStrataByValvingForDispatcher,
+  reduceForNewHarpStrataByTuning,
+  reduceForNewHarpStrataByValving,
 } from './utils'
 import {
   useTuningTitle,
@@ -28,8 +28,8 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const tuningItemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataByTuningForDispatcher),
-    [useDispatch, getNewHarpStrataByTuningForDispatcher]
+    useDispatch(reduceForNewHarpStrataByTuning),
+    [useDispatch, reduceForNewHarpStrataByTuning]
   )
   const useTuningItemsMemo = useCallback(
     () => useTuningItems(useGlobal, tuningItemTapHandler),
@@ -40,8 +40,8 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const valvingItemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataByValvingForDispatcher),
-    [useDispatch, getNewHarpStrataByValvingForDispatcher]
+    useDispatch(reduceForNewHarpStrataByValving),
+    [useDispatch, reduceForNewHarpStrataByValving]
   )
   const useValvingItemsMemo = useCallback(
     () => useValvingItems(useGlobal, valvingItemTapHandler),

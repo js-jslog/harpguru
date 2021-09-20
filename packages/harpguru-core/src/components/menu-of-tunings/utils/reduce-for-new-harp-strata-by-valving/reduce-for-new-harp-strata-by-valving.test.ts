@@ -1,9 +1,10 @@
+import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
 import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
 
-import { getNewHarpStrataByValvingForDispatcher } from './get-new-harpstrata-by-valving-for-dispatcher'
+import { reduceForNewHarpStrataByValving } from './reduce-for-new-harp-strata-by-valving'
 
 const baseHarpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
@@ -24,12 +25,13 @@ const valvedHarp = getHarpStrata(valvedHarpProps)
 test('provides HarpStrata updated to exclude valving', () => {
   const inputGlobal = {
     activeHarpStrata: valvedHarp,
+    columnBounds: 'FIT',
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
   const {
     activeHarpStrata: newActiveHarpStrata,
-  } = getNewHarpStrataByValvingForDispatcher(
+  } = reduceForNewHarpStrataByValving(
     inputGlobal,
     unusedDispatcher,
     ValvingIds.NotValved
@@ -41,12 +43,13 @@ test('provides HarpStrata updated to exclude valving', () => {
 test('provides HarpStrata updated to include valving', () => {
   const inputGlobal = {
     activeHarpStrata: unvalvedHarp,
+    columnBounds: 'FIT',
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
   const {
     activeHarpStrata: newActiveHarpStrata,
-  } = getNewHarpStrataByValvingForDispatcher(
+  } = reduceForNewHarpStrataByValving(
     inputGlobal,
     unusedDispatcher,
     ValvingIds.HalfValved
