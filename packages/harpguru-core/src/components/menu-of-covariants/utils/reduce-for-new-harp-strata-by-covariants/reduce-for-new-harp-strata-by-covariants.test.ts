@@ -4,7 +4,7 @@ import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
 
-import { getNewHarpStrataByCovariantsForDispatcher } from './get-new-harpstrata-by-covariants-for-dispatcher'
+import { reduceForNewHarpStrataByCovariants } from './reduce-for-new-harp-strata-by-covariants'
 
 const baseHarpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
@@ -42,7 +42,7 @@ test('provides HarpStrata with different Pozition', () => {
 
   const {
     activeHarpStrata: newActiveHarpStrata,
-  } = getNewHarpStrataByCovariantsForDispatcher(
+  } = reduceForNewHarpStrataByCovariants(
     inputGlobal,
     unusedDispatcher,
     partialHarpStrataProps
@@ -65,7 +65,7 @@ test('provides HarpStrata with different HarpKey & Pozition', () => {
 
   const {
     activeHarpStrata: newActiveHarpStrata,
-  } = getNewHarpStrataByCovariantsForDispatcher(
+  } = reduceForNewHarpStrataByCovariants(
     inputGlobal,
     unusedDispatcher,
     partialHarpStrataProps

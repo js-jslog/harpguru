@@ -2,11 +2,11 @@ import type { Dispatch } from 'reactn/default'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 
-import { setNewHarpStrataReducer } from '../../../../utils'
+import { reduceForNewHarpStrata } from '../../../../utils'
 import type { GlobalState } from '../../../../types'
 import { DisplayModes } from '../../../../types'
 
-export const getNewHarpStrataByCovariantsForDispatcher = (
+export const reduceForNewHarpStrataByCovariants = (
   global: GlobalState,
   _dispatch: Dispatch,
   partialHarpStrata: Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
@@ -24,5 +24,5 @@ export const getNewHarpStrataByCovariantsForDispatcher = (
 
   const newHarpStrata = getHarpStrata(newHarpStrataProps)
 
-  return setNewHarpStrataReducer(global, _dispatch, newHarpStrata)
+  return reduceForNewHarpStrata(global, _dispatch, newHarpStrata)
 }
