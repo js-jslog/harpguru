@@ -1,7 +1,7 @@
 import type { Dispatch } from 'reactn/default'
 import type { HarpStrata } from 'harpstrata'
 
-import { getNewColumnBoundsForDispatcher } from '../get-new-column-bounds-for-dispatcher'
+import { setNewColumnBoundsReducer } from '../set-new-column-bounds-reducer'
 import type { GlobalState } from '../../types'
 
 export const setNewHarpStrataReducer = (
@@ -16,6 +16,6 @@ export const setNewHarpStrataReducer = (
 
   return {
     ...newGlobal,
-    ...getNewColumnBoundsForDispatcher(newGlobal, _dispatch),
+    ...setNewColumnBoundsReducer(newGlobal, _dispatch),
   }
 }

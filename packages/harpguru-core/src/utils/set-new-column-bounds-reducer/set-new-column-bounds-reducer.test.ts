@@ -13,7 +13,7 @@ import {
 import { ZoomIds } from '../../types'
 import type { GlobalState } from '../../types'
 
-import { getNewColumnBoundsForDispatcher } from './get-new-column-bounds-for-dispatcher'
+import { setNewColumnBoundsReducer } from './set-new-column-bounds-reducer'
 
 // TODO: Writing this file has made me realise 2 things:
 //
@@ -38,7 +38,7 @@ test('when no zoom level is selected and columnBounds is already FIT, the column
     columnBounds: 'FIT',
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-  const { columnBounds } = getNewColumnBoundsForDispatcher(
+  const { columnBounds } = setNewColumnBoundsReducer(
     inputGlobal,
     unusedDispatcher
   )
@@ -52,12 +52,12 @@ test('when fit zoom level is selected the columnBounds is set to FIT', () => {
     columnBounds: [0, 1] as const,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-  const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: newColumnBounds } = setNewColumnBoundsReducer(
     inputGlobal,
     unusedDispatcher,
     ZoomIds.Fit
   )
-  const { columnBounds: sameColumnBounds } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: sameColumnBounds } = setNewColumnBoundsReducer(
     { ...inputGlobal, columnBounds: 'FIT' },
     unusedDispatcher,
     ZoomIds.Fit
@@ -76,17 +76,17 @@ test('when 7 hole zoom is selected and columnBounds is already 7 holes wide, the
     columnBounds: columnBounds1,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-  const { columnBounds: sameColumnBounds1 } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: sameColumnBounds1 } = setNewColumnBoundsReducer(
     inputGlobal,
     unusedDispatcher,
     ZoomIds.Seven
   )
-  const { columnBounds: sameColumnBounds2 } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: sameColumnBounds2 } = setNewColumnBoundsReducer(
     { ...inputGlobal, columnBounds: columnBounds2 },
     unusedDispatcher,
     ZoomIds.Seven
   )
-  const { columnBounds: sameColumnBounds3 } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: sameColumnBounds3 } = setNewColumnBoundsReducer(
     { ...inputGlobal, columnBounds: columnBounds3 },
     unusedDispatcher,
     ZoomIds.Seven
@@ -104,7 +104,7 @@ test('when columnBounds is already 7 holes wide and new activeHarpStrata can han
     columnBounds: columnBounds,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-  const { columnBounds: sameColumnBounds1 } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: sameColumnBounds1 } = setNewColumnBoundsReducer(
     inputGlobal,
     unusedDispatcher
   )
@@ -118,7 +118,7 @@ test('when 7 hole zoom is selected from existing FIT columnBounds, 0 index is us
     columnBounds: 'FIT',
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-  const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: newColumnBounds } = setNewColumnBoundsReducer(
     inputGlobal,
     unusedDispatcher,
     ZoomIds.Seven
@@ -140,7 +140,7 @@ test('when 7 hole zoom is selected on activeHarpStrata which is less than 7 hole
     columnBounds: [1, 7] as const,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-  const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: newColumnBounds } = setNewColumnBoundsReducer(
     inputGlobal,
     unusedDispatcher,
     ZoomIds.Seven
@@ -162,7 +162,7 @@ test('when new activeHarpStrata which is less than 7 holes wide is selected when
     columnBounds: [1, 7] as const,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-  const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: newColumnBounds } = setNewColumnBoundsReducer(
     inputGlobal,
     unusedDispatcher
   )
@@ -176,9 +176,7 @@ test('when 7 hole zoom is selected and columnBounds is set above the end bounds 
     columnBounds: columnBounds,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-  const {
-    columnBounds: rolledBackColumnBounds,
-  } = getNewColumnBoundsForDispatcher(
+  const { columnBounds: rolledBackColumnBounds } = setNewColumnBoundsReducer(
     inputGlobal,
     unusedDispatcher,
     ZoomIds.Seven
@@ -194,9 +192,10 @@ test('when activeHarpStrata is selected which can handle the columnBounds range,
     columnBounds: columnBounds,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-  const {
-    columnBounds: rolledBackColumnBounds,
-  } = getNewColumnBoundsForDispatcher(inputGlobal, unusedDispatcher)
+  const { columnBounds: rolledBackColumnBounds } = setNewColumnBoundsReducer(
+    inputGlobal,
+    unusedDispatcher
+  )
 
   expect(rolledBackColumnBounds).toStrictEqual([3, 9])
 })

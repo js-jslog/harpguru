@@ -6,7 +6,7 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
-import { getColors, getNewColumnBoundsForDispatcher } from '../../utils'
+import { getColors, setNewColumnBoundsReducer } from '../../utils'
 import type { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
@@ -52,8 +52,8 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const zoomItemTapHandler = useCallback(
-    useDispatch(getNewColumnBoundsForDispatcher),
-    [useDispatch, getNewColumnBoundsForDispatcher]
+    useDispatch(setNewColumnBoundsReducer),
+    [useDispatch, setNewColumnBoundsReducer]
   )
   const useZoomItemsMemo = useCallback(
     () => useZoomItems(useGlobal, zoomItemTapHandler),

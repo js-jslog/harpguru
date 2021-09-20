@@ -6,7 +6,7 @@ import type { GlobalState } from '../../types'
 import { determineZoomId } from './determine-zoom-id'
 import { determineNextColumnBounds } from './determine-next-column-bounds'
 
-export const getNewColumnBoundsForDispatcher = (
+export const setNewColumnBoundsReducer = (
   global: GlobalState,
   _dipatch: Dispatch,
   zoomId: ZoomIds = determineZoomId(global.columnBounds)
