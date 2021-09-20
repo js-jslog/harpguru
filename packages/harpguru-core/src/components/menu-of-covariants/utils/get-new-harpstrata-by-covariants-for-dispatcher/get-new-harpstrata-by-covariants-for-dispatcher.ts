@@ -1,17 +1,16 @@
-//import type { Dispatch } from 'reactn/default'
-import Dispatcher from 'reactn/types/dispatcher'
+import type { Dispatch } from 'reactn/default'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 
+import { setNewHarpStrataReducer } from '../../../../utils'
 import type { GlobalState } from '../../../../types'
 import { DisplayModes } from '../../../../types'
 
 export const getNewHarpStrataByCovariantsForDispatcher = (
   global: GlobalState,
-  //_dispatch: Dispatch,
-  _dispatch: Dispatcher,
+  _dispatch: Dispatch,
   partialHarpStrata: Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
-): Pick<GlobalState, 'activeHarpStrata'> => {
+): Pick<GlobalState, 'activeHarpStrata' | 'columnBounds'> => {
   const { activeHarpStrata, activeDisplayMode } = global
 
   const newHarpStrataProps: HarpStrataProps = {
@@ -22,8 +21,8 @@ export const getNewHarpStrataByCovariantsForDispatcher = (
     harpKeyId: partialHarpStrata.harpKeyId,
     pozitionId: partialHarpStrata.pozitionId,
   }
-  //dispatch.newHarpStrata(getHarpStrata(newHarpStrataProps))
-  return {
-    activeHarpStrata: getHarpStrata(newHarpStrataProps),
-  }
+
+  const newHarpStrata = getHarpStrata(newHarpStrataProps)
+
+  return setNewHarpStrataReducer(global, _dispatch, newHarpStrata)
 }

@@ -6,7 +6,6 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
-import { SyncColumnBoundsWithActiveHarpStrata } from '../sync-column-bounds-with-active-harp-strata'
 import { NotifyOfScale } from '../notify-of-scale'
 import { NotifyOfQuizQuestion } from '../notify-of-quiz-question'
 import { MenuTabNextPage } from '../menu-tab-next-page'
@@ -96,7 +95,6 @@ export const HarpGuruPage = ({
         stashPosition={MenuStashPosition.Seventh}
         getNextPage={() => pageOnDisplay.setValue(nextPageNumberMap[thisPage])}
       />
-      <SyncColumnBoundsWithActiveHarpStrata />
       <ToggleBufferFlusher />
       <NotifyOfQuizQuestion isScreenFree={menuState === MenuStates.NoMenu} />
       <NotifyOfScale isScalesMenu={menuState === MenuStates.ScalesMenu} />

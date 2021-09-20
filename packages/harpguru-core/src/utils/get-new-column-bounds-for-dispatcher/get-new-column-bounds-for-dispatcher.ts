@@ -1,4 +1,4 @@
-import Dispatcher from 'reactn/types/dispatcher'
+import type { Dispatch } from 'reactn/default'
 
 import { ZoomIds } from '../../types'
 import type { GlobalState } from '../../types'
@@ -8,7 +8,7 @@ import { determineNextColumnBounds } from './determine-next-column-bounds'
 
 export const getNewColumnBoundsForDispatcher = (
   global: GlobalState,
-  _dipatch: Dispatcher,
+  _dipatch: Dispatch,
   zoomId: ZoomIds = determineZoomId(global.columnBounds)
 ): Pick<GlobalState, 'columnBounds'> => {
   const {

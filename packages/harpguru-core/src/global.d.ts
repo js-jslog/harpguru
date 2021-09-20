@@ -5,18 +5,6 @@ import type { DegreeIds } from 'harpparts'
 import type { DisplayModes, ExperienceModes, FlushChannels } from './types'
 
 declare module 'reactn/default' {
-  export interface Reducers {
-    newHarpStrata: (
-      global: State,
-      dispatch: unknown,
-      newHarpStrata: HarpStrata
-    ) => Pick<GlobalState, 'activeHarpStrata'>
-    nextColumnBounds: (
-      global: State,
-      dispatch: unknown
-    ) => Pick<GlobalState, 'columnBounds'>
-  }
-
   export interface State {
     readonly activeHarpStrata: HarpStrata
     readonly activeExperienceMode: ExperienceModes

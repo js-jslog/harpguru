@@ -1,46 +1,22 @@
 import 'react-native-gesture-handler'
 
 import { useWindowDimensions } from 'use-dimensions'
-import type { Dispatch } from 'reactn/default'
 import { createProvider } from 'reactn'
 import { withTimingTransition, useValue } from 'react-native-redash'
 import Animated, { Easing, interpolate } from 'react-native-reanimated'
 import { StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
-import type { HarpStrata } from 'harpstrata'
 
 import { HarpGuruPage } from '../harp-guru-page'
-import type { GlobalState, PageNumber } from '../../types'
+import type { PageNumber } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 import { getInitialGlobalState } from './utils'
 
-const nextColumnBounds = (): Pick<GlobalState, 'columnBounds'> => {
-  return {
-    columnBounds: [0, 6],
-  }
-}
-const newHarpStrata = (
-  _global: GlobalState,
-  dispatch: Dispatch,
-  harpStrata: HarpStrata
-): Pick<GlobalState, 'activeHarpStrata'> => {
-  dispatch.nextColumnBounds()
-  return {
-    activeHarpStrata: harpStrata,
-  }
-}
-
 const Provider1 = createProvider(getInitialGlobalState(1))
 const Provider2 = createProvider(getInitialGlobalState(2))
 const Provider3 = createProvider(getInitialGlobalState(3))
-Provider1.addReducer('newHarpStrata', newHarpStrata)
-Provider1.addReducer('newHarpStrata', nextColumnBounds)
-Provider2.addReducer('newHarpStrata', newHarpStrata)
-Provider2.addReducer('newHarpStrata', nextColumnBounds)
-Provider3.addReducer('newHarpStrata', newHarpStrata)
-Provider3.addReducer('newHarpStrata', nextColumnBounds)
 
 export const HarpGuru = (): ReactElement => {
   useWindowDimensions()

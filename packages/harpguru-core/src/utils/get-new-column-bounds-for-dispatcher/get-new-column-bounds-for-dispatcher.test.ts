@@ -1,3 +1,4 @@
+import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
 import {
   TuningIds,
@@ -36,7 +37,7 @@ test('when no zoom level is selected and columnBounds is already FIT, the column
     activeHarpStrata: majorDiatonicHarp,
     columnBounds: 'FIT',
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds } = getNewColumnBoundsForDispatcher(
     inputGlobal,
     unusedDispatcher
@@ -50,7 +51,7 @@ test('when fit zoom level is selected the columnBounds is set to FIT', () => {
     activeHarpStrata: majorDiatonicHarp,
     columnBounds: [0, 1] as const,
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
     inputGlobal,
     unusedDispatcher,
@@ -74,7 +75,7 @@ test('when 7 hole zoom is selected and columnBounds is already 7 holes wide, the
     activeHarpStrata: majorDiatonicHarp,
     columnBounds: columnBounds1,
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: sameColumnBounds1 } = getNewColumnBoundsForDispatcher(
     inputGlobal,
     unusedDispatcher,
@@ -102,7 +103,7 @@ test('when columnBounds is already 7 holes wide and new activeHarpStrata can han
     activeHarpStrata: majorDiatonicHarp,
     columnBounds: columnBounds,
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: sameColumnBounds1 } = getNewColumnBoundsForDispatcher(
     inputGlobal,
     unusedDispatcher
@@ -116,7 +117,7 @@ test('when 7 hole zoom is selected from existing FIT columnBounds, 0 index is us
     activeHarpStrata: majorDiatonicHarp,
     columnBounds: 'FIT',
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
     inputGlobal,
     unusedDispatcher,
@@ -138,7 +139,7 @@ test('when 7 hole zoom is selected on activeHarpStrata which is less than 7 hole
     },
     columnBounds: [1, 7] as const,
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
     inputGlobal,
     unusedDispatcher,
@@ -160,7 +161,7 @@ test('when new activeHarpStrata which is less than 7 holes wide is selected when
     },
     columnBounds: [1, 7] as const,
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: newColumnBounds } = getNewColumnBoundsForDispatcher(
     inputGlobal,
     unusedDispatcher
@@ -174,7 +175,7 @@ test('when 7 hole zoom is selected and columnBounds is set above the end bounds 
     activeHarpStrata: majorDiatonicHarp,
     columnBounds: columnBounds,
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const {
     columnBounds: rolledBackColumnBounds,
   } = getNewColumnBoundsForDispatcher(
@@ -192,7 +193,7 @@ test('when activeHarpStrata is selected which can handle the columnBounds range,
     activeHarpStrata: majorDiatonicHarp,
     columnBounds: columnBounds,
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const {
     columnBounds: rolledBackColumnBounds,
   } = getNewColumnBoundsForDispatcher(inputGlobal, unusedDispatcher)
