@@ -7,8 +7,15 @@ export const determineZoomId = (
     return ZoomIds.Fit
   }
   const [startColumn, endColumn] = columnBounds
-  if (endColumn - startColumn + 1 === 7) {
+  const columnCount = endColumn - startColumn + 1
+  if (columnCount === ZoomIds.Seven) {
     return ZoomIds.Seven
+  }
+  if (columnCount === ZoomIds.Ten) {
+    return ZoomIds.Ten
+  }
+  if (columnCount === ZoomIds.Twelve) {
+    return ZoomIds.Twelve
   }
   throw Error('TODO DETERMINE ERROR MESSAGE')
 }

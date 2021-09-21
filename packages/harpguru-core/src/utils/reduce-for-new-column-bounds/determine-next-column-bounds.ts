@@ -1,6 +1,6 @@
 import { ZoomIds } from '../../types'
 
-import { determineBest7Holes } from './determine-best-7-holes'
+import { determineBestBoundsForHarpLength } from './determine-best-bounds-for-harp-length'
 
 export const determineNextColumnBounds = (
   harpLength: number,
@@ -10,12 +10,8 @@ export const determineNextColumnBounds = (
   return (() => {
     if (zoomId === ZoomIds.Fit) return 'FIT'
     if (currentColumnBounds === 'FIT') {
-      if (zoomId === ZoomIds.Seven) return [0, 6] as const
-      throw Error('TODO: IMPROVE THIS MESSAGE: Unexpected zoomId selected')
+      return [0, zoomId - 1] as const
     }
-    if (zoomId === ZoomIds.Seven) {
-      return determineBest7Holes(harpLength, currentColumnBounds)
-    }
-    throw Error('TODO: IMPROVE THIS MESSAGE: Unexpected scenario has occurred')
+    return determineBestBoundsForHarpLength(harpLength, currentColumnBounds)
   })()
 }
