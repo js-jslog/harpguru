@@ -1,9 +1,9 @@
 import type { Dispatch } from 'reactn/default'
 
+import { determineZoomId } from '../determine-zoom-id'
 import { ZoomIds } from '../../types'
 import type { GlobalState } from '../../types'
 
-import { determineZoomId } from './determine-zoom-id'
 import { determineNextColumnBounds } from './determine-next-column-bounds'
 
 export const reduceForNewColumnBounds = (
