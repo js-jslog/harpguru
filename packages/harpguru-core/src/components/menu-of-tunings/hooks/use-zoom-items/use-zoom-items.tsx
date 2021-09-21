@@ -20,7 +20,7 @@ export const useZoomItems = (
 ): ValvingItems => {
   const [columnBounds] = useGlobal('columnBounds')
   const activeZoomId = determineZoomId(columnBounds)
-  const zoomIds = [ZoomIds.Fit, ZoomIds.Seven]
+  const zoomIds = [ZoomIds.Fit, ZoomIds.Seven, ZoomIds.Ten, ZoomIds.Twelve]
   const items = zoomIds.map((id, index) => (
     <OptionItem
       key={`${index}`}
