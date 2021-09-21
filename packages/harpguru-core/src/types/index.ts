@@ -109,8 +109,8 @@ export type WithStateValue = {
 }
 
 export enum ZoomIds {
-  Fit = 'Fit full harp',
-  Seven = '7 holes',
-  //  Ten = '10 holes',
-  //  Twelve = '12 holes',
+  Fit = 'FIT',
+  Seven = 7,
+  //Ten = 10
+  // Twelve = '12 holes',
 }

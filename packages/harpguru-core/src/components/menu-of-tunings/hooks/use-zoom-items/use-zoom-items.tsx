@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { getZoomText } from '../../utils'
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
 import { determineZoomId } from '../../../../utils'
@@ -23,7 +24,7 @@ export const useZoomItems = (
   const items = zoomIds.map((id, index) => (
     <OptionItem
       key={`${index}`}
-      value={id}
+      value={getZoomText(id)}
       isSelected={id === activeZoomId}
       itemTapHandler={itemTapHandler}
       callbackParam={id}

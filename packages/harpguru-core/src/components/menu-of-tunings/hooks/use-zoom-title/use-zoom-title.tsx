@@ -1,26 +1,22 @@
 import React from 'react'
 
+import { getZoomText } from '../../utils'
 import { OptionLabel } from '../../../option-label'
 import type { OptionLabelProps } from '../../../option-label'
+import { determineZoomId } from '../../../../utils'
 import type { UseGlobal } from '../../../../types'
 
 export const useZoomTitle = (
   useGlobal: UseGlobal
 ): React.ReactElement<OptionLabelProps> => {
   const [columnBounds] = useGlobal('columnBounds')
-  const explanatoryText = (() => {
-    if (columnBounds === 'FIT') {
-      return 'Show full harp'
-    }
-    const [startColumn, endColumn] = columnBounds
-    const columnCount = endColumn - startColumn + 1
-    return `Limit to ${columnCount} holes`
-  })()
+  const zoomId = determineZoomId(columnBounds)
+  const labelText = getZoomText(zoomId)
   return (
     <OptionLabel
       title={'Zoom'}
       isLargeTitle={true}
-      value={explanatoryText}
+      value={labelText}
       alignItems={'flex-start'}
     />
   )
