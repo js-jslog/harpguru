@@ -12,6 +12,10 @@ export const determineNextColumnBounds = (
     if (currentColumnBounds === 'FIT') {
       return [0, zoomId - 1] as const
     }
-    return determineBestBoundsForHarpLength(harpLength, currentColumnBounds)
+    const [currentStart] = currentColumnBounds
+    return determineBestBoundsForHarpLength(harpLength, [
+      currentStart,
+      currentStart + zoomId - 1,
+    ])
   })()
 }
