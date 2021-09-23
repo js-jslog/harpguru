@@ -1,7 +1,7 @@
 import { ZoomIds } from '../../types'
 
 export const determineZoomId = (
-  columnBounds: readonly [number, number] | 'FIT'
+  columnBounds: 'FIT' | readonly [number, number]
 ): ZoomIds => {
   if (columnBounds === 'FIT') {
     return ZoomIds.Fit
