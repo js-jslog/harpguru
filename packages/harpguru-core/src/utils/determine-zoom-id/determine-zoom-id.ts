@@ -17,5 +17,8 @@ export const determineZoomId = (
   if (columnCount === ZoomIds.Twelve) {
     return ZoomIds.Twelve
   }
-  throw Error('TODO DETERMINE ERROR MESSAGE')
+  throw Error(`
+Current columnBounds (${columnBounds}) does not
+map to an available ZoomId.
+  `)
 }
