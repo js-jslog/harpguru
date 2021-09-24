@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import type { Degree, HarpFaceMatrix } from 'harpparts'
 
-import { transposeMatrix } from '../../../../packages/transpose-matrix'
+import { transposeMatrix } from '../../packages/transpose-matrix'
 
 import { getOctaveColumnGroups } from './get-octave-column-groups'
 import type { ColumnRanges } from './get-octave-column-groups'

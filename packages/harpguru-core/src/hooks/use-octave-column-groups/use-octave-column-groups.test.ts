@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 
-import { inactiveCellsHarpStrata as activeHarpStrata } from '../../../../test-resources'
+import { inactiveCellsHarpStrata as activeHarpStrata } from '../../test-resources'
 
 import { useOctaveColumnGroups } from './use-octave-column-groups'
 

@@ -1,3 +1,4 @@
+import { useOctaveColumnGroups } from '../use-octave-column-groups'
 import { useLayoutFacts } from '../use-layout-facts'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
@@ -42,6 +43,7 @@ const relativeLabelIconSize = 7
 export const useSizes = (): SizeSchemes => {
   const { shortEdge, longEdge } = getWindowDimensions()
   const { harpFaceRowCount, harpFaceColumnCount } = useLayoutFacts()
+  const fragmentGutterCount = useOctaveColumnGroups().length - 1
 
   const {
     [relativeColumnWidth]: columnWidth,
@@ -52,20 +54,11 @@ export const useSizes = (): SizeSchemes => {
   const rowHeight = columnWidth
   const labelGrace = fragmentGutter
 
-  // TODO: It might be better to either count the number of gutters
-  // or base this as a proportion of the number of columns since
-  // this number won't work well as the number of columns and
-  // therefore gutters increases.
-  // We could also set this to 0 if the no-fragment mode is
-  // selected. This would mean that the cell size would grow
-  // when they left fragment mode. That would have advantages
-  // and disadvantages.
-  const roughFragmentGutterCount = 3
   const sidesContainingLabelsCount = 2
   const dynamicWidthRequirements =
     longEdge /
     (columnWidth * harpFaceColumnCount +
-      fragmentGutter * roughFragmentGutterCount +
+      fragmentGutter * fragmentGutterCount +
       labelProtrusion * sidesContainingLabelsCount +
       labelGrace * sidesContainingLabelsCount)
   const dynamicHeightRequirements = shortEdge / (rowHeight * harpFaceRowCount)
@@ -99,7 +92,7 @@ export const useSizes = (): SizeSchemes => {
   const staticSeedSize =
     longEdge /
     (columnWidth * staticEquivalentColumnCount +
-      fragmentGutter * roughFragmentGutterCount +
+      fragmentGutter * fragmentGutterCount +
       labelProtrusion * sidesContainingLabelsCount +
       labelGrace * sidesContainingLabelsCount)
 

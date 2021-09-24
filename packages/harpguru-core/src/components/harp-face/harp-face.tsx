@@ -2,8 +2,9 @@ import { View } from 'react-native'
 import React from 'react'
 
 import { HarpFaceFragment } from '../harp-face-fragment'
+import { useOctaveColumnGroups } from '../../hooks'
 
-import { useStyles, useOctaveColumnGroups } from './hooks'
+import { useStyles } from './hooks'
 
 export const HarpFace = (): React.ReactElement => {
   const styles = useStyles()

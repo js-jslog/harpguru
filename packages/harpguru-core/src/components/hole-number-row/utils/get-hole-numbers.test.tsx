@@ -10,6 +10,7 @@ const mockUseGlobal = useGlobal as jest.Mock
 mockUseGlobal.mockImplementation((stateItem: string) => {
   if (stateItem === 'activeHarpStrata') return [activeCellsHarpStrata]
   if (stateItem === 'columnBounds') return ['FIT']
+  if (stateItem === 'fragmentHarpFaceByOctaves') return [true]
   return undefined
 })
 
