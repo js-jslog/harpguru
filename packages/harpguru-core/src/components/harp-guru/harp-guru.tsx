@@ -9,7 +9,7 @@ import React from 'react'
 import type { ReactElement } from 'react'
 
 import { HarpGuruPage } from '../harp-guru-page'
-import { PageNumber } from '../../types'
+import type { PageNumber } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 import { getInitialGlobalState } from './utils'

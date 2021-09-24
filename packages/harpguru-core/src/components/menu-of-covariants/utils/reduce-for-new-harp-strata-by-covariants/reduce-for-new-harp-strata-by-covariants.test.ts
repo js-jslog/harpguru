@@ -1,9 +1,10 @@
+import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
 import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
 
-import { getNewHarpStrataByCovariantsForDispatcher } from './get-new-harpstrata-by-covariants-for-dispatcher'
+import { reduceForNewHarpStrataByCovariants } from './reduce-for-new-harp-strata-by-covariants'
 
 const baseHarpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
@@ -30,8 +31,9 @@ const dHarpSecondPozition = getHarpStrata(dHarpSecondPozitionProps)
 test('provides HarpStrata with different Pozition', () => {
   const inputGlobal = {
     activeHarpStrata: cHarpFirstPozition,
+    columnBounds: 'FIT',
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
   const partialHarpStrataProps = {
     harpKeyId: PitchIds.C,
@@ -40,7 +42,7 @@ test('provides HarpStrata with different Pozition', () => {
 
   const {
     activeHarpStrata: newActiveHarpStrata,
-  } = getNewHarpStrataByCovariantsForDispatcher(
+  } = reduceForNewHarpStrataByCovariants(
     inputGlobal,
     unusedDispatcher,
     partialHarpStrataProps
@@ -52,8 +54,9 @@ test('provides HarpStrata with different Pozition', () => {
 test('provides HarpStrata with different HarpKey & Pozition', () => {
   const inputGlobal = {
     activeHarpStrata: cHarpFirstPozition,
+    columnBounds: 'FIT',
   } as GlobalState
-  const unusedDispatcher = jest.fn()
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
   const partialHarpStrataProps = {
     harpKeyId: PitchIds.D,
@@ -62,7 +65,7 @@ test('provides HarpStrata with different HarpKey & Pozition', () => {
 
   const {
     activeHarpStrata: newActiveHarpStrata,
-  } = getNewHarpStrataByCovariantsForDispatcher(
+  } = reduceForNewHarpStrataByCovariants(
     inputGlobal,
     unusedDispatcher,
     partialHarpStrataProps

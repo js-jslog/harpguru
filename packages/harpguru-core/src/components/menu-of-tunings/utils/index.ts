@@ -1,2 +1,3 @@
-export { getNewHarpStrataByTuningForDispatcher } from './get-new-harpstrata-by-tuning-for-dispatcher'
-export { getNewHarpStrataByValvingForDispatcher } from './get-new-harpstrata-by-valving-for-dispatcher'
+export { reduceForNewHarpStrataByTuning } from './reduce-for-new-harp-strata-by-tuning'
+export { reduceForNewHarpStrataByValving } from './reduce-for-new-harp-strata-by-valving'
+export { getZoomText } from './get-zoom-text'

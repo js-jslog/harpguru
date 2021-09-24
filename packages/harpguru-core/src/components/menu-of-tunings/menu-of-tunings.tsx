@@ -6,19 +6,21 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
-import { getColors } from '../../utils'
+import { getColors, reduceForNewColumnBounds } from '../../utils'
 import type { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
 import {
-  getNewHarpStrataByTuningForDispatcher,
-  getNewHarpStrataByValvingForDispatcher,
+  reduceForNewHarpStrataByTuning,
+  reduceForNewHarpStrataByValving,
 } from './utils'
 import {
   useTuningTitle,
   useTuningItems,
   useValvingTitle,
   useValvingItems,
+  useZoomTitle,
+  useZoomItems,
 } from './hooks'
 
 export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
@@ -26,8 +28,8 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const tuningItemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataByTuningForDispatcher),
-    [useDispatch, getNewHarpStrataByTuningForDispatcher]
+    useDispatch(reduceForNewHarpStrataByTuning),
+    [useDispatch, reduceForNewHarpStrataByTuning]
   )
   const useTuningItemsMemo = useCallback(
     () => useTuningItems(useGlobal, tuningItemTapHandler),
@@ -38,12 +40,24 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const valvingItemTapHandler = useCallback(
-    useDispatch(getNewHarpStrataByValvingForDispatcher),
-    [useDispatch, getNewHarpStrataByValvingForDispatcher]
+    useDispatch(reduceForNewHarpStrataByValving),
+    [useDispatch, reduceForNewHarpStrataByValving]
   )
   const useValvingItemsMemo = useCallback(
     () => useValvingItems(useGlobal, valvingItemTapHandler),
     [useGlobal, valvingItemTapHandler]
+  )
+
+  const useZoomTitleMemo = useCallback(() => useZoomTitle(useGlobal), [
+    useGlobal,
+  ])
+  const zoomItemTapHandler = useCallback(
+    useDispatch(reduceForNewColumnBounds),
+    [useDispatch, reduceForNewColumnBounds]
+  )
+  const useZoomItemsMemo = useCallback(
+    () => useZoomItems(useGlobal, zoomItemTapHandler),
+    [useGlobal, zoomItemTapHandler]
   )
 
   const optionStackPropsz = [
@@ -55,6 +69,11 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     {
       useTitle: useValvingTitleMemo,
       useItems: useValvingItemsMemo,
+      twoColumns: false,
+    },
+    {
+      useTitle: useZoomTitleMemo,
+      useItems: useZoomItemsMemo,
       twoColumns: false,
     },
   ]

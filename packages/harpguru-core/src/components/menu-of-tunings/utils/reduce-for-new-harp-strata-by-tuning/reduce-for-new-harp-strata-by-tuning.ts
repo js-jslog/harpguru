@@ -1,15 +1,16 @@
-import Dispatcher from 'reactn/types/dispatcher'
+import type { Dispatch } from 'reactn/default'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 import type { TuningIds } from 'harpparts'
 
+import { reduceForNewHarpStrata } from '../../../../utils'
 import { DisplayModes, GlobalState } from '../../../../types'
 
-export const getNewHarpStrataByTuningForDispatcher = (
+export const reduceForNewHarpStrataByTuning = (
   global: GlobalState,
-  _dipatch: Dispatcher,
+  _dispatch: Dispatch,
   tuningId: TuningIds
-): Pick<GlobalState, 'activeHarpStrata'> => {
+): Pick<GlobalState, 'activeHarpStrata' | 'columnBounds'> => {
   const { activeHarpStrata, activeDisplayMode } = global
 
   const newHarpStrataProps: HarpStrataProps = {
@@ -20,6 +21,10 @@ export const getNewHarpStrataByTuningForDispatcher = (
     tuningId,
   }
   return {
-    activeHarpStrata: getHarpStrata(newHarpStrataProps),
+    ...reduceForNewHarpStrata(
+      global,
+      _dispatch,
+      getHarpStrata(newHarpStrataProps)
+    ),
   }
 }

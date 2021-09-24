@@ -107,3 +107,10 @@ export type WithTransition = {
 export type WithStateValue = {
   readonly stateValue: Value<number>
 }
+
+export enum ZoomIds {
+  Fit = 'FIT',
+  Seven = 7,
+  Ten = 10,
+  Twelve = 12,
+}
