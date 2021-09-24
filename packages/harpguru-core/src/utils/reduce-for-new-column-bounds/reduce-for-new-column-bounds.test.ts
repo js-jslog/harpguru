@@ -15,11 +15,6 @@ import type { GlobalState } from '../../types'
 
 import { reduceForNewColumnBounds } from './reduce-for-new-column-bounds'
 
-// TODO: Writing this file has made me realise 2 things:
-//
-// 1. columnBounds should perhaps be called holeBounds
-// 2. there is more functionality here than we need in this dispatcher. The UI should make sure that there are no 7 hole zoom requests to a harp which has less than 7 holes. However this functionality will be important for the callback which runs when the activeHarpStrata is updated to update the columnBounds. I might just house all that functionality under this one function for now in anticipation of trying to have a single function to handle all the situations. I don't know
-
 const baseHarpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
   valvingId: ValvingIds.NotValved,
