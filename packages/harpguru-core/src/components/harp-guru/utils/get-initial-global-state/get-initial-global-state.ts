@@ -52,6 +52,8 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     flushChannel: FlushChannels.Regular,
     activeQuizDegrees: getDegreeIds(),
     columnBounds: 'FIT',
+    activeDegreeMatrix: initialHarpStrata.degreeMatrix,
+    activePitchMatrix: initialHarpStrata.pitchMatrix,
   } as const
 
   return state

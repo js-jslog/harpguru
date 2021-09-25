@@ -1,7 +1,7 @@
 import type { StateTuple } from 'reactn/types/use-global'
 import type { Node, Value } from 'react-native-reanimated'
 import type { HarpStrata } from 'harpstrata'
-import type { DegreeIds } from 'harpparts'
+import type { Degree, DegreeIds, HarpFaceMatrix, Pitch } from 'harpparts'
 
 export type GlobalState = {
   readonly activeHarpStrata: HarpStrata
@@ -12,6 +12,8 @@ export type GlobalState = {
   readonly flushChannel: FlushChannels
   readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
   readonly columnBounds: 'FIT' | readonly [number, number]
+  readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
+  readonly activePitchMatrix: HarpFaceMatrix<Pitch>
 }
 
 export type UseGlobal = <

@@ -1,6 +1,6 @@
 import 'reactn'
 import type { HarpStrata } from 'harpstrata'
-import type { DegreeIds } from 'harpparts'
+import type { Degree, DegreeIds, HarpFaceMatrix, Pitch } from 'harpparts'
 
 import type { DisplayModes, ExperienceModes, FlushChannels } from './types'
 
@@ -14,6 +14,8 @@ declare module 'reactn/default' {
     readonly flushChannel: FlushChannels
     readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
     readonly columnBounds: 'FIT' | readonly [number, number]
+    readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
+    readonly activePitchMatrix: HarpFaceMatrix<Pitch>
   }
 }
 
