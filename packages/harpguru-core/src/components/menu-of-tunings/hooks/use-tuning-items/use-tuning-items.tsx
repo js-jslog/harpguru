@@ -18,6 +18,7 @@ export const useTuningItems = (
   useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): TuningItems => {
+  // TOOMANYRENDERS
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const {
     apparatus: { tuningId },

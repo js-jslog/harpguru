@@ -7,6 +7,7 @@ import type { UseGlobal } from '../../../../types'
 export const useTuningTitle = (
   useGlobal: UseGlobal
 ): React.ReactElement<OptionLabelProps> => {
+  // TOOMANYRENDERS
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const {
     apparatus: { tuningId },

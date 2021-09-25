@@ -27,6 +27,9 @@ export const useCovariantItems = (): CovariantItems => {
     useGlobal: UseGlobal,
     itemTapHandler: ItemTapHandler
   ) => {
+    // TOOMANYRENDERS: if we create more dedicated global states
+    // then we can potentially avoid rerending when things like
+    // active pitches change which I think will be the most common.
     const [activeHarpStrata] = useGlobal('activeHarpStrata')
     const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
     const harpKeyPrimer: CovariancePrimer = {

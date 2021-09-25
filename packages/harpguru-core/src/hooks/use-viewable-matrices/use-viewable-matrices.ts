@@ -12,6 +12,7 @@ type ViewableMatrices = {
 }
 
 export const useViewableMatrices = (): ViewableMatrices => {
+  // TOOMANYRENDERS this has impact all the way in to sizes
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [columnBounds] = useGlobal('columnBounds')
 

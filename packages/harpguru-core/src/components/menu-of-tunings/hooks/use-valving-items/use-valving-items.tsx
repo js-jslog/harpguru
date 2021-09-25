@@ -16,6 +16,7 @@ export const useValvingItems = (
   useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): ValvingItems => {
+  // TOOMANYRENDERS
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const {
     apparatus: { valvingId },

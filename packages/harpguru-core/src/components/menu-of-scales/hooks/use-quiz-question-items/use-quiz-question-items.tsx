@@ -31,6 +31,7 @@ export const useQuizQuestionItems = (
     />
   ))
 
+  // TOOMANYRENDERS:
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [, setActiveQuizDegrees] = useGlobal('activeQuizDegrees')
   const syncWithHarpTapHandler = () =>
