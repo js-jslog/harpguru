@@ -79,3 +79,50 @@ test('mixed unmatched matrices return false', () => {
     doSparceIdedObjectMatricesMatch(pitchMatrix3, pitchMatrix2)
   ).toBeFalsy()
 })
+
+test('matrices of unmatched length return false', () => {
+  const pitchMatrix = [
+    [getPitch(PitchIds.A), getPitch(PitchIds.A), getPitch(PitchIds.A)],
+    [getPitch(PitchIds.A), getPitch(PitchIds.A), getPitch(PitchIds.A)],
+    [getPitch(PitchIds.A), getPitch(PitchIds.A), getPitch(PitchIds.A)],
+  ]
+  const pitchMatrixExtraRow = [
+    [getPitch(PitchIds.A), getPitch(PitchIds.A), getPitch(PitchIds.A)],
+    [getPitch(PitchIds.A), getPitch(PitchIds.A), getPitch(PitchIds.A)],
+    [getPitch(PitchIds.A), getPitch(PitchIds.A), getPitch(PitchIds.A)],
+    [undefined, undefined, undefined],
+  ]
+  const pitchMatrixExtraColumn = [
+    [
+      getPitch(PitchIds.A),
+      getPitch(PitchIds.A),
+      getPitch(PitchIds.A),
+      undefined,
+    ],
+    [
+      getPitch(PitchIds.A),
+      getPitch(PitchIds.A),
+      getPitch(PitchIds.A),
+      undefined,
+    ],
+    [
+      getPitch(PitchIds.A),
+      getPitch(PitchIds.A),
+      getPitch(PitchIds.A),
+      undefined,
+    ],
+  ]
+
+  expect(
+    doSparceIdedObjectMatricesMatch(pitchMatrix, pitchMatrixExtraRow)
+  ).toBeFalsy()
+  expect(
+    doSparceIdedObjectMatricesMatch(pitchMatrixExtraRow, pitchMatrix)
+  ).toBeFalsy()
+  expect(
+    doSparceIdedObjectMatricesMatch(pitchMatrix, pitchMatrixExtraColumn)
+  ).toBeFalsy()
+  expect(
+    doSparceIdedObjectMatricesMatch(pitchMatrixExtraColumn, pitchMatrix)
+  ).toBeFalsy()
+})
