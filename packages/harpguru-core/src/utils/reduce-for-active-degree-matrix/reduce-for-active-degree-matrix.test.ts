@@ -43,6 +43,12 @@ test('the original degreeMatrix gets returned from the reducer when new matches 
   )
   const expectedResult = { activeDegreeMatrix: originalDegreeMatrix }
   expect(actualResult).toStrictEqual(expectedResult)
+  expect(
+    Object.is(actualResult.activeDegreeMatrix, originalDegreeMatrix)
+  ).toBeTruthy()
+  expect(
+    Object.is(actualResult.activeDegreeMatrix, newDegreeMatrix)
+  ).toBeFalsy()
 })
 
 test('a new degreeMatrix gets returned from the reducer', () => {
@@ -78,4 +84,10 @@ test('a new degreeMatrix gets returned from the reducer', () => {
   )
   const expectedResult = { activeDegreeMatrix: newDegreeMatrix }
   expect(actualResult).toStrictEqual(expectedResult)
+  expect(
+    Object.is(actualResult.activeDegreeMatrix, originalDegreeMatrix)
+  ).toBeFalsy()
+  expect(
+    Object.is(actualResult.activeDegreeMatrix, newDegreeMatrix)
+  ).toBeTruthy()
 })

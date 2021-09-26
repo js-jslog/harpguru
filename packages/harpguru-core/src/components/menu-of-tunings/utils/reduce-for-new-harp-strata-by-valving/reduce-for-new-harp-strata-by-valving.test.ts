@@ -26,6 +26,7 @@ test('provides HarpStrata updated to exclude valving', () => {
   const inputGlobal = {
     activeHarpStrata: valvedHarp,
     columnBounds: 'FIT',
+    activeDegreeMatrix: valvedHarp.degreeMatrix,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
@@ -44,6 +45,7 @@ test('provides HarpStrata updated to include valving', () => {
   const inputGlobal = {
     activeHarpStrata: unvalvedHarp,
     columnBounds: 'FIT',
+    activeDegreeMatrix: unvalvedHarp.degreeMatrix,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 

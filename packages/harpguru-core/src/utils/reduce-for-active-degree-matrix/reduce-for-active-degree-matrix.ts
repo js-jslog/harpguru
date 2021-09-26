@@ -2,16 +2,20 @@ import type { Dispatch } from 'reactn/default'
 import type { HarpFaceMatrix, Degree } from 'harpparts'
 
 import type { GlobalState } from '../../types'
+import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 
 export const reduceForActiveDegreeMatrix = (
-  _global: GlobalState,
+  global: GlobalState,
   _dipatch: Dispatch,
-  activeDegreeMatrix: HarpFaceMatrix<Degree>
+  newDegreeMatrix: HarpFaceMatrix<Degree>
 ): Pick<GlobalState, 'activeDegreeMatrix'> => {
-  // TODO: There needs to be a full matrix comparison
-  // and return the original global variables identity
-  // if they match
+  const { activeDegreeMatrix } = global
+  if (doSparceIdedObjectMatricesMatch(activeDegreeMatrix, newDegreeMatrix)) {
+    return {
+      activeDegreeMatrix,
+    }
+  }
   return {
-    activeDegreeMatrix,
+    activeDegreeMatrix: newDegreeMatrix,
   }
 }
