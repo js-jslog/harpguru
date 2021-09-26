@@ -93,3 +93,19 @@ test('mixed rows of same length with same content in different order returns fal
   expect(doRowsMatch(row1, row2)).toBeFalsy()
   expect(doRowsMatch(row2, row1)).toBeFalsy()
 })
+
+test('mixed rows of different lengths returns false', () => {
+  const row1 = [
+    undefined,
+    getPitch(PitchIds.A),
+    undefined,
+    getPitch(PitchIds.A),
+  ]
+  const row2 = [undefined, getPitch(PitchIds.A), undefined, undefined]
+  const rowShort = [undefined, getPitch(PitchIds.A), undefined]
+
+  expect(doRowsMatch(row1, rowShort)).toBeFalsy()
+  expect(doRowsMatch(row2, rowShort)).toBeFalsy()
+  expect(doRowsMatch(rowShort, row1)).toBeFalsy()
+  expect(doRowsMatch(rowShort, row2)).toBeFalsy()
+})
