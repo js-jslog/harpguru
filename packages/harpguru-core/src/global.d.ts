@@ -16,6 +16,7 @@ declare module 'reactn/default' {
     readonly columnBounds: 'FIT' | readonly [number, number]
     readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
     readonly activePitchMatrix: HarpFaceMatrix<Pitch>
+    readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
   }
 }
 

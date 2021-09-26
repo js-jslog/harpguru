@@ -14,6 +14,7 @@ export type GlobalState = {
   readonly columnBounds: 'FIT' | readonly [number, number]
   readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
   readonly activePitchMatrix: HarpFaceMatrix<Pitch>
+  readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
 }
 
 export type UseGlobal = <
