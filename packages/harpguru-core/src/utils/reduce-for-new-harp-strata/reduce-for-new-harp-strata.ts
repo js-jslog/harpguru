@@ -24,7 +24,7 @@ export const reduceForNewHarpStrata = (
 
   return {
     ...newGlobal,
-    ...reduceForNewColumnBounds(newGlobal, _dispatch),
+    ...reduceForNewColumnBounds(global, _dispatch, undefined, newHarpStrata),
     ...reduceForActiveDegreeMatrix(
       global,
       _dispatch,

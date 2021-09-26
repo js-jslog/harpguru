@@ -25,9 +25,29 @@ const baseHarpStrataProps = {
 const majorDiatonicHarpProps = baseHarpStrataProps
 const majorDiatonicHarp = getHarpStrata(majorDiatonicHarpProps)
 
+// TODO: Consider adding some tests for when the activeHarpStrata has changed since previous global state
+// This might be unnecessary since the previous harpstrata is never actually important. It's all about the
+// previous columnBounds and the new harpstrata.
+
 // The usecase here is that a new activeHarpStrata has been set, the columnBounds are being reevaluated, but nothing
 // has to change because FIT is always appropriate.
-test('when no zoom level is selected and columnBounds is already FIT, the columnBounds is not changed', () => {
+test('when no zoom level is provided and columnBounds is already FIT, the columnBounds is not changed', () => {
+  const inputGlobal = {
+    activeHarpStrata: majorDiatonicHarp,
+    columnBounds: 'FIT',
+  } as GlobalState
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
+  const { columnBounds } = reduceForNewColumnBounds(
+    inputGlobal,
+    unusedDispatcher,
+    undefined,
+    majorDiatonicHarp
+  )
+
+  expect(columnBounds).toStrictEqual('FIT')
+})
+
+test('when no zoom level or new harp strata are provided and columnBounds is already FIT, the columnBounds is not changed', () => {
   const inputGlobal = {
     activeHarpStrata: majorDiatonicHarp,
     columnBounds: 'FIT',
@@ -50,12 +70,37 @@ test('when fit zoom level is selected the columnBounds is set to FIT', () => {
   const { columnBounds: newColumnBounds } = reduceForNewColumnBounds(
     inputGlobal,
     unusedDispatcher,
-    ZoomIds.Fit
+    ZoomIds.Fit,
+    majorDiatonicHarp
   )
   const { columnBounds: sameColumnBounds } = reduceForNewColumnBounds(
     { ...inputGlobal, columnBounds: 'FIT' },
     unusedDispatcher,
-    ZoomIds.Fit
+    ZoomIds.Fit,
+    majorDiatonicHarp
+  )
+
+  expect(newColumnBounds).toStrictEqual('FIT')
+  expect(sameColumnBounds).toStrictEqual('FIT')
+})
+
+test('when fit zoom level is selected but no new harpstrata is, the columnBounds is set to FIT', () => {
+  const inputGlobal = {
+    activeHarpStrata: majorDiatonicHarp,
+    columnBounds: [0, 1] as const,
+  } as GlobalState
+  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
+  const { columnBounds: newColumnBounds } = reduceForNewColumnBounds(
+    inputGlobal,
+    unusedDispatcher,
+    ZoomIds.Fit,
+    undefined
+  )
+  const { columnBounds: sameColumnBounds } = reduceForNewColumnBounds(
+    { ...inputGlobal, columnBounds: 'FIT' },
+    unusedDispatcher,
+    ZoomIds.Fit,
+    majorDiatonicHarp
   )
 
   expect(newColumnBounds).toStrictEqual('FIT')
@@ -74,17 +119,20 @@ test('when 7 hole zoom is selected and columnBounds is already 7 holes wide, the
   const { columnBounds: sameColumnBounds1 } = reduceForNewColumnBounds(
     inputGlobal,
     unusedDispatcher,
-    ZoomIds.Seven
+    ZoomIds.Seven,
+    majorDiatonicHarp
   )
   const { columnBounds: sameColumnBounds2 } = reduceForNewColumnBounds(
     { ...inputGlobal, columnBounds: columnBounds2 },
     unusedDispatcher,
-    ZoomIds.Seven
+    ZoomIds.Seven,
+    majorDiatonicHarp
   )
   const { columnBounds: sameColumnBounds3 } = reduceForNewColumnBounds(
     { ...inputGlobal, columnBounds: columnBounds3 },
     unusedDispatcher,
-    ZoomIds.Seven
+    ZoomIds.Seven,
+    majorDiatonicHarp
   )
 
   expect(sameColumnBounds1).toStrictEqual(columnBounds1)
@@ -101,7 +149,9 @@ test('when columnBounds is already 7 holes wide and new activeHarpStrata can han
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: sameColumnBounds1 } = reduceForNewColumnBounds(
     inputGlobal,
-    unusedDispatcher
+    unusedDispatcher,
+    undefined,
+    majorDiatonicHarp
   )
 
   expect(sameColumnBounds1).toStrictEqual(columnBounds)
@@ -116,7 +166,8 @@ test('when 7 hole zoom is selected from existing FIT columnBounds, 0 index is us
   const { columnBounds: newColumnBounds } = reduceForNewColumnBounds(
     inputGlobal,
     unusedDispatcher,
-    ZoomIds.Seven
+    ZoomIds.Seven,
+    majorDiatonicHarp
   )
   expect(newColumnBounds).toStrictEqual([0, 6])
 })
@@ -127,18 +178,20 @@ test('when 7 hole zoom is selected on activeHarpStrata which is less than 7 hole
     label: 'test',
   }
   const simplifiedDegreeMatrix: HarpFaceMatrix<Degree> = [[ROOT, ROOT, ROOT]]
+  const activeHarpStrata = {
+    ...majorDiatonicHarp,
+    degreeMatrix: simplifiedDegreeMatrix,
+  }
   const inputGlobal = {
-    activeHarpStrata: {
-      ...majorDiatonicHarp,
-      degreeMatrix: simplifiedDegreeMatrix,
-    },
+    activeHarpStrata,
     columnBounds: [1, 7] as const,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: newColumnBounds } = reduceForNewColumnBounds(
     inputGlobal,
     unusedDispatcher,
-    ZoomIds.Seven
+    ZoomIds.Seven,
+    activeHarpStrata
   )
   expect(newColumnBounds).toStrictEqual([0, 6])
 })
@@ -149,17 +202,20 @@ test('when new activeHarpStrata which is less than 7 holes wide is selected when
     label: 'test',
   }
   const simplifiedDegreeMatrix: HarpFaceMatrix<Degree> = [[ROOT, ROOT, ROOT]]
+  const activeHarpStrata = {
+    ...majorDiatonicHarp,
+    degreeMatrix: simplifiedDegreeMatrix,
+  }
   const inputGlobal = {
-    activeHarpStrata: {
-      ...majorDiatonicHarp,
-      degreeMatrix: simplifiedDegreeMatrix,
-    },
+    activeHarpStrata,
     columnBounds: [1, 7] as const,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: newColumnBounds } = reduceForNewColumnBounds(
     inputGlobal,
-    unusedDispatcher
+    unusedDispatcher,
+    undefined,
+    activeHarpStrata
   )
   expect(newColumnBounds).toStrictEqual([0, 6])
 })
@@ -174,7 +230,8 @@ test('when 7 hole zoom is selected and columnBounds is set above the end bounds 
   const { columnBounds: rolledBackColumnBounds } = reduceForNewColumnBounds(
     inputGlobal,
     unusedDispatcher,
-    ZoomIds.Seven
+    ZoomIds.Seven,
+    majorDiatonicHarp
   )
 
   expect(rolledBackColumnBounds).toStrictEqual([3, 9])
@@ -189,7 +246,9 @@ test('when activeHarpStrata is selected which can handle the columnBounds range,
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
   const { columnBounds: rolledBackColumnBounds } = reduceForNewColumnBounds(
     inputGlobal,
-    unusedDispatcher
+    unusedDispatcher,
+    undefined,
+    majorDiatonicHarp
   )
 
   expect(rolledBackColumnBounds).toStrictEqual([3, 9])
