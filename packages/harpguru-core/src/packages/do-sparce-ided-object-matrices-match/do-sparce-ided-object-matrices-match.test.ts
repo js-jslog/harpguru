@@ -1,17 +1,13 @@
-import { getPitch, PitchIds } from 'harpparts'
+import { getPitch, PitchIds, getDegree, DegreeIds } from 'harpparts'
 
 import { doSparceIdedObjectMatricesMatch } from './do-sparce-ided-object-matrices-match'
 
 test('single item matched matrix returns true', () => {
-  const pitchMatrix1 = [[getPitch(PitchIds.A)]]
-  const pitchMatrix2 = [[getPitch(PitchIds.A)]]
+  const matrix1 = [[getDegree(DegreeIds.Fifth)]]
+  const matrix2 = [[getDegree(DegreeIds.Fifth)]]
 
-  expect(
-    doSparceIdedObjectMatricesMatch(pitchMatrix1, pitchMatrix2)
-  ).toBeTruthy()
-  expect(
-    doSparceIdedObjectMatricesMatch(pitchMatrix2, pitchMatrix1)
-  ).toBeTruthy()
+  expect(doSparceIdedObjectMatricesMatch(matrix1, matrix2)).toBeTruthy()
+  expect(doSparceIdedObjectMatricesMatch(matrix2, matrix1)).toBeTruthy()
 })
 
 test('mixed matching matrices return true', () => {
@@ -35,12 +31,11 @@ test('mixed matching matrices return true', () => {
 })
 
 test('single item mismatched matrix returns false', () => {
-  const pitchMatrix1 = [[getPitch(PitchIds.Ab)]]
-  const pitchMatrix2 = [[getPitch(PitchIds.A)]]
+  const matrix1 = [[getDegree(DegreeIds.Second)]]
+  const matrix2 = [[getDegree(DegreeIds.Third)]]
 
-  expect(
-    doSparceIdedObjectMatricesMatch(pitchMatrix1, pitchMatrix2)
-  ).toBeFalsy()
+  expect(doSparceIdedObjectMatricesMatch(matrix1, matrix2)).toBeFalsy()
+  expect(doSparceIdedObjectMatricesMatch(matrix2, matrix1)).toBeFalsy()
 })
 
 test('mixed unmatched matrices return false', () => {

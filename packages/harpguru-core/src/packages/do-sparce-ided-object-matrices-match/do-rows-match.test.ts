@@ -1,12 +1,12 @@
-import { getPitch, PitchIds } from 'harpparts'
+import { getPitch, PitchIds, getDegree, DegreeIds } from 'harpparts'
 
 import { doRowsMatch } from './do-rows-match'
 
 test('single item mismatched row returns false', () => {
-  const pitchRow1 = [getPitch(PitchIds.Ab)]
-  const pitchRow2 = [getPitch(PitchIds.A)]
+  const row1 = [getDegree(DegreeIds.Third)]
+  const row2 = [getDegree(DegreeIds.Flat3)]
 
-  expect(doRowsMatch(pitchRow1, pitchRow2)).toBeFalsy()
+  expect(doRowsMatch(row1, row2)).toBeFalsy()
 })
 
 test('fully populated matched rows returns true', () => {
@@ -36,8 +36,8 @@ test('fully undefined rows of same length returns true', () => {
 })
 
 test('mixed rows of same length returns true', () => {
-  const row1 = [undefined, getPitch(PitchIds.A), undefined, undefined]
-  const row2 = [undefined, getPitch(PitchIds.A), undefined, undefined]
+  const row1 = [undefined, getDegree(DegreeIds.Root), undefined, undefined]
+  const row2 = [undefined, getDegree(DegreeIds.Root), undefined, undefined]
 
   expect(doRowsMatch(row1, row1)).toBeTruthy()
   expect(doRowsMatch(row1, row2)).toBeTruthy()
