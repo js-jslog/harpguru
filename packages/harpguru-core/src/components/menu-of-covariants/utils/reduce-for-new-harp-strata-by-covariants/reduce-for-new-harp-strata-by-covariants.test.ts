@@ -33,6 +33,7 @@ test('provides HarpStrata with different Pozition', () => {
     activeHarpStrata: cHarpFirstPozition,
     columnBounds: 'FIT',
     activeDegreeMatrix: cHarpFirstPozition.degreeMatrix,
+    activePitchMatrix: cHarpFirstPozition.pitchMatrix,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
@@ -57,6 +58,7 @@ test('provides HarpStrata with different HarpKey & Pozition', () => {
     activeHarpStrata: cHarpFirstPozition,
     columnBounds: 'FIT',
     activeDegreeMatrix: cHarpFirstPozition.degreeMatrix,
+    activePitchMatrix: cHarpFirstPozition.pitchMatrix,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 

@@ -32,6 +32,7 @@ test('provides HarpStrata updated by tuning set to natural minor', () => {
     activeHarpStrata: countryTunedHarp,
     columnBounds: 'FIT',
     activeDegreeMatrix: countryTunedHarp.degreeMatrix,
+    activePitchMatrix: countryTunedHarp.pitchMatrix,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
@@ -51,6 +52,7 @@ test('provides HarpStrata updated by tuning to major diatonic', () => {
     activeHarpStrata: countryTunedHarp,
     columnBounds: 'FIT',
     activeDegreeMatrix: countryTunedHarp.degreeMatrix,
+    activePitchMatrix: countryTunedHarp.pitchMatrix,
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
