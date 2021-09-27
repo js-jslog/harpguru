@@ -4,6 +4,7 @@ import type { HarpStrata } from 'harpstrata'
 import { reduceNewHarpStrataForViewablePitchMatrix } from '../reduce-new-harpstrata-for-viewable-pitch-matrix'
 import { reduceNewHarpStrataForViewableDegreeMatrix } from '../reduce-new-harpstrata-for-viewable-degree-matrix'
 import { reduceNewHarpStrataForPitchMatrix } from '../reduce-new-harpstrata-for-pitch-matrix'
+import { reduceNewHarpStrataForLayoutFacts } from '../reduce-new-harpstrata-for-layout-facts'
 import { reduceNewHarpStrataForDegreeMatrix } from '../reduce-new-harpstrata-for-degree-matrix'
 import { reduceNewHarpStrataForColumnBounds } from '../reduce-new-harpstrata-for-column-bounds'
 import { reduceNewHarpStrataForActivePitchIds } from '../reduce-new-harpstrata-for-active-pitchids'
@@ -24,6 +25,7 @@ export const reduceForNewHarpStrata = (
   | 'activePitchIds'
   | 'viewableDegreeMatrix'
   | 'viewablePitchMatrix'
+  | 'layoutFacts'
 > => {
   return {
     ...global,
@@ -43,5 +45,6 @@ export const reduceForNewHarpStrata = (
       _dispatch,
       newHarpStrata
     ),
+    ...reduceNewHarpStrataForLayoutFacts(global, _dispatch, newHarpStrata),
   }
 }

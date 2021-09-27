@@ -4,6 +4,11 @@ import type { Degree, DegreeIds, HarpFaceMatrix, Pitch } from 'harpparts'
 
 import type { DisplayModes, ExperienceModes, FlushChannels } from './types'
 
+type LayoutFacts = {
+  readonly harpfaceColumns: number
+  readonly harpfaceRows: number
+}
+
 declare module 'reactn/default' {
   export interface State {
     readonly activeHarpStrata: HarpStrata
@@ -20,6 +25,7 @@ declare module 'reactn/default' {
     readonly activePitchIds: ActivePitchIds
     readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
     readonly viewablePitchMatrix: HarpFaceMatrix<Pitch>
+    readonly layoutFacts: LayoutFacts
   }
 }
 

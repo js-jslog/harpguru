@@ -58,6 +58,12 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     activePitchIds: [],
     viewableDegreeMatrix: initialHarpStrata.degreeMatrix,
     viewablePitchMatrix: initialHarpStrata.pitchMatrix,
+    // TODO: This and many other parts of this state should
+    // be derived rather than stated outright.
+    layoutFacts: {
+      harpfaceColumns: 10,
+      harpfaceRows: 7,
+    },
   } as const
 
   return state

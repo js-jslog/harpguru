@@ -3,6 +3,11 @@ import type { Node, Value } from 'react-native-reanimated'
 import type { HarpStrata, ActiveDegreeIds, ActivePitchIds } from 'harpstrata'
 import type { Degree, DegreeIds, HarpFaceMatrix, Pitch } from 'harpparts'
 
+type LayoutFacts = {
+  readonly harpfaceColumns: number
+  readonly harpfaceRows: number
+}
+
 export type GlobalState = {
   readonly activeHarpStrata: HarpStrata
   readonly activeExperienceMode: ExperienceModes
@@ -18,6 +23,7 @@ export type GlobalState = {
   readonly activePitchIds: ActivePitchIds
   readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
   readonly viewablePitchMatrix: HarpFaceMatrix<Pitch>
+  readonly layoutFacts: LayoutFacts
 }
 
 export type UseGlobal = <
