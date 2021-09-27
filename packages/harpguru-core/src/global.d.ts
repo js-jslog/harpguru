@@ -50,6 +50,9 @@ declare module 'reactn/default' {
 //
 // All of those reducers are really just in service of the main `reduce-new-harpstrata` reducer function and should probably just be local to it's folder definition.
 // All of the global-and-harpstrata... functions can probably identify themselves as meeting a contract, either as a type or interface
+// We should also have comparison functions which will operate to simplify the comparison task required in the reducer itself
+// compare-column-bounds
+// ... we actually already have the matrix comparison and the row comparison is just a subcategory of that
 
 // Introduction of columnBounds
 // 1. Should be evaulated every time the activeHarpStrata is updated so that it stays reasonably in sync
