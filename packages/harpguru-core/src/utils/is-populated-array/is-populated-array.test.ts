@@ -1,5 +1,7 @@
 import { isPopulatedArray } from './is-populated-array'
 
+// TODO: move this in to the `getViewableMatrix` util
+// folder and remove all other references when ready
 test('Arrays containing any content return true', () => {
   const array1 = [1]
   const array2 = [1, undefined, undefined, undefined]

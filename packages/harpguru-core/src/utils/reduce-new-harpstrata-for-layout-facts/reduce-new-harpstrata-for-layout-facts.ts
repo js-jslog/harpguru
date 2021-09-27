@@ -3,10 +3,9 @@ import type { HarpStrata } from 'harpstrata'
 
 // TODO: Sort out this import
 import { determineNextColumnBounds } from '../reduce-for-new-column-bounds/determine-next-column-bounds'
-import { isPopulatedArray } from '../is-populated-array'
+import { getViewableMatrix } from '../get-viewable-matrix'
 import { determineZoomId } from '../determine-zoom-id'
 import type { GlobalState } from '../../types'
-import { sliceMatrix } from '../../packages/slice-matrix'
 
 // TODO: Copied from `reduceNewHarpStrataForViewableDegreeMatrix``
 // Make sure to add unit tests for the return value
@@ -40,38 +39,12 @@ export const reduceNewHarpStrataForLayoutFacts = (
     zoomId
   )
 
-  // TODO: We need a single function to getViewableMatrices
-  // from the harpstrata and the next columnBounds which can
-  // then set a simple variable here which can then be compared
-  // to the previous value.
-  if (newColumnBounds === 'FIT') {
-    const { length: rowCount } = newDegreeMatrix
-    const { [0]: exampleHarpRow2 } = newDegreeMatrix
-    const { length: columnCount } = exampleHarpRow2
-
-    if (rowCount === harpfaceRows && columnCount === harpfaceColumns)
-      return {
-        layoutFacts,
-      }
-
-    return {
-      layoutFacts: {
-        harpfaceColumns: columnCount,
-        harpfaceRows: rowCount,
-      },
-    }
-  }
-
-  const [start, end] = newColumnBounds
-
-  const newViewableDegreeMatrix = sliceMatrix(
+  const viewableDegreeMatrix = getViewableMatrix(
     newDegreeMatrix,
-    start,
-    end + 1
-  ).filter(isPopulatedArray)
-
-  const { length: rowCount } = newViewableDegreeMatrix
-  const { [0]: exampleHarpRow2 } = newViewableDegreeMatrix
+    newColumnBounds
+  )
+  const { length: rowCount } = viewableDegreeMatrix
+  const { [0]: exampleHarpRow2 } = viewableDegreeMatrix
   const { length: columnCount } = exampleHarpRow2
 
   if (rowCount === harpfaceRows && columnCount === harpfaceColumns)

@@ -3,10 +3,9 @@ import type { HarpStrata } from 'harpstrata'
 
 // TODO: Sort out this import
 import { determineNextColumnBounds } from '../reduce-for-new-column-bounds/determine-next-column-bounds'
-import { isPopulatedArray } from '../is-populated-array'
+import { getViewableMatrix } from '../get-viewable-matrix'
 import { determineZoomId } from '../determine-zoom-id'
 import type { GlobalState } from '../../types'
-import { sliceMatrix } from '../../packages/slice-matrix'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 
 // TODO: Copied from `reduceForViewablePitchMatrix`
@@ -39,27 +38,10 @@ export const reduceNewHarpStrataForViewablePitchMatrix = (
     zoomId
   )
 
-  // TODO: We need a single function to getViewableMatrices
-  // from the harpstrata and the next columnBounds which can
-  // then set a simple variable here which can then be compared
-  // to the previous value.
-  if (newColumnBounds === 'FIT') {
-    if (doSparceIdedObjectMatricesMatch(newPitchMatrix, viewablePitchMatrix)) {
-      return { viewablePitchMatrix }
-    }
-    return {
-      viewablePitchMatrix: newPitchMatrix,
-    }
-  }
-
-  const [start, end] = newColumnBounds
-
-  const newViewablePitchMatrix = sliceMatrix(
+  const newViewablePitchMatrix = getViewableMatrix(
     newPitchMatrix,
-    start,
-    end + 1
-  ).filter(isPopulatedArray)
-
+    newColumnBounds
+  )
   if (
     doSparceIdedObjectMatricesMatch(newViewablePitchMatrix, viewablePitchMatrix)
   ) {
