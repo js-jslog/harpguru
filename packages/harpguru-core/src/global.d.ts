@@ -20,6 +20,37 @@ declare module 'reactn/default' {
   }
 }
 
+// Introduction of exploded activeHarpStrata properties
+// The motivation here is to reduce the number of renders which are happening when a new harpstrata is loaded.
+// Most componenets are hooked in to the `activeHarpStrata` global state and most actions update that object.
+// However most of those actions don't require the entire component tree to update. Exploding the variables out
+// will make it possible for the components to hook in to just the part of the harpstrata that they care about.
+// I have started making reducers carefully with unit tests but now I'm pretty confident I know where I'm going
+// and my first test will be around the ActivityLegend not loading when a new apparatus is chosen, or a new
+// position is chosen while pitches are displayed rather than the degrees. I want to get to that test asap
+// even though that now means I'm going to hack together a number of reducers without tests to make that happen.
+// One of the main reasons I'm making this decision is that I don't think it's too far to go to get that test,
+// but I already have a strategic modification in mind for those reducers. I don't want to enact that strategic
+// modification before I've tested the validity of the general idea.
+// The strategic modification is that I think all of these reducers should acknowledge that they are for a shared
+// purpose and use only the same parameter inputs as a result (the new activeHarpStrata). They may need to perform
+// similar tasks to get to the variable they are producing (for example the layout facts and the viewable degree matrix
+// reducers will both need to derive the viewable degree matrix as part of their process. This and basically every
+// other detailed process should be farmed out to a util. The main function of the reducers should just be to test
+// the equality of the previous and the next value to make sure that if they are identical, the original value (or
+// possibly no value) is returned.
+// The utils should share a naming convention so that it's clear that they are associated. Something like this for
+// the reducers and the utils is probably warranted:
+//
+// reduce-new-harpstrata-for-degree-matrix
+// reduce-new-harpstrata-for-pitch-matrix
+// reduce-new-harpstrata-for-column-bounds <- and this should be different to reduce-new-zoom-id-for-column-bounds which will use the same util function but not actually be the same reducer
+// global-and-harpstrata-to-degree-matrix <- which will obviously be really simple, but will protect against future change
+// global-and-harpstrata-to-column-bounds <- which will actually make use of the global object to determine what the existing columnBounds are and whether they should be changed
+//
+// All of those reducers are really just in service of the main `reduce-new-harpstrata` reducer function and should probably just be local to it's folder definition.
+// All of the global-and-harpstrata... functions can probably identify themselves as meeting a contract, either as a type or interface
+
 // Introduction of columnBounds
 // 1. Should be evaulated every time the activeHarpStrata is updated so that it stays reasonably in sync
 //   - 'FIT' should always remain
