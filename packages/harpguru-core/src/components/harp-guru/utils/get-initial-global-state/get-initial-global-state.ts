@@ -54,7 +54,10 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     columnBounds: 'FIT',
     activeDegreeMatrix: initialHarpStrata.degreeMatrix,
     activePitchMatrix: initialHarpStrata.pitchMatrix,
+    activeDegreeIds: [],
+    activePitchIds: [],
     viewableDegreeMatrix: initialHarpStrata.degreeMatrix,
+    viewablePitchMatrix: initialHarpStrata.pitchMatrix,
   } as const
 
   return state
