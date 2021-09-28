@@ -1,11 +1,9 @@
 import type { Dispatch } from 'reactn/default'
 import type { HarpStrata } from 'harpstrata'
 
+import { compareActiveIds } from '../compare-active-ids'
 import type { GlobalState } from '../../types'
 
-// Make sure to add unit tests for the return value
-// equality checks, and create a util for all the logic
-// preseding that.
 export const reduceNewHarpStrataForActivePitchIds = (
   global: GlobalState,
   _dipatch: Dispatch,
@@ -14,14 +12,7 @@ export const reduceNewHarpStrataForActivePitchIds = (
   const { activePitchIds } = global
   const { activePitchIds: newActivePitchIds } = newHarpStrata
 
-  const match1 = activePitchIds.every(
-    (item, index) => item === newActivePitchIds[index]
-  )
-  const match2 = newActivePitchIds.every(
-    (item, index) => item === activePitchIds[index]
-  )
-
-  if (match1 && match2)
+  if (compareActiveIds(activePitchIds, newActivePitchIds))
     return {
       activePitchIds,
     }
