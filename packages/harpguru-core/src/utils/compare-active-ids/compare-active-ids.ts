@@ -1,5 +1,7 @@
 import type { DegreeIds, PitchIds } from 'harpparts'
 
+// TODO: I'd like the type safety to be a bit more intelligent here
+// so that both parameters must be of the same type
 export const compareActiveIds = (
   ids1: ReadonlyArray<DegreeIds | PitchIds>,
   ids2: ReadonlyArray<DegreeIds | PitchIds>
