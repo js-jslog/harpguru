@@ -1,10 +1,9 @@
 import type { Dispatch } from 'reactn/default'
 import type { HarpStrata } from 'harpstrata'
 
-// TODO: Sort out this import
-import { determineNextColumnBounds } from '../reduce-for-new-column-bounds/determine-next-column-bounds'
 import { getViewableMatrix } from '../get-viewable-matrix'
 import { determineZoomId } from '../determine-zoom-id'
+import { determineNextColumnBounds } from '../determine-next-column-bounds'
 import { determineMatrixDimensions } from '../determine-matrix-dimensions'
 import type { GlobalState } from '../../types'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'

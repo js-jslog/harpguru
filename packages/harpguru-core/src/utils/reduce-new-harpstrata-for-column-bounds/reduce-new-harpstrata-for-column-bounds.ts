@@ -1,9 +1,8 @@
 import type { Dispatch } from 'reactn/default'
 import type { HarpStrata } from 'harpstrata'
 
-// TODO: fix the location of this import
-import { determineNextColumnBounds } from '../reduce-for-new-column-bounds/determine-next-column-bounds'
 import { determineZoomId } from '../determine-zoom-id'
+import { determineNextColumnBounds } from '../determine-next-column-bounds'
 import { determineMatrixDimensions } from '../determine-matrix-dimensions'
 import { compareColumnBounds } from '../compare-column-bounds'
 import type { GlobalState } from '../../types'
