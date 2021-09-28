@@ -3,6 +3,7 @@ import type { HarpStrata } from 'harpstrata'
 
 import { reduceNewHarpStrataForViewableDegreeMatrix } from '../reduce-new-harpstrata-for-viewable-degree-matrix'
 import { determineMatrixDimensions } from '../determine-matrix-dimensions'
+import { compareLayoutFacts } from '../compare-layout-facts'
 import type { GlobalState } from '../../types'
 
 // TODO: Copied from `reduceNewHarpStrataForViewableDegreeMatrix``
@@ -15,8 +16,6 @@ export const reduceNewHarpStrataForLayoutFacts = (
   _dipatch: Dispatch,
   newHarpStrata: HarpStrata
 ): Pick<GlobalState, 'layoutFacts'> => {
-  const { layoutFacts } = global
-  const { harpfaceColumns, harpfaceRows } = layoutFacts
   const {
     viewableDegreeMatrix: newViewableDegreeMatrix,
   } = reduceNewHarpStrataForViewableDegreeMatrix(
@@ -27,16 +26,14 @@ export const reduceNewHarpStrataForLayoutFacts = (
   const { columns: columnCount, rows: rowCount } = determineMatrixDimensions(
     newViewableDegreeMatrix
   )
+  const newLayoutFacts = {
+    harpfaceColumns: columnCount,
+    harpfaceRows: rowCount,
+  }
 
-  if (rowCount === harpfaceRows && columnCount === harpfaceColumns)
-    return {
-      layoutFacts,
-    }
-
+  const { layoutFacts } = global
+  if (compareLayoutFacts(layoutFacts, newLayoutFacts)) return { layoutFacts }
   return {
-    layoutFacts: {
-      harpfaceColumns: columnCount,
-      harpfaceRows: rowCount,
-    },
+    layoutFacts: newLayoutFacts,
   }
 }
