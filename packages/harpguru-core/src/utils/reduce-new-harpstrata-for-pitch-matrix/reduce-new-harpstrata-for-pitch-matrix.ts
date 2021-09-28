@@ -16,11 +16,10 @@ export const reduceNewHarpStrataForPitchMatrix = (
 ): Pick<GlobalState, 'activePitchMatrix'> => {
   const { activePitchMatrix } = global
   const { pitchMatrix: newPitchMatrix } = newHarpStrata
-  if (doSparceIdedObjectMatricesMatch(activePitchMatrix, newPitchMatrix)) {
+  if (doSparceIdedObjectMatricesMatch(activePitchMatrix, newPitchMatrix))
     return {
       activePitchMatrix,
     }
-  }
   return {
     activePitchMatrix: newPitchMatrix,
   }
