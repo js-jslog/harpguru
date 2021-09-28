@@ -5,6 +5,7 @@ import type { HarpStrata } from 'harpstrata'
 import { determineNextColumnBounds } from '../reduce-for-new-column-bounds/determine-next-column-bounds'
 import { getViewableMatrix } from '../get-viewable-matrix'
 import { determineZoomId } from '../determine-zoom-id'
+import { determineMatrixDimensions } from '../determine-matrix-dimensions'
 import type { GlobalState } from '../../types'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 
@@ -24,16 +25,13 @@ export const reduceNewHarpStrataForViewablePitchMatrix = (
   // the test of this reducer.
   const { columnBounds } = global
   const { pitchMatrix: newPitchMatrix } = newHarpStrata
-  // TODO: This should eventually use the same util which
-  // the reduceForNewLayoutFacts reducer will eventually use
-  const { [0]: exampleHarpRow } = newPitchMatrix
-  const { length: activeColumnCount } = exampleHarpRow
+  const { columns: columnCount } = determineMatrixDimensions(newPitchMatrix)
   // TODO: This defaulting should perhaps be done in the
   // `determineNextColumnBounds` function since it's going
   // to be useful in multiple locations.
   const zoomId = determineZoomId(columnBounds)
   const newColumnBounds = determineNextColumnBounds(
-    activeColumnCount,
+    columnCount,
     columnBounds,
     zoomId
   )

@@ -5,6 +5,7 @@ import type { HarpStrata } from 'harpstrata'
 import { determineNextColumnBounds } from '../reduce-for-new-column-bounds/determine-next-column-bounds'
 import { getViewableMatrix } from '../get-viewable-matrix'
 import { determineZoomId } from '../determine-zoom-id'
+import { determineMatrixDimensions } from '../determine-matrix-dimensions'
 import type { GlobalState } from '../../types'
 
 // TODO: Copied from `reduceNewHarpStrataForViewableDegreeMatrix``
@@ -25,16 +26,13 @@ export const reduceNewHarpStrataForLayoutFacts = (
   // the test of this reducer.
   const { columnBounds } = global
   const { degreeMatrix: newDegreeMatrix } = newHarpStrata
-  // TODO: This should eventually use the same util which
-  // the reduceForNewLayoutFacts reducer will eventually use
-  const { [0]: exampleHarpRow1 } = newDegreeMatrix
-  const { length: activeColumnCount } = exampleHarpRow1
+  const { columns: columnCount1 } = determineMatrixDimensions(newDegreeMatrix)
   // TODO: This defaulting should perhaps be done in the
   // `determineNextColumnBounds` function since it's going
   // to be useful in multiple locations.
   const zoomId = determineZoomId(columnBounds)
   const newColumnBounds = determineNextColumnBounds(
-    activeColumnCount,
+    columnCount1,
     columnBounds,
     zoomId
   )
@@ -44,17 +42,18 @@ export const reduceNewHarpStrataForLayoutFacts = (
     newColumnBounds
   )
   const { length: rowCount } = viewableDegreeMatrix
-  const { [0]: exampleHarpRow2 } = viewableDegreeMatrix
-  const { length: columnCount } = exampleHarpRow2
+  const { columns: columnCount2 } = determineMatrixDimensions(
+    viewableDegreeMatrix
+  )
 
-  if (rowCount === harpfaceRows && columnCount === harpfaceColumns)
+  if (rowCount === harpfaceRows && columnCount2 === harpfaceColumns)
     return {
       layoutFacts,
     }
 
   return {
     layoutFacts: {
-      harpfaceColumns: columnCount,
+      harpfaceColumns: columnCount2,
       harpfaceRows: rowCount,
     },
   }
