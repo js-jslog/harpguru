@@ -16,11 +16,10 @@ export const reduceNewHarpStrataForDegreeMatrix = (
 ): Pick<GlobalState, 'activeDegreeMatrix'> => {
   const { activeDegreeMatrix } = global
   const { degreeMatrix: newDegreeMatrix } = newHarpStrata
-  if (doSparceIdedObjectMatricesMatch(activeDegreeMatrix, newDegreeMatrix)) {
+  if (doSparceIdedObjectMatricesMatch(activeDegreeMatrix, newDegreeMatrix))
     return {
       activeDegreeMatrix,
     }
-  }
   return {
     activeDegreeMatrix: newDegreeMatrix,
   }
