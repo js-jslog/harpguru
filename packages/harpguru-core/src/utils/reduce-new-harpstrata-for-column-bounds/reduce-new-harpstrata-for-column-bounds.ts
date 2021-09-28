@@ -4,6 +4,7 @@ import type { HarpStrata } from 'harpstrata'
 // TODO: fix the location of this import
 import { determineNextColumnBounds } from '../reduce-for-new-column-bounds/determine-next-column-bounds'
 import { determineZoomId } from '../determine-zoom-id'
+import { compareColumnBounds } from '../compare-column-bounds'
 import type { GlobalState } from '../../types'
 
 // TODO: Copied from reduce-for-new-column-bounds
@@ -31,14 +32,7 @@ export const reduceNewHarpStrataForColumnBounds = (
     zoomId
   )
 
-  if (columnBounds === 'FIT') {
-    if (newColumnBounds == 'FIT') return { columnBounds }
-  }
-  if (newColumnBounds === 'FIT') return { columnBounds: newColumnBounds }
-  if (
-    columnBounds[0] === newColumnBounds[0] &&
-    columnBounds[1] === newColumnBounds[1]
-  )
+  if (compareColumnBounds(columnBounds, newColumnBounds))
     return { columnBounds }
   return { columnBounds: newColumnBounds }
 }
