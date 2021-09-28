@@ -1,5 +1,6 @@
 import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
+import type { ActiveDegreeIds, ActivePitchIds } from 'harpstrata'
 import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
@@ -28,6 +29,11 @@ test('provides HarpStrata updated to exclude valving', () => {
     columnBounds: 'FIT',
     activeDegreeMatrix: valvedHarp.degreeMatrix,
     activePitchMatrix: valvedHarp.pitchMatrix,
+    activeDegreeIds: [] as ActiveDegreeIds,
+    activePitchIds: [] as ActivePitchIds,
+    viewableDegreeMatrix: valvedHarp.degreeMatrix,
+    viewablePitchMatrix: valvedHarp.pitchMatrix,
+    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
@@ -48,6 +54,11 @@ test('provides HarpStrata updated to include valving', () => {
     columnBounds: 'FIT',
     activeDegreeMatrix: unvalvedHarp.degreeMatrix,
     activePitchMatrix: unvalvedHarp.pitchMatrix,
+    activeDegreeIds: [] as ActiveDegreeIds,
+    activePitchIds: [] as ActivePitchIds,
+    viewableDegreeMatrix: valvedHarp.degreeMatrix,
+    viewablePitchMatrix: valvedHarp.pitchMatrix,
+    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 

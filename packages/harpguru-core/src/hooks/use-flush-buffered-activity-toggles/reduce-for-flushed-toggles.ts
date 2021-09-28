@@ -2,7 +2,7 @@ import type { Dispatch } from 'reactn/default'
 import type { HarpStrataProps } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
 
-import { batchToggleDegreeIds, reduceForNewHarpStrata } from '../../utils'
+import { batchToggleDegreeIds, reduceNewHarpStrataToGlobal } from '../../utils'
 import type { GlobalState } from '../../types'
 
 export const reduceForFlushedToggles = (
@@ -37,7 +37,7 @@ export const reduceForFlushedToggles = (
   }
 
   return {
-    ...reduceForNewHarpStrata(
+    ...reduceNewHarpStrataToGlobal(
       global,
       _dispatch,
       getHarpStrata(newHarpStrataProps)

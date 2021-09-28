@@ -3,7 +3,7 @@ import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 import type { ValvingIds } from 'harpparts'
 
-import { reduceForNewHarpStrata } from '../../../../utils'
+import { reduceNewHarpStrataToGlobal } from '../../../../utils'
 import { DisplayModes, GlobalState } from '../../../../types'
 
 export const reduceForNewHarpStrataByValving = (
@@ -21,7 +21,7 @@ export const reduceForNewHarpStrataByValving = (
     valvingId,
   }
   return {
-    ...reduceForNewHarpStrata(
+    ...reduceNewHarpStrataToGlobal(
       global,
       _dispatch,
       getHarpStrata(newHarpStrataProps)

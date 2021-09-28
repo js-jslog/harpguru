@@ -3,7 +3,7 @@ import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 import type { TuningIds } from 'harpparts'
 
-import { reduceForNewHarpStrata } from '../../../../utils'
+import { reduceNewHarpStrataToGlobal } from '../../../../utils'
 import { DisplayModes, GlobalState } from '../../../../types'
 
 export const reduceForNewHarpStrataByTuning = (
@@ -21,7 +21,7 @@ export const reduceForNewHarpStrataByTuning = (
     tuningId,
   }
   return {
-    ...reduceForNewHarpStrata(
+    ...reduceNewHarpStrataToGlobal(
       global,
       _dispatch,
       getHarpStrata(newHarpStrataProps)

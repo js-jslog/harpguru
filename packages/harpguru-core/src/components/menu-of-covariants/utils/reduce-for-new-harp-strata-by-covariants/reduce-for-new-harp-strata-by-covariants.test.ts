@@ -1,5 +1,6 @@
 import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
+import type { ActiveDegreeIds, ActivePitchIds } from 'harpstrata'
 import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
@@ -34,6 +35,11 @@ test('provides HarpStrata with different Pozition', () => {
     columnBounds: 'FIT',
     activeDegreeMatrix: cHarpFirstPozition.degreeMatrix,
     activePitchMatrix: cHarpFirstPozition.pitchMatrix,
+    activeDegreeIds: [] as ActiveDegreeIds,
+    activePitchIds: [] as ActivePitchIds,
+    viewableDegreeMatrix: cHarpFirstPozition.degreeMatrix,
+    viewablePitchMatrix: cHarpFirstPozition.pitchMatrix,
+    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
@@ -59,6 +65,13 @@ test('provides HarpStrata with different HarpKey & Pozition', () => {
     columnBounds: 'FIT',
     activeDegreeMatrix: cHarpFirstPozition.degreeMatrix,
     activePitchMatrix: cHarpFirstPozition.pitchMatrix,
+    activeDegreeIds: [] as ActiveDegreeIds,
+    activePitchIds: [] as ActivePitchIds,
+    viewableDegreeMatrix: cHarpFirstPozition.degreeMatrix,
+    viewablePitchMatrix: cHarpFirstPozition.pitchMatrix,
+    // TODO: ideally all these variables would be derived
+    // properly from the origin
+    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 

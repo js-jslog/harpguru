@@ -2,7 +2,7 @@ import type { Dispatch } from 'reactn/default'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 
-import { reduceForNewHarpStrata } from '../../../../utils'
+import { reduceNewHarpStrataToGlobal } from '../../../../utils'
 import type { GlobalState } from '../../../../types'
 import { DisplayModes } from '../../../../types'
 
@@ -24,5 +24,5 @@ export const reduceForNewHarpStrataByCovariants = (
 
   const newHarpStrata = getHarpStrata(newHarpStrataProps)
 
-  return reduceForNewHarpStrata(global, _dispatch, newHarpStrata)
+  return reduceNewHarpStrataToGlobal(global, _dispatch, newHarpStrata)
 }

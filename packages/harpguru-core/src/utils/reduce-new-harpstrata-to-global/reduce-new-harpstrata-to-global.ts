@@ -11,7 +11,7 @@ import { reduceNewHarpStrataForActivePitchIds } from '../reduce-new-harpstrata-f
 import { reduceNewHarpStrataForActiveDegreeIds } from '../reduce-new-harpstrata-for-active-degreeids'
 import type { GlobalState } from '../../types'
 
-export const reduceForNewHarpStrata = (
+export const reduceNewHarpStrataToGlobal = (
   global: GlobalState,
   _dispatch: Dispatch,
   newHarpStrata: HarpStrata

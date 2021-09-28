@@ -1,5 +1,6 @@
 import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
+import type { ActiveDegreeIds, ActivePitchIds } from 'harpstrata'
 import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import type { GlobalState } from '../../../../types'
@@ -33,6 +34,11 @@ test('provides HarpStrata updated by tuning set to natural minor', () => {
     columnBounds: 'FIT',
     activeDegreeMatrix: countryTunedHarp.degreeMatrix,
     activePitchMatrix: countryTunedHarp.pitchMatrix,
+    activeDegreeIds: [] as ActiveDegreeIds,
+    activePitchIds: [] as ActivePitchIds,
+    viewableDegreeMatrix: countryTunedHarp.degreeMatrix,
+    viewablePitchMatrix: countryTunedHarp.pitchMatrix,
+    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
@@ -53,6 +59,11 @@ test('provides HarpStrata updated by tuning to major diatonic', () => {
     columnBounds: 'FIT',
     activeDegreeMatrix: countryTunedHarp.degreeMatrix,
     activePitchMatrix: countryTunedHarp.pitchMatrix,
+    activeDegreeIds: [] as ActiveDegreeIds,
+    activePitchIds: [] as ActivePitchIds,
+    viewableDegreeMatrix: countryTunedHarp.degreeMatrix,
+    viewablePitchMatrix: countryTunedHarp.pitchMatrix,
+    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
   } as GlobalState
   const unusedDispatcher = (jest.fn() as unknown) as Dispatch
 
