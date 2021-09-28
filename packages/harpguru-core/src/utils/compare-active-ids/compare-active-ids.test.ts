@@ -26,3 +26,26 @@ test('two similar arrays match', () => {
   expect(compareActiveIds(pitchIds2, pitchIds1)).toBeTruthy()
   expect(compareActiveIds(degreeIds2, degreeIds1)).toBeTruthy()
 })
+
+test('two dissimilar arrays do not match', () => {
+  const emptyIds1 = [] as ActiveIds
+  const pitchIds1 = [PitchIds.A, PitchIds.B]
+  const pitchIds2 = [PitchIds.B, PitchIds.A]
+  const degreeIds1 = [DegreeIds.Root, DegreeIds.Second]
+  const degreeIds2 = [DegreeIds.Second, DegreeIds.Root]
+  expect(compareActiveIds(emptyIds1, pitchIds1)).toBeFalsy()
+  expect(compareActiveIds(pitchIds1, pitchIds2)).toBeFalsy()
+  expect(compareActiveIds(degreeIds1, degreeIds2)).toBeFalsy()
+  expect(compareActiveIds(pitchIds1, degreeIds2)).toBeFalsy()
+})
+
+test('two "almost similar but for additional items" arrays do not match', () => {
+  const pitchIds1 = [PitchIds.A, PitchIds.B]
+  const pitchIds2 = [PitchIds.A, PitchIds.B, PitchIds.A]
+  const degreeIds1 = [DegreeIds.Root, DegreeIds.Second]
+  const degreeIds2 = [DegreeIds.Root, DegreeIds.Root, DegreeIds.Second]
+  expect(compareActiveIds(pitchIds1, pitchIds2)).toBeFalsy()
+  expect(compareActiveIds(degreeIds1, degreeIds2)).toBeFalsy()
+  expect(compareActiveIds(pitchIds2, pitchIds1)).toBeFalsy()
+  expect(compareActiveIds(degreeIds2, degreeIds1)).toBeFalsy()
+})
