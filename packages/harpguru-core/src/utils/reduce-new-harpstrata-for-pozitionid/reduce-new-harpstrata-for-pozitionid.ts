@@ -5,7 +5,7 @@ import type { GlobalState } from '../../types'
 
 import { comparePozitionIds } from './utils'
 
-export const reduceNewHarpStrataForActiveDegreeIds = (
+export const reduceNewHarpStrataForPozitionId = (
   global: GlobalState,
   _dipatch: Dispatch,
   newHarpStrata: HarpStrata
