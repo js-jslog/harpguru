@@ -5,22 +5,27 @@ import { DisplayModes } from '../../../../types'
 import type { UseGlobal } from '../../../../types'
 
 export const useSetNewHarpStrataByCovariants = (
-  partialHarpStrata: Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>,
   useGlobal: UseGlobal
-): void => {
+): ((arg0: Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>) => void) => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
-  const newHarpStrataProps: HarpStrataProps = {
-    ...getPropsForHarpStrata(
-      activeHarpStrata,
-      activeDisplayMode === DisplayModes.Pitch ? 'PITCH' : 'DEGREE'
-    ),
-    harpKeyId: partialHarpStrata.harpKeyId,
-    pozitionId: partialHarpStrata.pozitionId,
+  const setNewHarpStrataByCovariants = (
+    partialHarpStrata: Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
+  ): void => {
+    const newHarpStrataProps: HarpStrataProps = {
+      ...getPropsForHarpStrata(
+        activeHarpStrata,
+        activeDisplayMode === DisplayModes.Pitch ? 'PITCH' : 'DEGREE'
+      ),
+      harpKeyId: partialHarpStrata.harpKeyId,
+      pozitionId: partialHarpStrata.pozitionId,
+    }
+
+    const newHarpStrata = getHarpStrata(newHarpStrataProps)
+
+    setActiveHarpStrata(newHarpStrata)
   }
 
-  const newHarpStrata = getHarpStrata(newHarpStrataProps)
-
-  setActiveHarpStrata(newHarpStrata)
+  return setNewHarpStrataByCovariants
 }
