@@ -30,6 +30,8 @@ const cHarpSecondPozition = getHarpStrata(cHarpSecondPozitionProps)
 const dHarpSecondPozition = getHarpStrata(dHarpSecondPozitionProps)
 
 test('provides HarpStrata with different Pozition', () => {
+  // TODO: create test helper function to create the activeHarpStrata
+  // derivative properties
   const inputGlobal = {
     activeHarpStrata: cHarpFirstPozition,
     columnBounds: 'FIT',
