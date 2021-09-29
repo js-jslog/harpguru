@@ -1,6 +1,13 @@
 import 'reactn'
 import type { HarpStrata, ActiveDegreeIds, ActivePitchIds } from 'harpstrata'
-import type { Degree, DegreeIds, HarpFaceMatrix, Pitch } from 'harpparts'
+import type {
+  Degree,
+  DegreeIds,
+  HarpFaceMatrix,
+  Pitch,
+  PitchIds,
+  PozitionIds,
+} from 'harpparts'
 
 import type { DisplayModes, ExperienceModes, FlushChannels } from './types'
 
@@ -23,6 +30,9 @@ declare module 'reactn/default' {
     readonly activePitchMatrix: HarpFaceMatrix<Pitch>
     readonly activeDegreeIds: ActiveDegreeIds
     readonly activePitchIds: ActivePitchIds
+    readonly pozitionId: PozitionIds
+    readonly rootPitchId: PitchIds
+    readonly harpKeyId: PitchIds
     readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
     readonly viewablePitchMatrix: HarpFaceMatrix<Pitch>
     readonly layoutFacts: LayoutFacts
