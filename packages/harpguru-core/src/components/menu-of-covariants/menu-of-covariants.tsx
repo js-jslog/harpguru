@@ -18,7 +18,9 @@ import {
 } from './hooks'
 
 export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
-  //const itemTapHandler = useCallback(() => useSetNewHarpStrataByCovariants(useGlobal), [useGlobal])
+  // TODO: I wonder whether the items themselves could be passing the display
+  // mode as part of their callback property. That might save us a rerender
+  // when the display mode is changed.
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const itemTapHandler = useCallback(
     useDispatch(
