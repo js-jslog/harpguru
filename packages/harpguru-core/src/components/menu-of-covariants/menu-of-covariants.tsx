@@ -18,10 +18,7 @@ import {
 } from './hooks'
 
 export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
-  const itemTapHandler = useCallback(
-    useSetNewHarpStrataByCovariants(useGlobal),
-    [useGlobal]
-  )
+  const itemTapHandler = useSetNewHarpStrataByCovariants()
   const {
     useHarpKeyTitle,
     usePozitionTitle,

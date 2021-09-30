@@ -1,12 +1,12 @@
+import { useGlobal } from 'reactn'
 import { getHarpStrata, getPropsForHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
 
 import { DisplayModes } from '../../../../types'
-import type { UseGlobal } from '../../../../types'
 
-export const useSetNewHarpStrataByCovariants = (
-  useGlobal: UseGlobal
-): ((arg0: Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>) => void) => {
+export const useSetNewHarpStrataByCovariants = (): ((
+  arg0: Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
+) => void) => {
   const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
 
