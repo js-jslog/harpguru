@@ -7,6 +7,9 @@ export const useUpdateRootPitchId = (): void => {
 
   useEffect(() => {
     if (rootPitchId === activeHarpStrata.rootPitchId) return
+    console.log(
+      ':::::::::::::::::::::::::::::::::: rootPitchId changed: :' + rootPitchId
+    )
     setRootPitchId(activeHarpStrata.rootPitchId)
   }, [activeHarpStrata, rootPitchId, setRootPitchId])
 }
