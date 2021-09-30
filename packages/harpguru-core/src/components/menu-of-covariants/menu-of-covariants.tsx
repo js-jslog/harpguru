@@ -1,4 +1,4 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
 import { Feather } from '@expo/vector-icons'
 
@@ -10,15 +10,28 @@ import { getColors } from '../../utils'
 import type { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
+import { reduceForNewHarpStrataByCovariants } from './utils'
 import {
   useCovariantTitles,
   useCovariantItems,
   useCovariantLabels,
-  useSetNewHarpStrataByCovariants,
 } from './hooks'
 
 export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
-  const itemTapHandler = useSetNewHarpStrataByCovariants()
+  //const itemTapHandler = useCallback(() => useSetNewHarpStrataByCovariants(useGlobal), [useGlobal])
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const itemTapHandler = useCallback(
+    useDispatch(
+      (currentHarpStrata, partialHarpStrata) =>
+        reduceForNewHarpStrataByCovariants(
+          currentHarpStrata,
+          activeDisplayMode,
+          partialHarpStrata
+        ),
+      'activeHarpStrata'
+    ),
+    [useDispatch, reduceForNewHarpStrataByCovariants, activeDisplayMode]
+  )
   const {
     useHarpKeyTitle,
     usePozitionTitle,
