@@ -6,7 +6,7 @@ export const useDeriveRootPitchId = (
   prevRootPitchId: PitchIds,
   setRootPitchId: (arg0: PitchIds) => void
 ): PitchIds => {
-  const { harpKeyId: nextRootPitchId } = newHarpStrata
+  const { rootPitchId: nextRootPitchId } = newHarpStrata
   if (prevRootPitchId !== nextRootPitchId) setRootPitchId(nextRootPitchId)
   return nextRootPitchId
 }
