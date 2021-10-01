@@ -9,7 +9,13 @@ const mockUseGlobal = useGlobal as jest.Mock
 
 test('useHarpRows returns an object with the rows split between the blow / draw holes', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [activeHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [activeHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix') return [activeHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [activeHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [activeHarpStrata.activeDegreeIds]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -21,7 +27,13 @@ test('useHarpRows returns an object with the rows split between the blow / draw 
 
 test('useHarpRows returns a column bounded object with the rows split between the blow / draw holes', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [activeHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [activeHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix') return [activeHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [activeHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [activeHarpStrata.activeDegreeIds]
     if (stateItem === 'columnBounds') return [[1, 7]]
     return undefined
   })

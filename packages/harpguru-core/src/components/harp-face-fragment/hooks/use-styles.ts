@@ -12,6 +12,7 @@ export const useStyles = (xRange: XRange): HarpFaceFragmentStyles => {
   const {
     dynamicSizes: { columnWidth, rowHeight },
   } = useSizes()
+  // TODO: replace with global state prop
   const { harpFaceRowCount } = useLayoutFacts()
   const { length: fragmentColumnCount } = xRange
 

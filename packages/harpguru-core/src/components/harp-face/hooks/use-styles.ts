@@ -13,6 +13,7 @@ export const useStyles = (): HarpFaceStyles => {
   const { dynamicSizes } = useSizes()
   const { columnWidth, rowHeight, fragmentGutter } = dynamicSizes
 
+  // TODO: Replace with global state prop
   const { harpFaceRowCount, harpFaceColumnCount } = useLayoutFacts()
 
   const octaveColumnGroups = useOctaveColumnGroups()

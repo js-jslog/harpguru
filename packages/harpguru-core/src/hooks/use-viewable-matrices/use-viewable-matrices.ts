@@ -13,32 +13,30 @@ type ViewableMatrices = {
 
 export const useViewableMatrices = (): ViewableMatrices => {
   // TOOMANYRENDERS this has impact all the way in to sizes
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [degreeMatrix] = useGlobal('activeDegreeMatrix')
+  const [pitchMatrix] = useGlobal('activePitchMatrix')
+  const [interactionMatrix] = useGlobal('activeInteractionMatrix')
   const [columnBounds] = useGlobal('columnBounds')
 
   if (columnBounds === 'FIT')
     return {
-      viewableDegreeMatrix: activeHarpStrata.degreeMatrix,
-      viewablePitchMatrix: activeHarpStrata.pitchMatrix,
-      viewableInteractionMatrix: activeHarpStrata.apparatus.interactionMatrix,
+      viewableDegreeMatrix: degreeMatrix,
+      viewablePitchMatrix: pitchMatrix,
+      viewableInteractionMatrix: interactionMatrix,
     }
 
   const [start, end] = columnBounds
 
-  const viewableDegreeMatrix = sliceMatrix(
-    activeHarpStrata.degreeMatrix,
-    start,
-    end + 1
-  ).filter(isPopulatedArray)
+  const viewableDegreeMatrix = sliceMatrix(degreeMatrix, start, end + 1).filter(
+    isPopulatedArray
+  )
 
-  const viewablePitchMatrix = sliceMatrix(
-    activeHarpStrata.pitchMatrix,
-    start,
-    end + 1
-  ).filter(isPopulatedArray)
+  const viewablePitchMatrix = sliceMatrix(pitchMatrix, start, end + 1).filter(
+    isPopulatedArray
+  )
 
   const viewableInteractionMatrix = sliceMatrix(
-    activeHarpStrata.apparatus.interactionMatrix,
+    interactionMatrix,
     start,
     end + 1
   ).filter(isPopulatedArray)

@@ -20,8 +20,7 @@ type CovariantMenuTitles = {
 export const useCovariantTitles = (): CovariantMenuTitles => {
   const useHarpKeyTitle = (useGlobal: UseGlobal) => {
     // TOOMANYRENDERS:
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId } = activeHarpStrata
+    const [harpKeyId] = useGlobal('harpKeyId')
     return (
       <OptionLabel
         title={'Harp key'}
@@ -33,8 +32,7 @@ export const useCovariantTitles = (): CovariantMenuTitles => {
   }
 
   const usePozitionTitle = (useGlobal: UseGlobal) => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { pozitionId } = activeHarpStrata
+    const [pozitionId] = useGlobal('pozitionId')
     return (
       <OptionLabel
         title={'Position'}
@@ -46,8 +44,7 @@ export const useCovariantTitles = (): CovariantMenuTitles => {
   }
 
   const useRootPitchTitle = (useGlobal: UseGlobal) => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { rootPitchId } = activeHarpStrata
+    const [rootPitchId] = useGlobal('rootPitchId')
     return (
       <OptionLabel
         title={'Song key'}

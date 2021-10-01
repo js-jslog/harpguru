@@ -8,8 +8,7 @@ import type { UseGlobal } from '../../../../types'
 export const useScaleTitle = (
   useGlobal: UseGlobal
 ): React.ReactElement<OptionLabelProps> => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const { activeDegreeIds } = activeHarpStrata
+  const [activeDegreeIds] = useGlobal('activeDegreeIds')
   const { label: scaleLabel, category: scaleCategory } =
     getScaleByDegreeIds(activeDegreeIds) || {}
   const title = scaleCategory === ScaleCategory.Chord ? 'Chord' : 'Scale'

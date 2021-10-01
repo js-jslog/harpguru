@@ -23,8 +23,8 @@ export const HarpRow = ({
   // blow and draw then we could avoid rerendering the rows
   // when everything else about the harpstrata and active
   // pitches / degrees change.
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const styles = useStyles(yCoord, activeHarpStrata)
+  const [activeInteractionMatrix] = useGlobal('activeInteractionMatrix')
+  const styles = useStyles(yCoord, activeInteractionMatrix)
 
   return <View style={styles.row}>{getHarpCells(yCoord, xRange)}</View>
 }

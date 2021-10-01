@@ -11,11 +11,24 @@ import { HarpRow } from './harp-row'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
+// TODO: Should be shared resource
+const layoutFacts = {
+  harpfaceColumns: 10,
+  harpfaceRows: 7,
+}
 mockUseGlobal.mockImplementation((stateItem: string) => {
-  if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+  if (stateItem === 'activeDegreeMatrix')
+    return [inactiveCellsHarpStrata.degreeMatrix]
+  if (stateItem === 'activePitchMatrix')
+    return [inactiveCellsHarpStrata.pitchMatrix]
+  if (stateItem === 'activeInteractionMatrix')
+    return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+  if (stateItem === 'activeDegreeIds')
+    return [inactiveCellsHarpStrata.activeDegreeIds]
   if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
   if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
   if (stateItem === 'bufferedActivityToggles') return [[]]
+  if (stateItem === 'layoutFacts') return [layoutFacts]
   if (stateItem === 'columnBounds') return ['FIT']
   return undefined
 })

@@ -13,6 +13,7 @@ type HarpRows = {
 }
 
 export const useHarpRows = (xRange: XRange): HarpRows => {
+  // TODO: replace with derived global state
   const { viewableInteractionMatrix } = useViewableMatrices()
   const viewableBlowDrawIdsMap = viewableInteractionMatrix.map(
     mapRowToBlowDrawIds
@@ -28,10 +29,7 @@ export const useHarpRows = (xRange: XRange): HarpRows => {
   // TOOMANYRENDERS: This is going to produce more renders than necessary
   // when:
   // - the
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const {
-    apparatus: { interactionMatrix: fullInteractionMatrix },
-  } = activeHarpStrata
+  const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const fullBlowDrawIdsMap = fullInteractionMatrix.map(mapRowToBlowDrawIds)
   const fullDrawIndex = fullBlowDrawIdsMap.indexOf(InteractionIds.Draw)
   const drawIndexDiff = fullDrawIndex - drawIndex

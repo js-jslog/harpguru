@@ -17,10 +17,7 @@ export const useValvingItems = (
   itemTapHandler: ItemTapHandler
 ): ValvingItems => {
   // TOOMANYRENDERS
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const {
-    apparatus: { valvingId },
-  } = activeHarpStrata
+  const [valvingId] = useGlobal('valvingId')
   const items = getValvingIds().map((id, index) => (
     <OptionItem
       key={`${index}`}

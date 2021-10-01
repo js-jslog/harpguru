@@ -12,8 +12,9 @@ export type PositionFacts = {
 }
 
 export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const { degreeMatrix, pitchMatrix, activeDegreeIds } = activeHarpStrata
+  const [degreeMatrix] = useGlobal('activeDegreeMatrix')
+  const [pitchMatrix] = useGlobal('activePitchMatrix')
+  const [activeDegreeIds] = useGlobal('activeDegreeIds')
   const [yCoord, xCoord] = yxCoord
   const {
     [yCoord]: { [xCoord]: thisDegree },

@@ -19,10 +19,7 @@ export const useTuningItems = (
   itemTapHandler: ItemTapHandler
 ): TuningItems => {
   // TOOMANYRENDERS
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const {
-    apparatus: { tuningId },
-  } = activeHarpStrata
+  const [tuningId] = useGlobal('tuningId')
   const commonTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.Common)

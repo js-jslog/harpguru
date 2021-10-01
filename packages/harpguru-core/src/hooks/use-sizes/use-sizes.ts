@@ -1,4 +1,5 @@
-import { useLayoutFacts } from '../use-layout-facts'
+import { useGlobal } from 'reactn'
+
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 import { SizeScheme, SizeSchemes } from './use-sizes-types'
@@ -41,7 +42,11 @@ const relativeLabelIconSize = 7
 
 export const useSizes = (): SizeSchemes => {
   const { shortEdge, longEdge } = getWindowDimensions()
-  const { harpFaceRowCount, harpFaceColumnCount } = useLayoutFacts()
+  const [layoutFacts] = useGlobal('layoutFacts')
+  const {
+    harpfaceColumns: harpFaceColumnCount,
+    harpfaceRows: harpFaceRowCount,
+  } = layoutFacts
 
   const {
     [relativeColumnWidth]: columnWidth,

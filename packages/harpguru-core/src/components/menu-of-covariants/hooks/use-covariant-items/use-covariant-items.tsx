@@ -30,8 +30,9 @@ export const useCovariantItems = (): CovariantItems => {
     // TOOMANYRENDERS: if we create more dedicated global states
     // then we can potentially avoid rerending when things like
     // active pitches change which I think will be the most common.
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
+    const [harpKeyId] = useGlobal('harpKeyId')
+    const [pozitionId] = useGlobal('pozitionId')
+    const [rootPitchId] = useGlobal('rootPitchId')
     const harpKeyPrimer: CovariancePrimer = {
       lockedType: CovariantMembers.HarpKey,
       variedType: CovariantMembers.Pozition,
@@ -72,8 +73,9 @@ export const useCovariantItems = (): CovariantItems => {
     useGlobal: UseGlobal,
     itemTapHandler: ItemTapHandler
   ) => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
+    const [harpKeyId] = useGlobal('harpKeyId')
+    const [pozitionId] = useGlobal('pozitionId')
+    const [rootPitchId] = useGlobal('rootPitchId')
     const pozitionPrimer: CovariancePrimer = {
       lockedType: CovariantMembers.Pozition,
       variedType: CovariantMembers.RootPitch,
@@ -114,8 +116,9 @@ export const useCovariantItems = (): CovariantItems => {
     useGlobal: UseGlobal,
     itemTapHandler: ItemTapHandler
   ) => {
-    const [activeHarpStrata] = useGlobal('activeHarpStrata')
-    const { harpKeyId, pozitionId, rootPitchId } = activeHarpStrata
+    const [harpKeyId] = useGlobal('harpKeyId')
+    const [pozitionId] = useGlobal('pozitionId')
+    const [rootPitchId] = useGlobal('rootPitchId')
     const rootPitchPrimer: CovariancePrimer = {
       lockedType: CovariantMembers.RootPitch,
       variedType: CovariantMembers.HarpKey,

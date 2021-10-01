@@ -1,15 +1,12 @@
-import type { HarpStrata } from 'harpstrata'
+import type { HarpFaceMatrix, Interaction } from 'harpparts'
 import { InteractionIds } from 'harpparts'
 
 import type { Coord } from '../../../../types'
 
 const getInteractionId = (
   yCoord: Coord,
-  activeHarpStrata: HarpStrata
+  interactionMatrix: HarpFaceMatrix<Interaction>
 ): InteractionIds | undefined => {
-  const {
-    apparatus: { interactionMatrix },
-  } = activeHarpStrata
   const {
     [yCoord]: { [0]: thisInteraction },
   } = interactionMatrix
@@ -20,9 +17,9 @@ const getInteractionId = (
 
 export const isBlowRow = (
   yCoord: Coord,
-  activeHarpStrata: HarpStrata
+  interactionMatrix: HarpFaceMatrix<Interaction>
 ): boolean => {
-  const interactionId = getInteractionId(yCoord, activeHarpStrata)
+  const interactionId = getInteractionId(yCoord, interactionMatrix)
   const isBlow = interactionId === InteractionIds.Blow
 
   return isBlow
@@ -30,9 +27,9 @@ export const isBlowRow = (
 
 export const isDrawRow = (
   yCoord: Coord,
-  activeHarpStrata: HarpStrata
+  interactionMatrix: HarpFaceMatrix<Interaction>
 ): boolean => {
-  const interactionId = getInteractionId(yCoord, activeHarpStrata)
+  const interactionId = getInteractionId(yCoord, interactionMatrix)
   const isDraw = interactionId === InteractionIds.Draw
 
   return isDraw
@@ -40,9 +37,9 @@ export const isDrawRow = (
 
 export const isBlowOrDrawRow = (
   yCoord: Coord,
-  activeHarpStrata: HarpStrata
+  interactionMatrix: HarpFaceMatrix<Interaction>
 ): boolean => {
   return (
-    isBlowRow(yCoord, activeHarpStrata) || isDrawRow(yCoord, activeHarpStrata)
+    isBlowRow(yCoord, interactionMatrix) || isDrawRow(yCoord, interactionMatrix)
   )
 }

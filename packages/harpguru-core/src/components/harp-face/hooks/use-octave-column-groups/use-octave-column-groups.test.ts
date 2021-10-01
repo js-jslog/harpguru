@@ -7,9 +7,11 @@ import { useOctaveColumnGroups } from './use-octave-column-groups'
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
 
+const { degreeMatrix: activeDegreeMatrix } = activeHarpStrata
+
 test('Identifies the columns grouped by octave', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [activeHarpStrata]
+    if (stateItem === 'activeDegreeMatrix') return [activeDegreeMatrix]
     if (stateItem === 'fragmentHarpFaceByOctaves') return [true]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
@@ -22,7 +24,7 @@ test('Identifies the columns grouped by octave', () => {
 
 test('Returns an ungrouped set if the harp fragmentation is off', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [activeHarpStrata]
+    if (stateItem === 'activeDegreeMatrix') return [activeDegreeMatrix]
     if (stateItem === 'fragmentHarpFaceByOctaves') return [false]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
@@ -35,7 +37,7 @@ test('Returns an ungrouped set if the harp fragmentation is off', () => {
 
 test('Returns a bounded grouped set', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [activeHarpStrata]
+    if (stateItem === 'activeDegreeMatrix') return [activeDegreeMatrix]
     if (stateItem === 'fragmentHarpFaceByOctaves') return [true]
     if (stateItem === 'columnBounds') return [[2, 7]]
     return undefined
@@ -48,7 +50,7 @@ test('Returns a bounded grouped set', () => {
 
 test('Returns a bounded ungrouped set', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [activeHarpStrata]
+    if (stateItem === 'activeDegreeMatrix') return [activeDegreeMatrix]
     if (stateItem === 'fragmentHarpFaceByOctaves') return [false]
     if (stateItem === 'columnBounds') return [[3, 8]]
     return undefined

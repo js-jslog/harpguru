@@ -8,8 +8,19 @@ import { HoleNumberRow } from './hole-number-row'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
+// TODO: Should be shared resource
+const layoutFacts = {
+  harpfaceColumns: 10,
+  harpfaceRows: 7,
+}
 mockUseGlobal.mockImplementation((stateItem: string) => {
-  if (stateItem === 'activeHarpStrata') return [activeCellsHarpStrata]
+  if (stateItem === 'activeDegreeMatrix')
+    return [activeCellsHarpStrata.degreeMatrix]
+  if (stateItem === 'activePitchMatrix')
+    return [activeCellsHarpStrata.pitchMatrix]
+  if (stateItem === 'activeInteractionMatrix')
+    return [activeCellsHarpStrata.apparatus.interactionMatrix]
+  if (stateItem === 'layoutFacts') return [layoutFacts]
   if (stateItem === 'columnBounds') return ['FIT']
   return undefined
 })

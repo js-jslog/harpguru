@@ -9,12 +9,23 @@ import { getHarpCells } from './get-harp-cells'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
+const layoutFacts = {
+  harpfaceColumns: 10,
+  harpfaceRows: 7,
+}
 mockUseGlobal.mockImplementation((stateItem: string) => {
-  if (stateItem === 'activeHarpStrata')
-    return [inactiveCellsHarpStrata, jest.fn()]
+  if (stateItem === 'activeDegreeMatrix')
+    return [inactiveCellsHarpStrata.degreeMatrix, jest.fn()]
+  if (stateItem === 'activePitchMatrix')
+    return [inactiveCellsHarpStrata.pitchMatrix, jest.fn()]
+  if (stateItem === 'activeInteractionMatrix')
+    return [inactiveCellsHarpStrata.apparatus.interactionMatrix, jest.fn()]
+  if (stateItem === 'activeDegreeIds')
+    return [inactiveCellsHarpStrata.activeDegreeIds]
   if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
   if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
   if (stateItem === 'bufferedActivityToggles') return [[]]
+  if (stateItem === 'layoutFacts') return [layoutFacts]
   if (stateItem === 'columnBounds') return ['FIT']
   return undefined
 })

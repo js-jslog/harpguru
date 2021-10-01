@@ -12,11 +12,23 @@ jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
 
 test('A snapshot of an unbounded HarpFaceFragment', () => {
+  const layoutFacts = {
+    harpfaceColumns: 10,
+    harpfaceRows: 7,
+  }
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -29,11 +41,25 @@ test('A snapshot of an unbounded HarpFaceFragment', () => {
 })
 
 test('A snapshot of a bounded HarpFaceFragment - we should expect fewer rows since the double blowbend is not present', () => {
+  // TODO: These mock implementations should really
+  // be deducable rather than manually setup each time
+  const layoutFacts = {
+    harpfaceColumns: 9,
+    harpfaceRows: 7,
+  }
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix, jest.fn()]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix, jest.fn()]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix, jest.fn()]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return [[0, 8]]
     return undefined
   })

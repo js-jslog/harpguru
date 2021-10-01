@@ -13,13 +13,26 @@ import { HarpCell } from './harp-cell'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
+// TODO: Should be shared resource
+const layoutFacts = {
+  harpfaceColumns: 10,
+  harpfaceRows: 7,
+}
 
 test('A component is rendered with the Degree or Pitch value in its text view depending on the DisplayMode selected', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -30,10 +43,18 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 
   expect(getByText(DegreeIds.Second)).toBeTruthy()
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Pitch]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -45,10 +66,18 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 
 test('A component is rendered with an a11y role of button', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -62,10 +91,18 @@ test('A component is rendered with an a11y role of button', () => {
 
 test('A component is rendered without an a11y role of button if it has no content', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -110,10 +147,18 @@ test.skip('A press of the componenet results in toggled active ids in the harpst
 
 test('A snapshot of a populated cell', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -127,10 +172,18 @@ test('A snapshot of a populated cell', () => {
 
 test('A snapshot of an active cell', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [activeCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [activeCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [activeCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [activeCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [activeCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -144,10 +197,18 @@ test('A snapshot of an active cell', () => {
 
 test('A snapshot of an empty cell', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -161,10 +222,18 @@ test('A snapshot of an empty cell', () => {
 
 test('A snapshot of an inactive cell in Explore mode', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })
@@ -180,10 +249,19 @@ test('A snapshot of an inactive cell in Explore mode', () => {
 // the contents of the cells should be hidden in Quiz mode.
 test('A snapshot of an inactive cell in Quiz mode', () => {
   mockUseGlobal.mockImplementation((stateItem: string) => {
+    if (stateItem === 'activeDegreeMatrix')
+      return [inactiveCellsHarpStrata.degreeMatrix]
+    if (stateItem === 'activePitchMatrix')
+      return [inactiveCellsHarpStrata.pitchMatrix]
+    if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'activeDegreeIds')
+      return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Quiz]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]
+    if (stateItem === 'layoutFacts') return [layoutFacts]
     if (stateItem === 'columnBounds') return ['FIT']
     return undefined
   })

@@ -25,6 +25,9 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
   )
   const [prevActiveDegreeIds, setActiveDegreeIds] = useGlobal('activeDegreeIds')
   const [prevActivePitchIds, setActivePitchIds] = useGlobal('activePitchIds')
+  const [prevHarpKeyId, setHarpKeyId] = useGlobal('harpKeyId')
+  const [prevPozitionId, setPozitionId] = useGlobal('pozitionId')
+  const [prevRootPitchId, setRootPitchId] = useGlobal('rootPitchId')
   const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
   const [prevActiveDegreeMatrix, setActiveDegreeMatrix] = useGlobal(
     'activeDegreeMatrix'
@@ -83,6 +86,15 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       const nextActiveDegreeIds = deriveActiveDegreeIds(activeHarpStrata)
       if (!compareActiveIds(nextActiveDegreeIds, prevActiveDegreeIds))
         setActiveDegreeIds(nextActiveDegreeIds)
+
+      const { harpKeyId: nextHarpKeyId } = activeHarpStrata
+      if (prevHarpKeyId !== nextHarpKeyId) setHarpKeyId(nextHarpKeyId)
+
+      const { pozitionId: nextPozitionId } = activeHarpStrata
+      if (prevPozitionId !== nextPozitionId) setPozitionId(nextPozitionId)
+
+      const { rootPitchId: nextRootPitchId } = activeHarpStrata
+      if (prevRootPitchId !== nextRootPitchId) setRootPitchId(nextRootPitchId)
 
       const nextActivePitchIds = deriveActivePitchIds(activeHarpStrata)
       if (!compareActiveIds(nextActivePitchIds, prevActivePitchIds))

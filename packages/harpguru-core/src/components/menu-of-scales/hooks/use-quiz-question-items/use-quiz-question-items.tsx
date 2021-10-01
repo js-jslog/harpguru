@@ -32,10 +32,9 @@ export const useQuizQuestionItems = (
   ))
 
   // TOOMANYRENDERS:
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
   const [, setActiveQuizDegrees] = useGlobal('activeQuizDegrees')
-  const syncWithHarpTapHandler = () =>
-    setActiveQuizDegrees(activeHarpStrata.activeDegreeIds)
+  const [activeDegreeIds] = useGlobal('activeQuizDegrees')
+  const syncWithHarpTapHandler = () => setActiveQuizDegrees(activeDegreeIds)
   const syncItem = (
     <OptionItem
       value={'Sync with active harp'}
