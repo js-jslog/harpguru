@@ -18,6 +18,11 @@ import {
 
 export const NewHarpStrataStateCallback = (): React.ReactElement => {
   const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [prevTuningId, setTuningId] = useGlobal('tuningId')
+  const [prevValvingId, setValvingId] = useGlobal('valvingId')
+  const [prevActiveInteractionMatrix, setActiveInteractionMatrix] = useGlobal(
+    'activeInteractionMatrix'
+  )
   const [prevActiveDegreeIds, setActiveDegreeIds] = useGlobal('activeDegreeIds')
   const [prevActivePitchIds, setActivePitchIds] = useGlobal('activePitchIds')
   const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
@@ -36,6 +41,45 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
   )
   useEffect(() => {
     unstable_batchedUpdates(() => {
+      const {
+        apparatus: { tuningId: nextTuningId },
+      } = activeHarpStrata
+      if (prevTuningId !== nextTuningId) setTuningId(nextTuningId)
+
+      const {
+        apparatus: { valvingId: nextValvingId },
+      } = activeHarpStrata
+      if (prevValvingId !== nextValvingId) setValvingId(nextValvingId)
+
+      const {
+        apparatus: { interactionMatrix: nextActiveInteractionMatrix },
+      } = activeHarpStrata
+      if (
+        !doSparceIdedObjectMatricesMatch(
+          prevActiveInteractionMatrix,
+          nextActiveInteractionMatrix
+        )
+      )
+        setActiveInteractionMatrix(nextActiveInteractionMatrix)
+
+      const { degreeMatrix: nextActiveDegreeMatrix } = activeHarpStrata
+      if (
+        !doSparceIdedObjectMatricesMatch(
+          prevActiveDegreeMatrix,
+          nextActiveDegreeMatrix
+        )
+      )
+        setActiveDegreeMatrix(nextActiveDegreeMatrix)
+
+      const { pitchMatrix: nextActivePitchMatrix } = activeHarpStrata
+      if (
+        !doSparceIdedObjectMatricesMatch(
+          prevActivePitchMatrix,
+          nextActivePitchMatrix
+        )
+      )
+        setActivePitchMatrix(nextActivePitchMatrix)
+
       const nextActiveDegreeIds = deriveActiveDegreeIds(activeHarpStrata)
       if (!compareActiveIds(nextActiveDegreeIds, prevActiveDegreeIds))
         setActiveDegreeIds(nextActiveDegreeIds)
@@ -51,26 +95,8 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       if (!compareColumnBounds(prevColumnBounds, nextColumnBounds))
         setColumnBounds(nextColumnBounds)
 
-      const { degreeMatrix: activeDegreeMatrix } = activeHarpStrata
-      if (
-        !doSparceIdedObjectMatricesMatch(
-          prevActiveDegreeMatrix,
-          activeDegreeMatrix
-        )
-      )
-        setActiveDegreeMatrix(activeDegreeMatrix)
-
-      const { pitchMatrix: activePitchMatrix } = activeHarpStrata
-      if (
-        !doSparceIdedObjectMatricesMatch(
-          prevActivePitchMatrix,
-          activePitchMatrix
-        )
-      )
-        setActivePitchMatrix(activePitchMatrix)
-
       const nextViewableDegreeMatrix = deriveViewableDegreeMatrix(
-        activeDegreeMatrix,
+        nextActiveDegreeMatrix,
         nextColumnBounds
       )
       if (
@@ -82,7 +108,7 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
         setViewableDegreeMatrix(nextViewableDegreeMatrix)
 
       const nextViewablePitchMatrix = deriveViewablePitchMatrix(
-        activePitchMatrix,
+        nextActivePitchMatrix,
         nextColumnBounds
       )
       if (

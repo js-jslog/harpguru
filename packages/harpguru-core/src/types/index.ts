@@ -8,6 +8,9 @@ import type {
   Pitch,
   PitchIds,
   PozitionIds,
+  TuningIds,
+  ValvingIds,
+  Interaction,
 } from 'harpparts'
 
 type LayoutFacts = {
@@ -24,6 +27,9 @@ export type GlobalState = {
   readonly flushChannel: FlushChannels
   readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
   readonly columnBounds: 'FIT' | readonly [number, number]
+  readonly tuningId: TuningIds
+  readonly valvingId: ValvingIds
+  readonly activeInteractionMatrix: HarpFaceMatrix<Interaction>
   readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
   readonly activePitchMatrix: HarpFaceMatrix<Pitch>
   readonly activeDegreeIds: ActiveDegreeIds

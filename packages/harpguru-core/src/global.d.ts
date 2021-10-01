@@ -4,9 +4,12 @@ import type {
   Degree,
   DegreeIds,
   HarpFaceMatrix,
+  Interaction,
   Pitch,
   PitchIds,
   PozitionIds,
+  TuningIds,
+  ValvingIds,
 } from 'harpparts'
 
 import type { DisplayModes, ExperienceModes, FlushChannels } from './types'
@@ -26,6 +29,9 @@ declare module 'reactn/default' {
     readonly flushChannel: FlushChannels
     readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
     readonly columnBounds: 'FIT' | readonly [number, number]
+    readonly tuningId: TuningIds
+    readonly valvingId: ValvingIds
+    readonly activeInteractionMatrix: HarpFaceMatrix<Interaction>
     readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
     readonly activePitchMatrix: HarpFaceMatrix<Pitch>
     readonly activeDegreeIds: ActiveDegreeIds
