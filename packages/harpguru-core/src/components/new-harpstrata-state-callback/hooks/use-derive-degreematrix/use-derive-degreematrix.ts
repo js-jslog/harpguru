@@ -17,5 +17,5 @@ export const useDeriveDegreeMatrix = (): void => {
       return
     console.log(':::::::::::::::::::::::::::::::::: degreematrix changed')
     setDegreeMatrix(activeHarpStrata.degreeMatrix)
-  }, [activeHarpStrata, prevDegreeMatrix, setDegreeMatrix])
+  }, [activeHarpStrata])
 }

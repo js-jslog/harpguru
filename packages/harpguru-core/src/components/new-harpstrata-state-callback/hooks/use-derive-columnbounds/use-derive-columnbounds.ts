@@ -16,5 +16,5 @@ export const useDeriveColumnBounds = (): void => {
     if (compareColumnBounds(prevColumnBounds, newColumnBounds)) return
     console.log(':::::::::::::::::::::::::::::::::: columnBounds changed')
     setColumnBounds(newColumnBounds)
-  }, [activeHarpStrata, prevColumnBounds, setColumnBounds])
+  }, [activeHarpStrata])
 }

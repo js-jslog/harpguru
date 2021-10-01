@@ -20,5 +20,5 @@ export const useDerivePitchMatrix = (): void => {
     // TODO: Should consider whether the prevPichMatrix should
     // be included here. What will happen if it is somehow
     // updated independently of the activeHarpSrata
-  }, [activeHarpStrata, prevPitchMatrix, setPitchMatrix])
+  }, [activeHarpStrata])
 }

@@ -13,5 +13,5 @@ export const useDeriveActiveDegreeIds = (): void => {
     if (compareActiveIds(nextActiveDegreeIds, prevActiveDegreeIds)) return
     console.log(':::::::::::::::::::::::::::::::::: active degree ids changed')
     setActiveDegreeIds(nextActiveDegreeIds)
-  }, [activeHarpStrata, prevActiveDegreeIds, setActiveDegreeIds])
+  }, [activeHarpStrata])
 }

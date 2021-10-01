@@ -5,13 +5,13 @@ import { deriveViewableDegreeMatrix } from '../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
 export const useDeriveViewableDegreeMatrix = (): void => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [activeDegreeMatrix] = useGlobal('activeDegreeMatrix')
   const [columnBounds] = useGlobal('columnBounds')
   const [prevDegreeMatrix, setDegreeMatrix] = useGlobal('viewableDegreeMatrix')
 
   useEffect(() => {
     const nextViewableDegreeMatrix = deriveViewableDegreeMatrix(
-      activeHarpStrata,
+      activeDegreeMatrix,
       columnBounds
     )
     if (
@@ -25,5 +25,5 @@ export const useDeriveViewableDegreeMatrix = (): void => {
       ':::::::::::::::::::::::::::::::::: viewable degreeMatrix changed'
     )
     setDegreeMatrix(nextViewableDegreeMatrix)
-  }, [activeHarpStrata, columnBounds, prevDegreeMatrix, setDegreeMatrix])
+  }, [activeDegreeMatrix, columnBounds])
 }

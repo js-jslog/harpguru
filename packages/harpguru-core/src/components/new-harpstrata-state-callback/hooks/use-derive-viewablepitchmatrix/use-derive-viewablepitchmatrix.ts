@@ -5,13 +5,13 @@ import { deriveViewablePitchMatrix } from '../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
 export const useDeriveViewablePitchMatrix = (): void => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [activePitchMatrix] = useGlobal('activePitchMatrix')
   const [columnBounds] = useGlobal('columnBounds')
   const [prevPitchMatrix, setPitchMatrix] = useGlobal('viewablePitchMatrix')
 
   useEffect(() => {
     const nextViewablePitchMatrix = deriveViewablePitchMatrix(
-      activeHarpStrata,
+      activePitchMatrix,
       columnBounds
     )
     if (
@@ -22,5 +22,5 @@ export const useDeriveViewablePitchMatrix = (): void => {
       ':::::::::::::::::::::::::::::::::: viewable pitchMatrix changed'
     )
     setPitchMatrix(nextViewablePitchMatrix)
-  }, [activeHarpStrata, columnBounds, prevPitchMatrix, setPitchMatrix])
+  }, [activePitchMatrix, columnBounds])
 }

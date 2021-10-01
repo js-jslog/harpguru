@@ -5,17 +5,14 @@ import { deriveLayoutFacts } from '../../utils'
 import { compareLayoutFacts } from '../../../../utils/compare-layout-facts'
 
 export const useDeriveLayoutFacts = (): void => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const [prevColumnBounds] = useGlobal('columnBounds')
+  // TODO: should be based on the less volatile interaction matrix
+  const [viewableDegreeMatrix] = useGlobal('viewableDegreeMatrix')
   const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
 
   useEffect(() => {
-    const nextLayoutFacts = deriveLayoutFacts(
-      activeHarpStrata,
-      prevColumnBounds
-    )
+    const nextLayoutFacts = deriveLayoutFacts(viewableDegreeMatrix)
     if (compareLayoutFacts(prevLayoutFacts, nextLayoutFacts)) return
     console.log(':::::::::::::::::::::::::::::::::: layout facts changed')
     setLayoutFacts(nextLayoutFacts)
-  }, [activeHarpStrata, prevColumnBounds, prevLayoutFacts, setLayoutFacts])
+  }, [viewableDegreeMatrix])
 }

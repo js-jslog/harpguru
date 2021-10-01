@@ -13,5 +13,5 @@ export const useDeriveActivePitchIds = (): void => {
     if (compareActiveIds(nextActivePitchIds, prevActivePitchIds)) return
     console.log(':::::::::::::::::::::::::::::::::: active pitch ids changed')
     setActivePitchIds(nextActivePitchIds)
-  }, [activeHarpStrata, prevActivePitchIds, setActivePitchIds])
+  }, [activeHarpStrata])
 }

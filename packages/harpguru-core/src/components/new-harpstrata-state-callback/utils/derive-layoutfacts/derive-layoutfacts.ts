@@ -1,6 +1,5 @@
-import type { HarpStrata } from 'harpstrata'
+import type { HarpFaceMatrix, Degree } from 'harpparts'
 
-import { deriveViewableDegreeMatrix } from '../derive-viewabledegreematrix'
 import { determineMatrixDimensions } from '../../../../utils'
 
 type LayoutFacts = {
@@ -9,17 +8,12 @@ type LayoutFacts = {
 }
 
 export const deriveLayoutFacts = (
-  activeHarpStrata: HarpStrata,
-  prevColumnBounds: 'FIT' | readonly [number, number]
+  viewableDegreeMatrix: HarpFaceMatrix<Degree>
 ): LayoutFacts => {
-  const newViewableDegreeMatrix = deriveViewableDegreeMatrix(
-    activeHarpStrata,
-    prevColumnBounds
+  const { columns: columnCount, rows: rowCount } = determineMatrixDimensions(
+    viewableDegreeMatrix
   )
 
-  const { columns: columnCount, rows: rowCount } = determineMatrixDimensions(
-    newViewableDegreeMatrix
-  )
   const newLayoutFacts = {
     harpfaceColumns: columnCount,
     harpfaceRows: rowCount,
