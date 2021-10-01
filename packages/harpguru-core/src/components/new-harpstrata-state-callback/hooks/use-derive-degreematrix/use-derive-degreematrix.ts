@@ -1,21 +1,15 @@
-import { useGlobal } from 'reactn'
-import { useEffect } from 'react'
+import type { HarpStrata } from 'harpstrata'
+import type { HarpFaceMatrix, Degree } from 'harpparts'
 
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
-export const useDeriveDegreeMatrix = (): void => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const [prevDegreeMatrix, setDegreeMatrix] = useGlobal('activeDegreeMatrix')
-
-  useEffect(() => {
-    if (
-      doSparceIdedObjectMatricesMatch(
-        prevDegreeMatrix,
-        activeHarpStrata.degreeMatrix
-      )
-    )
-      return
-    console.log(':::::::::::::::::::::::::::::::::: degreematrix changed')
-    setDegreeMatrix(activeHarpStrata.degreeMatrix)
-  }, [activeHarpStrata])
+export const useDeriveDegreeMatrix = (
+  newHarpStrata: HarpStrata,
+  prevDegreeMatrix: HarpFaceMatrix<Degree>,
+  setDegreeMatrix: (arg0: HarpFaceMatrix<Degree>) => void
+): HarpFaceMatrix<Degree> => {
+  const { degreeMatrix: newDegreeMatrix } = newHarpStrata
+  if (!doSparceIdedObjectMatricesMatch(prevDegreeMatrix, newDegreeMatrix))
+    setDegreeMatrix(newDegreeMatrix)
+  return newDegreeMatrix
 }

@@ -1,17 +1,15 @@
-import { useGlobal } from 'reactn'
-import { useEffect } from 'react'
+import type { ActiveDegreeIds, HarpStrata } from 'harpstrata'
 
 import { deriveActiveDegreeIds } from '../../utils'
 import { compareActiveIds } from '../../../../utils/compare-active-ids'
 
-export const useDeriveActiveDegreeIds = (): void => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const [prevActiveDegreeIds, setActiveDegreeIds] = useGlobal('activeDegreeIds')
-
-  useEffect(() => {
-    const nextActiveDegreeIds = deriveActiveDegreeIds(activeHarpStrata)
-    if (compareActiveIds(nextActiveDegreeIds, prevActiveDegreeIds)) return
-    console.log(':::::::::::::::::::::::::::::::::: active degree ids changed')
+export const useDeriveActiveDegreeIds = (
+  newHarpStrata: HarpStrata,
+  prevActiveDegreeIds: ActiveDegreeIds,
+  setActiveDegreeIds: (arg0: ActiveDegreeIds) => void
+): ActiveDegreeIds => {
+  const nextActiveDegreeIds = deriveActiveDegreeIds(newHarpStrata)
+  if (!compareActiveIds(nextActiveDegreeIds, prevActiveDegreeIds))
     setActiveDegreeIds(nextActiveDegreeIds)
-  }, [activeHarpStrata])
+  return nextActiveDegreeIds
 }

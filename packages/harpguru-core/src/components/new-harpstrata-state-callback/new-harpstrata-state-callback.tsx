@@ -1,25 +1,28 @@
 import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
-import { compareLayoutFacts } from '../../utils/compare-layout-facts'
-import { compareActiveIds } from '../../utils/compare-active-ids'
-import { compareColumnBounds } from '../../utils'
-import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
-
 import {
-  deriveActiveDegreeIds,
-  deriveActivePitchIds,
-  deriveViewableDegreeMatrix,
-  deriveViewablePitchMatrix,
-  deriveColumnBounds,
-  deriveLayoutFacts,
-} from './utils'
+  useDeriveTuningId,
+  useDeriveValvingId,
+  useDeriveInteractionMatrix,
+  useDeriveDegreeMatrix,
+  useDerivePitchMatrix,
+  useDeriveHarpKeyId,
+  useDerivePozitionId,
+  useDeriveRootPitchId,
+  useDeriveActiveDegreeIds,
+  useDeriveActivePitchIds,
+  useDeriveColumnBounds,
+  useDeriveViewableDegreeMatrix,
+  useDeriveViewablePitchMatrix,
+  useDeriveLayoutFacts,
+} from './hooks'
 
 export const NewHarpStrataStateCallback = (): React.ReactElement => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [newHarpStrata] = useGlobal('activeHarpStrata')
   const [prevTuningId, setTuningId] = useGlobal('tuningId')
   const [prevValvingId, setValvingId] = useGlobal('valvingId')
-  const [prevActiveInteractionMatrix, setActiveInteractionMatrix] = useGlobal(
+  const [prevInteractionMatrix, setInteractionMatrix] = useGlobal(
     'activeInteractionMatrix'
   )
   const [prevActiveDegreeIds, setActiveDegreeIds] = useGlobal('activeDegreeIds')
@@ -28,12 +31,8 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
   const [prevPozitionId, setPozitionId] = useGlobal('pozitionId')
   const [prevRootPitchId, setRootPitchId] = useGlobal('rootPitchId')
   const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
-  const [prevActiveDegreeMatrix, setActiveDegreeMatrix] = useGlobal(
-    'activeDegreeMatrix'
-  )
-  const [prevActivePitchMatrix, setActivePitchMatrix] = useGlobal(
-    'activePitchMatrix'
-  )
+  const [prevDegreeMatrix, setDegreeMatrix] = useGlobal('activeDegreeMatrix')
+  const [prevPitchMatrix, setPitchMatrix] = useGlobal('activePitchMatrix')
   const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
   const [prevViewableDegreeMatrix, setViewableDegreeMatrix] = useGlobal(
     'viewableDegreeMatrix'
@@ -42,97 +41,59 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
     'viewablePitchMatrix'
   )
   useEffect(() => {
-    const {
-      apparatus: { tuningId: nextTuningId },
-    } = activeHarpStrata
-    if (prevTuningId !== nextTuningId) setTuningId(nextTuningId)
-
-    const {
-      apparatus: { valvingId: nextValvingId },
-    } = activeHarpStrata
-    if (prevValvingId !== nextValvingId) setValvingId(nextValvingId)
-
-    const {
-      apparatus: { interactionMatrix: nextActiveInteractionMatrix },
-    } = activeHarpStrata
-    if (
-      !doSparceIdedObjectMatricesMatch(
-        prevActiveInteractionMatrix,
-        nextActiveInteractionMatrix
-      )
+    useDeriveTuningId(newHarpStrata, prevTuningId, setTuningId)
+    useDeriveValvingId(newHarpStrata, prevValvingId, setValvingId)
+    useDeriveInteractionMatrix(
+      newHarpStrata,
+      prevInteractionMatrix,
+      setInteractionMatrix
     )
-      setActiveInteractionMatrix(nextActiveInteractionMatrix)
-
-    const { degreeMatrix: nextActiveDegreeMatrix } = activeHarpStrata
-    if (
-      !doSparceIdedObjectMatricesMatch(
-        prevActiveDegreeMatrix,
-        nextActiveDegreeMatrix
-      )
+    const nextDegreeMatrix = useDeriveDegreeMatrix(
+      newHarpStrata,
+      prevDegreeMatrix,
+      setDegreeMatrix
     )
-      setActiveDegreeMatrix(nextActiveDegreeMatrix)
-
-    const { pitchMatrix: nextActivePitchMatrix } = activeHarpStrata
-    if (
-      !doSparceIdedObjectMatricesMatch(
-        prevActivePitchMatrix,
-        nextActivePitchMatrix
-      )
+    const nextPitchMatrix = useDerivePitchMatrix(
+      newHarpStrata,
+      prevPitchMatrix,
+      setPitchMatrix
     )
-      setActivePitchMatrix(nextActivePitchMatrix)
-
-    const nextActiveDegreeIds = deriveActiveDegreeIds(activeHarpStrata)
-    if (!compareActiveIds(nextActiveDegreeIds, prevActiveDegreeIds))
-      setActiveDegreeIds(nextActiveDegreeIds)
-
-    const { harpKeyId: nextHarpKeyId } = activeHarpStrata
-    if (prevHarpKeyId !== nextHarpKeyId) setHarpKeyId(nextHarpKeyId)
-
-    const { pozitionId: nextPozitionId } = activeHarpStrata
-    if (prevPozitionId !== nextPozitionId) setPozitionId(nextPozitionId)
-
-    const { rootPitchId: nextRootPitchId } = activeHarpStrata
-    if (prevRootPitchId !== nextRootPitchId) setRootPitchId(nextRootPitchId)
-
-    const nextActivePitchIds = deriveActivePitchIds(activeHarpStrata)
-    if (!compareActiveIds(nextActivePitchIds, prevActivePitchIds))
-      setActivePitchIds(nextActivePitchIds)
-
-    const nextColumnBounds = deriveColumnBounds(
-      activeHarpStrata,
-      prevColumnBounds
+    useDeriveHarpKeyId(newHarpStrata, prevHarpKeyId, setHarpKeyId)
+    useDerivePozitionId(newHarpStrata, prevPozitionId, setPozitionId)
+    useDeriveRootPitchId(newHarpStrata, prevRootPitchId, setRootPitchId)
+    useDeriveActiveDegreeIds(
+      newHarpStrata,
+      prevActiveDegreeIds,
+      setActiveDegreeIds
     )
-    if (!compareColumnBounds(prevColumnBounds, nextColumnBounds))
-      setColumnBounds(nextColumnBounds)
-
-    const nextViewableDegreeMatrix = deriveViewableDegreeMatrix(
-      nextActiveDegreeMatrix,
-      nextColumnBounds
+    useDeriveActivePitchIds(
+      newHarpStrata,
+      prevActivePitchIds,
+      setActivePitchIds
     )
-    if (
-      !doSparceIdedObjectMatricesMatch(
-        prevViewableDegreeMatrix,
-        nextViewableDegreeMatrix
-      )
+    const nextColumnBounds = useDeriveColumnBounds(
+      newHarpStrata,
+      prevColumnBounds,
+      setColumnBounds
     )
-      setViewableDegreeMatrix(nextViewableDegreeMatrix)
-
-    const nextViewablePitchMatrix = deriveViewablePitchMatrix(
-      nextActivePitchMatrix,
-      nextColumnBounds
+    const nextViewableDegreeMatrix = useDeriveViewableDegreeMatrix(
+      nextDegreeMatrix,
+      nextColumnBounds,
+      prevViewableDegreeMatrix,
+      setViewableDegreeMatrix
     )
-    if (
-      !doSparceIdedObjectMatricesMatch(
-        prevViewablePitchMatrix,
-        nextViewablePitchMatrix
-      )
+    useDeriveViewablePitchMatrix(
+      nextPitchMatrix,
+      nextColumnBounds,
+      prevViewablePitchMatrix,
+      setViewablePitchMatrix
     )
-      setViewablePitchMatrix(nextViewablePitchMatrix)
-
-    const nextLayoutFacts = deriveLayoutFacts(nextViewableDegreeMatrix)
-    if (!compareLayoutFacts(prevLayoutFacts, nextLayoutFacts))
-      setLayoutFacts(nextLayoutFacts)
-  }, [activeHarpStrata])
+    useDeriveLayoutFacts(
+      nextViewableDegreeMatrix,
+      prevLayoutFacts,
+      setLayoutFacts
+    )
+  }, [newHarpStrata])
 
   return <></>
 }

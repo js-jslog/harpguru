@@ -1,17 +1,15 @@
-import { useGlobal } from 'reactn'
-import { useEffect } from 'react'
+import type { ActivePitchIds, HarpStrata } from 'harpstrata'
 
 import { deriveActivePitchIds } from '../../utils'
 import { compareActiveIds } from '../../../../utils/compare-active-ids'
 
-export const useDeriveActivePitchIds = (): void => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const [prevActivePitchIds, setActivePitchIds] = useGlobal('activePitchIds')
-
-  useEffect(() => {
-    const nextActivePitchIds = deriveActivePitchIds(activeHarpStrata)
-    if (compareActiveIds(nextActivePitchIds, prevActivePitchIds)) return
-    console.log(':::::::::::::::::::::::::::::::::: active pitch ids changed')
+export const useDeriveActivePitchIds = (
+  newHarpStrata: HarpStrata,
+  prevActivePitchIds: ActivePitchIds,
+  setActivePitchIds: (arg0: ActivePitchIds) => void
+): ActivePitchIds => {
+  const nextActivePitchIds = deriveActivePitchIds(newHarpStrata)
+  if (!compareActiveIds(nextActivePitchIds, prevActivePitchIds))
     setActivePitchIds(nextActivePitchIds)
-  }, [activeHarpStrata])
+  return nextActivePitchIds
 }

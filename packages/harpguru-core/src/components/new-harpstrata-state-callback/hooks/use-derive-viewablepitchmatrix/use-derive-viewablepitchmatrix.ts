@@ -1,26 +1,24 @@
-import { useGlobal } from 'reactn'
-import { useEffect } from 'react'
+import type { HarpFaceMatrix, Pitch } from 'harpparts'
 
 import { deriveViewablePitchMatrix } from '../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
-export const useDeriveViewablePitchMatrix = (): void => {
-  const [activePitchMatrix] = useGlobal('activePitchMatrix')
-  const [columnBounds] = useGlobal('columnBounds')
-  const [prevPitchMatrix, setPitchMatrix] = useGlobal('viewablePitchMatrix')
-
-  useEffect(() => {
-    const nextViewablePitchMatrix = deriveViewablePitchMatrix(
-      activePitchMatrix,
-      columnBounds
+export const useDeriveViewablePitchMatrix = (
+  nextPitchMatrix: HarpFaceMatrix<Pitch>,
+  nextColumnBounds: 'FIT' | readonly [number, number],
+  prevViewablePitchMatrix: HarpFaceMatrix<Pitch>,
+  setViewablePitchMatrix: (arg0: HarpFaceMatrix<Pitch>) => void
+): HarpFaceMatrix<Pitch> => {
+  const nextViewablePitchMatrix = deriveViewablePitchMatrix(
+    nextPitchMatrix,
+    nextColumnBounds
+  )
+  if (
+    !doSparceIdedObjectMatricesMatch(
+      prevViewablePitchMatrix,
+      nextViewablePitchMatrix
     )
-    if (
-      doSparceIdedObjectMatricesMatch(prevPitchMatrix, nextViewablePitchMatrix)
-    )
-      return
-    console.log(
-      ':::::::::::::::::::::::::::::::::: viewable pitchMatrix changed'
-    )
-    setPitchMatrix(nextViewablePitchMatrix)
-  }, [activePitchMatrix, columnBounds])
+  )
+    setViewablePitchMatrix(nextViewablePitchMatrix)
+  return nextViewablePitchMatrix
 }

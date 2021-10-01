@@ -1,29 +1,24 @@
-import { useGlobal } from 'reactn'
-import { useEffect } from 'react'
+import type { HarpFaceMatrix, Degree } from 'harpparts'
 
 import { deriveViewableDegreeMatrix } from '../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
-export const useDeriveViewableDegreeMatrix = (): void => {
-  const [activeDegreeMatrix] = useGlobal('activeDegreeMatrix')
-  const [columnBounds] = useGlobal('columnBounds')
-  const [prevDegreeMatrix, setDegreeMatrix] = useGlobal('viewableDegreeMatrix')
-
-  useEffect(() => {
-    const nextViewableDegreeMatrix = deriveViewableDegreeMatrix(
-      activeDegreeMatrix,
-      columnBounds
+export const useDeriveViewableDegreeMatrix = (
+  nextDegreeMatrix: HarpFaceMatrix<Degree>,
+  nextColumnBounds: 'FIT' | readonly [number, number],
+  prevViewableDegreeMatrix: HarpFaceMatrix<Degree>,
+  setViewableDegreeMatrix: (arg0: HarpFaceMatrix<Degree>) => void
+): HarpFaceMatrix<Degree> => {
+  const nextViewableDegreeMatrix = deriveViewableDegreeMatrix(
+    nextDegreeMatrix,
+    nextColumnBounds
+  )
+  if (
+    !doSparceIdedObjectMatricesMatch(
+      prevViewableDegreeMatrix,
+      nextViewableDegreeMatrix
     )
-    if (
-      doSparceIdedObjectMatricesMatch(
-        prevDegreeMatrix,
-        nextViewableDegreeMatrix
-      )
-    )
-      return
-    console.log(
-      ':::::::::::::::::::::::::::::::::: viewable degreeMatrix changed'
-    )
-    setDegreeMatrix(nextViewableDegreeMatrix)
-  }, [activeDegreeMatrix, columnBounds])
+  )
+    setViewableDegreeMatrix(nextViewableDegreeMatrix)
+  return nextViewableDegreeMatrix
 }
