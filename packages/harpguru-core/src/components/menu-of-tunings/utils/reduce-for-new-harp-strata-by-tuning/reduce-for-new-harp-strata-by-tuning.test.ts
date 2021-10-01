@@ -1,9 +1,7 @@
-import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
-import type { ActiveDegreeIds, ActivePitchIds } from 'harpstrata'
 import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
-import type { GlobalState } from '../../../../types'
+import { DisplayModes } from '../../../../types'
 
 import { reduceForNewHarpStrataByTuning } from './reduce-for-new-harp-strata-by-tuning'
 
@@ -29,56 +27,28 @@ const countryTunedHarp = getHarpStrata(countryTunedHarpProps)
 const naturalMinorHarp = getHarpStrata(naturalMinorHarpProps)
 
 test('provides HarpStrata updated by tuning set to natural minor', () => {
-  const inputGlobal = {
-    activeHarpStrata: countryTunedHarp,
-    columnBounds: 'FIT',
-    activeDegreeMatrix: countryTunedHarp.degreeMatrix,
-    activePitchMatrix: countryTunedHarp.pitchMatrix,
-    activeDegreeIds: [] as ActiveDegreeIds,
-    activePitchIds: [] as ActivePitchIds,
-    pozitionId: countryTunedHarp.pozitionId,
-    rootPitchId: countryTunedHarp.rootPitchId,
-    harpKeyId: countryTunedHarp.harpKeyId,
-    viewableDegreeMatrix: countryTunedHarp.degreeMatrix,
-    viewablePitchMatrix: countryTunedHarp.pitchMatrix,
-    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
-  } as GlobalState
-  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
+  const activeHarpStrata = countryTunedHarp
+  const { Degree: activeDisplayMode } = DisplayModes
+  const { NaturalMinor: tuningId } = TuningIds
 
-  const {
-    activeHarpStrata: newActiveHarpStrata,
-  } = reduceForNewHarpStrataByTuning(
-    inputGlobal,
-    unusedDispatcher,
-    TuningIds.NaturalMinor
+  const newActiveHarpStrata = reduceForNewHarpStrataByTuning(
+    activeHarpStrata,
+    activeDisplayMode,
+    tuningId
   )
 
   expect(newActiveHarpStrata).toStrictEqual(naturalMinorHarp)
 })
 
 test('provides HarpStrata updated by tuning to major diatonic', () => {
-  const inputGlobal = {
-    activeHarpStrata: countryTunedHarp,
-    columnBounds: 'FIT',
-    activeDegreeMatrix: countryTunedHarp.degreeMatrix,
-    activePitchMatrix: countryTunedHarp.pitchMatrix,
-    activeDegreeIds: [] as ActiveDegreeIds,
-    activePitchIds: [] as ActivePitchIds,
-    pozitionId: countryTunedHarp.pozitionId,
-    rootPitchId: countryTunedHarp.rootPitchId,
-    harpKeyId: countryTunedHarp.harpKeyId,
-    viewableDegreeMatrix: countryTunedHarp.degreeMatrix,
-    viewablePitchMatrix: countryTunedHarp.pitchMatrix,
-    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
-  } as GlobalState
-  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
+  const activeHarpStrata = countryTunedHarp
+  const { Degree: activeDisplayMode } = DisplayModes
+  const { MajorDiatonic: tuningId } = TuningIds
 
-  const {
-    activeHarpStrata: newActiveHarpStrata,
-  } = reduceForNewHarpStrataByTuning(
-    inputGlobal,
-    unusedDispatcher,
-    TuningIds.MajorDiatonic
+  const newActiveHarpStrata = reduceForNewHarpStrataByTuning(
+    activeHarpStrata,
+    activeDisplayMode,
+    tuningId
   )
 
   expect(newActiveHarpStrata).toStrictEqual(majorDiatonicHarp)

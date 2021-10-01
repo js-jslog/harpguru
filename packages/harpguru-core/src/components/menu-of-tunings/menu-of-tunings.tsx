@@ -28,9 +28,19 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
   const useTuningTitleMemo = useCallback(() => useTuningTitle(useGlobal), [
     useGlobal,
   ])
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const [activeDegreeMatrix] = useGlobal('activeDegreeMatrix')
   const tuningItemTapHandler = useCallback(
-    useDispatch(reduceForNewHarpStrataByTuning),
-    [useDispatch, reduceForNewHarpStrataByTuning]
+    useDispatch(
+      (currentHarpStrata, tuningId) =>
+        reduceForNewHarpStrataByTuning(
+          currentHarpStrata,
+          activeDisplayMode,
+          tuningId
+        ),
+      'activeHarpStrata'
+    ),
+    [useDispatch, reduceForNewHarpStrataByTuning, activeDisplayMode]
   )
   const useTuningItemsMemo = useCallback(
     () => useTuningItems(useGlobal, tuningItemTapHandler),
@@ -41,8 +51,16 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const valvingItemTapHandler = useCallback(
-    useDispatch(reduceForNewHarpStrataByValving),
-    [useDispatch, reduceForNewHarpStrataByValving]
+    useDispatch(
+      (currentHarpStrata, valvingId) =>
+        reduceForNewHarpStrataByValving(
+          currentHarpStrata,
+          activeDisplayMode,
+          valvingId
+        ),
+      'activeHarpStrata'
+    ),
+    [useDispatch, reduceForNewHarpStrataByValving, activeDisplayMode]
   )
   const useValvingItemsMemo = useCallback(
     () => useValvingItems(useGlobal, valvingItemTapHandler),
@@ -53,8 +71,19 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const zoomItemTapHandler = useCallback(
-    useDispatch(reduceForNewColumnBoundsByZoomId),
-    [useDispatch, reduceForNewColumnBoundsByZoomId]
+    useDispatch(
+      (currentColumnBounds, zoomId) =>
+        reduceForNewColumnBoundsByZoomId(
+          currentColumnBounds,
+          activeDegreeMatrix,
+          zoomId
+        ),
+      'columnBounds'
+    ),
+    // TODO: This and a great many other things should be based on the
+    // interaction matrix of the apparatus rather than the degreeMatrix
+    // which is much more volatile
+    [useDispatch, reduceForNewColumnBoundsByZoomId, activeDegreeMatrix]
   )
   const useZoomItemsMemo = useCallback(
     () => useZoomItems(useGlobal, zoomItemTapHandler),
