@@ -1,0 +1,6 @@
+export { deriveViewableDegreeMatrix } from './derive-viewabledegreematrix'
+export { deriveViewablePitchMatrix } from './derive-viewablepitchmatrix'
+export { deriveColumnBounds } from './derive-columnbounds'
+export { deriveLayoutFacts } from './derive-layoutfacts'
+export { deriveActiveDegreeIds } from './derive-activedegreeids'
+export { deriveActivePitchIds } from './derive-activepitchids'
