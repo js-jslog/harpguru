@@ -11,7 +11,7 @@ import { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
 import {
-  getNewActiveQuizDegreesByToggleForDispatcher,
+  reduceForNewActiveQuizDegreesByToggle,
   reduceForNewBufferedActivityTogglesByTargetScale,
 } from './utils'
 import {
@@ -48,8 +48,8 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
 
   const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
   const quizQuestionTapHandler = useCallback(
-    useDispatch(getNewActiveQuizDegreesByToggleForDispatcher),
-    [useDispatch, getNewActiveQuizDegreesByToggleForDispatcher]
+    useDispatch(reduceForNewActiveQuizDegreesByToggle, 'activeQuizDegrees'),
+    [useDispatch, reduceForNewActiveQuizDegreesByToggle]
   )
   const useQuizQuestionItemsMemo = useCallback(
     () => useQuizQuestionItems(useGlobal, quizQuestionTapHandler),
