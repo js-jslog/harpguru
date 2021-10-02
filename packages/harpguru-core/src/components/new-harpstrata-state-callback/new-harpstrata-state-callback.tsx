@@ -16,6 +16,7 @@ import {
   useDeriveViewableDegreeMatrix,
   useDeriveViewablePitchMatrix,
   useDeriveLayoutFacts,
+  useEmptyBufferedActivityToggles,
 } from './hooks'
 
 export const NewHarpStrataStateCallback = (): React.ReactElement => {
@@ -39,6 +40,9 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
   )
   const [prevViewablePitchMatrix, setViewablePitchMatrix] = useGlobal(
     'viewablePitchMatrix'
+  )
+  const [prevBufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
+    'bufferedActivityToggles'
   )
   useEffect(() => {
     useDeriveTuningId(newHarpStrata, prevTuningId, setTuningId)
@@ -92,6 +96,10 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       nextViewableDegreeMatrix,
       prevLayoutFacts,
       setLayoutFacts
+    )
+    useEmptyBufferedActivityToggles(
+      prevBufferedActivityToggles,
+      setBufferedActivityToggles
     )
   }, [newHarpStrata])
 

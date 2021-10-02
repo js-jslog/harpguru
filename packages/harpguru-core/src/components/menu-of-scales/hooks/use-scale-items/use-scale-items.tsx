@@ -7,19 +7,16 @@ import {
   ScaleCategory,
 } from 'harpparts'
 
-import { OptionItemWithDegreeIdList } from '../../../option-item-with-degreeid-list'
-import type { OptionItemWithDegreeIdListProps } from '../../../option-item-with-degreeid-list'
+import { OptionItem } from '../../../option-item'
+import type { OptionItemProps } from '../../../option-item'
 import { OptionBreak } from '../../../option-break'
 import type { UseGlobal } from '../../../../types'
 
 type ItemCallback = ReadonlyArray<DegreeIds>
-type ItemTapHandler = (
-  arg0: ReadonlyArray<DegreeIds>,
-  arg1: ReadonlyArray<DegreeIds>
-) => void
+type ItemTapHandler = (arg0: ReadonlyArray<DegreeIds>) => void
 
 type ScaleItems = ReadonlyArray<
-  React.ReactElement<OptionItemWithDegreeIdListProps<ItemCallback>>
+  React.ReactElement<OptionItemProps<ItemCallback>>
 >
 
 export const useScaleItems = (
@@ -38,12 +35,11 @@ export const useScaleItems = (
     .filter((scale) => scale.category === ScaleCategory.Chord)
 
   return [
-    <OptionItemWithDegreeIdList
+    <OptionItem
       key={'clear-all-scales'}
       value={'Clear all'}
       isSelected={false}
       itemTapHandler={itemTapHandler}
-      degreeIds={activeDegreeIds}
       callbackParam={[]}
       twoColumns={false}
     />,
@@ -53,12 +49,11 @@ export const useScaleItems = (
       key={'option-break-scales'}
     />,
     ...scales.map((item, index) => (
-      <OptionItemWithDegreeIdList
+      <OptionItem
         key={`${index}`}
         value={item.label}
         isSelected={item.label === activeScaleId}
         itemTapHandler={itemTapHandler}
-        degreeIds={activeDegreeIds}
         callbackParam={item.degrees}
         twoColumns={false}
       />
@@ -69,12 +64,11 @@ export const useScaleItems = (
       key={'option-break-chords'}
     />,
     ...chords.map((item, index) => (
-      <OptionItemWithDegreeIdList
+      <OptionItem
         key={`${index}`}
         value={item.label}
         isSelected={item.label === activeScaleId}
         itemTapHandler={itemTapHandler}
-        degreeIds={activeDegreeIds}
         callbackParam={item.degrees}
         twoColumns={false}
       />

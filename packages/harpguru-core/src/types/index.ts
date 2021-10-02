@@ -62,7 +62,6 @@ export enum ExperienceModes {
 export enum FlushChannels {
   Regular,
   Quiz,
-  ScalesMenu,
 }
 
 export enum MenuStates {

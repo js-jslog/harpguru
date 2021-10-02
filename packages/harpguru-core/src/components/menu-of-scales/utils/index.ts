@@ -1,2 +1,2 @@
 export { reduceForNewActiveQuizDegreesByToggle } from './reduce-for-new-activequizdegrees-by-toggle'
-export { reduceForNewBufferedActivityTogglesByTargetScale } from './reduce-for-new-buffered-activity-toggles-by-target-scale'
+export { reduceForNewHarpStrataByTargetScale } from './reduce-for-new-harpstrata-by-target-scale'
