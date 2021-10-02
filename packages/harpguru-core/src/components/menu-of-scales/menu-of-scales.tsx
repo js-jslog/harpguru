@@ -11,8 +11,8 @@ import { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
 import {
-  getNewBufferedTogglesByTargetScaleForDispatcher,
   getNewActiveQuizDegreesByToggleForDispatcher,
+  reduceForNewBufferedActivityTogglesByTargetScale,
 } from './utils'
 import {
   useScaleTitle,
@@ -27,8 +27,16 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     isMenuStashed: menuProps.isMenuStashed,
   })
   const scaleItemTapHandler = useCallback(
-    useDispatch(getNewBufferedTogglesByTargetScaleForDispatcher),
-    [useDispatch, getNewBufferedTogglesByTargetScaleForDispatcher]
+    useDispatch(
+      (currentBufferedActivityToggles, activeDegreeIds, targetScaleIds) =>
+        reduceForNewBufferedActivityTogglesByTargetScale(
+          currentBufferedActivityToggles,
+          activeDegreeIds,
+          targetScaleIds
+        ),
+      'bufferedActivityToggles'
+    ),
+    [useDispatch, reduceForNewBufferedActivityTogglesByTargetScale]
   )
   const useScalesTitleMemo = useCallback(() => useScaleTitle(useGlobal), [
     useGlobal,
