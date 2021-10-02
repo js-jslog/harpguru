@@ -1,13 +1,25 @@
-import type { HarpStrata } from 'harpstrata'
+import { getHarpStrata, HarpStrata } from 'harpstrata'
 import type { DegreeIds } from 'harpparts'
+
+import { compareActiveIds } from '../../../../utils/compare-active-ids'
 
 export const reduceForNewHarpStrataByTargetScale = (
   activeHarpStrata: HarpStrata,
   targetScale: ReadonlyArray<DegreeIds>
 ): HarpStrata => {
-  const nextHarpStrata = {
-    ...activeHarpStrata,
-    activeDegreeIds: targetScale,
-  }
+  const {
+    apparatus: { tuningId, valvingId },
+    pozitionId,
+    harpKeyId,
+    activeDegreeIds,
+  } = activeHarpStrata
+  if (compareActiveIds(activeDegreeIds, targetScale)) return activeHarpStrata
+  const nextHarpStrata = getHarpStrata({
+    tuningId,
+    valvingId,
+    pozitionId,
+    harpKeyId,
+    activeIds: targetScale,
+  })
   return nextHarpStrata
 }
