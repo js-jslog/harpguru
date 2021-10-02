@@ -1,10 +1,18 @@
-import { useDispatch } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import { unstable_batchedUpdates } from 'react-native'
 
-import { reduceForFlushedToggles } from './reduce-for-flushed-toggles'
+import { reduceForNewHarpStrataByToggleFlush } from './reduce-for-new-harpstrata-by-toggle-flush'
 
 export const useFlushBufferedActivityToggles = (): (() => void) => {
-  const updateActiveHarpStrata = useDispatch(reduceForFlushedToggles)
+  const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
+  const updateActiveHarpStrata = useDispatch(
+    (activeHarpStrata) =>
+      reduceForNewHarpStrataByToggleFlush(
+        activeHarpStrata,
+        bufferedActivityToggles
+      ),
+    'activeHarpStrata'
+  )
 
   // The dispatch seems to function just
   // fine without the batch wrapper, except
