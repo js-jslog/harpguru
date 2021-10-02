@@ -1,4 +1,4 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import { useState, useEffect } from 'react'
 import { getHarpStrata } from 'harpstrata'
 import { DegreeIds, isPitchId } from 'harpparts'
@@ -26,18 +26,20 @@ export const useQuizQuestionCycle = (
   isScreenFree: boolean
 ): [DegreeIds | PitchIds, boolean] => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [activeHarpStrata, setActiveHarpStrata] = useGlobal('activeHarpStrata')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
   const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
   const [activeQuizDegrees] = useGlobal('activeQuizDegrees')
+  const [harpKeyId] = useGlobal('harpKeyId')
+  const [pozitionId] = useGlobal('pozitionId')
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(
     getNextQuizQuestion(DegreeIds.Root, activeQuizDegrees, activeDisplayMode)
   )
 
-  const resetHarpFace = () => {
+  const resetHarpFace = useDispatch((activeHarpStrata) => {
+    if (activeHarpStrata.activeDegreeIds.length === 0) return activeHarpStrata
     const harpStrataProps = {
       tuningId: activeHarpStrata.apparatus.tuningId,
       valvingId: activeHarpStrata.apparatus.valvingId,
@@ -46,10 +48,10 @@ export const useQuizQuestionCycle = (
       activeIds: [],
     }
     const resetHarpStrata = getHarpStrata(harpStrataProps)
-    setActiveHarpStrata(resetHarpStrata)
-  }
+    return resetHarpStrata
+  }, 'activeHarpStrata')
 
-  const batchAnswerActions = () => {
+  const batchAnswerActions = useDispatch((activeHarpStrata) => {
     const {
       apparatus: { tuningId, valvingId },
       harpKeyId,
@@ -79,11 +81,8 @@ export const useQuizQuestionCycle = (
       activeIds: answerDegreeIds,
     }
     const answerHarpStrata = getHarpStrata(harpStrataProps)
-    setActiveHarpStrata(answerHarpStrata)
-    setQuizQuestion(
-      getNextQuizQuestion(quizQuestion, activeQuizDegrees, activeDisplayMode)
-    )
-  }
+    return answerHarpStrata
+  }, 'activeHarpStrata')
 
   // Start asking questions when the experience mode is set to Quiz
   // and the screen is clear of menus
@@ -116,6 +115,9 @@ export const useQuizQuestionCycle = (
 
     if (quizState === QuizStates.Answer) {
       batchAnswerActions()
+      setQuizQuestion(
+        getNextQuizQuestion(quizQuestion, activeQuizDegrees, activeDisplayMode)
+      )
       const onToNextQuestion = setTimeout(() => {
         setQuizState(QuizStates.Ask)
       }, 2000)
@@ -144,8 +146,8 @@ export const useQuizQuestionCycle = (
     const toggleEvalProps = {
       toggleBuffer: bufferedActivityToggles,
       quizQuestion,
-      harpKeyId: activeHarpStrata.harpKeyId,
-      pozitionId: activeHarpStrata.pozitionId,
+      harpKeyId: harpKeyId,
+      pozitionId: pozitionId,
     }
     const answerImmediately = hasToggledIncorrectCell(toggleEvalProps)
     if (answerImmediately) return setQuizState(QuizStates.Answer)
@@ -153,7 +155,7 @@ export const useQuizQuestionCycle = (
       setQuizState(QuizStates.Answer)
     }, 3000)
     return () => clearTimeout(timeout)
-  }, [bufferedActivityToggles, activeHarpStrata, quizState, flushChannel])
+  }, [bufferedActivityToggles, harpKeyId, pozitionId, quizState, flushChannel])
 
   const isDisplayPeriod = quizState === QuizStates.Ask
   const shouldDisplayQuestion =
