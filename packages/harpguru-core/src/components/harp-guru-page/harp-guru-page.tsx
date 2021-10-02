@@ -10,6 +10,7 @@ import { NotifyOfScale } from '../notify-of-scale'
 import { NotifyOfQuizQuestion } from '../notify-of-quiz-question'
 import { NewStateLogger } from '../new-state-logger'
 import { NewHarpStrataStateCallback } from '../new-harpstrata-state-callback'
+import { NewColumnBoundsStateCallback } from '../new-columnbounds-state-callback'
 import { MenuTabNextPage } from '../menu-tab-next-page'
 import { MenuTabFragmentation } from '../menu-tab-fragmentation'
 import { MenuTabExperienceMode } from '../menu-tab-experience-mode'
@@ -99,6 +100,7 @@ export const HarpGuruPage = ({
       />
       <ToggleBufferFlusher />
       <NewHarpStrataStateCallback />
+      <NewColumnBoundsStateCallback />
       <NewStateLogger />
       <NotifyOfQuizQuestion isScreenFree={menuState === MenuStates.NoMenu} />
       <NotifyOfScale isScalesMenu={menuState === MenuStates.ScalesMenu} />
