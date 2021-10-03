@@ -1,10 +1,5 @@
 import { isPopulatedArray } from './is-populated-array'
 
-// TODO: move this in to the `getViewableMatrix` util
-// folder and remove all other references when ready
-// This was copied from the root utils which seemed to
-// be limited to the harpstrata reducers made there.
-// Perhaps it's scope can be kept very limited.
 test('Arrays containing any content return true', () => {
   const array1 = [1]
   const array2 = [1, undefined, undefined, undefined]
