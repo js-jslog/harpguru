@@ -8,6 +8,7 @@ import {
   getNextQuizQuestion,
   hasToggledIncorrectCell,
   getCounterpartDegreeId,
+  reduceForNewHarpStrataByHardReset,
 } from '../../utils'
 import { ExperienceModes, FlushChannels } from '../../../../types'
 import { useFlushBufferedActivityToggles } from '../../../../hooks'
@@ -40,18 +41,10 @@ export const useQuizQuestionCycle = (
   )
 
   const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
-  const resetHarpFace = useDispatch((activeHarpStrata) => {
-    if (activeHarpStrata.activeDegreeIds.length === 0) return activeHarpStrata
-    const harpStrataProps = {
-      tuningId: activeHarpStrata.apparatus.tuningId,
-      valvingId: activeHarpStrata.apparatus.valvingId,
-      harpKeyId: activeHarpStrata.harpKeyId,
-      pozitionId: activeHarpStrata.pozitionId,
-      activeIds: [],
-    }
-    const resetHarpStrata = getHarpStrata(harpStrataProps)
-    return resetHarpStrata
-  }, 'activeHarpStrata')
+  const hardResetHarpStrata = useDispatch(
+    reduceForNewHarpStrataByHardReset,
+    'activeHarpStrata'
+  )
 
   const batchAnswerActions = useDispatch((activeHarpStrata) => {
     const {
@@ -138,7 +131,7 @@ export const useQuizQuestionCycle = (
 
     // If we've *just* entered Listen state
     if (bufferedActivityToggles.length === 0) {
-      resetHarpFace()
+      hardResetHarpStrata()
       const finishListening = setTimeout(() => {
         setQuizState(QuizStates.Answer)
       }, 5000)
