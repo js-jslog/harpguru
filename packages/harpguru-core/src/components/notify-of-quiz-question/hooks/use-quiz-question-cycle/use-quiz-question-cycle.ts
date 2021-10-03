@@ -1,14 +1,13 @@
 import { useGlobal, useDispatch } from 'reactn'
 import { useState, useEffect } from 'react'
-import { getHarpStrata } from 'harpstrata'
-import { DegreeIds, isPitchId } from 'harpparts'
+import { DegreeIds } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
 import {
   getNextQuizQuestion,
   hasToggledIncorrectCell,
-  getCounterpartDegreeId,
   reduceForNewHarpStrataByHardReset,
+  reduceForNewHarpStrataByQuizAnswer,
 } from '../../utils'
 import { ExperienceModes, FlushChannels } from '../../../../types'
 import { useFlushBufferedActivityToggles } from '../../../../hooks'
@@ -45,38 +44,12 @@ export const useQuizQuestionCycle = (
     reduceForNewHarpStrataByHardReset,
     'activeHarpStrata'
   )
-
-  const batchAnswerActions = useDispatch((activeHarpStrata) => {
-    const {
-      apparatus: { tuningId, valvingId },
-      harpKeyId,
-      pozitionId,
-    } = activeHarpStrata
-    const answerDegreeIds = (() => {
-      if (isPitchId(quizQuestion)) {
-        const counterpartDegreeId = getCounterpartDegreeId({
-          pitchId: quizQuestion,
-          harpKeyId: harpKeyId,
-          pozitionId: pozitionId,
-        })
-        const answerDegreeIds = [
-          ...bufferedActivityToggles,
-          counterpartDegreeId,
-        ]
-        return answerDegreeIds
-      }
-      const answerDegreeIds = [...bufferedActivityToggles, quizQuestion]
-      return answerDegreeIds
-    })()
-    const harpStrataProps = {
-      tuningId,
-      valvingId,
-      harpKeyId,
-      pozitionId,
-      activeIds: answerDegreeIds,
-    }
-    const answerHarpStrata = getHarpStrata(harpStrataProps)
-    return answerHarpStrata
+  const addAnswerToHarpStrata = useDispatch((activeHarpStrata) => {
+    return reduceForNewHarpStrataByQuizAnswer(
+      activeHarpStrata,
+      quizQuestion,
+      bufferedActivityToggles
+    )
   }, 'activeHarpStrata')
 
   // Start asking questions when the experience mode is set to Quiz
@@ -109,7 +82,7 @@ export const useQuizQuestionCycle = (
     }
 
     if (quizState === QuizStates.Answer) {
-      batchAnswerActions()
+      addAnswerToHarpStrata()
       setQuizQuestion(
         getNextQuizQuestion(quizQuestion, activeQuizDegrees, activeDisplayMode)
       )
