@@ -1,7 +1,7 @@
 import type { ActivePitchIds, HarpStrata } from 'harpstrata'
 
 import { deriveActivePitchIds } from '../../utils'
-import { compareActiveIds } from '../../../../utils/compare-active-ids'
+import { compareActiveIds } from '../../../../utils'
 
 export const useDeriveActivePitchIds = (
   newHarpStrata: HarpStrata,

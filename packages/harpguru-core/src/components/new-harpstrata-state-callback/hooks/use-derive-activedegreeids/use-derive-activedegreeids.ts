@@ -1,7 +1,7 @@
 import type { ActiveDegreeIds, HarpStrata } from 'harpstrata'
 
 import { deriveActiveDegreeIds } from '../../utils'
-import { compareActiveIds } from '../../../../utils/compare-active-ids'
+import { compareActiveIds } from '../../../../utils'
 
 export const useDeriveActiveDegreeIds = (
   newHarpStrata: HarpStrata,

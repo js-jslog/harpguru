@@ -1,7 +1,7 @@
 import { getHarpStrata, HarpStrata } from 'harpstrata'
 import type { DegreeIds } from 'harpparts'
 
-import { compareActiveIds } from '../../../../utils/compare-active-ids'
+import { compareActiveIds } from '../../../../utils'
 
 export const reduceForNewHarpStrataByTargetScale = (
   activeHarpStrata: HarpStrata,
