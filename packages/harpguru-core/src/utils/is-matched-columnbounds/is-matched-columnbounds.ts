@@ -1,4 +1,4 @@
-export const compareColumnBounds = (
+export const isMatchedColumnBounds = (
   bounds1: 'FIT' | readonly [number, number],
   bounds2: 'FIT' | readonly [number, number]
 ): boolean => {

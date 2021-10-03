@@ -1,7 +1,7 @@
 import type { HarpStrata } from 'harpstrata'
 
 import { deriveColumnBounds } from '../../utils'
-import { compareColumnBounds } from '../../../../utils'
+import { isMatchedColumnBounds } from '../../../../utils'
 
 export const useDeriveColumnBounds = (
   newHarpStrata: HarpStrata,
@@ -9,7 +9,7 @@ export const useDeriveColumnBounds = (
   setColumnBounds: (arg0: 'FIT' | readonly [number, number]) => void
 ): 'FIT' | readonly [number, number] => {
   const nextColumnBounds = deriveColumnBounds(newHarpStrata, prevColumnBounds)
-  if (!compareColumnBounds(prevColumnBounds, nextColumnBounds))
+  if (!isMatchedColumnBounds(prevColumnBounds, nextColumnBounds))
     setColumnBounds(nextColumnBounds)
   return nextColumnBounds
 }
