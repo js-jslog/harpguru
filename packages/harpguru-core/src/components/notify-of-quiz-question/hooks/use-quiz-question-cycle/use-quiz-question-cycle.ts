@@ -9,8 +9,8 @@ import {
   reduceForNewHarpStrataByHardReset,
   reduceForNewHarpStrataByQuizAnswer,
 } from '../../utils'
+import { reduceForNewHarpStrataByToggleFlush } from '../../../../utils'
 import { ExperienceModes, FlushChannels } from '../../../../types'
-import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
 // Ask - display the question
 // Listen - allow user to input answers
@@ -39,7 +39,12 @@ export const useQuizQuestionCycle = (
     getNextQuizQuestion(DegreeIds.Root, activeQuizDegrees, activeDisplayMode)
   )
 
-  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
+  const flushBufferedActivityToggles = useDispatch((activeHarpStrata) => {
+    return reduceForNewHarpStrataByToggleFlush(
+      activeHarpStrata,
+      bufferedActivityToggles
+    )
+  }, 'activeHarpStrata')
   const hardResetHarpStrata = useDispatch(
     reduceForNewHarpStrataByHardReset,
     'activeHarpStrata'

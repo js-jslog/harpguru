@@ -9,3 +9,4 @@ export { reduceNewHarpStrataForColumnBounds } from './reduce-new-harpstrata-for-
 export { determineMatrixDimensions } from './determine-matrix-dimensions'
 export { determineNextColumnBounds } from './determine-next-column-bounds'
 export { compareColumnBounds } from './compare-column-bounds'
+export { reduceForNewHarpStrataByToggleFlush } from './reduce-for-new-harpstrata-by-toggle-flush'
