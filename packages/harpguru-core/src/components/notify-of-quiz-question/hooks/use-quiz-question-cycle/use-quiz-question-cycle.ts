@@ -10,6 +10,7 @@ import {
   getCounterpartDegreeId,
 } from '../../utils'
 import { ExperienceModes, FlushChannels } from '../../../../types'
+import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
 // Ask - display the question
 // Listen - allow user to input answers
@@ -38,6 +39,7 @@ export const useQuizQuestionCycle = (
     getNextQuizQuestion(DegreeIds.Root, activeQuizDegrees, activeDisplayMode)
   )
 
+  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
   const resetHarpFace = useDispatch((activeHarpStrata) => {
     if (activeHarpStrata.activeDegreeIds.length === 0) return activeHarpStrata
     const harpStrataProps = {
@@ -106,7 +108,7 @@ export const useQuizQuestionCycle = (
     if (flushChannel !== FlushChannels.Quiz) return
 
     if (quizState === QuizStates.Ask) {
-      resetHarpFace()
+      flushBufferedActivityToggles()
       const finishAsking = setTimeout(() => {
         setQuizState(QuizStates.Listen)
       }, 1500)
