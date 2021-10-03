@@ -2,7 +2,7 @@ import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 import { getHarpStrata } from 'harpstrata'
 import type { DegreeIds } from 'harpparts'
 
-import { batchToggleDegreeIds } from '../../utils'
+import { batchToggleDegreeIds } from '../batch-toggle-degree-ids'
 
 export const reduceForNewHarpStrataByToggleFlush = (
   activeHarpStrata: HarpStrata,
