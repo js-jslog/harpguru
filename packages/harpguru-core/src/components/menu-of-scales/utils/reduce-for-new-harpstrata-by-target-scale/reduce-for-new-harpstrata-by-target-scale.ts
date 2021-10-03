@@ -1,7 +1,7 @@
 import { getHarpStrata, HarpStrata } from 'harpstrata'
 import type { DegreeIds } from 'harpparts'
 
-import { compareActiveIds } from '../../../../utils'
+import { isMatchedActiveIds } from '../../../../utils'
 
 export const reduceForNewHarpStrataByTargetScale = (
   activeHarpStrata: HarpStrata,
@@ -13,7 +13,7 @@ export const reduceForNewHarpStrataByTargetScale = (
     harpKeyId,
     activeDegreeIds,
   } = activeHarpStrata
-  if (compareActiveIds(activeDegreeIds, targetScale)) return activeHarpStrata
+  if (isMatchedActiveIds(activeDegreeIds, targetScale)) return activeHarpStrata
   const nextHarpStrata = getHarpStrata({
     tuningId,
     valvingId,

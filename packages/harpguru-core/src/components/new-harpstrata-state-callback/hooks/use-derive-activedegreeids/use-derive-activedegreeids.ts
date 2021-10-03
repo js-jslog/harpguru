@@ -1,7 +1,7 @@
 import type { ActiveDegreeIds, HarpStrata } from 'harpstrata'
 
 import { deriveActiveDegreeIds } from '../../utils'
-import { compareActiveIds } from '../../../../utils'
+import { isMatchedActiveIds } from '../../../../utils'
 
 export const useDeriveActiveDegreeIds = (
   newHarpStrata: HarpStrata,
@@ -9,7 +9,7 @@ export const useDeriveActiveDegreeIds = (
   setActiveDegreeIds: (arg0: ActiveDegreeIds) => void
 ): ActiveDegreeIds => {
   const nextActiveDegreeIds = deriveActiveDegreeIds(newHarpStrata)
-  if (!compareActiveIds(nextActiveDegreeIds, prevActiveDegreeIds))
+  if (!isMatchedActiveIds(nextActiveDegreeIds, prevActiveDegreeIds))
     setActiveDegreeIds(nextActiveDegreeIds)
   return nextActiveDegreeIds
 }

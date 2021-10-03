@@ -1,15 +1,15 @@
 import type { ActiveIds } from 'harpstrata'
 import { PitchIds, DegreeIds } from 'harpparts'
 
-import { compareActiveIds } from './compare-active-ids'
+import { isMatchedActiveIds } from './is-matched-activeids'
 
 test('two identical arrays match', () => {
   const emptyIds = [] as ActiveIds
   const pitchIds = [PitchIds.A, PitchIds.B]
   const degreeIds = [DegreeIds.Root, DegreeIds.Second]
-  expect(compareActiveIds(emptyIds, emptyIds)).toBeTruthy()
-  expect(compareActiveIds(pitchIds, pitchIds)).toBeTruthy()
-  expect(compareActiveIds(degreeIds, degreeIds)).toBeTruthy()
+  expect(isMatchedActiveIds(emptyIds, emptyIds)).toBeTruthy()
+  expect(isMatchedActiveIds(pitchIds, pitchIds)).toBeTruthy()
+  expect(isMatchedActiveIds(degreeIds, degreeIds)).toBeTruthy()
 })
 
 test('two similar arrays match', () => {
@@ -19,12 +19,12 @@ test('two similar arrays match', () => {
   const pitchIds2 = [PitchIds.A, PitchIds.B]
   const degreeIds1 = [DegreeIds.Root, DegreeIds.Second]
   const degreeIds2 = [DegreeIds.Root, DegreeIds.Second]
-  expect(compareActiveIds(emptyIds1, emptyIds2)).toBeTruthy()
-  expect(compareActiveIds(pitchIds1, pitchIds2)).toBeTruthy()
-  expect(compareActiveIds(degreeIds1, degreeIds2)).toBeTruthy()
-  expect(compareActiveIds(emptyIds2, emptyIds1)).toBeTruthy()
-  expect(compareActiveIds(pitchIds2, pitchIds1)).toBeTruthy()
-  expect(compareActiveIds(degreeIds2, degreeIds1)).toBeTruthy()
+  expect(isMatchedActiveIds(emptyIds1, emptyIds2)).toBeTruthy()
+  expect(isMatchedActiveIds(pitchIds1, pitchIds2)).toBeTruthy()
+  expect(isMatchedActiveIds(degreeIds1, degreeIds2)).toBeTruthy()
+  expect(isMatchedActiveIds(emptyIds2, emptyIds1)).toBeTruthy()
+  expect(isMatchedActiveIds(pitchIds2, pitchIds1)).toBeTruthy()
+  expect(isMatchedActiveIds(degreeIds2, degreeIds1)).toBeTruthy()
 })
 
 test('two dissimilar arrays do not match', () => {
@@ -33,10 +33,10 @@ test('two dissimilar arrays do not match', () => {
   const pitchIds2 = [PitchIds.B, PitchIds.A]
   const degreeIds1 = [DegreeIds.Root, DegreeIds.Second]
   const degreeIds2 = [DegreeIds.Second, DegreeIds.Root]
-  expect(compareActiveIds(emptyIds1, pitchIds1)).toBeFalsy()
-  expect(compareActiveIds(pitchIds1, pitchIds2)).toBeFalsy()
-  expect(compareActiveIds(degreeIds1, degreeIds2)).toBeFalsy()
-  expect(compareActiveIds(pitchIds1, degreeIds2)).toBeFalsy()
+  expect(isMatchedActiveIds(emptyIds1, pitchIds1)).toBeFalsy()
+  expect(isMatchedActiveIds(pitchIds1, pitchIds2)).toBeFalsy()
+  expect(isMatchedActiveIds(degreeIds1, degreeIds2)).toBeFalsy()
+  expect(isMatchedActiveIds(pitchIds1, degreeIds2)).toBeFalsy()
 })
 
 test('two "almost similar but for additional items" arrays do not match', () => {
@@ -44,8 +44,8 @@ test('two "almost similar but for additional items" arrays do not match', () => 
   const pitchIds2 = [PitchIds.A, PitchIds.B, PitchIds.A]
   const degreeIds1 = [DegreeIds.Root, DegreeIds.Second]
   const degreeIds2 = [DegreeIds.Root, DegreeIds.Root, DegreeIds.Second]
-  expect(compareActiveIds(pitchIds1, pitchIds2)).toBeFalsy()
-  expect(compareActiveIds(degreeIds1, degreeIds2)).toBeFalsy()
-  expect(compareActiveIds(pitchIds2, pitchIds1)).toBeFalsy()
-  expect(compareActiveIds(degreeIds2, degreeIds1)).toBeFalsy()
+  expect(isMatchedActiveIds(pitchIds1, pitchIds2)).toBeFalsy()
+  expect(isMatchedActiveIds(degreeIds1, degreeIds2)).toBeFalsy()
+  expect(isMatchedActiveIds(pitchIds2, pitchIds1)).toBeFalsy()
+  expect(isMatchedActiveIds(degreeIds2, degreeIds1)).toBeFalsy()
 })

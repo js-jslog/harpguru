@@ -1,7 +1,7 @@
 import type { ActivePitchIds, HarpStrata } from 'harpstrata'
 
 import { deriveActivePitchIds } from '../../utils'
-import { compareActiveIds } from '../../../../utils'
+import { isMatchedActiveIds } from '../../../../utils'
 
 export const useDeriveActivePitchIds = (
   newHarpStrata: HarpStrata,
@@ -9,7 +9,7 @@ export const useDeriveActivePitchIds = (
   setActivePitchIds: (arg0: ActivePitchIds) => void
 ): ActivePitchIds => {
   const nextActivePitchIds = deriveActivePitchIds(newHarpStrata)
-  if (!compareActiveIds(nextActivePitchIds, prevActivePitchIds))
+  if (!isMatchedActiveIds(nextActivePitchIds, prevActivePitchIds))
     setActivePitchIds(nextActivePitchIds)
   return nextActivePitchIds
 }
