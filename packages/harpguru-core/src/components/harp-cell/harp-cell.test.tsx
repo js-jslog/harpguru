@@ -257,7 +257,6 @@ test('A snapshot of an inactive cell in Quiz mode', () => {
       return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
     if (stateItem === 'activeDegreeIds')
       return [inactiveCellsHarpStrata.activeDegreeIds]
-    if (stateItem === 'activeHarpStrata') return [inactiveCellsHarpStrata]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Quiz]
     if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
     if (stateItem === 'bufferedActivityToggles') return [[]]

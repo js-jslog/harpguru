@@ -1,8 +1,6 @@
 import { useGlobal } from 'reactn'
 import { render } from '@testing-library/react-native'
 
-import { activeCellsHarpStrata } from '../../../test-resources'
-
 import { getHoleNumbers } from './get-hole-numbers'
 
 jest.mock('reactn')
@@ -13,7 +11,6 @@ const layoutFacts = {
   harpfaceRows: 7,
 }
 mockUseGlobal.mockImplementation((stateItem: string) => {
-  if (stateItem === 'activeHarpStrata') return [activeCellsHarpStrata]
   if (stateItem === 'columnBounds') return ['FIT']
   if (stateItem === 'layoutFacts') return [layoutFacts]
   return undefined

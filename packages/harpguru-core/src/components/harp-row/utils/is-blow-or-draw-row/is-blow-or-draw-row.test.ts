@@ -11,10 +11,9 @@ const harpStrataProps = {
   activeIds: [],
 }
 
-const activeHarpStrata = getHarpStrata(harpStrataProps)
 const {
   apparatus: { interactionMatrix },
-} = activeHarpStrata
+} = getHarpStrata(harpStrataProps)
 
 test('isBlowRow returns true for a blow row and false otherwise', () => {
   const forBlowRow = isBlowRow(2, interactionMatrix)

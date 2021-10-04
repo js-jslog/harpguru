@@ -28,11 +28,6 @@ const getToneSource = (
 }
 
 export const ActivityLegend = (): React.ReactElement => {
-  // TOOMANYRENDERS: All we need of the activeHarpStrata
-  // is the rootpitch and active pitches. We will probably
-  // see extra renders:
-  // - apparatus change
-  // - position change, if the pitches are held
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [rootPitchId] = useGlobal('rootPitchId')
   const [activePitchIds] = useGlobal('activePitchIds')

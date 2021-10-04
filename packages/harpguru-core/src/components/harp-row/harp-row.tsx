@@ -16,13 +16,6 @@ export const HarpRow = ({
   yCoord,
   xRange,
 }: HarpRowProps): React.ReactElement => {
-  // TOOMANYRENDERS: the activeHarpStrata is only required
-  // in order to determine whether we are currently on
-  // a blow or draw row in the associated styling hook.
-  // If there were a global state for the row number of
-  // blow and draw then we could avoid rerendering the rows
-  // when everything else about the harpstrata and active
-  // pitches / degrees change.
   const [activeInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const styles = useStyles(yCoord, activeInteractionMatrix)
 
