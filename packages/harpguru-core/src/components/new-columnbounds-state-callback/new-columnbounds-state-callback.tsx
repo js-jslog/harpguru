@@ -6,8 +6,11 @@ import {
   useDeriveLayoutFacts,
 } from '../new-harpstrata-state-callback/hooks'
 
+import { setFromSourceColumnBounds } from './utils'
+
 export const NewColumnBoundsStateCallback = (): React.ReactElement => {
-  const [nextColumnBounds] = useGlobal('columnBounds')
+  const [nextSourceColumnBounds] = useGlobal('sourceColumnBounds')
+  const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const [fullDegreeMatrix] = useGlobal('activeDegreeMatrix')
   const [fullPitchMatrix] = useGlobal('activePitchMatrix')
@@ -25,28 +28,33 @@ export const NewColumnBoundsStateCallback = (): React.ReactElement => {
   useEffect(() => {
     const nextViewableInteractionMatrix = useDeriveViewableMatrix(
       fullInteractionMatrix,
-      nextColumnBounds,
+      nextSourceColumnBounds,
       prevViewableInteractionMatrix,
       setViewableInteractionMatrix
     )
     useDeriveViewableMatrix(
       fullDegreeMatrix,
-      nextColumnBounds,
+      nextSourceColumnBounds,
       prevViewableDegreeMatrix,
       setViewableDegreeMatrix
     )
     useDeriveViewableMatrix(
       fullPitchMatrix,
-      nextColumnBounds,
+      nextSourceColumnBounds,
       prevViewablePitchMatrix,
       setViewablePitchMatrix
+    )
+    setFromSourceColumnBounds(
+      nextSourceColumnBounds,
+      prevColumnBounds,
+      setColumnBounds
     )
     useDeriveLayoutFacts(
       nextViewableInteractionMatrix,
       prevLayoutFacts,
       setLayoutFacts
     )
-  }, [nextColumnBounds])
+  }, [nextSourceColumnBounds])
 
   return <></>
 }

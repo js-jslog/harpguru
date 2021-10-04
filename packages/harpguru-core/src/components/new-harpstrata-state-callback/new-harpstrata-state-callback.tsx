@@ -30,7 +30,10 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
   const [prevHarpKeyId, setHarpKeyId] = useGlobal('harpKeyId')
   const [prevPozitionId, setPozitionId] = useGlobal('pozitionId')
   const [prevRootPitchId, setRootPitchId] = useGlobal('rootPitchId')
-  const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
+  const [prevSourceColumnBounds, setSourceColumnBounds] = useGlobal(
+    'sourceColumnBounds'
+  )
+  const [, setColumnBounds] = useGlobal('columnBounds')
   const [prevDegreeMatrix, setDegreeMatrix] = useGlobal('activeDegreeMatrix')
   const [prevPitchMatrix, setPitchMatrix] = useGlobal('activePitchMatrix')
   const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
@@ -78,26 +81,31 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevActivePitchIds,
       setActivePitchIds
     )
-    const nextColumnBounds = useDeriveColumnBounds(
+    const nextSourceColumnBounds = useDeriveColumnBounds(
       newHarpStrata,
-      prevColumnBounds,
+      prevSourceColumnBounds,
+      setSourceColumnBounds
+    )
+    useDeriveColumnBounds(
+      newHarpStrata,
+      prevSourceColumnBounds,
       setColumnBounds
     )
     const nextViewableInteractionMatrix = useDeriveViewableMatrix(
       nextInteractionMatrix,
-      nextColumnBounds,
+      nextSourceColumnBounds,
       prevViewableInteractionMatrix,
       setViewableInteractionMatrix
     )
     useDeriveViewableMatrix(
       nextDegreeMatrix,
-      nextColumnBounds,
+      nextSourceColumnBounds,
       prevViewableDegreeMatrix,
       setViewableDegreeMatrix
     )
     useDeriveViewableMatrix(
       nextPitchMatrix,
-      nextColumnBounds,
+      nextSourceColumnBounds,
       prevViewablePitchMatrix,
       setViewablePitchMatrix
     )

@@ -76,7 +76,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
           activeDegreeMatrix,
           zoomId
         ),
-      'columnBounds'
+      'sourceColumnBounds'
     ),
     // TODO: This and a great many other things should be based on the
     // interaction matrix of the apparatus rather than the degreeMatrix
