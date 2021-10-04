@@ -1,4 +1,4 @@
-import { useViewableMatrices } from '../use-viewable-matrices'
+import { useGlobal } from 'reactn'
 
 type LayoutFacts = {
   harpFaceRowCount: number
@@ -6,9 +6,9 @@ type LayoutFacts = {
 }
 
 export const useLayoutFacts = (): LayoutFacts => {
-  const { viewableDegreeMatrix } = useViewableMatrices()
-  const { length: harpFaceRowCount } = viewableDegreeMatrix
-  const { [0]: exampleHarpRow } = viewableDegreeMatrix
+  const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
+  const { length: harpFaceRowCount } = viewableInteractionMatrix
+  const { [0]: exampleHarpRow } = viewableInteractionMatrix
   const { length: harpFaceColumnCount } = exampleHarpRow
 
   return {

@@ -1,5 +1,8 @@
 import { useGlobal } from 'reactn'
 
+// TODO: remove this import. Work on test data construction instead and make
+// the mock objects easier to construct.
+import { deriveViewableInteractionMatrix } from '../../../new-harpstrata-state-callback/utils'
 import { inactiveCellsHarpStrata as activeHarpStrata } from '../../../../test-resources'
 
 import { useHarpRows } from './use-harp-rows'
@@ -14,6 +17,8 @@ test('useHarpRows returns an object with the rows split between the blow / draw 
     if (stateItem === 'activePitchMatrix') return [activeHarpStrata.pitchMatrix]
     if (stateItem === 'activeInteractionMatrix')
       return [activeHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'viewableInteractionMatrix')
+      return [activeHarpStrata.apparatus.interactionMatrix]
     if (stateItem === 'activeDegreeIds')
       return [activeHarpStrata.activeDegreeIds]
     if (stateItem === 'columnBounds') return ['FIT']
@@ -26,12 +31,18 @@ test('useHarpRows returns an object with the rows split between the blow / draw 
 })
 
 test('useHarpRows returns a column bounded object with the rows split between the blow / draw holes', () => {
+  const viewableInteractionMatrix = deriveViewableInteractionMatrix(
+    activeHarpStrata.apparatus.interactionMatrix,
+    [1, 7]
+  )
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeDegreeMatrix')
       return [activeHarpStrata.degreeMatrix]
     if (stateItem === 'activePitchMatrix') return [activeHarpStrata.pitchMatrix]
     if (stateItem === 'activeInteractionMatrix')
       return [activeHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'viewableInteractionMatrix')
+      return [viewableInteractionMatrix]
     if (stateItem === 'activeDegreeIds')
       return [activeHarpStrata.activeDegreeIds]
     if (stateItem === 'columnBounds') return [[1, 7]]

@@ -3,6 +3,9 @@ import 'react-native'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
+// TODO: remove this import. Work on test data construction instead and make
+// the mock objects easier to construct.
+import { deriveViewableInteractionMatrix } from '../new-harpstrata-state-callback/utils'
 import { DisplayModes, ExperienceModes } from '../../types'
 import { inactiveCellsHarpStrata } from '../../test-resources'
 
@@ -23,6 +26,8 @@ test('A component is rendered with fragmented face', () => {
     if (stateItem === 'activePitchMatrix')
       return [inactiveCellsHarpStrata.pitchMatrix]
     if (stateItem === 'activeInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'viewableInteractionMatrix')
       return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
     if (stateItem === 'activeDegreeIds')
       return [inactiveCellsHarpStrata.activeDegreeIds]
@@ -52,6 +57,8 @@ test('A component is rendered with unfragmented face', () => {
       return [inactiveCellsHarpStrata.pitchMatrix]
     if (stateItem === 'activeInteractionMatrix')
       return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'viewableInteractionMatrix')
+      return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
     if (stateItem === 'activeDegreeIds')
       return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
@@ -73,6 +80,10 @@ test('A component is rendered with fragmented and bounded face', () => {
     harpfaceColumns: 6,
     harpfaceRows: 6,
   }
+  const viewableInteractionMatrix = deriveViewableInteractionMatrix(
+    inactiveCellsHarpStrata.apparatus.interactionMatrix,
+    [2, 7]
+  )
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeDegreeMatrix')
       return [inactiveCellsHarpStrata.degreeMatrix]
@@ -80,6 +91,8 @@ test('A component is rendered with fragmented and bounded face', () => {
       return [inactiveCellsHarpStrata.pitchMatrix]
     if (stateItem === 'activeInteractionMatrix')
       return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'viewableInteractionMatrix')
+      return [viewableInteractionMatrix]
     if (stateItem === 'activeDegreeIds')
       return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
@@ -101,6 +114,10 @@ test('A component is rendered with unfragmented and bounded face', () => {
     harpfaceColumns: 6,
     harpfaceRows: 6,
   }
+  const viewableInteractionMatrix = deriveViewableInteractionMatrix(
+    inactiveCellsHarpStrata.apparatus.interactionMatrix,
+    [2, 7]
+  )
   mockUseGlobal.mockImplementation((stateItem: string) => {
     if (stateItem === 'activeDegreeMatrix')
       return [inactiveCellsHarpStrata.degreeMatrix]
@@ -108,6 +125,8 @@ test('A component is rendered with unfragmented and bounded face', () => {
       return [inactiveCellsHarpStrata.pitchMatrix]
     if (stateItem === 'activeInteractionMatrix')
       return [inactiveCellsHarpStrata.apparatus.interactionMatrix]
+    if (stateItem === 'viewableInteractionMatrix')
+      return [viewableInteractionMatrix]
     if (stateItem === 'activeDegreeIds')
       return [inactiveCellsHarpStrata.activeDegreeIds]
     if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]

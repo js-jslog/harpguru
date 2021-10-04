@@ -5,7 +5,6 @@ import { InteractionIds } from 'harpparts'
 import { mapRowToBlowDrawIds } from '../map-row-to-blow-draw-ids'
 import { HarpRow } from '../../../harp-row'
 import type { XRange } from '../../../../types'
-import { useViewableMatrices } from '../../../../hooks'
 
 type HarpRows = {
   readonly top: ReactElement[]
@@ -13,8 +12,7 @@ type HarpRows = {
 }
 
 export const useHarpRows = (xRange: XRange): HarpRows => {
-  // TODO: replace with derived global state
-  const { viewableInteractionMatrix } = useViewableMatrices()
+  const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
   const viewableBlowDrawIdsMap = viewableInteractionMatrix.map(
     mapRowToBlowDrawIds
   )
