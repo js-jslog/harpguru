@@ -1,7 +1,4 @@
 export { useDeriveValvingId } from './use-derive-valvingid'
-export { useDeriveRootPitchId } from './use-derive-rootpitchid'
-export { useDeriveHarpKeyId } from './use-derive-harpkeyid'
-export { useDerivePozitionId } from './use-derive-pozitionid'
 export { useDeriveColumnBounds } from './use-derive-columnbounds'
 export { useDeriveLayoutFacts } from './use-derive-layoutfacts'
 export { useEmptyBufferedActivityToggles } from './use-empty-bufferedactivitytoggles'

@@ -5,5 +5,8 @@ export { setFromHarpStrataToActiveDegreeIds } from './setfrom-harpstrata-to-acti
 export { setFromHarpStrataToActivePitchIds } from './setfrom-harpstrata-to-activepitchids'
 export { setFromHarpStrataToInteractionMatrix } from './setfrom-harpstrata-to-interactionmatrix'
 export { setFromHarpStrataToDegreeMatrix } from './setfrom-harpstrata-to-degreematrix'
+export { setFromHarpStrataToHarpKeyId } from './setfrom-harpstrata-to-harpkeyid'
+export { setFromHarpStrataToPozitionId } from './setfrom-harpstrata-to-pozitionid'
+export { setFromHarpStrataToRootPitchId } from './setfrom-harpstrata-to-rootpitchid'
 export { setFromHarpStrataToPitchMatrix } from './setfrom-harpstrata-to-pitchmatrix'
 export { setFromHarpStrataToViewableMatrix } from './setfrom-harpstrata-to-viewablematrix'

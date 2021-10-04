@@ -6,15 +6,15 @@ import {
   setFromHarpStrataToActiveDegreeIds,
   setFromHarpStrataToActivePitchIds,
   setFromHarpStrataToInteractionMatrix,
+  setFromHarpStrataToHarpKeyId,
+  setFromHarpStrataToPozitionId,
+  setFromHarpStrataToRootPitchId,
   setFromHarpStrataToDegreeMatrix,
   setFromHarpStrataToPitchMatrix,
   setFromHarpStrataToViewableMatrix,
 } from './utils'
 import {
   useDeriveValvingId,
-  useDeriveHarpKeyId,
-  useDerivePozitionId,
-  useDeriveRootPitchId,
   useDeriveColumnBounds,
   useDeriveLayoutFacts,
   useEmptyBufferedActivityToggles,
@@ -70,9 +70,13 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevPitchMatrix,
       setPitchMatrix
     )
-    useDeriveHarpKeyId(newHarpStrata, prevHarpKeyId, setHarpKeyId)
-    useDerivePozitionId(newHarpStrata, prevPozitionId, setPozitionId)
-    useDeriveRootPitchId(newHarpStrata, prevRootPitchId, setRootPitchId)
+    setFromHarpStrataToHarpKeyId(newHarpStrata, prevHarpKeyId, setHarpKeyId)
+    setFromHarpStrataToPozitionId(newHarpStrata, prevPozitionId, setPozitionId)
+    setFromHarpStrataToRootPitchId(
+      newHarpStrata,
+      prevRootPitchId,
+      setRootPitchId
+    )
     setFromHarpStrataToActiveDegreeIds(
       newHarpStrata,
       prevActiveDegreeIds,

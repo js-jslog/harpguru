@@ -1,7 +1,7 @@
 import type { HarpStrata } from 'harpstrata'
 import type { PitchIds } from 'harpparts'
 
-export const useDeriveHarpKeyId = (
+export const setFromHarpStrataToHarpKeyId = (
   newHarpStrata: HarpStrata,
   prevHarpKeyId: PitchIds,
   setHarpKeyId: (arg0: PitchIds) => void
