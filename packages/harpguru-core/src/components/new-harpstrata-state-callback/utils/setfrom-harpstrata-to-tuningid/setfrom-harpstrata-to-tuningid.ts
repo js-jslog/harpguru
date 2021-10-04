@@ -1,7 +1,7 @@
 import type { HarpStrata } from 'harpstrata'
 import type { TuningIds } from 'harpparts'
 
-export const setFromSourceHarpStrataTuningId = (
+export const setFromHarpStrataToTuningId = (
   newHarpStrata: HarpStrata,
   prevTuningId: TuningIds,
   setTuningId: (arg0: TuningIds) => void

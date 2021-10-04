@@ -2,8 +2,8 @@ import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
 import {
-  setFromSourceHarpStrataTuningId,
-  setFromSourceHarpStrataActiveDegreeIds,
+  setFromHarpStrataToTuningId,
+  setFromHarpStrataToActiveDegreeIds,
   setFromHarpStrataToActivePitchIds,
 } from './utils'
 import {
@@ -53,7 +53,7 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
     'bufferedActivityToggles'
   )
   useEffect(() => {
-    setFromSourceHarpStrataTuningId(newHarpStrata, prevTuningId, setTuningId)
+    setFromHarpStrataToTuningId(newHarpStrata, prevTuningId, setTuningId)
     useDeriveValvingId(newHarpStrata, prevValvingId, setValvingId)
     const nextInteractionMatrix = useDeriveInteractionMatrix(
       newHarpStrata,
@@ -73,7 +73,7 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
     useDeriveHarpKeyId(newHarpStrata, prevHarpKeyId, setHarpKeyId)
     useDerivePozitionId(newHarpStrata, prevPozitionId, setPozitionId)
     useDeriveRootPitchId(newHarpStrata, prevRootPitchId, setRootPitchId)
-    setFromSourceHarpStrataActiveDegreeIds(
+    setFromHarpStrataToActiveDegreeIds(
       newHarpStrata,
       prevActiveDegreeIds,
       setActiveDegreeIds

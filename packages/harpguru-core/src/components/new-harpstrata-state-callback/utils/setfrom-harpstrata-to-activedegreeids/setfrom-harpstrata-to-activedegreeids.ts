@@ -1,16 +1,14 @@
 import type { ActiveDegreeIds, HarpStrata } from 'harpstrata'
 
-import { deriveFromSourceHarpStrataActiveDegreeIds } from '../derivefromsource-harpstrata-activedegreeids'
+import { reduceHarpStrataToActiveDegreeIds } from '../reduce-harpstrata-to-activedegreeids'
 import { isMatchedActiveIds } from '../../../../utils'
 
-export const setFromSourceHarpStrataActiveDegreeIds = (
+export const setFromHarpStrataToActiveDegreeIds = (
   newHarpStrata: HarpStrata,
   prevActiveDegreeIds: ActiveDegreeIds,
   setActiveDegreeIds: (arg0: ActiveDegreeIds) => void
 ): ActiveDegreeIds => {
-  const nextActiveDegreeIds = deriveFromSourceHarpStrataActiveDegreeIds(
-    newHarpStrata
-  )
+  const nextActiveDegreeIds = reduceHarpStrataToActiveDegreeIds(newHarpStrata)
   if (!isMatchedActiveIds(nextActiveDegreeIds, prevActiveDegreeIds))
     setActiveDegreeIds(nextActiveDegreeIds)
   return nextActiveDegreeIds
