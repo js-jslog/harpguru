@@ -6,7 +6,7 @@ import {
   InteractionIds,
 } from 'harpparts'
 
-import { deriveViewableMatrix } from './derive-viewablematrix'
+import { reduceHarpStrataToViewableMatrix } from './reduce-harpstrata-to-viewablematrix'
 
 const root = getDegree(DegreeIds.Root)
 const second = getDegree(DegreeIds.Second)
@@ -44,9 +44,15 @@ test('identical degree matrix is returned when columnBounds is FIT', () => {
     [undefined, getDegree(DegreeIds.Third)],
   ]
 
-  expect(deriveViewableMatrix(fullMatrix1, columnBounds)).toBe(fullMatrix1)
-  expect(deriveViewableMatrix(fullMatrix2, columnBounds)).toBe(fullMatrix2)
-  expect(deriveViewableMatrix(fullMatrix3, columnBounds)).toBe(fullMatrix3)
+  expect(reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)).toBe(
+    fullMatrix1
+  )
+  expect(reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)).toBe(
+    fullMatrix2
+  )
+  expect(reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)).toBe(
+    fullMatrix3
+  )
 })
 
 test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
@@ -77,15 +83,15 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
     [undefined, third],
   ]
 
-  expect(deriveViewableMatrix(fullMatrix1, columnBounds)).toStrictEqual(
-    slicedMatrix1
-  )
-  expect(deriveViewableMatrix(fullMatrix2, columnBounds)).toStrictEqual(
-    slicedMatrix2
-  )
-  expect(deriveViewableMatrix(fullMatrix3, columnBounds)).toStrictEqual(
-    fullMatrix3
-  )
+  expect(
+    reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)
+  ).toStrictEqual(slicedMatrix1)
+  expect(
+    reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)
+  ).toStrictEqual(slicedMatrix2)
+  expect(
+    reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)
+  ).toStrictEqual(fullMatrix3)
 })
 
 test('identical pitch matrix is returned when columnBounds is FIT', () => {
@@ -106,9 +112,15 @@ test('identical pitch matrix is returned when columnBounds is FIT', () => {
     [undefined, getPitch(PitchIds.E)],
   ]
 
-  expect(deriveViewableMatrix(fullMatrix1, columnBounds)).toBe(fullMatrix1)
-  expect(deriveViewableMatrix(fullMatrix2, columnBounds)).toBe(fullMatrix2)
-  expect(deriveViewableMatrix(fullMatrix3, columnBounds)).toBe(fullMatrix3)
+  expect(reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)).toBe(
+    fullMatrix1
+  )
+  expect(reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)).toBe(
+    fullMatrix2
+  )
+  expect(reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)).toBe(
+    fullMatrix3
+  )
 })
 
 test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
@@ -139,15 +151,15 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
     [undefined, e],
   ]
 
-  expect(deriveViewableMatrix(fullMatrix1, columnBounds)).toStrictEqual(
-    slicedMatrix1
-  )
-  expect(deriveViewableMatrix(fullMatrix2, columnBounds)).toStrictEqual(
-    slicedMatrix2
-  )
-  expect(deriveViewableMatrix(fullMatrix3, columnBounds)).toStrictEqual(
-    fullMatrix3
-  )
+  expect(
+    reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)
+  ).toStrictEqual(slicedMatrix1)
+  expect(
+    reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)
+  ).toStrictEqual(slicedMatrix2)
+  expect(
+    reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)
+  ).toStrictEqual(fullMatrix3)
 })
 
 test('identical interaction matrix is returned when columnBounds is FIT', () => {
@@ -170,9 +182,15 @@ test('identical interaction matrix is returned when columnBounds is FIT', () => 
     [undefined, drawbend],
   ]
 
-  expect(deriveViewableMatrix(fullMatrix1, columnBounds)).toBe(fullMatrix1)
-  expect(deriveViewableMatrix(fullMatrix2, columnBounds)).toBe(fullMatrix2)
-  expect(deriveViewableMatrix(fullMatrix3, columnBounds)).toBe(fullMatrix3)
+  expect(reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)).toBe(
+    fullMatrix1
+  )
+  expect(reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)).toBe(
+    fullMatrix2
+  )
+  expect(reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)).toBe(
+    fullMatrix3
+  )
 })
 
 test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => {
@@ -206,13 +224,13 @@ test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => 
     [undefined, drawbend],
   ]
 
-  expect(deriveViewableMatrix(fullMatrix1, columnBounds)).toStrictEqual(
-    slicedMatrix1
-  )
-  expect(deriveViewableMatrix(fullMatrix2, columnBounds)).toStrictEqual(
-    slicedMatrix2
-  )
-  expect(deriveViewableMatrix(fullMatrix3, columnBounds)).toStrictEqual(
-    fullMatrix3
-  )
+  expect(
+    reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)
+  ).toStrictEqual(slicedMatrix1)
+  expect(
+    reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)
+  ).toStrictEqual(slicedMatrix2)
+  expect(
+    reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)
+  ).toStrictEqual(fullMatrix3)
 })

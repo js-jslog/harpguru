@@ -3,7 +3,7 @@ import type { HarpFaceMatrix, Pitch } from 'harpparts'
 
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
-export const useDerivePitchMatrix = (
+export const setFromHarpStrataToPitchMatrix = (
   newHarpStrata: HarpStrata,
   prevPitchMatrix: HarpFaceMatrix<Pitch>,
   setPitchMatrix: (arg0: HarpFaceMatrix<Pitch>) => void

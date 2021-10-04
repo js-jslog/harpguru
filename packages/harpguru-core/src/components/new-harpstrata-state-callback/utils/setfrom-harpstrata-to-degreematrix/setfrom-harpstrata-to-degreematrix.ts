@@ -3,7 +3,7 @@ import type { HarpFaceMatrix, Degree } from 'harpparts'
 
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
-export const useDeriveDegreeMatrix = (
+export const setFromHarpStrataToDegreeMatrix = (
   newHarpStrata: HarpStrata,
   prevDegreeMatrix: HarpFaceMatrix<Degree>,
   setDegreeMatrix: (arg0: HarpFaceMatrix<Degree>) => void

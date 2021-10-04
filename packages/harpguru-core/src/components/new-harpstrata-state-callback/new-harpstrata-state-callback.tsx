@@ -5,17 +5,17 @@ import {
   setFromHarpStrataToTuningId,
   setFromHarpStrataToActiveDegreeIds,
   setFromHarpStrataToActivePitchIds,
+  setFromHarpStrataToInteractionMatrix,
+  setFromHarpStrataToDegreeMatrix,
+  setFromHarpStrataToPitchMatrix,
+  setFromHarpStrataToViewableMatrix,
 } from './utils'
 import {
   useDeriveValvingId,
-  useDeriveInteractionMatrix,
-  useDeriveDegreeMatrix,
-  useDerivePitchMatrix,
   useDeriveHarpKeyId,
   useDerivePozitionId,
   useDeriveRootPitchId,
   useDeriveColumnBounds,
-  useDeriveViewableMatrix,
   useDeriveLayoutFacts,
   useEmptyBufferedActivityToggles,
 } from './hooks'
@@ -55,17 +55,17 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
   useEffect(() => {
     setFromHarpStrataToTuningId(newHarpStrata, prevTuningId, setTuningId)
     useDeriveValvingId(newHarpStrata, prevValvingId, setValvingId)
-    const nextInteractionMatrix = useDeriveInteractionMatrix(
+    const nextInteractionMatrix = setFromHarpStrataToInteractionMatrix(
       newHarpStrata,
       prevInteractionMatrix,
       setInteractionMatrix
     )
-    const nextDegreeMatrix = useDeriveDegreeMatrix(
+    const nextDegreeMatrix = setFromHarpStrataToDegreeMatrix(
       newHarpStrata,
       prevDegreeMatrix,
       setDegreeMatrix
     )
-    const nextPitchMatrix = useDerivePitchMatrix(
+    const nextPitchMatrix = setFromHarpStrataToPitchMatrix(
       newHarpStrata,
       prevPitchMatrix,
       setPitchMatrix
@@ -93,19 +93,19 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevSourceColumnBounds,
       setColumnBounds
     )
-    const nextViewableInteractionMatrix = useDeriveViewableMatrix(
+    const nextViewableInteractionMatrix = setFromHarpStrataToViewableMatrix(
       nextInteractionMatrix,
       nextSourceColumnBounds,
       prevViewableInteractionMatrix,
       setViewableInteractionMatrix
     )
-    useDeriveViewableMatrix(
+    setFromHarpStrataToViewableMatrix(
       nextDegreeMatrix,
       nextSourceColumnBounds,
       prevViewableDegreeMatrix,
       setViewableDegreeMatrix
     )
-    useDeriveViewableMatrix(
+    setFromHarpStrataToViewableMatrix(
       nextPitchMatrix,
       nextSourceColumnBounds,
       prevViewablePitchMatrix,
