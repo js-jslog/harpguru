@@ -37,6 +37,7 @@ export type GlobalState = {
   readonly pozitionId: PozitionIds
   readonly rootPitchId: PitchIds
   readonly harpKeyId: PitchIds
+  readonly viewableInteractionMatrix: HarpFaceMatrix<Interaction>
   readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
   readonly viewablePitchMatrix: HarpFaceMatrix<Pitch>
   readonly layoutFacts: LayoutFacts

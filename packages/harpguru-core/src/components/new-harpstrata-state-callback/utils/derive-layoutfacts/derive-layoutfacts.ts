@@ -1,4 +1,4 @@
-import type { HarpFaceMatrix, Degree } from 'harpparts'
+import type { HarpFaceMatrix, Interaction } from 'harpparts'
 
 import { determineMatrixDimensions } from '../../../../utils'
 
@@ -8,10 +8,10 @@ type LayoutFacts = {
 }
 
 export const deriveLayoutFacts = (
-  viewableDegreeMatrix: HarpFaceMatrix<Degree>
+  viewableInteractionMatrix: HarpFaceMatrix<Interaction>
 ): LayoutFacts => {
   const { columns: columnCount, rows: rowCount } = determineMatrixDimensions(
-    viewableDegreeMatrix
+    viewableInteractionMatrix
   )
 
   const newLayoutFacts = {

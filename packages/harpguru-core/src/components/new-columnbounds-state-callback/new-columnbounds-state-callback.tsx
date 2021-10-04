@@ -2,6 +2,7 @@ import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
 import {
+  useDeriveViewableInteractionMatrix,
   useDeriveViewableDegreeMatrix,
   useDeriveViewablePitchMatrix,
   useDeriveLayoutFacts,
@@ -9,9 +10,14 @@ import {
 
 export const NewColumnBoundsStateCallback = (): React.ReactElement => {
   const [nextColumnBounds] = useGlobal('columnBounds')
+  const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const [fullDegreeMatrix] = useGlobal('activeDegreeMatrix')
   const [fullPitchMatrix] = useGlobal('activePitchMatrix')
   const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
+  const [
+    prevViewableInteractionMatrix,
+    setViewableInteractionMatrix,
+  ] = useGlobal('viewableInteractionMatrix')
   const [prevViewableDegreeMatrix, setViewableDegreeMatrix] = useGlobal(
     'viewableDegreeMatrix'
   )
@@ -19,7 +25,13 @@ export const NewColumnBoundsStateCallback = (): React.ReactElement => {
     'viewablePitchMatrix'
   )
   useEffect(() => {
-    const nextViewableDegreeMatrix = useDeriveViewableDegreeMatrix(
+    const nextViewableInteractionMatrix = useDeriveViewableInteractionMatrix(
+      fullInteractionMatrix,
+      nextColumnBounds,
+      prevViewableInteractionMatrix,
+      setViewableInteractionMatrix
+    )
+    useDeriveViewableDegreeMatrix(
       fullDegreeMatrix,
       nextColumnBounds,
       prevViewableDegreeMatrix,
@@ -32,7 +44,7 @@ export const NewColumnBoundsStateCallback = (): React.ReactElement => {
       setViewablePitchMatrix
     )
     useDeriveLayoutFacts(
-      nextViewableDegreeMatrix,
+      nextViewableInteractionMatrix,
       prevLayoutFacts,
       setLayoutFacts
     )

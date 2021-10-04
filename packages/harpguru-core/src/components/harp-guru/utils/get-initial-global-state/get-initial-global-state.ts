@@ -59,6 +59,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     activePitchMatrix: initialHarpStrata.pitchMatrix,
     activeDegreeIds: [],
     activePitchIds: [],
+    viewableInteractionMatrix: initialHarpStrata.apparatus.interactionMatrix,
     viewableDegreeMatrix: initialHarpStrata.degreeMatrix,
     viewablePitchMatrix: initialHarpStrata.pitchMatrix,
     pozitionId: initialHarpStrata.pozitionId,
