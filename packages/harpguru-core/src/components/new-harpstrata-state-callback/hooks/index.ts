@@ -1,4 +1,3 @@
-export { useDeriveTuningId } from './use-derive-tuningid'
 export { useDeriveValvingId } from './use-derive-valvingid'
 export { useDeriveInteractionMatrix } from './use-derive-interactionmatrix'
 export { useDeriveRootPitchId } from './use-derive-rootpitchid'

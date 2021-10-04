@@ -1,8 +1,8 @@
 import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
+import { setFromSourceHarpStrataTuningId } from './utils'
 import {
-  useDeriveTuningId,
   useDeriveValvingId,
   useDeriveInteractionMatrix,
   useDeriveDegreeMatrix,
@@ -51,7 +51,7 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
     'bufferedActivityToggles'
   )
   useEffect(() => {
-    useDeriveTuningId(newHarpStrata, prevTuningId, setTuningId)
+    setFromSourceHarpStrataTuningId(newHarpStrata, prevTuningId, setTuningId)
     useDeriveValvingId(newHarpStrata, prevValvingId, setValvingId)
     const nextInteractionMatrix = useDeriveInteractionMatrix(
       newHarpStrata,
