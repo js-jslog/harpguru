@@ -8,7 +8,7 @@ import {
   determineZoomId,
 } from '../../../../utils'
 
-export const deriveColumnBounds = (
+export const reduceHarpStrataToColumnBounds = (
   // TODO: Should consider simplifying this so that
   // only the next degree matrix is passed in rather
   // than the entire harpstrata

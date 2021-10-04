@@ -1,4 +1,4 @@
-import type { HarpFaceMatrix, Interaction } from 'harpparts'
+import type { HarpFaceMatrix } from 'harpparts'
 
 import { determineMatrixDimensions } from '../../../../utils'
 
@@ -7,8 +7,8 @@ type LayoutFacts = {
   readonly harpfaceRows: number
 }
 
-export const deriveLayoutFacts = (
-  viewableInteractionMatrix: HarpFaceMatrix<Interaction>
+export const reduceViewableMatrixToLayoutFacts = <T>(
+  viewableInteractionMatrix: HarpFaceMatrix<T>
 ): LayoutFacts => {
   const { columns: columnCount, rows: rowCount } = determineMatrixDimensions(
     viewableInteractionMatrix

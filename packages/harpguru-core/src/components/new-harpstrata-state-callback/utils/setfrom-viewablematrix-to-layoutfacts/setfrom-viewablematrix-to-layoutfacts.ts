@@ -1,6 +1,6 @@
-import type { HarpFaceMatrix, Interaction } from 'harpparts'
+import type { HarpFaceMatrix } from 'harpparts'
 
-import { deriveLayoutFacts } from '../../utils'
+import { reduceViewableMatrixToLayoutFacts } from '../reduce-viewablematrix-to-layoutfacts'
 import { compareLayoutFacts } from '../../../../utils/compare-layout-facts'
 
 type LayoutFacts = {
@@ -8,13 +8,12 @@ type LayoutFacts = {
   readonly harpfaceRows: number
 }
 
-// TODO: should be based on the less volatile interaction matrix
-export const useDeriveLayoutFacts = (
-  nextViewableInteractionMatrix: HarpFaceMatrix<Interaction>,
+export const setFromViewableMatrixToLayoutFacts = <T>(
+  nextViewableMatrix: HarpFaceMatrix<T>,
   prevLayoutFacts: LayoutFacts,
   setLayoutFacts: (arg0: LayoutFacts) => void
 ): LayoutFacts => {
-  const nextLayoutFacts = deriveLayoutFacts(nextViewableInteractionMatrix)
+  const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(nextViewableMatrix)
   if (!compareLayoutFacts(prevLayoutFacts, nextLayoutFacts))
     setLayoutFacts(nextLayoutFacts)
   return nextLayoutFacts

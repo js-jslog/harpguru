@@ -1,8 +1,8 @@
 import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
+import { setFromViewableMatrixToLayoutFacts } from '../new-harpstrata-state-callback/utils/setfrom-viewablematrix-to-layoutfacts'
 import { setFromHarpStrataToViewableMatrix } from '../new-harpstrata-state-callback/utils'
-import { useDeriveLayoutFacts } from '../new-harpstrata-state-callback/hooks'
 
 import { setFromSourceColumnBounds } from './utils'
 
@@ -47,7 +47,7 @@ export const NewColumnBoundsStateCallback = (): React.ReactElement => {
       prevColumnBounds,
       setColumnBounds
     )
-    useDeriveLayoutFacts(
+    setFromViewableMatrixToLayoutFacts(
       nextViewableInteractionMatrix,
       prevLayoutFacts,
       setLayoutFacts

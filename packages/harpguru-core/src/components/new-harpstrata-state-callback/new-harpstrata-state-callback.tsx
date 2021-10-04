@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 
 import {
   setFromHarpStrataToTuningId,
+  setFromHarpStrataToValvingId,
   setFromHarpStrataToActiveDegreeIds,
   setFromHarpStrataToActivePitchIds,
   setFromHarpStrataToInteractionMatrix,
@@ -12,13 +13,10 @@ import {
   setFromHarpStrataToDegreeMatrix,
   setFromHarpStrataToPitchMatrix,
   setFromHarpStrataToViewableMatrix,
+  setFromHarpStrataToColumnBounds,
+  setFromViewableMatrixToLayoutFacts,
+  setToEmptyBufferedActivityToggles,
 } from './utils'
-import {
-  useDeriveValvingId,
-  useDeriveColumnBounds,
-  useDeriveLayoutFacts,
-  useEmptyBufferedActivityToggles,
-} from './hooks'
 
 export const NewHarpStrataStateCallback = (): React.ReactElement => {
   const [newHarpStrata] = useGlobal('activeHarpStrata')
@@ -54,7 +52,7 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
   )
   useEffect(() => {
     setFromHarpStrataToTuningId(newHarpStrata, prevTuningId, setTuningId)
-    useDeriveValvingId(newHarpStrata, prevValvingId, setValvingId)
+    setFromHarpStrataToValvingId(newHarpStrata, prevValvingId, setValvingId)
     const nextInteractionMatrix = setFromHarpStrataToInteractionMatrix(
       newHarpStrata,
       prevInteractionMatrix,
@@ -87,12 +85,12 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevActivePitchIds,
       setActivePitchIds
     )
-    const nextSourceColumnBounds = useDeriveColumnBounds(
+    const nextSourceColumnBounds = setFromHarpStrataToColumnBounds(
       newHarpStrata,
       prevSourceColumnBounds,
       setSourceColumnBounds
     )
-    useDeriveColumnBounds(
+    setFromHarpStrataToColumnBounds(
       newHarpStrata,
       prevSourceColumnBounds,
       setColumnBounds
@@ -115,12 +113,12 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevViewablePitchMatrix,
       setViewablePitchMatrix
     )
-    useDeriveLayoutFacts(
+    setFromViewableMatrixToLayoutFacts(
       nextViewableInteractionMatrix,
       prevLayoutFacts,
       setLayoutFacts
     )
-    useEmptyBufferedActivityToggles(
+    setToEmptyBufferedActivityToggles(
       prevBufferedActivityToggles,
       setBufferedActivityToggles
     )
