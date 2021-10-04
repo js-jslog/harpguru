@@ -1,6 +1,6 @@
 import type { ActiveDegreeIds, HarpStrata } from 'harpstrata'
 
-export const deriveActiveDegreeIds = (
+export const deriveFromSourceHarpStrataActiveDegreeIds = (
   // TODO: Should consider simplifying this so that
   // only the next degree matrix is passed in rather
   // than the entire harpstrata

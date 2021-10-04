@@ -1,6 +1,6 @@
 export { deriveViewableMatrix } from './derive-viewablematrix'
 export { deriveColumnBounds } from './derive-columnbounds'
 export { deriveLayoutFacts } from './derive-layoutfacts'
-export { deriveActiveDegreeIds } from './derive-activedegreeids'
 export { deriveActivePitchIds } from './derive-activepitchids'
 export { setFromSourceHarpStrataTuningId } from './setfromsource-harpstrata-tuningid'
+export { setFromSourceHarpStrataActiveDegreeIds } from './setfromsource-harpstrata-activedegreeids'
