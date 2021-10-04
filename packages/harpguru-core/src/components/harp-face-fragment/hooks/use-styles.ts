@@ -1,8 +1,9 @@
+import { useGlobal } from 'reactn'
 import type { ViewStyle } from 'react-native'
 import { StyleSheet } from 'react-native'
 
 import type { XRange } from '../../../types'
-import { useLayoutFacts, useSizes } from '../../../hooks'
+import { useSizes } from '../../../hooks'
 
 type HarpFaceFragmentStyles = {
   readonly fragment: ViewStyle
@@ -12,14 +13,14 @@ export const useStyles = (xRange: XRange): HarpFaceFragmentStyles => {
   const {
     dynamicSizes: { columnWidth, rowHeight },
   } = useSizes()
-  // TODO: replace with global state prop
-  const { harpFaceRowCount } = useLayoutFacts()
+  const [layoutFacts] = useGlobal('layoutFacts')
+  const { harpfaceRows } = layoutFacts
   const { length: fragmentColumnCount } = xRange
 
   const styles = StyleSheet.create<HarpFaceFragmentStyles>({
     fragment: {
       width: columnWidth * fragmentColumnCount,
-      height: rowHeight * harpFaceRowCount,
+      height: rowHeight * harpfaceRows,
     },
   })
 

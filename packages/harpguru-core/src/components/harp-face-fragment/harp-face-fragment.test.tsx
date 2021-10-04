@@ -50,7 +50,7 @@ test('A snapshot of a bounded HarpFaceFragment - we should expect fewer rows sin
   // be deducable rather than manually setup each time
   const layoutFacts = {
     harpfaceColumns: 9,
-    harpfaceRows: 7,
+    harpfaceRows: 6,
   }
   const viewableInteractionMatrix = deriveViewableInteractionMatrix(
     inactiveCellsHarpStrata.apparatus.interactionMatrix,
