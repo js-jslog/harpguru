@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import {
   setFromSourceHarpStrataTuningId,
   setFromSourceHarpStrataActiveDegreeIds,
+  setFromHarpStrataToActivePitchIds,
 } from './utils'
 import {
   useDeriveValvingId,
@@ -13,7 +14,6 @@ import {
   useDeriveHarpKeyId,
   useDerivePozitionId,
   useDeriveRootPitchId,
-  useDeriveActivePitchIds,
   useDeriveColumnBounds,
   useDeriveViewableMatrix,
   useDeriveLayoutFacts,
@@ -78,7 +78,7 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevActiveDegreeIds,
       setActiveDegreeIds
     )
-    useDeriveActivePitchIds(
+    setFromHarpStrataToActivePitchIds(
       newHarpStrata,
       prevActivePitchIds,
       setActivePitchIds
