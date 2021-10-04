@@ -2,9 +2,7 @@ import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
 import {
-  useDeriveViewableInteractionMatrix,
-  useDeriveViewableDegreeMatrix,
-  useDeriveViewablePitchMatrix,
+  useDeriveViewableMatrix,
   useDeriveLayoutFacts,
 } from '../new-harpstrata-state-callback/hooks'
 
@@ -25,19 +23,19 @@ export const NewColumnBoundsStateCallback = (): React.ReactElement => {
     'viewablePitchMatrix'
   )
   useEffect(() => {
-    const nextViewableInteractionMatrix = useDeriveViewableInteractionMatrix(
+    const nextViewableInteractionMatrix = useDeriveViewableMatrix(
       fullInteractionMatrix,
       nextColumnBounds,
       prevViewableInteractionMatrix,
       setViewableInteractionMatrix
     )
-    useDeriveViewableDegreeMatrix(
+    useDeriveViewableMatrix(
       fullDegreeMatrix,
       nextColumnBounds,
       prevViewableDegreeMatrix,
       setViewableDegreeMatrix
     )
-    useDeriveViewablePitchMatrix(
+    useDeriveViewableMatrix(
       fullPitchMatrix,
       nextColumnBounds,
       prevViewablePitchMatrix,

@@ -5,7 +5,7 @@ import { render } from '@testing-library/react-native'
 
 // TODO: remove this import. Work on test data construction instead and make
 // the mock objects easier to construct.
-import { deriveViewableInteractionMatrix } from '../new-harpstrata-state-callback/utils'
+import { deriveViewableMatrix } from '../new-harpstrata-state-callback/utils'
 import { DisplayModes, ExperienceModes } from '../../types'
 import { inactiveCellsHarpStrata } from '../../test-resources'
 
@@ -80,7 +80,7 @@ test('A component is rendered with fragmented and bounded face', () => {
     harpfaceColumns: 6,
     harpfaceRows: 6,
   }
-  const viewableInteractionMatrix = deriveViewableInteractionMatrix(
+  const viewableInteractionMatrix = deriveViewableMatrix(
     inactiveCellsHarpStrata.apparatus.interactionMatrix,
     [2, 7]
   )
@@ -114,7 +114,7 @@ test('A component is rendered with unfragmented and bounded face', () => {
     harpfaceColumns: 6,
     harpfaceRows: 6,
   }
-  const viewableInteractionMatrix = deriveViewableInteractionMatrix(
+  const viewableInteractionMatrix = deriveViewableMatrix(
     inactiveCellsHarpStrata.apparatus.interactionMatrix,
     [2, 7]
   )

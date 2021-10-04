@@ -13,9 +13,7 @@ import {
   useDeriveActiveDegreeIds,
   useDeriveActivePitchIds,
   useDeriveColumnBounds,
-  useDeriveViewableInteractionMatrix,
-  useDeriveViewableDegreeMatrix,
-  useDeriveViewablePitchMatrix,
+  useDeriveViewableMatrix,
   useDeriveLayoutFacts,
   useEmptyBufferedActivityToggles,
 } from './hooks'
@@ -85,19 +83,19 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevColumnBounds,
       setColumnBounds
     )
-    const nextViewableInteractionMatrix = useDeriveViewableInteractionMatrix(
+    const nextViewableInteractionMatrix = useDeriveViewableMatrix(
       nextInteractionMatrix,
       nextColumnBounds,
       prevViewableInteractionMatrix,
       setViewableInteractionMatrix
     )
-    useDeriveViewableDegreeMatrix(
+    useDeriveViewableMatrix(
       nextDegreeMatrix,
       nextColumnBounds,
       prevViewableDegreeMatrix,
       setViewableDegreeMatrix
     )
-    useDeriveViewablePitchMatrix(
+    useDeriveViewableMatrix(
       nextPitchMatrix,
       nextColumnBounds,
       prevViewablePitchMatrix,

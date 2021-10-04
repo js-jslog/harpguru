@@ -2,7 +2,7 @@ import { useGlobal } from 'reactn'
 
 // TODO: remove this import. Work on test data construction instead and make
 // the mock objects easier to construct.
-import { deriveViewableInteractionMatrix } from '../../../new-harpstrata-state-callback/utils'
+import { deriveViewableMatrix } from '../../../new-harpstrata-state-callback/utils'
 import { inactiveCellsHarpStrata as activeHarpStrata } from '../../../../test-resources'
 
 import { useHarpRows } from './use-harp-rows'
@@ -31,7 +31,7 @@ test('useHarpRows returns an object with the rows split between the blow / draw 
 })
 
 test('useHarpRows returns a column bounded object with the rows split between the blow / draw holes', () => {
-  const viewableInteractionMatrix = deriveViewableInteractionMatrix(
+  const viewableInteractionMatrix = deriveViewableMatrix(
     activeHarpStrata.apparatus.interactionMatrix,
     [1, 7]
   )
