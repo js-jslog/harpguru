@@ -19,11 +19,6 @@ export const useZoomItems = (
   useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): ValvingItems => {
-  // TOOMANYRENDERS: Perhaps if we had a zoomid global state which were always
-  // deduced whenever the columnBounds were updated we wouldn't have to
-  // update these labels when the column bounds are changed but only if they
-  // have atually changed length. This will be relevant when the widget to
-  // shift left and right while zoomed have been added.
   const [columnBounds] = useGlobal('columnBounds')
   const [activeDegreeMatrix] = useGlobal('activeDegreeMatrix')
   const activeZoomId = determineZoomId(columnBounds)

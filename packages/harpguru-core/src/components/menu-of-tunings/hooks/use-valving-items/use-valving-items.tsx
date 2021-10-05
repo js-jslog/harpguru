@@ -16,7 +16,6 @@ export const useValvingItems = (
   useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): ValvingItems => {
-  // TOOMANYRENDERS
   const [valvingId] = useGlobal('valvingId')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const items = getValvingIds().map((id, index) => (

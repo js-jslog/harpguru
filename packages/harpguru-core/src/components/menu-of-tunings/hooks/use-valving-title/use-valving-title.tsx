@@ -7,7 +7,6 @@ import type { UseGlobal } from '../../../../types'
 export const useValvingTitle = (
   useGlobal: UseGlobal
 ): React.ReactElement<OptionLabelProps> => {
-  // TOOMANYRENDERS
   const [valvingId] = useGlobal('valvingId')
   return (
     <OptionLabel

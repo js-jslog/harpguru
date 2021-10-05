@@ -18,7 +18,6 @@ export const useTuningItems = (
   useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): TuningItems => {
-  // TOOMANYRENDERS
   const [tuningId] = useGlobal('tuningId')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const commonTunings = getTuningIds()

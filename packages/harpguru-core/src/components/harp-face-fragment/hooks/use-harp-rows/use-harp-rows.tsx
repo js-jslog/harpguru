@@ -24,9 +24,6 @@ export const useHarpRows = (xRange: XRange): HarpRows => {
   // TODO: this is a bit clumsy. There are 2 options here:
   // 1. decide this is an elegant approach but a messy implementation - refactor
   // 2. decide that all of the objects further down the chain should be using the viewable matrices too - refactor
-  // TOOMANYRENDERS: This is going to produce more renders than necessary
-  // when:
-  // - the
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const fullBlowDrawIdsMap = fullInteractionMatrix.map(mapRowToBlowDrawIds)
   const fullDrawIndex = fullBlowDrawIdsMap.indexOf(InteractionIds.Draw)

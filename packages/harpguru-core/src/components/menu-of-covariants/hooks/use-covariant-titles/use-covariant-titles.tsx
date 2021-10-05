@@ -19,7 +19,6 @@ type CovariantMenuTitles = {
 
 export const useCovariantTitles = (): CovariantMenuTitles => {
   const useHarpKeyTitle = (useGlobal: UseGlobal) => {
-    // TOOMANYRENDERS:
     const [harpKeyId] = useGlobal('harpKeyId')
     return (
       <OptionLabel

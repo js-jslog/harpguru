@@ -20,7 +20,6 @@ type CovariantMenuLabels = {
 
 export const useCovariantLabels = (): CovariantMenuLabels => {
   const useHarpKeyLabel = () => {
-    // TOOMANYRENDERS: A
     const [harpKeyId] = useGlobal('harpKeyId')
     return (
       <OptionLabel

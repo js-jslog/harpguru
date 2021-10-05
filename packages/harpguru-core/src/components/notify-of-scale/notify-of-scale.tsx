@@ -16,7 +16,6 @@ type NotifyOfScaleProps = {
 export const NotifyOfScale = ({
   isScalesMenu,
 }: NotifyOfScaleProps): ReactElement => {
-  // TOOMANYRENDERS
   const [activeDegreeIds] = useGlobal('activeDegreeIds')
   const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
 
