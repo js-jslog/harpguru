@@ -2,28 +2,13 @@ import { useGlobal } from 'reactn'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { activeCellsHarpStrata } from '../../test-resources'
+import { buildMockUseGlobalImplementation } from '../../test-resources'
 
 import { HoleNumberRow } from './hole-number-row'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
-// TODO: Should be shared resource
-const layoutFacts = {
-  harpfaceColumns: 10,
-  harpfaceRows: 7,
-}
-mockUseGlobal.mockImplementation((stateItem: string) => {
-  if (stateItem === 'activeDegreeMatrix')
-    return [activeCellsHarpStrata.degreeMatrix]
-  if (stateItem === 'activePitchMatrix')
-    return [activeCellsHarpStrata.pitchMatrix]
-  if (stateItem === 'activeInteractionMatrix')
-    return [activeCellsHarpStrata.apparatus.interactionMatrix]
-  if (stateItem === 'layoutFacts') return [layoutFacts]
-  if (stateItem === 'columnBounds') return ['FIT']
-  return undefined
-})
+mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
 
 test('HoleNumberRow returns a 10 hole sequence', () => {
   const { queryByText, getByText } = render(

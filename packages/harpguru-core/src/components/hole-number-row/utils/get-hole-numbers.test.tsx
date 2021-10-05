@@ -1,20 +1,13 @@
 import { useGlobal } from 'reactn'
 import { render } from '@testing-library/react-native'
 
+import { buildMockUseGlobalImplementation } from '../../../test-resources'
+
 import { getHoleNumbers } from './get-hole-numbers'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
-// TODO: Should be shared resource
-const layoutFacts = {
-  harpfaceColumns: 10,
-  harpfaceRows: 7,
-}
-mockUseGlobal.mockImplementation((stateItem: string) => {
-  if (stateItem === 'columnBounds') return ['FIT']
-  if (stateItem === 'layoutFacts') return [layoutFacts]
-  return undefined
-})
+mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
 
 test('getHoleNumbers returns an array of HoleNumber components which is the width of the range supplied', () => {
   const xRange = [0, 1, 2, 3, 4, 5, 6, 7]
