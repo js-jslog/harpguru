@@ -12,12 +12,12 @@ import type {
   ValvingIds,
 } from 'harpparts'
 
-import type { DisplayModes, ExperienceModes, FlushChannels } from './types'
-
-type LayoutFacts = {
-  readonly harpfaceColumns: number
-  readonly harpfaceRows: number
-}
+import type {
+  DisplayModes,
+  ExperienceModes,
+  FlushChannels,
+  LayoutFacts,
+} from './types'
 
 declare module 'reactn/default' {
   export interface State {

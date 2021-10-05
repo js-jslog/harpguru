@@ -1,7 +1,4 @@
-type LayoutFacts = {
-  readonly harpfaceColumns: number
-  readonly harpfaceRows: number
-}
+import { LayoutFacts } from '../../types'
 
 export const compareLayoutFacts = (
   facts1: LayoutFacts,

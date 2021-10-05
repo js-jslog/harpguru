@@ -13,7 +13,7 @@ import type {
   Interaction,
 } from 'harpparts'
 
-type LayoutFacts = {
+export type LayoutFacts = {
   readonly harpfaceColumns: number
   readonly harpfaceRows: number
 }
