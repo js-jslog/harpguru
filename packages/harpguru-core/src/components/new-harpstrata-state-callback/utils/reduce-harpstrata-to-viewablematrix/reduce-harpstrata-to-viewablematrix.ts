@@ -1,11 +1,12 @@
 import type { HarpFaceMatrix } from 'harpparts'
 
 import { isPopulatedArray } from '../is-populated-array'
+import type { ColumnBounds } from '../../../../types'
 import { sliceMatrix } from '../../../../packages/slice-matrix'
 
 export const reduceHarpStrataToViewableMatrix = <T>(
   activeMatrix: HarpFaceMatrix<T>,
-  columnBounds: 'FIT' | readonly [number, number]
+  columnBounds: ColumnBounds
 ): HarpFaceMatrix<T> => {
   if (columnBounds === 'FIT') return activeMatrix
 

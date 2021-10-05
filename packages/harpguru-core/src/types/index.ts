@@ -18,6 +18,8 @@ export type LayoutFacts = {
   readonly harpfaceRows: number
 }
 
+export type ColumnBounds = 'FIT' | readonly [number, number]
+
 export type GlobalState = {
   readonly activeHarpStrata: HarpStrata
   readonly activeExperienceMode: ExperienceModes
@@ -26,8 +28,8 @@ export type GlobalState = {
   readonly fragmentHarpFaceByOctaves: boolean
   readonly flushChannel: FlushChannels
   readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
-  readonly sourceColumnBounds: 'FIT' | readonly [number, number]
-  readonly columnBounds: 'FIT' | readonly [number, number]
+  readonly sourceColumnBounds: ColumnBounds
+  readonly columnBounds: ColumnBounds
   readonly tuningId: TuningIds
   readonly valvingId: ValvingIds
   readonly activeInteractionMatrix: HarpFaceMatrix<Interaction>

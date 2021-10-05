@@ -9,6 +9,7 @@ import {
 } from 'harpparts'
 
 import { DisplayModes, ExperienceModes, FlushChannels } from '../types'
+import type { ColumnBounds } from '../types'
 // TODO: fix these imports
 import { reduceViewableMatrixToLayoutFacts } from '../components/new-harpstrata-state-callback/utils/reduce-viewablematrix-to-layoutfacts'
 // TODO: this function needs renaming. It's param is not a harpstara, it's just a splan matrix.
@@ -49,7 +50,7 @@ export const activeCellsHarpStrata = getHarpStrata(activeCellsHarpStrataProps)
 
 type BuildMockUseGlobalImplementationProps = {
   readonly sourceHarpStrata?: HarpStrata
-  readonly sourceColumnBounds?: 'FIT' | readonly [number, number]
+  readonly sourceColumnBounds?: ColumnBounds
   readonly experienceMode?: ExperienceModes
   readonly displayMode?: DisplayModes
   readonly bufferedActivityToggles?: ReadonlyArray<DegreeIds>

@@ -7,14 +7,15 @@ import {
   determineMatrixDimensions,
   determineZoomId,
 } from '../../../../utils'
+import type { ColumnBounds } from '../../../../types'
 
 export const reduceHarpStrataToColumnBounds = (
   // TODO: Should consider simplifying this so that
   // only the next degree matrix is passed in rather
   // than the entire harpstrata
   activeHarpStrata: HarpStrata,
-  prevColumnBounds: 'FIT' | readonly [number, number]
-): 'FIT' | readonly [number, number] => {
+  prevColumnBounds: ColumnBounds
+): ColumnBounds => {
   const { degreeMatrix: newDegreeMatrix } = activeHarpStrata
   const { columns: columnCount } = determineMatrixDimensions(newDegreeMatrix)
   // TODO: This defaulting should perhaps be done in the

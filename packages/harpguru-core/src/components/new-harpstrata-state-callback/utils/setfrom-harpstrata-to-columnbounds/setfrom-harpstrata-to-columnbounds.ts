@@ -2,12 +2,13 @@ import type { HarpStrata } from 'harpstrata'
 
 import { reduceHarpStrataToColumnBounds } from '../reduce-harpstrata-to-columnbounds'
 import { isMatchedColumnBounds } from '../../../../utils'
+import type { ColumnBounds } from '../../../../types'
 
 export const setFromHarpStrataToColumnBounds = (
   newHarpStrata: HarpStrata,
-  prevColumnBounds: 'FIT' | readonly [number, number],
-  setColumnBounds: (arg0: 'FIT' | readonly [number, number]) => void
-): 'FIT' | readonly [number, number] => {
+  prevColumnBounds: ColumnBounds,
+  setColumnBounds: (arg0: ColumnBounds) => void
+): ColumnBounds => {
   const nextColumnBounds = reduceHarpStrataToColumnBounds(
     newHarpStrata,
     prevColumnBounds

@@ -1,12 +1,13 @@
 import type { HarpFaceMatrix } from 'harpparts'
 
 import { reduceHarpStrataToViewableMatrix } from '../reduce-harpstrata-to-viewablematrix'
+import type { ColumnBounds } from '../../../../types'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 import type { IdedObject } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
 export const setFromHarpStrataToViewableMatrix = <T extends IdedObject>(
   nextMatrix: HarpFaceMatrix<T>,
-  nextColumnBounds: 'FIT' | readonly [number, number],
+  nextColumnBounds: ColumnBounds,
   prevViewableMatrix: HarpFaceMatrix<T>,
   setViewableMatrix: (arg0: HarpFaceMatrix<T>) => void
 ): HarpFaceMatrix<T> => {

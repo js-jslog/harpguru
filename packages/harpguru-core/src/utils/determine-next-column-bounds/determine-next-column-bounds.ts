@@ -1,12 +1,13 @@
 import { ZoomIds } from '../../types'
+import type { ColumnBounds } from '../../types'
 
 import { determineBestBoundsForHarpLength } from './determine-best-bounds-for-harp-length'
 
 export const determineNextColumnBounds = (
   harpLength: number,
-  currentColumnBounds: 'FIT' | readonly [number, number],
+  currentColumnBounds: ColumnBounds,
   zoomId: ZoomIds
-): 'FIT' | readonly [number, number] => {
+): ColumnBounds => {
   return (() => {
     if (zoomId === ZoomIds.Fit) return 'FIT'
     if (currentColumnBounds === 'FIT') {

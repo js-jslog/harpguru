@@ -1,10 +1,11 @@
 import { isMatchedColumnBounds } from '../../../../utils'
+import type { ColumnBounds } from '../../../../types'
 
 export const setFromSourceColumnBounds = (
-  newSourceColumnBounds: 'FIT' | readonly [number, number],
-  prevColumnBounds: 'FIT' | readonly [number, number],
-  setColumnBounds: (arg0: 'FIT' | readonly [number, number]) => void
-): 'FIT' | readonly [number, number] => {
+  newSourceColumnBounds: ColumnBounds,
+  prevColumnBounds: ColumnBounds,
+  setColumnBounds: (arg0: ColumnBounds) => void
+): ColumnBounds => {
   if (isMatchedColumnBounds(newSourceColumnBounds, prevColumnBounds))
     return prevColumnBounds
   setColumnBounds(newSourceColumnBounds)

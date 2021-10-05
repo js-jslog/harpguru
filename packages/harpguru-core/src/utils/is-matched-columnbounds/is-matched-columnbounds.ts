@@ -1,6 +1,8 @@
+import type { ColumnBounds } from '../../types'
+
 export const isMatchedColumnBounds = (
-  bounds1: 'FIT' | readonly [number, number],
-  bounds2: 'FIT' | readonly [number, number]
+  bounds1: ColumnBounds,
+  bounds2: ColumnBounds
 ): boolean => {
   if (bounds1 === 'FIT') return bounds2 === 'FIT'
   const [start1, end1] = bounds1
