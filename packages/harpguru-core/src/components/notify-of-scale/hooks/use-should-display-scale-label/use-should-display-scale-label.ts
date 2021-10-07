@@ -8,7 +8,7 @@ export const useShouldDisplayScaleLabel = (
   scaleLabel: string | undefined,
   isScalesMenu: boolean
 ): boolean => {
-  const previousScaleLabel = usePrevious(scaleLabel, scaleLabel)
+  const previousScaleLabel = usePrevious(scaleLabel, undefined)
   const [shouldDisplay, setShouldDisplay] = useState(false)
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
 

@@ -33,19 +33,19 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   }
   const { [pageNumber]: pozitionId } = pozitionMap
 
+  const thisPozitionDegrees =
+    pageNumber === 1 ? getScale(ScaleIds.MajorPentatonic).degrees : []
+
   const initialHarpStrataProps: HarpStrataProps = {
     tuningId,
     valvingId,
     pozitionId,
     harpKeyId,
-    activeIds: [],
+    activeIds: thisPozitionDegrees,
   }
   const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
   const { Explore: initialExperienceMode } = ExperienceModes
   const { Degree: initialDisplayMode } = DisplayModes
-
-  const thisPozitionDegrees =
-    pageNumber === 1 ? getScale(ScaleIds.MajorPentatonic).degrees : []
 
   const { rootPitchId, activeDegreeIds, activePitchIds } = initialHarpStrata
   const {
@@ -74,7 +74,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     activeHarpStrata: initialHarpStrata,
     activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
-    bufferedActivityToggles: thisPozitionDegrees,
+    bufferedActivityToggles: [],
     fragmentHarpFaceByOctaves: true,
     flushChannel: FlushChannels.Regular,
     activeQuizDegrees: getDegreeIds(),
