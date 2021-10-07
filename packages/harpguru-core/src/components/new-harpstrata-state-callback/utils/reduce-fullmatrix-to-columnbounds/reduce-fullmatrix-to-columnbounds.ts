@@ -12,9 +12,6 @@ export const reduceFullMatrixToColumnBounds = (
   prevColumnBounds: ColumnBounds
 ): ColumnBounds => {
   const { columns: columnCount } = determineMatrixDimensions(nextFullMatrix)
-  // TODO: This defaulting should perhaps be done in the
-  // `determineNextColumnBounds` function since it's going
-  // to be useful in multiple locations.
   const zoomId = determineZoomId(prevColumnBounds)
   const newColumnBounds = determineNextColumnBounds(
     columnCount,
