@@ -10,3 +10,4 @@ export { setFromHarpStrataToRootPitchId } from './setfrom-harpstrata-to-rootpitc
 export { setFromHarpStrataToPitchMatrix } from './setfrom-harpstrata-to-pitchmatrix'
 export { setFromFullMatrixToColumnBounds } from './setfrom-fullmatrix-to-columnbounds'
 export { setToEmptyBufferedActivityToggles } from './setto-empty-bufferedactivitytoggles'
+export { setFromSourceColumnBoundsColumnBounds } from './setfrom-sourcecolumnbounds-columnbounds'

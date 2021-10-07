@@ -1,18 +1,13 @@
 import { useGlobal } from 'reactn'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
+import { setFromSourceColumnBoundsColumnBounds } from '../utils'
 import {
   setFromFullMatrixToViewableMatrix,
   setFromViewableMatrixToLayoutFacts,
-} from '../../utils'
+} from '../../../utils'
 
-import { setFromSourceColumnBounds } from './utils'
-
-// TODO: I think I might want both of the source global state useEffects to be
-// defined in the same component so that we don't have to fragment the origin
-// of all these dependencies. I'd like to keep as many of them out of the root
-// utils folder as possible.
-export const NewColumnBoundsStateCallback = (): React.ReactElement => {
+export const useSetFromSourceColumnBounds = (): void => {
   const [nextSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
@@ -48,7 +43,7 @@ export const NewColumnBoundsStateCallback = (): React.ReactElement => {
       prevViewablePitchMatrix,
       setViewablePitchMatrix
     )
-    setFromSourceColumnBounds(
+    setFromSourceColumnBoundsColumnBounds(
       nextSourceColumnBounds,
       prevColumnBounds,
       setColumnBounds
@@ -59,6 +54,4 @@ export const NewColumnBoundsStateCallback = (): React.ReactElement => {
       setLayoutFacts
     )
   }, [nextSourceColumnBounds])
-
-  return <></>
 }

@@ -1,10 +1,5 @@
 import { useGlobal } from 'reactn'
-import React, { useEffect } from 'react'
-
-import {
-  setFromFullMatrixToViewableMatrix,
-  setFromViewableMatrixToLayoutFacts,
-} from '../../utils'
+import { useEffect } from 'react'
 
 import {
   setFromHarpStrataToTuningId,
@@ -19,10 +14,14 @@ import {
   setFromHarpStrataToPitchMatrix,
   setFromFullMatrixToColumnBounds,
   setToEmptyBufferedActivityToggles,
-} from './utils'
+} from '../utils'
+import {
+  setFromFullMatrixToViewableMatrix,
+  setFromViewableMatrixToLayoutFacts,
+} from '../../../utils'
 
-export const NewHarpStrataStateCallback = (): React.ReactElement => {
-  const [newHarpStrata] = useGlobal('activeHarpStrata')
+export const useSetFromSourceHarpStrata = (): void => {
+  const [nextSourceHarpStrata] = useGlobal('activeHarpStrata')
   const [prevTuningId, setTuningId] = useGlobal('tuningId')
   const [prevValvingId, setValvingId] = useGlobal('valvingId')
   const [prevInteractionMatrix, setInteractionMatrix] = useGlobal(
@@ -54,37 +53,49 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
     'bufferedActivityToggles'
   )
   useEffect(() => {
-    setFromHarpStrataToTuningId(newHarpStrata, prevTuningId, setTuningId)
-    setFromHarpStrataToValvingId(newHarpStrata, prevValvingId, setValvingId)
+    setFromHarpStrataToTuningId(nextSourceHarpStrata, prevTuningId, setTuningId)
+    setFromHarpStrataToValvingId(
+      nextSourceHarpStrata,
+      prevValvingId,
+      setValvingId
+    )
     const nextFullInteractionMatrix = setFromHarpStrataToInteractionMatrix(
-      newHarpStrata,
+      nextSourceHarpStrata,
       prevInteractionMatrix,
       setInteractionMatrix
     )
     const nextFullDegreeMatrix = setFromHarpStrataToDegreeMatrix(
-      newHarpStrata,
+      nextSourceHarpStrata,
       prevDegreeMatrix,
       setDegreeMatrix
     )
     const nextFullPitchMatrix = setFromHarpStrataToPitchMatrix(
-      newHarpStrata,
+      nextSourceHarpStrata,
       prevPitchMatrix,
       setPitchMatrix
     )
-    setFromHarpStrataToHarpKeyId(newHarpStrata, prevHarpKeyId, setHarpKeyId)
-    setFromHarpStrataToPozitionId(newHarpStrata, prevPozitionId, setPozitionId)
+    setFromHarpStrataToHarpKeyId(
+      nextSourceHarpStrata,
+      prevHarpKeyId,
+      setHarpKeyId
+    )
+    setFromHarpStrataToPozitionId(
+      nextSourceHarpStrata,
+      prevPozitionId,
+      setPozitionId
+    )
     setFromHarpStrataToRootPitchId(
-      newHarpStrata,
+      nextSourceHarpStrata,
       prevRootPitchId,
       setRootPitchId
     )
     setFromHarpStrataToActiveDegreeIds(
-      newHarpStrata,
+      nextSourceHarpStrata,
       prevActiveDegreeIds,
       setActiveDegreeIds
     )
     setFromHarpStrataToActivePitchIds(
-      newHarpStrata,
+      nextSourceHarpStrata,
       prevActivePitchIds,
       setActivePitchIds
     )
@@ -125,7 +136,5 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevBufferedActivityToggles,
       setBufferedActivityToggles
     )
-  }, [newHarpStrata])
-
-  return <></>
+  }, [nextSourceHarpStrata])
 }

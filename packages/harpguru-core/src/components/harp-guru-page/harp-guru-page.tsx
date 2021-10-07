@@ -9,8 +9,6 @@ import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
 import { NotifyOfScale } from '../notify-of-scale'
 import { NotifyOfQuizQuestion } from '../notify-of-quiz-question'
 import { NewStateLogger } from '../new-state-logger'
-import { NewHarpStrataStateCallback } from '../new-harpstrata-state-callback'
-import { NewColumnBoundsStateCallback } from '../new-columnbounds-state-callback'
 import { MenuTabNextPage } from '../menu-tab-next-page'
 import { MenuTabFragmentation } from '../menu-tab-fragmentation'
 import { MenuTabExperienceMode } from '../menu-tab-experience-mode'
@@ -19,6 +17,7 @@ import { MenuOfTunings } from '../menu-of-tunings'
 import { MenuOfScales } from '../menu-of-scales'
 import { MenuOfCovariants } from '../menu-of-covariants'
 import { HarpFaceMemo } from '../harp-face'
+import { CallbackOnSourceGlobalProps } from '../callback-on-sourceglobalprops'
 import { ActivityLegend } from '../activity-legend'
 import { getColors } from '../../utils'
 import { MenuStates, MenuStashPosition, PageNumber } from '../../types'
@@ -99,8 +98,7 @@ export const HarpGuruPage = ({
         getNextPage={() => pageOnDisplay.setValue(nextPageNumberMap[thisPage])}
       />
       <ToggleBufferFlusher />
-      <NewHarpStrataStateCallback />
-      <NewColumnBoundsStateCallback />
+      <CallbackOnSourceGlobalProps />
       <NewStateLogger />
       <NotifyOfQuizQuestion isScreenFree={menuState === MenuStates.NoMenu} />
       <NotifyOfScale isScalesMenu={menuState === MenuStates.ScalesMenu} />
