@@ -4,7 +4,7 @@ import { isPopulatedArray } from '../is-populated-array'
 import type { ColumnBounds } from '../../../../types'
 import { sliceMatrix } from '../../../../packages/slice-matrix'
 
-export const reduceHarpStrataToViewableMatrix = <T>(
+export const reduceFullMatrixToViewableMatrix = <T>(
   activeMatrix: HarpFaceMatrix<T>,
   columnBounds: ColumnBounds
 ): HarpFaceMatrix<T> => {

@@ -13,7 +13,7 @@ import { DisplayModes, ExperienceModes, FlushChannels } from '../types'
 import type { ColumnBounds } from '../types'
 // TODO: fix these imports
 // TODO: this function needs renaming. It's param is not a harpstara, it's just a splan matrix.
-import { reduceHarpStrataToViewableMatrix } from '../components/new-harpstrata-state-callback/utils/reduce-harpstrata-to-viewablematrix'
+import { reduceFullMatrixToViewableMatrix } from '../components/new-harpstrata-state-callback/utils/reduce-fullmatrix-to-viewablematrix'
 
 const allActiveDegrees = [
   DegreeIds.Root,
@@ -87,15 +87,15 @@ export const buildMockUseGlobalImplementation = ({
     if (stateItem === 'rootPitchId') return [sourceHarpStrata.rootPitchId]
 
     if (stateItem === 'columnBounds') return [sourceColumnBounds]
-    const viewableDegreeMatrix = reduceHarpStrataToViewableMatrix(
+    const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
       sourceHarpStrata.degreeMatrix,
       sourceColumnBounds
     )
-    const viewablePitchMatrix = reduceHarpStrataToViewableMatrix(
+    const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
       sourceHarpStrata.pitchMatrix,
       sourceColumnBounds
     )
-    const viewableInteractionMatrix = reduceHarpStrataToViewableMatrix(
+    const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
       sourceHarpStrata.apparatus.interactionMatrix,
       sourceColumnBounds
     )

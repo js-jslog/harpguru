@@ -14,7 +14,7 @@ import {
   setFromHarpStrataToRootPitchId,
   setFromHarpStrataToDegreeMatrix,
   setFromHarpStrataToPitchMatrix,
-  setFromHarpStrataToViewableMatrix,
+  setFromFullMatrixToViewableMatrix,
   setFromHarpStrataToColumnBounds,
   setToEmptyBufferedActivityToggles,
 } from './utils'
@@ -96,19 +96,19 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevSourceColumnBounds,
       setColumnBounds
     )
-    const nextViewableInteractionMatrix = setFromHarpStrataToViewableMatrix(
+    const nextViewableInteractionMatrix = setFromFullMatrixToViewableMatrix(
       nextInteractionMatrix,
       nextSourceColumnBounds,
       prevViewableInteractionMatrix,
       setViewableInteractionMatrix
     )
-    setFromHarpStrataToViewableMatrix(
+    setFromFullMatrixToViewableMatrix(
       nextDegreeMatrix,
       nextSourceColumnBounds,
       prevViewableDegreeMatrix,
       setViewableDegreeMatrix
     )
-    setFromHarpStrataToViewableMatrix(
+    setFromFullMatrixToViewableMatrix(
       nextPitchMatrix,
       nextSourceColumnBounds,
       prevViewablePitchMatrix,

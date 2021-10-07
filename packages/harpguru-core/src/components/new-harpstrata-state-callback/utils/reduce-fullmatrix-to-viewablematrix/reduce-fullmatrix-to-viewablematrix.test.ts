@@ -6,7 +6,7 @@ import {
   InteractionIds,
 } from 'harpparts'
 
-import { reduceHarpStrataToViewableMatrix } from './reduce-harpstrata-to-viewablematrix'
+import { reduceFullMatrixToViewableMatrix } from './reduce-fullmatrix-to-viewablematrix'
 
 const root = getDegree(DegreeIds.Root)
 const second = getDegree(DegreeIds.Second)
@@ -44,13 +44,13 @@ test('identical degree matrix is returned when columnBounds is FIT', () => {
     [undefined, getDegree(DegreeIds.Third)],
   ]
 
-  expect(reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)).toBe(
+  expect(reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)).toBe(
     fullMatrix1
   )
-  expect(reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)).toBe(
+  expect(reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)).toBe(
     fullMatrix2
   )
-  expect(reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)).toBe(
+  expect(reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)).toBe(
     fullMatrix3
   )
 })
@@ -84,13 +84,13 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
   ]
 
   expect(
-    reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)
+    reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)
   ).toStrictEqual(slicedMatrix1)
   expect(
-    reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)
+    reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)
   ).toStrictEqual(slicedMatrix2)
   expect(
-    reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)
+    reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)
   ).toStrictEqual(fullMatrix3)
 })
 
@@ -112,13 +112,13 @@ test('identical pitch matrix is returned when columnBounds is FIT', () => {
     [undefined, getPitch(PitchIds.E)],
   ]
 
-  expect(reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)).toBe(
+  expect(reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)).toBe(
     fullMatrix1
   )
-  expect(reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)).toBe(
+  expect(reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)).toBe(
     fullMatrix2
   )
-  expect(reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)).toBe(
+  expect(reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)).toBe(
     fullMatrix3
   )
 })
@@ -152,13 +152,13 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
   ]
 
   expect(
-    reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)
+    reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)
   ).toStrictEqual(slicedMatrix1)
   expect(
-    reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)
+    reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)
   ).toStrictEqual(slicedMatrix2)
   expect(
-    reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)
+    reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)
   ).toStrictEqual(fullMatrix3)
 })
 
@@ -182,13 +182,13 @@ test('identical interaction matrix is returned when columnBounds is FIT', () => 
     [undefined, drawbend],
   ]
 
-  expect(reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)).toBe(
+  expect(reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)).toBe(
     fullMatrix1
   )
-  expect(reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)).toBe(
+  expect(reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)).toBe(
     fullMatrix2
   )
-  expect(reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)).toBe(
+  expect(reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)).toBe(
     fullMatrix3
   )
 })
@@ -225,12 +225,12 @@ test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => 
   ]
 
   expect(
-    reduceHarpStrataToViewableMatrix(fullMatrix1, columnBounds)
+    reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)
   ).toStrictEqual(slicedMatrix1)
   expect(
-    reduceHarpStrataToViewableMatrix(fullMatrix2, columnBounds)
+    reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)
   ).toStrictEqual(slicedMatrix2)
   expect(
-    reduceHarpStrataToViewableMatrix(fullMatrix3, columnBounds)
+    reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)
   ).toStrictEqual(fullMatrix3)
 })

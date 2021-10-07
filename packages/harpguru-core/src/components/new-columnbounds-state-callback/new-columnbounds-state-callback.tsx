@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
-import { setFromHarpStrataToViewableMatrix } from '../new-harpstrata-state-callback/utils'
+import { setFromFullMatrixToViewableMatrix } from '../new-harpstrata-state-callback/utils'
 import { setFromViewableMatrixToLayoutFacts } from '../../utils'
 
 import { setFromSourceColumnBounds } from './utils'
@@ -28,19 +28,19 @@ export const NewColumnBoundsStateCallback = (): React.ReactElement => {
     'viewablePitchMatrix'
   )
   useEffect(() => {
-    const nextViewableInteractionMatrix = setFromHarpStrataToViewableMatrix(
+    const nextViewableInteractionMatrix = setFromFullMatrixToViewableMatrix(
       fullInteractionMatrix,
       nextSourceColumnBounds,
       prevViewableInteractionMatrix,
       setViewableInteractionMatrix
     )
-    setFromHarpStrataToViewableMatrix(
+    setFromFullMatrixToViewableMatrix(
       fullDegreeMatrix,
       nextSourceColumnBounds,
       prevViewableDegreeMatrix,
       setViewableDegreeMatrix
     )
-    setFromHarpStrataToViewableMatrix(
+    setFromFullMatrixToViewableMatrix(
       fullPitchMatrix,
       nextSourceColumnBounds,
       prevViewablePitchMatrix,
