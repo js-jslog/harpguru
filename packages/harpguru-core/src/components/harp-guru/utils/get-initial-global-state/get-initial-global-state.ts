@@ -11,6 +11,10 @@ import {
 } from 'harpparts'
 
 import {
+  reduceFullMatrixToViewableMatrix,
+  reduceViewableMatrixToLayoutFacts,
+} from '../../../../utils'
+import {
   GlobalState,
   DisplayModes,
   ExperienceModes,
@@ -43,6 +47,29 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const thisPozitionDegrees =
     pageNumber === 1 ? getScale(ScaleIds.MajorPentatonic).degrees : []
 
+  const { rootPitchId } = initialHarpStrata
+  const {
+    apparatus: { interactionMatrix: fullInteractionMatrix },
+  } = initialHarpStrata
+  const { degreeMatrix: fullDegreeMatrix } = initialHarpStrata
+  const { pitchMatrix: fullPitchMatrix } = initialHarpStrata
+  const columnBounds = 'FIT'
+  const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
+    fullInteractionMatrix,
+    columnBounds
+  )
+  const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
+    fullDegreeMatrix,
+    columnBounds
+  )
+  const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
+    fullPitchMatrix,
+    columnBounds
+  )
+  const layoutFacts = reduceViewableMatrixToLayoutFacts(
+    viewableInteractionMatrix
+  )
+
   const state = {
     activeHarpStrata: initialHarpStrata,
     activeExperienceMode: initialExperienceMode,
@@ -51,27 +78,22 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     fragmentHarpFaceByOctaves: true,
     flushChannel: FlushChannels.Regular,
     activeQuizDegrees: getDegreeIds(),
-    sourceColumnBounds: 'FIT',
-    columnBounds: 'FIT',
-    tuningId: initialHarpStrata.apparatus.tuningId,
-    valvingId: initialHarpStrata.apparatus.valvingId,
-    activeInteractionMatrix: initialHarpStrata.apparatus.interactionMatrix,
-    activeDegreeMatrix: initialHarpStrata.degreeMatrix,
-    activePitchMatrix: initialHarpStrata.pitchMatrix,
+    sourceColumnBounds: columnBounds,
+    columnBounds,
+    tuningId,
+    valvingId,
+    activeInteractionMatrix: fullInteractionMatrix,
+    activeDegreeMatrix: fullDegreeMatrix,
+    activePitchMatrix: fullPitchMatrix,
     activeDegreeIds: [],
     activePitchIds: [],
-    viewableInteractionMatrix: initialHarpStrata.apparatus.interactionMatrix,
-    viewableDegreeMatrix: initialHarpStrata.degreeMatrix,
-    viewablePitchMatrix: initialHarpStrata.pitchMatrix,
-    pozitionId: initialHarpStrata.pozitionId,
-    rootPitchId: initialHarpStrata.rootPitchId,
-    harpKeyId: initialHarpStrata.harpKeyId,
-    // TODO: This and many other parts of this state should
-    // be derived rather than stated outright.
-    layoutFacts: {
-      harpfaceColumns: 10,
-      harpfaceRows: 7,
-    },
+    viewableInteractionMatrix,
+    viewableDegreeMatrix,
+    viewablePitchMatrix,
+    pozitionId,
+    rootPitchId,
+    harpKeyId,
+    layoutFacts,
   } as const
 
   return state
