@@ -8,12 +8,12 @@ import {
   ValvingIds,
 } from 'harpparts'
 
-import { reduceViewableMatrixToLayoutFacts } from '../utils'
+import {
+  reduceFullMatrixToViewableMatrix,
+  reduceViewableMatrixToLayoutFacts,
+} from '../utils'
 import { DisplayModes, ExperienceModes, FlushChannels } from '../types'
 import type { ColumnBounds } from '../types'
-// TODO: fix these imports
-// TODO: this function needs renaming. It's param is not a harpstara, it's just a splan matrix.
-import { reduceFullMatrixToViewableMatrix } from '../components/new-harpstrata-state-callback/utils/reduce-fullmatrix-to-viewablematrix'
 
 const allActiveDegrees = [
   DegreeIds.Root,

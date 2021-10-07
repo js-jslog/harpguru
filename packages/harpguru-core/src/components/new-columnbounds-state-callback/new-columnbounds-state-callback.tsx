@@ -1,8 +1,10 @@
 import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
-import { setFromFullMatrixToViewableMatrix } from '../new-harpstrata-state-callback/utils'
-import { setFromViewableMatrixToLayoutFacts } from '../../utils'
+import {
+  setFromFullMatrixToViewableMatrix,
+  setFromViewableMatrixToLayoutFacts,
+} from '../../utils'
 
 import { setFromSourceColumnBounds } from './utils'
 
