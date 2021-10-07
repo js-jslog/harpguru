@@ -1,16 +1,16 @@
-import type { HarpStrata } from 'harpstrata'
+import type { HarpFaceMatrix } from 'harpparts'
 
-import { reduceHarpStrataToColumnBounds } from '../reduce-harpstrata-to-columnbounds'
+import { reduceFullMatrixToColumnBounds } from '../reduce-fullmatrix-to-columnbounds'
 import { isMatchColumnBounds } from '../../../../utils'
 import type { ColumnBounds } from '../../../../types'
 
-export const setFromHarpStrataToColumnBounds = (
-  newHarpStrata: HarpStrata,
+export const setFromFullMatrixToColumnBounds = (
+  nextFullMatrix: HarpFaceMatrix<unknown>,
   prevColumnBounds: ColumnBounds,
   setColumnBounds: (arg0: ColumnBounds) => void
 ): ColumnBounds => {
-  const nextColumnBounds = reduceHarpStrataToColumnBounds(
-    newHarpStrata,
+  const nextColumnBounds = reduceFullMatrixToColumnBounds(
+    nextFullMatrix,
     prevColumnBounds
   )
   if (!isMatchColumnBounds(prevColumnBounds, nextColumnBounds))

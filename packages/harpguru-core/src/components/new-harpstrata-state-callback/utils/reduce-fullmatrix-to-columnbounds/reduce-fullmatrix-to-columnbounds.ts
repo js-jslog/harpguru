@@ -1,4 +1,4 @@
-import type { HarpStrata } from 'harpstrata'
+import type { HarpFaceMatrix } from 'harpparts'
 
 // TODO: Some of the functions should probably be moved if this plan comes off
 // (plan to have "callback" esque updates to the other derived global state
@@ -9,15 +9,11 @@ import {
 } from '../../../../utils'
 import type { ColumnBounds } from '../../../../types'
 
-export const reduceHarpStrataToColumnBounds = (
-  // TODO: Should consider simplifying this so that
-  // only the next degree matrix is passed in rather
-  // than the entire harpstrata
-  activeHarpStrata: HarpStrata,
+export const reduceFullMatrixToColumnBounds = (
+  nextFullMatrix: HarpFaceMatrix<unknown>,
   prevColumnBounds: ColumnBounds
 ): ColumnBounds => {
-  const { degreeMatrix: newDegreeMatrix } = activeHarpStrata
-  const { columns: columnCount } = determineMatrixDimensions(newDegreeMatrix)
+  const { columns: columnCount } = determineMatrixDimensions(nextFullMatrix)
   // TODO: This defaulting should perhaps be done in the
   // `determineNextColumnBounds` function since it's going
   // to be useful in multiple locations.

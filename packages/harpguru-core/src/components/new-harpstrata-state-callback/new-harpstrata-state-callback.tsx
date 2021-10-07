@@ -17,7 +17,7 @@ import {
   setFromHarpStrataToRootPitchId,
   setFromHarpStrataToDegreeMatrix,
   setFromHarpStrataToPitchMatrix,
-  setFromHarpStrataToColumnBounds,
+  setFromFullMatrixToColumnBounds,
   setToEmptyBufferedActivityToggles,
 } from './utils'
 
@@ -56,17 +56,17 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
   useEffect(() => {
     setFromHarpStrataToTuningId(newHarpStrata, prevTuningId, setTuningId)
     setFromHarpStrataToValvingId(newHarpStrata, prevValvingId, setValvingId)
-    const nextInteractionMatrix = setFromHarpStrataToInteractionMatrix(
+    const nextFullInteractionMatrix = setFromHarpStrataToInteractionMatrix(
       newHarpStrata,
       prevInteractionMatrix,
       setInteractionMatrix
     )
-    const nextDegreeMatrix = setFromHarpStrataToDegreeMatrix(
+    const nextFullDegreeMatrix = setFromHarpStrataToDegreeMatrix(
       newHarpStrata,
       prevDegreeMatrix,
       setDegreeMatrix
     )
-    const nextPitchMatrix = setFromHarpStrataToPitchMatrix(
+    const nextFullPitchMatrix = setFromHarpStrataToPitchMatrix(
       newHarpStrata,
       prevPitchMatrix,
       setPitchMatrix
@@ -88,30 +88,30 @@ export const NewHarpStrataStateCallback = (): React.ReactElement => {
       prevActivePitchIds,
       setActivePitchIds
     )
-    const nextSourceColumnBounds = setFromHarpStrataToColumnBounds(
-      newHarpStrata,
+    const nextSourceColumnBounds = setFromFullMatrixToColumnBounds(
+      nextFullInteractionMatrix,
       prevSourceColumnBounds,
       setSourceColumnBounds
     )
-    setFromHarpStrataToColumnBounds(
-      newHarpStrata,
+    setFromFullMatrixToColumnBounds(
+      nextFullInteractionMatrix,
       prevSourceColumnBounds,
       setColumnBounds
     )
     const nextViewableInteractionMatrix = setFromFullMatrixToViewableMatrix(
-      nextInteractionMatrix,
+      nextFullInteractionMatrix,
       nextSourceColumnBounds,
       prevViewableInteractionMatrix,
       setViewableInteractionMatrix
     )
     setFromFullMatrixToViewableMatrix(
-      nextDegreeMatrix,
+      nextFullDegreeMatrix,
       nextSourceColumnBounds,
       prevViewableDegreeMatrix,
       setViewableDegreeMatrix
     )
     setFromFullMatrixToViewableMatrix(
-      nextPitchMatrix,
+      nextFullPitchMatrix,
       nextSourceColumnBounds,
       prevViewablePitchMatrix,
       setViewablePitchMatrix
