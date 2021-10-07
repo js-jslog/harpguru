@@ -14,11 +14,9 @@ import {
   setFromHarpStrataToPitchMatrix,
   setFromFullMatrixToColumnBounds,
   setToEmptyBufferedActivityToggles,
-} from '../utils'
-import {
   setFromFullMatrixToViewableMatrix,
   setFromViewableMatrixToLayoutFacts,
-} from '../../../utils'
+} from '../utils'
 
 export const useSetFromSourceHarpStrata = (): void => {
   const [nextSourceHarpStrata] = useGlobal('activeHarpStrata')

@@ -11,3 +11,5 @@ export { setFromHarpStrataToPitchMatrix } from './setfrom-harpstrata-to-pitchmat
 export { setFromFullMatrixToColumnBounds } from './setfrom-fullmatrix-to-columnbounds'
 export { setToEmptyBufferedActivityToggles } from './setto-empty-bufferedactivitytoggles'
 export { setFromSourceColumnBoundsColumnBounds } from './setfrom-sourcecolumnbounds-columnbounds'
+export { setFromFullMatrixToViewableMatrix } from './setfrom-fullmatrix-to-viewablematrix'
+export { setFromViewableMatrixToLayoutFacts } from './setfrom-viewablematrix-to-layoutfacts'
