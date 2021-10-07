@@ -3,7 +3,7 @@ import type { HarpFaceMatrix, Degree } from 'harpparts'
 import {
   determineMatrixDimensions,
   determineNextColumnBounds,
-  isMatchedColumnBounds,
+  isMatchColumnBounds,
 } from '../../../../utils'
 import type { ColumnBounds, ZoomIds } from '../../../../types'
 
@@ -19,6 +19,6 @@ export const reduceForNewColumnBoundsByZoomId = (
     zoomId
   )
 
-  if (isMatchedColumnBounds(columnBounds, newColumnBounds)) return columnBounds
+  if (isMatchColumnBounds(columnBounds, newColumnBounds)) return columnBounds
   return newColumnBounds
 }

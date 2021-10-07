@@ -1,4 +1,4 @@
-import { isMatchedColumnBounds } from '../../../../utils'
+import { isMatchColumnBounds } from '../../../../utils'
 import type { ColumnBounds } from '../../../../types'
 
 export const setFromSourceColumnBounds = (
@@ -6,7 +6,7 @@ export const setFromSourceColumnBounds = (
   prevColumnBounds: ColumnBounds,
   setColumnBounds: (arg0: ColumnBounds) => void
 ): ColumnBounds => {
-  if (isMatchedColumnBounds(newSourceColumnBounds, prevColumnBounds))
+  if (isMatchColumnBounds(newSourceColumnBounds, prevColumnBounds))
     return prevColumnBounds
   setColumnBounds(newSourceColumnBounds)
   return newSourceColumnBounds

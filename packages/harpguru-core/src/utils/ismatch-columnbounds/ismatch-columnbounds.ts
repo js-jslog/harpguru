@@ -1,6 +1,6 @@
 import type { ColumnBounds } from '../../types'
 
-export const isMatchedColumnBounds = (
+export const isMatchColumnBounds = (
   bounds1: ColumnBounds,
   bounds2: ColumnBounds
 ): boolean => {

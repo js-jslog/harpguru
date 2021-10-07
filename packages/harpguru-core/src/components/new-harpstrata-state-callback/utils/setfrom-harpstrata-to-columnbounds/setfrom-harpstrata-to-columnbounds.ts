@@ -1,7 +1,7 @@
 import type { HarpStrata } from 'harpstrata'
 
 import { reduceHarpStrataToColumnBounds } from '../reduce-harpstrata-to-columnbounds'
-import { isMatchedColumnBounds } from '../../../../utils'
+import { isMatchColumnBounds } from '../../../../utils'
 import type { ColumnBounds } from '../../../../types'
 
 export const setFromHarpStrataToColumnBounds = (
@@ -13,7 +13,7 @@ export const setFromHarpStrataToColumnBounds = (
     newHarpStrata,
     prevColumnBounds
   )
-  if (!isMatchedColumnBounds(prevColumnBounds, nextColumnBounds))
+  if (!isMatchColumnBounds(prevColumnBounds, nextColumnBounds))
     setColumnBounds(nextColumnBounds)
   return nextColumnBounds
 }
