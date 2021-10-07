@@ -1,6 +1,8 @@
 import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
+import { setFromViewableMatrixToLayoutFacts } from '../../utils'
+
 import {
   setFromHarpStrataToTuningId,
   setFromHarpStrataToValvingId,
@@ -14,7 +16,6 @@ import {
   setFromHarpStrataToPitchMatrix,
   setFromHarpStrataToViewableMatrix,
   setFromHarpStrataToColumnBounds,
-  setFromViewableMatrixToLayoutFacts,
   setToEmptyBufferedActivityToggles,
 } from './utils'
 

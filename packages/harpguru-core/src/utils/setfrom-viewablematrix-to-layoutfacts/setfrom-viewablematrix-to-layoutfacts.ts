@@ -2,7 +2,7 @@ import type { HarpFaceMatrix } from 'harpparts'
 
 import { reduceViewableMatrixToLayoutFacts } from '../reduce-viewablematrix-to-layoutfacts'
 import { isMatchLayoutFacts } from '../ismatch-layoutfacts'
-import type { LayoutFacts } from '../../../../types'
+import type { LayoutFacts } from '../../types'
 
 export const setFromViewableMatrixToLayoutFacts = <T>(
   nextViewableMatrix: HarpFaceMatrix<T>,

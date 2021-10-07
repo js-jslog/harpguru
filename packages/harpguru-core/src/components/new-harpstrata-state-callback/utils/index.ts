@@ -10,5 +10,4 @@ export { setFromHarpStrataToRootPitchId } from './setfrom-harpstrata-to-rootpitc
 export { setFromHarpStrataToPitchMatrix } from './setfrom-harpstrata-to-pitchmatrix'
 export { setFromHarpStrataToViewableMatrix } from './setfrom-harpstrata-to-viewablematrix'
 export { setFromHarpStrataToColumnBounds } from './setfrom-harpstrata-to-columnbounds'
-export { setFromViewableMatrixToLayoutFacts } from './setfrom-viewablematrix-to-layoutfacts'
 export { setToEmptyBufferedActivityToggles } from './setto-empty-bufferedactivitytoggles'

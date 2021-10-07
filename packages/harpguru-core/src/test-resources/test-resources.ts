@@ -8,10 +8,10 @@ import {
   ValvingIds,
 } from 'harpparts'
 
+import { reduceViewableMatrixToLayoutFacts } from '../utils'
 import { DisplayModes, ExperienceModes, FlushChannels } from '../types'
 import type { ColumnBounds } from '../types'
 // TODO: fix these imports
-import { reduceViewableMatrixToLayoutFacts } from '../components/new-harpstrata-state-callback/utils/reduce-viewablematrix-to-layoutfacts'
 // TODO: this function needs renaming. It's param is not a harpstara, it's just a splan matrix.
 import { reduceHarpStrataToViewableMatrix } from '../components/new-harpstrata-state-callback/utils/reduce-harpstrata-to-viewablematrix'
 

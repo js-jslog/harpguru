@@ -1,11 +1,15 @@
 import { useGlobal } from 'reactn'
 import React, { useEffect } from 'react'
 
-import { setFromViewableMatrixToLayoutFacts } from '../new-harpstrata-state-callback/utils/setfrom-viewablematrix-to-layoutfacts'
 import { setFromHarpStrataToViewableMatrix } from '../new-harpstrata-state-callback/utils'
+import { setFromViewableMatrixToLayoutFacts } from '../../utils'
 
 import { setFromSourceColumnBounds } from './utils'
 
+// TODO: I think I might want both of the source global state useEffects to be
+// defined in the same component so that we don't have to fragment the origin
+// of all these dependencies. I'd like to keep as many of them out of the root
+// utils folder as possible.
 export const NewColumnBoundsStateCallback = (): React.ReactElement => {
   const [nextSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')

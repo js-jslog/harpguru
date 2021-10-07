@@ -1,6 +1,6 @@
 import type { HarpFaceMatrix } from 'harpparts'
 
-import { determineMatrixDimensions } from '../../../../utils'
+import { determineMatrixDimensions } from '../determine-matrix-dimensions'
 
 type LayoutFacts = {
   readonly harpfaceColumns: number
