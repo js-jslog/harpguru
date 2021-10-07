@@ -47,7 +47,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const thisPozitionDegrees =
     pageNumber === 1 ? getScale(ScaleIds.MajorPentatonic).degrees : []
 
-  const { rootPitchId } = initialHarpStrata
+  const { rootPitchId, activeDegreeIds, activePitchIds } = initialHarpStrata
   const {
     apparatus: { interactionMatrix: fullInteractionMatrix },
   } = initialHarpStrata
@@ -85,8 +85,8 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     activeInteractionMatrix: fullInteractionMatrix,
     activeDegreeMatrix: fullDegreeMatrix,
     activePitchMatrix: fullPitchMatrix,
-    activeDegreeIds: [],
-    activePitchIds: [],
+    activeDegreeIds,
+    activePitchIds,
     viewableInteractionMatrix,
     viewableDegreeMatrix,
     viewablePitchMatrix,
