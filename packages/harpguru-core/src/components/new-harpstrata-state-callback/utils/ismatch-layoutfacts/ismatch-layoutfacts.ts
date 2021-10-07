@@ -1,6 +1,6 @@
-import { LayoutFacts } from '../../types'
+import type { LayoutFacts } from '../../../../types'
 
-export const compareLayoutFacts = (
+export const isMatchLayoutFacts = (
   facts1: LayoutFacts,
   facts2: LayoutFacts
 ): boolean => {
