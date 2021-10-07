@@ -1,7 +1,5 @@
 import type { HarpFaceMatrix } from 'harpparts'
 
-// TODO: Some of the functions should probably be moved if this plan comes off
-// (plan to have "callback" esque updates to the other derived global state
 import {
   determineNextColumnBounds,
   determineMatrixDimensions,
