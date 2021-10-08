@@ -2,11 +2,11 @@ import type { HarpStrata } from 'harpstrata'
 import type { PitchIds } from 'harpparts'
 
 export const setFromHarpStrataToRootPitchId = (
-  newHarpStrata: HarpStrata,
+  harpStrata: HarpStrata,
   prevRootPitchId: PitchIds,
   setRootPitchId: (arg0: PitchIds) => void
 ): PitchIds => {
-  const { rootPitchId: nextRootPitchId } = newHarpStrata
+  const { rootPitchId: nextRootPitchId } = harpStrata
   if (prevRootPitchId !== nextRootPitchId) setRootPitchId(nextRootPitchId)
   return nextRootPitchId
 }

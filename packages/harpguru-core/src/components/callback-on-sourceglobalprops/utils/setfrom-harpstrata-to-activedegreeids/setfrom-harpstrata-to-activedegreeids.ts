@@ -4,11 +4,11 @@ import { reduceHarpStrataToActiveDegreeIds } from '../reduce-harpstrata-to-activ
 import { isMatchActiveIds } from '../../../../utils'
 
 export const setFromHarpStrataToActiveDegreeIds = (
-  newHarpStrata: HarpStrata,
+  harpStrata: HarpStrata,
   prevActiveDegreeIds: ActiveDegreeIds,
   setActiveDegreeIds: (arg0: ActiveDegreeIds) => void
 ): ActiveDegreeIds => {
-  const nextActiveDegreeIds = reduceHarpStrataToActiveDegreeIds(newHarpStrata)
+  const nextActiveDegreeIds = reduceHarpStrataToActiveDegreeIds(harpStrata)
   if (!isMatchActiveIds(nextActiveDegreeIds, prevActiveDegreeIds))
     setActiveDegreeIds(nextActiveDegreeIds)
   return nextActiveDegreeIds

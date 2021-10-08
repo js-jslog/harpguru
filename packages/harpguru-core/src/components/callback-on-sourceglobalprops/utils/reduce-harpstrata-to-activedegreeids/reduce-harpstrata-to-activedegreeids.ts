@@ -1,8 +1,8 @@
 import type { ActiveDegreeIds, HarpStrata } from 'harpstrata'
 
 export const reduceHarpStrataToActiveDegreeIds = (
-  activeHarpStrata: HarpStrata
+  harpStrata: HarpStrata
 ): ActiveDegreeIds => {
-  const { activeDegreeIds: newActiveDegreeIds } = activeHarpStrata
-  return newActiveDegreeIds
+  const { activeDegreeIds } = harpStrata
+  return activeDegreeIds
 }

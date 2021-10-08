@@ -2,13 +2,13 @@ import type { HarpStrata } from 'harpstrata'
 import type { TuningIds } from 'harpparts'
 
 export const setFromHarpStrataToTuningId = (
-  newHarpStrata: HarpStrata,
+  harpStrata: HarpStrata,
   prevTuningId: TuningIds,
   setTuningId: (arg0: TuningIds) => void
 ): TuningIds => {
   const {
     apparatus: { tuningId: nextTuningId },
-  } = newHarpStrata
+  } = harpStrata
   if (prevTuningId !== nextTuningId) setTuningId(nextTuningId)
   return nextTuningId
 }

@@ -8,15 +8,15 @@ import {
 import type { ColumnBounds } from '../../../../types'
 
 export const reduceFullMatrixToColumnBounds = (
-  nextFullMatrix: HarpFaceMatrix<unknown>,
+  fullMatrix: HarpFaceMatrix<unknown>,
   prevColumnBounds: ColumnBounds
 ): ColumnBounds => {
-  const { columns: columnCount } = determineMatrixDimensions(nextFullMatrix)
+  const { columns: columnCount } = determineMatrixDimensions(fullMatrix)
   const zoomId = determineZoomId(prevColumnBounds)
-  const newColumnBounds = determineNextColumnBounds(
+  const nextColumnBounds = determineNextColumnBounds(
     columnCount,
     prevColumnBounds,
     zoomId
   )
-  return newColumnBounds
+  return nextColumnBounds
 }

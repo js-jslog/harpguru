@@ -4,11 +4,11 @@ import { reduceHarpStrataToActivePitchIds } from '../reduce-harpstrata-to-active
 import { isMatchActiveIds } from '../../../../utils'
 
 export const setFromHarpStrataToActivePitchIds = (
-  newHarpStrata: HarpStrata,
+  harpStrata: HarpStrata,
   prevActivePitchIds: ActivePitchIds,
   setActivePitchIds: (arg0: ActivePitchIds) => void
 ): ActivePitchIds => {
-  const nextActivePitchIds = reduceHarpStrataToActivePitchIds(newHarpStrata)
+  const nextActivePitchIds = reduceHarpStrataToActivePitchIds(harpStrata)
   if (!isMatchActiveIds(nextActivePitchIds, prevActivePitchIds))
     setActivePitchIds(nextActivePitchIds)
   return nextActivePitchIds
