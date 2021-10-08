@@ -1,8 +1,9 @@
-import type { ActiveDegreeIds, HarpStrata } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
+import type { DegreeIds } from 'harpparts'
 
 export const reduceHarpStrataToActiveDegreeIds = (
   harpStrata: HarpStrata
-): ActiveDegreeIds => {
+): ReadonlyArray<DegreeIds> => {
   const { activeDegreeIds } = harpStrata
   return activeDegreeIds
 }

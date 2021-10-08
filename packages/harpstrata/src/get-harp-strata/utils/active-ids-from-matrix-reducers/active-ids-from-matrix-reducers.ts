@@ -1,17 +1,23 @@
-import type { HarpFaceRow, HarpFaceMatrix, Degree, Pitch } from 'harpparts'
+import type {
+  HarpFaceRow,
+  HarpFaceMatrix,
+  Degree,
+  DegreeIds,
+  Pitch,
+  PitchIds,
+} from 'harpparts'
 
 import type { RowAccumulator } from '../active-ids-from-row-reducers'
 import {
   activeIdsFromPitchRow,
   activeIdsFromDegreeRow,
 } from '../active-ids-from-row-reducers'
-import type { ActivePitchIds, ActiveDegreeIds } from '../../../types'
 
 export type MatrixAccumulator = {
   readonly degreeMatrix: HarpFaceMatrix<Degree>
   readonly pitchMatrix: HarpFaceMatrix<Pitch>
-  readonly activeDegreeIds: ActiveDegreeIds
-  readonly activePitchIds: ActivePitchIds
+  readonly activeDegreeIds: ReadonlyArray<DegreeIds>
+  readonly activePitchIds: ReadonlyArray<PitchIds>
 }
 
 export const activeIdsFromPitchMatrix = (

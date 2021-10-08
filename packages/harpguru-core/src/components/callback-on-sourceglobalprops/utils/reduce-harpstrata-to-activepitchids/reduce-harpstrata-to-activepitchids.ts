@@ -1,8 +1,9 @@
-import type { ActivePitchIds, HarpStrata } from 'harpstrata'
+import type { HarpStrata } from 'harpstrata'
+import type { PitchIds } from 'harpparts'
 
 export const reduceHarpStrataToActivePitchIds = (
   nextHarpStrata: HarpStrata
-): ActivePitchIds => {
+): ReadonlyArray<PitchIds> => {
   const { activePitchIds } = nextHarpStrata
   return activePitchIds
 }
