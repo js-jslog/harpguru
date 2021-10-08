@@ -16,9 +16,36 @@ test('the previous activeDegreeIds object is returned if it matches the one on t
   expect(nextActiveDegreeIds).toStrictEqual(harpStrata.activeDegreeIds)
 })
 
-test('an activeDegreeIds is returned from a harpstrata if the previous activeDegreeIds is different', () => {
+test('an activeDegreeIds is returned from a harpstrata if the previous activeDegreeIds is longer', () => {
   const harpStrata = activeCellsHarpStrata
   const prevActiveDegreeIds = [...harpStrata.activeDegreeIds, DegreeIds.Flat3]
+  const nextActiveDegreeIds = reduceHarpStrataToActiveDegreeIds(
+    prevActiveDegreeIds,
+    harpStrata
+  )
+  expect(nextActiveDegreeIds).not.toBe(prevActiveDegreeIds)
+  expect(nextActiveDegreeIds).not.toStrictEqual(prevActiveDegreeIds)
+  expect(nextActiveDegreeIds).toStrictEqual(harpStrata.activeDegreeIds)
+})
+
+test('an activeDegreeIds is returned from a harpstrata if the previous activeDegreeIds is shorter', () => {
+  const harpStrata = activeCellsHarpStrata
+  const {
+    activeDegreeIds: [, ...prevActiveDegreeIds],
+  } = harpStrata
+  const nextActiveDegreeIds = reduceHarpStrataToActiveDegreeIds(
+    prevActiveDegreeIds,
+    harpStrata
+  )
+  expect(nextActiveDegreeIds).not.toBe(prevActiveDegreeIds)
+  expect(nextActiveDegreeIds).not.toStrictEqual(prevActiveDegreeIds)
+  expect(nextActiveDegreeIds).toStrictEqual(harpStrata.activeDegreeIds)
+})
+
+test('an activeDegreeIds is returned from a harpstrata if the previous activeDegreeIds is reversed', () => {
+  const harpStrata = activeCellsHarpStrata
+  const { activeDegreeIds } = harpStrata
+  const prevActiveDegreeIds = [...activeDegreeIds].reverse()
   const nextActiveDegreeIds = reduceHarpStrataToActiveDegreeIds(
     prevActiveDegreeIds,
     harpStrata
