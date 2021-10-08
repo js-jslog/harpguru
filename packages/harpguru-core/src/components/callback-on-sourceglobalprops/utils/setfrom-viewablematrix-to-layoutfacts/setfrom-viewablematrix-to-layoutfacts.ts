@@ -9,7 +9,10 @@ export const setFromViewableMatrixToLayoutFacts = <T>(
   prevLayoutFacts: LayoutFacts,
   setLayoutFacts: (arg0: LayoutFacts) => void
 ): LayoutFacts => {
-  const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(nextViewableMatrix)
+  const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(
+    prevLayoutFacts,
+    nextViewableMatrix
+  )
   if (!isMatchLayoutFacts(prevLayoutFacts, nextLayoutFacts))
     setLayoutFacts(nextLayoutFacts)
   return nextLayoutFacts

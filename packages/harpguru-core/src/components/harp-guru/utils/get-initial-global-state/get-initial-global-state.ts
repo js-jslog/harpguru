@@ -70,6 +70,10 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     columnBounds
   )
   const layoutFacts = reduceViewableMatrixToLayoutFacts(
+    {
+      harpfaceColumns: 0,
+      harpfaceRows: 0,
+    },
     viewableInteractionMatrix
   )
 

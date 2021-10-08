@@ -108,6 +108,10 @@ export const buildMockUseGlobalImplementation = ({
       return [viewableInteractionMatrix]
 
     const layoutFacts = reduceViewableMatrixToLayoutFacts(
+      {
+        harpfaceColumns: 0,
+        harpfaceRows: 0,
+      },
       viewableInteractionMatrix
     )
     if (stateItem === 'layoutFacts') return [layoutFacts]
