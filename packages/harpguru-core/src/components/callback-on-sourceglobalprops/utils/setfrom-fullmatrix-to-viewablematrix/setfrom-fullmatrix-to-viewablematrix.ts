@@ -12,6 +12,7 @@ export const setFromFullMatrixToViewableMatrix = <T extends IdedObject>(
   setViewableMatrix: (arg0: HarpFaceMatrix<T>) => void
 ): HarpFaceMatrix<T> => {
   const nextViewableMatrix = reduceFullMatrixToViewableMatrix(
+    prevViewableMatrix,
     nextMatrix,
     nextColumnBounds
   )

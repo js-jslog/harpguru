@@ -28,6 +28,7 @@ const overblow = { id: InteractionIds.OverBlow1 }
 
 test('identical degree matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
+  const prevViewableMatrix = [[fifth]]
   const fullMatrix1 = [
     [root, second, third, fourth, fifth],
     [root, second, third, fourth, fifth],
@@ -44,19 +45,53 @@ test('identical degree matrix is returned when columnBounds is FIT', () => {
     [undefined, getDegree(DegreeIds.Third)],
   ]
 
-  expect(reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)).toBe(
-    fullMatrix1
-  )
-  expect(reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)).toBe(
-    fullMatrix2
-  )
-  expect(reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)).toBe(
-    fullMatrix3
-  )
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix1,
+      columnBounds
+    )
+  ).toBe(fullMatrix1)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix2,
+      columnBounds
+    )
+  ).toBe(fullMatrix2)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix3,
+      columnBounds
+    )
+  ).toBe(fullMatrix3)
+})
+
+test('previous viewable matrix is returned if reduced one is a match', () => {
+  const fitColumnBounds = [0, 4] as const
+  const prevViewableMatrix = [
+    [root, second, third, fourth, fifth],
+    [root, second, third, fourth, fifth],
+    [root, second, third, fourth, fifth],
+  ]
+  const fullMatrix = [
+    [root, second, third, fourth, fifth],
+    [root, second, third, fourth, fifth],
+    [root, second, third, fourth, fifth],
+  ]
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix,
+      fitColumnBounds
+    )
+  ).toBe(prevViewableMatrix)
 })
 
 test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
   const columnBounds = [0, 1] as const
+  const prevViewableMatrix = [[fifth]]
   const fullMatrix1 = [
     [root, second, third, fourth, fifth],
     [root, second, third, fourth, fifth],
@@ -84,18 +119,31 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
   ]
 
   expect(
-    reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix1,
+      columnBounds
+    )
   ).toStrictEqual(slicedMatrix1)
   expect(
-    reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix2,
+      columnBounds
+    )
   ).toStrictEqual(slicedMatrix2)
   expect(
-    reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix3,
+      columnBounds
+    )
   ).toStrictEqual(fullMatrix3)
 })
 
 test('identical pitch matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
+  const prevViewableMatrix = [[g]]
   const fullMatrix1 = [
     [c, d, e, f, g],
     [c, d, e, f, g],
@@ -112,19 +160,32 @@ test('identical pitch matrix is returned when columnBounds is FIT', () => {
     [undefined, getPitch(PitchIds.E)],
   ]
 
-  expect(reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)).toBe(
-    fullMatrix1
-  )
-  expect(reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)).toBe(
-    fullMatrix2
-  )
-  expect(reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)).toBe(
-    fullMatrix3
-  )
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix1,
+      columnBounds
+    )
+  ).toBe(fullMatrix1)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix2,
+      columnBounds
+    )
+  ).toBe(fullMatrix2)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix3,
+      columnBounds
+    )
+  ).toBe(fullMatrix3)
 })
 
 test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
   const columnBounds = [0, 1] as const
+  const prevViewableMatrix = [[g]]
   const fullMatrix1 = [
     [c, d, e, f, g],
     [c, d, e, f, g],
@@ -152,18 +213,31 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
   ]
 
   expect(
-    reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix1,
+      columnBounds
+    )
   ).toStrictEqual(slicedMatrix1)
   expect(
-    reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix2,
+      columnBounds
+    )
   ).toStrictEqual(slicedMatrix2)
   expect(
-    reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix3,
+      columnBounds
+    )
   ).toStrictEqual(fullMatrix3)
 })
 
 test('identical interaction matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
+  const prevViewableMatrix = [[drawbend]]
   const fullMatrix1 = [
     [blow, blow, blow, blow, blow],
     [draw, draw, draw, draw, draw],
@@ -182,19 +256,32 @@ test('identical interaction matrix is returned when columnBounds is FIT', () => 
     [undefined, drawbend],
   ]
 
-  expect(reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)).toBe(
-    fullMatrix1
-  )
-  expect(reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)).toBe(
-    fullMatrix2
-  )
-  expect(reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)).toBe(
-    fullMatrix3
-  )
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix1,
+      columnBounds
+    )
+  ).toBe(fullMatrix1)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix2,
+      columnBounds
+    )
+  ).toBe(fullMatrix2)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix3,
+      columnBounds
+    )
+  ).toBe(fullMatrix3)
 })
 
 test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => {
   const columnBounds = [0, 1] as const
+  const prevViewableMatrix = [[drawbend]]
   const fullMatrix1 = [
     [blow, blow, blow, blow, blow],
     [draw, draw, draw, draw, draw],
@@ -225,12 +312,24 @@ test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => 
   ]
 
   expect(
-    reduceFullMatrixToViewableMatrix(fullMatrix1, columnBounds)
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix1,
+      columnBounds
+    )
   ).toStrictEqual(slicedMatrix1)
   expect(
-    reduceFullMatrixToViewableMatrix(fullMatrix2, columnBounds)
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix2,
+      columnBounds
+    )
   ).toStrictEqual(slicedMatrix2)
   expect(
-    reduceFullMatrixToViewableMatrix(fullMatrix3, columnBounds)
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix3,
+      columnBounds
+    )
   ).toStrictEqual(fullMatrix3)
 })

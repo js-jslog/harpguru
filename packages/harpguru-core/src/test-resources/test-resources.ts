@@ -88,14 +88,17 @@ export const buildMockUseGlobalImplementation = ({
 
     if (stateItem === 'columnBounds') return [sourceColumnBounds]
     const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
+      [[]] as const,
       sourceHarpStrata.degreeMatrix,
       sourceColumnBounds
     )
     const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
+      [[]] as const,
       sourceHarpStrata.pitchMatrix,
       sourceColumnBounds
     )
     const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
+      [[]] as const,
       sourceHarpStrata.apparatus.interactionMatrix,
       sourceColumnBounds
     )
