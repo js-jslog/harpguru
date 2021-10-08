@@ -4,11 +4,10 @@ import type { DegreeIds } from 'harpparts'
 import { isMatchActiveIds } from '../../../../utils'
 
 export const reduceHarpStrataToActiveDegreeIds = (
-  harpStrata: HarpStrata,
-  prevActiveDegreeIds?: ReadonlyArray<DegreeIds>
+  prevActiveDegreeIds: ReadonlyArray<DegreeIds>,
+  harpStrata: HarpStrata
 ): ReadonlyArray<DegreeIds> => {
   const { activeDegreeIds: nextActiveDegreeIds } = harpStrata
-  if (!prevActiveDegreeIds) return nextActiveDegreeIds
   if (isMatchActiveIds(prevActiveDegreeIds, nextActiveDegreeIds))
     return prevActiveDegreeIds
   return nextActiveDegreeIds

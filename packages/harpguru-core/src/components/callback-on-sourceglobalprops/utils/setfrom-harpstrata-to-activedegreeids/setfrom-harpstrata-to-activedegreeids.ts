@@ -9,7 +9,10 @@ export const setFromHarpStrataToActiveDegreeIds = (
   prevActiveDegreeIds: ReadonlyArray<DegreeIds>,
   setActiveDegreeIds: (arg0: ReadonlyArray<DegreeIds>) => void
 ): ReadonlyArray<DegreeIds> => {
-  const nextActiveDegreeIds = reduceHarpStrataToActiveDegreeIds(harpStrata)
+  const nextActiveDegreeIds = reduceHarpStrataToActiveDegreeIds(
+    prevActiveDegreeIds,
+    harpStrata
+  )
   if (!isMatchActiveIds(nextActiveDegreeIds, prevActiveDegreeIds))
     setActiveDegreeIds(nextActiveDegreeIds)
   return nextActiveDegreeIds
