@@ -9,7 +9,10 @@ export const setFromHarpStrataToActivePitchIds = (
   prevActivePitchIds: ReadonlyArray<PitchIds>,
   setActivePitchIds: (arg0: ReadonlyArray<PitchIds>) => void
 ): ReadonlyArray<PitchIds> => {
-  const nextActivePitchIds = reduceHarpStrataToActivePitchIds(harpStrata)
+  const nextActivePitchIds = reduceHarpStrataToActivePitchIds(
+    prevActivePitchIds,
+    harpStrata
+  )
   if (!isMatchActiveIds(nextActivePitchIds, prevActivePitchIds))
     setActivePitchIds(nextActivePitchIds)
   return nextActivePitchIds
