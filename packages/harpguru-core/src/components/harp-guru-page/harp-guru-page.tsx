@@ -16,6 +16,7 @@ import { MenuOfTunings } from '../menu-of-tunings'
 import { MenuOfScales } from '../menu-of-scales'
 import { MenuOfCovariants } from '../menu-of-covariants'
 import { HarpFaceMemo } from '../harp-face'
+import { CallbackOnSourceGlobalProps } from '../callback-on-sourceglobalprops'
 import { ActivityLegend } from '../activity-legend'
 import { getColors } from '../../utils'
 import { MenuStates, MenuStashPosition, PageNumber } from '../../types'
@@ -96,6 +97,7 @@ export const HarpGuruPage = ({
         getNextPage={() => pageOnDisplay.setValue(nextPageNumberMap[thisPage])}
       />
       <ToggleBufferFlusher />
+      <CallbackOnSourceGlobalProps />
       <NotifyOfQuizQuestion isScreenFree={menuState === MenuStates.NoMenu} />
       <NotifyOfScale isScalesMenu={menuState === MenuStates.ScalesMenu} />
     </View>

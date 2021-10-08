@@ -1,4 +1,5 @@
 export { activateHarpCell } from './activate-harp-cell'
-export { getCounterpartDegreeId } from './get-counterpart-degree-id'
 export { getNextQuizQuestion } from './get-next-quiz-question'
 export { hasToggledIncorrectCell } from './has-toggled-incorrect-cell'
+export { reduceForNewHarpStrataByHardReset } from './reduce-for-new-harpstrata-by-hard-reset'
+export { reduceForNewHarpStrataByQuizAnswer } from './reduce-for-new-harpstrata-by-quiz-answer'

@@ -11,8 +11,8 @@ import { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
 import {
-  getNewBufferedTogglesByTargetScaleForDispatcher,
-  getNewActiveQuizDegreesByToggleForDispatcher,
+  reduceForNewActiveQuizDegreesByToggle,
+  reduceForNewHarpStrataByTargetScale,
 } from './utils'
 import {
   useScaleTitle,
@@ -20,15 +20,11 @@ import {
   useQuizQuestionTitle,
   useQuizQuestionItems,
 } from './hooks'
-import { useImmediatelyFlushToggles } from './hooks'
 
 export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
-  useImmediatelyFlushToggles({
-    isMenuStashed: menuProps.isMenuStashed,
-  })
   const scaleItemTapHandler = useCallback(
-    useDispatch(getNewBufferedTogglesByTargetScaleForDispatcher),
-    [useDispatch, getNewBufferedTogglesByTargetScaleForDispatcher]
+    useDispatch(reduceForNewHarpStrataByTargetScale, 'activeHarpStrata'),
+    [useDispatch, reduceForNewHarpStrataByTargetScale]
   )
   const useScalesTitleMemo = useCallback(() => useScaleTitle(useGlobal), [
     useGlobal,
@@ -40,8 +36,8 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
 
   const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
   const quizQuestionTapHandler = useCallback(
-    useDispatch(getNewActiveQuizDegreesByToggleForDispatcher),
-    [useDispatch, getNewActiveQuizDegreesByToggleForDispatcher]
+    useDispatch(reduceForNewActiveQuizDegreesByToggle, 'activeQuizDegrees'),
+    [useDispatch, reduceForNewActiveQuizDegreesByToggle]
   )
   const useQuizQuestionItemsMemo = useCallback(
     () => useQuizQuestionItems(useGlobal, quizQuestionTapHandler),

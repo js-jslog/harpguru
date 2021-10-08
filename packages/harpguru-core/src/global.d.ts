@@ -4,17 +4,21 @@ import type {
   Degree,
   DegreeIds,
   HarpFaceMatrix,
+  Interaction,
   Pitch,
   PitchIds,
   PozitionIds,
+  TuningIds,
+  ValvingIds,
 } from 'harpparts'
 
-import type { DisplayModes, ExperienceModes, FlushChannels } from './types'
-
-type LayoutFacts = {
-  readonly harpfaceColumns: number
-  readonly harpfaceRows: number
-}
+import type {
+  ColumnBounds,
+  DisplayModes,
+  ExperienceModes,
+  FlushChannels,
+  LayoutFacts,
+} from './types'
 
 declare module 'reactn/default' {
   export interface State {
@@ -25,7 +29,11 @@ declare module 'reactn/default' {
     readonly fragmentHarpFaceByOctaves: boolean
     readonly flushChannel: FlushChannels
     readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
-    readonly columnBounds: 'FIT' | readonly [number, number]
+    readonly sourceColumnBounds: ColumnBounds
+    readonly columnBounds: ColumnBounds
+    readonly tuningId: TuningIds
+    readonly valvingId: ValvingIds
+    readonly activeInteractionMatrix: HarpFaceMatrix<Interaction>
     readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
     readonly activePitchMatrix: HarpFaceMatrix<Pitch>
     readonly activeDegreeIds: ActiveDegreeIds
@@ -33,6 +41,7 @@ declare module 'reactn/default' {
     readonly pozitionId: PozitionIds
     readonly rootPitchId: PitchIds
     readonly harpKeyId: PitchIds
+    readonly viewableInteractionMatrix: HarpFaceMatrix<Interaction>
     readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
     readonly viewablePitchMatrix: HarpFaceMatrix<Pitch>
     readonly layoutFacts: LayoutFacts

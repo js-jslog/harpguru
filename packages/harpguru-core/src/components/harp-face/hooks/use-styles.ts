@@ -1,7 +1,8 @@
+import { useGlobal } from 'reactn'
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
-import { useLayoutFacts, useSizes } from '../../../hooks'
+import { useSizes } from '../../../hooks'
 
 import { useOctaveColumnGroups } from './use-octave-column-groups'
 
@@ -13,7 +14,8 @@ export const useStyles = (): HarpFaceStyles => {
   const { dynamicSizes } = useSizes()
   const { columnWidth, rowHeight, fragmentGutter } = dynamicSizes
 
-  const { harpFaceRowCount, harpFaceColumnCount } = useLayoutFacts()
+  const [layoutFacts] = useGlobal('layoutFacts')
+  const { harpfaceRows, harpfaceColumns } = layoutFacts
 
   const octaveColumnGroups = useOctaveColumnGroups()
   const { length: groupCount } = octaveColumnGroups
@@ -22,9 +24,8 @@ export const useStyles = (): HarpFaceStyles => {
     face: {
       flexDirection: 'row',
       justifyContent: 'space-around',
-      width:
-        columnWidth * harpFaceColumnCount + (fragmentGutter * groupCount + 1),
-      height: rowHeight * harpFaceRowCount,
+      width: columnWidth * harpfaceColumns + (fragmentGutter * groupCount + 1),
+      height: rowHeight * harpfaceRows,
     },
   })
 

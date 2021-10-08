@@ -9,7 +9,6 @@ import type { UseGlobal } from '../../../../types'
 export const useZoomTitle = (
   useGlobal: UseGlobal
 ): React.ReactElement<OptionLabelProps> => {
-  // TOOMANYRENDERS
   const [columnBounds] = useGlobal('columnBounds')
   const zoomId = determineZoomId(columnBounds)
   const labelText = getZoomText(zoomId)

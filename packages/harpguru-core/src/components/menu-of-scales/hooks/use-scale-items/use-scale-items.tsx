@@ -23,8 +23,7 @@ export const useScaleItems = (
   useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): ScaleItems => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const { activeDegreeIds } = activeHarpStrata
+  const [activeDegreeIds] = useGlobal('activeDegreeIds')
   const { label: activeScaleId } = getScaleByDegreeIds(activeDegreeIds) || {
     id: '',
   }

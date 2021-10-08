@@ -8,14 +8,9 @@ import type { ColumnRanges } from './get-octave-column-groups'
 import { arrayHasRoot } from './array-has-root'
 
 export const useOctaveColumnGroups = (): ColumnRanges => {
-  // TOOMANYRENDERS: We should ideall just have a global variable
-  // which tells us how many columns the harpstrata has so that this
-  // can just use be based on that value which won't update
-  // unless the number of columns changes
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [degreeMatrix] = useGlobal('activeDegreeMatrix')
   const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const [columnBounds] = useGlobal('columnBounds')
-  const { degreeMatrix } = activeHarpStrata
 
   const columnsFirstDegreeMatrix = transposeMatrix(
     degreeMatrix

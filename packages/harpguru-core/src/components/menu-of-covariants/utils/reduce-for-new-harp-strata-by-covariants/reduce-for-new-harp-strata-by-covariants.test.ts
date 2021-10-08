@@ -1,9 +1,7 @@
-import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
-import type { ActiveDegreeIds, ActivePitchIds } from 'harpstrata'
 import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
-import type { GlobalState } from '../../../../types'
+import { DisplayModes } from '../../../../types'
 
 import { reduceForNewHarpStrataByCovariants } from './reduce-for-new-harp-strata-by-covariants'
 
@@ -30,34 +28,16 @@ const cHarpSecondPozition = getHarpStrata(cHarpSecondPozitionProps)
 const dHarpSecondPozition = getHarpStrata(dHarpSecondPozitionProps)
 
 test('provides HarpStrata with different Pozition', () => {
-  // TODO: create test helper function to create the activeHarpStrata
-  // derivative properties
-  const inputGlobal = {
-    activeHarpStrata: cHarpFirstPozition,
-    columnBounds: 'FIT',
-    activeDegreeMatrix: cHarpFirstPozition.degreeMatrix,
-    activePitchMatrix: cHarpFirstPozition.pitchMatrix,
-    activeDegreeIds: [] as ActiveDegreeIds,
-    activePitchIds: [] as ActivePitchIds,
-    pozitionId: cHarpFirstPozition.pozitionId,
-    rootPitchId: cHarpFirstPozition.rootPitchId,
-    harpKeyId: cHarpFirstPozition.harpKeyId,
-    viewableDegreeMatrix: cHarpFirstPozition.degreeMatrix,
-    viewablePitchMatrix: cHarpFirstPozition.pitchMatrix,
-    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
-  } as GlobalState
-  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-
+  const activeHarpStrata = cHarpFirstPozition
+  const { Degree: activeDisplayMode } = DisplayModes
   const partialHarpStrataProps = {
     harpKeyId: PitchIds.C,
     pozitionId: PozitionIds.Second,
   }
 
-  const {
-    activeHarpStrata: newActiveHarpStrata,
-  } = reduceForNewHarpStrataByCovariants(
-    inputGlobal,
-    unusedDispatcher,
+  const newActiveHarpStrata = reduceForNewHarpStrataByCovariants(
+    activeHarpStrata,
+    activeDisplayMode,
     partialHarpStrataProps
   )
 
@@ -65,34 +45,16 @@ test('provides HarpStrata with different Pozition', () => {
 })
 
 test('provides HarpStrata with different HarpKey & Pozition', () => {
-  const inputGlobal = {
-    activeHarpStrata: cHarpFirstPozition,
-    columnBounds: 'FIT',
-    activeDegreeMatrix: cHarpFirstPozition.degreeMatrix,
-    activePitchMatrix: cHarpFirstPozition.pitchMatrix,
-    activeDegreeIds: [] as ActiveDegreeIds,
-    activePitchIds: [] as ActivePitchIds,
-    pozitionId: cHarpFirstPozition.pozitionId,
-    rootPitchId: cHarpFirstPozition.rootPitchId,
-    harpKeyId: cHarpFirstPozition.harpKeyId,
-    viewableDegreeMatrix: cHarpFirstPozition.degreeMatrix,
-    viewablePitchMatrix: cHarpFirstPozition.pitchMatrix,
-    // TODO: ideally all these variables would be derived
-    // properly from the origin
-    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
-  } as GlobalState
-  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
-
+  const activeHarpStrata = cHarpFirstPozition
+  const { Degree: activeDisplayMode } = DisplayModes
   const partialHarpStrataProps = {
     harpKeyId: PitchIds.D,
     pozitionId: PozitionIds.Second,
   }
 
-  const {
-    activeHarpStrata: newActiveHarpStrata,
-  } = reduceForNewHarpStrataByCovariants(
-    inputGlobal,
-    unusedDispatcher,
+  const newActiveHarpStrata = reduceForNewHarpStrataByCovariants(
+    activeHarpStrata,
+    activeDisplayMode,
     partialHarpStrataProps
   )
 

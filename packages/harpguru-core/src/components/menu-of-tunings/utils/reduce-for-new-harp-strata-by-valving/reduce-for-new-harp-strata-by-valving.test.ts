@@ -1,9 +1,7 @@
-import type { Dispatch } from 'reactn/default'
 import { getHarpStrata } from 'harpstrata'
-import type { ActiveDegreeIds, ActivePitchIds } from 'harpstrata'
 import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
-import type { GlobalState } from '../../../../types'
+import { DisplayModes } from '../../../../types'
 
 import { reduceForNewHarpStrataByValving } from './reduce-for-new-harp-strata-by-valving'
 
@@ -24,56 +22,28 @@ const unvalvedHarp = getHarpStrata(unvalvedHarpProps)
 const valvedHarp = getHarpStrata(valvedHarpProps)
 
 test('provides HarpStrata updated to exclude valving', () => {
-  const inputGlobal = {
-    activeHarpStrata: valvedHarp,
-    columnBounds: 'FIT',
-    activeDegreeMatrix: valvedHarp.degreeMatrix,
-    activePitchMatrix: valvedHarp.pitchMatrix,
-    activeDegreeIds: [] as ActiveDegreeIds,
-    activePitchIds: [] as ActivePitchIds,
-    pozitionId: valvedHarp.pozitionId,
-    rootPitchId: valvedHarp.rootPitchId,
-    harpKeyId: valvedHarp.harpKeyId,
-    viewableDegreeMatrix: valvedHarp.degreeMatrix,
-    viewablePitchMatrix: valvedHarp.pitchMatrix,
-    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
-  } as GlobalState
-  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
+  const activeHarpStrata = valvedHarp
+  const { Degree: activeDisplayMode } = DisplayModes
+  const { NotValved: valvingId } = ValvingIds
 
-  const {
-    activeHarpStrata: newActiveHarpStrata,
-  } = reduceForNewHarpStrataByValving(
-    inputGlobal,
-    unusedDispatcher,
-    ValvingIds.NotValved
+  const newActiveHarpStrata = reduceForNewHarpStrataByValving(
+    activeHarpStrata,
+    activeDisplayMode,
+    valvingId
   )
 
   expect(newActiveHarpStrata).toStrictEqual(unvalvedHarp)
 })
 
 test('provides HarpStrata updated to include valving', () => {
-  const inputGlobal = {
-    activeHarpStrata: unvalvedHarp,
-    columnBounds: 'FIT',
-    activeDegreeMatrix: unvalvedHarp.degreeMatrix,
-    activePitchMatrix: unvalvedHarp.pitchMatrix,
-    activeDegreeIds: [] as ActiveDegreeIds,
-    activePitchIds: [] as ActivePitchIds,
-    pozitionId: unvalvedHarp.pozitionId,
-    rootPitchId: unvalvedHarp.rootPitchId,
-    harpKeyId: unvalvedHarp.harpKeyId,
-    viewableDegreeMatrix: valvedHarp.degreeMatrix,
-    viewablePitchMatrix: valvedHarp.pitchMatrix,
-    layoutFacts: { harpfaceColumns: 10, harpfaceRows: 7 },
-  } as GlobalState
-  const unusedDispatcher = (jest.fn() as unknown) as Dispatch
+  const activeHarpStrata = unvalvedHarp
+  const { Degree: activeDisplayMode } = DisplayModes
+  const { HalfValved: valvingId } = ValvingIds
 
-  const {
-    activeHarpStrata: newActiveHarpStrata,
-  } = reduceForNewHarpStrataByValving(
-    inputGlobal,
-    unusedDispatcher,
-    ValvingIds.HalfValved
+  const newActiveHarpStrata = reduceForNewHarpStrataByValving(
+    activeHarpStrata,
+    activeDisplayMode,
+    valvingId
   )
 
   expect(newActiveHarpStrata).toStrictEqual(valvedHarp)

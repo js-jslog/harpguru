@@ -1,4 +1,3 @@
-export { useImmediatelyFlushToggles } from './use-immediately-flush-toggles'
 export { useScaleTitle } from './use-scale-title'
 export { useScaleItems } from './use-scale-items'
 export { useQuizQuestionTitle } from './use-quiz-question-title'

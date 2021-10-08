@@ -29,7 +29,15 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const tuningItemTapHandler = useCallback(
-    useDispatch(reduceForNewHarpStrataByTuning),
+    useDispatch(
+      (currentHarpStrata, activeDisplayMode, tuningId) =>
+        reduceForNewHarpStrataByTuning(
+          currentHarpStrata,
+          activeDisplayMode,
+          tuningId
+        ),
+      'activeHarpStrata'
+    ),
     [useDispatch, reduceForNewHarpStrataByTuning]
   )
   const useTuningItemsMemo = useCallback(
@@ -41,7 +49,15 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const valvingItemTapHandler = useCallback(
-    useDispatch(reduceForNewHarpStrataByValving),
+    useDispatch(
+      (currentHarpStrata, activeDisplayMode, valvingId) =>
+        reduceForNewHarpStrataByValving(
+          currentHarpStrata,
+          activeDisplayMode,
+          valvingId
+        ),
+      'activeHarpStrata'
+    ),
     [useDispatch, reduceForNewHarpStrataByValving]
   )
   const useValvingItemsMemo = useCallback(
@@ -53,7 +69,18 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const zoomItemTapHandler = useCallback(
-    useDispatch(reduceForNewColumnBoundsByZoomId),
+    useDispatch(
+      (currentColumnBounds, activeDegreeMatrix, zoomId) =>
+        reduceForNewColumnBoundsByZoomId(
+          currentColumnBounds,
+          activeDegreeMatrix,
+          zoomId
+        ),
+      'sourceColumnBounds'
+    ),
+    // TODO: This and a great many other things should be based on the
+    // interaction matrix of the apparatus rather than the degreeMatrix
+    // which is much more volatile
     [useDispatch, reduceForNewColumnBoundsByZoomId]
   )
   const useZoomItemsMemo = useCallback(

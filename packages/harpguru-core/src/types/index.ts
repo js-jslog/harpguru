@@ -8,12 +8,17 @@ import type {
   Pitch,
   PitchIds,
   PozitionIds,
+  TuningIds,
+  ValvingIds,
+  Interaction,
 } from 'harpparts'
 
-type LayoutFacts = {
+export type LayoutFacts = {
   readonly harpfaceColumns: number
   readonly harpfaceRows: number
 }
+
+export type ColumnBounds = 'FIT' | readonly [number, number]
 
 export type GlobalState = {
   readonly activeHarpStrata: HarpStrata
@@ -23,7 +28,11 @@ export type GlobalState = {
   readonly fragmentHarpFaceByOctaves: boolean
   readonly flushChannel: FlushChannels
   readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
-  readonly columnBounds: 'FIT' | readonly [number, number]
+  readonly sourceColumnBounds: ColumnBounds
+  readonly columnBounds: ColumnBounds
+  readonly tuningId: TuningIds
+  readonly valvingId: ValvingIds
+  readonly activeInteractionMatrix: HarpFaceMatrix<Interaction>
   readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
   readonly activePitchMatrix: HarpFaceMatrix<Pitch>
   readonly activeDegreeIds: ActiveDegreeIds
@@ -31,6 +40,7 @@ export type GlobalState = {
   readonly pozitionId: PozitionIds
   readonly rootPitchId: PitchIds
   readonly harpKeyId: PitchIds
+  readonly viewableInteractionMatrix: HarpFaceMatrix<Interaction>
   readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
   readonly viewablePitchMatrix: HarpFaceMatrix<Pitch>
   readonly layoutFacts: LayoutFacts
@@ -56,7 +66,6 @@ export enum ExperienceModes {
 export enum FlushChannels {
   Regular,
   Quiz,
-  ScalesMenu,
 }
 
 export enum MenuStates {

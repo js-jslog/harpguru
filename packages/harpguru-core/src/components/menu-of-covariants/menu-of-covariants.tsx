@@ -19,7 +19,15 @@ import {
 
 export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
   const itemTapHandler = useCallback(
-    useDispatch(reduceForNewHarpStrataByCovariants),
+    useDispatch(
+      (currentHarpStrata, activeDisplayMode, partialHarpStrata) =>
+        reduceForNewHarpStrataByCovariants(
+          currentHarpStrata,
+          activeDisplayMode,
+          partialHarpStrata
+        ),
+      'activeHarpStrata'
+    ),
     [useDispatch, reduceForNewHarpStrataByCovariants]
   )
   const {

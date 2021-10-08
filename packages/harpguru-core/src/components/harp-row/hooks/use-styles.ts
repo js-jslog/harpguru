@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
-import type { HarpStrata } from 'harpstrata'
+import type { HarpFaceMatrix, Interaction } from 'harpparts'
 
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from '../utils'
 import { getColors } from '../../../utils'
@@ -15,7 +15,7 @@ const { homeRowsColor, inertOutline } = getColors()
 
 export const useStyles = (
   yCoord: Coord,
-  activeHarpStrata: HarpStrata
+  interactionMatrix: HarpFaceMatrix<Interaction>
 ): HarpRowStyles => {
   const { dynamicSizes } = useSizes()
   const { 0: borderWidth, 6: borderRadius } = dynamicSizes
@@ -27,27 +27,27 @@ export const useStyles = (
       justifyContent: 'space-around',
       alignItems: 'center',
       borderColor: inertOutline,
-      borderTopWidth: isBlowRow(yCoord, activeHarpStrata) ? borderWidth : 0,
-      borderBottomWidth: isDrawRow(yCoord, activeHarpStrata) ? borderWidth : 0,
-      borderRightWidth: isBlowOrDrawRow(yCoord, activeHarpStrata)
+      borderTopWidth: isBlowRow(yCoord, interactionMatrix) ? borderWidth : 0,
+      borderBottomWidth: isDrawRow(yCoord, interactionMatrix) ? borderWidth : 0,
+      borderRightWidth: isBlowOrDrawRow(yCoord, interactionMatrix)
         ? borderWidth
         : 0,
-      borderLeftWidth: isBlowOrDrawRow(yCoord, activeHarpStrata)
+      borderLeftWidth: isBlowOrDrawRow(yCoord, interactionMatrix)
         ? borderWidth
         : 0,
-      backgroundColor: isBlowOrDrawRow(yCoord, activeHarpStrata)
+      backgroundColor: isBlowOrDrawRow(yCoord, interactionMatrix)
         ? homeRowsColor
         : 'transparent',
-      borderTopLeftRadius: isBlowRow(yCoord, activeHarpStrata)
+      borderTopLeftRadius: isBlowRow(yCoord, interactionMatrix)
         ? borderRadius
         : 0,
-      borderTopRightRadius: isBlowRow(yCoord, activeHarpStrata)
+      borderTopRightRadius: isBlowRow(yCoord, interactionMatrix)
         ? borderRadius
         : 0,
-      borderBottomLeftRadius: isDrawRow(yCoord, activeHarpStrata)
+      borderBottomLeftRadius: isDrawRow(yCoord, interactionMatrix)
         ? borderRadius
         : 0,
-      borderBottomRightRadius: isDrawRow(yCoord, activeHarpStrata)
+      borderBottomRightRadius: isDrawRow(yCoord, interactionMatrix)
         ? borderRadius
         : 0,
     },

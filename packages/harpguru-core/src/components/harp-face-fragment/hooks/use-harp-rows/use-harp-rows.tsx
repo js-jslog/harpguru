@@ -5,7 +5,6 @@ import { InteractionIds } from 'harpparts'
 import { mapRowToBlowDrawIds } from '../map-row-to-blow-draw-ids'
 import { HarpRow } from '../../../harp-row'
 import type { XRange } from '../../../../types'
-import { useViewableMatrices } from '../../../../hooks'
 
 type HarpRows = {
   readonly top: ReactElement[]
@@ -13,7 +12,7 @@ type HarpRows = {
 }
 
 export const useHarpRows = (xRange: XRange): HarpRows => {
-  const { viewableInteractionMatrix } = useViewableMatrices()
+  const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
   const viewableBlowDrawIdsMap = viewableInteractionMatrix.map(
     mapRowToBlowDrawIds
   )
@@ -25,13 +24,7 @@ export const useHarpRows = (xRange: XRange): HarpRows => {
   // TODO: this is a bit clumsy. There are 2 options here:
   // 1. decide this is an elegant approach but a messy implementation - refactor
   // 2. decide that all of the objects further down the chain should be using the viewable matrices too - refactor
-  // TOOMANYRENDERS: This is going to produce more renders than necessary
-  // when:
-  // - the
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const {
-    apparatus: { interactionMatrix: fullInteractionMatrix },
-  } = activeHarpStrata
+  const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const fullBlowDrawIdsMap = fullInteractionMatrix.map(mapRowToBlowDrawIds)
   const fullDrawIndex = fullBlowDrawIdsMap.indexOf(InteractionIds.Draw)
   const drawIndexDiff = fullDrawIndex - drawIndex

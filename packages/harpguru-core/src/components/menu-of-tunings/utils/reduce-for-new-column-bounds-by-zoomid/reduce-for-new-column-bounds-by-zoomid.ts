@@ -1,19 +1,17 @@
-import type { Dispatch } from 'reactn/default'
+import type { HarpFaceMatrix, Degree } from 'harpparts'
 
 import {
   determineMatrixDimensions,
   determineNextColumnBounds,
-  compareColumnBounds,
+  isMatchColumnBounds,
 } from '../../../../utils'
-import { ZoomIds } from '../../../../types'
-import type { GlobalState } from '../../../../types'
+import type { ColumnBounds, ZoomIds } from '../../../../types'
 
 export const reduceForNewColumnBoundsByZoomId = (
-  global: GlobalState,
-  _dipatch: Dispatch,
+  columnBounds: ColumnBounds,
+  activeDegreeMatrix: HarpFaceMatrix<Degree>,
   zoomId: ZoomIds
-): Pick<GlobalState, 'columnBounds'> => {
-  const { columnBounds, activeDegreeMatrix } = global
+): ColumnBounds => {
   const { columns: columnCount } = determineMatrixDimensions(activeDegreeMatrix)
   const newColumnBounds = determineNextColumnBounds(
     columnCount,
@@ -21,11 +19,6 @@ export const reduceForNewColumnBoundsByZoomId = (
     zoomId
   )
 
-  if (compareColumnBounds(columnBounds, newColumnBounds))
-    return {
-      columnBounds,
-    }
-  return {
-    columnBounds: newColumnBounds,
-  }
+  if (isMatchColumnBounds(columnBounds, newColumnBounds)) return columnBounds
+  return newColumnBounds
 }
