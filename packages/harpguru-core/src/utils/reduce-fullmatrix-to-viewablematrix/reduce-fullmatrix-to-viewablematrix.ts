@@ -11,7 +11,11 @@ export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
   fullMatrix: HarpFaceMatrix<T>,
   columnBounds: ColumnBounds
 ): HarpFaceMatrix<T> => {
-  if (columnBounds === 'FIT') return fullMatrix
+  if (columnBounds === 'FIT') {
+    if (doSparceIdedObjectMatricesMatch(prevViewableMatrix, fullMatrix))
+      return prevViewableMatrix
+    return fullMatrix
+  }
 
   const [start, end] = columnBounds
 
