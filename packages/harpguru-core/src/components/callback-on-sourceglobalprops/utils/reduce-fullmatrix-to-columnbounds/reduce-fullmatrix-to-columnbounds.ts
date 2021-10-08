@@ -4,12 +4,13 @@ import {
   determineNextColumnBounds,
   determineMatrixDimensions,
   determineZoomId,
+  isMatchColumnBounds,
 } from '../../../../utils'
 import type { ColumnBounds } from '../../../../types'
 
 export const reduceFullMatrixToColumnBounds = (
-  fullMatrix: HarpFaceMatrix<unknown>,
-  prevColumnBounds: ColumnBounds
+  prevColumnBounds: ColumnBounds,
+  fullMatrix: HarpFaceMatrix<unknown>
 ): ColumnBounds => {
   const { columns: columnCount } = determineMatrixDimensions(fullMatrix)
   const zoomId = determineZoomId(prevColumnBounds)
@@ -18,5 +19,7 @@ export const reduceFullMatrixToColumnBounds = (
     prevColumnBounds,
     zoomId
   )
+  if (isMatchColumnBounds(prevColumnBounds, nextColumnBounds))
+    return prevColumnBounds
   return nextColumnBounds
 }

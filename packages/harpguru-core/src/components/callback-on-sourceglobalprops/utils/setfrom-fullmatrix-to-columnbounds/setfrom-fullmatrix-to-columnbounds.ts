@@ -10,8 +10,8 @@ export const setFromFullMatrixToColumnBounds = (
   setColumnBounds: (arg0: ColumnBounds) => void
 ): ColumnBounds => {
   const nextColumnBounds = reduceFullMatrixToColumnBounds(
-    nextFullMatrix,
-    prevColumnBounds
+    prevColumnBounds,
+    nextFullMatrix
   )
   if (!isMatchColumnBounds(prevColumnBounds, nextColumnBounds))
     setColumnBounds(nextColumnBounds)
