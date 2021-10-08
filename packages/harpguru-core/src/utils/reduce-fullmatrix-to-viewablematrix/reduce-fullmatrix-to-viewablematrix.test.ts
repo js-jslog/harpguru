@@ -26,48 +26,6 @@ const blowbend = { id: InteractionIds.BlowBend1 }
 const drawbend = { id: InteractionIds.DrawBend1 }
 const overblow = { id: InteractionIds.OverBlow1 }
 
-test('identical degree matrix is returned when columnBounds is FIT (if doesnt match previous matrix)', () => {
-  const columnBounds = 'FIT'
-  const prevViewableMatrix = [[fifth]]
-  const fullMatrix1 = [
-    [root, second, third, fourth, fifth],
-    [root, second, third, fourth, fifth],
-    [root, second, third, fourth, fifth],
-  ]
-  const fullMatrix2 = [
-    [root, second, third, fourth, undefined],
-    [root, second, third, fourth, fifth],
-    [root, undefined, third, fourth, fifth],
-  ]
-  const fullMatrix3 = [
-    [getDegree(DegreeIds.Root), undefined],
-    [getDegree(DegreeIds.Root), getDegree(DegreeIds.Third)],
-    [undefined, getDegree(DegreeIds.Third)],
-  ]
-
-  expect(
-    reduceFullMatrixToViewableMatrix(
-      prevViewableMatrix,
-      fullMatrix1,
-      columnBounds
-    )
-  ).toBe(fullMatrix1)
-  expect(
-    reduceFullMatrixToViewableMatrix(
-      prevViewableMatrix,
-      fullMatrix2,
-      columnBounds
-    )
-  ).toBe(fullMatrix2)
-  expect(
-    reduceFullMatrixToViewableMatrix(
-      prevViewableMatrix,
-      fullMatrix3,
-      columnBounds
-    )
-  ).toBe(fullMatrix3)
-})
-
 test('previous viewable matrix is returned if reduced one is a match', () => {
   const actualFitColumnBounds = 'FIT'
   const effectiveFitColumnBounds = [0, 4] as const
@@ -108,6 +66,48 @@ test('previous viewable matrix is returned if reduced one is a match', () => {
       notFitColumnBounds
     )
   ).toBe(notFitPrevViewableMatrix)
+})
+
+test('identical full degree matrix is returned when columnBounds is FIT (if doesnt match previous matrix)', () => {
+  const columnBounds = 'FIT'
+  const prevViewableMatrix = [[fifth]]
+  const fullMatrix1 = [
+    [root, second, third, fourth, fifth],
+    [root, second, third, fourth, fifth],
+    [root, second, third, fourth, fifth],
+  ]
+  const fullMatrix2 = [
+    [root, second, third, fourth, undefined],
+    [root, second, third, fourth, fifth],
+    [root, undefined, third, fourth, fifth],
+  ]
+  const fullMatrix3 = [
+    [getDegree(DegreeIds.Root), undefined],
+    [getDegree(DegreeIds.Root), getDegree(DegreeIds.Third)],
+    [undefined, getDegree(DegreeIds.Third)],
+  ]
+
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix1,
+      columnBounds
+    )
+  ).toBe(fullMatrix1)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix2,
+      columnBounds
+    )
+  ).toBe(fullMatrix2)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix3,
+      columnBounds
+    )
+  ).toBe(fullMatrix3)
 })
 
 test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
@@ -162,7 +162,7 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
   ).toStrictEqual(fullMatrix3)
 })
 
-test('identical pitch matrix is returned when columnBounds is FIT', () => {
+test('identical full pitch matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
   const prevViewableMatrix = [[g]]
   const fullMatrix1 = [
@@ -256,7 +256,7 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
   ).toStrictEqual(fullMatrix3)
 })
 
-test('identical interaction matrix is returned when columnBounds is FIT', () => {
+test('identical full interaction matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
   const prevViewableMatrix = [[drawbend]]
   const fullMatrix1 = [
