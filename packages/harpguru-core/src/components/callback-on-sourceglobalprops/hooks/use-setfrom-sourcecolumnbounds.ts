@@ -1,57 +1,75 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import { useEffect } from 'react'
 
+import { reduceSourceColumnBoundsToColumnBounds } from '../utils'
 import {
-  setFromFullMatrixToViewableMatrix,
-  setFromViewableMatrixToLayoutFacts,
-  setFromSourceColumnBoundsColumnBounds,
-} from '../utils'
+  reduceFullMatrixToViewableMatrix,
+  reduceViewableMatrixToLayoutFacts,
+} from '../../../utils'
 
 export const useSetFromSourceColumnBounds = (): void => {
+  reduceFullMatrixToViewableMatrix
+  reduceViewableMatrixToLayoutFacts
   const [nextSourceColumnBounds] = useGlobal('sourceColumnBounds')
-  const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const [fullDegreeMatrix] = useGlobal('activeDegreeMatrix')
   const [fullPitchMatrix] = useGlobal('activePitchMatrix')
-  const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
-  const [
-    prevViewableInteractionMatrix,
-    setViewableInteractionMatrix,
-  ] = useGlobal('viewableInteractionMatrix')
-  const [prevViewableDegreeMatrix, setViewableDegreeMatrix] = useGlobal(
-    'viewableDegreeMatrix'
+  const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
+  const nextViewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
+    viewableInteractionMatrix,
+    fullInteractionMatrix,
+    nextSourceColumnBounds
   )
-  const [prevViewablePitchMatrix, setViewablePitchMatrix] = useGlobal(
-    'viewablePitchMatrix'
+
+  const dispatchForViewableInteractionMatrix = useDispatch(
+    (prevViewableInteractionMatrix) =>
+      reduceFullMatrixToViewableMatrix(
+        prevViewableInteractionMatrix,
+        fullInteractionMatrix,
+        nextSourceColumnBounds
+      ),
+    'activeInteractionMatrix'
   )
+  const dispatchForViewableDegreeMatrix = useDispatch(
+    (prevViewableDegreeMatrix) =>
+      reduceFullMatrixToViewableMatrix(
+        prevViewableDegreeMatrix,
+        fullDegreeMatrix,
+        nextSourceColumnBounds
+      ),
+    'activeDegreeMatrix'
+  )
+  const dispatchForViewablePitchMatrix = useDispatch(
+    (prevViewablePitchMatrix) =>
+      reduceFullMatrixToViewableMatrix(
+        prevViewablePitchMatrix,
+        fullPitchMatrix,
+        nextSourceColumnBounds
+      ),
+    'activePitchMatrix'
+  )
+  const dispatchForColumnBounds = useDispatch(
+    (prevColumnBounds) =>
+      reduceSourceColumnBoundsToColumnBounds(
+        prevColumnBounds,
+        nextSourceColumnBounds
+      ),
+    'columnBounds'
+  )
+  const dispatchForLayoutFacts = useDispatch(
+    (prevLayoutFacts) =>
+      reduceViewableMatrixToLayoutFacts(
+        prevLayoutFacts,
+        nextViewableInteractionMatrix
+      ),
+    'layoutFacts'
+  )
+
   useEffect(() => {
-    const nextViewableInteractionMatrix = setFromFullMatrixToViewableMatrix(
-      fullInteractionMatrix,
-      nextSourceColumnBounds,
-      prevViewableInteractionMatrix,
-      setViewableInteractionMatrix
-    )
-    setFromFullMatrixToViewableMatrix(
-      fullDegreeMatrix,
-      nextSourceColumnBounds,
-      prevViewableDegreeMatrix,
-      setViewableDegreeMatrix
-    )
-    setFromFullMatrixToViewableMatrix(
-      fullPitchMatrix,
-      nextSourceColumnBounds,
-      prevViewablePitchMatrix,
-      setViewablePitchMatrix
-    )
-    setFromSourceColumnBoundsColumnBounds(
-      nextSourceColumnBounds,
-      prevColumnBounds,
-      setColumnBounds
-    )
-    setFromViewableMatrixToLayoutFacts(
-      nextViewableInteractionMatrix,
-      prevLayoutFacts,
-      setLayoutFacts
-    )
+    dispatchForViewableInteractionMatrix()
+    dispatchForViewableDegreeMatrix()
+    dispatchForViewablePitchMatrix()
+    dispatchForColumnBounds()
+    dispatchForLayoutFacts()
   }, [nextSourceColumnBounds])
 }
