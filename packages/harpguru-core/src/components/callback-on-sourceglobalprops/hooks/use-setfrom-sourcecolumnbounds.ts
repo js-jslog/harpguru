@@ -6,7 +6,6 @@ import {
   setFromViewableMatrixToLayoutFacts,
   setFromSourceColumnBoundsColumnBounds,
 } from '../utils'
-import {} from '../../../utils'
 
 export const useSetFromSourceColumnBounds = (): void => {
   const [nextSourceColumnBounds] = useGlobal('sourceColumnBounds')
