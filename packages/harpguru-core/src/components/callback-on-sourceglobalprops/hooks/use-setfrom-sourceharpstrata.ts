@@ -14,6 +14,7 @@ import {
   reduceHarpStrataToActivePitchIds,
   reduceFullMatrixToColumnBounds,
   reduceToEmptyBufferedActivityToggles,
+  reduceIdedMatrix,
 } from '../utils'
 import {
   reduceFullMatrixToViewableMatrix,
@@ -28,9 +29,6 @@ export const useSetFromSourceHarpStrata = (): void => {
   const [prevPitchMatrix] = useGlobal('activePitchMatrix')
   const [prevViewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
 
-  // TODO: See whether these values can be set through a more simple reducer in order to
-  // avoid going through these more complex reducers all over again. Probably not much
-  // optimisation to be gained, but it might be simpler to read.. perhaps.
   const nextFullInteractionMatrix = reduceHarpStrataToFullInteractionMatrix(
     prevInteractionMatrix,
     nextSourceHarpStrata
@@ -80,23 +78,16 @@ export const useSetFromSourceHarpStrata = (): void => {
   )
   const dispatchForFullInteractionMatrix = useDispatch(
     (prevInteractionMatrix) =>
-      reduceHarpStrataToFullInteractionMatrix(
-        prevInteractionMatrix,
-        nextSourceHarpStrata
-      ),
+      reduceIdedMatrix(prevInteractionMatrix, nextFullInteractionMatrix),
     'activeInteractionMatrix'
   )
   const dispatchForFullDegreeMatrix = useDispatch(
     (prevDegreeMatrix) =>
-      reduceHarpStrataToFullDegreeMatrix(
-        prevDegreeMatrix,
-        nextSourceHarpStrata
-      ),
+      reduceIdedMatrix(prevDegreeMatrix, nextFullDegreeMatrix),
     'activeDegreeMatrix'
   )
   const dispatchForFullPitchMatrix = useDispatch(
-    (prevPitchMatrix) =>
-      reduceHarpStrataToFullPitchMatrix(prevPitchMatrix, nextSourceHarpStrata),
+    (prevPitchMatrix) => reduceIdedMatrix(prevPitchMatrix, nextFullPitchMatrix),
     'activePitchMatrix'
   )
   const dispatchForActiveDegreeIds = useDispatch(
@@ -117,12 +108,11 @@ export const useSetFromSourceHarpStrata = (): void => {
   )
   const dispatchForViewableInteractionMatrix = useDispatch(
     (prevViewableInteractionMatrix) =>
-      reduceFullMatrixToViewableMatrix(
+      reduceIdedMatrix(
         prevViewableInteractionMatrix,
-        nextFullInteractionMatrix,
-        nextColumnBounds
+        nextFullInteractionMatrix
       ),
-    'activeInteractionMatrix'
+    'viewableInteractionMatrix'
   )
   const dispatchForViewableDegreeMatrix = useDispatch(
     (prevViewableDegreeMatrix) =>
@@ -131,7 +121,7 @@ export const useSetFromSourceHarpStrata = (): void => {
         nextFullDegreeMatrix,
         nextColumnBounds
       ),
-    'activeDegreeMatrix'
+    'viewableDegreeMatrix'
   )
   const dispatchForViewablePitchMatrix = useDispatch(
     (prevViewablePitchMatrix) =>
@@ -140,7 +130,7 @@ export const useSetFromSourceHarpStrata = (): void => {
         nextFullPitchMatrix,
         nextColumnBounds
       ),
-    'activePitchMatrix'
+    'viewablePitchMatrix'
   )
   const dispatchForSourceColumnBounds = useDispatch(
     (prevSoureceColumnBounds) =>
