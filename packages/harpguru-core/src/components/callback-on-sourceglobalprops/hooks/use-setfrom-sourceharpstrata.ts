@@ -15,6 +15,7 @@ import {
   reduceFullMatrixToColumnBounds,
   reduceToEmptyBufferedActivityToggles,
   reduceIdedMatrix,
+  reduceColumnBounds,
 } from '../utils'
 import {
   reduceFullMatrixToViewableMatrix,
@@ -134,18 +135,12 @@ export const useSetFromSourceHarpStrata = (): void => {
   )
   const dispatchForSourceColumnBounds = useDispatch(
     (prevSoureceColumnBounds) =>
-      reduceFullMatrixToColumnBounds(
-        prevSoureceColumnBounds,
-        nextFullInteractionMatrix
-      ),
+      reduceColumnBounds(prevSoureceColumnBounds, nextColumnBounds),
     'sourceColumnBounds'
   )
   const dispatchForColumnBounds = useDispatch(
     (prevColumnBounds) =>
-      reduceFullMatrixToColumnBounds(
-        prevColumnBounds,
-        nextFullInteractionMatrix
-      ),
+      reduceColumnBounds(prevColumnBounds, nextColumnBounds),
     'columnBounds'
   )
   const dispatchForLayoutFacts = useDispatch(
