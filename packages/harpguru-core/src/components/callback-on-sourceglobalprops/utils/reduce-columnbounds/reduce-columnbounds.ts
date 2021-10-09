@@ -1,7 +1,7 @@
 import { isMatchColumnBounds } from '../../../../utils'
 import type { ColumnBounds } from '../../../../types'
 
-export const reduceSourceColumnBoundsToColumnBounds = (
+export const reduceColumnBounds = (
   prevColumnBounds: ColumnBounds,
   sourceColumnBounds: ColumnBounds
 ): ColumnBounds => {

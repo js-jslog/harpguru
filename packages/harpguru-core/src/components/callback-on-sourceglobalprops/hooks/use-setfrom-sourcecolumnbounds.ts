@@ -1,7 +1,7 @@
 import { useGlobal, useDispatch } from 'reactn'
 import { useEffect } from 'react'
 
-import { reduceSourceColumnBoundsToColumnBounds } from '../utils'
+import { reduceColumnBounds } from '../utils'
 import {
   reduceFullMatrixToViewableMatrix,
   reduceViewableMatrixToLayoutFacts,
@@ -50,10 +50,7 @@ export const useSetFromSourceColumnBounds = (): void => {
   )
   const dispatchForColumnBounds = useDispatch(
     (prevColumnBounds) =>
-      reduceSourceColumnBoundsToColumnBounds(
-        prevColumnBounds,
-        nextSourceColumnBounds
-      ),
+      reduceColumnBounds(prevColumnBounds, nextSourceColumnBounds),
     'columnBounds'
   )
   const dispatchForLayoutFacts = useDispatch(

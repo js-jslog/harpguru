@@ -1,7 +1,7 @@
 export { reduceFullMatrixToColumnBounds } from './reduce-fullmatrix-to-columnbounds'
 export { reduceHarpStrataToActiveDegreeIds } from './reduce-harpstrata-to-activedegreeids'
 export { reduceHarpStrataToActivePitchIds } from './reduce-harpstrata-to-activepitchids'
-export { reduceSourceColumnBoundsToColumnBounds } from './reduce-sourcecolumnbounds-to-columnbounds'
+export { reduceColumnBounds } from './reduce-columnbounds'
 export { reduceHarpStrataToFullInteractionMatrix } from './reduce-harpstrata-to-fullinteractionmatrix'
 export { reduceHarpStrataToFullDegreeMatrix } from './reduce-harpstrata-to-fulldegreematrix'
 export { reduceHarpStrataToFullPitchMatrix } from './reduce-harpstrata-to-fullpitchmatrix'
