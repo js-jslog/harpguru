@@ -24,22 +24,22 @@ import {
 
 export const useSetFromSourceHarpStrata = (): void => {
   const [nextSourceHarpStrata] = useGlobal('activeHarpStrata')
-  const [prevInteractionMatrix] = useGlobal('activeInteractionMatrix')
+  const [prevFullInteractionMatrix] = useGlobal('activeInteractionMatrix')
+  const [prevFullDegreeMatrix] = useGlobal('activeDegreeMatrix')
+  const [prevFullPitchMatrix] = useGlobal('activePitchMatrix')
   const [prevColumnBounds] = useGlobal('columnBounds')
-  const [prevDegreeMatrix] = useGlobal('activeDegreeMatrix')
-  const [prevPitchMatrix] = useGlobal('activePitchMatrix')
   const [prevViewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
 
   const nextFullInteractionMatrix = reduceHarpStrataToFullInteractionMatrix(
-    prevInteractionMatrix,
+    prevFullInteractionMatrix,
     nextSourceHarpStrata
   )
   const nextFullDegreeMatrix = reduceHarpStrataToFullDegreeMatrix(
-    prevDegreeMatrix,
+    prevFullDegreeMatrix,
     nextSourceHarpStrata
   )
   const nextFullPitchMatrix = reduceHarpStrataToFullPitchMatrix(
-    prevPitchMatrix,
+    prevFullPitchMatrix,
     nextSourceHarpStrata
   )
   const nextColumnBounds = reduceFullMatrixToColumnBounds(
