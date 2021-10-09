@@ -28,7 +28,7 @@ export const useSetFromSourceColumnBounds = (): void => {
         fullInteractionMatrix,
         nextSourceColumnBounds
       ),
-    'activeInteractionMatrix'
+    'viewableInteractionMatrix'
   )
   const dispatchForViewableDegreeMatrix = useDispatch(
     (prevViewableDegreeMatrix) =>
@@ -37,7 +37,7 @@ export const useSetFromSourceColumnBounds = (): void => {
         fullDegreeMatrix,
         nextSourceColumnBounds
       ),
-    'activeDegreeMatrix'
+    'viewableDegreeMatrix'
   )
   const dispatchForViewablePitchMatrix = useDispatch(
     (prevViewablePitchMatrix) =>
@@ -46,7 +46,7 @@ export const useSetFromSourceColumnBounds = (): void => {
         fullPitchMatrix,
         nextSourceColumnBounds
       ),
-    'activePitchMatrix'
+    'viewablePitchMatrix'
   )
   const dispatchForColumnBounds = useDispatch(
     (prevColumnBounds) =>
