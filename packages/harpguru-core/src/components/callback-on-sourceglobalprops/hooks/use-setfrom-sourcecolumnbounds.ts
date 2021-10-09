@@ -21,7 +21,7 @@ export const useSetFromSourceColumnBounds = (): void => {
     nextSourceColumnBounds
   )
 
-  const dispatchForViewableInteractionMatrix = useDispatch(
+  const viewableInteractionMatrixDispatch = useDispatch(
     (prevViewableInteractionMatrix) =>
       reduceFullMatrixToViewableMatrix(
         prevViewableInteractionMatrix,
@@ -30,7 +30,7 @@ export const useSetFromSourceColumnBounds = (): void => {
       ),
     'viewableInteractionMatrix'
   )
-  const dispatchForViewableDegreeMatrix = useDispatch(
+  const viewableDegreeMatrixDispatch = useDispatch(
     (prevViewableDegreeMatrix) =>
       reduceFullMatrixToViewableMatrix(
         prevViewableDegreeMatrix,
@@ -39,7 +39,7 @@ export const useSetFromSourceColumnBounds = (): void => {
       ),
     'viewableDegreeMatrix'
   )
-  const dispatchForViewablePitchMatrix = useDispatch(
+  const viewablePitchMatrixDispatch = useDispatch(
     (prevViewablePitchMatrix) =>
       reduceFullMatrixToViewableMatrix(
         prevViewablePitchMatrix,
@@ -48,12 +48,12 @@ export const useSetFromSourceColumnBounds = (): void => {
       ),
     'viewablePitchMatrix'
   )
-  const dispatchForColumnBounds = useDispatch(
+  const columnBoundsDispatch = useDispatch(
     (prevColumnBounds) =>
       reduceColumnBounds(prevColumnBounds, nextSourceColumnBounds),
     'columnBounds'
   )
-  const dispatchForLayoutFacts = useDispatch(
+  const layoutFactsDispatch = useDispatch(
     (prevLayoutFacts) =>
       reduceViewableMatrixToLayoutFacts(
         prevLayoutFacts,
@@ -63,10 +63,10 @@ export const useSetFromSourceColumnBounds = (): void => {
   )
 
   useEffect(() => {
-    dispatchForViewableInteractionMatrix()
-    dispatchForViewableDegreeMatrix()
-    dispatchForViewablePitchMatrix()
-    dispatchForColumnBounds()
-    dispatchForLayoutFacts()
+    viewableInteractionMatrixDispatch()
+    viewableDegreeMatrixDispatch()
+    viewablePitchMatrixDispatch()
+    columnBoundsDispatch()
+    layoutFactsDispatch()
   }, [nextSourceColumnBounds])
 }
