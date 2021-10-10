@@ -13,7 +13,7 @@ import { useSizes } from '../../hooks'
 import {
   reduceForNewColumnBoundsByZoomId,
   reduceTuningIdToHarpStrata,
-  reduceForNewHarpStrataByValving,
+  reduceValvingIdToHarpStrata,
 } from './utils'
 import {
   useTuningTitle,
@@ -51,14 +51,14 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
   const valvingItemTapHandler = useCallback(
     useDispatch(
       (currentHarpStrata, activeDisplayMode, valvingId) =>
-        reduceForNewHarpStrataByValving(
+        reduceValvingIdToHarpStrata(
           currentHarpStrata,
           activeDisplayMode,
           valvingId
         ),
       'activeHarpStrata'
     ),
-    [useDispatch, reduceForNewHarpStrataByValving]
+    [useDispatch, reduceValvingIdToHarpStrata]
   )
   const useValvingItemsMemo = useCallback(
     () => useValvingItems(useGlobal, valvingItemTapHandler),

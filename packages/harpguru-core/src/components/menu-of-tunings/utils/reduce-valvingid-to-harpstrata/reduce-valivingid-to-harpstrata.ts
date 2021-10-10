@@ -4,14 +4,14 @@ import type { ValvingIds } from 'harpparts'
 
 import { DisplayModes } from '../../../../types'
 
-export const reduceForNewHarpStrataByValving = (
-  activeHarpStrata: HarpStrata,
+export const reduceValvingIdToHarpStrata = (
+  prevHarpStrata: HarpStrata,
   activeDisplayMode: DisplayModes,
   valvingId: ValvingIds
 ): HarpStrata => {
   const newHarpStrataProps: HarpStrataProps = {
     ...getPropsForHarpStrata(
-      activeHarpStrata,
+      prevHarpStrata,
       activeDisplayMode === DisplayModes.Pitch ? 'PITCH' : 'DEGREE'
     ),
     valvingId,

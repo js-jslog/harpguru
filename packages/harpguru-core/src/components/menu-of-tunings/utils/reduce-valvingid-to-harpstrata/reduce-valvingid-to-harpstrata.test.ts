@@ -3,7 +3,7 @@ import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import { DisplayModes } from '../../../../types'
 
-import { reduceForNewHarpStrataByValving } from './reduce-for-new-harp-strata-by-valving'
+import { reduceValvingIdToHarpStrata } from './reduce-valivingid-to-harpstrata'
 
 const baseHarpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
@@ -26,7 +26,7 @@ test('provides HarpStrata updated to exclude valving', () => {
   const { Degree: activeDisplayMode } = DisplayModes
   const { NotValved: valvingId } = ValvingIds
 
-  const newActiveHarpStrata = reduceForNewHarpStrataByValving(
+  const newActiveHarpStrata = reduceValvingIdToHarpStrata(
     activeHarpStrata,
     activeDisplayMode,
     valvingId
@@ -40,7 +40,7 @@ test('provides HarpStrata updated to include valving', () => {
   const { Degree: activeDisplayMode } = DisplayModes
   const { HalfValved: valvingId } = ValvingIds
 
-  const newActiveHarpStrata = reduceForNewHarpStrataByValving(
+  const newActiveHarpStrata = reduceValvingIdToHarpStrata(
     activeHarpStrata,
     activeDisplayMode,
     valvingId
