@@ -5,13 +5,13 @@ import {
   inactiveCellsHarpStrata,
 } from '../../test-resources'
 
-import { reduceForNewHarpStrataByToggleFlush } from './reduce-for-new-harpstrata-by-toggle-flush'
+import { reduceCellToggleBufferToHarpStrata } from './reduce-celltogglebuffer-to-harpstrata'
 
 test('the existing harpstrata is returned if there are no toggles buffered', () => {
-  expect(reduceForNewHarpStrataByToggleFlush(activeCellsHarpStrata, [])).toBe(
+  expect(reduceCellToggleBufferToHarpStrata(activeCellsHarpStrata, [])).toBe(
     activeCellsHarpStrata
   )
-  expect(reduceForNewHarpStrataByToggleFlush(inactiveCellsHarpStrata, [])).toBe(
+  expect(reduceCellToggleBufferToHarpStrata(inactiveCellsHarpStrata, [])).toBe(
     inactiveCellsHarpStrata
   )
 })
@@ -29,7 +29,7 @@ test('the buffered toggles are added to the existing inactive harpstrata', () =>
     activePitchIds: counterpartPitchIds,
   }
   expect(
-    reduceForNewHarpStrataByToggleFlush(
+    reduceCellToggleBufferToHarpStrata(
       inactiveCellsHarpStrata,
       bufferedActivityToggles
     )

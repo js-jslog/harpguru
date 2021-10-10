@@ -9,7 +9,7 @@ import {
   reduceForNewHarpStrataByHardReset,
   reduceForNewHarpStrataByQuizAnswer,
 } from '../../utils'
-import { reduceForNewHarpStrataByToggleFlush } from '../../../../utils'
+import { reduceCellToggleBufferToHarpStrata } from '../../../../utils'
 import { ExperienceModes, FlushChannels } from '../../../../types'
 
 // Ask - display the question
@@ -28,7 +28,7 @@ export const useQuizQuestionCycle = (
 ): [DegreeIds | PitchIds, boolean] => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
+  const [cellToggleBuffer] = useGlobal('bufferedActivityToggles')
   const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
   const [activeQuizDegrees] = useGlobal('activeQuizDegrees')
   const [harpKeyId] = useGlobal('harpKeyId')
@@ -39,11 +39,8 @@ export const useQuizQuestionCycle = (
     getNextQuizQuestion(DegreeIds.Root, activeQuizDegrees, activeDisplayMode)
   )
 
-  const flushBufferedActivityToggles = useDispatch((activeHarpStrata) => {
-    return reduceForNewHarpStrataByToggleFlush(
-      activeHarpStrata,
-      bufferedActivityToggles
-    )
+  const flushBufferedActivityToggles = useDispatch((prevHarpStrata) => {
+    return reduceCellToggleBufferToHarpStrata(prevHarpStrata, cellToggleBuffer)
   }, 'activeHarpStrata')
   const hardResetHarpStrata = useDispatch(
     reduceForNewHarpStrataByHardReset,
@@ -53,7 +50,7 @@ export const useQuizQuestionCycle = (
     return reduceForNewHarpStrataByQuizAnswer(
       activeHarpStrata,
       quizQuestion,
-      bufferedActivityToggles
+      cellToggleBuffer
     )
   }, 'activeHarpStrata')
 
@@ -108,7 +105,7 @@ export const useQuizQuestionCycle = (
     if (quizState !== QuizStates.Listen) return
 
     // If we've *just* entered Listen state
-    if (bufferedActivityToggles.length === 0) {
+    if (cellToggleBuffer.length === 0) {
       hardResetHarpStrata()
       const finishListening = setTimeout(() => {
         setQuizState(QuizStates.Answer)
@@ -117,7 +114,7 @@ export const useQuizQuestionCycle = (
     }
 
     const toggleEvalProps = {
-      toggleBuffer: bufferedActivityToggles,
+      toggleBuffer: cellToggleBuffer,
       quizQuestion,
       harpKeyId: harpKeyId,
       pozitionId: pozitionId,
@@ -128,7 +125,7 @@ export const useQuizQuestionCycle = (
       setQuizState(QuizStates.Answer)
     }, 3000)
     return () => clearTimeout(timeout)
-  }, [bufferedActivityToggles, harpKeyId, pozitionId, quizState, flushChannel])
+  }, [cellToggleBuffer, harpKeyId, pozitionId, quizState, flushChannel])
 
   const isDisplayPeriod = quizState === QuizStates.Ask
   const shouldDisplayQuestion =

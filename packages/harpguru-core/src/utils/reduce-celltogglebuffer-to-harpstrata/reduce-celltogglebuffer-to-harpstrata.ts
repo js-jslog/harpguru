@@ -4,18 +4,18 @@ import type { DegreeIds } from 'harpparts'
 
 import { batchToggleDegreeIds } from '../batch-toggle-degree-ids'
 
-export const reduceForNewHarpStrataByToggleFlush = (
-  activeHarpStrata: HarpStrata,
+export const reduceCellToggleBufferToHarpStrata = (
+  prevHarpStrata: HarpStrata,
   bufferedActivityToggles: ReadonlyArray<DegreeIds>
 ): HarpStrata => {
-  if (bufferedActivityToggles.length === 0) return activeHarpStrata
+  if (bufferedActivityToggles.length === 0) return prevHarpStrata
 
   const {
     apparatus: { tuningId, valvingId },
     pozitionId,
     harpKeyId,
     activeDegreeIds,
-  } = activeHarpStrata
+  } = prevHarpStrata
   const newActiveDegreeIds = batchToggleDegreeIds(
     activeDegreeIds,
     bufferedActivityToggles
