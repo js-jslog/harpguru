@@ -12,7 +12,7 @@ import { useSizes } from '../../hooks'
 
 import {
   reduceForNewActiveQuizDegreesByToggle,
-  reduceForNewHarpStrataByTargetScale,
+  reduceScaleToHarpStrata,
 } from './utils'
 import {
   useScaleTitle,
@@ -23,8 +23,8 @@ import {
 
 export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
   const scaleItemTapHandler = useCallback(
-    useDispatch(reduceForNewHarpStrataByTargetScale, 'activeHarpStrata'),
-    [useDispatch, reduceForNewHarpStrataByTargetScale]
+    useDispatch(reduceScaleToHarpStrata, 'activeHarpStrata'),
+    [useDispatch, reduceScaleToHarpStrata]
   )
   const useScalesTitleMemo = useCallback(() => useScaleTitle(useGlobal), [
     useGlobal,
