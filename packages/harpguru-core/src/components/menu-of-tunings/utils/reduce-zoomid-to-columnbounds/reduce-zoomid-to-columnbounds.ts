@@ -7,18 +7,19 @@ import {
 } from '../../../../utils'
 import type { ColumnBounds, ZoomIds } from '../../../../types'
 
-export const reduceForNewColumnBoundsByZoomId = (
-  columnBounds: ColumnBounds,
+export const reduceZoomIdToColumnBounds = (
+  preColumnBounds: ColumnBounds,
   activeDegreeMatrix: HarpFaceMatrix<Degree>,
   zoomId: ZoomIds
 ): ColumnBounds => {
   const { columns: columnCount } = determineMatrixDimensions(activeDegreeMatrix)
   const newColumnBounds = determineNextColumnBounds(
     columnCount,
-    columnBounds,
+    preColumnBounds,
     zoomId
   )
 
-  if (isMatchColumnBounds(columnBounds, newColumnBounds)) return columnBounds
+  if (isMatchColumnBounds(preColumnBounds, newColumnBounds))
+    return preColumnBounds
   return newColumnBounds
 }
