@@ -6,7 +6,7 @@ import type { PitchIds } from 'harpparts'
 import {
   getNextQuizQuestion,
   hasToggledIncorrectCell,
-  reduceForNewHarpStrataByHardReset,
+  reduceEmptyActiveIdsToHarpStrata,
   reduceForNewHarpStrataByQuizAnswer,
 } from '../../utils'
 import { reduceCellToggleBufferToHarpStrata } from '../../../../utils'
@@ -43,7 +43,7 @@ export const useQuizQuestionCycle = (
     return reduceCellToggleBufferToHarpStrata(prevHarpStrata, cellToggleBuffer)
   }, 'activeHarpStrata')
   const hardResetHarpStrata = useDispatch(
-    reduceForNewHarpStrataByHardReset,
+    reduceEmptyActiveIdsToHarpStrata,
     'activeHarpStrata'
   )
   const addAnswerToHarpStrata = useDispatch((activeHarpStrata) => {

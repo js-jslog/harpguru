@@ -1,25 +1,25 @@
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrata } from 'harpstrata'
 
-export const reduceForNewHarpStrataByHardReset = (
-  activeHarpStrata: HarpStrata
+export const reduceEmptyActiveIdsToHarpStrata = (
+  prevHarpStrata: HarpStrata
 ): HarpStrata => {
   const {
     apparatus: { tuningId, valvingId },
     harpKeyId,
     pozitionId,
     activeDegreeIds,
-  } = activeHarpStrata
+  } = prevHarpStrata
 
-  if (activeDegreeIds.length === 0) return activeHarpStrata
+  if (activeDegreeIds.length === 0) return prevHarpStrata
 
-  const harpStrataProps = {
+  const nextHarpStrataProps = {
     tuningId,
     valvingId,
     harpKeyId,
     pozitionId,
     activeIds: [],
   }
-  const resetHarpStrata = getHarpStrata(harpStrataProps)
-  return resetHarpStrata
+  const nextHarpStrata = getHarpStrata(nextHarpStrataProps)
+  return nextHarpStrata
 }

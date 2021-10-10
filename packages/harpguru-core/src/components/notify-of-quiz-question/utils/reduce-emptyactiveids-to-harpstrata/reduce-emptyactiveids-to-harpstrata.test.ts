@@ -3,11 +3,11 @@ import {
   activeCellsHarpStrata,
 } from '../../../../test-resources'
 
-import { reduceForNewHarpStrataByHardReset } from './reduce-for-new-harpstrata-by-hard-reset'
+import { reduceEmptyActiveIdsToHarpStrata } from './reduce-emptyactiveids-to-harpstrata'
 
 test('if the activeHarpStrata is already empty then return the original activeHarpStrata', () => {
   const activeHarpStrata = inactiveCellsHarpStrata
-  const newHarpStrata = reduceForNewHarpStrataByHardReset(activeHarpStrata)
+  const newHarpStrata = reduceEmptyActiveIdsToHarpStrata(activeHarpStrata)
   expect(newHarpStrata).toBe(activeHarpStrata)
 })
 
@@ -18,9 +18,7 @@ test('if the activeHarpStrata has active cells then return similar harpstrata bu
     activeDegreeIds: [],
     activePitchIds: [],
   }
-  const actualNewHarpStrata = reduceForNewHarpStrataByHardReset(
-    activeHarpStrata
-  )
+  const actualNewHarpStrata = reduceEmptyActiveIdsToHarpStrata(activeHarpStrata)
   expect(actualNewHarpStrata).not.toBe(expectedNewHarpStrata)
   expect(actualNewHarpStrata).toStrictEqual(expectedNewHarpStrata)
 })
