@@ -4,14 +4,14 @@ import type { TuningIds } from 'harpparts'
 
 import { DisplayModes } from '../../../../types'
 
-export const reduceForNewHarpStrataByTuning = (
-  activeHarpStrata: HarpStrata,
+export const reduceTuningIdToHarpStrata = (
+  prevHarpStrata: HarpStrata,
   activeDisplayMode: DisplayModes,
   tuningId: TuningIds
 ): HarpStrata => {
   const newHarpStrataProps: HarpStrataProps = {
     ...getPropsForHarpStrata(
-      activeHarpStrata,
+      prevHarpStrata,
       activeDisplayMode === DisplayModes.Pitch ? 'PITCH' : 'DEGREE'
     ),
     tuningId,

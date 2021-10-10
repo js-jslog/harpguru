@@ -3,7 +3,7 @@ import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import { DisplayModes } from '../../../../types'
 
-import { reduceForNewHarpStrataByTuning } from './reduce-for-new-harp-strata-by-tuning'
+import { reduceTuningIdToHarpStrata } from './reduce-tuningid-to-harpstrata'
 
 const baseHarpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
@@ -31,7 +31,7 @@ test('provides HarpStrata updated by tuning set to natural minor', () => {
   const { Degree: activeDisplayMode } = DisplayModes
   const { NaturalMinor: tuningId } = TuningIds
 
-  const newActiveHarpStrata = reduceForNewHarpStrataByTuning(
+  const newActiveHarpStrata = reduceTuningIdToHarpStrata(
     activeHarpStrata,
     activeDisplayMode,
     tuningId
@@ -45,7 +45,7 @@ test('provides HarpStrata updated by tuning to major diatonic', () => {
   const { Degree: activeDisplayMode } = DisplayModes
   const { MajorDiatonic: tuningId } = TuningIds
 
-  const newActiveHarpStrata = reduceForNewHarpStrataByTuning(
+  const newActiveHarpStrata = reduceTuningIdToHarpStrata(
     activeHarpStrata,
     activeDisplayMode,
     tuningId

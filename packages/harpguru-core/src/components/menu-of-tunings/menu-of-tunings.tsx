@@ -12,7 +12,7 @@ import { useSizes } from '../../hooks'
 
 import {
   reduceForNewColumnBoundsByZoomId,
-  reduceForNewHarpStrataByTuning,
+  reduceTuningIdToHarpStrata,
   reduceForNewHarpStrataByValving,
 } from './utils'
 import {
@@ -31,14 +31,14 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
   const tuningItemTapHandler = useCallback(
     useDispatch(
       (currentHarpStrata, activeDisplayMode, tuningId) =>
-        reduceForNewHarpStrataByTuning(
+        reduceTuningIdToHarpStrata(
           currentHarpStrata,
           activeDisplayMode,
           tuningId
         ),
       'activeHarpStrata'
     ),
-    [useDispatch, reduceForNewHarpStrataByTuning]
+    [useDispatch, reduceTuningIdToHarpStrata]
   )
   const useTuningItemsMemo = useCallback(
     () => useTuningItems(useGlobal, tuningItemTapHandler),
