@@ -3,7 +3,7 @@ import { TuningIds, PitchIds, PozitionIds, ValvingIds } from 'harpparts'
 
 import { DisplayModes } from '../../../../types'
 
-import { reduceForNewHarpStrataByCovariants } from './reduce-for-new-harp-strata-by-covariants'
+import { reduceCovariantsToHarpStrata } from './reduce-covariants-to-harpstrata'
 
 const baseHarpStrataProps = {
   tuningId: TuningIds.MajorDiatonic,
@@ -35,7 +35,7 @@ test('provides HarpStrata with different Pozition', () => {
     pozitionId: PozitionIds.Second,
   }
 
-  const newActiveHarpStrata = reduceForNewHarpStrataByCovariants(
+  const newActiveHarpStrata = reduceCovariantsToHarpStrata(
     activeHarpStrata,
     activeDisplayMode,
     partialHarpStrataProps
@@ -52,7 +52,7 @@ test('provides HarpStrata with different HarpKey & Pozition', () => {
     pozitionId: PozitionIds.Second,
   }
 
-  const newActiveHarpStrata = reduceForNewHarpStrataByCovariants(
+  const newActiveHarpStrata = reduceCovariantsToHarpStrata(
     activeHarpStrata,
     activeDisplayMode,
     partialHarpStrataProps
