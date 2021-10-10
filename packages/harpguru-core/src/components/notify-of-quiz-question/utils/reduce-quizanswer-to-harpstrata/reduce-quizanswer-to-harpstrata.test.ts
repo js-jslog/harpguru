@@ -2,7 +2,7 @@ import { DegreeIds, PitchIds } from 'harpparts'
 
 import { inactiveCellsHarpStrata } from '../../../../test-resources'
 
-import { reduceForNewHarpStrataByQuizAnswer } from './reduce-for-new-harpstrata-by-quiz-answer'
+import { reduceQuizAnswerToHarpStrata } from './reduce-quizanswer-to-harpstrata'
 
 test('when no toggles are buffered a new harpstrata is returned with just the quiz answer added to it', () => {
   const activeHarpStrata = inactiveCellsHarpStrata
@@ -15,14 +15,14 @@ test('when no toggles are buffered a new harpstrata is returned with just the qu
     activePitchIds: [pitchQuizQuestion],
   }
   expect(
-    reduceForNewHarpStrataByQuizAnswer(
+    reduceQuizAnswerToHarpStrata(
       activeHarpStrata,
       degreeQuizQuestion,
       bufferedActivityToggles
     )
   ).toStrictEqual(expectedNewHarpStrata)
   expect(
-    reduceForNewHarpStrataByQuizAnswer(
+    reduceQuizAnswerToHarpStrata(
       activeHarpStrata,
       pitchQuizQuestion,
       bufferedActivityToggles
@@ -41,14 +41,14 @@ test('when some toggles are buffered a new harpstrata is returned with those tog
     activePitchIds: [pitchQuizQuestion, PitchIds.D],
   }
   expect(
-    reduceForNewHarpStrataByQuizAnswer(
+    reduceQuizAnswerToHarpStrata(
       activeHarpStrata,
       degreeQuizQuestion,
       bufferedActivityToggles
     )
   ).toStrictEqual(expectedNewHarpStrata)
   expect(
-    reduceForNewHarpStrataByQuizAnswer(
+    reduceQuizAnswerToHarpStrata(
       activeHarpStrata,
       pitchQuizQuestion,
       bufferedActivityToggles

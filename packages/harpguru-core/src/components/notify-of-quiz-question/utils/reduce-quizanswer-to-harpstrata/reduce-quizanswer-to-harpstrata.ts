@@ -5,7 +5,7 @@ import { isPitchId } from 'harpparts'
 
 import { getCounterpartDegreeId } from '../get-counterpart-degree-id'
 
-export const reduceForNewHarpStrataByQuizAnswer = (
+export const reduceQuizAnswerToHarpStrata = (
   activeHarpStrata: HarpStrata,
   quizQuestion: DegreeIds | PitchIds,
   bufferedActivityToggles: ReadonlyArray<DegreeIds>

@@ -7,7 +7,7 @@ import {
   getNextQuizQuestion,
   hasToggledIncorrectCell,
   reduceEmptyActiveIdsToHarpStrata,
-  reduceForNewHarpStrataByQuizAnswer,
+  reduceQuizAnswerToHarpStrata,
 } from '../../utils'
 import { reduceCellToggleBufferToHarpStrata } from '../../../../utils'
 import { ExperienceModes, FlushChannels } from '../../../../types'
@@ -47,7 +47,7 @@ export const useQuizQuestionCycle = (
     'activeHarpStrata'
   )
   const addAnswerToHarpStrata = useDispatch((activeHarpStrata) => {
-    return reduceForNewHarpStrataByQuizAnswer(
+    return reduceQuizAnswerToHarpStrata(
       activeHarpStrata,
       quizQuestion,
       cellToggleBuffer
