@@ -1,4 +1,4 @@
-import { useGlobal, useDispatch } from 'reactn'
+import { useGlobal } from 'reactn'
 import { useEffect } from 'react'
 
 import {
@@ -14,8 +14,8 @@ import {
   reduceHarpStrataToActivePitchIds,
   reduceFullMatrixToColumnBounds,
   reduceToEmptyBufferedActivityToggles,
-  reduceIdedMatrix,
   reduceColumnBounds,
+  setIfNew,
 } from '../utils'
 import {
   reduceFullMatrixToViewableMatrix,
@@ -24,12 +24,69 @@ import {
 
 export const useSetFromSourceHarpStrata = (): void => {
   const [nextSourceHarpStrata] = useGlobal('activeHarpStrata')
-  const [prevFullInteractionMatrix] = useGlobal('activeInteractionMatrix')
-  const [prevFullDegreeMatrix] = useGlobal('activeDegreeMatrix')
-  const [prevFullPitchMatrix] = useGlobal('activePitchMatrix')
-  const [prevColumnBounds] = useGlobal('columnBounds')
-  const [prevViewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
+  const [prevHarpKeyId, setHarpKeyId] = useGlobal('harpKeyId')
+  const [prevPozitionId, setPozitionId] = useGlobal('pozitionId')
+  const [prevRootPitchId, setRootPitchId] = useGlobal('rootPitchId')
+  const [prevTuningId, setTuningId] = useGlobal('tuningId')
+  const [prevValvingId, setValvingId] = useGlobal('valvingId')
+  const [prevActiveDegreeIds, setActiveDegreeIds] = useGlobal('activeDegreeIds')
+  const [prevActivePitchIds, setActivePitchIds] = useGlobal('activePitchIds')
+  const [prevFullInteractionMatrix, setFullInteractionMatrix] = useGlobal(
+    'activeInteractionMatrix'
+  )
+  const [prevFullDegreeMatrix, setFullDegreeMatrix] = useGlobal(
+    'activeDegreeMatrix'
+  )
+  const [prevFullPitchMatrix, setFullPitchMatrix] = useGlobal(
+    'activePitchMatrix'
+  )
+  const [prevSourceColumnBounds, setSourceColumnBounds] = useGlobal(
+    'sourceColumnBounds'
+  )
+  const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
+  const [
+    prevViewableInteractionMatrix,
+    setViewableInteractionMatrix,
+  ] = useGlobal('viewableInteractionMatrix')
+  const [prevViewableDegreeMatrix, setViewableDegreeMatrix] = useGlobal(
+    'viewableDegreeMatrix'
+  )
+  const [prevViewablePitchMatrix, setViewablePitchMatrix] = useGlobal(
+    'viewablePitchMatrix'
+  )
+  const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
+  const [prevCellToggleBuffer, setCellToggleBuffer] = useGlobal(
+    'bufferedActivityToggles'
+  )
 
+  const nextHarpKeyId = reduceHarpStrataToHarpKeyId(
+    prevHarpKeyId,
+    nextSourceHarpStrata
+  )
+  const nextPozitionId = reduceHarpStrataToPozitionId(
+    prevPozitionId,
+    nextSourceHarpStrata
+  )
+  const nextRootPitchId = reduceHarpStrataToRootPitchId(
+    prevRootPitchId,
+    nextSourceHarpStrata
+  )
+  const nextTuningId = reduceHarpStrataToTuningId(
+    prevTuningId,
+    nextSourceHarpStrata
+  )
+  const nextValvingId = reduceHarpStrataToValvingId(
+    prevValvingId,
+    nextSourceHarpStrata
+  )
+  const nextActiveDegreeIds = reduceHarpStrataToActiveDegreeIds(
+    prevActiveDegreeIds,
+    nextSourceHarpStrata
+  )
+  const nextActivePitchIds = reduceHarpStrataToActivePitchIds(
+    prevActivePitchIds,
+    nextSourceHarpStrata
+  )
   const nextFullInteractionMatrix = reduceHarpStrataToFullInteractionMatrix(
     prevFullInteractionMatrix,
     nextSourceHarpStrata
@@ -42,138 +99,73 @@ export const useSetFromSourceHarpStrata = (): void => {
     prevFullPitchMatrix,
     nextSourceHarpStrata
   )
-  const nextColumnBounds = reduceFullMatrixToColumnBounds(
-    prevColumnBounds,
+  const nextSourceColumnBounds = reduceFullMatrixToColumnBounds(
+    prevSourceColumnBounds,
     nextFullInteractionMatrix
+  )
+  const nextColumnBounds = reduceColumnBounds(
+    prevColumnBounds,
+    nextSourceColumnBounds
   )
   const nextViewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
     prevViewableInteractionMatrix,
     nextFullInteractionMatrix,
     nextColumnBounds
   )
-
-  const tuningIdDispatch = useDispatch(
-    (prevTuningId) =>
-      reduceHarpStrataToTuningId(prevTuningId, nextSourceHarpStrata),
-    'tuningId'
+  const nextViewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
+    prevViewableDegreeMatrix,
+    nextFullDegreeMatrix,
+    nextColumnBounds
   )
-  const valvingIdDispatch = useDispatch(
-    (prevValvingId) =>
-      reduceHarpStrataToValvingId(prevValvingId, nextSourceHarpStrata),
-    'valvingId'
+  const nextViewablePitchMatrix = reduceFullMatrixToViewableMatrix(
+    prevViewablePitchMatrix,
+    nextFullPitchMatrix,
+    nextColumnBounds
   )
-  const harpKeyIdDispatch = useDispatch(
-    (prevHarpKeyId) =>
-      reduceHarpStrataToHarpKeyId(prevHarpKeyId, nextSourceHarpStrata),
-    'harpKeyId'
+  const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(
+    prevLayoutFacts,
+    nextViewableInteractionMatrix
   )
-  const pozitionIdDispatch = useDispatch(
-    (prevPozitionId) =>
-      reduceHarpStrataToPozitionId(prevPozitionId, nextSourceHarpStrata),
-    'pozitionId'
-  )
-  const rootPitchIdDispatch = useDispatch(
-    (prevRootPitchId) =>
-      reduceHarpStrataToRootPitchId(prevRootPitchId, nextSourceHarpStrata),
-    'rootPitchId'
-  )
-  const fullInteractionMatrixDispatch = useDispatch(
-    (prevFullInteractionMatrix) =>
-      reduceIdedMatrix(prevFullInteractionMatrix, nextFullInteractionMatrix),
-    'activeInteractionMatrix'
-  )
-  const fullDegreeMatrixDispatch = useDispatch(
-    (prevFullDegreeMatrix) =>
-      reduceIdedMatrix(prevFullDegreeMatrix, nextFullDegreeMatrix),
-    'activeDegreeMatrix'
-  )
-  const fullPitchMatrixDispatch = useDispatch(
-    (prevFullPitchMatrix) =>
-      reduceIdedMatrix(prevFullPitchMatrix, nextFullPitchMatrix),
-    'activePitchMatrix'
-  )
-  const activeDegreeIdsDispatch = useDispatch(
-    (prevActiveDegreeIds) =>
-      reduceHarpStrataToActiveDegreeIds(
-        prevActiveDegreeIds,
-        nextSourceHarpStrata
-      ),
-    'activeDegreeIds'
-  )
-  const activePitchIdsDispatch = useDispatch(
-    (prevActivePitchIds) =>
-      reduceHarpStrataToActivePitchIds(
-        prevActivePitchIds,
-        nextSourceHarpStrata
-      ),
-    'activePitchIds'
-  )
-  const viewableInteractionMatrixDispatch = useDispatch(
-    (prevViewableInteractionMatrix) =>
-      reduceIdedMatrix(
-        prevViewableInteractionMatrix,
-        nextFullInteractionMatrix
-      ),
-    'viewableInteractionMatrix'
-  )
-  const viewableDegreeMatrixDispatch = useDispatch(
-    (prevViewableDegreeMatrix) =>
-      reduceFullMatrixToViewableMatrix(
-        prevViewableDegreeMatrix,
-        nextFullDegreeMatrix,
-        nextColumnBounds
-      ),
-    'viewableDegreeMatrix'
-  )
-  const viewablePitchMatrixDispatch = useDispatch(
-    (prevViewablePitchMatrix) =>
-      reduceFullMatrixToViewableMatrix(
-        prevViewablePitchMatrix,
-        nextFullPitchMatrix,
-        nextColumnBounds
-      ),
-    'viewablePitchMatrix'
-  )
-  const sourceColumnBoundsDispatch = useDispatch(
-    (prevSoureceColumnBounds) =>
-      reduceColumnBounds(prevSoureceColumnBounds, nextColumnBounds),
-    'sourceColumnBounds'
-  )
-  const columnBoundsDispatch = useDispatch(
-    (prevColumnBounds) =>
-      reduceColumnBounds(prevColumnBounds, nextColumnBounds),
-    'columnBounds'
-  )
-  const layoutFactsDispatch = useDispatch(
-    (prevLayoutFacts) =>
-      reduceViewableMatrixToLayoutFacts(
-        prevLayoutFacts,
-        nextViewableInteractionMatrix
-      ),
-    'layoutFacts'
-  )
-  const emptyBufferedActivityTogglesDispatch = useDispatch(
-    (prevBufferedActivityToggles) =>
-      reduceToEmptyBufferedActivityToggles(prevBufferedActivityToggles),
-    'bufferedActivityToggles'
+  const nextCellToggleBuffer = reduceToEmptyBufferedActivityToggles(
+    prevCellToggleBuffer
   )
   useEffect(() => {
-    tuningIdDispatch()
-    valvingIdDispatch()
-    harpKeyIdDispatch()
-    pozitionIdDispatch()
-    rootPitchIdDispatch()
-    fullInteractionMatrixDispatch()
-    fullDegreeMatrixDispatch()
-    fullPitchMatrixDispatch()
-    activeDegreeIdsDispatch()
-    activePitchIdsDispatch()
-    sourceColumnBoundsDispatch()
-    columnBoundsDispatch()
-    viewableInteractionMatrixDispatch()
-    viewableDegreeMatrixDispatch()
-    viewablePitchMatrixDispatch()
-    layoutFactsDispatch()
-    emptyBufferedActivityTogglesDispatch()
+    setIfNew(prevHarpKeyId, nextHarpKeyId, setHarpKeyId)
+    setIfNew(prevPozitionId, nextPozitionId, setPozitionId)
+    setIfNew(prevRootPitchId, nextRootPitchId, setRootPitchId)
+    setIfNew(prevTuningId, nextTuningId, setTuningId)
+    setIfNew(prevValvingId, nextValvingId, setValvingId)
+    setIfNew(prevActiveDegreeIds, nextActiveDegreeIds, setActiveDegreeIds)
+    setIfNew(prevActivePitchIds, nextActivePitchIds, setActivePitchIds)
+    setIfNew(
+      prevFullInteractionMatrix,
+      nextFullInteractionMatrix,
+      setFullInteractionMatrix
+    )
+    setIfNew(prevFullDegreeMatrix, nextFullDegreeMatrix, setFullDegreeMatrix)
+    setIfNew(prevFullPitchMatrix, nextFullPitchMatrix, setFullPitchMatrix)
+    setIfNew(
+      prevSourceColumnBounds,
+      nextSourceColumnBounds,
+      setSourceColumnBounds
+    )
+    setIfNew(prevColumnBounds, nextColumnBounds, setColumnBounds)
+    setIfNew(
+      prevViewableInteractionMatrix,
+      nextViewableInteractionMatrix,
+      setViewableInteractionMatrix
+    )
+    setIfNew(
+      prevViewableDegreeMatrix,
+      nextViewableDegreeMatrix,
+      setViewableDegreeMatrix
+    )
+    setIfNew(
+      prevViewablePitchMatrix,
+      nextViewablePitchMatrix,
+      setViewablePitchMatrix
+    )
+    setIfNew(prevLayoutFacts, nextLayoutFacts, setLayoutFacts)
+    setIfNew(prevCellToggleBuffer, nextCellToggleBuffer, setCellToggleBuffer)
   }, [nextSourceHarpStrata])
 }
