@@ -18,6 +18,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Added
 
 - MINOR: Some alternate length tunings
+- MINOR: Pentaharp tuning added
 
 ### Changed
 

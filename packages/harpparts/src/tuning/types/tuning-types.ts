@@ -11,6 +11,7 @@ export enum TuningIds {
   WildeMinor = 'Wilde minor',
   Circular = 'Circular/Melody king',
   OrchestraS = 'Orchestra s',
+  PentaHarp = 'Penta harp',
   PowerBender = 'Power bender',
   PowerDraw = 'Power draw',
   PaddyRichter = 'Paddy richter',
@@ -48,6 +49,7 @@ export enum TuningIds {
 export enum TuningCategories {
   Common = 'Common',
   Seydel = 'Seydel',
+  Hohner = 'Hohner',
   BrendanPower = 'Brendan Power',
   JoeFilisko = 'Joe Filisko',
   RichterModes = 'Richter modes',
