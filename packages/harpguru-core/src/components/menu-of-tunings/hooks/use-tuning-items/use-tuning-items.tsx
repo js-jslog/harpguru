@@ -82,7 +82,7 @@ export const useTuningItems = (
       />
     )),
     <OptionBreak
-      title={TuningCategories.Seydel}
+      title={TuningCategories.Hohner}
       isTopPadded={true}
       key={'option-break-hohner'}
     />,
