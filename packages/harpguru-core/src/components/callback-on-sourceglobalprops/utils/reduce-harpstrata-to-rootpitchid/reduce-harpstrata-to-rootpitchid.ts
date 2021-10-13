@@ -5,7 +5,7 @@ export const reduceHarpStrataToRootPitchId = (
   prevRootPitchId: PitchIds,
   harpStrata: HarpStrata
 ): PitchIds => {
-  const { harpKeyId: nextRootPitchId } = harpStrata
+  const { rootPitchId: nextRootPitchId } = harpStrata
   if (prevRootPitchId === nextRootPitchId) return prevRootPitchId
   return nextRootPitchId
 }

@@ -91,7 +91,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              3
+              6
             </Text>
           </View>
           <View
@@ -212,102 +212,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              3
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 15.075683153363046,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
-                }
-              }
-            >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 24.392956838458737,
-                "flexDirection": "row",
-                "height": 78.93727998364356,
-                "justifyContent": "center",
-                "width": 78.93727998364356,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 39.46863999182178,
-                }
-              }
-            >
-              5
+              6
             </Text>
           </View>
           <View
@@ -429,25 +334,12 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              b
+              
             </Text>
           </View>
         </View>
       </View>
     </View>
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
     <View
       collapsable={false}
       onGestureHandlerEvent={[Function]}
@@ -544,6 +436,19 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       </View>
     </View>
     <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
       collapsable={false}
       onGestureHandlerEvent={[Function]}
       onGestureHandlerStateChange={[Function]}
@@ -605,7 +510,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              5
+              6
             </Text>
           </View>
           <View
@@ -633,6 +538,101 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
               }
             >
               b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              7
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
             </Text>
           </View>
         </View>
@@ -721,7 +721,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              1
+              4
             </Text>
           </View>
           <View
@@ -816,102 +816,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              3
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 15.075683153363046,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
-                }
-              }
-            >
-              
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 24.392956838458737,
-                "flexDirection": "row",
-                "height": 78.93727998364356,
-                "justifyContent": "center",
-                "width": 78.93727998364356,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 39.46863999182178,
-                }
-              }
-            >
-              5
+              6
             </Text>
           </View>
           <View
@@ -1101,7 +1006,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              3
+              4
             </Text>
           </View>
           <View
@@ -1196,7 +1101,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              5
+              6
             </Text>
           </View>
           <View
@@ -1386,7 +1291,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              3
+              4
             </Text>
           </View>
           <View
@@ -1481,7 +1386,102 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              5
+              6
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              1
             </Text>
           </View>
           <View
@@ -1816,7 +1816,197 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              2
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              1
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              3
             </Text>
           </View>
           <View
@@ -2033,7 +2223,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              
+              b
             </Text>
           </View>
         </View>
@@ -2196,7 +2386,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              4
+              3
             </Text>
           </View>
           <View
@@ -2291,7 +2481,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              6
+              5
             </Text>
           </View>
           <View
@@ -2319,6 +2509,217 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
               }
             >
               
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              7
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
             </Text>
           </View>
         </View>
@@ -2481,7 +2882,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              2
+              3
             </Text>
           </View>
           <View
@@ -2508,7 +2909,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              
+              b
             </Text>
           </View>
         </View>
@@ -2576,7 +2977,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              4
+              5
             </Text>
           </View>
           <View
@@ -2603,33 +3004,25 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              
+              b
             </Text>
           </View>
         </View>
       </View>
     </View>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "transparent",
-        "borderBottomLeftRadius": 0,
-        "borderBottomRightRadius": 0,
-        "borderBottomWidth": 0,
-        "borderColor": "#555",
-        "borderLeftWidth": 0,
-        "borderRightWidth": 0,
-        "borderTopLeftRadius": 0,
-        "borderTopRightRadius": 0,
-        "borderTopWidth": 0,
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-around",
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
       }
-    }
-  >
+    />
     <View
       collapsable={false}
       onGestureHandlerEvent={[Function]}
@@ -2821,6 +3214,148 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       </View>
     </View>
     <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 24.392956838458737,
+                "flexDirection": "row",
+                "height": 78.93727998364356,
+                "justifyContent": "center",
+                "width": 78.93727998364356,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.1995452514390204,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 39.46863999182178,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 15.075683153363046,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 24.392956838458737,
+                  "left": 15.075683153363046,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
       collapsable={false}
       onGestureHandlerEvent={[Function]}
       onGestureHandlerStateChange={[Function]}
@@ -3004,7 +3539,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 }
               }
             >
-              b
+              
             </Text>
           </View>
         </View>
@@ -3024,100 +3559,117 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       }
     />
     <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
         }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 24.392956838458737,
-                "flexDirection": "row",
-                "height": 78.93727998364356,
-                "justifyContent": "center",
-                "width": 78.93727998364356,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 39.46863999182178,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 15.075683153363046,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
-                }
-              }
-            >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 24.392956838458737,
+          "flexDirection": "row",
+          "height": 78.93727998364356,
+          "justifyContent": "center",
+          "width": 78.93727998364356,
+        }
+      }
+    />
     <View
       collapsable={false}
       onGestureHandlerEvent={[Function]}
@@ -3181,558 +3733,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
               }
             >
               2
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 15.075683153363046,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
-                }
-              }
-            >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 24.392956838458737,
-                "flexDirection": "row",
-                "height": 78.93727998364356,
-                "justifyContent": "center",
-                "width": 78.93727998364356,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 39.46863999182178,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 15.075683153363046,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
-                }
-              }
-            >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "transparent",
-        "borderBottomLeftRadius": 0,
-        "borderBottomRightRadius": 0,
-        "borderBottomWidth": 0,
-        "borderColor": "#555",
-        "borderLeftWidth": 0,
-        "borderRightWidth": 0,
-        "borderTopLeftRadius": 0,
-        "borderTopRightRadius": 0,
-        "borderTopWidth": 0,
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-      }
-    }
-  >
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 24.392956838458737,
-                "flexDirection": "row",
-                "height": 78.93727998364356,
-                "justifyContent": "center",
-                "width": 78.93727998364356,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 39.46863999182178,
-                }
-              }
-            >
-              4
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 15.075683153363046,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
-                }
-              }
-            >
-              
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 24.392956838458737,
-                "flexDirection": "row",
-                "height": 78.93727998364356,
-                "justifyContent": "center",
-                "width": 78.93727998364356,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 39.46863999182178,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 15.075683153363046,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
-                }
-              }
-            >
-              
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "transparent",
-        "borderBottomLeftRadius": 0,
-        "borderBottomRightRadius": 0,
-        "borderBottomWidth": 0,
-        "borderColor": "#555",
-        "borderLeftWidth": 0,
-        "borderRightWidth": 0,
-        "borderTopLeftRadius": 0,
-        "borderTopRightRadius": 0,
-        "borderTopWidth": 0,
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-      }
-    }
-  >
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 24.392956838458737,
-          "flexDirection": "row",
-          "height": 78.93727998364356,
-          "justifyContent": "center",
-          "width": 78.93727998364356,
-        }
-      }
-    />
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 24.392956838458737,
-                "flexDirection": "row",
-                "height": 78.93727998364356,
-                "justifyContent": "center",
-                "width": 78.93727998364356,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 39.46863999182178,
-                }
-              }
-            >
-              6
             </Text>
           </View>
           <View
@@ -4055,7 +4055,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              7
+              3
             </Text>
           </View>
           <View
@@ -4171,7 +4171,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              3
+              6
             </Text>
           </View>
           <View
@@ -4292,102 +4292,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              3
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              5
+              6
             </Text>
           </View>
           <View
@@ -4509,25 +4414,12 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              b
+              
             </Text>
           </View>
         </View>
       </View>
     </View>
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 22.63930291919421,
-          "flexDirection": "row",
-          "height": 73.26233572263678,
-          "justifyContent": "center",
-          "width": 73.26233572263678,
-        }
-      }
-    />
     <View
       collapsable={false}
       onGestureHandlerEvent={[Function]}
@@ -4624,6 +4516,19 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
       </View>
     </View>
     <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 22.63930291919421,
+          "flexDirection": "row",
+          "height": 73.26233572263678,
+          "justifyContent": "center",
+          "width": 73.26233572263678,
+        }
+      }
+    />
+    <View
       collapsable={false}
       onGestureHandlerEvent={[Function]}
       onGestureHandlerStateChange={[Function]}
@@ -4685,7 +4590,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              5
+              6
             </Text>
           </View>
           <View
@@ -4781,6 +4686,101 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
               }
             >
               7
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              3
             </Text>
           </View>
           <View
@@ -4896,7 +4896,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              1
+              4
             </Text>
           </View>
           <View
@@ -4991,102 +4991,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              3
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              5
+              6
             </Text>
           </View>
           <View
@@ -5276,7 +5181,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              3
+              4
             </Text>
           </View>
           <View
@@ -5371,7 +5276,292 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              5
+              6
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              1
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              4
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              6
             </Text>
           </View>
           <View
@@ -5561,197 +5751,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              3
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              5
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              1
+              4
             </Text>
           </View>
           <View
@@ -6109,7 +6109,197 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              2
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              1
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              3
             </Text>
           </View>
           <View
@@ -6326,7 +6516,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              
+              b
             </Text>
           </View>
         </View>
@@ -6489,7 +6679,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              4
+              3
             </Text>
           </View>
           <View
@@ -6584,7 +6774,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              6
+              5
             </Text>
           </View>
           <View
@@ -6612,6 +6802,312 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
               }
             >
               
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              7
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              b
             </Text>
           </View>
         </View>
@@ -6774,7 +7270,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              2
+              3
             </Text>
           </View>
           <View
@@ -6801,7 +7297,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              
+              b
             </Text>
           </View>
         </View>
@@ -6869,7 +7365,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              4
+              5
             </Text>
           </View>
           <View
@@ -6896,128 +7392,25 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              
+              b
             </Text>
           </View>
         </View>
       </View>
     </View>
     <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 22.63930291919421,
+          "flexDirection": "row",
+          "height": 73.26233572263678,
+          "justifyContent": "center",
+          "width": 73.26233572263678,
         }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "transparent",
-        "borderBottomLeftRadius": 0,
-        "borderBottomRightRadius": 0,
-        "borderBottomWidth": 0,
-        "borderColor": "#555",
-        "borderLeftWidth": 0,
-        "borderRightWidth": 0,
-        "borderTopLeftRadius": 0,
-        "borderTopRightRadius": 0,
-        "borderTopWidth": 0,
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-around",
       }
-    }
-  >
+    />
     <View
       collapsable={false}
       onGestureHandlerEvent={[Function]}
@@ -7209,6 +7602,243 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
       </View>
     </View>
     <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 22.63930291919421,
+          "flexDirection": "row",
+          "height": 73.26233572263678,
+          "justifyContent": "center",
+          "width": 73.26233572263678,
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              2
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "transform": Array [
+                Object {
+                  "scale": undefined,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessible={true}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderRadius": 22.63930291919421,
+                "flexDirection": "row",
+                "height": 73.26233572263678,
+                "justifyContent": "center",
+                "width": 73.26233572263678,
+              },
+              Object {
+                "backgroundColor": "#fefefe",
+                "borderColor": "#555",
+                "borderWidth": 2.0414159530382516,
+                "elevation": 0,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 36.63116786131839,
+                }
+              }
+            >
+              5
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "bottom": 13.991864942124177,
+                  "color": "#555",
+                  "display": "flex",
+                  "fontSize": 22.63930291919421,
+                  "left": 13.991864942124177,
+                }
+              }
+            >
+              b
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomLeftRadius": 0,
+        "borderBottomRightRadius": 0,
+        "borderBottomWidth": 0,
+        "borderColor": "#555",
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "borderTopLeftRadius": 0,
+        "borderTopRightRadius": 0,
+        "borderTopWidth": 0,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      accessible={false}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 22.63930291919421,
+          "flexDirection": "row",
+          "height": 73.26233572263678,
+          "justifyContent": "center",
+          "width": 73.26233572263678,
+        }
+      }
+    />
+    <View
       collapsable={false}
       onGestureHandlerEvent={[Function]}
       onGestureHandlerStateChange={[Function]}
@@ -7392,636 +8022,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 22.63930291919421,
-          "flexDirection": "row",
-          "height": 73.26233572263678,
-          "justifyContent": "center",
-          "width": 73.26233572263678,
-        }
-      }
-    />
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              2
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 22.63930291919421,
-          "flexDirection": "row",
-          "height": 73.26233572263678,
-          "justifyContent": "center",
-          "width": 73.26233572263678,
-        }
-      }
-    />
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              2
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              b
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "transparent",
-        "borderBottomLeftRadius": 0,
-        "borderBottomRightRadius": 0,
-        "borderBottomWidth": 0,
-        "borderColor": "#555",
-        "borderLeftWidth": 0,
-        "borderRightWidth": 0,
-        "borderTopLeftRadius": 0,
-        "borderTopRightRadius": 0,
-        "borderTopWidth": 0,
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-      }
-    }
-  >
-    <View
-      accessible={false}
-      style={
-        Object {
-          "alignItems": "center",
-          "borderRadius": 22.63930291919421,
-          "flexDirection": "row",
-          "height": 73.26233572263678,
-          "justifyContent": "center",
-          "width": 73.26233572263678,
-        }
-      }
-    />
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              4
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
-              
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      collapsable={false}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "transform": Array [
-                Object {
-                  "scale": undefined,
-                },
-              ],
-            },
-          ]
-        }
-      >
-        <View
-          accessibilityRole="button"
-          accessible={true}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "borderRadius": 22.63930291919421,
-                "flexDirection": "row",
-                "height": 73.26233572263678,
-                "justifyContent": "center",
-                "width": 73.26233572263678,
-              },
-              Object {
-                "backgroundColor": "#fefefe",
-                "borderColor": "#555",
-                "borderWidth": 2.0414159530382516,
-                "elevation": 0,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 36.63116786131839,
-                }
-              }
-            >
-              6
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "bottom": 0,
-                "justifyContent": "center",
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "bottom": 13.991864942124177,
-                  "color": "#555",
-                  "display": "flex",
-                  "fontSize": 22.63930291919421,
-                  "left": 13.991864942124177,
-                }
-              }
-            >
               
             </Text>
           </View>
@@ -8228,7 +8228,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
                 }
               }
             >
-              6
+              2
             </Text>
           </View>
           <View

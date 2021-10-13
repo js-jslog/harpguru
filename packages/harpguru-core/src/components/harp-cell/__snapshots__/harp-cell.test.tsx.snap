@@ -63,7 +63,7 @@ exports[`A snapshot of a populated cell 1`] = `
             }
           }
         >
-          2
+          5
         </Text>
       </View>
       <View
@@ -131,7 +131,7 @@ exports[`A snapshot of an active cell 1`] = `
             "width": 73.26233572263678,
           },
           Object {
-            "backgroundColor": "#323031",
+            "backgroundColor": "#4285f4",
             "borderColor": "black",
             "borderWidth": 2.0414159530382516,
             "elevation": 3.3030110120158915,
@@ -161,7 +161,7 @@ exports[`A snapshot of an active cell 1`] = `
             }
           }
         >
-          2
+          5
         </Text>
       </View>
       <View
@@ -275,7 +275,7 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
             }
           }
         >
-          2
+          5
         </Text>
       </View>
       <View
@@ -373,7 +373,7 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
             }
           }
         >
-          2
+          5
         </Text>
       </View>
       <View
