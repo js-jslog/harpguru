@@ -4,6 +4,7 @@ import type { Tuning } from '../types'
 const {
   Common,
   Seydel,
+  Hohner,
   BrendanPower,
   JoeFilisko,
   RichterModes,
@@ -23,6 +24,7 @@ const {
   WildeMinor,
   Circular,
   OrchestraS,
+  PentaHarp,
   PowerBender,
   PowerDraw,
   PaddyRichter,
@@ -371,6 +373,17 @@ export const ORCHESTRA_S: Tuning = {
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , f1 , f1 , a1 , c2 , f2 , f2 , a2 , c3 , f3 ],
     [ d1 , e1 , g1 , bb1, d2 , e2 , g2 , bb2, d3 , e3 ],
+  ],
+} as const
+
+export const PENTA_HARP: Tuning = {
+  id: PentaHarp,
+  category: Hohner,
+  // prettier-ignore
+  reedArray: [
+    // 1    2    3    4    5    6    7    8    9   10
+    [ c1 , f1 , g1 , c2 , f2 , g2 , c3 , f3 , g3 , c4 ],
+    [ eb1, gb1, b1 , eb2, gb2, b2 , eb3, gb3, b3 , eb4],
   ],
 } as const
 

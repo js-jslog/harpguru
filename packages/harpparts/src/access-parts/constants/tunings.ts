@@ -10,6 +10,7 @@ import {
   WILDE_MINOR,
   CIRCULAR,
   ORCHESTRA_S,
+  PENTA_HARP,
   POWER_BENDER,
   POWER_DRAW,
   PADDY_RICHTER,
@@ -56,6 +57,7 @@ orderedTunings.set(TuningIds.Wilde, WILDE)
 orderedTunings.set(TuningIds.WildeMinor, WILDE_MINOR)
 orderedTunings.set(TuningIds.Circular, CIRCULAR)
 orderedTunings.set(TuningIds.OrchestraS, ORCHESTRA_S)
+orderedTunings.set(TuningIds.PentaHarp, PENTA_HARP)
 orderedTunings.set(TuningIds.PowerBender, POWER_BENDER)
 orderedTunings.set(TuningIds.PowerDraw, POWER_DRAW)
 orderedTunings.set(TuningIds.PaddyRichter, PADDY_RICHTER)
