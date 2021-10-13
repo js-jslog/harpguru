@@ -383,7 +383,7 @@ export const PENTA_HARP: Tuning = {
   reedArray: [
     // 1    2    3    4    5    6    7    8    9   10
     [ c1 , f1 , g1 , c2 , f2 , g2 , c3 , f3 , g3 , c4 ],
-    [ eb1, gb1, b1 , eb2, gb2, b2 , eb3, gb3, b3 , eb4],
+    [ eb1, gb1, bb1, eb2, gb2, bb2, eb3, gb3, bb3, eb4],
   ],
 } as const
 
