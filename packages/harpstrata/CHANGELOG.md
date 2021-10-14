@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v9.0.0...HEAD) - yyyy-mm-dd
 
+### Removed
+
+- MAJOR: `ActiveDegreeIds` & `ActivePitchIds` types no longer exported
+
 ## [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v9.0.0) - 2021-07-11
 
 ### Changed
