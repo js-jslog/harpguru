@@ -26,7 +26,7 @@ test('getHarpCells returns an array of HarpCells, with a sample containing the e
   const { getByText: getByText_1 } = render(harpCells[1])
   const { getByText: getByText_2 } = render(harpCells[2])
 
-  expect(getByText_0(DegreeIds.Third)).toBeTruthy()
-  expect(getByText_1(DegreeIds.Fifth)).toBeTruthy()
-  expect(getByText_2(DegreeIds.Root)).toBeTruthy()
+  expect(getByText_0(DegreeIds.Sixth)).toBeTruthy()
+  expect(getByText_1(DegreeIds.Root)).toBeTruthy()
+  expect(getByText_2(DegreeIds.Fourth)).toBeTruthy()
 })
