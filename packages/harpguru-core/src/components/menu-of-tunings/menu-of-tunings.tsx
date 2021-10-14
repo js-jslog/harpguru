@@ -11,7 +11,6 @@ import type { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
 import {
-  reduceZoomIdToColumnBounds,
   reduceTuningIdToHarpStrata,
   reduceValvingIdToHarpStrata,
 } from './utils'
@@ -20,8 +19,6 @@ import {
   useTuningItems,
   useValvingTitle,
   useValvingItems,
-  useZoomTitle,
-  useZoomItems,
 } from './hooks'
 
 export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
@@ -65,29 +62,6 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal, valvingItemTapHandler]
   )
 
-  const useZoomTitleMemo = useCallback(() => useZoomTitle(useGlobal), [
-    useGlobal,
-  ])
-  const zoomItemTapHandler = useCallback(
-    useDispatch(
-      (currentColumnBounds, activeDegreeMatrix, zoomId) =>
-        reduceZoomIdToColumnBounds(
-          currentColumnBounds,
-          activeDegreeMatrix,
-          zoomId
-        ),
-      'sourceColumnBounds'
-    ),
-    // TODO: This and a great many other things should be based on the
-    // interaction matrix of the apparatus rather than the degreeMatrix
-    // which is much more volatile
-    [useDispatch, reduceZoomIdToColumnBounds]
-  )
-  const useZoomItemsMemo = useCallback(
-    () => useZoomItems(useGlobal, zoomItemTapHandler),
-    [useGlobal, zoomItemTapHandler]
-  )
-
   const optionStackPropsz = [
     {
       useTitle: useTuningTitleMemo,
@@ -97,11 +71,6 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     {
       useTitle: useValvingTitleMemo,
       useItems: useValvingItemsMemo,
-      twoColumns: false,
-    },
-    {
-      useTitle: useZoomTitleMemo,
-      useItems: useZoomItemsMemo,
       twoColumns: false,
     },
   ]
