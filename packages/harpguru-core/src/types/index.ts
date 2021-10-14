@@ -1,7 +1,24 @@
 import type { StateTuple } from 'reactn/types/use-global'
 import type { Node, Value } from 'react-native-reanimated'
 import type { HarpStrata } from 'harpstrata'
-import type { DegreeIds } from 'harpparts'
+import type {
+  Degree,
+  DegreeIds,
+  HarpFaceMatrix,
+  Pitch,
+  PitchIds,
+  PozitionIds,
+  TuningIds,
+  ValvingIds,
+  Interaction,
+} from 'harpparts'
+
+export type LayoutFacts = {
+  readonly harpfaceColumns: number
+  readonly harpfaceRows: number
+}
+
+export type ColumnBounds = 'FIT' | readonly [number, number]
 
 export type GlobalState = {
   readonly activeHarpStrata: HarpStrata
@@ -11,7 +28,22 @@ export type GlobalState = {
   readonly fragmentHarpFaceByOctaves: boolean
   readonly flushChannel: FlushChannels
   readonly activeQuizDegrees: ReadonlyArray<DegreeIds>
-  readonly columnBounds: 'FIT' | readonly [number, number]
+  readonly sourceColumnBounds: ColumnBounds
+  readonly columnBounds: ColumnBounds
+  readonly tuningId: TuningIds
+  readonly valvingId: ValvingIds
+  readonly activeInteractionMatrix: HarpFaceMatrix<Interaction>
+  readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
+  readonly activePitchMatrix: HarpFaceMatrix<Pitch>
+  readonly activeDegreeIds: ReadonlyArray<DegreeIds>
+  readonly activePitchIds: ReadonlyArray<PitchIds>
+  readonly pozitionId: PozitionIds
+  readonly rootPitchId: PitchIds
+  readonly harpKeyId: PitchIds
+  readonly viewableInteractionMatrix: HarpFaceMatrix<Interaction>
+  readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
+  readonly viewablePitchMatrix: HarpFaceMatrix<Pitch>
+  readonly layoutFacts: LayoutFacts
 }
 
 export type UseGlobal = <
@@ -34,7 +66,6 @@ export enum ExperienceModes {
 export enum FlushChannels {
   Regular,
   Quiz,
-  ScalesMenu,
 }
 
 export enum MenuStates {

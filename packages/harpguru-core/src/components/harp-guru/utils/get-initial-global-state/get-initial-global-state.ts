@@ -11,6 +11,10 @@ import {
 } from 'harpparts'
 
 import {
+  reduceFullMatrixToViewableMatrix,
+  reduceViewableMatrixToLayoutFacts,
+} from '../../../../utils'
+import {
   GlobalState,
   DisplayModes,
   ExperienceModes,
@@ -29,29 +33,74 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   }
   const { [pageNumber]: pozitionId } = pozitionMap
 
+  const thisPozitionDegrees =
+    pageNumber === 1 ? getScale(ScaleIds.MajorPentatonic).degrees : []
+
   const initialHarpStrataProps: HarpStrataProps = {
     tuningId,
     valvingId,
     pozitionId,
     harpKeyId,
-    activeIds: [],
+    activeIds: thisPozitionDegrees,
   }
   const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
   const { Explore: initialExperienceMode } = ExperienceModes
   const { Degree: initialDisplayMode } = DisplayModes
 
-  const thisPozitionDegrees =
-    pageNumber === 1 ? getScale(ScaleIds.MajorPentatonic).degrees : []
+  const { rootPitchId, activeDegreeIds, activePitchIds } = initialHarpStrata
+  const {
+    apparatus: { interactionMatrix: fullInteractionMatrix },
+  } = initialHarpStrata
+  const { degreeMatrix: fullDegreeMatrix } = initialHarpStrata
+  const { pitchMatrix: fullPitchMatrix } = initialHarpStrata
+  const columnBounds = 'FIT'
+  const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
+    [[]] as const,
+    fullInteractionMatrix,
+    columnBounds
+  )
+  const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
+    [[]] as const,
+    fullDegreeMatrix,
+    columnBounds
+  )
+  const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
+    [[]] as const,
+    fullPitchMatrix,
+    columnBounds
+  )
+  const layoutFacts = reduceViewableMatrixToLayoutFacts(
+    {
+      harpfaceColumns: 0,
+      harpfaceRows: 0,
+    },
+    viewableInteractionMatrix
+  )
 
   const state = {
     activeHarpStrata: initialHarpStrata,
     activeExperienceMode: initialExperienceMode,
     activeDisplayMode: initialDisplayMode,
-    bufferedActivityToggles: thisPozitionDegrees,
+    bufferedActivityToggles: [],
     fragmentHarpFaceByOctaves: true,
     flushChannel: FlushChannels.Regular,
     activeQuizDegrees: getDegreeIds(),
-    columnBounds: 'FIT',
+    sourceColumnBounds: columnBounds,
+    columnBounds,
+    tuningId,
+    valvingId,
+    activeInteractionMatrix: fullInteractionMatrix,
+    activeDegreeMatrix: fullDegreeMatrix,
+    activePitchMatrix: fullPitchMatrix,
+    activeDegreeIds,
+    activePitchIds,
+    viewableInteractionMatrix,
+    viewableDegreeMatrix,
+    viewablePitchMatrix,
+    pozitionId,
+    rootPitchId,
+    harpKeyId,
+    layoutFacts,
   } as const
 
   return state

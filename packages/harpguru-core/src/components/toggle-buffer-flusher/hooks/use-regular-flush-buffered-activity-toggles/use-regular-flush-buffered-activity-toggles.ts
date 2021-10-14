@@ -1,13 +1,18 @@
-import { useGlobal } from 'reactn'
+import { useGlobal, useDispatch } from 'reactn'
 import { useEffect } from 'react'
 
+import { reduceCellToggleBufferToHarpStrata } from '../../../../utils'
 import { FlushChannels } from '../../../../types'
-import { useFlushBufferedActivityToggles } from '../../../../hooks'
 
 export const useRegularFlushBufferedToggles = (): void => {
   const [flushChannel] = useGlobal('flushChannel')
   const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
-  const flushBufferedActivityToggles = useFlushBufferedActivityToggles()
+  const flushBufferedActivityToggles = useDispatch((activeHarpStrata) => {
+    return reduceCellToggleBufferToHarpStrata(
+      activeHarpStrata,
+      bufferedActivityToggles
+    )
+  }, 'activeHarpStrata')
 
   useEffect(() => {
     if (flushChannel !== FlushChannels.Regular) return

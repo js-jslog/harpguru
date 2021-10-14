@@ -8,10 +8,9 @@ import type { ColumnRanges } from './get-octave-column-groups'
 import { arrayHasRoot } from './array-has-root'
 
 export const useOctaveColumnGroups = (): ColumnRanges => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
+  const [degreeMatrix] = useGlobal('activeDegreeMatrix')
   const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const [columnBounds] = useGlobal('columnBounds')
-  const { degreeMatrix } = activeHarpStrata
 
   const columnsFirstDegreeMatrix = transposeMatrix(
     degreeMatrix

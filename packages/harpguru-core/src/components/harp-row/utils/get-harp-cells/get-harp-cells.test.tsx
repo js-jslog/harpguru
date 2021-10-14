@@ -2,22 +2,13 @@ import { useGlobal } from 'reactn'
 import { DegreeIds } from 'harpparts'
 import { render } from '@testing-library/react-native'
 
-import { DisplayModes, ExperienceModes } from '../../../../types'
-import { inactiveCellsHarpStrata } from '../../../../test-resources'
+import { buildMockUseGlobalImplementation } from '../../../../test-resources'
 
 import { getHarpCells } from './get-harp-cells'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
-mockUseGlobal.mockImplementation((stateItem: string) => {
-  if (stateItem === 'activeHarpStrata')
-    return [inactiveCellsHarpStrata, jest.fn()]
-  if (stateItem === 'activeExperienceMode') return [ExperienceModes.Explore]
-  if (stateItem === 'activeDisplayMode') return [DisplayModes.Degree]
-  if (stateItem === 'bufferedActivityToggles') return [[]]
-  if (stateItem === 'columnBounds') return ['FIT']
-  return undefined
-})
+mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
 
 test('getHarpCells returns an array of HarpCells, the length of the range supplied', () => {
   const yCoord = 0
@@ -35,7 +26,7 @@ test('getHarpCells returns an array of HarpCells, with a sample containing the e
   const { getByText: getByText_1 } = render(harpCells[1])
   const { getByText: getByText_2 } = render(harpCells[2])
 
-  expect(getByText_0(DegreeIds.Third)).toBeTruthy()
-  expect(getByText_1(DegreeIds.Fifth)).toBeTruthy()
-  expect(getByText_2(DegreeIds.Root)).toBeTruthy()
+  expect(getByText_0(DegreeIds.Sixth)).toBeTruthy()
+  expect(getByText_1(DegreeIds.Root)).toBeTruthy()
+  expect(getByText_2(DegreeIds.Fourth)).toBeTruthy()
 })

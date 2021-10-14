@@ -1,7 +1,7 @@
 import { getDegree, DegreeIds, PitchIds, getPitch } from 'harpparts'
 
 import { EXAMPLE_STRATA } from '../../testResources'
-import { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../../../types'
+import type { ActiveIds } from '../../../types'
 import type { IsActiveProps } from '../../../types'
 
 import { getActiveIdsPair } from './index'
@@ -34,8 +34,11 @@ test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
   const activePitchIds: ActiveIds = [PitchIds.D, PitchIds.E]
   const isActiveProps = { ...baseIsActiveProps, activeIds: activePitchIds }
   const expectedActiveIdsPair = {
-    activeDegreeIds: [DegreeIds.Second, DegreeIds.Third] as ActiveDegreeIds,
-    activePitchIds: activePitchIds as ActivePitchIds,
+    activeDegreeIds: [
+      DegreeIds.Second,
+      DegreeIds.Third,
+    ] as ReadonlyArray<DegreeIds>,
+    activePitchIds: activePitchIds as ReadonlyArray<PitchIds>,
   }
   const actualActiveIds = getActiveIdsPair(isActiveProps)
 
@@ -46,8 +49,8 @@ test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
   const activeDegreeIds: ActiveIds = [DegreeIds.Second, DegreeIds.Third]
   const isActiveProps = { ...baseIsActiveProps, activeIds: activeDegreeIds }
   const expectedActiveIds = {
-    activePitchIds: [PitchIds.D, PitchIds.E] as ActivePitchIds,
-    activeDegreeIds: activeDegreeIds as ActiveDegreeIds,
+    activePitchIds: [PitchIds.D, PitchIds.E] as ReadonlyArray<PitchIds>,
+    activeDegreeIds: activeDegreeIds as ReadonlyArray<DegreeIds>,
   }
   const actualActiveIds = getActiveIdsPair(isActiveProps)
 
@@ -81,8 +84,8 @@ test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
   }
   const actualActiveIds = getActiveIdsPair(isActiveProps)
   const expectedActiveIds = {
-    activePitchIds: examplePitchIds as ActivePitchIds,
-    activeDegreeIds: exampleDegreeIds as ActiveDegreeIds,
+    activePitchIds: examplePitchIds as ReadonlyArray<PitchIds>,
+    activeDegreeIds: exampleDegreeIds as ReadonlyArray<DegreeIds>,
   }
 
   expect(actualActiveIds).toEqual(expectedActiveIds)
@@ -96,8 +99,8 @@ test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
   }
   const actualActiveIds = getActiveIdsPair(isActiveProps)
   const expectedActiveIds = {
-    activePitchIds: examplePitchIds as ActivePitchIds,
-    activeDegreeIds: exampleDegreeIds as ActiveDegreeIds,
+    activePitchIds: examplePitchIds as ReadonlyArray<PitchIds>,
+    activeDegreeIds: exampleDegreeIds as ReadonlyArray<DegreeIds>,
   }
 
   expect(actualActiveIds).toEqual(expectedActiveIds)
@@ -111,8 +114,8 @@ test('getActiveIdsPair returns the active ids for a given Flat3 DegreeIds[]', ()
   }
   const actualActiveIds = getActiveIdsPair(isActiveProps)
   const expectedActiveIds = {
-    activePitchIds: [PitchIds.Eb] as ActivePitchIds,
-    activeDegreeIds: [DegreeIds.Flat3] as ActiveDegreeIds,
+    activePitchIds: [PitchIds.Eb] as ReadonlyArray<PitchIds>,
+    activeDegreeIds: [DegreeIds.Flat3] as ReadonlyArray<DegreeIds>,
   }
 
   expect(actualActiveIds).toEqual(expectedActiveIds)

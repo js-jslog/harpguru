@@ -2,26 +2,24 @@ import React from 'react'
 import type { TuningIds } from 'harpparts'
 import { getTuningIds, getTuning, TuningCategories } from 'harpparts'
 
-import { OptionItem } from '../../../option-item'
-import type { OptionItemProps } from '../../../option-item'
+import { OptionItemWithDisplayMode } from '../../../option-item-with-display-mode'
+import type { OptionItemWithDisplayModeProps } from '../../../option-item-with-display-mode'
 import { OptionBreak } from '../../../option-break'
-import type { UseGlobal } from '../../../../types'
+import type { DisplayModes, UseGlobal } from '../../../../types'
 
 type ItemCallback = TuningIds
-type ItemTapHandler = (arg0: TuningIds) => void
+type ItemTapHandler = (arg0: DisplayModes, arg1: TuningIds) => void
 
 type TuningItems = ReadonlyArray<
-  React.ReactElement<OptionItemProps<ItemCallback>>
+  React.ReactElement<OptionItemWithDisplayModeProps<ItemCallback>>
 >
 
 export const useTuningItems = (
   useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): TuningItems => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const {
-    apparatus: { tuningId },
-  } = activeHarpStrata
+  const [tuningId] = useGlobal('tuningId')
+  const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const commonTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.Common)
@@ -57,11 +55,12 @@ export const useTuningItems = (
       key={'option-break-common'}
     />,
     ...commonTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />
@@ -72,11 +71,12 @@ export const useTuningItems = (
       key={'option-break-seydel'}
     />,
     ...seydelTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />
@@ -87,11 +87,12 @@ export const useTuningItems = (
       key={'option-break-hohner'}
     />,
     ...hohnerTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />
@@ -102,11 +103,12 @@ export const useTuningItems = (
       key={'option-break-brendan-power'}
     />,
     ...brendanPowerTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />
@@ -117,11 +119,12 @@ export const useTuningItems = (
       key={'option-break-joe-filisko'}
     />,
     ...joeFiliskoTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />
@@ -132,11 +135,12 @@ export const useTuningItems = (
       key={'option-break-richter-modes'}
     />,
     ...richterModesTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />
@@ -147,11 +151,12 @@ export const useTuningItems = (
       key={'option-break-spiral-modes'}
     />,
     ...spiralModesTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />
@@ -162,11 +167,12 @@ export const useTuningItems = (
       key={'option-break-other-scales'}
     />,
     ...otherScalesTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />
@@ -177,11 +183,12 @@ export const useTuningItems = (
       key={'option-break-other'}
     />,
     ...otherTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />

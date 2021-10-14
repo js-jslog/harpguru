@@ -1,18 +1,16 @@
+import type { DegreeIds, PitchIds } from 'harpparts'
+
 import {
   activeIdsFromPitchMatrix,
   activeIdsFromDegreeMatrix,
 } from '../active-ids-from-matrix-reducers'
-import type {
-  IsActiveProps,
-  ActivePitchIds,
-  ActiveDegreeIds,
-} from '../../../types'
+import type { IsActiveProps } from '../../../types'
 
 export const getCounterpartDegreeIds = (
   props: IsActiveProps
-): ActiveDegreeIds => {
+): ReadonlyArray<DegreeIds> => {
   const { degreeMatrix, pitchMatrix, activeIds } = props
-  const activePitchIds = activeIds as ActivePitchIds
+  const activePitchIds = activeIds as ReadonlyArray<PitchIds>
   const initialState = {
     pitchMatrix,
     degreeMatrix,
@@ -30,9 +28,9 @@ export const getCounterpartDegreeIds = (
 
 export const getCounterpartPitchIds = (
   props: IsActiveProps
-): ActivePitchIds => {
+): ReadonlyArray<PitchIds> => {
   const { degreeMatrix, pitchMatrix, activeIds } = props
-  const activeDegreeIds = activeIds as ActiveDegreeIds
+  const activeDegreeIds = activeIds as ReadonlyArray<DegreeIds>
   const initialState = {
     degreeMatrix,
     pitchMatrix,

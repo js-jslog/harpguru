@@ -16,8 +16,8 @@ export const HarpRow = ({
   yCoord,
   xRange,
 }: HarpRowProps): React.ReactElement => {
-  const [activeHarpStrata] = useGlobal('activeHarpStrata')
-  const styles = useStyles(yCoord, activeHarpStrata)
+  const [activeInteractionMatrix] = useGlobal('activeInteractionMatrix')
+  const styles = useStyles(yCoord, activeInteractionMatrix)
 
   return <View style={styles.row}>{getHarpCells(yCoord, xRange)}</View>
 }

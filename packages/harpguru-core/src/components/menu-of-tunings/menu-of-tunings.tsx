@@ -6,13 +6,14 @@ import { MemoOptionStack } from '../option-stack'
 import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
-import { getColors, reduceForNewColumnBounds } from '../../utils'
+import { getColors } from '../../utils'
 import type { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
 import {
-  reduceForNewHarpStrataByTuning,
-  reduceForNewHarpStrataByValving,
+  reduceZoomIdToColumnBounds,
+  reduceTuningIdToHarpStrata,
+  reduceValvingIdToHarpStrata,
 } from './utils'
 import {
   useTuningTitle,
@@ -28,8 +29,16 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const tuningItemTapHandler = useCallback(
-    useDispatch(reduceForNewHarpStrataByTuning),
-    [useDispatch, reduceForNewHarpStrataByTuning]
+    useDispatch(
+      (currentHarpStrata, activeDisplayMode, tuningId) =>
+        reduceTuningIdToHarpStrata(
+          currentHarpStrata,
+          activeDisplayMode,
+          tuningId
+        ),
+      'activeHarpStrata'
+    ),
+    [useDispatch, reduceTuningIdToHarpStrata]
   )
   const useTuningItemsMemo = useCallback(
     () => useTuningItems(useGlobal, tuningItemTapHandler),
@@ -40,8 +49,16 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const valvingItemTapHandler = useCallback(
-    useDispatch(reduceForNewHarpStrataByValving),
-    [useDispatch, reduceForNewHarpStrataByValving]
+    useDispatch(
+      (currentHarpStrata, activeDisplayMode, valvingId) =>
+        reduceValvingIdToHarpStrata(
+          currentHarpStrata,
+          activeDisplayMode,
+          valvingId
+        ),
+      'activeHarpStrata'
+    ),
+    [useDispatch, reduceValvingIdToHarpStrata]
   )
   const useValvingItemsMemo = useCallback(
     () => useValvingItems(useGlobal, valvingItemTapHandler),
@@ -52,8 +69,19 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     useGlobal,
   ])
   const zoomItemTapHandler = useCallback(
-    useDispatch(reduceForNewColumnBounds),
-    [useDispatch, reduceForNewColumnBounds]
+    useDispatch(
+      (currentColumnBounds, activeDegreeMatrix, zoomId) =>
+        reduceZoomIdToColumnBounds(
+          currentColumnBounds,
+          activeDegreeMatrix,
+          zoomId
+        ),
+      'sourceColumnBounds'
+    ),
+    // TODO: This and a great many other things should be based on the
+    // interaction matrix of the apparatus rather than the degreeMatrix
+    // which is much more volatile
+    [useDispatch, reduceZoomIdToColumnBounds]
   )
   const useZoomItemsMemo = useCallback(
     () => useZoomItems(useGlobal, zoomItemTapHandler),

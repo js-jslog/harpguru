@@ -1,2 +1,2 @@
-export { getNewActiveQuizDegreesByToggleForDispatcher } from './get-new-active-quiz-degrees-by-toggle-for-dispatcher'
-export { getNewBufferedTogglesByTargetScaleForDispatcher } from './get-new-buffered-toggles-by-target-scale-for-dispatcher'
+export { reduceToggleToQuizableDegreeIds } from './reduce-toggle-to-quizabledegreeids'
+export { reduceScaleToHarpStrata } from './reduce-scale-to-harpstrata'

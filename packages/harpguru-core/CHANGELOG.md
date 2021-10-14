@@ -24,6 +24,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: Make sizing adaptive to dimensions of harp being presented
 - MINOR: Make layout adaptive to dimensions of harp being presented
+- MINOR: Optimisation of rendering for improved UI speed
 
 ## [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v9.0.0) - 2021-07-11
 

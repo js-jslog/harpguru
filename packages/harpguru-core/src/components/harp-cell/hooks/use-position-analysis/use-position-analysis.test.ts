@@ -4,7 +4,7 @@ import type { Degree, Pitch } from 'harpparts'
 import type { YXCoord } from '../../../harp-cell'
 import {
   inactiveCellsHarpStrata,
-  activeCellsHarpStrata,
+  buildMockUseGlobalImplementation,
 } from '../../../../test-resources'
 
 import { usePositionAnalysis } from './index'
@@ -24,11 +24,15 @@ const ourPitch = <Pitch>y3x3Pitch
 
 test('thisIsActive is true if the cell is active or false otherwise', () => {
   const ourCoord: YXCoord = [3, 3]
-  mockUseGlobal.mockReturnValue([activeCellsHarpStrata])
+  mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
   const { thisIsActive: active } = usePositionAnalysis(ourCoord)
   expect(active).toBe(true)
 
-  mockUseGlobal.mockReturnValue([inactiveCellsHarpStrata])
+  mockUseGlobal.mockImplementation(
+    buildMockUseGlobalImplementation({
+      sourceHarpStrata: inactiveCellsHarpStrata,
+    })
+  )
   const { thisIsActive: inactive } = usePositionAnalysis(ourCoord)
   expect(inactive).toBe(false)
 

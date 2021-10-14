@@ -2,17 +2,13 @@ import { useGlobal } from 'reactn'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { activeCellsHarpStrata } from '../../test-resources'
+import { buildMockUseGlobalImplementation } from '../../test-resources'
 
 import { HoleNumber, HoleNumberIds } from './hole-number'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
-mockUseGlobal.mockImplementation((stateItem: string) => {
-  if (stateItem === 'activeHarpStrata') return [activeCellsHarpStrata]
-  if (stateItem === 'columnBounds') return ['FIT']
-  return undefined
-})
+mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
 
 test('HoleNumber renders a dom element with the expected value included', () => {
   const { getByText } = render(<HoleNumber xCoord={0} />)

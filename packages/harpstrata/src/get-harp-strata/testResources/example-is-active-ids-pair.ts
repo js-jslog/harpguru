@@ -1,22 +1,20 @@
 import { DegreeIds, PitchIds } from 'harpparts'
 
-import type { ActivePitchIds, ActiveDegreeIds } from '../../types'
-
-const majorPentatonicScaleDegreeIds: ActiveDegreeIds = [
+const majorPentatonicScaleDegreeIds: ReadonlyArray<DegreeIds> = [
   DegreeIds.Root,
   DegreeIds.Second,
   DegreeIds.Third,
   DegreeIds.Fifth,
   DegreeIds.Sixth,
 ] as const
-const cMajorPentatonicPitchIds: ActivePitchIds = [
+const cMajorPentatonicPitchIds: ReadonlyArray<PitchIds> = [
   PitchIds.A,
   PitchIds.C,
   PitchIds.D,
   PitchIds.E,
   PitchIds.G,
 ] as const
-const gMajorPentatonicPitchIds: ActivePitchIds = [
+const gMajorPentatonicPitchIds: ReadonlyArray<PitchIds> = [
   PitchIds.A,
   PitchIds.B,
   PitchIds.D,

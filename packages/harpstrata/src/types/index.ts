@@ -10,9 +10,8 @@ import type {
   ValvingIds,
 } from 'harpparts'
 
-export type ActiveDegreeIds = ReadonlyArray<DegreeIds>
-export type ActivePitchIds = ReadonlyArray<PitchIds>
-
+type ActiveDegreeIds = ReadonlyArray<DegreeIds>
+type ActivePitchIds = ReadonlyArray<PitchIds>
 export type ActiveIds = ActivePitchIds | ActiveDegreeIds
 
 export type ActiveIdsPair = {
