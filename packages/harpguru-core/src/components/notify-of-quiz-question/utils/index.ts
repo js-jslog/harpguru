@@ -1,5 +1,5 @@
 export { activateHarpCell } from './activate-harp-cell'
 export { getNextQuizQuestion } from './get-next-quiz-question'
 export { hasToggledIncorrectCell } from './has-toggled-incorrect-cell'
-export { reduceForNewHarpStrataByHardReset } from './reduce-for-new-harpstrata-by-hard-reset'
-export { reduceForNewHarpStrataByQuizAnswer } from './reduce-for-new-harpstrata-by-quiz-answer'
+export { reduceEmptyActiveIdsToHarpStrata } from './reduce-emptyactiveids-to-harpstrata'
+export { reduceQuizAnswerToHarpStrata } from './reduce-quizanswer-to-harpstrata'

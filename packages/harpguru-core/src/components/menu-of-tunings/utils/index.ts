@@ -1,4 +1,4 @@
-export { reduceForNewColumnBoundsByZoomId } from './reduce-for-new-column-bounds-by-zoomid'
-export { reduceForNewHarpStrataByTuning } from './reduce-for-new-harp-strata-by-tuning'
-export { reduceForNewHarpStrataByValving } from './reduce-for-new-harp-strata-by-valving'
+export { reduceZoomIdToColumnBounds } from './reduce-zoomid-to-columnbounds'
+export { reduceTuningIdToHarpStrata } from './reduce-tuningid-to-harpstrata'
+export { reduceValvingIdToHarpStrata } from './reduce-valvingid-to-harpstrata'
 export { getZoomText } from './get-zoom-text'

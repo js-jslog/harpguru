@@ -21,7 +21,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
   }
   const { getByText, rerender } = render(<HarpCell {...harpCellProps} />)
 
-  expect(getByText(DegreeIds.Second)).toBeTruthy()
+  expect(getByText(DegreeIds.Fifth)).toBeTruthy()
 
   mockUseGlobal.mockImplementation(
     buildMockUseGlobalImplementation({

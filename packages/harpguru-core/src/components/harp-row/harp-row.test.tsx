@@ -22,9 +22,9 @@ mockUseGlobal.mockImplementation(
 test('The first 3 holes of a blow row from a major diatonic tuned harmonica can be rendered', () => {
   const { getByText } = render(<HarpRow yCoord={2} xRange={[0, 1, 2]} />)
 
+  expect(getByText(DegreeIds.Fourth)).toBeTruthy()
+  expect(getByText(DegreeIds.Sixth)).toBeTruthy()
   expect(getByText(DegreeIds.Root)).toBeTruthy()
-  expect(getByText(DegreeIds.Third)).toBeTruthy()
-  expect(getByText(DegreeIds.Fifth)).toBeTruthy()
 })
 
 test('A snapshot of a non-home row', () => {

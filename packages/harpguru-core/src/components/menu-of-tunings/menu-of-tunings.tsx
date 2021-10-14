@@ -11,9 +11,9 @@ import type { MenuProps } from '../../types'
 import { useSizes } from '../../hooks'
 
 import {
-  reduceForNewColumnBoundsByZoomId,
-  reduceForNewHarpStrataByTuning,
-  reduceForNewHarpStrataByValving,
+  reduceZoomIdToColumnBounds,
+  reduceTuningIdToHarpStrata,
+  reduceValvingIdToHarpStrata,
 } from './utils'
 import {
   useTuningTitle,
@@ -31,14 +31,14 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
   const tuningItemTapHandler = useCallback(
     useDispatch(
       (currentHarpStrata, activeDisplayMode, tuningId) =>
-        reduceForNewHarpStrataByTuning(
+        reduceTuningIdToHarpStrata(
           currentHarpStrata,
           activeDisplayMode,
           tuningId
         ),
       'activeHarpStrata'
     ),
-    [useDispatch, reduceForNewHarpStrataByTuning]
+    [useDispatch, reduceTuningIdToHarpStrata]
   )
   const useTuningItemsMemo = useCallback(
     () => useTuningItems(useGlobal, tuningItemTapHandler),
@@ -51,14 +51,14 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
   const valvingItemTapHandler = useCallback(
     useDispatch(
       (currentHarpStrata, activeDisplayMode, valvingId) =>
-        reduceForNewHarpStrataByValving(
+        reduceValvingIdToHarpStrata(
           currentHarpStrata,
           activeDisplayMode,
           valvingId
         ),
       'activeHarpStrata'
     ),
-    [useDispatch, reduceForNewHarpStrataByValving]
+    [useDispatch, reduceValvingIdToHarpStrata]
   )
   const useValvingItemsMemo = useCallback(
     () => useValvingItems(useGlobal, valvingItemTapHandler),
@@ -71,7 +71,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
   const zoomItemTapHandler = useCallback(
     useDispatch(
       (currentColumnBounds, activeDegreeMatrix, zoomId) =>
-        reduceForNewColumnBoundsByZoomId(
+        reduceZoomIdToColumnBounds(
           currentColumnBounds,
           activeDegreeMatrix,
           zoomId
@@ -81,7 +81,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     // TODO: This and a great many other things should be based on the
     // interaction matrix of the apparatus rather than the degreeMatrix
     // which is much more volatile
-    [useDispatch, reduceForNewColumnBoundsByZoomId]
+    [useDispatch, reduceZoomIdToColumnBounds]
   )
   const useZoomItemsMemo = useCallback(
     () => useZoomItems(useGlobal, zoomItemTapHandler),

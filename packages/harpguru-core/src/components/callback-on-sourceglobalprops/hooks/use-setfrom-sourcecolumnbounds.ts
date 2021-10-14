@@ -1,19 +1,18 @@
 import { useGlobal } from 'reactn'
 import { useEffect } from 'react'
 
+import { reduceColumnBounds, setIfNew } from '../utils'
 import {
-  setFromFullMatrixToViewableMatrix,
-  setFromViewableMatrixToLayoutFacts,
-  setFromSourceColumnBoundsColumnBounds,
-} from '../utils'
+  reduceFullMatrixToViewableMatrix,
+  reduceViewableMatrixToLayoutFacts,
+} from '../../../utils'
 
 export const useSetFromSourceColumnBounds = (): void => {
   const [nextSourceColumnBounds] = useGlobal('sourceColumnBounds')
-  const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const [fullDegreeMatrix] = useGlobal('activeDegreeMatrix')
   const [fullPitchMatrix] = useGlobal('activePitchMatrix')
-  const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
+  const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
   const [
     prevViewableInteractionMatrix,
     setViewableInteractionMatrix,
@@ -24,34 +23,49 @@ export const useSetFromSourceColumnBounds = (): void => {
   const [prevViewablePitchMatrix, setViewablePitchMatrix] = useGlobal(
     'viewablePitchMatrix'
   )
+  const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
+
+  const nextColumnBounds = reduceColumnBounds(
+    prevColumnBounds,
+    nextSourceColumnBounds
+  )
+  const nextViewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
+    prevViewableInteractionMatrix,
+    fullInteractionMatrix,
+    nextSourceColumnBounds
+  )
+  const nextViewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
+    prevViewableDegreeMatrix,
+    fullDegreeMatrix,
+    nextSourceColumnBounds
+  )
+  const nextViewablePitchMatrix = reduceFullMatrixToViewableMatrix(
+    prevViewablePitchMatrix,
+    fullPitchMatrix,
+    nextSourceColumnBounds
+  )
+  const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(
+    prevLayoutFacts,
+    nextViewableInteractionMatrix
+  )
+
   useEffect(() => {
-    const nextViewableInteractionMatrix = setFromFullMatrixToViewableMatrix(
-      fullInteractionMatrix,
-      nextSourceColumnBounds,
+    setIfNew(prevColumnBounds, nextColumnBounds, setColumnBounds)
+    setIfNew(
       prevViewableInteractionMatrix,
+      nextViewableInteractionMatrix,
       setViewableInteractionMatrix
     )
-    setFromFullMatrixToViewableMatrix(
-      fullDegreeMatrix,
-      nextSourceColumnBounds,
+    setIfNew(
       prevViewableDegreeMatrix,
+      nextViewableDegreeMatrix,
       setViewableDegreeMatrix
     )
-    setFromFullMatrixToViewableMatrix(
-      fullPitchMatrix,
-      nextSourceColumnBounds,
+    setIfNew(
       prevViewablePitchMatrix,
+      nextViewablePitchMatrix,
       setViewablePitchMatrix
     )
-    setFromSourceColumnBoundsColumnBounds(
-      nextSourceColumnBounds,
-      prevColumnBounds,
-      setColumnBounds
-    )
-    setFromViewableMatrixToLayoutFacts(
-      nextViewableInteractionMatrix,
-      prevLayoutFacts,
-      setLayoutFacts
-    )
+    setIfNew(prevLayoutFacts, nextLayoutFacts, setLayoutFacts)
   }, [nextSourceColumnBounds])
 }
