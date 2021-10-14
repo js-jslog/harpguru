@@ -17,7 +17,6 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Added
 
-- MINOR: Ability to zoom to set number of holes
 - MINOR: Pentaharp tuning added
 
 ### Changed
