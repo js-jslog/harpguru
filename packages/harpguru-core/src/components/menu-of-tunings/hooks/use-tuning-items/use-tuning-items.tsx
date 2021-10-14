@@ -87,11 +87,12 @@ export const useTuningItems = (
       key={'option-break-hohner'}
     />,
     ...hohnerTunings.map((tuning, index) => (
-      <OptionItem
+      <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
         callbackParam={tuning.id}
         twoColumns={false}
       />
