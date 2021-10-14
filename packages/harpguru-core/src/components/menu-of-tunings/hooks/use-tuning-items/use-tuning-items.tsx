@@ -26,6 +26,9 @@ export const useTuningItems = (
   const seydelTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.Seydel)
+  const hohnerTunings = getTuningIds()
+    .map((id) => getTuning(id))
+    .filter((tuning) => tuning.category === TuningCategories.Hohner)
   const brendanPowerTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.BrendanPower)
@@ -74,6 +77,21 @@ export const useTuningItems = (
         isSelected={tuning.id === tuningId}
         itemTapHandler={itemTapHandler}
         displayMode={activeDisplayMode}
+        callbackParam={tuning.id}
+        twoColumns={false}
+      />
+    )),
+    <OptionBreak
+      title={TuningCategories.Hohner}
+      isTopPadded={true}
+      key={'option-break-hohner'}
+    />,
+    ...hohnerTunings.map((tuning, index) => (
+      <OptionItem
+        key={`${index}`}
+        value={tuning.shortName || tuning.id}
+        isSelected={tuning.id === tuningId}
+        itemTapHandler={itemTapHandler}
         callbackParam={tuning.id}
         twoColumns={false}
       />
