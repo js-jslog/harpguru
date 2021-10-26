@@ -19,6 +19,7 @@
     "react-native": "0.63.0"
   },
   "dependencies": {
+    "@ptomasroos/react-native-multi-slider": "^2.2.2",
     "harpcovariance": "^8.0.0",
     "harpparts": "^9.0.0",
     "harpstrata": "^10.0.0",
