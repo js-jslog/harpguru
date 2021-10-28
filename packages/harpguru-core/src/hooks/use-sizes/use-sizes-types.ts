@@ -13,6 +13,7 @@ export type SizeScheme = {
   readonly 11: number
   readonly columnWidth: number
   readonly rowHeight: number
+  readonly zoomSlideWidth: number
   readonly fragmentGutter: number
   readonly labelProtrusion: number
   readonly labelIconSize: number

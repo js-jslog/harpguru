@@ -17,6 +17,7 @@ const relativeSizes: Omit<
   SizeScheme,
   | 'columnWidth'
   | 'rowHeight'
+  | 'zoomSlideWidth'
   | 'fragmentGutter'
   | 'labelProtrusion'
   | 'labelIconSize'
@@ -55,6 +56,7 @@ export const useSizes = (): SizeSchemes => {
     [relativeLabelIconSize]: labelIconSize,
   } = relativeSizes
   const rowHeight = columnWidth
+  const zoomSlideWidth = columnWidth * 2
   const labelGrace = fragmentGutter
 
   // TODO: It might be better to either count the number of gutters
@@ -72,7 +74,8 @@ export const useSizes = (): SizeSchemes => {
     (columnWidth * harpFaceColumnCount +
       fragmentGutter * roughFragmentGutterCount +
       labelProtrusion * sidesContainingLabelsCount +
-      labelGrace * sidesContainingLabelsCount)
+      labelGrace * sidesContainingLabelsCount +
+      zoomSlideWidth)
   const dynamicHeightRequirements = shortEdge / (rowHeight * harpFaceRowCount)
 
   const dynamicSeedSize =
@@ -95,6 +98,7 @@ export const useSizes = (): SizeSchemes => {
     11: dynamicSeedSize * relativeSizes[11],
     columnWidth: dynamicSeedSize * columnWidth,
     rowHeight: dynamicSeedSize * rowHeight,
+    zoomSlideWidth: dynamicSeedSize * zoomSlideWidth,
     fragmentGutter: dynamicSeedSize * fragmentGutter,
     labelProtrusion: dynamicSeedSize * labelProtrusion,
     labelIconSize: dynamicSeedSize * labelIconSize,
@@ -123,6 +127,7 @@ export const useSizes = (): SizeSchemes => {
     11: staticSeedSize * relativeSizes[11],
     columnWidth: staticSeedSize * columnWidth,
     rowHeight: staticSeedSize * rowHeight,
+    zoomSlideWidth: staticSeedSize * zoomSlideWidth,
     fragmentGutter: staticSeedSize * fragmentGutter,
     labelProtrusion: staticSeedSize * labelProtrusion,
     labelIconSize: staticSeedSize * labelIconSize,
