@@ -8,6 +8,7 @@ exports[`A component is rendered with fragmented and bounded face 1`] = `
       "flexDirection": "row",
       "height": 672.052181372987,
       "justifyContent": "space-around",
+      "left": 112.00869689549783,
       "width": 758.6173937909956,
     }
   }
@@ -2727,6 +2728,7 @@ exports[`A component is rendered with fragmented face 1`] = `
       "flexDirection": "row",
       "height": 586.934227602465,
       "justifyContent": "space-around",
+      "left": 83.84774680035214,
       "width": 967.5827038395773,
     }
   }
@@ -7752,6 +7754,7 @@ exports[`A component is rendered with unfragmented and bounded face 1`] = `
       "flexDirection": "row",
       "height": 672.052181372987,
       "justifyContent": "space-around",
+      "left": 112.00869689549783,
       "width": 715.8347875819912,
     }
   }
@@ -10324,6 +10327,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
       "flexDirection": "row",
       "height": 586.934227602465,
       "justifyContent": "space-around",
+      "left": 83.84774680035214,
       "width": 871.5037769625354,
     }
   }

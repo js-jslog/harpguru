@@ -26,6 +26,8 @@ export const useStyles = (): HarpFaceStyles => {
       justifyContent: 'space-around',
       width: columnWidth * harpfaceColumns + (fragmentGutter * groupCount + 1),
       height: rowHeight * harpfaceRows,
+      backgroundColor: 'black',
+      left: dynamicSizes.zoomSlideWidth / 2,
     },
   })
 
