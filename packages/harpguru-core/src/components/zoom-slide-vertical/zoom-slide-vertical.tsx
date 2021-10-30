@@ -3,23 +3,34 @@ import { StyleSheet, View, Text } from 'react-native'
 import React, { useState } from 'react'
 import MultiSlider from '@ptomasroos/react-native-multi-slider'
 
+import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 import { useSizes } from '../../hooks'
 
 export const ZoomSlideVertical = (): React.ReactElement => {
+  const [columnBounds] = useGlobal('columnBounds')
+  const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
+  const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
+  if (columnBounds === 'FIT') return <></>
+  if (
+    doSparceIdedObjectMatricesMatch(
+      fullInteractionMatrix,
+      viewableInteractionMatrix
+    )
+  )
+    return <></>
+
+  return <ZoomSlideVerticalVisible restrictingColumnBounds={columnBounds} />
+}
+
+type ZoomSlideVerticalVisibleProps = {
+  readonly restrictingColumnBounds: readonly [number, number]
+}
+const ZoomSlideVerticalVisible = ({
+  restrictingColumnBounds: columnBounds,
+}: ZoomSlideVerticalVisibleProps): React.ReactElement => {
   const { dynamicSizes } = useSizes()
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
-  const [globalDisplayColumnBounds] = useGlobal('columnBounds')
-  // This local version of columnBounds is required because it needs to be
-  // updated without producing the application wide rerendering which updating
-  // either `columnBounds` or `sourceColumnBounds` would.
-  // In addition, it's necessary to drive this local version of column bounds
-  // by the `columnBounds` rather than the `sourceColumnBounds` because we must
-  // never drive renders by the "source" global variables but we must always
-  // update "source" global variables rather than their non-source counterparts.
-  // See callback-on-sourceglobalprops for details.
-  const [localColumnBounds, setLocalColumnBounds] = useState(
-    globalDisplayColumnBounds
-  )
+  const [sliderBounds, setSliderBounds] = useState(columnBounds)
   const styles = StyleSheet.create({
     componentWrapper: {
       ...StyleSheet.absoluteFillObject,
@@ -52,10 +63,7 @@ export const ZoomSlideVertical = (): React.ReactElement => {
     },
   })
 
-  if (localColumnBounds === 'FIT')
-    return <View style={styles.componentWrapper} />
-
-  const [start, end] = localColumnBounds
+  const [start, end] = sliderBounds
   const diff = end - start
 
   const onValuesChangeFinish = (values: number[]) => {
@@ -66,18 +74,18 @@ export const ZoomSlideVertical = (): React.ReactElement => {
   const onValuesChange = (values: number[]) => {
     const startHole = values[0] - 1
     const endHole = startHole + diff
-    setLocalColumnBounds([startHole, endHole])
+    setSliderBounds([startHole, endHole])
   }
 
   return (
     <View style={styles.componentWrapper}>
       <View style={styles.topLabelWrapper}>
-        <Text>{localColumnBounds[0] + 1}</Text>
+        <Text>{sliderBounds[0] + 1}</Text>
       </View>
       <View style={styles.sliderWrapper}>
         <MultiSlider
           vertical={true}
-          values={[localColumnBounds[0] + 1]}
+          values={[sliderBounds[0] + 1]}
           min={1}
           max={7}
           snapped={true}
@@ -90,7 +98,7 @@ export const ZoomSlideVertical = (): React.ReactElement => {
         />
       </View>
       <View style={styles.bottomLabelWrapper}>
-        <Text>{localColumnBounds[1] + 1}</Text>
+        <Text>{sliderBounds[1] + 1}</Text>
       </View>
     </View>
   )
