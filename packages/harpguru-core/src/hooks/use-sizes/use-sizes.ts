@@ -56,7 +56,7 @@ export const useSizes = (): SizeSchemes => {
     [relativeLabelIconSize]: labelIconSize,
   } = relativeSizes
   const rowHeight = columnWidth
-  const zoomSlideWidth = columnWidth * 2
+  const zoomSlideWidth = columnWidth
   const labelGrace = fragmentGutter
 
   // TODO: It might be better to either count the number of gutters

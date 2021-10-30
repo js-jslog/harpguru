@@ -26,16 +26,16 @@ exports[`A snapshot of a populated cell 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderRadius": 19.793344090251075,
+            "borderRadius": 21.120884235352566,
             "flexDirection": "row",
-            "height": 64.052617918028,
+            "height": 68.3486288041779,
             "justifyContent": "center",
-            "width": 64.052617918028,
+            "width": 68.3486288041779,
           },
           Object {
             "backgroundColor": "#fefefe",
             "borderColor": "#555",
-            "borderWidth": 1.7847920730614135,
+            "borderWidth": 1.904498127624217,
             "elevation": 0,
           },
         ]
@@ -59,7 +59,7 @@ exports[`A snapshot of a populated cell 1`] = `
             Object {
               "color": "#555",
               "display": "flex",
-              "fontSize": 32.026308959014,
+              "fontSize": 34.174314402088946,
             }
           }
         >
@@ -82,11 +82,11 @@ exports[`A snapshot of a populated cell 1`] = `
         <Text
           style={
             Object {
-              "bottom": 12.232964868762929,
+              "bottom": 13.053430166736383,
               "color": "#555",
               "display": "flex",
-              "fontSize": 19.793344090251075,
-              "left": 12.232964868762929,
+              "fontSize": 21.120884235352566,
+              "left": 13.053430166736383,
             }
           }
         >
@@ -124,17 +124,17 @@ exports[`A snapshot of an active cell 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderRadius": 19.793344090251075,
+            "borderRadius": 21.120884235352566,
             "flexDirection": "row",
-            "height": 64.052617918028,
+            "height": 68.3486288041779,
             "justifyContent": "center",
-            "width": 64.052617918028,
+            "width": 68.3486288041779,
           },
           Object {
             "backgroundColor": "#4285f4",
             "borderColor": "black",
-            "borderWidth": 1.7847920730614135,
-            "elevation": 2.8877935742133674,
+            "borderWidth": 1.904498127624217,
+            "elevation": 3.081477970495983,
           },
         ]
       }
@@ -157,7 +157,7 @@ exports[`A snapshot of an active cell 1`] = `
             Object {
               "color": "#fefefe",
               "display": "flex",
-              "fontSize": 32.026308959014,
+              "fontSize": 34.174314402088946,
             }
           }
         >
@@ -180,11 +180,11 @@ exports[`A snapshot of an active cell 1`] = `
         <Text
           style={
             Object {
-              "bottom": 12.232964868762929,
+              "bottom": 13.053430166736383,
               "color": "#fefefe",
               "display": "flex",
-              "fontSize": 19.793344090251075,
-              "left": 12.232964868762929,
+              "fontSize": 21.120884235352566,
+              "left": 13.053430166736383,
             }
           }
         >
@@ -202,11 +202,11 @@ exports[`A snapshot of an empty cell 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "borderRadius": 19.793344090251075,
+      "borderRadius": 21.120884235352566,
       "flexDirection": "row",
-      "height": 64.052617918028,
+      "height": 68.3486288041779,
       "justifyContent": "center",
-      "width": 64.052617918028,
+      "width": 68.3486288041779,
     }
   }
 />
@@ -238,16 +238,16 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderRadius": 19.793344090251075,
+            "borderRadius": 21.120884235352566,
             "flexDirection": "row",
-            "height": 64.052617918028,
+            "height": 68.3486288041779,
             "justifyContent": "center",
-            "width": 64.052617918028,
+            "width": 68.3486288041779,
           },
           Object {
             "backgroundColor": "#fefefe",
             "borderColor": "#555",
-            "borderWidth": 1.7847920730614135,
+            "borderWidth": 1.904498127624217,
             "elevation": 0,
           },
         ]
@@ -271,7 +271,7 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
             Object {
               "color": "#555",
               "display": "flex",
-              "fontSize": 32.026308959014,
+              "fontSize": 34.174314402088946,
             }
           }
         >
@@ -294,11 +294,11 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
         <Text
           style={
             Object {
-              "bottom": 12.232964868762929,
+              "bottom": 13.053430166736383,
               "color": "#555",
               "display": "flex",
-              "fontSize": 19.793344090251075,
-              "left": 12.232964868762929,
+              "fontSize": 21.120884235352566,
+              "left": 13.053430166736383,
             }
           }
         >
@@ -336,16 +336,16 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderRadius": 19.793344090251075,
+            "borderRadius": 21.120884235352566,
             "flexDirection": "row",
-            "height": 64.052617918028,
+            "height": 68.3486288041779,
             "justifyContent": "center",
-            "width": 64.052617918028,
+            "width": 68.3486288041779,
           },
           Object {
             "backgroundColor": "#fefefe",
             "borderColor": "#555",
-            "borderWidth": 1.7847920730614135,
+            "borderWidth": 1.904498127624217,
             "elevation": 0,
           },
         ]
@@ -369,7 +369,7 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
             Object {
               "color": "#555",
               "display": "none",
-              "fontSize": 32.026308959014,
+              "fontSize": 34.174314402088946,
             }
           }
         >
@@ -392,11 +392,11 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
         <Text
           style={
             Object {
-              "bottom": 12.232964868762929,
+              "bottom": 13.053430166736383,
               "color": "#555",
               "display": "none",
-              "fontSize": 19.793344090251075,
-              "left": 12.232964868762929,
+              "fontSize": 21.120884235352566,
+              "left": 13.053430166736383,
             }
           }
         >
