@@ -19,14 +19,21 @@ export const ZoomSlideVertical = (): React.ReactElement => {
   )
     return <></>
 
-  return <ZoomSlideVerticalVisible restrictingColumnBounds={columnBounds} />
+  return (
+    <ZoomSlideVerticalVisible
+      restrictingColumnBounds={columnBounds}
+      totalHoles={fullInteractionMatrix[0].length}
+    />
+  )
 }
 
 type ZoomSlideVerticalVisibleProps = {
   readonly restrictingColumnBounds: readonly [number, number]
+  readonly totalHoles: number
 }
 const ZoomSlideVerticalVisible = ({
   restrictingColumnBounds: columnBounds,
+  totalHoles,
 }: ZoomSlideVerticalVisibleProps): React.ReactElement => {
   const { dynamicSizes } = useSizes()
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
@@ -87,7 +94,7 @@ const ZoomSlideVerticalVisible = ({
           vertical={true}
           values={[sliderBounds[0] + 1]}
           min={1}
-          max={7}
+          max={totalHoles - diff}
           snapped={true}
           sliderLength={150}
           onValuesChangeFinish={onValuesChangeFinish}
