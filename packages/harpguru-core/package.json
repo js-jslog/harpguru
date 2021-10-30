@@ -28,6 +28,7 @@
     "react-native-reanimated": "~1.9.0",
     "react-native-redash": "^14.1.1",
     "reactn": "^2.2.7",
+    "rn-vertical-slider": "^2.0.2",
     "use-dimensions": "^1.0.3"
   },
   "devDependencies": {
