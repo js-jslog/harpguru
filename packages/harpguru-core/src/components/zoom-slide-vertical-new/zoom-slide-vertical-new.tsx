@@ -95,11 +95,12 @@ const ZoomSlideVerticalVisible = (
         shortEdge
       )
         return setSliderTopOffset(shortEdge - indicatorHeight)
-      return setSliderTopOffset(
-        multiplyUp(
-          Math.round(interpolate(sliderTopOffset + nativeEvent.translationY))
-        )
+      const holeNumber = Math.round(
+        interpolate(sliderTopOffset + nativeEvent.translationY)
       )
+      const absoluteSnap = multiplyUp(holeNumber)
+      setSliderTopOffset(absoluteSnap)
+      return sliderYAnimation.setValue(absoluteSnap)
     }
   }
 
