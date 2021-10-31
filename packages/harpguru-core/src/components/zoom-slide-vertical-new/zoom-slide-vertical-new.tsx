@@ -64,6 +64,18 @@ const ZoomSlideVerticalVisible = (
 
   const sliderYAnimation = new Value<number>(sliderTopOffset)
 
+  const interpolate = (absoluteVal: number): number => {
+    const unitSize = shortEdge / totalHoles
+    const relativeVal = absoluteVal / unitSize
+    return relativeVal
+  }
+
+  const multiplyUp = (relativeVal: number): number => {
+    const unitSize = shortEdge / totalHoles
+    const absoluteVal = relativeVal * unitSize
+    return absoluteVal
+  }
+
   const onGesture = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     if (sliderTopOffset + nativeEvent.translationY <= 0)
       return sliderYAnimation.setValue(0)
@@ -83,7 +95,11 @@ const ZoomSlideVerticalVisible = (
         shortEdge
       )
         return setSliderTopOffset(shortEdge - indicatorHeight)
-      return setSliderTopOffset(sliderTopOffset + nativeEvent.translationY)
+      return setSliderTopOffset(
+        multiplyUp(
+          Math.round(interpolate(sliderTopOffset + nativeEvent.translationY))
+        )
+      )
     }
   }
 
