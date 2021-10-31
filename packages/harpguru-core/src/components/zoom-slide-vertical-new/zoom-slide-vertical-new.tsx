@@ -84,6 +84,20 @@ const ZoomSlideVerticalVisible = (
 
   const sliderYAnimation = new Value<number>(sliderTopOffset)
 
+  const snapToHoleIndex = (nextSlideOffset: number) => {
+    const holeNumber = interpolateToHoleIndex(
+      nextSlideOffset,
+      shortEdge,
+      totalHoles
+    )
+    const snappedSlideOffset = projectToSlideOffset(
+      holeNumber,
+      shortEdge,
+      totalHoles
+    )
+    setSliderTopOffset(snappedSlideOffset)
+    return sliderYAnimation.setValue(snappedSlideOffset)
+  }
   const onGesture = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     if (sliderTopOffset + nativeEvent.translationY <= 0)
       return sliderYAnimation.setValue(0)
@@ -97,25 +111,13 @@ const ZoomSlideVerticalVisible = (
   const onStateChange = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === 5) {
       if (sliderTopOffset + nativeEvent.translationY <= 0)
-        return setSliderTopOffset(0)
+        return snapToHoleIndex(0)
       if (
         sliderTopOffset + indicatorHeight + nativeEvent.translationY >=
         shortEdge
       )
-        return setSliderTopOffset(shortEdge - indicatorHeight)
-      const nextSlideOffset = sliderTopOffset + nativeEvent.translationY
-      const holeNumber = interpolateToHoleIndex(
-        nextSlideOffset,
-        shortEdge,
-        totalHoles
-      )
-      const snappedSlideOffset = projectToSlideOffset(
-        holeNumber,
-        shortEdge,
-        totalHoles
-      )
-      setSliderTopOffset(snappedSlideOffset)
-      return sliderYAnimation.setValue(snappedSlideOffset)
+        return snapToHoleIndex(shortEdge - indicatorHeight)
+      return snapToHoleIndex(sliderTopOffset + nativeEvent.translationY)
     }
   }
 
