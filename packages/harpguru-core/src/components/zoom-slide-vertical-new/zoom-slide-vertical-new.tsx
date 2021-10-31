@@ -33,6 +33,26 @@ export const ZoomSlideVerticalNew = (): React.ReactElement => {
   )
 }
 
+const interpolateToHoleIndex = (
+  slideOffset: number,
+  totalHeight: number,
+  totalHoles: number
+): number => {
+  const unitSize = totalHeight / totalHoles
+  const interHoleIndex = slideOffset / unitSize
+  return Math.round(interHoleIndex)
+}
+
+const projectToSlideOffset = (
+  holeIndex: number,
+  totalHeight: number,
+  totalHoles: number
+) => {
+  const unitSize = totalHeight / totalHoles
+  const slideOffset = holeIndex * unitSize
+  return slideOffset
+}
+
 type ZoomSlideVerticalVisibleProps = {
   readonly restrictingColumnBounds: readonly [number, number]
   readonly totalHoles: number
@@ -64,18 +84,6 @@ const ZoomSlideVerticalVisible = (
 
   const sliderYAnimation = new Value<number>(sliderTopOffset)
 
-  const interpolate = (absoluteVal: number): number => {
-    const unitSize = shortEdge / totalHoles
-    const relativeVal = absoluteVal / unitSize
-    return relativeVal
-  }
-
-  const multiplyUp = (relativeVal: number): number => {
-    const unitSize = shortEdge / totalHoles
-    const absoluteVal = relativeVal * unitSize
-    return absoluteVal
-  }
-
   const onGesture = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     if (sliderTopOffset + nativeEvent.translationY <= 0)
       return sliderYAnimation.setValue(0)
@@ -95,12 +103,19 @@ const ZoomSlideVerticalVisible = (
         shortEdge
       )
         return setSliderTopOffset(shortEdge - indicatorHeight)
-      const holeNumber = Math.round(
-        interpolate(sliderTopOffset + nativeEvent.translationY)
+      const nextSlideOffset = sliderTopOffset + nativeEvent.translationY
+      const holeNumber = interpolateToHoleIndex(
+        nextSlideOffset,
+        shortEdge,
+        totalHoles
       )
-      const absoluteSnap = multiplyUp(holeNumber)
-      setSliderTopOffset(absoluteSnap)
-      return sliderYAnimation.setValue(absoluteSnap)
+      const snappedSlideOffset = projectToSlideOffset(
+        holeNumber,
+        shortEdge,
+        totalHoles
+      )
+      setSliderTopOffset(snappedSlideOffset)
+      return sliderYAnimation.setValue(snappedSlideOffset)
     }
   }
 
