@@ -67,12 +67,22 @@ const ZoomSlideVerticalVisible = (
   const onGesture = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     if (sliderTopOffset + nativeEvent.translationY <= 0)
       return sliderYAnimation.setValue(0)
+    if (
+      sliderTopOffset + indicatorHeight + nativeEvent.translationY >=
+      shortEdge
+    )
+      return sliderYAnimation.setValue(shortEdge - indicatorHeight)
     return sliderYAnimation.setValue(sliderTopOffset + nativeEvent.translationY)
   }
   const onStateChange = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
     if (nativeEvent.state === 5) {
       if (sliderTopOffset + nativeEvent.translationY <= 0)
         return setSliderTopOffset(0)
+      if (
+        sliderTopOffset + indicatorHeight + nativeEvent.translationY >=
+        shortEdge
+      )
+        return setSliderTopOffset(shortEdge - indicatorHeight)
       return setSliderTopOffset(sliderTopOffset + nativeEvent.translationY)
     }
   }
