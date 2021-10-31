@@ -37,7 +37,7 @@ const ZoomSlideVerticalVisible = ({
   totalHoles,
 }: ZoomSlideVerticalVisibleProps): React.ReactElement => {
   const { dynamicSizes } = useSizes()
-  const { homeRowsColor, inertOutline, harpguruPink } = getColors()
+  const { homeRowsColor, inertOutline, pageColor } = getColors()
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const [sliderBounds, setSliderBounds] = useState(columnBounds)
   const styles = StyleSheet.create({
@@ -69,9 +69,9 @@ const ZoomSlideVerticalVisible = ({
       zIndex: 0,
     },
     indicator: {
-      backgroundColor: 'black',
+      backgroundColor: inertOutline,
       width: dynamicSizes['8'] + dynamicSizes['5'],
-      height: dynamicSizes['8'],
+      height: dynamicSizes['4'],
     },
   })
 
@@ -88,14 +88,6 @@ const ZoomSlideVerticalVisible = ({
     const endHole = startHole + diff
     setSliderBounds([startHole, endHole])
   }
-  const shadowProps = {
-    shadowOffsetWidth: 0,
-    shadowOffsetHeight: 0,
-    shadowOpacity: 0,
-    shadowRadius: 0,
-    elevation: 0,
-    shadowColor: '#fff',
-  }
 
   return (
     <View style={styles.componentWrapper}>
@@ -104,20 +96,24 @@ const ZoomSlideVerticalVisible = ({
       </View>
       <View style={styles.sliderWrapper}>
         <VerticalSlider
-          value={sliderBounds[0] + 1}
           disabled={false}
+          value={sliderBounds[0] + 1}
+          step={1}
           min={1}
           max={totalHoles - diff}
           onChange={onChange}
           onComplete={onComplete}
           width={dynamicSizes['8'] + dynamicSizes['5']}
           height={dynamicSizes.rowHeight * 3}
-          step={1}
           borderRadius={dynamicSizes['6']}
-          minimumTrackTintColor={harpguruPink}
-          maximumTrackTintColor={homeRowsColor}
+          minimumTrackTintColor={pageColor}
+          maximumTrackTintColor={pageColor}
           renderIndicator={() => <View style={styles.indicator} />}
-          shadowProps={shadowProps}
+          showBallIndicator={true}
+          ballIndicatorHeight={dynamicSizes['5']}
+          ballIndicatorWidth={dynamicSizes['8'] + dynamicSizes['5']}
+          ballIndicatorPosition={0}
+          showBackgroundShadow={false}
         />
       </View>
       <View style={styles.columnBoundsLabelWrapper}>
