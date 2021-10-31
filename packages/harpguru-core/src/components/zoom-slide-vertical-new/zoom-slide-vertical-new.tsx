@@ -5,7 +5,7 @@ import Animated, { Value } from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { StyleSheet, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { getColors } from '../../utils'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
@@ -41,6 +41,7 @@ const ZoomSlideVerticalVisible = (
   props: ZoomSlideVerticalVisibleProps
 ): React.ReactElement => {
   const { restrictingColumnBounds: columnBounds, totalHoles } = props
+  const [sliderTopOffset, setSliderTopOffset] = useState<number>(10)
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()
   const { shortEdge } = getWindowDimensions()
@@ -58,18 +59,25 @@ const ZoomSlideVerticalVisible = (
       backgroundColor: inertOutline,
       width: dynamicSizes.zoomSlideWidth,
       height: indicatorHeight,
+      top: sliderTopOffset,
     },
   })
 
   const sliderYAnimation = new Value<number>(0)
 
   const onGesture = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
-    console.log('::::::::::::::::::::::::;; ' + nativeEvent.translationY)
     sliderYAnimation.setValue(nativeEvent.translationY)
+  }
+  const onStateChange = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
+    if (nativeEvent.state === 5)
+      setSliderTopOffset(sliderTopOffset + nativeEvent.translationY)
   }
 
   return (
-    <PanGestureHandler onGestureEvent={onGesture}>
+    <PanGestureHandler
+      onGestureEvent={onGesture}
+      onHandlerStateChange={onStateChange}
+    >
       <View style={styles.componentWrapper}>
         <Animated.View
           style={[
