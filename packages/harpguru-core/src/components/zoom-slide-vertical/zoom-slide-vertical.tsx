@@ -4,6 +4,7 @@ import { StyleSheet, View, Text } from 'react-native'
 import React, { useState } from 'react'
 
 import { getColors } from '../../utils'
+import { getWindowDimensions } from '../../packages/get-window-dimensions'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 import { useSizes } from '../../hooks'
 
@@ -32,10 +33,10 @@ type ZoomSlideVerticalVisibleProps = {
   readonly restrictingColumnBounds: readonly [number, number]
   readonly totalHoles: number
 }
-const ZoomSlideVerticalVisible = ({
-  restrictingColumnBounds: columnBounds,
-  totalHoles,
-}: ZoomSlideVerticalVisibleProps): React.ReactElement => {
+const ZoomSlideVerticalVisible = (
+  props: ZoomSlideVerticalVisibleProps
+): React.ReactElement => {
+  const { restrictingColumnBounds: columnBounds, totalHoles } = props
   const { dynamicSizes } = useSizes()
   const { homeRowsColor, inertOutline, pageColor } = getColors()
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
@@ -67,11 +68,6 @@ const ZoomSlideVerticalVisible = ({
       justifyContent: 'center',
       alignItems: 'center',
       zIndex: 0,
-    },
-    indicator: {
-      backgroundColor: inertOutline,
-      width: dynamicSizes['8'] + dynamicSizes['5'],
-      height: dynamicSizes['4'],
     },
   })
 
@@ -108,7 +104,7 @@ const ZoomSlideVerticalVisible = ({
           borderRadius={dynamicSizes['6']}
           minimumTrackTintColor={pageColor}
           maximumTrackTintColor={pageColor}
-          renderIndicator={() => <View style={styles.indicator} />}
+          renderIndicator={() => <ZoomSlideVerticalIndicator {...props} />}
           showBallIndicator={true}
           ballIndicatorHeight={dynamicSizes['5']}
           ballIndicatorWidth={dynamicSizes['8'] + dynamicSizes['5']}
@@ -121,4 +117,26 @@ const ZoomSlideVerticalVisible = ({
       </View>
     </View>
   )
+}
+
+const ZoomSlideVerticalIndicator = ({
+  restrictingColumnBounds: columnBounds,
+  totalHoles,
+}: ZoomSlideVerticalVisibleProps): React.ReactElement => {
+  const { dynamicSizes } = useSizes()
+  const { inertOutline } = getColors()
+  const { shortEdge } = getWindowDimensions()
+  const unitSize = shortEdge / totalHoles
+  const [startHole, endHole] = columnBounds
+  const holeSpan = endHole - startHole
+  const indicatorHeight = unitSize * holeSpan
+  const styles = StyleSheet.create({
+    indicator: {
+      backgroundColor: inertOutline,
+      width: dynamicSizes['8'] + dynamicSizes['5'],
+      height: indicatorHeight,
+      bottom: indicatorHeight / 2,
+    },
+  })
+  return <View style={styles.indicator} />
 }
