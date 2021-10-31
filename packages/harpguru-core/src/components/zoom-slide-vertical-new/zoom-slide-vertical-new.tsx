@@ -59,18 +59,22 @@ const ZoomSlideVerticalVisible = (
       backgroundColor: inertOutline,
       width: dynamicSizes.zoomSlideWidth,
       height: indicatorHeight,
-      top: sliderTopOffset,
     },
   })
 
-  const sliderYAnimation = new Value<number>(0)
+  const sliderYAnimation = new Value<number>(sliderTopOffset)
 
   const onGesture = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
-    sliderYAnimation.setValue(nativeEvent.translationY)
+    if (sliderTopOffset + nativeEvent.translationY <= 0)
+      return sliderYAnimation.setValue(0)
+    return sliderYAnimation.setValue(sliderTopOffset + nativeEvent.translationY)
   }
   const onStateChange = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
-    if (nativeEvent.state === 5)
-      setSliderTopOffset(sliderTopOffset + nativeEvent.translationY)
+    if (nativeEvent.state === 5) {
+      if (sliderTopOffset + nativeEvent.translationY <= 0)
+        return setSliderTopOffset(0)
+      return setSliderTopOffset(sliderTopOffset + nativeEvent.translationY)
+    }
   }
 
   return (
