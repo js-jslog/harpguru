@@ -1,4 +1,9 @@
+import 'react-native-gesture-handler'
+
 import { useGlobal } from 'reactn'
+import Animated, { Value } from 'react-native-reanimated'
+import { PanGestureHandler } from 'react-native-gesture-handler'
+import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
@@ -56,9 +61,25 @@ const ZoomSlideVerticalVisible = (
     },
   })
 
+  const sliderYAnimation = new Value<number>(0)
+
+  const onGesture = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
+    console.log('::::::::::::::::::::::::;; ' + nativeEvent.translationY)
+    sliderYAnimation.setValue(nativeEvent.translationY)
+  }
+
   return (
-    <View style={styles.componentWrapper}>
-      <View style={styles.sliderWrapper} />
-    </View>
+    <PanGestureHandler onGestureEvent={onGesture}>
+      <View style={styles.componentWrapper}>
+        <Animated.View
+          style={[
+            styles.sliderWrapper,
+            {
+              transform: [{ translateY: sliderYAnimation }],
+            },
+          ]}
+        />
+      </View>
+    </PanGestureHandler>
   )
 }
