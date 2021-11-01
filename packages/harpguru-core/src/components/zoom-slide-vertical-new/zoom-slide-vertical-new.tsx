@@ -33,23 +33,23 @@ export const ZoomSlideVerticalNew = (): React.ReactElement => {
   )
 }
 
-const interpolateToHoleIndex = (
+const interpolateToSlotIndex = (
   slideOffset: number,
-  totalHeight: number,
-  totalHoles: number
+  trackHeight: number,
+  slotCount: number
 ): number => {
-  const unitSize = totalHeight / (totalHoles - 1)
-  const interHoleIndex = slideOffset / unitSize
-  return Math.round(interHoleIndex) + 1
+  const slotSize = trackHeight / slotCount
+  const decimalInterpolation = slideOffset / slotSize
+  return Math.round(decimalInterpolation) + 1
 }
 
 const projectToSlideOffset = (
   holeIndex: number,
-  totalHeight: number,
-  totalHoles: number
+  trackHeight: number,
+  slotCount: number
 ) => {
-  const unitSize = totalHeight / (totalHoles - 1)
-  const slideOffset = (holeIndex - 1) * unitSize
+  const slotSize = trackHeight / (slotCount - 1)
+  const slideOffset = (holeIndex - 1) * slotSize
   return slideOffset
 }
 
@@ -60,17 +60,20 @@ type ZoomSlideVerticalVisibleProps = {
 const ZoomSlideVerticalVisible = (
   props: ZoomSlideVerticalVisibleProps
 ): React.ReactElement => {
-  const { restrictingColumnBounds: columnBounds, totalHoles } = props
-  const [sliderTopOffset, setSliderTopOffset] = useState<number>(0)
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const setLabelState = useRef<(arg0: number) => void>(() => {})
+  const { restrictingColumnBounds, totalHoles } = props
+  const slotCount = totalHoles - 1
+  const { shortEdge } = getWindowDimensions()
+  const slotSize = shortEdge / slotCount
+
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()
-  const { shortEdge } = getWindowDimensions()
-  const unitSize = shortEdge / (totalHoles - 1)
-  const [startHole, endHole] = columnBounds
-  const holeSpan = endHole - startHole
-  const indicatorHeight = unitSize * holeSpan
+
+  const [slideOffset, setSlideOffset] = useState<number>(0)
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  const setLabelState = useRef<(arg0: number) => void>(() => {})
+  const [startSlot, endSlot] = restrictingColumnBounds
+  const slideSpan = endSlot - startSlot
+  const slideHeight = slotSize * slideSpan
   const styles = StyleSheet.create({
     componentWrapper: {
       ...StyleSheet.absoluteFillObject,
@@ -80,14 +83,14 @@ const ZoomSlideVerticalVisible = (
     sliderWrapper: {
       backgroundColor: inertOutline,
       width: dynamicSizes.zoomSlideWidth,
-      height: indicatorHeight,
+      height: slideHeight,
     },
   })
 
-  const sliderYAnimation = new Value<number>(sliderTopOffset)
+  const slideOffsetAnimation = new Value<number>(slideOffset)
 
-  const snapToHoleIndex = (nextSlideOffset: number) => {
-    const holeNumber = interpolateToHoleIndex(
+  const snapSlideToSlot = (nextSlideOffset: number) => {
+    const holeNumber = interpolateToSlotIndex(
       nextSlideOffset,
       shortEdge,
       totalHoles
@@ -97,52 +100,42 @@ const ZoomSlideVerticalVisible = (
       shortEdge,
       totalHoles
     )
-    setSliderTopOffset(snappedSlideOffset)
-    return sliderYAnimation.setValue(snappedSlideOffset)
+    setSlideOffset(snappedSlideOffset)
+    return slideOffsetAnimation.setValue(snappedSlideOffset)
   }
-  const onGesture = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
-    if (sliderTopOffset + nativeEvent.translationY <= 0) {
-      setLabelState.current(interpolateToHoleIndex(0, shortEdge, totalHoles))
-      return sliderYAnimation.setValue(0)
+  const onGesture = ({
+    nativeEvent: { translationY },
+  }: PanGestureHandlerGestureEvent) => {
+    if (slideOffset + translationY <= 0) {
+      setLabelState.current(interpolateToSlotIndex(0, shortEdge, totalHoles))
+      return slideOffsetAnimation.setValue(0)
     }
-    if (
-      sliderTopOffset + indicatorHeight + nativeEvent.translationY >=
-      shortEdge
-    ) {
+    if (slideOffset + slideHeight + translationY >= shortEdge) {
       setLabelState.current(
-        interpolateToHoleIndex(
-          shortEdge - indicatorHeight,
-          shortEdge,
-          totalHoles
-        )
+        interpolateToSlotIndex(shortEdge - slideHeight, shortEdge, totalHoles)
       )
-      return sliderYAnimation.setValue(shortEdge - indicatorHeight)
+      return slideOffsetAnimation.setValue(shortEdge - slideHeight)
     }
     setLabelState.current(
-      interpolateToHoleIndex(
-        sliderTopOffset + nativeEvent.translationY,
-        shortEdge,
-        totalHoles
-      )
+      interpolateToSlotIndex(slideOffset + translationY, shortEdge, totalHoles)
     )
-    return sliderYAnimation.setValue(sliderTopOffset + nativeEvent.translationY)
+    return slideOffsetAnimation.setValue(slideOffset + translationY)
   }
-  const onStateChange = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
-    if (nativeEvent.state === 5) {
-      if (sliderTopOffset + nativeEvent.translationY <= 0)
-        return snapToHoleIndex(0)
-      if (
-        sliderTopOffset + indicatorHeight + nativeEvent.translationY >=
-        shortEdge
-      )
-        return snapToHoleIndex(shortEdge - indicatorHeight)
-      return snapToHoleIndex(sliderTopOffset + nativeEvent.translationY)
+  const onStateChange = ({
+    nativeEvent: { translationY, state },
+  }: PanGestureHandlerGestureEvent) => {
+    const END_GESTURE = 5
+    if (state === END_GESTURE) {
+      if (slideOffset + translationY <= 0) return snapSlideToSlot(0)
+      if (slideOffset + slideHeight + translationY >= shortEdge)
+        return snapSlideToSlot(shortEdge - slideHeight)
+      return snapSlideToSlot(slideOffset + translationY)
     }
   }
 
   useEffect(() => {
     setLabelState.current(
-      interpolateToHoleIndex(sliderTopOffset, shortEdge, totalHoles)
+      interpolateToSlotIndex(slideOffset, shortEdge, totalHoles)
     )
   }, [])
 
@@ -156,7 +149,7 @@ const ZoomSlideVerticalVisible = (
           style={[
             styles.sliderWrapper,
             {
-              transform: [{ translateY: sliderYAnimation }],
+              transform: [{ translateY: slideOffsetAnimation }],
             },
           ]}
         >
