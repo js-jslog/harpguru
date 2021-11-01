@@ -171,7 +171,16 @@ type IndicatorLabelProps = {
   readonly setLabelState: MutableRefObject<(arg0: number) => void>
 }
 const IndicatorLabel = ({ setLabelState }: IndicatorLabelProps) => {
+  const { dynamicSizes } = useSizes()
+  const { pageColor } = getColors()
+  const styles = StyleSheet.create({
+    textStyle: {
+      color: pageColor,
+      fontSize: dynamicSizes['8'],
+      alignSelf: 'center',
+    },
+  })
   const [label, setLabel] = useState(2)
   setLabelState.current = (label: number) => setLabel(label)
-  return <Text>{label}</Text>
+  return <Text style={styles.textStyle}>{label}</Text>
 }
