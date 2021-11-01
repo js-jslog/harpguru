@@ -106,20 +106,32 @@ const ZoomSlideVerticalVisible = (
   const onGesture = ({
     nativeEvent: { translationY },
   }: PanGestureHandlerGestureEvent) => {
-    if (slideOffset + translationY <= 0) {
-      setLabelState.current(interpolateToSlotIndex(0, shortEdge, slotCount))
-      return slideOffsetAnimation.setValue(0)
+    const isPastTop = slideOffset + translationY <= 0
+    const topOffset = 0
+    const topSlotIndex = interpolateToSlotIndex(0, shortEdge, slotCount)
+    if (isPastTop) {
+      setLabelState.current(topSlotIndex)
+      return slideOffsetAnimation.setValue(topOffset)
     }
-    if (slideOffset + slideHeight + translationY >= shortEdge) {
-      setLabelState.current(
-        interpolateToSlotIndex(shortEdge - slideHeight, shortEdge, slotCount)
-      )
-      return slideOffsetAnimation.setValue(shortEdge - slideHeight)
-    }
-    setLabelState.current(
-      interpolateToSlotIndex(slideOffset + translationY, shortEdge, slotCount)
+    const isPastBottom = slideOffset + slideHeight + translationY >= shortEdge
+    const bottomOffset = shortEdge - slideHeight
+    const bottomSlotIndex = interpolateToSlotIndex(
+      bottomOffset,
+      shortEdge,
+      slotCount
     )
-    return slideOffsetAnimation.setValue(slideOffset + translationY)
+    if (isPastBottom) {
+      setLabelState.current(bottomSlotIndex)
+      return slideOffsetAnimation.setValue(bottomOffset)
+    }
+    const nextOffset = slideOffset + translationY
+    const nextSlotIndex = interpolateToSlotIndex(
+      nextOffset,
+      shortEdge,
+      slotCount
+    )
+    setLabelState.current(nextSlotIndex)
+    return slideOffsetAnimation.setValue(nextOffset)
   }
   const onStateChange = ({
     nativeEvent: { translationY, state },
