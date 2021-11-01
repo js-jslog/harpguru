@@ -38,9 +38,9 @@ const interpolateToHoleIndex = (
   totalHeight: number,
   totalHoles: number
 ): number => {
-  const unitSize = totalHeight / totalHoles
+  const unitSize = totalHeight / (totalHoles - 1)
   const interHoleIndex = slideOffset / unitSize
-  return Math.round(interHoleIndex)
+  return Math.round(interHoleIndex) + 1
 }
 
 const projectToSlideOffset = (
@@ -48,8 +48,8 @@ const projectToSlideOffset = (
   totalHeight: number,
   totalHoles: number
 ) => {
-  const unitSize = totalHeight / totalHoles
-  const slideOffset = holeIndex * unitSize
+  const unitSize = totalHeight / (totalHoles - 1)
+  const slideOffset = (holeIndex - 1) * unitSize
   return slideOffset
 }
 
@@ -67,7 +67,7 @@ const ZoomSlideVerticalVisible = (
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()
   const { shortEdge } = getWindowDimensions()
-  const unitSize = shortEdge / totalHoles
+  const unitSize = shortEdge / (totalHoles - 1)
   const [startHole, endHole] = columnBounds
   const holeSpan = endHole - startHole
   const indicatorHeight = unitSize * holeSpan
