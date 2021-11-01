@@ -4,7 +4,7 @@ import { useGlobal } from 'reactn'
 import Animated, { Value } from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import React, { useState } from 'react'
 
 import { getColors } from '../../utils'
@@ -61,7 +61,8 @@ const ZoomSlideVerticalVisible = (
   props: ZoomSlideVerticalVisibleProps
 ): React.ReactElement => {
   const { restrictingColumnBounds: columnBounds, totalHoles } = props
-  const [sliderTopOffset, setSliderTopOffset] = useState<number>(10)
+  const [sliderTopOffset, setSliderTopOffset] = useState<number>(0)
+  const [liveStartHole, setLiveStartHole] = useState<number>(1)
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()
   const { shortEdge } = getWindowDimensions()
@@ -99,13 +100,30 @@ const ZoomSlideVerticalVisible = (
     return sliderYAnimation.setValue(snappedSlideOffset)
   }
   const onGesture = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
-    if (sliderTopOffset + nativeEvent.translationY <= 0)
+    if (sliderTopOffset + nativeEvent.translationY <= 0) {
+      setLiveStartHole(interpolateToHoleIndex(0, shortEdge, totalHoles))
       return sliderYAnimation.setValue(0)
+    }
     if (
       sliderTopOffset + indicatorHeight + nativeEvent.translationY >=
       shortEdge
-    )
+    ) {
+      setLiveStartHole(
+        interpolateToHoleIndex(
+          shortEdge - indicatorHeight,
+          shortEdge,
+          totalHoles
+        )
+      )
       return sliderYAnimation.setValue(shortEdge - indicatorHeight)
+    }
+    setLiveStartHole(
+      interpolateToHoleIndex(
+        sliderTopOffset + nativeEvent.translationY,
+        shortEdge,
+        totalHoles
+      )
+    )
     return sliderYAnimation.setValue(sliderTopOffset + nativeEvent.translationY)
   }
   const onStateChange = ({ nativeEvent }: PanGestureHandlerGestureEvent) => {
@@ -134,8 +152,19 @@ const ZoomSlideVerticalVisible = (
               transform: [{ translateY: sliderYAnimation }],
             },
           ]}
-        />
+        >
+          <IndicatorLabel liveStartHole={liveStartHole} />
+        </Animated.View>
       </View>
     </PanGestureHandler>
   )
+}
+
+type IndicatorLabelProps = {
+  readonly liveStartHole: number
+}
+const IndicatorLabel = ({
+  liveStartHole,
+}: IndicatorLabelProps): React.ReactElement => {
+  return <Text>{liveStartHole}</Text>
 }
