@@ -40,7 +40,7 @@ const interpolateToSlotIndex = (
 ): number => {
   const slotSize = trackHeight / slotCount
   const decimalInterpolation = slideOffset / slotSize
-  return Math.round(decimalInterpolation) + 1
+  return Math.round(decimalInterpolation)
 }
 
 const projectToSlideOffset = (
@@ -48,8 +48,8 @@ const projectToSlideOffset = (
   trackHeight: number,
   slotCount: number
 ) => {
-  const slotSize = trackHeight / (slotCount - 1)
-  const slideOffset = (holeIndex - 1) * slotSize
+  const slotSize = trackHeight / slotCount
+  const slideOffset = holeIndex * slotSize
   return slideOffset
 }
 
@@ -93,12 +93,12 @@ const ZoomSlideVerticalVisible = (
     const holeNumber = interpolateToSlotIndex(
       nextSlideOffset,
       shortEdge,
-      totalHoles
+      slotCount
     )
     const snappedSlideOffset = projectToSlideOffset(
       holeNumber,
       shortEdge,
-      totalHoles
+      slotCount
     )
     setSlideOffset(snappedSlideOffset)
     return slideOffsetAnimation.setValue(snappedSlideOffset)
@@ -107,17 +107,17 @@ const ZoomSlideVerticalVisible = (
     nativeEvent: { translationY },
   }: PanGestureHandlerGestureEvent) => {
     if (slideOffset + translationY <= 0) {
-      setLabelState.current(interpolateToSlotIndex(0, shortEdge, totalHoles))
+      setLabelState.current(interpolateToSlotIndex(0, shortEdge, slotCount))
       return slideOffsetAnimation.setValue(0)
     }
     if (slideOffset + slideHeight + translationY >= shortEdge) {
       setLabelState.current(
-        interpolateToSlotIndex(shortEdge - slideHeight, shortEdge, totalHoles)
+        interpolateToSlotIndex(shortEdge - slideHeight, shortEdge, slotCount)
       )
       return slideOffsetAnimation.setValue(shortEdge - slideHeight)
     }
     setLabelState.current(
-      interpolateToSlotIndex(slideOffset + translationY, shortEdge, totalHoles)
+      interpolateToSlotIndex(slideOffset + translationY, shortEdge, slotCount)
     )
     return slideOffsetAnimation.setValue(slideOffset + translationY)
   }
@@ -135,7 +135,7 @@ const ZoomSlideVerticalVisible = (
 
   useEffect(() => {
     setLabelState.current(
-      interpolateToSlotIndex(slideOffset, shortEdge, totalHoles)
+      interpolateToSlotIndex(slideOffset, shortEdge, slotCount)
     )
   }, [])
 
@@ -175,5 +175,5 @@ const IndicatorLabel = ({ setLabelState }: IndicatorLabelProps) => {
   })
   const [label, setLabel] = useState(2)
   setLabelState.current = (label: number) => setLabel(label)
-  return <Text style={styles.textStyle}>{label}</Text>
+  return <Text style={styles.textStyle}>{label + 1}</Text>
 }
