@@ -143,12 +143,11 @@ const ZoomSlideVerticalVisible = (
     nativeEvent: { translationY, state },
   }: PanGestureHandlerGestureEvent) => {
     const END_GESTURE = 5
-    if (state === END_GESTURE) {
-      if (slideOffset + translationY <= 0) return snapSlideToSlot(0)
-      if (slideOffset + slideHeight + translationY >= shortEdge)
-        return snapSlideToSlot(shortEdge - slideHeight)
-      return snapSlideToSlot(slideOffset + translationY)
-    }
+    if (state !== END_GESTURE) return
+    if (slideOffset + translationY <= 0) return snapSlideToSlot(0)
+    if (slideOffset + slideHeight + translationY >= shortEdge)
+      return snapSlideToSlot(shortEdge - slideHeight)
+    return snapSlideToSlot(slideOffset + translationY)
   }
 
   useEffect(() => {
