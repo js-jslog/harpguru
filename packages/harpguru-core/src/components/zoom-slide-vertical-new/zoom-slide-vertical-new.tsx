@@ -8,6 +8,7 @@ import { StyleSheet, View, Text } from 'react-native'
 import React, { useState, useRef, MutableRefObject } from 'react'
 
 import { getColors } from '../../utils'
+import type { ColumnBounds } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 import { useSizes } from '../../hooks'
@@ -69,6 +70,7 @@ const ZoomSlideVerticalVisible = (
   const { inertOutline } = getColors()
 
   const [slideOffset, setSlideOffset] = useState<number>(0)
+  const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   const setSlotIndexInStartLabel = useRef<(arg0: number) => void>(() => {})
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -144,10 +146,40 @@ const ZoomSlideVerticalVisible = (
   }: PanGestureHandlerGestureEvent) => {
     const END_GESTURE = 5
     if (state !== END_GESTURE) return
-    if (slideOffset + translationY <= 0) return snapSlideToSlot(0)
-    if (slideOffset + slideHeight + translationY >= shortEdge)
-      return snapSlideToSlot(shortEdge - slideHeight)
-    return snapSlideToSlot(slideOffset + translationY)
+    if (slideOffset + translationY <= 0) {
+      const sourceOffset = 0
+      snapSlideToSlot(sourceOffset)
+      const startHoleIndex = interpolateToSlotIndex(
+        sourceOffset,
+        shortEdge,
+        slotCount
+      )
+      const endHoleIndex = startHoleIndex + slideSpan
+      const newColumnBounds = [startHoleIndex, endHoleIndex] as ColumnBounds
+      return setSourceColumnBounds(newColumnBounds)
+    }
+    if (slideOffset + slideHeight + translationY >= shortEdge) {
+      const sourceOffset = shortEdge - slideHeight
+      snapSlideToSlot(sourceOffset)
+      const startHoleIndex = interpolateToSlotIndex(
+        sourceOffset,
+        shortEdge,
+        slotCount
+      )
+      const endHoleIndex = startHoleIndex + slideSpan
+      const newColumnBounds = [startHoleIndex, endHoleIndex] as ColumnBounds
+      return setSourceColumnBounds(newColumnBounds)
+    }
+    const sourceOffset = slideOffset + translationY
+    snapSlideToSlot(sourceOffset)
+    const startHoleIndex = interpolateToSlotIndex(
+      sourceOffset,
+      shortEdge,
+      slotCount
+    )
+    const endHoleIndex = startHoleIndex + slideSpan
+    const newColumnBounds = [startHoleIndex, endHoleIndex] as ColumnBounds
+    return setSourceColumnBounds(newColumnBounds)
   }
 
   useEffect(() => {
