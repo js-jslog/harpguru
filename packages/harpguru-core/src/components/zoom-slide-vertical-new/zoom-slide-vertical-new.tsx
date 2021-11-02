@@ -70,7 +70,9 @@ const ZoomSlideVerticalVisible = (
 
   const [slideOffset, setSlideOffset] = useState<number>(0)
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const setLabelState = useRef<(arg0: number) => void>(() => {})
+  const setSlotIndexInStartLabel = useRef<(arg0: number) => void>(() => {})
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  const setSlotIndexInEndLabel = useRef<(arg0: number) => void>(() => {})
   const [startSlot, endSlot] = restrictingColumnBounds
   const slideSpan = endSlot - startSlot
   const slideHeight = slotSize * slideSpan
@@ -110,7 +112,8 @@ const ZoomSlideVerticalVisible = (
     const topOffset = 0
     const topSlotIndex = interpolateToSlotIndex(0, shortEdge, slotCount)
     if (isPastTop) {
-      setLabelState.current(topSlotIndex)
+      setSlotIndexInStartLabel.current(topSlotIndex)
+      setSlotIndexInEndLabel.current(topSlotIndex)
       return slideOffsetAnimation.setValue(topOffset)
     }
     const isPastBottom = slideOffset + slideHeight + translationY >= shortEdge
@@ -121,7 +124,8 @@ const ZoomSlideVerticalVisible = (
       slotCount
     )
     if (isPastBottom) {
-      setLabelState.current(bottomSlotIndex)
+      setSlotIndexInStartLabel.current(bottomSlotIndex)
+      setSlotIndexInEndLabel.current(bottomSlotIndex)
       return slideOffsetAnimation.setValue(bottomOffset)
     }
     const nextOffset = slideOffset + translationY
@@ -130,7 +134,8 @@ const ZoomSlideVerticalVisible = (
       shortEdge,
       slotCount
     )
-    setLabelState.current(nextSlotIndex)
+    setSlotIndexInStartLabel.current(nextSlotIndex)
+    setSlotIndexInEndLabel.current(nextSlotIndex)
     return slideOffsetAnimation.setValue(nextOffset)
   }
   const onStateChange = ({
@@ -146,7 +151,10 @@ const ZoomSlideVerticalVisible = (
   }
 
   useEffect(() => {
-    setLabelState.current(
+    setSlotIndexInStartLabel.current(
+      interpolateToSlotIndex(slideOffset, shortEdge, slotCount)
+    )
+    setSlotIndexInEndLabel.current(
       interpolateToSlotIndex(slideOffset, shortEdge, slotCount)
     )
   }, [])
@@ -165,7 +173,14 @@ const ZoomSlideVerticalVisible = (
             },
           ]}
         >
-          <IndicatorLabel setLabelState={setLabelState} />
+          <IndicatorLabel
+            setLabelIndex={setSlotIndexInStartLabel}
+            zeroIndex={1}
+          />
+          <IndicatorLabel
+            setLabelIndex={setSlotIndexInEndLabel}
+            zeroIndex={slideSpan + 1}
+          />
         </Animated.View>
       </View>
     </PanGestureHandler>
@@ -173,9 +188,10 @@ const ZoomSlideVerticalVisible = (
 }
 
 type IndicatorLabelProps = {
-  readonly setLabelState: MutableRefObject<(arg0: number) => void>
+  readonly setLabelIndex: MutableRefObject<(arg0: number) => void>
+  readonly zeroIndex: number
 }
-const IndicatorLabel = ({ setLabelState }: IndicatorLabelProps) => {
+const IndicatorLabel = ({ setLabelIndex, zeroIndex }: IndicatorLabelProps) => {
   const { dynamicSizes } = useSizes()
   const { pageColor } = getColors()
   const styles = StyleSheet.create({
@@ -186,6 +202,6 @@ const IndicatorLabel = ({ setLabelState }: IndicatorLabelProps) => {
     },
   })
   const [label, setLabel] = useState(2)
-  setLabelState.current = (label: number) => setLabel(label)
-  return <Text style={styles.textStyle}>{label + 1}</Text>
+  setLabelIndex.current = (label: number) => setLabel(label)
+  return <Text style={styles.textStyle}>{label + zeroIndex}</Text>
 }
