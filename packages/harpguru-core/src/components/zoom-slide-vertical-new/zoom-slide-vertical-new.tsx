@@ -86,6 +86,7 @@ const ZoomSlideVerticalVisible = (
       backgroundColor: inertOutline,
       width: dynamicSizes.zoomSlideWidth,
       height: slideHeight,
+      justifyContent: 'space-between',
     },
   })
 
