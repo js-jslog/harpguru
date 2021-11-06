@@ -61,6 +61,15 @@ type ZoomSlideVerticalVisibleProps = {
 const ZoomSlideVerticalVisible = (
   props: ZoomSlideVerticalVisibleProps
 ): React.ReactElement => {
+  // Get sizes
+  // Setup animation value
+  // Create refs for labels
+  // On gesture
+  //  - evaluate offset & set animation
+  //  - evaluate index from offset & set label refs
+  // On statechange
+  //  - evaluate offset, evaluate index, evaluate snapoffset
+  //  - set slideoffset & animation value
   const { restrictingColumnBounds, totalHoles } = props
   const slotCount = totalHoles - 1
   const { shortEdge } = getWindowDimensions()
