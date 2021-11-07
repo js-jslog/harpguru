@@ -86,6 +86,8 @@ export const buildMockUseGlobalImplementation = ({
     if (stateItem === 'pozitionId') return [sourceHarpStrata.pozitionId]
     if (stateItem === 'rootPitchId') return [sourceHarpStrata.rootPitchId]
 
+    if (stateItem === 'sourceColumnBounds')
+      return [sourceColumnBounds, jest.fn()]
     if (stateItem === 'columnBounds') return [sourceColumnBounds]
     const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
       [[]] as const,
