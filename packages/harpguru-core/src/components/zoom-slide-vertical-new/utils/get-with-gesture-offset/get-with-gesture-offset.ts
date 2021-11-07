@@ -4,9 +4,9 @@ export const getWithGestureOffset = (
   slideLength: number,
   trackLength: number
 ): number => {
-  const nextAbsoluteOffset = prevOffset + translationY
-  const maxSlideOffset = trackLength - slideLength
-  if (nextAbsoluteOffset <= 0) return 0
-  if (nextAbsoluteOffset >= maxSlideOffset) return maxSlideOffset
-  return nextAbsoluteOffset
+  const nextOffset = prevOffset + translationY
+  const maxOffset = trackLength - slideLength
+  if (nextOffset <= 0) return 0
+  if (nextOffset >= maxOffset) return maxOffset
+  return nextOffset
 }
