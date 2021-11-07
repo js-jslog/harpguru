@@ -1,17 +1,15 @@
 import { useEffect, useGlobal } from 'reactn'
 import Animated, { Value } from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
-import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { StyleSheet } from 'react-native'
 import React, { useState, useRef } from 'react'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
 import { getColors } from '../../utils'
-import type { ColumnBounds } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 import { useSizes } from '../../hooks'
 
-import { getWithGestureOffset, getWithSnapProps } from './utils'
+import { getWithSnapProps, getGestureHandlerCallbacks } from './utils'
 
 type ZoomSlideVerticalVisibleProps = {
   readonly restrictingColumnBounds: readonly [number, number]
@@ -31,8 +29,8 @@ export const ZoomSlideVerticalVisible = (
   //  - set slideoffset & animation value
   const { restrictingColumnBounds, totalHoles } = props
   const slotCount = totalHoles - 1
-  const { shortEdge } = getWindowDimensions()
-  const slotSize = shortEdge / slotCount
+  const { shortEdge: trackLength } = getWindowDimensions()
+  const slotSize = trackLength / slotCount
 
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()
@@ -58,55 +56,27 @@ export const ZoomSlideVerticalVisible = (
 
   const slideOffsetAnimation = new Value<number>(slideOffset)
 
-  const onGesture = ({
-    nativeEvent: { translationY },
-  }: PanGestureHandlerGestureEvent) => {
-    const withGestureSlideOffset = getWithGestureOffset(
-      slideOffset,
-      translationY,
-      slideLength,
-      shortEdge
-    )
-    const { withSnapIndex } = getWithSnapProps(
-      withGestureSlideOffset,
-      shortEdge,
-      slotCount
-    )
-    labelStateSetterRef.current(withSnapIndex)
-    return slideOffsetAnimation.setValue(withGestureSlideOffset)
-  }
-
-  const onStateChange = ({
-    nativeEvent: { translationY, state },
-  }: PanGestureHandlerGestureEvent) => {
-    const END_GESTURE = 5
-    if (state !== END_GESTURE) return
-    const withGestureSlideOffset = getWithGestureOffset(
-      slideOffset,
-      translationY,
-      slideLength,
-      shortEdge
-    )
-    const { withSnapOffset, withSnapIndex: startHoleIndex } = getWithSnapProps(
-      withGestureSlideOffset,
-      shortEdge,
-      slotCount
-    )
-    setSlideOffset(withSnapOffset)
-    const endHoleIndex = startHoleIndex + slideSpan
-    const nextColumnBounds = [startHoleIndex, endHoleIndex] as ColumnBounds
-    setSourceColumnBounds(nextColumnBounds)
-  }
-
   useEffect(() => {
     const { withSnapIndex } = getWithSnapProps(
       slideOffset,
-      shortEdge,
+      trackLength,
       slotCount
     )
 
     labelStateSetterRef.current(withSnapIndex)
   }, [])
+
+  const { onGesture, onStateChange } = getGestureHandlerCallbacks(
+    slideOffset,
+    slideLength,
+    trackLength,
+    slideSpan,
+    slotCount,
+    slideOffsetAnimation,
+    labelStateSetterRef.current,
+    setSlideOffset,
+    setSourceColumnBounds
+  )
 
   return (
     <PanGestureHandler
