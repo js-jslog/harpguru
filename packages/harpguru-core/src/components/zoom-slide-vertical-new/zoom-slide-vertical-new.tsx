@@ -66,13 +66,13 @@ const ZoomSlideVerticalVisible = (
   const labelStateSetterRef = useRef<(arg0: number) => void>(() => {})
   const [startSlot, endSlot] = restrictingColumnBounds
   const slideSpan = endSlot - startSlot
-  const slideHeight = slotSize * slideSpan
+  const slideLength = slotSize * slideSpan
   const styles = StyleSheet.create({
     componentWrapper: {
       ...StyleSheet.absoluteFillObject,
       width: dynamicSizes.zoomSlideWidth,
       left: dynamicSizes['9'], // legend width is going to have to become a named variable
-      height: slideHeight,
+      height: slideLength,
       backgroundColor: inertOutline,
       flexDirection: 'column',
       justifyContent: 'space-between',
@@ -87,7 +87,7 @@ const ZoomSlideVerticalVisible = (
     const withGestureSlideOffset = getWithGestureOffset(
       slideOffset,
       translationY,
-      slideHeight,
+      slideLength,
       shortEdge
     )
     const { withSnapIndex } = getWithSnapProps(
@@ -107,7 +107,7 @@ const ZoomSlideVerticalVisible = (
     const withGestureSlideOffset = getWithGestureOffset(
       slideOffset,
       translationY,
-      slideHeight,
+      slideLength,
       shortEdge
     )
     const { withSnapOffset, withSnapIndex: startHoleIndex } = getWithSnapProps(
