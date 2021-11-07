@@ -7,7 +7,7 @@ import {
   buildMockUseGlobalImplementation,
 } from '../../test-resources'
 
-import { ZoomSlideVerticalNew } from './zoom-slide-vertical-new'
+import { ZoomSlideVertical } from './zoom-slide-vertical'
 
 jest.mock('reactn')
 const mockUseGlobal = useGlobal as jest.Mock
@@ -20,7 +20,7 @@ test('A slider is not rendered when the whole harp is visible', () => {
     })
   )
 
-  const { toJSON: toJSONAtFIT } = render(<ZoomSlideVerticalNew />)
+  const { toJSON: toJSONAtFIT } = render(<ZoomSlideVertical />)
   expect(toJSONAtFIT()).toMatchSnapshot()
 
   mockUseGlobal.mockImplementation(
@@ -30,7 +30,7 @@ test('A slider is not rendered when the whole harp is visible', () => {
     })
   )
 
-  const { toJSON: toJSONAtColumnBounds } = render(<ZoomSlideVerticalNew />)
+  const { toJSON: toJSONAtColumnBounds } = render(<ZoomSlideVertical />)
   expect(toJSONAtColumnBounds()).toMatchSnapshot()
 })
 

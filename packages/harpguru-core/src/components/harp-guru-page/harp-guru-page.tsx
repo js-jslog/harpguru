@@ -5,7 +5,7 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import { ZoomSlideVerticalNew } from '../zoom-slide-vertical-new'
+import { ZoomSlideVertical } from '../zoom-slide-vertical'
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
 import { NotifyOfScale } from '../notify-of-scale'
 import { NotifyOfQuizQuestion } from '../notify-of-quiz-question'
@@ -53,7 +53,7 @@ export const HarpGuruPage = ({
   return (
     <View style={styles.fillScreen}>
       <ActivityLegend />
-      <ZoomSlideVerticalNew />
+      <ZoomSlideVertical />
       <HarpFaceMemo />
       <MenuOfCovariants
         isMenuStashed={menuState !== MenuStates.CovariantMenu}

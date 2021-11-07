@@ -6,7 +6,7 @@ import React from 'react'
 import { ZoomSlideVerticalVisible } from '../zoom-slide-vertical-visible'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 
-export const ZoomSlideVerticalNew = (): React.ReactElement => {
+export const ZoomSlideVertical = (): React.ReactElement => {
   const [columnBounds] = useGlobal('columnBounds')
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
