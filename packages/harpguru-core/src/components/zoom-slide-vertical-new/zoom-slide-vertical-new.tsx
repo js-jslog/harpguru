@@ -4,7 +4,7 @@ import { useEffect, useGlobal } from 'reactn'
 import Animated, { Value } from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import React, { useState, useRef, MutableRefObject } from 'react'
 
 import { getColors } from '../../utils'
@@ -63,9 +63,7 @@ const ZoomSlideVerticalVisible = (
   const [slideOffset, setSlideOffset] = useState<number>(0)
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const setSlotIndexInStartLabel = useRef<(arg0: number) => void>(() => {})
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const setSlotIndexInEndLabel = useRef<(arg0: number) => void>(() => {})
+  const labelStateSetterRef = useRef<(arg0: number) => void>(() => {})
   const [startSlot, endSlot] = restrictingColumnBounds
   const slideSpan = endSlot - startSlot
   const slideHeight = slotSize * slideSpan
@@ -74,11 +72,9 @@ const ZoomSlideVerticalVisible = (
       ...StyleSheet.absoluteFillObject,
       width: dynamicSizes.zoomSlideWidth,
       left: dynamicSizes['9'], // legend width is going to have to become a named variable
-    },
-    sliderWrapper: {
-      backgroundColor: inertOutline,
-      width: dynamicSizes.zoomSlideWidth,
       height: slideHeight,
+      backgroundColor: inertOutline,
+      flexDirection: 'column',
       justifyContent: 'space-between',
     },
   })
@@ -99,8 +95,7 @@ const ZoomSlideVerticalVisible = (
       shortEdge,
       slotCount
     )
-    setSlotIndexInStartLabel.current(withSnapIndex)
-    setSlotIndexInEndLabel.current(withSnapIndex)
+    labelStateSetterRef.current(withSnapIndex)
     return slideOffsetAnimation.setValue(withGestureSlideOffset)
   }
 
@@ -133,8 +128,7 @@ const ZoomSlideVerticalVisible = (
       slotCount
     )
 
-    setSlotIndexInStartLabel.current(withSnapIndex)
-    setSlotIndexInEndLabel.current(withSnapIndex)
+    labelStateSetterRef.current(withSnapIndex)
   }, [])
 
   return (
@@ -142,34 +136,26 @@ const ZoomSlideVerticalVisible = (
       onGestureEvent={onGesture}
       onHandlerStateChange={onStateChange}
     >
-      <View style={styles.componentWrapper}>
-        <Animated.View
-          style={[
-            styles.sliderWrapper,
-            {
-              transform: [{ translateY: slideOffsetAnimation }],
-            },
-          ]}
-        >
-          <IndicatorLabel
-            setLabelIndex={setSlotIndexInStartLabel}
-            zeroIndex={1}
-          />
-          <IndicatorLabel
-            setLabelIndex={setSlotIndexInEndLabel}
-            zeroIndex={slideSpan + 1}
-          />
-        </Animated.View>
-      </View>
+      <Animated.View
+        style={[
+          styles.componentWrapper,
+          { transform: [{ translateY: slideOffsetAnimation }] },
+        ]}
+      >
+        <IndicatorLabel
+          stateSetterRef={labelStateSetterRef}
+          slideSpan={slideSpan}
+        />
+      </Animated.View>
     </PanGestureHandler>
   )
 }
 
 type IndicatorLabelProps = {
-  readonly setLabelIndex: MutableRefObject<(arg0: number) => void>
-  readonly zeroIndex: number
+  readonly stateSetterRef: MutableRefObject<(arg0: number) => void>
+  readonly slideSpan: number
 }
-const IndicatorLabel = ({ setLabelIndex, zeroIndex }: IndicatorLabelProps) => {
+const IndicatorLabel = ({ stateSetterRef, slideSpan }: IndicatorLabelProps) => {
   const { dynamicSizes } = useSizes()
   const { pageColor } = getColors()
   const styles = StyleSheet.create({
@@ -179,7 +165,16 @@ const IndicatorLabel = ({ setLabelIndex, zeroIndex }: IndicatorLabelProps) => {
       alignSelf: 'center',
     },
   })
-  const [label, setLabel] = useState(2)
-  setLabelIndex.current = (label: number) => setLabel(label)
-  return <Text style={styles.textStyle}>{label + zeroIndex}</Text>
+  const [startHoleIndex, setStartHoleIndex] = useState(2)
+  stateSetterRef.current = (slotIndex: number) => setStartHoleIndex(slotIndex)
+
+  const startHoleLabel = startHoleIndex + 1
+  const endHoleLabel = startHoleLabel + slideSpan
+
+  return (
+    <>
+      <Text style={styles.textStyle}>{startHoleLabel}</Text>
+      <Text style={styles.textStyle}>{endHoleLabel}</Text>
+    </>
+  )
 }
