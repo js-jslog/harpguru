@@ -13,6 +13,8 @@ import { getWindowDimensions } from '../../packages/get-window-dimensions'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 import { useSizes } from '../../hooks'
 
+import { getWithGestureOffset, getWithSnapProps } from './utils'
+
 export const ZoomSlideVerticalNew = (): React.ReactElement => {
   const [columnBounds] = useGlobal('columnBounds')
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
@@ -32,26 +34,6 @@ export const ZoomSlideVerticalNew = (): React.ReactElement => {
       totalHoles={fullInteractionMatrix[0].length}
     />
   )
-}
-
-const interpolateToSlotIndex = (
-  slideOffset: number,
-  trackHeight: number,
-  slotCount: number
-): number => {
-  const slotSize = trackHeight / slotCount
-  const decimalInterpolation = slideOffset / slotSize
-  return Math.round(decimalInterpolation)
-}
-
-const projectToSlideOffset = (
-  holeIndex: number,
-  trackHeight: number,
-  slotCount: number
-) => {
-  const slotSize = trackHeight / slotCount
-  const slideOffset = holeIndex * slotSize
-  return slideOffset
 }
 
 type ZoomSlideVerticalVisibleProps = {
@@ -103,101 +85,56 @@ const ZoomSlideVerticalVisible = (
 
   const slideOffsetAnimation = new Value<number>(slideOffset)
 
-  const snapSlideToSlot = (nextSlideOffset: number) => {
-    const holeNumber = interpolateToSlotIndex(
-      nextSlideOffset,
-      shortEdge,
-      slotCount
-    )
-    const snappedSlideOffset = projectToSlideOffset(
-      holeNumber,
-      shortEdge,
-      slotCount
-    )
-    setSlideOffset(snappedSlideOffset)
-    return slideOffsetAnimation.setValue(snappedSlideOffset)
-  }
   const onGesture = ({
     nativeEvent: { translationY },
   }: PanGestureHandlerGestureEvent) => {
-    const isPastTop = slideOffset + translationY <= 0
-    const topOffset = 0
-    const topSlotIndex = interpolateToSlotIndex(0, shortEdge, slotCount)
-    if (isPastTop) {
-      setSlotIndexInStartLabel.current(topSlotIndex)
-      setSlotIndexInEndLabel.current(topSlotIndex)
-      return slideOffsetAnimation.setValue(topOffset)
-    }
-    const isPastBottom = slideOffset + slideHeight + translationY >= shortEdge
-    const bottomOffset = shortEdge - slideHeight
-    const bottomSlotIndex = interpolateToSlotIndex(
-      bottomOffset,
+    const withGestureSlideOffset = getWithGestureOffset(
+      slideOffset,
+      translationY,
+      slideHeight,
+      shortEdge
+    )
+    const { withSnapIndex } = getWithSnapProps(
+      withGestureSlideOffset,
       shortEdge,
       slotCount
     )
-    if (isPastBottom) {
-      setSlotIndexInStartLabel.current(bottomSlotIndex)
-      setSlotIndexInEndLabel.current(bottomSlotIndex)
-      return slideOffsetAnimation.setValue(bottomOffset)
-    }
-    const nextOffset = slideOffset + translationY
-    const nextSlotIndex = interpolateToSlotIndex(
-      nextOffset,
-      shortEdge,
-      slotCount
-    )
-    setSlotIndexInStartLabel.current(nextSlotIndex)
-    setSlotIndexInEndLabel.current(nextSlotIndex)
-    return slideOffsetAnimation.setValue(nextOffset)
+    setSlotIndexInStartLabel.current(withSnapIndex)
+    setSlotIndexInEndLabel.current(withSnapIndex)
+    return slideOffsetAnimation.setValue(withGestureSlideOffset)
   }
+
   const onStateChange = ({
     nativeEvent: { translationY, state },
   }: PanGestureHandlerGestureEvent) => {
     const END_GESTURE = 5
     if (state !== END_GESTURE) return
-    if (slideOffset + translationY <= 0) {
-      const sourceOffset = 0
-      snapSlideToSlot(sourceOffset)
-      const startHoleIndex = interpolateToSlotIndex(
-        sourceOffset,
-        shortEdge,
-        slotCount
-      )
-      const endHoleIndex = startHoleIndex + slideSpan
-      const newColumnBounds = [startHoleIndex, endHoleIndex] as ColumnBounds
-      return setSourceColumnBounds(newColumnBounds)
-    }
-    if (slideOffset + slideHeight + translationY >= shortEdge) {
-      const sourceOffset = shortEdge - slideHeight
-      snapSlideToSlot(sourceOffset)
-      const startHoleIndex = interpolateToSlotIndex(
-        sourceOffset,
-        shortEdge,
-        slotCount
-      )
-      const endHoleIndex = startHoleIndex + slideSpan
-      const newColumnBounds = [startHoleIndex, endHoleIndex] as ColumnBounds
-      return setSourceColumnBounds(newColumnBounds)
-    }
-    const sourceOffset = slideOffset + translationY
-    snapSlideToSlot(sourceOffset)
-    const startHoleIndex = interpolateToSlotIndex(
-      sourceOffset,
+    const withGestureSlideOffset = getWithGestureOffset(
+      slideOffset,
+      translationY,
+      slideHeight,
+      shortEdge
+    )
+    const { withSnapOffset, withSnapIndex: startHoleIndex } = getWithSnapProps(
+      withGestureSlideOffset,
       shortEdge,
       slotCount
     )
+    setSlideOffset(withSnapOffset)
     const endHoleIndex = startHoleIndex + slideSpan
-    const newColumnBounds = [startHoleIndex, endHoleIndex] as ColumnBounds
-    return setSourceColumnBounds(newColumnBounds)
+    const nextColumnBounds = [startHoleIndex, endHoleIndex] as ColumnBounds
+    setSourceColumnBounds(nextColumnBounds)
   }
 
   useEffect(() => {
-    setSlotIndexInStartLabel.current(
-      interpolateToSlotIndex(slideOffset, shortEdge, slotCount)
+    const { withSnapIndex } = getWithSnapProps(
+      slideOffset,
+      shortEdge,
+      slotCount
     )
-    setSlotIndexInEndLabel.current(
-      interpolateToSlotIndex(slideOffset, shortEdge, slotCount)
-    )
+
+    setSlotIndexInStartLabel.current(withSnapIndex)
+    setSlotIndexInEndLabel.current(withSnapIndex)
   }, [])
 
   return (
