@@ -1,15 +1,16 @@
-import { useEffect, useGlobal } from 'reactn'
+import { useGlobal } from 'reactn'
 import Animated, { Value } from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import { StyleSheet } from 'react-native'
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
 import { getColors } from '../../utils'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 import { useSizes } from '../../hooks'
 
-import { getWithSnapProps, getGestureHandlerCallbacks } from './utils'
+import { getGestureHandlerCallbacks } from './utils'
+import { useLabelStateSetterRef } from './hooks'
 
 type ZoomSlideVerticalVisibleProps = {
   readonly restrictingColumnBounds: readonly [number, number]
@@ -28,8 +29,6 @@ export const ZoomSlideVerticalVisible = (
 
   const [slideOffset, setSlideOffset] = useState<number>(0)
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const labelStateSetterRef = useRef<(arg0: number) => void>(() => {})
   const [startSlot, endSlot] = restrictingColumnBounds
   const slideSpan = endSlot - startSlot
   const slideLength = slotSize * slideSpan
@@ -45,17 +44,13 @@ export const ZoomSlideVerticalVisible = (
     },
   })
 
+  const labelStateSetterRef = useLabelStateSetterRef(
+    slideOffset,
+    trackLength,
+    slotCount
+  )
+
   const slideOffsetAnimation = new Value<number>(slideOffset)
-
-  useEffect(() => {
-    const { withSnapIndex } = getWithSnapProps(
-      slideOffset,
-      trackLength,
-      slotCount
-    )
-
-    labelStateSetterRef.current(withSnapIndex)
-  }, [])
 
   const { onGesture, onStateChange } = getGestureHandlerCallbacks(
     slideOffset,

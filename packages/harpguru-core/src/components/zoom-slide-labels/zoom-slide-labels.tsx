@@ -1,5 +1,6 @@
 import { StyleSheet, Text } from 'react-native'
-import React, { useState, MutableRefObject } from 'react'
+import React, { useState } from 'react'
+import type { MutableRefObject } from 'react'
 
 import { getColors } from '../../utils'
 import { useSizes } from '../../hooks'
