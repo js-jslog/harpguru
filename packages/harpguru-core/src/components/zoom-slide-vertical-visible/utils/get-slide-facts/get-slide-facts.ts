@@ -10,7 +10,7 @@ export const getSlideFacts = (
   restrictingColumnBounds: readonly [number, number],
   totalHoles: number
 ): SlideFacts => {
-  const slotCount = totalHoles + 1
+  const slotCount = totalHoles - 1
   const { shortEdge: trackLength } = getWindowDimensions()
   const slotLength = trackLength / slotCount
   const [startBound, endBound] = restrictingColumnBounds
