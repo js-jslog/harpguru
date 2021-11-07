@@ -26,9 +26,6 @@ export const ZoomSlideVerticalVisible = (
 
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()
-
-  const [slideOffset, setSlideOffset] = useState<number>(0)
-  const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const styles = StyleSheet.create({
     componentWrapper: {
       ...StyleSheet.absoluteFillObject,
@@ -41,6 +38,7 @@ export const ZoomSlideVerticalVisible = (
     },
   })
 
+  const [slideOffset, setSlideOffset] = useState<number>(0)
   const labelStateSetterRef = useLabelStateSetterRef(
     slideOffset,
     trackLength,
@@ -48,7 +46,7 @@ export const ZoomSlideVerticalVisible = (
   )
 
   const slideOffsetAnimation = new Value<number>(slideOffset)
-
+  const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const { onGesture, onStateChange } = getGestureHandlerCallbacks(
     slideOffset,
     slideLength,
