@@ -57,3 +57,32 @@ test('maximum offset following gesture takes slider to end of track', () => {
     getWithGestureOffset(prevOffset_4, translationY_4, slideLength, trackLength)
   ).toBe(10)
 })
+
+test('inter-track offset following gesture is calculated correctly', () => {
+  const slideLength = 10
+  const trackLength = 20
+
+  const prevOffset_1 = 3
+  const translationY_1 = 5
+  expect(
+    getWithGestureOffset(prevOffset_1, translationY_1, slideLength, trackLength)
+  ).toBe(8)
+
+  const prevOffset_2 = 3
+  const translationY_2 = -2
+  expect(
+    getWithGestureOffset(prevOffset_2, translationY_2, slideLength, trackLength)
+  ).toBe(1)
+
+  const prevOffset_3 = 50
+  const translationY_3 = -45
+  expect(
+    getWithGestureOffset(prevOffset_3, translationY_3, slideLength, trackLength)
+  ).toBe(5)
+
+  const prevOffset_4 = -50
+  const translationY_4 = 53
+  expect(
+    getWithGestureOffset(prevOffset_4, translationY_4, slideLength, trackLength)
+  ).toBe(3)
+})
