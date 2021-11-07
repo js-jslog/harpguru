@@ -1,4 +1,4 @@
-import { getWithGestureOffset } from './get-with-gesture-offset'
+import { getWithGestureOffset } from './get-withgesture-offset'
 
 test('minimum offset following gesture is 0', () => {
   const slideLength = 10
