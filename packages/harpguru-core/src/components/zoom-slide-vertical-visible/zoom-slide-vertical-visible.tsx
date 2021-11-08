@@ -1,4 +1,4 @@
-import { useGlobal } from 'reactn'
+import { useEffect, useGlobal } from 'reactn'
 import Animated, { Value } from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import { StyleSheet } from 'react-native'
@@ -60,6 +60,13 @@ export const ZoomSlideVerticalVisible = (
     setSlotIndex,
     setSourceColumnBounds
   )
+
+  useEffect(() => {
+    if (slotIndex !== initialSlotIndex) {
+      setSlotIndex(initialSlotIndex)
+      labelStateSetterRef.current(initialSlotIndex)
+    }
+  }, [slotIndex, initialSlotIndex, setSlotIndex, labelStateSetterRef])
 
   return (
     <PanGestureHandler
