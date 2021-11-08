@@ -23,27 +23,21 @@ export const ZoomSlideVerticalVisible = (
   const columnBoundsSpan = columnBounds[1] - columnBounds[0]
 
   const [slotIndex, setSlotIndex] = useState<number>(inputBoundsStart)
-  const {
-    trackLength,
-    slideLength,
-    slotCount,
-    slideHeadOffset,
-    slideSpan,
-  } = getSlideFacts([slotIndex, slotIndex + columnBoundsSpan], columnCount)
+  const { slideLength, slideHeadOffset, slideSpan } = getSlideFacts(
+    [slotIndex, slotIndex + columnBoundsSpan],
+    columnCount
+  )
   const labelStateSetterRef = useLabelStateSetterRef(slotIndex)
 
   const slideOffsetAnimation = new Value<number>(slideHeadOffset)
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const { onGesture, onStateChange } = getGestureHandlerCallbacks(
-    slideLength,
-    trackLength,
-    slideSpan,
-    slotCount,
+    [slotIndex, slotIndex + columnBoundsSpan],
+    columnCount,
     slideOffsetAnimation,
     labelStateSetterRef.current,
     setSlotIndex,
-    setSourceColumnBounds,
-    slideHeadOffset
+    setSourceColumnBounds
   )
 
   useEffect(() => {

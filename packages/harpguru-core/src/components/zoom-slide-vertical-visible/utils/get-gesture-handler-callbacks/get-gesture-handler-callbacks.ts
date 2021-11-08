@@ -3,6 +3,7 @@ import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler
 
 import { getWithSnapProps } from '../get-withsnap-props'
 import { getWithGestureOffset } from '../get-withgesture-offset'
+import { getSlideFacts } from '../get-slide-facts'
 import type { ColumnBounds } from '../../../../types'
 
 type GestureHandlerCallbacks = {
@@ -10,16 +11,21 @@ type GestureHandlerCallbacks = {
   readonly onStateChange: (arg0: PanGestureHandlerGestureEvent) => void
 }
 export const getGestureHandlerCallbacks = (
-  slideLength: number,
-  trackLength: number,
-  slideSpan: number,
-  slotCount: number,
+  slideSlotIndices: readonly [number, number],
+  columnCount: number,
   slideOffsetAnimation: Value<number>,
   setLabelIndex: (arg0: number) => void,
   setSlotIndex: (arg0: number) => void,
-  setSourceColumnBounds: (arg0: ColumnBounds) => void,
-  baseSlideOffset: number
+  setSourceColumnBounds: (arg0: ColumnBounds) => void
 ): GestureHandlerCallbacks => {
+  const {
+    slideHeadOffset: baseSlideOffset,
+    slideLength,
+    trackLength,
+    slideSpan,
+    slotCount,
+  } = getSlideFacts(slideSlotIndices, columnCount)
+
   const onGesture = ({
     nativeEvent: { translationY },
   }: PanGestureHandlerGestureEvent) => {
