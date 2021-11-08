@@ -8,11 +8,7 @@ import { ZoomSlideLabels } from '../zoom-slide-labels'
 import { getColors } from '../../utils'
 import { useSizes } from '../../hooks'
 
-import {
-  getGestureHandlerCallbacks,
-  getSlideFacts,
-  getFromIndexOffset,
-} from './utils'
+import { getGestureHandlerCallbacks, getSlideFacts } from './utils'
 import { useLabelStateSetterRef } from './hooks'
 
 type ZoomSlideVerticalVisibleProps = {
@@ -23,11 +19,40 @@ export const ZoomSlideVerticalVisible = (
   props: ZoomSlideVerticalVisibleProps
 ): React.ReactElement => {
   const { restrictingColumnBounds, totalHoles } = props
-  const { trackLength, slideLength, slideSpan, slotCount } = getSlideFacts(
-    restrictingColumnBounds,
-    totalHoles
+  const { [0]: columnBoundsStartSlotIndex } = restrictingColumnBounds
+  const columnBoundsSpan =
+    restrictingColumnBounds[1] - restrictingColumnBounds[0]
+
+  const [slotIndex, setSlotIndex] = useState<number>(columnBoundsStartSlotIndex)
+  const {
+    trackLength,
+    slideLength,
+    slotCount,
+    slideHeadOffset,
+    slideSpan,
+  } = getSlideFacts([slotIndex, slotIndex + columnBoundsSpan], totalHoles)
+  const labelStateSetterRef = useLabelStateSetterRef(slotIndex)
+
+  const slideOffsetAnimation = new Value<number>(slideHeadOffset)
+  const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
+  const { onGesture, onStateChange } = getGestureHandlerCallbacks(
+    slideLength,
+    trackLength,
+    slideSpan,
+    slotCount,
+    slideOffsetAnimation,
+    labelStateSetterRef.current,
+    setSlotIndex,
+    setSourceColumnBounds,
+    slideHeadOffset
   )
-  const { [0]: initialSlotIndex } = restrictingColumnBounds
+
+  useEffect(() => {
+    if (slotIndex !== columnBoundsStartSlotIndex) {
+      setSlotIndex(columnBoundsStartSlotIndex)
+      labelStateSetterRef.current(columnBoundsStartSlotIndex)
+    }
+  }, [slotIndex, columnBoundsStartSlotIndex, setSlotIndex, labelStateSetterRef])
 
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()
@@ -42,32 +67,6 @@ export const ZoomSlideVerticalVisible = (
       justifyContent: 'space-between',
     },
   })
-
-  const [slotIndex, setSlotIndex] = useState<number>(initialSlotIndex)
-  const labelStateSetterRef = useLabelStateSetterRef(slotIndex)
-
-  const slideOffset = getFromIndexOffset(slotIndex, trackLength, slotCount)
-  const slideOffsetAnimation = new Value<number>(slideOffset)
-  const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
-  const { onGesture, onStateChange } = getGestureHandlerCallbacks(
-    slotIndex,
-    slideLength,
-    trackLength,
-    slideSpan,
-    slotCount,
-    slideOffsetAnimation,
-    labelStateSetterRef.current,
-    setSlotIndex,
-    setSourceColumnBounds
-  )
-
-  useEffect(() => {
-    if (slotIndex !== initialSlotIndex) {
-      setSlotIndex(initialSlotIndex)
-      labelStateSetterRef.current(initialSlotIndex)
-    }
-  }, [slotIndex, initialSlotIndex, setSlotIndex, labelStateSetterRef])
-
   return (
     <PanGestureHandler
       onGestureEvent={onGesture}

@@ -3,7 +3,6 @@ import type { PanGestureHandlerGestureEvent } from 'react-native-gesture-handler
 
 import { getWithSnapProps } from '../get-withsnap-props'
 import { getWithGestureOffset } from '../get-withgesture-offset'
-import { getFromIndexOffset } from '../get-fromindex-offset'
 import type { ColumnBounds } from '../../../../types'
 
 type GestureHandlerCallbacks = {
@@ -11,7 +10,6 @@ type GestureHandlerCallbacks = {
   readonly onStateChange: (arg0: PanGestureHandlerGestureEvent) => void
 }
 export const getGestureHandlerCallbacks = (
-  baseSlotIndex: number,
   slideLength: number,
   trackLength: number,
   slideSpan: number,
@@ -19,16 +17,12 @@ export const getGestureHandlerCallbacks = (
   slideOffsetAnimation: Value<number>,
   setLabelIndex: (arg0: number) => void,
   setSlotIndex: (arg0: number) => void,
-  setSourceColumnBounds: (arg0: ColumnBounds) => void
+  setSourceColumnBounds: (arg0: ColumnBounds) => void,
+  baseSlideOffset: number
 ): GestureHandlerCallbacks => {
   const onGesture = ({
     nativeEvent: { translationY },
   }: PanGestureHandlerGestureEvent) => {
-    const baseSlideOffset = getFromIndexOffset(
-      baseSlotIndex,
-      trackLength,
-      slotCount
-    )
     const withGestureSlideOffset = getWithGestureOffset(
       baseSlideOffset,
       translationY,
@@ -49,11 +43,6 @@ export const getGestureHandlerCallbacks = (
   }: PanGestureHandlerGestureEvent) => {
     const END_GESTURE = 5
     if (state !== END_GESTURE) return
-    const baseSlideOffset = getFromIndexOffset(
-      baseSlotIndex,
-      trackLength,
-      slotCount
-    )
     const withGestureSlideOffset = getWithGestureOffset(
       baseSlideOffset,
       translationY,
