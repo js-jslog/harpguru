@@ -21,8 +21,8 @@ export const ZoomSlideVertical = (): React.ReactElement => {
 
   return (
     <ZoomSlideVerticalVisible
-      restrictingColumnBounds={columnBounds}
-      totalHoles={fullInteractionMatrix[0].length}
+      columnBounds={columnBounds}
+      columnCount={fullInteractionMatrix[0].length}
     />
   )
 }
