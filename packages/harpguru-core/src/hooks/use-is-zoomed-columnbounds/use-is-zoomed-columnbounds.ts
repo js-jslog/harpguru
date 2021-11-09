@@ -3,7 +3,9 @@ import { useGlobal } from 'reactn'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 
 // TODO: Add a test
-export const useIsZoomed = (): boolean => {
+export const useIsZoomedColumnBounds = ():
+  | false
+  | readonly [number, number] => {
   const [columnBounds] = useGlobal('columnBounds')
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
@@ -15,5 +17,5 @@ export const useIsZoomed = (): boolean => {
     )
   )
     return false
-  return true
+  return columnBounds
 }

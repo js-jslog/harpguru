@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 
-import { useIsZoomed } from '../use-is-zoomed'
+import { useIsZoomedColumnBounds } from '../use-is-zoomed-columnbounds'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 import { SizeScheme, SizeSchemes } from './use-sizes-types'
@@ -57,7 +57,7 @@ export const useSizes = (): SizeSchemes => {
     [relativeLabelIconSize]: labelIconSize,
   } = relativeSizes
   const rowHeight = columnWidth
-  const zoomSlideWidth = useIsZoomed() ? columnWidth : 0
+  const zoomSlideWidth = useIsZoomedColumnBounds() === false ? 0 : columnWidth
   const labelGrace = fragmentGutter
 
   // TODO: It might be better to either count the number of gutters

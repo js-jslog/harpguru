@@ -5,4 +5,4 @@ export { useScaledMenuLabelProtrusion } from './use-scaled-menu-label-protrusion
 export { useInterpolateOptionStackTransitionValue } from './use-interpolate-option-stack-transition-value'
 export { useOptionSizes } from './use-option-sizes'
 export { useSizes } from './use-sizes'
-export { useIsZoomed } from './use-is-zoomed'
+export { useIsZoomedColumnBounds } from './use-is-zoomed-columnbounds'
