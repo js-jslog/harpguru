@@ -2,28 +2,28 @@ import { getWindowDimensions } from '../../../../packages/get-window-dimensions'
 
 type SlideFacts = {
   readonly trackLength: number
-  readonly slideHeadOffset: number
+  readonly slideOffsetLength: number
   readonly slideLength: number
-  readonly slotCount: number
-  readonly slideSpan: number
+  readonly maxTrackIndex: number
+  readonly slideIndexSpan: number
 }
 export const getSlideFacts = (
   columnBounds: readonly [number, number],
   columnCount: number
 ): SlideFacts => {
   const [startBound, endBound] = columnBounds
-  const slotCount = columnCount - 1
+  const maxTrackIndex = columnCount - 1
   const { shortEdge: trackLength } = getWindowDimensions()
-  const slotLength = trackLength / slotCount
-  const slideHeadOffset = slotLength * startBound
-  const slideSpan = endBound - startBound
-  const slideLength = slotLength * slideSpan
+  const slotLength = trackLength / maxTrackIndex
+  const slideOffsetLength = slotLength * startBound
+  const slideIndexSpan = endBound - startBound
+  const slideLength = slotLength * slideIndexSpan
 
   return {
     trackLength,
-    slideHeadOffset,
+    slideOffsetLength,
     slideLength,
-    slotCount,
-    slideSpan,
+    maxTrackIndex,
+    slideIndexSpan,
   }
 }

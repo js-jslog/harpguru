@@ -23,13 +23,13 @@ export const ZoomSlideVerticalVisible = (
   const [localColumnBounds, setLocalColumnBounds] = useState<
     readonly [number, number]
   >(globalColumnBounds)
-  const { slideLength, slideHeadOffset } = getSlideFacts(
+  const { slideLength, slideOffsetLength } = getSlideFacts(
     localColumnBounds,
     columnCount
   )
   const labelStateSetterRef = useLabelStateSetterRef(localColumnBounds)
 
-  const slideOffsetAnimation = new Value<number>(slideHeadOffset)
+  const slideOffsetAnimation = new Value<number>(slideOffsetLength)
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const { onGesture, onStateChange } = getGestureHandlerCallbacks(
     localColumnBounds,

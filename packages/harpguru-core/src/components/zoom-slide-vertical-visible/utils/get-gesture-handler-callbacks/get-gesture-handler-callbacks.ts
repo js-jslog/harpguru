@@ -19,18 +19,18 @@ export const getGestureHandlerCallbacks = (
   setSourceColumnBounds: (arg0: ColumnBounds) => void
 ): GestureHandlerCallbacks => {
   const {
-    slideHeadOffset: baseSlideOffset,
+    slideOffsetLength,
     slideLength,
     trackLength,
-    slideSpan,
-    slotCount,
+    maxTrackIndex,
+    slideIndexSpan,
   } = getSlideFacts(columnBounds, columnCount)
 
   const onGesture = ({
     nativeEvent: { translationY },
   }: PanGestureHandlerGestureEvent) => {
     const withGestureSlideOffset = getWithGestureOffset(
-      baseSlideOffset,
+      slideOffsetLength,
       translationY,
       slideLength,
       trackLength
@@ -38,9 +38,9 @@ export const getGestureHandlerCallbacks = (
     const { withSnapIndex } = getWithSnapProps(
       withGestureSlideOffset,
       trackLength,
-      slotCount
+      maxTrackIndex
     )
-    const endHoleIndex = withSnapIndex + slideSpan
+    const endHoleIndex = withSnapIndex + slideIndexSpan
     setLabelColumnBounds([withSnapIndex, endHoleIndex])
     slideOffsetAnimation.setValue(withGestureSlideOffset)
   }
@@ -51,7 +51,7 @@ export const getGestureHandlerCallbacks = (
     const END_GESTURE = 5
     if (state !== END_GESTURE) return
     const withGestureSlideOffset = getWithGestureOffset(
-      baseSlideOffset,
+      slideOffsetLength,
       translationY,
       slideLength,
       trackLength
@@ -59,9 +59,9 @@ export const getGestureHandlerCallbacks = (
     const { withSnapIndex } = getWithSnapProps(
       withGestureSlideOffset,
       trackLength,
-      slotCount
+      maxTrackIndex
     )
-    const endHoleIndex = withSnapIndex + slideSpan
+    const endHoleIndex = withSnapIndex + slideIndexSpan
     setSlideColumnBounds([withSnapIndex, endHoleIndex] as readonly [
       number,
       number
