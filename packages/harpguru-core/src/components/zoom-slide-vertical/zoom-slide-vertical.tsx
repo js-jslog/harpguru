@@ -22,7 +22,7 @@ export const ZoomSlideVertical = (): React.ReactElement => {
   return (
     <ZoomSlideVerticalVisible
       globalColumnBounds={columnBounds}
-      globalColumnCount={fullInteractionMatrix[0].length}
+      columnCount={fullInteractionMatrix[0].length}
     />
   )
 }

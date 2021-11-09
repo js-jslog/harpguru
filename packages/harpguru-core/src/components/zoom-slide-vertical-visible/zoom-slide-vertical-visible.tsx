@@ -13,19 +13,19 @@ import { useLabelStateSetterRef } from './hooks'
 
 type ZoomSlideVerticalVisibleProps = {
   readonly globalColumnBounds: readonly [number, number]
-  readonly globalColumnCount: number
+  readonly columnCount: number
 }
 export const ZoomSlideVerticalVisible = (
   props: ZoomSlideVerticalVisibleProps
 ): React.ReactElement => {
-  const { globalColumnBounds, globalColumnCount } = props
+  const { globalColumnBounds, columnCount } = props
 
   const [localColumnBounds, setLocalColumnBounds] = useState<
     readonly [number, number]
   >(globalColumnBounds)
   const { slideLength, slideHeadOffset, slideSpan } = getSlideFacts(
     localColumnBounds,
-    globalColumnCount // need to create a localColumnCount state
+    columnCount
   )
   const labelStateSetterRef = useLabelStateSetterRef(localColumnBounds[0])
 
@@ -33,7 +33,7 @@ export const ZoomSlideVerticalVisible = (
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const { onGesture, onStateChange } = getGestureHandlerCallbacks(
     localColumnBounds,
-    globalColumnCount,
+    columnCount,
     slideOffsetAnimation,
     labelStateSetterRef.current,
     setLocalColumnBounds,
