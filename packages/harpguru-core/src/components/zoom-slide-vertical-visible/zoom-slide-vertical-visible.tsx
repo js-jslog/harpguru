@@ -37,12 +37,15 @@ import { useSlideState, useStyles } from './hooks'
 
 type ZoomSlideVerticalVisibleProps = {
   readonly columnBounds: readonly [number, number]
-  readonly columnCount: number
 }
 export const ZoomSlideVerticalVisible = (
   props: ZoomSlideVerticalVisibleProps
 ): React.ReactElement => {
-  const { columnBounds, columnCount } = props
+  const { columnBounds } = props
+  const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
+  const {
+    [0]: { length: columnCount },
+  } = fullInteractionMatrix
 
   const {
     trackBounds,
