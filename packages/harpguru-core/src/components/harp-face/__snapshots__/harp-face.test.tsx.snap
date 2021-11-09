@@ -4,7 +4,6 @@ exports[`A component is rendered with fragmented and bounded face 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "black",
       "flexDirection": "row",
       "height": 733.6530200124481,
       "justifyContent": "space-around",
@@ -2724,7 +2723,6 @@ exports[`A component is rendered with fragmented face 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "black",
       "flexDirection": "row",
       "height": 671.3257604044882,
       "justifyContent": "space-around",
@@ -7750,7 +7748,6 @@ exports[`A component is rendered with unfragmented and bounded face 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "black",
       "flexDirection": "row",
       "height": 733.6530200124481,
       "justifyContent": "space-around",
@@ -10323,7 +10320,6 @@ exports[`A component is rendered with unfragmented face 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "black",
       "flexDirection": "row",
       "height": 671.3257604044882,
       "justifyContent": "space-around",
