@@ -1,1 +1,1 @@
-export { ZoomSlideVerticalVisible } from './zoom-slide-vertical-visible'
+export { ZoomSlideVertical } from './zoom-slide-vertical'

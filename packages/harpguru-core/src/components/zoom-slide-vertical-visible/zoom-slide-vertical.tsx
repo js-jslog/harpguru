@@ -4,6 +4,7 @@ import { PanGestureHandler } from 'react-native-gesture-handler'
 import React from 'react'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
+import { useIsZoomedColumnBounds } from '../../hooks'
 
 import { getGestureHandlerCallbacks } from './utils'
 import { useSlideState, useStyles } from './hooks'
@@ -35,7 +36,14 @@ import { useSlideState, useStyles } from './hooks'
  * 5test1. Ensure that slide is made invisible and harpface resizes to occupy more space
  */
 
-export const ZoomSlideVerticalVisible = ({
+export const ZoomSlideVertical = (): React.ReactElement => {
+  const isZoomedColumBounds = useIsZoomedColumnBounds()
+  if (isZoomedColumBounds === false) return <></>
+
+  return <ZoomSlideVerticalVisible columnBounds={isZoomedColumBounds} />
+}
+
+const ZoomSlideVerticalVisible = ({
   columnBounds,
 }: {
   columnBounds: readonly [number, number]
