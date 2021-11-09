@@ -2,13 +2,16 @@ import { useEffect, useRef } from 'react'
 import type { MutableRefObject } from 'react'
 
 export const useLabelStateSetterRef = (
-  slotIndex: number
-): MutableRefObject<(arg0: number) => void> => {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const labelStateSetterRef = useRef<(arg0: number) => void>(() => {})
+  columnBounds: readonly [number, number]
+): MutableRefObject<(arg0: readonly [number, number]) => void> => {
+  /* eslint-disable @typescript-eslint/no-empty-function */
+  const labelStateSetterRef = useRef<(arg0: readonly [number, number]) => void>(
+    () => {}
+  )
+  /* eslint-enable @typescript-eslint/no-empty-function */
 
   useEffect(() => {
-    labelStateSetterRef.current(slotIndex)
+    labelStateSetterRef.current(columnBounds)
   }, [])
 
   return labelStateSetterRef

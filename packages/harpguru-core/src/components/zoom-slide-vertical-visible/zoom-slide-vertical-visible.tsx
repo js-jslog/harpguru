@@ -23,11 +23,11 @@ export const ZoomSlideVerticalVisible = (
   const [localColumnBounds, setLocalColumnBounds] = useState<
     readonly [number, number]
   >(globalColumnBounds)
-  const { slideLength, slideHeadOffset, slideSpan } = getSlideFacts(
+  const { slideLength, slideHeadOffset } = getSlideFacts(
     localColumnBounds,
     columnCount
   )
-  const labelStateSetterRef = useLabelStateSetterRef(localColumnBounds[0])
+  const labelStateSetterRef = useLabelStateSetterRef(localColumnBounds)
 
   const slideOffsetAnimation = new Value<number>(slideHeadOffset)
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
@@ -43,7 +43,7 @@ export const ZoomSlideVerticalVisible = (
   useEffect(() => {
     if (!isMatchColumnBounds(localColumnBounds, globalColumnBounds)) {
       setLocalColumnBounds(globalColumnBounds)
-      labelStateSetterRef.current(globalColumnBounds[0])
+      labelStateSetterRef.current(globalColumnBounds)
     }
   }, [
     localColumnBounds,
@@ -76,10 +76,7 @@ export const ZoomSlideVerticalVisible = (
           { transform: [{ translateY: slideOffsetAnimation }] },
         ]}
       >
-        <ZoomSlideLabels
-          stateSetterRef={labelStateSetterRef}
-          slideSpan={slideSpan}
-        />
+        <ZoomSlideLabels stateSetterRef={labelStateSetterRef} />
       </Animated.View>
     </PanGestureHandler>
   )

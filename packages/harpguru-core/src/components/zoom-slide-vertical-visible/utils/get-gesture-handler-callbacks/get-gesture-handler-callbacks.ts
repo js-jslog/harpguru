@@ -14,8 +14,8 @@ export const getGestureHandlerCallbacks = (
   columnBounds: readonly [number, number],
   columnCount: number,
   slideOffsetAnimation: Value<number>,
-  setLabelIndex: (arg0: number) => void,
-  setLocalColumnBounds: (arg0: readonly [number, number]) => void,
+  setLabelColumnBounds: (arg0: readonly [number, number]) => void,
+  setSlideColumnBounds: (arg0: readonly [number, number]) => void,
   setSourceColumnBounds: (arg0: ColumnBounds) => void
 ): GestureHandlerCallbacks => {
   const {
@@ -40,7 +40,8 @@ export const getGestureHandlerCallbacks = (
       trackLength,
       slotCount
     )
-    setLabelIndex(withSnapIndex)
+    const endHoleIndex = withSnapIndex + slideSpan
+    setLabelColumnBounds([withSnapIndex, endHoleIndex])
     slideOffsetAnimation.setValue(withGestureSlideOffset)
   }
 
@@ -61,7 +62,7 @@ export const getGestureHandlerCallbacks = (
       slotCount
     )
     const endHoleIndex = withSnapIndex + slideSpan
-    setLocalColumnBounds([withSnapIndex, endHoleIndex] as readonly [
+    setSlideColumnBounds([withSnapIndex, endHoleIndex] as readonly [
       number,
       number
     ])

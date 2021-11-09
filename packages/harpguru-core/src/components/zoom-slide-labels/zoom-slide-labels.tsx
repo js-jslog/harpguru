@@ -6,12 +6,12 @@ import { getColors } from '../../utils'
 import { useSizes } from '../../hooks'
 
 type ZoomSlideLabelsProps = {
-  readonly stateSetterRef: MutableRefObject<(arg0: number) => void>
-  readonly slideSpan: number
+  readonly stateSetterRef: MutableRefObject<
+    (arg0: readonly [number, number]) => void
+  >
 }
 export const ZoomSlideLabels = ({
   stateSetterRef,
-  slideSpan,
 }: ZoomSlideLabelsProps): React.ReactElement => {
   const { dynamicSizes } = useSizes()
   const { pageColor } = getColors()
@@ -22,11 +22,14 @@ export const ZoomSlideLabels = ({
       alignSelf: 'center',
     },
   })
-  const [startHoleIndex, setStartHoleIndex] = useState(2)
-  stateSetterRef.current = (slotIndex: number) => setStartHoleIndex(slotIndex)
+  const [[startHoleIndex, endHoleIndex], setColumnBounds] = useState<
+    readonly [number, number]
+  >([0, 0])
+  stateSetterRef.current = (columnBounds: readonly [number, number]) =>
+    setColumnBounds(columnBounds)
 
   const startHoleLabel = startHoleIndex + 1
-  const endHoleLabel = startHoleLabel + slideSpan
+  const endHoleLabel = endHoleIndex + 1
 
   return (
     <>
