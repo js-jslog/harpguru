@@ -11,7 +11,7 @@ type GestureHandlerCallbacks = {
   readonly onStateChange: (arg0: PanGestureHandlerGestureEvent) => void
 }
 export const getGestureHandlerCallbacks = (
-  columnBounds: readonly [number, number],
+  trackBounds: readonly [number, number],
   columnCount: number,
   slideOffsetAnimation: Value<number>,
   setLabelColumnBounds: (arg0: readonly [number, number]) => void,
@@ -24,7 +24,7 @@ export const getGestureHandlerCallbacks = (
     trackLength,
     maxTrackIndex,
     slideIndexSpan,
-  } = getSlideFacts(columnBounds, columnCount)
+  } = getSlideFacts(trackBounds, columnCount)
 
   const onGesture = ({
     nativeEvent: { translationY },

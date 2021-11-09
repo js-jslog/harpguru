@@ -8,10 +8,10 @@ type SlideFacts = {
   readonly slideIndexSpan: number
 }
 export const getSlideFacts = (
-  columnBounds: readonly [number, number],
+  trackBounds: readonly [number, number],
   columnCount: number
 ): SlideFacts => {
-  const [startBound, endBound] = columnBounds
+  const [startBound, endBound] = trackBounds
   const maxTrackIndex = columnCount - 1
   const { shortEdge: trackLength } = getWindowDimensions()
   const slotLength = trackLength / maxTrackIndex

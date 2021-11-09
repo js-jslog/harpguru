@@ -12,45 +12,40 @@ import { getGestureHandlerCallbacks, getSlideFacts } from './utils'
 import { useLabelStateSetterRef } from './hooks'
 
 type ZoomSlideVerticalVisibleProps = {
-  readonly globalColumnBounds: readonly [number, number]
+  readonly columnBounds: readonly [number, number]
   readonly columnCount: number
 }
 export const ZoomSlideVerticalVisible = (
   props: ZoomSlideVerticalVisibleProps
 ): React.ReactElement => {
-  const { globalColumnBounds, columnCount } = props
+  const { columnBounds, columnCount } = props
 
-  const [localColumnBounds, setLocalColumnBounds] = useState<
-    readonly [number, number]
-  >(globalColumnBounds)
+  const [trackBounds, setTrackBounds] = useState<readonly [number, number]>(
+    columnBounds
+  )
   const { slideLength, slideOffsetLength } = getSlideFacts(
-    localColumnBounds,
+    trackBounds,
     columnCount
   )
-  const labelStateSetterRef = useLabelStateSetterRef(localColumnBounds)
+  const labelStateSetterRef = useLabelStateSetterRef(trackBounds)
 
   const slideOffsetAnimation = new Value<number>(slideOffsetLength)
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const { onGesture, onStateChange } = getGestureHandlerCallbacks(
-    localColumnBounds,
+    trackBounds,
     columnCount,
     slideOffsetAnimation,
     labelStateSetterRef.current,
-    setLocalColumnBounds,
+    setTrackBounds,
     setSourceColumnBounds
   )
 
   useEffect(() => {
-    if (!isMatchColumnBounds(localColumnBounds, globalColumnBounds)) {
-      setLocalColumnBounds(globalColumnBounds)
-      labelStateSetterRef.current(globalColumnBounds)
+    if (!isMatchColumnBounds(trackBounds, columnBounds)) {
+      setTrackBounds(columnBounds)
+      labelStateSetterRef.current(columnBounds)
     }
-  }, [
-    localColumnBounds,
-    globalColumnBounds,
-    setLocalColumnBounds,
-    labelStateSetterRef,
-  ])
+  }, [trackBounds, columnBounds, setTrackBounds, labelStateSetterRef])
 
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()
