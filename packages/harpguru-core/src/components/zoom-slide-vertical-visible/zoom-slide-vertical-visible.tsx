@@ -35,13 +35,11 @@ import { useSlideState, useStyles } from './hooks'
  * 5test1. Ensure that slide is made invisible and harpface resizes to occupy more space
  */
 
-type ZoomSlideVerticalVisibleProps = {
-  readonly columnBounds: readonly [number, number]
-}
-export const ZoomSlideVerticalVisible = (
-  props: ZoomSlideVerticalVisibleProps
-): React.ReactElement => {
-  const { columnBounds } = props
+export const ZoomSlideVerticalVisible = ({
+  columnBounds,
+}: {
+  columnBounds: readonly [number, number]
+}): React.ReactElement => {
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const {
     [0]: { length: columnCount },
