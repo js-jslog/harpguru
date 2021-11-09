@@ -5,10 +5,10 @@ exports[`A snapshot of HoleNumber 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "height": 21.120884235352566,
+      "height": 22.63930291919421,
       "justifyContent": "center",
-      "top": -10.560442117676283,
-      "width": 55.295198637441516,
+      "top": -11.319651459597106,
+      "width": 59.270470780512596,
     }
   }
 >
@@ -17,7 +17,7 @@ exports[`A snapshot of HoleNumber 1`] = `
     style={
       Object {
         "color": "#555",
-        "fontSize": 21.120884235352566,
+        "fontSize": 22.63930291919421,
       }
     }
   >
