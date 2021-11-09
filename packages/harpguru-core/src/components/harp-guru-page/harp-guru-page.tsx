@@ -5,7 +5,7 @@ import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
-import { ZoomSlideVertical } from '../zoom-slide-vertical-visible'
+import { ZoomSlideVertical } from '../zoom-slide-vertical'
 import { ToggleBufferFlusher } from '../toggle-buffer-flusher'
 import { NotifyOfScale } from '../notify-of-scale'
 import { NotifyOfQuizQuestion } from '../notify-of-quiz-question'
