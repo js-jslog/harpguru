@@ -5,47 +5,52 @@ import { StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
-import { getColors } from '../../utils'
+import { getColors, isMatchColumnBounds } from '../../utils'
 import { useSizes } from '../../hooks'
 
 import { getGestureHandlerCallbacks, getSlideFacts } from './utils'
 import { useLabelStateSetterRef } from './hooks'
 
 type ZoomSlideVerticalVisibleProps = {
-  readonly columnBounds: readonly [number, number]
-  readonly columnCount: number
+  readonly globalColumnBounds: readonly [number, number]
+  readonly globalColumnCount: number
 }
 export const ZoomSlideVerticalVisible = (
   props: ZoomSlideVerticalVisibleProps
 ): React.ReactElement => {
-  const { columnBounds, columnCount } = props
-  const { [0]: inputBoundsStart } = columnBounds
-  const columnBoundsSpan = columnBounds[1] - columnBounds[0]
+  const { globalColumnBounds, globalColumnCount } = props
 
-  const [slotIndex, setSlotIndex] = useState<number>(inputBoundsStart)
+  const [localColumnBounds, setLocalColumnBounds] = useState<
+    readonly [number, number]
+  >(globalColumnBounds)
   const { slideLength, slideHeadOffset, slideSpan } = getSlideFacts(
-    [slotIndex, slotIndex + columnBoundsSpan],
-    columnCount
+    localColumnBounds,
+    globalColumnCount // need to create a localColumnCount state
   )
-  const labelStateSetterRef = useLabelStateSetterRef(slotIndex)
+  const labelStateSetterRef = useLabelStateSetterRef(localColumnBounds[0])
 
   const slideOffsetAnimation = new Value<number>(slideHeadOffset)
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const { onGesture, onStateChange } = getGestureHandlerCallbacks(
-    [slotIndex, slotIndex + columnBoundsSpan],
-    columnCount,
+    localColumnBounds,
+    globalColumnCount,
     slideOffsetAnimation,
     labelStateSetterRef.current,
-    setSlotIndex,
+    setLocalColumnBounds,
     setSourceColumnBounds
   )
 
   useEffect(() => {
-    if (slotIndex !== inputBoundsStart) {
-      setSlotIndex(inputBoundsStart)
-      labelStateSetterRef.current(inputBoundsStart)
+    if (!isMatchColumnBounds(localColumnBounds, globalColumnBounds)) {
+      setLocalColumnBounds(globalColumnBounds)
+      labelStateSetterRef.current(globalColumnBounds[0])
     }
-  }, [slotIndex, inputBoundsStart, setSlotIndex, labelStateSetterRef])
+  }, [
+    localColumnBounds,
+    globalColumnBounds,
+    setLocalColumnBounds,
+    labelStateSetterRef,
+  ])
 
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()

@@ -11,11 +11,11 @@ type GestureHandlerCallbacks = {
   readonly onStateChange: (arg0: PanGestureHandlerGestureEvent) => void
 }
 export const getGestureHandlerCallbacks = (
-  slideSlotIndices: readonly [number, number],
+  localColumnBounds: readonly [number, number],
   columnCount: number,
   slideOffsetAnimation: Value<number>,
   setLabelIndex: (arg0: number) => void,
-  setSlotIndex: (arg0: number) => void,
+  setLocalColumnBounds: (arg0: readonly [number, number]) => void,
   setSourceColumnBounds: (arg0: ColumnBounds) => void
 ): GestureHandlerCallbacks => {
   const {
@@ -24,7 +24,7 @@ export const getGestureHandlerCallbacks = (
     trackLength,
     slideSpan,
     slotCount,
-  } = getSlideFacts(slideSlotIndices, columnCount)
+  } = getSlideFacts(localColumnBounds, columnCount)
 
   const onGesture = ({
     nativeEvent: { translationY },
@@ -60,8 +60,11 @@ export const getGestureHandlerCallbacks = (
       trackLength,
       slotCount
     )
-    setSlotIndex(withSnapIndex)
     const endHoleIndex = withSnapIndex + slideSpan
+    setLocalColumnBounds([withSnapIndex, endHoleIndex] as readonly [
+      number,
+      number
+    ])
     const nextColumnBounds = [withSnapIndex, endHoleIndex] as ColumnBounds
     setSourceColumnBounds(nextColumnBounds)
   }
