@@ -4,24 +4,20 @@ import { useGlobal } from 'reactn'
 import React from 'react'
 
 import { ZoomSlideVerticalVisible } from '../zoom-slide-vertical-visible'
-import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
+import { useIsZoomed } from '../../hooks'
 
 export const ZoomSlideVertical = (): React.ReactElement => {
-  const [columnBounds] = useGlobal('columnBounds')
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
-  const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
-  if (columnBounds === 'FIT') return <></>
-  if (
-    doSparceIdedObjectMatricesMatch(
-      fullInteractionMatrix,
-      viewableInteractionMatrix
-    )
-  )
-    return <></>
+  if (!useIsZoomed()) return <></>
 
+  // We can assume that this is not 'FIT' because we have
+  // returned false from useIsZoomed. This is not a self
+  // evident inferance though and it would be better if
+  // there were some kind of typeguard
+  const [columnBounds] = useGlobal('columnBounds')
   return (
     <ZoomSlideVerticalVisible
-      columnBounds={columnBounds}
+      columnBounds={columnBounds as readonly [number, number]}
       columnCount={fullInteractionMatrix[0].length}
     />
   )
