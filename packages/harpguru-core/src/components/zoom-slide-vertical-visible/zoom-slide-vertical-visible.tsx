@@ -1,15 +1,12 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
-import { StyleSheet } from 'react-native'
 import React from 'react'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
-import { getColors } from '../../utils'
-import { useSizes } from '../../hooks'
 
-import { getGestureHandlerCallbacks, getSlideFacts } from './utils'
-import { useSlideState } from './hooks'
+import { getGestureHandlerCallbacks } from './utils'
+import { useSlideState, useStyles } from './hooks'
 
 type ZoomSlideVerticalVisibleProps = {
   readonly columnBounds: readonly [number, number]
@@ -37,20 +34,8 @@ export const ZoomSlideVerticalVisible = (
     setSourceColumnBounds
   )
 
-  const { dynamicSizes } = useSizes()
-  const { inertOutline } = getColors()
-  const { slideLength } = getSlideFacts(trackBounds, columnCount)
-  const styles = StyleSheet.create({
-    componentWrapper: {
-      ...StyleSheet.absoluteFillObject,
-      width: dynamicSizes.zoomSlideWidth,
-      left: dynamicSizes['9'], // legend width is going to have to become a named variable
-      height: slideLength,
-      backgroundColor: inertOutline,
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-    },
-  })
+  const slideStyle = useStyles(trackBounds, columnCount)
+
   return (
     <PanGestureHandler
       onGestureEvent={onGesture}
@@ -58,7 +43,7 @@ export const ZoomSlideVerticalVisible = (
     >
       <Animated.View
         style={[
-          styles.componentWrapper,
+          slideStyle,
           { transform: [{ translateY: slideOffsetAnimation }] },
         ]}
       >
