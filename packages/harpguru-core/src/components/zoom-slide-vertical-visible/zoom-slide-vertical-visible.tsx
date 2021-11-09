@@ -1,15 +1,15 @@
-import { useEffect, useGlobal } from 'reactn'
+import { useGlobal } from 'reactn'
 import Animated, { Value } from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import { StyleSheet } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
-import { getColors, isMatchColumnBounds } from '../../utils'
+import { getColors } from '../../utils'
 import { useSizes } from '../../hooks'
 
 import { getGestureHandlerCallbacks, getSlideFacts } from './utils'
-import { useLabelStateSetterRef } from './hooks'
+import { useSlideState } from './hooks'
 
 type ZoomSlideVerticalVisibleProps = {
   readonly columnBounds: readonly [number, number]
@@ -20,15 +20,14 @@ export const ZoomSlideVerticalVisible = (
 ): React.ReactElement => {
   const { columnBounds, columnCount } = props
 
-  const [trackBounds, setTrackBounds] = useState<readonly [number, number]>(
+  const { trackBounds, setTrackBounds, labelStateSetterRef } = useSlideState(
     columnBounds
   )
+
   const { slideLength, slideOffsetLength } = getSlideFacts(
     trackBounds,
     columnCount
   )
-  const labelStateSetterRef = useLabelStateSetterRef(trackBounds)
-
   const slideOffsetAnimation = new Value<number>(slideOffsetLength)
   const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
   const { onGesture, onStateChange } = getGestureHandlerCallbacks(
@@ -39,13 +38,6 @@ export const ZoomSlideVerticalVisible = (
     setTrackBounds,
     setSourceColumnBounds
   )
-
-  useEffect(() => {
-    if (!isMatchColumnBounds(trackBounds, columnBounds)) {
-      setTrackBounds(columnBounds)
-      labelStateSetterRef.current(columnBounds)
-    }
-  }, [trackBounds, columnBounds, setTrackBounds, labelStateSetterRef])
 
   const { dynamicSizes } = useSizes()
   const { inertOutline } = getColors()
