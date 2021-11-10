@@ -1,10 +1,13 @@
 import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
+import { View } from 'react-native'
 import React from 'react'
+import { FontAwesome } from '@expo/vector-icons'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
-import { useIsZoomedColumnBounds } from '../../hooks'
+import { getColors } from '../../utils'
+import { useIsZoomedColumnBounds, useSizes } from '../../hooks'
 
 import { getGestureHandlerCallbacks } from './utils'
 import { useSlideState, useStyles } from './hooks'
@@ -70,7 +73,15 @@ const ZoomSlideVerticalVisible = ({
     setSourceColumnBounds
   )
 
-  const slideStyle = useStyles(trackBounds, columnCount)
+  const {
+    componentWrapper,
+    pointerLayer,
+    topPointer,
+    bottomPointer,
+    labelLayer,
+  } = useStyles(trackBounds, columnCount)
+  const { dynamicSizes } = useSizes()
+  const { inertOutline } = getColors()
 
   return (
     <PanGestureHandler
@@ -79,11 +90,29 @@ const ZoomSlideVerticalVisible = ({
     >
       <Animated.View
         style={[
-          slideStyle,
+          componentWrapper,
           { transform: [{ translateY: slideOffsetAnimation }] },
         ]}
       >
-        <ZoomSlideLabels stateSetterRef={labelStateSetterRef} />
+        <View style={pointerLayer}>
+          <View style={topPointer}>
+            <FontAwesome
+              name="angle-double-up"
+              size={dynamicSizes['9']}
+              color={inertOutline}
+            />
+          </View>
+          <View style={bottomPointer}>
+            <FontAwesome
+              name="angle-double-down"
+              size={dynamicSizes['9']}
+              color={inertOutline}
+            />
+          </View>
+        </View>
+        <View style={labelLayer}>
+          <ZoomSlideLabels stateSetterRef={labelStateSetterRef} />
+        </View>
       </Animated.View>
     </PanGestureHandler>
   )
