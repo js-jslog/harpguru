@@ -14,10 +14,10 @@ export const ZoomSlideLabels = ({
   stateSetterRef,
 }: ZoomSlideLabelsProps): React.ReactElement => {
   const { dynamicSizes } = useSizes()
-  const { pageColor } = getColors()
+  const { inertOutline } = getColors()
   const styles = StyleSheet.create({
     textStyle: {
-      color: pageColor,
+      color: inertOutline,
       fontSize: dynamicSizes['8'],
       alignSelf: 'center',
     },

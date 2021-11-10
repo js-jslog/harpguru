@@ -17,7 +17,7 @@ export const useStyles = (
   columnCount: number
 ): Styles => {
   const { dynamicSizes } = useSizes()
-  const { inertOutline } = getColors()
+  const { homeRowsColor } = getColors()
   const { slideLength } = getSlideFacts(trackBounds, columnCount)
   const styles = StyleSheet.create({
     componentWrapper: {
@@ -25,7 +25,7 @@ export const useStyles = (
       width: dynamicSizes.zoomSlideWidth,
       left: dynamicSizes['9'], // legend width is going to have to become a named variable
       height: slideLength,
-      backgroundColor: inertOutline,
+      backgroundColor: homeRowsColor,
     },
     pointerLayer: {
       ...StyleSheet.absoluteFillObject,
