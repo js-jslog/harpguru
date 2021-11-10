@@ -1,7 +1,8 @@
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import type { MutableRefObject } from 'react'
 
+import { TextWithoutOSScale } from '../text-without-os-scale'
 import { getColors } from '../../utils'
 import { useSizes } from '../../hooks'
 
@@ -33,8 +34,12 @@ export const ZoomSlideLabels = ({
 
   return (
     <>
-      <Text style={styles.textStyle}>{startHoleLabel}</Text>
-      <Text style={styles.textStyle}>{endHoleLabel}</Text>
+      <TextWithoutOSScale style={styles.textStyle}>
+        {startHoleLabel}
+      </TextWithoutOSScale>
+      <TextWithoutOSScale style={styles.textStyle}>
+        {endHoleLabel}
+      </TextWithoutOSScale>
     </>
   )
 }
