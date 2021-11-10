@@ -3,7 +3,7 @@ import Animated from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 import React from 'react'
-import { FontAwesome } from '@expo/vector-icons'
+import { AntDesign } from '@expo/vector-icons'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
 import { getColors } from '../../utils'
@@ -96,16 +96,16 @@ const ZoomSlideVerticalVisible = ({
       >
         <View style={pointerLayer}>
           <View style={topPointer}>
-            <FontAwesome
-              name="angle-double-up"
-              size={dynamicSizes['9']}
+            <AntDesign
+              name="up"
+              size={dynamicSizes['8']}
               color={inertOutline}
             />
           </View>
           <View style={bottomPointer}>
-            <FontAwesome
-              name="angle-double-down"
-              size={dynamicSizes['9']}
+            <AntDesign
+              name="down"
+              size={dynamicSizes['8']}
               color={inertOutline}
             />
           </View>
