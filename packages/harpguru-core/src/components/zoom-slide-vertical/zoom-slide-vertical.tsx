@@ -74,7 +74,8 @@ const ZoomSlideVerticalVisible = ({
   )
 
   const {
-    componentWrapper,
+    track,
+    slide,
     pointerLayer,
     topPointer,
     bottomPointer,
@@ -88,32 +89,31 @@ const ZoomSlideVerticalVisible = ({
       onGestureEvent={onGesture}
       onHandlerStateChange={onStateChange}
     >
-      <Animated.View
-        style={[
-          componentWrapper,
-          { transform: [{ translateY: slideOffsetAnimation }] },
-        ]}
-      >
-        <View style={pointerLayer}>
-          <View style={topPointer}>
-            <AntDesign
-              name="up"
-              size={dynamicSizes['8']}
-              color={inertOutline}
-            />
+      <View style={track}>
+        <Animated.View
+          style={[slide, { transform: [{ translateY: slideOffsetAnimation }] }]}
+        >
+          <View style={pointerLayer}>
+            <View style={topPointer}>
+              <AntDesign
+                name="up"
+                size={dynamicSizes['8']}
+                color={inertOutline}
+              />
+            </View>
+            <View style={bottomPointer}>
+              <AntDesign
+                name="down"
+                size={dynamicSizes['8']}
+                color={inertOutline}
+              />
+            </View>
           </View>
-          <View style={bottomPointer}>
-            <AntDesign
-              name="down"
-              size={dynamicSizes['8']}
-              color={inertOutline}
-            />
+          <View style={labelLayer}>
+            <ZoomSlideLabels stateSetterRef={labelStateSetterRef} />
           </View>
-        </View>
-        <View style={labelLayer}>
-          <ZoomSlideLabels stateSetterRef={labelStateSetterRef} />
-        </View>
-      </Animated.View>
+        </Animated.View>
+      </View>
     </PanGestureHandler>
   )
 }

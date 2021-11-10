@@ -6,7 +6,8 @@ import { getColors } from '../../../../utils'
 import { useSizes } from '../../../../hooks'
 
 type Styles = {
-  readonly componentWrapper: ViewStyle
+  readonly track: ViewStyle
+  readonly slide: ViewStyle
   readonly pointerLayer: ViewStyle
   readonly topPointer: ViewStyle
   readonly bottomPointer: ViewStyle
@@ -20,10 +21,14 @@ export const useStyles = (
   const { homeRowsColor } = getColors()
   const { slideLength } = getSlideFacts(trackBounds, columnCount)
   const styles = StyleSheet.create({
-    componentWrapper: {
+    track: {
       ...StyleSheet.absoluteFillObject,
       width: dynamicSizes.zoomSlideWidth,
       left: dynamicSizes['9'], // legend width is going to have to become a named variable
+    },
+    slide: {
+      ...StyleSheet.absoluteFillObject,
+      width: dynamicSizes.zoomSlideWidth,
       height: slideLength,
       backgroundColor: homeRowsColor,
     },
@@ -46,7 +51,8 @@ export const useStyles = (
     },
   })
   const {
-    componentWrapper,
+    track,
+    slide,
     pointerLayer,
     topPointer,
     bottomPointer,
@@ -54,7 +60,8 @@ export const useStyles = (
   } = styles
 
   return {
-    componentWrapper,
+    track,
+    slide,
     pointerLayer,
     topPointer,
     bottomPointer,
