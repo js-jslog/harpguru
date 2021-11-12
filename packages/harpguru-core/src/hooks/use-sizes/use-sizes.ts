@@ -113,8 +113,7 @@ export const useSizes = (): SizeSchemes => {
     (columnWidth * staticEquivalentColumnCount +
       fragmentGutter * includingHarpFaceEdgesGutterCount +
       labelProtrusion +
-      legendWidth +
-      zoomSlideWidth)
+      legendWidth)
 
   const staticSizes: SizeScheme = {
     0: staticSeedSize * relativeSizes[0],
