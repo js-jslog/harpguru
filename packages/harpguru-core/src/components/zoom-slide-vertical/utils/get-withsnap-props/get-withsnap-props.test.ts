@@ -2,14 +2,14 @@ import { getWithSnapProps } from './get-withsnap-props'
 
 test('withsnaps on exact offsets are correct', () => {
   const trackLength = 100
-  const slotCount = 10
+  const maxTrackIndex = 10
 
   const slideOffset_1 = 0
 
   const withSnapProps_1 = getWithSnapProps(
     slideOffset_1,
     trackLength,
-    slotCount
+    maxTrackIndex
   )
 
   expect(withSnapProps_1.withSnapOffset).toBe(0)
@@ -20,7 +20,7 @@ test('withsnaps on exact offsets are correct', () => {
   const withSnapProps_2 = getWithSnapProps(
     slideOffset_2,
     trackLength,
-    slotCount
+    maxTrackIndex
   )
 
   expect(withSnapProps_2.withSnapOffset).toBe(10)
@@ -31,7 +31,7 @@ test('withsnaps on exact offsets are correct', () => {
   const withSnapProps_3 = getWithSnapProps(
     slideOffset_3,
     trackLength,
-    slotCount
+    maxTrackIndex
   )
 
   expect(withSnapProps_3.withSnapOffset).toBe(90)
@@ -40,7 +40,7 @@ test('withsnaps on exact offsets are correct', () => {
 
 test('withsnaps on nonexact offsets are correct', () => {
   const trackLength = 100
-  const slotCount = 10
+  const maxTrackIndex = 10
 
   const slideOffset_1a = 1
   const slideOffset_1b = 4.9
@@ -48,12 +48,12 @@ test('withsnaps on nonexact offsets are correct', () => {
   const withSnapProps_1a = getWithSnapProps(
     slideOffset_1a,
     trackLength,
-    slotCount
+    maxTrackIndex
   )
   const withSnapProps_1b = getWithSnapProps(
     slideOffset_1b,
     trackLength,
-    slotCount
+    maxTrackIndex
   )
 
   expect(withSnapProps_1a.withSnapOffset).toBe(0)
@@ -67,12 +67,12 @@ test('withsnaps on nonexact offsets are correct', () => {
   const withSnapProps_2a = getWithSnapProps(
     slideOffset_2a,
     trackLength,
-    slotCount
+    maxTrackIndex
   )
   const withSnapProps_2b = getWithSnapProps(
     slideOffset_2b,
     trackLength,
-    slotCount
+    maxTrackIndex
   )
 
   expect(withSnapProps_2a.withSnapOffset).toBe(10)
@@ -86,12 +86,12 @@ test('withsnaps on nonexact offsets are correct', () => {
   const withSnapProps_3a = getWithSnapProps(
     slideOffset_3a,
     trackLength,
-    slotCount
+    maxTrackIndex
   )
   const withSnapProps_3b = getWithSnapProps(
     slideOffset_3b,
     trackLength,
-    slotCount
+    maxTrackIndex
   )
 
   expect(withSnapProps_3a.withSnapOffset).toBe(90)

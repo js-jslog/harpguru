@@ -6,9 +6,9 @@ type WithSnapProps = {
 export const getWithSnapProps = (
   slideOffset: number,
   trackLength: number,
-  trackIndexCount: number
+  maxTrackIndex: number
 ): WithSnapProps => {
-  const slotLength = trackLength / trackIndexCount
+  const slotLength = trackLength / maxTrackIndex
   const withSnapIndex = Math.round(slideOffset / slotLength)
   const withSnapOffset = withSnapIndex * slotLength
 
