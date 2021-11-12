@@ -17,18 +17,20 @@ export const useStyles = (
   trackBounds: readonly [number, number],
   columnCount: number
 ): Styles => {
-  const { dynamicSizes } = useSizes()
+  const {
+    dynamicSizes: { legendWidth, zoomSlideWidth },
+  } = useSizes()
   const { homeRowsColor } = getColors()
   const { slideLength } = getSlideFacts(trackBounds, columnCount)
   const styles = StyleSheet.create({
     track: {
       ...StyleSheet.absoluteFillObject,
-      width: dynamicSizes.zoomSlideWidth,
-      left: dynamicSizes['9'], // legend width is going to have to become a named variable
+      width: zoomSlideWidth,
+      left: legendWidth,
     },
     slide: {
       ...StyleSheet.absoluteFillObject,
-      width: dynamicSizes.zoomSlideWidth,
+      width: zoomSlideWidth,
       height: slideLength,
       backgroundColor: homeRowsColor,
     },
@@ -39,10 +41,10 @@ export const useStyles = (
       justifyContent: 'space-between',
     },
     topPointer: {
-      bottom: dynamicSizes['9'],
+      bottom: zoomSlideWidth,
     },
     bottomPointer: {
-      top: dynamicSizes['9'],
+      top: zoomSlideWidth,
     },
     labelLayer: {
       ...StyleSheet.absoluteFillObject,

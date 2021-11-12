@@ -75,8 +75,9 @@ const ActivityCell = ({
   isActive,
 }: ActivityCellProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const { dynamicSizes } = useSizes()
-  const { 9: legendWidth } = dynamicSizes
+  const {
+    dynamicSizes: { legendWidth },
+  } = useSizes()
 
   const styles = StyleSheet.create({
     cell: {
