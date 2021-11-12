@@ -62,11 +62,11 @@ export const getGestureHandlerCallbacks = (
       maxTrackIndex
     )
     const endHoleIndex = withSnapIndex + slideIndexSpan
-    setSlideColumnBounds([withSnapIndex, endHoleIndex] as readonly [
+    const nextColumnBounds = [withSnapIndex, endHoleIndex] as readonly [
       number,
       number
-    ])
-    const nextColumnBounds = [withSnapIndex, endHoleIndex] as ColumnBounds
+    ]
+    setSlideColumnBounds(nextColumnBounds)
     setSourceColumnBounds(nextColumnBounds)
   }
 
