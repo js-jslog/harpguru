@@ -1,5 +1,6 @@
 import { useGlobal } from 'reactn'
 
+import { useIsZoomedColumnBounds } from '../use-is-zoomed-columnbounds'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 import { SizeScheme, SizeSchemes } from './use-sizes-types'
@@ -17,6 +18,8 @@ const relativeSizes: Omit<
   SizeScheme,
   | 'columnWidth'
   | 'rowHeight'
+  | 'legendWidth'
+  | 'zoomSlideWidth'
   | 'fragmentGutter'
   | 'labelProtrusion'
   | 'labelIconSize'
@@ -55,7 +58,8 @@ export const useSizes = (): SizeSchemes => {
     [relativeLabelIconSize]: labelIconSize,
   } = relativeSizes
   const rowHeight = columnWidth
-  const labelGrace = fragmentGutter
+  const legendWidth = columnWidth
+  const zoomSlideWidth = useIsZoomedColumnBounds() === false ? 0 : columnWidth
 
   // TODO: It might be better to either count the number of gutters
   // or base this as a proportion of the number of columns since
@@ -66,13 +70,14 @@ export const useSizes = (): SizeSchemes => {
   // when they left fragment mode. That would have advantages
   // and disadvantages.
   const roughFragmentGutterCount = 3
-  const sidesContainingLabelsCount = 2
+  const includingHarpFaceEdgesGutterCount = roughFragmentGutterCount + 2
   const dynamicWidthRequirements =
     longEdge /
     (columnWidth * harpFaceColumnCount +
-      fragmentGutter * roughFragmentGutterCount +
-      labelProtrusion * sidesContainingLabelsCount +
-      labelGrace * sidesContainingLabelsCount)
+      fragmentGutter * includingHarpFaceEdgesGutterCount +
+      labelProtrusion +
+      legendWidth +
+      zoomSlideWidth)
   const dynamicHeightRequirements = shortEdge / (rowHeight * harpFaceRowCount)
 
   const dynamicSeedSize =
@@ -94,7 +99,9 @@ export const useSizes = (): SizeSchemes => {
     10: dynamicSeedSize * relativeSizes[10],
     11: dynamicSeedSize * relativeSizes[11],
     columnWidth: dynamicSeedSize * columnWidth,
-    rowHeight: dynamicSeedSize * columnWidth,
+    rowHeight: dynamicSeedSize * rowHeight,
+    legendWidth: dynamicSeedSize * legendWidth,
+    zoomSlideWidth: dynamicSeedSize * zoomSlideWidth,
     fragmentGutter: dynamicSeedSize * fragmentGutter,
     labelProtrusion: dynamicSeedSize * labelProtrusion,
     labelIconSize: dynamicSeedSize * labelIconSize,
@@ -104,9 +111,9 @@ export const useSizes = (): SizeSchemes => {
   const staticSeedSize =
     longEdge /
     (columnWidth * staticEquivalentColumnCount +
-      fragmentGutter * roughFragmentGutterCount +
-      labelProtrusion * sidesContainingLabelsCount +
-      labelGrace * sidesContainingLabelsCount)
+      fragmentGutter * includingHarpFaceEdgesGutterCount +
+      labelProtrusion +
+      legendWidth)
 
   const staticSizes: SizeScheme = {
     0: staticSeedSize * relativeSizes[0],
@@ -122,7 +129,9 @@ export const useSizes = (): SizeSchemes => {
     10: staticSeedSize * relativeSizes[10],
     11: staticSeedSize * relativeSizes[11],
     columnWidth: staticSeedSize * columnWidth,
-    rowHeight: staticSeedSize * columnWidth,
+    rowHeight: staticSeedSize * rowHeight,
+    legendWidth: staticSeedSize * legendWidth,
+    zoomSlideWidth: staticSeedSize * zoomSlideWidth,
     fragmentGutter: staticSeedSize * fragmentGutter,
     labelProtrusion: staticSeedSize * labelProtrusion,
     labelIconSize: staticSeedSize * labelIconSize,

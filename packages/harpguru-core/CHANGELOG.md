@@ -15,6 +15,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v10.0.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: A menu to select a zoom level
+- MINOR: A slider to navigate the length of the harp while in zoom mode
+
 ## [v8.1.0](https://github.com/js-jslog/harpguru/releases/tag/v10.0.0) - 2021-10-14
 
 ### Added
