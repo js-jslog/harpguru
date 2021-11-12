@@ -90,17 +90,17 @@ export const buildMockUseGlobalImplementation = ({
       return [sourceColumnBounds, jest.fn()]
     if (stateItem === 'columnBounds') return [sourceColumnBounds]
     const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
-      [[]] as const,
+      [[], []] as const,
       sourceHarpStrata.degreeMatrix,
       sourceColumnBounds
     )
     const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
-      [[]] as const,
+      [[], []] as const,
       sourceHarpStrata.pitchMatrix,
       sourceColumnBounds
     )
     const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
-      [[]] as const,
+      [[], []] as const,
       sourceHarpStrata.apparatus.interactionMatrix,
       sourceColumnBounds
     )
@@ -110,10 +110,13 @@ export const buildMockUseGlobalImplementation = ({
       return [viewableInteractionMatrix]
 
     const layoutFacts = reduceViewableMatrixToLayoutFacts(
-      {
+      [{
         harpfaceColumns: 0,
         harpfaceRows: 0,
-      },
+      },{
+        harpfaceColumns: 0,
+        harpfaceRows: 0,
+      }],
       viewableInteractionMatrix
     )
     if (stateItem === 'layoutFacts') return [layoutFacts]

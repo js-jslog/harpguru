@@ -15,7 +15,7 @@ const flat7 = getDegree(DegreeIds.Flat7)
 const seventh = getDegree(DegreeIds.Seventh)
 
 // prettier-ignore
-const majorDiatonicFirstPozition: HarpFaceMatrix<Degree> = [
+const majorDiatonicFirstPozition: readonly [HarpFaceMatrix<Degree>, HarpFaceMatrix<Degree>] = [[
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat7     ],
   [ flat3    , undefined, undefined, flat3    , flat5    , flat7    , undefined, flat3    , flat5    , seventh   ],
   [ root     , third    , fifth    , root     , third    , fifth    , root     , third    , fifth    , root      ],
@@ -23,10 +23,10 @@ const majorDiatonicFirstPozition: HarpFaceMatrix<Degree> = [
   [ flat2    , flat5    , flat7    , flat2    , undefined, flat6    , flat2    , undefined, flat6    , flat2     ],
   [ undefined, fourth   , sixth , undefined   , undefined, undefined, undefined, undefined, undefined, undefined ],
   [ undefined, undefined, flat6 , undefined   , undefined, undefined, undefined, undefined, undefined, undefined ],
-] as const
+], []] as const
 
 // prettier-ignore
-const majorDiatonicFirstPozitionHalfValved: HarpFaceMatrix<Degree> = [
+const majorDiatonicFirstPozitionHalfValved: readonly [HarpFaceMatrix<Degree>, HarpFaceMatrix<Degree>] = [[
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat7     ],
   [ seventh  , flat3    , flat5    , seventh  , flat3    , flat5    , undefined, flat3    , flat5    , seventh   ],
   [ root     , third    , fifth    , root     , third    , fifth    , root     , third    , fifth    , root      ],
@@ -34,10 +34,10 @@ const majorDiatonicFirstPozitionHalfValved: HarpFaceMatrix<Degree> = [
   [ flat2    , flat5    , flat7    , flat2    , undefined, flat6    , flat7    , flat2    , third    , flat6     ],
   [ undefined, fourth   , sixth    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   [ undefined, undefined, flat6    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
-] as const
+], []] as const
 
 // prettier-ignore
-const majorDiatonicSecondPozition: HarpFaceMatrix<Degree> = [
+const majorDiatonicSecondPozition: readonly [HarpFaceMatrix<Degree>, HarpFaceMatrix<Degree>] = [[
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, flat3     ],
   [ flat6    , undefined, undefined, flat6    , seventh  , flat3    , undefined, flat6    , seventh  , third     ],
   [ fourth   , sixth    , root     , fourth   , sixth    , root     , fourth   , sixth    , root     , fourth    ],
@@ -45,7 +45,7 @@ const majorDiatonicSecondPozition: HarpFaceMatrix<Degree> = [
   [ flat5    , seventh  , flat3    , flat5    , undefined, flat2    , flat5    , undefined, flat2    , flat5     ],
   [ undefined, flat7    , second   , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   [ undefined, undefined, flat2    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
-] as const
+], []] as const
 
 export const EXAMPLE_DEGREE_MATRICES = {
   majorDiatonic: {

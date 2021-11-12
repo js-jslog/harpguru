@@ -1,4 +1,5 @@
 import type {
+  ReedArrayEmpty,
   ReedArray7,
   ReedArray10,
   ReedArray12,
@@ -6,6 +7,7 @@ import type {
   ReedArray16,
 } from './tuning-types'
 import {
+  isReedArrayEmpty,
   isReedArray7,
   isReedArray10,
   isReedArray12,
@@ -13,6 +15,10 @@ import {
   isReedArray16,
 } from './tuning-typeguards'
 
+const reedArrayEmpty: ReedArrayEmpty = [
+  [],
+  [],
+]
 const reedArray7: ReedArray7 = [
   [1, 2, 3, 4, 5, 6, 7],
   [1, 2, 3, 4, 5, 6, 7],
@@ -37,7 +43,17 @@ const reedArray16: ReedArray16 = [
   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
 ]
 
+test('isReedArrayEmpty returns true for an empty reed array and false otherwise', () => {
+  expect(isReedArrayEmpty(reedArrayEmpty)).toBeTruthy()
+  expect(isReedArrayEmpty(reedArray7)).toBeFalsy()
+  expect(isReedArrayEmpty(reedArray10)).toBeFalsy()
+  expect(isReedArrayEmpty(reedArray12)).toBeFalsy()
+  expect(isReedArrayEmpty(reedArray13)).toBeFalsy()
+  expect(isReedArrayEmpty(reedArray16)).toBeFalsy()
+})
+
 test('isReedArray7 returns true for a 7 reed array and false otherwise', () => {
+  expect(isReedArray7(reedArrayEmpty)).toBeFalsy()
   expect(isReedArray7(reedArray7)).toBeTruthy()
   expect(isReedArray7(reedArray10)).toBeFalsy()
   expect(isReedArray7(reedArray12)).toBeFalsy()
@@ -46,6 +62,7 @@ test('isReedArray7 returns true for a 7 reed array and false otherwise', () => {
 })
 
 test('isReedArray10 returns true for a 10 reed array and false otherwise', () => {
+  expect(isReedArray10(reedArrayEmpty)).toBeFalsy()
   expect(isReedArray10(reedArray7)).toBeFalsy()
   expect(isReedArray10(reedArray10)).toBeTruthy()
   expect(isReedArray10(reedArray12)).toBeFalsy()
@@ -54,6 +71,7 @@ test('isReedArray10 returns true for a 10 reed array and false otherwise', () =>
 })
 
 test('isReedArray12 returns true for a 12 reed array and false otherwise', () => {
+  expect(isReedArray12(reedArrayEmpty)).toBeFalsy()
   expect(isReedArray12(reedArray7)).toBeFalsy()
   expect(isReedArray12(reedArray10)).toBeFalsy()
   expect(isReedArray12(reedArray12)).toBeTruthy()
@@ -62,6 +80,7 @@ test('isReedArray12 returns true for a 12 reed array and false otherwise', () =>
 })
 
 test('isReedArray13 returns true for a 13 reed array and false otherwise', () => {
+  expect(isReedArray13(reedArrayEmpty)).toBeFalsy()
   expect(isReedArray13(reedArray7)).toBeFalsy()
   expect(isReedArray13(reedArray10)).toBeFalsy()
   expect(isReedArray13(reedArray12)).toBeFalsy()
@@ -70,6 +89,7 @@ test('isReedArray13 returns true for a 13 reed array and false otherwise', () =>
 })
 
 test('isReedArray16 returns true for a 16 reed array and false otherwise', () => {
+  expect(isReedArray16(reedArrayEmpty)).toBeFalsy()
   expect(isReedArray16(reedArray7)).toBeFalsy()
   expect(isReedArray16(reedArray10)).toBeFalsy()
   expect(isReedArray16(reedArray12)).toBeFalsy()

@@ -10,12 +10,12 @@ type HarpFaceStyles = {
   readonly face: ViewStyle
 }
 
-export const useStyles = (): HarpFaceStyles => {
+export const useStyles = (harpfaceIndex: 0 | 1): HarpFaceStyles => {
   const { dynamicSizes } = useSizes()
   const { columnWidth, rowHeight, fragmentGutter } = dynamicSizes
 
   const [layoutFacts] = useGlobal('layoutFacts')
-  const { harpfaceRows, harpfaceColumns } = layoutFacts
+  const {[harpfaceIndex]: { harpfaceRows, harpfaceColumns }} = layoutFacts
 
   const octaveColumnGroups = useOctaveColumnGroups()
   const { length: groupCount } = octaveColumnGroups

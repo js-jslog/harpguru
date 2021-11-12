@@ -35,7 +35,7 @@ test('getDegreeMatrix maps a major diatonic halfstepmatrix in to a major diatoni
     },
   } = EXAMPLE_DEGREE_MATRICES
   const actualArray = getDegreeMatrix(
-    majorDiatonicApparatus.halfstepIndexMatrix,
+    majorDiatonicApparatus.halfstepIndexMatrix[0],
     0
   )
 

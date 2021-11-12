@@ -6,10 +6,14 @@ import { HarpFaceFragment } from '../harp-face-fragment'
 import { useStyles, useOctaveColumnGroups } from './hooks'
 
 export const HarpFace = (): React.ReactElement => {
-  const styles = useStyles()
+  // TODO: This needs to be determined based on which
+  // harpface is being rendered when we actually do
+  // potentially render 2 harpfaces.
+  const harpfaceIndex = 0
+  const styles = useStyles(harpfaceIndex)
   const columnRanges = useOctaveColumnGroups()
   const fragments = columnRanges.map((xRange, index) => (
-    <HarpFaceFragment key={index} xRange={xRange} />
+    <HarpFaceFragment key={index} xRange={xRange} harpfaceIndex={harpfaceIndex} />
   ))
 
   return <View style={styles.face}>{fragments}</View>

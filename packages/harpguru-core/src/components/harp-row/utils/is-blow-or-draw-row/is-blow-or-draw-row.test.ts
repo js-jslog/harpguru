@@ -16,9 +16,9 @@ const {
 } = getHarpStrata(harpStrataProps)
 
 test('isBlowRow returns true for a blow row and false otherwise', () => {
-  const forBlowRow = isBlowRow(2, interactionMatrix)
-  const forDrawRow = isBlowRow(3, interactionMatrix)
-  const forBendRow = isBlowRow(4, interactionMatrix)
+  const forBlowRow = isBlowRow(2, interactionMatrix[0])
+  const forDrawRow = isBlowRow(3, interactionMatrix[0])
+  const forBendRow = isBlowRow(4, interactionMatrix[0])
 
   expect(forBlowRow).toBeTruthy()
   expect(forDrawRow).toBeFalsy()
@@ -26,9 +26,9 @@ test('isBlowRow returns true for a blow row and false otherwise', () => {
 })
 
 test('isDrawRow returns true for a blow row and false otherwise', () => {
-  const forBlowRow = isDrawRow(2, interactionMatrix)
-  const forDrawRow = isDrawRow(3, interactionMatrix)
-  const forBendRow = isDrawRow(4, interactionMatrix)
+  const forBlowRow = isDrawRow(2, interactionMatrix[0])
+  const forDrawRow = isDrawRow(3, interactionMatrix[0])
+  const forBendRow = isDrawRow(4, interactionMatrix[0])
 
   expect(forBlowRow).toBeFalsy()
   expect(forDrawRow).toBeTruthy()
@@ -36,9 +36,9 @@ test('isDrawRow returns true for a blow row and false otherwise', () => {
 })
 
 test('isBlowOrDrawRow returns true for a blow or draw row and false otherwise', () => {
-  const forBlowRow = isBlowOrDrawRow(2, interactionMatrix)
-  const forDrawRow = isBlowOrDrawRow(3, interactionMatrix)
-  const forBendRow = isBlowOrDrawRow(4, interactionMatrix)
+  const forBlowRow = isBlowOrDrawRow(2, interactionMatrix[0])
+  const forDrawRow = isBlowOrDrawRow(3, interactionMatrix[0])
+  const forBendRow = isBlowOrDrawRow(4, interactionMatrix[0])
 
   expect(forBlowRow).toBeTruthy()
   expect(forDrawRow).toBeTruthy()

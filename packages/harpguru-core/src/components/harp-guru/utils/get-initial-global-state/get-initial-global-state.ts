@@ -55,27 +55,29 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const { pitchMatrix: fullPitchMatrix } = initialHarpStrata
   const columnBounds = 'FIT'
   const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
-    [[]] as const,
+    [[], []] as const,
     fullInteractionMatrix,
     columnBounds
   )
   const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
-    [[]] as const,
+    [[], []] as const,
     fullDegreeMatrix,
     columnBounds
   )
   const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
-    [[]] as const,
+    [[], []] as const,
     fullPitchMatrix,
     columnBounds
   )
-  const layoutFacts = reduceViewableMatrixToLayoutFacts(
+  const layoutFacts = reduceViewableMatrixToLayoutFacts([
     {
       harpfaceColumns: 0,
       harpfaceRows: 0,
-    },
-    viewableInteractionMatrix
-  )
+    },{
+      harpfaceColumns: 0,
+      harpfaceRows: 0,
+    }
+  ], viewableInteractionMatrix)
 
   const state = {
     activeHarpStrata: initialHarpStrata,

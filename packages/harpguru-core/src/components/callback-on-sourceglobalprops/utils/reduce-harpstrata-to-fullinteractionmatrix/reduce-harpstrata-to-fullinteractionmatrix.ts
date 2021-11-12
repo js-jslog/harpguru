@@ -1,21 +1,17 @@
 import type { HarpStrata } from 'harpstrata'
 import type { HarpFaceMatrix, Interaction } from 'harpparts'
 
+import { isMatchHighOrderTuples } from '../../../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
 export const reduceHarpStrataToFullInteractionMatrix = (
-  prevInteractionMatrix: HarpFaceMatrix<Interaction>,
+  prevInteractionMatrix: readonly [HarpFaceMatrix<Interaction>, HarpFaceMatrix<Interaction>],
   harpStrata: HarpStrata
-): HarpFaceMatrix<Interaction> => {
+): readonly [HarpFaceMatrix<Interaction>, HarpFaceMatrix<Interaction>] => {
   const {
     apparatus: { interactionMatrix: nextInteractionMatrix },
   } = harpStrata
-  if (
-    doSparceIdedObjectMatricesMatch(
-      prevInteractionMatrix,
-      nextInteractionMatrix
-    )
-  )
+  if (isMatchHighOrderTuples(doSparceIdedObjectMatricesMatch, prevInteractionMatrix, nextInteractionMatrix))
     return prevInteractionMatrix
   return nextInteractionMatrix
 }

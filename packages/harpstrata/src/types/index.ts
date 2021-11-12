@@ -35,8 +35,8 @@ export type HarpStrataProps = {
 
 export type HarpStrata = {
   readonly apparatus: Apparatus
-  readonly degreeMatrix: HarpFaceMatrix<Degree>
-  readonly pitchMatrix: HarpFaceMatrix<Pitch>
+  readonly degreeMatrix: readonly [HarpFaceMatrix<Degree>, HarpFaceMatrix<Degree>]
+  readonly pitchMatrix: readonly [HarpFaceMatrix<Pitch>, HarpFaceMatrix<Pitch>]
   readonly activeDegreeIds: ActiveDegreeIds
   readonly activePitchIds: ActivePitchIds
   readonly pozitionId: PozitionIds

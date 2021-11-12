@@ -78,8 +78,8 @@ const {
 
 test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
   const isActiveProps = {
-    degreeMatrix,
-    pitchMatrix,
+    degreeMatrix: degreeMatrix[0],
+    pitchMatrix: pitchMatrix[0],
     activeIds: examplePitchIds as ActiveIds,
   }
   const actualActiveIds = getActiveIdsPair(isActiveProps)
@@ -93,8 +93,8 @@ test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
 
 test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
   const isActiveProps = {
-    degreeMatrix,
-    pitchMatrix,
+    degreeMatrix: degreeMatrix[0],
+    pitchMatrix: pitchMatrix[0],
     activeIds: exampleDegreeIds as ActiveIds,
   }
   const actualActiveIds = getActiveIdsPair(isActiveProps)
@@ -108,8 +108,8 @@ test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
 
 test('getActiveIdsPair returns the active ids for a given Flat3 DegreeIds[]', () => {
   const isActiveProps = {
-    degreeMatrix,
-    pitchMatrix,
+    degreeMatrix: degreeMatrix[0],
+    pitchMatrix: pitchMatrix[0],
     activeIds: [DegreeIds.Flat3] as ActiveIds,
   }
   const actualActiveIds = getActiveIdsPair(isActiveProps)

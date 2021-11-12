@@ -97,8 +97,8 @@ test('reedArrayToMatrices works as expected for a major diatonic tuned harp', ()
     [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const { id, reedArray } = MAJOR_DIATONIC
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
+  const { id, reedArrays } = MAJOR_DIATONIC
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -128,8 +128,8 @@ test('reedArrayToMatrices works as expected for a Country tuned harp', () => {
   ] as const
   // prettier-ignore
 
-  const { id, reedArray } = COUNTRY
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
+  const { id, reedArrays } = COUNTRY
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -158,8 +158,8 @@ test('reedArrayToMatrices works as expected for a Natrual Minor tuned harp', () 
     [ undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const { id, reedArray } = NATURAL_MINOR
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
+  const { id, reedArrays } = NATURAL_MINOR
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -186,8 +186,8 @@ test('reedArrayToMatrices works as expected for a Power Bender tuned harp', () =
     [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const { id, reedArray } = POWER_BENDER
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
+  const { id, reedArrays } = POWER_BENDER
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -214,8 +214,8 @@ test('reedArrayToMatrices works as expected for a Power Draw tuned harp', () => 
     [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   ] as const
 
-  const { id, reedArray } = POWER_DRAW
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
+  const { id, reedArrays } = POWER_DRAW
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -242,8 +242,8 @@ test('reedArrayToMatrices works as expected for a Wilde tuned harp', () => {
     [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, DRAWBEND3, undefined, undefined, undefined ],
   ] as const
 
-  const { id, reedArray } = WILDE
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
+  const { id, reedArrays } = WILDE
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -270,8 +270,8 @@ test('reedArrayToMatrices works as expected for a Woozle Minor tuned harp', () =
     [ undefined, DRAWBEND3, undefined, undefined, undefined, undefined, undefined, undefined, DRAWBEND3, undefined ],
   ] as const
 
-  const { id, reedArray } = WOOZLE_MINOR
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
+  const { id, reedArrays } = WOOZLE_MINOR
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -298,8 +298,8 @@ test('reedArrayToMatrices works as expected for a half-valved Power Draw tuned h
     [ undefined  , undefined  , DRAWBEND3  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
   ] as const
 
-  const { id, reedArray } = POWER_DRAW
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.HalfValved)
+  const { id, reedArrays } = POWER_DRAW
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.HalfValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -326,8 +326,8 @@ test('reedArrayToMatrices works as expected for a half-valved Woozle Minor tuned
     [ undefined  , DRAWBEND3  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , DRAWBEND3  , undefined   ],
   ] as const
 
-  const { id, reedArray } = WOOZLE_MINOR
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.HalfValved)
+  const { id, reedArrays } = WOOZLE_MINOR
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.HalfValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -356,8 +356,8 @@ test('reedArrayToMatrices works as expected for a half-valved major diatonic tun
     [ undefined  , undefined  , DRAWBEND3  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined  , undefined   ],
   ] as const
 
-  const { id, reedArray } = MAJOR_DIATONIC
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.HalfValved)
+  const { id, reedArrays } = MAJOR_DIATONIC
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.HalfValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })
 
@@ -384,7 +384,7 @@ test('reedArrayToMatrices works as expected for a baby fat tuned harp', () => {
     [ undefined, undefined, DRAWBEND3, undefined, undefined, undefined, undefined],
   ] as const
 
-  const { id, reedArray } = BABY_FAT
-  const matrices = reedArrayToMatrices(reedArray, id, ValvingIds.NotValved)
+  const { id, reedArrays } = BABY_FAT
+  const matrices = reedArrayToMatrices(reedArrays[0], id, ValvingIds.NotValved)
   expect(matrices).toStrictEqual({ halfstepIndexMatrix, interactionMatrix })
 })

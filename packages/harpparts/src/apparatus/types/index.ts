@@ -176,6 +176,6 @@ export type MatrixSpecs = {
 export type Apparatus = {
   readonly tuningId: TuningIds
   readonly valvingId: ValvingIds
-  readonly halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex>
-  readonly interactionMatrix: HarpFaceMatrix<Interaction>
+  readonly halfstepIndexMatrix: readonly [HarpFaceMatrix<HalfstepIndex>, HarpFaceMatrix<HalfstepIndex>]
+  readonly interactionMatrix: readonly [HarpFaceMatrix<Interaction>, HarpFaceMatrix<Interaction>]
 }

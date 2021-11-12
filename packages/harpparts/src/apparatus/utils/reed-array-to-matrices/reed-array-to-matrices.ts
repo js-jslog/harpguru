@@ -9,15 +9,21 @@ import { mapHoleTierToHalfstepindex } from '../map-hole-tier-to-halstepindex'
 import { getHoleArrayErrorMessages } from '../get-hole-array-error-messages'
 import { deriveMatrixSpecs } from '../derive-matrix-specs'
 import type { HoleArray } from '../../types'
-import type { Apparatus } from '../../types'
 import { ValvingIds } from '../../../valving'
+import type {HarpFaceMatrix, HalfstepIndex} from '../../../types'
 import type { TuningIds, ReedArray } from '../../../tuning'
+import {Interaction} from '../../../interaction'
+
+type ApparatusMatrices = {
+  readonly halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex>,
+  readonly interactionMatrix: HarpFaceMatrix<Interaction>,
+}
 
 export const reedArrayToMatrices = (
   reedArray: ReedArray,
   tuningId: TuningIds,
   valvingId: ValvingIds
-): Pick<Apparatus, 'halfstepIndexMatrix' | 'interactionMatrix'> => {
+): ApparatusMatrices => {
   const holeArray = (pivotReedArray(reedArray)
     .map(mapReedPairToHole)
     .map(mapHoleToIncludeBends)

@@ -7,7 +7,7 @@ import { reduceHarpStrataToFullPitchMatrix } from './reduce-harpstrata-to-fullpi
 test('the previous fullPitchMatrix object is returned if it matches the one on the harpstrata', () => {
   const harpStrata = activeCellsHarpStrata
   const { pitchMatrix } = harpStrata
-  const prevPitchMatrix = [...pitchMatrix]
+  const prevPitchMatrix = [...pitchMatrix] as const
   const nextPitchMatrix = reduceHarpStrataToFullPitchMatrix(
     prevPitchMatrix,
     harpStrata
@@ -21,14 +21,15 @@ test('the previous fullPitchMatrix object is returned if it matches the one on t
 test('the next fullPitchMatrix object is returned if it is different from the previous', () => {
   const harpStrata = activeCellsHarpStrata
   const { pitchMatrix } = harpStrata
-  const [firstRow] = pitchMatrix
+  const [ pitchMatrix1, pitchMatrix2 ] = pitchMatrix
+  const [firstRow] = pitchMatrix1
   const [, ...firstRowMinusFirstElement] = firstRow
   const firstRowNewFirstElement = [
     getPitch(PitchIds.Gb),
     ...firstRowMinusFirstElement,
   ]
-  const [, ...minusFirstRow] = pitchMatrix
-  const prevPitchMatrix = [firstRowNewFirstElement, ...minusFirstRow]
+  const [, ...minusFirstRow] = pitchMatrix1
+  const prevPitchMatrix = [[firstRowNewFirstElement, ...minusFirstRow], pitchMatrix2] as const
   const nextPitchMatrix = reduceHarpStrataToFullPitchMatrix(
     prevPitchMatrix,
     harpStrata
@@ -37,3 +38,6 @@ test('the next fullPitchMatrix object is returned if it is different from the pr
   expect(nextPitchMatrix).not.toStrictEqual(prevPitchMatrix)
   expect(nextPitchMatrix).toBe(harpStrata.pitchMatrix)
 })
+
+// TODO: Add test for when the the second matrix isn't empty. All the source data has empty second matrices at the moment
+// TODO: These things will be less confusing if I were to change the pitchMatrix property on HarpStrata to pitchMatrices but I haven't really settled on this design yet.

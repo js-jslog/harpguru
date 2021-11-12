@@ -31,7 +31,7 @@ test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic
   } = EXAMPLE_PITCH_MATRICES
   const actualArray = getPitchMatrix(
     buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
-      .halfstepIndexMatrix,
+      .halfstepIndexMatrix[0],
     c.id
   )
 
@@ -48,7 +48,7 @@ test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic
   } = EXAMPLE_PITCH_MATRICES
   const actualArray = getPitchMatrix(
     buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
-      .halfstepIndexMatrix,
+      .halfstepIndexMatrix[0],
     PitchIds.F
   )
 
