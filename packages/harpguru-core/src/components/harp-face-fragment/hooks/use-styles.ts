@@ -9,12 +9,17 @@ type HarpFaceFragmentStyles = {
   readonly fragment: ViewStyle
 }
 
-export const useStyles = (xRange: XRange): HarpFaceFragmentStyles => {
+export const useStyles = (
+  xRange: XRange,
+  harpfaceIndex: number
+): HarpFaceFragmentStyles => {
   const {
     dynamicSizes: { columnWidth, rowHeight },
   } = useSizes()
   const [layoutFacts] = useGlobal('layoutFacts')
-  const { harpfaceRows } = layoutFacts
+  const {
+    [harpfaceIndex]: { harpfaceRows },
+  } = layoutFacts
   const { length: fragmentColumnCount } = xRange
 
   const styles = StyleSheet.create<HarpFaceFragmentStyles>({

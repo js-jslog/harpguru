@@ -30,12 +30,14 @@ test('getDegreeMatrix maps a major diatonic halfstepmatrix in to a major diatoni
   const {
     majorDiatonic: {
       firstPozition: {
-        notValved: { degreeMatrix: expectedDegreeMatrix },
+        notValved: {
+          degreeMatrix: [expectedDegreeMatrix],
+        },
       },
     },
   } = EXAMPLE_DEGREE_MATRICES
   const actualArray = getDegreeMatrix(
-    majorDiatonicApparatus.halfstepIndexMatrix,
+    majorDiatonicApparatus.halfstepIndexMatrix[0],
     0
   )
 

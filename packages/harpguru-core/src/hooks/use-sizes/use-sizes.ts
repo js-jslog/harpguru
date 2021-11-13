@@ -45,11 +45,19 @@ const relativeLabelIconSize = 7
 
 export const useSizes = (): SizeSchemes => {
   const { shortEdge, longEdge } = getWindowDimensions()
-  const [layoutFacts] = useGlobal('layoutFacts')
+  const [[layoutFacts1, layoutFacts2]] = useGlobal('layoutFacts')
   const {
-    harpfaceColumns: harpFaceColumnCount,
-    harpfaceRows: harpFaceRowCount,
-  } = layoutFacts
+    harpfaceColumns: harpFace1ColumnCount,
+    harpfaceRows: harpFace1RowCount,
+  } = layoutFacts1
+  const { harpfaceRows: harpFace2RowCount } = layoutFacts2
+  const harpFaceColumnCount = harpFace1ColumnCount
+  // TODO: It looks like we're getting a 1 back from the layout facts
+  // of an empty second harpface. This is probably because we have returned
+  // [[]] for an empty harp, to make sure that checks for columns don't throw
+  // an indexoutofbounds exception. That logic needs improving and the type
+  // being changed to [].
+  const harpFaceRowCount = harpFace1RowCount + harpFace2RowCount - 1
 
   const {
     [relativeColumnWidth]: columnWidth,
@@ -69,6 +77,9 @@ export const useSizes = (): SizeSchemes => {
   // selected. This would mean that the cell size would grow
   // when they left fragment mode. That would have advantages
   // and disadvantages.
+  // TODO: We will also need to determine whether there is a horizontal
+  // gutter required by looking at whether there are any rows on the
+  // second harpface.
   const roughFragmentGutterCount = 3
   const includingHarpFaceEdgesGutterCount = roughFragmentGutterCount + 2
   const dynamicWidthRequirements =

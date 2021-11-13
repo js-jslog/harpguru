@@ -15,7 +15,7 @@ const bb = getPitch(PitchIds.Bb)
 const b = getPitch(PitchIds.B)
 
 // prettier-ignore
-const cMajorDiatonic: HarpFaceMatrix<Pitch> = [
+const cMajorDiatonic: readonly [HarpFaceMatrix<Pitch>, HarpFaceMatrix<Pitch>] = [[
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, bb        ],
   [ eb       , undefined, undefined, eb       , gb       , bb       , undefined, eb       , gb       , b         ],
   [ c        , e        , g        , c        , e        , g        , c        , e        , g        , c         ],
@@ -23,10 +23,10 @@ const cMajorDiatonic: HarpFaceMatrix<Pitch> = [
   [ db       , gb       , bb       , db       , undefined, ab       , db       , undefined, ab       , db        ],
   [ undefined, f        , a        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   [ undefined, undefined, ab       , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
-] as const
+], [[]]] as const
 
 // prettier-ignore
-const cMajorDiatonicHalfValved: HarpFaceMatrix<Pitch> = [
+const cMajorDiatonicHalfValved: readonly [HarpFaceMatrix<Pitch>, HarpFaceMatrix<Pitch>] = [[
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, bb        ],
   [ b        , eb       , gb       , b        , eb       , gb       , undefined, eb       , gb       , b         ],
   [ c        , e        , g        , c        , e        , g        , c        , e        , g        , c         ],
@@ -34,10 +34,10 @@ const cMajorDiatonicHalfValved: HarpFaceMatrix<Pitch> = [
   [ db       , gb       , bb       , db       , undefined, ab       , bb       , db       , e        , ab        ],
   [ undefined, f        , a        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   [ undefined, undefined, ab       , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
-] as const
+], [[]]] as const
 
 // prettier-ignore
-const fMajorDiatonic: HarpFaceMatrix<Pitch> = [
+const fMajorDiatonic: readonly [HarpFaceMatrix<Pitch>, HarpFaceMatrix<Pitch>] = [[
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, eb        ],
   [ ab       , undefined, undefined, ab       , b        , eb       , undefined, ab       , b        , e         ],
   [ f        , a        , c        , f        , a        , c        , f        , a        , c        , f         ],
@@ -45,7 +45,7 @@ const fMajorDiatonic: HarpFaceMatrix<Pitch> = [
   [ gb       , b        , eb       , gb       , undefined, db       , gb       , undefined, db       , gb        ],
   [ undefined, bb       , d        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   [ undefined, undefined, db       , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
-] as const
+], [[]]] as const
 
 export const EXAMPLE_PITCH_MATRICES = {
   majorDiatonic: {

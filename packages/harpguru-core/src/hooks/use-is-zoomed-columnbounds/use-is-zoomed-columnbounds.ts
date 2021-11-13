@@ -1,5 +1,6 @@
 import { useGlobal } from 'reactn'
 
+import { isMatchHighOrderTuples } from '../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 
 // TODO: Add a test
@@ -11,7 +12,8 @@ export const useIsZoomedColumnBounds = ():
   const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
   if (columnBounds === 'FIT') return false
   if (
-    doSparceIdedObjectMatricesMatch(
+    isMatchHighOrderTuples(
+      doSparceIdedObjectMatricesMatch,
       fullInteractionMatrix,
       viewableInteractionMatrix
     )

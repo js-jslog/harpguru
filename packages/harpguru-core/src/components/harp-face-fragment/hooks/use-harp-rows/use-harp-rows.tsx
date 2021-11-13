@@ -11,9 +11,9 @@ type HarpRows = {
   readonly bottom: ReactElement[]
 }
 
-export const useHarpRows = (xRange: XRange): HarpRows => {
+export const useHarpRows = (xRange: XRange, harpfaceIndex: 0 | 1): HarpRows => {
   const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
-  const viewableBlowDrawIdsMap = viewableInteractionMatrix.map(
+  const viewableBlowDrawIdsMap = viewableInteractionMatrix[harpfaceIndex].map(
     mapRowToBlowDrawIds
   )
 
@@ -25,18 +25,32 @@ export const useHarpRows = (xRange: XRange): HarpRows => {
   // 1. decide this is an elegant approach but a messy implementation - refactor
   // 2. decide that all of the objects further down the chain should be using the viewable matrices too - refactor
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
-  const fullBlowDrawIdsMap = fullInteractionMatrix.map(mapRowToBlowDrawIds)
+  const fullBlowDrawIdsMap = fullInteractionMatrix[harpfaceIndex].map(
+    mapRowToBlowDrawIds
+  )
   const fullDrawIndex = fullBlowDrawIdsMap.indexOf(InteractionIds.Draw)
   const drawIndexDiff = fullDrawIndex - drawIndex
 
   const topHarpRows = topRowsPrimer.map((_, index) => {
     return (
-      <HarpRow key={index} xRange={xRange} yCoord={index + drawIndexDiff} />
+      <HarpRow
+        key={index}
+        xRange={xRange}
+        yCoord={index + drawIndexDiff}
+        harpfaceIndex={harpfaceIndex}
+      />
     )
   })
   const bottomHarpRows = bottomRowsPrimer.map((_, index) => {
     const amendedIndex = index + topHarpRows.length + drawIndexDiff
-    return <HarpRow key={amendedIndex} xRange={xRange} yCoord={amendedIndex} />
+    return (
+      <HarpRow
+        key={amendedIndex}
+        xRange={xRange}
+        yCoord={amendedIndex}
+        harpfaceIndex={harpfaceIndex}
+      />
+    )
   })
 
   const harpRows = {

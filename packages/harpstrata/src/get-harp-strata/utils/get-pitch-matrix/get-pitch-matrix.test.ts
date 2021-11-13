@@ -25,13 +25,15 @@ test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic
   const {
     majorDiatonic: {
       cHarp: {
-        notValved: { pitchMatrix: expectedPitchMatrix },
+        notValved: {
+          pitchMatrix: [expectedPitchMatrix],
+        },
       },
     },
   } = EXAMPLE_PITCH_MATRICES
   const actualArray = getPitchMatrix(
     buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
-      .halfstepIndexMatrix,
+      .halfstepIndexMatrix[0],
     c.id
   )
 
@@ -42,13 +44,15 @@ test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic
   const {
     majorDiatonic: {
       fHarp: {
-        notValved: { pitchMatrix: expectedPitchMatrix },
+        notValved: {
+          pitchMatrix: [expectedPitchMatrix],
+        },
       },
     },
   } = EXAMPLE_PITCH_MATRICES
   const actualArray = getPitchMatrix(
     buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
-      .halfstepIndexMatrix,
+      .halfstepIndexMatrix[0],
     PitchIds.F
   )
 

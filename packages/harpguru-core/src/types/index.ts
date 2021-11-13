@@ -32,18 +32,36 @@ export type GlobalState = {
   readonly columnBounds: ColumnBounds
   readonly tuningId: TuningIds
   readonly valvingId: ValvingIds
-  readonly activeInteractionMatrix: HarpFaceMatrix<Interaction>
-  readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
-  readonly activePitchMatrix: HarpFaceMatrix<Pitch>
+  readonly activeInteractionMatrix: readonly [
+    HarpFaceMatrix<Interaction>,
+    HarpFaceMatrix<Interaction>
+  ]
+  readonly activeDegreeMatrix: readonly [
+    HarpFaceMatrix<Degree>,
+    HarpFaceMatrix<Degree>
+  ]
+  readonly activePitchMatrix: readonly [
+    HarpFaceMatrix<Pitch>,
+    HarpFaceMatrix<Pitch>
+  ]
   readonly activeDegreeIds: ReadonlyArray<DegreeIds>
   readonly activePitchIds: ReadonlyArray<PitchIds>
   readonly pozitionId: PozitionIds
   readonly rootPitchId: PitchIds
   readonly harpKeyId: PitchIds
-  readonly viewableInteractionMatrix: HarpFaceMatrix<Interaction>
-  readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
-  readonly viewablePitchMatrix: HarpFaceMatrix<Pitch>
-  readonly layoutFacts: LayoutFacts
+  readonly viewableInteractionMatrix: readonly [
+    HarpFaceMatrix<Interaction>,
+    HarpFaceMatrix<Interaction>
+  ]
+  readonly viewableDegreeMatrix: readonly [
+    HarpFaceMatrix<Degree>,
+    HarpFaceMatrix<Degree>
+  ]
+  readonly viewablePitchMatrix: readonly [
+    HarpFaceMatrix<Pitch>,
+    HarpFaceMatrix<Pitch>
+  ]
+  readonly layoutFacts: readonly [LayoutFacts, LayoutFacts]
 }
 
 export type UseGlobal = <

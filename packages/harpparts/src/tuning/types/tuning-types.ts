@@ -62,15 +62,18 @@ export type Tuning = {
   readonly id: TuningIds
   readonly shortName?: string
   readonly category: TuningCategories
-  readonly reedArray: ReedArray
+  readonly reedArrays: readonly [ReedArray, ReedArray]
 }
 
 export type ReedArray =
+  | ReedArrayEmpty
   | ReedArray7
   | ReedArray10
   | ReedArray12
   | ReedArray13
   | ReedArray16
+
+export type ReedArrayEmpty = readonly [readonly [], readonly []]
 
 export type ReedArray7 = readonly [
   readonly [

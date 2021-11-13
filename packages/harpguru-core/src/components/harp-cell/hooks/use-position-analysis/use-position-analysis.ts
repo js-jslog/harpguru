@@ -11,16 +11,23 @@ export type PositionFacts = {
   readonly thisIsActive: boolean
 }
 
-export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
+export const usePositionAnalysis = (
+  yxCoord: YXCoord,
+  harpfaceIndex: 0 | 1
+): PositionFacts => {
   const [degreeMatrix] = useGlobal('activeDegreeMatrix')
   const [pitchMatrix] = useGlobal('activePitchMatrix')
   const [activeDegreeIds] = useGlobal('activeDegreeIds')
   const [yCoord, xCoord] = yxCoord
   const {
-    [yCoord]: { [xCoord]: thisDegree },
+    [harpfaceIndex]: {
+      [yCoord]: { [xCoord]: thisDegree },
+    },
   } = degreeMatrix
   const {
-    [yCoord]: { [xCoord]: thisPitch },
+    [harpfaceIndex]: {
+      [yCoord]: { [xCoord]: thisPitch },
+    },
   } = pitchMatrix
   const { id: thisDegreeId } = thisDegree || { id: undefined }
   const { id: thisPitchId } = thisPitch || { id: undefined }

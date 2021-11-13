@@ -11,10 +11,16 @@ test('From each of the available tunings, both the halfstepindex interaction mat
     )
     .flat()
     .forEach((apparatus) => {
-      const [hasParity, errorMessages] = matricesHaveParity(
-        apparatus.halfstepIndexMatrix,
-        apparatus.interactionMatrix
+      const [hasParity1, errorMessages1] = matricesHaveParity(
+        apparatus.halfstepIndexMatrix[0],
+        apparatus.interactionMatrix[0]
       )
+      const [hasParity2, errorMessages2] = matricesHaveParity(
+        apparatus.halfstepIndexMatrix[1],
+        apparatus.interactionMatrix[1]
+      )
+      const hasParity = hasParity1 && hasParity2
+      const errorMessages = [...errorMessages1, ...errorMessages2]
       expect(hasParity).toBeTruthy()
       expect(errorMessages).toStrictEqual([])
     })
@@ -23,9 +29,9 @@ test('From each of the available tunings, both the halfstepindex interaction mat
 test('Double check that misaligned apparatus matrices *would* produce failing errors here', () => {
   const [hasParity, errorMessages] = matricesHaveParity(
     buildApparatus(TuningIds.MajorDiatonic, ValvingIds.NotValved)
-      .halfstepIndexMatrix,
+      .halfstepIndexMatrix[0],
     buildApparatus(TuningIds.MajorDiatonic, ValvingIds.HalfValved)
-      .interactionMatrix
+      .interactionMatrix[0]
   )
 
   expect(hasParity).toBeFalsy()

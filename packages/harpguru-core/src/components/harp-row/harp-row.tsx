@@ -10,14 +10,20 @@ import { useStyles } from './hooks'
 type HarpRowProps = {
   readonly yCoord: Coord
   readonly xRange: XRange
+  readonly harpfaceIndex: 0 | 1
 }
 
 export const HarpRow = ({
   yCoord,
   xRange,
+  harpfaceIndex,
 }: HarpRowProps): React.ReactElement => {
   const [activeInteractionMatrix] = useGlobal('activeInteractionMatrix')
-  const styles = useStyles(yCoord, activeInteractionMatrix)
+  const styles = useStyles(yCoord, activeInteractionMatrix[harpfaceIndex])
 
-  return <View style={styles.row}>{getHarpCells(yCoord, xRange)}</View>
+  return (
+    <View style={styles.row}>
+      {getHarpCells(yCoord, xRange, harpfaceIndex)}
+    </View>
+  )
 }

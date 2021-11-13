@@ -7,9 +7,10 @@ export const determineMatrixDimensions = (
   matrix: ReadonlyArray<ReadonlyArray<unknown>>
 ): MatrixDimensions => {
   const { length: rows } = matrix
-  const {
-    [0]: { length: columns },
-  } = matrix
+  const columns = (() => {
+    if (!matrix[0]) return 0
+    return matrix[0].length
+  })()
 
   return { columns, rows }
 }

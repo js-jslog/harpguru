@@ -16,11 +16,16 @@ import type { YXCoord } from './types'
 
 type HarpCellProps = {
   readonly yxCoord: YXCoord
+  readonly harpfaceIndex: 0 | 1
 }
 
-export const HarpCell = ({ yxCoord }: HarpCellProps): React.ReactElement => {
+export const HarpCell = ({
+  yxCoord,
+  harpfaceIndex,
+}: HarpCellProps): React.ReactElement => {
   const { thisDegreeId, thisPitchId, thisIsActive } = usePositionAnalysis(
-    yxCoord
+    yxCoord,
+    harpfaceIndex
   )
   const baseHarpCellStyles = getBaseHarpCellStyles()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
