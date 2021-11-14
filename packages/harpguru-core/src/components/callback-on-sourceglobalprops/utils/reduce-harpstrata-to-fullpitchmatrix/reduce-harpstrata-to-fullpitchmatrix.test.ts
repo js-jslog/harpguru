@@ -7,7 +7,7 @@ import { reduceHarpStrataToFullPitchMatrix } from './reduce-harpstrata-to-fullpi
 test('the previous fullPitchMatrix object is returned if it matches the one on the harpstrata', () => {
   const harpStrata = activeCellsHarpStrata
   const { pitchMatrix } = harpStrata
-  const prevPitchMatrix = [...pitchMatrix] as const
+  const prevPitchMatrix = { ...pitchMatrix }
   const nextPitchMatrix = reduceHarpStrataToFullPitchMatrix(
     prevPitchMatrix,
     harpStrata
@@ -21,7 +21,7 @@ test('the previous fullPitchMatrix object is returned if it matches the one on t
 test('the next fullPitchMatrix object is returned if it is different from the previous', () => {
   const harpStrata = activeCellsHarpStrata
   const { pitchMatrix } = harpStrata
-  const [pitchMatrix1, pitchMatrix2] = pitchMatrix
+  const { harpface1: pitchMatrix1 } = pitchMatrix
   const [firstRow] = pitchMatrix1
   const [, ...firstRowMinusFirstElement] = firstRow
   const firstRowNewFirstElement = [
@@ -29,10 +29,10 @@ test('the next fullPitchMatrix object is returned if it is different from the pr
     ...firstRowMinusFirstElement,
   ]
   const [, ...minusFirstRow] = pitchMatrix1
-  const prevPitchMatrix = [
-    [firstRowNewFirstElement, ...minusFirstRow],
-    pitchMatrix2,
-  ] as const
+  const prevPitchMatrix = {
+    ...pitchMatrix,
+    harpface1: [firstRowNewFirstElement, ...minusFirstRow],
+  }
   const nextPitchMatrix = reduceHarpStrataToFullPitchMatrix(
     prevPitchMatrix,
     harpStrata

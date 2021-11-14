@@ -29,31 +29,28 @@ const overblow = { id: InteractionIds.OverBlow1 }
 test('previous viewable matrix is returned if reduced one is a match', () => {
   const actualFitColumnBounds = 'FIT'
   const effectiveFitColumnBounds = [0, 4] as const
-  const prevViewableMatrix = [
-    [
+  const prevViewableMatrix = {
+    harpface1: [
       [root, second, third, fourth, fifth],
       [root, second, third, fourth, fifth],
       [root, second, third, fourth, fifth],
     ],
-    [],
-  ] as const
+  }
   const notFitColumnBounds = [1, 2] as const
-  const notFitPrevViewableMatrix = [
-    [
+  const notFitPrevViewableMatrix = {
+    harpface1: [
       [second, third],
       [second, third],
       [second, third],
     ],
-    [],
-  ] as const
-  const fullMatrix = [
-    [
+  }
+  const fullMatrix = {
+    harpface1: [
       [root, second, third, fourth, fifth],
       [root, second, third, fourth, fifth],
       [root, second, third, fourth, fifth],
     ],
-    [],
-  ] as const
+  }
   expect(
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
@@ -79,31 +76,30 @@ test('previous viewable matrix is returned if reduced one is a match', () => {
 
 test('identical full degree matrix is returned when columnBounds is FIT (if doesnt match previous matrix)', () => {
   const columnBounds = 'FIT'
-  const prevViewableMatrix = [[[fifth]], []] as const
-  const fullMatrix1 = [
-    [
+  const prevViewableMatrix = {
+    harpface1: [[fifth]],
+  }
+  const fullMatrix1 = {
+    harpface1: [
       [root, second, third, fourth, fifth],
       [root, second, third, fourth, fifth],
       [root, second, third, fourth, fifth],
     ],
-    [],
-  ] as const
-  const fullMatrix2 = [
-    [
+  }
+  const fullMatrix2 = {
+    harpface1: [
       [root, second, third, fourth, undefined],
       [root, second, third, fourth, fifth],
       [root, undefined, third, fourth, fifth],
     ],
-    [],
-  ] as const
-  const fullMatrix3 = [
-    [
+  }
+  const fullMatrix3 = {
+    harpface1: [
       [getDegree(DegreeIds.Root), undefined],
       [getDegree(DegreeIds.Root), getDegree(DegreeIds.Third)],
       [undefined, getDegree(DegreeIds.Third)],
     ],
-    [],
-  ] as const
+  }
 
   expect(
     reduceFullMatrixToViewableMatrix(
@@ -130,47 +126,42 @@ test('identical full degree matrix is returned when columnBounds is FIT (if does
 
 test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
   const columnBounds = [0, 1] as const
-  const prevViewableMatrix = [[[fifth]], []] as const
-  const fullMatrix1 = [
-    [
+  const prevViewableMatrix = { harpface1: [[fifth]] }
+  const fullMatrix1 = {
+    harpface1: [
       [root, second, third, fourth, fifth],
       [root, second, third, fourth, fifth],
       [root, second, third, fourth, fifth],
     ],
-    [],
-  ] as const
-  const slicedMatrix1 = [
-    [
+  }
+  const slicedMatrix1 = {
+    harpface1: [
       [root, second],
       [root, second],
       [root, second],
     ],
-    [],
-  ] as const
-  const fullMatrix2 = [
-    [
+  }
+  const fullMatrix2 = {
+    harpface1: [
       [root, second, third, fourth, undefined],
       [root, second, third, fourth, fifth],
       [root, undefined, third, fourth, fifth],
     ],
-    [],
-  ] as const
-  const slicedMatrix2 = [
-    [
+  }
+  const slicedMatrix2 = {
+    harpface1: [
       [root, second],
       [root, second],
       [root, undefined],
     ],
-    [],
-  ] as const
-  const fullMatrix3 = [
-    [
+  }
+  const fullMatrix3 = {
+    harpface1: [
       [root, undefined],
       [root, third],
       [undefined, third],
     ],
-    [],
-  ] as const
+  }
 
   expect(
     reduceFullMatrixToViewableMatrix(
@@ -197,31 +188,28 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
 
 test('identical full pitch matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
-  const prevViewableMatrix = [[[g]], []] as const
-  const fullMatrix1 = [
-    [
+  const prevViewableMatrix = { harpface1: [[g]] }
+  const fullMatrix1 = {
+    harpface1: [
       [c, d, e, f, g],
       [c, d, e, f, g],
       [c, d, e, f, g],
     ],
-    [],
-  ] as const
-  const fullMatrix2 = [
-    [
+  }
+  const fullMatrix2 = {
+    harpface1: [
       [c, d, e, f, undefined],
       [c, d, e, f, g],
       [c, undefined, e, f, g],
     ],
-    [],
-  ] as const
-  const fullMatrix3 = [
-    [
+  }
+  const fullMatrix3 = {
+    harpface1: [
       [getPitch(PitchIds.C), undefined],
       [getPitch(PitchIds.C), getPitch(PitchIds.E)],
       [undefined, getPitch(PitchIds.E)],
     ],
-    [],
-  ] as const
+  }
 
   expect(
     reduceFullMatrixToViewableMatrix(
@@ -248,47 +236,42 @@ test('identical full pitch matrix is returned when columnBounds is FIT', () => {
 
 test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
   const columnBounds = [0, 1] as const
-  const prevViewableMatrix = [[[g]], []] as const
-  const fullMatrix1 = [
-    [
+  const prevViewableMatrix = { harpface1: [[g]] }
+  const fullMatrix1 = {
+    harpface1: [
       [c, d, e, f, g],
       [c, d, e, f, g],
       [c, d, e, f, g],
     ],
-    [],
-  ] as const
-  const slicedMatrix1 = [
-    [
+  }
+  const slicedMatrix1 = {
+    harpface1: [
       [c, d],
       [c, d],
       [c, d],
     ],
-    [],
-  ] as const
-  const fullMatrix2 = [
-    [
+  }
+  const fullMatrix2 = {
+    harpface1: [
       [c, d, e, f, undefined],
       [c, d, e, f, g],
       [c, undefined, e, f, g],
     ],
-    [],
-  ] as const
-  const slicedMatrix2 = [
-    [
+  }
+  const slicedMatrix2 = {
+    harpface1: [
       [c, d],
       [c, d],
       [c, undefined],
     ],
-    [],
-  ] as const
-  const fullMatrix3 = [
-    [
+  }
+  const fullMatrix3 = {
+    harpface1: [
       [c, undefined],
       [c, e],
       [undefined, e],
     ],
-    [],
-  ] as const
+  }
 
   expect(
     reduceFullMatrixToViewableMatrix(
@@ -315,33 +298,30 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
 
 test('identical full interaction matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
-  const prevViewableMatrix = [[[drawbend]], []] as const
-  const fullMatrix1 = [
-    [
+  const prevViewableMatrix = { harpface1: [[drawbend]] }
+  const fullMatrix1 = {
+    harpface1: [
       [blow, blow, blow, blow, blow],
       [draw, draw, draw, draw, draw],
       [drawbend, drawbend, drawbend, drawbend, drawbend],
     ],
-    [],
-  ] as const
-  const fullMatrix2 = [
-    [
+  }
+  const fullMatrix2 = {
+    harpface1: [
       [overblow, overblow, overblow, overblow, undefined],
       [blow, blow, blow, blow, blow],
       [draw, draw, draw, draw, draw],
       [drawbend, undefined, drawbend, drawbend, drawbend],
     ],
-    [],
-  ] as const
-  const fullMatrix3 = [
-    [
+  }
+  const fullMatrix3 = {
+    harpface1: [
       [blowbend, undefined],
       [blow, blow],
       [draw, draw],
       [undefined, drawbend],
     ],
-    [],
-  ] as const
+  }
 
   expect(
     reduceFullMatrixToViewableMatrix(
@@ -368,50 +348,45 @@ test('identical full interaction matrix is returned when columnBounds is FIT', (
 
 test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => {
   const columnBounds = [0, 1] as const
-  const prevViewableMatrix = [[[drawbend]], []] as const
-  const fullMatrix1 = [
-    [
+  const prevViewableMatrix = { harpface1: [[drawbend]] }
+  const fullMatrix1 = {
+    harpface1: [
       [blow, blow, blow, blow, blow],
       [draw, draw, draw, draw, draw],
       [drawbend, drawbend, drawbend, drawbend, drawbend],
     ],
-    [],
-  ] as const
-  const slicedMatrix1 = [
-    [
+  }
+  const slicedMatrix1 = {
+    harpface1: [
       [blow, blow],
       [draw, draw],
       [drawbend, drawbend],
     ],
-    [],
-  ] as const
-  const fullMatrix2 = [
-    [
+  }
+  const fullMatrix2 = {
+    harpface1: [
       [overblow, overblow, overblow, overblow, undefined],
       [blow, blow, blow, blow, blow],
       [draw, draw, draw, draw, draw],
       [drawbend, undefined, drawbend, drawbend, drawbend],
     ],
-    [],
-  ] as const
-  const slicedMatrix2 = [
-    [
+  }
+  const slicedMatrix2 = {
+    harpface1: [
       [overblow, overblow],
       [blow, blow],
       [draw, draw],
       [drawbend, undefined],
     ],
-    [],
-  ] as const
-  const fullMatrix3 = [
-    [
+  }
+  const fullMatrix3 = {
+    harpface1: [
       [blowbend, undefined],
       [blow, blow],
       [draw, draw],
       [undefined, drawbend],
     ],
-    [],
-  ] as const
+  }
 
   expect(
     reduceFullMatrixToViewableMatrix(

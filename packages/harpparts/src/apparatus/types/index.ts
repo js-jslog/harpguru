@@ -1,5 +1,5 @@
 import { ValvingIds } from '../../valving'
-import type { HarpFaceMatrix, HalfstepIndex } from '../../types'
+import type { HalfstepIndex, HarpFaceMatrices } from '../../types'
 import { TuningIds } from '../../tuning'
 import type { Interaction } from '../../interaction'
 
@@ -176,12 +176,6 @@ export type MatrixSpecs = {
 export type Apparatus = {
   readonly tuningId: TuningIds
   readonly valvingId: ValvingIds
-  readonly halfstepIndexMatrix: readonly [
-    HarpFaceMatrix<HalfstepIndex>,
-    HarpFaceMatrix<HalfstepIndex>
-  ]
-  readonly interactionMatrix: readonly [
-    HarpFaceMatrix<Interaction>,
-    HarpFaceMatrix<Interaction>
-  ]
+  readonly halfstepIndexMatrix: HarpFaceMatrices<HalfstepIndex>
+  readonly interactionMatrix: HarpFaceMatrices<Interaction>
 }

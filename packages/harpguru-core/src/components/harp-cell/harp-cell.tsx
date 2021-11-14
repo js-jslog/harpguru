@@ -16,7 +16,7 @@ import type { YXCoord } from './types'
 
 type HarpCellProps = {
   readonly yxCoord: YXCoord
-  readonly harpfaceIndex: 0 | 1
+  readonly harpfaceIndex: 'harpface1' | 'harpface2'
 }
 
 export const HarpCell = ({

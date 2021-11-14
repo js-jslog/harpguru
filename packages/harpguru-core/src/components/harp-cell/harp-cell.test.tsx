@@ -18,7 +18,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
   mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
-    harpfaceIndex: 0,
+    harpfaceIndex: 'harpface1',
   } as const
   const { getByText, rerender } = render(<HarpCell {...harpCellProps} />)
 
@@ -39,7 +39,7 @@ test('A component is rendered with an a11y role of button', () => {
   mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
-    harpfaceIndex: 0,
+    harpfaceIndex: 'harpface1',
   } as const
   const { getByRole } = render(<HarpCell {...harpCellProps} />)
 
@@ -50,7 +50,7 @@ test('A component is rendered without an a11y role of button if it has no conten
   mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
   const harpCellProps = {
     yxCoord: [0, 0] as [0, 0],
-    harpfaceIndex: 0,
+    harpfaceIndex: 'harpface1',
   } as const
   const { queryByRole } = render(<HarpCell {...harpCellProps} />)
 
@@ -64,7 +64,7 @@ test.skip('A press of the componenet results in toggled active ids in the harpst
     activeDisplayMode: DisplayModes.Degree,
     setActiveHarpStrata,
     yxCoord: [3, 0] as [3, 0],
-    harpfaceIndex: 0,
+    harpfaceIndex: 'harpface1',
   } as const
 
   const { getByText } = render(<HarpCell {...harpCellProps} />)
@@ -97,7 +97,7 @@ test('A snapshot of a populated cell', () => {
   )
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
-    harpfaceIndex: 0,
+    harpfaceIndex: 'harpface1',
   } as const
 
   const { toJSON } = render(<HarpCell {...harpCellProps} />)
@@ -108,7 +108,7 @@ test('A snapshot of an active cell', () => {
   mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
-    harpfaceIndex: 0,
+    harpfaceIndex: 'harpface1',
   } as const
 
   const { toJSON } = render(<HarpCell {...harpCellProps} />)
@@ -123,7 +123,7 @@ test('A snapshot of an empty cell', () => {
   )
   const harpFaceProps = {
     yxCoord: [0, 0] as [0, 0],
-    harpfaceIndex: 0,
+    harpfaceIndex: 'harpface1',
   } as const
 
   const { toJSON } = render(<HarpCell {...harpFaceProps} />)
@@ -139,7 +139,7 @@ test('A snapshot of an inactive cell in Explore mode', () => {
   )
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
-    harpfaceIndex: 0,
+    harpfaceIndex: 'harpface1',
   } as const
 
   const { toJSON } = render(<HarpCell {...harpCellProps} />)
@@ -157,7 +157,7 @@ test('A snapshot of an inactive cell in Quiz mode', () => {
   )
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
-    harpfaceIndex: 0,
+    harpfaceIndex: 'harpface1',
   } as const
 
   const { toJSON } = render(<HarpCell {...harpCellProps} />)

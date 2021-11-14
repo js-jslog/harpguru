@@ -9,7 +9,7 @@ test('the previous fullInteractionMatrix object is returned if it matches the on
   const {
     apparatus: { interactionMatrix },
   } = harpStrata
-  const prevInteractionMatrix = [...interactionMatrix] as const
+  const prevInteractionMatrix = { ...interactionMatrix }
   const nextInteractionMatrix = reduceHarpStrataToFullInteractionMatrix(
     prevInteractionMatrix,
     harpStrata
@@ -27,7 +27,7 @@ test('the next fullInteractionMatrix object is returned if it is different from 
   const {
     apparatus: { interactionMatrix },
   } = harpStrata
-  const [interactionMatrix1, interactionMatrix2] = interactionMatrix
+  const { harpface1: interactionMatrix1 } = interactionMatrix
   const [firstRow] = interactionMatrix1
   const [, ...firstRowMinusFirstElement] = firstRow
   const firstRowNewFirstElement = [
@@ -35,10 +35,10 @@ test('the next fullInteractionMatrix object is returned if it is different from 
     ...firstRowMinusFirstElement,
   ]
   const [, ...minusFirstRow] = interactionMatrix1
-  const prevInteractionMatrix = [
-    [firstRowNewFirstElement, ...minusFirstRow],
-    interactionMatrix2,
-  ] as const
+  const prevInteractionMatrix = {
+    ...interactionMatrix,
+    harpface1: [firstRowNewFirstElement, ...minusFirstRow],
+  }
   const nextInteractionMatrix = reduceHarpStrataToFullInteractionMatrix(
     prevInteractionMatrix,
     harpStrata

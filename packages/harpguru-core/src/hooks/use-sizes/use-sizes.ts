@@ -52,12 +52,7 @@ export const useSizes = (): SizeSchemes => {
   } = layoutFacts1
   const { harpfaceRows: harpFace2RowCount } = layoutFacts2
   const harpFaceColumnCount = harpFace1ColumnCount
-  // TODO: It looks like we're getting a 1 back from the layout facts
-  // of an empty second harpface. This is probably because we have returned
-  // [[]] for an empty harp, to make sure that checks for columns don't throw
-  // an indexoutofbounds exception. That logic needs improving and the type
-  // being changed to [].
-  const harpFaceRowCount = harpFace1RowCount + harpFace2RowCount - 1
+  const harpFaceRowCount = harpFace1RowCount + harpFace2RowCount
 
   const {
     [relativeColumnWidth]: columnWidth,

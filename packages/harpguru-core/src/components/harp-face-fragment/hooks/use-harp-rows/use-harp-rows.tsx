@@ -4,6 +4,7 @@ import { InteractionIds } from 'harpparts'
 
 import { mapRowToBlowDrawIds } from '../map-row-to-blow-draw-ids'
 import { HarpRow } from '../../../harp-row'
+import { extractHarpFaceMatrix } from '../../../../utils'
 import type { XRange } from '../../../../types'
 
 type HarpRows = {
@@ -11,12 +12,15 @@ type HarpRows = {
   readonly bottom: ReactElement[]
 }
 
-export const useHarpRows = (xRange: XRange, harpfaceIndex: 0 | 1): HarpRows => {
+export const useHarpRows = (
+  xRange: XRange,
+  harpfaceIndex: 'harpface1' | 'harpface2'
+): HarpRows => {
   const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
-  const viewableBlowDrawIdsMap = viewableInteractionMatrix[harpfaceIndex].map(
-    mapRowToBlowDrawIds
-  )
-
+  const viewableBlowDrawIdsMap = extractHarpFaceMatrix(
+    viewableInteractionMatrix,
+    harpfaceIndex
+  ).map(mapRowToBlowDrawIds)
   const drawIndex = viewableBlowDrawIdsMap.indexOf(InteractionIds.Draw)
   const topRowsPrimer = viewableBlowDrawIdsMap.slice(0, drawIndex)
   const bottomRowsPrimer = viewableBlowDrawIdsMap.slice(drawIndex)
@@ -25,9 +29,10 @@ export const useHarpRows = (xRange: XRange, harpfaceIndex: 0 | 1): HarpRows => {
   // 1. decide this is an elegant approach but a messy implementation - refactor
   // 2. decide that all of the objects further down the chain should be using the viewable matrices too - refactor
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
-  const fullBlowDrawIdsMap = fullInteractionMatrix[harpfaceIndex].map(
-    mapRowToBlowDrawIds
-  )
+  const fullBlowDrawIdsMap = extractHarpFaceMatrix(
+    fullInteractionMatrix,
+    harpfaceIndex
+  ).map(mapRowToBlowDrawIds)
   const fullDrawIndex = fullBlowDrawIdsMap.indexOf(InteractionIds.Draw)
   const drawIndexDiff = fullDrawIndex - drawIndex
 

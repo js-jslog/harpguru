@@ -14,19 +14,21 @@ export const buildApparatus = (
   // is a massive (but temporary) cop out. There's some typing complexity
   // to deal with around here, but while I'm just refounding this whole
   // thing for double reed arrays I need to let a few things go.
-  const halfstepIndexMatrix = [
-    reedArrayToMatrices(reedArray1, tuningId, valvingId).halfstepIndexMatrix,
-    isReedArrayEmpty(reedArray2)
-      ? [[]]
+  const halfstepIndexMatrix = {
+    harpface1: reedArrayToMatrices(reedArray1, tuningId, valvingId)
+      .halfstepIndexMatrix,
+    harpface2: isReedArrayEmpty(reedArray2)
+      ? undefined
       : reedArrayToMatrices(reedArray2, tuningId, valvingId)
         .halfstepIndexMatrix,
-  ] as const
-  const interactionMatrix = [
-    reedArrayToMatrices(reedArray1, tuningId, valvingId).interactionMatrix,
-    isReedArrayEmpty(reedArray2)
-      ? [[]]
+  }
+  const interactionMatrix = {
+    harpface1: reedArrayToMatrices(reedArray1, tuningId, valvingId)
+      .interactionMatrix,
+    harpface2: isReedArrayEmpty(reedArray2)
+      ? undefined
       : reedArrayToMatrices(reedArray2, tuningId, valvingId).interactionMatrix,
-  ] as const
+  }
   return {
     tuningId,
     valvingId,

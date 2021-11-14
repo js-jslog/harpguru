@@ -7,7 +7,7 @@ import type { Coord, XRange } from '../../../../types'
 export const getHarpCells = (
   yCoord: Coord,
   xRange: XRange,
-  harpfaceIndex: 0 | 1
+  harpfaceIndex: 'harpface1' | 'harpface2'
 ): React.ReactElement[] => {
   const harpCells = xRange.map((xCoord) => {
     const yxCoord: YXCoord = [yCoord, xCoord]

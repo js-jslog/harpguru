@@ -31,7 +31,7 @@ export const useZoomItems = (
       itemTapHandler={itemTapHandler}
       // TODO: This really doesn't need to be either of the
       // degree matrices, it could just be a layout fact..
-      degreeMatrix={activeDegreeMatrix[0]}
+      degreeMatrix={activeDegreeMatrix.harpface1}
       callbackParam={id}
       twoColumns={false}
     />

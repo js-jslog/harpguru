@@ -7,7 +7,7 @@ import { reduceHarpStrataToFullDegreeMatrix } from './reduce-harpstrata-to-fulld
 test('the previous fullDegreeMatrix object is returned if it matches the one on the harpstrata', () => {
   const harpStrata = activeCellsHarpStrata
   const { degreeMatrix } = harpStrata
-  const prevDegreeMatrix = [...degreeMatrix] as const
+  const prevDegreeMatrix = { ...degreeMatrix }
   const nextDegreeMatrix = reduceHarpStrataToFullDegreeMatrix(
     prevDegreeMatrix,
     harpStrata
@@ -20,8 +20,9 @@ test('the previous fullDegreeMatrix object is returned if it matches the one on 
 
 test('the next fullDegreeMatrix object is returned if it is different from the previous', () => {
   const harpStrata = activeCellsHarpStrata
-  const { degreeMatrix } = harpStrata
-  const [degreeMatrix1, degreeMatrix2] = degreeMatrix
+  const {
+    degreeMatrix: { harpface1: degreeMatrix1 },
+  } = harpStrata
   const [firstRow] = degreeMatrix1
   const [, ...firstRowMinusFirstElement] = firstRow
   const firstRowNewFirstElement = [
@@ -29,10 +30,10 @@ test('the next fullDegreeMatrix object is returned if it is different from the p
     ...firstRowMinusFirstElement,
   ]
   const [, ...minusFirstRow] = degreeMatrix1
-  const prevDegreeMatrix = [
-    [firstRowNewFirstElement, ...minusFirstRow],
-    degreeMatrix2,
-  ] as const
+  const prevDegreeMatrix = {
+    ...harpStrata.degreeMatrix,
+    harpface1: [firstRowNewFirstElement, ...minusFirstRow],
+  }
   const nextDegreeMatrix = reduceHarpStrataToFullDegreeMatrix(
     prevDegreeMatrix,
     harpStrata

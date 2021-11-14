@@ -1,4 +1,5 @@
-import type { HarpFaceMatrix } from 'harpparts'
+import { isChromaticHarpFace } from 'harpparts'
+import type { HarpFaceMatrices } from 'harpparts'
 
 import { isMatchHighOrderTuples } from '../ismatch-highordertuples'
 import { determineMatrixDimensions } from '../determine-matrix-dimensions'
@@ -8,16 +9,21 @@ import { isMatchLayoutFacts } from '../../components/callback-on-sourceglobalpro
 
 export const reduceViewableMatrixToLayoutFacts = <T>(
   prevLayoutFacts: readonly [LayoutFacts, LayoutFacts],
-  viewableMatrix: readonly [HarpFaceMatrix<T>, HarpFaceMatrix<T>]
+  viewableMatrix: HarpFaceMatrices<T>
 ): readonly [LayoutFacts, LayoutFacts] => {
   const nextLayoutFacts = [
     {
-      harpfaceColumns: determineMatrixDimensions(viewableMatrix[0]).columns,
-      harpfaceRows: determineMatrixDimensions(viewableMatrix[0]).rows,
+      harpfaceColumns: determineMatrixDimensions(viewableMatrix.harpface1)
+        .columns,
+      harpfaceRows: determineMatrixDimensions(viewableMatrix.harpface1).rows,
     },
     {
-      harpfaceColumns: determineMatrixDimensions(viewableMatrix[1]).columns,
-      harpfaceRows: determineMatrixDimensions(viewableMatrix[1]).rows,
+      harpfaceColumns: isChromaticHarpFace(viewableMatrix)
+        ? determineMatrixDimensions(viewableMatrix.harpface2).columns
+        : 0,
+      harpfaceRows: isChromaticHarpFace(viewableMatrix)
+        ? determineMatrixDimensions(viewableMatrix.harpface2).rows
+        : 0,
     },
   ] as const
 

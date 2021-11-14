@@ -8,7 +8,7 @@ import { useStyles, useHarpRows } from './hooks'
 
 type HarpFaceFragmentProps = {
   readonly xRange: XRange
-  readonly harpfaceIndex: 0 | 1
+  readonly harpfaceIndex: 'harpface1' | 'harpface2'
 }
 
 export const HarpFaceFragment = ({

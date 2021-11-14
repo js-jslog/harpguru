@@ -8,6 +8,7 @@ import type {
   Pitch,
   PozitionIds,
   ValvingIds,
+  HarpFaceMatrices,
 } from 'harpparts'
 
 type ActiveDegreeIds = ReadonlyArray<DegreeIds>
@@ -35,11 +36,8 @@ export type HarpStrataProps = {
 
 export type HarpStrata = {
   readonly apparatus: Apparatus
-  readonly degreeMatrix: readonly [
-    HarpFaceMatrix<Degree>,
-    HarpFaceMatrix<Degree>
-  ]
-  readonly pitchMatrix: readonly [HarpFaceMatrix<Pitch>, HarpFaceMatrix<Pitch>]
+  readonly degreeMatrix: HarpFaceMatrices<Degree>
+  readonly pitchMatrix: HarpFaceMatrices<Pitch>
   readonly activeDegreeIds: ActiveDegreeIds
   readonly activePitchIds: ActivePitchIds
   readonly pozitionId: PozitionIds

@@ -21,7 +21,7 @@ mockUseGlobal.mockImplementation(
 
 test('The first 3 holes of a blow row from a major diatonic tuned harmonica can be rendered', () => {
   const { getByText } = render(
-    <HarpRow yCoord={2} xRange={[0, 1, 2]} harpfaceIndex={0} />
+    <HarpRow yCoord={2} xRange={[0, 1, 2]} harpfaceIndex={'harpface1'} />
   )
 
   expect(getByText(DegreeIds.Fourth)).toBeTruthy()
@@ -34,7 +34,7 @@ test('A snapshot of a non-home row', () => {
     <HarpRow
       yCoord={0}
       xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
-      harpfaceIndex={0}
+      harpfaceIndex={'harpface1'}
     />
   )
 
@@ -46,7 +46,7 @@ test('A snapshot of a blow home row', () => {
     <HarpRow
       yCoord={2}
       xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
-      harpfaceIndex={0}
+      harpfaceIndex={'harpface1'}
     />
   )
 
@@ -58,7 +58,7 @@ test('A snapshot of a draw home row', () => {
     <HarpRow
       yCoord={3}
       xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
-      harpfaceIndex={0}
+      harpfaceIndex={'harpface1'}
     />
   )
 

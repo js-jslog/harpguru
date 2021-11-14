@@ -1,16 +1,16 @@
 import type { HarpStrata } from 'harpstrata'
-import type { HarpFaceMatrix, Degree } from 'harpparts'
+import type { Degree, HarpFaceMatrices } from 'harpparts'
 
-import { isMatchHighOrderTuples } from '../../../../utils'
+import { isMatchHarpFaceMatrices } from '../../../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
 export const reduceHarpStrataToFullDegreeMatrix = (
-  prevDegreeMatrix: readonly [HarpFaceMatrix<Degree>, HarpFaceMatrix<Degree>],
+  prevDegreeMatrix: HarpFaceMatrices<Degree>,
   harpStrata: HarpStrata
-): readonly [HarpFaceMatrix<Degree>, HarpFaceMatrix<Degree>] => {
+): HarpFaceMatrices<Degree> => {
   const { degreeMatrix: nextDegreeMatrix } = harpStrata
   if (
-    isMatchHighOrderTuples(
+    isMatchHarpFaceMatrices(
       doSparceIdedObjectMatricesMatch,
       prevDegreeMatrix,
       nextDegreeMatrix

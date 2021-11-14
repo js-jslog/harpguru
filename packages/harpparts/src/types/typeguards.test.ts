@@ -11,11 +11,16 @@ const dummyHarpfaceMatrix = [
 ]
 
 test('isChromaticHarpFace returns false for a diatonic (single matix) harp face matrices', () => {
-  const diatonicHarpFaceMatrices = {
+  const diatonicHarpFaceMatrices1 = {
     harpface1: dummyHarpfaceMatrix,
   }
+  const diatonicHarpFaceMatrices2 = {
+    harpface1: dummyHarpfaceMatrix,
+    harpface2: undefined,
+  }
 
-  expect(isChromaticHarpFace(diatonicHarpFaceMatrices)).toBeFalsy()
+  expect(isChromaticHarpFace(diatonicHarpFaceMatrices1)).toBeFalsy()
+  expect(isChromaticHarpFace(diatonicHarpFaceMatrices2)).toBeFalsy()
 })
 
 test('isChromaticHarpFace returns true for a chromatic (double matrix) harp face matrices', () => {

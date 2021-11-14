@@ -1,14 +1,13 @@
 import { reduceViewableMatrixToLayoutFacts } from './reduce-viewablematrix-to-layoutfacts'
 
-const viewableMatrix = [
-  [
+const viewableMatrix = {
+  harpface1: [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   ],
-  [],
-] as const
+}
 
 test('the previous layoutFacts are returned if they match the derived ones', () => {
   const prevLayoutFacts = [

@@ -1,6 +1,6 @@
-import type { HarpFaceMatrix } from 'harpparts'
+import { HarpFaceMatrices, isChromaticHarpFace } from 'harpparts'
 
-import { isMatchHighOrderTuples } from '../ismatch-highordertuples'
+import { isMatchHarpFaceMatrices } from '../ismatch-harpfacematrices'
 import { isPopulatedArray } from '../is-populated-array'
 import type { ColumnBounds } from '../../types'
 import { sliceMatrix } from '../../packages/slice-matrix'
@@ -8,37 +8,46 @@ import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-o
 import type { IdedObject } from '../../packages/do-sparce-ided-object-matrices-match'
 
 export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
-  prevViewableMatrix: readonly [HarpFaceMatrix<T>, HarpFaceMatrix<T>],
-  fullMatrix: readonly [HarpFaceMatrix<T>, HarpFaceMatrix<T>],
+  prevViewableMatrices: HarpFaceMatrices<T>,
+  fullMatrix: HarpFaceMatrices<T>,
   columnBounds: ColumnBounds
-): readonly [HarpFaceMatrix<T>, HarpFaceMatrix<T>] => {
+): HarpFaceMatrices<T> => {
   if (columnBounds === 'FIT') {
     if (
-      isMatchHighOrderTuples(
+      isMatchHarpFaceMatrices(
         doSparceIdedObjectMatricesMatch,
-        prevViewableMatrix,
+        prevViewableMatrices,
         fullMatrix
       )
     )
-      return prevViewableMatrix
+      return prevViewableMatrices
     return fullMatrix
   }
 
   const [start, end] = columnBounds
 
-  const nextViewableMatrix = [
-    sliceMatrix(fullMatrix[0], start, end + 1).filter(isPopulatedArray),
-    sliceMatrix(fullMatrix[1], start, end + 1).filter(isPopulatedArray),
-  ] as const
+  const nextViewableMatrices = (() => {
+    const harpface1 = sliceMatrix(fullMatrix.harpface1, start, end + 1).filter(
+      isPopulatedArray
+    )
+    if (isChromaticHarpFace(fullMatrix))
+      return {
+        harpface1,
+        harpface2: sliceMatrix(fullMatrix.harpface2, start, end + 1).filter(
+          isPopulatedArray
+        ),
+      }
+    return { harpface1 }
+  })()
 
   if (
-    isMatchHighOrderTuples(
+    isMatchHarpFaceMatrices(
       doSparceIdedObjectMatricesMatch,
-      prevViewableMatrix,
-      nextViewableMatrix
+      prevViewableMatrices,
+      nextViewableMatrices
     )
   )
-    return prevViewableMatrix
+    return prevViewableMatrices
 
-  return nextViewableMatrix
+  return nextViewableMatrices
 }

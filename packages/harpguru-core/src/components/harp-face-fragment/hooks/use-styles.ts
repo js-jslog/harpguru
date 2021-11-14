@@ -11,14 +11,14 @@ type HarpFaceFragmentStyles = {
 
 export const useStyles = (
   xRange: XRange,
-  harpfaceIndex: number
+  harpfaceIndex: 'harpface1' | 'harpface2'
 ): HarpFaceFragmentStyles => {
   const {
     dynamicSizes: { columnWidth, rowHeight },
   } = useSizes()
   const [layoutFacts] = useGlobal('layoutFacts')
   const {
-    [harpfaceIndex]: { harpfaceRows },
+    [harpfaceIndex === 'harpface1' ? 0 : 1]: { harpfaceRows },
   } = layoutFacts
   const { length: fragmentColumnCount } = xRange
 
