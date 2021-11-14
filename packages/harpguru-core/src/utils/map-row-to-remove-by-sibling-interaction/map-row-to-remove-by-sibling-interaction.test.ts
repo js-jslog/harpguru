@@ -109,3 +109,5 @@ test('a mapped entire matrix can be output when used as a callback to a map func
 
   expect(mappedDegreeMatrix).toStrictEqual(expectedMappedDegreeMatrix)
 })
+
+// TODO: There are more tests to write here. At least around the exception being thrown.
