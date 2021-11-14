@@ -1,4 +1,4 @@
-import { TuningIds } from '../../tuning'
+import { SIXTEEN_HOLE_CHROMATIC, TuningIds } from '../../tuning'
 import {
   MAJOR_DIATONIC,
   COUNTRY,
@@ -53,6 +53,7 @@ orderedTunings.set(TuningIds.NaturalMinor, NATURAL_MINOR)
 orderedTunings.set(TuningIds.HarmonicMinor, HARMONIC_MINOR)
 orderedTunings.set(TuningIds.MelodyMaker, MELODY_MAKER)
 orderedTunings.set(TuningIds.EasyDiatonic, EASY_DIATONIC)
+orderedTunings.set(TuningIds.SixteenHoleChromatic, SIXTEEN_HOLE_CHROMATIC)
 orderedTunings.set(TuningIds.Wilde, WILDE)
 orderedTunings.set(TuningIds.WildeMinor, WILDE_MINOR)
 orderedTunings.set(TuningIds.Circular, CIRCULAR)

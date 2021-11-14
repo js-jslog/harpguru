@@ -42,6 +42,7 @@ export {
   BABY_FAT,
   TWELVE_HOLE_SOLO,
   SIXTEEN_HOLE_SOLO,
+  SIXTEEN_HOLE_CHROMATIC,
 } from './constants'
 export type { Tuning, ReedArray } from './types'
 export {

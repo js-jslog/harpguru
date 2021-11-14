@@ -44,6 +44,7 @@ export enum TuningIds {
   BabyFat = 'Baby fat',
   TwelveHoleSolo = 'Twelve hole solo',
   SixteenHoleSolo = 'Sixteen hole solo',
+  SixteenHoleChromatic = 'Chromatic (16 hole)',
 }
 
 export enum TuningCategories {
@@ -281,4 +282,16 @@ export enum ReedTuningPitches {
   bb4,
   b4,
   c5,
+  db5,
+  d5,
+  eb5,
+  e5,
+  f5,
+  gb5,
+  g5,
+  ab5,
+  a5,
+  bb5,
+  b5,
+  c6,
 }

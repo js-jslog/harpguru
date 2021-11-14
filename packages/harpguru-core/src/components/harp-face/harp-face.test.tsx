@@ -19,7 +19,7 @@ test('A component is rendered with fragmented face', () => {
       sourceHarpStrata: inactiveCellsHarpStrata,
     })
   )
-  const { toJSON } = render(<HarpFace />)
+  const { toJSON } = render(<HarpFace harpfaceIndex={'harpface1'} />)
 
   expect(toJSON()).toMatchSnapshot()
 })
@@ -31,7 +31,7 @@ test('A component is rendered with unfragmented face', () => {
       fragmentHarpFaceByOctaves: false,
     })
   )
-  const { toJSON } = render(<HarpFace />)
+  const { toJSON } = render(<HarpFace harpfaceIndex={'harpface1'} />)
 
   expect(toJSON()).toMatchSnapshot()
 })
@@ -43,7 +43,7 @@ test('A component is rendered with fragmented and bounded face', () => {
       sourceColumnBounds: [2, 7],
     })
   )
-  const { toJSON } = render(<HarpFace />)
+  const { toJSON } = render(<HarpFace harpfaceIndex={'harpface1'} />)
 
   expect(toJSON()).toMatchSnapshot()
 })
@@ -56,7 +56,7 @@ test('A component is rendered with unfragmented and bounded face', () => {
       sourceColumnBounds: [2, 7],
     })
   )
-  const { toJSON } = render(<HarpFace />)
+  const { toJSON } = render(<HarpFace harpfaceIndex={'harpface1'} />)
 
   expect(toJSON()).toMatchSnapshot()
 })

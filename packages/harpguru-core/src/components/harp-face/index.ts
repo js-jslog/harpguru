@@ -1,1 +1,1 @@
-export { HarpFaceMemo } from './harp-face'
+export { HarpFace } from './harp-face'
