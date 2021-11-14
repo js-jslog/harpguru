@@ -29,4 +29,10 @@ export {
 } from './access-parts'
 export { getScaleByDegreeIds } from './utils'
 
-export type { HarpFaceMatrix, HarpFaceRow, HalfstepIndex } from './types'
+export type {
+  HarpFaceMatrices,
+  HarpFaceMatrix,
+  HarpFaceRow,
+  HalfstepIndex,
+} from './types'
+export { isChromaticHarpFace } from './types'
