@@ -13,22 +13,22 @@ export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
   columnBounds: ColumnBounds
 ): HarpFaceMatrices<T> => {
   const nextViewableMatrix = (() => {
-    if (isChromaticHarpFace(fullMatrix))
-      return {
-        harpface1: trimFullMatrixByColumnBounds(
-          fullMatrix.harpface1,
-          columnBounds
-        ).filter(isPopulatedArray),
-        harpface2: trimFullMatrixByColumnBounds(
-          fullMatrix.harpface2,
-          columnBounds
-        ).filter(isPopulatedArray),
-      }
-    return {
-      harpface1: trimFullMatrixByColumnBounds(
-        fullMatrix.harpface1,
+    const harpface1 = trimFullMatrixByColumnBounds(
+      fullMatrix.harpface1,
+      columnBounds
+    ).filter(isPopulatedArray)
+    if (isChromaticHarpFace(fullMatrix)) {
+      const harpface2 = trimFullMatrixByColumnBounds(
+        fullMatrix.harpface2,
         columnBounds
-      ).filter(isPopulatedArray),
+      ).filter(isPopulatedArray)
+      return {
+        harpface1,
+        harpface2,
+      }
+    }
+    return {
+      harpface1,
     }
   })()
 
