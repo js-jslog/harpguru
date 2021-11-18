@@ -12,7 +12,7 @@ export const HarpFaces = (): React.ReactElement => {
       ...StyleSheet.absoluteFillObject,
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
     },
   })
   if (isChromaticHarpFace(fullInteractionMatrix)) {
