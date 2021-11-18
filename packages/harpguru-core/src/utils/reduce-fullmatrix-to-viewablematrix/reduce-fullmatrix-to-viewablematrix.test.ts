@@ -74,7 +74,7 @@ test('previous viewable matrix is returned if reduced one is a match', () => {
   ).toBe(notFitPrevViewableMatrix)
 })
 
-test('identical full degree matrix is returned when columnBounds is FIT (if doesnt match previous matrix)', () => {
+test('untrimmed full degree matrix is returned when columnBounds is FIT (if doesnt match previous matrix)', () => {
   const columnBounds = 'FIT'
   const prevViewableMatrix = {
     harpface1: [[fifth]],
@@ -107,21 +107,21 @@ test('identical full degree matrix is returned when columnBounds is FIT (if does
       fullMatrix1,
       columnBounds
     )
-  ).toBe(fullMatrix1)
+  ).toStrictEqual(fullMatrix1)
   expect(
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
       columnBounds
     )
-  ).toBe(fullMatrix2)
+  ).toStrictEqual(fullMatrix2)
   expect(
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix3,
       columnBounds
     )
-  ).toBe(fullMatrix3)
+  ).toStrictEqual(fullMatrix3)
 })
 
 test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
@@ -186,7 +186,7 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
   ).toStrictEqual(fullMatrix3)
 })
 
-test('identical full pitch matrix is returned when columnBounds is FIT', () => {
+test('untrimmed full pitch matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
   const prevViewableMatrix = { harpface1: [[g]] }
   const fullMatrix1 = {
@@ -217,21 +217,21 @@ test('identical full pitch matrix is returned when columnBounds is FIT', () => {
       fullMatrix1,
       columnBounds
     )
-  ).toBe(fullMatrix1)
+  ).toStrictEqual(fullMatrix1)
   expect(
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
       columnBounds
     )
-  ).toBe(fullMatrix2)
+  ).toStrictEqual(fullMatrix2)
   expect(
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix3,
       columnBounds
     )
-  ).toBe(fullMatrix3)
+  ).toStrictEqual(fullMatrix3)
 })
 
 test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
@@ -296,7 +296,7 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
   ).toStrictEqual(fullMatrix3)
 })
 
-test('identical full interaction matrix is returned when columnBounds is FIT', () => {
+test('untrimmed full interaction matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
   const prevViewableMatrix = { harpface1: [[drawbend]] }
   const fullMatrix1 = {
@@ -329,21 +329,21 @@ test('identical full interaction matrix is returned when columnBounds is FIT', (
       fullMatrix1,
       columnBounds
     )
-  ).toBe(fullMatrix1)
+  ).toStrictEqual(fullMatrix1)
   expect(
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
       columnBounds
     )
-  ).toBe(fullMatrix2)
+  ).toStrictEqual(fullMatrix2)
   expect(
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix3,
       columnBounds
     )
-  ).toBe(fullMatrix3)
+  ).toStrictEqual(fullMatrix3)
 })
 
 test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => {
@@ -409,4 +409,73 @@ test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => 
       columnBounds
     )
   ).toStrictEqual(fullMatrix3)
+})
+
+test('sliced matrix includes empty rows', () => {
+  const columnBounds = [0, 1] as const
+  const prevViewableMatrix = { harpface1: [[drawbend]] }
+  const fullMatrix1 = {
+    harpface1: [
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+      [undefined, undefined, drawbend, drawbend, drawbend],
+    ],
+  }
+  const slicedMatrix1 = {
+    harpface1: [
+      [blow, blow],
+      [draw, draw],
+    ],
+  }
+  const fullMatrix2 = {
+    harpface1: [
+      [undefined, undefined, overblow, overblow, undefined],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+      [undefined, undefined, drawbend, drawbend, drawbend],
+    ],
+  }
+  const slicedMatrix2 = {
+    harpface1: [
+      [blow, blow],
+      [draw, draw],
+    ],
+  }
+  const fullMatrix3 = {
+    harpface1: [
+      [undefined, undefined],
+      [blow, blow],
+      [draw, draw],
+      [undefined, drawbend],
+    ],
+  }
+  const slicedMatrix3 = {
+    harpface1: [
+      [blow, blow],
+      [draw, draw],
+      [undefined, drawbend],
+    ],
+  }
+
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix1,
+      columnBounds
+    )
+  ).toStrictEqual(slicedMatrix1)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix2,
+      columnBounds
+    )
+  ).toStrictEqual(slicedMatrix2)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix3,
+      columnBounds
+    )
+  ).toStrictEqual(slicedMatrix3)
 })
