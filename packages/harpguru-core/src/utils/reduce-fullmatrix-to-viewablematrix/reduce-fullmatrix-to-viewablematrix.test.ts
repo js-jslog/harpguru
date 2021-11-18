@@ -36,6 +36,13 @@ test('previous viewable matrix is returned if reduced one is a match', () => {
       [root, second, third, fourth, fifth],
     ],
   }
+  const interactionMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+    ],
+  }
   const notFitColumnBounds = [1, 2] as const
   const notFitPrevViewableMatrix = {
     harpface1: [
@@ -55,6 +62,7 @@ test('previous viewable matrix is returned if reduced one is a match', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix,
+      interactionMatrix,
       actualFitColumnBounds
     )
   ).toBe(prevViewableMatrix)
@@ -62,6 +70,7 @@ test('previous viewable matrix is returned if reduced one is a match', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix,
+      interactionMatrix,
       effectiveFitColumnBounds
     )
   ).toBe(prevViewableMatrix)
@@ -69,6 +78,7 @@ test('previous viewable matrix is returned if reduced one is a match', () => {
     reduceFullMatrixToViewableMatrix(
       notFitPrevViewableMatrix,
       fullMatrix,
+      interactionMatrix,
       notFitColumnBounds
     )
   ).toBe(notFitPrevViewableMatrix)
@@ -78,6 +88,13 @@ test('untrimmed full degree matrix is returned when columnBounds is FIT (if does
   const columnBounds = 'FIT'
   const prevViewableMatrix = {
     harpface1: [[fifth]],
+  }
+  const interactionMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+    ],
   }
   const fullMatrix1 = {
     harpface1: [
@@ -105,6 +122,7 @@ test('untrimmed full degree matrix is returned when columnBounds is FIT (if does
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix1,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix1)
@@ -112,6 +130,7 @@ test('untrimmed full degree matrix is returned when columnBounds is FIT (if does
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix2)
@@ -119,6 +138,7 @@ test('untrimmed full degree matrix is returned when columnBounds is FIT (if does
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix3,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix3)
@@ -127,6 +147,13 @@ test('untrimmed full degree matrix is returned when columnBounds is FIT (if does
 test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
   const columnBounds = [0, 1] as const
   const prevViewableMatrix = { harpface1: [[fifth]] }
+  const interactionMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+    ],
+  }
   const fullMatrix1 = {
     harpface1: [
       [root, second, third, fourth, fifth],
@@ -167,6 +194,7 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix1,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(slicedMatrix1)
@@ -174,6 +202,7 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(slicedMatrix2)
@@ -181,6 +210,7 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix3,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix3)
@@ -189,6 +219,13 @@ test('sliced degree matrix is returned when columnBounds is [1, 2]', () => {
 test('untrimmed full pitch matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
   const prevViewableMatrix = { harpface1: [[g]] }
+  const interactionMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+    ],
+  }
   const fullMatrix1 = {
     harpface1: [
       [c, d, e, f, g],
@@ -215,6 +252,7 @@ test('untrimmed full pitch matrix is returned when columnBounds is FIT', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix1,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix1)
@@ -222,6 +260,7 @@ test('untrimmed full pitch matrix is returned when columnBounds is FIT', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix2)
@@ -229,6 +268,7 @@ test('untrimmed full pitch matrix is returned when columnBounds is FIT', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix3,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix3)
@@ -237,6 +277,13 @@ test('untrimmed full pitch matrix is returned when columnBounds is FIT', () => {
 test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
   const columnBounds = [0, 1] as const
   const prevViewableMatrix = { harpface1: [[g]] }
+  const interactionMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+    ],
+  }
   const fullMatrix1 = {
     harpface1: [
       [c, d, e, f, g],
@@ -277,6 +324,7 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix1,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(slicedMatrix1)
@@ -284,6 +332,7 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(slicedMatrix2)
@@ -291,6 +340,7 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix3,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix3)
@@ -299,14 +349,15 @@ test('sliced pitch matrix is returned when columnBounds is [1, 2]', () => {
 test('untrimmed full interaction matrix is returned when columnBounds is FIT', () => {
   const columnBounds = 'FIT'
   const prevViewableMatrix = { harpface1: [[drawbend]] }
-  const fullMatrix1 = {
+  const interactionMatrix = {
     harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
       [blow, blow, blow, blow, blow],
       [draw, draw, draw, draw, draw],
       [drawbend, drawbend, drawbend, drawbend, drawbend],
     ],
   }
-  const fullMatrix2 = {
+  const fullMatrix1 = {
     harpface1: [
       [overblow, overblow, overblow, overblow, undefined],
       [blow, blow, blow, blow, blow],
@@ -314,7 +365,7 @@ test('untrimmed full interaction matrix is returned when columnBounds is FIT', (
       [drawbend, undefined, drawbend, drawbend, drawbend],
     ],
   }
-  const fullMatrix3 = {
+  const fullMatrix2 = {
     harpface1: [
       [blowbend, undefined],
       [blow, blow],
@@ -327,6 +378,7 @@ test('untrimmed full interaction matrix is returned when columnBounds is FIT', (
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix1,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix1)
@@ -334,26 +386,31 @@ test('untrimmed full interaction matrix is returned when columnBounds is FIT', (
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix2)
-  expect(
-    reduceFullMatrixToViewableMatrix(
-      prevViewableMatrix,
-      fullMatrix3,
-      columnBounds
-    )
-  ).toStrictEqual(fullMatrix3)
 })
 
+// TODO: I don't think all of these permutations of the test should be in this particular test file.
+// I think the genericability of the consitituent functions should be tested  in their own test files.
 test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => {
   const columnBounds = [0, 1] as const
   const prevViewableMatrix = { harpface1: [[drawbend]] }
+  const interactionMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+      [drawbend, drawbend, drawbend, drawbend, drawbend],
+    ],
+  }
   const fullMatrix1 = {
     harpface1: [
       [blow, blow, blow, blow, blow],
       [draw, draw, draw, draw, draw],
       [drawbend, drawbend, drawbend, drawbend, drawbend],
+      [undefined, undefined, undefined, undefined, undefined],
     ],
   }
   const slicedMatrix1 = {
@@ -392,6 +449,7 @@ test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => 
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix1,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(slicedMatrix1)
@@ -399,6 +457,7 @@ test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => 
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(slicedMatrix2)
@@ -406,19 +465,29 @@ test('sliced interaction matrix is returned when columnBounds is [1, 2]', () => 
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix3,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(fullMatrix3)
 })
 
-test('sliced matrix includes empty rows', () => {
+test('sliced matrix excludes empty rows', () => {
   const columnBounds = [0, 1] as const
   const prevViewableMatrix = { harpface1: [[drawbend]] }
+  const interactionMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+      [drawbend, drawbend, drawbend, drawbend, drawbend],
+    ],
+  }
   const fullMatrix1 = {
     harpface1: [
       [blow, blow, blow, blow, blow],
       [draw, draw, draw, draw, draw],
       [undefined, undefined, drawbend, drawbend, drawbend],
+      [undefined, undefined, undefined, undefined, undefined],
     ],
   }
   const slicedMatrix1 = {
@@ -461,6 +530,7 @@ test('sliced matrix includes empty rows', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix1,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(slicedMatrix1)
@@ -468,6 +538,7 @@ test('sliced matrix includes empty rows', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix2,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(slicedMatrix2)
@@ -475,6 +546,7 @@ test('sliced matrix includes empty rows', () => {
     reduceFullMatrixToViewableMatrix(
       prevViewableMatrix,
       fullMatrix3,
+      interactionMatrix,
       columnBounds
     )
   ).toStrictEqual(slicedMatrix3)

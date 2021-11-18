@@ -92,15 +92,18 @@ export const buildMockUseGlobalImplementation = ({
     const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
       { harpface1: [[]] },
       sourceHarpStrata.degreeMatrix,
+      sourceHarpStrata.apparatus.interactionMatrix,
       sourceColumnBounds
     )
     const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
       { harpface1: [[]] },
       sourceHarpStrata.pitchMatrix,
+      sourceHarpStrata.apparatus.interactionMatrix,
       sourceColumnBounds
     )
     const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
       { harpface1: [[]] },
+      sourceHarpStrata.apparatus.interactionMatrix,
       sourceHarpStrata.apparatus.interactionMatrix,
       sourceColumnBounds
     )

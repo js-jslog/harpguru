@@ -57,16 +57,19 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
     { harpface1: [[]] },
     fullInteractionMatrix,
+    fullInteractionMatrix,
     columnBounds
   )
   const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
     { harpface1: [[]] },
     fullDegreeMatrix,
+    fullInteractionMatrix,
     columnBounds
   )
   const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
     { harpface1: [[]] },
     fullPitchMatrix,
+    fullInteractionMatrix,
     columnBounds
   )
   const layoutFacts = reduceViewableMatrixToLayoutFacts(
