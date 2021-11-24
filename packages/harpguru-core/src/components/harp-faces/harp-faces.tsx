@@ -22,6 +22,9 @@ export const HarpFaces = (): React.ReactElement => {
       height: fragmentGutter,
     },
   })
+  // TODO: Have this as part of the layout facts
+  // hook and use both here and in the use sizes
+  // hook.
   if (isChromaticHarpFace(fullInteractionMatrix)) {
     return (
       <View style={stack}>

@@ -1,6 +1,7 @@
 import { useGlobal } from 'reactn'
 import { isChromaticHarpFace } from 'harpparts'
 
+//import { useOctaveColumnGroups } from '../use-octave-column-groups'
 import { useIsZoomedColumnBounds } from '../use-is-zoomed-columnbounds'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
@@ -65,16 +66,10 @@ export const useSizes = (): SizeSchemes => {
   const legendWidth = columnWidth
   const zoomSlideWidth = useIsZoomedColumnBounds() === false ? 0 : columnWidth
 
-  // TODO: It might be better to either count the number of gutters
-  // or base this as a proportion of the number of columns since
-  // this number won't work well as the number of columns and
-  // therefore gutters increases.
-  // We could also set this to 0 if the no-fragment mode is
-  // selected. This would mean that the cell size would grow
-  // when they left fragment mode. That would have advantages
-  // and disadvantages.
-  const roughFragmentGutterCount = 3
-  const includingHarpFaceEdgesGutterCount = roughFragmentGutterCount + 2
+  //const { length: groupCount } = useOctaveColumnGroups('harpface1')
+  // TODO: Temporarily use a magic number so that snapshots aren't
+  // updated amoungst all of this other mess.
+  const includingHarpFaceEdgesGutterCount = 3 + 2
   const dynamicWidthRequirements =
     longEdge /
     (columnWidth * harpFaceColumnCount +

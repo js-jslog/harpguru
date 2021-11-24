@@ -2,8 +2,9 @@ import { View } from 'react-native'
 import React from 'react'
 
 import { HarpFaceFragment } from '../harp-face-fragment'
+import { useOctaveColumnGroups } from '../../hooks'
 
-import { useStyles, useOctaveColumnGroups } from './hooks'
+import { useStyles } from './hooks'
 
 type HarpFaceProps = {
   readonly harpfaceIndex: 'harpface1' | 'harpface2'
