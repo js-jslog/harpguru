@@ -21,7 +21,11 @@ export const useStyles = (
 
   // TODO: Should we perhaps just make useOctaveColumnGroups always use
   // harpface1 rather than requiring that it be passed
-  const octaveColumnGroups = useOctaveColumnGroups('harpface1')
+  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
+  const octaveColumnGroups = useOctaveColumnGroups(
+    'harpface1',
+    fragmentHarpFaceByOctaves
+  )
   const { length: groupCount } = octaveColumnGroups
 
   const styles = StyleSheet.create({

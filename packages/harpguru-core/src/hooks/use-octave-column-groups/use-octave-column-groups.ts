@@ -9,10 +9,10 @@ import type { ColumnRanges } from './get-octave-column-groups'
 import { arrayHasRoot } from './array-has-root'
 
 export const useOctaveColumnGroups = (
-  harpfaceIndex: 'harpface1' | 'harpface2'
+  harpfaceIndex: 'harpface1' | 'harpface2',
+  fragment: boolean
 ): ColumnRanges => {
   const [degreeMatrix] = useGlobal('activeDegreeMatrix')
-  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
   const [columnBounds] = useGlobal('columnBounds')
 
   const columnsFirstDegreeMatrix = transposeMatrix(
@@ -22,7 +22,7 @@ export const useOctaveColumnGroups = (
   const octaveColumnGroups = getOctaveColumnGroups(rootColumnsMask)
 
   if (columnBounds === 'FIT') {
-    if (fragmentHarpFaceByOctaves) return octaveColumnGroups
+    if (fragment) return octaveColumnGroups
 
     return [octaveColumnGroups.flat()]
   }
@@ -35,7 +35,7 @@ export const useOctaveColumnGroups = (
     })
     .filter((group) => group.length > 0)
 
-  if (fragmentHarpFaceByOctaves) return viewableColumnGroups
+  if (fragment) return viewableColumnGroups
 
   return [viewableColumnGroups.flat()]
 }
