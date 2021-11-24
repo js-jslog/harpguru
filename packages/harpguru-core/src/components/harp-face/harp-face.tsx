@@ -13,9 +13,6 @@ type HarpFaceProps = {
 export const HarpFace = ({
   harpfaceIndex,
 }: HarpFaceProps): React.ReactElement => {
-  // TODO: This needs to be determined based on which
-  // harpface is being rendered when we actually do
-  // potentially render 2 harpfaces.
   const styles = useStyles(harpfaceIndex)
   const columnRanges = useOctaveColumnGroups('harpface1')
   const fragments = columnRanges.map((xRange, index) => (
