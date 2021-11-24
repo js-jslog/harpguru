@@ -1,7 +1,7 @@
 import { useGlobal } from 'reactn'
 import { isChromaticHarpFace } from 'harpparts'
 
-//import { useOctaveColumnGroups } from '../use-octave-column-groups'
+import { useOctaveColumnGroups } from '../use-octave-column-groups'
 import { useIsZoomedColumnBounds } from '../use-is-zoomed-columnbounds'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
@@ -66,10 +66,9 @@ export const useSizes = (): SizeSchemes => {
   const legendWidth = columnWidth
   const zoomSlideWidth = useIsZoomedColumnBounds() === false ? 0 : columnWidth
 
-  //const { length: groupCount } = useOctaveColumnGroups('harpface1')
-  // TODO: Temporarily use a magic number so that snapshots aren't
-  // updated amoungst all of this other mess.
-  const includingHarpFaceEdgesGutterCount = 3 + 2
+  const { length: groupCount } = useOctaveColumnGroups('harpface1')
+  const exteriorGutterCount = 2
+  const includingHarpFaceEdgesGutterCount = groupCount + exteriorGutterCount
   const dynamicWidthRequirements =
     longEdge /
     (columnWidth * harpFaceColumnCount +
