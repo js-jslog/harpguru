@@ -1,4 +1,5 @@
 import { useGlobal } from 'reactn'
+import { isChromaticHarpFace } from 'harpparts'
 
 import { useIsZoomedColumnBounds } from '../use-is-zoomed-columnbounds'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
@@ -72,9 +73,6 @@ export const useSizes = (): SizeSchemes => {
   // selected. This would mean that the cell size would grow
   // when they left fragment mode. That would have advantages
   // and disadvantages.
-  // TODO: We will also need to determine whether there is a horizontal
-  // gutter required by looking at whether there are any rows on the
-  // second harpface.
   const roughFragmentGutterCount = 3
   const includingHarpFaceEdgesGutterCount = roughFragmentGutterCount + 2
   const dynamicWidthRequirements =
@@ -84,7 +82,13 @@ export const useSizes = (): SizeSchemes => {
       labelProtrusion +
       legendWidth +
       zoomSlideWidth)
-  const dynamicHeightRequirements = shortEdge / (rowHeight * harpFaceRowCount)
+  const dynamicHeightRequirements = (() => {
+    const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
+    const actualRowsHeight = shortEdge / (rowHeight * harpFaceRowCount)
+    if (isChromaticHarpFace(fullInteractionMatrix))
+      return actualRowsHeight + fragmentGutter
+    return actualRowsHeight
+  })()
 
   const dynamicSeedSize =
     dynamicWidthRequirements > dynamicHeightRequirements
