@@ -10,15 +10,15 @@ export type HarpPart = Pitch | Pozition
 
 export type HalfstepIndex = number
 
+type DiatonicHarpFaceFact<T> = {
+  readonly harpface1: T
+}
+export type ChromaticHarpFaceFact<T> = {
+  readonly harpface1: T
+  readonly harpface2: T
+}
+export type HarpFaceFact<T> = DiatonicHarpFaceFact<T> | ChromaticHarpFaceFact<T>
+
 export type HarpFaceRow<T> = ReadonlyArray<T | undefined>
 export type HarpFaceMatrix<T> = ReadonlyArray<HarpFaceRow<T>>
-type HarpFaceMatricesDiatonic<T> = {
-  readonly harpface1: HarpFaceMatrix<T>
-}
-export type HarpFaceMatricesChromatic<T> = {
-  readonly harpface1: HarpFaceMatrix<T>
-  readonly harpface2: HarpFaceMatrix<T>
-}
-export type HarpFaceMatrices<T> =
-  | HarpFaceMatricesDiatonic<T>
-  | HarpFaceMatricesChromatic<T>
+export type HarpFaceMatrices<T> = HarpFaceFact<HarpFaceMatrix<T>>
