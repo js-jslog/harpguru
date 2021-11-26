@@ -1,8 +1,8 @@
-import type { ChromaticHarpFaceFact, HarpFaceFact } from './types'
+import type { ChromaticHarpFaceFacts, HarpFaceFacts } from './types'
 
 // TODO: rename this function
 export const isChromaticHarpFace = <T>(
-  props: HarpFaceFact<T>
-): props is ChromaticHarpFaceFact<T> => {
-  return !!(props as ChromaticHarpFaceFact<T>).harpface2
+  props: HarpFaceFacts<T>
+): props is ChromaticHarpFaceFacts<T> => {
+  return !!(props as ChromaticHarpFaceFacts<T>).harpface2
 }
