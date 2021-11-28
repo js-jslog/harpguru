@@ -2,6 +2,7 @@ import { useGlobal } from 'reactn'
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
+import { extractHarpFaceFacts } from '../../../utils'
 import { useSizes, useOctaveColumnGroups } from '../../../hooks'
 
 type HarpFaceStyles = {
@@ -15,9 +16,10 @@ export const useStyles = (
   const { columnWidth, rowHeight, fragmentGutter } = dynamicSizes
 
   const [layoutFacts] = useGlobal('layoutFacts')
-  const {
-    [harpfaceIndex === 'harpface1' ? 0 : 1]: { harpfaceRows, harpfaceColumns },
-  } = layoutFacts
+  const { harpfaceRows, harpfaceColumns } = extractHarpFaceFacts(
+    layoutFacts,
+    harpfaceIndex
+  )
 
   // TODO: Should we perhaps just make useOctaveColumnGroups always use
   // harpface1 rather than requiring that it be passed

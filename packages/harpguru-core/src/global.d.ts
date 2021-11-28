@@ -3,6 +3,7 @@ import type { HarpStrata } from 'harpstrata'
 import type {
   Degree,
   DegreeIds,
+  HarpFaceFacts,
   HarpFaceMatrices,
   Interaction,
   Pitch,
@@ -44,8 +45,6 @@ declare module 'reactn/default' {
     readonly viewableInteractionMatrix: HarpFaceMatrices<Interaction>
     readonly viewableDegreeMatrix: HarpFaceMatrices<Degree>
     readonly viewablePitchMatrix: HarpFaceMatrices<Pitch>
-    // TODO: It would be nice to have a type which is more in keeping with the
-    // HarpFaceMatrices type. Perhaps that should be genericised further?
-    readonly layoutFacts: readonly [LayoutFacts, LayoutFacts]
+    readonly layoutFacts: HarpFaceFacts<LayoutFacts>
   }
 }

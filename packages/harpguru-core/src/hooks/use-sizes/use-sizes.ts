@@ -47,14 +47,26 @@ const relativeLabelIconSize = 7
 
 export const useSizes = (): SizeSchemes => {
   const { shortEdge, longEdge } = getWindowDimensions()
-  const [[layoutFacts1, layoutFacts2]] = useGlobal('layoutFacts')
-  const {
-    harpfaceColumns: harpFace1ColumnCount,
-    harpfaceRows: harpFace1RowCount,
-  } = layoutFacts1
-  const { harpfaceRows: harpFace2RowCount } = layoutFacts2
-  const harpFaceColumnCount = harpFace1ColumnCount
-  const harpFaceRowCount = harpFace1RowCount + harpFace2RowCount
+  const [layoutFacts] = useGlobal('layoutFacts')
+  const { harpfaceRowCount, harpfaceColumnCount } = (() => {
+    const {
+      harpface1: {
+        harpfaceColumns: harpfaceColumnCount,
+        harpfaceRows: harpface1RowCount,
+      },
+    } = layoutFacts
+    if (isChromaticHarpFace(layoutFacts)) {
+      const {
+        harpface2: { harpfaceRows: harpface2RowCount },
+      } = layoutFacts
+      const harpfaceRowCount = harpface1RowCount + harpface2RowCount
+      return {
+        harpfaceColumnCount,
+        harpfaceRowCount,
+      }
+    }
+    return { harpfaceColumnCount, harpfaceRowCount: harpface1RowCount }
+  })()
 
   const {
     [relativeColumnWidth]: columnWidth,
@@ -71,14 +83,14 @@ export const useSizes = (): SizeSchemes => {
   const includingHarpFaceEdgesGutterCount = groupCount + exteriorGutterCount
   const dynamicWidthRequirements =
     longEdge /
-    (columnWidth * harpFaceColumnCount +
+    (columnWidth * harpfaceColumnCount +
       fragmentGutter * includingHarpFaceEdgesGutterCount +
       labelProtrusion +
       legendWidth +
       zoomSlideWidth)
   const dynamicHeightRequirements = (() => {
     const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
-    const actualRowsHeight = shortEdge / (rowHeight * harpFaceRowCount)
+    const actualRowsHeight = shortEdge / (rowHeight * harpfaceRowCount)
     if (isChromaticHarpFace(fullInteractionMatrix))
       return actualRowsHeight + fragmentGutter
     return actualRowsHeight

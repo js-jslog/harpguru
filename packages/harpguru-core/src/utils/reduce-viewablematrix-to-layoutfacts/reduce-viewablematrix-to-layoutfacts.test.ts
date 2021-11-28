@@ -10,42 +10,30 @@ const viewableMatrix = {
 }
 
 test('the previous layoutFacts are returned if they match the derived ones', () => {
-  const prevLayoutFacts = [
-    {
+  const prevLayoutFacts = {
+    harpface1: {
       harpfaceColumns: 10,
       harpfaceRows: 4,
     },
-    {
-      harpfaceColumns: 0,
-      harpfaceRows: 0,
-    },
-  ] as const
+  } as const
   expect(
     reduceViewableMatrixToLayoutFacts(prevLayoutFacts, viewableMatrix)
   ).toBe(prevLayoutFacts)
 })
 
 test('an appropriate layoutFacts is returned for a given viewableMatrix', () => {
-  const prevLayoutFacts = [
-    {
+  const prevLayoutFacts = {
+    harpface1: {
       harpfaceColumns: 1,
       harpfaceRows: 1,
     },
-    {
-      harpfaceColumns: 0,
-      harpfaceRows: 0,
-    },
-  ] as const
-  const expectedLayoutFacts = [
-    {
+  } as const
+  const expectedLayoutFacts = {
+    harpface1: {
       harpfaceColumns: 10,
       harpfaceRows: 4,
     },
-    {
-      harpfaceColumns: 0,
-      harpfaceRows: 0,
-    },
-  ] as const
+  } as const
   expect(
     reduceViewableMatrixToLayoutFacts(prevLayoutFacts, viewableMatrix)
   ).toStrictEqual(expectedLayoutFacts)
