@@ -30,6 +30,7 @@ export {
 export { getScaleByDegreeIds } from './utils'
 
 export type {
+  HarpFaceFacts,
   HarpFaceMatrices,
   HarpFaceMatrix,
   HarpFaceRow,

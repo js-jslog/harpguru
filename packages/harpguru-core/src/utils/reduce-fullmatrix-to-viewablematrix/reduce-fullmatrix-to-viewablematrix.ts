@@ -3,7 +3,7 @@ import type { HarpFaceMatrices, Interaction } from 'harpparts'
 
 import { trimFullMatrixByColumnBounds } from '../trim-fullmatrix-by-columnbounds'
 import { mapMatrixToRemoveBySiblingInteraction } from '../map-matrix-to-remove-by-sibling-interaction'
-import { isMatchHarpFaceMatrices } from '../ismatch-harpfacematrices'
+import { isMatchHarpFaceFacts } from '../ismatch-harpfacefacts'
 import { isPopulatedArray } from '../is-populated-array'
 import type { ColumnBounds } from '../../types'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
@@ -92,7 +92,7 @@ export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
   })()
 
   if (
-    isMatchHarpFaceMatrices(
+    isMatchHarpFaceFacts(
       doSparceIdedObjectMatricesMatch,
       prevViewableMatrices,
       nextViewableMatrix
