@@ -48,7 +48,6 @@ export type { Tuning, ReedArray } from './types'
 export {
   TuningIds,
   TuningCategories,
-  isReedArrayEmpty,
   isReedArray7,
   isReedArray10,
   isReedArray12,
