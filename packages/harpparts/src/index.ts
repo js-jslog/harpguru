@@ -27,7 +27,7 @@ export {
   getPozitionByOffset,
   reversePreserveOrigin,
 } from './access-parts'
-export { getScaleByDegreeIds } from './utils'
+export { getScaleByDegreeIds, mapHarpFaceFacts } from './utils'
 
 export type {
   HarpFaceFacts,
