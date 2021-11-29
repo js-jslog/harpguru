@@ -1,6 +1,7 @@
 export type {
   HarpPart,
   HarpFaceMatrix,
+  HarpFaceFacts,
   HarpFaceMatrices,
   HarpFaceRow,
   HalfstepIndex,

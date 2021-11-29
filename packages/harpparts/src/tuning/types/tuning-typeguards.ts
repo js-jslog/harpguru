@@ -7,13 +7,6 @@ import type {
   ReedArray16,
 } from './tuning-types'
 
-export const isReedArrayEmpty = (
-  reedArray: ReedArray
-): reedArray is ReedArray7 => {
-  const [blowRow, drawRow] = reedArray
-  return blowRow.length === 0 && drawRow.length === 0
-}
-
 export const isReedArray7 = (reedArray: ReedArray): reedArray is ReedArray7 => {
   const [blowRow, drawRow] = reedArray
   return blowRow.length === 7 && drawRow.length === 7

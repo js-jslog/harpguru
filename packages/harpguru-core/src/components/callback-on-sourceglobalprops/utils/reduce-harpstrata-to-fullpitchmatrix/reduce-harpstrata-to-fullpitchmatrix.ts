@@ -1,7 +1,7 @@
 import type { HarpStrata } from 'harpstrata'
 import type { HarpFaceMatrices, Pitch } from 'harpparts'
 
-import { isMatchHarpFaceMatrices } from '../../../../utils'
+import { isMatchHarpFaceFacts } from '../../../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
 export const reduceHarpStrataToFullPitchMatrix = (
@@ -10,7 +10,7 @@ export const reduceHarpStrataToFullPitchMatrix = (
 ): HarpFaceMatrices<Pitch> => {
   const { pitchMatrix: nextPitchMatrix } = harpStrata
   if (
-    isMatchHarpFaceMatrices(
+    isMatchHarpFaceFacts(
       doSparceIdedObjectMatricesMatch,
       prevPitchMatrix,
       nextPitchMatrix

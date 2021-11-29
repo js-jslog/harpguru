@@ -1,7 +1,7 @@
 import type { HarpStrata } from 'harpstrata'
 import type { Degree, HarpFaceMatrices } from 'harpparts'
 
-import { isMatchHarpFaceMatrices } from '../../../../utils'
+import { isMatchHarpFaceFacts } from '../../../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
 export const reduceHarpStrataToFullDegreeMatrix = (
@@ -10,7 +10,7 @@ export const reduceHarpStrataToFullDegreeMatrix = (
 ): HarpFaceMatrices<Degree> => {
   const { degreeMatrix: nextDegreeMatrix } = harpStrata
   if (
-    isMatchHarpFaceMatrices(
+    isMatchHarpFaceFacts(
       doSparceIdedObjectMatricesMatch,
       prevDegreeMatrix,
       nextDegreeMatrix

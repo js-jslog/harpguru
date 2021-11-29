@@ -1,4 +1,4 @@
-import type { HalfstepIndex } from '../../types'
+import type { HalfstepIndex, HarpFaceFacts } from '../../types'
 
 export enum TuningIds {
   MajorDiatonic = 'Major diatonic',
@@ -63,18 +63,15 @@ export type Tuning = {
   readonly id: TuningIds
   readonly shortName?: string
   readonly category: TuningCategories
-  readonly reedArrays: readonly [ReedArray, ReedArray]
+  readonly reedArrays: HarpFaceFacts<ReedArray>
 }
 
 export type ReedArray =
-  | ReedArrayEmpty
   | ReedArray7
   | ReedArray10
   | ReedArray12
   | ReedArray13
   | ReedArray16
-
-export type ReedArrayEmpty = readonly [readonly [], readonly []]
 
 export type ReedArray7 = readonly [
   readonly [

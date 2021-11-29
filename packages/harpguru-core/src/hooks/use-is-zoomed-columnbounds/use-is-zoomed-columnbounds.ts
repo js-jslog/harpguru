@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 
-import { isMatchHarpFaceMatrices } from '../../utils'
+import { isMatchHarpFaceFacts } from '../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 
 // TODO: Add a test
@@ -12,7 +12,7 @@ export const useIsZoomedColumnBounds = ():
   const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
   if (columnBounds === 'FIT') return false
   if (
-    isMatchHarpFaceMatrices(
+    isMatchHarpFaceFacts(
       doSparceIdedObjectMatricesMatch,
       fullInteractionMatrix,
       viewableInteractionMatrix
