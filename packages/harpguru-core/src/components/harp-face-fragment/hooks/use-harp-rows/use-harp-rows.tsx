@@ -4,7 +4,7 @@ import { InteractionIds } from 'harpparts'
 
 import { mapRowToBlowDrawIds } from '../map-row-to-blow-draw-ids'
 import { HarpRow } from '../../../harp-row'
-import { extractHarpFaceMatrix } from '../../../../utils'
+import { extractHarpFaceFacts } from '../../../../utils'
 import type { XRange } from '../../../../types'
 
 type HarpRows = {
@@ -17,7 +17,7 @@ export const useHarpRows = (
   harpfaceIndex: 'harpface1' | 'harpface2'
 ): HarpRows => {
   const [viewableInteractionMatrix] = useGlobal('viewableInteractionMatrix')
-  const viewableBlowDrawIdsMap = extractHarpFaceMatrix(
+  const viewableBlowDrawIdsMap = extractHarpFaceFacts(
     viewableInteractionMatrix,
     harpfaceIndex
   ).map(mapRowToBlowDrawIds)
@@ -29,7 +29,7 @@ export const useHarpRows = (
   // 1. decide this is an elegant approach but a messy implementation - refactor
   // 2. decide that all of the objects further down the chain should be using the viewable matrices too - refactor
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
-  const fullBlowDrawIdsMap = extractHarpFaceMatrix(
+  const fullBlowDrawIdsMap = extractHarpFaceFacts(
     fullInteractionMatrix,
     harpfaceIndex
   ).map(mapRowToBlowDrawIds)
