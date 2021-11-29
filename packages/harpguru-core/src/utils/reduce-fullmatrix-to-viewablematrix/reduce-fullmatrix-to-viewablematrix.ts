@@ -10,8 +10,9 @@ import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-o
 import type { IdedObject } from '../../packages/do-sparce-ided-object-matrices-match'
 
 const errorMessage = `
-The interaction matrix is somehow not chromatic while
-the sibling matrix is. This should never be the case.
+The interaction matrix and sibling matrix should both
+be diatonic or chromatic. The should match. Currently
+they do not. That should never be the case.
 `
 
 export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
@@ -72,6 +73,8 @@ export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
         harpface2,
       }
     }
+
+    if (isChromaticHarpFace(fullInteractionMatrix)) throw Error(errorMessage)
 
     const removeInteractionIds = [] as ReadonlyArray<InteractionIds>
     const mapForRemovalProps1 = {
