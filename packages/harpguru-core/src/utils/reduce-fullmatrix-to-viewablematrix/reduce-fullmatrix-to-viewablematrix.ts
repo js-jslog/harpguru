@@ -1,4 +1,9 @@
-import { isChromaticHarpFace, InteractionIds } from 'harpparts'
+import {
+  isChromaticHarpFace,
+  InteractionIds,
+  mapHarpFaceFacts,
+  HarpFaceMatrix,
+} from 'harpparts'
 import type { HarpFaceMatrices, Interaction } from 'harpparts'
 
 import { trimFullMatrixByColumnBounds } from '../trim-fullmatrix-by-columnbounds'
@@ -17,82 +22,81 @@ they do not. That should never be the case.
 
 export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
   prevViewableMatrices: HarpFaceMatrices<T>,
-  fullMatrix: HarpFaceMatrices<T>,
-  fullInteractionMatrix: HarpFaceMatrices<Interaction>,
+  fullMatrices: HarpFaceMatrices<T>,
+  fullInteractionMatrices: HarpFaceMatrices<Interaction>,
   columnBounds: ColumnBounds
 ): HarpFaceMatrices<T> => {
-  const nextViewableMatrix = (() => {
-    if (isChromaticHarpFace(fullMatrix)) {
-      if (!isChromaticHarpFace(fullInteractionMatrix)) throw Error(errorMessage)
-      // TODO: This is rubbish. Can I not find a way to just remove the Blow & Draw
-      // from the full list of InteractionIds?
-      const removeInteractionIds = [
-        InteractionIds.BlowBend1,
-        InteractionIds.BlowBend2,
-        InteractionIds.BlowBend3,
-        InteractionIds.BlowBend4,
-        InteractionIds.BlowBend5,
-        InteractionIds.DrawBend1,
-        InteractionIds.DrawBend2,
-        InteractionIds.DrawBend3,
-        InteractionIds.DrawBend4,
-        InteractionIds.DrawBend5,
-        InteractionIds.OverBlow1,
-        InteractionIds.OverBlow2,
-        InteractionIds.OverDraw1,
-        InteractionIds.OverDraw2,
-        InteractionIds.ValvedBlow1,
-        InteractionIds.ValvedDraw1,
-      ]
-      const mapForRemovalProps1 = {
-        matrix: fullMatrix.harpface1,
-        removeInteractionIds,
-        interactionMatrix: fullInteractionMatrix.harpface1,
-      }
-      const withRemovedInteractions1 = mapMatrixToRemoveBySiblingInteraction(
-        mapForRemovalProps1
-      )
-      const harpface1 = trimFullMatrixByColumnBounds(
-        withRemovedInteractions1,
-        columnBounds
-      ).filter(isPopulatedArray)
-      const mapForRemovalProps2 = {
-        matrix: fullMatrix.harpface2,
-        removeInteractionIds,
-        interactionMatrix: fullInteractionMatrix.harpface2,
-      }
-      const withRemovedInteractions2 = mapMatrixToRemoveBySiblingInteraction(
-        mapForRemovalProps2
-      )
-      const harpface2 = trimFullMatrixByColumnBounds(
-        withRemovedInteractions2,
-        columnBounds
-      ).filter(isPopulatedArray)
+  type InteractionMatrixWithSibling = {
+    interactionMatrix: HarpFaceMatrix<Interaction>
+    siblingMatrix: HarpFaceMatrix<T>
+  }
+
+  const pairedMatrices = (() => {
+    if (isChromaticHarpFace(fullMatrices)) {
+      if (!isChromaticHarpFace(fullInteractionMatrices))
+        throw Error(errorMessage)
       return {
-        harpface1,
-        harpface2,
+        harpface1: {
+          interactionMatrix: fullInteractionMatrices.harpface1,
+          siblingMatrix: fullMatrices.harpface1,
+        },
+        harpface2: {
+          interactionMatrix: fullInteractionMatrices.harpface2,
+          siblingMatrix: fullMatrices.harpface2,
+        },
       }
     }
-
-    if (isChromaticHarpFace(fullInteractionMatrix)) throw Error(errorMessage)
-
-    const removeInteractionIds = [] as ReadonlyArray<InteractionIds>
-    const mapForRemovalProps1 = {
-      matrix: fullMatrix.harpface1,
-      removeInteractionIds,
-      interactionMatrix: fullInteractionMatrix.harpface1,
-    }
-    const withRemovedInteractions1 = mapMatrixToRemoveBySiblingInteraction(
-      mapForRemovalProps1
-    )
-    const harpface1 = trimFullMatrixByColumnBounds(
-      withRemovedInteractions1,
-      columnBounds
-    ).filter(isPopulatedArray)
+    if (isChromaticHarpFace(fullInteractionMatrices)) throw Error(errorMessage)
     return {
-      harpface1,
+      harpface1: {
+        interactionMatrix: fullInteractionMatrices.harpface1,
+        siblingMatrix: fullMatrices.harpface1,
+      },
     }
   })()
+
+  const removeInteractionIds = (() => {
+    if (!isChromaticHarpFace(fullMatrices)) return []
+    // TODO: This is rubbish. Can I not find a way to just remove the Blow & Draw
+    // from the full list of InteractionIds?
+    return [
+      InteractionIds.BlowBend1,
+      InteractionIds.BlowBend2,
+      InteractionIds.BlowBend3,
+      InteractionIds.BlowBend4,
+      InteractionIds.BlowBend5,
+      InteractionIds.DrawBend1,
+      InteractionIds.DrawBend2,
+      InteractionIds.DrawBend3,
+      InteractionIds.DrawBend4,
+      InteractionIds.DrawBend5,
+      InteractionIds.OverBlow1,
+      InteractionIds.OverBlow2,
+      InteractionIds.OverDraw1,
+      InteractionIds.OverDraw2,
+      InteractionIds.ValvedBlow1,
+      InteractionIds.ValvedDraw1,
+    ]
+  })()
+
+  const mapFunction = (
+    interactionMatrixWithSibling: InteractionMatrixWithSibling
+  ) => {
+    const {
+      siblingMatrix: matrix,
+      interactionMatrix,
+    } = interactionMatrixWithSibling
+    const withRemovedInteractions = mapMatrixToRemoveBySiblingInteraction({
+      matrix,
+      removeInteractionIds,
+      interactionMatrix,
+    })
+    return trimFullMatrixByColumnBounds(
+      withRemovedInteractions,
+      columnBounds
+    ).filter(isPopulatedArray)
+  }
+  const nextViewableMatrix = mapHarpFaceFacts(pairedMatrices, mapFunction)
 
   if (
     isMatchHarpFaceFacts(
