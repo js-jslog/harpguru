@@ -26,23 +26,23 @@ export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
   fullInteractionMatrices: HarpFaceMatrices<Interaction>,
   columnBounds: ColumnBounds
 ): HarpFaceMatrices<T> => {
-  type InteractionMatrixWithSibling = {
+  type SiblingMatrices = {
     interactionMatrix: HarpFaceMatrix<Interaction>
-    siblingMatrix: HarpFaceMatrix<T>
+    fullMatrix: HarpFaceMatrix<T>
   }
 
-  const pairedMatrices = (() => {
+  const harpfaceSiblingMatrices = (() => {
     if (isChromaticHarpFace(fullMatrices)) {
       if (!isChromaticHarpFace(fullInteractionMatrices))
         throw Error(errorMessage)
       return {
         harpface1: {
           interactionMatrix: fullInteractionMatrices.harpface1,
-          siblingMatrix: fullMatrices.harpface1,
+          fullMatrix: fullMatrices.harpface1,
         },
         harpface2: {
           interactionMatrix: fullInteractionMatrices.harpface2,
-          siblingMatrix: fullMatrices.harpface2,
+          fullMatrix: fullMatrices.harpface2,
         },
       }
     }
@@ -50,7 +50,7 @@ export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
     return {
       harpface1: {
         interactionMatrix: fullInteractionMatrices.harpface1,
-        siblingMatrix: fullMatrices.harpface1,
+        fullMatrix: fullMatrices.harpface1,
       },
     }
   })()
@@ -79,24 +79,22 @@ export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
     ]
   })()
 
-  const mapFunction = (
-    interactionMatrixWithSibling: InteractionMatrixWithSibling
-  ) => {
-    const {
-      siblingMatrix: matrix,
-      interactionMatrix,
-    } = interactionMatrixWithSibling
+  const mapFunction = (siblingMatrices: SiblingMatrices) => {
+    const { fullMatrix, interactionMatrix } = siblingMatrices
     const withRemovedInteractions = mapMatrixToRemoveBySiblingInteraction({
-      matrix,
-      removeInteractionIds,
+      matrix: fullMatrix,
       interactionMatrix,
+      removeInteractionIds,
     })
     return trimFullMatrixByColumnBounds(
       withRemovedInteractions,
       columnBounds
     ).filter(isPopulatedArray)
   }
-  const nextViewableMatrix = mapHarpFaceFacts(pairedMatrices, mapFunction)
+  const nextViewableMatrix = mapHarpFaceFacts(
+    harpfaceSiblingMatrices,
+    mapFunction
+  )
 
   if (
     isMatchHarpFaceFacts(
