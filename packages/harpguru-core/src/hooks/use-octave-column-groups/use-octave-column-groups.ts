@@ -8,14 +8,12 @@ import { getOctaveColumnGroups } from './get-octave-column-groups'
 import type { ColumnRanges } from './get-octave-column-groups'
 import { arrayHasRoot } from './array-has-root'
 
-export const useOctaveColumnGroups = (
-  harpfaceIndex: 'harpface1' | 'harpface2'
-): ColumnRanges => {
+export const useOctaveColumnGroups = (): ColumnRanges => {
   const [degreeMatrix] = useGlobal('activeDegreeMatrix')
   const [columnBounds] = useGlobal('columnBounds')
 
   const columnsFirstDegreeMatrix = transposeMatrix(
-    extractHarpFaceFacts(degreeMatrix, harpfaceIndex)
+    extractHarpFaceFacts(degreeMatrix, 'harpface1')
   ) as HarpFaceMatrix<Degree>
   const rootColumnsMask = columnsFirstDegreeMatrix.map(arrayHasRoot)
   const octaveColumnGroups = getOctaveColumnGroups(rootColumnsMask)

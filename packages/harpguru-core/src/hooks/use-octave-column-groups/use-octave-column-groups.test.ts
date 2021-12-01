@@ -9,7 +9,7 @@ const mockUseGlobal = useGlobal as jest.Mock
 
 test('Identifies the columns grouped by octave', () => {
   mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
-  const octaveColumnGroups = useOctaveColumnGroups('harpface1')
+  const octaveColumnGroups = useOctaveColumnGroups()
   const expectedOctaveGroups = [[0], [1, 2, 3, 4], [5, 6, 7], [8, 9]]
 
   expect(octaveColumnGroups).toStrictEqual(expectedOctaveGroups)
@@ -21,7 +21,7 @@ test('Returns a bounded grouped set', () => {
       sourceColumnBounds: [2, 7],
     })
   )
-  const octaveColumnGroups = useOctaveColumnGroups('harpface1')
+  const octaveColumnGroups = useOctaveColumnGroups()
   const expectedOctaveGroups = [
     [2, 3, 4],
     [5, 6, 7],

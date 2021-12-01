@@ -13,7 +13,7 @@ test('Identifies the columns grouped by octave', () => {
       fragmentHarpFaceByOctaves: true,
     })
   )
-  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware('harpface1')
+  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware()
   const expectedOctaveGroups = [[0], [1, 2, 3, 4], [5, 6, 7], [8, 9]]
 
   expect(octaveColumnGroups).toStrictEqual(expectedOctaveGroups)
@@ -25,7 +25,7 @@ test('Returns an ungrouped set if the harp fragmentation is off', () => {
       fragmentHarpFaceByOctaves: false,
     })
   )
-  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware('harpface1')
+  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware()
   const expectedOctaveGroups = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]]
 
   expect(octaveColumnGroups).toStrictEqual(expectedOctaveGroups)
@@ -38,7 +38,7 @@ test('Returns a bounded grouped set', () => {
       fragmentHarpFaceByOctaves: true,
     })
   )
-  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware('harpface1')
+  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware()
   const expectedOctaveGroups = [
     [2, 3, 4],
     [5, 6, 7],
@@ -54,7 +54,7 @@ test('Returns a bounded ungrouped set', () => {
       fragmentHarpFaceByOctaves: false,
     })
   )
-  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware('harpface1')
+  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware()
   const expectedOctaveGroups = [[3, 4, 5, 6, 7, 8]]
 
   expect(octaveColumnGroups).toStrictEqual(expectedOctaveGroups)

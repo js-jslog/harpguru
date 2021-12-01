@@ -14,7 +14,7 @@ export const HarpFace = ({
   harpfaceIndex,
 }: HarpFaceProps): React.ReactElement => {
   const styles = useStyles(harpfaceIndex)
-  const columnRanges = useOctaveColumnGroupsFragmentAware('harpface1')
+  const columnRanges = useOctaveColumnGroupsFragmentAware()
   const fragments = columnRanges.map((xRange, index) => (
     <HarpFaceFragment
       key={index}

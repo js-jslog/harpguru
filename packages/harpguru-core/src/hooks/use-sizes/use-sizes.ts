@@ -78,7 +78,7 @@ export const useSizes = (): SizeSchemes => {
   const legendWidth = columnWidth
   const zoomSlideWidth = useIsZoomedColumnBounds() === false ? 0 : columnWidth
 
-  const { length: groupCount } = useOctaveColumnGroups('harpface1')
+  const { length: groupCount } = useOctaveColumnGroups()
   const exteriorGutterCount = 2
   const includingHarpFaceEdgesGutterCount = groupCount + exteriorGutterCount
   const dynamicWidthRequirements =
