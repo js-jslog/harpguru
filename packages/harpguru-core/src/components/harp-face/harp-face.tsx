@@ -1,9 +1,8 @@
-import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 
 import { HarpFaceFragment } from '../harp-face-fragment'
-import { useOctaveColumnGroups } from '../../hooks'
+import { useOctaveColumnGroupsFragmentAware } from '../../hooks'
 
 import { useStyles } from './hooks'
 
@@ -15,11 +14,7 @@ export const HarpFace = ({
   harpfaceIndex,
 }: HarpFaceProps): React.ReactElement => {
   const styles = useStyles(harpfaceIndex)
-  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
-  const columnRanges = useOctaveColumnGroups(
-    'harpface1',
-    fragmentHarpFaceByOctaves
-  )
+  const columnRanges = useOctaveColumnGroupsFragmentAware('harpface1')
   const fragments = columnRanges.map((xRange, index) => (
     <HarpFaceFragment
       key={index}

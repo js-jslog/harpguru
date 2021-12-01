@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
 import { extractHarpFaceFacts } from '../../../utils'
-import { useSizes, useOctaveColumnGroups } from '../../../hooks'
+import { useSizes, useOctaveColumnGroupsFragmentAware } from '../../../hooks'
 
 type HarpFaceStyles = {
   readonly face: ViewStyle
@@ -23,11 +23,7 @@ export const useStyles = (
 
   // TODO: Should we perhaps just make useOctaveColumnGroups always use
   // harpface1 rather than requiring that it be passed
-  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
-  const octaveColumnGroups = useOctaveColumnGroups(
-    'harpface1',
-    fragmentHarpFaceByOctaves
-  )
+  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware('harpface1')
   const { length: groupCount } = octaveColumnGroups
 
   const styles = StyleSheet.create({
