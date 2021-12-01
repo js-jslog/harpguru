@@ -551,3 +551,204 @@ test('sliced matrix excludes empty rows', () => {
     )
   ).toStrictEqual(slicedMatrix3)
 })
+
+test('a chromatic harp can be trimmed and has its non-homerow interactions removed', () => {
+  const actualFitColumnBounds = 'FIT'
+  const trimmedColumnBounds = [1, 4] as const
+  const prevViewableMatrix = {
+    harpface1: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+    harpface2: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+  }
+  const fullMatrix = {
+    harpface1: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+    harpface2: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+  }
+  const interactionMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+    ],
+    harpface2: [
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+      [drawbend, drawbend, drawbend, drawbend, drawbend],
+    ],
+  }
+  const nextFitViewableMatrix = {
+    harpface1: [
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+    harpface2: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+    ],
+  }
+  const nextTrimmedViewableMatrix = {
+    harpface1: [
+      [second, third, fourth, fifth],
+      [second, third, third, third],
+    ],
+    harpface2: [
+      [root, root, fourth, fifth],
+      [second, third, fourth, fifth],
+    ],
+  }
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix,
+      interactionMatrix,
+      actualFitColumnBounds
+    )
+  ).toStrictEqual(nextFitViewableMatrix)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullMatrix,
+      interactionMatrix,
+      trimmedColumnBounds
+    )
+  ).toStrictEqual(nextTrimmedViewableMatrix)
+})
+
+test('an identical chromatic viewable matrices is returned if a match is made', () => {
+  const actualFitColumnBounds = 'FIT'
+  const trimmedColumnBounds = [1, 4] as const
+  const prevFitViewableMatrix = {
+    harpface1: [
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+    harpface2: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+    ],
+  }
+  const prevTrimmedViewableMatrix = {
+    harpface1: [
+      [second, third, fourth, fifth],
+      [second, third, third, third],
+    ],
+    harpface2: [
+      [root, root, fourth, fifth],
+      [second, third, fourth, fifth],
+    ],
+  }
+  const fullMatrix = {
+    harpface1: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+    harpface2: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+  }
+  const interactionMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+    ],
+    harpface2: [
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+      [drawbend, drawbend, drawbend, drawbend, drawbend],
+    ],
+  }
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevFitViewableMatrix,
+      fullMatrix,
+      interactionMatrix,
+      actualFitColumnBounds
+    )
+  ).toBe(prevFitViewableMatrix)
+  expect(
+    reduceFullMatrixToViewableMatrix(
+      prevTrimmedViewableMatrix,
+      fullMatrix,
+      interactionMatrix,
+      trimmedColumnBounds
+    )
+  ).toBe(prevTrimmedViewableMatrix)
+})
+
+test('an error is thrown if the chromatic / diatonic type of the interaction & input matrix dont match', () => {
+  const columnBounds = 'FIT'
+  const prevViewableMatrix = { harpface1: [[root]] }
+  const fullDiatonicMatrix = {
+    harpface1: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+  }
+  const interactionDiatonicMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+    ],
+  }
+  const fullChromaticMatrix = {
+    harpface1: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+    harpface2: [
+      [root, root, root, fourth, fifth],
+      [root, second, third, fourth, fifth],
+      [root, second, third, third, third],
+    ],
+  }
+  const interactionChromaticMatrix = {
+    harpface1: [
+      [blowbend, blowbend, blowbend, blowbend, blowbend],
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+    ],
+    harpface2: [
+      [blow, blow, blow, blow, blow],
+      [draw, draw, draw, draw, draw],
+      [drawbend, drawbend, drawbend, drawbend, drawbend],
+    ],
+  }
+  expect(() =>
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullDiatonicMatrix,
+      interactionChromaticMatrix,
+      columnBounds
+    )
+  ).toThrow()
+  expect(() =>
+    reduceFullMatrixToViewableMatrix(
+      prevViewableMatrix,
+      fullChromaticMatrix,
+      interactionDiatonicMatrix,
+      columnBounds
+    )
+  ).toThrow()
+})

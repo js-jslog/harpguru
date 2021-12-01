@@ -42,11 +42,16 @@ const activeCellsHarpStrataProps = {
   ...baseHarpStrataProps,
   activeIds: allActiveDegrees,
 }
+const chromaticHarpStrataProps = {
+  ...baseHarpStrataProps,
+  tuningId: TuningIds.SixteenHoleChromatic,
+}
 
 export const inactiveCellsHarpStrata = getHarpStrata(
   inactiveCellsHarpStrataProps
 )
 export const activeCellsHarpStrata = getHarpStrata(activeCellsHarpStrataProps)
+export const chromaticHarpStrata = getHarpStrata(chromaticHarpStrataProps)
 
 type BuildMockUseGlobalImplementationProps = {
   readonly sourceHarpStrata?: HarpStrata
