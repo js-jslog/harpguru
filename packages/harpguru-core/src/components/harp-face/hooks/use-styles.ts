@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
 import { extractHarpFaceFacts } from '../../../utils'
-import { useSizes, useOctaveColumnGroupsFragmentAware } from '../../../hooks'
+import { useSizes, useOctaveColumnGroups } from '../../../hooks'
 
 type HarpFaceStyles = {
   readonly face: ViewStyle
@@ -21,7 +21,7 @@ export const useStyles = (
     harpfaceIndex
   )
 
-  const octaveColumnGroups = useOctaveColumnGroupsFragmentAware()
+  const octaveColumnGroups = useOctaveColumnGroups()
   const { length: groupCount } = octaveColumnGroups
 
   const styles = StyleSheet.create({
