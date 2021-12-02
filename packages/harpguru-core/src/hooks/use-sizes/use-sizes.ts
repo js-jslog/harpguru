@@ -1,7 +1,6 @@
 import { useGlobal } from 'reactn'
 import { isChromaticHarpFace } from 'harpparts'
 
-import { useOctaveColumnGroups } from '../use-octave-column-groups'
 import { useIsZoomedColumnBounds } from '../use-is-zoomed-columnbounds'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
@@ -78,9 +77,21 @@ export const useSizes = (): SizeSchemes => {
   const legendWidth = columnWidth
   const zoomSlideWidth = useIsZoomedColumnBounds() === false ? 0 : columnWidth
 
-  const { length: groupCount } = useOctaveColumnGroups()
+  // We need the sizing scheme to be as independant from the updates of the
+  // updates of the global properties as possible. If it isn't then we will
+  // see size updates after insignificant interactions. Getting an accurate
+  // measure of the number of octave groups is a waste of effort because it
+  // requires a lot of context and only very slightly improves the accuracy
+  // of this sizing seed. There are not many harps having fewer than 3 hole
+  // octave spreads. Most have 4, but using 3 doesnt disrupt the layout too
+  // much.
+  const pessimisticGroupColumnnEstimate = 3
+  const roughFullGroupCount = Math.ceil(
+    harpfaceColumnCount / pessimisticGroupColumnnEstimate
+  )
   const exteriorGutterCount = 2
-  const includingHarpFaceEdgesGutterCount = groupCount + exteriorGutterCount
+  const includingHarpFaceEdgesGutterCount =
+    roughFullGroupCount + exteriorGutterCount
   const dynamicWidthRequirements =
     longEdge /
     (columnWidth * harpfaceColumnCount +
@@ -88,10 +99,13 @@ export const useSizes = (): SizeSchemes => {
       labelProtrusion +
       legendWidth +
       zoomSlideWidth)
+  const [fullInteractionMatrices] = useGlobal('activeInteractionMatrix')
+  // TODO: There should be an `isChromatic` layout fact. Not that it would
+  // work where a typeguard is actually required, but it would mean that we
+  // can get all of our layout facts from a single optimised global property.
   const dynamicHeightRequirements = (() => {
-    const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
     const actualRowsHeight = shortEdge / (rowHeight * harpfaceRowCount)
-    if (isChromaticHarpFace(fullInteractionMatrix))
+    if (isChromaticHarpFace(fullInteractionMatrices))
       return actualRowsHeight + fragmentGutter
     return actualRowsHeight
   })()

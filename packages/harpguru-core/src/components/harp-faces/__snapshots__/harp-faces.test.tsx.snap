@@ -19,18 +19,18 @@ exports[`A chromatic harp is rendered 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "height": 129.05282167972572,
+        "height": 126.71175344277142,
         "justifyContent": "space-around",
         "left": 0,
-        "width": 1156.6544340681405,
+        "width": 1135.690414426582,
       }
     }
   >
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 129.05282167972572,
+          "height": 126.71175344277142,
+          "width": 126.71175344277142,
         }
       }
     >
@@ -45,8 +45,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -79,16 +79,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -112,7 +112,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -135,11 +135,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -174,16 +174,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -207,7 +207,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -230,11 +230,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -260,10 +260,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -272,7 +272,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -283,10 +283,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -295,7 +295,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -308,8 +308,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -348,16 +348,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -381,7 +381,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -404,11 +404,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -443,16 +443,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -476,7 +476,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -499,11 +499,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -518,8 +518,8 @@ exports[`A chromatic harp is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 258.10564335945145,
+          "height": 126.71175344277142,
+          "width": 253.42350688554285,
         }
       }
     >
@@ -534,8 +534,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -568,16 +568,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -601,7 +601,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -624,11 +624,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -663,16 +663,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -696,7 +696,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -719,11 +719,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -758,16 +758,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -791,7 +791,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -814,11 +814,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -853,16 +853,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -886,7 +886,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -909,11 +909,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -939,10 +939,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -951,7 +951,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -962,10 +962,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -974,7 +974,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -985,10 +985,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -997,7 +997,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -1008,10 +1008,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -1020,7 +1020,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -1033,8 +1033,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -1073,16 +1073,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -1106,7 +1106,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -1129,11 +1129,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -1168,16 +1168,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -1201,7 +1201,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -1224,11 +1224,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -1263,16 +1263,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -1296,7 +1296,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -1319,11 +1319,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -1358,16 +1358,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -1391,7 +1391,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -1414,11 +1414,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -1433,8 +1433,8 @@ exports[`A chromatic harp is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 258.10564335945145,
+          "height": 126.71175344277142,
+          "width": 253.42350688554285,
         }
       }
     >
@@ -1449,8 +1449,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -1483,16 +1483,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -1516,7 +1516,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -1539,11 +1539,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -1578,16 +1578,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -1611,7 +1611,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -1634,11 +1634,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -1673,16 +1673,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -1706,7 +1706,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -1729,11 +1729,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -1768,16 +1768,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -1801,7 +1801,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -1824,11 +1824,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -1854,10 +1854,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -1866,7 +1866,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -1877,10 +1877,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -1889,7 +1889,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -1900,10 +1900,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -1912,7 +1912,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -1923,10 +1923,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -1935,7 +1935,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -1948,8 +1948,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -1988,16 +1988,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -2021,7 +2021,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -2044,11 +2044,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -2083,16 +2083,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -2116,7 +2116,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -2139,11 +2139,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -2178,16 +2178,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -2211,7 +2211,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -2234,11 +2234,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -2273,16 +2273,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -2306,7 +2306,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -2329,11 +2329,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -2348,8 +2348,8 @@ exports[`A chromatic harp is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 258.10564335945145,
+          "height": 126.71175344277142,
+          "width": 253.42350688554285,
         }
       }
     >
@@ -2364,8 +2364,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -2398,16 +2398,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -2431,7 +2431,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -2454,11 +2454,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -2493,16 +2493,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -2526,7 +2526,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -2549,11 +2549,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -2588,16 +2588,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -2621,7 +2621,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -2644,11 +2644,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -2683,16 +2683,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -2716,7 +2716,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -2739,11 +2739,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -2769,10 +2769,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -2781,7 +2781,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -2792,10 +2792,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -2804,7 +2804,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -2815,10 +2815,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -2827,7 +2827,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -2838,10 +2838,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -2850,7 +2850,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -2863,8 +2863,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -2903,16 +2903,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -2936,7 +2936,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -2959,11 +2959,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -2998,16 +2998,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -3031,7 +3031,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -3054,11 +3054,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -3093,16 +3093,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -3126,7 +3126,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -3149,11 +3149,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -3188,16 +3188,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -3221,7 +3221,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -3244,11 +3244,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -3263,8 +3263,8 @@ exports[`A chromatic harp is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 129.05282167972572,
+          "height": 126.71175344277142,
+          "width": 126.71175344277142,
         }
       }
     >
@@ -3279,8 +3279,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -3313,16 +3313,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -3346,7 +3346,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -3369,11 +3369,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -3408,16 +3408,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -3441,7 +3441,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -3464,11 +3464,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -3494,10 +3494,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -3506,7 +3506,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -3517,10 +3517,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -3529,7 +3529,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -3542,8 +3542,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -3582,16 +3582,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -3615,7 +3615,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -3638,11 +3638,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -3677,16 +3677,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -3710,7 +3710,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -3733,11 +3733,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -3753,7 +3753,7 @@ exports[`A chromatic harp is rendered 1`] = `
   <View
     style={
       Object {
-        "height": 24.646372126066947,
+        "height": 24.199277376882122,
       }
     }
   />
@@ -3761,18 +3761,18 @@ exports[`A chromatic harp is rendered 1`] = `
     style={
       Object {
         "flexDirection": "row",
-        "height": 129.05282167972572,
+        "height": 126.71175344277142,
         "justifyContent": "space-around",
         "left": 0,
-        "width": 1156.6544340681405,
+        "width": 1135.690414426582,
       }
     }
   >
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 129.05282167972572,
+          "height": 126.71175344277142,
+          "width": 126.71175344277142,
         }
       }
     >
@@ -3787,8 +3787,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -3821,16 +3821,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -3854,7 +3854,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -3877,11 +3877,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -3916,16 +3916,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -3949,7 +3949,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -3972,11 +3972,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -4002,10 +4002,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -4014,7 +4014,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -4025,10 +4025,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -4037,7 +4037,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -4050,8 +4050,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -4090,16 +4090,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -4123,7 +4123,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -4146,11 +4146,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -4185,16 +4185,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -4218,7 +4218,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -4241,11 +4241,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -4260,8 +4260,8 @@ exports[`A chromatic harp is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 258.10564335945145,
+          "height": 126.71175344277142,
+          "width": 253.42350688554285,
         }
       }
     >
@@ -4276,8 +4276,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -4310,16 +4310,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -4343,7 +4343,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -4366,11 +4366,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -4405,16 +4405,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -4438,7 +4438,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -4461,11 +4461,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -4500,16 +4500,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -4533,7 +4533,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -4556,11 +4556,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -4595,16 +4595,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -4628,7 +4628,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -4651,11 +4651,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -4681,10 +4681,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -4693,7 +4693,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -4704,10 +4704,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -4716,7 +4716,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -4727,10 +4727,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -4739,7 +4739,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -4750,10 +4750,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -4762,7 +4762,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -4775,8 +4775,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -4815,16 +4815,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -4848,7 +4848,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -4871,11 +4871,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -4910,16 +4910,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -4943,7 +4943,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -4966,11 +4966,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -5005,16 +5005,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -5038,7 +5038,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -5061,11 +5061,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -5100,16 +5100,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -5133,7 +5133,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -5156,11 +5156,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -5175,8 +5175,8 @@ exports[`A chromatic harp is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 258.10564335945145,
+          "height": 126.71175344277142,
+          "width": 253.42350688554285,
         }
       }
     >
@@ -5191,8 +5191,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -5225,16 +5225,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -5258,7 +5258,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -5281,11 +5281,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -5320,16 +5320,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -5353,7 +5353,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -5376,11 +5376,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -5415,16 +5415,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -5448,7 +5448,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -5471,11 +5471,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -5510,16 +5510,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -5543,7 +5543,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -5566,11 +5566,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -5596,10 +5596,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -5608,7 +5608,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -5619,10 +5619,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -5631,7 +5631,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -5642,10 +5642,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -5654,7 +5654,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -5665,10 +5665,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -5677,7 +5677,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -5690,8 +5690,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -5730,16 +5730,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -5763,7 +5763,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -5786,11 +5786,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -5825,16 +5825,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -5858,7 +5858,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -5881,11 +5881,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -5920,16 +5920,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -5953,7 +5953,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -5976,11 +5976,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -6015,16 +6015,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -6048,7 +6048,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -6071,11 +6071,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -6090,8 +6090,8 @@ exports[`A chromatic harp is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 258.10564335945145,
+          "height": 126.71175344277142,
+          "width": 253.42350688554285,
         }
       }
     >
@@ -6106,8 +6106,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -6140,16 +6140,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -6173,7 +6173,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -6196,11 +6196,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -6235,16 +6235,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -6268,7 +6268,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -6291,11 +6291,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -6330,16 +6330,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -6363,7 +6363,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -6386,11 +6386,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -6425,16 +6425,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -6458,7 +6458,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -6481,11 +6481,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -6511,10 +6511,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -6523,7 +6523,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -6534,10 +6534,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -6546,7 +6546,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -6557,10 +6557,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -6569,7 +6569,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -6580,10 +6580,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -6592,7 +6592,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -6605,8 +6605,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -6645,16 +6645,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -6678,7 +6678,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -6701,11 +6701,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -6740,16 +6740,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -6773,7 +6773,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -6796,11 +6796,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -6835,16 +6835,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -6868,7 +6868,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -6891,11 +6891,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -6930,16 +6930,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -6963,7 +6963,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -6986,11 +6986,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -7005,8 +7005,8 @@ exports[`A chromatic harp is rendered 1`] = `
     <View
       style={
         Object {
-          "height": 129.05282167972572,
-          "width": 129.05282167972572,
+          "height": 126.71175344277142,
+          "width": 126.71175344277142,
         }
       }
     >
@@ -7021,8 +7021,8 @@ exports[`A chromatic harp is rendered 1`] = `
             "borderColor": "#555",
             "borderLeftWidth": 0,
             "borderRightWidth": 0,
-            "borderTopLeftRadius": 15.232293071672004,
-            "borderTopRightRadius": 15.232293071672004,
+            "borderTopLeftRadius": 14.955973367678485,
+            "borderTopRightRadius": 14.955973367678485,
             "borderTopWidth": 0,
             "flex": 1,
             "flexDirection": "row",
@@ -7055,16 +7055,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -7088,7 +7088,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -7111,11 +7111,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -7150,16 +7150,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -7183,7 +7183,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -7206,11 +7206,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -7236,10 +7236,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -7248,7 +7248,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -7259,10 +7259,10 @@ exports[`A chromatic harp is rendered 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "height": 15.232293071672004,
+              "height": 14.955973367678485,
               "justifyContent": "center",
-              "top": -7.616146535836002,
-              "width": 39.878665197738954,
+              "top": -7.477986683839243,
+              "width": 39.155250744560604,
             }
           }
         >
@@ -7271,7 +7271,7 @@ exports[`A chromatic harp is rendered 1`] = `
             style={
               Object {
                 "color": "#555",
-                "fontSize": 15.232293071672004,
+                "fontSize": 14.955973367678485,
               }
             }
           >
@@ -7284,8 +7284,8 @@ exports[`A chromatic harp is rendered 1`] = `
           Object {
             "alignItems": "center",
             "backgroundColor": "#ddd",
-            "borderBottomLeftRadius": 15.232293071672004,
-            "borderBottomRightRadius": 15.232293071672004,
+            "borderBottomLeftRadius": 14.955973367678485,
+            "borderBottomRightRadius": 14.955973367678485,
             "borderBottomWidth": 0,
             "borderColor": "#555",
             "borderLeftWidth": 0,
@@ -7324,16 +7324,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -7357,7 +7357,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -7380,11 +7380,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
@@ -7419,16 +7419,16 @@ exports[`A chromatic harp is rendered 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderRadius": 15.232293071672004,
+                    "borderRadius": 14.955973367678485,
                     "flexDirection": "row",
-                    "height": 49.2927442521339,
+                    "height": 48.398554753764245,
                     "justifyContent": "center",
-                    "width": 49.2927442521339,
+                    "width": 48.398554753764245,
                   },
                   Object {
                     "backgroundColor": "#fefefe",
                     "borderColor": "#555",
-                    "borderWidth": 1.373516056958702,
+                    "borderWidth": 1.348599942982731,
                     "elevation": 0,
                   },
                 ]
@@ -7452,7 +7452,7 @@ exports[`A chromatic harp is rendered 1`] = `
                     Object {
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 24.646372126066947,
+                      "fontSize": 24.199277376882122,
                     }
                   }
                 >
@@ -7475,11 +7475,11 @@ exports[`A chromatic harp is rendered 1`] = `
                 <Text
                   style={
                     Object {
-                      "bottom": 9.414079054394943,
+                      "bottom": 9.243304009203637,
                       "color": "#555",
                       "display": "flex",
-                      "fontSize": 15.232293071672004,
-                      "left": 9.414079054394943,
+                      "fontSize": 14.955973367678485,
+                      "left": 9.243304009203637,
                     }
                   }
                 >
