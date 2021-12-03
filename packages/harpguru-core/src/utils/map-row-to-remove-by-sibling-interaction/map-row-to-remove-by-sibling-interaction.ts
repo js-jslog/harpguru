@@ -25,6 +25,7 @@ export const mapRowToRemoveBySiblingInteraction = <T>(
       [rowIndex]: { [itemIndex]: siblingInteraction },
     } = interactionMatrix
     if (siblingInteraction !== undefined) {
+      if (item === undefined) throw Error(errorMessage)
       if (removeInteractionIds.includes(siblingInteraction.id)) return undefined
       return item
     }

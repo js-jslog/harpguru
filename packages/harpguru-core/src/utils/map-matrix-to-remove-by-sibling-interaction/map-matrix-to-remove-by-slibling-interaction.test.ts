@@ -33,8 +33,8 @@ test('a strictly equal output is provided when no remove interactions are define
   ]
   const interactionMatrix = [
     [DRAW_BEND_1, DRAW_BEND_1, DRAW_BEND_1, undefined],
-    [DRAW_BEND_1, DRAW_BEND_1, DRAW_BEND_1, undefined],
-    [DRAW_BEND_1, DRAW_BEND_1, DRAW_BEND_1, undefined],
+    [undefined, DRAW_BEND_1, DRAW_BEND_1, undefined],
+    [DRAW_BEND_1, DRAW_BEND_1, undefined, undefined],
   ]
   const removeInteractionIds = [] as ReadonlyArray<InteractionIds>
   const interactionInfo = {
@@ -69,8 +69,8 @@ test('a matrix can have all of its items removed when its sibling interaction is
   ]
   const interactionMatrix = [
     [DRAW_BEND_1, DRAW_BEND_1, DRAW_BEND_1, undefined],
-    [DRAW_BEND_1, DRAW_BEND_1, DRAW_BEND_1, undefined],
-    [DRAW_BEND_1, DRAW_BEND_1, DRAW_BEND_1, undefined],
+    [undefined, DRAW_BEND_1, DRAW_BEND_1, undefined],
+    [DRAW_BEND_1, DRAW_BEND_1, undefined, undefined],
   ]
   const removeInteractionIds = [
     InteractionIds.DrawBend1,
@@ -145,4 +145,84 @@ test('a matrix can have some of its items removed when its sibling interaction i
       matrix: pitchMatrix,
     })
   ).toStrictEqual(expectedMappedPitchMatrix)
+})
+
+test('an interaction matrix which is a different shape to its sibling will result in an error', () => {
+  const degreeMatrix = [
+    [ROOT, SECOND, THIRD, undefined],
+    [undefined, SECOND, THIRD, ROOT],
+    [ROOT, SECOND, undefined, undefined],
+  ]
+  const pitchMatrix = [
+    [C, D, E, undefined],
+    [C, D, E, undefined],
+    [C, D, undefined, undefined],
+  ]
+  const interactionMatrixFull = [
+    [DRAW_BEND_1, DRAW_BEND_1, OVERDRAW_1, OVERDRAW_1],
+    [DRAW_BEND_1, DRAW_BEND_1, OVERDRAW_1, OVERDRAW_1],
+    [DRAW_BEND_1, DRAW_BEND_1, OVERDRAW_1, OVERDRAW_1],
+  ]
+  const interactionMatrixDifferentlyPartial = [
+    [DRAW_BEND_1, DRAW_BEND_1, OVERDRAW_1, undefined],
+    [DRAW_BEND_1, DRAW_BEND_1, undefined, DRAW_BEND_1],
+    [DRAW_BEND_1, DRAW_BEND_1, undefined, undefined],
+  ]
+  const interactionMatrixExtraRow = [
+    [DRAW_BEND_1, DRAW_BEND_1, OVERDRAW_1, undefined],
+    [undefined, DRAW_BEND_1, OVERDRAW_1, undefined],
+    [DRAW_BEND_1, DRAW_BEND_1, undefined, undefined],
+    [DRAW_BEND_1, DRAW_BEND_1, undefined, undefined],
+  ]
+  const removeInteractionIds = [
+    InteractionIds.DrawBend1,
+  ] as ReadonlyArray<InteractionIds>
+  const interactionInfoFullInteractionMatrix = {
+    interactionMatrix: interactionMatrixFull,
+    removeInteractionIds,
+  }
+  const interactionInfoPartialInteractionMatrix = {
+    interactionMatrix: interactionMatrixDifferentlyPartial,
+    removeInteractionIds,
+  }
+  const interactionInfoInteractionMatrxExtraRow = {
+    interactionMatrix: interactionMatrixExtraRow,
+    removeInteractionIds,
+  }
+  expect(() =>
+    mapMatrixToRemoveBySiblingInteraction({
+      ...interactionInfoFullInteractionMatrix,
+      matrix: degreeMatrix,
+    })
+  ).toThrow()
+  expect(() =>
+    mapMatrixToRemoveBySiblingInteraction({
+      ...interactionInfoPartialInteractionMatrix,
+      matrix: degreeMatrix,
+    })
+  ).toThrow()
+  expect(() =>
+    mapMatrixToRemoveBySiblingInteraction({
+      ...interactionInfoInteractionMatrxExtraRow,
+      matrix: degreeMatrix,
+    })
+  ).toThrow()
+  expect(() =>
+    mapMatrixToRemoveBySiblingInteraction({
+      ...interactionInfoFullInteractionMatrix,
+      matrix: pitchMatrix,
+    })
+  ).toThrow()
+  expect(() =>
+    mapMatrixToRemoveBySiblingInteraction({
+      ...interactionInfoPartialInteractionMatrix,
+      matrix: pitchMatrix,
+    })
+  ).toThrow()
+  expect(() =>
+    mapMatrixToRemoveBySiblingInteraction({
+      ...interactionInfoInteractionMatrxExtraRow,
+      matrix: pitchMatrix,
+    })
+  ).toThrow()
 })

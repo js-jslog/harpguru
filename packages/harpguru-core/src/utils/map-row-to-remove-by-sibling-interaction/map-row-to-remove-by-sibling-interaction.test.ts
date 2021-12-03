@@ -110,4 +110,52 @@ test('a mapped entire matrix can be output when used as a callback to a map func
   expect(mappedDegreeMatrix).toStrictEqual(expectedMappedDegreeMatrix)
 })
 
-// TODO: There are more tests to write here. At least around the exception being thrown.
+test('an interaction row which is a different shape to its sibling will result in an error', () => {
+  const degreeRow = [undefined, SECOND, THIRD, ROOT]
+  const pitchRow = [C, D, E, undefined]
+  const interactionMatrixFull = [
+    [DRAW_BEND_1, DRAW_BEND_1, OVERDRAW_1, DRAW_BEND_1],
+  ]
+  const interactionMatrixDifferentlyPartial = [
+    [DRAW_BEND_1, DRAW_BEND_1, undefined, DRAW_BEND_1],
+  ]
+  const removeInteractionIds = [
+    InteractionIds.DrawBend1,
+  ] as ReadonlyArray<InteractionIds>
+  const interactionInfoFullInteractionMatrix = {
+    interactionMatrix: interactionMatrixFull,
+    removeInteractionIds,
+  }
+  const interactionInfoPartialInteractionMatrix = {
+    interactionMatrix: interactionMatrixDifferentlyPartial,
+    removeInteractionIds,
+  }
+  expect(() =>
+    mapRowToRemoveBySiblingInteraction(
+      interactionInfoFullInteractionMatrix,
+      degreeRow,
+      0
+    )
+  ).toThrow()
+  expect(() =>
+    mapRowToRemoveBySiblingInteraction(
+      interactionInfoPartialInteractionMatrix,
+      degreeRow,
+      0
+    )
+  ).toThrow()
+  expect(() =>
+    mapRowToRemoveBySiblingInteraction(
+      interactionInfoFullInteractionMatrix,
+      pitchRow,
+      0
+    )
+  ).toThrow()
+  expect(() =>
+    mapRowToRemoveBySiblingInteraction(
+      interactionInfoPartialInteractionMatrix,
+      pitchRow,
+      0
+    )
+  ).toThrow()
+})
