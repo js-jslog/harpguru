@@ -1,11 +1,10 @@
 import { mapHarpFaceFacts } from 'harpparts'
 import type { HarpFaceFacts, HarpFaceMatrix, HarpFaceMatrices } from 'harpparts'
 
+import { isMatchLayoutFacts } from '../ismatch-layoutfacts'
 import { isMatchHarpFaceFacts } from '../ismatch-harpfacefacts'
 import { determineMatrixDimensions } from '../determine-matrix-dimensions'
 import type { LayoutFacts } from '../../types'
-// TODO: this was always a mistake and should be corrected
-import { isMatchLayoutFacts } from '../../components/callback-on-sourceglobalprops/utils/ismatch-layoutfacts'
 
 export const reduceViewableMatrixToLayoutFacts = <T>(
   prevLayoutFacts: HarpFaceFacts<LayoutFacts>,
