@@ -99,13 +99,10 @@ export const useSizes = (): SizeSchemes => {
       labelProtrusion +
       legendWidth +
       zoomSlideWidth)
-  const [fullInteractionMatrices] = useGlobal('activeInteractionMatrix')
-  // TODO: There should be an `isChromatic` layout fact. Not that it would
-  // work where a typeguard is actually required, but it would mean that we
-  // can get all of our layout facts from a single optimised global property.
   const dynamicHeightRequirements = (() => {
+    const [viewableInteractionMatrices] = useGlobal('viewableInteractionMatrix')
     const actualRowsHeight = shortEdge / (rowHeight * harpfaceRowCount)
-    if (isChromaticHarpFace(fullInteractionMatrices))
+    if (isChromaticHarpFace(viewableInteractionMatrices))
       return actualRowsHeight + fragmentGutter
     return actualRowsHeight
   })()
