@@ -60,3 +60,7 @@ xcrun simctl install <device id> <path to app file>
 # eg
 xcrun simctl install 74F3E445-D2CF-4CC3-916D-70A7D5C432F3 ~/Desktop/harp-guru.app
 ```
+
+# Manual render speed testing
+
+See [ this code review discussion ](https://github.com/js-jslog/harpguru/pull/133#discussion_r761787427) for some version specific results at v10.0.0.
