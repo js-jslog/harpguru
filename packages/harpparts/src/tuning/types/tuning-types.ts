@@ -44,6 +44,7 @@ export enum TuningIds {
   BabyFat = 'Baby fat',
   TwelveHoleSolo = 'Twelve hole solo',
   SixteenHoleSolo = 'Sixteen hole solo',
+  TwelveHoleChromatic = 'Chromatic (12 hole)',
   SixteenHoleChromatic = 'Chromatic (16 hole)',
 }
 

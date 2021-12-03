@@ -57,6 +57,7 @@ const {
   BabyFat,
   TwelveHoleSolo,
   SixteenHoleSolo,
+  TwelveHoleChromatic,
   SixteenHoleChromatic,
 } = TuningIds
 
@@ -375,6 +376,24 @@ export const EASY_DIATONIC: Tuning = {
       // 1    2    3    4    5    6    7    8    9   10
       [ a0 , c1 , e1 , a1 , c2 , e2 , a2 , c3 , e3 , a3 ],
       [ b0 , d1 , g1 , b1 , d2 , g2 , b2 , d3 , g3 , b3 ],
+    ]
+  },
+} as const
+
+export const TWELVE_HOLE_CHROMATIC: Tuning = {
+  id: TwelveHoleChromatic,
+  category: Common,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 , g4 , c5 ],
+      [ d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 , b4 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 , ab4, db5],
+      [ eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4, bb4, d5 ],
     ]
   },
 } as const
