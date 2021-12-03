@@ -1,6 +1,6 @@
 import { useGlobal } from 'reactn'
 
-import { buildMockUseGlobalImplementation } from '../../test-resources'
+import { buildMockUseGlobalImplementation } from '../../../../test-resources'
 
 import { useOctaveColumnGroups } from './use-octave-column-groups'
 

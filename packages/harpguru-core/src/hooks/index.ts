@@ -6,4 +6,3 @@ export { useInterpolateOptionStackTransitionValue } from './use-interpolate-opti
 export { useOptionSizes } from './use-option-sizes'
 export { useSizes } from './use-sizes'
 export { useIsZoomedColumnBounds } from './use-is-zoomed-columnbounds'
-export { useOctaveColumnGroups } from './use-octave-column-groups'

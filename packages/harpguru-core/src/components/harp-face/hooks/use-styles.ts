@@ -3,7 +3,9 @@ import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
 import { extractHarpFaceFacts } from '../../../utils'
-import { useSizes, useOctaveColumnGroups } from '../../../hooks'
+import { useSizes } from '../../../hooks'
+
+import { useOctaveColumnGroups } from './use-octave-column-groups'
 
 type HarpFaceStyles = {
   readonly face: ViewStyle
