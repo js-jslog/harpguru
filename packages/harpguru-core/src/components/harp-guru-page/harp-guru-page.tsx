@@ -16,7 +16,7 @@ import { MenuTabDisplayMode } from '../menu-tab-display-mode'
 import { MenuOfTunings } from '../menu-of-tunings'
 import { MenuOfScales } from '../menu-of-scales'
 import { MenuOfCovariants } from '../menu-of-covariants'
-import { HarpFaceMemo } from '../harp-face'
+import { HarpFaces } from '../harp-faces'
 import { CallbackOnSourceGlobalProps } from '../callback-on-sourceglobalprops'
 import { ActivityLegend } from '../activity-legend'
 import { getColors } from '../../utils'
@@ -54,7 +54,7 @@ export const HarpGuruPage = ({
     <View style={styles.fillScreen}>
       <ActivityLegend />
       <ZoomSlideVertical />
-      <HarpFaceMemo />
+      <HarpFaces />
       <MenuOfCovariants
         isMenuStashed={menuState !== MenuStates.CovariantMenu}
         isLabelHidden={

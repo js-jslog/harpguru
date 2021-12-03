@@ -32,16 +32,19 @@ export const useSetFromSourceColumnBounds = (): void => {
   const nextViewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
     prevViewableInteractionMatrix,
     fullInteractionMatrix,
+    fullInteractionMatrix,
     nextSourceColumnBounds
   )
   const nextViewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
     prevViewableDegreeMatrix,
     fullDegreeMatrix,
+    fullInteractionMatrix,
     nextSourceColumnBounds
   )
   const nextViewablePitchMatrix = reduceFullMatrixToViewableMatrix(
     prevViewablePitchMatrix,
     fullPitchMatrix,
+    fullInteractionMatrix,
     nextSourceColumnBounds
   )
   const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(

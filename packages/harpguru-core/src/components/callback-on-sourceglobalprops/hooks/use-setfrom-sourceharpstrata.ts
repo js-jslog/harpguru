@@ -110,16 +110,19 @@ export const useSetFromSourceHarpStrata = (): void => {
   const nextViewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
     prevViewableInteractionMatrix,
     nextFullInteractionMatrix,
+    nextFullInteractionMatrix,
     nextColumnBounds
   )
   const nextViewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
     prevViewableDegreeMatrix,
     nextFullDegreeMatrix,
+    nextFullInteractionMatrix,
     nextColumnBounds
   )
   const nextViewablePitchMatrix = reduceFullMatrixToViewableMatrix(
     prevViewablePitchMatrix,
     nextFullPitchMatrix,
+    nextFullInteractionMatrix,
     nextColumnBounds
   )
   const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(

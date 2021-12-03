@@ -4,7 +4,8 @@ import type { HarpStrata } from 'harpstrata'
 import type {
   Degree,
   DegreeIds,
-  HarpFaceMatrix,
+  HarpFaceFacts,
+  HarpFaceMatrices,
   Pitch,
   PitchIds,
   PozitionIds,
@@ -32,18 +33,18 @@ export type GlobalState = {
   readonly columnBounds: ColumnBounds
   readonly tuningId: TuningIds
   readonly valvingId: ValvingIds
-  readonly activeInteractionMatrix: HarpFaceMatrix<Interaction>
-  readonly activeDegreeMatrix: HarpFaceMatrix<Degree>
-  readonly activePitchMatrix: HarpFaceMatrix<Pitch>
+  readonly activeInteractionMatrix: HarpFaceMatrices<Interaction>
+  readonly activeDegreeMatrix: HarpFaceMatrices<Degree>
+  readonly activePitchMatrix: HarpFaceMatrices<Pitch>
   readonly activeDegreeIds: ReadonlyArray<DegreeIds>
   readonly activePitchIds: ReadonlyArray<PitchIds>
   readonly pozitionId: PozitionIds
   readonly rootPitchId: PitchIds
   readonly harpKeyId: PitchIds
-  readonly viewableInteractionMatrix: HarpFaceMatrix<Interaction>
-  readonly viewableDegreeMatrix: HarpFaceMatrix<Degree>
-  readonly viewablePitchMatrix: HarpFaceMatrix<Pitch>
-  readonly layoutFacts: LayoutFacts
+  readonly viewableInteractionMatrix: HarpFaceMatrices<Interaction>
+  readonly viewableDegreeMatrix: HarpFaceMatrices<Degree>
+  readonly viewablePitchMatrix: HarpFaceMatrices<Pitch>
+  readonly layoutFacts: HarpFaceFacts<LayoutFacts>
 }
 
 export type UseGlobal = <

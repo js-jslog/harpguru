@@ -20,7 +20,10 @@ test('A snapshot of an unbounded HarpFaceFragment', () => {
     })
   )
   const { toJSON } = render(
-    <HarpFaceFragment xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
+    <HarpFaceFragment
+      xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+      harpfaceIndex={'harpface1'}
+    />
   )
 
   expect(toJSON()).toMatchSnapshot()
@@ -35,7 +38,10 @@ test('A snapshot of a bounded HarpFaceFragment - we should expect fewer rows sin
   )
 
   const { toJSON } = render(
-    <HarpFaceFragment xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8]} />
+    <HarpFaceFragment
+      xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8]}
+      harpfaceIndex={'harpface1'}
+    />
   )
 
   expect(toJSON()).toMatchSnapshot()

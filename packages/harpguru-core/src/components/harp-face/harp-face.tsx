@@ -5,16 +5,22 @@ import { HarpFaceFragment } from '../harp-face-fragment'
 
 import { useStyles, useOctaveColumnGroups } from './hooks'
 
-export const HarpFace = (): React.ReactElement => {
-  const styles = useStyles()
+type HarpFaceProps = {
+  readonly harpfaceIndex: 'harpface1' | 'harpface2'
+}
+
+export const HarpFace = ({
+  harpfaceIndex,
+}: HarpFaceProps): React.ReactElement => {
+  const styles = useStyles(harpfaceIndex)
   const columnRanges = useOctaveColumnGroups()
   const fragments = columnRanges.map((xRange, index) => (
-    <HarpFaceFragment key={index} xRange={xRange} />
+    <HarpFaceFragment
+      key={index}
+      xRange={xRange}
+      harpfaceIndex={harpfaceIndex}
+    />
   ))
 
   return <View style={styles.face}>{fragments}</View>
-}
-
-export const HarpFaceMemo = (): React.ReactElement => {
-  return React.useMemo(() => <HarpFace />, [])
 }

@@ -1,4 +1,4 @@
-import type { LayoutFacts } from '../../../../types'
+import type { LayoutFacts } from '../../types'
 
 export const isMatchLayoutFacts = (
   facts1: LayoutFacts,

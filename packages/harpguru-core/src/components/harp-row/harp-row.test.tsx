@@ -20,7 +20,9 @@ mockUseGlobal.mockImplementation(
 )
 
 test('The first 3 holes of a blow row from a major diatonic tuned harmonica can be rendered', () => {
-  const { getByText } = render(<HarpRow yCoord={2} xRange={[0, 1, 2]} />)
+  const { getByText } = render(
+    <HarpRow yCoord={2} xRange={[0, 1, 2]} harpfaceIndex={'harpface1'} />
+  )
 
   expect(getByText(DegreeIds.Fourth)).toBeTruthy()
   expect(getByText(DegreeIds.Sixth)).toBeTruthy()
@@ -29,7 +31,11 @@ test('The first 3 holes of a blow row from a major diatonic tuned harmonica can 
 
 test('A snapshot of a non-home row', () => {
   const { toJSON } = render(
-    <HarpRow yCoord={0} xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
+    <HarpRow
+      yCoord={0}
+      xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+      harpfaceIndex={'harpface1'}
+    />
   )
 
   expect(toJSON()).toMatchSnapshot()
@@ -37,7 +43,11 @@ test('A snapshot of a non-home row', () => {
 
 test('A snapshot of a blow home row', () => {
   const { toJSON } = render(
-    <HarpRow yCoord={2} xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
+    <HarpRow
+      yCoord={2}
+      xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+      harpfaceIndex={'harpface1'}
+    />
   )
 
   expect(toJSON()).toMatchSnapshot()
@@ -45,7 +55,11 @@ test('A snapshot of a blow home row', () => {
 
 test('A snapshot of a draw home row', () => {
   const { toJSON } = render(
-    <HarpRow yCoord={3} xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
+    <HarpRow
+      yCoord={3}
+      xRange={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+      harpfaceIndex={'harpface1'}
+    />
   )
 
   expect(toJSON()).toMatchSnapshot()

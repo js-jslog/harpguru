@@ -2,6 +2,7 @@ import { useGlobal } from 'reactn'
 import type { PitchIds, Pitch, Degree, DegreeIds } from 'harpparts'
 
 import type { YXCoord } from '../../../harp-cell'
+import { extractHarpFaceFacts } from '../../../../utils'
 
 export type PositionFacts = {
   readonly thisDegree: Degree | undefined
@@ -11,11 +12,17 @@ export type PositionFacts = {
   readonly thisIsActive: boolean
 }
 
-export const usePositionAnalysis = (yxCoord: YXCoord): PositionFacts => {
-  const [degreeMatrix] = useGlobal('activeDegreeMatrix')
-  const [pitchMatrix] = useGlobal('activePitchMatrix')
+export const usePositionAnalysis = (
+  yxCoord: YXCoord,
+  harpfaceIndex: 'harpface1' | 'harpface2'
+): PositionFacts => {
+  const [degreeMatrices] = useGlobal('activeDegreeMatrix')
+  const [pitchMatrices] = useGlobal('activePitchMatrix')
   const [activeDegreeIds] = useGlobal('activeDegreeIds')
   const [yCoord, xCoord] = yxCoord
+  const degreeMatrix = extractHarpFaceFacts(degreeMatrices, harpfaceIndex)
+  const pitchMatrix = extractHarpFaceFacts(pitchMatrices, harpfaceIndex)
+
   const {
     [yCoord]: { [xCoord]: thisDegree },
   } = degreeMatrix

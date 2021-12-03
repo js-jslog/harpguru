@@ -1,30 +1,108 @@
-import type { HarpFaceMatrix } from 'harpparts'
+import {
+  isChromaticHarpFace,
+  InteractionIds,
+  mapHarpFaceFacts,
+  HarpFaceMatrix,
+} from 'harpparts'
+import type { HarpFaceMatrices, Interaction } from 'harpparts'
 
+import { trimFullMatrixByColumnBounds } from '../trim-fullmatrix-by-columnbounds'
+import { mapMatrixToRemoveBySiblingInteraction } from '../map-matrix-to-remove-by-sibling-interaction'
+import { isMatchHarpFaceFacts } from '../ismatch-harpfacefacts'
 import { isPopulatedArray } from '../is-populated-array'
 import type { ColumnBounds } from '../../types'
-import { sliceMatrix } from '../../packages/slice-matrix'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 import type { IdedObject } from '../../packages/do-sparce-ided-object-matrices-match'
 
+const errorMessage = `
+The interaction matrix and sibling matrix should both
+be diatonic or chromatic. The should match. Currently
+they do not. That should never be the case.
+`
+
 export const reduceFullMatrixToViewableMatrix = <T extends IdedObject>(
-  prevViewableMatrix: HarpFaceMatrix<T>,
-  fullMatrix: HarpFaceMatrix<T>,
+  prevViewableMatrices: HarpFaceMatrices<T>,
+  fullMatrices: HarpFaceMatrices<T>,
+  fullInteractionMatrices: HarpFaceMatrices<Interaction>,
   columnBounds: ColumnBounds
-): HarpFaceMatrix<T> => {
-  if (columnBounds === 'FIT') {
-    if (doSparceIdedObjectMatricesMatch(prevViewableMatrix, fullMatrix))
-      return prevViewableMatrix
-    return fullMatrix
+): HarpFaceMatrices<T> => {
+  type SiblingMatrices = {
+    interactionMatrix: HarpFaceMatrix<Interaction>
+    fullMatrix: HarpFaceMatrix<T>
   }
 
-  const [start, end] = columnBounds
+  const harpfaceSiblingMatrices = (() => {
+    if (isChromaticHarpFace(fullMatrices)) {
+      if (!isChromaticHarpFace(fullInteractionMatrices))
+        throw Error(errorMessage)
+      return {
+        harpface1: {
+          interactionMatrix: fullInteractionMatrices.harpface1,
+          fullMatrix: fullMatrices.harpface1,
+        },
+        harpface2: {
+          interactionMatrix: fullInteractionMatrices.harpface2,
+          fullMatrix: fullMatrices.harpface2,
+        },
+      }
+    }
+    if (isChromaticHarpFace(fullInteractionMatrices)) throw Error(errorMessage)
+    return {
+      harpface1: {
+        interactionMatrix: fullInteractionMatrices.harpface1,
+        fullMatrix: fullMatrices.harpface1,
+      },
+    }
+  })()
 
-  const nextViewableMatrix = sliceMatrix(fullMatrix, start, end + 1).filter(
-    isPopulatedArray
+  const removeInteractionIds = (() => {
+    if (!isChromaticHarpFace(fullMatrices)) return []
+    // TODO: This is rubbish. Can I not find a way to just remove the Blow & Draw
+    // from the full list of InteractionIds?
+    return [
+      InteractionIds.BlowBend1,
+      InteractionIds.BlowBend2,
+      InteractionIds.BlowBend3,
+      InteractionIds.BlowBend4,
+      InteractionIds.BlowBend5,
+      InteractionIds.DrawBend1,
+      InteractionIds.DrawBend2,
+      InteractionIds.DrawBend3,
+      InteractionIds.DrawBend4,
+      InteractionIds.DrawBend5,
+      InteractionIds.OverBlow1,
+      InteractionIds.OverBlow2,
+      InteractionIds.OverDraw1,
+      InteractionIds.OverDraw2,
+      InteractionIds.ValvedBlow1,
+      InteractionIds.ValvedDraw1,
+    ]
+  })()
+
+  const mapFunction = (siblingMatrices: SiblingMatrices) => {
+    const { fullMatrix, interactionMatrix } = siblingMatrices
+    const withRemovedInteractions = mapMatrixToRemoveBySiblingInteraction({
+      matrix: fullMatrix,
+      interactionMatrix,
+      removeInteractionIds,
+    })
+    return trimFullMatrixByColumnBounds(
+      withRemovedInteractions,
+      columnBounds
+    ).filter(isPopulatedArray)
+  }
+  const nextViewableMatrix = mapHarpFaceFacts(
+    harpfaceSiblingMatrices,
+    mapFunction
   )
 
-  if (doSparceIdedObjectMatricesMatch(prevViewableMatrix, nextViewableMatrix))
-    return prevViewableMatrix
-
+  if (
+    isMatchHarpFaceFacts(
+      doSparceIdedObjectMatricesMatch,
+      prevViewableMatrices,
+      nextViewableMatrix
+    )
+  )
+    return prevViewableMatrices
   return nextViewableMatrix
 }

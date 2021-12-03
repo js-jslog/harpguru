@@ -1,17 +1,19 @@
 import type { HarpStrata } from 'harpstrata'
-import type { HarpFaceMatrix, Interaction } from 'harpparts'
+import type { HarpFaceMatrices, Interaction } from 'harpparts'
 
+import { isMatchHarpFaceFacts } from '../../../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../../../packages/do-sparce-ided-object-matrices-match'
 
 export const reduceHarpStrataToFullInteractionMatrix = (
-  prevInteractionMatrix: HarpFaceMatrix<Interaction>,
+  prevInteractionMatrix: HarpFaceMatrices<Interaction>,
   harpStrata: HarpStrata
-): HarpFaceMatrix<Interaction> => {
+): HarpFaceMatrices<Interaction> => {
   const {
     apparatus: { interactionMatrix: nextInteractionMatrix },
   } = harpStrata
   if (
-    doSparceIdedObjectMatricesMatch(
+    isMatchHarpFaceFacts(
+      doSparceIdedObjectMatricesMatch,
       prevInteractionMatrix,
       nextInteractionMatrix
     )

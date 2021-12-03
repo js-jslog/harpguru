@@ -1,4 +1,5 @@
 import { useGlobal } from 'reactn'
+import { isChromaticHarpFace } from 'harpparts'
 
 import { useIsZoomedColumnBounds } from '../use-is-zoomed-columnbounds'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
@@ -46,10 +47,25 @@ const relativeLabelIconSize = 7
 export const useSizes = (): SizeSchemes => {
   const { shortEdge, longEdge } = getWindowDimensions()
   const [layoutFacts] = useGlobal('layoutFacts')
-  const {
-    harpfaceColumns: harpFaceColumnCount,
-    harpfaceRows: harpFaceRowCount,
-  } = layoutFacts
+  const { harpfaceRowCount, harpfaceColumnCount } = (() => {
+    const {
+      harpface1: {
+        harpfaceColumns: harpfaceColumnCount,
+        harpfaceRows: harpface1RowCount,
+      },
+    } = layoutFacts
+    if (isChromaticHarpFace(layoutFacts)) {
+      const {
+        harpface2: { harpfaceRows: harpface2RowCount },
+      } = layoutFacts
+      const harpfaceRowCount = harpface1RowCount + harpface2RowCount
+      return {
+        harpfaceColumnCount,
+        harpfaceRowCount,
+      }
+    }
+    return { harpfaceColumnCount, harpfaceRowCount: harpface1RowCount }
+  })()
 
   const {
     [relativeColumnWidth]: columnWidth,
@@ -61,24 +77,35 @@ export const useSizes = (): SizeSchemes => {
   const legendWidth = columnWidth
   const zoomSlideWidth = useIsZoomedColumnBounds() === false ? 0 : columnWidth
 
-  // TODO: It might be better to either count the number of gutters
-  // or base this as a proportion of the number of columns since
-  // this number won't work well as the number of columns and
-  // therefore gutters increases.
-  // We could also set this to 0 if the no-fragment mode is
-  // selected. This would mean that the cell size would grow
-  // when they left fragment mode. That would have advantages
-  // and disadvantages.
-  const roughFragmentGutterCount = 3
-  const includingHarpFaceEdgesGutterCount = roughFragmentGutterCount + 2
+  // We need the sizing scheme to be as independant from the updates of the
+  // updates of the global properties as possible. If it isn't then we will
+  // see size updates after insignificant interactions. Getting an accurate
+  // measure of the number of octave groups is a waste of effort because it
+  // requires a lot of context and only very slightly improves the accuracy
+  // of this sizing seed. There are not many harps having fewer than 3 hole
+  // octave spreads. Most have 4, but using 3 doesnt disrupt the layout too
+  // much.
+  const pessimisticGroupColumnnEstimate = 3
+  const roughFullGroupCount = Math.ceil(
+    harpfaceColumnCount / pessimisticGroupColumnnEstimate
+  )
+  const exteriorGutterCount = 2
+  const includingHarpFaceEdgesGutterCount =
+    roughFullGroupCount + exteriorGutterCount
   const dynamicWidthRequirements =
     longEdge /
-    (columnWidth * harpFaceColumnCount +
+    (columnWidth * harpfaceColumnCount +
       fragmentGutter * includingHarpFaceEdgesGutterCount +
       labelProtrusion +
       legendWidth +
       zoomSlideWidth)
-  const dynamicHeightRequirements = shortEdge / (rowHeight * harpFaceRowCount)
+  const dynamicHeightRequirements = (() => {
+    const [viewableInteractionMatrices] = useGlobal('viewableInteractionMatrix')
+    const actualRowsHeight = shortEdge / (rowHeight * harpfaceRowCount)
+    if (isChromaticHarpFace(viewableInteractionMatrices))
+      return actualRowsHeight + fragmentGutter
+    return actualRowsHeight
+  })()
 
   const dynamicSeedSize =
     dynamicWidthRequirements > dynamicHeightRequirements

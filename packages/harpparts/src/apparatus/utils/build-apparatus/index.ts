@@ -1,17 +1,34 @@
 import { reedArrayToMatrices } from '../reed-array-to-matrices'
 import type { Apparatus } from '../../types'
 import { ValvingIds } from '../../../valving'
-import type { TuningIds } from '../../../tuning'
+import { mapHarpFaceFacts } from '../../../utils'
+import { TuningIds } from '../../../tuning'
+import type { ReedArray } from '../../../tuning'
 import { getTuning } from '../../../access-parts'
 
 export const buildApparatus = (
   tuningId: TuningIds,
   valvingId: ValvingIds
 ): Apparatus => {
-  const tuning = getTuning(tuningId)
+  const { reedArrays } = getTuning(tuningId)
+
+  const reedArrayToHalfstepIndexMatrix = (reedArray: ReedArray) =>
+    reedArrayToMatrices(reedArray, tuningId, valvingId).halfstepIndexMatrix
+  const halfstepIndexMatrix = mapHarpFaceFacts(
+    reedArrays,
+    reedArrayToHalfstepIndexMatrix
+  )
+
+  const reedArrayToInteractionMatrix = (reedArray: ReedArray) =>
+    reedArrayToMatrices(reedArray, tuningId, valvingId).interactionMatrix
+  const interactionMatrix = mapHarpFaceFacts(
+    reedArrays,
+    reedArrayToInteractionMatrix
+  )
   return {
-    tuningId: tuning.id,
+    tuningId,
     valvingId,
-    ...reedArrayToMatrices(tuning.reedArray, tuning.id, valvingId),
+    halfstepIndexMatrix,
+    interactionMatrix,
   }
 }

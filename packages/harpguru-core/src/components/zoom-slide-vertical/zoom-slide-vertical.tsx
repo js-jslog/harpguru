@@ -53,7 +53,9 @@ const ZoomSlideVerticalVisible = ({
 }): React.ReactElement => {
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const {
-    [0]: { length: columnCount },
+    harpface1: {
+      [0]: { length: columnCount },
+    },
   } = fullInteractionMatrix
 
   const {

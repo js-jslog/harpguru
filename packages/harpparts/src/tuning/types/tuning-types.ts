@@ -1,4 +1,4 @@
-import type { HalfstepIndex } from '../../types'
+import type { HalfstepIndex, HarpFaceFacts } from '../../types'
 
 export enum TuningIds {
   MajorDiatonic = 'Major diatonic',
@@ -44,6 +44,8 @@ export enum TuningIds {
   BabyFat = 'Baby fat',
   TwelveHoleSolo = 'Twelve hole solo',
   SixteenHoleSolo = 'Sixteen hole solo',
+  TwelveHoleChromatic = 'Chromatic (12 hole)',
+  SixteenHoleChromatic = 'Chromatic (16 hole)',
 }
 
 export enum TuningCategories {
@@ -62,7 +64,7 @@ export type Tuning = {
   readonly id: TuningIds
   readonly shortName?: string
   readonly category: TuningCategories
-  readonly reedArray: ReedArray
+  readonly reedArrays: HarpFaceFacts<ReedArray>
 }
 
 export type ReedArray =
@@ -278,4 +280,16 @@ export enum ReedTuningPitches {
   bb4,
   b4,
   c5,
+  db5,
+  d5,
+  eb5,
+  e5,
+  f5,
+  gb5,
+  g5,
+  ab5,
+  a5,
+  bb5,
+  b5,
+  c6,
 }

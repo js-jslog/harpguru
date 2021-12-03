@@ -11,7 +11,7 @@ test('mapRowToBlowDrawIds can be used to map a matrix to just an array indicatin
     apparatus: { interactionMatrix },
   } = inactiveCellsHarpStrata
 
-  const resultingArray = interactionMatrix.map(mapRowToBlowDrawIds)
+  const resultingArray = interactionMatrix.harpface1.map(mapRowToBlowDrawIds)
   const expectedArray = [
     undefined,
     undefined,

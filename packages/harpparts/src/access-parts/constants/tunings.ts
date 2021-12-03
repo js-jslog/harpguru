@@ -43,6 +43,8 @@ import {
   BABY_FAT,
   TWELVE_HOLE_SOLO,
   SIXTEEN_HOLE_SOLO,
+  TWELVE_HOLE_CHROMATIC,
+  SIXTEEN_HOLE_CHROMATIC,
 } from '../../tuning'
 import type { Tuning } from '../../tuning'
 
@@ -53,6 +55,8 @@ orderedTunings.set(TuningIds.NaturalMinor, NATURAL_MINOR)
 orderedTunings.set(TuningIds.HarmonicMinor, HARMONIC_MINOR)
 orderedTunings.set(TuningIds.MelodyMaker, MELODY_MAKER)
 orderedTunings.set(TuningIds.EasyDiatonic, EASY_DIATONIC)
+orderedTunings.set(TuningIds.TwelveHoleChromatic, TWELVE_HOLE_CHROMATIC)
+orderedTunings.set(TuningIds.SixteenHoleChromatic, SIXTEEN_HOLE_CHROMATIC)
 orderedTunings.set(TuningIds.Wilde, WILDE)
 orderedTunings.set(TuningIds.WildeMinor, WILDE_MINOR)
 orderedTunings.set(TuningIds.Circular, CIRCULAR)

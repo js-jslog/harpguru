@@ -15,6 +15,16 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v10.0.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: 12 & 16 hole chromatic tunings
+- MINOR: `HarpFaceFacts` type to wrap and define diatonic vs chromatic facts
+- MINOR: `mapHarpFaceFacts` higher order function to help interactions with `HarpFaceFacts` type
+
+### Changed
+
+- MAJOR: Type of properties on the `Apparatus` type (`interactionMatrix` & `halfstepIndexMatrix`)
+
 ## [v9.2.0](https://github.com/js-jslog/harpguru/releases/tag/v10.0.0) - 2021-10-14
 
 ### Added

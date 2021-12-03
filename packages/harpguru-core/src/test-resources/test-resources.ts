@@ -42,11 +42,16 @@ const activeCellsHarpStrataProps = {
   ...baseHarpStrataProps,
   activeIds: allActiveDegrees,
 }
+const chromaticHarpStrataProps = {
+  ...baseHarpStrataProps,
+  tuningId: TuningIds.SixteenHoleChromatic,
+}
 
 export const inactiveCellsHarpStrata = getHarpStrata(
   inactiveCellsHarpStrataProps
 )
 export const activeCellsHarpStrata = getHarpStrata(activeCellsHarpStrataProps)
+export const chromaticHarpStrata = getHarpStrata(chromaticHarpStrataProps)
 
 type BuildMockUseGlobalImplementationProps = {
   readonly sourceHarpStrata?: HarpStrata
@@ -90,17 +95,20 @@ export const buildMockUseGlobalImplementation = ({
       return [sourceColumnBounds, jest.fn()]
     if (stateItem === 'columnBounds') return [sourceColumnBounds]
     const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
-      [[]] as const,
+      { harpface1: [[]] },
       sourceHarpStrata.degreeMatrix,
+      sourceHarpStrata.apparatus.interactionMatrix,
       sourceColumnBounds
     )
     const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
-      [[]] as const,
+      { harpface1: [[]] },
       sourceHarpStrata.pitchMatrix,
+      sourceHarpStrata.apparatus.interactionMatrix,
       sourceColumnBounds
     )
     const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
-      [[]] as const,
+      { harpface1: [[]] },
+      sourceHarpStrata.apparatus.interactionMatrix,
       sourceHarpStrata.apparatus.interactionMatrix,
       sourceColumnBounds
     )
@@ -111,8 +119,10 @@ export const buildMockUseGlobalImplementation = ({
 
     const layoutFacts = reduceViewableMatrixToLayoutFacts(
       {
-        harpfaceColumns: 0,
-        harpfaceRows: 0,
+        harpface1: {
+          harpfaceColumns: 0,
+          harpfaceRows: 0,
+        },
       },
       viewableInteractionMatrix
     )

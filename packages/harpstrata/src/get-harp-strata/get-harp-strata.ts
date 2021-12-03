@@ -1,4 +1,10 @@
-import { buildApparatus, getPitch, getPozition } from 'harpparts'
+import {
+  buildApparatus,
+  getPitch,
+  getPozition,
+  mapHarpFaceFacts,
+} from 'harpparts'
+import type { HalfstepIndex, HarpFaceMatrix } from 'harpparts'
 import { getCovariantSet } from 'harpcovariance'
 
 import type { HarpStrataProps, HarpStrata } from '../types'
@@ -9,17 +15,31 @@ export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
   const { tuningId, valvingId, pozitionId, harpKeyId, activeIds } = props
 
   const apparatus = buildApparatus(tuningId, valvingId)
+
   const { rootOffset } = getPozition(pozitionId)
   const pitch = getPitch(harpKeyId)
-
-  const { halfstepIndexMatrix } = apparatus
   const { id: pitchId } = pitch
 
-  const degreeMatrix = getDegreeMatrix(halfstepIndexMatrix, rootOffset)
-  const pitchMatrix = getPitchMatrix(halfstepIndexMatrix, pitchId)
+  const { halfstepIndexMatrix: halfstepIndexMatrices } = apparatus
+  const mapToDegreeMatrix = (
+    halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex>
+  ) => getDegreeMatrix(halfstepIndexMatrix, rootOffset)
+  const degreeMatrices = mapHarpFaceFacts(
+    halfstepIndexMatrices,
+    mapToDegreeMatrix
+  )
+
+  const mapToPitchMatrix = (
+    halfstepIndexMatrix: HarpFaceMatrix<HalfstepIndex>
+  ) => getPitchMatrix(halfstepIndexMatrix, pitchId)
+  const pitchMatrices = mapHarpFaceFacts(
+    halfstepIndexMatrices,
+    mapToPitchMatrix
+  )
+
   const { activeDegreeIds, activePitchIds } = getActiveIdsPair({
-    degreeMatrix,
-    pitchMatrix,
+    degreeMatrix: degreeMatrices.harpface1,
+    pitchMatrix: pitchMatrices.harpface1,
     activeIds: activeIds,
   })
 
@@ -27,8 +47,9 @@ export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
 
   return {
     apparatus,
-    degreeMatrix,
-    pitchMatrix,
+    // TODO: It will be necessary to modify the name of these properties eventually
+    degreeMatrix: degreeMatrices,
+    pitchMatrix: pitchMatrices,
     activeDegreeIds,
     activePitchIds,
     pozitionId,
