@@ -10,6 +10,8 @@ import {
 
 import {
   reduceFullMatrixToViewableMatrix,
+  reduceLayoutFactsToDynamicSizes,
+  reduceLayoutFactsToStaticSizes,
   reduceViewableMatrixToLayoutFacts,
 } from '../utils'
 import { DisplayModes, ExperienceModes, FlushChannels } from '../types'
@@ -127,6 +129,12 @@ export const buildMockUseGlobalImplementation = ({
       viewableInteractionMatrix
     )
     if (stateItem === 'layoutFacts') return [layoutFacts]
+
+    const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, layoutFacts)
+    if (stateItem === 'dynamicSizes') return [dynamicSizes]
+
+    const staticSizes = reduceLayoutFactsToStaticSizes(undefined, layoutFacts)
+    if (stateItem === 'staticSizes') return [staticSizes]
 
     if (stateItem === 'activeExperienceMode') return [experienceMode]
     if (stateItem === 'activeDisplayMode') return [displayMode]

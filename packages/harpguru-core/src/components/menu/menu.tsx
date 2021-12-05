@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { StyleSheet } from 'react-native'
 import React from 'react'
@@ -6,7 +7,6 @@ import type { MenuProps, ChildrenProps } from '../../types'
 import {
   useMenuAnimationValues,
   useScaledMenuLabelProtrusion,
-  useSizes,
 } from '../../hooks'
 
 export const Menu = ({
@@ -25,8 +25,8 @@ export const Menu = ({
   const scaledLabelProtrusion = useScaledMenuLabelProtrusion()
 
   const {
-    dynamicSizes: { 9: borderRadius },
-  } = useSizes()
+    [0]: { 9: borderRadius },
+  } = useGlobal('dynamicSizes')
   const styles = StyleSheet.create({
     animated: {
       ...StyleSheet.absoluteFillObject,

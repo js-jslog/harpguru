@@ -8,7 +8,6 @@ import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { useSizes } from '../../hooks'
 
 import { useToggleFragmentHarpFace } from './hooks'
 
@@ -30,7 +29,7 @@ export const MenuTabFragmentation = ({
     openCloseMenu: () => toggleFragmentHarpFace(),
   }
 
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   const { harpguruGold } = getColors()
 
   const activeLabelIcon =

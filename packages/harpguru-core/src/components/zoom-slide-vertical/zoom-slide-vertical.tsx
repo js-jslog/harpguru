@@ -7,7 +7,7 @@ import { AntDesign } from '@expo/vector-icons'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
 import { getColors } from '../../utils'
-import { useIsZoomedColumnBounds, useSizes } from '../../hooks'
+import { useIsZoomedColumnBounds } from '../../hooks'
 
 import { getGestureHandlerCallbacks } from './utils'
 import { useSlideState, useStyles } from './hooks'
@@ -83,7 +83,7 @@ const ZoomSlideVerticalVisible = ({
     bottomPointer,
     labelLayer,
   } = useStyles(trackBounds, columnCount)
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   const { inertOutline } = getColors()
 
   return (

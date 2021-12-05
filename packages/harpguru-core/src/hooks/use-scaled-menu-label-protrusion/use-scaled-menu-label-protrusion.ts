@@ -1,10 +1,11 @@
-import { useSizes } from '../use-sizes'
+import { useGlobal } from 'reactn'
+
 import { menuStashedScale } from '../../constants'
 
 export const useScaledMenuLabelProtrusion = (): number => {
   const {
-    dynamicSizes: { labelProtrusion: unscaledLabelProtrusion },
-  } = useSizes()
+    [0]: { labelProtrusion: unscaledLabelProtrusion },
+  } = useGlobal('dynamicSizes')
   const scaledLabelProtrusion = unscaledLabelProtrusion / menuStashedScale
   return scaledLabelProtrusion
 }

@@ -4,13 +4,12 @@ import React from 'react'
 import { isChromaticHarpFace } from 'harpparts'
 
 import { HarpFace } from '../harp-face'
-import { useSizes } from '../../hooks'
 
 export const HarpFaces = (): React.ReactElement => {
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
   const {
-    dynamicSizes: { fragmentGutter },
-  } = useSizes()
+    [0]: { fragmentGutter },
+  } = useGlobal('dynamicSizes')
   const { stack, gutter } = StyleSheet.create({
     stack: {
       ...StyleSheet.absoluteFillObject,

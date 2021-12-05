@@ -8,7 +8,6 @@ import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import { ExperienceModes, MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { useSizes } from '../../hooks'
 
 import { getNewExperienceModeForDispatcher } from './utils'
 
@@ -33,7 +32,7 @@ export const MenuTabExperienceMode = ({
     openCloseMenu: () => nudgeExperienceMode(),
   }
 
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   const { harpguruGold } = getColors()
 
   const activeLabelIcon =

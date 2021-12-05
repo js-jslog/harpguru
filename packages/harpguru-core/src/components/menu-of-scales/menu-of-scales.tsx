@@ -8,7 +8,6 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import { MenuProps } from '../../types'
-import { useSizes } from '../../hooks'
 
 import {
   reduceToggleToQuizableDegreeIds,
@@ -57,7 +56,7 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     },
   ]
 
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>

@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import { Text, View } from 'react-native'
 import React from 'react'
 
@@ -6,7 +7,6 @@ import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import { MenuStashPosition, PageNumber } from '../../types'
 import type { MenuProps } from '../../types'
-import { useSizes } from '../../hooks'
 
 type MenuTabNextPageProps = {
   readonly thisPage: PageNumber
@@ -28,7 +28,7 @@ export const MenuTabNextPage = ({
     openCloseMenu: getNextPage,
   }
 
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   const { harpguruPink } = getColors()
 
   return (

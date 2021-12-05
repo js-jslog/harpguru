@@ -1,8 +1,8 @@
+import { useGlobal } from 'reactn'
 import { StyleSheet } from 'react-native'
 import type { ViewStyle, TextStyle } from 'react-native'
 
 import { getColors } from '../../../utils'
-import { useSizes } from '../../../hooks'
 
 type HoleNumberStyles = {
   readonly cell: ViewStyle
@@ -12,7 +12,7 @@ type HoleNumberStyles = {
 const { holeNumbersColor } = getColors()
 
 export const useStyles = (): HoleNumberStyles => {
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   const { 6: fontSize, 8: width } = dynamicSizes
 
   const styles = StyleSheet.create<HoleNumberStyles>({
