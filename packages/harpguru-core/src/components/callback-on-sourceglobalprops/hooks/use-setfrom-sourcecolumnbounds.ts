@@ -5,6 +5,8 @@ import { reduceColumnBounds, setIfNew } from '../utils'
 import {
   reduceFullMatrixToViewableMatrix,
   reduceViewableMatrixToLayoutFacts,
+  reduceLayoutFactsToDynamicSizes,
+  reduceLayoutFactsToStaticSizes,
 } from '../../../utils'
 
 export const useSetFromSourceColumnBounds = (): void => {
@@ -24,6 +26,8 @@ export const useSetFromSourceColumnBounds = (): void => {
     'viewablePitchMatrix'
   )
   const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
+  const [prevDynamicSizes, setDynamicSizes] = useGlobal('dynamicSizes')
+  const [prevStaticSizes, setStaticSizes] = useGlobal('staticSizes')
 
   const nextColumnBounds = reduceColumnBounds(
     prevColumnBounds,
@@ -51,6 +55,14 @@ export const useSetFromSourceColumnBounds = (): void => {
     prevLayoutFacts,
     nextViewableInteractionMatrix
   )
+  const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(
+    prevDynamicSizes,
+    nextLayoutFacts
+  )
+  const nextStaticSizes = reduceLayoutFactsToStaticSizes(
+    prevStaticSizes,
+    nextLayoutFacts
+  )
 
   useEffect(() => {
     setIfNew(prevColumnBounds, nextColumnBounds, setColumnBounds)
@@ -70,5 +82,7 @@ export const useSetFromSourceColumnBounds = (): void => {
       setViewablePitchMatrix
     )
     setIfNew(prevLayoutFacts, nextLayoutFacts, setLayoutFacts)
+    setIfNew(prevDynamicSizes, nextDynamicSizes, setDynamicSizes)
+    setIfNew(prevStaticSizes, nextStaticSizes, setStaticSizes)
   }, [nextSourceColumnBounds])
 }

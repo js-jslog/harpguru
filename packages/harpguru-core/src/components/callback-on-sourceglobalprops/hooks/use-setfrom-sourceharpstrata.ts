@@ -20,6 +20,8 @@ import {
 import {
   reduceFullMatrixToViewableMatrix,
   reduceViewableMatrixToLayoutFacts,
+  reduceLayoutFactsToDynamicSizes,
+  reduceLayoutFactsToStaticSizes,
 } from '../../../utils'
 
 export const useSetFromSourceHarpStrata = (): void => {
@@ -55,6 +57,8 @@ export const useSetFromSourceHarpStrata = (): void => {
     'viewablePitchMatrix'
   )
   const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
+  const [prevDynamicSizes, setDynamicSizes] = useGlobal('dynamicSizes')
+  const [prevStaticSizes, setStaticSizes] = useGlobal('staticSizes')
   const [prevCellToggleBuffer, setCellToggleBuffer] = useGlobal(
     'bufferedActivityToggles'
   )
@@ -129,6 +133,14 @@ export const useSetFromSourceHarpStrata = (): void => {
     prevLayoutFacts,
     nextViewableInteractionMatrix
   )
+  const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(
+    prevDynamicSizes,
+    nextLayoutFacts
+  )
+  const nextStaticSizes = reduceLayoutFactsToStaticSizes(
+    prevStaticSizes,
+    nextLayoutFacts
+  )
   const nextCellToggleBuffer = reduceToEmptyBufferedActivityToggles(
     prevCellToggleBuffer
   )
@@ -169,6 +181,8 @@ export const useSetFromSourceHarpStrata = (): void => {
       setViewablePitchMatrix
     )
     setIfNew(prevLayoutFacts, nextLayoutFacts, setLayoutFacts)
+    setIfNew(prevDynamicSizes, nextDynamicSizes, setDynamicSizes)
+    setIfNew(prevStaticSizes, nextStaticSizes, setStaticSizes)
     setIfNew(prevCellToggleBuffer, nextCellToggleBuffer, setCellToggleBuffer)
   }, [nextSourceHarpStrata])
 }

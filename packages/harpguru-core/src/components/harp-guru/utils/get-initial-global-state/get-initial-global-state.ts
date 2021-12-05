@@ -12,6 +12,8 @@ import {
 
 import {
   reduceFullMatrixToViewableMatrix,
+  reduceLayoutFactsToDynamicSizes,
+  reduceLayoutFactsToStaticSizes,
   reduceViewableMatrixToLayoutFacts,
 } from '../../../../utils'
 import {
@@ -81,6 +83,8 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     },
     viewableInteractionMatrix
   )
+  const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, layoutFacts)
+  const staticSizes = reduceLayoutFactsToStaticSizes(undefined, layoutFacts)
 
   const state = {
     activeHarpStrata: initialHarpStrata,
@@ -106,6 +110,8 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     rootPitchId,
     harpKeyId,
     layoutFacts,
+    dynamicSizes,
+    staticSizes,
   } as const
 
   return state
