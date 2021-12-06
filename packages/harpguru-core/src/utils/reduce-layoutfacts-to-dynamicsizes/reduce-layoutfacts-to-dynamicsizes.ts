@@ -125,6 +125,6 @@ export const reduceLayoutFactsToDynamicSizes = (
     labelIconSize: dynamicSeedSize * labelIconSize,
   } as const
 
-  if (prevSizes && prevSizes[0] === dynamicSizes[0]) return prevSizes
+  if (prevSizes && prevSizes[1] === dynamicSizes[1]) return prevSizes
   return dynamicSizes
 }

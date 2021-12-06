@@ -118,6 +118,6 @@ export const reduceLayoutFactsToStaticSizes = (
     labelIconSize: staticSeedSize * labelIconSize,
   } as const
 
-  if (prevSizes && prevSizes[0] === staticSizes[0]) return prevSizes
+  if (prevSizes && prevSizes[1] === staticSizes[1]) return prevSizes
   return staticSizes
 }
