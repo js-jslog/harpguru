@@ -4,6 +4,7 @@ import { isMatchHarpFaceFacts } from '../../utils'
 import { doSparceIdedObjectMatricesMatch } from '../../packages/do-sparce-ided-object-matrices-match'
 
 // TODO: Add a test
+// TODO: Is this no longer used?
 export const useIsZoomedColumnBounds = ():
   | false
   | readonly [number, number] => {

@@ -3,7 +3,6 @@ import type { HarpFaceFacts } from 'harpparts'
 
 import type { LayoutFacts, SizeScheme } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
-import { useIsZoomedColumnBounds } from '../../hooks'
 
 const relativeSizes: Omit<
   SizeScheme,
@@ -66,7 +65,9 @@ export const reduceLayoutFactsToDynamicSizes = (
   } = relativeSizes
   const rowHeight = columnWidth
   const legendWidth = columnWidth
-  const zoomSlideWidth = useIsZoomedColumnBounds() === false ? 0 : columnWidth
+  // TODO: This needs to be made aware of whether
+  // the zoom slide is in place or not
+  const zoomSlideWidth = columnWidth
 
   // We need the sizing scheme to be as independant from the updates of the
   // updates of the global properties as possible. If it isn't then we will
