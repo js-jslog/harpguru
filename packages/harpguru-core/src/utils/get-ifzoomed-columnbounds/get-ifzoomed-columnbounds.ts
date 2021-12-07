@@ -5,8 +5,8 @@ export const getIfZoomedColumnBounds = (
   columnBounds: ColumnBounds
 ): false | readonly [number, number] => {
   if (columnBounds === 'FIT') return false
-  const holeSpan = columnBounds[1] - columnBounds[0] + 1
   const { harpfaceColumns } = layoutFacts
-  if (holeSpan >= harpfaceColumns) return false
-  return columnBounds
+  if (columnBounds[0] !== 0) return columnBounds
+  if (columnBounds[1] + 1 < harpfaceColumns) return columnBounds
+  return false
 }

@@ -66,3 +66,30 @@ test('A zoomed columnbounds is returned as is', () => {
     columnBounds3
   )
 })
+
+test('A pseudo-fit, but offset columnbounds is returned as is', () => {
+  const columnBounds1 = [1, 10] as const
+  const layoutFacts1 = {
+    harpfaceRows: 10,
+    harpfaceColumns: 10,
+  }
+  expect(getIfZoomedColumnBounds(layoutFacts1, columnBounds1)).toBe(
+    columnBounds1
+  )
+  const columnBounds2 = [100, 150] as const
+  const layoutFacts2 = {
+    harpfaceRows: 10,
+    harpfaceColumns: 10,
+  }
+  expect(getIfZoomedColumnBounds(layoutFacts2, columnBounds2)).toBe(
+    columnBounds2
+  )
+  const columnBounds3 = [1, 999999999] as const
+  const layoutFacts3 = {
+    harpfaceRows: 10000,
+    harpfaceColumns: 10000,
+  }
+  expect(getIfZoomedColumnBounds(layoutFacts3, columnBounds3)).toBe(
+    columnBounds3
+  )
+})
