@@ -44,7 +44,10 @@ export type GlobalState = {
   readonly viewableInteractionMatrix: HarpFaceMatrices<Interaction>
   readonly viewableDegreeMatrix: HarpFaceMatrices<Degree>
   readonly viewablePitchMatrix: HarpFaceMatrices<Pitch>
+  readonly fullLayoutFacts: HarpFaceFacts<LayoutFacts>
   readonly layoutFacts: HarpFaceFacts<LayoutFacts>
+  readonly dynamicSizes: SizeScheme
+  readonly staticSizes: SizeScheme
 }
 
 export type UseGlobal = <

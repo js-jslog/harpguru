@@ -25,6 +25,7 @@ export const useSetFromSourceColumnBounds = (): void => {
   const [prevViewablePitchMatrix, setViewablePitchMatrix] = useGlobal(
     'viewablePitchMatrix'
   )
+  const [prevFullLayoutFacts, setFullLayoutFacts] = useGlobal('fullLayoutFacts')
   const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
   const [prevDynamicSizes, setDynamicSizes] = useGlobal('dynamicSizes')
   const [prevStaticSizes, setStaticSizes] = useGlobal('staticSizes')
@@ -50,6 +51,10 @@ export const useSetFromSourceColumnBounds = (): void => {
     fullPitchMatrix,
     fullInteractionMatrix,
     nextSourceColumnBounds
+  )
+  const nextFullLayoutFacts = reduceMatrixToLayoutFacts(
+    prevLayoutFacts,
+    fullInteractionMatrix
   )
   const nextLayoutFacts = reduceMatrixToLayoutFacts(
     prevLayoutFacts,
@@ -82,6 +87,7 @@ export const useSetFromSourceColumnBounds = (): void => {
       nextViewablePitchMatrix,
       setViewablePitchMatrix
     )
+    setIfNew(prevFullLayoutFacts, nextFullLayoutFacts, setFullLayoutFacts)
     setIfNew(prevLayoutFacts, nextLayoutFacts, setLayoutFacts)
     setIfNew(prevDynamicSizes, nextDynamicSizes, setDynamicSizes)
     setIfNew(prevStaticSizes, nextStaticSizes, setStaticSizes)

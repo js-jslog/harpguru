@@ -56,6 +56,7 @@ export const useSetFromSourceHarpStrata = (): void => {
   const [prevViewablePitchMatrix, setViewablePitchMatrix] = useGlobal(
     'viewablePitchMatrix'
   )
+  const [prevFullLayoutFacts, setFullLayoutFacts] = useGlobal('fullLayoutFacts')
   const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
   const [prevDynamicSizes, setDynamicSizes] = useGlobal('dynamicSizes')
   const [prevStaticSizes, setStaticSizes] = useGlobal('staticSizes')
@@ -129,6 +130,10 @@ export const useSetFromSourceHarpStrata = (): void => {
     nextFullInteractionMatrix,
     nextColumnBounds
   )
+  const nextFullLayoutFacts = reduceMatrixToLayoutFacts(
+    prevFullLayoutFacts,
+    nextFullInteractionMatrix
+  )
   const nextLayoutFacts = reduceMatrixToLayoutFacts(
     prevLayoutFacts,
     nextViewableInteractionMatrix
@@ -181,6 +186,7 @@ export const useSetFromSourceHarpStrata = (): void => {
       nextViewablePitchMatrix,
       setViewablePitchMatrix
     )
+    setIfNew(prevFullLayoutFacts, nextFullLayoutFacts, setFullLayoutFacts)
     setIfNew(prevLayoutFacts, nextLayoutFacts, setLayoutFacts)
     setIfNew(prevDynamicSizes, nextDynamicSizes, setDynamicSizes)
     setIfNew(prevStaticSizes, nextStaticSizes, setStaticSizes)

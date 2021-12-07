@@ -74,6 +74,15 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     fullInteractionMatrix,
     columnBounds
   )
+  const fullLayoutFacts = reduceMatrixToLayoutFacts(
+    {
+      harpface1: {
+        harpfaceColumns: 0,
+        harpfaceRows: 0,
+      },
+    },
+    fullInteractionMatrix
+  )
   const layoutFacts = reduceMatrixToLayoutFacts(
     {
       harpface1: {
@@ -113,6 +122,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     pozitionId,
     rootPitchId,
     harpKeyId,
+    fullLayoutFacts,
     layoutFacts,
     dynamicSizes,
     staticSizes,

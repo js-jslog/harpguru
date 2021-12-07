@@ -119,6 +119,16 @@ export const buildMockUseGlobalImplementation = ({
     if (stateItem === 'viewableInteractionMatrix')
       return [viewableInteractionMatrix]
 
+    const fullLayoutFacts = reduceMatrixToLayoutFacts(
+      {
+        harpface1: {
+          harpfaceColumns: 0,
+          harpfaceRows: 0,
+        },
+      },
+      sourceHarpStrata.apparatus.interactionMatrix
+    )
+    if (stateItem === 'fullLayoutFacts') return [fullLayoutFacts]
     const layoutFacts = reduceMatrixToLayoutFacts(
       {
         harpface1: {
