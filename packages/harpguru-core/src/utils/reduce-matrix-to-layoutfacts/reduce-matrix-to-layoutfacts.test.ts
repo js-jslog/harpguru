@@ -1,4 +1,4 @@
-import { reduceViewableMatrixToLayoutFacts } from './reduce-viewablematrix-to-layoutfacts'
+import { reduceMatrixToLayoutFacts } from './reduce-matrix-to-layoutfacts'
 
 const viewableMatrixChromatic = {
   harpface1: [
@@ -34,16 +34,10 @@ test('the previous layoutFacts are returned if they match the derived ones', () 
     },
   } as const
   expect(
-    reduceViewableMatrixToLayoutFacts(
-      prevLayoutFactsDiatonic,
-      viewableMatrixDiatonic
-    )
+    reduceMatrixToLayoutFacts(prevLayoutFactsDiatonic, viewableMatrixDiatonic)
   ).toBe(prevLayoutFactsDiatonic)
   expect(
-    reduceViewableMatrixToLayoutFacts(
-      prevLayoutFactsChromatic,
-      viewableMatrixChromatic
-    )
+    reduceMatrixToLayoutFacts(prevLayoutFactsChromatic, viewableMatrixChromatic)
   ).toBe(prevLayoutFactsChromatic)
 })
 
@@ -81,15 +75,9 @@ test('an appropriate layoutFacts is returned for a given viewableMatrix', () => 
     },
   } as const
   expect(
-    reduceViewableMatrixToLayoutFacts(
-      prevLayoutFactsChromatic,
-      viewableMatrixDiatonic
-    )
+    reduceMatrixToLayoutFacts(prevLayoutFactsChromatic, viewableMatrixDiatonic)
   ).toStrictEqual(expectedLayoutFactsDiatonic)
   expect(
-    reduceViewableMatrixToLayoutFacts(
-      prevLayoutFactsDiatonic,
-      viewableMatrixChromatic
-    )
+    reduceMatrixToLayoutFacts(prevLayoutFactsDiatonic, viewableMatrixChromatic)
   ).toStrictEqual(expectedLayoutFactsChromatic)
 })

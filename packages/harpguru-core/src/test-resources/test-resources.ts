@@ -12,7 +12,7 @@ import {
   reduceFullMatrixToViewableMatrix,
   reduceLayoutFactsToDynamicSizes,
   reduceLayoutFactsToStaticSizes,
-  reduceViewableMatrixToLayoutFacts,
+  reduceMatrixToLayoutFacts,
 } from '../utils'
 import { DisplayModes, ExperienceModes, FlushChannels } from '../types'
 import type { ColumnBounds } from '../types'
@@ -119,7 +119,7 @@ export const buildMockUseGlobalImplementation = ({
     if (stateItem === 'viewableInteractionMatrix')
       return [viewableInteractionMatrix]
 
-    const layoutFacts = reduceViewableMatrixToLayoutFacts(
+    const layoutFacts = reduceMatrixToLayoutFacts(
       {
         harpface1: {
           harpfaceColumns: 0,

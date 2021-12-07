@@ -14,7 +14,7 @@ import {
   reduceFullMatrixToViewableMatrix,
   reduceLayoutFactsToDynamicSizes,
   reduceLayoutFactsToStaticSizes,
-  reduceViewableMatrixToLayoutFacts,
+  reduceMatrixToLayoutFacts,
 } from '../../../../utils'
 import {
   GlobalState,
@@ -74,7 +74,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     fullInteractionMatrix,
     columnBounds
   )
-  const layoutFacts = reduceViewableMatrixToLayoutFacts(
+  const layoutFacts = reduceMatrixToLayoutFacts(
     {
       harpface1: {
         harpfaceColumns: 0,

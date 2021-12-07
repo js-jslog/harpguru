@@ -19,7 +19,7 @@ import {
 } from '../utils'
 import {
   reduceFullMatrixToViewableMatrix,
-  reduceViewableMatrixToLayoutFacts,
+  reduceMatrixToLayoutFacts,
   reduceLayoutFactsToDynamicSizes,
   reduceLayoutFactsToStaticSizes,
 } from '../../../utils'
@@ -129,7 +129,7 @@ export const useSetFromSourceHarpStrata = (): void => {
     nextFullInteractionMatrix,
     nextColumnBounds
   )
-  const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(
+  const nextLayoutFacts = reduceMatrixToLayoutFacts(
     prevLayoutFacts,
     nextViewableInteractionMatrix
   )

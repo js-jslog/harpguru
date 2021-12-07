@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { reduceColumnBounds, setIfNew } from '../utils'
 import {
   reduceFullMatrixToViewableMatrix,
-  reduceViewableMatrixToLayoutFacts,
+  reduceMatrixToLayoutFacts,
   reduceLayoutFactsToDynamicSizes,
   reduceLayoutFactsToStaticSizes,
 } from '../../../utils'
@@ -51,7 +51,7 @@ export const useSetFromSourceColumnBounds = (): void => {
     fullInteractionMatrix,
     nextSourceColumnBounds
   )
-  const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(
+  const nextLayoutFacts = reduceMatrixToLayoutFacts(
     prevLayoutFacts,
     nextViewableInteractionMatrix
   )
