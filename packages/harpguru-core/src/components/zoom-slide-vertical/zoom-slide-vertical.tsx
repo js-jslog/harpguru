@@ -6,8 +6,7 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
-import { getColors } from '../../utils'
-import { useIsZoomedColumnBounds } from '../../hooks'
+import { getColors, getIfZoomedColumnBounds } from '../../utils'
 
 import { getGestureHandlerCallbacks } from './utils'
 import { useSlideState, useStyles } from './hooks'
@@ -40,10 +39,15 @@ import { useSlideState, useStyles } from './hooks'
  */
 
 export const ZoomSlideVertical = (): React.ReactElement => {
-  const isZoomedColumBounds = useIsZoomedColumnBounds()
-  if (isZoomedColumBounds === false) return <></>
+  const [layoutFacts] = useGlobal('layoutFacts')
+  const [columnBounds] = useGlobal('columnBounds')
+  const ifZoomedColumnBounds = getIfZoomedColumnBounds(
+    layoutFacts.harpface1,
+    columnBounds
+  )
+  if (ifZoomedColumnBounds === false) return <></>
 
-  return <ZoomSlideVerticalVisible columnBounds={isZoomedColumBounds} />
+  return <ZoomSlideVerticalVisible columnBounds={ifZoomedColumnBounds} />
 }
 
 const ZoomSlideVerticalVisible = ({

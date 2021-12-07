@@ -14,3 +14,4 @@ export { reduceViewableMatrixToLayoutFacts } from './reduce-viewablematrix-to-la
 export { reduceFullMatrixToViewableMatrix } from './reduce-fullmatrix-to-viewablematrix'
 export { reduceLayoutFactsToDynamicSizes } from './reduce-layoutfacts-to-dynamicsizes'
 export { reduceLayoutFactsToStaticSizes } from './reduce-layoutfacts-to-staticsizes'
+export { getIfZoomedColumnBounds } from './get-ifzoomed-columnbounds'
