@@ -130,7 +130,11 @@ export const buildMockUseGlobalImplementation = ({
     )
     if (stateItem === 'layoutFacts') return [layoutFacts]
 
-    const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, layoutFacts)
+    const dynamicSizes = reduceLayoutFactsToDynamicSizes(
+      undefined,
+      layoutFacts,
+      sourceColumnBounds
+    )
     if (stateItem === 'dynamicSizes') return [dynamicSizes]
 
     const staticSizes = reduceLayoutFactsToStaticSizes(undefined, layoutFacts)

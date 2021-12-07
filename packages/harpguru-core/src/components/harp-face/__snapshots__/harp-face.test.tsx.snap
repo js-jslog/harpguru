@@ -2724,18 +2724,18 @@ exports[`A component is rendered with fragmented face 1`] = `
   style={
     Object {
       "flexDirection": "row",
-      "height": 610.6561774855197,
+      "height": 653.3840652237375,
       "justifyContent": "space-around",
-      "left": 43.61829839182283,
-      "width": 1006.6487957115274,
+      "left": 0,
+      "width": 1077.0144948258296,
     }
   }
 >
   <View
     style={
       Object {
-        "height": 610.6561774855197,
-        "width": 87.23659678364567,
+        "height": 653.3840652237375,
+        "width": 93.34058074624821,
       }
     }
   >
@@ -2764,11 +2764,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -2818,16 +2818,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -2851,7 +2851,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -2874,11 +2874,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -2900,8 +2900,8 @@ exports[`A component is rendered with fragmented face 1`] = `
           "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
-          "borderTopLeftRadius": 20.59332591861535,
-          "borderTopRightRadius": 20.59332591861535,
+          "borderTopLeftRadius": 22.034250207026385,
+          "borderTopRightRadius": 22.034250207026385,
           "borderTopWidth": 0,
           "flex": 1,
           "flexDirection": "row",
@@ -2934,16 +2934,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -2967,7 +2967,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -2990,11 +2990,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -3020,10 +3020,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -3032,7 +3032,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -3045,8 +3045,8 @@ exports[`A component is rendered with fragmented face 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#ddd",
-          "borderBottomLeftRadius": 20.59332591861535,
-          "borderBottomRightRadius": 20.59332591861535,
+          "borderBottomLeftRadius": 22.034250207026385,
+          "borderBottomRightRadius": 22.034250207026385,
           "borderBottomWidth": 0,
           "borderColor": "#555",
           "borderLeftWidth": 0,
@@ -3085,16 +3085,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -3118,7 +3118,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -3141,11 +3141,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -3201,16 +3201,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -3234,7 +3234,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -3257,11 +3257,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -3297,11 +3297,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -3331,11 +3331,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -3344,8 +3344,8 @@ exports[`A component is rendered with fragmented face 1`] = `
   <View
     style={
       Object {
-        "height": 610.6561774855197,
-        "width": 348.94638713458266,
+        "height": 653.3840652237375,
+        "width": 373.36232298499283,
       }
     }
   >
@@ -3374,11 +3374,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -3387,11 +3387,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -3400,11 +3400,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -3413,11 +3413,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -3447,11 +3447,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -3460,11 +3460,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -3493,16 +3493,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -3526,7 +3526,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -3549,11 +3549,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -3588,16 +3588,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -3621,7 +3621,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -3644,11 +3644,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -3670,8 +3670,8 @@ exports[`A component is rendered with fragmented face 1`] = `
           "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
-          "borderTopLeftRadius": 20.59332591861535,
-          "borderTopRightRadius": 20.59332591861535,
+          "borderTopLeftRadius": 22.034250207026385,
+          "borderTopRightRadius": 22.034250207026385,
           "borderTopWidth": 0,
           "flex": 1,
           "flexDirection": "row",
@@ -3704,16 +3704,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -3737,7 +3737,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -3760,11 +3760,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -3799,16 +3799,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -3832,7 +3832,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -3855,11 +3855,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -3894,16 +3894,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -3927,7 +3927,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -3950,11 +3950,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -3989,16 +3989,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -4022,7 +4022,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -4045,11 +4045,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -4075,10 +4075,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -4087,7 +4087,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -4098,10 +4098,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -4110,7 +4110,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -4121,10 +4121,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -4133,7 +4133,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -4144,10 +4144,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -4156,7 +4156,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -4169,8 +4169,8 @@ exports[`A component is rendered with fragmented face 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#ddd",
-          "borderBottomLeftRadius": 20.59332591861535,
-          "borderBottomRightRadius": 20.59332591861535,
+          "borderBottomLeftRadius": 22.034250207026385,
+          "borderBottomRightRadius": 22.034250207026385,
           "borderBottomWidth": 0,
           "borderColor": "#555",
           "borderLeftWidth": 0,
@@ -4209,16 +4209,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -4242,7 +4242,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -4265,11 +4265,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -4304,16 +4304,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -4337,7 +4337,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -4360,11 +4360,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -4399,16 +4399,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -4432,7 +4432,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -4455,11 +4455,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -4494,16 +4494,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -4527,7 +4527,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -4550,11 +4550,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -4610,16 +4610,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -4643,7 +4643,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -4666,11 +4666,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -4705,16 +4705,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -4738,7 +4738,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -4761,11 +4761,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -4800,16 +4800,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -4833,7 +4833,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -4856,11 +4856,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -4875,11 +4875,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -4929,16 +4929,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -4962,7 +4962,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -4985,11 +4985,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -5024,16 +5024,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -5057,7 +5057,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -5080,11 +5080,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -5099,11 +5099,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -5112,11 +5112,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -5146,11 +5146,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -5179,16 +5179,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -5212,7 +5212,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -5235,11 +5235,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -5254,11 +5254,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -5267,11 +5267,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -5280,8 +5280,8 @@ exports[`A component is rendered with fragmented face 1`] = `
   <View
     style={
       Object {
-        "height": 610.6561774855197,
-        "width": 261.709790350937,
+        "height": 653.3840652237375,
+        "width": 280.02174223874465,
       }
     }
   >
@@ -5310,11 +5310,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -5323,11 +5323,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -5336,11 +5336,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -5390,16 +5390,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -5423,7 +5423,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -5446,11 +5446,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -5465,11 +5465,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -5498,16 +5498,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -5531,7 +5531,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -5554,11 +5554,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -5580,8 +5580,8 @@ exports[`A component is rendered with fragmented face 1`] = `
           "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
-          "borderTopLeftRadius": 20.59332591861535,
-          "borderTopRightRadius": 20.59332591861535,
+          "borderTopLeftRadius": 22.034250207026385,
+          "borderTopRightRadius": 22.034250207026385,
           "borderTopWidth": 0,
           "flex": 1,
           "flexDirection": "row",
@@ -5614,16 +5614,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -5647,7 +5647,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -5670,11 +5670,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -5709,16 +5709,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -5742,7 +5742,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -5765,11 +5765,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -5804,16 +5804,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -5837,7 +5837,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -5860,11 +5860,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -5890,10 +5890,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -5902,7 +5902,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -5913,10 +5913,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -5925,7 +5925,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -5936,10 +5936,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -5948,7 +5948,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -5961,8 +5961,8 @@ exports[`A component is rendered with fragmented face 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#ddd",
-          "borderBottomLeftRadius": 20.59332591861535,
-          "borderBottomRightRadius": 20.59332591861535,
+          "borderBottomLeftRadius": 22.034250207026385,
+          "borderBottomRightRadius": 22.034250207026385,
           "borderBottomWidth": 0,
           "borderColor": "#555",
           "borderLeftWidth": 0,
@@ -6001,16 +6001,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -6034,7 +6034,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -6057,11 +6057,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -6096,16 +6096,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -6129,7 +6129,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -6152,11 +6152,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -6191,16 +6191,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -6224,7 +6224,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -6247,11 +6247,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -6307,16 +6307,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -6340,7 +6340,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -6363,11 +6363,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -6402,16 +6402,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -6435,7 +6435,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -6458,11 +6458,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -6477,11 +6477,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -6511,11 +6511,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -6524,11 +6524,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -6537,11 +6537,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -6571,11 +6571,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -6584,11 +6584,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -6597,11 +6597,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -6610,8 +6610,8 @@ exports[`A component is rendered with fragmented face 1`] = `
   <View
     style={
       Object {
-        "height": 610.6561774855197,
-        "width": 174.47319356729133,
+        "height": 653.3840652237375,
+        "width": 186.68116149249641,
       }
     }
   >
@@ -6640,11 +6640,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -6673,16 +6673,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -6706,7 +6706,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -6729,11 +6729,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -6789,16 +6789,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -6822,7 +6822,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -6845,11 +6845,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -6884,16 +6884,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -6917,7 +6917,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -6940,11 +6940,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -6966,8 +6966,8 @@ exports[`A component is rendered with fragmented face 1`] = `
           "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
-          "borderTopLeftRadius": 20.59332591861535,
-          "borderTopRightRadius": 20.59332591861535,
+          "borderTopLeftRadius": 22.034250207026385,
+          "borderTopRightRadius": 22.034250207026385,
           "borderTopWidth": 0,
           "flex": 1,
           "flexDirection": "row",
@@ -7000,16 +7000,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -7033,7 +7033,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -7056,11 +7056,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -7095,16 +7095,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -7128,7 +7128,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -7151,11 +7151,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -7181,10 +7181,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -7193,7 +7193,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -7204,10 +7204,10 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -7216,7 +7216,7 @@ exports[`A component is rendered with fragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -7229,8 +7229,8 @@ exports[`A component is rendered with fragmented face 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#ddd",
-          "borderBottomLeftRadius": 20.59332591861535,
-          "borderBottomRightRadius": 20.59332591861535,
+          "borderBottomLeftRadius": 22.034250207026385,
+          "borderBottomRightRadius": 22.034250207026385,
           "borderBottomWidth": 0,
           "borderColor": "#555",
           "borderLeftWidth": 0,
@@ -7269,16 +7269,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -7302,7 +7302,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -7325,11 +7325,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -7364,16 +7364,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -7397,7 +7397,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -7420,11 +7420,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -7480,16 +7480,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -7513,7 +7513,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -7536,11 +7536,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -7575,16 +7575,16 @@ exports[`A component is rendered with fragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -7608,7 +7608,7 @@ exports[`A component is rendered with fragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -7631,11 +7631,11 @@ exports[`A component is rendered with fragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -7671,11 +7671,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -7684,11 +7684,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -7718,11 +7718,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -7731,11 +7731,11 @@ exports[`A component is rendered with fragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10321,18 +10321,18 @@ exports[`A component is rendered with unfragmented face 1`] = `
   style={
     Object {
       "flexDirection": "row",
-      "height": 610.6561774855197,
+      "height": 653.3840652237375,
       "justifyContent": "space-around",
-      "left": 43.61829839182283,
-      "width": 906.6866748052244,
+      "left": 0,
+      "width": 970.0579793033189,
     }
   }
 >
   <View
     style={
       Object {
-        "height": 610.6561774855197,
-        "width": 872.3659678364567,
+        "height": 653.3840652237375,
+        "width": 933.405807462482,
       }
     }
   >
@@ -10361,11 +10361,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10374,11 +10374,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10387,11 +10387,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10400,11 +10400,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10413,11 +10413,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10426,11 +10426,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10439,11 +10439,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10452,11 +10452,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10465,11 +10465,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10498,16 +10498,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -10531,7 +10531,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -10554,11 +10554,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -10614,16 +10614,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -10647,7 +10647,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -10670,11 +10670,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -10689,11 +10689,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10702,11 +10702,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -10735,16 +10735,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -10768,7 +10768,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -10791,11 +10791,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -10830,16 +10830,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -10863,7 +10863,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -10886,11 +10886,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -10925,16 +10925,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -10958,7 +10958,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -10981,11 +10981,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11000,11 +11000,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -11033,16 +11033,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11066,7 +11066,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11089,11 +11089,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11128,16 +11128,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11161,7 +11161,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11184,11 +11184,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11223,16 +11223,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11256,7 +11256,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11279,11 +11279,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11305,8 +11305,8 @@ exports[`A component is rendered with unfragmented face 1`] = `
           "borderColor": "#555",
           "borderLeftWidth": 0,
           "borderRightWidth": 0,
-          "borderTopLeftRadius": 20.59332591861535,
-          "borderTopRightRadius": 20.59332591861535,
+          "borderTopLeftRadius": 22.034250207026385,
+          "borderTopRightRadius": 22.034250207026385,
           "borderTopWidth": 0,
           "flex": 1,
           "flexDirection": "row",
@@ -11339,16 +11339,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11372,7 +11372,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11395,11 +11395,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11434,16 +11434,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11467,7 +11467,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11490,11 +11490,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11529,16 +11529,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11562,7 +11562,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11585,11 +11585,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11624,16 +11624,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11657,7 +11657,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11680,11 +11680,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11719,16 +11719,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11752,7 +11752,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11775,11 +11775,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11814,16 +11814,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11847,7 +11847,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11870,11 +11870,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -11909,16 +11909,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -11942,7 +11942,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -11965,11 +11965,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -12004,16 +12004,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -12037,7 +12037,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -12060,11 +12060,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -12099,16 +12099,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -12132,7 +12132,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -12155,11 +12155,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -12194,16 +12194,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -12227,7 +12227,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -12250,11 +12250,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -12280,10 +12280,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12292,7 +12292,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12303,10 +12303,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12315,7 +12315,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12326,10 +12326,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12338,7 +12338,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12349,10 +12349,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12361,7 +12361,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12372,10 +12372,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12384,7 +12384,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12395,10 +12395,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12407,7 +12407,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12418,10 +12418,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12430,7 +12430,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12441,10 +12441,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12453,7 +12453,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12464,10 +12464,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12476,7 +12476,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12487,10 +12487,10 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "height": 20.59332591861535,
+            "height": 22.034250207026385,
             "justifyContent": "center",
-            "top": -10.296662959307675,
-            "width": 53.91403288738305,
+            "top": -11.017125103513193,
+            "width": 57.6864220478633,
           }
         }
       >
@@ -12499,7 +12499,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
           style={
             Object {
               "color": "#555",
-              "fontSize": 20.59332591861535,
+              "fontSize": 22.034250207026385,
             }
           }
         >
@@ -12512,8 +12512,8 @@ exports[`A component is rendered with unfragmented face 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "#ddd",
-          "borderBottomLeftRadius": 20.59332591861535,
-          "borderBottomRightRadius": 20.59332591861535,
+          "borderBottomLeftRadius": 22.034250207026385,
+          "borderBottomRightRadius": 22.034250207026385,
           "borderBottomWidth": 0,
           "borderColor": "#555",
           "borderLeftWidth": 0,
@@ -12552,16 +12552,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -12585,7 +12585,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -12608,11 +12608,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -12647,16 +12647,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -12680,7 +12680,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -12703,11 +12703,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -12742,16 +12742,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -12775,7 +12775,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -12798,11 +12798,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -12837,16 +12837,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -12870,7 +12870,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -12893,11 +12893,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -12932,16 +12932,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -12965,7 +12965,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -12988,11 +12988,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13027,16 +13027,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13060,7 +13060,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13083,11 +13083,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13122,16 +13122,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13155,7 +13155,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13178,11 +13178,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13217,16 +13217,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13250,7 +13250,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13273,11 +13273,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13312,16 +13312,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13345,7 +13345,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13368,11 +13368,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13407,16 +13407,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13440,7 +13440,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13463,11 +13463,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13523,16 +13523,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13556,7 +13556,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13579,11 +13579,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13618,16 +13618,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13651,7 +13651,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13674,11 +13674,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13713,16 +13713,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13746,7 +13746,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13769,11 +13769,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13808,16 +13808,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13841,7 +13841,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13864,11 +13864,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -13883,11 +13883,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -13916,16 +13916,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -13949,7 +13949,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -13972,11 +13972,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -14011,16 +14011,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -14044,7 +14044,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -14067,11 +14067,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -14086,11 +14086,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14119,16 +14119,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -14152,7 +14152,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -14175,11 +14175,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -14214,16 +14214,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -14247,7 +14247,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -14270,11 +14270,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -14310,11 +14310,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14343,16 +14343,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -14376,7 +14376,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -14399,11 +14399,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -14438,16 +14438,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -14471,7 +14471,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -14494,11 +14494,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -14513,11 +14513,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14526,11 +14526,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14539,11 +14539,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14552,11 +14552,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14565,11 +14565,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14578,11 +14578,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14591,11 +14591,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14625,11 +14625,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14638,11 +14638,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14671,16 +14671,16 @@ exports[`A component is rendered with unfragmented face 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderRadius": 20.59332591861535,
+                  "borderRadius": 22.034250207026385,
                   "flexDirection": "row",
-                  "height": 66.6414139375354,
+                  "height": 71.30434368167384,
                   "justifyContent": "center",
-                  "width": 66.6414139375354,
+                  "width": 71.30434368167384,
                 },
                 Object {
                   "backgroundColor": "#fefefe",
                   "borderColor": "#555",
-                  "borderWidth": 1.8569274949157213,
+                  "borderWidth": 1.9868575479735244,
                   "elevation": 0,
                 },
               ]
@@ -14704,7 +14704,7 @@ exports[`A component is rendered with unfragmented face 1`] = `
                   Object {
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 33.3207069687677,
+                    "fontSize": 35.65217184083692,
                   }
                 }
               >
@@ -14727,11 +14727,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
               <Text
                 style={
                   Object {
-                    "bottom": 12.727381050152355,
+                    "bottom": 13.617921633810537,
                     "color": "#555",
                     "display": "flex",
-                    "fontSize": 20.59332591861535,
-                    "left": 12.727381050152355,
+                    "fontSize": 22.034250207026385,
+                    "left": 13.617921633810537,
                   }
                 }
               >
@@ -14746,11 +14746,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14759,11 +14759,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14772,11 +14772,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14785,11 +14785,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14798,11 +14798,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14811,11 +14811,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />
@@ -14824,11 +14824,11 @@ exports[`A component is rendered with unfragmented face 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "borderRadius": 20.59332591861535,
+            "borderRadius": 22.034250207026385,
             "flexDirection": "row",
-            "height": 66.6414139375354,
+            "height": 71.30434368167384,
             "justifyContent": "center",
-            "width": 66.6414139375354,
+            "width": 71.30434368167384,
           }
         }
       />

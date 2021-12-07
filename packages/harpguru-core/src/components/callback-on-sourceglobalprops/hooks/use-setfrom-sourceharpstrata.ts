@@ -135,7 +135,8 @@ export const useSetFromSourceHarpStrata = (): void => {
   )
   const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(
     prevDynamicSizes,
-    nextLayoutFacts
+    nextLayoutFacts,
+    nextColumnBounds
   )
   const nextStaticSizes = reduceLayoutFactsToStaticSizes(
     prevStaticSizes,

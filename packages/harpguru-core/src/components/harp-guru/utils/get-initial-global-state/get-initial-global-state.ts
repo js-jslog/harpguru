@@ -83,7 +83,11 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     },
     viewableInteractionMatrix
   )
-  const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, layoutFacts)
+  const dynamicSizes = reduceLayoutFactsToDynamicSizes(
+    undefined,
+    layoutFacts,
+    columnBounds
+  )
   const staticSizes = reduceLayoutFactsToStaticSizes(undefined, layoutFacts)
 
   const state = {

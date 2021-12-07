@@ -1,7 +1,8 @@
 import { isChromaticHarpFace } from 'harpparts'
 import type { HarpFaceFacts } from 'harpparts'
 
-import type { LayoutFacts, SizeScheme } from '../../types'
+import { getIfZoomedColumnBounds } from '../get-ifzoomed-columnbounds'
+import type { ColumnBounds, LayoutFacts, SizeScheme } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 const relativeSizes: Omit<
@@ -34,7 +35,8 @@ const relativeLabelIconSize = 7
 
 export const reduceLayoutFactsToDynamicSizes = (
   prevSizes: SizeScheme | undefined,
-  layoutFacts: HarpFaceFacts<LayoutFacts>
+  layoutFacts: HarpFaceFacts<LayoutFacts>,
+  columnBounds: ColumnBounds
 ): SizeScheme => {
   const { shortEdge, longEdge } = getWindowDimensions()
   const { harpfaceRowCount, harpfaceColumnCount } = (() => {
@@ -65,9 +67,10 @@ export const reduceLayoutFactsToDynamicSizes = (
   } = relativeSizes
   const rowHeight = columnWidth
   const legendWidth = columnWidth
-  // TODO: This needs to be made aware of whether
-  // the zoom slide is in place or not
-  const zoomSlideWidth = columnWidth
+  const zoomSlideWidth =
+    getIfZoomedColumnBounds(layoutFacts.harpface1, columnBounds) === false
+      ? 0
+      : columnWidth
 
   // We need the sizing scheme to be as independant from the updates of the
   // updates of the global properties as possible. If it isn't then we will

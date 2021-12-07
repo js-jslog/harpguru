@@ -57,7 +57,8 @@ export const useSetFromSourceColumnBounds = (): void => {
   )
   const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(
     prevDynamicSizes,
-    nextLayoutFacts
+    nextLayoutFacts,
+    nextColumnBounds
   )
   const nextStaticSizes = reduceLayoutFactsToStaticSizes(
     prevStaticSizes,
