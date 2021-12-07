@@ -4,8 +4,8 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
 <View
   style={
     Object {
-      "height": 619.9946182041224,
-      "width": 929.9919273061836,
+      "height": 575.422080346704,
+      "width": 863.133120520056,
     }
   }
 >
@@ -54,16 +54,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -87,7 +87,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -110,11 +110,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -129,11 +129,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -142,11 +142,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -175,16 +175,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -208,7 +208,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -231,11 +231,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -270,16 +270,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -303,7 +303,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -326,11 +326,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -365,16 +365,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -398,7 +398,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -421,11 +421,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -440,11 +440,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -473,16 +473,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -506,7 +506,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -529,11 +529,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -568,16 +568,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -601,7 +601,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -624,11 +624,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -650,8 +650,8 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         "borderColor": "#555",
         "borderLeftWidth": 0,
         "borderRightWidth": 0,
-        "borderTopLeftRadius": 24.392956838458737,
-        "borderTopRightRadius": 24.392956838458737,
+        "borderTopLeftRadius": 22.639302919194204,
+        "borderTopRightRadius": 22.639302919194204,
         "borderTopWidth": 0,
         "flex": 1,
         "flexDirection": "row",
@@ -684,16 +684,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -717,7 +717,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -740,11 +740,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -779,16 +779,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -812,7 +812,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -835,11 +835,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -874,16 +874,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -907,7 +907,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -930,11 +930,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -969,16 +969,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -1002,7 +1002,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -1025,11 +1025,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -1064,16 +1064,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -1097,7 +1097,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -1120,11 +1120,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -1159,16 +1159,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -1192,7 +1192,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -1215,11 +1215,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -1254,16 +1254,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -1287,7 +1287,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -1310,11 +1310,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -1349,16 +1349,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -1382,7 +1382,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -1405,11 +1405,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -1444,16 +1444,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -1477,7 +1477,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -1500,11 +1500,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -1530,10 +1530,10 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "height": 24.392956838458737,
+          "height": 22.639302919194204,
           "justifyContent": "center",
-          "top": -12.196478419229368,
-          "width": 63.86159683028051,
+          "top": -11.319651459597102,
+          "width": 59.27047078051258,
         }
       }
     >
@@ -1542,7 +1542,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         style={
           Object {
             "color": "#555",
-            "fontSize": 24.392956838458737,
+            "fontSize": 22.639302919194204,
           }
         }
       >
@@ -1553,10 +1553,10 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "height": 24.392956838458737,
+          "height": 22.639302919194204,
           "justifyContent": "center",
-          "top": -12.196478419229368,
-          "width": 63.86159683028051,
+          "top": -11.319651459597102,
+          "width": 59.27047078051258,
         }
       }
     >
@@ -1565,7 +1565,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         style={
           Object {
             "color": "#555",
-            "fontSize": 24.392956838458737,
+            "fontSize": 22.639302919194204,
           }
         }
       >
@@ -1576,10 +1576,10 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "height": 24.392956838458737,
+          "height": 22.639302919194204,
           "justifyContent": "center",
-          "top": -12.196478419229368,
-          "width": 63.86159683028051,
+          "top": -11.319651459597102,
+          "width": 59.27047078051258,
         }
       }
     >
@@ -1588,7 +1588,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         style={
           Object {
             "color": "#555",
-            "fontSize": 24.392956838458737,
+            "fontSize": 22.639302919194204,
           }
         }
       >
@@ -1599,10 +1599,10 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "height": 24.392956838458737,
+          "height": 22.639302919194204,
           "justifyContent": "center",
-          "top": -12.196478419229368,
-          "width": 63.86159683028051,
+          "top": -11.319651459597102,
+          "width": 59.27047078051258,
         }
       }
     >
@@ -1611,7 +1611,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         style={
           Object {
             "color": "#555",
-            "fontSize": 24.392956838458737,
+            "fontSize": 22.639302919194204,
           }
         }
       >
@@ -1622,10 +1622,10 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "height": 24.392956838458737,
+          "height": 22.639302919194204,
           "justifyContent": "center",
-          "top": -12.196478419229368,
-          "width": 63.86159683028051,
+          "top": -11.319651459597102,
+          "width": 59.27047078051258,
         }
       }
     >
@@ -1634,7 +1634,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         style={
           Object {
             "color": "#555",
-            "fontSize": 24.392956838458737,
+            "fontSize": 22.639302919194204,
           }
         }
       >
@@ -1645,10 +1645,10 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "height": 24.392956838458737,
+          "height": 22.639302919194204,
           "justifyContent": "center",
-          "top": -12.196478419229368,
-          "width": 63.86159683028051,
+          "top": -11.319651459597102,
+          "width": 59.27047078051258,
         }
       }
     >
@@ -1657,7 +1657,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         style={
           Object {
             "color": "#555",
-            "fontSize": 24.392956838458737,
+            "fontSize": 22.639302919194204,
           }
         }
       >
@@ -1668,10 +1668,10 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "height": 24.392956838458737,
+          "height": 22.639302919194204,
           "justifyContent": "center",
-          "top": -12.196478419229368,
-          "width": 63.86159683028051,
+          "top": -11.319651459597102,
+          "width": 59.27047078051258,
         }
       }
     >
@@ -1680,7 +1680,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         style={
           Object {
             "color": "#555",
-            "fontSize": 24.392956838458737,
+            "fontSize": 22.639302919194204,
           }
         }
       >
@@ -1691,10 +1691,10 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "height": 24.392956838458737,
+          "height": 22.639302919194204,
           "justifyContent": "center",
-          "top": -12.196478419229368,
-          "width": 63.86159683028051,
+          "top": -11.319651459597102,
+          "width": 59.27047078051258,
         }
       }
     >
@@ -1703,7 +1703,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         style={
           Object {
             "color": "#555",
-            "fontSize": 24.392956838458737,
+            "fontSize": 22.639302919194204,
           }
         }
       >
@@ -1714,10 +1714,10 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "height": 24.392956838458737,
+          "height": 22.639302919194204,
           "justifyContent": "center",
-          "top": -12.196478419229368,
-          "width": 63.86159683028051,
+          "top": -11.319651459597102,
+          "width": 59.27047078051258,
         }
       }
     >
@@ -1726,7 +1726,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
         style={
           Object {
             "color": "#555",
-            "fontSize": 24.392956838458737,
+            "fontSize": 22.639302919194204,
           }
         }
       >
@@ -1739,8 +1739,8 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       Object {
         "alignItems": "center",
         "backgroundColor": "#ddd",
-        "borderBottomLeftRadius": 24.392956838458737,
-        "borderBottomRightRadius": 24.392956838458737,
+        "borderBottomLeftRadius": 22.639302919194204,
+        "borderBottomRightRadius": 22.639302919194204,
         "borderBottomWidth": 0,
         "borderColor": "#555",
         "borderLeftWidth": 0,
@@ -1779,16 +1779,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -1812,7 +1812,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -1835,11 +1835,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -1874,16 +1874,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -1907,7 +1907,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -1930,11 +1930,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -1969,16 +1969,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2002,7 +2002,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2025,11 +2025,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2064,16 +2064,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2097,7 +2097,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2120,11 +2120,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2159,16 +2159,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2192,7 +2192,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2215,11 +2215,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2254,16 +2254,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2287,7 +2287,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2310,11 +2310,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2349,16 +2349,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2382,7 +2382,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2405,11 +2405,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2444,16 +2444,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2477,7 +2477,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2500,11 +2500,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2539,16 +2539,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2572,7 +2572,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2595,11 +2595,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2655,16 +2655,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2688,7 +2688,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2711,11 +2711,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2750,16 +2750,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2783,7 +2783,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2806,11 +2806,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2845,16 +2845,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2878,7 +2878,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2901,11 +2901,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -2940,16 +2940,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -2973,7 +2973,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -2996,11 +2996,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -3015,11 +3015,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3048,16 +3048,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -3081,7 +3081,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -3104,11 +3104,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -3143,16 +3143,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -3176,7 +3176,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -3199,11 +3199,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -3218,11 +3218,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3251,16 +3251,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -3284,7 +3284,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -3307,11 +3307,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -3347,11 +3347,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3380,16 +3380,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -3413,7 +3413,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -3436,11 +3436,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -3475,16 +3475,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -3508,7 +3508,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -3531,11 +3531,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -3550,11 +3550,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3563,11 +3563,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3576,11 +3576,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3589,11 +3589,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3602,11 +3602,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3615,11 +3615,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3649,11 +3649,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3662,11 +3662,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3695,16 +3695,16 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             Array [
               Object {
                 "alignItems": "center",
-                "borderRadius": 24.392956838458737,
+                "borderRadius": 22.639302919194204,
                 "flexDirection": "row",
-                "height": 78.93727998364356,
+                "height": 73.26233572263675,
                 "justifyContent": "center",
-                "width": 78.93727998364356,
+                "width": 73.26233572263675,
               },
               Object {
                 "backgroundColor": "#fefefe",
                 "borderColor": "#555",
-                "borderWidth": 2.1995452514390204,
+                "borderWidth": 2.041415953038251,
                 "elevation": 0,
               },
             ]
@@ -3728,7 +3728,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
                 Object {
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 39.46863999182178,
+                  "fontSize": 36.631167861318374,
                 }
               }
             >
@@ -3751,11 +3751,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             <Text
               style={
                 Object {
-                  "bottom": 15.075683153363046,
+                  "bottom": 13.991864942124174,
                   "color": "#555",
                   "display": "flex",
-                  "fontSize": 24.392956838458737,
-                  "left": 15.075683153363046,
+                  "fontSize": 22.639302919194204,
+                  "left": 13.991864942124174,
                 }
               }
             >
@@ -3770,11 +3770,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3783,11 +3783,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3796,11 +3796,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3809,11 +3809,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3822,11 +3822,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />
@@ -3835,11 +3835,11 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
       style={
         Object {
           "alignItems": "center",
-          "borderRadius": 24.392956838458737,
+          "borderRadius": 22.639302919194204,
           "flexDirection": "row",
-          "height": 78.93727998364356,
+          "height": 73.26233572263675,
           "justifyContent": "center",
-          "width": 78.93727998364356,
+          "width": 73.26233572263675,
         }
       }
     />

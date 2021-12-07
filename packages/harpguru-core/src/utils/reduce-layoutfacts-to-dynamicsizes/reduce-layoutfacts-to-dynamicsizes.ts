@@ -1,8 +1,7 @@
 import { isChromaticHarpFace } from 'harpparts'
 import type { HarpFaceFacts } from 'harpparts'
 
-import { getIfZoomedColumnBounds } from '../get-ifzoomed-columnbounds'
-import type { ColumnBounds, LayoutFacts, SizeScheme } from '../../types'
+import type { LayoutFacts, SizeScheme } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 const relativeSizes: Omit<
@@ -36,7 +35,7 @@ const relativeLabelIconSize = 7
 export const reduceLayoutFactsToDynamicSizes = (
   prevSizes: SizeScheme | undefined,
   layoutFacts: HarpFaceFacts<LayoutFacts>,
-  columnBounds: ColumnBounds
+  fullLayoutFacts: HarpFaceFacts<LayoutFacts>
 ): SizeScheme => {
   const { shortEdge, longEdge } = getWindowDimensions()
   const { harpfaceRowCount, harpfaceColumnCount } = (() => {
@@ -66,11 +65,11 @@ export const reduceLayoutFactsToDynamicSizes = (
     [relativeLabelIconSize]: labelIconSize,
   } = relativeSizes
   const rowHeight = columnWidth
+  const isZoomed =
+    layoutFacts.harpface1.harpfaceColumns <
+    fullLayoutFacts.harpface1.harpfaceColumns
   const legendWidth = columnWidth
-  const zoomSlideWidth =
-    getIfZoomedColumnBounds(layoutFacts.harpface1, columnBounds) === false
-      ? 0
-      : columnWidth
+  const zoomSlideWidth = isZoomed ? columnWidth : 0
 
   // We need the sizing scheme to be as independant from the updates of the
   // updates of the global properties as possible. If it isn't then we will

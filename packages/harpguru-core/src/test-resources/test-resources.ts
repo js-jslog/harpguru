@@ -143,7 +143,7 @@ export const buildMockUseGlobalImplementation = ({
     const dynamicSizes = reduceLayoutFactsToDynamicSizes(
       undefined,
       layoutFacts,
-      sourceColumnBounds
+      fullLayoutFacts
     )
     if (stateItem === 'dynamicSizes') return [dynamicSizes]
 

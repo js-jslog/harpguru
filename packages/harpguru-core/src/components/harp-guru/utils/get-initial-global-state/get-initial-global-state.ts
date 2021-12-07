@@ -95,7 +95,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const dynamicSizes = reduceLayoutFactsToDynamicSizes(
     undefined,
     layoutFacts,
-    columnBounds
+    fullLayoutFacts
   )
   const staticSizes = reduceLayoutFactsToStaticSizes(undefined, layoutFacts)
 
