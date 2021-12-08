@@ -14,7 +14,8 @@ import {
   POWER_BENDER,
   POWER_DRAW,
   PADDY_RICHTER,
-  LUCKY_THIRTEEN,
+  LUCKY_THIRTEEN_RICHTER,
+  LUCKY_THIRTEEN_POWER_CHROMATIC,
   BLUES_ONE,
   BLUES_TWO,
   BLUES_THREE,
@@ -67,7 +68,11 @@ orderedTunings.set(TuningIds.PentaHarp, PENTA_HARP)
 orderedTunings.set(TuningIds.PowerBender, POWER_BENDER)
 orderedTunings.set(TuningIds.PowerDraw, POWER_DRAW)
 orderedTunings.set(TuningIds.PaddyRichter, PADDY_RICHTER)
-orderedTunings.set(TuningIds.LuckyThirteen, LUCKY_THIRTEEN)
+orderedTunings.set(TuningIds.LuckyThirteenRichter, LUCKY_THIRTEEN_RICHTER)
+orderedTunings.set(
+  TuningIds.LuckyThirteenPowerChromatic,
+  LUCKY_THIRTEEN_POWER_CHROMATIC
+)
 orderedTunings.set(TuningIds.BluesOne, BLUES_ONE)
 orderedTunings.set(TuningIds.BluesTwo, BLUES_TWO)
 orderedTunings.set(TuningIds.BluesThree, BLUES_THREE)

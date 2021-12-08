@@ -32,7 +32,8 @@ const {
   PowerBender,
   PowerDraw,
   PaddyRichter,
-  LuckyThirteen,
+  LuckyThirteenRichter,
+  LuckyThirteenPowerChromatic,
   BluesOne,
   BluesTwo,
   BluesThree,
@@ -537,8 +538,21 @@ export const PADDY_RICHTER: Tuning = {
   },
 } as const
 
-export const LUCKY_THIRTEEN: Tuning = {
-  id: LuckyThirteen,
+export const LUCKY_THIRTEEN_RICHTER: Tuning = {
+  id: LuckyThirteenRichter,
+  category: BrendanPower,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12   13
+      [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 , e4 , g4 , c5 ],
+      [ d1 , g1 , b1 , d2 , g2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 ]
+    ]
+  },
+} as const
+
+export const LUCKY_THIRTEEN_POWER_CHROMATIC: Tuning = {
+  id: LuckyThirteenPowerChromatic,
   category: BrendanPower,
   // prettier-ignore
   reedArrays: {
