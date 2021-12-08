@@ -32,10 +32,14 @@ const relativeFragmentGutterWidth = 7
 const relativeLabelProtrusion = 9
 const relativeLabelIconSize = 7
 
+type PropsForReduction = {
+  fullLayoutFacts: HarpFaceFacts<LayoutFacts>
+  layoutFacts: HarpFaceFacts<LayoutFacts>
+}
+
 export const reduceLayoutFactsToDynamicSizes = (
   prevSizes: SizeScheme | undefined,
-  layoutFacts: HarpFaceFacts<LayoutFacts>,
-  fullLayoutFacts: HarpFaceFacts<LayoutFacts>
+  { fullLayoutFacts, layoutFacts }: PropsForReduction
 ): SizeScheme => {
   const { shortEdge, longEdge } = getWindowDimensions()
   const { harpfaceRowCount, harpfaceColumnCount } = (() => {

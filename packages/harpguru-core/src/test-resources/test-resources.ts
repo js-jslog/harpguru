@@ -140,11 +140,10 @@ export const buildMockUseGlobalImplementation = ({
     )
     if (stateItem === 'layoutFacts') return [layoutFacts]
 
-    const dynamicSizes = reduceLayoutFactsToDynamicSizes(
-      undefined,
+    const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, {
+      fullLayoutFacts,
       layoutFacts,
-      fullLayoutFacts
-    )
+    })
     if (stateItem === 'dynamicSizes') return [dynamicSizes]
 
     const staticSizes = reduceToStaticSizes(undefined)

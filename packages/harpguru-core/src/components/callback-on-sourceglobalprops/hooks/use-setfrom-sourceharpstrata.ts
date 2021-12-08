@@ -138,11 +138,10 @@ export const useSetFromSourceHarpStrata = (): void => {
     prevLayoutFacts,
     nextViewableInteractionMatrix
   )
-  const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(
-    prevDynamicSizes,
-    nextLayoutFacts,
-    nextFullLayoutFacts
-  )
+  const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(prevDynamicSizes, {
+    fullLayoutFacts: nextFullLayoutFacts,
+    layoutFacts: nextLayoutFacts,
+  })
   const nextStaticSizes = reduceToStaticSizes(prevStaticSizes)
   const nextCellToggleBuffer = reduceToEmptyBufferedActivityToggles(
     prevCellToggleBuffer
