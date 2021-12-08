@@ -13,9 +13,8 @@ export const useStyles = (
   xRange: XRange,
   harpfaceIndex: 'harpface1' | 'harpface2'
 ): HarpFaceFragmentStyles => {
-  const {
-    [0]: { columnWidth, rowHeight },
-  } = useGlobal('dynamicSizes')
+  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const { columnWidth, rowHeight } = dynamicSizes
   const [layoutFacts] = useGlobal('layoutFacts')
   const { harpfaceRows } = extractHarpFaceFacts(layoutFacts, harpfaceIndex)
   const { length: fragmentColumnCount } = xRange

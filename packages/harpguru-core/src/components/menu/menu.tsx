@@ -24,9 +24,8 @@ export const Menu = ({
   } = useMenuAnimationValues(isMenuStashed, isLabelHidden, stashPosition)
   const scaledLabelProtrusion = useScaledMenuLabelProtrusion()
 
-  const {
-    [0]: { 9: borderRadius },
-  } = useGlobal('dynamicSizes')
+  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const { 9: borderRadius } = dynamicSizes
   const styles = StyleSheet.create({
     animated: {
       ...StyleSheet.absoluteFillObject,

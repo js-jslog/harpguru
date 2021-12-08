@@ -9,9 +9,8 @@ export const useAccessibleStyles = (
   degreeId: DegreeIds,
   isActive: boolean
 ): ViewStyle => {
-  const {
-    [0]: { 1: borderWidth, 2: elevation },
-  } = useGlobal('dynamicSizes')
+  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const { 1: borderWidth, 2: elevation } = dynamicSizes
   const { degreeColors, pageColor, inertOutline, activeOutline } = getColors()
   const { [degreeId]: degreeColor } = degreeColors
 

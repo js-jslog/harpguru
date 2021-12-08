@@ -7,9 +7,8 @@ import { HarpFace } from '../harp-face'
 
 export const HarpFaces = (): React.ReactElement => {
   const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
-  const {
-    [0]: { fragmentGutter },
-  } = useGlobal('dynamicSizes')
+  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const { fragmentGutter } = dynamicSizes
   const { stack, gutter } = StyleSheet.create({
     stack: {
       ...StyleSheet.absoluteFillObject,

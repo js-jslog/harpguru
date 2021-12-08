@@ -17,9 +17,8 @@ export const useStyles = (
   trackBounds: readonly [number, number],
   columnCount: number
 ): Styles => {
-  const {
-    [0]: { legendWidth, zoomSlideWidth },
-  } = useGlobal('dynamicSizes')
+  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const { legendWidth, zoomSlideWidth } = dynamicSizes
   const { homeRowsColor } = getColors()
   const { slideLength } = getSlideFacts(trackBounds, columnCount)
   const styles = StyleSheet.create({
