@@ -2,7 +2,8 @@ import { TuningIds, TuningCategories, ReedTuningPitches } from '../types'
 import type { Tuning } from '../types'
 
 const {
-  Common,
+  CommonDiatonic,
+  CommonChromatic,
   Seydel,
   Hohner,
   BrendanPower,
@@ -20,6 +21,9 @@ const {
   HarmonicMinor,
   MelodyMaker,
   EasyDiatonic,
+  TwelveHoleChromatic,
+  SixteenHoleChromatic,
+  DiminishedChromatic,
   Wilde,
   WildeMinor,
   Circular,
@@ -57,9 +61,6 @@ const {
   BabyFat,
   TwelveHoleSolo,
   SixteenHoleSolo,
-  TwelveHoleChromatic,
-  SixteenHoleChromatic,
-  DiminishedChromatic,
 } = TuningIds
 
 const {
@@ -317,14 +318,14 @@ export const SPIRAL_LYDIAN: Tuning = {
 
 export const MAJOR_DIATONIC: Tuning = {
   id: MajorDiatonic,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: RICHTER_IONIAN.reedArrays,
 } as const
 
 export const COUNTRY: Tuning = {
   id: Country,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -337,14 +338,14 @@ export const COUNTRY: Tuning = {
 
 export const NATURAL_MINOR: Tuning = {
   id: NaturalMinor,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: RICHTER_DORIAN.reedArrays,
 } as const
 
 export const HARMONIC_MINOR: Tuning = {
   id: HarmonicMinor,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -357,7 +358,7 @@ export const HARMONIC_MINOR: Tuning = {
 
 export const MELODY_MAKER: Tuning = {
   id: MelodyMaker,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -370,7 +371,7 @@ export const MELODY_MAKER: Tuning = {
 
 export const EASY_DIATONIC: Tuning = {
   id: EasyDiatonic,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -383,7 +384,8 @@ export const EASY_DIATONIC: Tuning = {
 
 export const TWELVE_HOLE_CHROMATIC: Tuning = {
   id: TwelveHoleChromatic,
-  category: Common,
+  shortName: '12 hole',
+  category: CommonChromatic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -401,7 +403,8 @@ export const TWELVE_HOLE_CHROMATIC: Tuning = {
 
 export const SIXTEEN_HOLE_CHROMATIC: Tuning = {
   id: SixteenHoleChromatic,
-  category: Common,
+  shortName: '16 hole',
+  category: CommonChromatic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -419,7 +422,8 @@ export const SIXTEEN_HOLE_CHROMATIC: Tuning = {
 
 export const DIMINISHED_CHROMATIC: Tuning = {
   id: DiminishedChromatic,
-  category: Common,
+  shortName: 'Diminished',
+  category: CommonChromatic,
   // prettier-ignore
   reedArrays: {
     harpface1: [

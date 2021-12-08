@@ -7,6 +7,9 @@ export enum TuningIds {
   HarmonicMinor = 'Harmonic minor',
   MelodyMaker = 'Melody maker',
   EasyDiatonic = 'Easy diatonic',
+  TwelveHoleChromatic = 'Chromatic (12 hole)',
+  SixteenHoleChromatic = 'Chromatic (16 hole)',
+  DiminishedChromatic = 'Chromatic (Diminished)',
   Wilde = 'Wilde',
   WildeMinor = 'Wilde minor',
   Circular = 'Circular/Melody king',
@@ -44,13 +47,11 @@ export enum TuningIds {
   BabyFat = 'Baby fat',
   TwelveHoleSolo = 'Twelve hole solo',
   SixteenHoleSolo = 'Sixteen hole solo',
-  TwelveHoleChromatic = 'Chromatic (12 hole)',
-  SixteenHoleChromatic = 'Chromatic (16 hole)',
-  DiminishedChromatic = 'Chromatic (Diminished)',
 }
 
 export enum TuningCategories {
-  Common = 'Common',
+  CommonDiatonic = 'Common Diatonic',
+  CommonChromatic = 'Common Chromatic',
   Seydel = 'Seydel',
   Hohner = 'Hohner',
   BrendanPower = 'Brendan Power',
