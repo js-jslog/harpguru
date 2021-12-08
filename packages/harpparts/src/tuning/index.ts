@@ -13,7 +13,8 @@ export {
   POWER_BENDER,
   POWER_DRAW,
   PADDY_RICHTER,
-  LUCKY_THIRTEEN,
+  LUCKY_13_RICHTER,
+  LUCKY_13_POWER_CHROMATIC,
   BLUES_ONE,
   BLUES_TWO,
   BLUES_THREE,
@@ -44,6 +45,7 @@ export {
   SIXTEEN_HOLE_SOLO,
   TWELVE_HOLE_CHROMATIC,
   SIXTEEN_HOLE_CHROMATIC,
+  DIMINISHED_CHROMATIC,
 } from './constants'
 export type { Tuning, ReedArray } from './types'
 export {

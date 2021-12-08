@@ -20,10 +20,14 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: 12 & 16 hole chromatic tunings
 - MINOR: `HarpFaceFacts` type to wrap and define diatonic vs chromatic facts
 - MINOR: `mapHarpFaceFacts` higher order function to help interactions with `HarpFaceFacts` type
+- MINOR: Diminished chromatic tuning
+- MINOR: Chromatic tuning category
+- MINOR: Lucky13 Richter tuning and dedicated lucky13 section
 
 ### Changed
 
 - MAJOR: Type of properties on the `Apparatus` type (`interactionMatrix` & `halfstepIndexMatrix`)
+- MINOR: Rename the lucky13 Power Chromatic (from just "Lucky 13")
 
 ## [v9.2.0](https://github.com/js-jslog/harpguru/releases/tag/v10.0.0) - 2021-10-14
 

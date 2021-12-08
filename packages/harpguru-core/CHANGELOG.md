@@ -20,6 +20,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: A menu to select a zoom level
 - MINOR: A slider to navigate the length of the harp while in zoom mode
 - MINOR: Representations of chromatic harmonicas
+- MINOR: Dedicated chromatics section
+- MINOR: Dedicated lucky13 section
 
 ## [v8.1.0](https://github.com/js-jslog/harpguru/releases/tag/v10.0.0) - 2021-10-14
 

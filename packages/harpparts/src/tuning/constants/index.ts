@@ -2,10 +2,12 @@ import { TuningIds, TuningCategories, ReedTuningPitches } from '../types'
 import type { Tuning } from '../types'
 
 const {
-  Common,
+  CommonDiatonic,
+  CommonChromatic,
   Seydel,
   Hohner,
   BrendanPower,
+  Lucky13,
   JoeFilisko,
   RichterModes,
   SpiralModes,
@@ -20,6 +22,9 @@ const {
   HarmonicMinor,
   MelodyMaker,
   EasyDiatonic,
+  TwelveHoleChromatic,
+  SixteenHoleChromatic,
+  DiminishedChromatic,
   Wilde,
   WildeMinor,
   Circular,
@@ -28,7 +33,8 @@ const {
   PowerBender,
   PowerDraw,
   PaddyRichter,
-  LuckyThirteen,
+  Lucky13Richter,
+  Lucky13PowerChromatic,
   BluesOne,
   BluesTwo,
   BluesThree,
@@ -57,8 +63,6 @@ const {
   BabyFat,
   TwelveHoleSolo,
   SixteenHoleSolo,
-  TwelveHoleChromatic,
-  SixteenHoleChromatic,
 } = TuningIds
 
 const {
@@ -316,14 +320,14 @@ export const SPIRAL_LYDIAN: Tuning = {
 
 export const MAJOR_DIATONIC: Tuning = {
   id: MajorDiatonic,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: RICHTER_IONIAN.reedArrays,
 } as const
 
 export const COUNTRY: Tuning = {
   id: Country,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -336,14 +340,14 @@ export const COUNTRY: Tuning = {
 
 export const NATURAL_MINOR: Tuning = {
   id: NaturalMinor,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: RICHTER_DORIAN.reedArrays,
 } as const
 
 export const HARMONIC_MINOR: Tuning = {
   id: HarmonicMinor,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -356,7 +360,7 @@ export const HARMONIC_MINOR: Tuning = {
 
 export const MELODY_MAKER: Tuning = {
   id: MelodyMaker,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -369,7 +373,7 @@ export const MELODY_MAKER: Tuning = {
 
 export const EASY_DIATONIC: Tuning = {
   id: EasyDiatonic,
-  category: Common,
+  category: CommonDiatonic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -382,7 +386,8 @@ export const EASY_DIATONIC: Tuning = {
 
 export const TWELVE_HOLE_CHROMATIC: Tuning = {
   id: TwelveHoleChromatic,
-  category: Common,
+  shortName: '12 hole',
+  category: CommonChromatic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -400,7 +405,8 @@ export const TWELVE_HOLE_CHROMATIC: Tuning = {
 
 export const SIXTEEN_HOLE_CHROMATIC: Tuning = {
   id: SixteenHoleChromatic,
-  category: Common,
+  shortName: '16 hole',
+  category: CommonChromatic,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -412,6 +418,25 @@ export const SIXTEEN_HOLE_CHROMATIC: Tuning = {
       // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
       [ db1, f1 , ab1, db2, db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 , ab4, db5],
       [ eb1, gb1, bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4, bb4, d5 ],
+    ]
+  },
+} as const
+
+export const DIMINISHED_CHROMATIC: Tuning = {
+  id: DiminishedChromatic,
+  shortName: 'Diminished',
+  category: CommonChromatic,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ c2 , eb2, gb2, a2 , c3 , eb3, gb3, a3 , c4 , eb4, gb4, a4 ],
+      [ d2 , f2 , ab2, b2 , d3 , f3 , ab3, b3 , d4 , f4 , ab4, b4 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ db2, e2 , g2 , bb2, db3, e3 , g3 , bb3, db4, e4 , g4 , bb4],
+      [ eb2, gb2, a2 , c3 , eb3, gb3, a3 , c4 , eb4, gb4, a4 , c5 ],
     ]
   },
 } as const
@@ -514,9 +539,24 @@ export const PADDY_RICHTER: Tuning = {
   },
 } as const
 
-export const LUCKY_THIRTEEN: Tuning = {
-  id: LuckyThirteen,
-  category: BrendanPower,
+export const LUCKY_13_RICHTER: Tuning = {
+  id: Lucky13Richter,
+  shortName: 'Richter',
+  category: Lucky13,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12   13
+      [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 , e4 , g4 , c5 ],
+      [ d1 , g1 , b1 , d2 , g2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 ]
+    ]
+  },
+} as const
+
+export const LUCKY_13_POWER_CHROMATIC: Tuning = {
+  id: Lucky13PowerChromatic,
+  shortName: 'Power chromatic',
+  category: Lucky13,
   // prettier-ignore
   reedArrays: {
     harpface1: [

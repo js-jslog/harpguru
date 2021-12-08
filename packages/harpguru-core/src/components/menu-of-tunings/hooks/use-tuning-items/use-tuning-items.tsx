@@ -20,9 +20,12 @@ export const useTuningItems = (
 ): TuningItems => {
   const [tuningId] = useGlobal('tuningId')
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const commonTunings = getTuningIds()
+  const commonDiatonicTunings = getTuningIds()
     .map((id) => getTuning(id))
-    .filter((tuning) => tuning.category === TuningCategories.Common)
+    .filter((tuning) => tuning.category === TuningCategories.CommonDiatonic)
+  const commonChromaticTunings = getTuningIds()
+    .map((id) => getTuning(id))
+    .filter((tuning) => tuning.category === TuningCategories.CommonChromatic)
   const seydelTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.Seydel)
@@ -32,6 +35,9 @@ export const useTuningItems = (
   const brendanPowerTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.BrendanPower)
+  const lucky13Tunings = getTuningIds()
+    .map((id) => getTuning(id))
+    .filter((tuning) => tuning.category === TuningCategories.Lucky13)
   const joeFiliskoTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.JoeFilisko)
@@ -50,11 +56,27 @@ export const useTuningItems = (
 
   return [
     <OptionBreak
-      title={TuningCategories.Common}
+      title={TuningCategories.CommonDiatonic}
       isTopPadded={false}
-      key={'option-break-common'}
+      key={'option-break-commondiatonic'}
     />,
-    ...commonTunings.map((tuning, index) => (
+    ...commonDiatonicTunings.map((tuning, index) => (
+      <OptionItemWithDisplayMode
+        key={`${index}`}
+        value={tuning.shortName || tuning.id}
+        isSelected={tuning.id === tuningId}
+        itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
+        callbackParam={tuning.id}
+        twoColumns={false}
+      />
+    )),
+    <OptionBreak
+      title={TuningCategories.CommonChromatic}
+      isTopPadded={true}
+      key={'option-break-commonchromatic'}
+    />,
+    ...commonChromaticTunings.map((tuning, index) => (
       <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
@@ -103,6 +125,22 @@ export const useTuningItems = (
       key={'option-break-brendan-power'}
     />,
     ...brendanPowerTunings.map((tuning, index) => (
+      <OptionItemWithDisplayMode
+        key={`${index}`}
+        value={tuning.shortName || tuning.id}
+        isSelected={tuning.id === tuningId}
+        itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
+        callbackParam={tuning.id}
+        twoColumns={false}
+      />
+    )),
+    <OptionBreak
+      title={TuningCategories.Lucky13}
+      isTopPadded={true}
+      key={'option-break-lucky13'}
+    />,
+    ...lucky13Tunings.map((tuning, index) => (
       <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}

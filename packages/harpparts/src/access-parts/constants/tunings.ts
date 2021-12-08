@@ -6,6 +6,9 @@ import {
   HARMONIC_MINOR,
   MELODY_MAKER,
   EASY_DIATONIC,
+  TWELVE_HOLE_CHROMATIC,
+  SIXTEEN_HOLE_CHROMATIC,
+  DIMINISHED_CHROMATIC,
   WILDE,
   WILDE_MINOR,
   CIRCULAR,
@@ -14,7 +17,8 @@ import {
   POWER_BENDER,
   POWER_DRAW,
   PADDY_RICHTER,
-  LUCKY_THIRTEEN,
+  LUCKY_13_RICHTER,
+  LUCKY_13_POWER_CHROMATIC,
   BLUES_ONE,
   BLUES_TWO,
   BLUES_THREE,
@@ -43,8 +47,6 @@ import {
   BABY_FAT,
   TWELVE_HOLE_SOLO,
   SIXTEEN_HOLE_SOLO,
-  TWELVE_HOLE_CHROMATIC,
-  SIXTEEN_HOLE_CHROMATIC,
 } from '../../tuning'
 import type { Tuning } from '../../tuning'
 
@@ -57,6 +59,7 @@ orderedTunings.set(TuningIds.MelodyMaker, MELODY_MAKER)
 orderedTunings.set(TuningIds.EasyDiatonic, EASY_DIATONIC)
 orderedTunings.set(TuningIds.TwelveHoleChromatic, TWELVE_HOLE_CHROMATIC)
 orderedTunings.set(TuningIds.SixteenHoleChromatic, SIXTEEN_HOLE_CHROMATIC)
+orderedTunings.set(TuningIds.DiminishedChromatic, DIMINISHED_CHROMATIC)
 orderedTunings.set(TuningIds.Wilde, WILDE)
 orderedTunings.set(TuningIds.WildeMinor, WILDE_MINOR)
 orderedTunings.set(TuningIds.Circular, CIRCULAR)
@@ -65,7 +68,8 @@ orderedTunings.set(TuningIds.PentaHarp, PENTA_HARP)
 orderedTunings.set(TuningIds.PowerBender, POWER_BENDER)
 orderedTunings.set(TuningIds.PowerDraw, POWER_DRAW)
 orderedTunings.set(TuningIds.PaddyRichter, PADDY_RICHTER)
-orderedTunings.set(TuningIds.LuckyThirteen, LUCKY_THIRTEEN)
+orderedTunings.set(TuningIds.Lucky13Richter, LUCKY_13_RICHTER)
+orderedTunings.set(TuningIds.Lucky13PowerChromatic, LUCKY_13_POWER_CHROMATIC)
 orderedTunings.set(TuningIds.BluesOne, BLUES_ONE)
 orderedTunings.set(TuningIds.BluesTwo, BLUES_TWO)
 orderedTunings.set(TuningIds.BluesThree, BLUES_THREE)
