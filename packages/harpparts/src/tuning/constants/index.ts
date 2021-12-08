@@ -7,6 +7,7 @@ const {
   Seydel,
   Hohner,
   BrendanPower,
+  Lucky13,
   JoeFilisko,
   RichterModes,
   SpiralModes,
@@ -540,7 +541,8 @@ export const PADDY_RICHTER: Tuning = {
 
 export const LUCKY_THIRTEEN_RICHTER: Tuning = {
   id: LuckyThirteenRichter,
-  category: BrendanPower,
+  shortName: 'Richter',
+  category: Lucky13,
   // prettier-ignore
   reedArrays: {
     harpface1: [
@@ -553,7 +555,8 @@ export const LUCKY_THIRTEEN_RICHTER: Tuning = {
 
 export const LUCKY_THIRTEEN_POWER_CHROMATIC: Tuning = {
   id: LuckyThirteenPowerChromatic,
-  category: BrendanPower,
+  shortName: 'Power chromatic',
+  category: Lucky13,
   // prettier-ignore
   reedArrays: {
     harpface1: [

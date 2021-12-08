@@ -35,6 +35,9 @@ export const useTuningItems = (
   const brendanPowerTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.BrendanPower)
+  const lucky13Tunings = getTuningIds()
+    .map((id) => getTuning(id))
+    .filter((tuning) => tuning.category === TuningCategories.Lucky13)
   const joeFiliskoTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.JoeFilisko)
@@ -122,6 +125,22 @@ export const useTuningItems = (
       key={'option-break-brendan-power'}
     />,
     ...brendanPowerTunings.map((tuning, index) => (
+      <OptionItemWithDisplayMode
+        key={`${index}`}
+        value={tuning.shortName || tuning.id}
+        isSelected={tuning.id === tuningId}
+        itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
+        callbackParam={tuning.id}
+        twoColumns={false}
+      />
+    )),
+    <OptionBreak
+      title={TuningCategories.Lucky13}
+      isTopPadded={true}
+      key={'option-break-lucky13'}
+    />,
+    ...lucky13Tunings.map((tuning, index) => (
       <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}
