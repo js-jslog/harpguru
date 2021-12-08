@@ -19,7 +19,9 @@ import {
 } from '../utils'
 import {
   reduceFullMatrixToViewableMatrix,
-  reduceViewableMatrixToLayoutFacts,
+  reduceMatrixToLayoutFacts,
+  reduceLayoutFactsToDynamicSizes,
+  reduceToStaticSizes,
 } from '../../../utils'
 
 export const useSetFromSourceHarpStrata = (): void => {
@@ -54,7 +56,10 @@ export const useSetFromSourceHarpStrata = (): void => {
   const [prevViewablePitchMatrix, setViewablePitchMatrix] = useGlobal(
     'viewablePitchMatrix'
   )
+  const [prevFullLayoutFacts, setFullLayoutFacts] = useGlobal('fullLayoutFacts')
   const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
+  const [prevDynamicSizes, setDynamicSizes] = useGlobal('dynamicSizes')
+  const [prevStaticSizes, setStaticSizes] = useGlobal('staticSizes')
   const [prevCellToggleBuffer, setCellToggleBuffer] = useGlobal(
     'bufferedActivityToggles'
   )
@@ -125,10 +130,19 @@ export const useSetFromSourceHarpStrata = (): void => {
     nextFullInteractionMatrix,
     nextColumnBounds
   )
-  const nextLayoutFacts = reduceViewableMatrixToLayoutFacts(
+  const nextFullLayoutFacts = reduceMatrixToLayoutFacts(
+    prevFullLayoutFacts,
+    nextFullInteractionMatrix
+  )
+  const nextLayoutFacts = reduceMatrixToLayoutFacts(
     prevLayoutFacts,
     nextViewableInteractionMatrix
   )
+  const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(prevDynamicSizes, {
+    fullLayoutFacts: nextFullLayoutFacts,
+    layoutFacts: nextLayoutFacts,
+  })
+  const nextStaticSizes = reduceToStaticSizes(prevStaticSizes)
   const nextCellToggleBuffer = reduceToEmptyBufferedActivityToggles(
     prevCellToggleBuffer
   )
@@ -168,7 +182,10 @@ export const useSetFromSourceHarpStrata = (): void => {
       nextViewablePitchMatrix,
       setViewablePitchMatrix
     )
+    setIfNew(prevFullLayoutFacts, nextFullLayoutFacts, setFullLayoutFacts)
     setIfNew(prevLayoutFacts, nextLayoutFacts, setLayoutFacts)
+    setIfNew(prevDynamicSizes, nextDynamicSizes, setDynamicSizes)
+    setIfNew(prevStaticSizes, nextStaticSizes, setStaticSizes)
     setIfNew(prevCellToggleBuffer, nextCellToggleBuffer, setCellToggleBuffer)
   }, [nextSourceHarpStrata])
 }

@@ -8,7 +8,6 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import type { MenuProps } from '../../types'
-import { useSizes } from '../../hooks'
 
 import {
   reduceZoomIdToColumnBounds,
@@ -106,7 +105,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     },
   ]
 
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>

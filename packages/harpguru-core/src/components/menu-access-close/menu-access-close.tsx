@@ -1,3 +1,4 @@
+import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { View } from 'react-native'
@@ -7,12 +8,12 @@ import { AntDesign } from '@expo/vector-icons'
 import { getColors } from '../../utils'
 import { TapAnimationTypes } from '../../types'
 import type { MenuProps } from '../../types'
-import { useScaleAndCallbackOnTap, useSizes } from '../../hooks'
+import { useScaleAndCallbackOnTap } from '../../hooks'
 
 export const MenuAccessClose = ({
   openCloseMenu,
 }: Pick<MenuProps, 'openCloseMenu'>): React.ReactElement => {
-  const { staticSizes } = useSizes()
+  const [staticSizes] = useGlobal('staticSizes')
 
   const [tapAnimationValue, handleTapStateChange] = useScaleAndCallbackOnTap(
     openCloseMenu,

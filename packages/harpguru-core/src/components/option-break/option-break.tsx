@@ -1,8 +1,9 @@
+import { useGlobal } from 'reactn'
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import { getColors } from '../../utils'
-import { useOptionSizes, useSizes } from '../../hooks'
+import { useOptionSizes } from '../../hooks'
 
 type OptionBreakProps = {
   readonly title?: string
@@ -13,7 +14,7 @@ export const OptionBreak = ({
   title: titleText,
   isTopPadded,
 }: OptionBreakProps): React.ReactElement => {
-  const { staticSizes } = useSizes()
+  const [staticSizes] = useGlobal('staticSizes')
   const {
     ['5']: breakHeight,
     ['8']: titleSize,

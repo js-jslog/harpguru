@@ -1,19 +1,8 @@
-import { useGlobal } from 'reactn'
 import { isChromaticHarpFace } from 'harpparts'
+import type { HarpFaceFacts } from 'harpparts'
 
-import { useIsZoomedColumnBounds } from '../use-is-zoomed-columnbounds'
+import type { LayoutFacts, SizeScheme } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
-
-import { SizeScheme, SizeSchemes } from './use-sizes-types'
-
-// Here's what we need this hook to provide:
-// 1. A set of sizes which updates as the number of columns being presented increases (which is also *possibly* sensitive to the number of rows present too)
-// 2. A set of sizes which do not update as the number of columns being presented increases
-//
-// 1. is for the harpface, the left hand legend and the menu tabs. I want all of these to be harmoneously sized together. If you have the eyesight or the screen size to present all the holes at the same time then you can afford the side panel info to scale along with it
-// 2. is for the menu contents. The text is already large, and nicely so. We don't need it to be bigger or smaller, and having it scale is not the same harmoneous thing as the main page. I want the guttering to move with the main page though so that the left menu items are
-// never obscuring what you can see in the left hand legend
-// 2. may also need to be used in the quiz mode.. it looks like the quiz mode might be behaving strangely now.. the question isn't always displayed. Perhaps that's caused by something else, but it doesn't make sense that the quiz question or the other notifications for that matter should be scaled.
 
 const relativeSizes: Omit<
   SizeScheme,
@@ -38,15 +27,21 @@ const relativeSizes: Omit<
   10: 76.013,
   11: 122.989,
 } as const
-
 const relativeColumnWidth = 9
 const relativeFragmentGutterWidth = 7
 const relativeLabelProtrusion = 9
 const relativeLabelIconSize = 7
 
-export const useSizes = (): SizeSchemes => {
+type PropsForReduction = {
+  fullLayoutFacts: HarpFaceFacts<LayoutFacts>
+  layoutFacts: HarpFaceFacts<LayoutFacts>
+}
+
+export const reduceLayoutFactsToDynamicSizes = (
+  prevSizes: SizeScheme | undefined,
+  { fullLayoutFacts, layoutFacts }: PropsForReduction
+): SizeScheme => {
   const { shortEdge, longEdge } = getWindowDimensions()
-  const [layoutFacts] = useGlobal('layoutFacts')
   const { harpfaceRowCount, harpfaceColumnCount } = (() => {
     const {
       harpface1: {
@@ -74,8 +69,11 @@ export const useSizes = (): SizeSchemes => {
     [relativeLabelIconSize]: labelIconSize,
   } = relativeSizes
   const rowHeight = columnWidth
+  const isZoomed =
+    layoutFacts.harpface1.harpfaceColumns <
+    fullLayoutFacts.harpface1.harpfaceColumns
   const legendWidth = columnWidth
-  const zoomSlideWidth = useIsZoomedColumnBounds() === false ? 0 : columnWidth
+  const zoomSlideWidth = isZoomed ? columnWidth : 0
 
   // We need the sizing scheme to be as independant from the updates of the
   // updates of the global properties as possible. If it isn't then we will
@@ -100,9 +98,8 @@ export const useSizes = (): SizeSchemes => {
       legendWidth +
       zoomSlideWidth)
   const dynamicHeightRequirements = (() => {
-    const [viewableInteractionMatrices] = useGlobal('viewableInteractionMatrix')
     const actualRowsHeight = shortEdge / (rowHeight * harpfaceRowCount)
-    if (isChromaticHarpFace(viewableInteractionMatrices))
+    if (isChromaticHarpFace(layoutFacts))
       return actualRowsHeight + fragmentGutter
     return actualRowsHeight
   })()
@@ -134,38 +131,29 @@ export const useSizes = (): SizeSchemes => {
     labelIconSize: dynamicSeedSize * labelIconSize,
   } as const
 
-  const staticEquivalentColumnCount = 12
-  const staticSeedSize =
-    longEdge /
-    (columnWidth * staticEquivalentColumnCount +
-      fragmentGutter * includingHarpFaceEdgesGutterCount +
-      labelProtrusion +
-      legendWidth)
+  if (prevSizes && isMatch(prevSizes, dynamicSizes)) return prevSizes
+  return dynamicSizes
+}
 
-  const staticSizes: SizeScheme = {
-    0: staticSeedSize * relativeSizes[0],
-    1: staticSeedSize * relativeSizes[1],
-    2: staticSeedSize * relativeSizes[2],
-    3: staticSeedSize * relativeSizes[3],
-    4: staticSeedSize * relativeSizes[4],
-    5: staticSeedSize * relativeSizes[5],
-    6: staticSeedSize * relativeSizes[6],
-    7: staticSeedSize * relativeSizes[7],
-    8: staticSeedSize * relativeSizes[8],
-    9: staticSeedSize * relativeSizes[9],
-    10: staticSeedSize * relativeSizes[10],
-    11: staticSeedSize * relativeSizes[11],
-    columnWidth: staticSeedSize * columnWidth,
-    rowHeight: staticSeedSize * rowHeight,
-    legendWidth: staticSeedSize * legendWidth,
-    zoomSlideWidth: staticSeedSize * zoomSlideWidth,
-    fragmentGutter: staticSeedSize * fragmentGutter,
-    labelProtrusion: staticSeedSize * labelProtrusion,
-    labelIconSize: staticSeedSize * labelIconSize,
-  } as const
-
-  return {
-    dynamicSizes,
-    staticSizes,
-  }
+const isMatch = (prevSizes: SizeScheme, nextSizes: SizeScheme): boolean => {
+  if (prevSizes[0] !== nextSizes[0]) return false
+  if (prevSizes[1] !== nextSizes[1]) return false
+  if (prevSizes[2] !== nextSizes[2]) return false
+  if (prevSizes[3] !== nextSizes[3]) return false
+  if (prevSizes[4] !== nextSizes[4]) return false
+  if (prevSizes[5] !== nextSizes[5]) return false
+  if (prevSizes[6] !== nextSizes[6]) return false
+  if (prevSizes[7] !== nextSizes[7]) return false
+  if (prevSizes[8] !== nextSizes[8]) return false
+  if (prevSizes[9] !== nextSizes[9]) return false
+  if (prevSizes[10] !== nextSizes[10]) return false
+  if (prevSizes[11] !== nextSizes[11]) return false
+  if (prevSizes.columnWidth !== nextSizes.columnWidth) return false
+  if (prevSizes.rowHeight !== nextSizes.rowHeight) return false
+  if (prevSizes.legendWidth !== nextSizes.legendWidth) return false
+  if (prevSizes.zoomSlideWidth !== nextSizes.zoomSlideWidth) return false
+  if (prevSizes.fragmentGutter !== nextSizes.fragmentGutter) return false
+  if (prevSizes.labelProtrusion !== nextSizes.labelProtrusion) return false
+  if (prevSizes.labelIconSize !== nextSizes.labelIconSize) return false
+  return true
 }

@@ -7,7 +7,6 @@ import { AntDesign } from '@expo/vector-icons'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
 import { getColors } from '../../utils'
-import { useIsZoomedColumnBounds, useSizes } from '../../hooks'
 
 import { getGestureHandlerCallbacks } from './utils'
 import { useSlideState, useStyles } from './hooks'
@@ -40,10 +39,18 @@ import { useSlideState, useStyles } from './hooks'
  */
 
 export const ZoomSlideVertical = (): React.ReactElement => {
-  const isZoomedColumBounds = useIsZoomedColumnBounds()
-  if (isZoomedColumBounds === false) return <></>
+  const [fullLayoutFacts] = useGlobal('fullLayoutFacts')
+  const [layoutFacts] = useGlobal('layoutFacts')
+  const [columnBounds] = useGlobal('columnBounds')
 
-  return <ZoomSlideVerticalVisible columnBounds={isZoomedColumBounds} />
+  if (columnBounds === 'FIT') return <></>
+  if (
+    fullLayoutFacts.harpface1.harpfaceColumns ===
+    layoutFacts.harpface1.harpfaceColumns
+  )
+    return <></>
+
+  return <ZoomSlideVerticalVisible columnBounds={columnBounds} />
 }
 
 const ZoomSlideVerticalVisible = ({
@@ -83,7 +90,7 @@ const ZoomSlideVerticalVisible = ({
     bottomPointer,
     labelLayer,
   } = useStyles(trackBounds, columnCount)
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   const { inertOutline } = getColors()
 
   return (

@@ -10,7 +10,9 @@ import {
 
 import {
   reduceFullMatrixToViewableMatrix,
-  reduceViewableMatrixToLayoutFacts,
+  reduceLayoutFactsToDynamicSizes,
+  reduceToStaticSizes,
+  reduceMatrixToLayoutFacts,
 } from '../utils'
 import { DisplayModes, ExperienceModes, FlushChannels } from '../types'
 import type { ColumnBounds } from '../types'
@@ -117,7 +119,17 @@ export const buildMockUseGlobalImplementation = ({
     if (stateItem === 'viewableInteractionMatrix')
       return [viewableInteractionMatrix]
 
-    const layoutFacts = reduceViewableMatrixToLayoutFacts(
+    const fullLayoutFacts = reduceMatrixToLayoutFacts(
+      {
+        harpface1: {
+          harpfaceColumns: 0,
+          harpfaceRows: 0,
+        },
+      },
+      sourceHarpStrata.apparatus.interactionMatrix
+    )
+    if (stateItem === 'fullLayoutFacts') return [fullLayoutFacts]
+    const layoutFacts = reduceMatrixToLayoutFacts(
       {
         harpface1: {
           harpfaceColumns: 0,
@@ -127,6 +139,15 @@ export const buildMockUseGlobalImplementation = ({
       viewableInteractionMatrix
     )
     if (stateItem === 'layoutFacts') return [layoutFacts]
+
+    const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, {
+      fullLayoutFacts,
+      layoutFacts,
+    })
+    if (stateItem === 'dynamicSizes') return [dynamicSizes]
+
+    const staticSizes = reduceToStaticSizes(undefined)
+    if (stateItem === 'staticSizes') return [staticSizes]
 
     if (stateItem === 'activeExperienceMode') return [experienceMode]
     if (stateItem === 'activeDisplayMode') return [displayMode]

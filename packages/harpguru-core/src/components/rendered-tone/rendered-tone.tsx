@@ -1,10 +1,10 @@
+import { useGlobal } from 'reactn'
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
 import { getColors } from '../../utils'
 import { ExperienceModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
-import { useSizes } from '../../hooks'
 
 type RenderedToneProps = {
   readonly toneTuples: RenderableToneTuples
@@ -30,7 +30,7 @@ export const RenderedTone = ({
 }: RenderedToneProps): React.ReactElement => {
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   const {
     [overrideSizes[0]]: noteFontSize,
     [overrideSizes[1]]: modifierTopMargin,

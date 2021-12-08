@@ -1,17 +1,16 @@
+import { useGlobal } from 'reactn'
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { DegreeIds } from 'harpparts'
 
 import { getColors } from '../../../../utils'
-import { useSizes } from '../../../../hooks'
 
 export const useAccessibleStyles = (
   degreeId: DegreeIds,
   isActive: boolean
 ): ViewStyle => {
-  const {
-    dynamicSizes: { 1: borderWidth, 2: elevation },
-  } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const { 1: borderWidth, 2: elevation } = dynamicSizes
   const { degreeColors, pageColor, inertOutline, activeOutline } = getColors()
   const { [degreeId]: degreeColor } = degreeColors
 

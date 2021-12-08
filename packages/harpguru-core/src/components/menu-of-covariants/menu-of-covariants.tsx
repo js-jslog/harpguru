@@ -8,7 +8,6 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import type { MenuProps } from '../../types'
-import { useSizes } from '../../hooks'
 
 import { reduceCovariantsToHarpStrata } from './utils'
 import {
@@ -87,7 +86,7 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal]
   )
 
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
 
   const optionPropsz = [
     {

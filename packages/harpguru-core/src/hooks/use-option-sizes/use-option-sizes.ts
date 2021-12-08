@@ -1,4 +1,4 @@
-import { useSizes } from '../use-sizes'
+import { useGlobal } from 'reactn'
 
 type OptionStyles = {
   largeFont: number
@@ -14,7 +14,8 @@ type OptionStyles = {
 }
 
 export const useOptionSizes = (): OptionStyles => {
-  const { dynamicSizes, staticSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const [staticSizes] = useGlobal('staticSizes')
   const { ['9']: largeFont } = staticSizes
   const { ['8']: smallFont } = staticSizes
   const { ['7']: superscriptFont } = staticSizes

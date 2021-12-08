@@ -6,7 +6,7 @@ import { isMatchHarpFaceFacts } from '../ismatch-harpfacefacts'
 import { determineMatrixDimensions } from '../determine-matrix-dimensions'
 import type { LayoutFacts } from '../../types'
 
-export const reduceViewableMatrixToLayoutFacts = <T>(
+export const reduceMatrixToLayoutFacts = <T>(
   prevLayoutFacts: HarpFaceFacts<LayoutFacts>,
   viewableMatrices: HarpFaceMatrices<T>
 ): HarpFaceFacts<LayoutFacts> => {

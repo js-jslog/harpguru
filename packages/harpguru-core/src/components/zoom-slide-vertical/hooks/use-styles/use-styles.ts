@@ -1,9 +1,9 @@
+import { useGlobal } from 'reactn'
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 
 import { getSlideFacts } from '../../utils'
 import { getColors } from '../../../../utils'
-import { useSizes } from '../../../../hooks'
 
 type Styles = {
   readonly track: ViewStyle
@@ -17,9 +17,8 @@ export const useStyles = (
   trackBounds: readonly [number, number],
   columnCount: number
 ): Styles => {
-  const {
-    dynamicSizes: { legendWidth, zoomSlideWidth },
-  } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const { legendWidth, zoomSlideWidth } = dynamicSizes
   const { homeRowsColor } = getColors()
   const { slideLength } = getSlideFacts(trackBounds, columnCount)
   const styles = StyleSheet.create({

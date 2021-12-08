@@ -12,7 +12,9 @@ import {
 
 import {
   reduceFullMatrixToViewableMatrix,
-  reduceViewableMatrixToLayoutFacts,
+  reduceLayoutFactsToDynamicSizes,
+  reduceToStaticSizes,
+  reduceMatrixToLayoutFacts,
 } from '../../../../utils'
 import {
   GlobalState,
@@ -72,7 +74,16 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     fullInteractionMatrix,
     columnBounds
   )
-  const layoutFacts = reduceViewableMatrixToLayoutFacts(
+  const fullLayoutFacts = reduceMatrixToLayoutFacts(
+    {
+      harpface1: {
+        harpfaceColumns: 0,
+        harpfaceRows: 0,
+      },
+    },
+    fullInteractionMatrix
+  )
+  const layoutFacts = reduceMatrixToLayoutFacts(
     {
       harpface1: {
         harpfaceColumns: 0,
@@ -81,6 +92,11 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     },
     viewableInteractionMatrix
   )
+  const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, {
+    fullLayoutFacts,
+    layoutFacts,
+  })
+  const staticSizes = reduceToStaticSizes(undefined)
 
   const state = {
     activeHarpStrata: initialHarpStrata,
@@ -105,7 +121,10 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     pozitionId,
     rootPitchId,
     harpKeyId,
+    fullLayoutFacts,
     layoutFacts,
+    dynamicSizes,
+    staticSizes,
   } as const
 
   return state

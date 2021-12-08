@@ -14,7 +14,6 @@ import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples, getColors } from '../../utils'
 import { DisplayModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
-import { useSizes } from '../../hooks'
 
 const { degreeColors } = getColors()
 
@@ -33,8 +32,9 @@ export const ActivityLegend = (): React.ReactElement => {
   const [activePitchIds] = useGlobal('activePitchIds')
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
-  const { dynamicSizes } = useSizes()
-  const { 9: legendWidth } = dynamicSizes
+  const {
+    [0]: { 9: legendWidth },
+  } = useGlobal('dynamicSizes')
 
   const activityCells = orderedPitchIds.map((pitchId, index) => {
     const isActive = activePitchIds.indexOf(pitchId) > -1
@@ -75,9 +75,8 @@ const ActivityCell = ({
   isActive,
 }: ActivityCellProps): React.ReactElement => {
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const {
-    dynamicSizes: { legendWidth },
-  } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const { legendWidth } = dynamicSizes
 
   const styles = StyleSheet.create({
     cell: {

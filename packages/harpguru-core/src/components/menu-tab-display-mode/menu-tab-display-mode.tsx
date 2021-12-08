@@ -1,4 +1,4 @@
-import { useDispatch } from 'reactn'
+import { useDispatch, useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -8,7 +8,6 @@ import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
-import { useSizes } from '../../hooks'
 
 import { getNewDisplayModeForDispatcher } from './utils'
 
@@ -32,7 +31,7 @@ export const MenuTabDisplayMode = ({
     openCloseMenu: () => nudgeDisplayMode(),
   }
 
-  const { dynamicSizes } = useSizes()
+  const [dynamicSizes] = useGlobal('dynamicSizes')
   const { harpguruGold } = getColors()
 
   const activeLabelIcon = (

@@ -19,6 +19,7 @@ import type {
   ExperienceModes,
   FlushChannels,
   LayoutFacts,
+  SizeScheme,
 } from './types'
 
 declare module 'reactn/default' {
@@ -45,6 +46,9 @@ declare module 'reactn/default' {
     readonly viewableInteractionMatrix: HarpFaceMatrices<Interaction>
     readonly viewableDegreeMatrix: HarpFaceMatrices<Degree>
     readonly viewablePitchMatrix: HarpFaceMatrices<Pitch>
+    readonly fullLayoutFacts: HarpFaceFacts<LayoutFacts>
     readonly layoutFacts: HarpFaceFacts<LayoutFacts>
+    readonly dynamicSizes: SizeScheme
+    readonly staticSizes: SizeScheme
   }
 }
