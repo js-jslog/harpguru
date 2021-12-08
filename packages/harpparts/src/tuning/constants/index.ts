@@ -59,6 +59,7 @@ const {
   SixteenHoleSolo,
   TwelveHoleChromatic,
   SixteenHoleChromatic,
+  DiminishedChromatic,
 } = TuningIds
 
 const {
@@ -412,6 +413,24 @@ export const SIXTEEN_HOLE_CHROMATIC: Tuning = {
       // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
       [ db1, f1 , ab1, db2, db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 , ab4, db5],
       [ eb1, gb1, bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4, bb4, d5 ],
+    ]
+  },
+} as const
+
+export const DIMINISHED_CHROMATIC: Tuning = {
+  id: DiminishedChromatic,
+  category: Common,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ c2 , eb2, gb2, a2 , c3 , eb3, gb3, a3 , c4 , eb4, gb4, a4 ],
+      [ d2 , f2 , ab2, b2 , d3 , f3 , ab3, b3 , d4 , f4 , ab4, b4 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ db2, e2 , g2 , bb2, db3, e3 , g3 , bb3, db4, e4 , g4 , bb4],
+      [ eb2, gb2, a2 , c3 , eb3, gb3, a3 , c4 , eb4, gb4, a4 , c5 ],
     ]
   },
 } as const

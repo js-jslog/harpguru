@@ -44,6 +44,7 @@ export {
   SIXTEEN_HOLE_SOLO,
   TWELVE_HOLE_CHROMATIC,
   SIXTEEN_HOLE_CHROMATIC,
+  DIMINISHED_CHROMATIC,
 } from './constants'
 export type { Tuning, ReedArray } from './types'
 export {

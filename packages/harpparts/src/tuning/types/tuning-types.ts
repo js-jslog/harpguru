@@ -46,6 +46,7 @@ export enum TuningIds {
   SixteenHoleSolo = 'Sixteen hole solo',
   TwelveHoleChromatic = 'Chromatic (12 hole)',
   SixteenHoleChromatic = 'Chromatic (16 hole)',
+  DiminishedChromatic = 'Chromatic (Diminished)',
 }
 
 export enum TuningCategories {
