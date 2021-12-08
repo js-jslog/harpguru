@@ -13,4 +13,4 @@ export { reduceCellToggleBufferToHarpStrata } from './reduce-celltogglebuffer-to
 export { reduceMatrixToLayoutFacts } from './reduce-matrix-to-layoutfacts'
 export { reduceFullMatrixToViewableMatrix } from './reduce-fullmatrix-to-viewablematrix'
 export { reduceLayoutFactsToDynamicSizes } from './reduce-layoutfacts-to-dynamicsizes'
-export { reduceLayoutFactsToStaticSizes } from './reduce-layoutfacts-to-staticsizes'
+export { reduceToStaticSizes } from './reduce-to-staticsizes'

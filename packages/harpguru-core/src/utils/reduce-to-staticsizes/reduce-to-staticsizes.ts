@@ -25,7 +25,7 @@ const relativeSizes: Omit<
   11: 122.989,
 } as const
 
-export const reduceLayoutFactsToStaticSizes = (
+export const reduceToStaticSizes = (
   prevSizes: SizeScheme | undefined
 ): SizeScheme => {
   const { longEdge } = getWindowDimensions()

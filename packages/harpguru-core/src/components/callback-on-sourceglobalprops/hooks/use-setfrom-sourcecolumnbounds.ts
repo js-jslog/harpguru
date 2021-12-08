@@ -6,7 +6,7 @@ import {
   reduceFullMatrixToViewableMatrix,
   reduceMatrixToLayoutFacts,
   reduceLayoutFactsToDynamicSizes,
-  reduceLayoutFactsToStaticSizes,
+  reduceToStaticSizes,
 } from '../../../utils'
 
 export const useSetFromSourceColumnBounds = (): void => {
@@ -65,7 +65,7 @@ export const useSetFromSourceColumnBounds = (): void => {
     nextLayoutFacts,
     nextFullLayoutFacts
   )
-  const nextStaticSizes = reduceLayoutFactsToStaticSizes(prevStaticSizes)
+  const nextStaticSizes = reduceToStaticSizes(prevStaticSizes)
 
   useEffect(() => {
     setIfNew(prevColumnBounds, nextColumnBounds, setColumnBounds)
