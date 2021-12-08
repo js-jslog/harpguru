@@ -16,7 +16,6 @@ import { getInitialGlobalState } from './utils'
 
 const Provider1 = createProvider(getInitialGlobalState(1))
 const Provider2 = createProvider(getInitialGlobalState(2))
-const Provider3 = createProvider(getInitialGlobalState(3))
 
 export const HarpGuru = (): ReactElement => {
   useWindowDimensions()
@@ -38,32 +37,16 @@ export const HarpGuru = (): ReactElement => {
   // way in case any animated objects move outside of it's page
   // frame towards interferring with the next page.
   const page1Y = interpolate(pageTransition, {
-    inputRange: [1, 1.9, 2, 3],
-    outputRange: [0, offscreen, offscreen * 10, offscreen * 10],
+    inputRange: [1, 1.9, 2],
+    outputRange: [0, offscreen, offscreen * 10],
   })
   const page2Y = interpolate(pageTransition, {
-    inputRange: [1, 2, 2.9, 3],
-    outputRange: [0, 0, offscreen, offscreen * 10],
-  })
-  const page3Y = interpolate(pageTransition, {
-    inputRange: [1, 2, 3],
-    outputRange: [0, 0, 0],
+    inputRange: [1, 2],
+    outputRange: [0, 0],
   })
 
   return (
     <>
-      <Provider3>
-        <Animated.View
-          style={[
-            { ...StyleSheet.absoluteFillObject },
-            {
-              transform: [{ translateY: page3Y }],
-            },
-          ]}
-        >
-          <HarpGuruPage pageOnDisplay={pageInFrame} thisPage={3} />
-        </Animated.View>
-      </Provider3>
       <Provider2>
         <Animated.View
           style={[

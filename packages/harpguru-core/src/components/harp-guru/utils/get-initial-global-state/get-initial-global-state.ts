@@ -31,7 +31,6 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const pozitionMap: Record<PageNumber, PozitionIds> = {
     1: PozitionIds.Second,
     2: PozitionIds.First,
-    3: PozitionIds.Third,
   }
   const { [pageNumber]: pozitionId } = pozitionMap
 
