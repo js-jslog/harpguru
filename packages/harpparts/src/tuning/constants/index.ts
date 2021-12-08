@@ -33,8 +33,8 @@ const {
   PowerBender,
   PowerDraw,
   PaddyRichter,
-  LuckyThirteenRichter,
-  LuckyThirteenPowerChromatic,
+  Lucky13Richter,
+  Lucky13PowerChromatic,
   BluesOne,
   BluesTwo,
   BluesThree,
@@ -539,8 +539,8 @@ export const PADDY_RICHTER: Tuning = {
   },
 } as const
 
-export const LUCKY_THIRTEEN_RICHTER: Tuning = {
-  id: LuckyThirteenRichter,
+export const LUCKY_13_RICHTER: Tuning = {
+  id: Lucky13Richter,
   shortName: 'Richter',
   category: Lucky13,
   // prettier-ignore
@@ -553,8 +553,8 @@ export const LUCKY_THIRTEEN_RICHTER: Tuning = {
   },
 } as const
 
-export const LUCKY_THIRTEEN_POWER_CHROMATIC: Tuning = {
-  id: LuckyThirteenPowerChromatic,
+export const LUCKY_13_POWER_CHROMATIC: Tuning = {
+  id: Lucky13PowerChromatic,
   shortName: 'Power chromatic',
   category: Lucky13,
   // prettier-ignore
