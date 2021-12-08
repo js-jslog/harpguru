@@ -127,6 +127,29 @@ export const reduceLayoutFactsToDynamicSizes = (
     labelIconSize: dynamicSeedSize * labelIconSize,
   } as const
 
-  if (prevSizes && prevSizes[1] === dynamicSizes[1]) return prevSizes
+  if (prevSizes && isMatch(prevSizes, dynamicSizes)) return prevSizes
   return dynamicSizes
+}
+
+const isMatch = (prevSizes: SizeScheme, nextSizes: SizeScheme): boolean => {
+  if (prevSizes[0] !== nextSizes[0]) return false
+  if (prevSizes[1] !== nextSizes[1]) return false
+  if (prevSizes[2] !== nextSizes[2]) return false
+  if (prevSizes[3] !== nextSizes[3]) return false
+  if (prevSizes[4] !== nextSizes[4]) return false
+  if (prevSizes[5] !== nextSizes[5]) return false
+  if (prevSizes[6] !== nextSizes[6]) return false
+  if (prevSizes[7] !== nextSizes[7]) return false
+  if (prevSizes[8] !== nextSizes[8]) return false
+  if (prevSizes[9] !== nextSizes[9]) return false
+  if (prevSizes[10] !== nextSizes[10]) return false
+  if (prevSizes[11] !== nextSizes[11]) return false
+  if (prevSizes.columnWidth !== nextSizes.columnWidth) return false
+  if (prevSizes.rowHeight !== nextSizes.rowHeight) return false
+  if (prevSizes.legendWidth !== nextSizes.legendWidth) return false
+  if (prevSizes.zoomSlideWidth !== nextSizes.zoomSlideWidth) return false
+  if (prevSizes.fragmentGutter !== nextSizes.fragmentGutter) return false
+  if (prevSizes.labelProtrusion !== nextSizes.labelProtrusion) return false
+  if (prevSizes.labelIconSize !== nextSizes.labelIconSize) return false
+  return true
 }
