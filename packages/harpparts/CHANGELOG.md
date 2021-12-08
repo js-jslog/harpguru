@@ -20,6 +20,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: 12 & 16 hole chromatic tunings
 - MINOR: `HarpFaceFacts` type to wrap and define diatonic vs chromatic facts
 - MINOR: `mapHarpFaceFacts` higher order function to help interactions with `HarpFaceFacts` type
+- MINOR: Diminished chromatic tuning
+- MINOR: Chromatic tuning category
 
 ### Changed
 
