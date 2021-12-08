@@ -50,8 +50,8 @@ export enum TuningIds {
 }
 
 export enum TuningCategories {
-  CommonDiatonic = 'Common Diatonic',
-  CommonChromatic = 'Common Chromatic',
+  CommonDiatonic = 'Common diatonic',
+  CommonChromatic = 'Common chromatic',
   Seydel = 'Seydel',
   Hohner = 'Hohner',
   BrendanPower = 'Brendan Power',
