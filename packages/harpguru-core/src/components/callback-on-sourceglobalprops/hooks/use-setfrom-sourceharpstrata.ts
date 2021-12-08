@@ -143,10 +143,7 @@ export const useSetFromSourceHarpStrata = (): void => {
     nextLayoutFacts,
     nextFullLayoutFacts
   )
-  const nextStaticSizes = reduceLayoutFactsToStaticSizes(
-    prevStaticSizes,
-    nextLayoutFacts
-  )
+  const nextStaticSizes = reduceLayoutFactsToStaticSizes(prevStaticSizes)
   const nextCellToggleBuffer = reduceToEmptyBufferedActivityToggles(
     prevCellToggleBuffer
   )

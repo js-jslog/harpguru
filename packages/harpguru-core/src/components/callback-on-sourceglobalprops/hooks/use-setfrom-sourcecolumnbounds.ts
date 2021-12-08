@@ -65,10 +65,7 @@ export const useSetFromSourceColumnBounds = (): void => {
     nextLayoutFacts,
     nextFullLayoutFacts
   )
-  const nextStaticSizes = reduceLayoutFactsToStaticSizes(
-    prevStaticSizes,
-    nextLayoutFacts
-  )
+  const nextStaticSizes = reduceLayoutFactsToStaticSizes(prevStaticSizes)
 
   useEffect(() => {
     setIfNew(prevColumnBounds, nextColumnBounds, setColumnBounds)

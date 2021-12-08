@@ -97,7 +97,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
     layoutFacts,
     fullLayoutFacts
   )
-  const staticSizes = reduceLayoutFactsToStaticSizes(undefined, layoutFacts)
+  const staticSizes = reduceLayoutFactsToStaticSizes(undefined)
 
   const state = {
     activeHarpStrata: initialHarpStrata,

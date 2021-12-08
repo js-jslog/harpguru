@@ -147,7 +147,7 @@ export const buildMockUseGlobalImplementation = ({
     )
     if (stateItem === 'dynamicSizes') return [dynamicSizes]
 
-    const staticSizes = reduceLayoutFactsToStaticSizes(undefined, layoutFacts)
+    const staticSizes = reduceLayoutFactsToStaticSizes(undefined)
     if (stateItem === 'staticSizes') return [staticSizes]
 
     if (stateItem === 'activeExperienceMode') return [experienceMode]
