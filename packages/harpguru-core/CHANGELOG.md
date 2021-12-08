@@ -35,6 +35,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: Make sizing adaptive to dimensions of harp being presented
 - MINOR: Make layout adaptive to dimensions of harp being presented
 - MINOR: Optimisation of rendering for improved UI speed
+- MAJOR: Reduced page count from 3 to 2 and made 2nd page the same position as the 1st
 
 ## [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v9.0.0) - 2021-07-11
 
