@@ -37,8 +37,8 @@ test('when some toggles are buffered a new harpstrata is returned with those tog
   const bufferedActivityToggles = [DegreeIds.Second] as const
   const expectedNewHarpStrata = {
     ...activeHarpStrata,
-    activeDegreeIds: [DegreeIds.Second, degreeQuizQuestion],
-    activePitchIds: [PitchIds.A, pitchQuizQuestion],
+    activeDegreeIds: [degreeQuizQuestion, DegreeIds.Second],
+    activePitchIds: [pitchQuizQuestion, PitchIds.A],
   }
   expect(
     reduceQuizAnswerToHarpStrata(
