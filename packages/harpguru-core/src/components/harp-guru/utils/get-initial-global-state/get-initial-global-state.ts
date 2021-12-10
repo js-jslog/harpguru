@@ -30,8 +30,7 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const { C: harpKeyId } = PitchIds
   const pozitionMap: Record<PageNumber, PozitionIds> = {
     1: PozitionIds.Second,
-    2: PozitionIds.First,
-    3: PozitionIds.Third,
+    2: PozitionIds.Second,
   }
   const { [pageNumber]: pozitionId } = pozitionMap
 

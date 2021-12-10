@@ -133,7 +133,7 @@ export type RenderableToneTuples =
   | [RenderableToneTuple, RenderableToneTuple]
   | [RenderableToneTuple]
 
-export type PageNumber = 1 | 2 | 3
+export type PageNumber = 1 | 2
 
 export type WithTransition = {
   readonly transitionValue: Node<number>

@@ -37,8 +37,7 @@ export const HarpGuruPage = ({
 
   const nextPageNumberMap: Record<PageNumber, PageNumber> = {
     1: 2,
-    2: 3,
-    3: 1,
+    2: 1,
   } as const
 
   const styles = StyleSheet.create({
@@ -94,7 +93,7 @@ export const HarpGuruPage = ({
       />
       <MenuTabNextPage
         thisPage={thisPage}
-        totalPages={3}
+        totalPages={2}
         stashPosition={MenuStashPosition.Seventh}
         getNextPage={() => pageOnDisplay.setValue(nextPageNumberMap[thisPage])}
       />
