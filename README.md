@@ -59,6 +59,8 @@ xcrun simctl list # to recover the device id
 xcrun simctl install <device id> <path to app file>
 # eg
 xcrun simctl install 74F3E445-D2CF-4CC3-916D-70A7D5C432F3 ~/Desktop/harp-guru.app
+# Requires that a device has been booted
+xcrun simctl boot <device id>
 ```
 
 # Manual render speed testing
