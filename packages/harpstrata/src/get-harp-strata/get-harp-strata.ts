@@ -37,13 +37,11 @@ export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
     mapToPitchMatrix
   )
 
-  const { activeDegreeIds, activePitchIds } = getActiveIdsPair({
-    degreeMatrix: degreeMatrices.harpface1,
-    pitchMatrix: pitchMatrices.harpface1,
-    activeIds: activeIds,
-  })
-
   const { rootPitchId } = getCovariantSet({ pozitionId, harpKeyId })
+  const { activeDegreeIds, activePitchIds } = getActiveIdsPair(
+    rootPitchId,
+    activeIds
+  )
 
   return {
     apparatus,

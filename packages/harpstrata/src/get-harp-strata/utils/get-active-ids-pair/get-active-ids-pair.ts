@@ -1,20 +1,25 @@
-import { DegreeIds, isPitchId } from 'harpparts'
+import { DegreeIds, getDegreeIds, getPitchIds, isPitchIdArray } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
-import {
-  getCounterpartDegreeIds,
-  getCounterpartPitchIds,
-} from '../get-counterpart-active-ids'
-import type { IsActiveProps, ActiveIdsPair } from '../../../types'
+type ActiveIds = ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds>
+type ActiveIdsPair = {
+  readonly activeDegreeIds: ReadonlyArray<DegreeIds>
+  readonly activePitchIds: ReadonlyArray<PitchIds>
+}
 
-export const getActiveIdsPair = (props: IsActiveProps): ActiveIdsPair => {
-  const { activeIds } = props
-  if (isPitchId(activeIds[0])) {
-    const activePitchIds = [...(activeIds as ReadonlyArray<PitchIds>)].sort()
-    const activeDegreeIds = [...getCounterpartDegreeIds(props)].sort()
-    return { activeDegreeIds, activePitchIds }
+export const getActiveIdsPair = (
+  rootPitchId: PitchIds,
+  activeIds: ActiveIds
+): ActiveIdsPair => {
+  const degreeIds = getDegreeIds()
+  const pitchIds = getPitchIds(rootPitchId)
+  if (isPitchIdArray(activeIds))
+    return {
+      activeDegreeIds: activeIds.map((id) => degreeIds[pitchIds.indexOf(id)]),
+      activePitchIds: activeIds,
+    }
+  return {
+    activeDegreeIds: activeIds,
+    activePitchIds: activeIds.map((id) => pitchIds[degreeIds.indexOf(id)]),
   }
-  const activeDegreeIds = [...(activeIds as ReadonlyArray<DegreeIds>)].sort()
-  const activePitchIds = [...getCounterpartPitchIds(props)].sort()
-  return { activeDegreeIds, activePitchIds }
 }

@@ -22,7 +22,7 @@ test('the buffered toggles are added to the existing inactive harpstrata', () =>
     DegreeIds.Third,
     DegreeIds.Fifth,
   ]
-  const counterpartPitchIds = [PitchIds.B, PitchIds.D, PitchIds.G]
+  const counterpartPitchIds = [PitchIds.G, PitchIds.B, PitchIds.D]
   const expectedNewHarpStrata = {
     ...inactiveCellsHarpStrata,
     activeDegreeIds: bufferedActivityToggles,
