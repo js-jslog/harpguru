@@ -1,5 +1,5 @@
 import { getHarpStrata } from 'harpstrata'
-import type { HarpStrataProps, ActiveIds } from 'harpstrata'
+import type { HarpStrataProps } from 'harpstrata'
 import {
   TuningIds,
   DegreeIds,
@@ -29,7 +29,7 @@ const baseHarpStrataProps: HarpStrataProps = {
   valvingId: ValvingIds.NotValved,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
-  activeIds: [] as ActiveIds,
+  activeIds: [] as const,
 }
 const inactiveCellsHarpStrataProps = baseHarpStrataProps
 const activeCellsHarpStrataProps = {
