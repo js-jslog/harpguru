@@ -15,12 +15,20 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v11.0.0...master) - yyyy-mm-dd
 
+### Changed
+
+- MAJOR: Expo SDK upgraded from 40 to 41
+
 ## [v4.10.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0) - 2021-12-10
+
+### Changed
 
 - MINOR: Increment android version number to 22 to build new production candidate
 - MINOR: Major bump iOS version to 11.0.0 to build new production candidate
 
 ## [v4.9.0](https://github.com/js-jslog/harpguru/releases/tag/v10.0.0) - 2021-10-14
+
+### Changed
 
 - MINOR: Increment android version number to 21 to build new production candidate
 - MINOR: Major bump iOS version to 10.0.0 to build new production candidate
