@@ -15,11 +15,15 @@ export const getActiveIdsPair = (
   const pitchIds = getPitchIds(rootPitchId)
   if (isPitchIdArray(activeIds))
     return {
-      activeDegreeIds: activeIds.map((id) => degreeIds[pitchIds.indexOf(id)]),
-      activePitchIds: activeIds,
+      activeDegreeIds: degreeIds.filter((_, index) =>
+        activeIds.includes(pitchIds[index])
+      ),
+      activePitchIds: pitchIds.filter((id) => activeIds.includes(id)),
     }
   return {
-    activeDegreeIds: activeIds,
-    activePitchIds: activeIds.map((id) => pitchIds[degreeIds.indexOf(id)]),
+    activeDegreeIds: degreeIds.filter((id) => activeIds.includes(id)),
+    activePitchIds: pitchIds.filter((_, index) =>
+      activeIds.includes(degreeIds[index])
+    ),
   }
 }
