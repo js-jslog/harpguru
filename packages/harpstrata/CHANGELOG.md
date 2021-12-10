@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v10.0.0...HEAD) - yyyy-mm-dd
 
+### Changed
+
+- MAJOR: Correctly put the root note at the beginning of the ActiveIdsPair. This should have no impact unless it is being consumed in an unhealthy way.
+
 ## [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v10.0.0) - 2021-10-14
 
 ### Removed
@@ -26,7 +30,6 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ### Changed
 
 - MAJOR: Update HarpStrata getter function params to require tuning and valving information to utilise the new apparatus builder function from `harpparts`.
-- MAJOR: Correctly put the root note at the beginning of the ActiveIdsPair. This should have no impact unless it is being consumed in an unhealthy way.
 
 ## [v8.1.0](https://github.com/js-jslog/harpguru/releases/tag/v8.5.0) - 2021-03-14
 
