@@ -15,6 +15,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v10.0.0...HEAD) - yyyy-mm-dd
 
+## [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0) - 2021-12-10
+
 ### Changed
 
 - MAJOR: Correctly put the root note at the beginning of the ActiveIdsPair. This should have no impact unless it is being consumed in an unhealthy way.
@@ -231,7 +233,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v10.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v11.0.0...HEAD)
+- [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0)
 - [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v10.0.0)
 - [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v9.0.0)
 - [v8.1.0](https://github.com/js-jslog/harpguru/releases/tag/v8.5.0)
