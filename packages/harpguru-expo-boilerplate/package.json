@@ -19,10 +19,10 @@
     "build-android-apk": "expo build:android -t apk --clear-credentials"
   },
   "dependencies": {
-    "expo": "^40.0.0",
+    "expo": "^41.0.0",
     "harpguru-core": "^9.0.0",
     "react": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz"
   },
   "private": true
 }
