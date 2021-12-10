@@ -5,7 +5,13 @@ export { ValvingIds } from './valving'
 export { InteractionIds } from './interaction'
 export type { Interaction } from './interaction'
 export { DegreeIds } from './degree'
-export { PitchIds, isPitchId, isNaturalPitch, isPitch } from './pitch'
+export {
+  PitchIds,
+  isPitchId,
+  isPitchIdArray,
+  isNaturalPitch,
+  isPitch,
+} from './pitch'
 export { PozitionIds, isPozitionId, isPozition } from './pozition'
 export { ScaleIds, ScaleCategory } from './scale'
 export type { Scale } from './scale'

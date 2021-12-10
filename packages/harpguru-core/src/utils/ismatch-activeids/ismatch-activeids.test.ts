@@ -1,10 +1,9 @@
-import type { ActiveIds } from 'harpstrata'
 import { PitchIds, DegreeIds } from 'harpparts'
 
 import { isMatchActiveIds } from './ismatch-activeids'
 
 test('two identical arrays match', () => {
-  const emptyIds = [] as ActiveIds
+  const emptyIds = [] as const
   const pitchIds = [PitchIds.A, PitchIds.B]
   const degreeIds = [DegreeIds.Root, DegreeIds.Second]
   expect(isMatchActiveIds(emptyIds, emptyIds)).toBeTruthy()
@@ -13,8 +12,8 @@ test('two identical arrays match', () => {
 })
 
 test('two similar arrays match', () => {
-  const emptyIds1 = [] as ActiveIds
-  const emptyIds2 = [] as ActiveIds
+  const emptyIds1 = [] as const
+  const emptyIds2 = [] as const
   const pitchIds1 = [PitchIds.A, PitchIds.B]
   const pitchIds2 = [PitchIds.A, PitchIds.B]
   const degreeIds1 = [DegreeIds.Root, DegreeIds.Second]
@@ -28,7 +27,7 @@ test('two similar arrays match', () => {
 })
 
 test('two dissimilar arrays do not match', () => {
-  const emptyIds1 = [] as ActiveIds
+  const emptyIds1 = [] as const
   const pitchIds1 = [PitchIds.A, PitchIds.B]
   const pitchIds2 = [PitchIds.B, PitchIds.A]
   const degreeIds1 = [DegreeIds.Root, DegreeIds.Second]

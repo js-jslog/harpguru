@@ -1,4 +1,4 @@
-import type { HarpStrataProps, ActiveIds, HarpStrata } from 'harpstrata'
+import type { HarpStrataProps, HarpStrata } from 'harpstrata'
 import {
   TuningIds,
   DegreeIds,
@@ -16,7 +16,7 @@ const baseHarpStrataProps: HarpStrataProps = {
   valvingId: ValvingIds.NotValved,
   pozitionId: PozitionIds.First,
   harpKeyId: PitchIds.C,
-  activeIds: [] as ActiveIds,
+  activeIds: [] as const,
 }
 export const keyCHarpStrataProps: HarpStrataProps = {
   ...baseHarpStrataProps,

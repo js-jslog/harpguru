@@ -8,7 +8,7 @@ test('when no toggles are buffered a new harpstrata is returned with just the qu
   const activeHarpStrata = inactiveCellsHarpStrata
   const { Root: degreeQuizQuestion } = DegreeIds
   const { rootPitchId: pitchQuizQuestion } = activeHarpStrata
-  const bufferedActivityToggles = [] as ReadonlyArray<DegreeIds>
+  const bufferedActivityToggles = [] as const
   const expectedNewHarpStrata = {
     ...activeHarpStrata,
     activeDegreeIds: [degreeQuizQuestion],
@@ -34,11 +34,11 @@ test('when some toggles are buffered a new harpstrata is returned with those tog
   const activeHarpStrata = inactiveCellsHarpStrata
   const { Root: degreeQuizQuestion } = DegreeIds
   const { rootPitchId: pitchQuizQuestion } = activeHarpStrata
-  const bufferedActivityToggles = [DegreeIds.Second] as ReadonlyArray<DegreeIds>
+  const bufferedActivityToggles = [DegreeIds.Second] as const
   const expectedNewHarpStrata = {
     ...activeHarpStrata,
     activeDegreeIds: [degreeQuizQuestion, DegreeIds.Second],
-    activePitchIds: [PitchIds.A, pitchQuizQuestion],
+    activePitchIds: [pitchQuizQuestion, PitchIds.A],
   }
   expect(
     reduceQuizAnswerToHarpStrata(

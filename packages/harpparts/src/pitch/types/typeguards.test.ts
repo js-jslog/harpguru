@@ -1,8 +1,14 @@
 import { generatePitch } from '../generate-pitch'
 import { PozitionIds } from '../../pozition'
+import { DegreeIds } from '../../degree'
 import { getPitch, getPozition } from '../../access-parts'
 
-import { isPitchId, isNaturalPitch, isPitch } from './typeguards'
+import {
+  isPitchId,
+  isNaturalPitch,
+  isPitch,
+  isPitchIdArray,
+} from './typeguards'
 
 import { PitchIds } from './types'
 
@@ -28,4 +34,16 @@ test('isPitch returns true for a Pitch and false otherwise', () => {
 
   expect(isPitch(pitch)).toBeTruthy()
   expect(isPitch(pozition)).toBeFalsy()
+})
+
+test('isPitchArray returns true for an array of PitchIds', () => {
+  const pitchIdArray = [PitchIds.A, PitchIds.B]
+
+  expect(isPitchIdArray(pitchIdArray)).toBeTruthy()
+})
+
+test('isPitchArray returns true for an array of PitchIds', () => {
+  const degreeIdArray = [DegreeIds.Root]
+
+  expect(isPitchIdArray(degreeIdArray)).toBeFalsy()
 })

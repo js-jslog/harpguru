@@ -8,4 +8,9 @@ export type {
   Pitch,
 } from './types'
 
-export { isPitchId, isNaturalPitch, isPitch } from './typeguards'
+export {
+  isPitchId,
+  isPitchIdArray,
+  isNaturalPitch,
+  isPitch,
+} from './typeguards'

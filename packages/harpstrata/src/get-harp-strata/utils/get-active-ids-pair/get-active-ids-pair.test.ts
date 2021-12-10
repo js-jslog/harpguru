@@ -1,122 +1,79 @@
-import { getDegree, DegreeIds, PitchIds, getPitch } from 'harpparts'
-
-import { EXAMPLE_STRATA } from '../../testResources'
-import type { ActiveIds } from '../../../types'
-import type { IsActiveProps } from '../../../types'
+import { DegreeIds, PitchIds } from 'harpparts'
 
 import { getActiveIdsPair } from './index'
 
-const c = getPitch(PitchIds.C)
-const d = getPitch(PitchIds.D)
-const e = getPitch(PitchIds.E)
-const f = getPitch(PitchIds.F)
-
-const root = getDegree(DegreeIds.Root)
-const second = getDegree(DegreeIds.Second)
-const third = getDegree(DegreeIds.Third)
-const fourth = getDegree(DegreeIds.Fourth)
-
-const basicDegreeMatrix = [
-  [root, second],
-  [third, fourth],
-]
-const basicPitchMatrix = [
-  [c, d],
-  [e, f],
-]
-const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix: basicDegreeMatrix,
-  pitchMatrix: basicPitchMatrix,
-  activeIds: [] as ActiveIds,
-}
-
 test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
-  const activePitchIds: ActiveIds = [PitchIds.D, PitchIds.E]
-  const isActiveProps = { ...baseIsActiveProps, activeIds: activePitchIds }
+  const activePitchIds = [PitchIds.D, PitchIds.E] as const
+
   const expectedActiveIdsPair = {
-    activeDegreeIds: [
-      DegreeIds.Second,
-      DegreeIds.Third,
-    ] as ReadonlyArray<DegreeIds>,
-    activePitchIds: activePitchIds as ReadonlyArray<PitchIds>,
+    activeDegreeIds: [DegreeIds.Second, DegreeIds.Third] as const,
+    activePitchIds: activePitchIds,
   }
-  const actualActiveIds = getActiveIdsPair(isActiveProps)
+  const actualActiveIds = getActiveIdsPair(PitchIds.C, activePitchIds)
 
   expect(actualActiveIds).toStrictEqual(expectedActiveIdsPair)
 })
 
 test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
-  const activeDegreeIds: ActiveIds = [DegreeIds.Second, DegreeIds.Third]
-  const isActiveProps = { ...baseIsActiveProps, activeIds: activeDegreeIds }
+  const activeDegreeIds = [DegreeIds.Second, DegreeIds.Third] as const
   const expectedActiveIds = {
-    activePitchIds: [PitchIds.D, PitchIds.E] as ReadonlyArray<PitchIds>,
-    activeDegreeIds: activeDegreeIds as ReadonlyArray<DegreeIds>,
+    activePitchIds: [PitchIds.D, PitchIds.E] as const,
+    activeDegreeIds: activeDegreeIds,
   }
-  const actualActiveIds = getActiveIdsPair(isActiveProps)
+  const actualActiveIds = getActiveIdsPair(PitchIds.C, activeDegreeIds)
 
   expect(actualActiveIds).toStrictEqual(expectedActiveIds)
 })
 
-const {
-  majorDiatonic: {
-    cHarp: {
-      firstPozition: {
-        notValved: {
-          cMajorPentatonic: {
-            harpStrata: {
-              degreeMatrix,
-              pitchMatrix,
-              activeDegreeIds: exampleDegreeIds,
-              activePitchIds: examplePitchIds,
-            },
-          },
-        },
-      },
-    },
-  },
-} = EXAMPLE_STRATA
+test('getActiveIdsPair returns the active ids for a given PitchIds[] regardless of the activeIds order', () => {
+  const activePitchIdsOrdered = [PitchIds.D, PitchIds.E, PitchIds.F] as const
+  const activePitchIdsJumbled = [PitchIds.D, PitchIds.F, PitchIds.E] as const
 
-test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
-  const isActiveProps = {
-    degreeMatrix: degreeMatrix.harpface1,
-    pitchMatrix: pitchMatrix.harpface1,
-    activeIds: examplePitchIds as ActiveIds,
+  const expectedActiveIdsPair = {
+    activeDegreeIds: [
+      DegreeIds.Flat6,
+      DegreeIds.Flat7,
+      DegreeIds.Seventh,
+    ] as const,
+    activePitchIds: activePitchIdsOrdered,
   }
-  const actualActiveIds = getActiveIdsPair(isActiveProps)
-  const expectedActiveIds = {
-    activePitchIds: examplePitchIds as ReadonlyArray<PitchIds>,
-    activeDegreeIds: exampleDegreeIds as ReadonlyArray<DegreeIds>,
-  }
-
-  expect(actualActiveIds).toEqual(expectedActiveIds)
+  expect(getActiveIdsPair(PitchIds.Gb, activePitchIdsOrdered)).toStrictEqual(
+    expectedActiveIdsPair
+  )
+  expect(getActiveIdsPair(PitchIds.Gb, activePitchIdsJumbled)).toStrictEqual(
+    expectedActiveIdsPair
+  )
 })
 
-test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
-  const isActiveProps = {
-    degreeMatrix: degreeMatrix.harpface1,
-    pitchMatrix: pitchMatrix.harpface1,
-    activeIds: exampleDegreeIds as ActiveIds,
-  }
-  const actualActiveIds = getActiveIdsPair(isActiveProps)
+test('getActiveIdsPair returns the active ids for a given DegreeIds[] regardless of the activeIds order', () => {
+  const activeDegreeIdsOrdered = [
+    DegreeIds.Root,
+    DegreeIds.Flat2,
+    DegreeIds.Third,
+    DegreeIds.Flat6,
+    DegreeIds.Seventh,
+  ] as const
+  const activeDegreeIdsJumbled = [
+    DegreeIds.Seventh,
+    DegreeIds.Flat6,
+    DegreeIds.Flat2,
+    DegreeIds.Third,
+    DegreeIds.Root,
+  ] as const
   const expectedActiveIds = {
-    activePitchIds: examplePitchIds as ReadonlyArray<PitchIds>,
-    activeDegreeIds: exampleDegreeIds as ReadonlyArray<DegreeIds>,
+    activePitchIds: [
+      PitchIds.E,
+      PitchIds.F,
+      PitchIds.Ab,
+      PitchIds.C,
+      PitchIds.Eb,
+    ] as const,
+    activeDegreeIds: activeDegreeIdsOrdered,
   }
-
-  expect(actualActiveIds).toEqual(expectedActiveIds)
-})
-
-test('getActiveIdsPair returns the active ids for a given Flat3 DegreeIds[]', () => {
-  const isActiveProps = {
-    degreeMatrix: degreeMatrix.harpface1,
-    pitchMatrix: pitchMatrix.harpface1,
-    activeIds: [DegreeIds.Flat3] as ActiveIds,
-  }
-  const actualActiveIds = getActiveIdsPair(isActiveProps)
-  const expectedActiveIds = {
-    activePitchIds: [PitchIds.Eb] as ReadonlyArray<PitchIds>,
-    activeDegreeIds: [DegreeIds.Flat3] as ReadonlyArray<DegreeIds>,
-  }
-
-  expect(actualActiveIds).toEqual(expectedActiveIds)
+  expect(getActiveIdsPair(PitchIds.E, activeDegreeIdsOrdered)).toStrictEqual(
+    expectedActiveIds
+  )
+  expect(getActiveIdsPair(PitchIds.E, activeDegreeIdsJumbled)).toStrictEqual(
+    expectedActiveIds
+  )
 })

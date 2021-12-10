@@ -8,18 +8,18 @@ const majorPentatonicScaleDegreeIds: ReadonlyArray<DegreeIds> = [
   DegreeIds.Sixth,
 ] as const
 const cMajorPentatonicPitchIds: ReadonlyArray<PitchIds> = [
-  PitchIds.A,
   PitchIds.C,
   PitchIds.D,
   PitchIds.E,
   PitchIds.G,
+  PitchIds.A,
 ] as const
 const gMajorPentatonicPitchIds: ReadonlyArray<PitchIds> = [
+  PitchIds.G,
   PitchIds.A,
   PitchIds.B,
   PitchIds.D,
   PitchIds.E,
-  PitchIds.G,
 ] as const
 
 export const EXAMPLE_IS_ACTIVE_IDS_PAIR = {
