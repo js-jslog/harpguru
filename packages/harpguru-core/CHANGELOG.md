@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v11.0.0...HEAD) - yyyy-mm-dd
 
+#### Fixed
+
+MINOR: Remove zoom slider gesture blocking by harpface component in iOS
+
 ## [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0) - 2021-12-10
 
 ### Added
