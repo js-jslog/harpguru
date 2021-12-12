@@ -52,8 +52,8 @@ export const HarpGuruPage = ({
   return (
     <View style={styles.fillScreen}>
       <ActivityLegend />
-      <ZoomSlideVertical />
       <HarpFaces />
+      <ZoomSlideVertical />
       <MenuOfCovariants
         isMenuStashed={menuState !== MenuStates.CovariantMenu}
         isLabelHidden={
