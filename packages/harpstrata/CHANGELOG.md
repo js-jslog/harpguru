@@ -13,7 +13,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v10.0.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v11.0.0...HEAD) - yyyy-mm-dd
 
 ## [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0) - 2021-12-10
 
