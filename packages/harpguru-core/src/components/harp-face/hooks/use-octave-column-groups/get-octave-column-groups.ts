@@ -9,36 +9,29 @@ export const getOctaveColumnGroups = (
 ): ColumnRanges => {
   const columnIndexes = Array.from(Array(rootColumnsMask.length).keys())
 
-  // This initlal map pass gathers all of the indexes following a root-containing
-  // column together at each index. For non-root-containing indexes this group
-  // will be empty, and for successive root-containing columns, the algorithm
-  // is configured to search *past* consecutive root-containing columns, and
-  // stop gathering at the next root-containing column after that sequence.
-  // This will result in some duplicate indexes gatherd in successive groups.
-  // These are then dealt with in the next part of the function where filtering
-  // is applied.
-  const overlappingGroups = rootColumnsMask.map((hasRoot, index) => {
+  const indexGroups = rootColumnsMask.map((hasRoot, index, array) => {
     if (!hasRoot && index !== 0) return []
+    const { [index - 1]: prev } = array
+    const { [index + 1]: next } = array
+    if (hasRoot && next === true && prev === false) return []
+    if (hasRoot && next === true && prev === true)
+      return columnIndexes.slice(index, index + 1)
 
-    const endOfTrueRun = rootColumnsMask.indexOf(false, index)
-    const nextIndex = rootColumnsMask.indexOf(true, endOfTrueRun)
+    const nextFalseIndex =
+      array.indexOf(false, index) > -1
+        ? array.indexOf(false, index)
+        : array.length
+    const nextUngroupedTrue =
+      array.indexOf(true, nextFalseIndex) > -1
+        ? array.indexOf(true, nextFalseIndex)
+        : array.length
+    const groupEndIndex =
+      array[nextUngroupedTrue + 1] === true
+        ? nextUngroupedTrue + 1
+        : nextUngroupedTrue
 
-    if (nextIndex === -1 || nextIndex === index)
-      return columnIndexes.slice(index)
-
-    return columnIndexes.slice(index, nextIndex)
+    return columnIndexes.slice(index, groupEndIndex)
   })
 
-  // This filter removes the empty groups and the groups which
-  // contain indexes which are already found in previous groups.
-  return overlappingGroups.filter((group, index) => {
-    const { length: groupLength } = group
-    const isEmpty = groupLength === 0
-
-    const { [index - 1]: previousGroup } = overlappingGroups
-    const hasDuplicates =
-      previousGroup && previousGroup.indexOf(group[0]) !== -1
-
-    return !isEmpty && !hasDuplicates
-  })
+  return indexGroups.filter((group) => group.length > 0)
 }

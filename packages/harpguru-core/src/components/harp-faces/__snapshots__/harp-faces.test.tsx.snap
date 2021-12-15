@@ -7525,7 +7525,7 @@ exports[`A diatonic harp is rendered 1`] = `
       style={
         Object {
           "height": 653.3840652237375,
-          "width": 93.34058074624821,
+          "width": 186.68116149249641,
         }
       }
     >
@@ -7549,6 +7549,19 @@ exports[`A diatonic harp is rendered 1`] = `
           }
         }
       >
+        <View
+          accessible={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 22.034250207026385,
+              "flexDirection": "row",
+              "height": 71.30434368167384,
+              "justifyContent": "center",
+              "width": 71.30434368167384,
+            }
+          }
+        />
         <View
           accessible={false}
           style={
@@ -7678,6 +7691,19 @@ exports[`A diatonic harp is rendered 1`] = `
             </View>
           </View>
         </View>
+        <View
+          accessible={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 22.034250207026385,
+              "flexDirection": "row",
+              "height": 71.30434368167384,
+              "justifyContent": "center",
+              "width": 71.30434368167384,
+            }
+          }
+        />
       </View>
       <View
         style={
@@ -7794,6 +7820,101 @@ exports[`A diatonic harp is rendered 1`] = `
             </View>
           </View>
         </View>
+        <View
+          collapsable={false}
+          onGestureHandlerEvent={[Function]}
+          onGestureHandlerStateChange={[Function]}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scale": undefined,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityRole="button"
+              accessible={true}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderRadius": 22.034250207026385,
+                    "flexDirection": "row",
+                    "height": 71.30434368167384,
+                    "justifyContent": "center",
+                    "width": 71.30434368167384,
+                  },
+                  Object {
+                    "backgroundColor": "#fefefe",
+                    "borderColor": "#555",
+                    "borderWidth": 1.9868575479735244,
+                    "elevation": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#555",
+                      "display": "flex",
+                      "fontSize": 35.65217184083692,
+                    }
+                  }
+                >
+                  6
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "bottom": 13.617921633810537,
+                      "color": "#555",
+                      "display": "flex",
+                      "fontSize": 22.034250207026385,
+                      "left": 13.617921633810537,
+                    }
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
       </View>
       <View
         style={
@@ -7827,6 +7948,29 @@ exports[`A diatonic harp is rendered 1`] = `
             }
           >
             1
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "height": 22.034250207026385,
+              "justifyContent": "center",
+              "top": -11.017125103513193,
+              "width": 57.6864220478633,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Object {
+                "color": "#555",
+                "fontSize": 22.034250207026385,
+              }
+            }
+          >
+            2
           </Text>
         </View>
       </View>
@@ -7913,6 +8057,101 @@ exports[`A diatonic harp is rendered 1`] = `
                   }
                 >
                   5
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "bottom": 13.617921633810537,
+                      "color": "#555",
+                      "display": "flex",
+                      "fontSize": 22.034250207026385,
+                      "left": 13.617921633810537,
+                    }
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          collapsable={false}
+          onGestureHandlerEvent={[Function]}
+          onGestureHandlerStateChange={[Function]}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scale": undefined,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityRole="button"
+              accessible={true}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderRadius": 22.034250207026385,
+                    "flexDirection": "row",
+                    "height": 71.30434368167384,
+                    "justifyContent": "center",
+                    "width": 71.30434368167384,
+                  },
+                  Object {
+                    "backgroundColor": "#fefefe",
+                    "borderColor": "#555",
+                    "borderWidth": 1.9868575479735244,
+                    "elevation": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#555",
+                      "display": "flex",
+                      "fontSize": 35.65217184083692,
+                    }
+                  }
+                >
+                  1
                 </Text>
               </View>
               <View
@@ -8061,6 +8300,101 @@ exports[`A diatonic harp is rendered 1`] = `
             </View>
           </View>
         </View>
+        <View
+          collapsable={false}
+          onGestureHandlerEvent={[Function]}
+          onGestureHandlerStateChange={[Function]}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scale": undefined,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityRole="button"
+              accessible={true}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderRadius": 22.034250207026385,
+                    "flexDirection": "row",
+                    "height": 71.30434368167384,
+                    "justifyContent": "center",
+                    "width": 71.30434368167384,
+                  },
+                  Object {
+                    "backgroundColor": "#fefefe",
+                    "borderColor": "#555",
+                    "borderWidth": 1.9868575479735244,
+                    "elevation": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#555",
+                      "display": "flex",
+                      "fontSize": 35.65217184083692,
+                    }
+                  }
+                >
+                  7
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "bottom": 13.617921633810537,
+                      "color": "#555",
+                      "display": "flex",
+                      "fontSize": 22.034250207026385,
+                      "left": 13.617921633810537,
+                    }
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
       </View>
       <View
         style={
@@ -8095,6 +8429,101 @@ exports[`A diatonic harp is rendered 1`] = `
             }
           }
         />
+        <View
+          collapsable={false}
+          onGestureHandlerEvent={[Function]}
+          onGestureHandlerStateChange={[Function]}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "transform": Array [
+                    Object {
+                      "scale": undefined,
+                    },
+                  ],
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityRole="button"
+              accessible={true}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderRadius": 22.034250207026385,
+                    "flexDirection": "row",
+                    "height": 71.30434368167384,
+                    "justifyContent": "center",
+                    "width": 71.30434368167384,
+                  },
+                  Object {
+                    "backgroundColor": "#fefefe",
+                    "borderColor": "#555",
+                    "borderWidth": 1.9868575479735244,
+                    "elevation": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#555",
+                      "display": "flex",
+                      "fontSize": 35.65217184083692,
+                    }
+                  }
+                >
+                  7
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "bottom": 13.617921633810537,
+                      "color": "#555",
+                      "display": "flex",
+                      "fontSize": 22.034250207026385,
+                      "left": 13.617921633810537,
+                    }
+                  }
+                >
+                  b
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
       </View>
       <View
         style={
@@ -8116,6 +8545,19 @@ exports[`A diatonic harp is rendered 1`] = `
           }
         }
       >
+        <View
+          accessible={false}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 22.034250207026385,
+              "flexDirection": "row",
+              "height": 71.30434368167384,
+              "justifyContent": "center",
+              "width": 71.30434368167384,
+            }
+          }
+        />
         <View
           accessible={false}
           style={
@@ -8135,7 +8577,7 @@ exports[`A diatonic harp is rendered 1`] = `
       style={
         Object {
           "height": 653.3840652237375,
-          "width": 373.36232298499283,
+          "width": 280.02174223874465,
         }
       }
     >
@@ -8198,19 +8640,6 @@ exports[`A diatonic harp is rendered 1`] = `
             }
           }
         />
-        <View
-          accessible={false}
-          style={
-            Object {
-              "alignItems": "center",
-              "borderRadius": 22.034250207026385,
-              "flexDirection": "row",
-              "height": 71.30434368167384,
-              "justifyContent": "center",
-              "width": 71.30434368167384,
-            }
-          }
-        />
       </View>
       <View
         style={
@@ -8232,19 +8661,6 @@ exports[`A diatonic harp is rendered 1`] = `
           }
         }
       >
-        <View
-          accessible={false}
-          style={
-            Object {
-              "alignItems": "center",
-              "borderRadius": 22.034250207026385,
-              "flexDirection": "row",
-              "height": 71.30434368167384,
-              "justifyContent": "center",
-              "width": 71.30434368167384,
-            }
-          }
-        />
         <View
           accessible={false}
           style={
@@ -8469,101 +8885,6 @@ exports[`A diatonic harp is rendered 1`] = `
           }
         }
       >
-        <View
-          collapsable={false}
-          onGestureHandlerEvent={[Function]}
-          onGestureHandlerStateChange={[Function]}
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scale": undefined,
-                    },
-                  ],
-                },
-              ]
-            }
-          >
-            <View
-              accessibilityRole="button"
-              accessible={true}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "borderRadius": 22.034250207026385,
-                    "flexDirection": "row",
-                    "height": 71.30434368167384,
-                    "justifyContent": "center",
-                    "width": 71.30434368167384,
-                  },
-                  Object {
-                    "backgroundColor": "#fefefe",
-                    "borderColor": "#555",
-                    "borderWidth": 1.9868575479735244,
-                    "elevation": 0,
-                  },
-                ]
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "bottom": 0,
-                    "justifyContent": "center",
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Object {
-                      "color": "#555",
-                      "display": "flex",
-                      "fontSize": 35.65217184083692,
-                    }
-                  }
-                >
-                  6
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "bottom": 0,
-                    "justifyContent": "center",
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Object {
-                      "bottom": 13.617921633810537,
-                      "color": "#555",
-                      "display": "flex",
-                      "fontSize": 22.034250207026385,
-                      "left": 13.617921633810537,
-                    }
-                  }
-                >
-                  
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
         <View
           collapsable={false}
           onGestureHandlerEvent={[Function]}
@@ -8861,29 +9182,6 @@ exports[`A diatonic harp is rendered 1`] = `
           }
         }
       >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "height": 22.034250207026385,
-              "justifyContent": "center",
-              "top": -11.017125103513193,
-              "width": 57.6864220478633,
-            }
-          }
-        >
-          <Text
-            allowFontScaling={false}
-            style={
-              Object {
-                "color": "#555",
-                "fontSize": 22.034250207026385,
-              }
-            }
-          >
-            2
-          </Text>
-        </View>
         <View
           style={
             Object {
@@ -9036,101 +9334,6 @@ exports[`A diatonic harp is rendered 1`] = `
                     }
                   }
                 >
-                  1
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "bottom": 0,
-                    "justifyContent": "center",
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Object {
-                      "bottom": 13.617921633810537,
-                      "color": "#555",
-                      "display": "flex",
-                      "fontSize": 22.034250207026385,
-                      "left": 13.617921633810537,
-                    }
-                  }
-                >
-                  
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
-        <View
-          collapsable={false}
-          onGestureHandlerEvent={[Function]}
-          onGestureHandlerStateChange={[Function]}
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scale": undefined,
-                    },
-                  ],
-                },
-              ]
-            }
-          >
-            <View
-              accessibilityRole="button"
-              accessible={true}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "borderRadius": 22.034250207026385,
-                    "flexDirection": "row",
-                    "height": 71.30434368167384,
-                    "justifyContent": "center",
-                    "width": 71.30434368167384,
-                  },
-                  Object {
-                    "backgroundColor": "#fefefe",
-                    "borderColor": "#555",
-                    "borderWidth": 1.9868575479735244,
-                    "elevation": 0,
-                  },
-                ]
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "bottom": 0,
-                    "justifyContent": "center",
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Object {
-                      "color": "#555",
-                      "display": "flex",
-                      "fontSize": 35.65217184083692,
-                    }
-                  }
-                >
                   3
                 </Text>
               </View>
@@ -9375,101 +9578,6 @@ exports[`A diatonic harp is rendered 1`] = `
           }
         }
       >
-        <View
-          collapsable={false}
-          onGestureHandlerEvent={[Function]}
-          onGestureHandlerStateChange={[Function]}
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scale": undefined,
-                    },
-                  ],
-                },
-              ]
-            }
-          >
-            <View
-              accessibilityRole="button"
-              accessible={true}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "borderRadius": 22.034250207026385,
-                    "flexDirection": "row",
-                    "height": 71.30434368167384,
-                    "justifyContent": "center",
-                    "width": 71.30434368167384,
-                  },
-                  Object {
-                    "backgroundColor": "#fefefe",
-                    "borderColor": "#555",
-                    "borderWidth": 1.9868575479735244,
-                    "elevation": 0,
-                  },
-                ]
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "bottom": 0,
-                    "justifyContent": "center",
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Object {
-                      "color": "#555",
-                      "display": "flex",
-                      "fontSize": 35.65217184083692,
-                    }
-                  }
-                >
-                  7
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "bottom": 0,
-                    "justifyContent": "center",
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Object {
-                      "bottom": 13.617921633810537,
-                      "color": "#555",
-                      "display": "flex",
-                      "fontSize": 22.034250207026385,
-                      "left": 13.617921633810537,
-                    }
-                  }
-                >
-                  
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
         <View
           collapsable={false}
           onGestureHandlerEvent={[Function]}
@@ -9694,101 +9802,6 @@ exports[`A diatonic harp is rendered 1`] = `
           }
         }
       >
-        <View
-          collapsable={false}
-          onGestureHandlerEvent={[Function]}
-          onGestureHandlerStateChange={[Function]}
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "transform": Array [
-                    Object {
-                      "scale": undefined,
-                    },
-                  ],
-                },
-              ]
-            }
-          >
-            <View
-              accessibilityRole="button"
-              accessible={true}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "borderRadius": 22.034250207026385,
-                    "flexDirection": "row",
-                    "height": 71.30434368167384,
-                    "justifyContent": "center",
-                    "width": 71.30434368167384,
-                  },
-                  Object {
-                    "backgroundColor": "#fefefe",
-                    "borderColor": "#555",
-                    "borderWidth": 1.9868575479735244,
-                    "elevation": 0,
-                  },
-                ]
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "bottom": 0,
-                    "justifyContent": "center",
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Object {
-                      "color": "#555",
-                      "display": "flex",
-                      "fontSize": 35.65217184083692,
-                    }
-                  }
-                >
-                  7
-                </Text>
-              </View>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "bottom": 0,
-                    "justifyContent": "center",
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Object {
-                      "bottom": 13.617921633810537,
-                      "color": "#555",
-                      "display": "flex",
-                      "fontSize": 22.034250207026385,
-                      "left": 13.617921633810537,
-                    }
-                  }
-                >
-                  b
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
         <View
           collapsable={false}
           onGestureHandlerEvent={[Function]}
@@ -9931,19 +9944,6 @@ exports[`A diatonic harp is rendered 1`] = `
           }
         }
       >
-        <View
-          accessible={false}
-          style={
-            Object {
-              "alignItems": "center",
-              "borderRadius": 22.034250207026385,
-              "flexDirection": "row",
-              "height": 71.30434368167384,
-              "justifyContent": "center",
-              "width": 71.30434368167384,
-            }
-          }
-        />
         <View
           collapsable={false}
           onGestureHandlerEvent={[Function]}
