@@ -14,6 +14,7 @@ export const getOctaveColumnGroups = (
     const { [index - 1]: prev } = array
     const { [index + 1]: next } = array
     if (hasRoot && next === true && prev === false) return []
+    if (hasRoot && next === undefined && prev === false) return []
     if (hasRoot && next === true && prev === true)
       return columnIndexes.slice(index, index + 1)
 
@@ -26,7 +27,8 @@ export const getOctaveColumnGroups = (
         ? array.indexOf(true, nextFalseIndex)
         : array.length
     const groupEndIndex =
-      array[nextUngroupedTrue + 1] === true
+      array[nextUngroupedTrue + 1] === true ||
+      array[nextUngroupedTrue + 1] === undefined
         ? nextUngroupedTrue + 1
         : nextUngroupedTrue
 
