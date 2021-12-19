@@ -770,8 +770,8 @@ export const SOLO_TWELVE_HOLE_DIATONIC: Tuning = {
   reedArrays: {
     harpface1: [
       // 1    2    3    4    5    6    7    8    9   10   11   12
-      [ c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 ],
-      [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 ],
+      [ c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 , g4 , c5 ],
+      [ d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 , b4 ],
     ]
   },
 } as const
