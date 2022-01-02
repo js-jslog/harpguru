@@ -3,6 +3,7 @@ import type { TuningIds, Tuning } from '../../tuning'
 
 export const getTuning = (tuningId: TuningIds): Tuning => {
   const tuning = orderedTunings.get(tuningId)
-  if (tuning === undefined) throw 'A tuning id for an unlisted tuning was used'
+  if (tuning === undefined)
+    throw `A tuning id for an unlisted tuning was used (${tuningId})`
   return tuning
 }
