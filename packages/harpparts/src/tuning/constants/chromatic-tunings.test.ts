@@ -5,11 +5,11 @@ import type { HarpFaceFacts } from '../../types'
 import { sliceMatrix } from '../../packages/slice-matrix'
 
 import {
-  soloTwelveHoleChromatic,
-  soloSixteenHoleChromatic,
-  orchestraTwelveHoleChromatic,
-  orchestraSixteenHoleChromatic,
-} from './chromatic-tunings'
+  SOLO_TWELVE_HOLE_CHROMATIC,
+  SOLO_SIXTEEN_HOLE_CHROMATIC,
+  ORCHESTRA_TWELVE_HOLE_CHROMATIC,
+  ORCHESTRA_SIXTEEN_HOLE_CHROMATIC,
+} from './index'
 
 // The main purpose of this file is as a documentation of
 // the interrelatedness of the solo and orchestra tunings
@@ -113,17 +113,25 @@ const sliceChromaticBase = (
 }
 
 test('The soloTwelveHoleChromatic tuning is correct', () => {
-  expect(soloTwelveHoleChromatic).toStrictEqual(sliceChromaticBase(6, 18))
+  expect(SOLO_TWELVE_HOLE_CHROMATIC.reedArrays).toStrictEqual(
+    sliceChromaticBase(6, 18)
+  )
 })
 
 test('The soloSixteenHoleChromatic tuning is correct', () => {
-  expect(soloSixteenHoleChromatic).toStrictEqual(sliceChromaticBase(2, 18))
+  expect(SOLO_SIXTEEN_HOLE_CHROMATIC.reedArrays).toStrictEqual(
+    sliceChromaticBase(2, 18)
+  )
 })
 
 test('The orchestraTwelveHoleChromatic tuning is correct', () => {
-  expect(orchestraTwelveHoleChromatic).toStrictEqual(sliceChromaticBase(4, 16))
+  expect(ORCHESTRA_TWELVE_HOLE_CHROMATIC.reedArrays).toStrictEqual(
+    sliceChromaticBase(4, 16)
+  )
 })
 
 test('The orchestraSixteenHoleChromatic tuning is correct', () => {
-  expect(orchestraSixteenHoleChromatic).toStrictEqual(sliceChromaticBase(0, 16))
+  expect(ORCHESTRA_SIXTEEN_HOLE_CHROMATIC.reedArrays).toStrictEqual(
+    sliceChromaticBase(0, 16)
+  )
 })

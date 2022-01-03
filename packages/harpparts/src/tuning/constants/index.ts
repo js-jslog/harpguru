@@ -2,13 +2,6 @@ import { TuningIds, TuningCategories, ReedTuningPitches } from '../types'
 import type { ReedArray10, Tuning } from '../types'
 import { sliceMatrix } from '../../packages/slice-matrix'
 
-import {
-  soloSixteenHoleChromatic,
-  soloTwelveHoleChromatic,
-  orchestraSixteenHoleChromatic,
-  orchestraTwelveHoleChromatic,
-} from './chromatic-tunings'
-
 const {
   CommonDiatonic,
   CommonChromatic,
@@ -77,7 +70,9 @@ const {
 
 const {
   g0,
+  ab0,
   a0,
+  bb0,
   b0,
   c1,
   db1,
@@ -128,6 +123,7 @@ const {
   bb4,
   b4,
   c5,
+  db5,
 } = ReedTuningPitches
 
 export const RICHTER_IONIAN: Tuning = {
@@ -397,14 +393,37 @@ export const SOLO_TWELVE_HOLE_CHROMATIC: Tuning = {
   shortName: 'Solo (12 hole)',
   category: CommonChromatic,
   // prettier-ignore
-  reedArrays: soloTwelveHoleChromatic,
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 , g4 , c5 ],
+      [ d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 , b4 ],
+    ] as const,
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 , ab4, db5],
+      [ eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4, bb4, c5 ],
+    ],
+  },
 } as const
 
 export const SOLO_SIXTEEN_HOLE_CHROMATIC: Tuning = {
   id: SoloSixteenHoleChromatic,
   shortName: 'Solo (16 hole)',
   category: CommonChromatic,
-  reedArrays: soloSixteenHoleChromatic,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
+      [ c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 , g4 , c5 ],
+      [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 , b4 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
+      [ db1, f1 , ab1, db2, db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 , ab4, db5],
+      [ eb1, gb1, bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4, bb4, c5 ],
+    ],
+  },
 } as const
 
 export const ORCHESTRA_TWELVE_HOLE_CHROMATIC: Tuning = {
@@ -412,8 +431,18 @@ export const ORCHESTRA_TWELVE_HOLE_CHROMATIC: Tuning = {
   shortName: 'Orchestra (12 hole)',
   category: CommonChromatic,
   // prettier-ignore
-  //reedArrays: mapHarpFaceFacts(chromaticBase, getSliceMatrixBy(4, 16)) as HarpFaceFacts<ReedArray12>
-  reedArrays: orchestraTwelveHoleChromatic,
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 ],
+      [ a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ ab1, db2, db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 ],
+      [ bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4],
+    ],
+  },
 } as const
 
 export const ORCHESTRA_SIXTEEN_HOLE_CHROMATIC: Tuning = {
@@ -421,8 +450,18 @@ export const ORCHESTRA_SIXTEEN_HOLE_CHROMATIC: Tuning = {
   shortName: 'Orchestra (16 hole)',
   category: CommonChromatic,
   // prettier-ignore
-  //reedArrays: mapHarpFaceFacts(chromaticBase, getSliceMatrixBy(0, 16)) as HarpFaceFacts<ReedArray12>
-  reedArrays: orchestraSixteenHoleChromatic,
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
+      [ g0 , c1 , c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 ],
+      [ a0 , b0 , d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
+      [ ab0, db1, db1, f1 , ab1, db2, db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 ],
+      [ bb0, c1 , eb1, gb1, bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4],
+    ],
+  },
 } as const
 
 export const DIMINISHED_CHROMATIC: Tuning = {
