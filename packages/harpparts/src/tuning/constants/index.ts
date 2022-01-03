@@ -521,7 +521,7 @@ export const ORCHESTRA_S: Tuning = {
   category: Seydel,
   // prettier-ignore
   reedArrays: {
-    harpface1: sliceMatrix(ORCHESTRA_SIXTEEN_HOLE_CHROMATIC.reedArrays.harpface1, 0, 10) as ReedArray10
+    harpface1: sliceMatrix(ORCHESTRA_SIXTEEN_HOLE_CHROMATIC.reedArrays.harpface1, 4, 14) as ReedArray10
   },
 } as const
 
