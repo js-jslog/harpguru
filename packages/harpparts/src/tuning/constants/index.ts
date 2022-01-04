@@ -1,5 +1,6 @@
 import { TuningIds, TuningCategories, ReedTuningPitches } from '../types'
-import type { Tuning } from '../types'
+import type { ReedArray10, Tuning } from '../types'
+import { sliceMatrix } from '../../packages/slice-matrix'
 
 const {
   CommonDiatonic,
@@ -22,8 +23,10 @@ const {
   HarmonicMinor,
   MelodyMaker,
   EasyDiatonic,
-  TwelveHoleChromatic,
-  SixteenHoleChromatic,
+  SoloTwelveHoleChromatic,
+  SoloSixteenHoleChromatic,
+  OrchestraTwelveHoleChromatic,
+  OrchestraSixteenHoleChromatic,
   DiminishedChromatic,
   Wilde,
   WildeMinor,
@@ -61,13 +64,15 @@ const {
   WillScarlett,
   WoozleMinor,
   BabyFat,
-  TwelveHoleSolo,
-  SixteenHoleSolo,
+  SoloTwelveHoleDiatonic,
+  SoloSixteenHoleDiatonic,
 } = TuningIds
 
 const {
   g0,
+  ab0,
   a0,
+  bb0,
   b0,
   c1,
   db1,
@@ -119,7 +124,6 @@ const {
   b4,
   c5,
   db5,
-  d5,
 } = ReedTuningPitches
 
 export const RICHTER_IONIAN: Tuning = {
@@ -384,9 +388,9 @@ export const EASY_DIATONIC: Tuning = {
   },
 } as const
 
-export const TWELVE_HOLE_CHROMATIC: Tuning = {
-  id: TwelveHoleChromatic,
-  shortName: '12 hole',
+export const SOLO_TWELVE_HOLE_CHROMATIC: Tuning = {
+  id: SoloTwelveHoleChromatic,
+  shortName: 'Solo (12 hole)',
   category: CommonChromatic,
   // prettier-ignore
   reedArrays: {
@@ -394,18 +398,18 @@ export const TWELVE_HOLE_CHROMATIC: Tuning = {
       // 1    2    3    4    5    6    7    8    9   10   11   12
       [ c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 , g4 , c5 ],
       [ d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 , b4 ],
-    ],
+    ] as const,
     harpface2: [
       // 1    2    3    4    5    6    7    8    9   10   11   12
       [ db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 , ab4, db5],
-      [ eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4, bb4, d5 ],
-    ]
+      [ eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4, bb4, c5 ],
+    ],
   },
 } as const
 
-export const SIXTEEN_HOLE_CHROMATIC: Tuning = {
-  id: SixteenHoleChromatic,
-  shortName: '16 hole',
+export const SOLO_SIXTEEN_HOLE_CHROMATIC: Tuning = {
+  id: SoloSixteenHoleChromatic,
+  shortName: 'Solo (16 hole)',
   category: CommonChromatic,
   // prettier-ignore
   reedArrays: {
@@ -417,8 +421,46 @@ export const SIXTEEN_HOLE_CHROMATIC: Tuning = {
     harpface2: [
       // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
       [ db1, f1 , ab1, db2, db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 , ab4, db5],
-      [ eb1, gb1, bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4, bb4, d5 ],
-    ]
+      [ eb1, gb1, bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4, bb4, c5 ],
+    ],
+  },
+} as const
+
+export const ORCHESTRA_TWELVE_HOLE_CHROMATIC: Tuning = {
+  id: OrchestraTwelveHoleChromatic,
+  shortName: 'Orchestra (12 hole)',
+  category: CommonChromatic,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 ],
+      [ a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12
+      [ ab1, db2, db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 ],
+      [ bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4],
+    ],
+  },
+} as const
+
+export const ORCHESTRA_SIXTEEN_HOLE_CHROMATIC: Tuning = {
+  id: OrchestraSixteenHoleChromatic,
+  shortName: 'Orchestra (16 hole)',
+  category: CommonChromatic,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
+      [ g0 , c1 , c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 ],
+      [ a0 , b0 , d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
+      [ ab0, db1, db1, f1 , ab1, db2, db2, f2 , ab2, db3, db3, f3 , ab3, db4, db4, f4 ],
+      [ bb0, c1 , eb1, gb1, bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3, c4 , eb4, gb4],
+    ],
   },
 } as const
 
@@ -479,11 +521,7 @@ export const ORCHESTRA_S: Tuning = {
   category: Seydel,
   // prettier-ignore
   reedArrays: {
-    harpface1: [
-      // 1    2    3    4    5    6    7    8    9   10
-      [ c1 , f1 , f1 , a1 , c2 , f2 , f2 , a2 , c3 , f3 ],
-      [ d1 , e1 , g1 , bb1, d2 , e2 , g2 , bb2, d3 , e3 ],
-    ]
+    harpface1: sliceMatrix(ORCHESTRA_SIXTEEN_HOLE_CHROMATIC.reedArrays.harpface1, 4, 14) as ReedArray10
   },
 } as const
 
@@ -723,28 +761,20 @@ export const BABY_FAT: Tuning = {
   },
 } as const
 
-export const TWELVE_HOLE_SOLO: Tuning = {
-  id: TwelveHoleSolo,
+export const SOLO_TWELVE_HOLE_DIATONIC: Tuning = {
+  id: SoloTwelveHoleDiatonic,
   category: Other,
   // prettier-ignore
   reedArrays: {
-    harpface1: [
-      // 1    2    3    4    5    6    7    8    9   10   11   12
-      [ c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 ],
-      [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 ],
-    ]
+    harpface1: SOLO_TWELVE_HOLE_CHROMATIC.reedArrays.harpface1
   },
 } as const
 
-export const SIXTEEN_HOLE_SOLO: Tuning = {
-  id: SixteenHoleSolo,
+export const SOLO_SIXTEEN_HOLE_DIATONIC: Tuning = {
+  id: SoloSixteenHoleDiatonic,
   category: Other,
   // prettier-ignore
   reedArrays: {
-    harpface1: [
-      // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
-      [ c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 , g4 , c5 ],
-      [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 , b4 ],
-    ]
+    harpface1: SOLO_SIXTEEN_HOLE_CHROMATIC.reedArrays.harpface1
   },
 } as const

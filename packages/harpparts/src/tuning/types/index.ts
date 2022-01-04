@@ -1,5 +1,5 @@
 export { TuningIds, TuningCategories, ReedTuningPitches } from './tuning-types'
-export type { Tuning, ReedArray } from './tuning-types'
+export type { Tuning, ReedArray, ReedArray10 } from './tuning-types'
 export {
   isReedArray7,
   isReedArray10,

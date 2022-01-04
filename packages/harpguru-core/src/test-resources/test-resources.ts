@@ -46,7 +46,7 @@ const activeCellsHarpStrataProps = {
 }
 const chromaticHarpStrataProps = {
   ...baseHarpStrataProps,
-  tuningId: TuningIds.SixteenHoleChromatic,
+  tuningId: TuningIds.SoloSixteenHoleChromatic,
 }
 
 export const inactiveCellsHarpStrata = getHarpStrata(
