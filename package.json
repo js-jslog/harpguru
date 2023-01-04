@@ -8,10 +8,12 @@
   ],
   "scripts": {
     "lint": "lerna run lint --stream",
+    "lint-file": "lerna run lint-file --npm-client=yarn -- --no-error-on-unmatched-pattern",
     "lint-fix": "lerna run lint-fix --stream",
     "prettier": "prettier --write .",
     "tsc": "lerna run tsc --stream",
     "test": "lerna run test --stream",
+    "test-find-related": "lerna run test --npm-client=yarn --stream -- --findRelatedTests",
     "postinstall": "husky install",
     "pre-commit": "lint-staged && lerna run tsc --stream -- --incremental",
     "pre-push": "yarn lint && yarn tsc && yarn test"
