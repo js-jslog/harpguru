@@ -15,6 +15,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v12.1.0...HEAD) - yyyy-mm-dd
 
+MAJOR: Upgrade react-native-reanimated & react-native-gesture-handler to version 2
+MAJOR: Upgrade react by 2 major versions to 18 & react native by 7 minor versions to 70
+
 ## [v9.1.0](https://github.com/js-jslog/harpguru/releases/tag/v12.1.0) - 2021-12-13
 
 #### Fixed
