@@ -1,4 +1,4 @@
-import Animated from 'react-native-reanimated'
+import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 import { View, ViewStyle } from 'react-native'
 import React from 'react'
 import type { DegreeIds, PitchIds } from 'harpparts'
@@ -41,14 +41,14 @@ export const HarpCellAccessible = (
   const accessibleStyles = useAccessibleStyles(degreeId, isActive)
   const tapAnimationValue = useTapAnimationValue(isTapped)
 
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{ scale: tapAnimationValue.value }],
+    }
+  })
+
   return (
-    <Animated.View
-      style={[
-        {
-          transform: [{ scale: tapAnimationValue }],
-        },
-      ]}
-    >
+    <Animated.View style={[animatedStyle]}>
       <View
         accessible={true}
         accessibilityRole="button"

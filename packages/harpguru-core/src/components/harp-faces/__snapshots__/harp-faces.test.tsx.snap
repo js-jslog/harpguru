@@ -56,6 +56,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={40}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -142,15 +144,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={41}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -237,9 +239,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -325,6 +325,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={42}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -411,15 +413,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={43}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -545,6 +547,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={44}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -631,15 +635,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={45}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -726,15 +730,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={46}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -821,15 +825,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={47}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -916,9 +920,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -1050,6 +1052,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={48}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -1136,15 +1140,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={49}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -1231,15 +1235,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={50}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -1326,15 +1330,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={51}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -1460,6 +1464,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={52}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -1546,15 +1552,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={53}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -1641,15 +1647,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={54}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -1736,15 +1742,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={55}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -1831,9 +1837,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -1965,6 +1969,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={56}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -2051,15 +2057,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={57}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -2146,15 +2152,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={58}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -2241,15 +2247,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={59}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -2375,6 +2381,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={60}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -2461,15 +2469,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={61}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -2556,15 +2564,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={62}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -2651,15 +2659,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={63}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -2746,9 +2754,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -2880,6 +2886,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={64}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -2966,15 +2974,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={65}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -3061,15 +3069,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={66}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -3156,15 +3164,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={67}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -3290,6 +3298,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={68}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -3376,15 +3386,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={69}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -3471,9 +3481,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -3559,6 +3567,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={70}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -3645,15 +3655,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={71}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -3740,9 +3750,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -3798,6 +3806,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={72}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -3893,6 +3903,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={73}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -4067,6 +4079,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={74}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -4162,6 +4176,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={75}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -4248,9 +4264,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -4287,6 +4301,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={76}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -4382,6 +4398,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={77}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -4477,6 +4495,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={78}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -4572,6 +4592,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={79}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -4792,6 +4814,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={80}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -4887,6 +4911,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={81}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -4973,15 +4999,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={82}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -5077,6 +5103,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={83}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -5163,9 +5191,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -5202,6 +5228,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={84}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -5297,6 +5325,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={85}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -5392,6 +5422,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={86}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -5487,6 +5519,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={87}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -5707,6 +5741,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={88}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -5802,6 +5838,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={89}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -5888,15 +5926,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={90}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -5992,6 +6030,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={91}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -6078,9 +6118,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -6117,6 +6155,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={92}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -6212,6 +6252,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={93}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -6307,6 +6349,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={94}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -6402,6 +6446,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={95}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -6622,6 +6668,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={96}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -6717,6 +6765,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={97}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -6803,15 +6853,15 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={98}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -6907,6 +6957,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={99}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -6993,9 +7045,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -7032,6 +7082,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={100}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -7127,6 +7179,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={101}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -7301,6 +7355,8 @@ exports[`A chromatic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={102}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -7396,6 +7452,8 @@ exports[`A chromatic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={103}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -7482,9 +7540,7 @@ exports[`A chromatic harp is rendered 1`] = `
                       "left": 9.243304009203637,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -7585,6 +7641,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={1}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -7701,6 +7759,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={2}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -7787,9 +7847,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -7852,6 +7910,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={3}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -7938,9 +7998,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -7968,6 +8026,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={4}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -8260,6 +8320,8 @@ exports[`A diatonic harp is rendered 1`] = `
         />
         <View
           collapsable={false}
+          handlerTag={5}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -8355,6 +8417,8 @@ exports[`A diatonic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={6}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -8441,9 +8505,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -8471,6 +8533,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={7}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -8557,15 +8621,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={8}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -8652,15 +8716,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={9}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -8747,15 +8811,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={10}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -8842,9 +8906,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -8976,6 +9038,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={11}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -9062,15 +9126,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={12}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -9157,15 +9221,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={13}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -9252,15 +9316,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={14}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -9377,6 +9441,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={15}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -9463,15 +9529,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={16}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -9567,6 +9633,8 @@ exports[`A diatonic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={17}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -9696,6 +9764,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={18}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -9791,6 +9861,8 @@ exports[`A diatonic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={19}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -9877,9 +9949,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -9946,6 +10016,8 @@ exports[`A diatonic harp is rendered 1`] = `
         />
         <View
           collapsable={false}
+          handlerTag={20}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -10157,6 +10229,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={21}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -10265,6 +10339,8 @@ exports[`A diatonic harp is rendered 1`] = `
         />
         <View
           collapsable={false}
+          handlerTag={22}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -10381,6 +10457,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={23}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -10467,15 +10545,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={24}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -10562,15 +10640,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={25}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -10657,9 +10735,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -10768,6 +10844,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={26}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -10854,15 +10932,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={27}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -10949,15 +11027,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={28}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -11044,9 +11122,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -11074,6 +11150,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={29}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -11169,6 +11247,8 @@ exports[`A diatonic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={30}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -11440,6 +11520,8 @@ exports[`A diatonic harp is rendered 1`] = `
         />
         <View
           collapsable={false}
+          handlerTag={31}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -11556,6 +11638,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={32}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -11642,15 +11726,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={33}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -11737,9 +11821,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -11767,6 +11849,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={34}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -11853,15 +11937,15 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
         </View>
         <View
           collapsable={false}
+          handlerTag={35}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -11948,9 +12032,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -12036,6 +12118,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={36}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -12131,6 +12215,8 @@ exports[`A diatonic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={37}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -12217,9 +12303,7 @@ exports[`A diatonic harp is rendered 1`] = `
                       "left": 13.617921633810537,
                     }
                   }
-                >
-                  
-                </Text>
+                />
               </View>
             </View>
           </View>
@@ -12247,6 +12331,8 @@ exports[`A diatonic harp is rendered 1`] = `
       >
         <View
           collapsable={false}
+          handlerTag={38}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >
@@ -12342,6 +12428,8 @@ exports[`A diatonic harp is rendered 1`] = `
         </View>
         <View
           collapsable={false}
+          handlerTag={39}
+          handlerType="TapGestureHandler"
           onGestureHandlerEvent={[Function]}
           onGestureHandlerStateChange={[Function]}
         >

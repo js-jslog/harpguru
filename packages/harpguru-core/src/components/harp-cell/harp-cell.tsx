@@ -1,9 +1,6 @@
 import { useGlobal } from 'reactn'
-import {
-  TapGestureHandler,
-  TapGestureHandlerStateChangeEvent,
-} from 'react-native-gesture-handler'
-import { View } from 'react-native'
+import Animated from 'react-native-reanimated'
+import { TapGestureHandler } from 'react-native-gesture-handler'
 import React from 'react'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
@@ -30,19 +27,13 @@ export const HarpCell = ({
   const baseHarpCellStyles = getBaseHarpCellStyles()
   const [activeDisplayMode] = useGlobal('activeDisplayMode')
   const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [cellState, tapHandler] = useTapRerenderLogic(
+  const [cellState, gestureHandler] = useTapRerenderLogic(
     thisDegreeId,
     thisIsActive
   )
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
-
-  const handleTapStateChange = ({
-    nativeEvent,
-  }: TapGestureHandlerStateChangeEvent) => {
-    tapHandler(nativeEvent)
-  }
 
   const harpCellAccessibleProps = {
     degreeId: thisDegreeId,
@@ -54,10 +45,10 @@ export const HarpCell = ({
   }
 
   return (
-    <TapGestureHandler onHandlerStateChange={handleTapStateChange}>
-      <View>
+    <TapGestureHandler onGestureEvent={gestureHandler}>
+      <Animated.View>
         <MemoHarpCellAccessible {...harpCellAccessibleProps} />
-      </View>
+      </Animated.View>
     </TapGestureHandler>
   )
 }

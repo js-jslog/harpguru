@@ -15,10 +15,8 @@ export const useSetFromSourceColumnBounds = (): void => {
   const [fullDegreeMatrix] = useGlobal('activeDegreeMatrix')
   const [fullPitchMatrix] = useGlobal('activePitchMatrix')
   const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
-  const [
-    prevViewableInteractionMatrix,
-    setViewableInteractionMatrix,
-  ] = useGlobal('viewableInteractionMatrix')
+  const [prevViewableInteractionMatrix, setViewableInteractionMatrix] =
+    useGlobal('viewableInteractionMatrix')
   const [prevViewableDegreeMatrix, setViewableDegreeMatrix] = useGlobal(
     'viewableDegreeMatrix'
   )

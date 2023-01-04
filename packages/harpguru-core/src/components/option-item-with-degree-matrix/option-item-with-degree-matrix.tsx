@@ -18,6 +18,7 @@ export type OptionItemWithDegreeMatrixProps<T> = Pick<
   readonly callbackParam: T
 }
 
+/* eslint-disable-next-line */
 export const OptionItemWithDegreeMatrix = <T extends unknown>({
   value,
   twoColumns,

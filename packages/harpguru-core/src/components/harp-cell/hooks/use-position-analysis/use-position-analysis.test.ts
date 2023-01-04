@@ -57,10 +57,8 @@ test('thisDegreeId and thisPitchId provide an id when available and undefined ot
   expect(thisPitchId).toBe(ourPitch.id)
 
   const emptyCoord: YXCoord = [0, 0]
-  const {
-    thisDegreeId: undefinedDegreeId,
-    thisPitchId: undefinedPitchId,
-  } = usePositionAnalysis(emptyCoord, 'harpface1')
+  const { thisDegreeId: undefinedDegreeId, thisPitchId: undefinedPitchId } =
+    usePositionAnalysis(emptyCoord, 'harpface1')
   expect(undefinedDegreeId).toBe(undefined)
   expect(undefinedPitchId).toBe(undefined)
 })
@@ -74,10 +72,8 @@ test('thisDegree and thisPitch provide an object when available and undefined ot
   expect(thisPitch).toStrictEqual(ourPitch)
 
   const emptyCoord: YXCoord = [0, 0]
-  const {
-    thisDegree: undefinedDegree,
-    thisPitch: undefinedPitch,
-  } = usePositionAnalysis(emptyCoord, 'harpface1')
+  const { thisDegree: undefinedDegree, thisPitch: undefinedPitch } =
+    usePositionAnalysis(emptyCoord, 'harpface1')
   expect(undefinedDegree).toBe(undefined)
   expect(undefinedPitch).toBe(undefined)
 })

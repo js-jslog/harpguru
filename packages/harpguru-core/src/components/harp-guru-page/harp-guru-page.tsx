@@ -1,6 +1,4 @@
-import 'react-native-gesture-handler'
-
-import type { Value } from 'react-native-reanimated'
+import type { SharedValue } from 'react-native-reanimated'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
@@ -25,7 +23,7 @@ import { MenuStates, MenuStashPosition, PageNumber } from '../../types'
 import { useMenus } from './hooks'
 
 type HarpGuruPageProps = {
-  readonly pageOnDisplay: Value<PageNumber>
+  readonly pageOnDisplay: SharedValue<PageNumber>
   readonly thisPage: PageNumber
 }
 
@@ -95,7 +93,8 @@ export const HarpGuruPage = ({
         thisPage={thisPage}
         totalPages={2}
         stashPosition={MenuStashPosition.Seventh}
-        getNextPage={() => pageOnDisplay.setValue(nextPageNumberMap[thisPage])}
+        /* eslint-disable prefer-destructuring */
+        getNextPage={() => (pageOnDisplay.value = nextPageNumberMap[thisPage])}
       />
       <ToggleBufferFlusher />
       <CallbackOnSourceGlobalProps />

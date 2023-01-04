@@ -51,14 +51,8 @@ export const useStyles = (
       justifyContent: 'space-between',
     },
   })
-  const {
-    track,
-    slide,
-    pointerLayer,
-    topPointer,
-    bottomPointer,
-    labelLayer,
-  } = styles
+  const { track, slide, pointerLayer, topPointer, bottomPointer, labelLayer } =
+    styles
 
   return {
     track,

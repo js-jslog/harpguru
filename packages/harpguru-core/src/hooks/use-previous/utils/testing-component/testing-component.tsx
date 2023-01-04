@@ -15,8 +15,12 @@ export const TestingComponent = ({
   const previousValue = usePrevious(value, initial)
   return (
     <>
-      <Text>Current: {value}</Text>
-      <Text>Previous: {previousValue}</Text>
+      <Text>
+        <>Current: {value}</>
+      </Text>
+      <Text>
+        <>Previous: {previousValue}</>
+      </Text>
     </>
   )
 }

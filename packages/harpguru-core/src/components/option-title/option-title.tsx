@@ -1,4 +1,4 @@
-import Animated from 'react-native-reanimated'
+import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 
@@ -27,8 +27,13 @@ export const OptionTitle = ({
       left: styles.smallGutter,
     },
   })
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      opacity: transitionValue.value,
+    }
+  })
   return (
-    <Animated.View style={[wrapper, { opacity: transitionValue }]}>
+    <Animated.View style={[wrapper, animatedStyle]}>
       <View style={gutterSpacer}>{title}</View>
     </Animated.View>
   )

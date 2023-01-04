@@ -1,16 +1,24 @@
-import { useTimingTransition } from 'react-native-redash'
-import { Easing, interpolate, Node } from 'react-native-reanimated'
+import {
+  Easing,
+  interpolate,
+  withTiming,
+  useDerivedValue,
+} from 'react-native-reanimated'
+import type { SharedValue } from 'react-native-reanimated'
 
 import { tapAnimationDuration } from '../../../../constants'
 
-export const useTapAnimationValue = (isTapped: boolean): Node<number> => {
-  const timingValue = useTimingTransition(isTapped, {
-    duration: tapAnimationDuration,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const animationValue = interpolate(timingValue, {
-    inputRange: [0, 1],
-    outputRange: isTapped ? [0.5, 1] : [1, 1],
+export const useTapAnimationValue = (
+  isTapped: boolean
+): SharedValue<number> => {
+  const timingValue = useDerivedValue(() => {
+    return withTiming(isTapped ? 1 : 0, {
+      duration: tapAnimationDuration,
+      easing: Easing.inOut(Easing.circle),
+    })
+  }, [isTapped])
+  const animationValue = useDerivedValue(() => {
+    return interpolate(timingValue.value, [0, 1], isTapped ? [0.5, 1] : [1, 1])
   })
 
   return animationValue

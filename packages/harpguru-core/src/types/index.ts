@@ -1,5 +1,5 @@
 import type { StateTuple } from 'reactn/types/use-global'
-import type { Node, Value } from 'react-native-reanimated'
+import type { SharedValue } from 'react-native-reanimated'
 import type { HarpStrata } from 'harpstrata'
 import type {
   Degree,
@@ -96,22 +96,6 @@ export enum CellStates {
   Off,
 }
 
-// The reason we need to identify the animation
-// types as 'Unsafe' and 'Safe' rather than 'Recoiling'
-// and 'NonRecoiling' or something is because the most
-// important thing that the name needs to communicate
-// to the developer is that if they choose the
-// 'Unsafe' animation type, there is a chance that
-// they will encounter a nasty unmount error.
-// This will occur if the callback that is being
-// passed to the hook which uses this enum is updating
-// the  harpface, particularly if it is creating a
-// harp with fewer rows.
-export enum TapAnimationTypes {
-  Safe,
-  Unsafe,
-}
-
 export type MenuProps = {
   readonly isMenuStashed: boolean
   readonly isLabelHidden: boolean
@@ -136,11 +120,11 @@ export type RenderableToneTuples =
 export type PageNumber = 1 | 2
 
 export type WithTransition = {
-  readonly transitionValue: Node<number>
+  readonly transitionValue: SharedValue<number>
 }
 
 export type WithStateValue = {
-  readonly stateValue: Value<number>
+  readonly stateValue: SharedValue<number>
 }
 
 export enum ZoomIds {

@@ -25,9 +25,10 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     useDispatch(reduceScaleToHarpStrata, 'activeHarpStrata'),
     [useDispatch, reduceScaleToHarpStrata]
   )
-  const useScalesTitleMemo = useCallback(() => useScaleTitle(useGlobal), [
-    useGlobal,
-  ])
+  const useScalesTitleMemo = useCallback(
+    () => useScaleTitle(useGlobal),
+    [useGlobal]
+  )
   const useScalesItemsMemo = useCallback(
     () => useScaleItems(useGlobal, scaleItemTapHandler),
     [useGlobal, scaleItemTapHandler]

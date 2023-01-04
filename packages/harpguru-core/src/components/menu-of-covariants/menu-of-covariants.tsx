@@ -29,29 +29,22 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
     ),
     [useDispatch, reduceCovariantsToHarpStrata]
   )
-  const {
-    useHarpKeyTitle,
-    usePozitionTitle,
-    useRootPitchTitle,
-  } = useCovariantTitles()
-  const {
-    useHarpKeyItems,
-    usePozitionItems,
-    useRootPitchItems,
-  } = useCovariantItems()
-  const {
-    useHarpKeyLabel,
-    usePozitionLabel,
-    useRootPitchLabel,
-  } = useCovariantLabels()
+  const { useHarpKeyTitle, usePozitionTitle, useRootPitchTitle } =
+    useCovariantTitles()
+  const { useHarpKeyItems, usePozitionItems, useRootPitchItems } =
+    useCovariantItems()
+  const { useHarpKeyLabel, usePozitionLabel, useRootPitchLabel } =
+    useCovariantLabels()
 
-  const useHarpKeyTitleMemo = useCallback(() => useHarpKeyTitle(useGlobal), [
-    useGlobal,
-  ])
+  const useHarpKeyTitleMemo = useCallback(
+    () => useHarpKeyTitle(useGlobal),
+    [useGlobal]
+  )
 
-  const usePozitionTitleMemo = useCallback(() => usePozitionTitle(useGlobal), [
-    useGlobal,
-  ])
+  const usePozitionTitleMemo = useCallback(
+    () => usePozitionTitle(useGlobal),
+    [useGlobal]
+  )
 
   const useRootPitchTitleMemo = useCallback(
     () => useRootPitchTitle(useGlobal),
@@ -73,13 +66,15 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal, itemTapHandler]
   )
 
-  const useHarpKeyLabelMemo = useCallback(() => useHarpKeyLabel(useGlobal), [
-    useGlobal,
-  ])
+  const useHarpKeyLabelMemo = useCallback(
+    () => useHarpKeyLabel(useGlobal),
+    [useGlobal]
+  )
 
-  const usePozitionLabelMemo = useCallback(() => usePozitionLabel(useGlobal), [
-    useGlobal,
-  ])
+  const usePozitionLabelMemo = useCallback(
+    () => usePozitionLabel(useGlobal),
+    [useGlobal]
+  )
 
   const useRootPitchLabelMemo = useCallback(
     () => useRootPitchLabel(useGlobal),

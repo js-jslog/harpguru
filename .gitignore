@@ -1,11 +1,14 @@
-node_modules/**/*
+node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
 
-# vim
-*.swp
-*.swo
-#
-# log files
-*.log
-#
-# typescript cache files
-tsconfig.tsbuildinfo
+# macOS
+.DS_Store

@@ -3,6 +3,8 @@
 exports[`A snapshot of a populated cell 1`] = `
 <View
   collapsable={false}
+  handlerTag={3}
+  handlerType="TapGestureHandler"
   onGestureHandlerEvent={[Function]}
   onGestureHandlerStateChange={[Function]}
 >
@@ -89,9 +91,7 @@ exports[`A snapshot of a populated cell 1`] = `
               "left": 13.617921633810537,
             }
           }
-        >
-          
-        </Text>
+        />
       </View>
     </View>
   </View>
@@ -101,6 +101,8 @@ exports[`A snapshot of a populated cell 1`] = `
 exports[`A snapshot of an active cell 1`] = `
 <View
   collapsable={false}
+  handlerTag={4}
+  handlerType="TapGestureHandler"
   onGestureHandlerEvent={[Function]}
   onGestureHandlerStateChange={[Function]}
 >
@@ -187,9 +189,7 @@ exports[`A snapshot of an active cell 1`] = `
               "left": 13.617921633810537,
             }
           }
-        >
-          
-        </Text>
+        />
       </View>
     </View>
   </View>
@@ -215,6 +215,8 @@ exports[`A snapshot of an empty cell 1`] = `
 exports[`A snapshot of an inactive cell in Explore mode 1`] = `
 <View
   collapsable={false}
+  handlerTag={5}
+  handlerType="TapGestureHandler"
   onGestureHandlerEvent={[Function]}
   onGestureHandlerStateChange={[Function]}
 >
@@ -301,9 +303,7 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
               "left": 13.617921633810537,
             }
           }
-        >
-          
-        </Text>
+        />
       </View>
     </View>
   </View>
@@ -313,6 +313,8 @@ exports[`A snapshot of an inactive cell in Explore mode 1`] = `
 exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
 <View
   collapsable={false}
+  handlerTag={6}
+  handlerType="TapGestureHandler"
   onGestureHandlerEvent={[Function]}
   onGestureHandlerStateChange={[Function]}
 >
@@ -399,9 +401,7 @@ exports[`A snapshot of an inactive cell in Quiz mode 1`] = `
               "left": 13.617921633810537,
             }
           }
-        >
-          
-        </Text>
+        />
       </View>
     </View>
   </View>

@@ -27,15 +27,12 @@ test('the previous columnBounds object is returned if it is still appropriate fo
 
 test('a new columnBounds is returned if the original needed to be slid down', () => {
   expect(reduceFullMatrixToColumnBounds([9, 18], fullMatrices)).toStrictEqual([
-    0,
-    9,
+    0, 9,
   ])
   expect(reduceFullMatrixToColumnBounds([9, 15], fullMatrices)).toStrictEqual([
-    3,
-    9,
+    3, 9,
   ])
   expect(reduceFullMatrixToColumnBounds([1, 12], fullMatrices)).toStrictEqual([
-    0,
-    11,
+    0, 11,
   ])
 })
