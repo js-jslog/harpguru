@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "ci": "lerna run ci --stream",
     "lint": "lerna run lint --stream",
     "lint-file": "lerna run lint-file --npm-client=yarn -- --no-error-on-unmatched-pattern",
     "lint-fix": "lerna run lint-fix --stream",
