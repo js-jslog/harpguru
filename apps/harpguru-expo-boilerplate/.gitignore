@@ -20,3 +20,5 @@ web-report/
 
 # log files
 *.log
+
+tsconfig.tsbuildinfo

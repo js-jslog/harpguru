@@ -7,3 +7,5 @@ lib/**/*
 #
 # log files
 *.log
+
+tsconfig.tsbuildinfo
