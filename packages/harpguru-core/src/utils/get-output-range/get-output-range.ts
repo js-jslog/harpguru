@@ -2,6 +2,7 @@ export const getOutputRange = (
   index: number,
   rangeLength: number
 ): ReadonlyArray<number> => {
+  'worklet'
   if (rangeLength < 1)
     throw Error('Only range lengths greater than 0 are valid')
   if (index < 0 || index > rangeLength - 1)

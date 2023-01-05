@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v12.1.0...master) - yyyy-mm-dd
 
+- MAJOR: Expo SDK upgraded from 41 to 47
+- MAJOR: Move package to "app" folder to meet new lerna workspace standard, as app entry point
+- MAJOR: Update metro so that expo-yarn-workspaces is not necessary any longer
+
 ## [v5.1.0](https://github.com/js-jslog/harpguru/releases/tag/v12.1.0) - 2021-12-13
 
 ### Changed

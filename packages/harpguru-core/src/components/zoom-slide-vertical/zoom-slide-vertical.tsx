@@ -82,14 +82,8 @@ const ZoomSlideVerticalVisible = ({
     setSourceColumnBounds
   )
 
-  const {
-    track,
-    slide,
-    pointerLayer,
-    topPointer,
-    bottomPointer,
-    labelLayer,
-  } = useStyles(trackBounds, columnCount)
+  const { track, slide, pointerLayer, topPointer, bottomPointer, labelLayer } =
+    useStyles(trackBounds, columnCount)
   const [dynamicSizes] = useGlobal('dynamicSizes')
   const { inertOutline } = getColors()
 

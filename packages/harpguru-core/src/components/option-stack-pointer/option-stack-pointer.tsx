@@ -1,6 +1,8 @@
-import Animated from 'react-native-reanimated'
+import Animated, {
+  useAnimatedStyle,
+  useAnimatedProps,
+} from 'react-native-reanimated'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { StyleSheet } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
@@ -31,33 +33,30 @@ export const OptionStackPointer = (
 
   const colors = getColors()
 
-  const { common, next, previous } = StyleSheet.create({
-    common: {
-      position: 'absolute',
-      left: smallGutter,
-    },
-    next: {
-      top: smallGutter,
-    },
-    previous: {
-      bottom: smallGutter,
-    },
-  })
-
   const { direction } = props
-  const pointerEvents =
-    direction === 'NEXT' ? nextPointerEvents : prevPointerEvents
   const opacity = direction === 'NEXT' ? nextPointerOpacity : prevPointerOpacity
-  const positionStyle =
-    direction === 'NEXT' ? [common, next] : [common, previous]
   const onPress = direction === 'NEXT' ? nextInStack : prevInStack
   const icon = direction === 'NEXT' ? 'up' : 'down'
 
+  const animatedProps = useAnimatedProps(() => {
+    const pointerEvents =
+      direction === 'NEXT' ? nextPointerEvents.value : prevPointerEvents.value
+    return {
+      pointerEvents,
+    }
+  })
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      opacity: opacity.value,
+      position: 'absolute',
+      left: smallGutter,
+      top: direction === 'NEXT' ? smallGutter : undefined,
+      bottom: direction === 'NEXT' ? undefined : smallGutter,
+    }
+  })
+
   return (
-    <Animated.View
-      pointerEvents={pointerEvents}
-      style={[{ opacity }, positionStyle]}
-    >
+    <Animated.View animatedProps={animatedProps} style={[animatedStyle]}>
       <TouchableOpacity onPress={onPress}>
         <AntDesign name={icon} size={largeFont} color={colors.inertOutline} />
       </TouchableOpacity>

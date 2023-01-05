@@ -15,11 +15,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v7.0.0...HEAD) - yyyy-mm-dd
 
+- MINOR: Add a 'lint-fix' run script
+
 ## [v8.1.0](https://github.com/js-jslog/harpguru/releases/tag/v7.0.0) - 2021-01-28
 
 ### Added
 
-MINOR: Export covariance series objects
+- MINOR: Export covariance series objects
 
 ## [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v5.0.0) - 2020-12-04
 

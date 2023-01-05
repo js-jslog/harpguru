@@ -18,6 +18,7 @@ export type OptionItemWithDisplayModeProps<T> = Pick<
   readonly callbackParam: T
 }
 
+/* eslint-disable-next-line */
 export const OptionItemWithDisplayMode = <T extends unknown>({
   value,
   twoColumns,

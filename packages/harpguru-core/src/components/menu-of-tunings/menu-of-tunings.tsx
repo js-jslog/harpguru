@@ -24,9 +24,10 @@ import {
 } from './hooks'
 
 export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
-  const useTuningTitleMemo = useCallback(() => useTuningTitle(useGlobal), [
-    useGlobal,
-  ])
+  const useTuningTitleMemo = useCallback(
+    () => useTuningTitle(useGlobal),
+    [useGlobal]
+  )
   const tuningItemTapHandler = useCallback(
     useDispatch(
       (currentHarpStrata, activeDisplayMode, tuningId) =>
@@ -44,9 +45,10 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal, tuningItemTapHandler]
   )
 
-  const useValvingTitleMemo = useCallback(() => useValvingTitle(useGlobal), [
-    useGlobal,
-  ])
+  const useValvingTitleMemo = useCallback(
+    () => useValvingTitle(useGlobal),
+    [useGlobal]
+  )
   const valvingItemTapHandler = useCallback(
     useDispatch(
       (currentHarpStrata, activeDisplayMode, valvingId) =>
@@ -64,9 +66,10 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     [useGlobal, valvingItemTapHandler]
   )
 
-  const useZoomTitleMemo = useCallback(() => useZoomTitle(useGlobal), [
-    useGlobal,
-  ])
+  const useZoomTitleMemo = useCallback(
+    () => useZoomTitle(useGlobal),
+    [useGlobal]
+  )
   const zoomItemTapHandler = useCallback(
     useDispatch(
       (currentColumnBounds, activeDegreeMatrix, zoomId) =>

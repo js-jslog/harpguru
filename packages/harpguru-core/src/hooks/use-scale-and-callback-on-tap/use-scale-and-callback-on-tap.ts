@@ -1,70 +1,55 @@
-import { useTimingTransition } from 'react-native-redash'
-import { Node, Easing, interpolate } from 'react-native-reanimated'
-import { State } from 'react-native-gesture-handler'
-import type { TapGestureHandlerStateChangeEvent } from 'react-native-gesture-handler'
+import {
+  useDerivedValue,
+  useAnimatedGestureHandler,
+  runOnJS,
+  withSpring,
+} from 'react-native-reanimated'
+import type { SharedValue } from 'react-native-reanimated'
+import type {
+  GestureEvent,
+  TapGestureHandlerEventPayload,
+} from 'react-native-gesture-handler'
 import React from 'react'
 
-import { TapAnimationTypes } from '../../types'
-import { tapAnimationDuration } from '../../constants'
-
-type TapEventHandler = (arg0: TapGestureHandlerStateChangeEvent) => void
+type GestureHandler = (
+  arg0: GestureEvent<TapGestureHandlerEventPayload>
+) => void
 
 export const useScaleAndCallbackOnTap = (
   callback: () => void,
-  scaleIn: [number, number],
-  scaleOut: [number, number],
-  tapAnimationType: TapAnimationTypes
-): [Node<number>, TapEventHandler] => {
+  inflation: number
+): [SharedValue<number>, GestureHandler] => {
   const [isTapped, setIsTapped] = React.useState(false)
-  const [isTimeForCallback, setIsTimeForCallback] = React.useState(false)
-  const shouldAnimateOut = tapAnimationType === TapAnimationTypes.Unsafe
-  const timingValue = useTimingTransition(isTapped, {
-    duration: tapAnimationDuration,
-    easing: Easing.inOut(Easing.circle),
-  })
-  const animationValue = interpolate(timingValue, {
-    inputRange: [0, 1],
-    outputRange: isTapped ? scaleIn : scaleOut,
-  })
-  const handleTapStateChange = (event: TapGestureHandlerStateChangeEvent) => {
-    const {
-      nativeEvent: { state },
-    } = event
-    const tapStart = state === State.BEGAN
-    const tapFail = [
-      State.FAILED,
-      State.CANCELLED,
-      State.UNDETERMINED,
-    ].includes(state)
-    const tapEnd = state === State.END
-    if (tapStart) setIsTapped(true)
-    if (tapFail) setIsTapped(false)
-    if (!tapEnd || shouldAnimateOut) return
-    setIsTapped(false)
-    callback()
+  const setIsTappedWrapper = (isTapped: boolean) => {
+    setIsTapped(isTapped)
   }
+  const animationValue = useDerivedValue(() => {
+    return withSpring(isTapped ? inflation : 1)
+  })
 
-  React.useEffect(() => {
-    const returnToOriginalScale = setTimeout(() => {
-      if (isTapped === false || !shouldAnimateOut) return
-      setIsTapped(false)
-      setIsTimeForCallback(true)
-    }, tapAnimationDuration)
-    return () => {
-      clearTimeout(returnToOriginalScale)
-    }
-  }, [isTapped, setIsTapped, shouldAnimateOut, setIsTimeForCallback])
+  const gestureHandler = useAnimatedGestureHandler<
+    GestureEvent<TapGestureHandlerEventPayload>
+  >(
+    {
+      onStart: () => {
+        runOnJS(setIsTappedWrapper)(true)
+      },
+      onCancel: () => {
+        runOnJS(setIsTappedWrapper)(false)
+      },
+      onFail: () => {
+        runOnJS(setIsTappedWrapper)(false)
+      },
+      onEnd: () => {
+        runOnJS(setIsTappedWrapper)(false)
+        runOnJS(callback)()
+      },
+      onFinish: () => {
+        runOnJS(setIsTappedWrapper)(false)
+      },
+    },
+    [setIsTappedWrapper]
+  )
 
-  React.useEffect(() => {
-    const runCallback = setTimeout(() => {
-      if (isTimeForCallback === false || !shouldAnimateOut) return
-      setIsTimeForCallback(false)
-      callback()
-    }, tapAnimationDuration)
-    return () => {
-      clearTimeout(runCallback)
-    }
-  }, [isTimeForCallback, setIsTimeForCallback, shouldAnimateOut, callback])
-
-  return [animationValue, handleTapStateChange]
+  return [animationValue, gestureHandler]
 }

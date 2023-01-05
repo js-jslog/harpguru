@@ -1,4 +1,7 @@
-import Animated, { interpolate } from 'react-native-reanimated'
+import Animated, {
+  interpolate,
+  useAnimatedStyle,
+} from 'react-native-reanimated'
 import { FlatList } from 'react-native-gesture-handler'
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
@@ -43,22 +46,17 @@ export const OptionList = ({
   const leftColumnLabel = useLeftColumnLabel()
   const rightColumnLabel = useRightColumnLabel()
 
-  const translateX = interpolate(transitionValue, {
-    inputRange: [0, 1],
-    outputRange: [longEdge, 0],
+  const animatedStyle = useAnimatedStyle(() => {
+    const translateX = interpolate(transitionValue.value, [0, 1], [longEdge, 0])
+    return {
+      transform: [{ translateX }],
+      opacity: transitionValue.value,
+    }
   })
 
   return (
     <Animated.View
-      style={{
-        ...StyleSheet.absoluteFillObject,
-        transform: [
-          {
-            translateX: translateX,
-          },
-        ],
-        opacity: transitionValue,
-      }}
+      style={[{ ...StyleSheet.absoluteFillObject }, animatedStyle]}
     >
       <View style={[common, left]}>{leftColumnLabel}</View>
       <View style={[common, right]}>{rightColumnLabel}</View>

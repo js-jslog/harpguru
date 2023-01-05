@@ -16,6 +16,7 @@ export type OptionItemProps<T> = Pick<
   readonly callbackParam: T
 }
 
+/* eslint-disable-next-line */
 export const OptionItem = <T extends unknown>({
   value,
   twoColumns,

@@ -36,20 +36,15 @@ export const useSetFromSourceHarpStrata = (): void => {
   const [prevFullInteractionMatrix, setFullInteractionMatrix] = useGlobal(
     'activeInteractionMatrix'
   )
-  const [prevFullDegreeMatrix, setFullDegreeMatrix] = useGlobal(
-    'activeDegreeMatrix'
-  )
-  const [prevFullPitchMatrix, setFullPitchMatrix] = useGlobal(
-    'activePitchMatrix'
-  )
-  const [prevSourceColumnBounds, setSourceColumnBounds] = useGlobal(
-    'sourceColumnBounds'
-  )
+  const [prevFullDegreeMatrix, setFullDegreeMatrix] =
+    useGlobal('activeDegreeMatrix')
+  const [prevFullPitchMatrix, setFullPitchMatrix] =
+    useGlobal('activePitchMatrix')
+  const [prevSourceColumnBounds, setSourceColumnBounds] =
+    useGlobal('sourceColumnBounds')
   const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
-  const [
-    prevViewableInteractionMatrix,
-    setViewableInteractionMatrix,
-  ] = useGlobal('viewableInteractionMatrix')
+  const [prevViewableInteractionMatrix, setViewableInteractionMatrix] =
+    useGlobal('viewableInteractionMatrix')
   const [prevViewableDegreeMatrix, setViewableDegreeMatrix] = useGlobal(
     'viewableDegreeMatrix'
   )
@@ -143,9 +138,8 @@ export const useSetFromSourceHarpStrata = (): void => {
     layoutFacts: nextLayoutFacts,
   })
   const nextStaticSizes = reduceToStaticSizes(prevStaticSizes)
-  const nextCellToggleBuffer = reduceToEmptyBufferedActivityToggles(
-    prevCellToggleBuffer
-  )
+  const nextCellToggleBuffer =
+    reduceToEmptyBufferedActivityToggles(prevCellToggleBuffer)
   useEffect(() => {
     setIfNew(prevHarpKeyId, nextHarpKeyId, setHarpKeyId)
     setIfNew(prevPozitionId, nextPozitionId, setPozitionId)

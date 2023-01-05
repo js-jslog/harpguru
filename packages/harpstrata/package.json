@@ -10,6 +10,7 @@
     "tsc": "tsc",
     "lint": "eslint --ext .ts,.tsx .",
     "lint-file": "eslint --ext .ts,.tsx",
+    "lint-fix": "eslint --fix --ext .ts,.tsx .",
     "ci": "yarn lint && yarn tsc"
   },
   "peerDependencies": {

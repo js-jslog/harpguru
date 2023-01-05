@@ -1,3 +1,4 @@
+import { useDerivedValue } from 'react-native-reanimated'
 import React from 'react'
 
 import { OptionTitle } from '../option-title'
@@ -10,14 +11,17 @@ export const OptionTitleStack = ({
   transitionValue,
 }: OptionStackProps & WithTransition): React.ReactElement => {
   const titleStack = optionPropsz.map((optionProps, index, array) => {
+    const derivedTransitionValue = useDerivedValue(() =>
+      useInterpolateOptionStackTransitionValue(
+        array.length,
+        index,
+        transitionValue.value
+      )
+    )
     return (
       <OptionTitle
         useTitle={optionProps.useTitle}
-        transitionValue={useInterpolateOptionStackTransitionValue(
-          array.length,
-          index,
-          transitionValue
-        )}
+        transitionValue={derivedTransitionValue}
         key={index}
       />
     )

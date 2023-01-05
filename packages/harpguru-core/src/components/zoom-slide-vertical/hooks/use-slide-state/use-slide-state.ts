@@ -18,9 +18,8 @@ export const useSlideState = (
   columnBounds: readonly [number, number],
   columnCount: number
 ): SlideStateObjects => {
-  const [trackBounds, setTrackBounds] = useState<readonly [number, number]>(
-    columnBounds
-  )
+  const [trackBounds, setTrackBounds] =
+    useState<readonly [number, number]>(columnBounds)
   const labelStateSetterRef = useLabelStateSetterRef(trackBounds)
   const { slideOffsetLength } = getSlideFacts(trackBounds, columnCount)
   const slideOffsetAnimation = new Value<number>(slideOffsetLength)

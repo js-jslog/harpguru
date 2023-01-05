@@ -24,12 +24,12 @@ export const reedArrayToMatrices = (
   tuningId: TuningIds,
   valvingId: ValvingIds
 ): ApparatusMatrices => {
-  const holeArray = (pivotReedArray(reedArray)
+  const holeArray = pivotReedArray(reedArray)
     .map(mapReedPairToHole)
     .map(mapHoleToIncludeBends)
     .map(mapHoleToIncludeOverbends.bind(undefined, valvingId))
     .map(mapHoleToIncludeValvebends.bind(undefined, valvingId))
-    .map(mapHoleToFilterOverbends) as unknown) as HoleArray
+    .map(mapHoleToFilterOverbends) as unknown as HoleArray
   // The types being used here are tuples. Typescript does not
   // attempt to preserve tuple length on `map` calls so we have
   // to use this quite extreme 2 step type assertion.
