@@ -1,6 +1,6 @@
 {
   "name": "harpguru-expo-boilerplate",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "description": "An expo based boilerplate to run the harpguru-core app",
   "main": "index.ts",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "expo": "~47.0.8",
-    "harpguru-core": "^9.0.0",
+    "harpguru-core": "^10.0.0",
     "react": "18.1.0",
     "react-native": "0.70.5"
   },
