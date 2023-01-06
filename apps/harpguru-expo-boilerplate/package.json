@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "expo": "~47.0.8",
+    "expo-splash-screen": "~0.17.5",
     "harpguru-core": "^10.0.0",
     "react": "18.1.0",
     "react-native": "0.70.5"
