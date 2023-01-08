@@ -20,11 +20,13 @@
     "build-android-apk": "expo build:android -t apk --clear-credentials"
   },
   "dependencies": {
-    "expo": "~47.0.8",
+    "expo": "~47.0.12",
     "expo-splash-screen": "~0.17.5",
     "harpguru-core": "^10.0.0",
     "react": "18.1.0",
-    "react-native": "0.70.5"
+    "react-native": "0.70.5",
+    "react-native-gesture-handler": "~2.8.0",
+    "react-native-reanimated": "~2.12.0"
   },
   "private": true
 }
