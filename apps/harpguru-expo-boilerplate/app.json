@@ -4,6 +4,7 @@
     "slug": "harp-guru",
     "platforms": ["ios", "android", "web"],
     "version": "13.0.0",
+    "jsEngine": "hermes",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
