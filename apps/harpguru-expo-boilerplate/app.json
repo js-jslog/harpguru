@@ -27,6 +27,11 @@
       "package": "com.jslog.harpguru",
       "versionCode": 25,
       "permissions": []
+    },
+    "extra": {
+      "eas": {
+        "projectId": "74089c1e-e0a1-4351-877a-9dc3bd837b01"
+      }
     }
   }
 }
