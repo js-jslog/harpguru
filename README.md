@@ -20,6 +20,8 @@ A monorepo containing the component packages to run and build the harpguru appli
 
 # Build guide
 
+New build guide under development [ here ](./apps/harpguru-expo-boilerplate/README.md)
+
 ## iOS build
 
 Expected questions and answers:
