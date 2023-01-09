@@ -1,6 +1,32 @@
 # HarpGuruExpoBoilerplate
 
-This project is simply some expo boilerplate set up to run the HarpGuru application.
+This project is simply some expo boilerplate to run the HarpGuru application in expo go and build binaries for testing and release.
+
+## Build process
+
+### Testing
+
+#### Android
+
+To create a preview binary .apk file which can be downloaded from a resulting link and installed on a device or in an emulator.
+
+```
+npx eas-cli build -p android --profile preview
+```
+
+#### iOS
+
+YET TO BE COMPLETED
+
+### Release
+
+#### Android
+
+To create a production .aab
+
+```
+npx eas-cli build -p android --profile production
+```
 
 # Split from HarpNative
 
