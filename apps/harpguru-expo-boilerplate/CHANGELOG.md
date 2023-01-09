@@ -15,6 +15,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v13.0.0...master) - yyyy-mm-dd
 
+- MAJOR: Update build setup to use Expo Application Services (for Android)
+
 ## [v6.0.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0) - 2023-01-05
 
 - MAJOR: Expo SDK upgraded from 41 to 47

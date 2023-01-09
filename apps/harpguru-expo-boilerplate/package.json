@@ -13,17 +13,16 @@
     "lint": "eslint --ext .ts,.tsx .",
     "lint-fix": "eslint --fix --ext .ts,.tsx .",
     "lint-file": "eslint --ext .ts,.tsx",
-    "ci": "yarn lint && yarn tsc",
-    "build-ios-archive": "expo build:ios -t archive --clear-credentials",
-    "build-ios-simulator": "expo build:ios -t simulator --clear-credentials",
-    "build-android-aad": "expo build:android -t app-bundle --clear-credentials",
-    "build-android-apk": "expo build:android -t apk --clear-credentials"
+    "ci": "yarn lint && yarn tsc"
   },
   "dependencies": {
-    "expo": "~47.0.8",
+    "expo": "~47.0.12",
+    "expo-splash-screen": "~0.17.5",
     "harpguru-core": "^10.0.0",
     "react": "18.1.0",
-    "react-native": "0.70.5"
+    "react-native": "0.70.5",
+    "react-native-gesture-handler": "~2.8.0",
+    "react-native-reanimated": "~2.12.0"
   },
   "private": true
 }

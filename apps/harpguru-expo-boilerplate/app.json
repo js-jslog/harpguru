@@ -4,6 +4,7 @@
     "slug": "harp-guru",
     "platforms": ["ios", "android", "web"],
     "version": "13.0.0",
+    "jsEngine": "hermes",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
@@ -27,6 +28,11 @@
       "package": "com.jslog.harpguru",
       "versionCode": 25,
       "permissions": []
+    },
+    "extra": {
+      "eas": {
+        "projectId": "74089c1e-e0a1-4351-877a-9dc3bd837b01"
+      }
     }
   }
 }

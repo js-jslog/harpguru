@@ -1,0 +1,21 @@
+{
+  "cli": {
+    "version": ">= 3.1.1"
+  },
+  "build": {
+    "production": {
+      "yarn": "1.22.19"
+    },
+    "preview": {
+      "extends": "production",
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "development": {
+      "extends": "production",
+      "developmentClient": true,
+      "distribution": "internal"
+    }
+  }
+}
