@@ -6,3 +6,4 @@ For details on the API's and what to expect when _using_ the packages, please vi
 
 - [ Lerna & Yarn workspaces ](lerna-and-yarn-workspaces.md)
 - [ Git hooks ](git-hooks.md)
+- [ Reanimated & gesture handler in the boilerplate ](../apps/harpguru-expo-boilerplate/docs/unnecessary-reanimated-and-gesture-handler-packages.md)
