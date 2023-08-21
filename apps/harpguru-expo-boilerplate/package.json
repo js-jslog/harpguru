@@ -16,7 +16,7 @@
     "ci": "yarn lint && yarn tsc"
   },
   "dependencies": {
-    "expo": "~47.0.12",
+    "expo": "^48.0.0",
     "expo-splash-screen": "~0.17.5",
     "harpguru-core": "^10.0.0",
     "react": "18.1.0",
