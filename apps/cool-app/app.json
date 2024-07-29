@@ -1,36 +1,35 @@
 {
   "expo": {
-    "name": "cool-app",
-    "slug": "cool-app",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "name": "Harp Guru",
+    "slug": "harp-guru",
+    "platforms": ["ios", "android", "web"],
+    "version": "14.0.0",
+    "jsEngine": "hermes",
+    "orientation": "landscape",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#efcded"
     },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.jslog.harpguru",
+      "buildNumber": "14.0.0",
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+      "package": "com.jslog.harpguru",
+      "versionCode": 25,
+      "permissions": []
+    },
+    "extra": {
+      "eas": {
+        "projectId": "74089c1e-e0a1-4351-877a-9dc3bd837b01"
       }
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      "expo-router"
-    ],
-    "experiments": {
-      "typedRoutes": true
     }
   }
 }
