@@ -1,7 +1,8 @@
 {
-  "name": "cool-app",
+  "name": "harpguru-expo-boilerplate",
+  "version": "7.0.0",
+  "description": "An expo based boilerplate to run the harpguru-core app",
   "main": "index.ts",
-  "version": "1.0.0",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
