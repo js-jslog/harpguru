@@ -3,7 +3,7 @@
 exports[`A snapshot of HoleNumberRow 1`] = `
 <View
   style={
-    Object {
+    {
       "backgroundColor": "red",
       "flexDirection": "row",
       "height": 0,
@@ -14,7 +14,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
 >
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -26,7 +26,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }
@@ -37,7 +37,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -49,7 +49,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }
@@ -60,7 +60,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -72,7 +72,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }
@@ -83,7 +83,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -95,7 +95,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }
@@ -106,7 +106,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -118,7 +118,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }
@@ -129,7 +129,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -141,7 +141,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }
@@ -152,7 +152,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -164,7 +164,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }
@@ -175,7 +175,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -187,7 +187,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }
@@ -198,7 +198,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -210,7 +210,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }
@@ -221,7 +221,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "alignItems": "center",
         "height": 22.034250207026385,
         "justifyContent": "center",
@@ -233,7 +233,7 @@ exports[`A snapshot of HoleNumberRow 1`] = `
     <Text
       allowFontScaling={false}
       style={
-        Object {
+        {
           "color": "#555",
           "fontSize": 22.034250207026385,
         }

@@ -31,7 +31,8 @@
     "use-dimensions": "^1.0.3"
   },
   "devDependencies": {
-    "@testing-library/react-native": "^7.1.0"
+    "@testing-library/react-native": "^7.1.0",
+    "metro-react-native-babel-preset": "^0.77.0"
   },
   "private": false
 }
