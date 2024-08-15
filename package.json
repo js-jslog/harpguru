@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "test": "yarn workspace harpcovariance run test && yarn workspace harpparts run test && yarn workspace harpstrata run test && yarn workspace harpguru-core run test",
-    "lint": "yarn workspaces run lint"
+    "lint": "yarn workspaces run lint",
+    "tsc": "yarn workspaces run tsc"
   },
   "workspaces": [
     "apps/*",
