@@ -7,7 +7,8 @@
     "lint": "yarn workspaces run lint",
     "tsc": "yarn workspaces run tsc",
     "expo-tunnel": "yarn workspace harpguru-expo-boilerplate run tunnel",
-    "expo-build-android": "yarn workspace harpguru-expo-boilerplate run THE_FOLLOWING_WERE_JUST_AUTO_CREATED"
+    "expo-build-android": "yarn workspace harpguru-expo-boilerplate run THE_FOLLOWING_WERE_JUST_AUTO_CREATED",
+    "prepare": "husky"
   },
   "workspaces": [
     "apps/*",
@@ -20,6 +21,7 @@
     "eslint": "^8.28.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^27.1.6",
-    "eslint-plugin-react": "^7.31.11"
+    "eslint-plugin-react": "^7.31.11",
+    "husky": "^9.1.4"
   }
 }
