@@ -4,6 +4,9 @@
   "description": "An expo based boilerplate to run the harpguru-core app",
   "main": "index.ts",
   "scripts": {
+    "tunnel": "npx expo start --tunnel",
+    "build-android": "npx eas-cli build -p android --profile production",
+    "THE_FOLLOWING_WERE_JUST_AUTO_CREATED": "echo 'not a real script'",
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
