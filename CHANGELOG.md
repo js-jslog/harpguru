@@ -13,7 +13,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v14.0.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v15.0.0...master) - yyyy-mm-dd
+
+## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Added
 
@@ -29,3 +31,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MAJOR: Removed Prettier
 - MINOR: Removed pre-commmit hook
 - MINOR: Trimmed unnecessary root dev dependencies
+
+## Github release list
+
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v15.0.0...HEAD)
+- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)

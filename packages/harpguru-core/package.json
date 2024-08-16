@@ -1,6 +1,6 @@
 {
   "name": "harpguru-core",
-  "version": "10.0.0",
+  "version": "11.0.0",
   "description": "A React Native implementation of the HarpGuru concept; a UI to aid the understanding of harmonica music theory",
   "main": "./src/index.ts",
   "types": "./src/index.d.ts",
