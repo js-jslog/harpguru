@@ -1,4 +1,4 @@
-import { Value } from 'react-native-reanimated'
+import { useSharedValue, type SharedValue } from 'react-native-reanimated'
 import { useState, useEffect } from 'react'
 import type { MutableRefObject } from 'react'
 
@@ -12,7 +12,7 @@ type SlideStateObjects = {
   readonly labelStateSetterRef: MutableRefObject<
     (arg0: readonly [number, number]) => void
   >
-  readonly slideOffsetAnimation: Value<number>
+  readonly slideOffsetAnimation: SharedValue<number>
 }
 export const useSlideState = (
   columnBounds: readonly [number, number],
@@ -22,7 +22,7 @@ export const useSlideState = (
     useState<readonly [number, number]>(columnBounds)
   const labelStateSetterRef = useLabelStateSetterRef(trackBounds)
   const { slideOffsetLength } = getSlideFacts(trackBounds, columnCount)
-  const slideOffsetAnimation = new Value<number>(slideOffsetLength)
+  const slideOffsetAnimation = useSharedValue<number>(slideOffsetLength)
 
   // This effect makes sure that when the columnBounds are updated
   // by other elements of the app, that the trackBounds are updated

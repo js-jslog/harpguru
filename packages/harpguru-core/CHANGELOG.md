@@ -15,14 +15,21 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v13.0.0...HEAD) - yyyy-mm-dd
 
+### Changed
+
+MAJOR: Upgrade react-native-reanimated from 2 to 3
+MINOR: Upgrade react-native-gesture-handler from 2.8 to 2.16
+
 ## [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0) - 2023-01-05
+
+### Changed
 
 MAJOR: Upgrade react-native-reanimated & react-native-gesture-handler to version 2
 MAJOR: Upgrade react by 2 major versions to 18 & react native by 7 minor versions to 70
 
 ## [v9.1.0](https://github.com/js-jslog/harpguru/releases/tag/v12.1.0) - 2021-12-13
 
-#### Fixed
+### Fixed
 
 MINOR: Remove zoom slider gesture blocking by harpface component in iOS
 

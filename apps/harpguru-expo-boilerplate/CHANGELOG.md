@@ -13,13 +13,25 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v13.0.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v14.0.0...master) - yyyy-mm-dd
+
+### Added
+
+- MINOR: Run scripts for testing and building
+
+### Changed
+
+- MAJOR: Expo SDK upgraded from 47 to 51
 
 ## [v7.0.0](https://github.com/js-jslog/harpguru/releases/tag/v14.0.0) - 2023-01-09
+
+### Changed
 
 - MAJOR: Update build setup to use Expo Application Services (for Android)
 
 ## [v6.0.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0) - 2023-01-05
+
+### Changed
 
 - MAJOR: Expo SDK upgraded from 41 to 47
 - MAJOR: Move package to "app" folder to meet new lerna workspace standard, as app entry point

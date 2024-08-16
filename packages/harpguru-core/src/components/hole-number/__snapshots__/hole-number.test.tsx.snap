@@ -3,7 +3,7 @@
 exports[`A snapshot of HoleNumber 1`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "height": 22.034250207026385,
       "justifyContent": "center",
@@ -15,7 +15,7 @@ exports[`A snapshot of HoleNumber 1`] = `
   <Text
     allowFontScaling={false}
     style={
-      Object {
+      {
         "color": "#555",
         "fontSize": 22.034250207026385,
       }
