@@ -7,7 +7,7 @@
     "lint": "yarn workspaces run lint",
     "tsc": "yarn workspaces run tsc",
     "expo-tunnel": "yarn workspace harpguru-expo-boilerplate run tunnel",
-    "expo-build-android": "yarn workspace harpguru-expo-boilerplate run THE_FOLLOWING_WERE_JUST_AUTO_CREATED",
+    "expo-build-android": "yarn workspace harpguru-expo-boilerplate run build-android",
     "prepare": "husky"
   },
   "workspaces": [
