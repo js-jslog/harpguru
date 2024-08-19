@@ -9409,12 +9409,14 @@ url-parse@^1.5.3:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
-use-dimensions@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/use-dimensions/-/use-dimensions-1.0.3.tgz#0b026ea3515626e9d738399069a4dacedd397192"
-  integrity sha512-uR4zIbaAkaqUo+aagxG0dL+BSM/3ybSVqNQs1aA6nAo8ta0wX9KiZlp609gI/QBY9cXQNoflP/Sw5sIYo6iXRA==
+use-dimensions@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/use-dimensions/-/use-dimensions-2.0.0.tgz#8824b9d550c2dc83e413a3d0805a40422e7ba81f"
+  integrity sha512-m7ICsog9z2aQsM6K8tATNiX/Amg3oKKdpqckFDKI9u0CIb2b/GwTxrFUM+jN8LWljNHxzVLh68nLWYvteHak5Q==
+  dependencies:
+    use-force-update "^1.0.10"
 
-use-force-update@^1.0.5:
+use-force-update@^1.0.10, use-force-update@^1.0.5:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/use-force-update/-/use-force-update-1.0.11.tgz#9483e9cf3e3cfba0f486cce141b66426bcb27619"
   integrity sha512-h4SICYgTJHon8w9dFIqdqR1Vrzdgl4YaRfRwhmAh01kBGljzTICanyfaFU8C4etuEfRdYpE+04XX2ZrEhOWKXQ==

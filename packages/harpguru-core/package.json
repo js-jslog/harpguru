@@ -28,7 +28,7 @@
     "react-native-gesture-handler": "~2.16.1",
     "react-native-reanimated": "~3.10.1",
     "reactn": "^2.2.7",
-    "use-dimensions": "^1.0.3"
+    "use-dimensions": "^2.0.0"
   },
   "devDependencies": {
     "@testing-library/react-native": "^7.1.0",
