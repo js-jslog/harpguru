@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v15.0.0...master) - yyyy-mm-dd
 
+### Fixed
+
+MINOR: Device can now switch to other apps without crashing HarpGuru
+
 ## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Changed
