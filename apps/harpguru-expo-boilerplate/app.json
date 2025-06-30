@@ -2,7 +2,11 @@
   "expo": {
     "name": "Harp Guru",
     "slug": "harp-guru",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "15.1.0",
     "jsEngine": "hermes",
     "orientation": "landscape",
@@ -15,7 +19,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "bundleIdentifier": "com.jslog.harpguru",
       "buildNumber": "15.1.0",
@@ -30,6 +36,11 @@
       "eas": {
         "projectId": "74089c1e-e0a1-4351-877a-9dc3bd837b01"
       }
-    }
+    },
+    "plugins": [
+      "expo-font",
+      "expo-router",
+      "expo-web-browser"
+    ]
   }
 }
