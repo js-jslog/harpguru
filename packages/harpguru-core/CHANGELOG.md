@@ -13,7 +13,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v15.1.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v15.2.0...master) - yyyy-mm-dd
+
+## [v15.2.0](https://github.com/js-jslog/harpguru/releases/tag/v15.2.0) - 2025-06-30
+
+### Changed
+
+- MINOR: Expo SDK upgraded from 51 to 53 (only tested on android)
 
 ## [v15.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0) - 2024-08-19
 
@@ -286,8 +292,9 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v15.1.0...HEAD)
-- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v15.2.0...HEAD)
+- [v15.2.0](https://github.com/js-jslog/harpguru/releases/tag/v15.2.0)
+- [v15.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0)
 - [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
 - [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0)
 - [v9.1.0](https://github.com/js-jslog/harpguru/releases/tag/v12.1.0)
