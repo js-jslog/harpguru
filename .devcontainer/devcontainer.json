@@ -36,6 +36,6 @@
   "postCreateCommand": [
     "/bin/bash",
     "-c",
-    ".devcontainer/install-neovim.sh && .devcontainer/install-tmux.sh && .devcontainer/install-socat.sh"
+    ".devcontainer/install-neovim.sh && .devcontainer/install-tmux.sh"
   ]
 }
