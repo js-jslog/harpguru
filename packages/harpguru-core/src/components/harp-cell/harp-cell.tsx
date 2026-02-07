@@ -1,5 +1,5 @@
 import Animated from 'react-native-reanimated'
-import { TapGestureHandler } from 'react-native-gesture-handler'
+import { GestureDetector } from 'react-native-gesture-handler'
 import React from 'react'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
@@ -27,7 +27,7 @@ export const HarpCell = ({
   const baseHarpCellStyles = getBaseHarpCellStyles()
   const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
   const activeExperienceMode = useHarpGuruStore((state) => state.activeExperienceMode)
-  const [cellState, gestureHandler] = useTapRerenderLogic(
+  const [cellState, tapGesture] = useTapRerenderLogic(
     thisDegreeId,
     thisIsActive
   )
@@ -45,10 +45,10 @@ export const HarpCell = ({
   }
 
   return (
-    <TapGestureHandler onGestureEvent={gestureHandler}>
+    <GestureDetector gesture={tapGesture}>
       <Animated.View>
         <MemoHarpCellAccessible {...harpCellAccessibleProps} />
       </Animated.View>
-    </TapGestureHandler>
+    </GestureDetector>
   )
 }

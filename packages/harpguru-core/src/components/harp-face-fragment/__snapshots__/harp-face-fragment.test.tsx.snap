@@ -31,10 +31,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
   >
     <View
       collapsable={false}
-      handlerTag={40}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -42,7 +38,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -154,10 +150,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     />
     <View
       collapsable={false}
-      handlerTag={41}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -165,7 +157,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -251,10 +243,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={42}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -262,7 +250,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -346,10 +334,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={43}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -357,7 +341,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -456,10 +440,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     />
     <View
       collapsable={false}
-      handlerTag={44}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -467,7 +447,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -553,10 +533,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={45}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -564,7 +540,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -669,10 +645,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
   >
     <View
       collapsable={false}
-      handlerTag={46}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -680,7 +652,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -764,10 +736,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={47}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -775,7 +743,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -859,10 +827,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={48}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -870,7 +834,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -954,10 +918,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={49}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -965,7 +925,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -1049,10 +1009,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={50}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -1060,7 +1016,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -1144,10 +1100,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={51}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -1155,7 +1107,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -1239,10 +1191,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={52}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -1250,7 +1198,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -1334,10 +1282,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={53}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -1345,7 +1289,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -1429,10 +1373,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={54}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -1440,7 +1380,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -1764,10 +1704,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
   >
     <View
       collapsable={false}
-      handlerTag={55}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -1775,7 +1711,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -1859,10 +1795,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={56}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -1870,7 +1802,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -1954,10 +1886,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={57}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -1965,7 +1893,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2049,10 +1977,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={58}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2060,7 +1984,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2144,10 +2068,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={59}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2155,7 +2075,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2241,10 +2161,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={60}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2252,7 +2168,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2336,10 +2252,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={61}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2347,7 +2259,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2431,10 +2343,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={62}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2442,7 +2350,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2526,10 +2434,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={63}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2537,7 +2441,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2644,10 +2548,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
   >
     <View
       collapsable={false}
-      handlerTag={64}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2655,7 +2555,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2741,10 +2641,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={65}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2752,7 +2648,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2836,10 +2732,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={66}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2847,7 +2739,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -2933,10 +2825,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={67}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -2944,7 +2832,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -3043,10 +2931,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     />
     <View
       collapsable={false}
-      handlerTag={68}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -3054,7 +2938,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -3140,10 +3024,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={69}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -3151,7 +3031,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -3250,10 +3130,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     />
     <View
       collapsable={false}
-      handlerTag={70}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -3261,7 +3137,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -3381,10 +3257,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     />
     <View
       collapsable={false}
-      handlerTag={71}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -3392,7 +3264,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -3478,10 +3350,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     </View>
     <View
       collapsable={false}
-      handlerTag={72}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -3489,7 +3357,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -3698,10 +3566,6 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
     />
     <View
       collapsable={false}
-      handlerTag={73}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -3709,7 +3573,7 @@ exports[`A snapshot of a bounded HarpFaceFragment - we should expect fewer rows 
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4023,10 +3887,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     />
     <View
       collapsable={false}
-      handlerTag={1}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4034,7 +3894,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4141,10 +4001,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
   >
     <View
       collapsable={false}
-      handlerTag={2}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4152,7 +4008,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4264,10 +4120,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     />
     <View
       collapsable={false}
-      handlerTag={3}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4275,7 +4127,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4361,10 +4213,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={4}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4372,7 +4220,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4456,10 +4304,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={5}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4467,7 +4311,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4566,10 +4410,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     />
     <View
       collapsable={false}
-      handlerTag={6}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4577,7 +4417,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4663,10 +4503,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={7}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4674,7 +4510,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4758,10 +4594,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={8}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4769,7 +4601,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4874,10 +4706,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
   >
     <View
       collapsable={false}
-      handlerTag={9}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4885,7 +4713,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -4969,10 +4797,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={10}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -4980,7 +4804,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -5064,10 +4888,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={11}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -5075,7 +4895,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -5159,10 +4979,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={12}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -5170,7 +4986,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -5254,10 +5070,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={13}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -5265,7 +5077,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -5349,10 +5161,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={14}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -5360,7 +5168,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -5444,10 +5252,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={15}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -5455,7 +5259,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -5539,10 +5343,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={16}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -5550,7 +5350,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -5634,10 +5434,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={17}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -5645,7 +5441,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -5729,10 +5525,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={18}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -5740,7 +5532,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6087,10 +5879,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
   >
     <View
       collapsable={false}
-      handlerTag={19}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6098,7 +5886,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6182,10 +5970,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={20}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6193,7 +5977,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6277,10 +6061,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={21}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6288,7 +6068,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6372,10 +6152,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={22}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6383,7 +6159,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6467,10 +6243,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={23}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6478,7 +6250,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6564,10 +6336,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={24}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6575,7 +6343,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6659,10 +6427,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={25}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6670,7 +6434,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6754,10 +6518,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={26}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6765,7 +6525,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6849,10 +6609,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={27}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6860,7 +6616,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -6946,10 +6702,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={28}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -6957,7 +6709,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7062,10 +6814,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
   >
     <View
       collapsable={false}
-      handlerTag={29}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -7073,7 +6821,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7159,10 +6907,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={30}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -7170,7 +6914,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7254,10 +6998,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={31}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -7265,7 +7005,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7351,10 +7091,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={32}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -7362,7 +7098,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7461,10 +7197,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     />
     <View
       collapsable={false}
-      handlerTag={33}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -7472,7 +7204,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7558,10 +7290,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={34}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -7569,7 +7297,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7668,10 +7396,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     />
     <View
       collapsable={false}
-      handlerTag={35}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -7679,7 +7403,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7765,10 +7489,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={36}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -7776,7 +7496,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7896,10 +7616,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     />
     <View
       collapsable={false}
-      handlerTag={37}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -7907,7 +7623,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -7993,10 +7709,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     </View>
     <View
       collapsable={false}
-      handlerTag={38}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -8004,7 +7716,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },
@@ -8226,10 +7938,6 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
     />
     <View
       collapsable={false}
-      handlerTag={39}
-      handlerType="TapGestureHandler"
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
     >
       <View
         style={
@@ -8237,7 +7945,7 @@ exports[`A snapshot of an unbounded HarpFaceFragment 1`] = `
             {
               "transform": [
                 {
-                  "scale": undefined,
+                  "scale": 1,
                 },
               ],
             },

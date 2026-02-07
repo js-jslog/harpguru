@@ -1,24 +1,13 @@
-import {
-  useDerivedValue,
-  useAnimatedGestureHandler,
-  runOnJS,
-  withSpring,
-} from 'react-native-reanimated'
+import { useDerivedValue, runOnJS, withSpring } from 'react-native-reanimated'
 import type { SharedValue } from 'react-native-reanimated'
-import type {
-  GestureEvent,
-  TapGestureHandlerEventPayload,
-} from 'react-native-gesture-handler'
+import { Gesture } from 'react-native-gesture-handler'
+import type { GestureType } from 'react-native-gesture-handler'
 import React from 'react'
-
-type GestureHandler = (
-  arg0: GestureEvent<TapGestureHandlerEventPayload>
-) => void
 
 export const useScaleAndCallbackOnTap = (
   callback: () => void,
   inflation: number
-): [SharedValue<number>, GestureHandler] => {
+): [SharedValue<number>, GestureType] => {
   const [isTapped, setIsTapped] = React.useState(false)
   const setIsTappedWrapper = (isTapped: boolean) => {
     setIsTapped(isTapped)
@@ -27,29 +16,17 @@ export const useScaleAndCallbackOnTap = (
     return withSpring(isTapped ? inflation : 1)
   })
 
-  const gestureHandler = useAnimatedGestureHandler<
-    GestureEvent<TapGestureHandlerEventPayload>
-  >(
-    {
-      onStart: () => {
-        runOnJS(setIsTappedWrapper)(true)
-      },
-      onCancel: () => {
-        runOnJS(setIsTappedWrapper)(false)
-      },
-      onFail: () => {
-        runOnJS(setIsTappedWrapper)(false)
-      },
-      onEnd: () => {
-        runOnJS(setIsTappedWrapper)(false)
-        runOnJS(callback)()
-      },
-      onFinish: () => {
-        runOnJS(setIsTappedWrapper)(false)
-      },
-    },
-    [setIsTappedWrapper]
-  )
+  const tapGesture = Gesture.Tap()
+    .onBegin(() => {
+      runOnJS(setIsTappedWrapper)(true)
+    })
+    .onEnd(() => {
+      runOnJS(setIsTappedWrapper)(false)
+      runOnJS(callback)()
+    })
+    .onFinalize(() => {
+      runOnJS(setIsTappedWrapper)(false)
+    })
 
-  return [animationValue, gestureHandler]
+  return [animationValue, tapGesture]
 }

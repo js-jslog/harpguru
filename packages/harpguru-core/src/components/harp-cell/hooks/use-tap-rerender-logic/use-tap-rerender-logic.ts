@@ -1,8 +1,6 @@
-import { runOnJS, useAnimatedGestureHandler } from 'react-native-reanimated'
-import type {
-  GestureEvent,
-  TapGestureHandlerEventPayload,
-} from 'react-native-gesture-handler'
+import { runOnJS } from 'react-native-reanimated'
+import { Gesture } from 'react-native-gesture-handler'
+import type { GestureType } from 'react-native-gesture-handler'
 import React from 'react'
 import { DegreeIds } from 'harpparts'
 
@@ -11,14 +9,10 @@ import { CellStates } from '../../../../types'
 import { useHarpGuruStore } from '../../../../store'
 import { tapAnimationDuration } from '../../../../constants'
 
-type GestureHandler = (
-  arg0: GestureEvent<TapGestureHandlerEventPayload>
-) => void
-
 export const useTapRerenderLogic = (
   thisDegreeId: DegreeIds | undefined,
   thisIsActive: boolean
-): [CellStates, GestureHandler] => {
+): [CellStates, GestureType] => {
   const bufferedActivityToggles = useHarpGuruStore((state) => state.bufferedActivityToggles)
   const isGloballyActive = thisIsActive
   const isLocallyActive =
@@ -43,29 +37,19 @@ export const useTapRerenderLogic = (
     if (thisDegreeId === undefined) return
     addBufferedActivityToggle(thisDegreeId)
   }
-  const gestureHandler = useAnimatedGestureHandler<
-    GestureEvent<TapGestureHandlerEventPayload>
-  >(
-    {
-      onStart: () => {
-        runOnJS(onStartSetCellStateWrapper)()
-      },
-      onCancel: () => {
+
+  const tapGesture = Gesture.Tap()
+    .onBegin(() => {
+      runOnJS(onStartSetCellStateWrapper)()
+    })
+    .onEnd(() => {
+      runOnJS(addBufferedActivityToggleWrapper)()
+    })
+    .onFinalize((_event, success) => {
+      if (!success) {
         runOnJS(onCancelSetCellStateWrapper)()
-      },
-      onFail: () => {
-        runOnJS(onCancelSetCellStateWrapper)()
-      },
-      onEnd: () => {
-        runOnJS(addBufferedActivityToggleWrapper)()
-      },
-    },
-    [
-      onStartSetCellStateWrapper,
-      onCancelSetCellStateWrapper,
-      addBufferedActivityToggleWrapper,
-    ]
-  )
+      }
+    })
 
   // This ensures that once the harpstrata's activity has been updated from
   // the toggle buffer, a render is produced in all the cells by their state
@@ -100,5 +84,5 @@ export const useTapRerenderLogic = (
     }
   }, [cellState, setCellState])
 
-  return [cellState, gestureHandler]
+  return [cellState, tapGesture]
 }
