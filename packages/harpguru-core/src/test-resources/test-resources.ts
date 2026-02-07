@@ -55,7 +55,7 @@ export const inactiveCellsHarpStrata = getHarpStrata(
 export const activeCellsHarpStrata = getHarpStrata(activeCellsHarpStrataProps)
 export const chromaticHarpStrata = getHarpStrata(chromaticHarpStrataProps)
 
-type BuildMockUseGlobalImplementationProps = {
+type BuildMockStoreStateProps = {
   readonly sourceHarpStrata?: HarpStrata
   readonly sourceColumnBounds?: ColumnBounds
   readonly experienceMode?: ExperienceModes
@@ -66,9 +66,7 @@ type BuildMockUseGlobalImplementationProps = {
   readonly activeQuizDegrees?: ReadonlyArray<DegreeIds>
 }
 
-type MockGlobalImplementation = (arg0: string) => unknown[] | undefined
-
-export const buildMockUseGlobalImplementation = ({
+export const buildMockStoreState = ({
   sourceHarpStrata = activeCellsHarpStrata,
   sourceColumnBounds = 'FIT',
   experienceMode = ExperienceModes.Explore,
@@ -77,87 +75,111 @@ export const buildMockUseGlobalImplementation = ({
   fragmentHarpFaceByOctaves = true,
   flushChannel = FlushChannels.Regular,
   activeQuizDegrees = allActiveDegrees,
-}: BuildMockUseGlobalImplementationProps): MockGlobalImplementation => {
-  const mockGlobal = (stateItem: string) => {
-    if (stateItem === 'activeDegreeMatrix')
-      return [sourceHarpStrata.degreeMatrix]
-    if (stateItem === 'activePitchMatrix') return [sourceHarpStrata.pitchMatrix]
-    if (stateItem === 'activeInteractionMatrix')
-      return [sourceHarpStrata.apparatus.interactionMatrix]
-    if (stateItem === 'activeDegreeIds')
-      return [sourceHarpStrata.activeDegreeIds]
-    if (stateItem === 'activePitchIds') return [sourceHarpStrata.activePitchIds]
-    if (stateItem === 'tuningId') return [sourceHarpStrata.apparatus.tuningId]
-    if (stateItem === 'valvingId') return [sourceHarpStrata.apparatus.valvingId]
-    if (stateItem === 'harpKeyId') return [sourceHarpStrata.harpKeyId]
-    if (stateItem === 'pozitionId') return [sourceHarpStrata.pozitionId]
-    if (stateItem === 'rootPitchId') return [sourceHarpStrata.rootPitchId]
-
-    if (stateItem === 'sourceColumnBounds')
-      return [sourceColumnBounds, jest.fn()]
-    if (stateItem === 'columnBounds') return [sourceColumnBounds]
-    const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
-      { harpface1: [[]] },
-      sourceHarpStrata.degreeMatrix,
-      sourceHarpStrata.apparatus.interactionMatrix,
-      sourceColumnBounds
-    )
-    const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
-      { harpface1: [[]] },
-      sourceHarpStrata.pitchMatrix,
-      sourceHarpStrata.apparatus.interactionMatrix,
-      sourceColumnBounds
-    )
-    const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
-      { harpface1: [[]] },
-      sourceHarpStrata.apparatus.interactionMatrix,
-      sourceHarpStrata.apparatus.interactionMatrix,
-      sourceColumnBounds
-    )
-    if (stateItem === 'viewableDegreeMatrix') return [viewableDegreeMatrix]
-    if (stateItem === 'viewablePitchMatrix') return [viewablePitchMatrix]
-    if (stateItem === 'viewableInteractionMatrix')
-      return [viewableInteractionMatrix]
-
-    const fullLayoutFacts = reduceMatrixToLayoutFacts(
-      {
-        harpface1: {
-          harpfaceColumns: 0,
-          harpfaceRows: 0,
-        },
+}: BuildMockStoreStateProps) => {
+  const viewableDegreeMatrix = reduceFullMatrixToViewableMatrix(
+    { harpface1: [[]] },
+    sourceHarpStrata.degreeMatrix,
+    sourceHarpStrata.apparatus.interactionMatrix,
+    sourceColumnBounds
+  )
+  const viewablePitchMatrix = reduceFullMatrixToViewableMatrix(
+    { harpface1: [[]] },
+    sourceHarpStrata.pitchMatrix,
+    sourceHarpStrata.apparatus.interactionMatrix,
+    sourceColumnBounds
+  )
+  const viewableInteractionMatrix = reduceFullMatrixToViewableMatrix(
+    { harpface1: [[]] },
+    sourceHarpStrata.apparatus.interactionMatrix,
+    sourceHarpStrata.apparatus.interactionMatrix,
+    sourceColumnBounds
+  )
+  const fullLayoutFacts = reduceMatrixToLayoutFacts(
+    {
+      harpface1: {
+        harpfaceColumns: 0,
+        harpfaceRows: 0,
       },
-      sourceHarpStrata.apparatus.interactionMatrix
-    )
-    if (stateItem === 'fullLayoutFacts') return [fullLayoutFacts]
-    const layoutFacts = reduceMatrixToLayoutFacts(
-      {
-        harpface1: {
-          harpfaceColumns: 0,
-          harpfaceRows: 0,
-        },
+    },
+    sourceHarpStrata.apparatus.interactionMatrix
+  )
+  const layoutFacts = reduceMatrixToLayoutFacts(
+    {
+      harpface1: {
+        harpfaceColumns: 0,
+        harpfaceRows: 0,
       },
-      viewableInteractionMatrix
-    )
-    if (stateItem === 'layoutFacts') return [layoutFacts]
+    },
+    viewableInteractionMatrix
+  )
+  const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, {
+    fullLayoutFacts,
+    layoutFacts,
+  })
+  const staticSizes = reduceToStaticSizes(undefined)
 
-    const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, {
-      fullLayoutFacts,
-      layoutFacts,
-    })
-    if (stateItem === 'dynamicSizes') return [dynamicSizes]
-
-    const staticSizes = reduceToStaticSizes(undefined)
-    if (stateItem === 'staticSizes') return [staticSizes]
-
-    if (stateItem === 'activeExperienceMode') return [experienceMode]
-    if (stateItem === 'activeDisplayMode') return [displayMode]
-    if (stateItem === 'bufferedActivityToggles')
-      return [bufferedActivityToggles]
-    if (stateItem === 'fragmentHarpFaceByOctaves')
-      return [fragmentHarpFaceByOctaves]
-    if (stateItem === 'flushChannel') return [flushChannel]
-    if (stateItem === 'activeQuizDegrees') return [activeQuizDegrees]
-    return undefined
+  return {
+    activeHarpStrata: sourceHarpStrata,
+    activeDegreeMatrix: sourceHarpStrata.degreeMatrix,
+    activePitchMatrix: sourceHarpStrata.pitchMatrix,
+    activeInteractionMatrix: sourceHarpStrata.apparatus.interactionMatrix,
+    activeDegreeIds: sourceHarpStrata.activeDegreeIds,
+    activePitchIds: sourceHarpStrata.activePitchIds,
+    tuningId: sourceHarpStrata.apparatus.tuningId,
+    valvingId: sourceHarpStrata.apparatus.valvingId,
+    harpKeyId: sourceHarpStrata.harpKeyId,
+    pozitionId: sourceHarpStrata.pozitionId,
+    rootPitchId: sourceHarpStrata.rootPitchId,
+    sourceColumnBounds,
+    columnBounds: sourceColumnBounds,
+    viewableDegreeMatrix,
+    viewablePitchMatrix,
+    viewableInteractionMatrix,
+    fullLayoutFacts,
+    layoutFacts,
+    dynamicSizes,
+    staticSizes,
+    activeExperienceMode: experienceMode,
+    activeDisplayMode: displayMode,
+    bufferedActivityToggles,
+    fragmentHarpFaceByOctaves,
+    flushChannel,
+    activeQuizDegrees,
+    setActiveHarpStrata: jest.fn(),
+    setActiveExperienceMode: jest.fn(),
+    setActiveDisplayMode: jest.fn(),
+    setBufferedActivityToggles: jest.fn(),
+    setFragmentHarpFaceByOctaves: jest.fn(),
+    setFlushChannel: jest.fn(),
+    setActiveQuizDegrees: jest.fn(),
+    setSourceColumnBounds: jest.fn(),
+    setColumnBounds: jest.fn(),
+    setTuningId: jest.fn(),
+    setValvingId: jest.fn(),
+    setActiveInteractionMatrix: jest.fn(),
+    setActiveDegreeMatrix: jest.fn(),
+    setActivePitchMatrix: jest.fn(),
+    setActiveDegreeIds: jest.fn(),
+    setActivePitchIds: jest.fn(),
+    setPozitionId: jest.fn(),
+    setRootPitchId: jest.fn(),
+    setHarpKeyId: jest.fn(),
+    setViewableInteractionMatrix: jest.fn(),
+    setViewableDegreeMatrix: jest.fn(),
+    setViewablePitchMatrix: jest.fn(),
+    setFullLayoutFacts: jest.fn(),
+    setLayoutFacts: jest.fn(),
+    setDynamicSizes: jest.fn(),
+    setStaticSizes: jest.fn(),
   }
-  return mockGlobal
+}
+
+type MockStoreState = ReturnType<typeof buildMockStoreState>
+type SelectorFn = (state: MockStoreState) => unknown
+
+export const mockStoreImplementation = (
+  props: BuildMockStoreStateProps
+): ((selector: SelectorFn) => unknown) => {
+  const state = buildMockStoreState(props)
+  return (selector: SelectorFn) => selector(state)
 }

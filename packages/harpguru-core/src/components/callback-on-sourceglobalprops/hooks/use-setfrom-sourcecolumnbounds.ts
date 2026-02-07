@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import { useEffect } from 'react'
 
 import { reduceColumnBounds, setIfNew } from '../utils'
@@ -8,25 +7,51 @@ import {
   reduceLayoutFactsToDynamicSizes,
   reduceToStaticSizes,
 } from '../../../utils'
+import { useHarpGuruStore } from '../../../store'
 
 export const useSetFromSourceColumnBounds = (): void => {
-  const [nextSourceColumnBounds] = useGlobal('sourceColumnBounds')
-  const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
-  const [fullDegreeMatrix] = useGlobal('activeDegreeMatrix')
-  const [fullPitchMatrix] = useGlobal('activePitchMatrix')
-  const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
-  const [prevViewableInteractionMatrix, setViewableInteractionMatrix] =
-    useGlobal('viewableInteractionMatrix')
-  const [prevViewableDegreeMatrix, setViewableDegreeMatrix] = useGlobal(
-    'viewableDegreeMatrix'
+  const nextSourceColumnBounds = useHarpGuruStore(
+    (state) => state.sourceColumnBounds
   )
-  const [prevViewablePitchMatrix, setViewablePitchMatrix] = useGlobal(
-    'viewablePitchMatrix'
+  const fullInteractionMatrix = useHarpGuruStore(
+    (state) => state.activeInteractionMatrix
   )
-  const [prevFullLayoutFacts, setFullLayoutFacts] = useGlobal('fullLayoutFacts')
-  const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
-  const [prevDynamicSizes, setDynamicSizes] = useGlobal('dynamicSizes')
-  const [prevStaticSizes, setStaticSizes] = useGlobal('staticSizes')
+  const fullDegreeMatrix = useHarpGuruStore(
+    (state) => state.activeDegreeMatrix
+  )
+  const fullPitchMatrix = useHarpGuruStore((state) => state.activePitchMatrix)
+  const prevColumnBounds = useHarpGuruStore((state) => state.columnBounds)
+  const setColumnBounds = useHarpGuruStore((state) => state.setColumnBounds)
+  const prevViewableInteractionMatrix = useHarpGuruStore(
+    (state) => state.viewableInteractionMatrix
+  )
+  const setViewableInteractionMatrix = useHarpGuruStore(
+    (state) => state.setViewableInteractionMatrix
+  )
+  const prevViewableDegreeMatrix = useHarpGuruStore(
+    (state) => state.viewableDegreeMatrix
+  )
+  const setViewableDegreeMatrix = useHarpGuruStore(
+    (state) => state.setViewableDegreeMatrix
+  )
+  const prevViewablePitchMatrix = useHarpGuruStore(
+    (state) => state.viewablePitchMatrix
+  )
+  const setViewablePitchMatrix = useHarpGuruStore(
+    (state) => state.setViewablePitchMatrix
+  )
+  const prevFullLayoutFacts = useHarpGuruStore(
+    (state) => state.fullLayoutFacts
+  )
+  const setFullLayoutFacts = useHarpGuruStore(
+    (state) => state.setFullLayoutFacts
+  )
+  const prevLayoutFacts = useHarpGuruStore((state) => state.layoutFacts)
+  const setLayoutFacts = useHarpGuruStore((state) => state.setLayoutFacts)
+  const prevDynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
+  const setDynamicSizes = useHarpGuruStore((state) => state.setDynamicSizes)
+  const prevStaticSizes = useHarpGuruStore((state) => state.staticSizes)
+  const setStaticSizes = useHarpGuruStore((state) => state.setStaticSizes)
 
   const nextColumnBounds = reduceColumnBounds(
     prevColumnBounds,

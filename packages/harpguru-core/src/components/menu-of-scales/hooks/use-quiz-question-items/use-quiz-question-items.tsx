@@ -5,7 +5,7 @@ import type { DegreeIds } from 'harpparts'
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
 import { OptionBreak } from '../../../option-break'
-import type { UseGlobal } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 
 type ItemCallback = DegreeIds
 type ItemTapHandler = (arg0: DegreeIds) => void
@@ -15,10 +15,11 @@ type ReturnType = ReadonlyArray<
 >
 
 export const useQuizQuestionItems = (
-  useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): ReturnType => {
-  const [activeQuizDegrees] = useGlobal('activeQuizDegrees')
+  const activeQuizDegrees = useHarpGuruStore(
+    (state) => state.activeQuizDegrees
+  )
   const items = getDegreeIds().map((id, index) => (
     <OptionItem
       key={`${index}`}
@@ -31,8 +32,10 @@ export const useQuizQuestionItems = (
     />
   ))
 
-  const [, setActiveQuizDegrees] = useGlobal('activeQuizDegrees')
-  const [activeDegreeIds] = useGlobal('activeDegreeIds')
+  const setActiveQuizDegrees = useHarpGuruStore(
+    (state) => state.setActiveQuizDegrees
+  )
+  const activeDegreeIds = useHarpGuruStore((state) => state.activeDegreeIds)
   const syncWithHarpTapHandler = () => setActiveQuizDegrees(activeDegreeIds)
   const syncItem = (
     <OptionItem

@@ -1,7 +1,7 @@
-import { useGlobal } from 'reactn'
 import { useEffect, useState } from 'react'
 
 import { ExperienceModes } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 import { usePrevious } from '../../../../hooks'
 
 export const useShouldDisplayScaleLabel = (
@@ -10,7 +10,7 @@ export const useShouldDisplayScaleLabel = (
 ): boolean => {
   const previousScaleLabel = usePrevious(scaleLabel, undefined)
   const [shouldDisplay, setShouldDisplay] = useState(false)
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const activeExperienceMode = useHarpGuruStore((state) => state.activeExperienceMode)
 
   const isNewScale = scaleLabel !== previousScaleLabel
 

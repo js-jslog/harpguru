@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import Animated, {
   interpolate,
   useAnimatedStyle,
@@ -15,6 +14,7 @@ import { RenderedTone } from '../rendered-tone'
 import { getRenderableToneTuples, getColors } from '../../utils'
 import { DisplayModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
+import { useHarpGuruStore } from '../../store'
 
 const { degreeColors } = getColors()
 
@@ -28,14 +28,12 @@ const getToneSource = (
 }
 
 export const ActivityLegend = (): React.ReactElement => {
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const [rootPitchId] = useGlobal('rootPitchId')
-  const [activePitchIds] = useGlobal('activePitchIds')
+  const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
+  const rootPitchId = useHarpGuruStore((state) => state.rootPitchId)
+  const activePitchIds = useHarpGuruStore((state) => state.activePitchIds)
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
-  const {
-    [0]: { 9: legendWidth },
-  } = useGlobal('dynamicSizes')
+  const { 9: legendWidth } = useHarpGuruStore((state) => state.dynamicSizes)
 
   const activityCells = orderedPitchIds.map((pitchId, index) => {
     const isActive = activePitchIds.indexOf(pitchId) > -1
@@ -75,8 +73,8 @@ const ActivityCell = ({
   toneTuples,
   isActive,
 }: ActivityCellProps): React.ReactElement => {
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const activeExperienceMode = useHarpGuruStore((state) => state.activeExperienceMode)
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const { legendWidth } = dynamicSizes
 
   const styles = StyleSheet.create({

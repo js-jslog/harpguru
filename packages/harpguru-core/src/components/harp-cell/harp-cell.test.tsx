@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import React from 'react'
 import { DegreeIds, PitchIds } from 'harpparts'
 import { render, fireEvent } from '@testing-library/react-native'
@@ -6,16 +5,17 @@ import { render, fireEvent } from '@testing-library/react-native'
 import { DisplayModes, ExperienceModes } from '../../types'
 import {
   inactiveCellsHarpStrata,
-  buildMockUseGlobalImplementation,
+  mockStoreImplementation,
 } from '../../test-resources'
+import { useHarpGuruStore } from '../../store'
 
 import { HarpCell } from './harp-cell'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
+jest.mock('../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
 
 test('A component is rendered with the Degree or Pitch value in its text view depending on the DisplayMode selected', () => {
-  mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
+  mockUseHarpGuruStore.mockImplementation(mockStoreImplementation({}))
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
     harpfaceIndex: 'harpface1',
@@ -24,8 +24,8 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 
   expect(getByText(DegreeIds.Fifth)).toBeTruthy()
 
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       displayMode: DisplayModes.Pitch,
     })
   )
@@ -36,7 +36,7 @@ test('A component is rendered with the Degree or Pitch value in its text view de
 })
 
 test('A component is rendered with an a11y role of button', () => {
-  mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
+  mockUseHarpGuruStore.mockImplementation(mockStoreImplementation({}))
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
     harpfaceIndex: 'harpface1',
@@ -47,7 +47,7 @@ test('A component is rendered with an a11y role of button', () => {
 })
 
 test('A component is rendered without an a11y role of button if it has no content', () => {
-  mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
+  mockUseHarpGuruStore.mockImplementation(mockStoreImplementation({}))
   const harpCellProps = {
     yxCoord: [0, 0] as [0, 0],
     harpfaceIndex: 'harpface1',
@@ -88,8 +88,8 @@ test.skip('A press of the componenet results in toggled active ids in the harpst
 })
 
 test('A snapshot of a populated cell', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
     })
   )
@@ -103,7 +103,7 @@ test('A snapshot of a populated cell', () => {
 })
 
 test('A snapshot of an active cell', () => {
-  mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
+  mockUseHarpGuruStore.mockImplementation(mockStoreImplementation({}))
   const harpCellProps = {
     yxCoord: [3, 0] as [3, 0],
     harpfaceIndex: 'harpface1',
@@ -114,8 +114,8 @@ test('A snapshot of an active cell', () => {
 })
 
 test('A snapshot of an empty cell', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
     })
   )
@@ -129,8 +129,8 @@ test('A snapshot of an empty cell', () => {
 })
 
 test('A snapshot of an inactive cell in Explore mode', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
       experienceMode: ExperienceModes.Explore,
     })
@@ -147,8 +147,8 @@ test('A snapshot of an inactive cell in Explore mode', () => {
 // The important difference between this and the previous is just that
 // the contents of the cells should be hidden in Quiz mode.
 test('A snapshot of an inactive cell in Quiz mode', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
       experienceMode: ExperienceModes.Quiz,
     })

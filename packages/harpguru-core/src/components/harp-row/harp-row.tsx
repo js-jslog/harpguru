@@ -1,9 +1,9 @@
-import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 
 import { extractHarpFaceFacts } from '../../utils'
 import type { Coord, XRange } from '../../types'
+import { useHarpGuruStore } from '../../store'
 
 import { getHarpCells } from './utils'
 import { useStyles } from './hooks'
@@ -19,7 +19,7 @@ export const HarpRow = ({
   xRange,
   harpfaceIndex,
 }: HarpRowProps): React.ReactElement => {
-  const [activeInteractionMatrix] = useGlobal('activeInteractionMatrix')
+  const activeInteractionMatrix = useHarpGuruStore((state) => state.activeInteractionMatrix)
   const styles = useStyles(
     yCoord,
     extractHarpFaceFacts(activeInteractionMatrix, harpfaceIndex)

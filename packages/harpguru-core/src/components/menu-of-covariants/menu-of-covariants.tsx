@@ -1,5 +1,5 @@
-import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
+import type { HarpStrataProps } from 'harpstrata'
 import { Feather } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
@@ -7,7 +7,8 @@ import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { getColors } from '../../utils'
-import type { MenuProps } from '../../types'
+import type { MenuProps, DisplayModes } from '../../types'
+import { useHarpGuruStore, useHarpGuruStoreInstance } from '../../store'
 
 import { reduceCovariantsToHarpStrata } from './utils'
 import {
@@ -17,17 +18,18 @@ import {
 } from './hooks'
 
 export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
+  const store = useHarpGuruStoreInstance()
   const itemTapHandler = useCallback(
-    useDispatch(
-      (currentHarpStrata, activeDisplayMode, partialHarpStrata) =>
-        reduceCovariantsToHarpStrata(
-          currentHarpStrata,
+    (activeDisplayMode: DisplayModes, partialHarpStrata: Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>) => {
+      store.setState((state) => ({
+        activeHarpStrata: reduceCovariantsToHarpStrata(
+          state.activeHarpStrata,
           activeDisplayMode,
           partialHarpStrata
         ),
-      'activeHarpStrata'
-    ),
-    [useDispatch, reduceCovariantsToHarpStrata]
+      }))
+    },
+    [store]
   )
   const { useHarpKeyTitle, usePozitionTitle, useRootPitchTitle } =
     useCovariantTitles()
@@ -36,52 +38,34 @@ export const MenuOfCovariants = (menuProps: MenuProps): React.ReactElement => {
   const { useHarpKeyLabel, usePozitionLabel, useRootPitchLabel } =
     useCovariantLabels()
 
-  const useHarpKeyTitleMemo = useCallback(
-    () => useHarpKeyTitle(useGlobal),
-    [useGlobal]
-  )
+  const useHarpKeyTitleMemo = useCallback(() => useHarpKeyTitle(), [])
 
-  const usePozitionTitleMemo = useCallback(
-    () => usePozitionTitle(useGlobal),
-    [useGlobal]
-  )
+  const usePozitionTitleMemo = useCallback(() => usePozitionTitle(), [])
 
-  const useRootPitchTitleMemo = useCallback(
-    () => useRootPitchTitle(useGlobal),
-    [useGlobal]
-  )
+  const useRootPitchTitleMemo = useCallback(() => useRootPitchTitle(), [])
 
   const useHarpKeyItemsMemo = useCallback(
-    () => useHarpKeyItems(useGlobal, itemTapHandler),
-    [useGlobal, itemTapHandler]
+    () => useHarpKeyItems(itemTapHandler),
+    [itemTapHandler]
   )
 
   const usePozitionItemsMemo = useCallback(
-    () => usePozitionItems(useGlobal, itemTapHandler),
-    [useGlobal, itemTapHandler]
+    () => usePozitionItems(itemTapHandler),
+    [itemTapHandler]
   )
 
   const useRootPitchItemsMemo = useCallback(
-    () => useRootPitchItems(useGlobal, itemTapHandler),
-    [useGlobal, itemTapHandler]
+    () => useRootPitchItems(itemTapHandler),
+    [itemTapHandler]
   )
 
-  const useHarpKeyLabelMemo = useCallback(
-    () => useHarpKeyLabel(useGlobal),
-    [useGlobal]
-  )
+  const useHarpKeyLabelMemo = useCallback(() => useHarpKeyLabel(), [])
 
-  const usePozitionLabelMemo = useCallback(
-    () => usePozitionLabel(useGlobal),
-    [useGlobal]
-  )
+  const usePozitionLabelMemo = useCallback(() => usePozitionLabel(), [])
 
-  const useRootPitchLabelMemo = useCallback(
-    () => useRootPitchLabel(useGlobal),
-    [useGlobal]
-  )
+  const useRootPitchLabelMemo = useCallback(() => useRootPitchLabel(), [])
 
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
 
   const optionPropsz = [
     {

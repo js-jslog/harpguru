@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "e81e29f5-287a-4fff-8165-f517d4ad3230"
+      }
+    },
+    "android": {
+      "package": "com.jslog.root"
+    }
+  }
+}

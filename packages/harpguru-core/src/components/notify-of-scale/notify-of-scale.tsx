@@ -1,10 +1,10 @@
-import { useGlobal } from 'reactn'
 import { Text } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 import { getScaleByDegreeIds } from 'harpparts'
 
 import { NotificationFlash } from '../notification-flash'
+import { useHarpGuruStore } from '../../store'
 
 import { useShouldDisplayScaleLabel } from './hooks'
 
@@ -15,12 +15,12 @@ type NotifyOfScaleProps = {
 export const NotifyOfScale = ({
   isScalesMenu,
 }: NotifyOfScaleProps): ReactElement => {
-  const [activeDegreeIds] = useGlobal('activeDegreeIds')
+  const activeDegreeIds = useHarpGuruStore((state) => state.activeDegreeIds)
   const { label: scaleLabel } = getScaleByDegreeIds(activeDegreeIds) || {}
 
   const shouldDisplay = useShouldDisplayScaleLabel(scaleLabel, isScalesMenu)
 
-  const [staticSizes] = useGlobal('staticSizes')
+  const staticSizes = useHarpGuruStore((state) => state.staticSizes)
 
   return (
     <NotificationFlash shouldDisplay={shouldDisplay}>

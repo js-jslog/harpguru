@@ -1,10 +1,10 @@
-import { useGlobal } from 'reactn'
 import React from 'react'
 
 import { RenderedTone } from '../rendered-tone'
 import { NotificationFlash } from '../notification-flash'
 import { getRenderableToneTuples } from '../../utils'
 import type { RenderableToneTuples } from '../../types'
+import { useHarpGuruStore } from '../../store'
 
 import { useQuizQuestionCycle } from './hooks'
 
@@ -16,7 +16,7 @@ export const NotifyOfQuizQuestion = ({
   isScreenFree,
 }: NotifyOfQuizQuestionProps): React.ReactElement => {
   const [quizQuestion, shouldDisplay] = useQuizQuestionCycle(isScreenFree)
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
+  const activeExperienceMode = useHarpGuruStore((state) => state.activeExperienceMode)
 
   const toneTuples = getRenderableToneTuples(quizQuestion)
 

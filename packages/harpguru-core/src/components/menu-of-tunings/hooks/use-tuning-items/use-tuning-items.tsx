@@ -5,7 +5,8 @@ import { getTuningIds, getTuning, TuningCategories } from 'harpparts'
 import { OptionItemWithDisplayMode } from '../../../option-item-with-display-mode'
 import type { OptionItemWithDisplayModeProps } from '../../../option-item-with-display-mode'
 import { OptionBreak } from '../../../option-break'
-import type { DisplayModes, UseGlobal } from '../../../../types'
+import type { DisplayModes } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 
 type ItemCallback = TuningIds
 type ItemTapHandler = (arg0: DisplayModes, arg1: TuningIds) => void
@@ -15,11 +16,12 @@ type TuningItems = ReadonlyArray<
 >
 
 export const useTuningItems = (
-  useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): TuningItems => {
-  const [tuningId] = useGlobal('tuningId')
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const tuningId = useHarpGuruStore((state) => state.tuningId)
+  const activeDisplayMode = useHarpGuruStore(
+    (state) => state.activeDisplayMode
+  )
   const commonDiatonicTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.CommonDiatonic)

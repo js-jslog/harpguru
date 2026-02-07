@@ -13,7 +13,16 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v15.1.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...master) - yyyy-mm-dd
+
+## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
+
+### Changed
+
+- MAJOR: Replaced reactn with Zustand v5 for state management
+- MAJOR: Upgraded react-native-reanimated from v3 to v4
+- MAJOR: Migrated gesture handlers from useAnimatedGestureHandler to Gesture API
+- MINOR: Replaced metro-react-native-babel-preset with @react-native/babel-preset
 
 ## [v15.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0) - 2024-08-19
 
@@ -286,7 +295,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v15.1.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...HEAD)
+- [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
 - [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0)
 - [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
 - [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0)

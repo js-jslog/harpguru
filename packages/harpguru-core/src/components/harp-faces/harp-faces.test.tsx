@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import 'react-native'
 import React from 'react'
 import { render } from '@testing-library/react-native'
@@ -6,17 +5,18 @@ import { render } from '@testing-library/react-native'
 import {
   inactiveCellsHarpStrata,
   chromaticHarpStrata,
-  buildMockUseGlobalImplementation,
+  mockStoreImplementation,
 } from '../../test-resources'
+import { useHarpGuruStore } from '../../store'
 
 import { HarpFaces } from './harp-faces'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
+jest.mock('../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
 
 test('A diatonic harp is rendered', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
     })
   )
@@ -26,8 +26,8 @@ test('A diatonic harp is rendered', () => {
 })
 
 test('A chromatic harp is rendered', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: chromaticHarpStrata,
     })
   )

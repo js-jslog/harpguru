@@ -1,6 +1,5 @@
-import { useDispatch, useGlobal } from 'reactn'
 import { View } from 'react-native'
-import React from 'react'
+import React, { useCallback } from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import { MenuAccessOpen } from '../menu-access-open'
@@ -8,6 +7,7 @@ import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
+import { useHarpGuruStore, useHarpGuruStoreInstance } from '../../store'
 
 import { getNewDisplayModeForDispatcher } from './utils'
 
@@ -20,10 +20,12 @@ export const MenuTabDisplayMode = ({
   isLabelHidden,
   stashPosition,
 }: MenuTabDisplayModeProps): React.ReactElement => {
-  const nudgeDisplayMode = useDispatch(
-    getNewDisplayModeForDispatcher,
-    'activeDisplayMode'
-  )
+  const store = useHarpGuruStoreInstance()
+  const nudgeDisplayMode = useCallback(() => {
+    store.setState((state) => ({
+      activeDisplayMode: getNewDisplayModeForDispatcher(state.activeDisplayMode),
+    }))
+  }, [store])
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: isLabelHidden,
@@ -31,7 +33,7 @@ export const MenuTabDisplayMode = ({
     openCloseMenu: () => nudgeDisplayMode(),
   }
 
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const { harpguruGold } = getColors()
 
   const activeLabelIcon = (

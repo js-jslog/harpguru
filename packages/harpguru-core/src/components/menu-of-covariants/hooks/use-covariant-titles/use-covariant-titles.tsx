@@ -3,23 +3,17 @@ import { getPitch, getPozition } from 'harpparts'
 
 import { OptionLabel } from '../../../option-label'
 import type { OptionLabelProps } from '../../../option-label'
-import type { UseGlobal } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 
 type CovariantMenuTitles = {
-  readonly useHarpKeyTitle: (
-    arg0: UseGlobal
-  ) => React.ReactElement<OptionLabelProps>
-  readonly usePozitionTitle: (
-    arg0: UseGlobal
-  ) => React.ReactElement<OptionLabelProps>
-  readonly useRootPitchTitle: (
-    arg0: UseGlobal
-  ) => React.ReactElement<OptionLabelProps>
+  readonly useHarpKeyTitle: () => React.ReactElement<OptionLabelProps>
+  readonly usePozitionTitle: () => React.ReactElement<OptionLabelProps>
+  readonly useRootPitchTitle: () => React.ReactElement<OptionLabelProps>
 }
 
 export const useCovariantTitles = (): CovariantMenuTitles => {
-  const useHarpKeyTitle = (useGlobal: UseGlobal) => {
-    const [harpKeyId] = useGlobal('harpKeyId')
+  const useHarpKeyTitle = () => {
+    const harpKeyId = useHarpGuruStore((state) => state.harpKeyId)
     return (
       <OptionLabel
         title={'Harp key'}
@@ -30,8 +24,8 @@ export const useCovariantTitles = (): CovariantMenuTitles => {
     )
   }
 
-  const usePozitionTitle = (useGlobal: UseGlobal) => {
-    const [pozitionId] = useGlobal('pozitionId')
+  const usePozitionTitle = () => {
+    const pozitionId = useHarpGuruStore((state) => state.pozitionId)
     return (
       <OptionLabel
         title={'Position'}
@@ -42,8 +36,8 @@ export const useCovariantTitles = (): CovariantMenuTitles => {
     )
   }
 
-  const useRootPitchTitle = (useGlobal: UseGlobal) => {
-    const [rootPitchId] = useGlobal('rootPitchId')
+  const useRootPitchTitle = () => {
+    const rootPitchId = useHarpGuruStore((state) => state.rootPitchId)
     return (
       <OptionLabel
         title={'Song key'}

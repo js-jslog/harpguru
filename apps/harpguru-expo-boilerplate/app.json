@@ -3,8 +3,7 @@
     "name": "Harp Guru",
     "slug": "harp-guru",
     "platforms": ["ios", "android", "web"],
-    "version": "15.1.0",
-    "jsEngine": "hermes",
+    "version": "16.0.0",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
@@ -15,15 +14,14 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "com.jslog.harpguru",
-      "buildNumber": "15.1.0",
+      "buildNumber": "16.0.0",
       "supportsTablet": true
     },
     "android": {
       "package": "com.jslog.harpguru",
-      "versionCode": 28,
+      "versionCode": 29,
       "permissions": []
     },
     "extra": {

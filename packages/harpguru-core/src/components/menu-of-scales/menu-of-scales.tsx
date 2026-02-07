@@ -1,5 +1,5 @@
-import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
+import type { DegreeIds } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
@@ -8,6 +8,7 @@ import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import { MenuProps } from '../../types'
+import { useHarpGuruStore, useHarpGuruStoreInstance } from '../../store'
 
 import {
   reduceToggleToQuizableDegreeIds,
@@ -21,27 +22,39 @@ import {
 } from './hooks'
 
 export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
+  const store = useHarpGuruStoreInstance()
   const scaleItemTapHandler = useCallback(
-    useDispatch(reduceScaleToHarpStrata, 'activeHarpStrata'),
-    [useDispatch, reduceScaleToHarpStrata]
+    (targetScale: ReadonlyArray<DegreeIds>) => {
+      store.setState((state) => ({
+        activeHarpStrata: reduceScaleToHarpStrata(
+          state.activeHarpStrata,
+          targetScale
+        ),
+      }))
+    },
+    [store]
   )
-  const useScalesTitleMemo = useCallback(
-    () => useScaleTitle(useGlobal),
-    [useGlobal]
-  )
+  const useScalesTitleMemo = useCallback(() => useScaleTitle(), [])
   const useScalesItemsMemo = useCallback(
-    () => useScaleItems(useGlobal, scaleItemTapHandler),
-    [useGlobal, scaleItemTapHandler]
+    () => useScaleItems(scaleItemTapHandler),
+    [scaleItemTapHandler]
   )
 
   const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
   const quizQuestionTapHandler = useCallback(
-    useDispatch(reduceToggleToQuizableDegreeIds, 'activeQuizDegrees'),
-    [useDispatch, reduceToggleToQuizableDegreeIds]
+    (degreeId: DegreeIds) => {
+      store.setState((state) => ({
+        activeQuizDegrees: reduceToggleToQuizableDegreeIds(
+          state.activeQuizDegrees,
+          degreeId
+        ),
+      }))
+    },
+    [store]
   )
   const useQuizQuestionItemsMemo = useCallback(
-    () => useQuizQuestionItems(useGlobal, quizQuestionTapHandler),
-    [useGlobal, quizQuestionTapHandler]
+    () => useQuizQuestionItems(quizQuestionTapHandler),
+    [quizQuestionTapHandler]
   )
 
   const optionStackPropsz = [
@@ -57,7 +70,7 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     },
   ]
 
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>

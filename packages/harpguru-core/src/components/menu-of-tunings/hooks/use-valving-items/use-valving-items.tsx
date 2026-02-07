@@ -3,7 +3,8 @@ import { getValvingIds, ValvingIds } from 'harpparts'
 
 import { OptionItemWithDisplayMode } from '../../../option-item-with-display-mode'
 import type { OptionItemWithDisplayModeProps } from '../../../option-item-with-display-mode'
-import type { DisplayModes, UseGlobal } from '../../../../types'
+import type { DisplayModes } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 
 type ItemCallback = ValvingIds
 type ItemTapHandler = (arg0: DisplayModes, arg1: ValvingIds) => void
@@ -13,11 +14,12 @@ type ValvingItems = ReadonlyArray<
 >
 
 export const useValvingItems = (
-  useGlobal: UseGlobal,
   itemTapHandler: ItemTapHandler
 ): ValvingItems => {
-  const [valvingId] = useGlobal('valvingId')
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const valvingId = useHarpGuruStore((state) => state.valvingId)
+  const activeDisplayMode = useHarpGuruStore(
+    (state) => state.activeDisplayMode
+  )
   const items = getValvingIds().map((id, index) => (
     <OptionItemWithDisplayMode
       key={`${index}`}

@@ -1,4 +1,4 @@
-import { useGlobal } from 'reactn'
+import { useHarpGuruStore } from '../../store'
 
 type OptionStyles = {
   largeFont: number
@@ -14,8 +14,8 @@ type OptionStyles = {
 }
 
 export const useOptionSizes = (): OptionStyles => {
-  const [dynamicSizes] = useGlobal('dynamicSizes')
-  const [staticSizes] = useGlobal('staticSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
+  const staticSizes = useHarpGuruStore((state) => state.staticSizes)
   const { ['9']: largeFont } = staticSizes
   const { ['8']: smallFont } = staticSizes
   const { ['7']: superscriptFont } = staticSizes

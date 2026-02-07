@@ -1,15 +1,14 @@
-import { useGlobal } from 'reactn'
-
-import { buildMockUseGlobalImplementation } from '../../../../test-resources'
+import { mockStoreImplementation } from '../../../../test-resources'
+import { useHarpGuruStore } from '../../../../store'
 
 import { useOctaveColumnGroups } from './use-octave-column-groups'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
+jest.mock('../../../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
 
 test('Identifies the columns grouped by octave', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       fragmentHarpFaceByOctaves: true,
     })
   )
@@ -20,8 +19,8 @@ test('Identifies the columns grouped by octave', () => {
 })
 
 test('Returns an ungrouped set if the harp fragmentation is off', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       fragmentHarpFaceByOctaves: false,
     })
   )
@@ -32,8 +31,8 @@ test('Returns an ungrouped set if the harp fragmentation is off', () => {
 })
 
 test('Returns a bounded grouped set', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceColumnBounds: [2, 7],
       fragmentHarpFaceByOctaves: true,
     })
@@ -48,8 +47,8 @@ test('Returns a bounded grouped set', () => {
 })
 
 test('Returns a bounded ungrouped set', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceColumnBounds: [3, 8],
       fragmentHarpFaceByOctaves: false,
     })

@@ -1,20 +1,20 @@
-import { useGlobal } from 'reactn'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
-import { TapGestureHandler } from 'react-native-gesture-handler'
+import { GestureDetector } from 'react-native-gesture-handler'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 
 import { getColors } from '../../utils'
 import type { MenuProps } from '../../types'
+import { useHarpGuruStore } from '../../store'
 import { useScaleAndCallbackOnTap } from '../../hooks'
 
 export const MenuAccessClose = ({
   openCloseMenu,
 }: Pick<MenuProps, 'openCloseMenu'>): React.ReactElement => {
-  const [staticSizes] = useGlobal('staticSizes')
+  const staticSizes = useHarpGuruStore((state) => state.staticSizes)
 
   const inflation = 5
-  const [tapAnimationValue, gestureHandler] = useScaleAndCallbackOnTap(
+  const [tapAnimationValue, tapGesture] = useScaleAndCallbackOnTap(
     openCloseMenu,
     inflation
   )
@@ -23,7 +23,7 @@ export const MenuAccessClose = ({
   })
 
   return (
-    <TapGestureHandler onGestureEvent={gestureHandler}>
+    <GestureDetector gesture={tapGesture}>
       <Animated.View
         style={{
           position: 'absolute',
@@ -41,6 +41,6 @@ export const MenuAccessClose = ({
           />
         </Animated.View>
       </Animated.View>
-    </TapGestureHandler>
+    </GestureDetector>
   )
 }

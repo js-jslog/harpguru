@@ -1,7 +1,7 @@
-import { useGlobal } from 'reactn'
 import type { Degree, HarpFaceMatrix } from 'harpparts'
 
 import { extractHarpFaceFacts } from '../../../../utils'
+import { useHarpGuruStore } from '../../../../store'
 import { transposeMatrix } from '../../../../packages/transpose-matrix'
 
 import { getOctaveColumnGroups } from './get-octave-column-groups'
@@ -9,9 +9,9 @@ import type { ColumnRanges } from './get-octave-column-groups'
 import { arrayHasRoot } from './array-has-root'
 
 export const useOctaveColumnGroups = (): ColumnRanges => {
-  const [viewableDegreeMatrices] = useGlobal('viewableDegreeMatrix')
-  const [columnBounds] = useGlobal('columnBounds')
-  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
+  const viewableDegreeMatrices = useHarpGuruStore((state) => state.viewableDegreeMatrix)
+  const columnBounds = useHarpGuruStore((state) => state.columnBounds)
+  const fragmentHarpFaceByOctaves = useHarpGuruStore((state) => state.fragmentHarpFaceByOctaves)
 
   const octaveColumnGroups = (() => {
     const columnsFirstDegreeMatrix = transposeMatrix(
