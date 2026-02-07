@@ -15,6 +15,22 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v15.0.0...master) - yyyy-mm-dd
 
+### Changed
+
+- MAJOR: Expo SDK upgraded from 51 to 54
+- MAJOR: React upgraded from 18.2 to 19.1
+- MAJOR: React Native upgraded from 0.74 to 0.81
+
+### Added
+
+- MINOR: Metro config for monorepo entry file resolution
+- MINOR: react-native-worklets dependency
+
+### Fixed
+
+- MINOR: EAS build entry file resolution for monorepo
+- MINOR: Expo Go crash from react-native-worklets version mismatch
+
 ## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Added

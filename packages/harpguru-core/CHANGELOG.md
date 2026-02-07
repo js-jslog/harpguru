@@ -15,6 +15,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v15.1.0...master) - yyyy-mm-dd
 
+### Changed
+
+- MAJOR: Replaced reactn with Zustand v5 for state management
+- MAJOR: Upgraded react-native-reanimated from v3 to v4
+- MAJOR: Migrated gesture handlers from useAnimatedGestureHandler to Gesture API
+- MINOR: Replaced metro-react-native-babel-preset with @react-native/babel-preset
+
 ## [v15.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0) - 2024-08-19
 
 ### Fixed

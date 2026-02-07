@@ -15,6 +15,14 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v15.0.0...master) - yyyy-mm-dd
 
+### Removed
+
+- MAJOR: Socat clipboard tooling from devcontainer
+
+### Added
+
+- MINOR: Claude Code dev container configuration
+
 ## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Added
