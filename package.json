@@ -10,6 +10,7 @@
     "expo-build-android": "yarn workspace harpguru-expo-boilerplate run build-android",
     "prepare": "husky"
   },
+  "main": "apps/harpguru-expo-boilerplate/index.ts",
   "workspaces": [
     "apps/*",
     "packages/*"
