@@ -174,8 +174,8 @@ export const buildMockStoreState = ({
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type SelectorFn = (state: any) => any
+type MockStoreState = ReturnType<typeof buildMockStoreState>
+type SelectorFn = (state: MockStoreState) => unknown
 
 export const mockStoreImplementation = (
   props: BuildMockStoreStateProps
