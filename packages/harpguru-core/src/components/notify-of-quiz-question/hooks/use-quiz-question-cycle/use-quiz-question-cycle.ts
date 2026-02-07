@@ -1,5 +1,4 @@
-import { useGlobal, useDispatch } from 'reactn'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { DegreeIds } from 'harpparts'
 import type { PitchIds } from 'harpparts'
 
@@ -11,6 +10,7 @@ import {
 } from '../../utils'
 import { reduceCellToggleBufferToHarpStrata } from '../../../../utils'
 import { ExperienceModes, FlushChannels } from '../../../../types'
+import { useHarpGuruStore, useHarpGuruStoreInstance } from '../../../../store'
 
 // Ask - display the question
 // Listen - allow user to input answers
@@ -26,33 +26,53 @@ enum QuizStates {
 export const useQuizQuestionCycle = (
   isScreenFree: boolean
 ): [DegreeIds | PitchIds, boolean] => {
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const [activeDisplayMode] = useGlobal('activeDisplayMode')
-  const [cellToggleBuffer] = useGlobal('bufferedActivityToggles')
-  const [flushChannel, setFlushChannel] = useGlobal('flushChannel')
-  const [activeQuizDegrees] = useGlobal('activeQuizDegrees')
-  const [harpKeyId] = useGlobal('harpKeyId')
-  const [pozitionId] = useGlobal('pozitionId')
+  const activeExperienceMode = useHarpGuruStore(
+    (state) => state.activeExperienceMode
+  )
+  const activeDisplayMode = useHarpGuruStore(
+    (state) => state.activeDisplayMode
+  )
+  const cellToggleBuffer = useHarpGuruStore(
+    (state) => state.bufferedActivityToggles
+  )
+  const flushChannel = useHarpGuruStore((state) => state.flushChannel)
+  const setFlushChannel = useHarpGuruStore((state) => state.setFlushChannel)
+  const activeQuizDegrees = useHarpGuruStore(
+    (state) => state.activeQuizDegrees
+  )
+  const harpKeyId = useHarpGuruStore((state) => state.harpKeyId)
+  const pozitionId = useHarpGuruStore((state) => state.pozitionId)
 
   const [quizState, setQuizState] = useState<QuizStates>(QuizStates.Wait)
   const [quizQuestion, setQuizQuestion] = useState<DegreeIds | PitchIds>(
     getNextQuizQuestion(DegreeIds.Root, activeQuizDegrees, activeDisplayMode)
   )
 
-  const flushBufferedActivityToggles = useDispatch((prevHarpStrata) => {
-    return reduceCellToggleBufferToHarpStrata(prevHarpStrata, cellToggleBuffer)
-  }, 'activeHarpStrata')
-  const hardResetHarpStrata = useDispatch(
-    reduceEmptyActiveIdsToHarpStrata,
-    'activeHarpStrata'
-  )
-  const addAnswerToHarpStrata = useDispatch((activeHarpStrata) => {
-    return reduceQuizAnswerToHarpStrata(
-      activeHarpStrata,
-      quizQuestion,
-      cellToggleBuffer
-    )
-  }, 'activeHarpStrata')
+  const store = useHarpGuruStoreInstance()
+  const flushBufferedActivityToggles = useCallback(() => {
+    store.setState((state) => ({
+      activeHarpStrata: reduceCellToggleBufferToHarpStrata(
+        state.activeHarpStrata,
+        cellToggleBuffer
+      ),
+    }))
+  }, [store, cellToggleBuffer])
+  const hardResetHarpStrata = useCallback(() => {
+    store.setState((state) => ({
+      activeHarpStrata: reduceEmptyActiveIdsToHarpStrata(
+        state.activeHarpStrata
+      ),
+    }))
+  }, [store])
+  const addAnswerToHarpStrata = useCallback(() => {
+    store.setState((state) => ({
+      activeHarpStrata: reduceQuizAnswerToHarpStrata(
+        state.activeHarpStrata,
+        quizQuestion,
+        cellToggleBuffer
+      ),
+    }))
+  }, [store, quizQuestion, cellToggleBuffer])
 
   // Start asking questions when the experience mode is set to Quiz
   // and the screen is clear of menus

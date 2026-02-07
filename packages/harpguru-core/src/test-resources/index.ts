@@ -2,5 +2,6 @@ export {
   inactiveCellsHarpStrata,
   activeCellsHarpStrata,
   chromaticHarpStrata,
-  buildMockUseGlobalImplementation,
+  buildMockStoreState,
+  mockStoreImplementation,
 } from './test-resources'

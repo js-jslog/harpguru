@@ -1,10 +1,10 @@
-import { useGlobal } from 'reactn'
 import { StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import type { MutableRefObject } from 'react'
 
 import { TextWithoutOSScale } from '../text-without-os-scale'
 import { getColors } from '../../utils'
+import { useHarpGuruStore } from '../../store'
 
 type ZoomSlideLabelsProps = {
   readonly stateSetterRef: MutableRefObject<
@@ -14,7 +14,7 @@ type ZoomSlideLabelsProps = {
 export const ZoomSlideLabels = ({
   stateSetterRef,
 }: ZoomSlideLabelsProps): React.ReactElement => {
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const { inertOutline } = getColors()
   const styles = StyleSheet.create({
     textStyle: {

@@ -1,6 +1,5 @@
-import { useGlobal, useDispatch } from 'reactn'
 import { View } from 'react-native'
-import React from 'react'
+import React, { useCallback } from 'react'
 import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons'
 
 import { MenuAccessOpen } from '../menu-access-open'
@@ -8,6 +7,7 @@ import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import { ExperienceModes, MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
+import { useHarpGuruStore, useHarpGuruStoreInstance } from '../../store'
 
 import { getNewExperienceModeForDispatcher } from './utils'
 
@@ -20,11 +20,17 @@ export const MenuTabExperienceMode = ({
   isLabelHidden,
   stashPosition,
 }: MenuTabExperienceModeProps): React.ReactElement => {
-  const [activeExperienceMode] = useGlobal('activeExperienceMode')
-  const nudgeExperienceMode = useDispatch(
-    getNewExperienceModeForDispatcher,
-    'activeExperienceMode'
+  const activeExperienceMode = useHarpGuruStore(
+    (state) => state.activeExperienceMode
   )
+  const store = useHarpGuruStoreInstance()
+  const nudgeExperienceMode = useCallback(() => {
+    store.setState((state) => ({
+      activeExperienceMode: getNewExperienceModeForDispatcher(
+        state.activeExperienceMode
+      ),
+    }))
+  }, [store])
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
     isLabelHidden: isLabelHidden,
@@ -32,7 +38,7 @@ export const MenuTabExperienceMode = ({
     openCloseMenu: () => nudgeExperienceMode(),
   }
 
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const { harpguruGold } = getColors()
 
   const activeLabelIcon =

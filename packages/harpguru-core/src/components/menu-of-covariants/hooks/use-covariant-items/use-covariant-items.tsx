@@ -6,14 +6,14 @@ import { getCovarianceSeries, CovariantMembers } from 'harpcovariance'
 
 import { OptionItemWithDisplayMode } from '../../../option-item-with-display-mode'
 import type { OptionItemWithDisplayModeProps } from '../../../option-item-with-display-mode'
-import type { UseGlobal, DisplayModes } from '../../../../types'
+import type { DisplayModes } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 
 type ItemCallback = Pick<HarpStrataProps, 'harpKeyId' | 'pozitionId'>
 type ItemTapHandler = (arg0: DisplayModes, arg1: ItemCallback) => void
 
 type UseCovariantItems = (
-  arg0: UseGlobal,
-  arg1: ItemTapHandler
+  arg0: ItemTapHandler
 ) => ReadonlyArray<
   React.ReactElement<OptionItemWithDisplayModeProps<ItemCallback>>
 >
@@ -25,14 +25,13 @@ type CovariantItems = {
 }
 
 export const useCovariantItems = (): CovariantItems => {
-  const useHarpKeyItems = (
-    useGlobal: UseGlobal,
-    itemTapHandler: ItemTapHandler
-  ) => {
-    const [harpKeyId] = useGlobal('harpKeyId')
-    const [pozitionId] = useGlobal('pozitionId')
-    const [rootPitchId] = useGlobal('rootPitchId')
-    const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const useHarpKeyItems = (itemTapHandler: ItemTapHandler) => {
+    const harpKeyId = useHarpGuruStore((state) => state.harpKeyId)
+    const pozitionId = useHarpGuruStore((state) => state.pozitionId)
+    const rootPitchId = useHarpGuruStore((state) => state.rootPitchId)
+    const activeDisplayMode = useHarpGuruStore(
+      (state) => state.activeDisplayMode
+    )
     const harpKeyPrimer: CovariancePrimer = {
       lockedType: CovariantMembers.HarpKey,
       variedType: CovariantMembers.Pozition,
@@ -71,14 +70,13 @@ export const useCovariantItems = (): CovariantItems => {
     return harpKeyItems
   }
 
-  const usePozitionItems = (
-    useGlobal: UseGlobal,
-    itemTapHandler: ItemTapHandler
-  ) => {
-    const [harpKeyId] = useGlobal('harpKeyId')
-    const [pozitionId] = useGlobal('pozitionId')
-    const [rootPitchId] = useGlobal('rootPitchId')
-    const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const usePozitionItems = (itemTapHandler: ItemTapHandler) => {
+    const harpKeyId = useHarpGuruStore((state) => state.harpKeyId)
+    const pozitionId = useHarpGuruStore((state) => state.pozitionId)
+    const rootPitchId = useHarpGuruStore((state) => state.rootPitchId)
+    const activeDisplayMode = useHarpGuruStore(
+      (state) => state.activeDisplayMode
+    )
     const pozitionPrimer: CovariancePrimer = {
       lockedType: CovariantMembers.Pozition,
       variedType: CovariantMembers.RootPitch,
@@ -117,14 +115,13 @@ export const useCovariantItems = (): CovariantItems => {
     return pozitionItems
   }
 
-  const useRootPitchItems = (
-    useGlobal: UseGlobal,
-    itemTapHandler: ItemTapHandler
-  ) => {
-    const [harpKeyId] = useGlobal('harpKeyId')
-    const [pozitionId] = useGlobal('pozitionId')
-    const [rootPitchId] = useGlobal('rootPitchId')
-    const [activeDisplayMode] = useGlobal('activeDisplayMode')
+  const useRootPitchItems = (itemTapHandler: ItemTapHandler) => {
+    const harpKeyId = useHarpGuruStore((state) => state.harpKeyId)
+    const pozitionId = useHarpGuruStore((state) => state.pozitionId)
+    const rootPitchId = useHarpGuruStore((state) => state.rootPitchId)
+    const activeDisplayMode = useHarpGuruStore(
+      (state) => state.activeDisplayMode
+    )
     const rootPitchPrimer: CovariancePrimer = {
       lockedType: CovariantMembers.RootPitch,
       variedType: CovariantMembers.HarpKey,

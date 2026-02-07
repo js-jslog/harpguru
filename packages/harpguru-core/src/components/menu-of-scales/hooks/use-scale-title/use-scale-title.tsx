@@ -3,12 +3,10 @@ import { getScaleByDegreeIds, ScaleCategory } from 'harpparts'
 
 import { OptionLabel } from '../../../option-label'
 import type { OptionLabelProps } from '../../../option-label'
-import type { UseGlobal } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 
-export const useScaleTitle = (
-  useGlobal: UseGlobal
-): React.ReactElement<OptionLabelProps> => {
-  const [activeDegreeIds] = useGlobal('activeDegreeIds')
+export const useScaleTitle = (): React.ReactElement<OptionLabelProps> => {
+  const activeDegreeIds = useHarpGuruStore((state) => state.activeDegreeIds)
   const { label: scaleLabel, category: scaleCategory } =
     getScaleByDegreeIds(activeDegreeIds) || {}
   const title = scaleCategory === ScaleCategory.Chord ? 'Chord' : 'Scale'

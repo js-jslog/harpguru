@@ -1,14 +1,14 @@
-import { useGlobal } from 'reactn'
 import { DegreeIds } from 'harpparts'
 import { render } from '@testing-library/react-native'
 
-import { buildMockUseGlobalImplementation } from '../../../../test-resources'
+import { mockStoreImplementation } from '../../../../test-resources'
+import { useHarpGuruStore } from '../../../../store'
 
 import { getHarpCells } from './get-harp-cells'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
-mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
+jest.mock('../../../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
+mockUseHarpGuruStore.mockImplementation(mockStoreImplementation({}))
 
 test('getHarpCells returns an array of HarpCells, the length of the range supplied', () => {
   const yCoord = 0

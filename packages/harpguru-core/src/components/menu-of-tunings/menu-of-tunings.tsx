@@ -1,5 +1,5 @@
-import { useGlobal, useDispatch } from 'reactn'
 import React, { useCallback } from 'react'
+import type { TuningIds, ValvingIds, HarpFaceMatrix, Degree } from 'harpparts'
 import { Entypo } from '@expo/vector-icons'
 
 import { MemoOptionStack } from '../option-stack'
@@ -7,7 +7,8 @@ import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
 import { Menu } from '../menu'
 import { getColors } from '../../utils'
-import type { MenuProps } from '../../types'
+import type { MenuProps, DisplayModes, ZoomIds } from '../../types'
+import { useHarpGuruStore, useHarpGuruStoreInstance } from '../../store'
 
 import {
   reduceZoomIdToColumnBounds,
@@ -24,70 +25,62 @@ import {
 } from './hooks'
 
 export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
-  const useTuningTitleMemo = useCallback(
-    () => useTuningTitle(useGlobal),
-    [useGlobal]
-  )
+  const store = useHarpGuruStoreInstance()
+  const useTuningTitleMemo = useCallback(() => useTuningTitle(), [])
   const tuningItemTapHandler = useCallback(
-    useDispatch(
-      (currentHarpStrata, activeDisplayMode, tuningId) =>
-        reduceTuningIdToHarpStrata(
-          currentHarpStrata,
+    (activeDisplayMode: DisplayModes, tuningId: TuningIds) => {
+      store.setState((state) => ({
+        activeHarpStrata: reduceTuningIdToHarpStrata(
+          state.activeHarpStrata,
           activeDisplayMode,
           tuningId
         ),
-      'activeHarpStrata'
-    ),
-    [useDispatch, reduceTuningIdToHarpStrata]
+      }))
+    },
+    [store]
   )
   const useTuningItemsMemo = useCallback(
-    () => useTuningItems(useGlobal, tuningItemTapHandler),
-    [useGlobal, tuningItemTapHandler]
+    () => useTuningItems(tuningItemTapHandler),
+    [tuningItemTapHandler]
   )
 
-  const useValvingTitleMemo = useCallback(
-    () => useValvingTitle(useGlobal),
-    [useGlobal]
-  )
+  const useValvingTitleMemo = useCallback(() => useValvingTitle(), [])
   const valvingItemTapHandler = useCallback(
-    useDispatch(
-      (currentHarpStrata, activeDisplayMode, valvingId) =>
-        reduceValvingIdToHarpStrata(
-          currentHarpStrata,
+    (activeDisplayMode: DisplayModes, valvingId: ValvingIds) => {
+      store.setState((state) => ({
+        activeHarpStrata: reduceValvingIdToHarpStrata(
+          state.activeHarpStrata,
           activeDisplayMode,
           valvingId
         ),
-      'activeHarpStrata'
-    ),
-    [useDispatch, reduceValvingIdToHarpStrata]
+      }))
+    },
+    [store]
   )
   const useValvingItemsMemo = useCallback(
-    () => useValvingItems(useGlobal, valvingItemTapHandler),
-    [useGlobal, valvingItemTapHandler]
+    () => useValvingItems(valvingItemTapHandler),
+    [valvingItemTapHandler]
   )
 
-  const useZoomTitleMemo = useCallback(
-    () => useZoomTitle(useGlobal),
-    [useGlobal]
-  )
+  const useZoomTitleMemo = useCallback(() => useZoomTitle(), [])
   const zoomItemTapHandler = useCallback(
-    useDispatch(
-      (currentColumnBounds, activeDegreeMatrix, zoomId) =>
-        reduceZoomIdToColumnBounds(
-          currentColumnBounds,
+    (activeDegreeMatrix: HarpFaceMatrix<Degree>, zoomId: ZoomIds) => {
+      store.setState((state) => ({
+        sourceColumnBounds: reduceZoomIdToColumnBounds(
+          state.sourceColumnBounds,
           activeDegreeMatrix,
           zoomId
         ),
-      'sourceColumnBounds'
-    ),
+      }))
+    },
     // TODO: This and a great many other things should be based on the
     // interaction matrix of the apparatus rather than the degreeMatrix
     // which is much more volatile
-    [useDispatch, reduceZoomIdToColumnBounds]
+    [store]
   )
   const useZoomItemsMemo = useCallback(
-    () => useZoomItems(useGlobal, zoomItemTapHandler),
-    [useGlobal, zoomItemTapHandler]
+    () => useZoomItems(zoomItemTapHandler),
+    [zoomItemTapHandler]
   )
 
   const optionStackPropsz = [
@@ -108,7 +101,7 @@ export const MenuOfTunings = (menuProps: MenuProps): React.ReactElement => {
     },
   ]
 
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   return (
     <Menu {...menuProps}>
       <MenuFace {...menuProps}>

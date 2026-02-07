@@ -1,11 +1,15 @@
-import { useGlobal } from 'reactn'
 import type { DegreeIds } from 'harpparts'
+
+import { useHarpGuruStore } from '../../../../store'
 
 type BufferToggleFunction = (arg0: DegreeIds) => void
 
 export const useAddBufferedActivityToggle = (): BufferToggleFunction => {
-  const [bufferedActivityToggles, setBufferedActivityToggles] = useGlobal(
-    'bufferedActivityToggles'
+  const bufferedActivityToggles = useHarpGuruStore(
+    (state) => state.bufferedActivityToggles
+  )
+  const setBufferedActivityToggles = useHarpGuruStore(
+    (state) => state.setBufferedActivityToggles
   )
 
   return (toggleToBuffer) => {

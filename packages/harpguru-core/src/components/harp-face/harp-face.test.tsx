@@ -1,21 +1,21 @@
-import { useGlobal } from 'reactn'
 import 'react-native'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
 import {
   inactiveCellsHarpStrata,
-  buildMockUseGlobalImplementation,
+  mockStoreImplementation,
 } from '../../test-resources'
+import { useHarpGuruStore } from '../../store'
 
 import { HarpFace } from './harp-face'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
+jest.mock('../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
 
 test('A component is rendered with fragmented face', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
     })
   )
@@ -25,8 +25,8 @@ test('A component is rendered with fragmented face', () => {
 })
 
 test('A component is rendered with unfragmented face', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
       fragmentHarpFaceByOctaves: false,
     })
@@ -37,8 +37,8 @@ test('A component is rendered with unfragmented face', () => {
 })
 
 test('A component is rendered with fragmented and bounded face', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
       sourceColumnBounds: [2, 7],
     })
@@ -49,8 +49,8 @@ test('A component is rendered with fragmented and bounded face', () => {
 })
 
 test('A component is rendered with unfragmented and bounded face', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
       fragmentHarpFaceByOctaves: false,
       sourceColumnBounds: [2, 7],

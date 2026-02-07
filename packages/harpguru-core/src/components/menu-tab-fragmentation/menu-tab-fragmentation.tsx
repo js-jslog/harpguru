@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import { View } from 'react-native'
 import React from 'react'
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons'
@@ -8,6 +7,7 @@ import { Menu } from '../menu'
 import { getColors } from '../../utils'
 import { MenuStashPosition } from '../../types'
 import type { MenuProps } from '../../types'
+import { useHarpGuruStore } from '../../store'
 
 import { useToggleFragmentHarpFace } from './hooks'
 
@@ -20,7 +20,9 @@ export const MenuTabFragmentation = ({
   isLabelHidden,
   stashPosition,
 }: MenuTabFragmentationProps): React.ReactElement => {
-  const [fragmentHarpFaceByOctaves] = useGlobal('fragmentHarpFaceByOctaves')
+  const fragmentHarpFaceByOctaves = useHarpGuruStore(
+    (state) => state.fragmentHarpFaceByOctaves
+  )
   const toggleFragmentHarpFace = useToggleFragmentHarpFace()
   const menuLikeProps: MenuProps = {
     isMenuStashed: true,
@@ -29,7 +31,7 @@ export const MenuTabFragmentation = ({
     openCloseMenu: () => toggleFragmentHarpFace(),
   }
 
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const { harpguruGold } = getColors()
 
   const activeLabelIcon =

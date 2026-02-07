@@ -1,9 +1,9 @@
-import { useGlobal } from 'reactn'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 import { StyleSheet } from 'react-native'
 import React from 'react'
 
 import type { MenuProps, ChildrenProps } from '../../types'
+import { useHarpGuruStore } from '../../store'
 import {
   useMenuAnimationValues,
   useScaledMenuLabelProtrusion,
@@ -19,7 +19,7 @@ export const Menu = ({
     useMenuAnimationValues(isMenuStashed, isLabelHidden, stashPosition)
   const scaledLabelProtrusion = useScaledMenuLabelProtrusion()
 
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const { 9: borderRadius } = dynamicSizes
   const styles = StyleSheet.create({
     animated: {

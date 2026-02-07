@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import Animated from 'react-native-reanimated'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import { View } from 'react-native'
@@ -7,6 +6,7 @@ import { AntDesign } from '@expo/vector-icons'
 
 import { ZoomSlideLabels } from '../zoom-slide-labels'
 import { getColors } from '../../utils'
+import { useHarpGuruStore } from '../../store'
 
 import { getGestureHandlerCallbacks } from './utils'
 import { useSlideState, useStyles } from './hooks'
@@ -39,9 +39,9 @@ import { useSlideState, useStyles } from './hooks'
  */
 
 export const ZoomSlideVertical = (): React.ReactElement => {
-  const [fullLayoutFacts] = useGlobal('fullLayoutFacts')
-  const [layoutFacts] = useGlobal('layoutFacts')
-  const [columnBounds] = useGlobal('columnBounds')
+  const fullLayoutFacts = useHarpGuruStore((state) => state.fullLayoutFacts)
+  const layoutFacts = useHarpGuruStore((state) => state.layoutFacts)
+  const columnBounds = useHarpGuruStore((state) => state.columnBounds)
 
   if (columnBounds === 'FIT') return <></>
   if (
@@ -58,7 +58,7 @@ const ZoomSlideVerticalVisible = ({
 }: {
   columnBounds: readonly [number, number]
 }): React.ReactElement => {
-  const [fullInteractionMatrix] = useGlobal('activeInteractionMatrix')
+  const fullInteractionMatrix = useHarpGuruStore((state) => state.activeInteractionMatrix)
   const {
     harpface1: {
       [0]: { length: columnCount },
@@ -72,7 +72,7 @@ const ZoomSlideVerticalVisible = ({
     slideOffsetAnimation,
   } = useSlideState(columnBounds, columnCount)
 
-  const [, setSourceColumnBounds] = useGlobal('sourceColumnBounds')
+  const setSourceColumnBounds = useHarpGuruStore((state) => state.setSourceColumnBounds)
   const { onGesture, onStateChange } = getGestureHandlerCallbacks(
     trackBounds,
     columnCount,
@@ -84,7 +84,7 @@ const ZoomSlideVerticalVisible = ({
 
   const { track, slide, pointerLayer, topPointer, bottomPointer, labelLayer } =
     useStyles(trackBounds, columnCount)
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const { inertOutline } = getColors()
 
   return (

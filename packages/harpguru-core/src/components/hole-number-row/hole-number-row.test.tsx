@@ -1,14 +1,14 @@
-import { useGlobal } from 'reactn'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
-import { buildMockUseGlobalImplementation } from '../../test-resources'
+import { mockStoreImplementation } from '../../test-resources'
+import { useHarpGuruStore } from '../../store'
 
 import { HoleNumberRow } from './hole-number-row'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
-mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
+jest.mock('../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
+mockUseHarpGuruStore.mockImplementation(mockStoreImplementation({}))
 
 test('HoleNumberRow returns a 10 hole sequence', () => {
   const { queryByText, getByText } = render(

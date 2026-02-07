@@ -1,16 +1,16 @@
-import { useGlobal } from 'reactn'
 import type { Degree, Pitch } from 'harpparts'
 
 import type { YXCoord } from '../../../harp-cell'
 import {
   inactiveCellsHarpStrata,
-  buildMockUseGlobalImplementation,
+  mockStoreImplementation,
 } from '../../../../test-resources'
+import { useHarpGuruStore } from '../../../../store'
 
 import { usePositionAnalysis } from './index'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
+jest.mock('../../../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
 
 const {
   degreeMatrix: {
@@ -28,12 +28,12 @@ const ourPitch = <Pitch>y3x3Pitch
 
 test('thisIsActive is true if the cell is active or false otherwise', () => {
   const ourCoord: YXCoord = [3, 3]
-  mockUseGlobal.mockImplementation(buildMockUseGlobalImplementation({}))
+  mockUseHarpGuruStore.mockImplementation(mockStoreImplementation({}))
   const { thisIsActive: active } = usePositionAnalysis(ourCoord, 'harpface1')
   expect(active).toBe(true)
 
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
     })
   )

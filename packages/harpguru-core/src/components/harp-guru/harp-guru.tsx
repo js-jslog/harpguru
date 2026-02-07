@@ -1,5 +1,3 @@
-import { useWindowDimensions } from 'use-dimensions'
-import { createProvider } from 'reactn'
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -8,18 +6,14 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, useWindowDimensions } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 
 import { HarpGuruPage } from '../harp-guru-page'
 import type { PageNumber } from '../../types'
+import { StoreProvider } from '../../store'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
-
-import { getInitialGlobalState } from './utils'
-
-const Provider1 = createProvider(getInitialGlobalState(1))
-const Provider2 = createProvider(getInitialGlobalState(2))
 
 export const HarpGuru = (): ReactElement => {
   useWindowDimensions()
@@ -49,18 +43,18 @@ export const HarpGuru = (): ReactElement => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <>
-        <Provider2>
+        <StoreProvider pageNumber={2}>
           <Animated.View style={[{ ...StyleSheet.absoluteFillObject }]}>
             <HarpGuruPage pageOnDisplay={pageOnDisplay} thisPage={2} />
           </Animated.View>
-        </Provider2>
-        <Provider1>
+        </StoreProvider>
+        <StoreProvider pageNumber={1}>
           <Animated.View
             style={[{ ...StyleSheet.absoluteFillObject }, page1YAnimationStyle]}
           >
             <HarpGuruPage pageOnDisplay={pageOnDisplay} thisPage={1} />
           </Animated.View>
-        </Provider1>
+        </StoreProvider>
       </>
     </GestureHandlerRootView>
   )

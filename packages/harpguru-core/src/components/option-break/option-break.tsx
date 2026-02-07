@@ -1,8 +1,8 @@
-import { useGlobal } from 'reactn'
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
 import { getColors } from '../../utils'
+import { useHarpGuruStore } from '../../store'
 import { useOptionSizes } from '../../hooks'
 
 type OptionBreakProps = {
@@ -14,7 +14,7 @@ export const OptionBreak = ({
   title: titleText,
   isTopPadded,
 }: OptionBreakProps): React.ReactElement => {
-  const [staticSizes] = useGlobal('staticSizes')
+  const staticSizes = useHarpGuruStore((state) => state.staticSizes)
   const {
     ['5']: breakHeight,
     ['8']: titleSize,

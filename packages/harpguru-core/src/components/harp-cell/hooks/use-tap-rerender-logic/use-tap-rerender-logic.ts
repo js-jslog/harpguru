@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import { runOnJS, useAnimatedGestureHandler } from 'react-native-reanimated'
 import type {
   GestureEvent,
@@ -9,6 +8,7 @@ import { DegreeIds } from 'harpparts'
 
 import { useAddBufferedActivityToggle } from '../use-add-buffered-activity-toggle'
 import { CellStates } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 import { tapAnimationDuration } from '../../../../constants'
 
 type GestureHandler = (
@@ -19,7 +19,7 @@ export const useTapRerenderLogic = (
   thisDegreeId: DegreeIds | undefined,
   thisIsActive: boolean
 ): [CellStates, GestureHandler] => {
-  const [bufferedActivityToggles] = useGlobal('bufferedActivityToggles')
+  const bufferedActivityToggles = useHarpGuruStore((state) => state.bufferedActivityToggles)
   const isGloballyActive = thisIsActive
   const isLocallyActive =
     (thisDegreeId !== undefined &&

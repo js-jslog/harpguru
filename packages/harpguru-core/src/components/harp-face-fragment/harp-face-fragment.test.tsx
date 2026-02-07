@@ -1,21 +1,21 @@
-import { useGlobal } from 'reactn'
 import 'react-native'
 import React from 'react'
 import { render } from '@testing-library/react-native'
 
 import {
   inactiveCellsHarpStrata,
-  buildMockUseGlobalImplementation,
+  mockStoreImplementation,
 } from '../../test-resources'
+import { useHarpGuruStore } from '../../store'
 
 import { HarpFaceFragment } from './index'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
+jest.mock('../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
 
 test('A snapshot of an unbounded HarpFaceFragment', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
     })
   )
@@ -30,8 +30,8 @@ test('A snapshot of an unbounded HarpFaceFragment', () => {
 })
 
 test('A snapshot of a bounded HarpFaceFragment - we should expect fewer rows since the double blowbend is not present', () => {
-  mockUseGlobal.mockImplementation(
-    buildMockUseGlobalImplementation({
+  mockUseHarpGuruStore.mockImplementation(
+    mockStoreImplementation({
       sourceHarpStrata: inactiveCellsHarpStrata,
       sourceColumnBounds: [0, 8],
     })

@@ -1,18 +1,21 @@
-import { useGlobal } from 'reactn'
 import { DegreeIds } from 'harpparts'
+
+import { useHarpGuruStore } from '../../../../store'
 
 import { useAddBufferedActivityToggle } from './use-add-buffered-activity-toggle'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
+jest.mock('../../../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
 
 test('adding a toggle id to empty toggle buffer is successful', () => {
   const bufferedActivityToggles = [] as ReadonlyArray<DegreeIds>
   const setToggleDegreeIdsBuffer = jest.fn()
-  mockUseGlobal.mockReturnValue([
-    bufferedActivityToggles,
-    setToggleDegreeIdsBuffer,
-  ])
+  mockUseHarpGuruStore.mockImplementation((selector: any) =>
+    selector({
+      bufferedActivityToggles,
+      setBufferedActivityToggles: setToggleDegreeIdsBuffer,
+    })
+  )
 
   useAddBufferedActivityToggle()(DegreeIds.Flat6)
 
@@ -28,10 +31,12 @@ test('adding a toggle id to a toggle buffer with the id already present calls th
     DegreeIds.Flat6,
   ] as ReadonlyArray<DegreeIds>
   const setToggleDegreeIdsBuffer = jest.fn()
-  mockUseGlobal.mockReturnValue([
-    bufferedActivityToggles,
-    setToggleDegreeIdsBuffer,
-  ])
+  mockUseHarpGuruStore.mockImplementation((selector: any) =>
+    selector({
+      bufferedActivityToggles,
+      setBufferedActivityToggles: setToggleDegreeIdsBuffer,
+    })
+  )
 
   useAddBufferedActivityToggle()(DegreeIds.Flat6)
 

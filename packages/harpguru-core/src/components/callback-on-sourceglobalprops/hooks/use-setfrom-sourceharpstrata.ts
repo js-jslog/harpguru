@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import { useEffect } from 'react'
 
 import {
@@ -23,40 +22,95 @@ import {
   reduceLayoutFactsToDynamicSizes,
   reduceToStaticSizes,
 } from '../../../utils'
+import { useHarpGuruStore } from '../../../store'
 
 export const useSetFromSourceHarpStrata = (): void => {
-  const [nextSourceHarpStrata] = useGlobal('activeHarpStrata')
-  const [prevHarpKeyId, setHarpKeyId] = useGlobal('harpKeyId')
-  const [prevPozitionId, setPozitionId] = useGlobal('pozitionId')
-  const [prevRootPitchId, setRootPitchId] = useGlobal('rootPitchId')
-  const [prevTuningId, setTuningId] = useGlobal('tuningId')
-  const [prevValvingId, setValvingId] = useGlobal('valvingId')
-  const [prevActiveDegreeIds, setActiveDegreeIds] = useGlobal('activeDegreeIds')
-  const [prevActivePitchIds, setActivePitchIds] = useGlobal('activePitchIds')
-  const [prevFullInteractionMatrix, setFullInteractionMatrix] = useGlobal(
-    'activeInteractionMatrix'
+  const nextSourceHarpStrata = useHarpGuruStore(
+    (state) => state.activeHarpStrata
   )
-  const [prevFullDegreeMatrix, setFullDegreeMatrix] =
-    useGlobal('activeDegreeMatrix')
-  const [prevFullPitchMatrix, setFullPitchMatrix] =
-    useGlobal('activePitchMatrix')
-  const [prevSourceColumnBounds, setSourceColumnBounds] =
-    useGlobal('sourceColumnBounds')
-  const [prevColumnBounds, setColumnBounds] = useGlobal('columnBounds')
-  const [prevViewableInteractionMatrix, setViewableInteractionMatrix] =
-    useGlobal('viewableInteractionMatrix')
-  const [prevViewableDegreeMatrix, setViewableDegreeMatrix] = useGlobal(
-    'viewableDegreeMatrix'
+  const prevHarpKeyId = useHarpGuruStore((state) => state.harpKeyId)
+  const setHarpKeyId = useHarpGuruStore((state) => state.setHarpKeyId)
+  const prevPozitionId = useHarpGuruStore((state) => state.pozitionId)
+  const setPozitionId = useHarpGuruStore((state) => state.setPozitionId)
+  const prevRootPitchId = useHarpGuruStore((state) => state.rootPitchId)
+  const setRootPitchId = useHarpGuruStore((state) => state.setRootPitchId)
+  const prevTuningId = useHarpGuruStore((state) => state.tuningId)
+  const setTuningId = useHarpGuruStore((state) => state.setTuningId)
+  const prevValvingId = useHarpGuruStore((state) => state.valvingId)
+  const setValvingId = useHarpGuruStore((state) => state.setValvingId)
+  const prevActiveDegreeIds = useHarpGuruStore(
+    (state) => state.activeDegreeIds
   )
-  const [prevViewablePitchMatrix, setViewablePitchMatrix] = useGlobal(
-    'viewablePitchMatrix'
+  const setActiveDegreeIds = useHarpGuruStore(
+    (state) => state.setActiveDegreeIds
   )
-  const [prevFullLayoutFacts, setFullLayoutFacts] = useGlobal('fullLayoutFacts')
-  const [prevLayoutFacts, setLayoutFacts] = useGlobal('layoutFacts')
-  const [prevDynamicSizes, setDynamicSizes] = useGlobal('dynamicSizes')
-  const [prevStaticSizes, setStaticSizes] = useGlobal('staticSizes')
-  const [prevCellToggleBuffer, setCellToggleBuffer] = useGlobal(
-    'bufferedActivityToggles'
+  const prevActivePitchIds = useHarpGuruStore(
+    (state) => state.activePitchIds
+  )
+  const setActivePitchIds = useHarpGuruStore(
+    (state) => state.setActivePitchIds
+  )
+  const prevFullInteractionMatrix = useHarpGuruStore(
+    (state) => state.activeInteractionMatrix
+  )
+  const setFullInteractionMatrix = useHarpGuruStore(
+    (state) => state.setActiveInteractionMatrix
+  )
+  const prevFullDegreeMatrix = useHarpGuruStore(
+    (state) => state.activeDegreeMatrix
+  )
+  const setFullDegreeMatrix = useHarpGuruStore(
+    (state) => state.setActiveDegreeMatrix
+  )
+  const prevFullPitchMatrix = useHarpGuruStore(
+    (state) => state.activePitchMatrix
+  )
+  const setFullPitchMatrix = useHarpGuruStore(
+    (state) => state.setActivePitchMatrix
+  )
+  const prevSourceColumnBounds = useHarpGuruStore(
+    (state) => state.sourceColumnBounds
+  )
+  const setSourceColumnBounds = useHarpGuruStore(
+    (state) => state.setSourceColumnBounds
+  )
+  const prevColumnBounds = useHarpGuruStore((state) => state.columnBounds)
+  const setColumnBounds = useHarpGuruStore((state) => state.setColumnBounds)
+  const prevViewableInteractionMatrix = useHarpGuruStore(
+    (state) => state.viewableInteractionMatrix
+  )
+  const setViewableInteractionMatrix = useHarpGuruStore(
+    (state) => state.setViewableInteractionMatrix
+  )
+  const prevViewableDegreeMatrix = useHarpGuruStore(
+    (state) => state.viewableDegreeMatrix
+  )
+  const setViewableDegreeMatrix = useHarpGuruStore(
+    (state) => state.setViewableDegreeMatrix
+  )
+  const prevViewablePitchMatrix = useHarpGuruStore(
+    (state) => state.viewablePitchMatrix
+  )
+  const setViewablePitchMatrix = useHarpGuruStore(
+    (state) => state.setViewablePitchMatrix
+  )
+  const prevFullLayoutFacts = useHarpGuruStore(
+    (state) => state.fullLayoutFacts
+  )
+  const setFullLayoutFacts = useHarpGuruStore(
+    (state) => state.setFullLayoutFacts
+  )
+  const prevLayoutFacts = useHarpGuruStore((state) => state.layoutFacts)
+  const setLayoutFacts = useHarpGuruStore((state) => state.setLayoutFacts)
+  const prevDynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
+  const setDynamicSizes = useHarpGuruStore((state) => state.setDynamicSizes)
+  const prevStaticSizes = useHarpGuruStore((state) => state.staticSizes)
+  const setStaticSizes = useHarpGuruStore((state) => state.setStaticSizes)
+  const prevCellToggleBuffer = useHarpGuruStore(
+    (state) => state.bufferedActivityToggles
+  )
+  const setCellToggleBuffer = useHarpGuruStore(
+    (state) => state.setBufferedActivityToggles
   )
 
   const nextHarpKeyId = reduceHarpStrataToHarpKeyId(

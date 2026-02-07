@@ -1,4 +1,3 @@
-import { useGlobal } from 'reactn'
 import { StyleSheet } from 'react-native'
 import type { ViewStyle } from 'react-native'
 import type { HarpFaceMatrix, Interaction } from 'harpparts'
@@ -6,6 +5,7 @@ import type { HarpFaceMatrix, Interaction } from 'harpparts'
 import { isBlowOrDrawRow, isBlowRow, isDrawRow } from '../utils'
 import { getColors } from '../../../utils'
 import type { Coord } from '../../../types'
+import { useHarpGuruStore } from '../../../store'
 
 type HarpRowStyles = {
   readonly row: ViewStyle
@@ -17,7 +17,7 @@ export const useStyles = (
   yCoord: Coord,
   interactionMatrix: HarpFaceMatrix<Interaction>
 ): HarpRowStyles => {
-  const [dynamicSizes] = useGlobal('dynamicSizes')
+  const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const { 0: borderWidth, 6: borderRadius } = dynamicSizes
 
   const styles = StyleSheet.create<HarpRowStyles>({

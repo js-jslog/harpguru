@@ -1,4 +1,3 @@
-import type { StateTuple } from 'reactn/types/use-global'
 import type { SharedValue } from 'react-native-reanimated'
 import type { HarpStrata } from 'harpstrata'
 import type {
@@ -49,13 +48,6 @@ export type GlobalState = {
   readonly dynamicSizes: SizeScheme
   readonly staticSizes: SizeScheme
 }
-
-export type UseGlobal = <
-  G extends GlobalState,
-  Property extends keyof G = keyof G
->(
-  property: Property
-) => StateTuple<G, Property>
 
 export enum DisplayModes {
   Degree = 'Degree',

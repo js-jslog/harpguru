@@ -10,7 +10,7 @@ import {
 import { OptionItem } from '../../../option-item'
 import type { OptionItemProps } from '../../../option-item'
 import { OptionBreak } from '../../../option-break'
-import type { UseGlobal } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 
 type ItemCallback = ReadonlyArray<DegreeIds>
 type ItemTapHandler = (arg0: ReadonlyArray<DegreeIds>) => void
@@ -19,11 +19,8 @@ type ScaleItems = ReadonlyArray<
   React.ReactElement<OptionItemProps<ItemCallback>>
 >
 
-export const useScaleItems = (
-  useGlobal: UseGlobal,
-  itemTapHandler: ItemTapHandler
-): ScaleItems => {
-  const [activeDegreeIds] = useGlobal('activeDegreeIds')
+export const useScaleItems = (itemTapHandler: ItemTapHandler): ScaleItems => {
+  const activeDegreeIds = useHarpGuruStore((state) => state.activeDegreeIds)
   const { label: activeScaleId } = getScaleByDegreeIds(activeDegreeIds) || {
     id: '',
   }

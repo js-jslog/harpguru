@@ -1,13 +1,18 @@
-import { useGlobal } from 'reactn'
+import { useHarpGuruStore } from '../../../../store'
 
 import { useToggleFragmentHarpFace } from './use-toggle-fragment-harpface'
 
-jest.mock('reactn')
-const mockUseGlobal = useGlobal as jest.Mock
+jest.mock('../../../../store', () => ({ useHarpGuruStore: jest.fn() }))
+const mockUseHarpGuruStore = useHarpGuruStore as jest.Mock
 
 test('sets the opposite harpface fragmentation when fragmentation is true', () => {
   const setFragmentHarpFace = jest.fn()
-  mockUseGlobal.mockReturnValue([true, setFragmentHarpFace])
+  mockUseHarpGuruStore.mockImplementation((selector: any) =>
+    selector({
+      fragmentHarpFaceByOctaves: true,
+      setFragmentHarpFaceByOctaves: setFragmentHarpFace,
+    })
+  )
 
   const toggleFragmentHarpFace = useToggleFragmentHarpFace()
   toggleFragmentHarpFace()
@@ -17,7 +22,12 @@ test('sets the opposite harpface fragmentation when fragmentation is true', () =
 
 test('sets the opposite harpface fragmentation when fragmentation is false', () => {
   const setFragmentHarpFace = jest.fn()
-  mockUseGlobal.mockReturnValue([false, setFragmentHarpFace])
+  mockUseHarpGuruStore.mockImplementation((selector: any) =>
+    selector({
+      fragmentHarpFaceByOctaves: false,
+      setFragmentHarpFaceByOctaves: setFragmentHarpFace,
+    })
+  )
 
   const toggleFragmentHarpFace = useToggleFragmentHarpFace()
   toggleFragmentHarpFace()

@@ -4,12 +4,10 @@ import { getZoomText } from '../../utils'
 import { OptionLabel } from '../../../option-label'
 import type { OptionLabelProps } from '../../../option-label'
 import { determineZoomId } from '../../../../utils'
-import type { UseGlobal } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 
-export const useZoomTitle = (
-  useGlobal: UseGlobal
-): React.ReactElement<OptionLabelProps> => {
-  const [columnBounds] = useGlobal('columnBounds')
+export const useZoomTitle = (): React.ReactElement<OptionLabelProps> => {
+  const columnBounds = useHarpGuruStore((state) => state.columnBounds)
   const zoomId = determineZoomId(columnBounds)
   const labelText = getZoomText(zoomId)
   return (

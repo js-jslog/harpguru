@@ -2,12 +2,10 @@ import React from 'react'
 
 import { OptionLabel } from '../../../option-label'
 import type { OptionLabelProps } from '../../../option-label'
-import type { UseGlobal } from '../../../../types'
+import { useHarpGuruStore } from '../../../../store'
 
-export const useTuningTitle = (
-  useGlobal: UseGlobal
-): React.ReactElement<OptionLabelProps> => {
-  const [tuningId] = useGlobal('tuningId')
+export const useTuningTitle = (): React.ReactElement<OptionLabelProps> => {
+  const tuningId = useHarpGuruStore((state) => state.tuningId)
   return (
     <OptionLabel
       title={'Tuning'}
