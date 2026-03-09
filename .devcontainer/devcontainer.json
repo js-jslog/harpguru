@@ -2,14 +2,8 @@
   "name": "HarpGuru dev container",
   "dockerFile": "../Dockerfile",
   "context": "..",
-  "settings": {
-    "build": {
-      "args": {
-        "TARGET_STAGE": "development"
-      }
-    }
-  },
-  "appPort": [3000],
+  "remoteUser": "node",
+  "appPort": [3002],
   /* The `mount` property allows for a more readable syntax (using object notation),
     however, you then end up with a workspace mount being created in addition. This
     pair of properties ensures that the "workspace" is set to the /app directory as
