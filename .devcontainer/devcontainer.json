@@ -1,46 +1,27 @@
 {
   "name": "HarpGuru dev container",
-  "dockerFile": "../Dockerfile",
-  "context": "..",
+  "image": "harpguru-devcontainer:latest",
   "remoteUser": "node",
-  "appPort": [3002],
-  /* The `mount` property allows for a more readable syntax (using object notation),
-    however, you then end up with a workspace mount being created in addition. This
-    pair of properties ensures that the "workspace" is set to the /app directory as
-    we would want, and that it is a volume, rather than a mount */
-  "workspaceMount": "source=harpguru-volume,target=/app,type=volume",
+
   "workspaceFolder": "/app",
-  /* Docker-in-Docker. To allow local testing of prod-like builds. We will
-     consider removing this if we are enough control and insight in to the
-     devops platform.
-     If we decide to keep it then we should consider changing from "latest" to a
-     specific version to match devops */
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest",
-      "moby": true,
-      "dockerDashComposeVersion": "v2",
-      "installDockerBuildx": true
-    }
-  },
-  /* Allow the Docker init script from the DinD feature to run. If we remove
-     DinD, this should also be removed, and then so should the CMD in the
-     Dockerfile.devcontainer */
-  "overrideCommand": false,
-  /* The following will ensure that you have the ability to carry out local git credentials
-    management, which is preferable to injected credentials (see boilerplate docs).
-    If you aren't using the runcontainer.ps1 script though, you will likely still need to add
-    your git config for user.name & user.email manually (again, see boilerplate docs) */
-  /* This will also install claude code. You will need to start the agent and log in
-    normally once you enter the container terminal. */
-  "onCreateCommand": [
-    "/bin/bash",
-    "-c",
-    ".devcontainer/set-git-config.sh && \
-    .devcontainer/install-lazygit.sh && \
-    .devcontainer/install-gcm.sh && \
-    .devcontainer/install-claude.sh"
-  ],
+  /* This 'dummy' volume is needed to make sure that WebStorm doesn't create
+   a folder mount or volume attached to /app folder. This is to ensure that
+   source-code in /app folder is coming from Docker image rather than host or
+   volume. This approach ensures full container isolation and traceability. */
+  "workspaceMount": "source=harpguru-prebuilt,target=/var,type=volume,readonly",
+
+  "appPort": [3003],
+  /* Allow the docker-init.sh ENTRYPOINT (which starts dockerd) to run instead
+    of being overridden by the devcontainer CLI. */
+//  "overrideCommand": false,
+//  /* set-git-config.sh applies the developer's host git identity to the container.
+//    All other dev tooling (lazygit, GCM, Claude Code, Neovim, tmux, Docker Engine)
+//    is now installed in Dockerfile.devcontainer so it is captured by image scanning. */
+//  "onCreateCommand": [
+//    "/bin/bash",
+//    "-c",
+//    ".devcontainer/set-git-config.sh"
+//  ],
   "customizations": {
     "vscode": {
       "settings": {
@@ -49,13 +30,5 @@
         "dev.containers.gitCredentialHelperConfigLocation": "none"
       }
     }
-  },
-  /////////////////////////////////////////////////////////////////////////////
-  //UNCOMMENT THIS SECTION IF YOU WANT TO USE THE EMBEDDED NEOVIM IDE
-  /////////////////////////////////////////////////////////////////////////////
-  "postCreateCommand": [
-    "/bin/bash",
-    "-c",
-    ".devcontainer/install-neovim.sh && .devcontainer/install-tmux.sh"
-  ]
+  }
 }
