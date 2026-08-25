@@ -1,6 +1,6 @@
 {
   "name": "HarpGuru dev container",
-  "dockerFile": "jslog/devcontainer-harpguru:latest",
+  "image": "jslog/devcontainer-harpguru:latest",
   "remoteUser": "node",
   "appPort": [3000],
   /* The `mount` property allows for a more readable syntax (using object notation),
