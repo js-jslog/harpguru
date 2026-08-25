@@ -3,10 +3,10 @@ FROM node:24
 
 WORKDIR /app
 
-# Setup pnpm as the package manager of this app.
+# Setup yarn as the package manager of this app.
 # We leave npm in place though as it's very bound
 # up in the node install.
-RUN corepack enable && corepack prepare pnpm@10.21.0 --activate
+RUN corepack enable yarn
 
 RUN chown node:node /app
 USER node
@@ -37,6 +37,8 @@ USER node
 ##################################################
 ############ TEMPORARY ROOT USER ENDS ############ 
 ##################################################
+
+RUN corepack prepare yarn@1.22.22 --activate
 
 # Allow git repo symlinks to be manifest as such
 RUN git config core.symlinks true
