@@ -1,13 +1,21 @@
 $param1 = $args[0]
 
-if ($param1 -eq "start") {
-    Write-Host "Creating if not exists, and / or starting"
-    devcontainer up --remote-env GIT_USER_NAME=$(git config --get user.name) --remote-env GIT_USER_EMAIL=$(git config --get user.email) --workspace-folder .
-}
-elseif ($param1 -eq "destructive") {
-    Write-Host "Running destructive creation - former container will be destroyed and replaced, but volumes will be reused."
-    devcontainer up --remote-env GIT_USER_NAME=$(git config --get user.name) --remote-env GIT_USER_EMAIL=$(git config --get user.email) --remove-existing-container --workspace-folder .
-}
-else {
+if ($param1 -ne "start" -and $param1 -ne "destructive") {
     Write-Host "Error: Invalid parameter. Acceptable parameters are 'start', or 'destructive'."
+    exit 1
 }
+
+docker pull jslog/devcontainer-harpguru:latest
+
+if ($param1 -eq "destructive") {
+    Write-Host "Destroying the existing container and the /app volume with it. Any work not committed and pushed is lost."
+
+    $containers = docker ps -aq --filter volume=devcontainer-harpguru-volume
+    if ($containers) {
+        docker rm -f $containers
+    }
+
+    docker volume rm --force devcontainer-harpguru-volume
+}
+
+devcontainer up --remote-env GIT_USER_NAME=$(git config --get user.name) --remote-env GIT_USER_EMAIL=$(git config --get user.email) --workspace-folder .
