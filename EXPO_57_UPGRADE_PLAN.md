@@ -266,6 +266,49 @@ foreclosing it:
   `@jest/globals@^29`. No Jest 30 migration bundled into this.
 - **Zustand 5** is unaffected.
 
+### 3.13 Expo Go is no longer a first-class target — development build wanted
+
+Discovered while running Phase 3 on 2026-08-26, so not part of the original analysis.
+
+**Expo Go is frozen at SDK 54 on both app stores.** SDK 55 shipped in February 2026 and
+never reached either store; 56 and 57 followed and neither did. On iOS the blocker is
+Apple review — Expo submitted, it stalled, and their
+[May 2026 changelog](https://expo.dev/changelog/expo-go-and-app-store-may-2026) still
+reports it "waiting for approval" with no timeline. For Google Play they have given no
+explanation at all, which — given Play review would not plausibly stall three SDKs for six
+months — reads as Expo's own decision rather than a store problem.
+
+Expo Go itself is still built and released per SDK (57.0.9 on 2026-08-15); only the
+distribution changed. SDK 55+ now comes from [expo.dev/go](https://expo.dev/go) (Android
+APK), `sign.expo.dev` (iOS, re-signed with your own Apple ID and expiring every ~7 days),
+or `eas go`. Expo's stated position is that Expo Go is "first and foremost an educational
+tool" and that they "don't recommend using expo go for any real world project".
+
+**Why this repo should follow them off it:**
+
+- Expo Go has already given this project a false pass once, and it is on record:
+  `apps/harpguru-expo-boilerplate/docs/unnecessary-reanimated-and-gesture-handler-packages.md`
+  documents Expo Go running happily without `react-native-reanimated` /
+  `react-native-gesture-handler` in the app workspace while the EAS binary crashed on open.
+  Phase 6 step 23 already encodes that distrust by making the EAS build the non-negotiable
+  gate. A development build collapses the gap — the daily loop becomes the same binary
+  shape that ships.
+- Expo Go only ever exposes the native modules Expo chose to bundle. The
+  `@react-native-vector-icons/*` migration queued in §3.6 is natively linked, so it
+  probably cannot run under Expo Go at all. Worth confirming, but if so the move is forced
+  regardless.
+- iOS (§3.11) is materially worse on Expo Go now: a 7-day re-signing treadmill versus an
+  ordinary EAS build.
+
+**The gap to close:** `eas.json` already has a `development` profile with
+`developmentClient: true`, but `expo-dev-client` is not a dependency, so that profile does
+not currently produce a working dev client.
+
+**Explicitly not part of this upgrade.** Swapping the runtime harness mid-upgrade breaks
+the same one-variable discipline that §3.1 and §3.9 are built on, Phase 3's checklist is
+written against Expo Go, and the SDK 57 Expo Go APK is free and available today. Sideload
+it for Phase 3, finish the plan as written, then do this.
+
 ---
 
 ## 4. Sequenced plan
@@ -274,8 +317,10 @@ foreclosing it:
 
 1. Branch from `162-refound-on-devcontainer-node-base` (or master once that merges).
 2. Re-record the baseline from §1 so post-upgrade diffs are attributable.
-3. Note the test device will need **Expo Go for SDK 57**; keep the SDK 54 build available
-   for rollback comparison.
+3. Note the test device will need **Expo Go for SDK 57**, which is **not on the Play
+   Store** — install it from [expo.dev/go](https://expo.dev/go) (§3.13). Expo Go is a
+   single app per SDK, so 54 and 57 cannot coexist on one device; the SDK 54 APK stays
+   downloadable from the same place if a rollback comparison is needed.
 
 ### Phase 1 — one-hop version bump
 
@@ -363,6 +408,9 @@ been installed and confirmed to open.
 - `zoom-slide-vertical`: legacy `PanGestureHandler` → modern `Gesture` API (§3.3).
 - Standing up iOS: an `ios` build profile in `eas.json`, credentials, and a safe-area
   pass over the landscape layout (§3.11).
+- Move the dev loop from Expo Go to a development build: add `expo-dev-client`, build
+  the existing `development` EAS profile, and retire sideloaded Expo Go as the default
+  way of running the app on device (§3.13).
 
 ---
 
