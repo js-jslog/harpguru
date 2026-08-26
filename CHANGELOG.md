@@ -15,6 +15,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...master) - yyyy-mm-dd
 
+### Changed
+
+- MAJOR: Expo SDK upgraded from 54 to 57
+- MAJOR: React upgraded from 19.1 to 19.2
+- MAJOR: React Native upgraded from 0.81 to 0.86
+- MINOR: TypeScript held at 5.9 deliberately, recorded via `expo.install.exclude`
+
 ## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
 ### Removed

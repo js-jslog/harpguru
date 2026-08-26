@@ -15,6 +15,22 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...master) - yyyy-mm-dd
 
+### Changed
+
+- MAJOR: Expo SDK upgraded from 54 to 57
+- MAJOR: React upgraded from 19.1 to 19.2
+- MAJOR: React Native upgraded from 0.81 to 0.86
+- MAJOR: Splash screen configuration moved from the removed `expo.splash` key
+  to the `expo-splash-screen` config plugin
+- MINOR: react-native-reanimated upgraded to 4.5.1 and react-native-worklets to
+  0.10.1, both pinned exactly to match the Expo Go SDK 57 native binary
+- MINOR: EAS `cli.version` raised to `>= 16.32.0` and `appVersionSource` set
+  explicitly to `local`, matching the hand-maintained versions in `app.json`
+
+### Added
+
+- MINOR: `expo.install.exclude` entry holding TypeScript at 5.9
+
 ## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
 ### Changed

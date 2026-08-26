@@ -53,7 +53,7 @@ export const ActivityLegend = (): React.ReactElement => {
 
   const styles = StyleSheet.create({
     legendWrapper: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       width: legendWidth,
       flexDirection: 'column',
     },
@@ -85,7 +85,7 @@ const ActivityCell = ({
       alignItems: 'center',
     },
     cellColor: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       backgroundColor: degreeColor,
     },
   })

@@ -40,19 +40,19 @@ export const RenderedTone = ({
 
   const styles = StyleSheet.create({
     naturalContentsWrapper: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       justifyContent: 'center',
       alignItems: 'center',
     },
     sharpContentsWrapper: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       justifyContent: 'center',
       alignItems: 'center',
       bottom: splitType === 'SLANT' ? dynamicSizes['5'] : 0,
       right: splitType === 'SLANT' ? dynamicSizes['7'] : dynamicSizes['7'],
     },
     flatContentsWrapper: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       justifyContent: 'center',
       alignItems: 'center',
       top: splitType === 'SLANT' ? dynamicSizes['5'] : 0,

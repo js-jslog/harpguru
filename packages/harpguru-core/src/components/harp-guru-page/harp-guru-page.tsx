@@ -40,7 +40,7 @@ export const HarpGuruPage = ({
 
   const styles = StyleSheet.create({
     fillScreen: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       backgroundColor: getColors().pageColor,
       justifyContent: 'center',
       alignItems: 'center',

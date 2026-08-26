@@ -15,6 +15,22 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...master) - yyyy-mm-dd
 
+### Changed
+
+- MAJOR: React Native peer upgraded from 0.81 to 0.86
+- MAJOR: `StyleSheet.absoluteFillObject` replaced with `StyleSheet.absoluteFill`,
+  which is the plain style object in React Native 0.86
+- MINOR: react-native-reanimated upgraded to 4.5.1 and react-native-worklets to
+  0.10.1, both pinned exactly to match the Expo Go SDK 57 native binary
+- MINOR: react-native-gesture-handler upgraded from 2.28 to 2.32
+- MINOR: `@react-native/babel-preset` pinned to 0.86.2, replacing the unbounded
+  `>=0.81.0` range
+
+### Added
+
+- MINOR: `@react-native/jest-preset` dependency, which React Native 0.86 split
+  out of the `react-native` package
+
 ## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
 ### Changed

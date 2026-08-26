@@ -3,31 +3,36 @@
     "name": "Harp Guru",
     "slug": "harp-guru",
     "platforms": ["ios", "android", "web"],
-    "version": "16.0.0",
+    "version": "17.0.0",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#efcded"
-    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "ios": {
       "bundleIdentifier": "com.jslog.harpguru",
-      "buildNumber": "16.0.0",
+      "buildNumber": "17.0.0",
       "supportsTablet": true
     },
     "android": {
       "package": "com.jslog.harpguru",
-      "versionCode": 29,
+      "versionCode": 30,
       "permissions": []
     },
     "extra": {
       "eas": {
         "projectId": "74089c1e-e0a1-4351-877a-9dc3bd837b01"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#efcded"
+        }
+      ]
+    ]
   }
 }

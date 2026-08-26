@@ -23,18 +23,18 @@ export const useStyles = (
   const { slideLength } = getSlideFacts(trackBounds, columnCount)
   const styles = StyleSheet.create({
     track: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       width: zoomSlideWidth,
       left: legendWidth,
     },
     slide: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       width: zoomSlideWidth,
       height: slideLength,
       backgroundColor: homeRowsColor,
     },
     pointerLayer: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -46,7 +46,7 @@ export const useStyles = (
       top: zoomSlideWidth,
     },
     labelLayer: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       flexDirection: 'column',
       justifyContent: 'space-between',
     },
