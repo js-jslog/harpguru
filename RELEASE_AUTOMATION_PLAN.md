@@ -120,8 +120,19 @@ If a first submission is ever rejected as a duplicate version code, then that
 value instead. The fix is to re-run `set` with a higher number — nothing is
 lost by skipping an integer.
 
-Nothing in CI can detect an unseeded counter — the check script guards the
-version, not these — so verify by eye.
+Verify by eye. The getters must print exactly:
+
+```
+Android versionCode - 30
+iOS buildNumber - 30
+```
+
+Nothing in CI can detect an unseeded or mis-seeded counter — the check script
+guards `expo.version`, not these — and a wrong value here fails late, at the
+first store submission. A digit dropped from the iOS seed would be the
+expensive one: `3` rather than `30` gives a first build of `4`, which Apple
+rejects against the existing `17.0.0`, because `CFBundleVersion` is compared
+component-wise and `4 < 17`. Read both numbers back before building.
 
 - [ ] Expo robot access token scoped to `harp-guru`, added as repository secret
       `EXPO_TOKEN`
