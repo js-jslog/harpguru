@@ -91,25 +91,43 @@ The order matters, and two constraints fix it:
 
 Nothing else can happen until this is done. It is manual and one-off.
 
+`eas-cli` is not installed in the dev container and is not a dependency of any
+workspace, so every local invocation goes through `npx` — as the `build-android`
+and `build-ios` scripts already do. In CI it *is* on `PATH`, installed by
+`expo/expo-github-action`, which is why the workflows call `eas` bare.
+
+`build:version:set` takes no value flag and prompts for the number, so it cannot
+be scripted:
+
 ```bash
 cd apps/harpguru-expo-boilerplate
-eas build:version:set -p android   # 30
-eas build:version:set -p ios       # 30
-eas build:version:get -p android && eas build:version:get -p ios   # verify
+npx eas-cli build:version:set -p android   # answer 30 at the prompt
+npx eas-cli build:version:set -p ios       # answer 30 at the prompt
+npx eas-cli build:version:get -p android && npx eas-cli build:version:get -p ios
 ```
 
-`build:version:set` records the *last used* value, so the first auto-incremented
-build is `31` on both. `31` is accepted by Play as an increase over `30`, and by
-Apple over `17.0.0` because `CFBundleVersion` is compared component-wise
-(`31 > 17`).
+Before seeding, both platforms report `No remote versions are configured for
+this project` — confirmed, which is exactly the state that would start a build
+at `1`.
+
+`build:version:set` records the *last used* value, so the first
+auto-incremented build is `31` on both. `31` is accepted by Play as an increase
+over `30`, and by Apple over `17.0.0` because `CFBundleVersion` is compared
+component-wise (`31 > 17`).
+
+If a first submission is ever rejected as a duplicate version code, then that
+"last used" assumption was wrong and the counter is being read as the *next*
+value instead. The fix is to re-run `set` with a higher number — nothing is
+lost by skipping an integer.
 
 Nothing in CI can detect an unseeded counter — the check script guards the
 version, not these — so verify by eye.
 
 - [ ] Expo robot access token scoped to `harp-guru`, added as repository secret
       `EXPO_TOKEN`
-- [ ] Google Play service account JSON uploaded to EAS (`eas credentials`), with
-      *Release to testing tracks* permission in the Play Console
+- [ ] Google Play service account JSON uploaded to EAS via
+      `npx eas-cli credentials`, with *Release to testing tracks* permission in
+      the Play Console
 - [ ] App Store Connect API key uploaded to EAS
 - [ ] Play `internal` and `beta` tracks exist, and `beta` has a country list
 - [ ] External TestFlight group exists with *automatically distribute new builds*
