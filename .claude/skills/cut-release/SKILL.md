@@ -107,7 +107,9 @@ their behalf.**
 
 Before editing anything, present a table: package, current version, new
 version, why (the strongest prefix and the entry that caused it), plus the
-anticipated tag and any dependency references that will move. List separately
+anticipated tag and any dependency references that will move. Include the
+store version fields from step 6 as their own rows, current and intended, even
+when the branch has already set them correctly. List separately
 anything you want the user to decide, and anything that looks wrong in the
 existing files.
 
@@ -171,11 +173,41 @@ so the package becomes `13.0.0` and the tag will be `v17.0.0`:
 - Set each bumped package's `package.json` `version` to the number used in its
   new changelog heading. These two must always match.
 - Apply the dependency reference updates from step 3.
-- Update any other version-bearing files the project keeps. In an Expo app this
-  is `app.json`: `expo.version` and `expo.ios.buildNumber` become the new tag
-  without its leading `v`, and `expo.android.versionCode` increments by one.
-  Check whether the branch already did this — an Expo upgrade often bumps
-  `app.json` early in order to make a test build.
+- Update any other version-bearing files the project keeps.
+
+### The store version fields
+
+An Expo app carries the numbers the app stores see in `app.json`, and they are
+easy to half-do — bumping Android and forgetting iOS leaves a build that Apple
+will reject as a duplicate. Never take "the branch already handled it" on
+trust: read all three fields, state their current and intended values in the
+step 4 plan, and assert them again in step 7. Set every one of them, whether or
+not the branch got there first.
+
+| Field | New value |
+| --- | --- |
+| `expo.version` | the new tag without its leading `v` |
+| `expo.ios.buildNumber` | the same string as `expo.version` |
+| `expo.android.versionCode` | previous integer + 1 |
+
+```bash
+python3 -c "import json;a=json.load(open('<app>/app.json'))['expo'];\
+print(a['version'], a['ios']['buildNumber'], a['android']['versionCode'])"
+```
+
+Two things to watch:
+
+- **Find the right `app.json`.** A monorepo can hold several, and the one at
+  the repo root may carry only an EAS `projectId` and no version fields at all.
+  The file you want is the one that already has `expo.version`.
+- **Check `eas.json` first.** Under `cli.appVersionSource: "local"` the
+  hand-maintained `app.json` values are authoritative and must be set here.
+  Under `"remote"`, EAS auto-increments `buildNumber` and `versionCode` on its
+  own servers; leave those two alone and bump only `expo.version`.
+
+An Expo SDK upgrade often bumps `app.json` early in order to make a test
+build, so finding the values already correct is normal — confirm each one and
+report it as verified rather than as skipped.
 
 ## Step 7 — verify
 
@@ -190,7 +222,8 @@ into a local `node_modules` instead of linking the workspace. New package
 directories appearing under any `node_modules` means a reference is wrong.
 
 Then confirm by eye that every new heading's label matches its package.json
-version, and every new link points at the same anticipated tag.
+version, and every new link points at the same anticipated tag. Re-read the
+store version fields and check all three against the table in step 6.
 
 ## Afterwards
 
