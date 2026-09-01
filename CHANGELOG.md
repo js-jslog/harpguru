@@ -15,6 +15,26 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...master) - yyyy-mm-dd
 
+### Added
+
+- MINOR: `Test build` GitHub Actions workflow, manually dispatched on any
+  branch, building both platforms on EAS and submitting them to the closed
+  testing tracks without creating a tag or consuming a version
+- MINOR: `Release` GitHub Actions workflow, tagging and building any push to
+  `master` that carries a new `expo.version`, and submitting to open testing
+- MINOR: `check-release-version.py` release precondition check, run by the
+  release workflow before anything is built and by the pre-push hook
+- MINOR: `docs/release-pipeline.md` describing the pipeline and the reasoning
+  behind tagging on the trunk rather than on the branch
+- MINOR: `expo-build-ios` root script, the counterpart to `expo-build-android`
+
+### Changed
+
+- MINOR: Release steps in `README.md` no longer include tagging by hand; the
+  merge to `master` is the release trigger
+- MINOR: `cut-release` skill sets only `expo.version`, and no longer instructs
+  the user to tag
+
 ## [v4.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0) - 2026-09-01
 
 ### Changed
