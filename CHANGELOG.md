@@ -17,10 +17,26 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Changed
 
-- MAJOR: Expo SDK upgraded from 54 to 57
-- MAJOR: React upgraded from 19.1 to 19.2
-- MAJOR: React Native upgraded from 0.81 to 0.86
-- MINOR: TypeScript held at 5.9 deliberately, recorded via `expo.install.exclude`
+- MAJOR: Dev container refounded on the prebuilt `jslog/devcontainer-harpguru`
+  image (itself built on `devcontainer-node-base`) rather than building the
+  Dockerfile in place on every create
+- MAJOR: Dev container runs as the `node` user rather than `root`
+- MAJOR: Workspace volume renamed from `harpguru-volume` to
+  `devcontainer-harpguru-volume`
+- MAJOR: `runcontainer.ps1 destructive` now removes the workspace volume along
+  with the container, where it previously reused the volume
+- MINOR: Node upgraded from 20 to 24, and yarn 1.22.22 activated through
+  corepack and recorded in the root `packageManager` field
+
+### Added
+
+- MINOR: `buildimage.sh` for building and publishing the dev container image
+- MINOR: Docker-in-Docker dev container feature
+
+### Removed
+
+- MAJOR: `.devcontainer` provisioning scripts for lazygit, GCM, Neovim, tmux,
+  Claude Code and git config, all now baked into the image
 
 ## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
