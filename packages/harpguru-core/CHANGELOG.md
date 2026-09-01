@@ -31,7 +31,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: `@react-native/jest-preset` dependency, which React Native 0.86 split
   out of the `react-native` package
 
-## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
+## [v12.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
 ### Changed
 
@@ -40,13 +40,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MAJOR: Migrated gesture handlers from useAnimatedGestureHandler to Gesture API
 - MINOR: Replaced metro-react-native-babel-preset with @react-native/babel-preset
 
-## [v15.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0) - 2024-08-19
+## [v11.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0) - 2024-08-19
 
 ### Fixed
 
 MINOR: Device can now switch to other apps without crashing HarpGuru
 
-## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
+## [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Changed
 
@@ -312,9 +312,9 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 ## Github release list
 
 - [unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...HEAD)
-- [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
-- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0)
-- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
+- [v12.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
+- [v11.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0)
+- [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
 - [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0)
 - [v9.1.0](https://github.com/js-jslog/harpguru/releases/tag/v12.1.0)
 - [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0)

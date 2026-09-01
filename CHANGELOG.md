@@ -38,7 +38,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MAJOR: `.devcontainer` provisioning scripts for lazygit, GCM, Neovim, tmux,
   Claude Code and git config, all now baked into the image
 
-## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
+## [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
 ### Removed
 
@@ -48,7 +48,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: Claude Code dev container configuration
 
-## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
+## [v2.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Added
 
@@ -68,5 +68,5 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 ## Github release list
 
 - [unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...HEAD)
-- [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
-- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
+- [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
+- [v2.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)

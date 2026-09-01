@@ -31,7 +31,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: `expo.install.exclude` entry holding TypeScript at 5.9
 
-## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
+## [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
 ### Changed
 
@@ -49,7 +49,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: EAS build entry file resolution for monorepo
 - MINOR: Expo Go crash from react-native-worklets version mismatch
 
-## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
+## [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Added
 
@@ -295,8 +295,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 ## Github release list
 
 - [unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...HEAD)
-- [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
-- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
+- [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
+- [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
 - [v7.0.0](https://github.com/js-jslog/harpguru/releases/tag/v14.0.0)
 - [v6.0.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0)
 - [v5.1.0](https://github.com/js-jslog/harpguru/releases/tag/v12.1.0)
