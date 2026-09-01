@@ -13,7 +13,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...master) - yyyy-mm-dd
+
+## [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0) - 2026-09-01
 
 ### Changed
 
@@ -29,6 +31,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Added
 
+- MINOR: `@expo/ngrok` devDependency, so `yarn expo-tunnel` resolves it from
+  the project rather than attempting a global npm install into the root owned
+  prefix, which the `node` user cannot write to
 - MINOR: `expo.install.exclude` entry holding TypeScript at 5.9
 
 ## [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
@@ -294,7 +299,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...HEAD)
+- [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0)
 - [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
 - [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
 - [v7.0.0](https://github.com/js-jslog/harpguru/releases/tag/v14.0.0)
