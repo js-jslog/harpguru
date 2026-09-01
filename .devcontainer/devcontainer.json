@@ -1,41 +1,34 @@
 {
   "name": "HarpGuru dev container",
-  "dockerFile": "../Dockerfile",
-  "context": "..",
-  "settings": {
-    "build": {
-      "args": {
-        "TARGET_STAGE": "development"
-      }
-    }
-  },
+  "image": "jslog/devcontainer-harpguru:latest",
+  "remoteUser": "node",
   "appPort": [3000],
   /* The `mount` property allows for a more readable syntax (using object notation),
     however, you then end up with a workspace mount being created in addition. This
     pair of properties ensures that the "workspace" is set to the /app directory as
     we would want, and that it is a volume, rather than a mount */
-  "workspaceMount": "source=harpguru-volume,target=/app,type=volume",
+  "workspaceMount": "source=devcontainer-harpguru-volume,target=/app,type=volume",
   "workspaceFolder": "/app",
-  /* The following will ensure that you have the ability to carry out local git credentials
-    management, which is preferable to injected credentials (see boilerplate docs).
-    If you aren't using the runcontainer.ps1 script though, you will likely still need to add
-    your git config for user.name & user.email manually (again, see boilerplate docs) */
-  /* This will also install claude code. You will need to start the agent and log in
-    normally once you enter the container terminal. */
-  "onCreateCommand": [
-    "/bin/bash",
-    "-c",
-    ".devcontainer/set-git-config.sh && \
-    .devcontainer/install-lazygit.sh && \
-    .devcontainer/install-gcm.sh && \
-    .devcontainer/install-claude.sh"
-  ],
-  ///////////////////////////////////////////////////////////////////////////////
-  ////UNCOMMENT THIS SECTION IF YOU WANT TO USE THE EMBEDDED NEOVIM IDE
-  ///////////////////////////////////////////////////////////////////////////////
-  "postCreateCommand": [
-    "/bin/bash",
-    "-c",
-    ".devcontainer/install-neovim.sh && .devcontainer/install-tmux.sh"
-  ]
+  /* Docker-in-Docker. Just in case */
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true,
+      "dockerDashComposeVersion": "v2",
+      "installDockerBuildx": true
+    }
+  },
+  /* Allow the Docker init script from the DinD feature to run. If we remove
+     DinD, this should also be removed, and then so should the CMD in the
+     Dockerfile.devcontainer */
+  "overrideCommand": false,
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "dev.containers.forwardWSLServices": false,
+        "dev.containers.dockerCredentialHelper": false,
+        "dev.containers.gitCredentialHelperConfigLocation": "none"
+      }
+    }
+  }
 }

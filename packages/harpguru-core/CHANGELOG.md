@@ -13,9 +13,27 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...master) - yyyy-mm-dd
 
-## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
+## [v13.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0) - 2026-09-01
+
+### Changed
+
+- MAJOR: React Native peer upgraded from 0.81 to 0.86
+- MAJOR: `StyleSheet.absoluteFillObject` replaced with `StyleSheet.absoluteFill`,
+  which is the plain style object in React Native 0.86
+- MINOR: react-native-reanimated upgraded to 4.5.1 and react-native-worklets to
+  0.10.1, both pinned exactly to match the Expo Go SDK 57 native binary
+- MINOR: react-native-gesture-handler upgraded from 2.28 to 2.32
+- MINOR: `@react-native/babel-preset` pinned to 0.86.2, replacing the unbounded
+  `>=0.81.0` range
+
+### Added
+
+- MINOR: `@react-native/jest-preset` dependency, which React Native 0.86 split
+  out of the `react-native` package
+
+## [v12.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
 ### Changed
 
@@ -24,13 +42,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MAJOR: Migrated gesture handlers from useAnimatedGestureHandler to Gesture API
 - MINOR: Replaced metro-react-native-babel-preset with @react-native/babel-preset
 
-## [v15.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0) - 2024-08-19
+## [v11.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0) - 2024-08-19
 
 ### Fixed
 
 MINOR: Device can now switch to other apps without crashing HarpGuru
 
-## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
+## [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Changed
 
@@ -295,10 +313,11 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...HEAD)
-- [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
-- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0)
-- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...HEAD)
+- [v13.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0)
+- [v12.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
+- [v11.1.0](https://github.com/js-jslog/harpguru/releases/tag/v15.1.0)
+- [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
 - [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0)
 - [v9.1.0](https://github.com/js-jslog/harpguru/releases/tag/v12.1.0)
 - [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0)

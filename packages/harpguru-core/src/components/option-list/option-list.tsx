@@ -56,7 +56,7 @@ export const OptionList = ({
 
   return (
     <Animated.View
-      style={[{ ...StyleSheet.absoluteFillObject }, animatedStyle]}
+      style={[{ ...StyleSheet.absoluteFill }, animatedStyle]}
     >
       <View style={[common, left]}>{leftColumnLabel}</View>
       <View style={[common, right]}>{rightColumnLabel}</View>

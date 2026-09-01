@@ -13,9 +13,34 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...master) - yyyy-mm-dd
 
-## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
+## [v4.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0) - 2026-09-01
+
+### Changed
+
+- MAJOR: Dev container refounded on the prebuilt `jslog/devcontainer-harpguru`
+  image (itself built on `devcontainer-node-base`) rather than building the
+  Dockerfile in place on every create
+- MAJOR: Dev container runs as the `node` user rather than `root`
+- MAJOR: Workspace volume renamed from `harpguru-volume` to
+  `devcontainer-harpguru-volume`
+- MAJOR: `runcontainer.ps1 destructive` now removes the workspace volume along
+  with the container, where it previously reused the volume
+- MINOR: Node upgraded from 20 to 24, and yarn 1.22.22 activated through
+  corepack and recorded in the root `packageManager` field
+
+### Added
+
+- MINOR: `buildimage.sh` for building and publishing the dev container image
+- MINOR: Docker-in-Docker dev container feature
+
+### Removed
+
+- MAJOR: `.devcontainer` provisioning scripts for lazygit, GCM, Neovim, tmux,
+  Claude Code and git config, all now baked into the image
+
+## [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
 ### Removed
 
@@ -25,7 +50,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: Claude Code dev container configuration
 
-## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
+## [v2.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Added
 
@@ -44,6 +69,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...HEAD)
-- [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
-- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...HEAD)
+- [v4.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0)
+- [v3.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
+- [v2.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)

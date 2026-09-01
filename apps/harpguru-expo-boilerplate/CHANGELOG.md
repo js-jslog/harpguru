@@ -13,9 +13,30 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...master) - yyyy-mm-dd
 
-## [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
+## [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0) - 2026-09-01
+
+### Changed
+
+- MAJOR: Expo SDK upgraded from 54 to 57
+- MAJOR: React upgraded from 19.1 to 19.2
+- MAJOR: React Native upgraded from 0.81 to 0.86
+- MAJOR: Splash screen configuration moved from the removed `expo.splash` key
+  to the `expo-splash-screen` config plugin
+- MINOR: react-native-reanimated upgraded to 4.5.1 and react-native-worklets to
+  0.10.1, both pinned exactly to match the Expo Go SDK 57 native binary
+- MINOR: EAS `cli.version` raised to `>= 16.32.0` and `appVersionSource` set
+  explicitly to `local`, matching the hand-maintained versions in `app.json`
+
+### Added
+
+- MINOR: `@expo/ngrok` devDependency, so `yarn expo-tunnel` resolves it from
+  the project rather than attempting a global npm install into the root owned
+  prefix, which the `node` user cannot write to
+- MINOR: `expo.install.exclude` entry holding TypeScript at 5.9
+
+## [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0) - 2026-02-07
 
 ### Changed
 
@@ -33,7 +54,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: EAS build entry file resolution for monorepo
 - MINOR: Expo Go crash from react-native-worklets version mismatch
 
-## [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
+## [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0) - 2024-08-16
 
 ### Added
 
@@ -278,9 +299,10 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v16.0.0...HEAD)
-- [v16.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
-- [v15.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...HEAD)
+- [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0)
+- [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
+- [v8.0.0](https://github.com/js-jslog/harpguru/releases/tag/v15.0.0)
 - [v7.0.0](https://github.com/js-jslog/harpguru/releases/tag/v14.0.0)
 - [v6.0.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0)
 - [v5.1.0](https://github.com/js-jslog/harpguru/releases/tag/v12.1.0)

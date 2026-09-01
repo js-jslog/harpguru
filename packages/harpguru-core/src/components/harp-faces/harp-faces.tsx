@@ -11,7 +11,7 @@ export const HarpFaces = (): React.ReactElement => {
   const { fragmentGutter } = dynamicSizes
   const { stack, gutter } = StyleSheet.create({
     stack: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',

@@ -44,13 +44,13 @@ export const HarpGuru = (): ReactElement => {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <>
         <StoreProvider pageNumber={2}>
-          <Animated.View style={[{ ...StyleSheet.absoluteFillObject }]}>
+          <Animated.View style={[{ ...StyleSheet.absoluteFill }]}>
             <HarpGuruPage pageOnDisplay={pageOnDisplay} thisPage={2} />
           </Animated.View>
         </StoreProvider>
         <StoreProvider pageNumber={1}>
           <Animated.View
-            style={[{ ...StyleSheet.absoluteFillObject }, page1YAnimationStyle]}
+            style={[{ ...StyleSheet.absoluteFill }, page1YAnimationStyle]}
           >
             <HarpGuruPage pageOnDisplay={pageOnDisplay} thisPage={1} />
           </Animated.View>
