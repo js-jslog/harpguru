@@ -71,10 +71,24 @@ branch: version equal to the newest tag (no-op), a minor and a patch bump
 (fails, naming the field). Both workflow files parse as YAML. `eas.json` parses
 as JSON.
 
-**Not verified — nothing has executed.** No workflow has run. No EAS build has
-been made. The `submit` profiles have never been exercised against either store.
-The remote counters have never been read or written. Treat the first run of each
-as the real test.
+**Verified against EAS, by queueing a real Android build** (build
+`6e336091`, commit `9188d93a`):
+
+- the remote counters are seeded and auto-increment as intended — seeded at
+  `30`, the build was issued version code `31`;
+- the Play service account is stored on EAS and resolves during submission;
+- the `internal` submit profile correctly overrides the `beta` track it
+  inherits from `production`, so `extends` resolves the way it is relied on;
+- `--non-interactive` queues without prompting for a keystore, which is the
+  thing that would otherwise break CI;
+- the build is recorded against the pushed commit, so provenance holds.
+
+**Still unverified.** Neither workflow has ever run — the whole CI path,
+`EXPO_TOKEN` included, is untested. The Android build has not finished
+compiling and its submission has not been accepted by Play. Nothing on iOS has
+been touched: no App Store Connect key, no signing credentials, no TestFlight
+submission. The `production` submit profile, and therefore open testing on both
+stores, has never been exercised.
 
 ## Roadmap
 
@@ -115,10 +129,8 @@ auto-incremented build is `31` on both. `31` is accepted by Play as an increase
 over `30`, and by Apple over `17.0.0` because `CFBundleVersion` is compared
 component-wise (`31 > 17`).
 
-If a first submission is ever rejected as a duplicate version code, then that
-"last used" assumption was wrong and the counter is being read as the *next*
-value instead. The fix is to re-run `set` with a higher number — nothing is
-lost by skipping an integer.
+This is confirmed rather than assumed: with the counters seeded to `30`, the
+first Android build was issued `Version code: 31`.
 
 Verify by eye. The getters must print exactly:
 
