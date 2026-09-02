@@ -160,7 +160,13 @@ component-wise and `4 < 17`. Read both numbers back before building.
 - [ ] App Store Connect API key generated at ASC → *Users and Access* →
       **Integrations** → *App Store Connect API* → **Team Keys**, with the
       *App Manager* role, and uploaded to EAS with its Key ID and Issuer ID.
-      The `.p8` downloads once only; team keys are not scoped per app
+      The `.p8` downloads once only; team keys are not scoped per app.
+      Uploading it reports *"Unable to validate App Store Connect API Key, you
+      are not authenticated with Apple"* alongside the success line — the key
+      is stored and assigned, but unchecked, so a mistyped Key ID or Issuer ID
+      surfaces only at the first submission. Recovery is cheap: the build still
+      succeeds and can be resubmitted with
+      `npx eas-cli submit -p ios --id <build-id> --profile internal`
 - [ ] iOS distribution certificate and provisioning profile, which the API key
       does **not** cover — EAS generates them during the first iOS build, which
       must therefore be run locally and interactively, not through CI
