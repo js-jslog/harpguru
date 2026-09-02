@@ -114,9 +114,14 @@ Apple is automatable up to "submitted for Beta App Review". The upload reaches
 *internal* TestFlight testers immediately with no review, which is what makes
 branch test builds quick. Distribution to an **external** group — the
 open-testing equivalent — requires Beta App Review, which cannot be bypassed.
-Group assignment is done by the `production` submit profile, which names the
-external group in `ios.groups`; the `internal` profile omits it, which is what
-keeps test builds in internal TestFlight. Distribution on approval is an App
+The two paths are asymmetric because TestFlight is. Internal access is a
+property of the *person*: an App Store Connect user in the internal group
+receives every build automatically, with no review and nothing named in
+`eas.json` — uploading is the distribution. External access is a property of
+the *build*: it must be assigned to a group, and the first build of each
+version faces Beta App Review. So the `production` submit profile names the
+external group in `ios.groups` and the `internal` profile omits it, which is
+what keeps test builds internal. Distribution on approval is an App
 Store Connect setting, so the process is unattended, but there is an
 Apple-side wait.
 

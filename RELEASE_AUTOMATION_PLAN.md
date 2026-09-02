@@ -171,6 +171,11 @@ component-wise and `4 < 17`. Read both numbers back before building.
       does **not** cover — EAS generates them during the first iOS build, which
       must therefore be run locally and interactively, not through CI
 - [ ] Play `internal` and `beta` tracks exist, and `beta` has a country list
+- [ ] Internal TestFlight group exists with you in it. Internal testers receive
+      every build automatically once uploaded, with no review and no group named
+      in `eas.json` — but only if they are in that group. Being the Account
+      Holder does not put you there, and an empty group means a submission that
+      succeeds and reaches nobody
 - [ ] External TestFlight group exists — named `External Testers` — with
       automatic distribution **off**. It is named in `submit.production.ios.groups`
       instead, so only release builds are assigned to it. Enabling automatic
