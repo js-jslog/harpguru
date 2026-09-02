@@ -129,5 +129,12 @@ Do not turn on automatic distribution for the external group. It applies to
 every build the app receives, so it would pull test builds into Beta App Review
 too, and the two submit profiles would stop meaning anything different on iOS.
 
+One further wrinkle is that the open-testing equivalent of Play's `beta` track
+is the external group's **public link**, set to *Open to Anyone*, and that link
+cannot be enabled until the group holds a build approved by Beta App Review. It
+therefore cannot be set up in advance — it is a one-time manual step after the
+first release. An external group with no link and no invited testers accepts a
+release perfectly happily and shows it to nobody.
+
 In short: **test builds are immediate on both platforms; the open-testing
 release is immediate on Android and unattended-but-queued on iOS.**

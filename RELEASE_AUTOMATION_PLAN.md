@@ -90,6 +90,20 @@ been touched: no App Store Connect key, no signing credentials, no TestFlight
 submission. The `production` submit profile, and therefore open testing on both
 stores, has never been exercised.
 
+### iOS open testing needs a manual step after the first release
+
+The open-testing equivalent of Play's `beta` track is not the external group
+itself but its **public link**, set to *Open to Anyone*. Without it, an approved
+build reaches only individually invited testers — an empty group means a
+release that succeeds and reaches nobody.
+
+The link cannot be enabled until the group has a build approved by Beta App
+Review, so it cannot be configured in advance. The order is forced: the first
+release submits and is assigned to the group, review happens, and only then can
+the link be switched on. That is a one-time manual click sitting *after* the
+first automated release. Later versions still face review, but the link
+persists.
+
 ## Roadmap
 
 The order matters, and two constraints fix it:
@@ -176,8 +190,9 @@ component-wise and `4 < 17`. Read both numbers back before building.
       in `eas.json` — but only if they are in that group. Being the Account
       Holder does not put you there, and an empty group means a submission that
       succeeds and reaches nobody
-- [ ] External TestFlight group exists — named `External Testers` — with
-      automatic distribution **off**. It is named in `submit.production.ios.groups`
+- [ ] External TestFlight group exists — named `External Testers`, matching
+      `ios.groups` exactly — with automatic distribution **off**. It needs no
+      testers in it for submission to work, but see the public link note below. It is named in `submit.production.ios.groups`
       instead, so only release builds are assigned to it. Enabling automatic
       distribution would sweep every build, test builds included, into Beta App
       Review and out to the public
