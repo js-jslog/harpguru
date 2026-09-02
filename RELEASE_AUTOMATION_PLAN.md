@@ -136,9 +136,13 @@ component-wise and `4 < 17`. Read both numbers back before building.
 
 - [ ] Expo robot access token scoped to `harp-guru`, added as repository secret
       `EXPO_TOKEN`
-- [ ] Google Play service account JSON uploaded to EAS via
-      `npx eas-cli credentials`, with *Release to testing tracks* permission in
-      the Play Console
+- [ ] Google Play service account created in **Google Cloud Console** (not Play
+      Console), with the *Google Play Android Developer API* enabled in the same
+      project, and its JSON key uploaded to EAS via `npx eas-cli credentials`
+- [ ] That service account's email granted *Release to testing tracks* on Harp
+      Guru, via Play Console → **Users and permissions** → *Invite new users*.
+      The old *Setup → API access* page is gone from newer consoles; service
+      accounts are now invited like users
 - [ ] App Store Connect API key uploaded to EAS
 - [ ] Play `internal` and `beta` tracks exist, and `beta` has a country list
 - [ ] External TestFlight group exists with *automatically distribute new builds*
