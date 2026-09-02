@@ -104,6 +104,21 @@ the link be switched on. That is a one-time manual click sitting *after* the
 first automated release. Later versions still face review, but the link
 persists.
 
+### iOS signing credentials expire, and CI cannot prompt
+
+EAS generates and stores the distribution certificate and provisioning profile
+on the first interactive iOS build, and reuses them thereafter. There is nothing
+to maintain locally and nothing in the repo.
+
+Apple certificates expire after a year, however, and both workflows run
+`--non-interactive`. If renewal ever needs a decision, the release will fail
+rather than prompt. EAS may renew silently — it holds an App Store Connect API
+key with the App Manager role, which may suffice — but this is untested and
+will not be known for about a year.
+
+If a release ever fails on iOS credentials, run `yarn build-ios` locally. That
+is interactive, so EAS can prompt and regenerate, after which CI works again.
+
 ## Roadmap
 
 The order matters, and two constraints fix it:
