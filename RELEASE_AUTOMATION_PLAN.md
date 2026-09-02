@@ -157,7 +157,13 @@ component-wise and `4 < 17`. Read both numbers back before building.
       Guru, via Play Console → **Users and permissions** → *Invite new users*.
       The old *Setup → API access* page is gone from newer consoles; service
       accounts are now invited like users
-- [ ] App Store Connect API key uploaded to EAS
+- [ ] App Store Connect API key generated at ASC → *Users and Access* →
+      **Integrations** → *App Store Connect API* → **Team Keys**, with the
+      *App Manager* role, and uploaded to EAS with its Key ID and Issuer ID.
+      The `.p8` downloads once only; team keys are not scoped per app
+- [ ] iOS distribution certificate and provisioning profile, which the API key
+      does **not** cover — EAS generates them during the first iOS build, which
+      must therefore be run locally and interactively, not through CI
 - [ ] Play `internal` and `beta` tracks exist, and `beta` has a country list
 - [ ] External TestFlight group exists with *automatically distribute new builds*
       enabled
