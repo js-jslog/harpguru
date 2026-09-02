@@ -25,8 +25,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Added
 
-- MINOR: `submit` profiles in `eas.json` — `internal` for closed testing and
-  `production` for open testing
+- MINOR: `submit` profiles in `eas.json` — `internal` for closed testing, and
+  `production` extending it for open testing, naming the external TestFlight
+  group in `ios.groups` so that only release builds are distributed externally
 - MINOR: `build-ios` script, the iOS counterpart to `build-android`
 
 ### Removed

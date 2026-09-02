@@ -20,9 +20,9 @@
     }
   },
   "submit": {
-    "production": {
+    "internal": {
       "android": {
-        "track": "beta"
+        "track": "internal"
       },
       "ios": {
         "appleId": "jhs4jbs@hotmail.co.uk",
@@ -30,10 +30,15 @@
         "appleTeamId": "6XJN2H9VQM"
       }
     },
-    "internal": {
-      "extends": "production",
+    "production": {
+      "extends": "internal",
       "android": {
-        "track": "internal"
+        "track": "beta"
+      },
+      "ios": {
+        "groups": [
+          "External Testers"
+        ]
       }
     }
   }

@@ -171,8 +171,11 @@ component-wise and `4 < 17`. Read both numbers back before building.
       does **not** cover — EAS generates them during the first iOS build, which
       must therefore be run locally and interactively, not through CI
 - [ ] Play `internal` and `beta` tracks exist, and `beta` has a country list
-- [ ] External TestFlight group exists with *automatically distribute new builds*
-      enabled
+- [ ] External TestFlight group exists — named `External Testers` — with
+      automatic distribution **off**. It is named in `submit.production.ios.groups`
+      instead, so only release builds are assigned to it. Enabling automatic
+      distribution would sweep every build, test builds included, into Beta App
+      Review and out to the public
 
 ### Step 2 — prove it from this branch, before merging
 

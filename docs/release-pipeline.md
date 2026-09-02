@@ -114,9 +114,15 @@ Apple is automatable up to "submitted for Beta App Review". The upload reaches
 *internal* TestFlight testers immediately with no review, which is what makes
 branch test builds quick. Distribution to an **external** group — the
 open-testing equivalent — requires Beta App Review, which cannot be bypassed.
-Group assignment and automatic distribution on approval are both configured in
-App Store Connect, so the process is unattended, but there is an Apple-side
-wait.
+Group assignment is done by the `production` submit profile, which names the
+external group in `ios.groups`; the `internal` profile omits it, which is what
+keeps test builds in internal TestFlight. Distribution on approval is an App
+Store Connect setting, so the process is unattended, but there is an
+Apple-side wait.
+
+Do not turn on automatic distribution for the external group. It applies to
+every build the app receives, so it would pull test builds into Beta App Review
+too, and the two submit profiles would stop meaning anything different on iOS.
 
 In short: **test builds are immediate on both platforms; the open-testing
 release is immediate on Android and unattended-but-queued on iOS.**
