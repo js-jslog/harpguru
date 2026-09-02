@@ -29,6 +29,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
   `production` extending it for open testing, naming the external TestFlight
   group in `ios.groups` so that only release builds are distributed externally
 - MINOR: `build-ios` script, the iOS counterpart to `build-android`
+- MINOR: `expo.ios.infoPlist.ITSAppUsesNonExemptEncryption` set to `false`,
+  declaring export compliance up front so that TestFlight builds are not held
+  in *Missing Compliance* awaiting a manual answer
 
 ### Removed
 

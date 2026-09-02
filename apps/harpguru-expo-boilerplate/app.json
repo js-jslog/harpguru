@@ -11,7 +11,10 @@
     },
     "ios": {
       "bundleIdentifier": "com.jslog.harpguru",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.jslog.harpguru",
