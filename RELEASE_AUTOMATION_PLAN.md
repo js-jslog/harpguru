@@ -71,24 +71,36 @@ branch: version equal to the newest tag (no-op), a minor and a patch bump
 (fails, naming the field). Both workflow files parse as YAML. `eas.json` parses
 as JSON.
 
-**Verified against EAS, by queueing a real Android build** (build
-`6e336091`, commit `9188d93a`):
+**Verified end to end on both stores.** Android build `6e336091` (commit
+`9188d93a`, version code 31) reached the Play `internal` track, and iOS build
+`e38c35d6` (commit `efaee20a`, build number 31) reached TestFlight. That
+settles:
 
 - the remote counters are seeded and auto-increment as intended — seeded at
-  `30`, the build was issued version code `31`;
-- the Play service account is stored on EAS and resolves during submission;
-- the `internal` submit profile correctly overrides the `beta` track it
-  inherits from `production`, so `extends` resolves the way it is relied on;
-- `--non-interactive` queues without prompting for a keystore, which is the
+  `30`, both platforms were issued `31`, and the Android sequence 29 → 30 → 31
+  runs with no gap and no duplicate;
+- both store credentials work: the Play service account and the App Store
+  Connect API key, the latter having been stored unvalidated and now proved by
+  a real submission;
+- the `internal` submit profile resolves to the closed tracks on both
+  platforms, confirming the `extends` structure;
+- `--non-interactive` builds without prompting for a keystore, which is the
   thing that would otherwise break CI;
-- the build is recorded against the pushed commit, so provenance holds.
+- builds are recorded against pushed commits, so provenance holds;
+- a failed submission costs only a retry — the Android submission failed on a
+  disabled Play Developer API and was recovered by resubmitting the same
+  artifact by build id, without repeating three hours of queue time.
+
+Note that this was proved through the **local** `yarn` scripts, not through a
+dispatched workflow, so the first acceptance criterion is not yet met even
+though the capability behind it is.
 
 **Still unverified.** Neither workflow has ever run — the whole CI path,
-`EXPO_TOKEN` included, is untested. The Android build has not finished
-compiling and its submission has not been accepted by Play. Nothing on iOS has
-been touched: no App Store Connect key, no signing credentials, no TestFlight
-submission. The `production` submit profile, and therefore open testing on both
-stores, has never been exercised.
+`EXPO_TOKEN` included, is untested, as is the check script anywhere other than
+locally. No tag has been created by automation. The `production` submit
+profile, and therefore the Play `beta` track and the external TestFlight
+group, has never been exercised, so open testing is entirely unproven on both
+platforms.
 
 ### iOS open testing needs a manual step after the first release
 
@@ -130,7 +142,7 @@ The order matters, and two constraints fix it:
 - **The local `yarn` build scripts have no such restriction**, so the whole
   credential and counter chain *can* be proved from this branch first.
 
-### Step 1 — seed the counters and set up credentials
+### Step 1 — seed the counters and set up credentials — **DONE**
 
 Nothing else can happen until this is done. It is manual and one-off.
 
@@ -177,7 +189,7 @@ component-wise and `4 < 17`. Read both numbers back before building.
 
 - [ ] Expo robot access token scoped to `harp-guru`, added as repository secret
       `EXPO_TOKEN`
-- [ ] Google Play service account created in **Google Cloud Console** (not Play
+- [x] Google Play service account created in **Google Cloud Console** (not Play
       Console), with the *Google Play Android Developer API* enabled in the same
       project, and its JSON key uploaded to EAS via `npx eas-cli credentials`.
       A Play-only Google account has no GCP project, and the service accounts
@@ -187,11 +199,11 @@ component-wise and `4 < 17`. Read both numbers back before building.
       `PERMISSION_DENIED: Google Play Android Developer API has not been used
       in project <n> before or it is disabled`. The build is unaffected, so the
       fix is to enable it and resubmit the same artifact — no rebuild
-- [ ] That service account's email granted *Release to testing tracks* on Harp
+- [x] That service account's email granted *Release to testing tracks* on Harp
       Guru, via Play Console → **Users and permissions** → *Invite new users*.
       The old *Setup → API access* page is gone from newer consoles; service
       accounts are now invited like users
-- [ ] App Store Connect API key generated at ASC → *Users and Access* →
+- [x] App Store Connect API key generated at ASC → *Users and Access* →
       **Integrations** → *App Store Connect API* → **Team Keys**, with the
       *App Manager* role, and uploaded to EAS with its Key ID and Issuer ID.
       The `.p8` downloads once only; team keys are not scoped per app.
@@ -201,23 +213,26 @@ component-wise and `4 < 17`. Read both numbers back before building.
       surfaces only at the first submission. Recovery is cheap: the build still
       succeeds and can be resubmitted with
       `npx eas-cli submit -p ios --id <build-id> --profile internal`
-- [ ] iOS distribution certificate and provisioning profile, which the API key
+- [x] iOS distribution certificate and provisioning profile, which the API key
       does **not** cover — EAS generates them during the first iOS build, which
       must therefore be run locally and interactively, not through CI
-- [ ] Play `internal` and `beta` tracks exist, and `beta` has a country list
-- [ ] Internal TestFlight group exists with you in it. Internal testers receive
+- [x] Play `internal` track exists — confirmed by the submission landing in it
+- [ ] Play `beta` track exists and has a country list. Still unchecked, and it
+      is the open-testing track the release workflow submits to, so a missing
+      country list would fail the first real release rather than a test build
+- [x] Internal TestFlight group exists with you in it. Internal testers receive
       every build automatically once uploaded, with no review and no group named
       in `eas.json` — but only if they are in that group. Being the Account
       Holder does not put you there, and an empty group means a submission that
       succeeds and reaches nobody
-- [ ] External TestFlight group exists — named `External Testers`, matching
+- [x] External TestFlight group exists — named `External Testers`, matching
       `ios.groups` exactly — with automatic distribution **off**. It needs no
       testers in it for submission to work, but see the public link note below. It is named in `submit.production.ios.groups`
       instead, so only release builds are assigned to it. Enabling automatic
       distribution would sweep every build, test builds included, into Beta App
       Review and out to the public
 
-### Step 2 — prove it from this branch, before merging
+### Step 2 — prove it from this branch, before merging — **DONE**
 
 ```bash
 yarn expo-build-android
