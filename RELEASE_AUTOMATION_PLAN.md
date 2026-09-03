@@ -384,6 +384,21 @@ requires the workflow file to exist on that ref.
 Only `pre-push` is present. Unrelated to this work, but spotted while wiring the
 check in.
 
+**The EAS GitHub integration** (`expo.dev/accounts/jslog/projects/harp-guru/github`)
+connects the repo to the EAS project and can trigger builds on push, on pull
+request, or on git tag creation. It is *not* an alternative to the release
+workflow: it cannot create tags, only respond to them, and tagging the trunk
+commit plus the version precondition is the substance of that workflow.
+
+There is a coherent architecture in which Actions runs the check and creates
+the tag, and the integration builds on tag creation — dropping `EXPO_TOKEN`
+from the release path and tying the build to the tagged commit by
+construction. Not taken, for three reasons: the "build on tag" feature is
+**Build Triggers, which Expo has deprecated**; its replacement, EAS Workflows,
+is a second CI system (`.eas/workflows/`) to maintain alongside Actions; and
+release logic would be split across two places, so a failed release means
+diagnosing both. Worth revisiting only if the Actions path proves troublesome.
+
 **`eas-version: latest`** in both workflows is unpinned, so an eas-cli release
 could change behaviour without a commit here. Pinning is the safer choice once
 the pipeline has been proved.
