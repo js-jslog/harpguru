@@ -181,7 +181,12 @@ component-wise and `4 < 17`. Read both numbers back before building.
       Console), with the *Google Play Android Developer API* enabled in the same
       project, and its JSON key uploaded to EAS via `npx eas-cli credentials`.
       A Play-only Google account has no GCP project, and the service accounts
-      page stays empty until one is created — no billing account is needed
+      page stays empty until one is created — no billing account is needed.
+      **Enabling the API is the step that actually gets missed**, and it fails
+      at the first submission rather than at setup, with
+      `PERMISSION_DENIED: Google Play Android Developer API has not been used
+      in project <n> before or it is disabled`. The build is unaffected, so the
+      fix is to enable it and resubmit the same artifact — no rebuild
 - [ ] That service account's email granted *Release to testing tracks* on Harp
       Guru, via Play Console → **Users and permissions** → *Invite new users*.
       The old *Setup → API access* page is gone from newer consoles; service
