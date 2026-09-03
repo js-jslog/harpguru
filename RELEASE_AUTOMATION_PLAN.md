@@ -212,7 +212,7 @@ expensive one: `3` rather than `30` gives a first build of `4`, which Apple
 rejects against the existing `17.0.0`, because `CFBundleVersion` is compared
 component-wise and `4 < 17`. Read both numbers back before building.
 
-- [ ] Expo **robot user** access token added as repository secret `EXPO_TOKEN`.
+- [x] Expo **robot user** access token added as repository secret `EXPO_TOKEN`.
       Robot users are available on a personal account, but under the
       *account*-scoped settings — https://expo.dev/accounts/jslog/settings/access-tokens
       — not the personal `expo.dev/settings/access-tokens`, which offers only
