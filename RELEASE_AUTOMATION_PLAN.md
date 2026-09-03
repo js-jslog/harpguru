@@ -212,8 +212,14 @@ expensive one: `3` rather than `30` gives a first build of `4`, which Apple
 rejects against the existing `17.0.0`, because `CFBundleVersion` is compared
 component-wise and `4 < 17`. Read both numbers back before building.
 
-- [ ] Expo robot access token scoped to `harp-guru`, added as repository secret
-      `EXPO_TOKEN`
+- [ ] Expo access token added as repository secret `EXPO_TOKEN`. Create it at
+      https://expo.dev/settings/access-tokens. Robot users, which would be the
+      better-scoped option, are an **organization** feature and are not offered
+      on a personal account like `jslog` — the *Settings* menu has no such
+      entry. A personal access token is separately revocable and does not
+      affect the login, so on a single-owner account it costs nothing.
+      Verify it before trusting it, in a terminal that is not being recorded:
+      `EXPO_TOKEN=<token> npx eas-cli whoami`
 - [x] Google Play service account created in **Google Cloud Console** (not Play
       Console), with the *Google Play Android Developer API* enabled in the same
       project, and its JSON key uploaded to EAS via `npx eas-cli credentials`.
