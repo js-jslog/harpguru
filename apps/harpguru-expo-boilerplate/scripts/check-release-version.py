@@ -16,7 +16,10 @@ import re
 import subprocess
 import sys
 
-APP_JSON = os.path.join(os.path.dirname(__file__), os.pardir, "app.json")
+# Both the config and the git history are located relative to this file, so
+# the answer does not depend on where the script was invoked from.
+APP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+APP_JSON = os.path.join(APP_DIR, "app.json")
 
 # Releases are tagged v<version>; expo.version carries the same number without
 # the prefix. Two patterns rather than one so neither has to pretend to be the
@@ -63,10 +66,13 @@ def main():
     version = expo["version"]
     new = parse(version)
 
-    tags = subprocess.run(
-        ["git", "tag", "--list", "v*"],
-        capture_output=True, text=True, check=True,
-    ).stdout.split()
+    try:
+        tags = subprocess.run(
+            ["git", "tag", "--list", "v*"],
+            cwd=APP_DIR, capture_output=True, text=True, check=True,
+        ).stdout.split()
+    except (subprocess.CalledProcessError, OSError) as error:
+        fail("could not read tags from git in %s: %s" % (APP_DIR, error))
     released = sorted(
         (tuple(int(p) for p in TAG_PATTERN.match(t).groups()) for t in tags
          if TAG_PATTERN.match(t)),

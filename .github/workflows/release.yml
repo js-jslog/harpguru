@@ -33,23 +33,13 @@ jobs:
       contents: write # required to push the tag
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # a tag push from a shallow clone is not worth risking
       - uses: actions/setup-node@v4
         with:
           node-version: 24
       - run: corepack enable && corepack prepare yarn@1.22.22 --activate
       - run: yarn install --frozen-lockfile
-
-      # Tag before building. If the submission fails the tag still stands,
-      # which is correct — the release was cut — and the build can be re-run
-      # from the EAS dashboard without any git surgery.
-      #
-      # Tags pushed with the default GITHUB_TOKEN do not trigger further
-      # workflows. That is GitHub's loop protection, and here it is exactly
-      # what we want.
-      - name: Tag
-        run: |
-          git tag "v${{ needs.check.outputs.version }}" "${{ github.sha }}"
-          git push origin "v${{ needs.check.outputs.version }}"
 
       - uses: expo/expo-github-action@v8
         with:
@@ -67,3 +57,20 @@ jobs:
           --profile production
           --auto-submit-with-profile production
           --non-interactive --no-wait
+
+      # Tag only once the build is queued. Tagging first would burn the version
+      # on a build that never started, and the workflow could not recover on
+      # its own: a re-run would find the tag, report no-op, and never build.
+      # This way a failure to queue leaves no tag, so a re-run simply works.
+      #
+      # The residual risk is the reverse — a build queued and a tag push that
+      # fails — leaving a release shipped but unnamed. It is the rarer of the
+      # two, and a re-run recovers it at the cost of a duplicate build.
+      #
+      # Tags pushed with the default GITHUB_TOKEN do not trigger further
+      # workflows. That is GitHub's loop protection, and here it is exactly
+      # what we want.
+      - name: Tag
+        run: |
+          git tag "v${{ needs.check.outputs.version }}" "${{ github.sha }}"
+          git push origin "v${{ needs.check.outputs.version }}"

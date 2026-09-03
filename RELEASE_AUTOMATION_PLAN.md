@@ -16,11 +16,9 @@ the work. Then:
 
 - **The branch is `166-autotag-build-publish`**, pushed. All the code is
   written and committed. Do not re-implement anything in *What is implemented*.
-- **Steps 1 and 2 of the Roadmap are done** and both stores have received a
-  build. Step 3 is next, and it is a merge.
-- **Two things gate Step 3**, both listed in Step 1 and both needing the
-  maintainer, not an agent: the `EXPO_TOKEN` repository secret, and confirming
-  the Play `beta` track has a country list.
+- **Steps 1 and 2 of the Roadmap are done.** Every credential is in place,
+  including `EXPO_TOKEN`, and both stores have taken a build at `31`. Nothing
+  gates Step 3, which is next, and which is a merge.
 - **Do not tag anything by hand.** Merging a new `expo.version` to `master` is
   what creates the tag. See *Decisions taken*.
 - **Nothing in CI has ever run.** Treat the first workflow run as a real test
@@ -46,37 +44,37 @@ identity from release version: the iOS build number and Android version code
 become counters owned by EAS, leaving `expo.version` as the only version number
 a human sets.
 
-All code for this is written. Nothing has run yet.
+All the code is written, committed and pushed. Both stores have taken a build
+through the local scripts; nothing has yet run in CI.
 
 ## Current state of the numbers
 
-This is the part to read first — the store, EAS and repo numbers do not
-currently agree, and one step must happen before anything builds.
+The counters are seeded and both stores have taken a build at `31`.
 
 | Where | Value | Notes |
 | --- | --- | --- |
-| Play Console | `versionCode 30`, marketing version `17.0.0` | shipped by the v17.0.0 production build |
-| App Store Connect | `CFBundleVersion 17.0.0`, marketing version `17.0.0` | same build |
-| EAS remote counters | **unset** | never initialised; a build now would start at `1` and be rejected |
-| `app.json` on this branch | `version: 17.0.0`, no counters | counters deleted by this work |
+| Play Console | `31` in *Internal testing*; `30` in production | 30 shipped by the v17.0.0 release |
+| App Store Connect | build `31` in TestFlight, under `17.0.0` | reached internal testers, no review |
+| EAS remote counters | seeded at `30`, last issued `31` | `build:version:set` stores the *last used* value |
+| `app.json` on this branch | `version: 17.0.0`, no counters | counters are EAS-owned now |
 | Newest tag | `v17.0.0`, on `master` | equal to `expo.version`, so no release is pending |
 
-`v17.0.0` was tagged **and** built and submitted to production, using the
-`app.json` values currently on `master`. The stores have therefore definitely
-seen `versionCode 30`, which fixes the seeding value below at `30` rather than
-`29`.
+`v17.0.0` was tagged **and** built and submitted to production using the
+`app.json` values on `master`, so the stores had definitely seen `versionCode
+30` — which is what fixed the seed at `30` rather than `29`, and why the
+Android sequence now runs 29 → 30 → 31 with no gap or duplicate.
 
 Because `expo.version` already equals the newest tag, the first push to `master`
 carries no release. That is not a problem to route around — see the roadmap.
 
 ## What is implemented
 
-Everything below is written and in the working tree of this branch, uncommitted.
+Everything below is written, committed and pushed on this branch.
 
 | File | State |
 | --- | --- |
-| `apps/harpguru-expo-boilerplate/app.json` | `ios.buildNumber` and `android.versionCode` removed |
-| `apps/harpguru-expo-boilerplate/eas.json` | `appVersionSource: remote`; `autoIncrement` on `production`; `submit` profiles `production` (Play `beta` + real Apple identifiers) and `internal` (`extends: production`, Play `internal`) |
+| `apps/harpguru-expo-boilerplate/app.json` | `ios.buildNumber` and `android.versionCode` removed; `ios.infoPlist.ITSAppUsesNonExemptEncryption` added |
+| `apps/harpguru-expo-boilerplate/eas.json` | `appVersionSource: remote`; `autoIncrement` on `production`; `submit` profiles `internal` (Play `internal` + the Apple identifiers) and `production` (`extends: internal`, Play `beta`, plus `ios.groups: ["External Testers"]`) |
 | `apps/harpguru-expo-boilerplate/scripts/check-release-version.py` | release precondition check; stdlib only |
 | `.husky/pre-push` | runs the check first, before lint/tsc/test |
 | `.github/workflows/test-build.yml` | `workflow_dispatch`, `platform` input, submits with the `internal` profile |
@@ -278,8 +276,9 @@ component-wise and `4 < 17`. Read both numbers back before building.
       succeeds and reaches nobody
 - [x] External TestFlight group exists — named `External Testers`, matching
       `ios.groups` exactly — with automatic distribution **off**. It needs no
-      testers in it for submission to work, but see the public link note below. It is named in `submit.production.ios.groups`
-      instead, so only release builds are assigned to it. Enabling automatic
+      testers in it for submission to work, but see the public link note
+      below. It is named in `submit.production.ios.groups` instead, so only
+      release builds are assigned to it. Enabling automatic
       distribution would sweep every build, test builds included, into Beta App
       Review and out to the public
 
@@ -354,10 +353,33 @@ existing tag and reported success, contradicting the acceptance criterion that a
 non-greater version must fail. The check now treats equality with the newest tag
 as the no-op and anything below it as an error.
 
-**`submit.internal` extends `submit.production`.** The original sketch claimed
+**The tag is created after the build is queued, not before.** The original
+shape tagged first, reasoning that a failed submission should still leave the
+tag standing because the release *was* cut. That gets the failure modes the
+wrong way round. Failing to queue a build — a bad token, a config error — is
+the more likely failure, and tagging first burns the version on a build that
+never started. Worse, the workflow cannot then recover on its own: a re-run
+finds the tag, reports a no-op and never builds, so it needs manual
+intervention.
+
+Tagging last inverts both. A failure to queue leaves no tag, so a re-run simply
+works. The residual risk is a queued build whose tag push fails, leaving a
+release shipped but unnamed — rarer, and recoverable by re-running at the cost
+of a duplicate build.
+
+**`submit.production` extends `submit.internal`.** The original sketch claimed
 iOS needs no configuration to reach internal TestFlight. It needs the app
-identity like any other submission, so extending keeps the three Apple
-identifiers in one place.
+identity like any other submission, so one profile holds the three Apple
+identifiers and the other inherits them.
+
+The direction was inverted partway through. It began as `internal extends
+production`, which was fine until `ios.groups` arrived: `production` names the
+external TestFlight group, and `internal` must *not* have it, so the profile
+without the group has to be the parent. `production` is therefore "internal,
+plus external distribution". Submit profiles merge field by field within each
+platform, so the child keeps everything it does not override — verified by
+resolving both profiles through `@expo/eas-json` rather than by reading the
+merge code.
 
 **The Apple identifiers are committed.** `appleId`, `ascAppId` and `appleTeamId`
 are public identifiers, not secrets. The actual secret is the App Store Connect
