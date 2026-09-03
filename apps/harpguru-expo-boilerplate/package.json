@@ -5,10 +5,9 @@
   "main": "index.ts",
   "scripts": {
     "tunnel": "npx expo start --tunnel",
-    "build-android": "npx eas-cli build -p android --profile production",
-    "THE_FOLLOWING_WERE_JUST_AUTO_CREATED": "echo 'not a real script'",
+    "build-android": "npx eas-cli build -p android --profile production --auto-submit-with-profile internal",
+    "build-ios": "npx eas-cli build -p ios --profile production --auto-submit-with-profile internal",
     "start": "expo start",
-    "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",

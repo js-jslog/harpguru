@@ -13,10 +13,15 @@ A monorepo containing the component packages to run and build the harpguru appli
   - You can test this by running a `yarn install` at the end. If you have the wrong dependencies then they will be installed in local `node_modules` folders.
 - Update app.json in harpguru-expo-boilerplate package
   - Set `expo.version` to the version number the project is about to be tagged with (minus the leading 'v')
-  - Set `expo.ios.buildNumber` to the same version number as `expo.version`
-  - Increment `expo.android.versionCode`
-- Tag harpguru and push
+  - This is the only version field to set. The iOS build number and the Android
+    version code are counters owned by EAS and must not be reintroduced here
+- Merge the branch to `master`
+  - This is the release trigger. CI tags the merge commit `v<expo.version>`,
+    builds it on EAS and submits to open testing on both stores
 - Check that the links in the CHANGELOG.md files find the new tag destination
+
+See [ the release pipeline ](./docs/release-pipeline.md) for what CI does, how
+to run a test build from a branch, and the one-off credential setup.
 
 # Build guide
 

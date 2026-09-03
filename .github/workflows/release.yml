@@ -1,0 +1,76 @@
+name: Release
+
+# expo.version is only ever changed by /cut-release, so a push touching
+# app.json is the one event that can carry a new release.
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'apps/harpguru-expo-boilerplate/app.json'
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.check.outputs.version }}
+      release: ${{ steps.check.outputs.release }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the check compares against every existing tag
+      - id: check
+        run: python3 apps/harpguru-expo-boilerplate/scripts/check-release-version.py
+
+  release:
+    needs: check
+    if: needs.check.outputs.release == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # required to push the tag
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # a tag push from a shallow clone is not worth risking
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: corepack enable && corepack prepare yarn@1.22.22 --activate
+      - run: yarn install --frozen-lockfile
+
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      # --no-wait returns as soon as the build is queued;
+      # --auto-submit-with-profile runs the store submission on EAS's servers
+      # when the build finishes, so a runner timeout cannot orphan a
+      # submission and this job costs seconds.
+      - working-directory: apps/harpguru-expo-boilerplate
+        run: >
+          eas build
+          --platform all
+          --profile production
+          --auto-submit-with-profile production
+          --non-interactive --no-wait
+
+      # Tag only once the build is queued. Tagging first would burn the version
+      # on a build that never started, and the workflow could not recover on
+      # its own: a re-run would find the tag, report no-op, and never build.
+      # This way a failure to queue leaves no tag, so a re-run simply works.
+      #
+      # The residual risk is the reverse — a build queued and a tag push that
+      # fails — leaving a release shipped but unnamed. It is the rarer of the
+      # two, and a re-run recovers it at the cost of a duplicate build.
+      #
+      # Tags pushed with the default GITHUB_TOKEN do not trigger further
+      # workflows. That is GitHub's loop protection, and here it is exactly
+      # what we want.
+      - name: Tag
+        run: |
+          git tag "v${{ needs.check.outputs.version }}" "${{ github.sha }}"
+          git push origin "v${{ needs.check.outputs.version }}"
