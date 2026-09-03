@@ -9,6 +9,31 @@ the pipeline works and why it is shaped this way lives in
 [`docs/release-pipeline.md`](docs/release-pipeline.md) and is **not** repeated
 here.
 
+## Picking this up cold
+
+Read this file top to bottom before touching anything; it is the whole state of
+the work. Then:
+
+- **The branch is `166-autotag-build-publish`**, pushed. All the code is
+  written and committed. Do not re-implement anything in *What is implemented*.
+- **Steps 1 and 2 of the Roadmap are done** and both stores have received a
+  build. Step 3 is next, and it is a merge.
+- **Two things gate Step 3**, both listed in Step 1 and both needing the
+  maintainer, not an agent: the `EXPO_TOKEN` repository secret, and confirming
+  the Play `beta` track has a country list.
+- **Do not tag anything by hand.** Merging a new `expo.version` to `master` is
+  what creates the tag. See *Decisions taken*.
+- **Nothing in CI has ever run.** Treat the first workflow run as a real test
+  and read *What is verified, and what is not* before claiming anything works.
+- The durable design — how the pipeline works and why — is in
+  [`docs/release-pipeline.md`](docs/release-pipeline.md). This file is the
+  transitional record and gets deleted at Step 6.
+
+The maintainer's conventions matter here: commits are small and frequent, with
+imperative subjects and a body explaining *why*, and carry no Claude
+attribution. Changelog entries accumulate under `Unreleased` as work happens;
+`/cut-release` turns them into a release later.
+
 ## In one paragraph
 
 The manual tail of the release process — `Tag harpguru and push`, then a local
