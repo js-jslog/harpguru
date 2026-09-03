@@ -221,6 +221,12 @@ component-wise and `4 < 17`. Read both numbers back before building.
       least privilege that can build and submit; raise to Admin only if
       something fails on permissions. A robot cannot sign in and owns nothing,
       so revoking it can never lock the maintainer out.
+      The robot is named `github-actions` after its consumer, since no
+      per-project scoping is offered and the role is account-wide — it can
+      therefore reach every EAS project the `jslog` account owns, not just
+      `harp-guru`, and a project-flavoured name would misstate that. Its token
+      is named `harpguru` after the repository whose secret holds it, so that
+      one repo's credential can be revoked without disturbing another's.
       Verify before trusting it, in a terminal that is not being recorded —
       `EXPO_TOKEN=<token> npx eas-cli whoami` — which prints the robot's name,
       not `jslog`
