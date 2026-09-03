@@ -258,9 +258,19 @@ component-wise and `4 < 17`. Read both numbers back before building.
       does **not** cover — EAS generates them during the first iOS build, which
       must therefore be run locally and interactively, not through CI
 - [x] Play `internal` track exists — confirmed by the submission landing in it
-- [ ] Play `beta` track exists and has a country list. Still unchecked, and it
-      is the open-testing track the release workflow submits to, so a missing
-      country list would fail the first real release rather than a test build
+- [x] Play `beta` track — *Open testing* in the console UI — exists and has
+      prior releases, so its region configuration is almost certainly in place.
+      The *Countries/regions* tab could not be read (console error
+      `6623A6C4`), so this is inferred rather than seen. Judged not worth
+      blocking on: a track with prior releases is unlikely to be missing region
+      config, and a failed submission costs only a resubmit by build id.
+      Earlier revisions of this document overstated the risk as the one item
+      that could sink the first release
+- [ ] Watch on the first release: open testing currently holds an
+      un-completed release at version code 30, offering a rollout, while 30 is
+      also in production — a staged rollout never finished, or a draft never
+      sent. Submitting 31 as `completed` should supersede it, but if the first
+      release fails on the `beta` track, look here before the country list
 - [x] Internal TestFlight group exists with you in it. Internal testers receive
       every build automatically once uploaded, with no review and no group named
       in `eas.json` — but only if they are in that group. Being the Account
