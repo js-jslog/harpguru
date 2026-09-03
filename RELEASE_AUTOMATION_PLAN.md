@@ -212,14 +212,18 @@ expensive one: `3` rather than `30` gives a first build of `4`, which Apple
 rejects against the existing `17.0.0`, because `CFBundleVersion` is compared
 component-wise and `4 < 17`. Read both numbers back before building.
 
-- [ ] Expo access token added as repository secret `EXPO_TOKEN`. Create it at
-      https://expo.dev/settings/access-tokens. Robot users, which would be the
-      better-scoped option, are an **organization** feature and are not offered
-      on a personal account like `jslog` — the *Settings* menu has no such
-      entry. A personal access token is separately revocable and does not
-      affect the login, so on a single-owner account it costs nothing.
-      Verify it before trusting it, in a terminal that is not being recorded:
-      `EXPO_TOKEN=<token> npx eas-cli whoami`
+- [ ] Expo **robot user** access token added as repository secret `EXPO_TOKEN`.
+      Robot users are available on a personal account, but under the
+      *account*-scoped settings — https://expo.dev/accounts/jslog/settings/access-tokens
+      — not the personal `expo.dev/settings/access-tokens`, which offers only
+      personal tokens. The distinction is easy to miss, since the Settings menu
+      leads to the personal page. Give the robot the **Developer** role, the
+      least privilege that can build and submit; raise to Admin only if
+      something fails on permissions. A robot cannot sign in and owns nothing,
+      so revoking it can never lock the maintainer out.
+      Verify before trusting it, in a terminal that is not being recorded —
+      `EXPO_TOKEN=<token> npx eas-cli whoami` — which prints the robot's name,
+      not `jslog`
 - [x] Google Play service account created in **Google Cloud Console** (not Play
       Console), with the *Google Play Android Developer API* enabled in the same
       project, and its JSON key uploaded to EAS via `npx eas-cli credentials`.
