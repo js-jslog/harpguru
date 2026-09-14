@@ -1,0 +1,43 @@
+name: Test build
+
+# Deliberately manual. Building on every branch push would spend EAS build
+# credits on commits nobody wanted built; making a test build an explicit act
+# is the feature, not a compromise.
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Platform to build
+        type: choice
+        options: [all, android, ios]
+        default: all
+
+concurrency:
+  group: test-build-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: corepack enable && corepack prepare yarn@1.22.22 --activate
+      - run: yarn install --frozen-lockfile
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      # Same build profile as a release — only the submit profile differs, so
+      # what testers get is the artifact a release would produce. The preview
+      # profile is not usable here: its Android apk output cannot go to Play.
+      - working-directory: apps/harpguru-expo-boilerplate
+        run: >
+          eas build
+          --platform ${{ inputs.platform }}
+          --profile production
+          --auto-submit-with-profile internal
+          --non-interactive --no-wait

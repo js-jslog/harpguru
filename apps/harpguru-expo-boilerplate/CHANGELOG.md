@@ -15,6 +15,34 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...master) - yyyy-mm-dd
 
+### Changed
+
+- MAJOR: `eas.json` `cli.appVersionSource` changed from `local` to `remote`, so
+  the iOS build number and the Android version code are counters owned and
+  incremented by EAS rather than values maintained here
+- MINOR: `build-android` now submits to the Play `internal` track, so a local
+  build and a CI test build land in the same place
+- MINOR: `README.md` build section covers only what is run from this package
+  and refers out to `docs/release-pipeline.md` for the pipeline itself, in
+  keeping with the split described in `docs/index.md`
+
+### Added
+
+- MINOR: `submit` profiles in `eas.json` — `internal` for closed testing, and
+  `production` extending it for open testing, naming the external TestFlight
+  group in `ios.groups` so that only release builds are distributed externally
+- MINOR: `build-ios` script, the iOS counterpart to `build-android`
+- MINOR: `expo.ios.infoPlist.ITSAppUsesNonExemptEncryption` set to `false`,
+  declaring export compliance up front so that TestFlight builds are not held
+  in *Missing Compliance* awaiting a manual answer
+
+### Removed
+
+- MAJOR: `expo.ios.buildNumber` and `expo.android.versionCode` from `app.json`,
+  which are now owned by EAS and must not be reintroduced
+- MINOR: `THE_FOLLOWING_WERE_JUST_AUTO_CREATED` and `reset-project` scripts
+  left over from the Expo template
+
 ## [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0) - 2026-09-01
 
 ### Changed

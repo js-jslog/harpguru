@@ -1,10 +1,12 @@
 {
   "cli": {
     "version": ">= 16.32.0",
-    "appVersionSource": "local"
+    "appVersionSource": "remote"
   },
   "build": {
-    "production": {},
+    "production": {
+      "autoIncrement": true
+    },
     "preview": {
       "extends": "production",
       "android": {
@@ -15,6 +17,29 @@
       "extends": "production",
       "developmentClient": true,
       "distribution": "internal"
+    }
+  },
+  "submit": {
+    "internal": {
+      "android": {
+        "track": "internal"
+      },
+      "ios": {
+        "appleId": "jhs4jbs@hotmail.co.uk",
+        "ascAppId": "1552752923",
+        "appleTeamId": "6XJN2H9VQM"
+      }
+    },
+    "production": {
+      "extends": "internal",
+      "android": {
+        "track": "beta"
+      },
+      "ios": {
+        "groups": [
+          "External Testers"
+        ]
+      }
     }
   }
 }

@@ -11,12 +11,13 @@
     },
     "ios": {
       "bundleIdentifier": "com.jslog.harpguru",
-      "buildNumber": "17.0.0",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.jslog.harpguru",
-      "versionCode": 30,
       "permissions": []
     },
     "extra": {
