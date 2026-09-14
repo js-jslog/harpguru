@@ -1,7 +1,7 @@
 # The release pipeline
 
-Two GitHub Actions workflows cover the tail of the release process — what used
-to be `Tag harpguru and push` followed by a local `eas build`.
+Two GitHub Actions workflows cover the tail of the release process: tagging the
+released commit, building it on EAS, and submitting the result to the stores.
 
 | Workflow | Trigger | Builds | Submits to | Tags |
 | --- | --- | --- | --- | --- |
@@ -12,12 +12,11 @@ The build is identical in both. Only the submit profile differs.
 
 ## Build identity is not release version
 
-A new *build* and a new *release* used to be the same act, because
-`ios.buildNumber` was required to equal `expo.version`. The stores do not
-require that — `CFBundleVersion` and `versionCode` exist precisely so one
-version can have many builds. Separating them is what lets a feature branch
-produce as many store-submitted test builds as it likes without consuming a
-version number or needing a tag.
+A build and a release are separate acts. `CFBundleVersion` and `versionCode`
+exist precisely so that one version can have many builds, and neither store
+asks them to agree with `expo.version`. Holding them apart is what lets a
+feature branch produce as many store-submitted test builds as it likes without
+consuming a version number or needing a tag.
 
 | Field | Owned by | Changes when |
 | --- | --- | --- |
@@ -27,9 +26,8 @@ version number or needing a tag.
 
 The two counters therefore no longer live in `app.json` or in git, and
 `check-release-version.py` fails the release if they reappear. EAS owns both,
-so they cannot drift apart — which deletes, rather than guards against, the
-old human error of bumping the iOS build number and forgetting the Android
-version code.
+so they cannot drift apart, and there is no longer a counter to bump on one
+platform and forget on the other.
 
 The visible consequence is that the stores show several builds under one
 version string — `17.0.0 (31)` tested internally, `17.0.0 (34)` in open
@@ -70,10 +68,12 @@ on that ref.
 `workflow_dispatch` rather than `on: push` is deliberate — building every
 branch push would spend EAS credits on commits nobody wanted built.
 
-The local `yarn build-android` / `yarn build-ios` scripts remain as a fallback.
-They submit to the same closed tracks, but they build the **working tree**, so
-the artifact in front of testers may correspond to no commit that exists
-anywhere.
+The local `yarn build-android` / `yarn build-ios` scripts in
+`apps/harpguru-expo-boilerplate` remain as a fallback — `yarn expo-build-android`
+and `yarn expo-build-ios` from the root are workspace-qualified aliases for the
+same two scripts, nothing more. They submit to the same closed tracks, but they
+build the **working tree**, so the artifact in front of testers may correspond
+to no commit that exists anywhere.
 
 ## The release check
 
