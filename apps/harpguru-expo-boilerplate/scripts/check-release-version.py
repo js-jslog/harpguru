@@ -98,7 +98,10 @@ def main():
             "Cut a release before merging to master." % ((version,) + previous)
         )
 
-    print("Releasing v%s." % version)
+    # "can release" rather than "releasing": the script only reports the
+    # verdict, and most of the times it runs — the pre-push hook on a branch
+    # that has been cut — nothing acts on it.
+    print("Can release v%s." % version)
     emit(release="true", version=version)
 
 

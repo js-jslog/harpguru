@@ -230,7 +230,7 @@ directly whether the repo is in a releasable state:
 python3 apps/harpguru-expo-boilerplate/scripts/check-release-version.py
 ```
 
-It should report the new version and `Releasing v<new>`. It also runs on
+It should report the new version and `Can release v<new>`. It also runs on
 `git push`, so a mistake here will block the push rather than the release.
 
 ## Afterwards
