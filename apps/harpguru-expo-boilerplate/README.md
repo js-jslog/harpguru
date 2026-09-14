@@ -4,48 +4,42 @@ This project is simply some expo boilerplate to run the HarpGuru application in 
 
 ## Build process
 
-Builds normally run in CI. See [ the release pipeline ](../../docs/release-pipeline.md)
-for the full picture; what follows is the summary and the local fallbacks.
-
-### Testing
-
-Actions -> **Test build** -> *Run workflow*, choosing the branch and the
-platform. Both platforms build with the `production` profile and are submitted
-to the closed testing tracks — Play `internal`, and internal TestFlight, which
-needs no Beta App Review and so reaches testers straight away.
-
-No tag is created and no version number is consumed. EAS increments the build
-counters, so a branch can produce as many test builds as it needs at the same
-`expo.version`.
-
-### Release
-
-Merging to `master` with a new `expo.version` tags the merge commit, builds it
-and submits to open testing on both stores. There is nothing to run by hand.
+Builds run in CI, and the full picture — test builds, releases, tagging and the
+one-off credential setup — is in
+[ the release pipeline ](../../docs/release-pipeline.md). What follows is only
+what is run from this package.
 
 ### Local fallbacks
 
-For when CI is in the way. These submit to the same closed tracks as a CI test
-build. From this package:
+For when CI is in the way:
 
 ```
 yarn build-android
 yarn build-ios
 ```
 
-or from the monorepo root:
+or from the monorepo root, where a script name has to say which workspace it
+delegates to, so these carry the `expo-` prefix (as `expo-tunnel` does for this
+package's `tunnel`):
 
 ```
 yarn expo-build-android
 yarn expo-build-ios
 ```
 
-The caveat is that they build the **working tree**, so the artifact in front of
-testers may correspond to no commit that exists anywhere. Prefer the workflow.
+Each pair is the same command — the root script does nothing but
+`yarn workspace harpguru-expo-boilerplate run …`.
 
-To create a preview binary .apk which can be downloaded from a resulting link
-and side-loaded onto a device or emulator — note that Play will not accept an
-apk, so this one is for direct installation only:
+They build with the `production` profile and submit to the same closed testing
+tracks as a CI test build. The caveat is that they build the **working tree**,
+so the artifact in front of testers may correspond to no commit that exists
+anywhere. Prefer the workflow.
+
+### A side-loadable binary
+
+To create a preview .apk which can be downloaded from the resulting link and
+side-loaded onto a device or emulator — note that Play will not accept an apk,
+so this one is for direct installation only:
 
 ```
 npx eas-cli build -p android --profile preview

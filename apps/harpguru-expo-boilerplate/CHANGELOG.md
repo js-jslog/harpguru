@@ -22,6 +22,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
   incremented by EAS rather than values maintained here
 - MINOR: `build-android` now submits to the Play `internal` track, so a local
   build and a CI test build land in the same place
+- MINOR: `README.md` build section covers only what is run from this package
+  and refers out to `docs/release-pipeline.md` for the pipeline itself, in
+  keeping with the split described in `docs/index.md`
 
 ### Added
 
