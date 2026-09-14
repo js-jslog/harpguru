@@ -30,10 +30,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Changed
 
-- MINOR: Release steps in `README.md` no longer include tagging by hand; the
-  merge to `master` is the release trigger
+- MAJOR: Releasing no longer includes tagging by hand. The merge to `master` is
+  the release trigger, so the old procedure does not merely become redundant —
+  a hand-cut tag now races CI for the same name
 - MINOR: `cut-release` skill sets only `expo.version`, and no longer instructs
   the user to tag
+- MINOR: `README.md` release steps defer to the `/cut-release` skill and set out
+  what to check in the plan it presents, rather than restating its mechanics
 
 ## [v4.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0) - 2026-09-01
 
