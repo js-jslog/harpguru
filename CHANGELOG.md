@@ -21,6 +21,15 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
   App Review — the App Store Connect call `eas submit` does not make, without
   which a released build never leaves *Ready to Submit*
 
+### Changed
+
+- MINOR: Workflow actions bumped off the Node 20 runtime GitHub now warns
+  about — `actions/checkout` v4 to v7, `actions/setup-node` v4 to v7 and
+  `expo/expo-github-action` v8 to v9, all in both workflows
+- MINOR: `eas-version` pinned to 24.4.2, the version that ran the v18.0.0
+  release, rather than tracking `latest` where an eas-cli release could change
+  the pipeline's behaviour with no commit in the repository
+
 ### Fixed
 
 - MINOR: `docs/release-pipeline.md` claimed Apple was automated as far as
