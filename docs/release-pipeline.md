@@ -110,10 +110,12 @@ that job, approval would gate the tag too.
 Google Play is fully automatable: `eas submit` to `track: beta` puts the
 artifact into open testing with no human step.
 
-Apple is automatable up to "submitted for Beta App Review". The upload reaches
-*internal* TestFlight testers immediately with no review, which is what makes
-branch test builds quick. Distribution to an **external** group — the
-open-testing equivalent — requires Beta App Review, which cannot be bypassed.
+Apple is automatable up to *uploaded, and assigned to the external group*. The
+upload reaches *internal* TestFlight testers immediately with no review, which
+is what makes branch test builds quick. Distribution to an **external** group —
+the open-testing equivalent — requires Beta App Review, which cannot be
+bypassed.
+
 The two paths are asymmetric because TestFlight is. Internal access is a
 property of the *person*: an App Store Connect user in the internal group
 receives every build automatically, with no review and nothing named in
@@ -122,8 +124,45 @@ the *build*: it must be assigned to a group, and the first build of each
 version faces Beta App Review. So the `production` submit profile names the
 external group in `ios.groups` and the `internal` profile omits it, which is
 what keeps test builds internal. Distribution on approval is an App
-Store Connect setting, so the process is unattended, but there is an
-Apple-side wait.
+Store Connect setting, so once a build is approved the process is unattended.
+
+### The build does not submit itself
+
+Being in a beta group and being submitted for Beta App Review are two separate
+resources in App Store Connect. `eas submit` creates the first and never the
+second, so a released build is assigned to `External Testers`, shows *Ready to
+Submit*, and waits there indefinitely. Nothing is queued at Apple and nothing
+times out; it simply never progresses.
+
+This is not a first-release quirk. Every release lands in that state, so every
+release needs the submission made:
+
+```
+ASC_KEY_ID=<key id> ASC_ISSUER_ID=<issuer id> ASC_KEY_PATH=<path to .p8> \
+  node apps/harpguru-expo-boilerplate/scripts/beta-review-submit.mjs --submit
+```
+
+Without `--submit` it reports what the API knows and changes nothing, which is
+also the quickest way to find out what a confusing console is actually showing:
+the build's processing state, the groups it belongs to, and whether a review
+submission exists. It reads the app id from `eas.json` and the version from
+`app.json`, and defaults to the newest build of that version. The key needs App
+Manager or Admin — a Developer-role key reads builds and then fails the
+submission with a bare 403.
+
+Run it after the build has finished processing. The release workflow queues with
+`--no-wait`, so immediately after a release Apple is usually still ingesting the
+upload, and a submission against a build that is not `VALID` is rejected.
+
+Things that are *not* the cause, all of which look plausible when a build is
+stuck: an empty tester list on the group, the absent public link, and missing
+Test Information. An external group with no testers accepts and reviews a build
+perfectly happily — audience and review are unrelated.
+
+This step is a candidate for the release workflow itself, which would make the
+first sentence of this section true rather than aspirational. It needs the key
+as a repository secret and a way to wait for processing, so it has been left
+out until it is designed rather than bolted on.
 
 Do not turn on automatic distribution for the external group. It applies to
 every build the app receives, so it would pull test builds into Beta App Review
@@ -137,4 +176,5 @@ first release. An external group with no link and no invited testers accepts a
 release perfectly happily and shows it to nobody.
 
 In short: **test builds are immediate on both platforms; the open-testing
-release is immediate on Android and unattended-but-queued on iOS.**
+release is immediate on Android, and on iOS needs one command per release and
+then an Apple-side wait.**

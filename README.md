@@ -31,6 +31,12 @@ tags the merge commit `v<expo.version>`, builds it on EAS and submits to open
 testing on both stores. Do not tag by hand; a manual tag races CI for the same
 name.
 
+iOS needs one command afterwards. The upload is assigned to the external
+TestFlight group but is not submitted for Beta App Review, so once Apple has
+finished processing it, run
+`apps/harpguru-expo-boilerplate/scripts/beta-review-submit.mjs --submit`. See
+[ the release pipeline ](./docs/release-pipeline.md) for why.
+
 Afterwards, check that the links in the CHANGELOG.md files find the new tag.
 
 See [ the release pipeline ](./docs/release-pipeline.md) for what CI does, how
