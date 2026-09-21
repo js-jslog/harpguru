@@ -15,8 +15,26 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.1.0...master) - yyyy-mm-dd
 
+### Added
+
+- MINOR: `beta-review.yml`, which submits the released iOS build for Beta App
+  Review — the App Store Connect call `eas submit` does not make, and the last
+  step of a release that still had to be run by hand. It triggers on the release
+  workflow completing, polls until Apple has finished processing the upload, and
+  submits the build assigned to the external TestFlight group. Its App Store
+  Connect key is held in a `master`-only GitHub environment rather than in
+  repository secrets, which any branch can read
+
 ### Changed
 
+- MINOR: `beta-review-submit.mjs` takes `--wait <minutes>`, polling App Store
+  Connect until the released build has arrived and reached `VALID` rather than
+  failing on the first look, and accepts the signing key inline as `ASC_KEY` as
+  well as by path, so CI never writes it to the runner's filesystem
+- MINOR: `docs/release-pipeline.md` records that the submit profile named
+  `production` targets open testing on both stores and that nothing in the
+  pipeline reaches either store's production track, and that EAS's `skipping
+  TestFlight setup` log line has nothing to do with Beta App Review
 - MINOR: `cut-release` skill says explicitly that an untouched package's
   `Unreleased` link is left pointing at an older tag, and to read the other
   packages' links before deciding — a link that looks stale is the convention,
