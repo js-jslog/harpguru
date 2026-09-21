@@ -15,6 +15,20 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.0.0...master) - yyyy-mm-dd
 
+### Added
+
+- MINOR: `beta-review-submit.mjs`, which submits a TestFlight build for Beta
+  App Review — the App Store Connect call `eas submit` does not make, without
+  which a released build never leaves *Ready to Submit*
+
+### Fixed
+
+- MINOR: `docs/release-pipeline.md` claimed Apple was automated as far as
+  "submitted for Beta App Review". It is automated as far as uploaded and
+  assigned to the external group; the submission is a separate resource and is
+  now documented as a per-release step
+- MINOR: Release steps in `README.md` did not mention the iOS submission
+
 ## [v5.0.0](https://github.com/js-jslog/harpguru/releases/tag/v18.0.0) - 2026-09-14
 
 ### Added
