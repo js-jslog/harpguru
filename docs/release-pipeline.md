@@ -1,14 +1,29 @@
 # The release pipeline
 
-Two GitHub Actions workflows cover the tail of the release process: tagging the
-released commit, building it on EAS, and submitting the result to the stores.
+Three GitHub Actions workflows cover the tail of the release process: tagging
+the released commit, building it on EAS, submitting the result to the stores,
+and submitting the iOS build for Beta App Review.
 
 | Workflow | Trigger | Builds | Submits to | Tags |
 | --- | --- | --- | --- | --- |
 | `test-build.yml` | manual, any branch | `--profile production` | closed testing (Play `internal`, internal TestFlight) | no |
 | `release.yml` | push to `master` touching `app.json` | `--profile production` | open testing (Play `beta`, external TestFlight) | `v<expo.version>` |
+| `beta-review.yml` | `release.yml` completing | — | Beta App Review, for the build `release.yml` produced | no |
 
-The build is identical in both. Only the submit profile differs.
+The build is identical in the first two. Only the submit profile differs.
+
+## `production` is not a production track
+
+Nothing in this pipeline reaches either store's production track, and nothing in
+it is meant to. The submit profile named `production` targets Play `beta` and
+the external TestFlight group — **open testing on both stores**.
+
+The name describes the build profile it extends, not a destination. `eas.json`
+has one production *build* profile, which every build here uses; the submit
+profiles differ only in where the finished artifact is sent, and neither of them
+sends it to a production track. Promotion to one is a manual act in the Play
+Console and in App Store Connect, and no workflow in this repository performs
+it. This has already misled once, which is why it is written down.
 
 ## Build identity is not release version
 
@@ -99,12 +114,33 @@ sequence is not mistaken for a mistake.
 
 ## Credentials
 
-Store credentials live on EAS's servers, not in this repository. The only
-repository secret is `EXPO_TOKEN`.
+Store credentials live on EAS's servers, not in this repository. CI holds two of
+its own: `EXPO_TOKEN`, and the App Store Connect API key that `beta-review.yml`
+submits with.
 
-Note that GitHub secrets are readable by workflows on every branch, so anyone
-able to push a branch can dispatch a test build and spend EAS credits. For a
-single-maintainer repo that is acceptable. The release workflow is `master`-only.
+They are held differently, deliberately. `EXPO_TOKEN` is an ordinary repository
+secret. The Apple key is not — it lives in an **environment** called
+`apple-beta-review`, whose deployment branch policy allows `master` only.
+
+The distinction matters because repository secrets are readable by a workflow on
+any branch, and `test-build.yml` is dispatchable from any branch, so anyone able
+to push a branch can read every repository secret. For `EXPO_TOKEN` that is
+accepted: the exposure is EAS build credits, and this is a single-maintainer
+repo. An App Manager key on the Apple account is a wider thing to leave within
+reach of a pushed branch, and the environment is what narrows it. GitHub refuses
+environment secrets to a job running on any other ref, and it does so
+server-side, so the restriction holds whatever a workflow on a branch claims. A
+dispatch of `beta-review.yml` from a branch is refused for the same reason,
+which is the intended behaviour rather than something to work around.
+
+That environment holds `ASC_KEY_ID`, `ASC_ISSUER_ID` and `ASC_KEY` — the last
+being the contents of the `.p8` rather than a path to it, so the key is never
+written to the runner's filesystem for a later step to read. The key needs App
+Manager or Admin.
+
+The release workflow is `master`-only, and so is `beta-review.yml` — by
+construction rather than by a condition that could be edited away, since a
+`workflow_run` workflow always runs the default branch's copy of its own file.
 
 If store submission should require a click, wrap the `release` job in a GitHub
 `environment` with a required reviewer — but note that with the tag step inside
@@ -115,11 +151,11 @@ that job, approval would gate the tag too.
 Google Play is fully automatable: `eas submit` to `track: beta` puts the
 artifact into open testing with no human step.
 
-Apple is automatable up to *uploaded, and assigned to the external group*. The
-upload reaches *internal* TestFlight testers immediately with no review, which
-is what makes branch test builds quick. Distribution to an **external** group —
-the open-testing equivalent — requires Beta App Review, which cannot be
-bypassed.
+Apple is automatable up to `WAITING_FOR_REVIEW`. The upload reaches *internal*
+TestFlight testers immediately with no review, which is what makes branch test
+builds quick. Distribution to an **external** group — the open-testing
+equivalent — requires Beta App Review. The review, and the wait for it, are
+what cannot be bypassed; *submitting* for it can be, and is.
 
 The two paths are asymmetric because TestFlight is. Internal access is a
 property of the *person*: an App Store Connect user in the internal group
@@ -139,35 +175,63 @@ second, so a released build is assigned to `External Testers`, shows *Ready to
 Submit*, and waits there indefinitely. Nothing is queued at Apple and nothing
 times out; it simply never progresses.
 
-This is not a first-release quirk. Every release lands in that state, so every
-release needs the submission made:
+This is not a first-release quirk. Every release lands in that state, observed
+identically on build 34 of v18.0.0 and build 35 of v18.1.0. So
+`beta-review.yml` makes the missing call on every release. Four things about how
+it does it:
+
+- It triggers on `release.yml` **completing**, not on the tag push, because tags
+  pushed with the default `GITHUB_TOKEN` do not trigger workflows. That is
+  GitHub's loop protection, and `release.yml` depends on it.
+- A successful `release.yml` run is not the same thing as a release: its check
+  job reports "nothing to release" for a push that carries no new version, and
+  the release job is then skipped. So `beta-review.yml` looks for a `v*` tag on
+  the released commit and does nothing when there is none, rather than polling
+  for an hour after a build that was never queued. The tag also names the
+  version to submit, so this does not depend on `app.json` still agreeing.
+- It polls App Store Connect for up to 90 minutes, because `release.yml` queues
+  with `--no-wait`: when the follow-on run starts, the build may not have
+  reached Apple at all, and a submission against a build that is not `VALID` is
+  rejected. Ninety minutes is generous on purpose — two releases are a thin
+  basis for a timeout, and the cost of guessing low is a red run on a release
+  that was fine.
+- It waits for the newest build of that version **assigned to the external
+  group**, not simply the newest of that version. A test build dispatched from a
+  branch after a release carries the same `expo.version` and a higher build
+  number, so it would be the newer of the two — and it is submitted with the
+  `internal` profile, so it is not a build that should ever reach Beta App
+  Review.
+
+Creating the submission is idempotent: the script reports an existing submission
+rather than making a second one. So re-running the workflow is always safe, and
+re-running it is how a timeout is recovered.
+
+When a run fails, the same script is both the diagnostic tool and the fallback:
 
 ```
 ASC_KEY_ID=<key id> ASC_ISSUER_ID=<issuer id> ASC_KEY_PATH=<path to .p8> \
-  node apps/harpguru-expo-boilerplate/scripts/beta-review-submit.mjs --submit
+  node apps/harpguru-expo-boilerplate/scripts/beta-review-submit.mjs
 ```
 
 Without `--submit` it reports what the API knows and changes nothing, which is
 also the quickest way to find out what a confusing console is actually showing:
 the build's processing state, the groups it belongs to, and whether a review
 submission exists. It reads the app id from `eas.json` and the version from
-`app.json`, and defaults to the newest build of that version. The key needs App
-Manager or Admin — a Developer-role key reads builds and then fails the
-submission with a bare 403.
+`app.json`, and defaults to the newest build of that version. Add `--submit` to
+make the call by hand. The key needs App Manager or Admin — a Developer-role
+key reads builds and then fails the submission with a bare 403.
 
-Run it after the build has finished processing. The release workflow queues with
-`--no-wait`, so immediately after a release Apple is usually still ingesting the
-upload, and a submission against a build that is not `VALID` is rejected.
+The console is worth distrusting here, because it reports two different statuses
+for the same build: *Build uploads* shows *Complete* once processing finishes,
+while the per-version list shows *Ready to Submit*. The second is the one that
+tracks review, and neither of them names the resource that is missing.
 
 Things that are *not* the cause, all of which look plausible when a build is
 stuck: an empty tester list on the group, the absent public link, and missing
 Test Information. An external group with no testers accepts and reviews a build
 perfectly happily — audience and review are unrelated.
 
-This step is a candidate for the release workflow itself, which would make the
-first sentence of this section true rather than aspirational. It needs the key
-as a repository secret and a way to wait for processing, so it has been left
-out until it is designed rather than bolted on.
+### The external group's own settings
 
 Do not turn on automatic distribution for the external group. It applies to
 every build the app receives, so it would pull test builds into Beta App Review
@@ -180,6 +244,29 @@ therefore cannot be set up in advance — it is a one-time manual step after the
 first release. An external group with no link and no invited testers accepts a
 release perfectly happily and shows it to nobody.
 
-In short: **test builds are immediate on both platforms; the open-testing
-release is immediate on Android, and on iOS needs one command per release and
-then an Apple-side wait.**
+### There is no shortcut through EAS
+
+Recorded so that it is not investigated a second time. Both release logs contain
+
+```
+No complete App Store Connect credentials, skipping TestFlight setup
+```
+
+which reads as though EAS would do this work if its credentials were completed.
+It would not. That line comes from
+[`ensureTestFlightSetup.ts`](https://github.com/expo/eas-cli/blob/v24.4.2/packages/eas-cli/src/submit/ios/ensureTestFlightSetup.ts),
+and the step it skips is
+[`ensureTestFlightGroupExistsAsync`](https://github.com/expo/eas-cli/blob/v24.4.2/packages/eas-cli/src/credentials/ios/appstore/ensureTestFlightGroup.ts),
+which creates an *internal* group named `Team (Expo)` and returns immediately if
+the app already has any beta group. This app has two. It would do nothing even
+if it ran, and it has nothing to do with Beta App Review.
+
+The root cause of that log line, and of `Failed to display prompt: Apple Team
+ID` during the build, is that the ASC API key held on EAS carries no Apple Team
+ID. Neither symptom is related to the submission gap.
+
+## In short
+
+**Test builds are immediate on both platforms; a release reaches open testing
+unattended on Android, and on iOS reaches Beta App Review unattended and then
+waits on Apple.**

@@ -54,6 +54,11 @@ jobs:
       # --auto-submit-with-profile runs the store submission on EAS's servers
       # when the build finishes, so a runner timeout cannot orphan a
       # submission and this job costs seconds.
+      #
+      # On iOS that submission stops short of Beta App Review, which is a
+      # separate App Store Connect resource. beta-review.yml makes that call
+      # once this workflow completes, keyed on the tag pushed below, and polls
+      # for the build rather than holding this job open for it.
       - working-directory: apps/harpguru-expo-boilerplate
         run: >
           eas build
