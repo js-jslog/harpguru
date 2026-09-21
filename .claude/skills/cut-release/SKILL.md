@@ -83,9 +83,15 @@ found *anywhere* in the repo's Unreleased sections. If any package has a
 
 **Each package's version.** Bump that package's *current `package.json`
 version* by the strongest prefix in *its own* Unreleased section. Packages
-with an empty Unreleased section are not bumped and get no new heading — leave
-their changelog's `Unreleased` link alone too, unless the project's existing
-files show otherwise.
+with an empty Unreleased section are not bumped and get no new heading.
+
+**Leave an untouched package's `Unreleased` link alone** — and read the repo
+before deciding. Check the `Unreleased` heading of every package you are *not*
+cutting: if they already point at tags older than the newest, the convention is
+that the link tracks the last tag that included that package, not the newest
+tag in the repo, and advancing it breaks the pattern rather than tidies it.
+The result looks stale and is not. Name it in the step 4 plan, so that nobody
+later reads it as a slip and corrects it.
 
 The package version and the tag are two different numbers and drift apart
 freely. That is expected and correct.

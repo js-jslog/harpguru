@@ -15,6 +15,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.1.0...master) - yyyy-mm-dd
 
+### Changed
+
+- MINOR: `cut-release` skill says explicitly that an untouched package's
+  `Unreleased` link is left pointing at an older tag, and to read the other
+  packages' links before deciding — a link that looks stale is the convention,
+  not a slip
+
 ### Fixed
 
 - MINOR: The release workflow's tag push ran the pre-push hook, because
