@@ -78,12 +78,17 @@ to no commit that exists anywhere.
 ## The release check
 
 `apps/harpguru-expo-boilerplate/scripts/check-release-version.py` runs before
-anything is built, and again on every `git push` via the pre-push hook. It
-fails the release if a build counter has reappeared in `app.json`, or if
-`expo.version` is below the newest tag. It reports "nothing to release" when
-`expo.version` already equals the newest tag — which is what makes a re-run or
-a force-push safe, with the tag itself acting as the record of what has already
-been released.
+anything is built, and again on every `git push` from a working copy via the
+pre-push hook. It fails the release if a build counter has reappeared in
+`app.json`, or if `expo.version` is below the newest tag. It reports "nothing
+to release" when `expo.version` already equals the newest tag — which is what
+makes a re-run or a force-push safe, with the tag itself acting as the record
+of what has already been released.
+
+The one push the hook deliberately does not gate is the release workflow's own
+tag push. `yarn install` installs the hooks on the runner as well, so that push
+uses `--no-verify`: by then the build is already queued, and a hook failure
+would leave a release shipped but unnamed.
 
 ## An abandoned release still burns a version
 

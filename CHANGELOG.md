@@ -15,6 +15,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.1.0...master) - yyyy-mm-dd
 
+### Fixed
+
+- MINOR: The release workflow's tag push ran the pre-push hook, because
+  `yarn install` installs the hooks on the runner — putting the release check,
+  lint, tsc and the whole test suite between a queued build and its tag. It now
+  pushes with `--no-verify`
+
 ## [v5.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.1.0) - 2026-09-21
 
 ### Added

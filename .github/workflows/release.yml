@@ -74,7 +74,14 @@ jobs:
       # Tags pushed with the default GITHUB_TOKEN do not trigger further
       # workflows. That is GitHub's loop protection, and here it is exactly
       # what we want.
+      #
+      # --no-verify because `yarn install` ran `prepare: husky`, which installs
+      # the hooks into .git/hooks on the runner, so this push would otherwise
+      # fire .husky/pre-push: the release check, lint, tsc and the whole test
+      # suite. That put four minutes of unrelated failure modes between a
+      # queued build and its tag, which is the one failure this job is shaped
+      # to avoid. The suite has already run on the branch before merge.
       - name: Tag
         run: |
           git tag "v${{ needs.check.outputs.version }}" "${{ github.sha }}"
-          git push origin "v${{ needs.check.outputs.version }}"
+          git push --no-verify origin "v${{ needs.check.outputs.version }}"
