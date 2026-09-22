@@ -13,7 +13,17 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.2.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.3.0...master) - yyyy-mm-dd
+
+## [v5.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.3.0) - 2026-09-22
+
+### Fixed
+
+- MINOR: `beta-review-submit.mjs` signed a single App Store Connect token and
+  presented it for every request, so a `--wait` run that polled for more than
+  twenty minutes ended in a `401` on credentials that had been working a minute
+  earlier — Apple caps a token's lifetime at twenty minutes and `--wait` polls
+  for up to ninety. It mints a token per request now
 
 ## [v5.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.2.0) - 2026-09-21
 
@@ -153,7 +163,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.2.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.3.0...HEAD)
+- [v5.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.3.0)
 - [v5.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.2.0)
 - [v5.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.1.0)
 - [v5.0.0](https://github.com/js-jslog/harpguru/releases/tag/v18.0.0)

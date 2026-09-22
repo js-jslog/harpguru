@@ -74,10 +74,28 @@ if (!ascAppId) fail('no submit.internal.ios.ascAppId in eas.json')
 const version = arg('version') ?? read('app.json').expo?.version
 if (!version) fail('no expo.version in app.json and no --version given')
 
+// The key is read once, rather than on each signing below, so that an
+// unreadable path is reported as itself instead of as a signing failure.
+const key = (() => {
+  if (keyPem) return keyPem
+  try {
+    return readFileSync(keyPath, 'utf8')
+  } catch (error) {
+    fail(`could not read the key at ${keyPath}: ${error.message}`)
+  }
+})()
+
 // ES256. Node signs ECDSA as DER by default; a JWT wants the raw r||s pair,
 // which is what dsaEncoding: 'ieee-p1363' produces. Getting this wrong reads
 // as an authentication failure rather than as a malformed signature.
-const token = (() => {
+//
+// A token is minted per request rather than once for the process. Apple caps
+// the lifetime at 20 minutes and rejects anything longer, while --wait polls
+// for up to 90, so one token cannot cover a run that waits: it expires part
+// way through and every poll after that is a 401, on credentials that were
+// working a minute earlier. Signing is local and costs nothing, so there is
+// nothing to hold a token for.
+const token = () => {
   const encode = (o) => Buffer.from(JSON.stringify(o)).toString('base64url')
   const iat = Math.floor(Date.now() / 1000)
   const header = encode({ alg: 'ES256', kid: keyId, typ: 'JWT' })
@@ -92,19 +110,13 @@ const token = (() => {
   signer.end()
   let signature
   try {
-    signature = signer.sign(
-      {
-        key: keyPem ?? readFileSync(keyPath, 'utf8'),
-        dsaEncoding: 'ieee-p1363',
-      },
-      'base64url'
-    )
+    signature = signer.sign({ key, dsaEncoding: 'ieee-p1363' }, 'base64url')
   } catch (error) {
     const where = keyPem ? 'in ASC_KEY' : `at ${keyPath}`
     fail(`could not sign with the key ${where}: ${error.message}`)
   }
   return `${header}.${payload}.${signature}`
-})()
+}
 
 const call = async (method, path, body) => {
   let response
@@ -112,7 +124,7 @@ const call = async (method, path, body) => {
     response = await fetch(`${API}${path}`, {
       method,
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token()}`,
         ...(body ? { 'Content-Type': 'application/json' } : {}),
       },
       ...(body ? { body: JSON.stringify(body) } : {}),
