@@ -12,7 +12,7 @@ export const MenuFace = ({
   const scaledLabelProtrusion = useScaledMenuLabelProtrusion()
   const { style } = StyleSheet.create({
     style: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       flexDirection: 'row',
       left: scaledLabelProtrusion,
     },

@@ -18,7 +18,7 @@ export const OptionTitle = ({
   const styles = useOptionSizes()
   const { wrapper, gutterSpacer } = StyleSheet.create({
     wrapper: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       alignItems: 'flex-start',
       justifyContent: 'center',
     },

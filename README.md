@@ -4,19 +4,44 @@ A monorepo containing the component packages to run and build the harpguru appli
 
 # Release steps
 
-- Review all of the CHANGELOG.md files for changes since last tag
-  - Create new entry drawing a line under the changes, being careful to update the label tag to the package version, but the link source to the anticipated harpguru tag number
-  - Update the `unreleased` line's tag reference
-  - Add a similar line to the bottom of the CHANGELOG.md file and similarly update the `Unreleased` tag reference
-- Increment the version number in the package.json and ensure it's the same as the one used in the CHANGELOG.md label tag
-- Update the dependencies on other harpguru packages if they exist
-  - You can test this by running a `yarn install` at the end. If you have the wrong dependencies then they will be installed in local `node_modules` folders.
-- Update app.json in harpguru-expo-boilerplate package
-  - Set `expo.version` to the version number the project is about to be tagged with (minus the leading 'v')
-  - Set `expo.ios.buildNumber` to the same version number as `expo.version`
-  - Increment `expo.android.versionCode`
-- Tag harpguru and push
-- Check that the links in the CHANGELOG.md files find the new tag destination
+Run `/cut-release`. It reads every CHANGELOG.md, works out each package's new
+version from its Compatible Versioning markers, and applies those numbers
+across the repo. It presents a plan before editing anything; what to check in
+that plan:
+
+- A package's version comes from the strongest `MAJOR:`/`MINOR:` prefix in
+  *its own* Unreleased section. The anticipated **tag** comes from the
+  strongest prefix found anywhere in the repo. These are two different numbers
+  and they drift apart on purpose — the root package version sitting far below
+  the tag is correct.
+- New changelog headings are labelled with the *package* version but link to
+  the *repo* tag, which will 404 until the merge creates it. Getting those two
+  the wrong way round is the classic mistake in these files.
+- `expo.version` in `apps/harpguru-expo-boilerplate/app.json` is set to the
+  anticipated tag without its leading `v`. It is the only version field that
+  belongs there: the iOS build number and the Android version code are
+  counters owned by EAS and must not be reintroduced.
+- References between harpguru packages move only when a package takes a major
+  bump, because the ranges are written `^MAJOR.0.0`. `yarn install` is the real
+  check: a wrong range silently installs a published copy into a local
+  `node_modules` instead of linking the workspace.
+
+Then merge the branch to `master`. **That merge is the release trigger** — CI
+tags the merge commit `v<expo.version>`, builds it on EAS and submits to open
+testing on both stores. Do not tag by hand; a manual tag races CI for the same
+name.
+
+iOS needs nothing afterwards. `eas submit` assigns the upload to the external
+TestFlight group but does not submit it for Beta App Review, so a second
+workflow makes that call once Apple has finished processing the build. What
+remains is Apple's review, which takes as long as it takes. See
+[ the release pipeline ](./docs/release-pipeline.md) for what to do if that run
+fails.
+
+Afterwards, check that the links in the CHANGELOG.md files find the new tag.
+
+See [ the release pipeline ](./docs/release-pipeline.md) for what CI does, how
+to run a test build from a branch, and the one-off credential setup.
 
 # Build guide
 

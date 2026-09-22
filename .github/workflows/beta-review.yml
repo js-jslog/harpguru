@@ -1,0 +1,133 @@
+name: Beta App Review
+
+# The last step of an iOS release, and the only one Apple insists on separately.
+#
+# `eas submit` assigns the upload to the external TestFlight group. It does not
+# submit it for Beta App Review, which is a different App Store Connect
+# resource, so without this workflow a released build sits at "Ready to Submit"
+# indefinitely: nothing is queued at Apple and nothing times out. See
+# docs/release-pipeline.md.
+on:
+  # Not `push: tags`, however well that would fit: the tag is pushed by
+  # release.yml with the default GITHUB_TOKEN, and GitHub deliberately does not
+  # trigger workflows from those pushes. workflow_run is the hook that does
+  # fire, and it always runs the default branch's copy of this file, which makes
+  # this master-only by construction rather than by a condition that could be
+  # forgotten.
+  workflow_run:
+    workflows: [Release]
+    types: [completed]
+
+  # For recovering a failed run, and for exercising this workflow without
+  # waiting for a release. dry_run defaults to true so that dispatching it is
+  # safe: it reports what App Store Connect knows and submits nothing.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to submit (default: whatever app.json carries)'
+        type: string
+      dry_run:
+        description: Report only, submit nothing
+        type: boolean
+        default: true
+
+concurrency:
+  group: beta-review
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    # The Apple key lives in this environment rather than in repository secrets,
+    # because an environment can be restricted to master and a repository secret
+    # cannot. Repository secrets are readable by a workflow on any branch, and
+    # test-build.yml is dispatchable from any branch, so a repository secret
+    # would put an App Manager key within reach of anything pushed to a branch.
+    # Set the environment's deployment branch policy to master only - that
+    # policy is the control doing the work here, not the environment itself.
+    #
+    # test-build.yml needs none of this and is untouched: it submits with the
+    # internal profile, which omits ios.groups, and internal TestFlight faces no
+    # review at all.
+    environment: apple-beta-review
+    # --wait below is the real budget. This only stops a wedged job idling for
+    # the six hours GitHub would otherwise allow.
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # The tag is both the evidence that a release happened and the source
+          # of the version, so the tags have to come with the clone.
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.ref }}
+
+      # release.yml finishes green whether or not it released anything: its
+      # check job reports "nothing to release" for a push that does not carry a
+      # new version, and the release job is then skipped. So a successful run is
+      # not the same thing as a release, and taking it for one would spend an
+      # hour polling for a build that was never queued. The tag is what tells
+      # them apart, and it names the version to submit, so this does not depend
+      # on app.json still agreeing with what was released.
+      #
+      # There is deliberately no `conclusion == 'success'` guard, because the
+      # tag subsumes it. A release that failed before queueing the build leaves
+      # no tag; so does one that queued a build and then failed to push the tag,
+      # which release.yml documents as its residual risk and recovers by being
+      # re-run. In every one of those cases there is nothing here to submit.
+      #
+      # Inputs are passed through env rather than interpolated into the script.
+      # This job holds a signing key, so it is not the place to expand arbitrary
+      # text into a shell.
+      - id: release
+        name: Was this a release?
+        env:
+          EVENT: ${{ github.event_name }}
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            version="$INPUT_VERSION"
+            if [ -z "$version" ]; then
+              version="$(node -p "require('./apps/harpguru-expo-boilerplate/app.json').expo.version")"
+            fi
+            echo "version=$version" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          tag="$(git tag --points-at HEAD --list 'v*' | head -n1)"
+          if [ -z "$tag" ]; then
+            echo "No v* tag on $(git rev-parse --short HEAD): release.yml ran but released nothing."
+            exit 0
+          fi
+          echo "version=${tag#v}" >> "$GITHUB_OUTPUT"
+
+      - if: steps.release.outputs.version != ''
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      # No `yarn install`: the script uses only Node builtins and global fetch,
+      # so this job costs a checkout and a Node.
+      #
+      # A dry run does not wait, because the point of one is to report what is
+      # there now. A real submission waits, because the release workflow queued
+      # the build with --no-wait and Apple is still ingesting the upload.
+      - if: steps.release.outputs.version != ''
+        name: Submit for Beta App Review
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          # The key itself rather than a path to it, so it is never written to
+          # the runner's filesystem.
+          ASC_KEY: ${{ secrets.ASC_KEY }}
+          EVENT: ${{ github.event_name }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          mode="--wait 90 --submit"
+          if [ "$EVENT" = "workflow_dispatch" ] && [ "$DRY_RUN" = "true" ]; then
+            mode=
+          fi
+          node apps/harpguru-expo-boilerplate/scripts/beta-review-submit.mjs \
+            --version "$VERSION" \
+            $mode

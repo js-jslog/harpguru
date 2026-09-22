@@ -23,11 +23,11 @@ export const Menu = ({
   const { 9: borderRadius } = dynamicSizes
   const styles = StyleSheet.create({
     animated: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       zIndex: 10,
     },
     overlay: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       left: scaledLabelProtrusion * -1,
       flexDirection: 'row',
       justifyContent: 'flex-start',

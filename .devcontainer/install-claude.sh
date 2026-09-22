@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
-
-curl -fsSL https://claude.ai/install.sh | bash

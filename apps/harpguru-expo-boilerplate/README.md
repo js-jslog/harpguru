@@ -4,28 +4,45 @@ This project is simply some expo boilerplate to run the HarpGuru application in 
 
 ## Build process
 
-### Testing
+Builds run in CI, and the full picture — test builds, releases, tagging and the
+one-off credential setup — is in
+[ the release pipeline ](../../docs/release-pipeline.md). What follows is only
+what is run from this package.
 
-#### Android
+### Local fallbacks
 
-To create a preview binary .apk file which can be downloaded from a resulting link and installed on a device or in an emulator.
+For when CI is in the way:
+
+```
+yarn build-android
+yarn build-ios
+```
+
+or from the monorepo root, where a script name has to say which workspace it
+delegates to, so these carry the `expo-` prefix (as `expo-tunnel` does for this
+package's `tunnel`):
+
+```
+yarn expo-build-android
+yarn expo-build-ios
+```
+
+Each pair is the same command — the root script does nothing but
+`yarn workspace harpguru-expo-boilerplate run …`.
+
+They build with the `production` profile and submit to the same closed testing
+tracks as a CI test build. The caveat is that they build the **working tree**,
+so the artifact in front of testers may correspond to no commit that exists
+anywhere. Prefer the workflow.
+
+### A side-loadable binary
+
+To create a preview .apk which can be downloaded from the resulting link and
+side-loaded onto a device or emulator — note that Play will not accept an apk,
+so this one is for direct installation only:
 
 ```
 npx eas-cli build -p android --profile preview
-```
-
-#### iOS
-
-YET TO BE COMPLETED
-
-### Release
-
-#### Android
-
-To create a production .aab
-
-```
-npx eas-cli build -p android --profile production
 ```
 
 # Split from HarpNative

@@ -23,17 +23,17 @@ export const NotificationFlash = ({
 
   const styles = StyleSheet.create({
     pinkExplosion: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       zIndex: 10,
       backgroundColor: colors.harpguruPink,
     },
     messageUnderlay: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       zIndex: 11,
       backgroundColor: colors.pageColor,
     },
     message: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       zIndex: 12,
       flexDirection: 'column',
       alignItems: 'center',
