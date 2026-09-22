@@ -488,6 +488,14 @@ early sight" — is a different act from a pitch.
 - How should `harpguru-core` expose the harp face — a handful of named exports, or a
   purpose-built composed component (a `HarpFaceOnly`, say) that the widget and the app both
   use? The second keeps the public surface small but is more upfront work.
-- Does a new `apps/` workspace need its own release cadence and CHANGELOG, or can the web
-  surfaces version independently of the store releases? The current process assumes every
-  package moves together at a tag.
+
+### Settled since writing
+
+- **Does a new `apps/` workspace need its own release cadence and CHANGELOG?** Not for
+  versioning. The premise this was asked under — that every package moves together at a
+  tag, by hand — no longer holds. `/cut-release` does the arithmetic across the monorepo
+  and merging a new `expo.version` to `master` does the tagging, so a new workspace joins
+  the existing cadence at no extra cost. **Deployment is a separate question and stays
+  open:** the release workflow reacts to `expo.version` and drives store submission only,
+  so what triggers a widget deploy is a Phase B design decision rather than a
+  release-process one. Settled 2026-09-22; see `docs/release-pipeline.md`.

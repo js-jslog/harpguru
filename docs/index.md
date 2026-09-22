@@ -9,6 +9,12 @@ For details on the API's and what to expect when _using_ the packages, please vi
 - [ The release pipeline ](release-pipeline.md)
 - [ Reanimated & gesture handler in the boilerplate ](../apps/harpguru-expo-boilerplate/docs/unnecessary-reanimated-and-gesture-handler-packages.md)
 
+# Project direction
+
+Where the project is going and why, for work that extends the product rather than maintains it. Read the roadmap end to end before planning any phase of it; the decisions it records are easier to re-derive badly than to find.
+
+- [ The AWS pathway ](../roadmap-planning/index.md)
+
 # User documentation
 
 It would be preferable to put this documentation in a more customer friendly place. But for now it is here and I just need to make it clear that this is aimed at the end user rather than the developer (which is the main intended target of documentation in this folder).

@@ -162,15 +162,22 @@ edited. Note also that the current list contains no `apps/*` entry at all.
 is live at push time: `lint` and `tsc` will cover a new workspace, `test` will quietly not.
 See `docs/git-hooks.md`.
 
-**Releases are coordinated across the monorepo**, and the process is manual. From the root
-README: every changed package gets a CHANGELOG entry whose label tag is the package version
-but whose link target is the anticipated `harpguru` tag; package versions are incremented;
-inter-package dependency ranges are updated; and `apps/harpguru-expo-boilerplate/app.json`
-gets `expo.version`, `expo.ios.buildNumber` and an incremented `expo.android.versionCode`.
+**Releases are coordinated across the monorepo, and the process is automated.**
+`/cut-release` reads every CHANGELOG, derives each package's new version from its
+Compatible Versioning markers, and applies those numbers across the repo. Merging the
+result to `master` is the release trigger: CI tags the merge commit, builds it on EAS and
+submits it to open testing. `expo.version` in `apps/harpguru-expo-boilerplate/app.json` is
+the only version field a human sets — the iOS build number and the Android version code
+are counters owned by EAS and **must not be reintroduced**. See `docs/release-pipeline.md`,
+which is the durable record.
 
-This matters for Phase C: **widening `TuningIds` is a change to `harpparts`**, which means a
-version bump and CHANGELOG entries in `harpparts` and in everything depending on it. Budget
-for it rather than discovering it at the tag.
+What the automation does not do is decide. The Unreleased CHANGELOG entries, and the
+`MAJOR:`/`MINOR:` markers that drive the arithmetic, are written as the work happens.
+
+This still matters for Phase C: **widening `TuningIds` is a change to `harpparts`**, so the
+version bump ripples into everything depending on it. `/cut-release` performs that ripple;
+what it needs is an Unreleased entry in each affected package, written at the time rather
+than reconstructed at the tag.
 
 **Each package has `.eslintrc.js` and `.prettierrc.js` extending the root base configs.** A
 new workspace needs both, or it will be linted inconsistently.
