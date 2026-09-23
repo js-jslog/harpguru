@@ -157,6 +157,13 @@ tooling ever exist in this container.
 That seam is deliberate and worth preserving: it is also the "no long-lived access keys
 anywhere" story that the DevOps certificate cares about.
 
+**Documents flow the other way.** The cloud container clones this repo to `/harpguru` —
+deliberately outside its own `/app` workspace — so that an agent working there can read the
+roadmap from a working tree and commit findings back to this repo rather than writing them
+up locally. That is a checkout, not a dependency: no domain code is built or consumed over
+there, and the seam above is untouched. The orientation file carries the details, including
+why markdown-only pushes from that container skip the pre-push hook.
+
 ### Where the new code goes in this repo
 
 The widget (Phase B) and the workbench (Phase C) are **new workspaces under `apps/`**,

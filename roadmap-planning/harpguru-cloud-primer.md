@@ -51,6 +51,46 @@ one history, one place to check.
 directing document drift, and the reader who loses is the one who does not know theirs is
 stale. If the roadmap is wrong, fix it there.
 
+## Working with the app repo from here
+
+Clone `js-jslog/harpguru` to **`/harpguru`** — outside `/app`, which is this repo's
+workspace. The separation is the point: a sibling at the filesystem root cannot be staged
+into a commit here by accident, and it does not depend on a gitignore rule continuing to
+hold. Do not put it under `/app`.
+
+That gives you the roadmap and the findings document in a working tree rather than over
+HTTP — fresher, and readable without a network round trip — and, more importantly, a place
+to commit discoveries back to.
+
+**The clone is ephemeral.** `/` is the container's writable layer, not a mounted volume, so
+a rebuild loses it. Re-clone; do not accumulate uncommitted work there. If it ever needs to
+survive rebuilds it wants its own named volume in the `mounts` array, and `purge` will not
+find that volume unless it is listed alongside the others — the same trap as the credential
+volumes. Re-cloning is the better default anyway: a stale checkout of a directing document
+is the exact failure this arrangement exists to prevent.
+
+### Pushing from here
+
+`harpguru`'s `.husky/pre-push` runs `check-release-version.py`, then `yarn lint`, `yarn tsc`
+and `yarn test`. This container has Node and pnpm but **no yarn**, and the clone has no
+`node_modules`, so the hook cannot run. There is no pre-commit hook, so committing is fine.
+
+**Markdown-only changes under `roadmap-planning/` may be pushed with `--no-verify`.** That is
+narrow and it is justified by what the hook actually checks: `eslint --ext .ts,.tsx`, `tsc`,
+`jest`, and a version check against `app.json`. A commit touching only markdown cannot
+regress any of them.
+
+**Anything touching code goes through the app container instead**, where the hook runs
+properly. The risk here was never that a markdown push breaks something — it cannot — it is
+that `--no-verify` becomes a habit that outlives its justification. If you find yourself
+reaching for it on a change that is not markdown, that is the signal to stop and move the
+work.
+
+Pushing also needs git credentials in this container. `/home/dev` persists across rebuilds
+and is where the base keeps hand-configured credentials, but confirm what it provides for
+git specifically — an earlier devcontainer in this family installed Git Credential Manager
+and a later one removed it.
+
 ## How work arrives
 
 An agent takes **one phase** and produces a granular plan for it, having read both documents
