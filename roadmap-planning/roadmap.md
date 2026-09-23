@@ -179,19 +179,24 @@ single object of 27 fields covering everything the app does — quiz degrees, pa
 fragmentation, column bounds, layout facts, size schemes. Rendering one cell therefore
 requires a fully populated store, not a set of props.
 
-Two ways through, and this should be settled before Phase B is planned in detail:
+**Settled 2026-09-23. The widget drives the whole store, and `harpguru-core` exposes the
+harp face as one composed component.** The evidence is in the findings doc; the reasoning:
 
-- **Drive the whole store from the widget.** Create a store instance, set the fixed tuning,
-  expose only key and pozition, and leave the quiz and paging state at defaults where it is
-  simply never read. Cheap, and keeps one source of truth. `createHarpGuruStore`,
-  `StoreProvider` and `useHarpGuruStore` are already exported from
-  `harpguru-core/src/store`, and `getInitialGlobalState` already builds the initial state.
-- **Decouple the components to take props.** Cleaner, and better for an embeddable widget,
-  but it is a refactor across 26-plus component files and would put the Phase B estimate at
-  serious risk.
-
-The first is almost certainly right for Phase B. The second is only worth considering if
-the widget turns out to need genuine isolation from app concepts.
+- **Drive the whole store.** Create a store instance, set the fixed tuning, expose only key
+  and pozition, and leave the quiz and paging state at defaults where it is simply never
+  read. The app already runs two independent stores side by side, the harp face reads only
+  13 of the store's 26 fields, and `CallbackOnSourceGlobalProps` already derives all of them
+  from `activeHarpStrata`.
+- **Not props.** Only 13 files in the tree touch the store — but prop-drilling those fields
+  would thread props through all 49. The refactor stays rejected on that arithmetic. The
+  "26-plus component files" figure previously written here was the Reanimated file count and
+  never belonged to this question.
+- **One composed component, not a handful of named exports.** A widget needs a bundle: the
+  provider, the derivation component, the harp face, and the resize behaviour that
+  `harp-guru.tsx` currently holds in a discarded `useWindowDimensions()` call. Four named
+  exports plus a note saying "and do not forget the resize line" is precisely how that line
+  gets left out. One component cannot be assembled wrongly, and it keeps the public surface
+  at two exports rather than five.
 
 ### Which container per phase
 
@@ -329,7 +334,10 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
 - Click-to-toggle rather than drag: a different input model from the app's, and simpler.
 - Responsive sizing into an iframe of unknown width. A harp face is 10–16 holes wide and a
   partner's sidebar may be 320px. The app's existing zoom option suggests this problem is
-  already familiar.
+  already familiar. **Know the mechanism before touching it:** resize response comes
+  entirely from a discarded `useWindowDimensions()` call in `harp-guru.tsx`, which the
+  composed harp face component has to reproduce or the widget will size once on mount and
+  never again.
 - **Trim the bundle.** 4 MB of the 6.2 MB web export is `@expo/vector-icons` fonts. An
   embed that drops megabytes onto a partner's product page will not stay on it.
 - Two chrome variants: promotional on harpguru.com, minimal and attributed in an embed.
@@ -482,17 +490,19 @@ early sight" — is a different act from a pitch.
   scope?
 - Should the `harpguru-cloud` fork share the `~/.aws` credential volume with
   `devcontainer-aws-base`, or have its own?
-- **Does the widget drive the full `harpguru-core` store, or do the harp face components get
-  decoupled to take props?** Settle before planning Phase B in detail — it is the largest
-  single risk to that phase's estimate. See "Where the new code goes".
-- How should `harpguru-core` expose the harp face — a handful of named exports, or a
-  purpose-built composed component (a `HarpFaceOnly`, say) that the widget and the app both
-  use? The second keeps the public surface small but is more upfront work.
 
 ### Settled since writing
 
+- **Does the widget drive the full `harpguru-core` store, or do the harp face components get
+  decoupled to take props? And how should the harp face be exposed?** The store, and as one
+  composed component. This was the largest single risk to Phase B's estimate, and the
+  verification retired it: the app already runs independent store instances, the harp face
+  reads 13 of 26 fields and writes one, and the derivation from `activeHarpStrata` is
+  already a component. Settled 2026-09-23; the reasoning is under "Where the new code goes"
+  and the evidence in the findings doc.
 - **Does the harp face look right in a browser, and do the gestures work under a mouse?**
-  Yes to both, and this was the largest remaining risk to Phases B and C. The spike ran on
+  Yes to both. This was the last thing that could have invalidated Phases B and C, and it
+  did not. The spike ran on
   2026-09-23 against `master` at `bafbd03e`: the harp face renders well and cells respond
   to clicks. The one failure — menu scrolling — is outside the widget's frozen scope. See
   the findings doc for the mechanism.

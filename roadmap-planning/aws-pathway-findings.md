@@ -140,9 +140,10 @@ export { StoreProvider, useHarpGuruStore, useHarpGuruStoreInstance } from './sto
 ```
 
 `getInitialGlobalState` (in `components/harp-guru/utils`) already builds an initial state.
-So a widget can plausibly create a store, fix the tuning, expose only key and pozition, and
-leave the unused fields at their defaults — without refactoring 26-plus components to take
-props. See the open questions in the roadmap; this is unsettled.
+So a widget can create a store, fix the tuning, expose only key and pozition, and leave the
+unused fields at their defaults, without refactoring the components to take props.
+**Settled 2026-09-23** — the verified findings below say what the tree actually reads, and
+the roadmap records the decision.
 
 ## Repo conventions
 
@@ -207,6 +208,39 @@ untested — the spike had no reason to find out.
 **The export has grown slightly**: a 2.4 MB JS bundle, 6.2 MB total, and still all 16
 `@expo/vector-icons` families making up roughly 4 MB of it. Phase B's bundle trim is
 unchanged in both need and size.
+
+**The widget can drive the whole store, and the harp face is less entangled than it looks.**
+The tree — `harp-face`, `harp-faces`, `harp-face-fragment`, `harp-row`, `harp-cell`,
+`hole-number`, `hole-number-row` — is 49 non-test files, of which **13 touch the store**.
+They read 13 of the store's 26 fields, and write exactly one thing: `setBufferedActivityToggles`,
+from the cell tap. `tuningId`, `valvingId`, `pozitionId`, `harpKeyId`, `activeQuizDegrees`,
+`flushChannel`, `sourceColumnBounds` and `staticSizes` are never read by it at all — they
+exist for the menus and the quiz.
+
+**The store is already multi-instance.** `harp-guru.tsx` mounts two `StoreProvider`s side by
+side, one per page, each with its own store from `createHarpGuruStore(pageNumber)`. Running
+an independent store for a widget is a pattern the app already relies on, not a new thing to
+prove.
+
+**The derivation is already a component.** `activeHarpStrata` is the single source of truth,
+and `CallbackOnSourceGlobalProps` — which renders `<></>` and does nothing but run two hooks
+— fans it out into every derived field. A widget is therefore a `StoreProvider`, a
+`CallbackOnSourceGlobalProps`, a harp face, and a control calling `setActiveHarpStrata` with
+a new `getHarpStrata(...)`. Everything else recomputes itself, and the quiz and paging
+fields sit at their defaults, unread.
+
+**`harp-guru.tsx:19` calls `useWindowDimensions()` and discards the result.** That single
+unassigned line is the app's entire responsive mechanism: it re-renders the tree on a resize
+or rotation, and seven call sites then read the imperative `getWindowDimensions()` during
+that render. It lives in the one component a widget will not use, so a widget that mounts a
+harp face directly sizes itself once on mount and never responds again. One line to fix,
+invisible until something resizes, and directly in the path of Phase B's iframe-of-unknown-width
+requirement.
+
+**The package exports one thing.** `harpguru-core/src/index.ts` is
+`export { HarpGuru } from './components'`. The store's exports are reachable only by deep
+import into `src/store` — which works, because `main` points at raw TypeScript, but is not a
+public surface. Exposing the harp face is a prerequisite task, exactly as the roadmap says.
 
 **`harpparts` now carries 51 tunings, not 47.** #180 added the trochilus tunings after this
 document was written. Pozitions, scales, pitches and degrees are unmoved. Phase B's
