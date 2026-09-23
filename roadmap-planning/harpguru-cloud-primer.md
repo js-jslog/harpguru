@@ -86,10 +86,11 @@ that `--no-verify` becomes a habit that outlives its justification. If you find 
 reaching for it on a change that is not markdown, that is the signal to stop and move the
 work.
 
-Pushing also needs git credentials in this container. `/home/dev` persists across rebuilds
-and is where the base keeps hand-configured credentials, but confirm what it provides for
-git specifically — an earlier devcontainer in this family installed Git Credential Manager
-and a later one removed it.
+Git credentials need no setup. The base Dockerfile installs **Git Credential Manager 2.4.1**,
+runs `git-credential-manager configure`, and sets `credential.credentialStore plaintext`
+globally, so authenticating to GitHub works out of the box and the stored credential survives
+rebuilds along with the rest of `/home/dev`. Note the store is plaintext by deliberate choice
+— it is a disposable development container, but it is worth knowing rather than discovering.
 
 ## How work arrives
 
