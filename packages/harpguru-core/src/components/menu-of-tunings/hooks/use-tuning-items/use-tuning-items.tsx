@@ -40,6 +40,9 @@ export const useTuningItems = (
   const lucky13Tunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.Lucky13)
+  const trochilusTunings = getTuningIds()
+    .map((id) => getTuning(id))
+    .filter((tuning) => tuning.category === TuningCategories.Trochilus)
   const joeFiliskoTunings = getTuningIds()
     .map((id) => getTuning(id))
     .filter((tuning) => tuning.category === TuningCategories.JoeFilisko)
@@ -143,6 +146,22 @@ export const useTuningItems = (
       key={'option-break-lucky13'}
     />,
     ...lucky13Tunings.map((tuning, index) => (
+      <OptionItemWithDisplayMode
+        key={`${index}`}
+        value={tuning.shortName || tuning.id}
+        isSelected={tuning.id === tuningId}
+        itemTapHandler={itemTapHandler}
+        displayMode={activeDisplayMode}
+        callbackParam={tuning.id}
+        twoColumns={false}
+      />
+    )),
+    <OptionBreak
+      title={TuningCategories.Trochilus}
+      isTopPadded={true}
+      key={'option-break-trochilus'}
+    />,
+    ...trochilusTunings.map((tuning, index) => (
       <OptionItemWithDisplayMode
         key={`${index}`}
         value={tuning.shortName || tuning.id}

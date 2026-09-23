@@ -47,6 +47,10 @@ import {
   BABY_FAT,
   TWELVE_HOLE_SOLO,
   SIXTEEN_HOLE_SOLO,
+  TROCHILUS_RICHTER,
+  TROCHILUS_POP,
+  TROCHILUS_SOLO,
+  TROCHILUS_SIXTH_SOLO,
 } from '../../tuning'
 import type { Tuning } from '../../tuning'
 
@@ -70,6 +74,10 @@ orderedTunings.set(TuningIds.PowerDraw, POWER_DRAW)
 orderedTunings.set(TuningIds.PaddyRichter, PADDY_RICHTER)
 orderedTunings.set(TuningIds.Lucky13Richter, LUCKY_13_RICHTER)
 orderedTunings.set(TuningIds.Lucky13PowerChromatic, LUCKY_13_POWER_CHROMATIC)
+orderedTunings.set(TuningIds.TrochilusRichter, TROCHILUS_RICHTER)
+orderedTunings.set(TuningIds.TrochilusPop, TROCHILUS_POP)
+orderedTunings.set(TuningIds.TrochilusSolo, TROCHILUS_SOLO)
+orderedTunings.set(TuningIds.TrochilusSixthSolo, TROCHILUS_SIXTH_SOLO)
 orderedTunings.set(TuningIds.BluesOne, BLUES_ONE)
 orderedTunings.set(TuningIds.BluesTwo, BLUES_TWO)
 orderedTunings.set(TuningIds.BluesThree, BLUES_THREE)

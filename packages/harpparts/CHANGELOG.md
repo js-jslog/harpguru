@@ -13,7 +13,14 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v13.0.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.4.0...HEAD) - yyyy-mm-dd
+
+## [v10.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.4.0) - 2026-09-23
+
+### Added
+
+- MINOR: JDR Trochilus (aka Bushman Game Changer) Richter, pop, solo and 6th
+  solo slide tunings, and a dedicated `TuningCategories.Trochilus` category
 
 ## [v10.1.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0) - 2023-01-05
 
@@ -269,7 +276,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v13.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.4.0...HEAD)
+- [v10.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.4.0)
 - [v10.1.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0)
 - [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0)
 - [v9.2.0](https://github.com/js-jslog/harpguru/releases/tag/v10.0.0)
