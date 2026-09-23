@@ -55,10 +55,12 @@ The extension we want, in priority order:
    audience.
 2. **Shareable setups.** A teacher publishes a link or QR code carrying harp key, pozition,
    tuning and scale; a student opens it and lands in exactly the right configuration.
-3. **A commercial thread.** There is an existing relationship with **Hohner** (from
-   promoting the PentaHarp) and their ambassador **Ronnie Shellist**, who advocates for
-   Harp Guru. The plan is built to give them something measurable, which is the thing
-   sponsors are usually unable to get.
+3. **A commercial thread.** **Ronnie Shellist** — a Hohner ambassador — advocates for Harp
+   Guru, and he *is* the relationship. **There is no meaningful relationship with Hohner
+   itself**: the contact from promoting the PentaHarp is not something to bank on, and the
+   plan should never assume a door there is already open. Hohner is reached through Ronnie,
+   or not for now. The plan is built to give a sponsor something measurable, which is the
+   thing sponsors are usually unable to get.
 
 Hard product constraints:
 
@@ -269,7 +271,8 @@ Reopen only with a specific new reason, and say what it is.
   permanently untriggered — a permanent exemption, not a temporary dodge. Identity, when it
   arrives, is web-only.
 - **The widget's scope is frozen.** One tuning, a few keys and pozitions, cell selection.
-  No quiz mode, no multiple pages, no tuning picker, no saved state. Feature creep here is
+  No quiz mode, no multiple pages, no tuning picker, no saved state. It *displays* the scale
+  a setup link carries — a flash and a name — and never offers a control to choose one. Feature creep here is
   the one thing that would genuinely cannibalise the paid app.
 - **No audio processing.** Descoped by product philosophy: Harp Guru identifies the note a
   player is aiming for, and a dedicated tuner is more direct for hitting it. Recording and
@@ -465,9 +468,16 @@ or use an S3 backend. CDK is safe here because CloudFormation holds state server
 
 ## Partner strategy
 
-**Ronnie before Hohner.** He is already an advocate, the conversation costs nothing, and a
-Hohner pitch arriving with their own ambassador as the reference case is a fundamentally
-different proposition to one arriving with a prototype.
+**Ronnie before Hohner, because Ronnie is the only warm route there is.** He is already an
+advocate and the conversation costs nothing. Hohner, by contrast, is cold — so a pitch does
+not merely land better with their own ambassador as the reference case, it is close to the
+only way it lands at all.
+
+**The setup link is what gets shown to him.** If the feature lands with Ronnie, the argument
+to Hohner follows from it: a harp face that demonstrates a novel tuning in two seconds is a
+manufacturer's problem solved, and their ambassador using it is the evidence. Other routes
+to Hohner may exist, but this is the primary one and the plan should be sequenced as though
+it is the only one.
 
 When that message goes out, lead with what he gets rather than what we get: because a setup
 link falls back to a working harp face rather than a store page, **his links work for his
@@ -477,22 +487,37 @@ part that matters to us, and it lands better as a consequence than as the pitch.
 
 **Approach Hohner during Phase D, with a report in hand rather than an idea.** An idea asks
 them to imagine something; a working feature with three months of numbers asks them to make
-a decision, which is far easier to get. Warm introductions have a limited re-approach
-budget and a premature pitch spends it. If the relationship needs keeping alive sooner, a
-note that asks for nothing — "here is what I have been building, thought you would want
-early sight" — is a different act from a pitch.
+a decision, which is far easier to get. There is no warm introduction here to spend
+carelessly — there is one to be manufactured, through Ronnie, and a premature approach
+spends the chance of making it.
 
 ## Open questions
 
-- Is the Hohner relationship warm enough to act on in roughly six months, or does it need a
-  low-cost holding note sooner?
-- Does the widget need a scale selector, or is that already scope creep against the frozen
-  scope?
 - Should the `harpguru-cloud` fork share the `~/.aws` credential volume with
-  `devcontainer-aws-base`, or have its own?
+  `devcontainer-aws-base`, or have its own? **Genuinely open, and open for a reason**: it
+  needs more AWS familiarity than exists yet, so do not mistake it for neglect and do not
+  let an agent settle it in passing. It is forced early — choosing is step 4 of creating the
+  fork, the first task of Phase A. If it is still undecided at that moment, take separate
+  volumes: isolation is the cheaper mistake to undo.
+- **Where does this roadmap live once `harpguru-cloud` exists?** Both repos need it and
+  copying it into both guarantees drift — the failure this document exists to prevent. The
+  candidates are a canonical copy here with a pointer from the cloud repo, the reverse, or
+  duplication with a stated master. Decide before the fork, because the fork is when the
+  second reader appears.
 
 ### Settled since writing
 
+- **Is the Hohner relationship warm enough to act on in roughly six months?** No — there is
+  very little relationship to act on, which closes the question rather than defers it. The
+  plan previously described an existing relationship; that has been corrected at source in
+  "The two goals" and in the partner strategy. Ronnie Shellist is the entry point, the
+  setup-link feature is what gets shown to him, and the manufacture-and-brand argument to
+  Hohner follows from his response. Settled 2026-09-23.
+- **Does the widget need a scale selector?** No, and the frozen scope stands. But a setup
+  link carries a scale, so the widget must show the one it is handed: a flash and the
+  scale's name is sufficient. Display, never a control — and `notify-of-scale` and
+  `notification-flash` already exist in `harpguru-core`, so this is reuse rather than new
+  UI. Settled 2026-09-23.
 - **Does the widget drive the full `harpguru-core` store, or do the harp face components get
   decoupled to take props? And how should the harp face be exposed?** The store, and as one
   composed component. This was the largest single risk to Phase B's estimate, and the
