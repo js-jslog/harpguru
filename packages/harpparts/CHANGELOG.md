@@ -15,6 +15,11 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v13.0.0...HEAD) - yyyy-mm-dd
 
+### Added
+
+- MINOR: JDR Trochilus (aka Bushman Game Changer) Richter, pop, solo and 6th
+  solo slide tunings, and a dedicated `TuningCategories.Trochilus` category
+
 ## [v10.1.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0) - 2023-01-05
 
 - MINOR: Add a 'lint-fix' run script

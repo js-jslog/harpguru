@@ -8,6 +8,7 @@ const {
   Hohner,
   BrendanPower,
   Lucky13,
+  Trochilus,
   JoeFilisko,
   RichterModes,
   SpiralModes,
@@ -63,6 +64,10 @@ const {
   BabyFat,
   TwelveHoleSolo,
   SixteenHoleSolo,
+  TrochilusRichter,
+  TrochilusPop,
+  TrochilusSolo,
+  TrochilusSixthSolo,
 } = TuningIds
 
 const {
@@ -745,6 +750,82 @@ export const SIXTEEN_HOLE_SOLO: Tuning = {
       // 1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
       [ c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 , g3 , c4 , c4 , e4 , g4 , c5 ],
       [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 , b3 , d4 , f4 , a4 , b4 ],
+    ]
+  },
+} as const
+
+export const TROCHILUS_RICHTER: Tuning = {
+  id: TrochilusRichter,
+  shortName: 'Richter',
+  category: Trochilus,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10
+      [ c1 , e1 , g1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+      [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10
+      [ db1, f1 , ab1, db2, f2 , ab2, db3, f3 , ab3, db4],
+      [ eb1, ab1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3],
+    ]
+  },
+} as const
+
+export const TROCHILUS_POP: Tuning = {
+  id: TrochilusPop,
+  shortName: 'Pop',
+  category: Trochilus,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10
+      [ c1 , e1 , a1 , c2 , e2 , g2 , c3 , e3 , g3 , c4 ],
+      [ d1 , g1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 , a3 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10
+      [ db1, f1 , bb1, db2, f2 , ab2, db3, f3 , ab3, db4],
+      [ eb1, ab1, c2 , eb2, gb2, bb2, c3 , eb3, gb3, bb3],
+    ]
+  },
+} as const
+
+export const TROCHILUS_SOLO: Tuning = {
+  id: TrochilusSolo,
+  shortName: 'Solo',
+  category: Trochilus,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10
+      [ c1 , e1 , g1 , c2 , c2 , e2 , g2 , c3 , c3 , e3 ],
+      [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10
+      [ db1, f1 , ab1, db2, db2, f2 , ab2, db3, db3, f3 ],
+      [ eb1, gb1, bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3],
+    ]
+  },
+} as const
+
+export const TROCHILUS_SIXTH_SOLO: Tuning = {
+  id: TrochilusSixthSolo,
+  shortName: '6th solo',
+  category: Trochilus,
+  // prettier-ignore
+  reedArrays: {
+    harpface1: [
+      // 1    2    3    4    5    6    7    8    9   10
+      [ c1 , e1 , g1 , a1 , c2 , e2 , g2 , a2 , c3 , e3 ],
+      [ d1 , f1 , a1 , b1 , d2 , f2 , a2 , b2 , d3 , f3 ],
+    ],
+    harpface2: [
+      // 1    2    3    4    5    6    7    8    9   10
+      [ db1, f1 , ab1, bb1, db2, f2 , ab2, bb2, db3, f3 ],
+      [ eb1, gb1, bb1, c2 , eb2, gb2, bb2, c3 , eb3, gb3],
     ]
   },
 } as const

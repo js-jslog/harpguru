@@ -48,6 +48,10 @@ export enum TuningIds {
   BabyFat = 'Baby fat',
   TwelveHoleSolo = 'Twelve hole solo',
   SixteenHoleSolo = 'Sixteen hole solo',
+  TrochilusRichter = 'Trochilus (richter)',
+  TrochilusPop = 'Trochilus (pop)',
+  TrochilusSolo = 'Trochilus (solo)',
+  TrochilusSixthSolo = 'Trochilus (6th solo)',
 }
 
 export enum TuningCategories {
@@ -57,6 +61,7 @@ export enum TuningCategories {
   Hohner = 'Hohner',
   BrendanPower = 'Brendan Power',
   Lucky13 = 'Lucky 13',
+  Trochilus = 'JDR Trochilus',
   JoeFilisko = 'Joe Filisko',
   RichterModes = 'Richter modes',
   SpiralModes = 'Spiral modes',

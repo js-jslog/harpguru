@@ -46,6 +46,10 @@ export {
   TWELVE_HOLE_CHROMATIC,
   SIXTEEN_HOLE_CHROMATIC,
   DIMINISHED_CHROMATIC,
+  TROCHILUS_RICHTER,
+  TROCHILUS_POP,
+  TROCHILUS_SOLO,
+  TROCHILUS_SIXTH_SOLO,
 } from './constants'
 export type { Tuning, ReedArray } from './types'
 export {

@@ -15,6 +15,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v17.0.0...master) - yyyy-mm-dd
 
+### Added
+
+- MINOR: JDR Trochilus section in the tuning menu
+
 ## [v13.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0) - 2026-09-01
 
 ### Changed
