@@ -55,12 +55,13 @@ The extension we want, in priority order:
    audience.
 2. **Shareable setups.** A teacher publishes a link or QR code carrying harp key, pozition,
    tuning and scale; a student opens it and lands in exactly the right configuration.
-3. **A commercial thread.** **Ronnie Shellist** — a Hohner ambassador — advocates for Harp
-   Guru, and he *is* the relationship. **There is no meaningful relationship with Hohner
-   itself**: the contact from promoting the PentaHarp is not something to bank on, and the
-   plan should never assume a door there is already open. Hohner is reached through Ronnie,
-   or not for now. The plan is built to give a sponsor something measurable, which is the
-   thing sponsors are usually unable to get.
+3. **A commercial thread.** **Ronnie Shellist**, a Hohner ambassador who advocates for Harp
+   Guru, and **Hohner** itself, from promoting the PentaHarp. **Both contacts are real but
+   old.** Ronnie's is the warmer of the two — the interaction was more direct — though a
+   long time has passed there as well. Hohner is not a closed door; it is simply not an open
+   one, and nothing here should be planned as though a warm introduction is waiting. The
+   plan is built to give a sponsor something measurable, which is the thing sponsors are
+   usually unable to get.
 
 Hard product constraints:
 
@@ -468,10 +469,11 @@ or use an S3 backend. CDK is safe here because CloudFormation holds state server
 
 ## Partner strategy
 
-**Ronnie before Hohner, because Ronnie is the only warm route there is.** He is already an
-advocate and the conversation costs nothing. Hohner, by contrast, is cold — so a pitch does
-not merely land better with their own ambassador as the reference case, it is close to the
-only way it lands at all.
+**Ronnie before Hohner, because his is the warmer of two cold contacts.** He is an advocate,
+the interaction was direct, and the conversation costs nothing to restart. Hohner is colder
+— not closed, but far enough back that a pitch arriving on its own would be starting from
+nothing. Arriving with their own ambassador as the reference case is a different proposition
+entirely.
 
 **The setup link is what gets shown to him.** If the feature lands with Ronnie, the argument
 to Hohner follows from it: a harp face that demonstrates a novel tuning in two seconds is a
@@ -487,9 +489,9 @@ part that matters to us, and it lands better as a consequence than as the pitch.
 
 **Approach Hohner during Phase D, with a report in hand rather than an idea.** An idea asks
 them to imagine something; a working feature with three months of numbers asks them to make
-a decision, which is far easier to get. There is no warm introduction here to spend
-carelessly — there is one to be manufactured, through Ronnie, and a premature approach
-spends the chance of making it.
+a decision, which is far easier to get. There is no live introduction here to spend
+carelessly — there is a lapsed one to revive, and reviving it through Ronnie is worth more
+than reviving it cold. A premature approach spends the chance of doing it the better way.
 
 ## Open questions
 
@@ -499,20 +501,24 @@ spends the chance of making it.
   let an agent settle it in passing. It is forced early — choosing is step 4 of creating the
   fork, the first task of Phase A. If it is still undecided at that moment, take separate
   volumes: isolation is the cheaper mistake to undo.
-- **Where does this roadmap live once `harpguru-cloud` exists?** Both repos need it and
-  copying it into both guarantees drift — the failure this document exists to prevent. The
-  candidates are a canonical copy here with a pointer from the cloud repo, the reverse, or
-  duplication with a stated master. Decide before the fork, because the fork is when the
-  second reader appears.
 
 ### Settled since writing
 
-- **Is the Hohner relationship warm enough to act on in roughly six months?** No — there is
-  very little relationship to act on, which closes the question rather than defers it. The
-  plan previously described an existing relationship; that has been corrected at source in
-  "The two goals" and in the partner strategy. Ronnie Shellist is the entry point, the
-  setup-link feature is what gets shown to him, and the manufacture-and-brand argument to
-  Hohner follows from his response. Settled 2026-09-23.
+- **Where does this roadmap live once `harpguru-cloud` exists?** Here, canonically, and
+  nowhere else. `harpguru-cloud` carries a short orientation file pointing at the public
+  GitHub URL rather than a copy. Two copies of a directing document drift, and the loser is
+  whichever reader does not know theirs is stale. It also removes any need to copy findings
+  back: work done in the cloud repo that establishes a fact commits that fact *here*, to the
+  findings doc, where there is one history to check. This is consistent with the repo split
+  — `harpguru-cloud` holds no domain content, and the roadmap is about the product.
+  Settled 2026-09-23.
+- **Is the Hohner relationship warm enough to act on in roughly six months?** No. Both
+  contacts have gone cold with time — Hohner more so than Ronnie, whose interaction was more
+  direct. Neither is a closed door, but the plan previously described an *existing*
+  relationship with Hohner, which overstated it; that is corrected at source in "The two
+  goals" and in the partner strategy. Ronnie is the entry point, the setup-link feature is
+  what gets shown to him, and the manufacture-and-brand argument to Hohner follows from his
+  response. Settled 2026-09-23.
 - **Does the widget need a scale selector?** No, and the frozen scope stands. But a setup
   link carries a scale, so the widget must show the one it is handed: a flash and the
   scale's name is sufficient. Display, never a control — and `notify-of-scale` and
