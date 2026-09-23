@@ -32,7 +32,8 @@ External resources:
 - Container conventions: <https://github.com/js-jslog/devcontainer-aws-base>, particularly
   its `docs/aws-conventions.md`
 
-**Status: nothing built yet.** Phase A not started.
+**Status: the Phase A browser spike is done and it passed** — see the findings doc.
+Nothing else is built.
 
 ---
 
@@ -41,8 +42,8 @@ External resources:
 ### Product
 
 Harp Guru is a harmonica learning tool: a visual harp face showing which scale degree or
-pitch each hole interaction produces, across 47 tunings, 12 keys, 12 pozitions and 23
-scales, with an explore mode and a quiz mode. It is at v16.0.0, in the App Store and Play
+pitch each hole interaction produces, across 51 tunings, 12 keys, 12 pozitions and 23
+scales, with an explore mode and a quiz mode. It is at v18.4.0, in the App Store and Play
 Store, paid, with a supporting YouTube channel.
 
 It has **no backend of any kind** — no accounts, no telemetry, no server state.
@@ -290,9 +291,10 @@ Each ships something a real user can touch.
 
 Ships: harpguru.com serving a real site over HTTPS.
 
-- **Spike first (~1 hr, in this repo):** serve the existing web export and look at a harp
-  face in a browser. It bundles cleanly; what is unverified is layout and mouse-driven
-  gestures. Everything in B and C assumes this is acceptable.
+- **Spike first (~1 hr, in this repo) — done 2026-09-23, and it passed.** The harp face
+  renders well in a desktop browser and cells respond to the mouse. Menu scrolling does not
+  work, which is outside the widget's scope; the findings doc records the mechanism and
+  what it means for Phase C.
 - Create the `harpguru-cloud` fork (steps above).
 - Second AWS account under Organizations; SCPs; org CloudTrail; Config; GuardDuty.
 - **Budget alarm before the first deploy.**
@@ -332,8 +334,8 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
   embed that drops megabytes onto a partner's product page will not stay on it.
 - Two chrome variants: promotional on harpguru.com, minimal and attributed in an embed.
   Hohner will not host a buy-the-app call to action on their own product page.
-- Generate a canonical page for each of the 47 built-in tunings. **One page per tuning, not
-  per permutation** — 47 tunings × 12 keys × 12 pozitions × 23 scales is over 150,000
+- Generate a canonical page for each of the 51 built-in tunings. **One page per tuning, not
+  per permutation** — 51 tunings × 12 keys × 12 pozitions × 23 scales is over 160,000
   near-identical pages, which is textbook doorway spam and gets penalised. Key and pozition
   change client-side.
 - Deep-link configuration (`associatedDomains`, intent filters) and a fetch client for
@@ -474,8 +476,6 @@ early sight" — is a different act from a pitch.
 
 ## Open questions
 
-- Does the harp face actually _look_ right in a browser, and do the gestures work under a
-  mouse? Phase A spike answers this.
 - Is the Hohner relationship warm enough to act on in roughly six months, or does it need a
   low-cost holding note sooner?
 - Does the widget need a scale selector, or is that already scope creep against the frozen
@@ -491,6 +491,11 @@ early sight" — is a different act from a pitch.
 
 ### Settled since writing
 
+- **Does the harp face look right in a browser, and do the gestures work under a mouse?**
+  Yes to both, and this was the largest remaining risk to Phases B and C. The spike ran on
+  2026-09-23 against `master` at `bafbd03e`: the harp face renders well and cells respond
+  to clicks. The one failure — menu scrolling — is outside the widget's frozen scope. See
+  the findings doc for the mechanism.
 - **Does a new `apps/` workspace need its own release cadence and CHANGELOG?** Not for
   versioning. The premise this was asked under — that every package moves together at a
   tag, by hand — no longer holds. `/cut-release` does the arithmetic across the monorepo

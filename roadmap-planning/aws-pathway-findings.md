@@ -95,12 +95,13 @@ and `react-native-gesture-handler` are declared there despite only being used in
 
 ### Domain content counts
 
-Checked 2026-08-31 by counting the `ordered*.set(...)` calls in
-`packages/harpparts/src/access-parts/constants/`.
+Counted from the `ordered*.set(...)` calls in
+`packages/harpparts/src/access-parts/constants/`. Recounted 2026-09-23; only the tuning
+count moved, and #180 moved it.
 
 | | |
 | --- | --- |
-| Tunings | 47 |
+| Tunings | 51 |
 | Pozitions | 12 |
 | Scales | 23 |
 | Pitches | 12 |
@@ -185,6 +186,31 @@ new workspace needs both, or it will be linted inconsistently.
 ---
 
 ## Verified findings
+
+### Checked 2026-09-23, against `master` at `bafbd03e`
+
+**The Phase A browser spike is done, and it passes.** The web export was built, served and
+opened in a desktop browser. The harp face renders well and cells respond to mouse clicks.
+`HarpCell` drives selection through the modern `GestureDetector`, which is the API the
+widget depends on, so **Phases B and C stand as written** — this was the last thing that
+could have invalidated them.
+
+**Menu scrolling does not work on the web, and the mechanism is the useful part.**
+`option-list.tsx` imports `FlatList` **from `react-native-gesture-handler`** rather than
+from `react-native`. Everything else in the menus behaves: `menu-access-open` and
+`menu-access-close` are `GestureDetector` taps and they work. The menus are outside the
+widget's frozen scope, so nothing in Phase B is blocked. **It is a note for Phase C**,
+which builds a web UI in this repo: do not reuse `option-list` for a scrolling list, or
+import `FlatList` from `react-native` instead. Whether that import alone fixes it is
+untested — the spike had no reason to find out.
+
+**The export has grown slightly**: a 2.4 MB JS bundle, 6.2 MB total, and still all 16
+`@expo/vector-icons` families making up roughly 4 MB of it. Phase B's bundle trim is
+unchanged in both need and size.
+
+**`harpparts` now carries 51 tunings, not 47.** #180 added the trochilus tunings after this
+document was written. Pozitions, scales, pitches and degrees are unmoved. Phase B's
+canonical page count follows the tuning count; nothing else does.
 
 ### Checked 2026-08-31, against `master` at `f5a52f24`
 
