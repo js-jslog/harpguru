@@ -299,6 +299,23 @@ interactive cell — uses the modern `GestureDetector`, as do `menu-access-open`
 `menu-access-close`. The legacy `PanGestureHandler` survives only in
 `components/zoom-slide-vertical/`, **which the frozen-scope widget does not include.**
 
+### harpguru.com, re-checked 2026-09-25
+
+Unchanged in substance: nameservers still `ns.heartinternet.uk` / `ns2.heartinternet.uk`,
+apex and `www` both `A 79.170.40.4`, and HTTPS still fails to connect. Registration runs to
+**2027-09-09**. No `AAAA`, `TXT`, `CAA` or `_dmarc` records.
+
+**The zone has a mail record the earlier check did not mention**: `MX 10 mail.harpguru.com`,
+which resolves to `79.170.44.72`, Heart's shared mail hosting. There is also an
+`ftp.harpguru.com` at `79.170.44.11`. Delegating to Route 53 serves only what the new zone
+holds, so **whether any `@harpguru.com` mailbox is in use has to be answered before the
+nameservers move**. If one is, its `MX` goes into the hosted zone first. If none is, the
+records are left behind deliberately. The "nothing live depends on it" line below held for
+the web and was never checked for mail.
+
+No `CAA` record means any CA may issue, so ACM needs nothing extra. If a `CAA` record is ever
+added, it must allow `amazon.com`.
+
 ### harpguru.com, checked 2026-08-31
 
 Registered through Heart Internet; nameservers `ns.heartinternet.uk` / `ns2.heartinternet.uk`;
