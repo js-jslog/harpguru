@@ -130,7 +130,12 @@ give an app repo the secrets posture of an infrastructure repo.
 First task of Phase A. `devcontainer-aws-base` is built to be forked; its README carries
 the canonical steps. In summary:
 
-1. Clone `js-jslog/devcontainer-aws-base` and re-point it at a new repo.
+1. Clone `js-jslog/devcontainer-aws-base` and re-point it at a new repo. **The base is on
+   `main`; this fork wants `master`**, to match `harpguru`, which it is worked on alongside.
+   Rename before the first push — `git branch -m main master` — and set the default branch
+   on GitHub. Doing it afterwards means a GitHub-side rename instead. Later forks of the
+   base can stay on `main`: it is the current standard, and only this one has a reason to
+   differ.
 2. Change the image name in three places: the `image` prop in
    `.devcontainer/devcontainer.json`, the `docker pull` in `runcontainer.ps1`, and the
    `image` var in `buildimage.sh`.
