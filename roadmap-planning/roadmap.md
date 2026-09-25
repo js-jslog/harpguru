@@ -508,11 +508,16 @@ than reviving it cold. A premature approach spends the chance of doing it the be
 ## Open questions
 
 - Should the `harpguru-cloud` fork share the `~/.aws` credential volume with
-  `devcontainer-aws-base`, or have its own? **Genuinely open, and open for a reason**: it
-  needs more AWS familiarity than exists yet, so do not mistake it for neglect and do not
-  let an agent settle it in passing. It is forced early — choosing is step 4 of creating the
-  fork, the first task of Phase A. If it is still undecided at that moment, take separate
-  volumes: isolation is the cheaper mistake to undo.
+  `devcontainer-aws-base`, or have its own? **Taken as separate when the fork was created
+  on 2026-09-25**, on the default this question recorded: isolation is the cheaper mistake
+  to undo, since separating later means untangling credentials while sharing later is a
+  volume rename. Verified empty in the new container, so the rename took.
+
+  It stays here rather than moving to the settled list, because it was answered by a
+  default rather than by knowing. The reason it was open — that it needs more AWS
+  familiarity than existed — still holds, and once SSO sessions are a daily reality the
+  convenience of sharing may turn out to be worth having. Revisit with a reason, not in
+  passing.
 
 ### Settled since writing
 
