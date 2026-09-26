@@ -313,6 +313,12 @@ nameservers move**. If one is, its `MX` goes into the hosted zone first. If none
 records are left behind deliberately. The "nothing live depends on it" line below held for
 the web and was never checked for mail.
 
+**Answered 2026-09-26: mail is live.** Customers are told to write to `contact@harpguru.com`,
+and Heart forwards it to a personal mailbox. So the Route 53 zone must hold
+`MX 10 mail.harpguru.com` and `mail.harpguru.com A 79.170.44.72` **before** the nameservers
+move. Send a test message to `contact@` before and after the switch, and confirm that Heart's
+forwarding does not depend on Heart serving the zone.
+
 No `CAA` record means any CA may issue, so ACM needs nothing extra. If a `CAA` record is ever
 added, it must allow `amazon.com`.
 
