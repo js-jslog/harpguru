@@ -299,6 +299,27 @@ interactive cell — uses the modern `GestureDetector`, as do `menu-access-open`
 `menu-access-close`. The legacy `PanGestureHandler` survives only in
 `components/zoom-slide-vertical/`, **which the frozen-scope widget does not include.**
 
+### AWS account state, checked 2026-09-26
+
+What already exists, so Phase A builds on it rather than repeating it:
+
+- **An Organization exists**, with all features enabled. It has one member, the management
+  account, and no OUs. **SCPs are not yet enabled on the root.** `describe-organization`
+  lists `SERVICE_CONTROL_POLICY` as available, but the root's own `PolicyTypes` is empty,
+  and the root is the authoritative place to check.
+- **IAM Identity Center is an organization instance in `eu-west-2`.** The account has no IAM
+  users. Console and CLI access both go through the access portal. The IAM three-field
+  sign-in page cannot work for an Identity Center username, which cost time to discover.
+- **Cost guardrails set up in the console already exist in the management account:** a
+  `My Zero-Spend Budget` ($1, alert on any actual spend over $0.01) and the default Cost
+  Anomaly Detection monitor with a daily email subscription. Phase A does not add a second
+  anomaly monitor.
+- **The management account is already CDK-bootstrapped in `eu-west-2`** (from 2026-08-28,
+  presumably the container's `verify-toolchain.sh --live`). It is not bootstrapped in
+  `us-east-1`, and no workload account exists yet to bootstrap.
+- No CloudTrail trail, no Config recorder, no GuardDuty detector, no hosted zones. The only
+  trusted service is `sso.amazonaws.com`.
+
 ### harpguru.com, re-checked 2026-09-25
 
 Unchanged in substance: nameservers still `ns.heartinternet.uk` / `ns2.heartinternet.uk`,
