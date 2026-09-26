@@ -325,13 +325,17 @@ Ships: harpguru.com serving a real site over HTTPS.
   `79.170.40.4` with no HTTPS, so nothing live can break.
 - ACM certificate **in us-east-1** — a CloudFront requirement regardless of where
   everything else lives.
-- S3 + CloudFront with OAC; security headers via CloudFront Functions.
+- S3 + CloudFront with OAC; security headers via a **response headers policy**, not
+  CloudFront Functions. Fixed headers are configuration: there is nothing to test and no
+  per-request charge. Functions are kept for logic that depends on the request, such as the
+  `www` → apex redirect here and the geo-aware links in Phase D. Settled 2026-09-26. The
+  earlier wording predated response headers policies, which arrived in late 2021.
 - Landing page: store links, YouTube channel.
 - `/.well-known/apple-app-site-association` and `/.well-known/assetlinks.json`, served as
   JSON over HTTPS with **no redirects**. Universal Links and Android App Links both require
   this, so **nothing in Phase B works without it**.
 
-AWS: S3 · CloudFront · OAC · Route 53 · ACM · CDK · Organizations · CloudTrail · Config · Budgets · IAM
+AWS: S3 · CloudFront · OAC · Response headers policies · CloudFront Functions · Route 53 · ACM · CDK · Organizations · CloudTrail · Config · Budgets · IAM
 
 ### Phase B — The public harpface · ~30 hrs · both repos
 
