@@ -314,10 +314,8 @@ What already exists, so Phase A builds on it rather than repeating it:
   **It cost time again on 2026-10-13, for a different reason.** The portal's username field
   takes the Identity Center **username** (`jslog`), not the email address the user is
   registered with. The full address is rejected as bad credentials, which looks exactly like
-  the three-field problem above. When an expired `aws sso login --use-device-code` needs
-  renewing, sign in at the access portal URL (the `sso_start_url` in `~/.aws/config`) with
-  the bare username first, then open the device URL in the same browser and approve the
-  code.
+  the three-field problem above. The device URL that `aws sso login --use-device-code` prints
+  leads to the right sign-in page by itself; entering `jslog` there is the whole fix.
 - **Cost guardrails set up in the console already exist in the management account:** a
   `My Zero-Spend Budget` ($1, alert on any actual spend over $0.01) and the default Cost
   Anomaly Detection monitor with a daily email subscription. Phase A does not add a second
