@@ -32,8 +32,11 @@ External resources:
 - Container conventions: <https://github.com/js-jslog/devcontainer-aws-base>, particularly
   its `docs/aws-conventions.md`
 
-**Status: the Phase A browser spike is done and it passed** — see the findings doc.
-Nothing else is built.
+**Status: the Phase A browser spike is done and it passed** — see the findings doc. The rest of
+Phase A is under way in `harpguru-cloud`, and the status table in its
+[Phase A plan](https://github.com/js-jslog/harpguru-cloud/blob/master/docs/plans/phase-a.md)
+is the record of what has shipped and what is deployed. It is not repeated here, so it cannot
+go stale here.
 
 ---
 
@@ -103,7 +106,7 @@ Two repos, two containers, one rule.
 > **If it renders a harp face, it belongs in `harpguru`. Everything else belongs in
 > `harpguru-cloud`.**
 
-|                 | `harpguru` (this repo)                                  | `harpguru-cloud` (to be created)     |
+|                 | `harpguru` (this repo)                                  | `harpguru-cloud`                     |
 | --------------- | ------------------------------------------------------- | ------------------------------------ |
 | Container       | the existing one here                                   | fork of `devcontainer-aws-base`      |
 | Toolchain       | Node, yarn, Expo, EAS                                   | AWS CLI, CDK, Terraform, JDK, Python |
@@ -319,10 +322,13 @@ Ships: harpguru.com serving a real site over HTTPS.
 - Create the `harpguru-cloud` fork (steps above).
 - Second AWS account under Organizations; SCPs; org CloudTrail; Config; GuardDuty.
 - **Budget alarm before the first deploy.**
-- `cdk bootstrap` in `eu-west-2`.
+- `cdk bootstrap` in `eu-west-2`, and for the workload account also in `us-east-1`, where the
+  certificate stack has to live.
 - Route 53 hosted zone for harpguru.com, then repoint the nameservers at Heart Internet.
   **Delegate, do not transfer** — registration can stay where it is. The domain is parked on
-  `79.170.40.4` with no HTTPS, so nothing live can break.
+  `79.170.40.4` with no HTTPS, so no website can break. **Mail is live, though:**
+  `contact@harpguru.com` forwards through Heart, so its `MX` and `mail` records go into the
+  new zone before the nameservers move. See the findings doc.
 - ACM certificate **in us-east-1** — a CloudFront requirement regardless of where
   everything else lives.
 - S3 + CloudFront with OAC; security headers via a **response headers policy**, not
