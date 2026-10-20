@@ -299,6 +299,24 @@ interactive cell — uses the modern `GestureDetector`, as do `menu-access-open`
 `menu-access-close`. The legacy `PanGestureHandler` survives only in
 `components/zoom-slide-vertical/`, **which the frozen-scope widget does not include.**
 
+### Step 3 facts, checked 2026-10-14 and 2026-10-20
+
+Established while building `harpguru-cloud`'s step 3, the workload account and its guardrails:
+
+- **An Organizations account's name and email can't be changed through CloudFormation**: the
+  update fails, and so does its rollback. They are not fixed, though. The management account
+  can rename a member account and start an email change through the Account Management API
+  (`aws account put-account-name`, `aws account start-primary-email-update`), once that API's
+  trusted access is on. Checked 2026-10-20 against the CLI's commands. CloudFormation's own
+  resource docs say only the root user can change them, which is out of date.
+- **Up to 10 SCPs can be attached directly to a root, OU or account**, per AWS's Organizations
+  quotas page on 2026-10-14. Older sources, and older memories, say 5.
+- **No CloudFormation resource switches a policy type such as SCPs on.** It is
+  `aws organizations enable-policy-type`, run once, or a custom resource.
+- **Centralised root access is three settings**: trusted access for IAM, root credentials
+  management, and privileged root actions. With it on, new member accounts are created with no
+  root credentials. It is off in this Organization (2026-10-14).
+
 ### AWS account state, checked 2026-09-26
 
 What already exists, so Phase A builds on it rather than repeating it:
