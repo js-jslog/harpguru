@@ -69,7 +69,7 @@ already written.
 
 ### The one app-side refactor
 
-`id` is typed `TuningIds` — a string enum of the 47 built-in tunings
+`id` is typed `TuningIds` — a string enum of the 51 built-in tunings
 (`MajorDiatonic = 'Major diatonic'`, and so on). A user-authored tuning has no enum member,
 so that identifier must widen before custom tunings can load.
 
@@ -126,7 +126,7 @@ Worse, the components are not prop-driven. `HarpCell` reads app-wide state direc
 const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
 ```
 
-`HarpGuruState` is a single zustand object of **27 fields** — `activeHarpStrata`,
+`HarpGuruState` is a single zustand object of **26 fields** — `activeHarpStrata`,
 `activeQuizDegrees`, `fragmentHarpFaceByOctaves`, `columnBounds`, `layoutFacts`,
 `dynamicSizes`, page and display modes, and so on. Rendering one cell therefore needs a
 fully populated store, not a set of props.

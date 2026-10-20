@@ -193,7 +193,7 @@ that export is a prerequisite task, not a detail.
 
 **And the components are coupled to app-wide state.** `HarpCell` reads directly from the
 zustand store (`useHarpGuruStore((state) => state.activeDisplayMode)`), and that store is a
-single object of 27 fields covering everything the app does — quiz degrees, page number,
+single object of 26 fields covering everything the app does — quiz degrees, page number,
 fragmentation, column bounds, layout facts, size schemes. Rendering one cell therefore
 requires a fully populated store, not a set of props.
 
