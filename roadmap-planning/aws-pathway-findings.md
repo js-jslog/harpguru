@@ -335,6 +335,9 @@ Established while building `harpguru-cloud`'s step 3, the workload account and i
 - **The `project` cost allocation tag was activated on 2026-10-22**, in the management account.
   Cost Explorer already listed the key; the budget has carried it since 2026-10-13, so it may
   have been available since then. Costs before activation were not backfilled.
+- **The workload account is CDK-bootstrapped in `eu-west-2` and `us-east-1`** (2026-10-22,
+  bootstrap version 32, the same as the management account's). The SCPs did not get in the
+  way. `cdk bootstrap` does not apply the app's tags, so they were passed with `--tags`.
 
 ### AWS account state, checked 2026-09-26
 
