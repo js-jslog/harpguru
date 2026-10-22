@@ -332,6 +332,9 @@ Established while building `harpguru-cloud`'s step 3, the workload account and i
   the change set, then gives up. For a new, termination-protected stack, it leaves an empty
   `REVIEW_IN_PROGRESS` stack behind with protection already on, so it can't clean up
   after itself. Run interactively, or read the diff and pass `--require-approval never`.
+- **The `project` cost allocation tag was activated on 2026-10-22**, in the management account.
+  Cost Explorer already listed the key; the budget has carried it since 2026-10-13, so it may
+  have been available since then. Costs before activation were not backfilled.
 
 ### AWS account state, checked 2026-09-26
 
