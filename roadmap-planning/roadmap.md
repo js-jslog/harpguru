@@ -32,8 +32,11 @@ External resources:
 - Container conventions: <https://github.com/js-jslog/devcontainer-aws-base>, particularly
   its `docs/aws-conventions.md`
 
-**Status: the Phase A browser spike is done and it passed** — see the findings doc.
-Nothing else is built.
+**Status: the Phase A browser spike is done and it passed** — see the findings doc. The rest of
+Phase A is under way in `harpguru-cloud`, and the status table in its
+[Phase A plan](https://github.com/js-jslog/harpguru-cloud/blob/master/docs/plans/phase-a.md)
+is the record of what has shipped and what is deployed. It is not repeated here, so it cannot
+go stale here.
 
 ---
 
@@ -103,7 +106,7 @@ Two repos, two containers, one rule.
 > **If it renders a harp face, it belongs in `harpguru`. Everything else belongs in
 > `harpguru-cloud`.**
 
-|                 | `harpguru` (this repo)                                  | `harpguru-cloud` (to be created)     |
+|                 | `harpguru` (this repo)                                  | `harpguru-cloud`                     |
 | --------------- | ------------------------------------------------------- | ------------------------------------ |
 | Container       | the existing one here                                   | fork of `devcontainer-aws-base`      |
 | Toolchain       | Node, yarn, Expo, EAS                                   | AWS CLI, CDK, Terraform, JDK, Python |
@@ -130,7 +133,12 @@ give an app repo the secrets posture of an infrastructure repo.
 First task of Phase A. `devcontainer-aws-base` is built to be forked; its README carries
 the canonical steps. In summary:
 
-1. Clone `js-jslog/devcontainer-aws-base` and re-point it at a new repo.
+1. Clone `js-jslog/devcontainer-aws-base` and re-point it at a new repo. **The base is on
+   `main`; this fork wants `master`**, to match `harpguru`, which it is worked on alongside.
+   Rename before the first push — `git branch -m main master` — and set the default branch
+   on GitHub. Doing it afterwards means a GitHub-side rename instead. Later forks of the
+   base can stay on `main`: it is the current standard, and only this one has a reason to
+   differ.
 2. Change the image name in three places: the `image` prop in
    `.devcontainer/devcontainer.json`, the `docker pull` in `runcontainer.ps1`, and the
    `image` var in `buildimage.sh`.
@@ -185,7 +193,7 @@ that export is a prerequisite task, not a detail.
 
 **And the components are coupled to app-wide state.** `HarpCell` reads directly from the
 zustand store (`useHarpGuruStore((state) => state.activeDisplayMode)`), and that store is a
-single object of 27 fields covering everything the app does — quiz degrees, page number,
+single object of 26 fields covering everything the app does — quiz degrees, page number,
 fragmentation, column bounds, layout facts, size schemes. Rendering one cell therefore
 requires a fully populated store, not a set of props.
 
@@ -314,19 +322,26 @@ Ships: harpguru.com serving a real site over HTTPS.
 - Create the `harpguru-cloud` fork (steps above).
 - Second AWS account under Organizations; SCPs; org CloudTrail; Config; GuardDuty.
 - **Budget alarm before the first deploy.**
-- `cdk bootstrap` in `eu-west-2`.
+- `cdk bootstrap` in `eu-west-2`, and for the workload account also in `us-east-1`, where the
+  certificate stack has to live.
 - Route 53 hosted zone for harpguru.com, then repoint the nameservers at Heart Internet.
   **Delegate, do not transfer** — registration can stay where it is. The domain is parked on
-  `79.170.40.4` with no HTTPS, so nothing live can break.
+  `79.170.40.4` with no HTTPS, so no website can break. **Mail is live, though:**
+  `contact@harpguru.com` forwards through Heart, so its `MX` and `mail` records go into the
+  new zone before the nameservers move. See the findings doc.
 - ACM certificate **in us-east-1** — a CloudFront requirement regardless of where
   everything else lives.
-- S3 + CloudFront with OAC; security headers via CloudFront Functions.
+- S3 + CloudFront with OAC; security headers via a **response headers policy**, not
+  CloudFront Functions. Fixed headers are configuration: there is nothing to test and no
+  per-request charge. Functions are kept for logic that depends on the request, such as the
+  `www` → apex redirect here and the geo-aware links in Phase D. Settled 2026-09-26. The
+  earlier wording predated response headers policies, which arrived in late 2021.
 - Landing page: store links, YouTube channel.
 - `/.well-known/apple-app-site-association` and `/.well-known/assetlinks.json`, served as
   JSON over HTTPS with **no redirects**. Universal Links and Android App Links both require
   this, so **nothing in Phase B works without it**.
 
-AWS: S3 · CloudFront · OAC · Route 53 · ACM · CDK · Organizations · CloudTrail · Config · Budgets · IAM
+AWS: S3 · CloudFront · OAC · Response headers policies · CloudFront Functions · Route 53 · ACM · CDK · Organizations · CloudTrail · Config · Budgets · IAM
 
 ### Phase B — The public harpface · ~30 hrs · both repos
 
@@ -503,11 +518,16 @@ than reviving it cold. A premature approach spends the chance of doing it the be
 ## Open questions
 
 - Should the `harpguru-cloud` fork share the `~/.aws` credential volume with
-  `devcontainer-aws-base`, or have its own? **Genuinely open, and open for a reason**: it
-  needs more AWS familiarity than exists yet, so do not mistake it for neglect and do not
-  let an agent settle it in passing. It is forced early — choosing is step 4 of creating the
-  fork, the first task of Phase A. If it is still undecided at that moment, take separate
-  volumes: isolation is the cheaper mistake to undo.
+  `devcontainer-aws-base`, or have its own? **Taken as separate when the fork was created
+  on 2026-09-25**, on the default this question recorded: isolation is the cheaper mistake
+  to undo, since separating later means untangling credentials while sharing later is a
+  volume rename. Verified empty in the new container, so the rename took.
+
+  It stays here rather than moving to the settled list, because it was answered by a
+  default rather than by knowing. The reason it was open — that it needs more AWS
+  familiarity than existed — still holds, and once SSO sessions are a daily reality the
+  convenience of sharing may turn out to be worth having. Revisit with a reason, not in
+  passing.
 
 ### Settled since writing
 

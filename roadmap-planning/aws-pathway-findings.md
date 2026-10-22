@@ -69,7 +69,7 @@ already written.
 
 ### The one app-side refactor
 
-`id` is typed `TuningIds` — a string enum of the 47 built-in tunings
+`id` is typed `TuningIds` — a string enum of the 51 built-in tunings
 (`MajorDiatonic = 'Major diatonic'`, and so on). A user-authored tuning has no enum member,
 so that identifier must widen before custom tunings can load.
 
@@ -126,7 +126,7 @@ Worse, the components are not prop-driven. `HarpCell` reads app-wide state direc
 const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
 ```
 
-`HarpGuruState` is a single zustand object of **27 fields** — `activeHarpStrata`,
+`HarpGuruState` is a single zustand object of **26 fields** — `activeHarpStrata`,
 `activeQuizDegrees`, `fragmentHarpFaceByOctaves`, `columnBounds`, `layoutFacts`,
 `dynamicSizes`, page and display modes, and so on. Rendering one cell therefore needs a
 fully populated store, not a set of props.
@@ -298,6 +298,117 @@ scroll handlers, sensors or frame callbacks.
 interactive cell — uses the modern `GestureDetector`, as do `menu-access-open` and
 `menu-access-close`. The legacy `PanGestureHandler` survives only in
 `components/zoom-slide-vertical/`, **which the frozen-scope widget does not include.**
+
+### Step 3 facts, checked 2026-10-14 and 2026-10-20
+
+Established while building `harpguru-cloud`'s step 3, the workload account and its guardrails:
+
+- **An Organizations account's name and email can't be changed through CloudFormation**: the
+  update fails, and so does its rollback. They are not fixed, though. The management account
+  can rename a member account and start an email change through the Account Management API
+  (`aws account put-account-name`, `aws account start-primary-email-update`), once that API's
+  trusted access is on. Checked 2026-10-20 against the CLI's commands. CloudFormation's own
+  resource docs say only the root user can change them, which is out of date.
+- **Up to 10 SCPs can be attached directly to a root, OU or account**, per AWS's Organizations
+  quotas page on 2026-10-14. Older sources, and older memories, say 5.
+- **No CloudFormation resource switches a policy type such as SCPs on.** It is
+  `aws organizations enable-policy-type`, run once, or a custom resource.
+- **Centralised root access is three settings**: trusted access for IAM, root credentials
+  management, and privileged root actions. With it on, new member accounts are created with no
+  root credentials. It is off in this Organization (2026-10-14).
+
+### Step 3 deployed, 2026-10-22
+
+- **Step 3 is live.** SCPs are enabled on the root. The `Workloads` OU carries
+  `FullAWSAccess` and the three `harpguru-*` SCPs. The `harpguru` workload account is
+  `ACTIVE` inside it, and the existing Identity Center login reaches it as
+  `AdministratorAccess`. Account creation took under a minute of stack time.
+- **The region lock works from inside the account.** `sqs:ListQueues` in `us-west-2` is
+  refused with "explicit deny in a service control policy"; `eu-west-2` calls succeed.
+- **CDK's `defaultCrossStackReferences: "weak"`, the `cdk init` default since 2.254.0, applies
+  within a region too**, not only between regions. A same-region reference is a plain output
+  read with `Fn::GetStackOutput`, with no export and no lock on the producer. CDK 2.271.0.
+- **`cdk deploy` run without a terminal can't ask for approval of IAM changes.** It makes
+  the change set, then gives up. For a new, termination-protected stack, it leaves an empty
+  `REVIEW_IN_PROGRESS` stack behind with protection already on, so it can't clean up
+  after itself. Run interactively, or read the diff and pass `--require-approval never`.
+- **The `project` cost allocation tag was activated on 2026-10-22**, in the management account.
+  Cost Explorer already listed the key; the budget has carried it since 2026-10-13, so it may
+  have been available since then. Costs before activation were not backfilled.
+- **The workload account is CDK-bootstrapped in `eu-west-2` and `us-east-1`** (2026-10-22,
+  bootstrap version 32, the same as the management account's). The SCPs did not get in the
+  way. `cdk bootstrap` does not apply the app's tags, so they were passed with `--tags`.
+- **Resource import, tried on Identity Center resources (2026-10-22).** `cdk import` with
+  `--resource-mapping-inline` adopted a console-made permission set and account assignment into
+  a new stack, with no prompts. Four things were not as assumed:
+  - **An import does change something.** CloudFormation added its `aws:cloudformation:*` tags
+    to the permission set. For the assignment it declined, saying tags would force a
+    replacement. It still never applies the template's own properties, and drift detection
+    ignores those tags.
+  - **`cdk diff` on a stack whose resources already exist fails early validation** for an
+    `AWS::SSO::Assignment` ("already exists", `NAME_CONFLICT_VALIDATION_VALIDATION_ERROR`), then
+    falls back to a template diff. It raised nothing for the permission set, though a create
+    would conflict on its name too.
+  - **`cdk import` switched termination protection on itself**, and left out only
+    `CDKMetadata`, the description and the bootstrap parameter, which the next deploy added.
+    `cdk diff` never shows `CDKMetadata`.
+  - **Drift detection works on `AWS::SSO::PermissionSet`, `AWS::SSO::Assignment` and
+    `AWS::Organizations::Account`.**
+- **The management account has had Resource Explorer on since 2026-08-28**: a local index in
+  `eu-west-2` and one view, switched on by hand. "AWS account state, checked 2026-09-26" missed
+  it. Found on 2026-10-22 while listing everything no stack manages.
+- **Every account has a default VPC in each of its 17 regions.** In a member account behind a
+  region-lock SCP, the 15 outside the allowed regions can't be read or deleted by anyone in it.
+
+### AWS account state, checked 2026-09-26
+
+What already exists, so Phase A builds on it rather than repeating it:
+
+- **An Organization exists**, with all features enabled. It has one member, the management
+  account, and no OUs. **SCPs are not yet enabled on the root.** `describe-organization`
+  lists `SERVICE_CONTROL_POLICY` as available, but the root's own `PolicyTypes` is empty,
+  and the root is the authoritative place to check.
+- **IAM Identity Center is an organization instance in `eu-west-2`.** The account has no IAM
+  users. Console and CLI access both go through the access portal. The IAM three-field
+  sign-in page cannot work for an Identity Center username, which cost time to discover.
+
+  **It cost time again on 2026-10-13, for a different reason.** The portal's username field
+  takes the Identity Center **username** (`jslog`), not the email address the user is
+  registered with. The full address is rejected as bad credentials, which looks exactly like
+  the three-field problem above. The device URL that `aws sso login --use-device-code` prints
+  leads to the right sign-in page by itself; entering `jslog` there is the whole fix.
+- **Cost guardrails set up in the console already exist in the management account:** a
+  `My Zero-Spend Budget` ($1, alert on any actual spend over $0.01) and the default Cost
+  Anomaly Detection monitor with a daily email subscription. Phase A does not add a second
+  anomaly monitor.
+- **The management account is already CDK-bootstrapped in `eu-west-2`** (from 2026-08-28,
+  presumably the container's `verify-toolchain.sh --live`). It is not bootstrapped in
+  `us-east-1`, and no workload account exists yet to bootstrap.
+- No CloudTrail trail, no Config recorder, no GuardDuty detector, no hosted zones. The only
+  trusted service is `sso.amazonaws.com`.
+
+### harpguru.com, re-checked 2026-09-25
+
+Unchanged in substance: nameservers still `ns.heartinternet.uk` / `ns2.heartinternet.uk`,
+apex and `www` both `A 79.170.40.4`, and HTTPS still fails to connect. Registration runs to
+**2027-09-09**. No `AAAA`, `TXT`, `CAA` or `_dmarc` records.
+
+**The zone has a mail record the earlier check did not mention**: `MX 10 mail.harpguru.com`,
+which resolves to `79.170.44.72`, Heart's shared mail hosting. There is also an
+`ftp.harpguru.com` at `79.170.44.11`. Delegating to Route 53 serves only what the new zone
+holds, so **whether any `@harpguru.com` mailbox is in use has to be answered before the
+nameservers move**. If one is, its `MX` goes into the hosted zone first. If none is, the
+records are left behind deliberately. The "nothing live depends on it" line below held for
+the web and was never checked for mail.
+
+**Answered 2026-09-26: mail is live.** Customers are told to write to `contact@harpguru.com`,
+and Heart forwards it to a personal mailbox. So the Route 53 zone must hold
+`MX 10 mail.harpguru.com` and `mail.harpguru.com A 79.170.44.72` **before** the nameservers
+move. Send a test message to `contact@` before and after the switch, and confirm that Heart's
+forwarding does not depend on Heart serving the zone.
+
+No `CAA` record means any CA may issue, so ACM needs nothing extra. If a `CAA` record is ever
+added, it must allow `amazon.com`.
 
 ### harpguru.com, checked 2026-08-31
 
