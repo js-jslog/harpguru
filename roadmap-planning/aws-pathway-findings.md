@@ -338,6 +338,24 @@ Established while building `harpguru-cloud`'s step 3, the workload account and i
 - **The workload account is CDK-bootstrapped in `eu-west-2` and `us-east-1`** (2026-10-22,
   bootstrap version 32, the same as the management account's). The SCPs did not get in the
   way. `cdk bootstrap` does not apply the app's tags, so they were passed with `--tags`.
+- **Resource import, tried on Identity Center resources (2026-10-22).** `cdk import` with
+  `--resource-mapping-inline` adopted a console-made permission set and account assignment into
+  a new stack, with no prompts. Four things were not as assumed:
+  - **An import does change something.** CloudFormation added its `aws:cloudformation:*` tags
+    to the permission set. For the assignment it declined, saying tags would force a
+    replacement. It still never applies the template's own properties, and drift detection
+    ignores those tags.
+  - **`cdk diff` on a stack whose resources already exist fails early validation** for an
+    `AWS::SSO::Assignment` ("already exists", `NAME_CONFLICT_VALIDATION_VALIDATION_ERROR`), then
+    falls back to a template diff. It raised nothing for the permission set, though a create
+    would conflict on its name too.
+  - **`cdk import` switched termination protection on itself**, and left out only
+    `CDKMetadata`, the description and the bootstrap parameter, which the next deploy added.
+    `cdk diff` never shows `CDKMetadata`.
+  - **Drift detection works on `AWS::SSO::PermissionSet`, `AWS::SSO::Assignment` and
+    `AWS::Organizations::Account`.**
+- **Every account has a default VPC in each of its 17 regions.** In a member account behind a
+  region-lock SCP, the 15 outside the allowed regions can't be read or deleted by anyone in it.
 
 ### AWS account state, checked 2026-09-26
 
