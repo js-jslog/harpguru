@@ -354,6 +354,9 @@ Established while building `harpguru-cloud`'s step 3, the workload account and i
     `cdk diff` never shows `CDKMetadata`.
   - **Drift detection works on `AWS::SSO::PermissionSet`, `AWS::SSO::Assignment` and
     `AWS::Organizations::Account`.**
+- **The management account has had Resource Explorer on since 2026-08-28**: a local index in
+  `eu-west-2` and one view, switched on by hand. "AWS account state, checked 2026-09-26" missed
+  it. Found on 2026-10-22 while listing everything no stack manages.
 - **Every account has a default VPC in each of its 17 regions.** In a member account behind a
   region-lock SCP, the 15 outside the allowed regions can't be read or deleted by anyone in it.
 
