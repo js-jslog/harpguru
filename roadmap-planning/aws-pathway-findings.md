@@ -317,6 +317,22 @@ Established while building `harpguru-cloud`'s step 3, the workload account and i
   management, and privileged root actions. With it on, new member accounts are created with no
   root credentials. It is off in this Organization (2026-10-14).
 
+### Step 3 deployed, 2026-10-22
+
+- **Step 3 is live.** SCPs are enabled on the root. The `Workloads` OU carries
+  `FullAWSAccess` and the three `harpguru-*` SCPs. The `harpguru` workload account is
+  `ACTIVE` inside it, and the existing Identity Center login reaches it as
+  `AdministratorAccess`. Account creation took under a minute of stack time.
+- **The region lock works from inside the account.** `sqs:ListQueues` in `us-west-2` is
+  refused with "explicit deny in a service control policy"; `eu-west-2` calls succeed.
+- **CDK's `defaultCrossStackReferences: "weak"`, the `cdk init` default since 2.254.0, applies
+  within a region too**, not only between regions. A same-region reference is a plain output
+  read with `Fn::GetStackOutput`, with no export and no lock on the producer. CDK 2.271.0.
+- **`cdk deploy` run without a terminal can't ask for approval of IAM changes.** It makes
+  the change set, then gives up. For a new, termination-protected stack, it leaves an empty
+  `REVIEW_IN_PROGRESS` stack behind with protection already on, so it can't clean up
+  after itself. Run interactively, or read the diff and pass `--require-approval never`.
+
 ### AWS account state, checked 2026-09-26
 
 What already exists, so Phase A builds on it rather than repeating it:
