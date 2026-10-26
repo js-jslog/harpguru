@@ -388,6 +388,23 @@ What already exists, so Phase A builds on it rather than repeating it:
 - No CloudTrail trail, no Config recorder, no GuardDuty detector, no hosted zones. The only
   trusted service is `sso.amazonaws.com`.
 
+### harpguru.com, re-checked 2026-10-26, and the hosted zone
+
+**Unchanged since 2026-09-25**, checked just before the hosted zone was built: Heart's
+nameservers, apex and `www` on `79.170.40.4`, `MX 10 mail.harpguru.com` with a one-hour TTL,
+`mail` on `79.170.44.72`, no `TXT` or `CAA` at the apex. The zone carries the two mail records and leaves
+`ftp` behind. **Heart also serves a wildcard**, `*.harpguru.com A 79.170.40.4`, so any name,
+`webmail`, `imap` and `_dmarc` included, resolves to the parked page; probing subdomains by
+name proves nothing there. And `_domainconnect TXT domainconnect.heartinternet.uk`, Heart's
+Domain Connect hook. Both are left behind deliberately.
+
+**The zone, deployed 2026-10-26 in the workload account, before any nameserver switch.**
+Route 53 wrote its own `NS` and `SOA` records alongside the two from the template, so it holds
+four record sets. Asked directly with `aws route53 test-dns-answer`, it answers the `MX`
+correctly while the public answer is still Heart's. A `.com` server
+(`a.gtld-servers.net`) hands out harpguru.com's delegation with a TTL of 172800 seconds, so a
+resolver may keep asking Heart for up to two days after the switch.
+
 ### harpguru.com, re-checked 2026-09-25
 
 Unchanged in substance: nameservers still `ns.heartinternet.uk` / `ns2.heartinternet.uk`,
@@ -407,14 +424,6 @@ and Heart forwards it to a personal mailbox. So the Route 53 zone must hold
 `MX 10 mail.harpguru.com` and `mail.harpguru.com A 79.170.44.72` **before** the nameservers
 move. Send a test message to `contact@` before and after the switch, and confirm that Heart's
 forwarding does not depend on Heart serving the zone.
-
-**Re-checked 2026-10-26, unchanged**, just before the hosted zone was built: Heart's
-nameservers, apex and `www` on `79.170.40.4`, `MX 10 mail.harpguru.com` with a one-hour TTL,
-`mail` on `79.170.44.72`, no `TXT` or `CAA` at the apex. The zone carries the two mail records and leaves
-`ftp` behind. **Heart also serves a wildcard**, `*.harpguru.com A 79.170.40.4`, so any name,
-`webmail`, `imap` and `_dmarc` included, resolves to the parked page; probing subdomains by
-name proves nothing there. And `_domainconnect TXT domainconnect.heartinternet.uk`, Heart's
-Domain Connect hook. Both are left behind deliberately.
 
 No `CAA` record means any CA may issue, so ACM needs nothing extra. If a `CAA` record is ever
 added, it must allow `amazon.com`.
