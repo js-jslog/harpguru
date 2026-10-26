@@ -405,6 +405,13 @@ correctly while the public answer is still Heart's. A `.com` server
 (`a.gtld-servers.net`) hands out harpguru.com's delegation with a TTL of 172800 seconds, so a
 resolver may keep asking Heart for up to two days after the switch.
 
+**Pinning a stack to the workload account stops a deploy with the wrong credentials.** Once
+`HarpguruDns` took its account ID from `deploy.local.json`, `cdk diff HarpguruDns` signed in to
+the management account printed no diff. It reported `Could not assume role in target account`,
+naming the workload account's `cdk-hnb659fds-lookup-role` and `cdk-hnb659fds-deploy-role`,
+because the bootstrap trusts no other account. Before the pin, the same command would have
+targeted the management account without complaint.
+
 ### harpguru.com, re-checked 2026-09-25
 
 Unchanged in substance: nameservers still `ns.heartinternet.uk` / `ns2.heartinternet.uk`,
