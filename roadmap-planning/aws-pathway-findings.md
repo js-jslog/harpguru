@@ -410,8 +410,11 @@ forwarding does not depend on Heart serving the zone.
 
 **Re-checked 2026-10-26, unchanged**, just before the hosted zone was built: Heart's
 nameservers, apex and `www` on `79.170.40.4`, `MX 10 mail.harpguru.com` with a one-hour TTL,
-`mail` on `79.170.44.72`, no `TXT` or `CAA`. The zone carries the two mail records and leaves
-`ftp` behind.
+`mail` on `79.170.44.72`, no `TXT` or `CAA` at the apex. The zone carries the two mail records and leaves
+`ftp` behind. **Heart also serves a wildcard**, `*.harpguru.com A 79.170.40.4`, so any name,
+`webmail`, `imap` and `_dmarc` included, resolves to the parked page; probing subdomains by
+name proves nothing there. And `_domainconnect TXT domainconnect.heartinternet.uk`, Heart's
+Domain Connect hook. Both are left behind deliberately.
 
 No `CAA` record means any CA may issue, so ACM needs nothing extra. If a `CAA` record is ever
 added, it must allow `amazon.com`.
