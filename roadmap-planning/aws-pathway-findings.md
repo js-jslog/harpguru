@@ -260,7 +260,8 @@ propose publishing these packages; the architecture is arranged so it is unneces
 **Toolchain versions.** Expo SDK 54, React Native 0.81.5, React 19.1.0, Reanimated
 **4.1.1**, gesture-handler 2.28.0, worklets 0.5.1, zustand 5. `react-native-web@0.21` and
 `react-dom@19.1` are already dependencies, and a `"web": "expo start --web"` script already
-exists. `app.json` declares `"platforms": ["ios", "android", "web"]`, app version 16.0.0.
+exists. `app.json` declares `"platforms": ["ios", "android", "web"]`, app version 16.0.0. (By
+2026-10-26 it was 18.4.0, as the roadmap says; the version moves, the rest of this holds.)
 
 **The app builds for web.** This was expected to fail and did not.
 
