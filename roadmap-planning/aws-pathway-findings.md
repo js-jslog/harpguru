@@ -388,6 +388,22 @@ What already exists, so Phase A builds on it rather than repeating it:
 - No CloudTrail trail, no Config recorder, no GuardDuty detector, no hosted zones. The only
   trusted service is `sso.amazonaws.com`.
 
+### harpguru.com, checked 2026-10-27, before the nameserver switch
+
+**DNSSEC is off.** `.com` holds no `DS` record for harpguru.com, and Heart serves no `DNSKEY`.
+This is the check that matters most before a nameserver move: with DNSSEC on, moving to an
+unsigned Route 53 zone would stop the whole domain resolving, and the way back carries the
+same two-day delegation TTL.
+
+**No mail authentication to carry across.** Heart serves no `TXT` at the apex, so no SPF, and
+`TXT` queries for `_dmarc` and `default._domainkey` come back empty (the wildcard only answers
+`A`).
+
+**After the switch, Heart's mail server address is ours to keep right.** Heart kept
+`mail.harpguru.com A 79.170.44.72` current in its own zone; once Route 53 serves the domain it
+is a fixed value in `HarpguruDns`, and a move on Heart's side would break forwarding without
+any signal. `harpguru-cloud`'s step 6a adds a weekly SES canary against it.
+
 ### harpguru.com, re-checked 2026-10-26, and the hosted zone
 
 **Unchanged since 2026-09-25**, checked just before the hosted zone was built: Heart's
