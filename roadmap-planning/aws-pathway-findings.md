@@ -412,6 +412,14 @@ working." Mail forwarding isn't named, but "such as" isn't a complete list, so o
 after the switch settles it. A baseline message to `contact@`, sent from another address before
 the switch, arrived.
 
+**The switch, made 2026-10-27 at about 21:00 UTC, propagated in minutes, not days.** Within
+minutes Google's and Cloudflare's public DNS listed the Route 53 nameservers. Heart's
+nameservers, asked directly, still answered for the domain with authority and the same `MX`,
+so during propagation a mail test passes by either path and proves nothing about the new zone.
+Microsoft's resolvers can't be queried from outside. A message from a Gmail address, sent
+after Google showed the new nameservers, arrived through Heart's forwarding: **Heart keeps
+forwarding mail with the nameservers moved off-site.**
+
 ### harpguru.com, re-checked 2026-10-26, and the hosted zone
 
 **Unchanged since 2026-09-25**, checked just before the hosted zone was built: Heart's
