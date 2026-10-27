@@ -404,6 +404,14 @@ same two-day delegation TTL.
 is a fixed value in `HarpguruDns`, and a move on Heart's side would break forwarding without
 any signal. `harpguru-cloud`'s step 6a adds a weekly SES canary against it.
 
+**In Heart's panel, checked the same day by the user.** The registration runs to September
+2027, and the panel shows no DNSSEC setting. The mail forwarding page says nothing about
+needing Heart's nameservers. The nameservers page warns: "Changing your domain's nameservers to
+offsite nameservers will prevent features such as web forwarding and web hosting from
+working." Mail forwarding isn't named, but "such as" isn't a complete list, so only the test
+after the switch settles it. A baseline message to `contact@`, sent from another address before
+the switch, arrived.
+
 ### harpguru.com, re-checked 2026-10-26, and the hosted zone
 
 **Unchanged since 2026-09-25**, checked just before the hosted zone was built: Heart's
