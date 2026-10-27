@@ -402,7 +402,7 @@ same two-day delegation TTL.
 **After the switch, Heart's mail server address is ours to keep right.** Heart kept
 `mail.harpguru.com A 79.170.44.72` current in its own zone; once Route 53 serves the domain it
 is a fixed value in `HarpguruDns`, and a move on Heart's side would break forwarding without
-any signal. `harpguru-cloud`'s step 6a adds a weekly SES canary against it.
+any signal. `harpguru-cloud`'s step 6a plans a weekly SES canary against it, not yet deployed.
 
 **In Heart's panel, checked the same day by the user.** The registration runs to September
 2027, and the panel shows no DNSSEC setting. The mail forwarding page says nothing about
