@@ -402,7 +402,13 @@ same two-day delegation TTL.
 **After the switch, Heart's mail server address is ours to keep right.** Heart kept
 `mail.harpguru.com A 79.170.44.72` current in its own zone; once Route 53 serves the domain it
 is a fixed value in `HarpguruDns`, and a move on Heart's side would break forwarding without
-any signal. `harpguru-cloud`'s step 6a plans a weekly SES canary against it, not yet deployed.
+any signal. `harpguru-cloud`'s step 6a guards it with a weekly SES canary, deployed
+2026-10-27: every Wednesday at 09:00 London time, one message straight to the forwarding
+address and one to `contact@`. The first pair, on 2026-10-28, both arrived, which also showed
+that EventBridge Scheduler can call SES v2's `sendEmail` as a universal target, with an IAM
+policy granting `ses:SendEmail`, not the `sesv2:` action CDK's universal target assumes by
+default. The SES domain identity's DKIM showed `SUCCESS` within the deploy's two and a half
+minutes, once the public DNS answered from Route 53.
 
 **In Heart's panel, checked the same day by the user.** The registration runs to September
 2027, and the panel shows no DNSSEC setting. The mail forwarding page says nothing about
