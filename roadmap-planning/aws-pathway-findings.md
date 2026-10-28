@@ -388,7 +388,7 @@ What already exists, so Phase A builds on it rather than repeating it:
 - No CloudTrail trail, no Config recorder, no GuardDuty detector, no hosted zones. The only
   trusted service is `sso.amazonaws.com`.
 
-### harpguru.com, checked 2026-10-27, before the nameserver switch
+### harpguru.com, checked 2026-10-27, and the nameserver switch
 
 **DNSSEC is off.** `.com` holds no `DS` record for harpguru.com, and Heart serves no `DNSKEY`.
 This is the check that matters most before a nameserver move: with DNSSEC on, moving to an
