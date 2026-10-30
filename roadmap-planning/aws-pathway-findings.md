@@ -404,8 +404,9 @@ recording, Config's service-linked role, one bucket in London; and an SCP on `Wo
   `AllowedByOrganizations: false`, which tests an SCP without attempting the call. An SCP
   exempting `arn:aws:iam::*:role/cdk-hnb659fds-cfn-exec-role-*` by `aws:PrincipalArn` denies the
   SSO admin and allows CDK's deploys.
-- **`cdk diff <stack>` includes the stacks it depends on**, at least once declared with
-  `addStackDependency`; `cdk deploy --exclusively` leaves them out.
+- **`cdk diff HarpguruGuardrails` included the stack it depends on**, `HarpguruPolicyTypes`
+  ("Including dependency stacks"), seen with CDK 2.271.0; why it began, not checked.
+  `cdk deploy --exclusively` leaves such stacks out.
 
 ### AWS account state, checked 2026-09-26
 
