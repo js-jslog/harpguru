@@ -382,6 +382,31 @@ Established while building `harpguru-cloud`'s step 3, the workload account and i
   trail was made, and the workload account's first file within seven. The trail showed up in the
   member account's `describe-trails` within six minutes, not at once.
 
+### Step 4b deployed: Config in the workload account, 2026-10-30
+
+`harpguru-cloud`'s `HarpguruConfig` (London) and `HarpguruConfigEdge` (`us-east-1`): daily
+recording, Config's service-linked role, one bucket in London; and an SCP on `Workloads`.
+
+- **A delivery channel mustn't `DependsOn` its recorder in CloudFormation**, though Config's
+  docs say a channel needs a recorder first. The recorder's create isn't done until it has
+  started, which needs the channel: the first deploy spent nine minutes on
+  `NoAvailableDeliveryChannelException`, then failed "did not stabilize" and rolled back. With
+  no dependency, the channel ran first, was refused with
+  `NoAvailableConfigurationRecorderException`, and its handler retried 25 seconds later and
+  succeeded. AWS's sample template has no dependency either. CDK 2.271.0.
+- **The rollback left a retained bucket with a fixed name**, so a retry needs it deleted first,
+  and the stack too, being termination protected. A fixed name on a `Retain` bucket costs that.
+- **A `us-east-1` delivery channel accepts a London bucket** at creation. Delivery itself not
+  yet seen.
+- **An org trail creates `AWSServiceRoleForCloudTrail` in member accounts too**, by the trail's
+  deploy (found in the workload account on 2026-10-30).
+- **`aws iam simulate-principal-policy` takes SCPs into account**: it reports `explicitDeny` and
+  `AllowedByOrganizations: false`, which tests an SCP without attempting the call. An SCP
+  exempting `arn:aws:iam::*:role/cdk-hnb659fds-cfn-exec-role-*` by `aws:PrincipalArn` denies the
+  SSO admin and allows CDK's deploys.
+- **`cdk diff <stack>` includes the stacks it depends on**, at least once declared with
+  `addStackDependency`; `cdk deploy --exclusively` leaves them out.
+
 ### AWS account state, checked 2026-09-26
 
 What already exists, so Phase A builds on it rather than repeating it:
