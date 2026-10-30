@@ -69,7 +69,7 @@ already written.
 
 ### The one app-side refactor
 
-`id` is typed `TuningIds` — a string enum of the 47 built-in tunings
+`id` is typed `TuningIds` — a string enum of the 51 built-in tunings
 (`MajorDiatonic = 'Major diatonic'`, and so on). A user-authored tuning has no enum member,
 so that identifier must widen before custom tunings can load.
 
@@ -126,7 +126,7 @@ Worse, the components are not prop-driven. `HarpCell` reads app-wide state direc
 const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
 ```
 
-`HarpGuruState` is a single zustand object of **27 fields** — `activeHarpStrata`,
+`HarpGuruState` is a single zustand object of **26 fields** — `activeHarpStrata`,
 `activeQuizDegrees`, `fragmentHarpFaceByOctaves`, `columnBounds`, `layoutFacts`,
 `dynamicSizes`, page and display modes, and so on. Rendering one cell therefore needs a
 fully populated store, not a set of props.
@@ -260,7 +260,8 @@ propose publishing these packages; the architecture is arranged so it is unneces
 **Toolchain versions.** Expo SDK 54, React Native 0.81.5, React 19.1.0, Reanimated
 **4.1.1**, gesture-handler 2.28.0, worklets 0.5.1, zustand 5. `react-native-web@0.21` and
 `react-dom@19.1` are already dependencies, and a `"web": "expo start --web"` script already
-exists. `app.json` declares `"platforms": ["ios", "android", "web"]`, app version 16.0.0.
+exists. `app.json` declares `"platforms": ["ios", "android", "web"]`, app version 16.0.0. (By
+2026-10-26 it was 18.4.0, as the roadmap says; the version moves, the rest of this holds.)
 
 **The app builds for web.** This was expected to fail and did not.
 
@@ -298,6 +299,230 @@ scroll handlers, sensors or frame callbacks.
 interactive cell — uses the modern `GestureDetector`, as do `menu-access-open` and
 `menu-access-close`. The legacy `PanGestureHandler` survives only in
 `components/zoom-slide-vertical/`, **which the frozen-scope widget does not include.**
+
+### Step 3 facts, checked 2026-10-14 and 2026-10-20
+
+Established while building `harpguru-cloud`'s step 3, the workload account and its guardrails:
+
+- **An Organizations account's name and email can't be changed through CloudFormation**: the
+  update fails, and so does its rollback. They are not fixed, though. The management account
+  can rename a member account and start an email change through the Account Management API
+  (`aws account put-account-name`, `aws account start-primary-email-update`), once that API's
+  trusted access is on. Checked 2026-10-20 against the CLI's commands. CloudFormation's own
+  resource docs say only the root user can change them, which is out of date.
+- **Up to 10 SCPs can be attached directly to a root, OU or account**, per AWS's Organizations
+  quotas page on 2026-10-14. Older sources, and older memories, say 5.
+- **No CloudFormation resource switches a policy type such as SCPs on.** It is
+  `aws organizations enable-policy-type`, run once, or a custom resource.
+- **Centralised root access is three settings**: trusted access for IAM, root credentials
+  management, and privileged root actions. With it on, new member accounts are created with no
+  root credentials. It is off in this Organization (2026-10-14).
+
+### Step 3 deployed, 2026-10-22
+
+- **Step 3 is live.** SCPs are enabled on the root. The `Workloads` OU carries
+  `FullAWSAccess` and the three `harpguru-*` SCPs. The `harpguru` workload account is
+  `ACTIVE` inside it, and the existing Identity Center login reaches it as
+  `AdministratorAccess`. Account creation took under a minute of stack time.
+- **The region lock works from inside the account.** `sqs:ListQueues` in `us-west-2` is
+  refused with "explicit deny in a service control policy"; `eu-west-2` calls succeed.
+- **CDK's `defaultCrossStackReferences: "weak"`, the `cdk init` default since 2.254.0, applies
+  within a region too**, not only between regions. A same-region reference is a plain output
+  read with `Fn::GetStackOutput`, with no export and no lock on the producer. CDK 2.271.0.
+- **`cdk deploy` run without a terminal can't ask for approval of IAM changes.** It makes
+  the change set, then gives up. For a new, termination-protected stack, it leaves an empty
+  `REVIEW_IN_PROGRESS` stack behind with protection already on, so it can't clean up
+  after itself. Run interactively, or read the diff and pass `--require-approval never`.
+- **The `project` cost allocation tag was activated on 2026-10-22**, in the management account.
+  Cost Explorer already listed the key; the budget has carried it since 2026-10-13, so it may
+  have been available since then. Costs before activation were not backfilled.
+- **The workload account is CDK-bootstrapped in `eu-west-2` and `us-east-1`** (2026-10-22,
+  bootstrap version 32, the same as the management account's). The SCPs did not get in the
+  way. `cdk bootstrap` does not apply the app's tags, so they were passed with `--tags`.
+- **Resource import, tried on Identity Center resources (2026-10-22).** `cdk import` with
+  `--resource-mapping-inline` adopted a console-made permission set and account assignment into
+  a new stack, with no prompts. Four things were not as assumed:
+  - **An import does change something.** CloudFormation added its `aws:cloudformation:*` tags
+    to the permission set. For the assignment it declined, saying tags would force a
+    replacement. It still never applies the template's own properties, and drift detection
+    ignores those tags.
+  - **`cdk diff` on a stack whose resources already exist fails early validation** for an
+    `AWS::SSO::Assignment` ("already exists", `NAME_CONFLICT_VALIDATION_VALIDATION_ERROR`), then
+    falls back to a template diff. It raised nothing for the permission set, though a create
+    would conflict on its name too.
+  - **`cdk import` switched termination protection on itself**, and left out only
+    `CDKMetadata`, the description and the bootstrap parameter, which the next deploy added.
+    `cdk diff` never shows `CDKMetadata`.
+  - **Drift detection works on `AWS::SSO::PermissionSet`, `AWS::SSO::Assignment` and
+    `AWS::Organizations::Account`.**
+- **The management account has had Resource Explorer on since 2026-08-28**: a local index in
+  `eu-west-2` and one view, switched on by hand. "AWS account state, checked 2026-09-26" missed
+  it. Found on 2026-10-22 while listing everything no stack manages.
+- **Every account has a default VPC in each of its 17 regions.** In a member account behind a
+  region-lock SCP, the 15 outside the allowed regions can't be read or deleted by anyone in it.
+
+### Step 4a deployed: the Organization trail, 2026-10-30
+
+`harpguru-cloud`'s `HarpguruTrail`, in the management account: one organisation trail,
+`harpguru-org-trail`, every region, management events only, into an S3 bucket.
+
+- **Trusted access for `cloudtrail.amazonaws.com` does not create `AWSServiceRoleForCloudTrail`.**
+  After `aws organizations enable-aws-service-access` the role was absent; it appeared in the
+  same second CloudFormation made the trail. The Organizations guide says otherwise.
+- **CDK's `Trail` conditions only one of its two `PutObject` statements.** With
+  `isOrganizationTrail`, it conditions the `AWSLogs/<org id>/*` statement on the trail's ARN
+  (`aws:SourceArn`), but not `AWSLogs/<account id>/*`, which then trusts CloudTrail acting for
+  any trail. The path limits that already, since CloudTrail writes under the trail's own account
+  ID, so it is a missing second lock, not an open door; the CloudTrail guide conditions both.
+  Added with an escape hatch before the deploy, and CloudTrail accepted it. CDK 2.271.0.
+  *Corrected 2026-10-30: this first said any account's trail could write there.*
+- **Where the logs land:** every account's files, the management account's included, go to
+  `AWSLogs/<org id>/<account id>/CloudTrail/<region>/<yyyy>/<mm>/<dd>/`. The only objects ever
+  written under `AWSLogs/<management account id>/` were empty `CloudTrail/` and
+  `CloudTrail-Digest/` markers at creation, so that statement is needed, if only then.
+- **Timing:** `IsLogging` was true at once. The first delivery came three minutes after the
+  trail was made, and the workload account's first file within seven. The trail showed up in the
+  member account's `describe-trails` within six minutes, not at once.
+
+### Step 4b deployed: Config in the workload account, 2026-10-30
+
+`harpguru-cloud`'s `HarpguruConfig` (London) and `HarpguruConfigEdge` (`us-east-1`): daily
+recording, Config's service-linked role, one bucket in London; and an SCP on `Workloads`.
+
+- **A delivery channel mustn't `DependsOn` its recorder in CloudFormation**, though Config's
+  docs say a channel needs a recorder first. The recorder's create isn't done until it has
+  started, which needs the channel: the first deploy spent nine minutes on
+  `NoAvailableDeliveryChannelException`, then failed "did not stabilize" and rolled back. With
+  no dependency, the channel ran first, was refused with
+  `NoAvailableConfigurationRecorderException`, and its handler retried 25 seconds later and
+  succeeded. AWS's sample template has no dependency either. CDK 2.271.0.
+- **The rollback left a retained bucket with a fixed name**, so a retry needs it deleted first,
+  and the stack too, being termination protected. A fixed name on a `Retain` bucket costs that.
+- **A `us-east-1` delivery channel accepts a London bucket**, and writes to it at once: each
+  channel writes `AWSLogs/<account id>/Config/ConfigWritabilityCheckFile`, and that copy was
+  last written the second the `us-east-1` channel was made. Strong evidence; no history file
+  seen yet (checked 22:12 UTC).
+- **An org trail creates `AWSServiceRoleForCloudTrail` in member accounts too**, by the trail's
+  deploy (found in the workload account on 2026-10-30).
+- **`aws iam simulate-principal-policy` takes SCPs into account**: it reports `explicitDeny` and
+  `AllowedByOrganizations: false`, which tests an SCP without attempting the call. An SCP
+  exempting `arn:aws:iam::*:role/cdk-hnb659fds-cfn-exec-role-*` by `aws:PrincipalArn` denies the
+  SSO admin and allows CDK's deploys.
+- **`cdk diff HarpguruGuardrails` included the stack it depends on**, `HarpguruPolicyTypes`
+  ("Including dependency stacks"), seen with CDK 2.271.0; why it began, not checked.
+  `cdk deploy --exclusively` leaves such stacks out.
+
+### AWS account state, checked 2026-09-26
+
+What already exists, so Phase A builds on it rather than repeating it:
+
+- **An Organization exists**, with all features enabled. It has one member, the management
+  account, and no OUs. **SCPs are not yet enabled on the root.** `describe-organization`
+  lists `SERVICE_CONTROL_POLICY` as available, but the root's own `PolicyTypes` is empty,
+  and the root is the authoritative place to check.
+- **IAM Identity Center is an organization instance in `eu-west-2`.** The account has no IAM
+  users. Console and CLI access both go through the access portal. The IAM three-field
+  sign-in page cannot work for an Identity Center username, which cost time to discover.
+
+  **It cost time again on 2026-10-13, for a different reason.** The portal's username field
+  takes the Identity Center **username** (`jslog`), not the email address the user is
+  registered with. The full address is rejected as bad credentials, which looks exactly like
+  the three-field problem above. The device URL that `aws sso login --use-device-code` prints
+  leads to the right sign-in page by itself; entering `jslog` there is the whole fix.
+- **Cost guardrails set up in the console already exist in the management account:** a
+  `My Zero-Spend Budget` ($1, alert on any actual spend over $0.01) and the default Cost
+  Anomaly Detection monitor with a daily email subscription. Phase A does not add a second
+  anomaly monitor.
+- **The management account is already CDK-bootstrapped in `eu-west-2`** (from 2026-08-28,
+  presumably the container's `verify-toolchain.sh --live`). It is not bootstrapped in
+  `us-east-1`, and no workload account exists yet to bootstrap.
+- No CloudTrail trail, no Config recorder, no GuardDuty detector, no hosted zones. The only
+  trusted service is `sso.amazonaws.com`.
+
+### harpguru.com, checked 2026-10-27, and the nameserver switch
+
+**DNSSEC is off.** `.com` holds no `DS` record for harpguru.com, and Heart serves no `DNSKEY`.
+This is the check that matters most before a nameserver move: with DNSSEC on, moving to an
+unsigned Route 53 zone would stop the whole domain resolving, and the way back carries the
+same two-day delegation TTL.
+
+**No mail authentication to carry across.** Heart serves no `TXT` at the apex, so no SPF, and
+`TXT` queries for `_dmarc` and `default._domainkey` come back empty (the wildcard only answers
+`A`).
+
+**After the switch, Heart's mail server address is ours to keep right.** Heart kept
+`mail.harpguru.com A 79.170.44.72` current in its own zone; once Route 53 serves the domain it
+is a fixed value in `HarpguruDns`, and a move on Heart's side would break forwarding without
+any signal. `harpguru-cloud`'s step 6a guards it with a weekly SES canary, deployed
+2026-10-27: every Wednesday at 09:00 London time, one message straight to the forwarding
+address and one to `contact@`. The first pair, on 2026-10-28, both arrived, which also showed
+that EventBridge Scheduler can call SES v2's `sendEmail` as a universal target, with an IAM
+policy granting `ses:SendEmail`, not the `sesv2:` action CDK's universal target assumes by
+default. The SES domain identity's DKIM showed `SUCCESS` within the deploy's two and a half
+minutes, once the public DNS answered from Route 53.
+
+**In Heart's panel, checked the same day by the user.** The registration runs to September
+2027, and the panel shows no DNSSEC setting. The mail forwarding page says nothing about
+needing Heart's nameservers. The nameservers page warns: "Changing your domain's nameservers to
+offsite nameservers will prevent features such as web forwarding and web hosting from
+working." Mail forwarding isn't named, but "such as" isn't a complete list, so only the test
+after the switch settles it. A baseline message to `contact@`, sent from another address before
+the switch, arrived.
+
+**The switch, made 2026-10-27 at about 21:00 UTC, propagated in minutes, not days.** Within
+minutes Google's and Cloudflare's public DNS listed the Route 53 nameservers. Heart's
+nameservers, asked directly, still answered for the domain with authority and the same `MX`,
+so during propagation a mail test passes by either path and proves nothing about the new zone.
+Microsoft's resolvers can't be queried from outside. A message from a Gmail address, sent
+after Google showed the new nameservers, arrived through Heart's forwarding: **Heart keeps
+forwarding mail with the nameservers moved off-site.**
+
+### harpguru.com, re-checked 2026-10-26, and the hosted zone
+
+**Unchanged since 2026-09-25**, checked just before the hosted zone was built: Heart's
+nameservers, apex and `www` on `79.170.40.4`, `MX 10 mail.harpguru.com` with a one-hour TTL,
+`mail` on `79.170.44.72`, no `TXT` or `CAA` at the apex. The zone carries the two mail records and leaves
+`ftp` behind. **Heart also serves a wildcard**, `*.harpguru.com A 79.170.40.4`, so any name,
+`webmail`, `imap` and `_dmarc` included, resolves to the parked page; probing subdomains by
+name proves nothing there. And `_domainconnect TXT domainconnect.heartinternet.uk`, Heart's
+Domain Connect hook. Both are left behind deliberately.
+
+**The zone, deployed 2026-10-26 in the workload account, before any nameserver switch.**
+Route 53 wrote its own `NS` and `SOA` records alongside the two from the template, so it holds
+four record sets. Asked directly with `aws route53 test-dns-answer`, it answers the `MX`
+correctly while the public answer is still Heart's. A `.com` server
+(`a.gtld-servers.net`) hands out harpguru.com's delegation with a TTL of 172800 seconds, so a
+resolver may keep asking Heart for up to two days after the switch.
+
+**Pinning a stack to the workload account stops a deploy with the wrong credentials.** Once
+`HarpguruDns` took its account ID from `deploy.local.json`, `cdk diff HarpguruDns` signed in to
+the management account printed no diff. It reported `Could not assume role in target account`,
+naming the workload account's `cdk-hnb659fds-lookup-role` and `cdk-hnb659fds-deploy-role`,
+because the bootstrap trusts no other account. Before the pin, the same command would have
+targeted the management account without complaint.
+
+### harpguru.com, re-checked 2026-09-25
+
+Unchanged in substance: nameservers still `ns.heartinternet.uk` / `ns2.heartinternet.uk`,
+apex and `www` both `A 79.170.40.4`, and HTTPS still fails to connect. Registration runs to
+**2027-09-09**. No `AAAA`, `TXT`, `CAA` or `_dmarc` records.
+
+**The zone has a mail record the earlier check did not mention**: `MX 10 mail.harpguru.com`,
+which resolves to `79.170.44.72`, Heart's shared mail hosting. There is also an
+`ftp.harpguru.com` at `79.170.44.11`. Delegating to Route 53 serves only what the new zone
+holds, so **whether any `@harpguru.com` mailbox is in use has to be answered before the
+nameservers move**. If one is, its `MX` goes into the hosted zone first. If none is, the
+records are left behind deliberately. The "nothing live depends on it" line below held for
+the web and was never checked for mail.
+
+**Answered 2026-09-26: mail is live.** Customers are told to write to `contact@harpguru.com`,
+and Heart forwards it to a personal mailbox. So the Route 53 zone must hold
+`MX 10 mail.harpguru.com` and `mail.harpguru.com A 79.170.44.72` **before** the nameservers
+move. Send a test message to `contact@` before and after the switch, and confirm that Heart's
+forwarding does not depend on Heart serving the zone.
+
+No `CAA` record means any CA may issue, so ACM needs nothing extra. If a `CAA` record is ever
+added, it must allow `amazon.com`.
 
 ### harpguru.com, checked 2026-08-31
 
