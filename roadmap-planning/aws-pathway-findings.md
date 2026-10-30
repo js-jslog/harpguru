@@ -398,8 +398,10 @@ recording, Config's service-linked role, one bucket in London; and an SCP on `Wo
   succeeded. AWS's sample template has no dependency either. CDK 2.271.0.
 - **The rollback left a retained bucket with a fixed name**, so a retry needs it deleted first,
   and the stack too, being termination protected. A fixed name on a `Retain` bucket costs that.
-- **A `us-east-1` delivery channel accepts a London bucket** at creation. Delivery itself not
-  yet seen.
+- **A `us-east-1` delivery channel accepts a London bucket**, and writes to it at once: each
+  channel writes `AWSLogs/<account id>/Config/ConfigWritabilityCheckFile`, and that copy was
+  last written the second the `us-east-1` channel was made. Strong evidence; no history file
+  seen yet (checked 22:12 UTC).
 - **An org trail creates `AWSServiceRoleForCloudTrail` in member accounts too**, by the trail's
   deploy (found in the workload account on 2026-10-30).
 - **`aws iam simulate-principal-policy` takes SCPs into account**: it reports `explicitDeny` and
