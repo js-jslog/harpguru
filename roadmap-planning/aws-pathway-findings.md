@@ -369,11 +369,13 @@ Established while building `harpguru-cloud`'s step 3, the workload account and i
 - **Trusted access for `cloudtrail.amazonaws.com` does not create `AWSServiceRoleForCloudTrail`.**
   After `aws organizations enable-aws-service-access` the role was absent; it appeared in the
   same second CloudFormation made the trail. The Organizations guide says otherwise.
-- **CDK's `Trail` leaves the management account's bucket statement open to any trail.** With
+- **CDK's `Trail` conditions only one of its two `PutObject` statements.** With
   `isOrganizationTrail`, it conditions the `AWSLogs/<org id>/*` statement on the trail's ARN
-  (`aws:SourceArn`), but not `AWSLogs/<account id>/*`, so any account's trail could write there:
-  the confused deputy. The CloudTrail guide conditions both. Fixed with an escape hatch before
-  the deploy, and CloudTrail accepted it. CDK 2.271.0.
+  (`aws:SourceArn`), but not `AWSLogs/<account id>/*`, which then trusts CloudTrail acting for
+  any trail. The path limits that already, since CloudTrail writes under the trail's own account
+  ID, so it is a missing second lock, not an open door; the CloudTrail guide conditions both.
+  Added with an escape hatch before the deploy, and CloudTrail accepted it. CDK 2.271.0.
+  *Corrected 2026-10-30: this first said any account's trail could write there.*
 - **Where the logs land:** every account's files, the management account's included, go to
   `AWSLogs/<org id>/<account id>/CloudTrail/<region>/<yyyy>/<mm>/<dd>/`. The only objects ever
   written under `AWSLogs/<management account id>/` were empty `CloudTrail/` and
