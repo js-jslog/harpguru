@@ -401,7 +401,7 @@ recording, Config's service-linked role, one bucket in London; and an SCP on `Wo
 - **A `us-east-1` delivery channel accepts a London bucket**, and writes to it at once: each
   channel writes `AWSLogs/<account id>/Config/ConfigWritabilityCheckFile`, and that copy was
   last written the second the `us-east-1` channel was made. Strong evidence; no history file
-  seen yet (checked 22:12 UTC).
+  seen yet (checked 22:12 UTC); seen 2026-11-03, below.
 - **An org trail creates `AWSServiceRoleForCloudTrail` in member accounts too**, by the trail's
   deploy (found in the workload account on 2026-10-30).
 - **`aws iam simulate-principal-policy` takes SCPs into account**: it reports `explicitDeny` and
@@ -411,6 +411,21 @@ recording, Config's service-linked role, one bucket in London; and an SCP on `Wo
 - **`cdk diff HarpguruGuardrails` included the stack it depends on**, `HarpguruPolicyTypes`
   ("Including dependency stacks"), seen with CDK 2.271.0; why it began, not checked.
   `cdk deploy --exclusively` leaves such stacks out.
+
+### Config's first history files, checked 2026-11-03
+
+Follows the step 4b deploy above; read with the `harpguru` profile.
+
+- **A `us-east-1` recorder delivers history to a London bucket.** The bucket held 31 files under
+  `AWSLogs/<account id>/Config/eu-west-2/` and 33 under `.../us-east-1/`, one per resource type,
+  all for 2026-10-30. The first came 22:24 UTC that day from London and 01:54 UTC on 2026-10-31
+  from `us-east-1`; none since, as expected of daily recording with nothing changing. Both
+  recorders and channels report `SUCCESS`.
+- **Only `us-east-1` discovers the Route 53 hosted zone**; London's
+  `list-discovered-resources --resource-type AWS::Route53::HostedZone` is empty.
+- **`includeGlobalResourceTypes: false` doesn't stop every IAM type.** `us-east-1`, with it off,
+  recorded `AWS::IAM::SAMLProvider` (Identity Center's); London, with it on, recorded
+  `AWS::IAM::Role` but no SAML provider. `us-east-1` also alone recorded `AWS::S3::StorageLens`.
 
 ### AWS account state, checked 2026-09-26
 
