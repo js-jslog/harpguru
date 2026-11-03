@@ -424,7 +424,7 @@ Follows the step 4b deploy above; read with the `harpguru` profile.
 - **Only `us-east-1` discovers the Route 53 hosted zone**; London's
   `list-discovered-resources --resource-type AWS::Route53::HostedZone` is empty.
 - **`includeGlobalResourceTypes: false` doesn't stop every IAM type.** `us-east-1`, with it off,
-  recorded `AWS::IAM::SAMLProvider` (Identity Center's); London, with it on, recorded
+  recorded `AWS::IAM::SAMLProvider` (Identity Center's, `AWSSSO_…_DO_NOT_DELETE`); London, with it on, recorded
   `AWS::IAM::Role` but no SAML provider. `us-east-1` also alone recorded `AWS::S3::StorageLens`.
 
 ### AWS account state, checked 2026-09-26
