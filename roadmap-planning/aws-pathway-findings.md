@@ -447,7 +447,7 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
   construct ID from the address**, which then shows in every diff; a plain `Subscription` avoids it.
 - **SNS emails from `no-reply@sns.amazonaws.com` land in Yahoo's spam**: the confirmations,
   and a sample finding's email after earlier ones were marked not spam in a third-party mail
-  app.
+  app. Marked not spam in Yahoo's own web client, the next one reached the inbox.
 - **`create-sample-findings` reaches EventBridge like a real finding**: one sample's email
   arrived through the rule. Its title carries no "[SAMPLE]"; the mark is in
   `Service.AdditionalInfo`.
