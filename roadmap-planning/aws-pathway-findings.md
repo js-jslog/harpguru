@@ -445,7 +445,12 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
   condition**, so any rule in any account could publish; an `aws:SourceArn` condition on the
   rule's ARN, added by property override, closes it. **`EmailSubscription` builds its
   construct ID from the address**, which then shows in every diff; a plain `Subscription` avoids it.
-- **SNS confirmation emails from `no-reply@sns.amazonaws.com` landed in Yahoo's spam.**
+- **SNS emails from `no-reply@sns.amazonaws.com` land in Yahoo's spam**: the confirmations,
+  and a sample finding's email after earlier ones were marked not spam in a third-party mail
+  app.
+- **`create-sample-findings` reaches EventBridge like a real finding**: one sample's email
+  arrived through the rule. Its title carries no "[SAMPLE]"; the mark is in
+  `Service.AdditionalInfo`.
 - **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
   denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
 
