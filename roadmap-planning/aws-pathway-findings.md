@@ -427,6 +427,28 @@ Follows the step 4b deploy above; read with the `harpguru` profile.
   recorded `AWS::IAM::SAMLProvider` (Identity Center's, `AWSSSO_…_DO_NOT_DELETE`); London, with it on, recorded
   `AWS::IAM::Role` but no SAML provider. `us-east-1` also alone recorded `AWS::S3::StorageLens`.
 
+### Step 4c deployed: GuardDuty in both accounts, 2026-11-05
+
+`harpguru-cloud`'s four `HarpguruGuardDuty*` stacks: a standalone detector in each account, in
+London and `us-east-1`, each with an EventBridge rule emailing its findings through SNS; and a
+fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
+
+- **A detector made by CloudFormation with no `Features` gets these plans on**: S3 data events,
+  EKS audit logs, EBS malware protection, RDS login events and Lambda network logs, besides
+  CloudTrail, DNS and flow logs. Runtime Monitoring, EKS Runtime Monitoring, AI Protection and
+  AI Analyst stay off. The same in both accounts and both regions.
+- **GuardDuty makes two service-linked roles**, `AWSServiceRoleForAmazonGuardDuty` and
+  `AWSServiceRoleForAmazonGuardDutyMalwareProtection`, with the first detector in an account.
+- **An OU may have ten SCPs attached**, `FullAWSAccess` included (the Organizations quotas page,
+  checked 2026-11-03); it was once five.
+- **CDK's `SnsTopic` event target grants `events.amazonaws.com` `sns:Publish` with no
+  condition**, so any rule in any account could publish; an `aws:SourceArn` condition on the
+  rule's ARN, added by property override, closes it. **`EmailSubscription` builds its
+  construct ID from the address**, which then shows in every diff; a plain `Subscription` avoids it.
+- **SNS confirmation emails from `no-reply@sns.amazonaws.com` landed in Yahoo's spam.**
+- **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
+  denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
+
 ### AWS account state, checked 2026-09-26
 
 What already exists, so Phase A builds on it rather than repeating it:
