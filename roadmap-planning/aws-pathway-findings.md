@@ -454,6 +454,26 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
 - **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
   denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
 
+### Step 4d deployed: the GuardDuty SCP's subscription gap, 2026-11-06
+
+`harpguru-protect-guardduty` gained `sns:SetSubscriptionAttributes`, so no filter policy can
+silently drop the findings emails.
+
+- **SNS authorizes subscription actions against the topic ARN.** A real
+  `set-subscription-attributes` call, given the subscription ARN, was refused with an explicit
+  SCP deny naming `arn:aws:sns:<region>:<account>:harpguru-guardduty-findings` as the resource.
+  A policy that names the topic covers its subscriptions; a `<topic>:*` pattern isn't what matches.
+- **`simulate-principal-policy` can't test SNS subscription actions.** `SetSubscriptionAttributes`,
+  `Unsubscribe` and `GetSubscriptionAttributes` all come back `implicitDeny`, with no
+  Organizations detail, against a subscription ARN or a topic ARN, ours or another, though the
+  real `Get` call succeeds under `AdministratorAccess`. That qualifies the step 4c finding
+  above: the simulator evaluates an SCP's `Resource` list for some services, not all. For
+  these actions only a real call tests the SCP.
+- **`--query` with `--output text` runs once per page.** `aws sns list-subscriptions --query
+  'Subscriptions[0].SubscriptionArn'` printed the ARN, then `None` from an empty second page,
+  and the two-line value failed as `Invalid parameter: Subscription GUID`.
+  `list-subscriptions-by-topic --no-paginate` returns the ARN alone.
+
 ### Step 7 deployed: the certificate, 2026-11-06
 
 `harpguru-cloud`'s `HarpguruCertificate`: one ACM certificate in the workload account in
