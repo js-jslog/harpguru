@@ -454,6 +454,26 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
 - **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
   denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
 
+### Step 7 deployed: the certificate, 2026-11-06
+
+`harpguru-cloud`'s `HarpguruCertificate`: one ACM certificate in the workload account in
+`us-east-1`, for `harpguru.com` and `www.harpguru.com`, validated through DNS in the London
+zone. CDK 2.271.0.
+
+- **A weak reference crosses regions with no custom resource.** With
+  `@aws-cdk/core:defaultCrossStackReferences` set to `"weak"`, the `us-east-1` stack's
+  template reads the zone's ID with `Fn::GetStackOutput` naming `eu-west-2`, and CloudFormation
+  resolved it on the first deploy. CDK reused the output already made for the mail canary's
+  same-region reference, so the producer stack had no diff.
+- **Issuance took about two and a half minutes**: the certificate resource went from
+  `CREATE_IN_PROGRESS` to `CREATE_COMPLETE` in 2m35s, the stack in 161s of deploy time.
+  CloudFormation wrote one `CNAME` per name, `_<hash>.harpguru.com` and
+  `_<hash>.www.harpguru.com`; they appear in the zone but in no template.
+- **The certificate is valid for 198 days**, from 2026-11-06 to 2027-05-23, with its
+  `NotBefore` an hour before it was requested. The key is `RSA-2048`, CDK's default.
+- **ACM reports an unused certificate as not renewable**: `InUse` `False` and
+  `RenewalEligibility` `INELIGIBLE` until something such as CloudFront uses it.
+
 ### AWS account state, checked 2026-09-26
 
 What already exists, so Phase A builds on it rather than repeating it:
