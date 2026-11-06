@@ -454,6 +454,31 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
 - **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
   denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
 
+### Step 8 deployed: harpguru.com, 2026-11-06
+
+`harpguru-cloud`'s `HarpguruSite`: a private S3 bucket behind one CloudFront distribution with
+OAC, a response headers policy, a CloudFront Function redirecting `www`, four alias records,
+and the files uploaded by two `BucketDeployment`s. CDK 2.271.0, CLI 2.1139.0.
+
+- **CloudFront passes query string values to a function still URL-encoded.** The guide doesn't
+  say. `?a=b%26c`, `?q=hello%20world` and `?x=%2F%3F` reached the function encoded, both in
+  `test-function` and in real requests, so a redirect that joins them back up needs no
+  re-encoding.
+- **A response headers policy also applies to a viewer-request function's own response**: the
+  `www` 301 carries the HSTS header.
+- **Apple's CDN and Google's Digital Asset Links API had the `.well-known` files within
+  minutes** of the deploy: `app-site-association.cdn-apple.com/a/v1/harpguru.com` and
+  `digitalassetlinks.googleapis.com/v1/statements:list` both returned them.
+- **A weak reference crosses regions in the other direction too**: the London stack read the
+  `us-east-1` certificate's ARN with `Fn::GetStackOutput`, the producer gaining one output.
+- **Creating the distribution took about four minutes**: 240 seconds for the whole stack, the
+  upload's invalidation included.
+- **An expired SSO access token stops CDK but not the AWS CLI.** The CLI renews it silently
+  from the refresh token; CDK reports `no credentials have been configured` and only `-v` shows
+  `Token is expired`. `aws sso login --sso-session jslog` fixes it.
+- **`describe-function` shows the `DEVELOPMENT` stage by default**; `--stage LIVE` shows what
+  CloudFront serves.
+
 ### Step 4d deployed: the GuardDuty SCP's subscription gap, 2026-11-06
 
 `harpguru-protect-guardduty` gained `sns:SetSubscriptionAttributes`, so no filter policy can
