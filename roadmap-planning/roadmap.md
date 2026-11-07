@@ -220,14 +220,14 @@ harp face as one composed component.** The evidence is in the findings doc; the 
 
 ### Which container per phase
 
-| Phase                    | `harpguru`                             | `harpguru-cloud`                   |
-| ------------------------ | -------------------------------------- | ---------------------------------- |
-| A — Ground the domain    | the browser spike                      | everything else                    |
-| B — The public harpface  | widget, tuning pages, deep-link config | API, DynamoDB, CloudFront, routing |
-| C — The tuning workbench | creator UI, `TuningIds` widening       | schema, validation, Step Functions |
-| D — Demand signal        | telemetry emission in the app          | ingestion, Athena, reporting       |
-| E — Verified publishers  | —                                      | Cognito, publisher console         |
-| F — Harden and migrate   | —                                      | everything                         |
+| Phase                    | `harpguru`                                                  | `harpguru-cloud`                                  |
+| ------------------------ | ----------------------------------------------------------- | ------------------------------------------------- |
+| A — Ground the domain    | the browser spike                                           | everything else                                   |
+| B — The public harpface  | widget, tuning pages, share button, deep-link config        | CloudFront routing, deploy role, request logs     |
+| C — The tuning workbench | creator UI, `TuningIds` widening                            | API, DynamoDB, schema, validation, Step Functions |
+| D — Demand signal        | telemetry emission in the app                               | ingestion, Athena, reporting                      |
+| E — Verified publishers  | —                                                           | Cognito, publisher console                        |
+| F — Harden and migrate   | —                                                           | everything                                        |
 
 The publisher console in Phase E renders no harp face, so it lives in `harpguru-cloud`.
 Where it needs to preview a tuning it should embed the widget by iframe — which has the
@@ -256,7 +256,9 @@ harpguru.com, minimal and attributed inside a partner's iframe.
 laptop has no app to install; someone on a phone would rather see the lesson than a
 purchase prompt. Giving the value first means the call to action lands warm — and it
 ungates link opens from installs, so the attribution numbers later count a creator's whole
-audience rather than the already-converted fraction.
+audience rather than the already-converted fraction. (Since 2026-11-07 a setup link is a
+self-describing URL: the numbers count setups, and telling one creator's links from
+another's waits for Phase E's creator tag.)
 
 **A browsable gallery is an emergent feature, not a build.** It is worthless until there
 are community tunings to browse. What is worth building now is the canonical page per
@@ -551,7 +553,9 @@ When that message goes out, lead with what he gets rather than what we get: beca
 link falls back to a working harp face rather than a store page, **his links work for his
 whole audience** — desktop viewers, and people who have never installed the app. He is not
 handing students an advert. That the attribution numbers then count his entire reach is the
-part that matters to us, and it lands better as a consequence than as the pitch.
+part that matters to us, and it lands better as a consequence than as the pitch. Counting
+*his* links apart from everyone else's needs Phase E's creator tag; until then the numbers
+are for setups, not people.
 
 **Approach Hohner during Phase D, with a report in hand rather than an idea.** An idea asks
 them to imagine something; a working feature with three months of numbers asks them to make
