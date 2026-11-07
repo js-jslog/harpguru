@@ -457,7 +457,7 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
 ### What a web export needs from a content security policy, checked 2026-11-07
 
 Checked for `harpguru-cloud`'s Phase B step 1, which serves the widget's pages behind one,
-against a web export of `master` at its 2026-11-07 head, the whole app, so a superset of the
+against a web export of `master` at `8ea86ea3`, the whole app, so a superset of the
 widget. A static reading of the output, not a browser test.
 
 - **Styles need `'unsafe-inline'`.** `index.html` carries Expo's inline `<style id="expo-reset">`,
