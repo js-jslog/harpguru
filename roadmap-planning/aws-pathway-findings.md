@@ -454,6 +454,27 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
 - **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
   denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
 
+### What a web export needs from a content security policy, checked 2026-11-07
+
+Checked for `harpguru-cloud`'s Phase B step 1, which serves the widget's pages behind one,
+against a web export of `master` at its 2026-11-07 head, the whole app, so a superset of the
+widget. A static reading of the output, not a browser test.
+
+- **Styles need `'unsafe-inline'`.** `index.html` carries Expo's inline `<style id="expo-reset">`,
+  and react-native-web writes rules into `<style>` elements and style attributes at run time,
+  which no hash or nonce can cover.
+- **Scripts need no `'unsafe-eval'`.** The bundle has two `eval` calls: Metro's loader for split
+  bundles, which a single-bundle export never calls, and a `uuid` fallback reached only when
+  `window` and `crypto` are both missing. No `new Function`, workers, `blob:` or WebAssembly.
+- **Fonts and images are same-origin**: 19 `.ttf` files under `assets/`, and `data:` SVG images
+  handled by the image component. `script-src 'self'`, `font-src 'self'` and
+  `img-src 'self' data:` cover them.
+- **The export uses two top-level prefixes**, `/_expo/static/js/web/` and `/assets/`, so a
+  widget served under one path, as `harpguru-cloud`'s `/w/*` behaviour expects, needs Expo's
+  base URL setting.
+- **The install and export still work as the 2026-08-31 check says**, with `corepack yarn`
+  standing in for a global yarn: both exited 0, and the JS bundle was 2.35 MB.
+
 ### Step 8 deployed: harpguru.com, 2026-11-06
 
 `harpguru-cloud`'s `HarpguruSite`: a private S3 bucket behind one CloudFront distribution with
