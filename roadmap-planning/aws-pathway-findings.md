@@ -469,7 +469,8 @@ from the branch before merging. CDK 2.271.0.
 - **Adding four behaviours and an origin, and swapping the function, took 70 seconds of stack
   time**, and the distribution reported `Deployed` within minutes. Only the function was
   replaced: CloudFormation made the new one, pointed every behaviour at it, then deleted the
-  old one, with no gap in the `www` redirect.
+  old one. The `www` redirect worked afterwards; whether it ever lapsed during the swap wasn't
+  watched.
 
 ### What a web export needs from a content security policy, checked 2026-11-07
 
