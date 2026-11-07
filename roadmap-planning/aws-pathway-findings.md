@@ -454,6 +454,23 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
 - **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
   denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
 
+### Phase B step 1 deployed: the widget's paths, 2026-11-07
+
+`harpguru-cloud`'s `HarpguruSite` gained a second bucket, `Pages`, behind `/w/*`, `/t/*`, `/s/*`
+and `/e/*`, one viewer-request function on every behaviour, and two headers policies. Deployed
+from the branch before merging. CDK 2.271.0.
+
+- **An error page carries the headers of the behaviour that serves it, not of the path asked
+  for.** With `/e/` empty, a request for it returned the site's `/404.html` with the default
+  behaviour's `X-Frame-Options: DENY` and CSP, not the embed policy, because CloudFront fetches
+  the error page through the behaviour matching `/404.html`.
+- **The cache key leaves out the query string, as the managed CachingOptimized policy says**:
+  `/t/smoke-test?k=D`, requested after `?k=C`, was `Hit from cloudfront`.
+- **Adding four behaviours and an origin, and swapping the function, took 70 seconds of stack
+  time**, and the distribution reported `Deployed` within minutes. Only the function was
+  replaced: CloudFormation made the new one, pointed every behaviour at it, then deleted the
+  old one, with no gap in the `www` redirect.
+
 ### What a web export needs from a content security policy, checked 2026-11-07
 
 Checked for `harpguru-cloud`'s Phase B step 1, which serves the widget's pages behind one,
