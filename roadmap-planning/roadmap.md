@@ -32,10 +32,9 @@ External resources:
 - Container conventions: <https://github.com/js-jslog/devcontainer-aws-base>, particularly
   its `docs/aws-conventions.md`
 
-**Status: the Phase A browser spike is done and it passed** — see the findings doc. The rest of
-Phase A is under way in `harpguru-cloud`, and the status table in its
-[Phase A plan](https://github.com/js-jslog/harpguru-cloud/blob/master/docs/plans/phase-a.md)
-is the record of what has shipped and what is deployed. It is not repeated here, so it cannot
+**Status: Phase A has shipped**, and Phase B is being planned. The status tables in
+`harpguru-cloud`'s [plans](https://github.com/js-jslog/harpguru-cloud/tree/master/docs/plans)
+are the record of what has shipped and what is deployed. It is not repeated here, so it cannot
 go stale here.
 
 ---
@@ -90,8 +89,11 @@ actually tests:
 | Shape                             | Where it appears |
 | --------------------------------- | ---------------- |
 | Static and edge delivery          | Phases A and B   |
-| Request/response with a datastore | Phase B          |
+| Request/response with a datastore | Phase C          |
 | Asynchronous orchestration        | Phase C          |
+
+The datastore shape moved from Phase B to Phase C on 2026-11-07, when setup links became
+self-describing URLs; see "Settled since writing".
 
 **Budget: 7 hours a week guaranteed, roughly 4 build and 3 study.** Hour figures below are
 allocations against that, not estimates to be held to. Around 86 build hours to the end of
@@ -286,10 +288,21 @@ Reopen only with a specific new reason, and say what it is.
   Apple guideline 4.8 (Sign in with Apple) and 5.1.1(v) (in-app account deletion)
   permanently untriggered — a permanent exemption, not a temporary dodge. Identity, when it
   arrives, is web-only.
-- **The widget's scope is frozen.** One tuning, a few keys and pozitions, cell selection.
-  No quiz mode, no multiple pages, no tuning picker, no saved state. It *displays* the scale
-  a setup link carries — a flash and a name — and never offers a control to choose one. Feature creep here is
-  the one thing that would genuinely cannibalise the paid app.
+- **The widget's scope is frozen.** One tuning per instance. No quiz mode, no multiple pages,
+  no tuning picker, no saved state. Feature creep here is the one thing that would genuinely
+  cannibalise the paid app. **Configuration and cell interaction never share a page**
+  (settled 2026-11-07):
+
+  | Page | Configuration | Cell interaction | Scale flash |
+  | --- | --- | --- | --- |
+  | `/s/` setup link | none: fixed by the teacher's URL | yes | yes |
+  | `/t/<tuning>` | a short list of keys, pozitions, display modes and scales | no | no |
+  | `/e/` embed | none: fixed by the partner's URL | yes | yes |
+
+  Every page is public, so withholding a control is only worth doing for the page's own
+  purpose: what anyone can reach is the union of all three. A lesson with several setups is
+  several links; a partner showing several is several embeds. Hand-editing a URL to reach
+  any setup with interactive cells is accepted, not guarded: whoever does it is invested.
 - **No audio processing.** Descoped by product philosophy: Harp Guru identifies the note a
   player is aiming for, and a dedicated tuner is more direct for hitting it. Recording and
   analysing a lick is product drift. The asynchronous architecture it would have taught
@@ -354,9 +367,18 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
 - **Prerequisite:** export the harp face component tree from `harpguru-core`, and settle the
   store question. Both are described in the topology section and both block everything else
   in this phase.
-- The widget: fixed tuning, a short list of keys and pozitions, click-to-toggle cells.
-  Playing key is **derived output, not a third control** — move harp key or pozition and the
-  other holds. `harpcovariance` already computes this; the UI is new.
+- The widget, in the three page types of the frozen-scope table under "Locked decisions":
+  interactive cells and the scale flash on `/s/` and `/e/`, configuration controls on `/t/`.
+  On `/t/`, playing key is **derived output, not a third control** — move harp key or
+  pozition and the other holds. `harpcovariance` already computes this; the UI is new.
+- **The URL is the page's state, on all three.** One parameter format, read by the bundle
+  after load; changing a `/t/` control rewrites the address bar without a reload, so every
+  view can be shared. Validation differs: `/s/` and `/e/` accept any real setup, `/t/` only
+  the options its controls offer, and a bad parameter falls back to that control's default
+  and corrects the address bar rather than failing.
+- **Shared URLs are a permanent contract.** QR codes get printed. Tuning identifiers need
+  stable slugs (`TuningIds` values are display strings such as `'Major diatonic'`), the format
+  must leave room for Phase C's custom tunings, and `/t/`'s option lists may only grow.
 - Click-to-toggle rather than drag: a different input model from the app's, and simpler.
 - Responsive sizing into an iframe of unknown width. A harp face is 10–16 holes wide and a
   partner's sidebar may be 320px. The app's existing zoom option suggests this problem is
@@ -371,24 +393,40 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
 - Generate a canonical page for each of the 51 built-in tunings. **One page per tuning, not
   per permutation** — 51 tunings × 12 keys × 12 pozitions × 23 scales is over 160,000
   near-identical pages, which is textbook doorway spam and gets penalised. Key and pozition
-  change client-side.
-- Deep-link configuration (`associatedDomains`, intent filters) and a fetch client for
-  setup documents.
+  change client-side, as query parameters, and each page declares the bare `/t/<tuning>` as
+  its canonical URL. `/s/` and `/e/` are kept out of the index.
+- **A share button in the app**: it builds the `/s/` URL for the setup on screen and draws
+  its QR code on the device. No network, no account, no write.
+- **Deep-link configuration** (`associatedDomains`, intent filters) and **opening a link,
+  app first**: when the app is installed, a `/s/` link opens it, and the app asks where the
+  setup goes — harp face 1, harp face 2, or open in the browser. A lesson of several setups
+  may work better as browser tabs; the user with the app must never be worse off than the
+  one without. "Open in the browser" re-opens the URL with a marker the link rules exclude.
+- **The app validates every incoming URL.** Anyone's QR code now drives the app's state; a
+  malformed or hostile link is refused cleanly, and never crashes the app or corrupts a harp
+  face.
 
 In `harpguru-cloud`:
 
-- Setup-link documents → short code, DynamoDB behind API Gateway.
 - One CloudFront distribution, several behaviours: apex to marketing, `/t/*` to tuning
-  pages, `/e/*` to embeds, `/s/*` to the link resolver. Cheaper than several distributions,
-  and behaviour ordering is examinable.
+  pages, `/e/*` to embeds, `/s/*` to setup links. Cheaper than several distributions,
+  and behaviour ordering is examinable. The pages come from a second bucket that this repo's
+  workflow deploys to, so the site's own upload can never prune them. The cache key ignores
+  query strings: one cached copy per page, whatever it is configured to show.
 - A `frame-ancestors` response headers policy restricting embeds to a partner allowlist —
-  a genuine security control rather than a contrived one, and per-partner embed counts fall
-  out of the same request logs.
+  a genuine security control rather than a contrived one. `/t/` and `/s/` refuse framing.
+- Request logs. Every browser view's configuration is in its URL, so the logs count which
+  setups and tunings are opened, and embeds per partner, without a datastore.
+- The GitHub OIDC provider and the deploy role this repo's workflow assumes (see "How the
+  two connect").
+- The `/s/*` rule in `apple-app-site-association` gains the exclusion for the open-in-browser
+  marker.
 
 Nothing is dynamic at request time: prerendered HTML plus a client bundle. No server
-participates in a page view.
+participates in a page view, and there is no setup datastore: a setup link is a
+self-describing URL (settled 2026-11-07).
 
-AWS: API Gateway · Lambda · DynamoDB · CloudFront behaviours · Response headers policies · WAF
+AWS: S3 · CloudFront behaviours · Cache policies · Response headers policies · CloudFront Functions · CloudFront logging · IAM OIDC federation
 
 ### Phase C — The tuning workbench · ~24 hrs · both repos
 
@@ -398,7 +436,10 @@ Ships: the most requested feature.
   app-side refactor and everything downstream depends on it.
 - Creator UI, reusing `harpparts` and the existing `is-hole-valid` and
   `get-hole-array-error-messages` helpers. The hard validation logic is already written.
-- Versioned JSON Schema for the tuning document; validation in the API.
+- Versioned JSON Schema for the tuning document; validation in the API. **This is where the
+  request/response-with-a-datastore shape lands**: tuning documents are stored in DynamoDB
+  behind API Gateway. It is also the first public, anonymous write, so WAF and throttling
+  arrive here.
 - Publication pipeline in Step Functions: submit → validate → **hold on `waitForTaskToken`**
   for approval → render a preview card → regenerate affected pages → invalidate the CDN.
   A workflow paused on human latency bills nothing while it waits, and the alternative is a
@@ -407,7 +448,7 @@ Ships: the most requested feature.
   infrastructure at this stage.
 - Publishing targets the read surfaces built in Phase B; nothing new is designed here.
 
-AWS: Step Functions · EventBridge · S3 events · SQS + DLQ · Lambda · CloudFront invalidation
+AWS: API Gateway · DynamoDB · WAF · Step Functions · EventBridge · S3 events · SQS + DLQ · Lambda · CloudFront invalidation
 
 ### Phase D — Anonymous demand signal · ~18 hrs · mostly `harpguru-cloud`
 
@@ -435,7 +476,9 @@ Ships: a console Hohner and Ronnie can log into.
 - Application-level authorization. "Hohner may edit tunings owned by Hohner" is not
   expressible in an IAM policy; consider Verified Permissions / Cedar.
 - Publisher dashboard: setup-link opens, geography, tunings studied. **The same data serves
-  Hohner's attribution and Ronnie's motivation** — one feature, two audiences.
+  Hohner's attribution and Ronnie's motivation** — one feature, two audiences. A
+  self-describing URL says what was shared, not who shared it, so counting a publisher's own
+  links needs an optional creator tag in the URL, added here; links without one keep working.
 - Audit log of who published what, when.
 
 The app learns nothing from this beyond a `verified` boolean on a fetched document.
@@ -452,7 +495,8 @@ confidence in a system partners now depend on.
   with the existing tests as the safety net and zero duplicated logic.
 - **Design the VPC NAT-free**, using interface endpoints. Simultaneously the largest cost
   saving available and a design decision the exam asks about.
-- GitHub Actions federated to IAM via OIDC.
+- GitHub Actions federated to IAM via OIDC for `harpguru-cloud`'s own deploys. The provider
+  arrives in Phase B, for this repo's widget deploys.
 - X-Ray end to end; CloudWatch dashboards and alarms; Logs Insights.
 - CodePipeline / CodeDeploy with canary deployment.
 
@@ -529,6 +573,13 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   convenience of sharing may turn out to be worth having. Revisit with a reason, not in
   passing.
 
+- **Should the app hold more than two harp faces?** Raised 2026-11-07. A lesson of several
+  setups works better in browser tabs than in an app that shuffles through two, and the
+  user with the app should never be worse off. The store is already one instance per harp
+  face, so three or more is mostly a UI question: shuffling through stops scaling past two.
+  Not a Phase B blocker, since the open-in-browser choice covers the lesson case, but the
+  harp-face picker that opens a link should be built to list any number.
+
 ### Settled since writing
 
 - **Where does this roadmap live once `harpguru-cloud` exists?** Here, canonically, and
@@ -572,3 +623,28 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   open:** the release workflow reacts to `expo.version` and drives store submission only,
   so what triggers a widget deploy is a Phase B design decision rather than a
   release-process one. Settled 2026-09-22; see `docs/release-pipeline.md`.
+- **How does a teacher make a setup link, and does it need a datastore?** In the app, with
+  a share button, and no datastore: **a setup link is a self-describing URL**, built and
+  drawn as a QR code on the device. Neither the roadmap nor the original discussion had said
+  where links were made; Phase B listed only a fetch client. Teachers' experience is central
+  to the product, so creation has to be free of friction, and identity remains for partners
+  only. Short codes in DynamoDB were weighed and dropped. What they would have added: a
+  count of opens inside the app, which would cost a network round trip on every open and is
+  Phase D's opt-in telemetry's job; telling teachers apart, which an optional creator tag
+  does in Phase E; and a smaller QR code, which is negligible. What dropping them gains: the
+  app never writes, so "unauthenticated reads only" holds untouched; links work offline; and
+  Phase B has no public write to defend, so WAF and the datastore move to Phase C, where
+  tuning documents need both. Settled 2026-11-07, with the user.
+- **Which page gets which controls?** Configuration and cell interaction never share a page;
+  the table is under "Locked decisions". Every page is public, so a control withheld from one
+  page but present on another protects nothing: a control is withheld only where it does not
+  serve the page's purpose. Hand-edited URLs are accepted rather than obfuscated against.
+  `/t/` validates its parameters against its own short option lists, so its URLs can be shared
+  for conversations about tunings without becoming a way round its limits. Settled
+  2026-11-07, with the user.
+- **What happens when a setup link is opened on a phone with the app?** The app opens and
+  asks where the setup goes: harp face 1, harp face 2, or the browser. App first, rather than
+  a web page offering an "open in the app" button, because a page cannot tell whether the
+  app is installed and iOS will not open an app from a link to the page's own domain. Settled
+  2026-11-07, with the user. Excluding the open-in-browser marker from Android's link rules
+  by query parameter is unverified; a path marker is the fallback.
