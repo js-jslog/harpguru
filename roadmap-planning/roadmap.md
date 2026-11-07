@@ -640,7 +640,11 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   Phase B has no public write to defend, so WAF and the datastore move to Phase C, where
   tuning documents need both. Settled 2026-11-07, with the user.
 - **Which page gets which controls?** Configuration and cell interaction never share a page;
-  the table is under "Locked decisions". Every page is public, so a control withheld from one
+  the table is under "Locked decisions". Together on one page, choosing a setup and then
+  playing across it is the app's core loop, free in a browser: that is what would cannibalise
+  it. Apart, each page does only its own job: a lesson is a fixed setup to play across, a
+  tuning page is a reference for seeing how a layout moves with key and pozition, and an embed
+  is a partner's fixed demonstration. Every page is public, so a control withheld from one
   page but present on another protects nothing: a control is withheld only where it does not
   serve the page's purpose. Hand-edited URLs are accepted rather than obfuscated against.
   `/t/` validates its parameters against its own short option lists, so its URLs can be shared
