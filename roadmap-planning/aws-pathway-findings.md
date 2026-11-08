@@ -479,8 +479,8 @@ CDK 2.271.0.
 - **The stack took 43 seconds**: the provider in about a second, the role about 19 and its
   policy about 17. `HarpguruSite` gained only the two outputs the weak references read.
 - **A deploy that changes IAM can't be approved from Claude Code's `!` prompt.** CDK asks for
-  confirmation, finds no terminal, and stops before the stack's changeset runs, though
-  dependency stacks it reached first are already deployed. `--require-approval never`, after
+  confirmation, finds no terminal, and stops after making that stack's changeset but before
+  running it. Dependency stacks it reached first are already deployed by then. `--require-approval never`, after
   reading the diff, gets past it.
 
 ### Phase B step 1 deployed: the widget's paths, 2026-11-07
