@@ -454,6 +454,35 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
 - **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
   denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
 
+### Phase B step 2 deployed: the deploy role, 2026-11-08
+
+`harpguru-cloud` gained a stack, `HarpguruGitHub`, in the workload account in London: GitHub's
+OIDC provider and the role `harpguru-pages-deploy`. Deployed from the branch before merging.
+CDK 2.271.0.
+
+- **What this repo's deploy workflow needs:** a job in the GitHub environment `harpguru.com`,
+  with `permissions: id-token: write`, assuming the role through
+  `aws-actions/configure-aws-credentials` in `eu-west-2`. The role's ARN goes in a GitHub
+  variable, because it carries the account ID. The bucket name and distribution ID are
+  `HarpguruSite`'s `PagesBucketName` and `DistributionId` outputs. The role may list, put,
+  delete and abort multipart uploads in the pages bucket, and invalidate the distribution; it
+  can't read objects, which `aws s3 sync --delete` doesn't need.
+- **The trust policy is untested until that workflow first runs.** It accepts only the subject
+  `repo:js-jslog/harpguru:environment:harpguru.com`, matched exactly. IAM's policy simulator
+  confirmed the permissions, but it can't present a GitHub token. A refusal on the first run,
+  "Not authorized to perform sts:AssumeRoleWithWebIdentity", means the token's `sub` differs:
+  the job isn't in the environment, or the names don't match.
+- **Given no thumbprint, IAM recorded one itself.** The native `AWS::IAM::OIDCProvider` was
+  created with an empty list, and `get-open-id-connect-provider` afterwards showed one
+  thumbprint. AWS's documentation says it doesn't use it for GitHub, checking the certificate
+  against its own trusted root CAs instead.
+- **The stack took 43 seconds**: the provider in about a second, the role about 19 and its
+  policy about 17. `HarpguruSite` gained only the two outputs the weak references read.
+- **A deploy that changes IAM can't be approved from Claude Code's `!` prompt.** CDK asks for
+  confirmation, finds no terminal, and stops before the stack's changeset runs, though
+  dependency stacks it reached first are already deployed. `--require-approval never`, after
+  reading the diff, gets past it.
+
 ### Phase B step 1 deployed: the widget's paths, 2026-11-07
 
 `harpguru-cloud`'s `HarpguruSite` gained a second bucket, `Pages`, behind `/w/*`, `/t/*`, `/s/*`
