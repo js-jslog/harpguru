@@ -4,3 +4,4 @@ Planning documentation for the AWS pathway: a cloud backend and web surfaces for
 
 - [ AWS pathway roadmap ](roadmap.md)
 - [ AWS pathway technical findings ](aws-pathway-findings.md)
+- [ Phase B handover from harpguru-cloud ](phase-b-handover.md)
