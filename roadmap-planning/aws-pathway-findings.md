@@ -490,7 +490,10 @@ points marked as untested.
   `S3-Egress-Bytes`. At a few megabytes a month either is nothing; the bill will settle it.
 - **A bucket used from another region needs a physical name that CDK knows at synthesis.**
   Passing the bucket to a `us-east-1` stack failed `cdk synth` with `CannotUseCrossEnvironment`
-  until it was given `PhysicalName.GENERATE_IF_NEEDED`.
+  until it was given `PhysicalName.GENERATE_IF_NEEDED`. The rule belongs to CDK's `Bucket`, which
+  builds its ARN through a check meant for other accounts and also applied to other regions. The
+  distribution's ID crossed regions as an ordinary weak reference, because `Distribution` builds
+  its ARN from the ID without that check.
 
 ### Phase B step 2 deployed: the deploy role, 2026-11-08
 
