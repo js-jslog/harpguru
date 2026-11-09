@@ -191,7 +191,7 @@ export { HarpGuru } from './harp-guru'
 
 The entire component tree — `HarpFace`, `HarpFaceFragment`, `HarpRow`, `HarpCell` — is
 private. A widget cannot reuse the harp face without `harpguru-core` first exporting it, and
-that export is a prerequisite task, not a detail.
+that export is a prerequisite task, not a detail. *Done 2026-11-09: `StandaloneHarpFace`.*
 
 **And the components are coupled to app-wide state.** `HarpCell` reads directly from the
 zustand store (`useHarpGuruStore((state) => state.activeDisplayMode)`), and that store is a
@@ -202,8 +202,8 @@ requires a fully populated store, not a set of props.
 **Settled 2026-09-23. The widget drives the whole store, and `harpguru-core` exposes the
 harp face as one composed component.** The evidence is in the findings doc; the reasoning:
 
-- **Drive the whole store.** Create a store instance, set the fixed tuning, expose only key
-  and pozition, and leave the quiz and paging state at defaults where it is simply never
+- **Drive the whole store.** Create a store instance, set the fixed tuning, expose only the
+  controls the page offers, and leave the quiz and paging state at defaults where it is simply never
   read. The app already runs two independent stores side by side, the harp face reads only
   13 of the store's 26 fields, and `CallbackOnSourceGlobalProps` already derives all of them
   from `activeHarpStrata`.
@@ -213,10 +213,12 @@ harp face as one composed component.** The evidence is in the findings doc; the 
   never belonged to this question.
 - **One composed component, not a handful of named exports.** A widget needs a bundle: the
   provider, the derivation component, the harp face, and the resize behaviour that
-  `harp-guru.tsx` currently holds in a discarded `useWindowDimensions()` call. Four named
+  `harp-guru.tsx` currently holds in a discarded `useWindowDimensions()` call (which, it
+  turned out on 2026-11-09, never recomputed the sizes; see the findings doc). Four named
   exports plus a note saying "and do not forget the resize line" is precisely how that line
   gets left out. One component cannot be assembled wrongly, and it keeps the public surface
-  at two exports rather than five.
+  at two exports rather than five. (The setup URL functions and a `standalone` entry joined
+  it on 2026-11-09.)
 
 ### Which container per phase
 
@@ -385,18 +387,19 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
 - Click-to-toggle rather than drag: a different input model from the app's, and simpler.
 - Responsive sizing into an iframe of unknown width. A harp face is 10–16 holes wide and a
   partner's sidebar may be 320px. The app's existing zoom option suggests this problem is
-  already familiar. **Know the mechanism before touching it:** resize response comes
-  entirely from a discarded `useWindowDimensions()` call in `harp-guru.tsx`, which the
-  composed harp face component has to reproduce or the widget will size once on mount and
-  never again.
+  already familiar. *Done 2026-11-09:* the discarded `useWindowDimensions()` call in
+  `harp-guru.tsx` re-rendered but never recomputed the sizes. `StandaloneHarpFace` now
+  sizes itself to its own box, and the app on the web follows a resize; see the findings doc.
 - **Trim the bundle.** 4 MB of the 6.2 MB web export is `@expo/vector-icons` fonts. An
-  embed that drops megabytes onto a partner's product page will not stay on it.
+  embed that drops megabytes onto a partner's product page will not stay on it. *Done
+  2026-11-09: 1.8 MB, no fonts.*
 - Two chrome variants: promotional on harpguru.com, minimal and attributed in an embed.
   Hohner will not host a buy-the-app call to action on their own product page.
 - Generate a canonical page for each of the 51 built-in tunings. **One page per tuning, not
   per permutation** — 51 tunings × 12 keys × 12 pozitions × 23 scales is over 160,000
-  near-identical pages, which is textbook doorway spam and gets penalised. Key and pozition
-  change client-side, as query parameters, and each page declares the bare `/t/<tuning>` as
+  near-identical pages, which is textbook doorway spam and gets penalised. A page's presets
+  change client-side, as query parameters (narrowed 2026-11-09: see "What does `/t/` let you
+  change?"), and each page declares the bare `/t/<tuning>` as
   its canonical URL. `/s/` and `/e/` are kept out of the index.
 - **A share button in the app**: it builds the `/s/` URL for the setup on screen and draws
   its QR code on the device. No network, no account, no write.
@@ -422,8 +425,8 @@ In `harpguru-cloud`:
   setups and tunings are opened, and embeds per partner, without a datastore.
 - The GitHub OIDC provider and the deploy role this repo's workflow assumes (see "How the
   two connect").
-- The `/s/*` rule in `apple-app-site-association` gains the exclusion for the open-in-browser
-  marker.
+- The `/s/*` rule in `apple-app-site-association` becomes the exact path `/s/`, so the
+  open-in-browser marker `/s/web` falls outside it (settled 2026-11-09).
 
 Nothing is dynamic at request time: prerendered HTML plus a client bundle. No server
 participates in a page view, and there is no setup datastore: a setup link is a
@@ -627,7 +630,9 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   the existing cadence at no extra cost. **Deployment is a separate question and stays
   open:** the release workflow reacts to `expo.version` and drives store submission only,
   so what triggers a widget deploy is a Phase B design decision rather than a
-  release-process one. Settled 2026-09-22; see `docs/release-pipeline.md`.
+  release-process one. Settled 2026-09-22; see `docs/release-pipeline.md`. The deploy
+  question was settled 2026-11-09: any push to `master` that can change a page deploys it
+  (`.github/workflows/deploy-widget.yml`).
 - **How does a teacher make a setup link, and does it need a datastore?** In the app, with
   a share button, and no datastore: **a setup link is a self-describing URL**, built and
   drawn as a QR code on the device. Neither the roadmap nor the original discussion had said
@@ -644,7 +649,7 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   the table is under "Locked decisions". Together on one page, choosing a setup and then
   playing across it is the app's core loop, free in a browser: that is what would cannibalise
   it. Apart, each page does only its own job: a lesson is a fixed setup to play across, a
-  tuning page is a reference for seeing how a layout moves with key and pozition, and an embed
+  tuning page is a reference for seeing how a layout moves across its pozitions, and an embed
   is a partner's fixed demonstration. Every page is public, so a control withheld from one
   page but present on another protects nothing: a control is withheld only where it does not
   serve the page's purpose. Hand-edited URLs are accepted rather than obfuscated against.
@@ -656,10 +661,11 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   a web page offering an "open in the app" button, because a page cannot tell whether the
   app is installed and iOS will not open an app from a link to the page's own domain. Settled
   2026-11-07, with the user. Excluding the open-in-browser marker from Android's link rules
-  by query parameter is unverified; a path marker is the fallback.
+  by query parameter is unverified; a path marker is the fallback. (Settled by the next
+  entry.)
 - **What is the open-in-browser marker?** The path `/s/web`. Excluding a query parameter
   from Android's link rules works only on Android 15 and later, so a path it is. Setup links
-  are always `/s/?…`, the intent filter and the AASA file claim the path `/s/` exactly, and
+  are always `/s/?…`, the intent filter and the AASA file are to claim the path `/s/` exactly, and
   `/s/web?…` falls outside both. CloudFront already serves it from the setup shell, so
   `harpguru-cloud` changes only the AASA file. Settled 2026-11-09, with the user; the detail
   is in the findings doc.
@@ -673,6 +679,6 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   pozition the tuning is designed for, each carrying its scale, plus the degree or pitch
   display. A frozen per-tuning table picks the pozitions by hand; each preset's scale is
   computed from the unbent notes where a named scale fits them, and named by hand where none
-  does. No independent key, pozition or scale control, which keeps covariance, and the app's
+  does, or shown as "Unbent notes" where no named scale is right. No independent key, pozition or scale control, which keeps covariance, and the app's
   core loop, off the page. To be settled by use: the lists only grow, so narrow is the cheap
   start. Settled 2026-11-09, with the user.

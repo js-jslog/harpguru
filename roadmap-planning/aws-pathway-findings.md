@@ -120,6 +120,9 @@ export { HarpGuru } from './harp-guru'
 cannot reuse the harp face until `harpguru-core` exports it**, so that export is a
 prerequisite task rather than an incidental one.
 
+*Done 2026-11-09:* `harpguru-core` now also exports `StandaloneHarpFace`, `DisplayModes` and
+the setup URL functions, and has a second entry, `harpguru-core/standalone`, without the app.
+
 Worse, the components are not prop-driven. `HarpCell` reads app-wide state directly:
 
 ```ts
@@ -160,6 +163,9 @@ workspace automatically. Root `test` does **not** — it enumerates workspaces b
 A new `apps/harpguru-widget` with tests will be silently skipped in CI unless that line is
 edited. Note also that the current list contains no `apps/*` entry at all.
 
+*Done 2026-11-09:* the line now ends `&& yarn workspace harpguru-widget run test`. The
+convention stands for the next workspace.
+
 **A husky `pre-push` hook runs `yarn lint`, `yarn tsc` and `yarn test`.** So the gap above
 is live at push time: `lint` and `tsc` will cover a new workspace, `test` will quietly not.
 See `docs/git-hooks.md`.
@@ -193,6 +199,16 @@ new workspace needs both, or it will be linted inconsistently.
 `apps/harpguru-widget`, on `178-build-the-harp-face-widget`. Not yet deployed: the deploy
 workflow runs from `master` only, so its first run follows the merge.
 
+Still open from the handover's order of work and report-back list:
+
+- **The first deploy run**, its result and date, for harpguru-cloud. It is also the first
+  real test of the role's trust policy.
+- **The app changes (step 7), none started:** the share button and its QR code;
+  `associatedDomains` and the Android intent filters; the picker offering harp face 1, harp
+  face 2 or the browser; checking every incoming URL. `writeSetupUrl` and `readSetupUrl`
+  are in `harpguru-core` for them and not yet used by the app.
+- **Review of the `/t/` preset table**, before the first deploy (see "what `/t/` offers").
+
 - **The widget needs nothing beyond the CSP harpguru-cloud serves.** Checked in headless
   Chromium 158 against the laid-out export, served with the pages' CSP exactly as the
   handover gives it and with the viewer-request function's path mapping: `/s/`, `/s/web`,
@@ -215,7 +231,7 @@ workflow runs from `master` only, so its first run follows the merge.
 - **The deploy workflow is `.github/workflows/deploy-widget.yml`.** It runs on a push to
   `master` that touches the widget, the packages, `yarn.lock` or itself, and on dispatch. It
   builds without credentials, then deploys in the `harpguru.com` environment. Three passes
-  rather than two: the new bundle files, then the pages with `--delete` and the invalidation
+  rather than two: the bundle files, then the pages with `--delete` and the invalidation
   of `/s/*`, `/e/*` and `/t/*`, then `--delete` for the bundle files no page names any more.
   That way no page is ever served naming a file that is missing.
 - **Node can run the packages' TypeScript for build scripts, through a hook.** Node 24's type
@@ -234,8 +250,9 @@ opens the same parameters at `https://harpguru.com/s/web?<params>`.
   level 35) and higher. They are ignored and have no effect on lower Android versions"
   (Android's manifest reference, read 2026-11-09). Dynamic App Links, the `assetlinks.json`
   route with `"exclude": true`, are Android 15+ with Google services too. So a path marker.
-- **No new behaviour is needed.** The app's intent filter matches `android:path="/s/"`
-  exactly, which ignores the query, so `/s/web` falls outside it. CloudFront already maps
+- **No new behaviour is needed.** The app's intent filter, still to be written in Phase B's
+  app changes, will match `android:path="/s/"` exactly, which ignores the query, so `/s/web`
+  falls outside it. CloudFront already maps
   `/s/<anything>` to `s/index.html`, so `/s/web` serves the same shell, and the page treats
   both paths alike. In the request logs, `/s/web` also counts the opens the app handed to the
   browser.
@@ -256,7 +273,7 @@ it can only grow: a key's meaning never changes, and an unknown key is ignored.
 | Key | Meaning | Values | Default |
 | --- | --- | --- | --- |
 | `t` | tuning (`/s/`, `/e/`; `/t/` takes it from the path) | a slug from the frozen table in `harpparts` | `major-diatonic` |
-| `k` | harp key | `A Bb B C Db D Eb E F Gb G Ab`; sharps read as their flats | `C` |
+| `k` | harp key | `A Bb B C Db D Eb E F Gb G Ab`; sharps, written `%23`, read as their flats | `C` |
 | `p` | pozition | `1`–`12` | `2` |
 | `d` | active degrees, comma separated | `1 2b 2 3b 3 4 5b 5 6b 6 7b 7`; empty for none | none |
 | `s` | a named scale, expanded to its degrees; ignored when `d` is present | a slug from the frozen scale table | none |
@@ -267,6 +284,12 @@ it can only grow: a key's meaning never changes, and an unknown key is ignored.
   value falls back to that key's default, and the page corrects the address bar with
   `history.replaceState`. Written URLs put the keys in the order above, always carry `t`,
   `k`, `p` and `d` on `/s/` and `/e/`, and carry `m` and `v` only when not the default.
+- **A bare `#` ends the query.** `k=F#` is read as `F`, and every key after it is lost, in
+  the browser and in `readSetupUrl` alike. Nothing written ever contains a sharp; only a
+  hand-typed link can, and it gets the wrong key rather than an error.
+- **`readSetupUrl`, for the app, accepts `/s/` only, and refuses `/s/web`.** `/s/web` is the
+  app's own hand-off to the browser. Whether the app's paste or scan should accept it too is
+  for the app changes to decide.
 - **The defaults are permanent too**, since a URL that omits a key means its default.
 - **Tuning slugs are a frozen table, not derived from the names.** `TuningIds` values are
   display strings that may be reworded; a slug never changes once shipped. Built-in slugs are
@@ -293,9 +316,13 @@ page exists to make a tuning understood, not to configure one, so:
   built for.
 - **Each preset's scale is computed** where it can be: take the unbent blow and draw notes in
   that pozition as degrees, and look for a named scale with exactly those degrees. Run against
-  all 51 tunings on 2026-11-09, it named a scale for 39. The other 12 match none unbent
+  all 51 tunings on 2026-11-09, it named a scale for 36. The other 15 match none unbent
   (Country's extra reed, Harmonic minor, Easy diatonic, Blues 2 and 3, Chord, Diminished,
-  Augmented Spanish, the three chromatics and four Trochilus tunings) and name theirs by hand.
+  Augmented Spanish, the three chromatics and four Trochilus tunings). 14 of them name theirs
+  by hand; Augmented Spanish has no fitting named scale and shows "Unbent notes", which
+  activates its unbent notes as degrees.
+- **The table is a draft until the first deploy.** `tuning-presets.ts` is marked for review:
+  a preset's pozition becomes a permanent `p` value once a `/t/` URL carrying it is shared.
 - **The display toggle stays**: degree and pitch.
 - **Expected to be settled by use, not by argument.** The lists only grow, so starting narrow
   is the cheap mistake.
@@ -313,8 +340,12 @@ window taller than wide was sized as though its height were its width.
 Fixed in `harpguru-core` for Phase B's composed component, `StandaloneHarpFace`:
 `CallbackOnSourceGlobalProps` recomputes the sizes when the window changes, and on the web
 `getWindowDimensions` takes the horizontal edge as the long one. Both are no-ops on a
-device. The sizes still come from the window, not the component's own box, so a standalone
-harp face expects to fill most of its window, as in a widget page or an iframe.
+device. `StandaloneHarpFace` goes further and sizes itself to its own box: its `onLayout`
+hands the measured size to `getWindowDimensions` through `setFrameDimensions`, and nothing
+is drawn until that first measurement. The frame is one module-level value, so it holds for
+one harp face per JavaScript context. That suits a widget page or an iframe; the app must
+not mount a `StandaloneHarpFace` beside its own harp faces, such as for a share preview,
+without first making the frame per store.
 
 ### Checked 2026-09-23, against `master` at `bafbd03e`
 
@@ -363,12 +394,14 @@ or rotation, and seven call sites then read the imperative `getWindowDimensions(
 that render. It lives in the one component a widget will not use, so a widget that mounts a
 harp face directly sizes itself once on mount and never responds again. One line to fix,
 invisible until something resizes, and directly in the path of Phase B's iframe-of-unknown-width
-requirement.
+requirement. *Incomplete: see "The harp face's resize mechanism, re-checked 2026-11-09"
+above.*
 
 **The package exports one thing.** `harpguru-core/src/index.ts` is
 `export { HarpGuru } from './components'`. The store's exports are reachable only by deep
 import into `src/store` — which works, because `main` points at raw TypeScript, but is not a
-public surface. Exposing the harp face is a prerequisite task, exactly as the roadmap says.
+public surface. Exposing the harp face is a prerequisite task, exactly as the roadmap says. *Done
+2026-11-09; see "`harpguru-core` exposes nothing but the whole app".*
 
 **`harpparts` now carries 51 tunings, not 47.** #180 added the trochilus tunings after this
 document was written. Pozitions, scales, pitches and degrees are unmoved. Phase B's
