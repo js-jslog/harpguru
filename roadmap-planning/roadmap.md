@@ -32,7 +32,7 @@ External resources:
 - Container conventions: <https://github.com/js-jslog/devcontainer-aws-base>, particularly
   its `docs/aws-conventions.md`
 
-**Status: Phase A has shipped**, and Phase B is being planned. The status tables in
+**Status: Phase A has shipped**, and Phase B is under way. The status tables in
 `harpguru-cloud`'s [plans](https://github.com/js-jslog/harpguru-cloud/tree/master/docs/plans)
 are the record of what has shipped and what is deployed. It is not repeated here, so it cannot
 go stale here.
