@@ -188,6 +188,41 @@ new workspace needs both, or it will be linted inconsistently.
 
 ## Verified findings
 
+### Phase B: the widget built, and checked under the live CSP, 2026-11-09
+
+`apps/harpguru-widget`, on `178-build-the-harp-face-widget`. Not yet deployed: the deploy
+workflow runs from `master` only, so its first run follows the merge.
+
+- **The widget needs nothing beyond the CSP harpguru-cloud serves.** Checked in headless
+  Chromium 158 against the laid-out export, served with the pages' CSP exactly as the
+  handover gives it and with the viewer-request function's path mapping: `/s/`, `/s/web`,
+  `/e/` and three `/t/` pages, at 1280×720, 1024×600, a 390×844 phone held upright and a
+  320×400 sidebar. No CSP violation, no console error. Cell taps toggle on `/s/` and do
+  nothing on `/t/`; a `/t/` preset rewrites the address without a reload; a bad parameter is
+  corrected in place.
+- **Store links and the attribution are plain links**, which a CSP doesn't govern. The pages'
+  icon is the site bucket's `/icon.png`, the one file they use from outside `/w/`.
+- **The bundle is 1.8 MB, 390 KB gzipped, and carries no fonts.** The full app's export is
+  6.2 MB with 4 MB of `@expo/vector-icons` fonts. The widget imports `harpguru-core/standalone`,
+  a second entry that leaves out the app and its menus, because Metro doesn't tree-shake; with
+  nothing importing the icons, Expo emits none. The roadmap's bundle trim needed nothing more.
+- **Expo's `experiments.baseUrl: "/w"` puts the bundle at `/w/_expo/static/js/web/…`**, in
+  the HTML and on disk alike, with `web.output: "single"`. The layout script refuses an export
+  that references anything outside `/w/`.
+- **The object keys are as the contract asks**: `w/…`, `s/index.html`, `e/index.html` and 51
+  `t/<slug>/index.html`, 54 objects in all. Each tuning page names its bare `/t/<slug>` as
+  canonical; the two shells carry `noindex`.
+- **The deploy workflow is `.github/workflows/deploy-widget.yml`.** It runs on a push to
+  `master` that touches the widget, the packages, `yarn.lock` or itself, and on dispatch. It
+  builds without credentials, then deploys in the `harpguru.com` environment. Three passes
+  rather than two: the new bundle files, then the pages with `--delete` and the invalidation
+  of `/s/*`, `/e/*` and `/t/*`, then `--delete` for the bundle files no page names any more.
+  That way no page is ever served naming a file that is missing.
+- **Node can run the packages' TypeScript for build scripts, through a hook.** Node 24's type
+  stripping fails on them twice: extensionless relative imports, and types imported without
+  `import type`. `apps/harpguru-widget/scripts/ts-hooks.mjs` resolves the first and puts each
+  `.ts` file through Babel's TypeScript preset for the second. No new dependency.
+
 ### Phase B: the open-in-browser marker, decided 2026-11-09 (unblocks harpguru-cloud #4)
 
 **The marker is the path `/s/web`.** A setup link is always `https://harpguru.com/s/?<params>`,
