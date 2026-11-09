@@ -82,8 +82,10 @@ jobs:
       # isn't there yet, or has just been deleted. The role may list, put and
       # delete, and nothing else; sync needs no more.
       #
-      # 1. The bundle, new files only. Its names carry a content hash, so a
-      #    file never changes once uploaded and can be cached for a year.
+      # 1. The bundle. Its names carry a content hash, so a file never changes
+      #    once uploaded and can be cached for a year. sync compares times, and
+      #    a fresh build is always newer, so unchanged files go up again too:
+      #    the same bytes, so harmless.
       - name: Upload the bundle
         run: >
           aws s3 sync site "s3://$BUCKET" --no-progress

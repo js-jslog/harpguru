@@ -67,7 +67,8 @@ const page = ({ title, description, canonical, isIndexed }: Head): string => {
   if (!template.includes('<title>Harp Guru</title>')) {
     throw new Error('The export index.html no longer has the expected <title>')
   }
-  return template.replace('<title>Harp Guru</title>', head)
+  // A function, so a $ in a tuning's name is never read as a replacement pattern
+  return template.replace('<title>Harp Guru</title>', () => head)
 }
 
 const write = (path: string, html: string): void => {

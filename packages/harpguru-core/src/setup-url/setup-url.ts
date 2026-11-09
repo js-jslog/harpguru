@@ -185,8 +185,9 @@ export const writeSetupUrl = (
   `${siteOrigin}/s/${openInBrowser ? 'web' : ''}?${writeSetupQuery(setup)}`
 
 // Reads a link the app has been handed. Anything other than a harpguru.com
-// setup link is refused with undefined, rather than guessed at; within a
-// setup link, bad values fall back as readSetupQuery describes.
+// /s/ setup link is refused with undefined, rather than guessed at, and that
+// includes /s/web, the app's own hand-off to the browser. Within a setup
+// link, bad values fall back as readSetupQuery describes.
 export const readSetupUrl = (url: string): Setup | undefined => {
   const match = /^https:\/\/(www\.)?harpguru\.com\/s\/?(\?[^#]*)?(#.*)?$/i.exec(
     url.trim()
