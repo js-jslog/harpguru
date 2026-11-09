@@ -1,4 +1,4 @@
-import { ScaleIds } from '../../scale'
+import { ScaleCategory, ScaleIds } from '../../scale'
 import { DegreeIds } from '../../degree'
 import { getScale } from '../../access-parts'
 
@@ -23,4 +23,12 @@ test('an unordered match to be recognised', () => {
 test('a non-match to be unorecognised', () => {
   const degreeIds = [Root, Third]
   expect(getScaleByDegreeIds(degreeIds)).toBeUndefined()
+})
+
+test('a match of the wrong category to be unrecognised', () => {
+  const degreeIds = [Root, Third, Fifth]
+  expect(getScaleByDegreeIds(degreeIds, ScaleCategory.Scale)).toBeUndefined()
+  expect(getScaleByDegreeIds(degreeIds, ScaleCategory.Chord)).toBe(
+    getScale(ScaleIds.MajorTriad)
+  )
 })
