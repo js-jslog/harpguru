@@ -519,9 +519,11 @@ CDK 2.271.0.
 
 - **What this repo's deploy workflow needs:** a job in the GitHub environment `harpguru.com`,
   with `permissions: id-token: write`, assuming the role through
-  `aws-actions/configure-aws-credentials` in `eu-west-2`. The role's ARN goes in a GitHub
-  variable, because it carries the account ID. The bucket name and distribution ID are
-  `HarpguruSite`'s `PagesBucketName` and `DistributionId` outputs. The role may list, put,
+  `aws-actions/configure-aws-credentials` in `eu-west-2`. Three variables in that environment,
+  made 2026-11-09, hold what it needs: `vars.AWS_PAGES_DEPLOY_ROLE_ARN`, the role's ARN, kept
+  out of files because it carries the account ID; `vars.AWS_PAGES_BUCKET`, the pages bucket
+  (`HarpguruSite`'s `PagesBucketName`); and `vars.AWS_DISTRIBUTION_ID` (`DistributionId`). The
+  role can't read stack outputs, so the workflow takes them from there. The role may list, put,
   delete and abort multipart uploads in the pages bucket, and invalidate the distribution; it
   can't read objects, which `aws s3 sync --delete` doesn't need.
 - **The trust policy is untested until that workflow first runs.** It accepts only the subject
