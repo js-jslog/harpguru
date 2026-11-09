@@ -500,8 +500,8 @@ branch; the smoke test passed.
 - **A request's line landed about 100 seconds after it was made.** The file was
   `cloudfront/year=2026/month=11/day=09/<distribution id>.2026-11-09-14.<id>.gz`: named by the
   hour and an ID, gzip-compressed (`application/x-gzip`), SSE-S3, one JSON object per line.
-- **Making the delivery wrote an empty `cloudfront/` object**, two minutes before the first
-  request, seemingly a test write.
+- **Making the delivery wrote an empty `cloudfront/` object**, about a minute and a half before
+  the first request, seemingly a test write.
 - **Every value is a string**, numbers included (`"sc-bytes": "1982"`); an empty field is
   `"-"`. An Athena table casts them.
 - **`cs(Host)` is the distribution's own domain, `d….cloudfront.net`; `x-host-header` is the
