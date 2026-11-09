@@ -519,7 +519,8 @@ CDK 2.271.0.
 
 - **What this repo's deploy workflow needs:** a job in the GitHub environment `harpguru.com`,
   with `permissions: id-token: write`, assuming the role through
-  `aws-actions/configure-aws-credentials` in `eu-west-2`. Three variables in that environment,
+  `aws-actions/configure-aws-credentials` in `eu-west-2`. The environment only accepts
+  deployments from `master`. Three variables in that environment,
   made 2026-11-09, hold what it needs: `vars.AWS_PAGES_DEPLOY_ROLE_ARN`, the role's ARN, kept
   out of files because it carries the account ID; `vars.AWS_PAGES_BUCKET`, the pages bucket
   (`HarpguruSite`'s `PagesBucketName`); and `vars.AWS_DISTRIBUTION_ID` (`DistributionId`). The
