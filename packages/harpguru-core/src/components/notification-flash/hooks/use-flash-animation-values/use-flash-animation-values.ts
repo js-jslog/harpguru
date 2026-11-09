@@ -7,6 +7,7 @@ import {
 } from 'react-native-reanimated'
 import type { SharedValue } from 'react-native-reanimated'
 
+import { useHarpGuruStore } from '../../../../store'
 import { getWindowDimensions } from '../../../../packages/get-window-dimensions'
 import { overlayOpacity } from '../../../../constants'
 
@@ -20,7 +21,8 @@ type FlashAnimationValues = [
 export const useFlashAnimationValues = (
   shouldDisplay: boolean
 ): FlashAnimationValues => {
-  const { longEdge } = getWindowDimensions()
+  const frameDimensions = useHarpGuruStore((state) => state.frameDimensions)
+  const { longEdge } = getWindowDimensions(frameDimensions)
   const guaranteeOffScreenWidth = longEdge
   const messageOpacity = useSharedValue(0)
   const explosionOpacity = useSharedValue(0)

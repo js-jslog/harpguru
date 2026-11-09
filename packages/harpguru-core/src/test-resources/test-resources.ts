@@ -112,11 +112,12 @@ export const buildMockStoreState = ({
     },
     viewableInteractionMatrix
   )
-  const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, {
-    fullLayoutFacts,
-    layoutFacts,
-  })
-  const staticSizes = reduceToStaticSizes(undefined)
+  const dynamicSizes = reduceLayoutFactsToDynamicSizes(
+    undefined,
+    { fullLayoutFacts, layoutFacts },
+    undefined
+  )
+  const staticSizes = reduceToStaticSizes(undefined, undefined)
 
   return {
     activeHarpStrata: sourceHarpStrata,
@@ -139,6 +140,8 @@ export const buildMockStoreState = ({
     layoutFacts,
     dynamicSizes,
     staticSizes,
+    frameDimensions: undefined,
+    isCellInteractive: true,
     activeExperienceMode: experienceMode,
     activeDisplayMode: displayMode,
     bufferedActivityToggles,
@@ -171,6 +174,8 @@ export const buildMockStoreState = ({
     setLayoutFacts: jest.fn(),
     setDynamicSizes: jest.fn(),
     setStaticSizes: jest.fn(),
+    setFrameDimensions: jest.fn(),
+    setIsCellInteractive: jest.fn(),
   }
 }
 

@@ -51,6 +51,7 @@ export const useSetFromSourceColumnBounds = (): void => {
   const prevDynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const setDynamicSizes = useHarpGuruStore((state) => state.setDynamicSizes)
   const prevStaticSizes = useHarpGuruStore((state) => state.staticSizes)
+  const frameDimensions = useHarpGuruStore((state) => state.frameDimensions)
   const setStaticSizes = useHarpGuruStore((state) => state.setStaticSizes)
 
   const nextColumnBounds = reduceColumnBounds(
@@ -83,11 +84,12 @@ export const useSetFromSourceColumnBounds = (): void => {
     prevLayoutFacts,
     nextViewableInteractionMatrix
   )
-  const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(prevDynamicSizes, {
-    fullLayoutFacts: nextFullLayoutFacts,
-    layoutFacts: nextLayoutFacts,
-  })
-  const nextStaticSizes = reduceToStaticSizes(prevStaticSizes)
+  const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(
+    prevDynamicSizes,
+    { fullLayoutFacts: nextFullLayoutFacts, layoutFacts: nextLayoutFacts },
+    frameDimensions
+  )
+  const nextStaticSizes = reduceToStaticSizes(prevStaticSizes, frameDimensions)
 
   useEffect(() => {
     setIfNew(prevColumnBounds, nextColumnBounds, setColumnBounds)

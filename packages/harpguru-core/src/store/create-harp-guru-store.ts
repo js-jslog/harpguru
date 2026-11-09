@@ -18,6 +18,7 @@ import type {
   DisplayModes,
   ExperienceModes,
   FlushChannels,
+  FrameDimensions,
   LayoutFacts,
   PageNumber,
   SizeScheme,
@@ -52,6 +53,8 @@ export type HarpGuruState = {
   readonly layoutFacts: HarpFaceFacts<LayoutFacts>
   readonly dynamicSizes: SizeScheme
   readonly staticSizes: SizeScheme
+  readonly frameDimensions: FrameDimensions | undefined
+  readonly isCellInteractive: boolean
 }
 
 export type HarpGuruActions = {
@@ -87,6 +90,8 @@ export type HarpGuruActions = {
   readonly setLayoutFacts: (value: HarpFaceFacts<LayoutFacts>) => void
   readonly setDynamicSizes: (value: SizeScheme) => void
   readonly setStaticSizes: (value: SizeScheme) => void
+  readonly setFrameDimensions: (value: FrameDimensions | undefined) => void
+  readonly setIsCellInteractive: (value: boolean) => void
 }
 
 export type HarpGuruStore = HarpGuruState & HarpGuruActions
@@ -129,6 +134,8 @@ export const createHarpGuruStore = (
     setLayoutFacts: (value) => set({ layoutFacts: value }),
     setDynamicSizes: (value) => set({ dynamicSizes: value }),
     setStaticSizes: (value) => set({ staticSizes: value }),
+    setFrameDimensions: (value) => set({ frameDimensions: value }),
+    setIsCellInteractive: (value) => set({ isCellInteractive: value }),
   }))
 }
 

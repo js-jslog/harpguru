@@ -1,1 +1,1 @@
-export { getWindowDimensions, setFrameDimensions } from './get-window-dimensions'
+export { getWindowDimensions } from './get-window-dimensions'
