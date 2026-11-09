@@ -1,10 +1,7 @@
 import { useWindowDimensions } from 'react-native'
 import { useEffect } from 'react'
 
-import {
-  reduceLayoutFactsToDynamicSizes,
-  reduceToStaticSizes,
-} from '../../../utils'
+import { reduceToResizedSizes } from '../../../utils'
 import { useHarpGuruStoreInstance } from '../../../store'
 
 // The sizes are otherwise recomputed only when the harp strata changes. On a
@@ -18,12 +15,6 @@ export const useSetFromWindowDimensions = (): void => {
   const store = useHarpGuruStoreInstance()
 
   useEffect(() => {
-    store.setState((state) => ({
-      dynamicSizes: reduceLayoutFactsToDynamicSizes(state.dynamicSizes, {
-        fullLayoutFacts: state.fullLayoutFacts,
-        layoutFacts: state.layoutFacts,
-      }),
-      staticSizes: reduceToStaticSizes(state.staticSizes),
-    }))
+    store.setState(reduceToResizedSizes)
   }, [store, width, height])
 }

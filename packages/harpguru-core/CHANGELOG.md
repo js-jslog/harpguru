@@ -19,11 +19,14 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: `StandaloneHarpFace`, one harp face outside the app, with its own store,
   started from the setup it is given and following later changes to it. Cell
-  taps and the scale flash can be switched off together
+  taps and the scale flash can be switched off together. It sizes itself to
+  the box it is given rather than the window, so a page can surround it
 - MINOR: `DisplayModes` exported, for setting a standalone harp face's display
 - MINOR: the setup URL format shared by the widget pages and the app:
   `readSetupQuery`, `writeSetupQuery`, `writeSetupUrl` and `readSetupUrl`, with
   `Setup`, `defaultSetup` and `siteOrigin`
+- MINOR: a second entry, `harpguru-core/standalone`, carrying the standalone
+  harp face and the setup URL format without the app
 
 ### Fixed
 

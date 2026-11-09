@@ -1,6 +1,7 @@
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
-import React, { useEffect } from 'react'
+import type { LayoutChangeEvent } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import type { ReactElement } from 'react'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
@@ -11,9 +12,10 @@ import { HarpFaces } from '../harp-faces'
 import { CellInteractionContext } from '../harp-cell'
 import { CallbackOnSourceGlobalProps } from '../callback-on-sourceglobalprops'
 import { ActivityLegend } from '../activity-legend'
-import { getColors } from '../../utils'
+import { getColors, reduceToResizedSizes } from '../../utils'
 import type { DisplayModes } from '../../types'
 import { StoreProvider, useHarpGuruStoreInstance } from '../../store'
+import { setFrameDimensions } from '../../packages/get-window-dimensions'
 
 export type StandaloneHarpFaceProps = {
   readonly harpStrataProps: HarpStrataProps
@@ -25,9 +27,10 @@ export type StandaloneHarpFaceProps = {
 }
 
 // One harp face, outside the app: its own store, the derivation that fans the
-// harp strata out into every other field, and the response to a resized
-// window. It fills its parent, and sizes itself from the window, so it
-// expects to be most of the window, as it is in a widget page or an iframe.
+// harp strata out into every other field, and the response to being resized.
+// It fills its parent and sizes itself to fit it, so a page can put its own
+// controls around it. One per page, since the size it measures is shared by
+// every harp face in the window.
 export const StandaloneHarpFace = (
   props: StandaloneHarpFaceProps
 ): ReactElement => {
@@ -53,6 +56,18 @@ const StandaloneHarpFaceContents = ({
   isInteractive,
 }: StandaloneHarpFaceProps): ReactElement => {
   useFollowProps(harpStrataProps, displayMode)
+  const store = useHarpGuruStoreInstance()
+  const [isMeasured, setIsMeasured] = useState(false)
+  const onLayout = ({
+    nativeEvent: {
+      layout: { width, height },
+    },
+  }: LayoutChangeEvent) => {
+    setFrameDimensions({ width, height })
+    store.setState(reduceToResizedSizes)
+    setIsMeasured(true)
+  }
+  useEffect(() => () => setFrameDimensions(undefined), [])
 
   const styles = StyleSheet.create({
     fill: {
@@ -64,12 +79,22 @@ const StandaloneHarpFaceContents = ({
   })
 
   return (
-    <View style={styles.fill}>
-      <ActivityLegend />
-      <HarpFaces />
-      <ToggleBufferFlusher />
+    <View
+      style={styles.fill}
+      onLayout={onLayout}
+      testID="standalone-harp-face"
+    >
       <CallbackOnSourceGlobalProps />
-      {isInteractive && <NotifyOfScale isScalesMenu={false} />}
+      <ToggleBufferFlusher />
+      {/* Nothing is drawn until the space is known, or the first frame would
+          be sized to the whole window */}
+      {isMeasured && (
+        <>
+          <ActivityLegend />
+          <HarpFaces />
+          {isInteractive && <NotifyOfScale isScalesMenu={false} />}
+        </>
+      )}
     </View>
   )
 }
