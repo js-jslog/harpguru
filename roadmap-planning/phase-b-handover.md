@@ -6,40 +6,31 @@ configured harp face opens live from a QR code.
 
 ## Where you are
 
-You are in the cloud container, working in `/harpguru`. Its branch
+You are in the `harpguru` app container, where this repo's pre-push hook runs. The branch
 `178-build-the-harp-face-widget` is ahead of `master` and holds the current roadmap and
 findings. Pull before relying on it.
 
-**`harpguru-cloud` is at `/app`.** Read it for reference, but treat it as read-only. Another
-agent works in that tree, so don't edit files, switch branches or pull there. Changes on the
-AWS side go to that agent, through the user. Worth reading:
+**`harpguru-cloud` is public: `https://github.com/js-jslog/harpguru-cloud`, on `master`.**
+Read it for reference. Clone it read-only if that helps, but don't push to it: changes on the
+AWS side go to its own agent, in the cloud container, through the user. Worth reading:
 
-- `/app/docs/plans/phase-b.md`: the status table, and "What this side needs from that side"
-- `/app/docs/orientation.md`: "Pushing from here" (see "Pushing" below)
-- `/app/infra/lib/site-stack.ts`: the paths, cache and headers, the CSPs included
-- `/app/infra/lib/functions/viewer-request.js`: how paths map to objects
-- `/app/infra/lib/github-stack.ts`: the deploy role's trust policy and permissions
-- `/app/infra/lib/partners.ts`: who may frame `/e/` (empty for now)
-- `/app/infra/site/.well-known/`: the AASA file and `assetlinks.json` as served
+- `docs/plans/phase-b.md`: the status table, and "What this side needs from that side"
+- `infra/lib/site-stack.ts`: the paths, cache and headers, the CSPs included
+- `infra/lib/functions/viewer-request.js`: how paths map to objects
+- `infra/lib/github-stack.ts`: the deploy role's trust policy and permissions
+- `infra/lib/partners.ts`: who may frame `/e/` (empty for now)
+- `infra/site/.well-known/`: the AASA file and `assetlinks.json` as served
 
-**This container has the AWS CLI, CDK and the user's SSO login. Don't use them.** The
-widget's only route to AWS is the GitHub workflow below, and nothing in this repo should
-depend on credentials. The user runs any `aws` or `cdk` command, from the harpguru-cloud
-side.
+**No AWS credentials or AWS tooling belong in this container or this repo.** The widget's
+only route to AWS is the GitHub workflow below. The user runs any `aws` or `cdk` command,
+from the harpguru-cloud side.
 
 ## Pushing
 
-`harpguru`'s pre-push hook runs the release version check, `yarn lint`, `yarn tsc` and
-`yarn test`. It can't run here: there is no global yarn, and the clone has no
-`node_modules`.
+Push normally: the pre-push hook runs the release version check, `yarn lint`, `yarn tsc` and
+`yarn test`, and must pass. Don't use `--no-verify`. No AI attribution in commits or PRs.
 
-- Markdown-only changes under `roadmap-planning/` may be pushed with `--no-verify`.
-- Code may not. Per `/app/docs/orientation.md`, code goes through the app container,
-  where the hook runs. If you are about to push code from here, stop and ask the user how
-  they want it done.
-- No AI attribution in commits or PRs.
-
-## Read first, in `/harpguru`
+## Read first, in this repo
 
 - `roadmap-planning/roadmap.md`:
   - "Phase B — The public harpface"
@@ -73,7 +64,7 @@ side.
   - That means no `eval`, no third-party scripts, fonts or images, no requests to other
     origins, no `<base>` tag, and no form submissions.
   - `/w/`, `/t/` and `/s/` refuse to be framed (`frame-ancestors 'none'`).
-  - `/e/` may be framed by harpguru.com and the partners in `/app/infra/lib/partners.ts`.
+  - `/e/` may be framed by harpguru.com and the partners in harpguru-cloud's `infra/lib/partners.ts`.
 - **App links:**
   - The AASA file claims `/s/*` for `com.jslog.harpguru`.
   - `assetlinks.json` is live.
