@@ -457,8 +457,8 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
 ### Phase B step 3 facts: CloudFront's request logs, checked 2026-11-09
 
 Read from AWS's documentation and from the workload account before building
-`harpguru-cloud`'s `1-request-logs`. Not yet deployed; the deploy will confirm or correct the
-points marked as untested.
+`harpguru-cloud`'s `1-request-logs`, then confirmed by its deploy the same day. Deployed from the
+branch; the smoke test passed.
 
 - **Standard logging (v2) is three CloudWatch Logs resources, all made in `us-east-1`**: a
   delivery source naming the distribution and `ACCESS_LOGS`, a delivery destination naming the
@@ -479,12 +479,12 @@ points marked as untested.
 - **For CloudFront, a prefix on the destination replaces the default
   `AWSLogs/<account id>/CloudFront/`**, rather than going in front of it, so the account ID
   stays out of the keys. With Hive-compatible paths on, a suffix of `{yyyy}/{MM}/{dd}` should
-  file by `year=…/month=…/day=…`. That last part is untested.
+  file by `year=…/month=…/day=…`. It did: `cloudfront/year=2026/month=11/day=09/`.
 - **The delivery adds its own statement to the bucket's policy** when it finds none it
   recognises and its caller may `s3:PutBucketPolicy`, which CDK's deploy role may. A
   CloudFormation-managed policy would then drift, and the next deploy would remove the
-  statement. `harpguru-cloud` writes the documented statements itself. Whether the delivery
-  then leaves the policy alone is untested.
+  statement. `harpguru-cloud` writes the documented statements itself, and the delivery
+  recognised them: after the deploy the policy held CDK's three statements and no others.
 - **The two guides disagree on cost.** CloudFront's says "There are no additional charges for
   log delivery to Amazon S3". CloudWatch's says vended delivery to S3 is billed as
   `S3-Egress-Bytes`. At a few megabytes a month either is nothing; the bill will settle it.
@@ -494,6 +494,22 @@ points marked as untested.
   builds its ARN through a check meant for other accounts and also applied to other regions. The
   distribution's ID crossed regions as an ordinary weak reference, because `Distribution` builds
   its ARN from the ID without that check.
+
+### Phase B step 3 deployed: what the request logs look like, 2026-11-09
+
+- **A request's line landed about 100 seconds after it was made.** The file was
+  `cloudfront/year=2026/month=11/day=09/<distribution id>.2026-11-09-14.<id>.gz`: named by the
+  hour and an ID, gzip-compressed (`application/x-gzip`), SSE-S3, one JSON object per line.
+- **Making the delivery wrote an empty `cloudfront/` object**, two minutes before the first
+  request, seemingly a test write.
+- **Every value is a string**, numbers included (`"sc-bytes": "1982"`); an empty field is
+  `"-"`. An Athena table casts them.
+- **`cs(Host)` is the distribution's own domain, `d….cloudfront.net`; `x-host-header` is the
+  name the viewer asked for, `harpguru.com`.** Counts by site use `x-host-header`.
+- **`c-country` and `cache-behavior-path-pattern` were filled in**: `GB` and `*` for a request
+  to `/`.
+- **Deploy times:** `HarpguruSite` 28 seconds for the bucket and its policy,
+  `HarpguruRequestLogsEdge` 11 seconds for the three delivery resources.
 
 ### Phase B step 2 deployed: the deploy role, 2026-11-08
 
