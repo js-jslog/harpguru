@@ -15,6 +15,18 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.4.0...master) - yyyy-mm-dd
 
+### Added
+
+- MINOR: `StandaloneHarpFace`, one harp face outside the app, with its own store,
+  started from the setup it is given and following later changes to it. Cell
+  taps and the scale flash can be switched off together
+- MINOR: `DisplayModes` exported, for setting a standalone harp face's display
+
+### Fixed
+
+- PATCH: on the web, the harp face resizes with the window, and a window taller
+  than it is wide sizes it to the width rather than the height
+
 ## [v13.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.4.0) - 2026-09-23
 
 ### Added

@@ -2,6 +2,7 @@ import { useStore } from 'zustand'
 import React, { createContext, useContext, useRef } from 'react'
 
 import type { ChildrenProps, PageNumber } from '../types'
+import type { InitialSetup } from '../components/harp-guru/utils'
 
 import type { HarpGuruStore, HarpGuruStoreInstance } from './create-harp-guru-store'
 import { createHarpGuruStore } from './create-harp-guru-store'
@@ -10,15 +11,18 @@ const StoreContext = createContext<HarpGuruStoreInstance | null>(null)
 
 type StoreProviderProps = ChildrenProps & {
   readonly pageNumber: PageNumber
+  // Read once, when the store is made. Later changes go through the store.
+  readonly initialSetup?: InitialSetup
 }
 
 export const StoreProvider = ({
   children,
   pageNumber,
+  initialSetup,
 }: StoreProviderProps): React.ReactElement => {
   const storeRef = useRef<HarpGuruStoreInstance | null>(null)
   if (storeRef.current === null) {
-    storeRef.current = createHarpGuruStore(pageNumber)
+    storeRef.current = createHarpGuruStore(pageNumber, initialSetup)
   }
 
   return (

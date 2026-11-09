@@ -24,7 +24,14 @@ import {
   FlushChannels,
 } from '../../../../types'
 
-export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
+// A standalone harp face starts from the setup it is given. The app starts
+// each page from its own default.
+export type InitialSetup = {
+  readonly harpStrataProps: HarpStrataProps
+  readonly displayMode: DisplayModes
+}
+
+const getDefaultHarpStrataProps = (pageNumber: PageNumber): HarpStrataProps => {
   const { MajorDiatonic: tuningId } = TuningIds
   const { NotValved: valvingId } = ValvingIds
   const { C: harpKeyId } = PitchIds
@@ -37,16 +44,25 @@ export const getInitialGlobalState = (pageNumber: PageNumber): GlobalState => {
   const thisPozitionDegrees =
     pageNumber === 1 ? getScale(ScaleIds.MajorPentatonic).degrees : []
 
-  const initialHarpStrataProps: HarpStrataProps = {
+  return {
     tuningId,
     valvingId,
     pozitionId,
     harpKeyId,
     activeIds: thisPozitionDegrees,
   }
+}
+
+export const getInitialGlobalState = (
+  pageNumber: PageNumber,
+  initialSetup?: InitialSetup
+): GlobalState => {
+  const initialHarpStrataProps =
+    initialSetup?.harpStrataProps ?? getDefaultHarpStrataProps(pageNumber)
+  const { tuningId, valvingId, pozitionId, harpKeyId } = initialHarpStrataProps
   const initialHarpStrata: HarpStrata = getHarpStrata(initialHarpStrataProps)
   const { Explore: initialExperienceMode } = ExperienceModes
-  const { Degree: initialDisplayMode } = DisplayModes
+  const initialDisplayMode = initialSetup?.displayMode ?? DisplayModes.Degree
 
   const { rootPitchId, activeDegreeIds, activePitchIds } = initialHarpStrata
   const {

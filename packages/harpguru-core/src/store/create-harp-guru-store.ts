@@ -23,6 +23,7 @@ import type {
   SizeScheme,
 } from '../types'
 import { getInitialGlobalState } from '../components/harp-guru/utils'
+import type { InitialSetup } from '../components/harp-guru/utils'
 
 export type HarpGuruState = {
   readonly activeHarpStrata: HarpStrata
@@ -90,8 +91,11 @@ export type HarpGuruActions = {
 
 export type HarpGuruStore = HarpGuruState & HarpGuruActions
 
-export const createHarpGuruStore = (pageNumber: PageNumber) => {
-  const initialState = getInitialGlobalState(pageNumber)
+export const createHarpGuruStore = (
+  pageNumber: PageNumber,
+  initialSetup?: InitialSetup
+) => {
+  const initialState = getInitialGlobalState(pageNumber, initialSetup)
 
   return createStore<HarpGuruStore>()((set) => ({
     ...initialState,

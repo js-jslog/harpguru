@@ -1,6 +1,6 @@
 import Animated from 'react-native-reanimated'
 import { GestureDetector } from 'react-native-gesture-handler'
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { MemoHarpCellInaccessible } from '../harp-cell-inaccessible'
 import { MemoHarpCellAccessible } from '../harp-cell-accessible'
@@ -8,6 +8,7 @@ import { useHarpGuruStore } from '../../store'
 
 import { getBaseHarpCellStyles } from './utils'
 import { usePositionAnalysis, useTapRerenderLogic } from './hooks'
+import { CellInteractionContext } from './cell-interaction-context'
 
 import type { YXCoord } from './types'
 
@@ -31,6 +32,7 @@ export const HarpCell = ({
     thisDegreeId,
     thisIsActive
   )
+  const isInteractive = useContext(CellInteractionContext)
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
@@ -45,7 +47,7 @@ export const HarpCell = ({
   }
 
   return (
-    <GestureDetector gesture={tapGesture}>
+    <GestureDetector gesture={tapGesture.enabled(isInteractive)}>
       <Animated.View>
         <MemoHarpCellAccessible {...harpCellAccessibleProps} />
       </Animated.View>
