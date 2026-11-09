@@ -454,6 +454,44 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
 - **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
   denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
 
+### Phase B step 3 facts: CloudFront's request logs, checked 2026-11-09
+
+Read from AWS's documentation and from the workload account before building
+`harpguru-cloud`'s `1-request-logs`. Not yet deployed; the deploy will confirm or correct the
+points marked as untested.
+
+- **Standard logging (v2) is three CloudWatch Logs resources, all made in `us-east-1`**: a
+  delivery source naming the distribution and `ACCESS_LOGS`, a delivery destination naming the
+  bucket and the format, and a delivery joining them. CloudFront's guide says the `us-east-1`
+  rule holds "even if you want to enable cross Region delivery", and gives a bucket in
+  `eu-west-1` as its example, so the bucket can stay in London. No CDK L2 exists for it in
+  2.271.0; the L1s are `CfnDeliverySource`, `CfnDeliveryDestination` and `CfnDelivery`.
+- **The legacy logging needs bucket ACLs**, which every bucket in these accounts has off.
+- **One delivery source per distribution.** A second fails with "This ResourceId has already
+  been used in another Delivery Source in this account". The workload account had none.
+- **The format is fixed when the destination is made**: JSON, plain, w3c or Parquet for S3.
+  Changing it means a new destination.
+- **CloudFront's default fields omit `c-country` and `cache-behavior-path-pattern`**, and
+  include `cs(Cookie)`. Read from
+  `aws logs describe-configuration-templates --service cloudfront --region us-east-1`, which
+  lists 70 allowed fields and, for S3, the suffix variables `accountid`, `region`,
+  `DistributionId`, `distributionid`, `yyyy`, `MM`, `dd` and `HH`.
+- **For CloudFront, a prefix on the destination replaces the default
+  `AWSLogs/<account id>/CloudFront/`**, rather than going in front of it, so the account ID
+  stays out of the keys. With Hive-compatible paths on, a suffix of `{yyyy}/{MM}/{dd}` should
+  file by `year=…/month=…/day=…`. That last part is untested.
+- **The delivery adds its own statement to the bucket's policy** when it finds none it
+  recognises and its caller may `s3:PutBucketPolicy`, which CDK's deploy role may. A
+  CloudFormation-managed policy would then drift, and the next deploy would remove the
+  statement. `harpguru-cloud` writes the documented statements itself. Whether the delivery
+  then leaves the policy alone is untested.
+- **The two guides disagree on cost.** CloudFront's says "There are no additional charges for
+  log delivery to Amazon S3". CloudWatch's says vended delivery to S3 is billed as
+  `S3-Egress-Bytes`. At a few megabytes a month either is nothing; the bill will settle it.
+- **A bucket used from another region needs a physical name that CDK knows at synthesis.**
+  Passing the bucket to a `us-east-1` stack failed `cdk synth` with `CannotUseCrossEnvironment`
+  until it was given `PhysicalName.GENERATE_IF_NEEDED`.
+
 ### Phase B step 2 deployed: the deploy role, 2026-11-08
 
 `harpguru-cloud` gained a stack, `HarpguruGitHub`, in the workload account in London: GitHub's
