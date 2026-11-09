@@ -21,6 +21,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
   started from the setup it is given and following later changes to it. Cell
   taps and the scale flash can be switched off together
 - MINOR: `DisplayModes` exported, for setting a standalone harp face's display
+- MINOR: the setup URL format shared by the widget pages and the app:
+  `readSetupQuery`, `writeSetupQuery`, `writeSetupUrl` and `readSetupUrl`, with
+  `Setup`, `defaultSetup` and `siteOrigin`
 
 ### Fixed
 
