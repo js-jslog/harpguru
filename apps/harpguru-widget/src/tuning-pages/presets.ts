@@ -1,7 +1,7 @@
-import { getScale } from 'harpparts'
+import { getUnbentDegreeIds } from 'harpstrata'
+import { ScaleCategory, getScale, getScaleByDegreeIds } from 'harpparts'
 import type { DegreeIds, PozitionIds, TuningIds } from 'harpparts'
 
-import { getUnbentDegrees, getUnbentScale } from './unbent-scale'
 import { tuningPresets } from './tuning-presets'
 
 export type Preset = {
@@ -21,20 +21,34 @@ export const getPagedTuningIds = (): ReadonlyArray<TuningIds> =>
 export const hasTuningPage = (tuningId: TuningIds): boolean =>
   tuningId in tuningPresets
 
+// The named scale a tuning's unbent notes make in a pozition, if there is
+// one. Chords are left out: a tuning page shows what a harp is built to play,
+// and that is a scale.
+export const getUnbentScale = (
+  tuningId: TuningIds,
+  pozitionId: PozitionIds
+): ReturnType<typeof getScaleByDegreeIds> =>
+  getScaleByDegreeIds(
+    getUnbentDegreeIds(tuningId, pozitionId),
+    ScaleCategory.Scale
+  )
+
 export const getPresets = (tuningId: TuningIds): ReadonlyArray<Preset> => {
   const { [tuningId]: plan } = tuningPresets
   if (plan === undefined) throw new Error(`${tuningId} has no tuning page`)
   const { pozitions, scales = {} } = plan
   return pozitions.map((pozitionId) => {
-    const scaleId = getUnbentScale(tuningId, pozitionId) ?? scales[pozitionId]
-    if (scaleId === undefined) {
+    const { [pozitionId]: chosenScaleId } = scales
+    const scale =
+      getUnbentScale(tuningId, pozitionId) ??
+      (chosenScaleId === undefined ? undefined : getScale(chosenScaleId))
+    if (scale === undefined) {
       return {
         pozitionId,
         scaleLabel: unbentNotesLabel,
-        degrees: getUnbentDegrees(tuningId, pozitionId),
+        degrees: getUnbentDegreeIds(tuningId, pozitionId),
       }
     }
-    const { label, degrees } = getScale(scaleId)
-    return { pozitionId, scaleLabel: label, degrees }
+    return { pozitionId, scaleLabel: scale.label, degrees: scale.degrees }
   })
 }

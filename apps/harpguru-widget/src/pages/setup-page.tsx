@@ -1,13 +1,11 @@
 import { View, Text } from 'react-native'
 import React, { useEffect, useMemo } from 'react'
 import type { ReactElement } from 'react'
-import {
-  StandaloneHarpFace,
-  readSetupQuery,
-  writeSetupQuery,
-} from 'harpguru-core/standalone'
+import { readSetupQuery, writeSetupQuery } from 'harpstrata'
+import { getScaleByDegreeIds } from 'harpparts'
+import { StandaloneHarpFace } from 'harpguru-core/standalone'
 
-import { describeHarp, describeScale } from '../describe-setup'
+import { describeHarp } from '../describe-setup'
 import { chromeStyles } from '../chrome/styles'
 import { StoreLinks } from '../chrome/store-links'
 import { Brand } from '../chrome/brand'
@@ -18,7 +16,7 @@ import { correctAddress } from '../address'
 export const SetupPage = (): ReactElement => {
   const setup = useMemo(() => readSetupQuery(window.location.search), [])
   const harp = describeHarp(setup.harpStrataProps)
-  const scale = describeScale(setup.harpStrataProps.activeIds)
+  const scale = getScaleByDegreeIds(setup.harpStrataProps.activeIds)?.label
 
   useEffect(() => {
     correctAddress(writeSetupQuery(setup))
@@ -37,11 +35,7 @@ export const SetupPage = (): ReactElement => {
         <StoreLinks />
       </View>
       <View style={chromeStyles.harpFace}>
-        <StandaloneHarpFace
-          harpStrataProps={setup.harpStrataProps}
-          displayMode={setup.displayMode}
-          isInteractive={true}
-        />
+        <StandaloneHarpFace setup={setup} isInteractive />
       </View>
     </View>
   )

@@ -1,21 +1,27 @@
-import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps } from 'harpstrata'
-import { getScaleByDegreeIds, ValvingIds } from 'harpparts'
-import type { DegreeIds } from 'harpparts'
+import { ValvingIds } from 'harpparts'
+import { getCovariantSet } from 'harpcovariance'
 
-// The words for a setup: 'Paddy richter, Bb harp, 3rd position: plays in C',
-// or without the tuning where the page is already about it.
+import type { Preset } from './tuning-pages/presets'
+
+// A setup in the app's own words: 'Harp key Bb · 3rd position · Song key C',
+// led by the tuning where the page isn't already about it.
 export const describeHarp = (
   harpStrataProps: HarpStrataProps,
   { withTuning = true }: { readonly withTuning?: boolean } = {}
 ): string => {
   const { tuningId, harpKeyId, pozitionId, valvingId } = harpStrataProps
-  const { rootPitchId } = getHarpStrata(harpStrataProps)
-  const valving = valvingId === ValvingIds.HalfValved ? ', half valved' : ''
-  const harp = `${harpKeyId} harp, ${pozitionId} position: plays in ${rootPitchId}`
-  return withTuning ? `${tuningId}${valving}, ${harp}` : `${harp}`
+  const { rootPitchId } = getCovariantSet({ harpKeyId, pozitionId })
+  const harp = [
+    `Harp key ${harpKeyId}`,
+    `${pozitionId} position`,
+    `Song key ${rootPitchId}`,
+  ]
+  const tuning = withTuning ? [tuningId] : []
+  const valving = valvingId === ValvingIds.HalfValved ? ['Half valved'] : []
+  return [...tuning, ...valving, ...harp].join(' · ')
 }
 
-export const describeScale = (
-  degrees: ReadonlyArray<DegreeIds>
-): string | undefined => getScaleByDegreeIds(degrees)?.label
+// A tuning page's preset, as its button and its page description name it
+export const describePreset = ({ pozitionId, scaleLabel }: Preset): string =>
+  `${pozitionId} position · ${scaleLabel}`

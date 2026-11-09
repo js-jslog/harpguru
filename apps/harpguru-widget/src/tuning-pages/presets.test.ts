@@ -1,6 +1,5 @@
-import { getUnbentScale } from './unbent-scale'
 import { tuningPresets } from './tuning-presets'
-import { getPagedTuningIds, getPresets } from './presets'
+import { getPagedTuningIds, getPresets, getUnbentScale } from './presets'
 
 test('Every tuning offers at least one pozition, none twice', () => {
   getPagedTuningIds().forEach((tuningId) => {

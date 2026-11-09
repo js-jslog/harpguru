@@ -1,5 +1,4 @@
 import { PozitionIds, TuningIds } from 'harpparts'
-import { DisplayModes } from 'harpguru-core/standalone'
 
 import { readTuningQuery, writeTuningQuery } from './tuning-query'
 
@@ -7,7 +6,7 @@ test('A tuning page opens on its first preset, in degrees', () => {
   const view = readTuningQuery(TuningIds.MajorDiatonic, '')
 
   expect(view.preset.pozitionId).toBe(PozitionIds.Second)
-  expect(view.displayMode).toBe(DisplayModes.Degree)
+  expect(view.displayMode).toBe('degree')
   expect(writeTuningQuery(view)).toBe('p=2')
 })
 
@@ -16,7 +15,7 @@ test('An offered preset and the pitch display are read back', () => {
 
   expect(view.preset.pozitionId).toBe(PozitionIds.Third)
   expect(view.preset.scaleLabel).toBe('Dorian')
-  expect(view.displayMode).toBe(DisplayModes.Pitch)
+  expect(view.displayMode).toBe('pitch')
   expect(writeTuningQuery(view)).toBe('p=3&m=pitch')
 })
 

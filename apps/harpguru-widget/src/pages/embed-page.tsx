@@ -1,14 +1,10 @@
 import { View, StyleSheet } from 'react-native'
 import React, { useEffect, useMemo } from 'react'
 import type { ReactElement } from 'react'
-import {
-  StandaloneHarpFace,
-  readSetupQuery,
-  writeSetupQuery,
-  writeSetupUrl,
-} from 'harpguru-core/standalone'
+import { readSetupQuery, writeSetupQuery, writeSetupUrl } from 'harpstrata'
+import { StandaloneHarpFace } from 'harpguru-core/standalone'
 
-import { colors, chromeStyles } from '../chrome/styles'
+import { colors, chromeStyles, linkStyle } from '../chrome/styles'
 import { correctAddress } from '../address'
 
 // /e/: a partner's demonstration, inside their iframe. The setup is fixed by
@@ -25,11 +21,7 @@ export const EmbedPage = (): ReactElement => {
   return (
     <View style={chromeStyles.page}>
       <View style={chromeStyles.harpFace}>
-        <StandaloneHarpFace
-          harpStrataProps={setup.harpStrataProps}
-          displayMode={setup.displayMode}
-          isInteractive={true}
-        />
+        <StandaloneHarpFace setup={setup} isInteractive />
       </View>
       <View style={styles.attribution}>
         <a
@@ -54,8 +46,7 @@ const styles = StyleSheet.create({
 })
 
 const attributionLink = {
+  ...linkStyle,
   color: colors.quiet,
-  fontFamily: 'system-ui, sans-serif',
   fontSize: 12,
-  textDecoration: 'none',
 } as const

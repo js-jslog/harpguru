@@ -1,11 +1,26 @@
 import { StyleSheet } from 'react-native'
+import { getColors } from 'harpguru-core/standalone'
 
+const { pageColor, homeRowsColor, inertOutline, harpguruPink, harpguruGold } =
+  getColors()
+
+// The app's palette, used as the app uses it: gold for what can be pressed,
+// pink behind what is chosen. Running text has no counterpart in the app,
+// which labels everything on the harp face itself.
 export const colors = {
-  page: '#fefefe',
+  page: pageColor,
   text: '#222222',
-  quiet: '#666666',
-  accent: '#7a3e78',
-  rule: '#e4e4e4',
+  quiet: inertOutline,
+  rule: homeRowsColor,
+  action: harpguruGold,
+  chosen: harpguruPink,
+} as const
+
+// DOM links, which react-native-web's Text can't be: an <a> keeps the
+// browser's own handling of new tabs and copying the address
+export const linkStyle = {
+  fontFamily: 'system-ui, sans-serif',
+  textDecoration: 'none',
 } as const
 
 export const chromeStyles = StyleSheet.create({

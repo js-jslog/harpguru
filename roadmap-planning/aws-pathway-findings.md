@@ -120,8 +120,9 @@ export { HarpGuru } from './harp-guru'
 cannot reuse the harp face until `harpguru-core` exports it**, so that export is a
 prerequisite task rather than an incidental one.
 
-*Done 2026-11-09:* `harpguru-core` now also exports `StandaloneHarpFace`, `DisplayModes` and
-the setup URL functions, and has a second entry, `harpguru-core/standalone`, without the app.
+*Done 2026-11-09:* `harpguru-core` has a second entry, `harpguru-core/standalone`, carrying
+`StandaloneHarpFace` and `getColors` without the app. The main entry still exports only
+`HarpGuru`. The setup URL format is in `harpstrata`, which needs no React Native.
 
 Worse, the components are not prop-driven. `HarpCell` reads app-wide state directly:
 
@@ -206,7 +207,7 @@ Still open from the handover's order of work and report-back list:
 - **The app changes (step 7), none started:** the share button and its QR code;
   `associatedDomains` and the Android intent filters; the picker offering harp face 1, harp
   face 2 or the browser; checking every incoming URL. `writeSetupUrl` and `readSetupUrl`
-  are in `harpguru-core` for them and not yet used by the app.
+  are in `harpstrata` for them and not yet used by the app.
 - **Review of the `/t/` preset table**, before the first deploy (see "what `/t/` offers").
 
 - **The widget needs nothing beyond the CSP harpguru-cloud serves.** Checked in headless
@@ -315,8 +316,8 @@ page exists to make a tuning understood, not to configure one, so:
   frozen in `harpparts`, so a page is added with one table entry. Decided 2026-11-09, with
   the user.
 - **One harp key, C.** In degree display the harp key changes nothing on the face, and in
-  pitch display C is the most readable key. The derived song key is shown as text ("C harp,
-  2nd position: plays in G"), not as a control, which keeps covariance off the page.
+  pitch display C is the most readable key. The derived song key is shown as text, in the
+  app menus' words ("Harp key C · 2nd position · Song key G"), not as a control, which keeps covariance off the page.
 - **The control is a list of presets, one per pozition the tuning is designed for**, each
   carrying its scale: "2nd position · Mixolydian". No independent key, pozition or scale.
 - **A frozen per-tuning table lists the pozitions**, hand-picked, because a 7-note diatonic
@@ -350,11 +351,9 @@ Fixed in `harpguru-core` for Phase B's composed component, `StandaloneHarpFace`:
 `CallbackOnSourceGlobalProps` recomputes the sizes when the window changes, and on the web
 `getWindowDimensions` takes the horizontal edge as the long one. Both are no-ops on a
 device. `StandaloneHarpFace` goes further and sizes itself to its own box: its `onLayout`
-hands the measured size to `getWindowDimensions` through `setFrameDimensions`, and nothing
-is drawn until that first measurement. The frame is one module-level value, so it holds for
-one harp face per JavaScript context. That suits a widget page or an iframe; the app must
-not mount a `StandaloneHarpFace` beside its own harp faces, such as for a share preview,
-without first making the frame per store.
+keeps the measured size in its store's `frameDimensions`, which the size reductions pass to
+`getWindowDimensions`, and nothing is drawn until that first measurement. Each store has its
+own, so several standalone harp faces, or one beside the app's own, size independently.
 
 ### Checked 2026-09-23, against `master` at `bafbd03e`
 

@@ -3,13 +3,12 @@ import React, { useEffect, useState } from 'react'
 import type { ReactElement } from 'react'
 import { PitchIds, ValvingIds } from 'harpparts'
 import type { TuningIds } from 'harpparts'
-import { DisplayModes, StandaloneHarpFace } from 'harpguru-core/standalone'
+import { StandaloneHarpFace } from 'harpguru-core/standalone'
 
 import { readTuningQuery, writeTuningQuery } from '../tuning-pages/tuning-query'
 import type { TuningView } from '../tuning-pages/tuning-query'
 import { getPresets } from '../tuning-pages/presets'
-import type { Preset } from '../tuning-pages/presets'
-import { describeHarp } from '../describe-setup'
+import { describeHarp, describePreset } from '../describe-setup'
 import { colors, chromeStyles } from '../chrome/styles'
 import { StoreLinks } from '../chrome/store-links'
 import { Brand } from '../chrome/brand'
@@ -55,7 +54,7 @@ export const TuningPage = ({ tuningId }: TuningPageProps): ReactElement => {
         {presets.map((preset) => (
           <Choice
             key={preset.pozitionId}
-            label={presetLabel(preset)}
+            label={describePreset(preset)}
             isChosen={preset.pozitionId === view.preset.pozitionId}
             onPress={() => setView({ ...view, preset })}
           />
@@ -63,28 +62,24 @@ export const TuningPage = ({ tuningId }: TuningPageProps): ReactElement => {
         <View style={styles.divider} />
         <Choice
           label="Degrees"
-          isChosen={view.displayMode === DisplayModes.Degree}
-          onPress={() => setView({ ...view, displayMode: DisplayModes.Degree })}
+          isChosen={view.displayMode === 'degree'}
+          onPress={() => setView({ ...view, displayMode: 'degree' })}
         />
         <Choice
           label="Pitches"
-          isChosen={view.displayMode === DisplayModes.Pitch}
-          onPress={() => setView({ ...view, displayMode: DisplayModes.Pitch })}
+          isChosen={view.displayMode === 'pitch'}
+          onPress={() => setView({ ...view, displayMode: 'pitch' })}
         />
       </View>
       <View style={chromeStyles.harpFace}>
         <StandaloneHarpFace
-          harpStrataProps={harpStrataProps}
-          displayMode={view.displayMode}
+          setup={{ harpStrataProps, displayMode: view.displayMode }}
           isInteractive={false}
         />
       </View>
     </View>
   )
 }
-
-const presetLabel = ({ pozitionId, scaleLabel }: Preset): string =>
-  `${pozitionId} position · ${scaleLabel}`
 
 type ChoiceProps = {
   readonly label: string
@@ -127,14 +122,14 @@ const styles = StyleSheet.create({
     borderColor: colors.rule,
   },
   chosen: {
-    backgroundColor: colors.accent,
-    borderColor: colors.accent,
+    backgroundColor: colors.chosen,
+    borderColor: colors.chosen,
   },
   choiceText: {
     color: colors.text,
     fontSize: 14,
   },
   chosenText: {
-    color: colors.page,
+    fontWeight: '600',
   },
 })
