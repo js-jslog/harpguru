@@ -188,6 +188,99 @@ new workspace needs both, or it will be linted inconsistently.
 
 ## Verified findings
 
+### Phase B: the open-in-browser marker, decided 2026-11-09 (unblocks harpguru-cloud #4)
+
+**The marker is the path `/s/web`.** A setup link is always `https://harpguru.com/s/?<params>`,
+path exactly `/s/`. When the app's link picker is answered "open in the browser", the app
+opens the same parameters at `https://harpguru.com/s/web?<params>`.
+
+- **Android can't exclude by query parameter on most phones.** `<uri-relative-filter-group
+  android:allow="false">`, which can match a query, is "only supported on Android 15 (API
+  level 35) and higher. They are ignored and have no effect on lower Android versions"
+  (Android's manifest reference, read 2026-11-09). Dynamic App Links, the `assetlinks.json`
+  route with `"exclude": true`, are Android 15+ with Google services too. So a path marker.
+- **No new behaviour is needed.** The app's intent filter matches `android:path="/s/"`
+  exactly, which ignores the query, so `/s/web` falls outside it. CloudFront already maps
+  `/s/<anything>` to `s/index.html`, so `/s/web` serves the same shell, and the page treats
+  both paths alike. In the request logs, `/s/web` also counts the opens the app handed to the
+  browser.
+- **harpguru-cloud's #4 becomes one change to the AASA file:** the `/s/*` component becomes
+  `{ "/": "/s/" }`, an exact path. An AASA `/` pattern ignores the query unless a `?` matcher
+  is given, so `/s/?<anything>` opens the app and `/s/web?<anything>` does not. Ship it
+  before, or with, the app release that adds `associatedDomains`; until then nothing claims
+  the links.
+- **A hand-typed `/s?…` is redirected by CloudFront to `/s/?…`.** Neither platform opens an
+  app from a redirect, so that link opens in the browser, which is the safe failure. The app
+  and the widget only ever write `/s/?`.
+
+### Phase B: the URL format, decided 2026-11-09
+
+One parameter vocabulary for `/s/`, `/s/web`, `/e/` and `/t/<slug>`. QR codes get printed, so
+it can only grow: a key's meaning never changes, and an unknown key is ignored.
+
+| Key | Meaning | Values | Default |
+| --- | --- | --- | --- |
+| `t` | tuning (`/s/`, `/e/`; `/t/` takes it from the path) | a slug from the frozen table in `harpparts` | `major-diatonic` |
+| `k` | harp key | `A Bb B C Db D Eb E F Gb G Ab`; sharps read as their flats | `C` |
+| `p` | pozition | `1`–`12` | `2` |
+| `d` | active degrees, comma separated | `1 2b 2 3b 3 4 5b 5 6b 6 7b 7`; empty for none | none |
+| `s` | a named scale, expanded to its degrees; ignored when `d` is present | a slug from the frozen scale table | none |
+| `m` | display | `degree`, `pitch` | `degree` |
+| `v` | valving | `half` | not valved |
+
+- **Reading is lenient, writing is canonical.** Values are read case-insensitively. A bad
+  value falls back to that key's default, and the page corrects the address bar with
+  `history.replaceState`. Written URLs put the keys in the order above, always carry `t`,
+  `k`, `p` and `d` on `/s/` and `/e/`, and carry `m` and `v` only when not the default.
+- **The defaults are permanent too**, since a URL that omits a key means its default.
+- **Tuning slugs are a frozen table, not derived from the names.** `TuningIds` values are
+  display strings that may be reworded; a slug never changes once shipped. Built-in slugs are
+  `[a-z0-9-]+`; any other `t` value is reserved for Phase C's custom tunings.
+- **`ScaleIds` is a numeric enum**, ordered by declaration, so it can't go in a URL either;
+  scales get a frozen slug table of their own.
+- **`d` is why `/s/` accepts any real setup**: a teacher's hand-toggled selection that is no
+  named scale still round-trips.
+- **`/t/` reads only `p` and `m`**, and accepts only its tuning's presets (below). `k` is fixed
+  at `C` for now; a `/t/` URL without `k` means `C`, so adding keys later breaks nothing.
+
+### Phase B: what `/t/` offers, decided 2026-11-09
+
+Narrower than the roadmap's "short list of keys, pozitions, display modes and scales". A tuning
+page exists to make a tuning understood, not to configure one, so:
+
+- **One harp key, C.** In degree display the harp key changes nothing on the face, and in
+  pitch display C is the most readable key. The derived song key is shown as text ("C harp,
+  2nd position: plays in G"), not as a control, which keeps covariance off the page.
+- **The control is a list of presets, one per pozition the tuning is designed for**, each
+  carrying its scale: "2nd position · Mixolydian". No independent key, pozition or scale.
+- **A frozen per-tuning table lists the pozitions**, hand-picked, because a 7-note diatonic
+  makes all seven modes across seven pozitions and the data can't say which one a harp was
+  built for.
+- **Each preset's scale is computed** where it can be: take the unbent blow and draw notes in
+  that pozition as degrees, and look for a named scale with exactly those degrees. Run against
+  all 51 tunings on 2026-11-09, it named a scale for 39. The other 12 match none unbent
+  (Country's extra reed, Harmonic minor, Easy diatonic, Blues 2 and 3, Chord, Diminished,
+  Augmented Spanish, the three chromatics and four Trochilus tunings) and name theirs by hand.
+- **The display toggle stays**: degree and pitch.
+- **Expected to be settled by use, not by argument.** The lists only grow, so starting narrow
+  is the cheap mistake.
+
+### The harp face's resize mechanism, re-checked 2026-11-09
+
+**The 2026-09-23 entry below is incomplete.** The discarded `useWindowDimensions()` in
+`harp-guru.tsx` does re-render the tree on a resize, but the cell sizes, `dynamicSizes` and
+`staticSizes`, are store fields, recomputed only inside the effect that follows a change of
+harp strata. A re-render alone leaves them as they were. On a device that never mattered:
+the app is locked to landscape and sizes from the long and short edges, which a rotation
+doesn't change. In a browser it did, twice over: a resize kept the mount-time size, and a
+window taller than wide was sized as though its height were its width.
+
+Fixed in `harpguru-core` for Phase B's composed component, `StandaloneHarpFace`:
+`CallbackOnSourceGlobalProps` recomputes the sizes when the window changes, and on the web
+`getWindowDimensions` takes the horizontal edge as the long one. Both are no-ops on a
+device. The sizes still come from the window, not the component's own box, so a standalone
+harp face expects to fill most of its window, as in a widget page or an iframe.
+
 ### Checked 2026-09-23, against `master` at `bafbd03e`
 
 **The Phase A browser spike is done, and it passes.** The web export was built, served and

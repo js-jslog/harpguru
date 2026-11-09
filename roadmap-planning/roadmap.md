@@ -298,7 +298,7 @@ Reopen only with a specific new reason, and say what it is.
   | Page | Configuration | Cell interaction | Scale flash |
   | --- | --- | --- | --- |
   | `/s/` setup link | none: fixed by the teacher's URL | yes | yes |
-  | `/t/<tuning>` | a short list of keys, pozitions, display modes and scales | no | no |
+  | `/t/<tuning>` | presets, one per pozition the tuning is designed for, each with its scale, on a C harp; and degree or pitch display (narrowed 2026-11-09) | no | no |
   | `/e/` embed | none: fixed by the partner's URL | yes | yes |
 
   Every page is public, so withholding a control is only worth doing for the page's own
@@ -371,8 +371,9 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
   in this phase.
 - The widget, in the three page types of the frozen-scope table under "Locked decisions":
   interactive cells and the scale flash on `/s/` and `/e/`, configuration controls on `/t/`.
-  On `/t/`, playing key is **derived output, not a third control** — move harp key or
-  pozition and the other holds. `harpcovariance` already computes this; the UI is new.
+  On `/t/`, playing key is **derived output, not a control**. Since 2026-11-09 the harp key
+  is fixed at C and a preset picks the pozition and its scale, so covariance stays off the
+  page; see "Settled since writing".
 - **The URL is the page's state, on all three.** One parameter format, read by the bundle
   after load; changing a `/t/` control rewrites the address bar without a reload, so every
   view can be shared. Validation differs: `/s/` and `/e/` accept any real setup, `/t/` only
@@ -656,3 +657,22 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   app is installed and iOS will not open an app from a link to the page's own domain. Settled
   2026-11-07, with the user. Excluding the open-in-browser marker from Android's link rules
   by query parameter is unverified; a path marker is the fallback.
+- **What is the open-in-browser marker?** The path `/s/web`. Excluding a query parameter
+  from Android's link rules works only on Android 15 and later, so a path it is. Setup links
+  are always `/s/?…`, the intent filter and the AASA file claim the path `/s/` exactly, and
+  `/s/web?…` falls outside both. CloudFront already serves it from the setup shell, so
+  `harpguru-cloud` changes only the AASA file. Settled 2026-11-09, with the user; the detail
+  is in the findings doc.
+- **What is the URL format?** Short keys with readable values, shared by every page: `t`
+  tuning slug, `k` harp key, `p` pozition, `d` active degrees, `s` named scale, `m` display,
+  `v` valving. Slugs come from frozen tables, never from display names. Read leniently,
+  written canonically, and only ever extended. Settled 2026-11-09, with the user; the table
+  is in the findings doc.
+- **What does `/t/` let you change?** Less than the roadmap first said. The page is for
+  understanding a tuning, not configuring one, so it shows a C harp and offers a preset per
+  pozition the tuning is designed for, each carrying its scale, plus the degree or pitch
+  display. A frozen per-tuning table picks the pozitions by hand; each preset's scale is
+  computed from the unbent notes where a named scale fits them, and named by hand where none
+  does. No independent key, pozition or scale control, which keeps covariance, and the app's
+  core loop, off the page. To be settled by use: the lists only grow, so narrow is the cheap
+  start. Settled 2026-11-09, with the user.
