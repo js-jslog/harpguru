@@ -20,5 +20,7 @@ test('Each path is the page CloudFront serves it from', () => {
 test('Anything else is a setup page', () => {
   expect(readRoute('/')).toStrictEqual({ page: 'setup' })
   expect(readRoute('/t/no-such-harp')).toStrictEqual({ page: 'setup' })
+  // A real tuning without a page of its own yet
+  expect(readRoute('/t/bagpipe')).toStrictEqual({ page: 'setup' })
   expect(readRoute('/t/country/extra')).toStrictEqual({ page: 'setup' })
 })

@@ -225,8 +225,10 @@ Still open from the handover's order of work and report-back list:
 - **Expo's `experiments.baseUrl: "/w"` puts the bundle at `/w/_expo/static/js/web/…`**, in
   the HTML and on disk alike, with `web.output: "single"`. The layout script refuses an export
   that references anything outside `/w/`.
-- **The object keys are as the contract asks**: `w/…`, `s/index.html`, `e/index.html` and 51
-  `t/<slug>/index.html`, 54 objects in all. Each tuning page names its bare `/t/<slug>` as
+- **The object keys are as the contract asks**: `w/…`, `s/index.html`, `e/index.html` and a
+  `t/<slug>/index.html` for each tuning with a page, 11 at first, so 14 objects in all.
+  The handover expected 51 tuning pages; see "what `/t/` offers" for the narrower start. A
+  slug without a page gets the site's 404. Each tuning page names its bare `/t/<slug>` as
   canonical; the two shells carry `noindex`.
 - **The deploy workflow is `.github/workflows/deploy-widget.yml`.** It runs on a push to
   `master` that touches the widget, the packages, `yarn.lock` or itself, and on dispatch. It
@@ -306,6 +308,12 @@ it can only grow: a key's meaning never changes, and an unknown key is ignored.
 Narrower than the roadmap's "short list of keys, pozitions, display modes and scales". A tuning
 page exists to make a tuning understood, not to configure one, so:
 
+- **11 tunings have a page at first, not 51:** Major diatonic, Country, Natural minor,
+  Harmonic minor, Melody Maker, Paddy Richter, Power Bender, Power Draw, Wilde, and the 12-
+  and 16-hole chromatics, the ones most players own. The list is the keys of
+  `tuning-presets.ts`. Setup links and embeds still take any of the 51, and every slug is
+  frozen in `harpparts`, so a page is added with one table entry. Decided 2026-11-09, with
+  the user.
 - **One harp key, C.** In degree display the harp key changes nothing on the face, and in
   pitch display C is the most readable key. The derived song key is shown as text ("C harp,
   2nd position: plays in G"), not as a control, which keeps covariance off the page.
@@ -320,7 +328,8 @@ page exists to make a tuning understood, not to configure one, so:
   (Country's extra reed, Harmonic minor, Easy diatonic, Blues 2 and 3, Chord, Diminished,
   Augmented Spanish, the three chromatics and four Trochilus tunings). 14 of them name theirs
   by hand; Augmented Spanish has no fitting named scale and shows "Unbent notes", which
-  activates its unbent notes as degrees.
+  activates its unbent notes as degrees. Of the 11 tunings with a page, Country, Harmonic
+  minor and the two chromatics name theirs by hand.
 - **The table is a draft until the first deploy.** `tuning-presets.ts` is marked for review:
   a preset's pozition becomes a permanent `p` value once a `/t/` URL carrying it is shared.
 - **The display toggle stays**: degree and pitch.

@@ -21,7 +21,8 @@ yarn workspace harpguru-widget run export
 
 Exports the bundle to `dist/`, then lays it out in `site/` as the pages bucket's
 object keys: `w/…` for the bundle, `s/index.html`, `e/index.html`, and
-`t/<slug>/index.html` for each tuning, each with its own head.
+`t/<slug>/index.html` for each tuning listed in
+`src/tuning-pages/tuning-presets.ts`, each with its own head.
 
 `yarn workspace harpguru-widget run web` serves it for development, at the
 root rather than under `/w/`.

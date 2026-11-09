@@ -395,7 +395,8 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
   2026-11-09: 1.8 MB, no fonts.*
 - Two chrome variants: promotional on harpguru.com, minimal and attributed in an embed.
   Hohner will not host a buy-the-app call to action on their own product page.
-- Generate a canonical page for each of the 51 built-in tunings. **One page per tuning, not
+- Generate a canonical page for each of the 51 built-in tunings (narrowed 2026-11-09 to the 11
+  most played, to start; see "What does `/t/` let you change?"). **One page per tuning, not
   per permutation** — 51 tunings × 12 keys × 12 pozitions × 23 scales is over 160,000
   near-identical pages, which is textbook doorway spam and gets penalised. A page's presets
   change client-side, as query parameters (narrowed 2026-11-09: see "What does `/t/` let you
@@ -680,5 +681,6 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   display. A frozen per-tuning table picks the pozitions by hand; each preset's scale is
   computed from the unbent notes where a named scale fits them, and named by hand where none
   does, or shown as "Unbent notes" where no named scale is right. No independent key, pozition or scale control, which keeps covariance, and the app's
-  core loop, off the page. To be settled by use: the lists only grow, so narrow is the cheap
+  core loop, off the page. Only the 11 most played tunings get a page to start with; setup
+  links and embeds take all 51. To be settled by use: the lists only grow, so narrow is the cheap
   start. Settled 2026-11-09, with the user.

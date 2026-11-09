@@ -15,10 +15,10 @@
 import { join } from 'node:path'
 import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 
-import { getTuningIds, getTuningSlug } from 'harpparts'
+import { getTuningSlug } from 'harpparts'
 import type { TuningIds } from 'harpparts'
 
-import { getPresets } from '../src/tuning-pages/presets'
+import { getPagedTuningIds, getPresets } from '../src/tuning-pages/presets'
 
 const origin = 'https://harpguru.com'
 
@@ -109,7 +109,7 @@ write(
     isIndexed: false,
   })
 )
-const tuningIds = getTuningIds()
+const tuningIds = getPagedTuningIds()
 for (const tuningId of tuningIds) {
   const slug = getTuningSlug(tuningId)
   write(

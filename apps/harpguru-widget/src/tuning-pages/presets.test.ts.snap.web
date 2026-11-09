@@ -2,34 +2,6 @@
 
 exports[`What each tuning page offers 1`] = `
 {
-  "Aeolian (richter)": [
-    "1st: Natural minor (Aeolian)",
-  ],
-  "Aeolian (spiral)": [
-    "1st: Natural minor (Aeolian)",
-  ],
-  "Augmented Spanish": [
-    "1st: Unbent notes",
-  ],
-  "Baby fat": [
-    "2nd: Mixolydian",
-    "1st: Major (Ionian)",
-  ],
-  "Bagpipe": [
-    "1st: Mixolydian",
-  ],
-  "Blues 1": [
-    "2nd: Mixolydian",
-  ],
-  "Blues 2": [
-    "2nd: Mixolydian",
-  ],
-  "Blues 3": [
-    "2nd: Mixolydian",
-  ],
-  "Chord": [
-    "1st: Major (Ionian)",
-  ],
   "Chromatic (12 hole)": [
     "1st: Major (Ionian)",
     "3rd: Dorian",
@@ -38,62 +10,11 @@ exports[`What each tuning page offers 1`] = `
     "1st: Major (Ionian)",
     "3rd: Dorian",
   ],
-  "Chromatic (Diminished)": [
-    "1st: Diminished scale",
-  ],
-  "Circular/Melody king": [
-    "1st: Mixolydian",
-    "2nd: Dorian",
-  ],
   "Country": [
     "2nd: Major (Ionian)",
   ],
-  "Diminished": [
-    "1st: Diminished scale",
-  ],
-  "Dorian (richter)": [
-    "1st: Dorian",
-  ],
-  "Dorian (spiral)": [
-    "1st: Dorian",
-  ],
-  "Easy diatonic": [
-    "1st: Major (Ionian)",
-  ],
-  "Easy third": [
-    "2nd: Mixolydian",
-    "1st: Major (Ionian)",
-  ],
   "Harmonic minor": [
     "1st: Harmonic minor",
-  ],
-  "Ionian (richter)": [
-    "1st: Major (Ionian)",
-  ],
-  "Ionian (spiral)": [
-    "1st: Major (Ionian)",
-  ],
-  "Locrian (richter)": [
-    "1st: Locrian",
-  ],
-  "Locrian (spiral)": [
-    "1st: Locrian",
-  ],
-  "Lucky 13 (power chromatic)": [
-    "2nd: Mixolydian",
-    "1st: Major (Ionian)",
-    "3rd: Dorian",
-  ],
-  "Lucky 13 (richter)": [
-    "2nd: Mixolydian",
-    "1st: Major (Ionian)",
-    "3rd: Dorian",
-  ],
-  "Lydian (richter)": [
-    "1st: Lydian",
-  ],
-  "Lydian (spiral)": [
-    "1st: Lydian",
   ],
   "Major diatonic": [
     "2nd: Mixolydian",
@@ -103,31 +24,12 @@ exports[`What each tuning page offers 1`] = `
   "Melody maker": [
     "2nd: Major (Ionian)",
   ],
-  "Mixolydian (richter)": [
-    "1st: Mixolydian",
-  ],
-  "Mixolydian (spiral)": [
-    "1st: Mixolydian",
-  ],
   "Natural minor": [
     "2nd: Natural minor (Aeolian)",
-  ],
-  "Orchestra s": [
-    "1st: Mixolydian",
-    "2nd: Dorian",
   ],
   "Paddy richter": [
     "1st: Major (Ionian)",
     "2nd: Mixolydian",
-  ],
-  "Penta harp": [
-    "1st: Blues scale",
-  ],
-  "Phrygian (richter)": [
-    "1st: Phrygian",
-  ],
-  "Phrygian (spiral)": [
-    "1st: Phrygian",
   ],
   "Power bender": [
     "2nd: Mixolydian",
@@ -137,44 +39,8 @@ exports[`What each tuning page offers 1`] = `
     "1st: Major (Ionian)",
     "2nd: Mixolydian",
   ],
-  "Sixteen hole solo": [
-    "1st: Major (Ionian)",
-    "3rd: Dorian",
-  ],
-  "Trochilus (6th solo)": [
-    "1st: Major (Ionian)",
-  ],
-  "Trochilus (pop)": [
-    "1st: Major (Ionian)",
-    "2nd: Mixolydian",
-  ],
-  "Trochilus (richter)": [
-    "2nd: Mixolydian",
-    "1st: Major (Ionian)",
-    "3rd: Dorian",
-  ],
-  "Trochilus (solo)": [
-    "1st: Major (Ionian)",
-    "3rd: Dorian",
-  ],
-  "Twelve hole solo": [
-    "1st: Major (Ionian)",
-    "3rd: Dorian",
-  ],
-  "Whole tone": [
-    "1st: Whole tone scale",
-  ],
   "Wilde": [
     "2nd: Mixolydian",
-  ],
-  "Wilde minor": [
-    "2nd: Natural minor (Aeolian)",
-  ],
-  "Will Scarlett": [
-    "2nd: Major (Ionian)",
-  ],
-  "Woozle minor": [
-    "2nd: Natural minor (Aeolian)",
   ],
 }
 `;

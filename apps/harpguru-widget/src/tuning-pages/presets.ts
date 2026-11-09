@@ -14,10 +14,17 @@ export type Preset = {
 
 export const unbentNotesLabel = 'Unbent notes'
 
+// The tunings that have a page, in the table's order
+export const getPagedTuningIds = (): ReadonlyArray<TuningIds> =>
+  Object.keys(tuningPresets) as TuningIds[]
+
+export const hasTuningPage = (tuningId: TuningIds): boolean =>
+  tuningId in tuningPresets
+
 export const getPresets = (tuningId: TuningIds): ReadonlyArray<Preset> => {
-  const {
-    [tuningId]: { pozitions, scales = {} },
-  } = tuningPresets
+  const { [tuningId]: plan } = tuningPresets
+  if (plan === undefined) throw new Error(`${tuningId} has no tuning page`)
+  const { pozitions, scales = {} } = plan
   return pozitions.map((pozitionId) => {
     const scaleId = getUnbentScale(tuningId, pozitionId) ?? scales[pozitionId]
     if (scaleId === undefined) {

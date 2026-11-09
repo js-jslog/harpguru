@@ -1,24 +1,18 @@
-import { getTuningIds } from 'harpparts'
-
 import { getUnbentScale } from './unbent-scale'
 import { tuningPresets } from './tuning-presets'
-import { getPresets } from './presets'
+import { getPagedTuningIds, getPresets } from './presets'
 
 test('Every tuning offers at least one pozition, none twice', () => {
-  getTuningIds().forEach((tuningId) => {
-    const {
-      [tuningId]: { pozitions },
-    } = tuningPresets
+  getPagedTuningIds().forEach((tuningId) => {
+    const { pozitions = [] } = tuningPresets[tuningId] ?? {}
     expect(pozitions.length).toBeGreaterThan(0)
     expect(new Set(pozitions).size).toBe(pozitions.length)
   })
 })
 
 test('A scale is chosen by hand only where the unbent notes make none, and only for an offered pozition', () => {
-  getTuningIds().forEach((tuningId) => {
-    const {
-      [tuningId]: { pozitions, scales = {} },
-    } = tuningPresets
+  getPagedTuningIds().forEach((tuningId) => {
+    const { pozitions = [], scales = {} } = tuningPresets[tuningId] ?? {}
     Object.keys(scales).forEach((pozitionId) => {
       const pozition = pozitionId as typeof pozitions[number]
       expect({ tuningId, pozitionId, offered: pozitions.includes(pozition) }).toEqual({
@@ -39,7 +33,7 @@ test('A scale is chosen by hand only where the unbent notes make none, and only 
 // a tuning's reeds shows up in review
 test('What each tuning page offers', () => {
   const offered = Object.fromEntries(
-    getTuningIds().map((tuningId) => [
+    getPagedTuningIds().map((tuningId) => [
       tuningId,
       getPresets(tuningId).map(
         ({ pozitionId, scaleLabel }) => `${pozitionId}: ${scaleLabel}`
