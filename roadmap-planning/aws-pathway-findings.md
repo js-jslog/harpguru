@@ -84,9 +84,9 @@ transpiled by the consumer's babel, with no build step.
 | Package          | Role                                                                                     | Public API                                                   |
 | ---------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | `harpparts`      | Foundational concepts: pitches, degrees, pozitions, scales, tunings, valvings, apparatus | many; see its README                                         |
-| `harpstrata`     | Composes a viewable harp                                                                 | `getHarpStrata`, `getPropsForHarpStrata`                     |
+| `harpstrata`     | Composes a viewable harp; since 2026-11-09 also the setup URL format and unbent degrees  | `getHarpStrata`, `getPropsForHarpStrata`, `getUnbentDegreeIds`, the `setup-url` readers and writers |
 | `harpcovariance` | The key / pozition / song-key relationship                                               | `getCovariantSet`, `getCovarianceSeries`, `CovariantMembers` |
-| `harpguru-core`  | The React Native UI                                                                      | `HarpGuru`                                                   |
+| `harpguru-core`  | The React Native UI                                                                      | `HarpGuru`; `harpguru-core/standalone`: `StandaloneHarpFace`, `getColors` |
 
 `apps/harpguru-expo-boilerplate` is a thin Expo shell: `registerRootComponent(App)` where
 `App` renders `<HarpGuru />`. Note the existing doc explaining why `react-native-reanimated`
@@ -130,7 +130,8 @@ Worse, the components are not prop-driven. `HarpCell` reads app-wide state direc
 const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
 ```
 
-`HarpGuruState` is a single zustand object of **26 fields** — `activeHarpStrata`,
+`HarpGuruState` is a single zustand object of **26 fields** (two more since 2026-11-09:
+`frameDimensions` and `isCellInteractive`, for `StandaloneHarpFace`) — `activeHarpStrata`,
 `activeQuizDegrees`, `fragmentHarpFaceByOctaves`, `columnBounds`, `layoutFacts`,
 `dynamicSizes`, page and display modes, and so on. Rendering one cell therefore needs a
 fully populated store, not a set of props.
@@ -200,15 +201,40 @@ new workspace needs both, or it will be linted inconsistently.
 `apps/harpguru-widget`, on `178-build-the-harp-face-widget`. Not yet deployed: the deploy
 workflow runs from `master` only, so its first run follows the merge.
 
-Still open from the handover's order of work and report-back list:
+**Where Phase B stands, 2026-11-10.** Handover steps 1 to 6 are built. What is left, in
+order:
 
-- **The first deploy run**, its result and date, for harpguru-cloud. It is also the first
-  real test of the role's trust policy.
-- **The app changes (step 7), none started:** the share button and its QR code;
-  `associatedDomains` and the Android intent filters; the picker offering harp face 1, harp
-  face 2 or the browser; checking every incoming URL. `writeSetupUrl` and `readSetupUrl`
-  are in `harpstrata` for them and not yet used by the app.
-- **Review of the `/t/` preset table**, before the first deploy (see "what `/t/` offers").
+1. **Merge `178-widget-shared-logic` into `178-build-the-harp-face-widget`.** The PR isn't
+   open yet; `gh` isn't installed in the container, so the user opens it. That branch holds
+   the newest work: the shared logic moved into `harpstrata` and `harpparts`, the pages'
+   design scope and the Restyle stage in the roadmap, the tuning text and home holes, and
+   Harmonic minor's page held back. Until it merges, harpguru-cloud, which reads this
+   document on the feature branch, sees the older version.
+2. **Build the pages' first design**, as the roadmap's Phase B lists it under "The pages'
+   first design": the field-guide `/t/`, the upright harp face on a phone, the tuning
+   drawer, borders on chosen controls, the one-line note, and the legend's bordered rows
+   in `harpguru-core`. The design canvas
+   (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal") draws every page
+   at desktop and phone size for this stage (the boards ending `B`) and for Restyle (`R`).
+   Its boards show Major diatonic only; the text for every tuning is in
+   `tuning-presets.ts`, and home holes come from `getHomeHoles`. Still to write, and for
+   the user to check: the key to reading the harp face, which the boards draft for the
+   sideways face only, and the one-line note, which the boards draft as "Deliberately
+   simple. Every key, position and scale is in the app."
+3. **Merge to `master`.** The deploy workflow runs on that push. Record its result and date
+   here for harpguru-cloud: it is also the first real test of the role's trust policy.
+   `harpparts`, `harpstrata`, `harpguru-core` and the widget have Unreleased CHANGELOG
+   entries for `/cut-release`; the widget's deploy doesn't wait on a release, but the app
+   changes below ship in one.
+4. **The app changes (step 7), none started:** the share button and its QR code;
+   `associatedDomains` and the Android intent filters; the picker offering harp face 1, harp
+   face 2 or the browser; checking every incoming URL. `writeSetupUrl` and `readSetupUrl`
+   are in `harpstrata` for them and not yet used by the app. harpguru-cloud's AASA change
+   (#4, below) ships before or with that release.
+
+Also open: **the `/t/` pozitions stay a draft until the first deploy** (see "what `/t/`
+offers"), and **Harmonic minor's draw 6 and 10** want checking against the maker's layout
+before it gets a page; a fix there is a `harpparts` change, and reaches the app too.
 
 - **The widget needs nothing beyond the CSP harpguru-cloud serves.** Checked in headless
   Chromium 158 against the laid-out export, served with the pages' CSP exactly as the

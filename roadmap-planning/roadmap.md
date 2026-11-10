@@ -217,8 +217,9 @@ harp face as one composed component.** The evidence is in the findings doc; the 
   turned out on 2026-11-09, never recomputed the sizes; see the findings doc). Four named
   exports plus a note saying "and do not forget the resize line" is precisely how that line
   gets left out. One component cannot be assembled wrongly, and it keeps the public surface
-  at two exports rather than five. (The setup URL functions and a `standalone` entry joined
-  it on 2026-11-09.)
+  at two exports rather than five. (Built 2026-11-09 as a second entry,
+  `harpguru-core/standalone`, so the main entry still exports only `HarpGuru`; the setup URL
+  format lives in `harpstrata`.)
 
 ### Which container per phase
 
@@ -397,11 +398,13 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
 - Two chrome variants: promotional on harpguru.com, minimal and attributed in an embed.
   Hohner will not host a buy-the-app call to action on their own product page.
 - **The pages' first design, usability before styling** (settled 2026-11-10; see "What should
-  the pages look like?"):
+  the pages look like?"). Every page is drawn at desktop and phone size on the design canvas,
+  <https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal", boards ending `B`:
   - `/t/` as a **field guide** to its tuning: a sentence on what the tuning is, each preset
     with a line on what that pozition is for, the home note for the chosen pozition (where
-    on the harp the song key sits), and a short key to reading the harp face. Each of the 11
-    tunings needs that text written, and checked by the user before it ships.
+    on the harp the song key sits), and a short key to reading the harp face. The text for
+    the 10 tunings is written and checked (2026-11-10, in `tuning-presets.ts`), and the home
+    holes are read from the reeds; the key to reading the harp face is still to write.
   - **On a phone, the harp face stands upright**: a row per hole, draw notes on one side of
     the hole number and blow notes on the other, bends beyond them. Sideways, a 10-hole face
     is too small to read at phone width.
@@ -420,7 +423,7 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
     sits beside the page's own content. Each row now clips its own fill, so the slide
     stays in its frame wherever the legend is. The animation is unchanged. The legend is
     `harpguru-core`'s, so the app gets the same look in its next release.
-- Generate a canonical page for each of the 51 built-in tunings (narrowed 2026-11-09 to the 11
+- Generate a canonical page for each of the 51 built-in tunings (narrowed 2026-11-09 to 10 of the
   most played, to start; see "What does `/t/` let you change?"). **One page per tuning, not
   per permutation** — 51 tunings × 12 keys × 12 pozitions × 23 scales is over 160,000
   near-identical pages, which is textbook doorway spam and gets penalised. A page's presets
