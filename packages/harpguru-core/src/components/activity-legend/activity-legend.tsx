@@ -58,6 +58,8 @@ export const ActivityLegend = (): React.ReactElement => {
       ...StyleSheet.absoluteFill,
       width: legendWidth,
       flexDirection: 'column',
+      // Centred, for a frame taller than its twelve degrees need
+      justifyContent: 'center',
       gap,
       padding: gap,
     },
@@ -90,6 +92,9 @@ const ActivityCell = ({
     // the screen's edge.
     cell: {
       flex: 1,
+      // No taller than wide. In the app the screen is shorter than that
+      // already; a standalone harp face's frame can be any height
+      maxHeight: legendWidth,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',

@@ -30,7 +30,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: the activity legend's degrees are bordered like the cells, with gaps
   between them, so an unselected degree is a defined shape rather than a label
   on white. Each clips its own colour's slide, so the legend works anywhere,
-  not only against the screen's edge
+  not only against the screen's edge. In a frame taller than the legend
+  needs, its degrees are no taller than wide, and centred
 
 ### Fixed
 
