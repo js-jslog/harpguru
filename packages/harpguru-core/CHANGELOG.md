@@ -25,6 +25,13 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - MINOR: a second entry, `harpguru-core/standalone`, carrying the standalone
   harp face and `getColors` without the app
 
+### Changed
+
+- MINOR: the activity legend's degrees are bordered like the cells, with gaps
+  between them, so an unselected degree is a defined shape rather than a label
+  on white. Each clips its own colour's slide, so the legend works anywhere,
+  not only against the screen's edge
+
 ### Fixed
 
 - PATCH: on the web, the harp face resizes with the window, and a window taller

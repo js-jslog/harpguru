@@ -16,7 +16,7 @@ import { DisplayModes } from '../../types'
 import type { RenderableToneTuples } from '../../types'
 import { useHarpGuruStore } from '../../store'
 
-const { degreeColors } = getColors()
+const { degreeColors, inertOutline, activeOutline } = getColors()
 
 const getToneSource = (
   degreeId: DegreeIds,
@@ -33,7 +33,9 @@ export const ActivityLegend = (): React.ReactElement => {
   const activePitchIds = useHarpGuruStore((state) => state.activePitchIds)
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
-  const { 9: legendWidth } = useHarpGuruStore((state) => state.dynamicSizes)
+  const { 2: gap, legendWidth } = useHarpGuruStore(
+    (state) => state.dynamicSizes
+  )
 
   const activityCells = orderedPitchIds.map((pitchId, index) => {
     const isActive = activePitchIds.indexOf(pitchId) > -1
@@ -56,6 +58,8 @@ export const ActivityLegend = (): React.ReactElement => {
       ...StyleSheet.absoluteFill,
       width: legendWidth,
       flexDirection: 'column',
+      gap,
+      padding: gap,
     },
   })
 
@@ -73,16 +77,26 @@ const ActivityCell = ({
   toneTuples,
   isActive,
 }: ActivityCellProps): React.ReactElement => {
-  const activeExperienceMode = useHarpGuruStore((state) => state.activeExperienceMode)
+  const activeExperienceMode = useHarpGuruStore(
+    (state) => state.activeExperienceMode
+  )
   const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
-  const { legendWidth } = dynamicSizes
+  const { 1: borderWidth, 4: borderRadius, legendWidth } = dynamicSizes
 
   const styles = StyleSheet.create({
+    // Each degree is a bordered shape with its own frame, so an unselected
+    // one is still defined against the page. The frame clips the colour's
+    // slide, so the colour hides wherever the legend sits, not only against
+    // the screen's edge.
     cell: {
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
+      overflow: 'hidden',
+      borderWidth,
+      borderRadius,
+      borderColor: isActive ? activeOutline : inertOutline,
     },
     cellColor: {
       ...StyleSheet.absoluteFill,
