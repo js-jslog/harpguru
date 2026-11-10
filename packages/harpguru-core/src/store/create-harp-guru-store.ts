@@ -55,6 +55,7 @@ export type HarpGuruState = {
   readonly staticSizes: SizeScheme
   readonly frameDimensions: FrameDimensions | undefined
   readonly isCellInteractive: boolean
+  readonly isUpright: boolean
 }
 
 export type HarpGuruActions = {
@@ -92,6 +93,7 @@ export type HarpGuruActions = {
   readonly setStaticSizes: (value: SizeScheme) => void
   readonly setFrameDimensions: (value: FrameDimensions | undefined) => void
   readonly setIsCellInteractive: (value: boolean) => void
+  readonly setIsUpright: (value: boolean) => void
 }
 
 export type HarpGuruStore = HarpGuruState & HarpGuruActions
@@ -136,6 +138,7 @@ export const createHarpGuruStore = (
     setStaticSizes: (value) => set({ staticSizes: value }),
     setFrameDimensions: (value) => set({ frameDimensions: value }),
     setIsCellInteractive: (value) => set({ isCellInteractive: value }),
+    setIsUpright: (value) => set({ isUpright: value }),
   }))
 }
 

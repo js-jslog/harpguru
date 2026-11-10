@@ -204,24 +204,20 @@ workflow runs from `master` only, so its first run follows the merge.
 **Where Phase B stands, 2026-11-10.** Handover steps 1 to 6 are built. What is left, in
 order:
 
-1. **Merge `178-widget-shared-logic` into `178-build-the-harp-face-widget`.** The PR isn't
-   open yet; `gh` isn't installed in the container, so the user opens it. That branch holds
-   the newest work: the shared logic moved into `harpstrata` and `harpparts`, the pages'
-   design scope and the Restyle stage in the roadmap, the tuning text and home holes, and
-   Harmonic minor's page held back. Until it merges, harpguru-cloud, which reads this
-   document on the feature branch, sees the older version.
+1. **Merged 2026-11-10:** `178-widget-shared-logic` into `178-build-the-harp-face-widget`
+   (#183).
 2. **Build the pages' first design**, as the roadmap's Phase B lists it under "The pages'
-   first design": the field-guide `/t/`, the upright harp face on a phone, the tuning
-   drawer, borders on chosen controls, the one-line note, and the legend's bordered rows
-   in `harpguru-core`. The design canvas
-   (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal") draws every page
-   at desktop and phone size for this stage (the boards ending `B`) and for Restyle (`R`).
-   Its boards show Major diatonic only; the text for every tuning is in
-   `tuning-presets.ts`, and home holes come from `getHomeHoles`. The key to reading the
-   upright harp face is on the phone board, accepted 2026-11-10: a short line above the
-   face, and the full key in a collapsed section below it. Still for the user to settle:
-   the one-line note, which the boards draft as "Deliberately simple. Every key, position
-   and scale is in the app."
+   first design", on `178-widget-first-design`, which merges back into the feature branch.
+   The design canvas (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal")
+   draws every page at desktop and phone size for this stage (the boards ending `B`) and
+   for Restyle (`R`). Built and checked under the CSP, 2026-11-10: the legend's bordered
+   rows in `harpguru-core`, each clipping its own slide and no taller than wide; borders on
+   chosen controls; the field-guide `/t/`, two columns from 1100px and one scrolling column
+   below, with each key to reading the harp face in `reading-key.ts`; the tuning drawer;
+   the one-line note on `/t/` and `/s/`, worded as the boards draft it; and the upright harp
+   face, `StandaloneHarpFace`'s `isUpright`, used below 700px on a window taller than wide
+   and on a narrow `/t/`. **What's left of this step:** a PR from that branch into the
+   feature branch.
 3. **Merge to `master`.** The deploy workflow runs on that push. Record its result and date
    here for harpguru-cloud: it is also the first real test of the role's trust policy.
    `harpparts`, `harpstrata`, `harpguru-core` and the widget have Unreleased CHANGELOG
@@ -368,6 +364,28 @@ page exists to make a tuning understood, not to configure one, so:
 - **The display toggle stays**: degree and pitch.
 - **Expected to be settled by use, not by argument.** The lists only grow, so starting narrow
   is the cheap mistake.
+
+### Phase B: the upright harp face, built 2026-11-10
+
+**The face is laid out as ever and turned, not laid out again.** `StandaloneHarpFace` with
+`isUpright` lays the face out in its box with the sides swapped, then turns that box a
+quarter clockwise about its centre. Turned that way, the sideways layout becomes the upright
+board's: hole 1 at the top, draw notes left of the hole numbers, blow notes right, and the
+legend along the top. Nothing in the layout, the sizing reducers or the cells changed.
+
+- **Labels turn back.** `RenderedTone` and the hole numbers counter-rotate when the store's
+  `isUpright` is set, and the legend runs in reverse so it still reads from the root.
+- **The face sizes itself to the turned box.** Its `frameDimensions` are the measured box
+  with the sides swapped, so at 390px wide the cells are about twice the size of the
+  sideways face's.
+- **Taps land through the turn.** The browser hit-tests the turned cells, checked in
+  headless Chromium: a tap toggles the cell under the pointer, and completing a scale
+  flashes its name, upright, since the flash sits outside the turned box.
+- **The frame clips.** The scale flash waits beside the face until it shows, and the turned
+  box's unturned layout is wider than the frame; neither widened the page once the frame
+  had `overflow: hidden`. The waiting flash had widened `/s/` sideways before too.
+- **The legend's double labels are tight upright**, about 28px for a degree like C♯/D♭ at
+  390px wide. They read, but only just; the Restyle stage is the place to revisit them.
 
 ### The harp face's resize mechanism, re-checked 2026-11-09
 

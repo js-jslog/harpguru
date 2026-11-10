@@ -2,6 +2,7 @@ import { tuningPresets } from './tuning-presets'
 import {
   getPagedTuningIds,
   getPresets,
+  getTuningGroups,
   getTuningDescription,
   getUnbentScale,
 } from './presets'
@@ -60,4 +61,17 @@ test('What each tuning page offers', () => {
     ])
   )
   expect(offered).toMatchSnapshot()
+})
+
+test('The drawer groups every tuning with a page once, as the app groups them', () => {
+  const groups = getTuningGroups()
+  expect(groups.flatMap(({ tuningIds }) => tuningIds).sort()).toEqual(
+    [...getPagedTuningIds()].sort()
+  )
+  expect(groups.map(({ category }) => category)).toEqual([
+    'Common diatonic',
+    'Common chromatic',
+    'Seydel',
+    'Brendan Power',
+  ])
 })

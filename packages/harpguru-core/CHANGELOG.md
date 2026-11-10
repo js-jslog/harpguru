@@ -24,6 +24,19 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
   store, so a page can surround it
 - MINOR: a second entry, `harpguru-core/standalone`, carrying the standalone
   harp face and `getColors` without the app
+- MINOR: `StandaloneHarpFace` can stand upright, for a frame taller than wide:
+  a quarter turn clockwise, a row per hole from hole 1 at the top, draw notes
+  left of the hole numbers and blow notes right, the legend along the top
+  reading from the root, and every label turned back to read upright. It
+  sizes itself to the turned box, and keeps the scale flash inside its frame
+
+### Changed
+
+- MINOR: the activity legend's degrees are bordered like the cells, with gaps
+  between them, so an unselected degree is a defined shape rather than a label
+  on white. Each clips its own colour's slide, so the legend works anywhere,
+  not only against the screen's edge. In a frame taller than the legend
+  needs, its degrees are no taller than wide, and centred
 
 ### Fixed
 

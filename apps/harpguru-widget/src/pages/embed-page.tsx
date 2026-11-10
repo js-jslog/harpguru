@@ -1,10 +1,11 @@
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, useWindowDimensions } from 'react-native'
 import React, { useEffect, useMemo } from 'react'
 import type { ReactElement } from 'react'
 import { readSetupQuery, writeSetupQuery, writeSetupUrl } from 'harpstrata'
 import { StandaloneHarpFace } from 'harpguru-core/standalone'
 
 import { colors, chromeStyles, linkStyle } from '../chrome/styles'
+import { isUprightWindow } from '../chrome/orientation'
 import { correctAddress } from '../address'
 
 // /e/: a partner's demonstration, inside their iframe. The setup is fixed by
@@ -12,6 +13,7 @@ import { correctAddress } from '../address'
 // their own page: only an attribution, which opens the same setup on
 // harpguru.com.
 export const EmbedPage = (): ReactElement => {
+  const { width, height } = useWindowDimensions()
   const setup = useMemo(() => readSetupQuery(window.location.search), [])
 
   useEffect(() => {
@@ -21,7 +23,11 @@ export const EmbedPage = (): ReactElement => {
   return (
     <View style={chromeStyles.page}>
       <View style={chromeStyles.harpFace}>
-        <StandaloneHarpFace setup={setup} isInteractive />
+        <StandaloneHarpFace
+          setup={setup}
+          isInteractive
+          isUpright={isUprightWindow(width, height)}
+        />
       </View>
       <View style={styles.attribution}>
         <a
