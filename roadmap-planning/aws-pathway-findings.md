@@ -214,9 +214,10 @@ order:
    rows in `harpguru-core`, each clipping its own slide and no taller than wide; borders on
    chosen controls; the field-guide `/t/`, two columns from 1100px and one scrolling column
    below, with each key to reading the harp face in `reading-key.ts`; the tuning drawer;
-   and the one-line note on `/t/` and `/s/`, worded as the boards draft it. **Left: the
-   upright harp face on a phone.** Until it lands, a narrow `/t/` shows the sideways face
-   with the sideways key.
+   the one-line note on `/t/` and `/s/`, worded as the boards draft it; and the upright harp
+   face, `StandaloneHarpFace`'s `isUpright`, used below 700px on a window taller than wide
+   and on a narrow `/t/`. **What's left of this step:** a PR from that branch into the
+   feature branch.
 3. **Merge to `master`.** The deploy workflow runs on that push. Record its result and date
    here for harpguru-cloud: it is also the first real test of the role's trust policy.
    `harpparts`, `harpstrata`, `harpguru-core` and the widget have Unreleased CHANGELOG
@@ -363,6 +364,28 @@ page exists to make a tuning understood, not to configure one, so:
 - **The display toggle stays**: degree and pitch.
 - **Expected to be settled by use, not by argument.** The lists only grow, so starting narrow
   is the cheap mistake.
+
+### Phase B: the upright harp face, built 2026-11-10
+
+**The face is laid out as ever and turned, not laid out again.** `StandaloneHarpFace` with
+`isUpright` lays the face out in its box with the sides swapped, then turns that box a
+quarter clockwise about its centre. Turned that way, the sideways layout becomes the upright
+board's: hole 1 at the top, draw notes left of the hole numbers, blow notes right, and the
+legend along the top. Nothing in the layout, the sizing reducers or the cells changed.
+
+- **Labels turn back.** `RenderedTone` and the hole numbers counter-rotate when the store's
+  `isUpright` is set, and the legend runs in reverse so it still reads from the root.
+- **The face sizes itself to the turned box.** Its `frameDimensions` are the measured box
+  with the sides swapped, so at 390px wide the cells are about twice the size of the
+  sideways face's.
+- **Taps land through the turn.** The browser hit-tests the turned cells, checked in
+  headless Chromium: a tap toggles the cell under the pointer, and completing a scale
+  flashes its name, upright, since the flash sits outside the turned box.
+- **The frame clips.** The scale flash waits beside the face until it shows, and the turned
+  box's unturned layout is wider than the frame; neither widened the page once the frame
+  had `overflow: hidden`. The waiting flash had widened `/s/` sideways before too.
+- **The legend's double labels are tight upright**, about 28px for a degree like C♯/D♭ at
+  390px wide. They read, but only just; the Restyle stage is the place to revisit them.
 
 ### The harp face's resize mechanism, re-checked 2026-11-09
 

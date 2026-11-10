@@ -409,7 +409,8 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
     and the full key in a collapsed "How to read the harp" below it.
   - **On a phone, the harp face stands upright**: a row per hole, draw notes on one side of
     the hole number and blow notes on the other, bends beyond them. Sideways, a 10-hole face
-    is too small to read at phone width.
+    is too small to read at phone width. *Done 2026-11-10: the face is turned, not laid out
+    again; see the findings doc.*
   - **Choosing another tuning** from a drawer, from the left on a desktop and from the bottom
     on a phone, grouped as the app's tuning menu groups them. Each entry is a link to
     `/t/<slug>`, carrying the display mode, so every tuning page keeps its own head, links
