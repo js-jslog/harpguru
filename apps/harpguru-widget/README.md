@@ -10,8 +10,10 @@ see "Locked decisions" in `roadmap-planning/roadmap.md`.
 | `/e/?…` | a partner's embed | tap to toggle, scale flash | none |
 | `/t/<slug>?…` | a tuning's reference page | fixed | presets, degree or pitch |
 
-The URL is each page's state. The format lives in `harpguru-core`'s
+The URL is each page's state. The format lives in `harpstrata`'s
 `setup-url`, and is described in `roadmap-planning/aws-pathway-findings.md`.
+The harp face comes from `harpguru-core/standalone`, and the pages' colours
+from its `getColors`, used as the app uses them.
 
 ## Building
 

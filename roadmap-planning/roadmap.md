@@ -217,8 +217,9 @@ harp face as one composed component.** The evidence is in the findings doc; the 
   turned out on 2026-11-09, never recomputed the sizes; see the findings doc). Four named
   exports plus a note saying "and do not forget the resize line" is precisely how that line
   gets left out. One component cannot be assembled wrongly, and it keeps the public surface
-  at two exports rather than five. (The setup URL functions and a `standalone` entry joined
-  it on 2026-11-09.)
+  at two exports rather than five. (Built 2026-11-09 as a second entry,
+  `harpguru-core/standalone`, so the main entry still exports only `HarpGuru`; the setup URL
+  format lives in `harpstrata`.)
 
 ### Which container per phase
 
@@ -226,6 +227,7 @@ harp face as one composed component.** The evidence is in the findings doc; the 
 | ------------------------ | ----------------------------------------------------------- | ------------------------------------------------- |
 | A — Ground the domain    | the browser spike                                           | everything else                                   |
 | B — The public harpface  | widget, tuning pages, share button, deep-link config        | CloudFront routing, deploy role, request logs     |
+| Restyle — the harp face  | bend cells and the brass comb, in the widget and the app    | —                                                 |
 | C — The tuning workbench | creator UI, `TuningIds` widening                            | API, DynamoDB, schema, validation, Step Functions |
 | D — Demand signal        | telemetry emission in the app                               | ingestion, Athena, reporting                      |
 | E — Verified publishers  | —                                                           | Cognito, publisher console                        |
@@ -395,7 +397,35 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
   2026-11-09: 1.8 MB, no fonts.*
 - Two chrome variants: promotional on harpguru.com, minimal and attributed in an embed.
   Hohner will not host a buy-the-app call to action on their own product page.
-- Generate a canonical page for each of the 51 built-in tunings (narrowed 2026-11-09 to the 11
+- **The pages' first design, usability before styling** (settled 2026-11-10; see "What should
+  the pages look like?"). Every page is drawn at desktop and phone size on the design canvas,
+  <https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal", boards ending `B`:
+  - `/t/` as a **field guide** to its tuning: a sentence on what the tuning is, each preset
+    with a line on what that pozition is for, the home note for the chosen pozition (where
+    on the harp the song key sits), and a short key to reading the harp face. The text for
+    the 10 tunings is written and checked (2026-11-10, in `tuning-presets.ts`), and the home
+    holes are read from the reeds. The key to reading the harp face is drafted on the phone
+    board (accepted 2026-11-10): one line above the face, with the face's own column labels,
+    and the full key in a collapsed "How to read the harp" below it.
+  - **On a phone, the harp face stands upright**: a row per hole, draw notes on one side of
+    the hole number and blow notes on the other, bends beyond them. Sideways, a 10-hole face
+    is too small to read at phone width.
+  - **Choosing another tuning** from a drawer, from the left on a desktop and from the bottom
+    on a phone, grouped as the app's tuning menu groups them. Each entry is a link to
+    `/t/<slug>`, carrying the display mode, so every tuning page keeps its own head, links
+    to the others for crawlers, and works with back and new tabs.
+  - A one-line note that the page is deliberately simple and the app has every key,
+    pozition and scale, on `/t/` and `/s/` but not in embeds. Wording to be settled.
+  - Chosen controls carry a border as well as the pink fill, which alone is too faint
+    against the page.
+  - **The legend's degrees are bordered, with gaps between them, and each clips its own
+    slide.** Unselected degrees were white on white, so the legend read as ill-defined. And
+    an unselected degree's colour slides one legend-width to the left, which only hides it
+    because the app's legend sits against the screen edge; a standalone harp face's legend
+    sits beside the page's own content. Each row now clips its own fill, so the slide
+    stays in its frame wherever the legend is. The animation is unchanged. The legend is
+    `harpguru-core`'s, so the app gets the same look in its next release.
+- Generate a canonical page for each of the 51 built-in tunings (narrowed 2026-11-09 to 10 of the
   most played, to start; see "What does `/t/` let you change?"). **One page per tuning, not
   per permutation** — 51 tunings × 12 keys × 12 pozitions × 23 scales is over 160,000
   near-identical pages, which is textbook doorway spam and gets penalised. A page's presets
@@ -434,6 +464,27 @@ participates in a page view, and there is no setup datastore: a setup link is a
 self-describing URL (settled 2026-11-07).
 
 AWS: S3 · CloudFront behaviours · Cache policies · Response headers policies · CloudFront Functions · CloudFront logging · IAM OIDC federation
+
+### Restyle — The harp face's new look · unestimated · this repo
+
+Ships: a harp face with more impact in less space, in the widget and the app alike.
+
+Not before Phase B is live; possibly not until the rest of the plan is done. Phase B's pages
+are built usable first and dramatic later, so nothing here blocks a working website. Added
+2026-11-10, with the user; the starting points are on the design canvas
+(<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, "Three bolder directions").
+
+- **Bends and overblows as smaller, circular cells**, wherever the harp face is drawn,
+  distinct at a glance from the blow and draw notes. Larger than the canvas's first
+  attempt, which made them too small to read.
+- **A brass comb through the middle in place of the grey home-row containers.** The comb
+  carries the hole numbers between the blow and draw rows, and gaps in it still split the
+  face into its octave groups.
+- **An experiment, not a commitment.** Tried in the widget first, judged on readability at
+  phone and sidebar sizes, then brought to the app. Both draw the harp face from
+  `harpguru-core`, so adopting it there is an app release.
+- A display font, if one is adopted, is served from `/w/` with the bundle: the pages' content
+  security policy allows fonts only from harpguru.com itself.
 
 ### Phase C — The tuning workbench · ~24 hrs · both repos
 
@@ -681,6 +732,12 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   display. A frozen per-tuning table picks the pozitions by hand; each preset's scale is
   computed from the unbent notes where a named scale fits them, and named by hand where none
   does, or shown as "Unbent notes" where no named scale is right. No independent key, pozition or scale control, which keeps covariance, and the app's
-  core loop, off the page. Only the 11 most played tunings get a page to start with; setup
+  core loop, off the page. Only 10 of the most played tunings get a page to start with; setup
   links and embeds take all 51. To be settled by use: the lists only grow, so narrow is the cheap
   start. Settled 2026-11-09, with the user.
+- **What should the pages look like?** Usable first, dramatic later. Of three directions
+  drawn on the design canvas, the field guide is what `/t/` should convey: the page explains
+  its tuning and teaches how to read the harp face, rather than only showing it. On a phone
+  the harp face stands upright. Both are Phase B. The bolder styling, circular bend cells
+  and a brass comb in place of the grey home rows, becomes its own stage after Phase B and
+  reaches the app as well as the widget. Settled 2026-11-10, with the user.

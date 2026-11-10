@@ -6,8 +6,6 @@ import {
   ValvingIds,
 } from 'harpparts'
 
-import { DisplayModes } from '../types'
-
 import {
   defaultSetup,
   readSetupQuery,
@@ -28,7 +26,7 @@ const bluesInA: Setup = {
     harpKeyId: PitchIds.Bb,
     activeIds: [Root, Flat3, Fourth, Flat5, Fifth, Flat7],
   },
-  displayMode: DisplayModes.Pitch,
+  displayMode: 'pitch',
 }
 
 test('A setup is written canonically', () => {
@@ -68,20 +66,22 @@ test('Values are read leniently', () => {
   expect(setup.harpStrataProps.harpKeyId).toBe(PitchIds.Gb)
   expect(setup.harpStrataProps.pozitionId).toBe(PozitionIds.Third)
   expect(setup.harpStrataProps.activeIds).toStrictEqual([Root, Fifth, Flat7])
-  expect(setup.displayMode).toBe(DisplayModes.Pitch)
+  expect(setup.displayMode).toBe('pitch')
 })
 
 test('A named scale stands in for degrees, but degrees win when both are given', () => {
-  expect(readSetupQuery('s=major-pentatonic').harpStrataProps.activeIds).toStrictEqual(
-    [Root, Second, Third, Fifth, Sixth]
-  )
-  expect(readSetupQuery('s=major-pentatonic&d=1').harpStrataProps.activeIds).toStrictEqual(
-    [Root]
-  )
+  expect(
+    readSetupQuery('s=major-pentatonic').harpStrataProps.activeIds
+  ).toStrictEqual([Root, Second, Third, Fifth, Sixth])
+  expect(
+    readSetupQuery('s=major-pentatonic&d=1').harpStrataProps.activeIds
+  ).toStrictEqual([Root])
 })
 
 test('Each bad value falls back to its own default and leaves the rest alone', () => {
-  const setup = readSetupQuery('t=no-such-harp&k=H&p=13&d=9,x&m=sideways&v=full')
+  const setup = readSetupQuery(
+    't=no-such-harp&k=H&p=13&d=9,x&m=sideways&v=full'
+  )
 
   expect(setup).toStrictEqual(defaultSetup)
   expect(readSetupQuery('t=country&k=H').harpStrataProps).toStrictEqual({
@@ -91,9 +91,9 @@ test('Each bad value falls back to its own default and leaves the rest alone', (
 })
 
 test('Unknown keys are ignored, and the first of a repeated key wins', () => {
-  expect(readSetupQuery('t=country&creator=x&t=wilde').harpStrataProps.tuningId).toBe(
-    TuningIds.Country
-  )
+  expect(
+    readSetupQuery('t=country&creator=x&t=wilde').harpStrataProps.tuningId
+  ).toBe(TuningIds.Country)
 })
 
 test('Hostile queries never throw', () => {
@@ -105,9 +105,7 @@ test('Hostile queries never throw', () => {
     '__proto__=x&constructor=y&toString=z',
     't=__proto__&k=constructor&s=toString',
   ]
-  hostile.forEach((query) =>
-    expect(() => readSetupQuery(query)).not.toThrow()
-  )
+  hostile.forEach((query) => expect(() => readSetupQuery(query)).not.toThrow())
   expect(readSetupQuery('t=__proto__&k=constructor&s=toString')).toStrictEqual(
     defaultSetup
   )
@@ -130,4 +128,35 @@ test('Only a harpguru.com setup link is read as one', () => {
     '',
   ]
   refused.forEach((url) => expect(readSetupUrl(url)).toBeUndefined())
+})
+
+test('A long list of degrees, inside the length limit, is read', () => {
+  expect(
+    readSetupQuery('d=' + '1,'.repeat(400) + '5').harpStrataProps.activeIds
+  ).toStrictEqual([Root, Fifth])
+})
+
+test('Pozitions are read by number, with or without a suffix', () => {
+  expect(readSetupQuery('p=03').harpStrataProps.pozitionId).toBe(
+    PozitionIds.Third
+  )
+  expect(readSetupQuery('p=12th').harpStrataProps.pozitionId).toBe(
+    PozitionIds.Twelfth
+  )
+  expect(readSetupQuery('p=0').harpStrataProps.pozitionId).toBe(
+    PozitionIds.Second
+  )
+})
+
+test('Every sharp is read as its flat', () => {
+  const sharps = {
+    'a%23': PitchIds.Bb,
+    'C%23': PitchIds.Db,
+    'd%23': PitchIds.Eb,
+    'f%23': PitchIds.Gb,
+    'g%23': PitchIds.Ab,
+  }
+  Object.entries(sharps).forEach(([k, pitchId]) =>
+    expect(readSetupQuery(`k=${k}`).harpStrataProps.harpKeyId).toBe(pitchId)
+  )
 })

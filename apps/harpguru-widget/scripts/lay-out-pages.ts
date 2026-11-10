@@ -1,11 +1,10 @@
 // Arranges a web export into the object keys harpguru.com's pages bucket
-// serves (see roadmap-planning/aws-pathway-findings.md, "Phase B step 1
-// deployed"):
+// serves:
 //
 //   w/...                  the bundle, which Expo's baseUrl already points at
 //   s/index.html           the one shell for every setup link
 //   e/index.html           the one shell for every embed
-//   t/<slug>/index.html    one page per built-in tuning
+//   t/<slug>/index.html    one page per tuning with presets
 //
 // Each page is the export's index.html with its own head. The bundle reads
 // the path and query once it loads; the head is for search engines and link
@@ -15,12 +14,13 @@
 import { join } from 'node:path'
 import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 
+import { siteOrigin } from 'harpstrata'
 import { getTuningSlug } from 'harpparts'
 import type { TuningIds } from 'harpparts'
 
 import { getPagedTuningIds, getPresets } from '../src/tuning-pages/presets'
-
-const origin = 'https://harpguru.com'
+import { describePreset } from '../src/describe-setup'
+import { appStoreId } from '../src/chrome/store-ids'
 
 const [exportDir, siteDir] = process.argv.slice(2)
 if (exportDir === undefined || siteDir === undefined) {
@@ -60,7 +60,7 @@ const page = ({ title, description, canonical, isIndexed }: Head): string => {
     canonical ? `<link rel="canonical" href="${escape(canonical)}" />` : '',
     isIndexed ? '' : '<meta name="robots" content="noindex" />',
     '<link rel="icon" href="/icon.png" type="image/png" />',
-    '<meta name="apple-itunes-app" content="app-id=1552752923" />',
+    `<meta name="apple-itunes-app" content="app-id=${appStoreId}" />`,
   ]
     .filter((line) => line !== '')
     .join('\n    ')
@@ -77,9 +77,7 @@ const write = (path: string, html: string): void => {
 }
 
 const describeTuning = (tuningId: TuningIds): string => {
-  const presets = getPresets(tuningId)
-    .map(({ pozitionId, scaleLabel }) => `${pozitionId} position (${scaleLabel})`)
-    .join(', ')
+  const presets = getPresets(tuningId).map(describePreset).join(', ')
   return `The ${tuningId} harmonica tuning on a C harp: every hole's note and scale degree, played in ${presets}.`
 }
 
@@ -117,7 +115,7 @@ for (const tuningId of tuningIds) {
     page({
       title: `${tuningId} harmonica tuning | Harp Guru`,
       description: describeTuning(tuningId),
-      canonical: `${origin}/t/${slug}`,
+      canonical: `${siteOrigin}/t/${slug}`,
       isIndexed: true,
     })
   )

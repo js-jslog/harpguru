@@ -20,6 +20,13 @@ export type LayoutFacts = {
 
 export type ColumnBounds = 'FIT' | readonly [number, number]
 
+// The box a standalone harp face was given, which it sizes itself to instead
+// of the window
+export type FrameDimensions = {
+  readonly width: number
+  readonly height: number
+}
+
 export type GlobalState = {
   readonly activeHarpStrata: HarpStrata
   readonly activeExperienceMode: ExperienceModes
@@ -47,6 +54,8 @@ export type GlobalState = {
   readonly layoutFacts: HarpFaceFacts<LayoutFacts>
   readonly dynamicSizes: SizeScheme
   readonly staticSizes: SizeScheme
+  readonly frameDimensions: FrameDimensions | undefined
+  readonly isCellInteractive: boolean
 }
 
 export enum DisplayModes {

@@ -105,6 +105,7 @@ export const useSetFromSourceHarpStrata = (): void => {
   const prevDynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
   const setDynamicSizes = useHarpGuruStore((state) => state.setDynamicSizes)
   const prevStaticSizes = useHarpGuruStore((state) => state.staticSizes)
+  const frameDimensions = useHarpGuruStore((state) => state.frameDimensions)
   const setStaticSizes = useHarpGuruStore((state) => state.setStaticSizes)
   const prevCellToggleBuffer = useHarpGuruStore(
     (state) => state.bufferedActivityToggles
@@ -187,11 +188,12 @@ export const useSetFromSourceHarpStrata = (): void => {
     prevLayoutFacts,
     nextViewableInteractionMatrix
   )
-  const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(prevDynamicSizes, {
-    fullLayoutFacts: nextFullLayoutFacts,
-    layoutFacts: nextLayoutFacts,
-  })
-  const nextStaticSizes = reduceToStaticSizes(prevStaticSizes)
+  const nextDynamicSizes = reduceLayoutFactsToDynamicSizes(
+    prevDynamicSizes,
+    { fullLayoutFacts: nextFullLayoutFacts, layoutFacts: nextLayoutFacts },
+    frameDimensions
+  )
+  const nextStaticSizes = reduceToStaticSizes(prevStaticSizes, frameDimensions)
   const nextCellToggleBuffer =
     reduceToEmptyBufferedActivityToggles(prevCellToggleBuffer)
   useEffect(() => {

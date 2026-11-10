@@ -3,44 +3,41 @@
 exports[`What each tuning page offers 1`] = `
 {
   "Chromatic (12 hole)": [
-    "1st: Major (Ionian)",
-    "3rd: Dorian",
+    "1st: Major (Ionian), home blow 1, 4, 5, 8, 9 and 12",
+    "3rd: Dorian, home draw 1, 5 and 9",
   ],
   "Chromatic (16 hole)": [
-    "1st: Major (Ionian)",
-    "3rd: Dorian",
+    "1st: Major (Ionian), home blow 1, 4, 5, 8, 9, 12, 13 and 16",
+    "3rd: Dorian, home draw 1, 5, 9 and 13",
   ],
   "Country": [
-    "2nd: Major (Ionian)",
-  ],
-  "Harmonic minor": [
-    "1st: Harmonic minor",
+    "2nd: Major (Ionian), home draw 2, blow 3, 6 and 9",
   ],
   "Major diatonic": [
-    "2nd: Mixolydian",
-    "1st: Major (Ionian)",
-    "3rd: Dorian",
+    "2nd: Mixolydian, home draw 2, blow 3, 6 and 9",
+    "1st: Major (Ionian), home blow 1, 4, 7 and 10",
+    "3rd: Dorian, home draw 1, 4 and 8",
   ],
   "Melody maker": [
-    "2nd: Major (Ionian)",
+    "2nd: Major (Ionian), home draw 2, blow 6 and 9",
   ],
   "Natural minor": [
-    "2nd: Natural minor (Aeolian)",
+    "2nd: Natural minor (Aeolian), home draw 2, blow 3, 6 and 9",
   ],
   "Paddy richter": [
-    "1st: Major (Ionian)",
-    "2nd: Mixolydian",
+    "1st: Major (Ionian), home blow 1, 4, 7 and 10",
+    "2nd: Mixolydian, home draw 2, blow 6 and 9",
   ],
   "Power bender": [
-    "2nd: Mixolydian",
-    "3rd: Dorian",
+    "2nd: Mixolydian, home draw 2, blow 3, draw 6 and 9",
+    "3rd: Dorian, home draw 1 and 4, blow 5, draw 8",
   ],
   "Power draw": [
-    "1st: Major (Ionian)",
-    "2nd: Mixolydian",
+    "1st: Major (Ionian), home blow 1, 4 and 8, draw 10",
+    "2nd: Mixolydian, home draw 2, blow 3 and 6, draw 9",
   ],
   "Wilde": [
-    "2nd: Mixolydian",
+    "2nd: Mixolydian, home draw 2, blow 3, draw 6, blow 7, draw 9",
   ],
 }
 `;

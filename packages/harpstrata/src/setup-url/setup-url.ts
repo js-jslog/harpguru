@@ -1,4 +1,3 @@
-import type { HarpStrataProps } from 'harpstrata'
 import {
   DegreeIds,
   PitchIds,
@@ -6,27 +5,42 @@ import {
   TuningIds,
   ValvingIds,
   getDegreeIds,
+  getPitch,
+  getPitchIds,
+  getPozition,
   getPozitionIds,
   getScale,
   getScaleIdBySlug,
   getTuningIdBySlug,
   getTuningSlug,
+  isNaturalPitch,
 } from 'harpparts'
 
-import { DisplayModes } from '../types'
+import type { HarpStrataProps } from '../types'
 
-// The URL format every widget page shares, and the app's share button and
-// link handling with them. Printed QR codes carry it, so it only ever grows:
-// a key's meaning never changes, its default never changes, and an unknown
-// key is ignored. The full table is in roadmap-planning/aws-pathway-findings.md.
+// The URL format every harpguru.com page shares, and the app's share button
+// and link handling with them. Printed QR codes carry it, so it only ever
+// grows: a key's meaning never changes, its default never changes, and an
+// unknown key is ignored. The keys, in the order they are written:
+//
+//   t  tuning, a slug from harpparts' frozen table   default major-diatonic
+//   k  harp key, a flat or natural; sharps are read   default C
+//   p  pozition, 1 to 12                              default 2
+//   d  active degrees, comma separated                default none
+//   s  a named scale's slug, ignored when d is given  default none
+//   m  display, degree or pitch                       default degree
+//   v  valving, half                                  default not valved
 
 export const siteOrigin = 'https://harpguru.com'
+
+// How the harp face labels its cells. The app's display modes map onto these.
+export type SetupDisplayMode = 'degree' | 'pitch'
 
 export type Setup = {
   readonly harpStrataProps: HarpStrataProps & {
     readonly activeIds: ReadonlyArray<DegreeIds>
   }
-  readonly displayMode: DisplayModes
+  readonly displayMode: SetupDisplayMode
 }
 
 export const defaultSetup: Setup = {
@@ -37,38 +51,25 @@ export const defaultSetup: Setup = {
     harpKeyId: PitchIds.C,
     activeIds: [],
   },
-  displayMode: DisplayModes.Degree,
+  displayMode: 'degree',
 } as const
 
 // Long enough for any real setup many times over. Anything longer is refused
 // before it is read.
 const maxQueryLength = 1000
 
-// A Map, not an object, so a key such as 'constructor' finds nothing
-const sharpsAsFlats: ReadonlyMap<string, PitchIds> = new Map([
-  ['a#', PitchIds.Bb],
-  ['c#', PitchIds.Db],
-  ['d#', PitchIds.Eb],
-  ['f#', PitchIds.Gb],
-  ['g#', PitchIds.Ab],
-])
-
-const readQuery = (query: string): ReadonlyMap<string, string> => {
-  const params = new Map<string, string>()
-  const trimmed = query.startsWith('?') ? query.slice(1) : query
-  if (trimmed.length > maxQueryLength) return params
-  trimmed.split('&').forEach((pair) => {
-    if (pair === '') return
-    const separator = pair.indexOf('=')
-    const rawKey = separator === -1 ? pair : pair.slice(0, separator)
-    const rawValue = separator === -1 ? '' : pair.slice(separator + 1)
-    const key = safeDecode(rawKey).toLowerCase()
-    // The first of a repeated key wins
-    if (key === '' || params.has(key)) return
-    params.set(key, safeDecode(rawValue).trim())
+// 'a#' for Bb, from each pitch's own sharp spelling. A Map, not an object, so
+// a key such as 'constructor' finds nothing.
+const sharpsAsPitchIds: ReadonlyMap<string, PitchIds> = new Map(
+  getPitchIds().flatMap((pitchId): Array<[string, PitchIds]> => {
+    const pitch = getPitch(pitchId)
+    if (isNaturalPitch(pitch)) return []
+    const {
+      contextualDisplayValues: { sharp },
+    } = pitch
+    return [[`${sharp}#`.toLowerCase(), pitchId]]
   })
-  return params
-}
+)
 
 const safeDecode = (value: string): string => {
   try {
@@ -78,24 +79,52 @@ const safeDecode = (value: string): string => {
   }
 }
 
+// A query's keys, lower-cased, with their values decoded and trimmed. The
+// first of a repeated key wins. Empty when the query is too long to be real.
+export const readSetupParams = (query: string): ReadonlyMap<string, string> => {
+  const params = new Map<string, string>()
+  const trimmed = query.startsWith('?') ? query.slice(1) : query
+  if (trimmed.length > maxQueryLength) return params
+  trimmed.split('&').forEach((pair) => {
+    if (pair === '') return
+    const separator = pair.indexOf('=')
+    const rawKey = separator === -1 ? pair : pair.slice(0, separator)
+    const rawValue = separator === -1 ? '' : pair.slice(separator + 1)
+    const key = safeDecode(rawKey).toLowerCase()
+    if (key === '' || params.has(key)) return
+    params.set(key, safeDecode(rawValue).trim())
+  })
+  return params
+}
+
 const readTuning = (value: string | undefined): TuningIds | undefined =>
   value === undefined ? undefined : getTuningIdBySlug(value.toLowerCase())
 
 const readHarpKey = (value: string | undefined): PitchIds | undefined => {
   if (value === undefined) return undefined
   const lower = value.toLowerCase()
-  const flat = Object.values(PitchIds).find(
-    (pitchId) => pitchId.toLowerCase() === lower
-  )
-  return flat ?? sharpsAsFlats.get(lower)
+  const pitchId = getPitchIds().find((id) => id.toLowerCase() === lower)
+  return pitchId ?? sharpsAsPitchIds.get(lower)
 }
 
-const readPozition = (value: string | undefined): PozitionIds | undefined => {
+// p: '3', '03' or '3rd'
+export const readPozitionParam = (
+  value: string | undefined
+): PozitionIds | undefined => {
   if (value === undefined) return undefined
   const digits = value.toLowerCase().replace(/(st|nd|rd|th)$/, '')
   if (!/^\d{1,2}$/.test(digits)) return undefined
-  const { [Number(digits) - 1]: pozitionId } = getPozitionIds()
-  return pozitionId
+  const number = String(Number(digits))
+  return getPozitionIds().find(
+    (pozitionId) => writePozitionParam(pozitionId) === number
+  )
+}
+
+export const writePozitionParam = (pozitionId: PozitionIds): string => {
+  const {
+    simpleSplitValue: [number],
+  } = getPozition(pozitionId)
+  return number
 }
 
 const readDegrees = (
@@ -117,45 +146,40 @@ const readScale = (
   return scaleId === undefined ? undefined : getScale(scaleId).degrees
 }
 
-const readDisplayMode = (
+const displayModes: ReadonlyArray<SetupDisplayMode> = ['degree', 'pitch']
+
+export const readDisplayModeParam = (
   value: string | undefined
-): DisplayModes | undefined => {
+): SetupDisplayMode | undefined => {
   const lower = value?.toLowerCase()
-  if (lower === 'degree') return DisplayModes.Degree
-  if (lower === 'pitch') return DisplayModes.Pitch
-  return undefined
+  return displayModes.find((displayMode) => displayMode === lower)
 }
 
-const readValving = (value: string | undefined): ValvingIds | undefined => {
-  if (value === undefined) return undefined
-  if (value.toLowerCase() === 'half') return ValvingIds.HalfValved
-  return undefined
-}
+const readValving = (value: string | undefined): ValvingIds | undefined =>
+  value?.toLowerCase() === 'half' ? ValvingIds.HalfValved : undefined
 
 // Reads a query string into a setup. Never fails: a missing or bad value
 // falls back to its key's default. Write the result back with
 // writeSetupQuery to see whether the address needs correcting.
 export const readSetupQuery = (query: string): Setup => {
-  const params = readQuery(query)
+  const params = readSetupParams(query)
   const { harpStrataProps: defaults } = defaultSetup
 
   return {
     harpStrataProps: {
       tuningId: readTuning(params.get('t')) ?? defaults.tuningId,
       valvingId: readValving(params.get('v')) ?? defaults.valvingId,
-      pozitionId: readPozition(params.get('p')) ?? defaults.pozitionId,
+      pozitionId: readPozitionParam(params.get('p')) ?? defaults.pozitionId,
       harpKeyId: readHarpKey(params.get('k')) ?? defaults.harpKeyId,
       activeIds:
         readDegrees(params.get('d')) ??
         readScale(params.get('s')) ??
         defaults.activeIds,
     },
-    displayMode: readDisplayMode(params.get('m')) ?? defaultSetup.displayMode,
+    displayMode:
+      readDisplayModeParam(params.get('m')) ?? defaultSetup.displayMode,
   }
 }
-
-const pozitionNumber = (pozitionId: PozitionIds): number =>
-  getPozitionIds().indexOf(pozitionId) + 1
 
 // The canonical query for a setup, without its '?'. Always carries t, k, p
 // and d, so a link says what it shows even to someone reading it; m and v
@@ -168,10 +192,10 @@ export const writeSetupQuery = (setup: Setup): string => {
   const parts = [
     `t=${getTuningSlug(harpStrataProps.tuningId)}`,
     `k=${harpStrataProps.harpKeyId}`,
-    `p=${pozitionNumber(harpStrataProps.pozitionId)}`,
+    `p=${writePozitionParam(harpStrataProps.pozitionId)}`,
     `d=${degrees.join(',')}`,
   ]
-  if (displayMode === DisplayModes.Pitch) parts.push('m=pitch')
+  if (displayMode !== defaultSetup.displayMode) parts.push(`m=${displayMode}`)
   if (harpStrataProps.valvingId === ValvingIds.HalfValved) parts.push('v=half')
   return parts.join('&')
 }

@@ -24,11 +24,13 @@ import {
   FlushChannels,
 } from '../../../../types'
 
-// A standalone harp face starts from the setup it is given. The app starts
-// each page from its own default.
+// A standalone harp face starts from the setup it is given, and says whether
+// its cells can be tapped. The app starts each page from its own default, with
+// tappable cells.
 export type InitialSetup = {
   readonly harpStrataProps: HarpStrataProps
   readonly displayMode: DisplayModes
+  readonly isCellInteractive: boolean
 }
 
 const getDefaultHarpStrataProps = (pageNumber: PageNumber): HarpStrataProps => {
@@ -107,11 +109,14 @@ export const getInitialGlobalState = (
     },
     viewableInteractionMatrix
   )
-  const dynamicSizes = reduceLayoutFactsToDynamicSizes(undefined, {
-    fullLayoutFacts,
-    layoutFacts,
-  })
-  const staticSizes = reduceToStaticSizes(undefined)
+  // Nothing has been measured yet, so the sizes start from the window
+  const frameDimensions = undefined
+  const dynamicSizes = reduceLayoutFactsToDynamicSizes(
+    undefined,
+    { fullLayoutFacts, layoutFacts },
+    frameDimensions
+  )
+  const staticSizes = reduceToStaticSizes(undefined, frameDimensions)
 
   const state = {
     activeHarpStrata: initialHarpStrata,
@@ -140,6 +145,8 @@ export const getInitialGlobalState = (
     layoutFacts,
     dynamicSizes,
     staticSizes,
+    frameDimensions,
+    isCellInteractive: initialSetup?.isCellInteractive ?? true,
   } as const
 
   return state

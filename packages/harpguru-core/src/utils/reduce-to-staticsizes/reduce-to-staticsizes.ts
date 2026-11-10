@@ -1,4 +1,4 @@
-import type { SizeScheme } from '../../types'
+import type { FrameDimensions, SizeScheme } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 const relativeSizes: Omit<
@@ -26,9 +26,10 @@ const relativeSizes: Omit<
 } as const
 
 export const reduceToStaticSizes = (
-  prevSizes: SizeScheme | undefined
+  prevSizes: SizeScheme | undefined,
+  frameDimensions: FrameDimensions | undefined
 ): SizeScheme => {
-  const { longEdge } = getWindowDimensions()
+  const { longEdge } = getWindowDimensions(frameDimensions)
   const staticSeedSize = longEdge / 750
 
   const staticSizes: SizeScheme = {

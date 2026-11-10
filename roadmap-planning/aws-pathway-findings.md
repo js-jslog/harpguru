@@ -84,9 +84,9 @@ transpiled by the consumer's babel, with no build step.
 | Package          | Role                                                                                     | Public API                                                   |
 | ---------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | `harpparts`      | Foundational concepts: pitches, degrees, pozitions, scales, tunings, valvings, apparatus | many; see its README                                         |
-| `harpstrata`     | Composes a viewable harp                                                                 | `getHarpStrata`, `getPropsForHarpStrata`                     |
+| `harpstrata`     | Composes a viewable harp; since 2026-11-09 also the setup URL format and unbent degrees  | `getHarpStrata`, `getPropsForHarpStrata`, `getUnbentDegreeIds`, the `setup-url` readers and writers |
 | `harpcovariance` | The key / pozition / song-key relationship                                               | `getCovariantSet`, `getCovarianceSeries`, `CovariantMembers` |
-| `harpguru-core`  | The React Native UI                                                                      | `HarpGuru`                                                   |
+| `harpguru-core`  | The React Native UI                                                                      | `HarpGuru`; `harpguru-core/standalone`: `StandaloneHarpFace`, `getColors` |
 
 `apps/harpguru-expo-boilerplate` is a thin Expo shell: `registerRootComponent(App)` where
 `App` renders `<HarpGuru />`. Note the existing doc explaining why `react-native-reanimated`
@@ -120,8 +120,9 @@ export { HarpGuru } from './harp-guru'
 cannot reuse the harp face until `harpguru-core` exports it**, so that export is a
 prerequisite task rather than an incidental one.
 
-*Done 2026-11-09:* `harpguru-core` now also exports `StandaloneHarpFace`, `DisplayModes` and
-the setup URL functions, and has a second entry, `harpguru-core/standalone`, without the app.
+*Done 2026-11-09:* `harpguru-core` has a second entry, `harpguru-core/standalone`, carrying
+`StandaloneHarpFace` and `getColors` without the app. The main entry still exports only
+`HarpGuru`. The setup URL format is in `harpstrata`, which needs no React Native.
 
 Worse, the components are not prop-driven. `HarpCell` reads app-wide state directly:
 
@@ -129,7 +130,8 @@ Worse, the components are not prop-driven. `HarpCell` reads app-wide state direc
 const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
 ```
 
-`HarpGuruState` is a single zustand object of **26 fields** — `activeHarpStrata`,
+`HarpGuruState` is a single zustand object of **26 fields** (two more since 2026-11-09:
+`frameDimensions` and `isCellInteractive`, for `StandaloneHarpFace`) — `activeHarpStrata`,
 `activeQuizDegrees`, `fragmentHarpFaceByOctaves`, `columnBounds`, `layoutFacts`,
 `dynamicSizes`, page and display modes, and so on. Rendering one cell therefore needs a
 fully populated store, not a set of props.
@@ -199,15 +201,41 @@ new workspace needs both, or it will be linted inconsistently.
 `apps/harpguru-widget`, on `178-build-the-harp-face-widget`. Not yet deployed: the deploy
 workflow runs from `master` only, so its first run follows the merge.
 
-Still open from the handover's order of work and report-back list:
+**Where Phase B stands, 2026-11-10.** Handover steps 1 to 6 are built. What is left, in
+order:
 
-- **The first deploy run**, its result and date, for harpguru-cloud. It is also the first
-  real test of the role's trust policy.
-- **The app changes (step 7), none started:** the share button and its QR code;
-  `associatedDomains` and the Android intent filters; the picker offering harp face 1, harp
-  face 2 or the browser; checking every incoming URL. `writeSetupUrl` and `readSetupUrl`
-  are in `harpguru-core` for them and not yet used by the app.
-- **Review of the `/t/` preset table**, before the first deploy (see "what `/t/` offers").
+1. **Merge `178-widget-shared-logic` into `178-build-the-harp-face-widget`.** The PR isn't
+   open yet; `gh` isn't installed in the container, so the user opens it. That branch holds
+   the newest work: the shared logic moved into `harpstrata` and `harpparts`, the pages'
+   design scope and the Restyle stage in the roadmap, the tuning text and home holes, and
+   Harmonic minor's page held back. Until it merges, harpguru-cloud, which reads this
+   document on the feature branch, sees the older version.
+2. **Build the pages' first design**, as the roadmap's Phase B lists it under "The pages'
+   first design": the field-guide `/t/`, the upright harp face on a phone, the tuning
+   drawer, borders on chosen controls, the one-line note, and the legend's bordered rows
+   in `harpguru-core`. The design canvas
+   (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal") draws every page
+   at desktop and phone size for this stage (the boards ending `B`) and for Restyle (`R`).
+   Its boards show Major diatonic only; the text for every tuning is in
+   `tuning-presets.ts`, and home holes come from `getHomeHoles`. The key to reading the
+   upright harp face is on the phone board, accepted 2026-11-10: a short line above the
+   face, and the full key in a collapsed section below it. Still for the user to settle:
+   the one-line note, which the boards draft as "Deliberately simple. Every key, position
+   and scale is in the app."
+3. **Merge to `master`.** The deploy workflow runs on that push. Record its result and date
+   here for harpguru-cloud: it is also the first real test of the role's trust policy.
+   `harpparts`, `harpstrata`, `harpguru-core` and the widget have Unreleased CHANGELOG
+   entries for `/cut-release`; the widget's deploy doesn't wait on a release, but the app
+   changes below ship in one.
+4. **The app changes (step 7), none started:** the share button and its QR code;
+   `associatedDomains` and the Android intent filters; the picker offering harp face 1, harp
+   face 2 or the browser; checking every incoming URL. `writeSetupUrl` and `readSetupUrl`
+   are in `harpstrata` for them and not yet used by the app. harpguru-cloud's AASA change
+   (#4, below) ships before or with that release.
+
+Also open: **the `/t/` pozitions stay a draft until the first deploy** (see "what `/t/`
+offers"), and **Harmonic minor's draw 6 and 10** want checking against the maker's layout
+before it gets a page; a fix there is a `harpparts` change, and reaches the app too.
 
 - **The widget needs nothing beyond the CSP harpguru-cloud serves.** Checked in headless
   Chromium 158 against the laid-out export, served with the pages' CSP exactly as the
@@ -226,7 +254,7 @@ Still open from the handover's order of work and report-back list:
   the HTML and on disk alike, with `web.output: "single"`. The layout script refuses an export
   that references anything outside `/w/`.
 - **The object keys are as the contract asks**: `w/…`, `s/index.html`, `e/index.html` and a
-  `t/<slug>/index.html` for each tuning with a page, 11 at first, so 14 objects in all.
+  `t/<slug>/index.html` for each tuning with a page, 10 at first, so 13 objects in all.
   The handover expected 51 tuning pages; see "what `/t/` offers" for the narrower start. A
   slug without a page gets the site's 404. Each tuning page names its bare `/t/<slug>` as
   canonical; the two shells carry `noindex`.
@@ -308,15 +336,17 @@ it can only grow: a key's meaning never changes, and an unknown key is ignored.
 Narrower than the roadmap's "short list of keys, pozitions, display modes and scales". A tuning
 page exists to make a tuning understood, not to configure one, so:
 
-- **11 tunings have a page at first, not 51:** Major diatonic, Country, Natural minor,
-  Harmonic minor, Melody Maker, Paddy Richter, Power Bender, Power Draw, Wilde, and the 12-
-  and 16-hole chromatics, the ones most players own. The list is the keys of
+- **10 tunings have a page at first, not 51:** Major diatonic, Country, Natural minor,
+  Melody Maker, Paddy Richter, Power Bender, Power Draw, Wilde, and the 12- and 16-hole
+  chromatics, among the ones most players own. Harmonic minor waits: its data has A on draw
+  6 and 10 where the maker's layout may have A♭, and a page that might be wrong costs more
+  than a missing one. It gets a page once its reeds are checked. The list is the keys of
   `tuning-presets.ts`. Setup links and embeds still take any of the 51, and every slug is
   frozen in `harpparts`, so a page is added with one table entry. Decided 2026-11-09, with
   the user.
 - **One harp key, C.** In degree display the harp key changes nothing on the face, and in
-  pitch display C is the most readable key. The derived song key is shown as text ("C harp,
-  2nd position: plays in G"), not as a control, which keeps covariance off the page.
+  pitch display C is the most readable key. The derived song key is shown as text, in the
+  app menus' words ("Harp key C · 2nd position · Song key G"), not as a control, which keeps covariance off the page.
 - **The control is a list of presets, one per pozition the tuning is designed for**, each
   carrying its scale: "2nd position · Mixolydian". No independent key, pozition or scale.
 - **A frozen per-tuning table lists the pozitions**, hand-picked, because a 7-note diatonic
@@ -328,10 +358,13 @@ page exists to make a tuning understood, not to configure one, so:
   (Country's extra reed, Harmonic minor, Easy diatonic, Blues 2 and 3, Chord, Diminished,
   Augmented Spanish, the three chromatics and four Trochilus tunings). 14 of them name theirs
   by hand; Augmented Spanish has no fitting named scale and shows "Unbent notes", which
-  activates its unbent notes as degrees. Of the 11 tunings with a page, Country, Harmonic
-  minor and the two chromatics name theirs by hand.
+  activates its unbent notes as degrees. Of the 10 tunings with a page, Country and the two
+  chromatics name theirs by hand.
 - **The table is a draft until the first deploy.** `tuning-presets.ts` is marked for review:
   a preset's pozition becomes a permanent `p` value once a `/t/` URL carrying it is shared.
+- **Each tuning and pozition has a line of text**, kept to what the reeds show or what is
+  settled among players, and each pozition's home holes are read from the reeds, not
+  written. Decided 2026-11-10, with the user.
 - **The display toggle stays**: degree and pitch.
 - **Expected to be settled by use, not by argument.** The lists only grow, so starting narrow
   is the cheap mistake.
@@ -350,11 +383,9 @@ Fixed in `harpguru-core` for Phase B's composed component, `StandaloneHarpFace`:
 `CallbackOnSourceGlobalProps` recomputes the sizes when the window changes, and on the web
 `getWindowDimensions` takes the horizontal edge as the long one. Both are no-ops on a
 device. `StandaloneHarpFace` goes further and sizes itself to its own box: its `onLayout`
-hands the measured size to `getWindowDimensions` through `setFrameDimensions`, and nothing
-is drawn until that first measurement. The frame is one module-level value, so it holds for
-one harp face per JavaScript context. That suits a widget page or an iframe; the app must
-not mount a `StandaloneHarpFace` beside its own harp faces, such as for a share preview,
-without first making the frame per store.
+keeps the measured size in its store's `frameDimensions`, which the size reductions pass to
+`getWindowDimensions`, and nothing is drawn until that first measurement. Each store has its
+own, so several standalone harp faces, or one beside the app's own, size independently.
 
 ### Checked 2026-09-23, against `master` at `bafbd03e`
 

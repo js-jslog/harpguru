@@ -1,7 +1,7 @@
 import { isChromaticHarpFace } from 'harpparts'
 import type { HarpFaceFacts } from 'harpparts'
 
-import type { LayoutFacts, SizeScheme } from '../../types'
+import type { FrameDimensions, LayoutFacts, SizeScheme } from '../../types'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
 const relativeSizes: Omit<
@@ -39,9 +39,10 @@ type PropsForReduction = {
 
 export const reduceLayoutFactsToDynamicSizes = (
   prevSizes: SizeScheme | undefined,
-  { fullLayoutFacts, layoutFacts }: PropsForReduction
+  { fullLayoutFacts, layoutFacts }: PropsForReduction,
+  frameDimensions: FrameDimensions | undefined
 ): SizeScheme => {
-  const { shortEdge, longEdge } = getWindowDimensions()
+  const { shortEdge, longEdge } = getWindowDimensions(frameDimensions)
   const { harpfaceRowCount, harpfaceColumnCount } = (() => {
     const {
       harpface1: {
