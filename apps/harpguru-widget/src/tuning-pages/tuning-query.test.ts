@@ -23,7 +23,7 @@ test('A pozition the page does not offer falls back to the first preset', () => 
   expect(readTuningQuery(TuningIds.MelodyMaker, 'p=1').preset.pozitionId).toBe(
     PozitionIds.Second
   )
-  expect(readTuningQuery(TuningIds.MajorDiatonic, 'p=%').preset.pozitionId).toBe(
-    PozitionIds.Second
-  )
+  expect(
+    readTuningQuery(TuningIds.MajorDiatonic, 'p=%').preset.pozitionId
+  ).toBe(PozitionIds.Second)
 })

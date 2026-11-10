@@ -727,7 +727,7 @@ than reviving it cold. A premature approach spends the chance of doing it the be
   display. A frozen per-tuning table picks the pozitions by hand; each preset's scale is
   computed from the unbent notes where a named scale fits them, and named by hand where none
   does, or shown as "Unbent notes" where no named scale is right. No independent key, pozition or scale control, which keeps covariance, and the app's
-  core loop, off the page. Only the 11 most played tunings get a page to start with; setup
+  core loop, off the page. Only 10 of the most played tunings get a page to start with; setup
   links and embeds take all 51. To be settled by use: the lists only grow, so narrow is the cheap
   start. Settled 2026-11-09, with the user.
 - **What should the pages look like?** Usable first, dramatic later. Of three directions

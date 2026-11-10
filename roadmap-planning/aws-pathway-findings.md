@@ -227,7 +227,7 @@ Still open from the handover's order of work and report-back list:
   the HTML and on disk alike, with `web.output: "single"`. The layout script refuses an export
   that references anything outside `/w/`.
 - **The object keys are as the contract asks**: `w/…`, `s/index.html`, `e/index.html` and a
-  `t/<slug>/index.html` for each tuning with a page, 11 at first, so 14 objects in all.
+  `t/<slug>/index.html` for each tuning with a page, 10 at first, so 13 objects in all.
   The handover expected 51 tuning pages; see "what `/t/` offers" for the narrower start. A
   slug without a page gets the site's 404. Each tuning page names its bare `/t/<slug>` as
   canonical; the two shells carry `noindex`.
@@ -309,9 +309,11 @@ it can only grow: a key's meaning never changes, and an unknown key is ignored.
 Narrower than the roadmap's "short list of keys, pozitions, display modes and scales". A tuning
 page exists to make a tuning understood, not to configure one, so:
 
-- **11 tunings have a page at first, not 51:** Major diatonic, Country, Natural minor,
-  Harmonic minor, Melody Maker, Paddy Richter, Power Bender, Power Draw, Wilde, and the 12-
-  and 16-hole chromatics, the ones most players own. The list is the keys of
+- **10 tunings have a page at first, not 51:** Major diatonic, Country, Natural minor,
+  Melody Maker, Paddy Richter, Power Bender, Power Draw, Wilde, and the 12- and 16-hole
+  chromatics, among the ones most players own. Harmonic minor waits: its data has A on draw
+  6 and 10 where the maker's layout may have A♭, and a page that might be wrong costs more
+  than a missing one. It gets a page once its reeds are checked. The list is the keys of
   `tuning-presets.ts`. Setup links and embeds still take any of the 51, and every slug is
   frozen in `harpparts`, so a page is added with one table entry. Decided 2026-11-09, with
   the user.
@@ -329,10 +331,13 @@ page exists to make a tuning understood, not to configure one, so:
   (Country's extra reed, Harmonic minor, Easy diatonic, Blues 2 and 3, Chord, Diminished,
   Augmented Spanish, the three chromatics and four Trochilus tunings). 14 of them name theirs
   by hand; Augmented Spanish has no fitting named scale and shows "Unbent notes", which
-  activates its unbent notes as degrees. Of the 11 tunings with a page, Country, Harmonic
-  minor and the two chromatics name theirs by hand.
+  activates its unbent notes as degrees. Of the 10 tunings with a page, Country and the two
+  chromatics name theirs by hand.
 - **The table is a draft until the first deploy.** `tuning-presets.ts` is marked for review:
   a preset's pozition becomes a permanent `p` value once a `/t/` URL carrying it is shared.
+- **Each tuning and pozition has a line of text**, kept to what the reeds show or what is
+  settled among players, and each pozition's home holes are read from the reeds, not
+  written. Decided 2026-11-10, with the user.
 - **The display toggle stays**: degree and pitch.
 - **Expected to be settled by use, not by argument.** The lists only grow, so starting narrow
   is the cheap mistake.
