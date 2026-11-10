@@ -19,7 +19,10 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 - MINOR: the public harp face, harpguru.com's three page types: `/s/` setup
   links and `/e/` embeds, with tappable cells and the scale flash, and a
-  `/t/<tuning>` page for each of 10 of the most played tunings, with presets,
-  the display toggle, a description of each tuning and pozition, and each
-  pozition's home holes read from the reeds
+  `/t/<tuning>` field guide for each of 10 of the most played tunings: what
+  the tuning is, a preset for each pozition it is built for and what that
+  pozition is for, its home holes read from the reeds, the display toggle and
+  a key to reading the harp face. Two columns on a wide screen, one scrolling
+  column on a narrow one. The promotional pages say they are deliberately
+  simple
 - MINOR: the web export laid out as the pages bucket's object keys
