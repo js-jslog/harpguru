@@ -204,24 +204,19 @@ workflow runs from `master` only, so its first run follows the merge.
 **Where Phase B stands, 2026-11-10.** Handover steps 1 to 6 are built. What is left, in
 order:
 
-1. **Merge `178-widget-shared-logic` into `178-build-the-harp-face-widget`.** The PR isn't
-   open yet; `gh` isn't installed in the container, so the user opens it. That branch holds
-   the newest work: the shared logic moved into `harpstrata` and `harpparts`, the pages'
-   design scope and the Restyle stage in the roadmap, the tuning text and home holes, and
-   Harmonic minor's page held back. Until it merges, harpguru-cloud, which reads this
-   document on the feature branch, sees the older version.
+1. **Merged 2026-11-10:** `178-widget-shared-logic` into `178-build-the-harp-face-widget`
+   (#183).
 2. **Build the pages' first design**, as the roadmap's Phase B lists it under "The pages'
-   first design": the field-guide `/t/`, the upright harp face on a phone, the tuning
-   drawer, borders on chosen controls, the one-line note, and the legend's bordered rows
-   in `harpguru-core`. The design canvas
-   (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal") draws every page
-   at desktop and phone size for this stage (the boards ending `B`) and for Restyle (`R`).
-   Its boards show Major diatonic only; the text for every tuning is in
-   `tuning-presets.ts`, and home holes come from `getHomeHoles`. The key to reading the
-   upright harp face is on the phone board, accepted 2026-11-10: a short line above the
-   face, and the full key in a collapsed section below it. Still for the user to settle:
-   the one-line note, which the boards draft as "Deliberately simple. Every key, position
-   and scale is in the app."
+   first design", on `178-widget-first-design`, which merges back into the feature branch.
+   The design canvas (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal")
+   draws every page at desktop and phone size for this stage (the boards ending `B`) and
+   for Restyle (`R`). Built and checked under the CSP, 2026-11-10: the legend's bordered
+   rows in `harpguru-core`, each clipping its own slide and no taller than wide; borders on
+   chosen controls; the field-guide `/t/`, two columns from 1100px and one scrolling column
+   below, with each key to reading the harp face in `reading-key.ts`; the tuning drawer;
+   and the one-line note on `/t/` and `/s/`, worded as the boards draft it. **Left: the
+   upright harp face on a phone.** Until it lands, a narrow `/t/` shows the sideways face
+   with the sideways key.
 3. **Merge to `master`.** The deploy workflow runs on that push. Record its result and date
    here for harpguru-cloud: it is also the first real test of the role's trust policy.
    `harpparts`, `harpstrata`, `harpguru-core` and the widget have Unreleased CHANGELOG
