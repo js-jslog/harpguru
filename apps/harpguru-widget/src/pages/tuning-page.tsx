@@ -15,6 +15,7 @@ import { getCovariantSet } from 'harpcovariance'
 
 import { readTuningQuery, writeTuningQuery } from '../tuning-pages/tuning-query'
 import type { TuningView } from '../tuning-pages/tuning-query'
+import { TuningDrawer } from '../tuning-pages/tuning-drawer'
 import { sidewaysKey } from '../tuning-pages/reading-key'
 import type { ReadingKey } from '../tuning-pages/reading-key'
 import { getPresets, getTuningDescription } from '../tuning-pages/presets'
@@ -50,6 +51,8 @@ export const TuningPage = ({ tuningId }: TuningPageProps): ReactElement => {
   const [view, setView] = useState<TuningView>(() =>
     readTuningQuery(tuningId, window.location.search)
   )
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const isWide = width >= wideWidth
   const harpStrataProps = {
     tuningId,
     valvingId: ValvingIds.NotValved,
@@ -75,12 +78,24 @@ export const TuningPage = ({ tuningId }: TuningPageProps): ReactElement => {
     harp: describeHarp(harpStrataProps, { withTuning: false }),
     home: describeHomeHoles(getHomeHoles(tuningId, view.preset.pozitionId)),
     readingKey: sidewaysKey,
+    openDrawer: () => setIsDrawerOpen(true),
   }
 
-  return width >= wideWidth ? (
-    <WideGuide {...guide} />
-  ) : (
-    <NarrowGuide {...guide} width={width} />
+  return (
+    <View style={chromeStyles.page}>
+      {isWide ? (
+        <WideGuide {...guide} />
+      ) : (
+        <NarrowGuide {...guide} width={width} />
+      )}
+      <TuningDrawer
+        currentTuningId={tuningId}
+        displayMode={view.displayMode}
+        side={isWide ? 'left' : 'bottom'}
+        isOpen={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+      />
+    </View>
   )
 }
 
@@ -94,6 +109,7 @@ type GuideProps = {
   // 'draw 2, blow 3, 6 and 9'
   readonly home: string
   readonly readingKey: ReadingKey
+  readonly openDrawer: () => void
 }
 
 // A sidebar that explains, beside a harp face that fills the rest
@@ -105,10 +121,14 @@ const WideGuide = ({
   harp,
   home,
   readingKey,
+  openDrawer,
 }: GuideProps): ReactElement => (
   <View style={chromeStyles.page}>
     <View style={[chromeStyles.bar, styles.wideBar]}>
-      <Brand />
+      <View style={styles.barStart}>
+        <Brand />
+        <TuningsButton onPress={openDrawer} />
+      </View>
       <View style={styles.barEnd}>
         <SimpleNote />
         <StoreLinks />
@@ -177,6 +197,7 @@ const NarrowGuide = ({
   harpFace,
   home,
   readingKey,
+  openDrawer,
   width,
 }: GuideProps & { readonly width: number }): ReactElement => {
   const [isKeyOpen, setIsKeyOpen] = useState(false)
@@ -188,9 +209,12 @@ const NarrowGuide = ({
         <StoreLinks />
       </View>
       <View style={styles.narrowBody}>
-        <Text role="heading" aria-level={1} style={styles.narrowTitle}>
-          {tuningId}
-        </Text>
+        <View style={styles.titleRow}>
+          <Text role="heading" aria-level={1} style={styles.narrowTitle}>
+            {tuningId}
+          </Text>
+          <TuningsButton onPress={openDrawer} />
+        </View>
         <Text style={styles.description}>{getTuningDescription(tuningId)}</Text>
         <View style={styles.section}>
           <SectionHeading>Play it in</SectionHeading>
@@ -245,6 +269,21 @@ const NarrowGuide = ({
   )
 }
 
+const TuningsButton = ({
+  onPress,
+}: {
+  readonly onPress: () => void
+}): ReactElement => (
+  <Pressable
+    onPress={onPress}
+    accessibilityRole="button"
+    aria-haspopup="dialog"
+    style={styles.tuningsButton}
+  >
+    <Text style={styles.choiceText}>☰ Tunings</Text>
+  </Pressable>
+)
+
 const SectionHeading = ({
   children,
 }: {
@@ -286,6 +325,25 @@ const DisplayChoices = ({
 const styles = StyleSheet.create({
   wideBar: {
     paddingHorizontal: 40,
+  },
+  barStart: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 20,
+  },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 10,
+  },
+  tuningsButton: {
+    paddingHorizontal: 12,
+    minHeight: 36,
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: colors.quiet,
+    borderRadius: 6,
   },
   barEnd: {
     flexDirection: 'row',

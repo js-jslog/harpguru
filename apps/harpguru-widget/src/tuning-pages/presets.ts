@@ -1,5 +1,11 @@
 import { getUnbentDegreeIds } from 'harpstrata'
-import { ScaleCategory, getScale, getScaleByDegreeIds } from 'harpparts'
+import {
+  ScaleCategory,
+  TuningCategories,
+  getScale,
+  getScaleByDegreeIds,
+  getTuning,
+} from 'harpparts'
 import type { DegreeIds, PozitionIds, TuningIds } from 'harpparts'
 
 import { tuningPresets } from './tuning-presets'
@@ -18,6 +24,21 @@ export const unbentNotesLabel = 'Unbent notes'
 // The tunings that have a page, in the table's order
 export const getPagedTuningIds = (): ReadonlyArray<TuningIds> =>
   Object.keys(tuningPresets) as TuningIds[]
+
+// The tunings with a page, grouped as the app's tuning menu groups them: by
+// category, in the categories' order, and in the table's order within each
+export const getTuningGroups = (): ReadonlyArray<{
+  readonly category: TuningCategories
+  readonly tuningIds: ReadonlyArray<TuningIds>
+}> =>
+  Object.values(TuningCategories)
+    .map((category) => ({
+      category,
+      tuningIds: getPagedTuningIds().filter(
+        (tuningId) => getTuning(tuningId).category === category
+      ),
+    }))
+    .filter(({ tuningIds }) => tuningIds.length > 0)
 
 export const hasTuningPage = (tuningId: TuningIds): boolean =>
   tuningId in tuningPresets

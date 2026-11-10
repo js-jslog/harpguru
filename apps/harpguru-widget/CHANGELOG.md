@@ -22,7 +22,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
   `/t/<tuning>` field guide for each of 10 of the most played tunings: what
   the tuning is, a preset for each pozition it is built for and what that
   pozition is for, its home holes read from the reeds, the display toggle and
-  a key to reading the harp face. Two columns on a wide screen, one scrolling
-  column on a narrow one. The promotional pages say they are deliberately
+  a key to reading the harp face, and a drawer linking the other tuning
+  pages. Two columns on a wide screen, one scrolling column on a narrow one. The promotional pages say they are deliberately
   simple
 - MINOR: the web export laid out as the pages bucket's object keys
