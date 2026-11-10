@@ -404,7 +404,9 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
     with a line on what that pozition is for, the home note for the chosen pozition (where
     on the harp the song key sits), and a short key to reading the harp face. The text for
     the 10 tunings is written and checked (2026-11-10, in `tuning-presets.ts`), and the home
-    holes are read from the reeds; the key to reading the harp face is still to write.
+    holes are read from the reeds. The key to reading the harp face is drafted on the phone
+    board (accepted 2026-11-10): one line above the face, with the face's own column labels,
+    and the full key in a collapsed "How to read the harp" below it.
   - **On a phone, the harp face stands upright**: a row per hole, draw notes on one side of
     the hole number and blow notes on the other, bends beyond them. Sideways, a 10-hole face
     is too small to read at phone width.

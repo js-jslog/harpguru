@@ -217,10 +217,11 @@ order:
    (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal") draws every page
    at desktop and phone size for this stage (the boards ending `B`) and for Restyle (`R`).
    Its boards show Major diatonic only; the text for every tuning is in
-   `tuning-presets.ts`, and home holes come from `getHomeHoles`. Still to write, and for
-   the user to check: the key to reading the harp face, which the boards draft for the
-   sideways face only, and the one-line note, which the boards draft as "Deliberately
-   simple. Every key, position and scale is in the app."
+   `tuning-presets.ts`, and home holes come from `getHomeHoles`. The key to reading the
+   upright harp face is on the phone board, accepted 2026-11-10: a short line above the
+   face, and the full key in a collapsed section below it. Still for the user to settle:
+   the one-line note, which the boards draft as "Deliberately simple. Every key, position
+   and scale is in the app."
 3. **Merge to `master`.** The deploy workflow runs on that push. Record its result and date
    here for harpguru-cloud: it is also the first real test of the role's trust policy.
    `harpparts`, `harpstrata`, `harpguru-core` and the widget have Unreleased CHANGELOG
