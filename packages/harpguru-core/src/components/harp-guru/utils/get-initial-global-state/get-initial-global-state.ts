@@ -25,12 +25,13 @@ import {
 } from '../../../../types'
 
 // A standalone harp face starts from the setup it is given, and says whether
-// its cells can be tapped. The app starts each page from its own default, with
-// tappable cells.
+// its cells can be tapped and whether it stands upright. The app starts each
+// page from its own default, with tappable cells, sideways.
 export type InitialSetup = {
   readonly harpStrataProps: HarpStrataProps
   readonly displayMode: DisplayModes
   readonly isCellInteractive: boolean
+  readonly isUpright: boolean
 }
 
 const getDefaultHarpStrataProps = (pageNumber: PageNumber): HarpStrataProps => {
@@ -147,6 +148,7 @@ export const getInitialGlobalState = (
     staticSizes,
     frameDimensions,
     isCellInteractive: initialSetup?.isCellInteractive ?? true,
+    isUpright: initialSetup?.isUpright ?? false,
   } as const
 
   return state

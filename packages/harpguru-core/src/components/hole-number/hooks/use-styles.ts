@@ -13,6 +13,7 @@ const { holeNumbersColor } = getColors()
 
 export const useStyles = (): HoleNumberStyles => {
   const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
+  const isUpright = useHarpGuruStore((state) => state.isUpright)
   const { 6: fontSize, 8: width } = dynamicSizes
 
   const styles = StyleSheet.create<HoleNumberStyles>({
@@ -26,6 +27,8 @@ export const useStyles = (): HoleNumberStyles => {
     text: {
       fontSize,
       color: holeNumbersColor,
+      // Turned back against the harp face's quarter turn
+      ...(isUpright ? { transform: [{ rotate: '-90deg' }] } : {}),
     },
   })
 

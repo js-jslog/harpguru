@@ -19,6 +19,7 @@ test('Each page starts from its default when no setup is given', () => {
   expect(state.harpKeyId).toBe(PitchIds.C)
   expect(state.activeDisplayMode).toBe(DisplayModes.Degree)
   expect(state.isCellInteractive).toBe(true)
+  expect(state.isUpright).toBe(false)
   expect(state.frameDimensions).toBeUndefined()
 })
 
@@ -34,6 +35,7 @@ test('A given setup is where the state starts, every derived field with it', () 
     harpStrataProps,
     displayMode: DisplayModes.Pitch,
     isCellInteractive: false,
+    isUpright: true,
   })
   const expectedHarpStrata = getHarpStrata(harpStrataProps)
 
@@ -51,4 +53,5 @@ test('A given setup is where the state starts, every derived field with it', () 
   )
   expect(state.activeDisplayMode).toBe(DisplayModes.Pitch)
   expect(state.isCellInteractive).toBe(false)
+  expect(state.isUpright).toBe(true)
 })

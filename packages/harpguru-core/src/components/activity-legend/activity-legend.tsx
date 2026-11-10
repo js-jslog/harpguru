@@ -31,6 +31,7 @@ export const ActivityLegend = (): React.ReactElement => {
   const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
   const rootPitchId = useHarpGuruStore((state) => state.rootPitchId)
   const activePitchIds = useHarpGuruStore((state) => state.activePitchIds)
+  const isUpright = useHarpGuruStore((state) => state.isUpright)
   const orderedPitchIds = getPitchIds(rootPitchId)
   const orderedDegreeIds = getDegreeIds()
   const { 2: gap, legendWidth } = useHarpGuruStore(
@@ -57,7 +58,9 @@ export const ActivityLegend = (): React.ReactElement => {
     legendWrapper: {
       ...StyleSheet.absoluteFill,
       width: legendWidth,
-      flexDirection: 'column',
+      // Turned with an upright harp face, the legend runs along the top, and
+      // reversed it still reads from the root
+      flexDirection: isUpright ? 'column-reverse' : 'column',
       // Centred, for a frame taller than its twelve degrees need
       justifyContent: 'center',
       gap,

@@ -56,6 +56,9 @@ export type GlobalState = {
   readonly staticSizes: SizeScheme
   readonly frameDimensions: FrameDimensions | undefined
   readonly isCellInteractive: boolean
+  // Drawn a quarter turn clockwise, a row per hole, for a frame taller than
+  // wide. The face is laid out as ever and turned; its labels turn back.
+  readonly isUpright: boolean
 }
 
 export enum DisplayModes {

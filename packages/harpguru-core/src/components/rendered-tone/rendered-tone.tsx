@@ -31,6 +31,7 @@ export const RenderedTone = ({
   const isQuizMode = activeExperienceMode === ExperienceModes.Quiz
 
   const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
+  const isUpright = useHarpGuruStore((state) => state.isUpright)
   const {
     [overrideSizes[0]]: noteFontSize,
     [overrideSizes[1]]: modifierTopMargin,
@@ -62,6 +63,11 @@ export const RenderedTone = ({
       display: isQuizMode && !isQuestion && !isActive ? 'none' : 'flex',
       color: isActive ? pageColor : borderColor,
       fontSize: noteFontSize,
+    },
+    // Turned back against the harp face's quarter turn, so it reads upright
+    upright: {
+      ...StyleSheet.absoluteFill,
+      transform: [{ rotate: '-90deg' }],
     },
     modifier: {
       bottom: modifierTopMargin,
@@ -99,5 +105,6 @@ export const RenderedTone = ({
       </>
     )
 
+  if (isUpright) return <View style={styles.upright}>{fragment}</View>
   return fragment
 }

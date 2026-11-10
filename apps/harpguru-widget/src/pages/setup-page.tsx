@@ -9,13 +9,14 @@ import { describeHarp } from '../describe-setup'
 import { chromeStyles } from '../chrome/styles'
 import { StoreLinks } from '../chrome/store-links'
 import { SimpleNote } from '../chrome/simple-note'
+import { isUprightWindow } from '../chrome/orientation'
 import { Brand } from '../chrome/brand'
 import { correctAddress } from '../address'
 
 // /s/: a teacher's setup, fixed by the link. Cells toggle and a scale flashes
 // its name; nothing on the page changes the setup.
 export const SetupPage = (): ReactElement => {
-  const { width } = useWindowDimensions()
+  const { width, height } = useWindowDimensions()
   const isWide = width >= 900
   const setup = useMemo(() => readSetupQuery(window.location.search), [])
   const harp = describeHarp(setup.harpStrataProps)
@@ -42,7 +43,11 @@ export const SetupPage = (): ReactElement => {
         </View>
       </View>
       <View style={chromeStyles.harpFace}>
-        <StandaloneHarpFace setup={setup} isInteractive />
+        <StandaloneHarpFace
+          setup={setup}
+          isInteractive
+          isUpright={isUprightWindow(width, height)}
+        />
       </View>
     </View>
   )

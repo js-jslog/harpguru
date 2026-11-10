@@ -13,6 +13,7 @@ import { CallbackOnSourceGlobalProps } from '../callback-on-sourceglobalprops'
 import { ActivityLegend } from '../activity-legend'
 import { getColors, reduceToResizedSizes } from '../../utils'
 import { DisplayModes } from '../../types'
+import type { FrameDimensions } from '../../types'
 import {
   StoreProvider,
   useHarpGuruStore,
@@ -26,6 +27,10 @@ export type StandaloneHarpFaceProps = {
   // page whose controls choose the setup, since configuration and cell
   // interaction never share a page.
   readonly isInteractive: boolean
+  // A quarter turn clockwise, a row per hole from hole 1 at the top: draw
+  // notes left of the hole numbers, blow notes right, and the legend along
+  // the top. For a frame taller than wide, such as a phone held upright.
+  readonly isUpright?: boolean
 }
 
 const toDisplayMode = (displayMode: SetupDisplayMode): DisplayModes =>
@@ -39,6 +44,7 @@ const toDisplayMode = (displayMode: SetupDisplayMode): DisplayModes =>
 export const StandaloneHarpFace = ({
   setup,
   isInteractive,
+  isUpright = false,
 }: StandaloneHarpFaceProps): ReactElement => (
   <GestureHandlerRootView style={{ flex: 1 }}>
     <StoreProvider
@@ -47,32 +53,48 @@ export const StandaloneHarpFace = ({
         harpStrataProps: setup.harpStrataProps,
         displayMode: toDisplayMode(setup.displayMode),
         isCellInteractive: isInteractive,
+        isUpright,
       }}
     >
-      <StandaloneHarpFaceContents setup={setup} />
+      <StandaloneHarpFaceContents setup={setup} isUpright={isUpright} />
     </StoreProvider>
   </GestureHandlerRootView>
 )
 
 const StandaloneHarpFaceContents = ({
   setup,
-}: Pick<StandaloneHarpFaceProps, 'setup'>): ReactElement => {
+  isUpright,
+}: Pick<StandaloneHarpFaceProps, 'setup'> & {
+  readonly isUpright: boolean
+}): ReactElement => {
   useFollowSetup(setup)
   const store = useHarpGuruStoreInstance()
   const isCellInteractive = useHarpGuruStore((state) => state.isCellInteractive)
-  const [isMeasured, setIsMeasured] = useState(false)
+  // The box it was given, as measured. Upright, the face is laid out in that
+  // box turned a quarter, so it sizes itself to the box's height as its width.
+  const [measured, setMeasured] = useState<FrameDimensions | undefined>()
+  const resize = (box: FrameDimensions, isTurned: boolean) => {
+    const frameDimensions = isTurned
+      ? { width: box.height, height: box.width }
+      : box
+    store.setState((state) => ({
+      isUpright: isTurned,
+      frameDimensions,
+      ...reduceToResizedSizes({ ...state, frameDimensions }),
+    }))
+  }
   const onLayout = ({
     nativeEvent: {
       layout: { width, height },
     },
   }: LayoutChangeEvent) => {
-    const frameDimensions = { width, height }
-    store.setState((state) => ({
-      frameDimensions,
-      ...reduceToResizedSizes({ ...state, frameDimensions }),
-    }))
-    setIsMeasured(true)
+    resize({ width, height }, isUpright)
+    setMeasured({ width, height })
   }
+
+  useEffect(() => {
+    if (measured !== undefined) resize(measured, isUpright)
+  }, [isUpright])
 
   const styles = StyleSheet.create({
     fill: {
@@ -80,8 +102,33 @@ const StandaloneHarpFaceContents = ({
       backgroundColor: getColors().pageColor,
       justifyContent: 'center',
       alignItems: 'center',
+      // The scale flash waits beside the face, out of sight, and an upright
+      // face's unturned box is wider than the frame: both stay inside it
+      overflow: 'hidden',
     },
+    // The turned box: the measured box with its sides swapped, centred on it
+    // and given a quarter turn about its centre
+    turned:
+      measured === undefined
+        ? {}
+        : {
+          position: 'absolute',
+          width: measured.height,
+          height: measured.width,
+          left: (measured.width - measured.height) / 2,
+          top: (measured.height - measured.width) / 2,
+          justifyContent: 'center',
+          alignItems: 'center',
+          transform: [{ rotate: '90deg' }],
+        },
   })
+
+  const face = (
+    <>
+      <ActivityLegend />
+      <HarpFaces />
+    </>
+  )
 
   return (
     <View style={styles.fill} onLayout={onLayout} testID="standalone-harp-face">
@@ -89,10 +136,9 @@ const StandaloneHarpFaceContents = ({
       <ToggleBufferFlusher />
       {/* Nothing is drawn until the space is known, or the first frame would
           be sized to the whole window */}
-      {isMeasured && (
+      {measured !== undefined && (
         <>
-          <ActivityLegend />
-          <HarpFaces />
+          {isUpright ? <View style={styles.turned}>{face}</View> : face}
           {isCellInteractive && <NotifyOfScale isScalesMenu={false} />}
         </>
       )}

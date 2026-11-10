@@ -16,7 +16,7 @@ import { getCovariantSet } from 'harpcovariance'
 import { readTuningQuery, writeTuningQuery } from '../tuning-pages/tuning-query'
 import type { TuningView } from '../tuning-pages/tuning-query'
 import { TuningDrawer } from '../tuning-pages/tuning-drawer'
-import { sidewaysKey } from '../tuning-pages/reading-key'
+import { sidewaysKey, uprightKey } from '../tuning-pages/reading-key'
 import type { ReadingKey } from '../tuning-pages/reading-key'
 import { getPresets, getTuningDescription } from '../tuning-pages/presets'
 import type { Preset } from '../tuning-pages/presets'
@@ -25,6 +25,7 @@ import { describeHarp } from '../describe-setup'
 import { colors, chromeStyles } from '../chrome/styles'
 import { StoreLinks } from '../chrome/store-links'
 import { SimpleNote } from '../chrome/simple-note'
+import { uprightBelowWidth } from '../chrome/orientation'
 import { Choice } from '../chrome/choice'
 import { Brand } from '../chrome/brand'
 import { correctAddress } from '../address'
@@ -53,6 +54,9 @@ export const TuningPage = ({ tuningId }: TuningPageProps): ReactElement => {
   )
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const isWide = width >= wideWidth
+  // A narrow guide scrolls, so its harp face can stand upright whatever the
+  // window's height
+  const isUpright = width < uprightBelowWidth
   const harpStrataProps = {
     tuningId,
     valvingId: ValvingIds.NotValved,
@@ -73,11 +77,12 @@ export const TuningPage = ({ tuningId }: TuningPageProps): ReactElement => {
       <StandaloneHarpFace
         setup={{ harpStrataProps, displayMode: view.displayMode }}
         isInteractive={false}
+        isUpright={isUpright}
       />
     ),
     harp: describeHarp(harpStrataProps, { withTuning: false }),
     home: describeHomeHoles(getHomeHoles(tuningId, view.preset.pozitionId)),
-    readingKey: sidewaysKey,
+    readingKey: isUpright ? uprightKey : sidewaysKey,
     openDrawer: () => setIsDrawerOpen(true),
   }
 
@@ -86,7 +91,7 @@ export const TuningPage = ({ tuningId }: TuningPageProps): ReactElement => {
       {isWide ? (
         <WideGuide {...guide} />
       ) : (
-        <NarrowGuide {...guide} width={width} />
+        <NarrowGuide {...guide} width={width} isUpright={isUpright} />
       )}
       <TuningDrawer
         currentTuningId={tuningId}
@@ -199,9 +204,14 @@ const NarrowGuide = ({
   readingKey,
   openDrawer,
   width,
-}: GuideProps & { readonly width: number }): ReactElement => {
+  isUpright,
+}: GuideProps & {
+  readonly width: number
+  readonly isUpright: boolean
+}): ReactElement => {
   const [isKeyOpen, setIsKeyOpen] = useState(false)
-  const faceHeight = Math.round((width - 32) * 0.6)
+  // Upright, a row per hole makes the face taller than wide
+  const faceHeight = Math.round((width - 32) * (isUpright ? 1.35 : 0.6))
   return (
     <ScrollView style={chromeStyles.page}>
       <View style={chromeStyles.bar}>
