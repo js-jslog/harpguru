@@ -413,6 +413,13 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
     pozition and scale, on `/t/` and `/s/` but not in embeds. Wording to be settled.
   - Chosen controls carry a border as well as the pink fill, which alone is too faint
     against the page.
+  - **The legend's degrees are bordered, with gaps between them, and each clips its own
+    slide.** Unselected degrees were white on white, so the legend read as ill-defined. And
+    an unselected degree's colour slides one legend-width to the left, which only hides it
+    because the app's legend sits against the screen edge; a standalone harp face's legend
+    sits beside the page's own content. Each row now clips its own fill, so the slide
+    stays in its frame wherever the legend is. The animation is unchanged. The legend is
+    `harpguru-core`'s, so the app gets the same look in its next release.
 - Generate a canonical page for each of the 51 built-in tunings (narrowed 2026-11-09 to the 11
   most played, to start; see "What does `/t/` let you change?"). **One page per tuning, not
   per permutation** — 51 tunings × 12 keys × 12 pozitions × 23 scales is over 160,000
