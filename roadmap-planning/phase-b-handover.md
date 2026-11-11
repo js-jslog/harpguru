@@ -4,10 +4,13 @@ As of 2026-11-09. The AWS side of Phase B is built and live. Everything left in 
 except one small AWS change (#4 below), is work in this repo. Phase B ships when a
 configured harp face opens live from a QR code.
 
-**Progress, for a session picking this up:** steps 1 to 6 below are built, and the report-back
-on the marker and the CSP is written. What is left, and in what order, is under "Where Phase
-B stands" in `aws-pathway-findings.md`. Where this handover and the roadmap or findings
-disagree, the later documents are right: `/t/` starts with 10 tuning pages, not 51.
+**Progress, for a session picking this up:** steps 1 to 6 below are built, and so is the
+pages' first design; the report-back on the marker and the CSP is written. What is left, and
+in what order, is under "Where Phase B stands" in `aws-pathway-findings.md`. Where this
+handover and the roadmap or findings disagree, the later documents are right: `/t/` starts
+with 10 tuning pages, not 51. **Once #182 is merged, `master` holds the current roadmap and
+findings**, and "the feature branch" below means `master`: findings go on a branch off it and
+merge back, and harpguru-cloud reads them there.
 
 ## Where you are
 

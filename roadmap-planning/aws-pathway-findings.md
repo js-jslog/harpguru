@@ -198,39 +198,48 @@ new workspace needs both, or it will be linted inconsistently.
 
 ### Phase B: the widget built, and checked under the live CSP, 2026-11-09
 
-`apps/harpguru-widget`, on `178-build-the-harp-face-widget`. Not yet deployed: the deploy
-workflow runs from `master` only, so its first run follows the merge.
+`apps/harpguru-widget`, built on `178-build-the-harp-face-widget`, which merges to `master`
+as #182. The deploy workflow runs from `master` only, so its first run follows that merge.
 
-**Where Phase B stands, 2026-11-10.** Handover steps 1 to 6 are built. What is left, in
-order:
+**Where Phase B stands, 2026-11-11.** Handover steps 1 to 6 are built, and so is the pages'
+first design. What is left, in order:
 
-1. **Merged 2026-11-10:** `178-widget-shared-logic` into `178-build-the-harp-face-widget`
-   (#183).
-2. **Build the pages' first design**, as the roadmap's Phase B lists it under "The pages'
-   first design", on `178-widget-first-design`, which merges back into the feature branch.
-   The design canvas (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal")
-   draws every page at desktop and phone size for this stage (the boards ending `B`) and
-   for Restyle (`R`). Built and checked under the CSP, 2026-11-10: the legend's bordered
-   rows in `harpguru-core`, each clipping its own slide and no taller than wide; borders on
-   chosen controls; the field-guide `/t/`, two columns from 1100px and one scrolling column
-   below, with each key to reading the harp face in `reading-key.ts`; the tuning drawer;
-   the one-line note on `/t/` and `/s/`, worded as the boards draft it; and the upright harp
-   face, `StandaloneHarpFace`'s `isUpright`, used below 700px on a window taller than wide
-   and on a narrow `/t/`. **What's left of this step:** a PR from that branch into the
-   feature branch.
-3. **Merge to `master`.** The deploy workflow runs on that push. Record its result and date
-   here for harpguru-cloud: it is also the first real test of the role's trust policy.
-   `harpparts`, `harpstrata`, `harpguru-core` and the widget have Unreleased CHANGELOG
-   entries for `/cut-release`; the widget's deploy doesn't wait on a release, but the app
-   changes below ship in one.
+1. **Done.** `178-widget-shared-logic` merged into `178-build-the-harp-face-widget` on
+   2026-11-10 (#183), and `178-widget-first-design` on 2026-11-11 (#184).
+   - The first design is the roadmap's Phase B "The pages' first design", as drawn on the
+     design canvas (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal",
+     boards ending `B`; `R` is Restyle). Built and checked under the CSP: the legend's
+     bordered rows in `harpguru-core`; borders on chosen controls; the field-guide `/t/`,
+     two columns from 1100px and one scrolling column below, with each key to reading the
+     harp face in `reading-key.ts`; the tuning drawer; the one-line note on `/t/` and
+     `/s/`, worded as the boards draft it; and the upright harp face (below).
+   - A test build of the feature branch went to internal testers on 2026-11-11, through
+     `test-build.yml`, for the user to see the legend in the app. Its verdict is the
+     user's to report.
+2. **Merge #182, `178-build-the-harp-face-widget` into `master`.** That push runs
+   `deploy-widget.yml`, the first deploy. A session here can't see GitHub Actions (`gh`
+   isn't installed), so **ask the user for the run's result and date**, then record them
+   in this section. On success, check the live pages: `https://harpguru.com/t/major-diatonic`,
+   `/s/?t=major-diatonic&k=C&p=2&s=blues` and `/e/?…`. On "Not authorized to perform
+   sts:AssumeRoleWithWebIdentity", see the handover's deploy workflow section.
+   - **No `/cut-release` with it**, decided 2026-11-11 with the user: the deploy doesn't
+     depend on a version, and an app release is cut when the app changes below are ready.
+     Until then `harpparts`, `harpstrata`, `harpguru-core` and the widget keep their
+     Unreleased CHANGELOG entries.
+   - The `/t/` presets go live as they are. A pozition removed later only sends an early
+     bookmark to the tuning's first preset, so the live check is worth more than the draft
+     status.
+3. **Report to harpguru-cloud, through the user:** the first deploy's result and date;
+   that the widget needs nothing beyond the live CSP; and that #4 is one AASA change, `/s/*`
+   to the exact path `{ "/": "/s/" }` (the marker section below), to ship before or with
+   the app release.
 4. **The app changes (step 7), none started:** the share button and its QR code;
    `associatedDomains` and the Android intent filters; the picker offering harp face 1, harp
    face 2 or the browser; checking every incoming URL. `writeSetupUrl` and `readSetupUrl`
-   are in `harpstrata` for them and not yet used by the app. harpguru-cloud's AASA change
-   (#4, below) ships before or with that release.
+   are in `harpstrata` for them and not yet used by the app. Done on a branch off `master`,
+   then `/cut-release`, and merging that release to `master` sends it to open testing.
 
-Also open: **the `/t/` pozitions stay a draft until the first deploy** (see "what `/t/`
-offers"), and **Harmonic minor's draw 6 and 10** want checking against the maker's layout
+Also open: **Harmonic minor's draw 6 and 10** want checking against the maker's layout
 before it gets a page; a fix there is a `harpparts` change, and reaches the app too.
 
 - **The widget needs nothing beyond the CSP harpguru-cloud serves.** Checked in headless
@@ -356,8 +365,10 @@ page exists to make a tuning understood, not to configure one, so:
   by hand; Augmented Spanish has no fitting named scale and shows "Unbent notes", which
   activates its unbent notes as degrees. Of the 10 tunings with a page, Country and the two
   chromatics name theirs by hand.
-- **The table is a draft until the first deploy.** `tuning-presets.ts` is marked for review:
-  a preset's pozition becomes a permanent `p` value once a `/t/` URL carrying it is shared.
+- **The table goes live as it is** (2026-11-11, with the user). Pozitions should only be
+  added from here, since `/t/` URLs carry them, but removing one breaks nothing: its `p`
+  falls back to the tuning's first preset. The pozitions remain judgements about what each
+  harp is built for, not facts in the data.
 - **Each tuning and pozition has a line of text**, kept to what the reeds show or what is
   settled among players, and each pozition's home holes are read from the reeds, not
   written. Decided 2026-11-10, with the user.

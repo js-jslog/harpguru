@@ -25,9 +25,9 @@ type PresetPlan = {
 // page offers. A tuning missing here has no page yet, though setup links and
 // embeds still show it: its slug is frozen in harpparts all the same, so
 // adding it later is one entry. Pozitions may be added to a tuning, never
-// taken away, since /t/ URLs carry them. A DRAFT for review until the first
-// deploy: the pozitions are judgements about what each harp is built for,
-// not facts in the data.
+// taken away, since /t/ URLs carry them; one taken away anyway sends its links
+// to the first preset. The pozitions are judgements about what each harp is
+// built for, not facts in the data.
 //
 // The text says only what the reeds show or what is settled among players.
 // A tuning whose reeds we aren't sure of waits for its page: Harmonic minor
