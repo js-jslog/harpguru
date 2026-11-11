@@ -276,8 +276,8 @@ first design. What is left, in order:
      `[{"/":"/s/"}]`, and the site and pages smoke tests pass.
    - **`assetlinks.json` carries the fingerprint the user gave on 2026-11-06 as the Play app
      signing key**, `3A:52:4C:…:FC:11:92`, and Google's Digital Asset Links API returns it for
-     `com.jslog.harpguru`. That it is the signing key and not the upload key can only be read
-     in Play Console, App integrity; the user is checking.
+     `com.jslog.harpguru`. The user supplied it as the app signing key, not the upload key, so
+     it is the one phones see on Play's re-signed releases.
 
    What surprised:
    - **Devices read the AASA from Apple's CDN, not from harpguru.com**:
