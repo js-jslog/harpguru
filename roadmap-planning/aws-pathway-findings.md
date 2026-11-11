@@ -235,9 +235,12 @@ first design. What is left, in order:
      `harpguru-core`'s bordered legend and the web resize fix, and no `associatedDomains`.
      The widget's first release is 1.0.0, not the 0.2.0 its bump rule gives, because this
      is where it goes live.
-   - From this repo's container, a session can't see GitHub Actions (`gh` isn't installed):
-     **ask the user for both runs' results and dates**, the deploy and the release (the
-     `v18.5.0` tag, the EAS build and its submission), and record them in this section. On
+   - From this repo's container, a session can't see GitHub Actions (`gh` isn't installed).
+     *GitHub's public API answered instead, `curl` on
+     `api.github.com/repos/js-jslog/harpguru/actions/workflows/<file>/runs`, so only EAS needed
+     the user.* Originally: **ask the user for both runs' results and dates**, the deploy and
+     the release (the `v18.5.0` tag, the EAS build and its submission), and record them in this
+     section. On
      "Not authorized to perform sts:AssumeRoleWithWebIdentity", see the handover's deploy
      workflow section.
    - The `/t/` presets go live as they are. A pozition removed later only sends an early
@@ -269,7 +272,8 @@ first design. What is left, in order:
      invalidation of `/e/*`, `/t/*` and `/s/*` completed at 21:44:30.
    - **No CSP violation on the live pages**, in headless Chromium 131 at 1280×720 and 390×844,
      listening for `securitypolicyviolation`, console errors and failed requests, on the four
-     URLs above. Each loads the page and the bundle, and nothing else. `/t/no-such-tuning`
+     URLs above. Each loads the page and the bundle, and nothing else; headless Chromium
+     skips the icon, `/icon.png`, which `curl` found served. `/t/no-such-tuning`
      is the site's 404. Framed from `http://localhost`, `/e/` is refused by
      `frame-ancestors 'self'` and `/s/` by `'none'`, `infra/lib/partners.ts` being empty.
    - **The request logs record every view**, query string included, about two minutes later.
@@ -278,18 +282,19 @@ first design. What is left, in order:
      `[{"/":"/s/"}]`, and the site and pages smoke tests pass.
    - **`assetlinks.json` carries the fingerprint the user gave on 2026-11-06 as the Play app
      signing key**, `3A:52:4C:…:FC:11:92`, and Google's Digital Asset Links API returns it for
-     `com.jslog.harpguru`. The user supplied it as the app signing key, not the upload key, so
-     it is the one phones see on Play's re-signed releases.
+     `com.jslog.harpguru`. The app signing key, not the upload key, is the one phones see on
+     Play's re-signed releases.
+   - **The pages correct their own address after loading, as the URL format intends**, with
+     `history.replaceState` and no request: `/t/major-diatonic` becomes `?p=2`, its first
+     preset, and `s=blues` becomes `d=1,3b,4,5b,5,7b`. So the logs keep the URL as it was
+     opened, which is what Phase D counts, and a link copied from the address bar afterwards
+     is the canonical `d=` form.
 
    What surprised:
    - **Devices read the AASA from Apple's CDN, not from harpguru.com**:
      `https://app-site-association.cdn-apple.com/a/v1/harpguru.com`, with
      `Cache-Control: max-age=21600`. A minute after #4's deploy it still held `/s/*`. Before
      step 7's device test, check the new file has reached it.
-   - **The pages rewrite their own address after loading**, with no request:
-     `/t/major-diatonic` becomes `?p=2`, its first preset, and `s=blues` becomes
-     `d=1,3b,4,5b,5,7b`. The logs keep the URL as it was opened, which is what Phase D counts;
-     a link copied from the address bar afterwards carries `d=`, not `s=`.
    - **`no-cache` pages are kept for a second**, the minimum TTL of the managed
      `CachingOptimized` policy, then revalidated with S3: a `RefreshHit` when unchanged.
    - **The pages' HTML carries `<meta httpEquiv="X-UA-Compatible" …>`**, the JSX spelling,
@@ -310,8 +315,8 @@ first design. What is left, in order:
      bump.
 
    #4 is live since 2026-11-11. A device test of deep links needs Apple's CDN to carry it,
-   and needs the user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or later), and
-   merging that release to `master` sends it to open testing.
+   and needs the user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or
+   later), and merging that release to `master` sends it to open testing.
 
 Also open: **Harmonic minor's draw 6 and 10** want checking against the maker's layout
 before it gets a page; a fix there is a `harpparts` change, and reaches the app too.
@@ -369,7 +374,7 @@ opens the same parameters at `https://harpguru.com/s/web?<params>`.
   `{ "/": "/s/" }`, an exact path. An AASA `/` pattern ignores the query unless a `?` matcher
   is given, so `/s/?<anything>` opens the app and `/s/web?<anything>` does not. Ship it
   before, or with, the app release that adds `associatedDomains`; until then nothing claims
-  the links.
+  the links. *Shipped 2026-11-11, before the app; see "Where Phase B stands".*
 - **A hand-typed `/s?…` is redirected by CloudFront to `/s/?…`.** Neither platform opens an
   app from a redirect, so that link opens in the browser, which is the safe failure. The app
   and the widget only ever write `/s/?`.
