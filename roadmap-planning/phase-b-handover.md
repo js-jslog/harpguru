@@ -8,15 +8,16 @@ configured harp face opens live from a QR code.
 pages' first design; the report-back on the marker and the CSP is written. What is left, and
 in what order, is under "Where Phase B stands" in `aws-pathway-findings.md`. Where this
 handover and the roadmap or findings disagree, the later documents are right: `/t/` starts
-with 10 tuning pages, not 51. **Once #182 is merged, `master` holds the current roadmap and
+with 10 tuning pages, not 51. Merging #182 also releases v18.5.0 to open testing. **Once
+#182 is merged, `master` holds the current roadmap and
 findings**, and "the feature branch" below means `master`: findings go on a branch off it and
 merge back, and harpguru-cloud reads them there.
 
 ## Where you are
 
-You are in the `harpguru` app container, where this repo's pre-push hook runs. The branch
-`178-build-the-harp-face-widget` is ahead of `master` and holds the current roadmap and
-findings. Pull before relying on it.
+You are in the `harpguru` app container, where this repo's pre-push hook runs. Before #182
+merged, the branch `178-build-the-harp-face-widget` held the current roadmap and findings;
+since then `master` does. Pull before relying on it.
 
 **`harpguru-cloud` is public: `https://github.com/js-jslog/harpguru-cloud`, on `master`.**
 Read it for reference. Clone it read-only if that helps, but don't push to it: changes on the
@@ -180,9 +181,8 @@ QR codes get printed, so shared URLs are a permanent contract.
 
 ## Report back to harpguru-cloud
 
-Write these in `roadmap-planning/aws-pathway-findings.md` on
-`178-build-the-harp-face-widget`, which is where the harpguru-cloud side reads them, and
-tell the user:
+Write these in `roadmap-planning/aws-pathway-findings.md` on a branch off `master`, merged
+back to `master`, which is where the harpguru-cloud side reads them, and tell the user:
 
 - the marker's form and name: this unblocks #4;
 - anything the widget needs beyond the CSP above;

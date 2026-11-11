@@ -195,7 +195,7 @@ that export is a prerequisite task, not a detail. *Done 2026-11-09: `StandaloneH
 
 **And the components are coupled to app-wide state.** `HarpCell` reads directly from the
 zustand store (`useHarpGuruStore((state) => state.activeDisplayMode)`), and that store is a
-single object of 26 fields covering everything the app does — quiz degrees, page number,
+single object of 26 fields (at the time) covering everything the app does — quiz degrees, page number,
 fragmentation, column bounds, layout facts, size schemes. Rendering one cell therefore
 requires a fully populated store, not a set of props.
 
@@ -205,7 +205,7 @@ harp face as one composed component.** The evidence is in the findings doc; the 
 - **Drive the whole store.** Create a store instance, set the fixed tuning, expose only the
   controls the page offers, and leave the quiz and paging state at defaults where it is simply never
   read. The app already runs two independent stores side by side, the harp face reads only
-  13 of the store's 26 fields, and `CallbackOnSourceGlobalProps` already derives all of them
+  13 of the store's 26 fields (at the time), and `CallbackOnSourceGlobalProps` already derives all of them
   from `activeHarpStrata`.
 - **Not props.** Only 13 files in the tree touch the store — but prop-drilling those fields
   would thread props through all 49. The refactor stays rejected on that arithmetic. The
@@ -346,7 +346,7 @@ Ships: harpguru.com serving a real site over HTTPS.
 - Route 53 hosted zone for harpguru.com, then repoint the nameservers at Heart Internet.
   **Delegate, do not transfer** — registration can stay where it is. The domain is parked on
   `79.170.40.4` with no HTTPS, so no website can break. **Mail is live, though:**
-  `contact@harpguru.com` forwards through Heart, so its `MX` and `mail` records go into the
+  the domain's public contact mailbox forwards through Heart, so its `MX` and `mail` records go into the
   new zone before the nameservers move. See the findings doc.
 - ACM certificate **in us-east-1** — a CloudFront requirement regardless of where
   everything else lives.
@@ -399,14 +399,16 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
   Hohner will not host a buy-the-app call to action on their own product page.
 - **The pages' first design, usability before styling** (settled 2026-11-10; see "What should
   the pages look like?"). Every page is drawn at desktop and phone size on the design canvas,
-  <https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal", boards ending `B`:
+  <https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal", boards ending `B` (a
+  private claude.ai artifact, read with the Artifact tool). *All of it done 2026-11-10 and
+  2026-11-11, and released with v18.5.0; see "Where Phase B stands" in the findings doc.*
   - `/t/` as a **field guide** to its tuning: a sentence on what the tuning is, each preset
     with a line on what that pozition is for, the home note for the chosen pozition (where
     on the harp the song key sits), and a short key to reading the harp face. The text for
     the 10 tunings is written and checked (2026-11-10, in `tuning-presets.ts`), and the home
     holes are read from the reeds. The key to reading the harp face is drafted on the phone
     board (accepted 2026-11-10): one line above the face, with the face's own column labels,
-    and the full key in a collapsed "How to read the harp" below it.
+    and the full key in a collapsed "How to read the harp" below it. *Done.*
   - **On a phone, the harp face stands upright**: a row per hole, draw notes on one side of
     the hole number and blow notes on the other, bends beyond them. Sideways, a 10-hole face
     is too small to read at phone width. *Done 2026-11-10: the face is turned, not laid out
@@ -414,18 +416,20 @@ In this repo (a new `apps/` workspace — see "Where the new code goes"):
   - **Choosing another tuning** from a drawer, from the left on a desktop and from the bottom
     on a phone, grouped as the app's tuning menu groups them. Each entry is a link to
     `/t/<slug>`, carrying the display mode, so every tuning page keeps its own head, links
-    to the others for crawlers, and works with back and new tabs.
+    to the others for crawlers, and works with back and new tabs. *Done.*
   - A one-line note that the page is deliberately simple and the app has every key,
-    pozition and scale, on `/t/` and `/s/` but not in embeds. Wording to be settled.
+    pozition and scale, on `/t/` and `/s/` but not in embeds. *Done, in the boards'
+    wording: "Deliberately simple. Every key, position and scale is in the app."*
   - Chosen controls carry a border as well as the pink fill, which alone is too faint
-    against the page.
+    against the page. *Done.*
   - **The legend's degrees are bordered, with gaps between them, and each clips its own
     slide.** Unselected degrees were white on white, so the legend read as ill-defined. And
     an unselected degree's colour slides one legend-width to the left, which only hides it
     because the app's legend sits against the screen edge; a standalone harp face's legend
     sits beside the page's own content. Each row now clips its own fill, so the slide
     stays in its frame wherever the legend is. The animation is unchanged. The legend is
-    `harpguru-core`'s, so the app gets the same look in its next release.
+    `harpguru-core`'s, so the app gets the same look in its next release. *Done, in the
+    app from v18.5.0.*
 - Generate a canonical page for each of the 51 built-in tunings (narrowed 2026-11-09 to 10 of the
   most played, to start; see "What does `/t/` let you change?"). **One page per tuning, not
   per permutation** — 51 tunings × 12 keys × 12 pozitions × 23 scales is over 160,000
@@ -473,7 +477,8 @@ Ships: a harp face with more impact in less space, in the widget and the app ali
 Not before Phase B is live; possibly not until the rest of the plan is done. Phase B's pages
 are built usable first and dramatic later, so nothing here blocks a working website. Added
 2026-11-10, with the user; the starting points are on the design canvas
-(<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, "Three bolder directions").
+(<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, "Three bolder directions"; a private
+claude.ai artifact, read with the Artifact tool).
 
 - **Bends and overblows as smaller, circular cells**, wherever the harp face is drawn,
   distinct at a glance from the blow and draw notes. Larger than the canvas's first

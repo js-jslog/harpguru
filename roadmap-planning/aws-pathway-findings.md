@@ -130,8 +130,8 @@ Worse, the components are not prop-driven. `HarpCell` reads app-wide state direc
 const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
 ```
 
-`HarpGuruState` is a single zustand object of **26 fields** (two more since 2026-11-09:
-`frameDimensions` and `isCellInteractive`, for `StandaloneHarpFace`) — `activeHarpStrata`,
+`HarpGuruState` is a single zustand object of **26 fields** (29 since 2026-11-10, with
+`frameDimensions`, `isCellInteractive` and `isUpright` for `StandaloneHarpFace`) — `activeHarpStrata`,
 `activeQuizDegrees`, `fragmentHarpFaceByOctaves`, `columnBounds`, `layoutFacts`,
 `dynamicSizes`, page and display modes, and so on. Rendering one cell therefore needs a
 fully populated store, not a set of props.
@@ -208,36 +208,64 @@ first design. What is left, in order:
    2026-11-10 (#183), and `178-widget-first-design` on 2026-11-11 (#184).
    - The first design is the roadmap's Phase B "The pages' first design", as drawn on the
      design canvas (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal",
-     boards ending `B`; `R` is Restyle). Built and checked under the CSP: the legend's
+     boards ending `B`; `R` is Restyle). It is a private claude.ai artifact: a session reads
+     it with its Artifact tool, under the user's account. Built and checked under the CSP: the legend's
      bordered rows in `harpguru-core`; borders on chosen controls; the field-guide `/t/`,
      two columns from 1100px and one scrolling column below, with each key to reading the
-     harp face in `reading-key.ts`; the tuning drawer; the one-line note on `/t/` and
-     `/s/`, worded as the boards draft it; and the upright harp face (below).
+     harp face in `reading-key.ts` and home holes from `home-holes.ts`; the tuning drawer,
+     `tuning-drawer.tsx`; the one-line note on `/t/` and `/s/`, worded as the boards draft
+     it; and the upright harp face (below).
    - A test build of the feature branch went to internal testers on 2026-11-11, through
      `test-build.yml`, for the user to see the legend in the app. Its verdict is the
      user's to report.
-2. **Merge #182, `178-build-the-harp-face-widget` into `master`.** That push runs
-   `deploy-widget.yml`, the first deploy. A session here can't see GitHub Actions (`gh`
-   isn't installed), so **ask the user for the run's result and date**, then record them
-   in this section. On success, check the live pages: `https://harpguru.com/t/major-diatonic`,
-   `/s/?t=major-diatonic&k=C&p=2&s=blues` and `/e/?…`. On "Not authorized to perform
-   sts:AssumeRoleWithWebIdentity", see the handover's deploy workflow section.
-   - **No `/cut-release` with it**, decided 2026-11-11 with the user: the deploy doesn't
-     depend on a version, and an app release is cut when the app changes below are ready.
-     Until then `harpparts`, `harpstrata`, `harpguru-core` and the widget keep their
-     Unreleased CHANGELOG entries.
+2. **Merge #182, `178-build-the-harp-face-widget` into `master`.** That push runs two
+   workflows: `deploy-widget.yml`, the first deploy, and `release.yml`, since the branch
+   carries a release cut.
+   - **A release goes with it: v18.5.0**, cut on the branch 2026-11-11 with the user,
+     reversing that day's earlier decision, so that later test builds carry a new version.
+     CI tags `v18.5.0`, builds on EAS and submits to open testing. The release carries
+     `harpguru-core`'s bordered legend and the web resize fix, and no `associatedDomains`.
+     The widget's first release is 1.0.0, not the 0.2.0 its bump rule gives, because this
+     is where it goes live.
+   - From this repo's container, a session can't see GitHub Actions (`gh` isn't installed):
+     **ask the user for both runs' results and dates**, the deploy and the release (the
+     `v18.5.0` tag, the EAS build and its submission), and record them in this section. On
+     "Not authorized to perform sts:AssumeRoleWithWebIdentity", see the handover's deploy
+     workflow section.
    - The `/t/` presets go live as they are. A pozition removed later only sends an early
-     bookmark to the tuning's first preset, so the live check is worth more than the draft
-     status.
-3. **Report to harpguru-cloud, through the user:** the first deploy's result and date;
-   that the widget needs nothing beyond the live CSP; and that #4 is one AASA change, `/s/*`
-   to the exact path `{ "/": "/s/" }` (the marker section below), to ship before or with
-   the app release.
-4. **The app changes (step 7), none started:** the share button and its QR code;
-   `associatedDomains` and the Android intent filters; the picker offering harp face 1, harp
-   face 2 or the browser; checking every incoming URL. `writeSetupUrl` and `readSetupUrl`
-   are in `harpstrata` for them and not yet used by the app. Done on a branch off `master`,
-   then `/cut-release`, and merging that release to `master` sends it to open testing.
+     bookmark to the tuning's first preset, so the live check is worth more than further
+     review.
+3. **Next session: harpguru-cloud's container**, which has AWS access. Pull `master` in its
+   `/harpguru` checkout, then:
+   - verify the first deploy: the role assumed through the trust policy's exact subject, the
+     pages bucket's objects (`w/…`, `s/index.html`, `e/index.html` and the 10 tuning pages)
+     with their `Cache-Control`, the
+     invalidation, and the live pages, `https://harpguru.com/t/major-diatonic`,
+     `/s/?t=major-diatonic&k=C&p=2&s=blues`, `/s/web?…` and `/e/?…`, under the live CSP,
+     with a slug without a page returning the site's 404;
+   - confirm the request logs record those views;
+   - ship #4, the AASA's `/s/*` becoming the exact path `{ "/": "/s/" }` (the marker
+     section below). Nothing claims the links yet, so it can ship now;
+   - confirm `assetlinks.json` carries the Play app-signing SHA-256, which step 7 relies on;
+   - record the results in this section, on a branch off `master` in this repo, as the
+     roadmap's "How the two connect" describes.
+4. **The app changes (step 7), back in this repo, none started.** On a branch off `master`:
+   - the share button, which writes the setup on screen with `writeSetupUrl` and draws its
+     QR code on the device. A QR library is a new dependency, not yet chosen;
+   - `associatedDomains` with `applinks:harpguru.com`, and an Android intent filter with
+     `android:autoVerify="true"` matching `android:path="/s/"` exactly, so the marker
+     `/s/web` falls outside both;
+   - the picker that opens a link, offering harp face 1, harp face 2 or the browser, built
+     to list any number (the roadmap's open question on more than two harp faces). "Open in
+     the browser" opens the same parameters at `/s/web`;
+   - checking every incoming URL with `readSetupUrl`, which refuses `/s/web`. Whether the
+     app's own paste or scan should accept `/s/web` is still to decide;
+   - the share button and the picker are app UI in `harpguru-core`, so it takes a version
+     bump.
+
+   It needs #4 live before deep links are tested on a device, and a device test needs the
+   user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or later), and
+   merging that release to `master` sends it to open testing.
 
 Also open: **Harmonic minor's draw 6 and 10** want checking against the maker's layout
 before it gets a page; a fix there is a `harpparts` change, and reaches the app too.
@@ -377,6 +405,9 @@ page exists to make a tuning understood, not to configure one, so:
   is the cheap mistake.
 
 ### Phase B: the upright harp face, built 2026-11-10
+
+**When:** the widget stands the face upright below 700px wide on a window taller than wide
+(`src/chrome/orientation.ts`), and always on a `/t/` page below 700px, which scrolls.
 
 **The face is laid out as ever and turned, not laid out again.** `StandaloneHarpFace` with
 `isUpright` lays the face out in its box with the sides swapped, then turns that box a
@@ -675,7 +706,7 @@ fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
   condition**, so any rule in any account could publish; an `aws:SourceArn` condition on the
   rule's ARN, added by property override, closes it. **`EmailSubscription` builds its
   construct ID from the address**, which then shows in every diff; a plain `Subscription` avoids it.
-- **SNS emails from `no-reply@sns.amazonaws.com` land in Yahoo's spam**: the confirmations,
+- **SNS emails from SNS's no-reply sender land in Yahoo's spam**: the confirmations,
   and a sample finding's email after earlier ones were marked not spam in a third-party mail
   app. Marked not spam in Yahoo's own web client, the next one reached the inbox.
 - **`create-sample-findings` reaches EventBridge like a real finding**: one sample's email
@@ -920,7 +951,7 @@ same two-day delegation TTL.
 is a fixed value in `HarpguruDns`, and a move on Heart's side would break forwarding without
 any signal. `harpguru-cloud`'s step 6a guards it with a weekly SES canary, deployed
 2026-10-27: every Wednesday at 09:00 London time, one message straight to the forwarding
-address and one to `contact@`. The first pair, on 2026-10-28, both arrived, which also showed
+address and one to the contact mailbox. The first pair, on 2026-10-28, both arrived, which also showed
 that EventBridge Scheduler can call SES v2's `sendEmail` as a universal target, with an IAM
 policy granting `ses:SendEmail`, not the `sesv2:` action CDK's universal target assumes by
 default. The SES domain identity's DKIM showed `SUCCESS` within the deploy's two and a half
@@ -931,7 +962,7 @@ minutes, once the public DNS answered from Route 53.
 needing Heart's nameservers. The nameservers page warns: "Changing your domain's nameservers to
 offsite nameservers will prevent features such as web forwarding and web hosting from
 working." Mail forwarding isn't named, but "such as" isn't a complete list, so only the test
-after the switch settles it. A baseline message to `contact@`, sent from another address before
+after the switch settles it. A baseline message to the contact mailbox, sent from another address before
 the switch, arrived.
 
 **The switch, made 2026-10-27 at about 21:00 UTC, propagated in minutes, not days.** Within
@@ -975,15 +1006,15 @@ apex and `www` both `A 79.170.40.4`, and HTTPS still fails to connect. Registrat
 **The zone has a mail record the earlier check did not mention**: `MX 10 mail.harpguru.com`,
 which resolves to `79.170.44.72`, Heart's shared mail hosting. There is also an
 `ftp.harpguru.com` at `79.170.44.11`. Delegating to Route 53 serves only what the new zone
-holds, so **whether any `@harpguru.com` mailbox is in use has to be answered before the
+holds, so **whether any harpguru.com mailbox is in use has to be answered before the
 nameservers move**. If one is, its `MX` goes into the hosted zone first. If none is, the
 records are left behind deliberately. The "nothing live depends on it" line below held for
 the web and was never checked for mail.
 
-**Answered 2026-09-26: mail is live.** Customers are told to write to `contact@harpguru.com`,
+**Answered 2026-09-26: mail is live.** Customers are told to write to the domain's public contact mailbox,
 and Heart forwards it to a personal mailbox. So the Route 53 zone must hold
 `MX 10 mail.harpguru.com` and `mail.harpguru.com A 79.170.44.72` **before** the nameservers
-move. Send a test message to `contact@` before and after the switch, and confirm that Heart's
+move. Send a test message to the contact mailbox before and after the switch, and confirm that Heart's
 forwarding does not depend on Heart serving the zone.
 
 No `CAA` record means any CA may issue, so ACM needs nothing extra. If a `CAA` record is ever
