@@ -13,7 +13,21 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.3.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...master) - yyyy-mm-dd
+
+## [v5.4.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0) - 2026-11-11
+
+### Added
+
+- MINOR: `deploy-widget.yml`, which deploys harpguru.com's pages from `master`
+  on any push that can change them. It builds the widget without credentials,
+  then, in the `harpguru.com` environment, assumes the pages role over OIDC,
+  syncs the pages bucket in three passes so no page ever names a missing file,
+  and invalidates the HTML paths
+
+### Changed
+
+- MINOR: the root `test` script runs the widget's tests too
 
 ## [v5.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.3.0) - 2026-09-22
 
@@ -163,7 +177,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.3.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD)
+- [v5.4.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0)
 - [v5.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.3.0)
 - [v5.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.2.0)
 - [v5.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.1.0)

@@ -13,7 +13,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.4.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD) - yyyy-mm-dd
+
+## [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0) - 2026-11-11
 
 ### Added
 
@@ -28,3 +30,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
   its own key on `/t/`. The promotional pages say they are deliberately
   simple
 - MINOR: the web export laid out as the pages bucket's object keys
+
+## Github release list
+
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD)
+- [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0)

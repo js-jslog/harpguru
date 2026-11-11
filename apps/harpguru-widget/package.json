@@ -1,6 +1,6 @@
 {
   "name": "harpguru-widget",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "The public harp face: harpguru.com's setup links, embeds and tuning pages",
   "main": "index.ts",
   "scripts": {
