@@ -13,7 +13,16 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.4.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD) - yyyy-mm-dd
+
+## [v10.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0) - 2026-11-11
+
+### Added
+
+- MINOR: frozen URL slugs for every tuning and scale, with `getTuningSlug`,
+  `getTuningIdBySlug`, `getScaleSlug` and `getScaleIdBySlug`
+- MINOR: `getScaleByDegreeIds` takes an optional `ScaleCategory`, to look for
+  only a scale or only a chord
 
 ## [v10.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.4.0) - 2026-09-23
 
@@ -276,7 +285,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.4.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD)
+- [v10.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0)
 - [v10.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.4.0)
 - [v10.1.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0)
 - [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0)

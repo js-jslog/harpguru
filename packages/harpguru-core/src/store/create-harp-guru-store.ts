@@ -18,11 +18,13 @@ import type {
   DisplayModes,
   ExperienceModes,
   FlushChannels,
+  FrameDimensions,
   LayoutFacts,
   PageNumber,
   SizeScheme,
 } from '../types'
 import { getInitialGlobalState } from '../components/harp-guru/utils'
+import type { InitialSetup } from '../components/harp-guru/utils'
 
 export type HarpGuruState = {
   readonly activeHarpStrata: HarpStrata
@@ -51,6 +53,9 @@ export type HarpGuruState = {
   readonly layoutFacts: HarpFaceFacts<LayoutFacts>
   readonly dynamicSizes: SizeScheme
   readonly staticSizes: SizeScheme
+  readonly frameDimensions: FrameDimensions | undefined
+  readonly isCellInteractive: boolean
+  readonly isUpright: boolean
 }
 
 export type HarpGuruActions = {
@@ -86,12 +91,18 @@ export type HarpGuruActions = {
   readonly setLayoutFacts: (value: HarpFaceFacts<LayoutFacts>) => void
   readonly setDynamicSizes: (value: SizeScheme) => void
   readonly setStaticSizes: (value: SizeScheme) => void
+  readonly setFrameDimensions: (value: FrameDimensions | undefined) => void
+  readonly setIsCellInteractive: (value: boolean) => void
+  readonly setIsUpright: (value: boolean) => void
 }
 
 export type HarpGuruStore = HarpGuruState & HarpGuruActions
 
-export const createHarpGuruStore = (pageNumber: PageNumber) => {
-  const initialState = getInitialGlobalState(pageNumber)
+export const createHarpGuruStore = (
+  pageNumber: PageNumber,
+  initialSetup?: InitialSetup
+) => {
+  const initialState = getInitialGlobalState(pageNumber, initialSetup)
 
   return createStore<HarpGuruStore>()((set) => ({
     ...initialState,
@@ -125,6 +136,9 @@ export const createHarpGuruStore = (pageNumber: PageNumber) => {
     setLayoutFacts: (value) => set({ layoutFacts: value }),
     setDynamicSizes: (value) => set({ dynamicSizes: value }),
     setStaticSizes: (value) => set({ staticSizes: value }),
+    setFrameDimensions: (value) => set({ frameDimensions: value }),
+    setIsCellInteractive: (value) => set({ isCellInteractive: value }),
+    setIsUpright: (value) => set({ isUpright: value }),
   }))
 }
 

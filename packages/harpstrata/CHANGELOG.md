@@ -13,7 +13,20 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v13.0.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD) - yyyy-mm-dd
+
+## [v11.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0) - 2026-11-11
+
+### Added
+
+- MINOR: the setup URL format harpguru.com's pages and the app share, with
+  `readSetupQuery`, `writeSetupQuery`, `readSetupUrl`, `writeSetupUrl`,
+  `defaultSetup`, `siteOrigin` and the `Setup` type. `/s/web` writes the
+  open-in-browser twin of a setup link. The per-key readers and writers,
+  `readSetupParams`, `readPozitionParam`, `writePozitionParam` and
+  `readDisplayModeParam`, let another page read the same keys by the same rules
+- MINOR: `getUnbentDegreeIds`, the degrees a tuning plays in a pozition without
+  bending
 
 ## [v11.1.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0) - 2023-01-05
 
@@ -237,7 +250,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v13.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD)
+- [v11.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0)
 - [v11.1.0](https://github.com/js-jslog/harpguru/releases/tag/v13.0.0)
 - [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v11.0.0)
 - [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v10.0.0)

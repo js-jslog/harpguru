@@ -4,5 +4,4 @@ Planning documentation for the AWS pathway: a cloud backend and web surfaces for
 
 - [ AWS pathway roadmap ](roadmap.md)
 - [ AWS pathway technical findings ](aws-pathway-findings.md)
-- [ harpguru-cloud orientation ](harpguru-cloud-primer.md) — seed copy, to be moved into the
-  fork when it is created
+- [ Phase B handover from harpguru-cloud ](phase-b-handover.md)

@@ -1,0 +1,115 @@
+name: Deploy widget
+
+# Builds the widget and uploads it to harpguru.com's pages bucket: /s/, /e/,
+# /t/<tuning> and the bundle under /w/. The bucket, the distribution and the
+# role this assumes are harpguru-cloud's; see "The deploy workflow" in
+# roadmap-planning/phase-b-handover.md and "Phase B step 2 deployed" in
+# roadmap-planning/aws-pathway-findings.md.
+#
+# A deploy follows any change on master that can change a page. The release
+# workflow reacts to expo.version and drives the stores; the pages have no
+# version of their own and nothing to wait for, so they go out as soon as they
+# change.
+on:
+  push:
+    branches: [master]
+    paths:
+      - apps/harpguru-widget/**
+      - packages/**
+      - yarn.lock
+      - .github/workflows/deploy-widget.yml
+  # For a first run, and for redeploying without a change. The environment
+  # accepts deployments from master only, so dispatching from a branch fails at
+  # the deploy job, by design.
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-widget
+  cancel-in-progress: false
+
+jobs:
+  # Built without AWS credentials: nothing that runs yarn install or the build
+  # needs them, so nothing it pulls in can reach them.
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: corepack enable && corepack prepare yarn@1.22.22 --activate
+      - run: yarn install --frozen-lockfile
+      - run: yarn workspace harpguru-widget run export
+        env:
+          CI: 1
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: apps/harpguru-widget/site
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # The role trusts only this repository's jobs in this environment, matched
+    # exactly: repo:js-jslog/harpguru:environment:harpguru.com. A refusal with
+    # "Not authorized to perform sts:AssumeRoleWithWebIdentity" means the token's
+    # subject differs, so check this name first.
+    environment: harpguru.com
+    permissions:
+      id-token: write
+      contents: read
+    timeout-minutes: 15
+    env:
+      BUCKET: ${{ vars.AWS_PAGES_BUCKET }}
+      DISTRIBUTION_ID: ${{ vars.AWS_DISTRIBUTION_ID }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: site
+          path: site
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_PAGES_DEPLOY_ROLE_ARN }}
+          aws-region: eu-west-2
+
+      # Three passes, so no page is ever served that names a bundle file which
+      # isn't there yet, or has just been deleted. The role may list, put and
+      # delete, and nothing else; sync needs no more.
+      #
+      # 1. The bundle. Its names carry a content hash, so a file never changes
+      #    once uploaded and can be cached for a year. sync compares times, and
+      #    a fresh build is always newer, so unchanged files go up again too:
+      #    the same bytes, so harmless.
+      - name: Upload the bundle
+        run: >
+          aws s3 sync site "s3://$BUCKET" --no-progress
+          --exclude '*.html'
+          --cache-control 'public, max-age=31536000, immutable'
+
+      # 2. The pages, which name the new bundle. no-cache: browsers and
+      #    CloudFront check back before reusing one, so a deploy shows at once.
+      #    --delete here removes only HTML: an excluded file is never deleted.
+      - name: Upload the pages
+        run: >
+          aws s3 sync site "s3://$BUCKET" --no-progress --delete
+          --exclude '*' --include '*.html'
+          --cache-control 'no-cache'
+
+      - name: Invalidate the pages
+        run: >
+          aws cloudfront create-invalidation
+          --distribution-id "$DISTRIBUTION_ID"
+          --paths '/s/*' '/e/*' '/t/*'
+
+      # 3. Only now, the bundle files no page names any more.
+      - name: Remove the old bundle
+        run: >
+          aws s3 sync site "s3://$BUCKET" --no-progress --delete
+          --exclude '*.html'
+          --cache-control 'public, max-age=31536000, immutable'

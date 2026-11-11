@@ -34,6 +34,12 @@ export {
   reversePreserveOrigin,
 } from './access-parts'
 export { getScaleByDegreeIds, mapHarpFaceFacts } from './utils'
+export {
+  getTuningSlug,
+  getTuningIdBySlug,
+  getScaleSlug,
+  getScaleIdBySlug,
+} from './slugs'
 
 export type {
   HarpFaceFacts,

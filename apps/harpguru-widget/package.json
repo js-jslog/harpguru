@@ -1,0 +1,40 @@
+{
+  "name": "harpguru-widget",
+  "version": "1.0.0",
+  "description": "The public harp face: harpguru.com's setup links, embeds and tuning pages",
+  "main": "index.ts",
+  "scripts": {
+    "web": "expo start --web",
+    "export": "expo export --platform web --output-dir dist && node --import ./scripts/ts-hooks.mjs --no-warnings scripts/lay-out-pages.ts dist site",
+    "test": "jest",
+    "tsc": "tsc",
+    "lint": "eslint --ext .ts,.tsx ."
+  },
+  "jest": {
+    "preset": "jest-expo/web"
+  },
+  "dependencies": {
+    "expo": "~57.0.16",
+    "harpcovariance": "^8.0.0",
+    "harpguru-core": "^13.0.0",
+    "harpparts": "^10.0.0",
+    "harpstrata": "^11.0.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.2",
+    "react-native-gesture-handler": "~2.32.0",
+    "react-native-reanimated": "4.5.1",
+    "react-native-web": "^0.21.0",
+    "react-native-worklets": "0.10.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-typescript": "^7.28.5",
+    "@types/jest": "^29.5.12",
+    "@types/react": "~19.2.4",
+    "jest": "^29.2.1",
+    "jest-expo": "~57.0.4",
+    "typescript": "~5.9.0"
+  },
+  "private": true
+}

@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Harp Guru",
+    "slug": "harpguru-widget",
+    "platforms": ["web"],
+    "web": {
+      "output": "single",
+      "bundler": "metro"
+    },
+    "experiments": {
+      "baseUrl": "/w"
+    }
+  }
+}

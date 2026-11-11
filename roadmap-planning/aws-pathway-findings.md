@@ -69,7 +69,7 @@ already written.
 
 ### The one app-side refactor
 
-`id` is typed `TuningIds` — a string enum of the 47 built-in tunings
+`id` is typed `TuningIds` — a string enum of the 51 built-in tunings
 (`MajorDiatonic = 'Major diatonic'`, and so on). A user-authored tuning has no enum member,
 so that identifier must widen before custom tunings can load.
 
@@ -84,9 +84,9 @@ transpiled by the consumer's babel, with no build step.
 | Package          | Role                                                                                     | Public API                                                   |
 | ---------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | `harpparts`      | Foundational concepts: pitches, degrees, pozitions, scales, tunings, valvings, apparatus | many; see its README                                         |
-| `harpstrata`     | Composes a viewable harp                                                                 | `getHarpStrata`, `getPropsForHarpStrata`                     |
+| `harpstrata`     | Composes a viewable harp; since 2026-11-09 also the setup URL format and unbent degrees  | `getHarpStrata`, `getPropsForHarpStrata`, `getUnbentDegreeIds`, the `setup-url` readers and writers |
 | `harpcovariance` | The key / pozition / song-key relationship                                               | `getCovariantSet`, `getCovarianceSeries`, `CovariantMembers` |
-| `harpguru-core`  | The React Native UI                                                                      | `HarpGuru`                                                   |
+| `harpguru-core`  | The React Native UI                                                                      | `HarpGuru`; `harpguru-core/standalone`: `StandaloneHarpFace`, `getColors` |
 
 `apps/harpguru-expo-boilerplate` is a thin Expo shell: `registerRootComponent(App)` where
 `App` renders `<HarpGuru />`. Note the existing doc explaining why `react-native-reanimated`
@@ -120,13 +120,18 @@ export { HarpGuru } from './harp-guru'
 cannot reuse the harp face until `harpguru-core` exports it**, so that export is a
 prerequisite task rather than an incidental one.
 
+*Done 2026-11-09:* `harpguru-core` has a second entry, `harpguru-core/standalone`, carrying
+`StandaloneHarpFace` and `getColors` without the app. The main entry still exports only
+`HarpGuru`. The setup URL format is in `harpstrata`, which needs no React Native.
+
 Worse, the components are not prop-driven. `HarpCell` reads app-wide state directly:
 
 ```ts
 const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
 ```
 
-`HarpGuruState` is a single zustand object of **27 fields** — `activeHarpStrata`,
+`HarpGuruState` is a single zustand object of **26 fields** (29 since 2026-11-10, with
+`frameDimensions`, `isCellInteractive` and `isUpright` for `StandaloneHarpFace`) — `activeHarpStrata`,
 `activeQuizDegrees`, `fragmentHarpFaceByOctaves`, `columnBounds`, `layoutFacts`,
 `dynamicSizes`, page and display modes, and so on. Rendering one cell therefore needs a
 fully populated store, not a set of props.
@@ -160,6 +165,9 @@ workspace automatically. Root `test` does **not** — it enumerates workspaces b
 A new `apps/harpguru-widget` with tests will be silently skipped in CI unless that line is
 edited. Note also that the current list contains no `apps/*` entry at all.
 
+*Done 2026-11-09:* the line now ends `&& yarn workspace harpguru-widget run test`. The
+convention stands for the next workspace.
+
 **A husky `pre-push` hook runs `yarn lint`, `yarn tsc` and `yarn test`.** So the gap above
 is live at push time: `lint` and `tsc` will cover a new workspace, `test` will quietly not.
 See `docs/git-hooks.md`.
@@ -187,6 +195,257 @@ new workspace needs both, or it will be linted inconsistently.
 ---
 
 ## Verified findings
+
+### Phase B: the widget built, and checked under the live CSP, 2026-11-09
+
+`apps/harpguru-widget`, built on `178-build-the-harp-face-widget`, which merges to `master`
+as #182. The deploy workflow runs from `master` only, so its first run follows that merge.
+
+**Where Phase B stands, 2026-11-11.** Handover steps 1 to 6 are built, and so is the pages'
+first design. What is left, in order:
+
+1. **Done.** `178-widget-shared-logic` merged into `178-build-the-harp-face-widget` on
+   2026-11-10 (#183), and `178-widget-first-design` on 2026-11-11 (#184).
+   - The first design is the roadmap's Phase B "The pages' first design", as drawn on the
+     design canvas (<https://claude.ai/artifact/CnaqHKM1dGhLDvMybpe3Wv>, page "proposal",
+     boards ending `B`; `R` is Restyle). It is a private claude.ai artifact: a session reads
+     it with its Artifact tool, under the user's account. Built and checked under the CSP: the legend's
+     bordered rows in `harpguru-core`; borders on chosen controls; the field-guide `/t/`,
+     two columns from 1100px and one scrolling column below, with each key to reading the
+     harp face in `reading-key.ts` and home holes from `home-holes.ts`; the tuning drawer,
+     `tuning-drawer.tsx`; the one-line note on `/t/` and `/s/`, worded as the boards draft
+     it; and the upright harp face (below).
+   - A test build of the feature branch went to internal testers on 2026-11-11, through
+     `test-build.yml`, for the user to see the legend in the app. Its verdict is the
+     user's to report.
+2. **Merge #182, `178-build-the-harp-face-widget` into `master`.** That push runs two
+   workflows: `deploy-widget.yml`, the first deploy, and `release.yml`, since the branch
+   carries a release cut.
+   - **A release goes with it: v18.5.0**, cut on the branch 2026-11-11 with the user,
+     reversing that day's earlier decision, so that later test builds carry a new version.
+     CI tags `v18.5.0`, builds on EAS and submits to open testing. The release carries
+     `harpguru-core`'s bordered legend and the web resize fix, and no `associatedDomains`.
+     The widget's first release is 1.0.0, not the 0.2.0 its bump rule gives, because this
+     is where it goes live.
+   - From this repo's container, a session can't see GitHub Actions (`gh` isn't installed):
+     **ask the user for both runs' results and dates**, the deploy and the release (the
+     `v18.5.0` tag, the EAS build and its submission), and record them in this section. On
+     "Not authorized to perform sts:AssumeRoleWithWebIdentity", see the handover's deploy
+     workflow section.
+   - The `/t/` presets go live as they are. A pozition removed later only sends an early
+     bookmark to the tuning's first preset, so the live check is worth more than further
+     review.
+3. **Next session: harpguru-cloud's container**, which has AWS access. Pull `master` in its
+   `/harpguru` checkout, then:
+   - verify the first deploy: the role assumed through the trust policy's exact subject, the
+     pages bucket's objects (`w/…`, `s/index.html`, `e/index.html` and the 10 tuning pages)
+     with their `Cache-Control`, the
+     invalidation, and the live pages, `https://harpguru.com/t/major-diatonic`,
+     `/s/?t=major-diatonic&k=C&p=2&s=blues`, `/s/web?…` and `/e/?…`, under the live CSP,
+     with a slug without a page returning the site's 404;
+   - confirm the request logs record those views;
+   - ship #4, the AASA's `/s/*` becoming the exact path `{ "/": "/s/" }` (the marker
+     section below). Nothing claims the links yet, so it can ship now;
+   - confirm `assetlinks.json` carries the Play app-signing SHA-256, which step 7 relies on;
+   - record the results in this section, on a branch off `master` in this repo, as the
+     roadmap's "How the two connect" describes.
+4. **The app changes (step 7), back in this repo, none started.** On a branch off `master`:
+   - the share button, which writes the setup on screen with `writeSetupUrl` and draws its
+     QR code on the device. A QR library is a new dependency, not yet chosen;
+   - `associatedDomains` with `applinks:harpguru.com`, and an Android intent filter with
+     `android:autoVerify="true"` matching `android:path="/s/"` exactly, so the marker
+     `/s/web` falls outside both;
+   - the picker that opens a link, offering harp face 1, harp face 2 or the browser, built
+     to list any number (the roadmap's open question on more than two harp faces). "Open in
+     the browser" opens the same parameters at `/s/web`;
+   - checking every incoming URL with `readSetupUrl`, which refuses `/s/web`. Whether the
+     app's own paste or scan should accept `/s/web` is still to decide;
+   - the share button and the picker are app UI in `harpguru-core`, so it takes a version
+     bump.
+
+   It needs #4 live before deep links are tested on a device, and a device test needs the
+   user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or later), and
+   merging that release to `master` sends it to open testing.
+
+Also open: **Harmonic minor's draw 6 and 10** want checking against the maker's layout
+before it gets a page; a fix there is a `harpparts` change, and reaches the app too.
+
+- **The widget needs nothing beyond the CSP harpguru-cloud serves.** Checked in headless
+  Chromium 158 against the laid-out export, served with the pages' CSP exactly as the
+  handover gives it and with the viewer-request function's path mapping: `/s/`, `/s/web`,
+  `/e/` and three `/t/` pages, at 1280×720, 1024×600, a 390×844 phone held upright and a
+  320×400 sidebar. No CSP violation, no console error. Cell taps toggle on `/s/` and do
+  nothing on `/t/`; a `/t/` preset rewrites the address without a reload; a bad parameter is
+  corrected in place.
+- **Store links and the attribution are plain links**, which a CSP doesn't govern. The pages'
+  icon is the site bucket's `/icon.png`, the one file they use from outside `/w/`.
+- **The bundle is 1.8 MB, 390 KB gzipped, and carries no fonts.** The full app's export is
+  6.2 MB with 4 MB of `@expo/vector-icons` fonts. The widget imports `harpguru-core/standalone`,
+  a second entry that leaves out the app and its menus, because Metro doesn't tree-shake; with
+  nothing importing the icons, Expo emits none. The roadmap's bundle trim needed nothing more.
+- **Expo's `experiments.baseUrl: "/w"` puts the bundle at `/w/_expo/static/js/web/…`**, in
+  the HTML and on disk alike, with `web.output: "single"`. The layout script refuses an export
+  that references anything outside `/w/`.
+- **The object keys are as the contract asks**: `w/…`, `s/index.html`, `e/index.html` and a
+  `t/<slug>/index.html` for each tuning with a page, 10 at first, so 13 objects in all.
+  The handover expected 51 tuning pages; see "what `/t/` offers" for the narrower start. A
+  slug without a page gets the site's 404. Each tuning page names its bare `/t/<slug>` as
+  canonical; the two shells carry `noindex`.
+- **The deploy workflow is `.github/workflows/deploy-widget.yml`.** It runs on a push to
+  `master` that touches the widget, the packages, `yarn.lock` or itself, and on dispatch. It
+  builds without credentials, then deploys in the `harpguru.com` environment. Three passes
+  rather than two: the bundle files, then the pages with `--delete` and the invalidation
+  of `/s/*`, `/e/*` and `/t/*`, then `--delete` for the bundle files no page names any more.
+  That way no page is ever served naming a file that is missing.
+- **Node can run the packages' TypeScript for build scripts, through a hook.** Node 24's type
+  stripping fails on them twice: extensionless relative imports, and types imported without
+  `import type`. `apps/harpguru-widget/scripts/ts-hooks.mjs` resolves the first and puts each
+  `.ts` file through Babel's TypeScript preset for the second. No new dependency.
+
+### Phase B: the open-in-browser marker, decided 2026-11-09 (unblocks harpguru-cloud #4)
+
+**The marker is the path `/s/web`.** A setup link is always `https://harpguru.com/s/?<params>`,
+path exactly `/s/`. When the app's link picker is answered "open in the browser", the app
+opens the same parameters at `https://harpguru.com/s/web?<params>`.
+
+- **Android can't exclude by query parameter on most phones.** `<uri-relative-filter-group
+  android:allow="false">`, which can match a query, is "only supported on Android 15 (API
+  level 35) and higher. They are ignored and have no effect on lower Android versions"
+  (Android's manifest reference, read 2026-11-09). Dynamic App Links, the `assetlinks.json`
+  route with `"exclude": true`, are Android 15+ with Google services too. So a path marker.
+- **No new behaviour is needed.** The app's intent filter, still to be written in Phase B's
+  app changes, will match `android:path="/s/"` exactly, which ignores the query, so `/s/web`
+  falls outside it. CloudFront already maps
+  `/s/<anything>` to `s/index.html`, so `/s/web` serves the same shell, and the page treats
+  both paths alike. In the request logs, `/s/web` also counts the opens the app handed to the
+  browser.
+- **harpguru-cloud's #4 becomes one change to the AASA file:** the `/s/*` component becomes
+  `{ "/": "/s/" }`, an exact path. An AASA `/` pattern ignores the query unless a `?` matcher
+  is given, so `/s/?<anything>` opens the app and `/s/web?<anything>` does not. Ship it
+  before, or with, the app release that adds `associatedDomains`; until then nothing claims
+  the links.
+- **A hand-typed `/s?…` is redirected by CloudFront to `/s/?…`.** Neither platform opens an
+  app from a redirect, so that link opens in the browser, which is the safe failure. The app
+  and the widget only ever write `/s/?`.
+
+### Phase B: the URL format, decided 2026-11-09
+
+One parameter vocabulary for `/s/`, `/s/web`, `/e/` and `/t/<slug>`. QR codes get printed, so
+it can only grow: a key's meaning never changes, and an unknown key is ignored.
+
+| Key | Meaning | Values | Default |
+| --- | --- | --- | --- |
+| `t` | tuning (`/s/`, `/e/`; `/t/` takes it from the path) | a slug from the frozen table in `harpparts` | `major-diatonic` |
+| `k` | harp key | `A Bb B C Db D Eb E F Gb G Ab`; sharps, written `%23`, read as their flats | `C` |
+| `p` | pozition | `1`–`12` | `2` |
+| `d` | active degrees, comma separated | `1 2b 2 3b 3 4 5b 5 6b 6 7b 7`; empty for none | none |
+| `s` | a named scale, expanded to its degrees; ignored when `d` is present | a slug from the frozen scale table | none |
+| `m` | display | `degree`, `pitch` | `degree` |
+| `v` | valving | `half` | not valved |
+
+- **Reading is lenient, writing is canonical.** Values are read case-insensitively. A bad
+  value falls back to that key's default, and the page corrects the address bar with
+  `history.replaceState`. Written URLs put the keys in the order above, always carry `t`,
+  `k`, `p` and `d` on `/s/` and `/e/`, and carry `m` and `v` only when not the default.
+- **A bare `#` ends the query.** `k=F#` is read as `F`, and every key after it is lost, in
+  the browser and in `readSetupUrl` alike. Nothing written ever contains a sharp; only a
+  hand-typed link can, and it gets the wrong key rather than an error.
+- **`readSetupUrl`, for the app, accepts `/s/` only, and refuses `/s/web`.** `/s/web` is the
+  app's own hand-off to the browser. Whether the app's paste or scan should accept it too is
+  for the app changes to decide.
+- **The defaults are permanent too**, since a URL that omits a key means its default.
+- **Tuning slugs are a frozen table, not derived from the names.** `TuningIds` values are
+  display strings that may be reworded; a slug never changes once shipped. Built-in slugs are
+  `[a-z0-9-]+`; any other `t` value is reserved for Phase C's custom tunings.
+- **`ScaleIds` is a numeric enum**, ordered by declaration, so it can't go in a URL either;
+  scales get a frozen slug table of their own.
+- **`d` is why `/s/` accepts any real setup**: a teacher's hand-toggled selection that is no
+  named scale still round-trips.
+- **`/t/` reads only `p` and `m`**, and accepts only its tuning's presets (below). `k` is fixed
+  at `C` for now; a `/t/` URL without `k` means `C`, so adding keys later breaks nothing.
+
+### Phase B: what `/t/` offers, decided 2026-11-09
+
+Narrower than the roadmap's "short list of keys, pozitions, display modes and scales". A tuning
+page exists to make a tuning understood, not to configure one, so:
+
+- **10 tunings have a page at first, not 51:** Major diatonic, Country, Natural minor,
+  Melody Maker, Paddy Richter, Power Bender, Power Draw, Wilde, and the 12- and 16-hole
+  chromatics, among the ones most players own. Harmonic minor waits: its data has A on draw
+  6 and 10 where the maker's layout may have A♭, and a page that might be wrong costs more
+  than a missing one. It gets a page once its reeds are checked. The list is the keys of
+  `tuning-presets.ts`. Setup links and embeds still take any of the 51, and every slug is
+  frozen in `harpparts`, so a page is added with one table entry. Decided 2026-11-09, with
+  the user.
+- **One harp key, C.** In degree display the harp key changes nothing on the face, and in
+  pitch display C is the most readable key. The derived song key is shown as text, in the
+  app menus' words ("Harp key C · 2nd position · Song key G"), not as a control, which keeps covariance off the page.
+- **The control is a list of presets, one per pozition the tuning is designed for**, each
+  carrying its scale: "2nd position · Mixolydian". No independent key, pozition or scale.
+- **A frozen per-tuning table lists the pozitions**, hand-picked, because a 7-note diatonic
+  makes all seven modes across seven pozitions and the data can't say which one a harp was
+  built for.
+- **Each preset's scale is computed** where it can be: take the unbent blow and draw notes in
+  that pozition as degrees, and look for a named scale with exactly those degrees. Run against
+  all 51 tunings on 2026-11-09, it named a scale for 36. The other 15 match none unbent
+  (Country's extra reed, Harmonic minor, Easy diatonic, Blues 2 and 3, Chord, Diminished,
+  Augmented Spanish, the three chromatics and four Trochilus tunings). 14 of them name theirs
+  by hand; Augmented Spanish has no fitting named scale and shows "Unbent notes", which
+  activates its unbent notes as degrees. Of the 10 tunings with a page, Country and the two
+  chromatics name theirs by hand.
+- **The table goes live as it is** (2026-11-11, with the user). Pozitions should only be
+  added from here, since `/t/` URLs carry them, but removing one breaks nothing: its `p`
+  falls back to the tuning's first preset. The pozitions remain judgements about what each
+  harp is built for, not facts in the data.
+- **Each tuning and pozition has a line of text**, kept to what the reeds show or what is
+  settled among players, and each pozition's home holes are read from the reeds, not
+  written. Decided 2026-11-10, with the user.
+- **The display toggle stays**: degree and pitch.
+- **Expected to be settled by use, not by argument.** The lists only grow, so starting narrow
+  is the cheap mistake.
+
+### Phase B: the upright harp face, built 2026-11-10
+
+**When:** the widget stands the face upright below 700px wide on a window taller than wide
+(`src/chrome/orientation.ts`), and always on a `/t/` page below 700px, which scrolls.
+
+**The face is laid out as ever and turned, not laid out again.** `StandaloneHarpFace` with
+`isUpright` lays the face out in its box with the sides swapped, then turns that box a
+quarter clockwise about its centre. Turned that way, the sideways layout becomes the upright
+board's: hole 1 at the top, draw notes left of the hole numbers, blow notes right, and the
+legend along the top. Nothing in the layout, the sizing reducers or the cells changed.
+
+- **Labels turn back.** `RenderedTone` and the hole numbers counter-rotate when the store's
+  `isUpright` is set, and the legend runs in reverse so it still reads from the root.
+- **The face sizes itself to the turned box.** Its `frameDimensions` are the measured box
+  with the sides swapped, so at 390px wide the cells are about twice the size of the
+  sideways face's.
+- **Taps land through the turn.** The browser hit-tests the turned cells, checked in
+  headless Chromium: a tap toggles the cell under the pointer, and completing a scale
+  flashes its name, upright, since the flash sits outside the turned box.
+- **The frame clips.** The scale flash waits beside the face until it shows, and the turned
+  box's unturned layout is wider than the frame; neither widened the page once the frame
+  had `overflow: hidden`. The waiting flash had widened `/s/` sideways before too.
+- **The legend's double labels are tight upright**, about 28px for a degree like C♯/D♭ at
+  390px wide. They read, but only just; the Restyle stage is the place to revisit them.
+
+### The harp face's resize mechanism, re-checked 2026-11-09
+
+**The 2026-09-23 entry below is incomplete.** The discarded `useWindowDimensions()` in
+`harp-guru.tsx` does re-render the tree on a resize, but the cell sizes, `dynamicSizes` and
+`staticSizes`, are store fields, recomputed only inside the effect that follows a change of
+harp strata. A re-render alone leaves them as they were. On a device that never mattered:
+the app is locked to landscape and sizes from the long and short edges, which a rotation
+doesn't change. In a browser it did, twice over: a resize kept the mount-time size, and a
+window taller than wide was sized as though its height were its width.
+
+Fixed in `harpguru-core` for Phase B's composed component, `StandaloneHarpFace`:
+`CallbackOnSourceGlobalProps` recomputes the sizes when the window changes, and on the web
+`getWindowDimensions` takes the horizontal edge as the long one. Both are no-ops on a
+device. `StandaloneHarpFace` goes further and sizes itself to its own box: its `onLayout`
+keeps the measured size in its store's `frameDimensions`, which the size reductions pass to
+`getWindowDimensions`, and nothing is drawn until that first measurement. Each store has its
+own, so several standalone harp faces, or one beside the app's own, size independently.
 
 ### Checked 2026-09-23, against `master` at `bafbd03e`
 
@@ -235,12 +494,14 @@ or rotation, and seven call sites then read the imperative `getWindowDimensions(
 that render. It lives in the one component a widget will not use, so a widget that mounts a
 harp face directly sizes itself once on mount and never responds again. One line to fix,
 invisible until something resizes, and directly in the path of Phase B's iframe-of-unknown-width
-requirement.
+requirement. *Incomplete: see "The harp face's resize mechanism, re-checked 2026-11-09"
+above.*
 
 **The package exports one thing.** `harpguru-core/src/index.ts` is
 `export { HarpGuru } from './components'`. The store's exports are reachable only by deep
 import into `src/store` — which works, because `main` points at raw TypeScript, but is not a
-public surface. Exposing the harp face is a prerequisite task, exactly as the roadmap says.
+public surface. Exposing the harp face is a prerequisite task, exactly as the roadmap says. *Done
+2026-11-09; see "`harpguru-core` exposes nothing but the whole app".*
 
 **`harpparts` now carries 51 tunings, not 47.** #180 added the trochilus tunings after this
 document was written. Pozitions, scales, pitches and degrees are unmoved. Phase B's
@@ -260,7 +521,8 @@ propose publishing these packages; the architecture is arranged so it is unneces
 **Toolchain versions.** Expo SDK 54, React Native 0.81.5, React 19.1.0, Reanimated
 **4.1.1**, gesture-handler 2.28.0, worklets 0.5.1, zustand 5. `react-native-web@0.21` and
 `react-dom@19.1` are already dependencies, and a `"web": "expo start --web"` script already
-exists. `app.json` declares `"platforms": ["ios", "android", "web"]`, app version 16.0.0.
+exists. `app.json` declares `"platforms": ["ios", "android", "web"]`, app version 16.0.0. (By
+2026-10-26 it was 18.4.0, as the roadmap says; the version moves, the rest of this holds.)
 
 **The app builds for web.** This was expected to fail and did not.
 
@@ -298,6 +560,465 @@ scroll handlers, sensors or frame callbacks.
 interactive cell — uses the modern `GestureDetector`, as do `menu-access-open` and
 `menu-access-close`. The legacy `PanGestureHandler` survives only in
 `components/zoom-slide-vertical/`, **which the frozen-scope widget does not include.**
+
+### Step 3 facts, checked 2026-10-14 and 2026-10-20
+
+Established while building `harpguru-cloud`'s step 3, the workload account and its guardrails:
+
+- **An Organizations account's name and email can't be changed through CloudFormation**: the
+  update fails, and so does its rollback. They are not fixed, though. The management account
+  can rename a member account and start an email change through the Account Management API
+  (`aws account put-account-name`, `aws account start-primary-email-update`), once that API's
+  trusted access is on. Checked 2026-10-20 against the CLI's commands. CloudFormation's own
+  resource docs say only the root user can change them, which is out of date.
+- **Up to 10 SCPs can be attached directly to a root, OU or account**, per AWS's Organizations
+  quotas page on 2026-10-14. Older sources, and older memories, say 5.
+- **No CloudFormation resource switches a policy type such as SCPs on.** It is
+  `aws organizations enable-policy-type`, run once, or a custom resource.
+- **Centralised root access is three settings**: trusted access for IAM, root credentials
+  management, and privileged root actions. With it on, new member accounts are created with no
+  root credentials. It is off in this Organization (2026-10-14).
+
+### Step 3 deployed, 2026-10-22
+
+- **Step 3 is live.** SCPs are enabled on the root. The `Workloads` OU carries
+  `FullAWSAccess` and the three `harpguru-*` SCPs. The `harpguru` workload account is
+  `ACTIVE` inside it, and the existing Identity Center login reaches it as
+  `AdministratorAccess`. Account creation took under a minute of stack time.
+- **The region lock works from inside the account.** `sqs:ListQueues` in `us-west-2` is
+  refused with "explicit deny in a service control policy"; `eu-west-2` calls succeed.
+- **CDK's `defaultCrossStackReferences: "weak"`, the `cdk init` default since 2.254.0, applies
+  within a region too**, not only between regions. A same-region reference is a plain output
+  read with `Fn::GetStackOutput`, with no export and no lock on the producer. CDK 2.271.0.
+- **`cdk deploy` run without a terminal can't ask for approval of IAM changes.** It makes
+  the change set, then gives up. For a new, termination-protected stack, it leaves an empty
+  `REVIEW_IN_PROGRESS` stack behind with protection already on, so it can't clean up
+  after itself. Run interactively, or read the diff and pass `--require-approval never`.
+- **The `project` cost allocation tag was activated on 2026-10-22**, in the management account.
+  Cost Explorer already listed the key; the budget has carried it since 2026-10-13, so it may
+  have been available since then. Costs before activation were not backfilled.
+- **The workload account is CDK-bootstrapped in `eu-west-2` and `us-east-1`** (2026-10-22,
+  bootstrap version 32, the same as the management account's). The SCPs did not get in the
+  way. `cdk bootstrap` does not apply the app's tags, so they were passed with `--tags`.
+- **Resource import, tried on Identity Center resources (2026-10-22).** `cdk import` with
+  `--resource-mapping-inline` adopted a console-made permission set and account assignment into
+  a new stack, with no prompts. Four things were not as assumed:
+  - **An import does change something.** CloudFormation added its `aws:cloudformation:*` tags
+    to the permission set. For the assignment it declined, saying tags would force a
+    replacement. It still never applies the template's own properties, and drift detection
+    ignores those tags.
+  - **`cdk diff` on a stack whose resources already exist fails early validation** for an
+    `AWS::SSO::Assignment` ("already exists", `NAME_CONFLICT_VALIDATION_VALIDATION_ERROR`), then
+    falls back to a template diff. It raised nothing for the permission set, though a create
+    would conflict on its name too.
+  - **`cdk import` switched termination protection on itself**, and left out only
+    `CDKMetadata`, the description and the bootstrap parameter, which the next deploy added.
+    `cdk diff` never shows `CDKMetadata`.
+  - **Drift detection works on `AWS::SSO::PermissionSet`, `AWS::SSO::Assignment` and
+    `AWS::Organizations::Account`.**
+- **The management account has had Resource Explorer on since 2026-08-28**: a local index in
+  `eu-west-2` and one view, switched on by hand. "AWS account state, checked 2026-09-26" missed
+  it. Found on 2026-10-22 while listing everything no stack manages.
+- **Every account has a default VPC in each of its 17 regions.** In a member account behind a
+  region-lock SCP, the 15 outside the allowed regions can't be read or deleted by anyone in it.
+
+### Step 4a deployed: the Organization trail, 2026-10-30
+
+`harpguru-cloud`'s `HarpguruTrail`, in the management account: one organisation trail,
+`harpguru-org-trail`, every region, management events only, into an S3 bucket.
+
+- **Trusted access for `cloudtrail.amazonaws.com` does not create `AWSServiceRoleForCloudTrail`.**
+  After `aws organizations enable-aws-service-access` the role was absent; it appeared in the
+  same second CloudFormation made the trail. The Organizations guide says otherwise.
+- **CDK's `Trail` conditions only one of its two `PutObject` statements.** With
+  `isOrganizationTrail`, it conditions the `AWSLogs/<org id>/*` statement on the trail's ARN
+  (`aws:SourceArn`), but not `AWSLogs/<account id>/*`, which then trusts CloudTrail acting for
+  any trail. The path limits that already, since CloudTrail writes under the trail's own account
+  ID, so it is a missing second lock, not an open door; the CloudTrail guide conditions both.
+  Added with an escape hatch before the deploy, and CloudTrail accepted it. CDK 2.271.0.
+  *Corrected 2026-10-30: this first said any account's trail could write there.*
+- **Where the logs land:** every account's files, the management account's included, go to
+  `AWSLogs/<org id>/<account id>/CloudTrail/<region>/<yyyy>/<mm>/<dd>/`. The only objects ever
+  written under `AWSLogs/<management account id>/` were empty `CloudTrail/` and
+  `CloudTrail-Digest/` markers at creation, so that statement is needed, if only then.
+- **Timing:** `IsLogging` was true at once. The first delivery came three minutes after the
+  trail was made, and the workload account's first file within seven. The trail showed up in the
+  member account's `describe-trails` within six minutes, not at once.
+
+### Step 4b deployed: Config in the workload account, 2026-10-30
+
+`harpguru-cloud`'s `HarpguruConfig` (London) and `HarpguruConfigEdge` (`us-east-1`): daily
+recording, Config's service-linked role, one bucket in London; and an SCP on `Workloads`.
+
+- **A delivery channel mustn't `DependsOn` its recorder in CloudFormation**, though Config's
+  docs say a channel needs a recorder first. The recorder's create isn't done until it has
+  started, which needs the channel: the first deploy spent nine minutes on
+  `NoAvailableDeliveryChannelException`, then failed "did not stabilize" and rolled back. With
+  no dependency, the channel ran first, was refused with
+  `NoAvailableConfigurationRecorderException`, and its handler retried 25 seconds later and
+  succeeded. AWS's sample template has no dependency either. CDK 2.271.0.
+- **The rollback left a retained bucket with a fixed name**, so a retry needs it deleted first,
+  and the stack too, being termination protected. A fixed name on a `Retain` bucket costs that.
+- **A `us-east-1` delivery channel accepts a London bucket**, and writes to it at once: each
+  channel writes `AWSLogs/<account id>/Config/ConfigWritabilityCheckFile`, and that copy was
+  last written the second the `us-east-1` channel was made. Strong evidence; no history file
+  seen yet (checked 22:12 UTC); seen 2026-11-03, below.
+- **An org trail creates `AWSServiceRoleForCloudTrail` in member accounts too**, by the trail's
+  deploy (found in the workload account on 2026-10-30).
+- **`aws iam simulate-principal-policy` takes SCPs into account**: it reports `explicitDeny` and
+  `AllowedByOrganizations: false`, which tests an SCP without attempting the call. An SCP
+  exempting `arn:aws:iam::*:role/cdk-hnb659fds-cfn-exec-role-*` by `aws:PrincipalArn` denies the
+  SSO admin and allows CDK's deploys.
+- **`cdk diff HarpguruGuardrails` included the stack it depends on**, `HarpguruPolicyTypes`
+  ("Including dependency stacks"), seen with CDK 2.271.0; why it began, not checked.
+  `cdk deploy --exclusively` leaves such stacks out.
+
+### Config's first history files, checked 2026-11-03
+
+Follows the step 4b deploy above; read with the `harpguru` profile.
+
+- **A `us-east-1` recorder delivers history to a London bucket.** The bucket held 31 files under
+  `AWSLogs/<account id>/Config/eu-west-2/` and 33 under `.../us-east-1/`, one per resource type,
+  all for 2026-10-30. The first came 22:24 UTC that day from London and 01:54 UTC on 2026-10-31
+  from `us-east-1`; none since, as expected of daily recording with nothing changing. Both
+  recorders and channels report `SUCCESS`.
+- **Only `us-east-1` discovers the Route 53 hosted zone**; London's
+  `list-discovered-resources --resource-type AWS::Route53::HostedZone` is empty.
+- **`includeGlobalResourceTypes: false` doesn't stop every IAM type.** `us-east-1`, with it off,
+  recorded `AWS::IAM::SAMLProvider` (Identity Center's, `AWSSSO_…_DO_NOT_DELETE`); London, with it on, recorded
+  `AWS::IAM::Role` but no SAML provider. `us-east-1` also alone recorded `AWS::S3::StorageLens`.
+
+### Step 4c deployed: GuardDuty in both accounts, 2026-11-05
+
+`harpguru-cloud`'s four `HarpguruGuardDuty*` stacks: a standalone detector in each account, in
+London and `us-east-1`, each with an EventBridge rule emailing its findings through SNS; and a
+fifth SCP on `Workloads`, `harpguru-protect-guardduty`. CDK 2.271.0.
+
+- **A detector made by CloudFormation with no `Features` gets these plans on**: S3 data events,
+  EKS audit logs, EBS malware protection, RDS login events and Lambda network logs, besides
+  CloudTrail, DNS and flow logs. Runtime Monitoring, EKS Runtime Monitoring, AI Protection and
+  AI Analyst stay off. The same in both accounts and both regions.
+- **GuardDuty makes two service-linked roles**, `AWSServiceRoleForAmazonGuardDuty` and
+  `AWSServiceRoleForAmazonGuardDutyMalwareProtection`, with the first detector in an account.
+- **An OU may have ten SCPs attached**, `FullAWSAccess` included (the Organizations quotas page,
+  checked 2026-11-03); it was once five.
+- **CDK's `SnsTopic` event target grants `events.amazonaws.com` `sns:Publish` with no
+  condition**, so any rule in any account could publish; an `aws:SourceArn` condition on the
+  rule's ARN, added by property override, closes it. **`EmailSubscription` builds its
+  construct ID from the address**, which then shows in every diff; a plain `Subscription` avoids it.
+- **SNS emails from SNS's no-reply sender land in Yahoo's spam**: the confirmations,
+  and a sample finding's email after earlier ones were marked not spam in a third-party mail
+  app. Marked not spam in Yahoo's own web client, the next one reached the inbox.
+- **`create-sample-findings` reaches EventBridge like a real finding**: one sample's email
+  arrived through the rule. Its title carries no "[SAMPLE]"; the mark is in
+  `Service.AdditionalInfo`.
+- **`simulate-principal-policy` evaluates an SCP's `Resource` list**: `events:DisableRule` was
+  denied on `rule/harpguru-guardduty-findings` and allowed on another rule's ARN.
+
+### Phase B step 3 facts: CloudFront's request logs, checked 2026-11-09
+
+Read from AWS's documentation and from the workload account before building
+`harpguru-cloud`'s `1-request-logs`, then confirmed by its deploy the same day. Deployed from the
+branch; the smoke test passed.
+
+- **Standard logging (v2) is three CloudWatch Logs resources, all made in `us-east-1`**: a
+  delivery source naming the distribution and `ACCESS_LOGS`, a delivery destination naming the
+  bucket and the format, and a delivery joining them. CloudFront's guide says the `us-east-1`
+  rule holds "even if you want to enable cross Region delivery", and gives a bucket in
+  `eu-west-1` as its example, so the bucket can stay in London. No CDK L2 exists for it in
+  2.271.0; the L1s are `CfnDeliverySource`, `CfnDeliveryDestination` and `CfnDelivery`.
+- **The legacy logging needs bucket ACLs**, which every bucket in these accounts has off.
+- **One delivery source per distribution.** A second fails with "This ResourceId has already
+  been used in another Delivery Source in this account". The workload account had none.
+- **The format is fixed when the destination is made**: JSON, plain, w3c or Parquet for S3.
+  Changing it means a new destination.
+- **CloudFront's default fields omit `c-country` and `cache-behavior-path-pattern`**, and
+  include `cs(Cookie)`. Read from
+  `aws logs describe-configuration-templates --service cloudfront --region us-east-1`, which
+  lists 70 allowed fields and, for S3, the suffix variables `accountid`, `region`,
+  `DistributionId`, `distributionid`, `yyyy`, `MM`, `dd` and `HH`.
+- **For CloudFront, a prefix on the destination replaces the default
+  `AWSLogs/<account id>/CloudFront/`**, rather than going in front of it, so the account ID
+  stays out of the keys. With Hive-compatible paths on, a suffix of `{yyyy}/{MM}/{dd}` should
+  file by `year=…/month=…/day=…`. It did: `cloudfront/year=2026/month=11/day=09/`.
+- **The delivery adds its own statement to the bucket's policy** when it finds none it
+  recognises and its caller may `s3:PutBucketPolicy`, which CDK's deploy role may. A
+  CloudFormation-managed policy would then drift, and the next deploy would remove the
+  statement. `harpguru-cloud` writes the documented statements itself, and the delivery
+  recognised them: after the deploy the policy held CDK's three statements and no others.
+- **The two guides disagree on cost.** CloudFront's says "There are no additional charges for
+  log delivery to Amazon S3". CloudWatch's says vended delivery to S3 is billed as
+  `S3-Egress-Bytes`. At a few megabytes a month either is nothing; the bill will settle it.
+- **A bucket used from another region needs a physical name that CDK knows at synthesis.**
+  Passing the bucket to a `us-east-1` stack failed `cdk synth` with `CannotUseCrossEnvironment`
+  until it was given `PhysicalName.GENERATE_IF_NEEDED`. The rule belongs to CDK's `Bucket`, which
+  builds its ARN through a check meant for other accounts and also applied to other regions. The
+  distribution's ID crossed regions as an ordinary weak reference, because `Distribution` builds
+  its ARN from the ID without that check.
+
+### Phase B step 3 deployed: what the request logs look like, 2026-11-09
+
+- **A request's line landed about 100 seconds after it was made.** The file was
+  `cloudfront/year=2026/month=11/day=09/<distribution id>.2026-11-09-14.<id>.gz`: named by the
+  hour and an ID, gzip-compressed (`application/x-gzip`), SSE-S3, one JSON object per line.
+- **Making the delivery wrote an empty `cloudfront/` object**, about a minute and a half before
+  the first request, seemingly a test write.
+- **Every value is a string**, numbers included (`"sc-bytes": "1982"`); an empty field is
+  `"-"`. An Athena table casts them.
+- **`cs(Host)` is the distribution's own domain, `d….cloudfront.net`; `x-host-header` is the
+  name the viewer asked for, `harpguru.com`.** Counts by site use `x-host-header`.
+- **`c-country` and `cache-behavior-path-pattern` were filled in**: `GB` and `*` for a request
+  to `/`.
+- **Deploy times:** `HarpguruSite` 28 seconds for the bucket and its policy,
+  `HarpguruRequestLogsEdge` 11 seconds for the three delivery resources.
+
+### Phase B step 2 deployed: the deploy role, 2026-11-08
+
+`harpguru-cloud` gained a stack, `HarpguruGitHub`, in the workload account in London: GitHub's
+OIDC provider and the role `harpguru-pages-deploy`. Deployed from the branch before merging.
+CDK 2.271.0.
+
+- **What this repo's deploy workflow needs:** a job in the GitHub environment `harpguru.com`,
+  with `permissions: id-token: write`, assuming the role through
+  `aws-actions/configure-aws-credentials` in `eu-west-2`. The environment only accepts
+  deployments from `master`. Three variables in that environment,
+  made 2026-11-09, hold what it needs: `vars.AWS_PAGES_DEPLOY_ROLE_ARN`, the role's ARN, kept
+  out of files because it carries the account ID; `vars.AWS_PAGES_BUCKET`, the pages bucket
+  (`HarpguruSite`'s `PagesBucketName`); and `vars.AWS_DISTRIBUTION_ID` (`DistributionId`). The
+  role can't read stack outputs, so the workflow takes them from there. The role may list, put,
+  delete and abort multipart uploads in the pages bucket, and invalidate the distribution; it
+  can't read objects, which `aws s3 sync --delete` doesn't need.
+- **The trust policy is untested until that workflow first runs.** It accepts only the subject
+  `repo:js-jslog/harpguru:environment:harpguru.com`, matched exactly. IAM's policy simulator
+  confirmed the permissions, but it can't present a GitHub token. A refusal on the first run,
+  "Not authorized to perform sts:AssumeRoleWithWebIdentity", means the token's `sub` differs:
+  the job isn't in the environment, or the names don't match.
+- **Given no thumbprint, IAM recorded one itself.** The native `AWS::IAM::OIDCProvider` was
+  created with an empty list, and `get-open-id-connect-provider` afterwards showed one
+  thumbprint. AWS's documentation says it doesn't use it for GitHub, checking the certificate
+  against its own trusted root CAs instead.
+- **The stack took 43 seconds**: the provider in about a second, the role about 19 and its
+  policy about 17. `HarpguruSite` gained only the two outputs the weak references read.
+- **A deploy that changes IAM can't be approved from Claude Code's `!` prompt.** CDK asks for
+  confirmation, finds no terminal, and stops after making that stack's changeset but before
+  running it. Dependency stacks it reached first are already deployed by then. `--require-approval never`, after
+  reading the diff, gets past it.
+
+### Phase B step 1 deployed: the widget's paths, 2026-11-07
+
+`harpguru-cloud`'s `HarpguruSite` gained a second bucket, `Pages`, behind `/w/*`, `/t/*`, `/s/*`
+and `/e/*`, one viewer-request function on every behaviour, and two headers policies. Deployed
+from the branch before merging. CDK 2.271.0.
+
+- **An error page carries the headers of the behaviour that serves it, not of the path asked
+  for.** With `/e/` empty, a request for it returned the site's `/404.html` with the default
+  behaviour's `X-Frame-Options: DENY` and CSP, not the embed policy, because CloudFront fetches
+  the error page through the behaviour matching `/404.html`.
+- **The cache key leaves out the query string, as the managed CachingOptimized policy says**:
+  `/t/smoke-test?k=D`, requested after `?k=C`, was `Hit from cloudfront`.
+- **Adding four behaviours and an origin, and swapping the function, took 70 seconds of stack
+  time**, and the distribution reported `Deployed` within minutes. Only the function was
+  replaced: CloudFormation made the new one, pointed every behaviour at it, then deleted the
+  old one. The `www` redirect worked afterwards; whether it ever lapsed during the swap wasn't
+  watched.
+
+### What a web export needs from a content security policy, checked 2026-11-07
+
+Checked for `harpguru-cloud`'s Phase B step 1, which serves the widget's pages behind one,
+against a web export of `master` at `8ea86ea3`, the whole app, so a superset of the
+widget. A static reading of the output, not a browser test.
+
+- **Styles need `'unsafe-inline'`.** `index.html` carries Expo's inline `<style id="expo-reset">`,
+  and react-native-web writes rules into `<style>` elements and style attributes at run time,
+  which no hash or nonce can cover.
+- **Scripts need no `'unsafe-eval'`.** The bundle has two `eval` calls: Metro's loader for split
+  bundles, which a single-bundle export never calls, and a `uuid` fallback reached only when
+  `window` and `crypto` are both missing. No `new Function`, workers, `blob:` or WebAssembly.
+- **Fonts and images are same-origin**: 19 `.ttf` files under `assets/`, and `data:` SVG images
+  handled by the image component. `script-src 'self'`, `font-src 'self'` and
+  `img-src 'self' data:` cover them.
+- **The export uses two top-level prefixes**, `/_expo/static/js/web/` and `/assets/`, so a
+  widget served under one path, as `harpguru-cloud`'s `/w/*` behaviour expects, needs Expo's
+  base URL setting.
+- **The install and export still work as the 2026-08-31 check says**, with `corepack yarn`
+  standing in for a global yarn: both exited 0, and the JS bundle was 2.35 MB.
+
+### Step 8 deployed: harpguru.com, 2026-11-06
+
+`harpguru-cloud`'s `HarpguruSite`: a private S3 bucket behind one CloudFront distribution with
+OAC, a response headers policy, a CloudFront Function redirecting `www`, four alias records,
+and the files uploaded by two `BucketDeployment`s. CDK 2.271.0, CLI 2.1139.0.
+
+- **CloudFront passes query string values to a function still URL-encoded.** The guide doesn't
+  say. `?a=b%26c`, `?q=hello%20world` and `?x=%2F%3F` reached the function encoded, both in
+  `test-function` and in real requests, so a redirect that joins them back up needs no
+  re-encoding.
+- **A response headers policy also applies to a viewer-request function's own response**: the
+  `www` 301 carries the HSTS header.
+- **Apple's CDN and Google's Digital Asset Links API had the `.well-known` files within
+  minutes** of the deploy: `app-site-association.cdn-apple.com/a/v1/harpguru.com` and
+  `digitalassetlinks.googleapis.com/v1/statements:list` both returned them.
+- **A weak reference crosses regions in the other direction too**: the London stack read the
+  `us-east-1` certificate's ARN with `Fn::GetStackOutput`, the producer gaining one output.
+- **Creating the distribution took about four minutes**: 240 seconds for the whole stack, the
+  upload's invalidation included.
+- **An expired SSO access token stops CDK but not the AWS CLI.** The CLI renews it silently
+  from the refresh token; CDK reports `no credentials have been configured` and only `-v` shows
+  `Token is expired`. `aws sso login --sso-session jslog` fixes it.
+- **`describe-function` shows the `DEVELOPMENT` stage by default**; `--stage LIVE` shows what
+  CloudFront serves.
+
+### Step 4d deployed: the GuardDuty SCP's subscription gap, 2026-11-06
+
+`harpguru-protect-guardduty` gained `sns:SetSubscriptionAttributes`, so no filter policy can
+silently drop the findings emails.
+
+- **SNS authorizes subscription actions against the topic ARN.** A real
+  `set-subscription-attributes` call, given the subscription ARN, was refused with an explicit
+  SCP deny naming `arn:aws:sns:<region>:<account>:harpguru-guardduty-findings` as the resource.
+  A policy that names the topic covers its subscriptions; a `<topic>:*` pattern isn't what matches.
+- **`simulate-principal-policy` can't test SNS subscription actions.** `SetSubscriptionAttributes`,
+  `Unsubscribe` and `GetSubscriptionAttributes` all come back `implicitDeny`, with no
+  Organizations detail, against a subscription ARN or a topic ARN, ours or another, though the
+  real `Get` call succeeds under `AdministratorAccess`. That qualifies the step 4c finding
+  above: the simulator evaluates an SCP's `Resource` list for some services, not all. For
+  these actions only a real call tests the SCP.
+- **`--query` with `--output text` runs once per page.** `aws sns list-subscriptions --query
+  'Subscriptions[0].SubscriptionArn'` printed the ARN, then `None` from an empty second page,
+  and the two-line value failed as `Invalid parameter: Subscription GUID`.
+  `list-subscriptions-by-topic --no-paginate` returns the ARN alone.
+
+### Step 7 deployed: the certificate, 2026-11-06
+
+`harpguru-cloud`'s `HarpguruCertificate`: one ACM certificate in the workload account in
+`us-east-1`, for `harpguru.com` and `www.harpguru.com`, validated through DNS in the London
+zone. CDK 2.271.0.
+
+- **A weak reference crosses regions with no custom resource.** With
+  `@aws-cdk/core:defaultCrossStackReferences` set to `"weak"`, the `us-east-1` stack's
+  template reads the zone's ID with `Fn::GetStackOutput` naming `eu-west-2`, and CloudFormation
+  resolved it on the first deploy. CDK reused the output already made for the mail canary's
+  same-region reference, so the producer stack had no diff.
+- **Issuance took about two and a half minutes**: the certificate resource went from
+  `CREATE_IN_PROGRESS` to `CREATE_COMPLETE` in 2m35s, the stack in 161s of deploy time.
+  CloudFormation wrote one `CNAME` per name, `_<hash>.harpguru.com` and
+  `_<hash>.www.harpguru.com`; they appear in the zone but in no template.
+- **The certificate is valid for 198 days**, from 2026-11-06 to 2027-05-23, with its
+  `NotBefore` an hour before it was requested. The key is `RSA-2048`, CDK's default.
+- **ACM reports an unused certificate as not renewable**: `InUse` `False` and
+  `RenewalEligibility` `INELIGIBLE` until something such as CloudFront uses it.
+
+### AWS account state, checked 2026-09-26
+
+What already exists, so Phase A builds on it rather than repeating it:
+
+- **An Organization exists**, with all features enabled. It has one member, the management
+  account, and no OUs. **SCPs are not yet enabled on the root.** `describe-organization`
+  lists `SERVICE_CONTROL_POLICY` as available, but the root's own `PolicyTypes` is empty,
+  and the root is the authoritative place to check.
+- **IAM Identity Center is an organization instance in `eu-west-2`.** The account has no IAM
+  users. Console and CLI access both go through the access portal. The IAM three-field
+  sign-in page cannot work for an Identity Center username, which cost time to discover.
+
+  **It cost time again on 2026-10-13, for a different reason.** The portal's username field
+  takes the Identity Center **username** (`jslog`), not the email address the user is
+  registered with. The full address is rejected as bad credentials, which looks exactly like
+  the three-field problem above. The device URL that `aws sso login --use-device-code` prints
+  leads to the right sign-in page by itself; entering `jslog` there is the whole fix.
+- **Cost guardrails set up in the console already exist in the management account:** a
+  `My Zero-Spend Budget` ($1, alert on any actual spend over $0.01) and the default Cost
+  Anomaly Detection monitor with a daily email subscription. Phase A does not add a second
+  anomaly monitor.
+- **The management account is already CDK-bootstrapped in `eu-west-2`** (from 2026-08-28,
+  presumably the container's `verify-toolchain.sh --live`). It is not bootstrapped in
+  `us-east-1`, and no workload account exists yet to bootstrap.
+- No CloudTrail trail, no Config recorder, no GuardDuty detector, no hosted zones. The only
+  trusted service is `sso.amazonaws.com`.
+
+### harpguru.com, checked 2026-10-27, and the nameserver switch
+
+**DNSSEC is off.** `.com` holds no `DS` record for harpguru.com, and Heart serves no `DNSKEY`.
+This is the check that matters most before a nameserver move: with DNSSEC on, moving to an
+unsigned Route 53 zone would stop the whole domain resolving, and the way back carries the
+same two-day delegation TTL.
+
+**No mail authentication to carry across.** Heart serves no `TXT` at the apex, so no SPF, and
+`TXT` queries for `_dmarc` and `default._domainkey` come back empty (the wildcard only answers
+`A`).
+
+**After the switch, Heart's mail server address is ours to keep right.** Heart kept
+`mail.harpguru.com A 79.170.44.72` current in its own zone; once Route 53 serves the domain it
+is a fixed value in `HarpguruDns`, and a move on Heart's side would break forwarding without
+any signal. `harpguru-cloud`'s step 6a guards it with a weekly SES canary, deployed
+2026-10-27: every Wednesday at 09:00 London time, one message straight to the forwarding
+address and one to the contact mailbox. The first pair, on 2026-10-28, both arrived, which also showed
+that EventBridge Scheduler can call SES v2's `sendEmail` as a universal target, with an IAM
+policy granting `ses:SendEmail`, not the `sesv2:` action CDK's universal target assumes by
+default. The SES domain identity's DKIM showed `SUCCESS` within the deploy's two and a half
+minutes, once the public DNS answered from Route 53.
+
+**In Heart's panel, checked the same day by the user.** The registration runs to September
+2027, and the panel shows no DNSSEC setting. The mail forwarding page says nothing about
+needing Heart's nameservers. The nameservers page warns: "Changing your domain's nameservers to
+offsite nameservers will prevent features such as web forwarding and web hosting from
+working." Mail forwarding isn't named, but "such as" isn't a complete list, so only the test
+after the switch settles it. A baseline message to the contact mailbox, sent from another address before
+the switch, arrived.
+
+**The switch, made 2026-10-27 at about 21:00 UTC, propagated in minutes, not days.** Within
+minutes Google's and Cloudflare's public DNS listed the Route 53 nameservers. Heart's
+nameservers, asked directly, still answered for the domain with authority and the same `MX`,
+so during propagation a mail test passes by either path and proves nothing about the new zone.
+Microsoft's resolvers can't be queried from outside. A message from a Gmail address, sent
+after Google showed the new nameservers, arrived through Heart's forwarding: **Heart keeps
+forwarding mail with the nameservers moved off-site.**
+
+### harpguru.com, re-checked 2026-10-26, and the hosted zone
+
+**Unchanged since 2026-09-25**, checked just before the hosted zone was built: Heart's
+nameservers, apex and `www` on `79.170.40.4`, `MX 10 mail.harpguru.com` with a one-hour TTL,
+`mail` on `79.170.44.72`, no `TXT` or `CAA` at the apex. The zone carries the two mail records and leaves
+`ftp` behind. **Heart also serves a wildcard**, `*.harpguru.com A 79.170.40.4`, so any name,
+`webmail`, `imap` and `_dmarc` included, resolves to the parked page; probing subdomains by
+name proves nothing there. And `_domainconnect TXT domainconnect.heartinternet.uk`, Heart's
+Domain Connect hook. Both are left behind deliberately.
+
+**The zone, deployed 2026-10-26 in the workload account, before any nameserver switch.**
+Route 53 wrote its own `NS` and `SOA` records alongside the two from the template, so it holds
+four record sets. Asked directly with `aws route53 test-dns-answer`, it answers the `MX`
+correctly while the public answer is still Heart's. A `.com` server
+(`a.gtld-servers.net`) hands out harpguru.com's delegation with a TTL of 172800 seconds, so a
+resolver may keep asking Heart for up to two days after the switch.
+
+**Pinning a stack to the workload account stops a deploy with the wrong credentials.** Once
+`HarpguruDns` took its account ID from `deploy.local.json`, `cdk diff HarpguruDns` signed in to
+the management account printed no diff. It reported `Could not assume role in target account`,
+naming the workload account's `cdk-hnb659fds-lookup-role` and `cdk-hnb659fds-deploy-role`,
+because the bootstrap trusts no other account. Before the pin, the same command would have
+targeted the management account without complaint.
+
+### harpguru.com, re-checked 2026-09-25
+
+Unchanged in substance: nameservers still `ns.heartinternet.uk` / `ns2.heartinternet.uk`,
+apex and `www` both `A 79.170.40.4`, and HTTPS still fails to connect. Registration runs to
+**2027-09-09**. No `AAAA`, `TXT`, `CAA` or `_dmarc` records.
+
+**The zone has a mail record the earlier check did not mention**: `MX 10 mail.harpguru.com`,
+which resolves to `79.170.44.72`, Heart's shared mail hosting. There is also an
+`ftp.harpguru.com` at `79.170.44.11`. Delegating to Route 53 serves only what the new zone
+holds, so **whether any harpguru.com mailbox is in use has to be answered before the
+nameservers move**. If one is, its `MX` goes into the hosted zone first. If none is, the
+records are left behind deliberately. The "nothing live depends on it" line below held for
+the web and was never checked for mail.
+
+**Answered 2026-09-26: mail is live.** Customers are told to write to the domain's public contact mailbox,
+and Heart forwards it to a personal mailbox. So the Route 53 zone must hold
+`MX 10 mail.harpguru.com` and `mail.harpguru.com A 79.170.44.72` **before** the nameservers
+move. Send a test message to the contact mailbox before and after the switch, and confirm that Heart's
+forwarding does not depend on Heart serving the zone.
+
+No `CAA` record means any CA may issue, so ACM needs nothing extra. If a `CAA` record is ever
+added, it must allow `amazon.com`.
 
 ### harpguru.com, checked 2026-08-31
 

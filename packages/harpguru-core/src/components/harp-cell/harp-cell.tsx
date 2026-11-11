@@ -31,6 +31,7 @@ export const HarpCell = ({
     thisDegreeId,
     thisIsActive
   )
+  const isInteractive = useHarpGuruStore((state) => state.isCellInteractive)
 
   if (thisDegreeId === undefined || thisPitchId === undefined)
     return <MemoHarpCellInaccessible baseStyles={baseHarpCellStyles} />
@@ -45,7 +46,7 @@ export const HarpCell = ({
   }
 
   return (
-    <GestureDetector gesture={tapGesture}>
+    <GestureDetector gesture={tapGesture.enabled(isInteractive)}>
       <Animated.View>
         <MemoHarpCellAccessible {...harpCellAccessibleProps} />
       </Animated.View>
