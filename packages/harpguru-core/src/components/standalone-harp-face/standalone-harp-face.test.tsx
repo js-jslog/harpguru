@@ -24,10 +24,13 @@ const setup: Setup = {
   displayMode: 'pitch',
 }
 
-const layOut = ({ getByTestId }: RenderAPI) =>
+const layOut = ({ getByTestId }: RenderAPI, width = 800, height = 400) =>
   fireEvent(getByTestId('standalone-harp-face'), 'layout', {
-    nativeEvent: { layout: { x: 0, y: 0, width: 800, height: 400 } },
+    nativeEvent: { layout: { x: 0, y: 0, width, height } },
   })
+
+const flatStyle = (style: unknown): Record<string, unknown> =>
+  Object.assign({}, ...[style].flat(Infinity).filter(Boolean))
 
 test('Nothing is drawn until the harp face knows its space, then it is drawn from the setup it is given', () => {
   const rendered = render(<StandaloneHarpFace setup={setup} isInteractive />)
@@ -77,4 +80,37 @@ test('A new display mode in the props reaches the harp face', () => {
   )
 
   expect(rendered.queryAllByText('C').length).toBeLessThan(pitchLabels)
+})
+
+test('Upright, the harp face is laid out in its box turned a quarter, and its labels turn back', () => {
+  const rendered = render(
+    <StandaloneHarpFace setup={setup} isInteractive={false} isUpright />
+  )
+  layOut(rendered, 400, 800)
+
+  const turned = flatStyle(
+    rendered.getByTestId('standalone-harp-face-turned').props.style
+  )
+  expect(turned).toMatchObject({
+    width: 800,
+    height: 400,
+    transform: [{ rotate: '90deg' }],
+  })
+  const [holeNumber] = rendered.getAllByText('10')
+  expect(flatStyle(holeNumber.props.style).transform).toEqual([
+    { rotate: '-90deg' },
+  ])
+})
+
+test('A change of orientation in the props reaches the harp face', () => {
+  const rendered = render(
+    <StandaloneHarpFace setup={setup} isInteractive={false} isUpright />
+  )
+  layOut(rendered, 400, 800)
+
+  rendered.rerender(<StandaloneHarpFace setup={setup} isInteractive={false} />)
+
+  expect(rendered.queryByTestId('standalone-harp-face-turned')).toBeNull()
+  const [holeNumber] = rendered.getAllByText('10')
+  expect(flatStyle(holeNumber.props.style).transform).toBeUndefined()
 })

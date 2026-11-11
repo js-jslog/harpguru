@@ -21,7 +21,7 @@ import type { ReadingKey } from '../tuning-pages/reading-key'
 import { getPresets, getTuningDescription } from '../tuning-pages/presets'
 import type { Preset } from '../tuning-pages/presets'
 import { describeHomeHoles, getHomeHoles } from '../tuning-pages/home-holes'
-import { describeHarp } from '../describe-setup'
+import { describeHarp, describePreset } from '../describe-setup'
 import { colors, chromeStyles } from '../chrome/styles'
 import { StoreLinks } from '../chrome/store-links'
 import { SimpleNote } from '../chrome/simple-note'
@@ -163,7 +163,7 @@ const WideGuide = ({
             >
               <View style={styles.presetCardTop}>
                 <Text style={styles.presetName}>
-                  {preset.pozitionId} position · {preset.scaleLabel}
+                  {describePreset(preset)}
                 </Text>
                 <Text style={[styles.quietText, styles.noShrink]}>
                   song key {getSongKey(preset)}

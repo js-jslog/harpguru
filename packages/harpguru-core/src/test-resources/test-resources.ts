@@ -142,6 +142,7 @@ export const buildMockStoreState = ({
     staticSizes,
     frameDimensions: undefined,
     isCellInteractive: true,
+    isUpright: false,
     activeExperienceMode: experienceMode,
     activeDisplayMode: displayMode,
     bufferedActivityToggles,
@@ -176,6 +177,7 @@ export const buildMockStoreState = ({
     setStaticSizes: jest.fn(),
     setFrameDimensions: jest.fn(),
     setIsCellInteractive: jest.fn(),
+    setIsUpright: jest.fn(),
   }
 }
 

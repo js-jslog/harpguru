@@ -6,6 +6,7 @@ import {
   Animated,
   Easing,
   StyleSheet,
+  useWindowDimensions,
 } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 import type { ReactElement } from 'react'
@@ -40,6 +41,9 @@ export const TuningDrawer = ({
   onClose,
 }: TuningDrawerProps): ReactElement | null => {
   const { current: progress } = useRef(new Animated.Value(0))
+  // The sheet is never taller than the window, so starting a window's height
+  // down keeps it out of sight
+  const { height: windowHeight } = useWindowDimensions()
   const [isShown, setIsShown] = useState(isOpen)
 
   useEffect(() => {
@@ -82,7 +86,7 @@ export const TuningDrawer = ({
           {
             translateY: progress.interpolate({
               inputRange: [0, 1],
-              outputRange: [600, 0],
+              outputRange: [windowHeight, 0],
             }),
           },
         ],

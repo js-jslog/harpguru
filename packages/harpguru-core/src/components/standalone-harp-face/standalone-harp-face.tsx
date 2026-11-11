@@ -1,7 +1,7 @@
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { View, StyleSheet } from 'react-native'
 import type { LayoutChangeEvent } from 'react-native'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { ReactElement } from 'react'
 import { getHarpStrata } from 'harpstrata'
 import type { HarpStrataProps, Setup, SetupDisplayMode } from 'harpstrata'
@@ -56,45 +56,49 @@ export const StandaloneHarpFace = ({
         isUpright,
       }}
     >
-      <StandaloneHarpFaceContents setup={setup} isUpright={isUpright} />
+      <StandaloneHarpFaceContents
+        setup={setup}
+        isInteractive={isInteractive}
+        isUpright={isUpright}
+      />
     </StoreProvider>
   </GestureHandlerRootView>
 )
 
 const StandaloneHarpFaceContents = ({
   setup,
+  isInteractive,
   isUpright,
-}: Pick<StandaloneHarpFaceProps, 'setup'> & {
+}: Pick<StandaloneHarpFaceProps, 'setup' | 'isInteractive'> & {
   readonly isUpright: boolean
 }): ReactElement => {
   useFollowSetup(setup)
+  useFollowInteractivity(isInteractive)
   const store = useHarpGuruStoreInstance()
   const isCellInteractive = useHarpGuruStore((state) => state.isCellInteractive)
   // The box it was given, as measured. Upright, the face is laid out in that
   // box turned a quarter, so it sizes itself to the box's height as its width.
   const [measured, setMeasured] = useState<FrameDimensions | undefined>()
-  const resize = (box: FrameDimensions, isTurned: boolean) => {
-    const frameDimensions = isTurned
-      ? { width: box.height, height: box.width }
-      : box
-    store.setState((state) => ({
-      isUpright: isTurned,
-      frameDimensions,
-      ...reduceToResizedSizes({ ...state, frameDimensions }),
-    }))
-  }
   const onLayout = ({
     nativeEvent: {
       layout: { width, height },
     },
-  }: LayoutChangeEvent) => {
-    resize({ width, height }, isUpright)
-    setMeasured({ width, height })
-  }
+  }: LayoutChangeEvent) => setMeasured({ width, height })
 
-  useEffect(() => {
-    if (measured !== undefined) resize(measured, isUpright)
-  }, [isUpright])
+  // One writer for the size and the orientation together, before the frame
+  // paints, so a turn and a resize arriving at once can't leave the store
+  // with one box and the other's orientation
+  useLayoutEffect(() => {
+    if (measured === undefined) return
+    const frameDimensions = isUpright
+      ? { width: measured.height, height: measured.width }
+      : measured
+    store.setState((state) => ({
+      isUpright,
+      frameDimensions,
+      ...reduceToResizedSizes({ ...state, frameDimensions }),
+    }))
+  }, [store, measured, isUpright])
 
   const styles = StyleSheet.create({
     fill: {
@@ -138,12 +142,32 @@ const StandaloneHarpFaceContents = ({
           be sized to the whole window */}
       {measured !== undefined && (
         <>
-          {isUpright ? <View style={styles.turned}>{face}</View> : face}
+          {isUpright ? (
+            <View style={styles.turned} testID="standalone-harp-face-turned">
+              {face}
+            </View>
+          ) : (
+            face
+          )}
           {isCellInteractive && <NotifyOfScale isScalesMenu={false} />}
         </>
       )}
     </View>
   )
+}
+
+// Cell taps and the scale flash follow the prop, as the setup does
+const useFollowInteractivity = (isInteractive: boolean): void => {
+  const store = useHarpGuruStoreInstance()
+  const isFirstRender = useRef(true)
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    store.setState({ isCellInteractive: isInteractive })
+  }, [store, isInteractive])
 }
 
 // The store is made from the first setup. When the setup it is given changes
