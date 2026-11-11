@@ -225,8 +225,10 @@ first design. What is left, in order:
      deploy 16, every step green, including the role assumption.
    - `release.yml`, run `43105566343`, 21:43:31 to 21:44:57 UTC: the version check, then
      `eas build … --auto-submit-with-profile production --no-wait` and the `v18.5.0` tag, on
-     `feeebc4f`. `--no-wait` means the job only starts the EAS build: its result and the
-     store submission are on EAS, not in the run, and are the user's to report.
+     `feeebc4f`. `--no-wait` means the job only starts the EAS build, so its result is on EAS,
+     not in the run. The user read it there: both builds started at 21:44 and completed as
+     18.5.0 (40), iOS in 4 minutes 48 seconds and Android in 22 minutes 26 seconds. Whether the
+     auto-submissions reached TestFlight and Play's open-testing track was not reported.
    - **A release goes with it: v18.5.0**, cut on the branch 2026-11-11 with the user,
      reversing that day's earlier decision, so that later test builds carry a new version.
      CI tags `v18.5.0`, builds on EAS and submits to open testing. The release carries
