@@ -293,8 +293,9 @@ first design. What is left, in order:
    What surprised:
    - **Devices read the AASA from Apple's CDN, not from harpguru.com**:
      `https://app-site-association.cdn-apple.com/a/v1/harpguru.com`, with
-     `Cache-Control: max-age=21600`. A minute after #4's deploy it still held `/s/*`. Before
-     step 7's device test, check the new file has reached it.
+     `Cache-Control: max-age=21600`. A minute after #4's deploy it still held `/s/*`; by
+     2026-11-12 09:17 UTC it carried `[{"/":"/s/"}]`, the hours between unobserved. A later
+     AASA change wants the same check before a device test.
    - **`no-cache` pages are kept for a second**, the minimum TTL of the managed
      `CachingOptimized` policy, then revalidated with S3: a `RefreshHit` when unchanged.
    - **The pages' HTML carries `<meta httpEquiv="X-UA-Compatible" …>`**, the JSX spelling,
@@ -314,8 +315,8 @@ first design. What is left, in order:
    - the share button and the picker are app UI in `harpguru-core`, so it takes a version
      bump.
 
-   #4 is live since 2026-11-11. A device test of deep links needs Apple's CDN to carry it,
-   and needs the user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or
+   #4 is live since 2026-11-11, and on Apple's CDN since 2026-11-12 at the latest. A device
+   test of deep links needs the user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or
    later), and merging that release to `master` sends it to open testing.
 
 Also open: **Harmonic minor's draw 6 and 10** want checking against the maker's layout
