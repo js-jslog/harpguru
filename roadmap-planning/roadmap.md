@@ -462,7 +462,7 @@ In `harpguru-cloud`:
 - The GitHub OIDC provider and the deploy role this repo's workflow assumes (see "How the
   two connect").
 - The `/s/*` rule in `apple-app-site-association` becomes the exact path `/s/`, so the
-  open-in-browser marker `/s/web` falls outside it (settled 2026-11-09).
+  open-in-browser marker `/s/web` falls outside it (settled 2026-11-09). *Live 2026-11-11.*
 
 Nothing is dynamic at request time: prerendered HTML plus a client bundle. No server
 participates in a page view, and there is no setup datastore: a setup link is a

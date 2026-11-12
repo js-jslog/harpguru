@@ -75,7 +75,8 @@ Push normally: the pre-push hook runs the release version check, `yarn lint`, `y
   - `/w/`, `/t/` and `/s/` refuse to be framed (`frame-ancestors 'none'`).
   - `/e/` may be framed by harpguru.com and the partners in harpguru-cloud's `infra/lib/partners.ts`.
 - **App links:**
-  - The AASA file claims `/s/*` for `com.jslog.harpguru`.
+  - The AASA file claims `/s/*` for `com.jslog.harpguru`; exactly `/s/` since 2026-11-11,
+    harpguru-cloud's #4.
   - `assetlinks.json` is live.
   - Android's paths come from the app's intent filters, which are this repo's to write.
 - **Request logs** record every request, query string included, and are kept for 90 days.

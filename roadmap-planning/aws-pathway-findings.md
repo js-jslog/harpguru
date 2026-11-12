@@ -218,25 +218,37 @@ first design. What is left, in order:
    - A test build of the feature branch went to internal testers on 2026-11-11, through
      `test-build.yml`, for the user to see the legend in the app. Its verdict is the
      user's to report.
-2. **Merge #182, `178-build-the-harp-face-widget` into `master`.** That push runs two
-   workflows: `deploy-widget.yml`, the first deploy, and `release.yml`, since the branch
-   carries a release cut.
+2. **Done: #182, `178-build-the-harp-face-widget`, merged into `master` on 2026-11-11.** That
+   push ran two workflows: `deploy-widget.yml`, the first deploy, and `release.yml`, since the
+   branch carries a release cut. Both succeeded, read from GitHub's public API:
+   - `deploy-widget.yml`, run `43105566299`, 21:43:31 to 21:44:34 UTC: build 40 seconds,
+     deploy 16, every step green, including the role assumption.
+   - `release.yml`, run `43105566343`, 21:43:31 to 21:44:57 UTC: the version check, then
+     `eas build … --auto-submit-with-profile production --no-wait` and the `v18.5.0` tag, on
+     `feeebc4f`. `--no-wait` means the job only starts the EAS build, so its result is on EAS,
+     not in the run. The user read it there: both builds started at 21:44 and succeeded as
+     18.5.0 (40), iOS in 4 minutes 48 seconds and Android in 22 minutes 26 seconds, and both
+     were submitted successfully, the user confirmed.
    - **A release goes with it: v18.5.0**, cut on the branch 2026-11-11 with the user,
      reversing that day's earlier decision, so that later test builds carry a new version.
      CI tags `v18.5.0`, builds on EAS and submits to open testing. The release carries
      `harpguru-core`'s bordered legend and the web resize fix, and no `associatedDomains`.
      The widget's first release is 1.0.0, not the 0.2.0 its bump rule gives, because this
      is where it goes live.
-   - From this repo's container, a session can't see GitHub Actions (`gh` isn't installed):
-     **ask the user for both runs' results and dates**, the deploy and the release (the
-     `v18.5.0` tag, the EAS build and its submission), and record them in this section. On
+   - From this repo's container, a session can't see GitHub Actions (`gh` isn't installed).
+     *GitHub's public API answered instead, `curl` on
+     `api.github.com/repos/js-jslog/harpguru/actions/workflows/<file>/runs`, so only EAS needed
+     the user.* Originally: **ask the user for both runs' results and dates**, the deploy and
+     the release (the `v18.5.0` tag, the EAS build and its submission), and record them in this
+     section. On
      "Not authorized to perform sts:AssumeRoleWithWebIdentity", see the handover's deploy
      workflow section.
    - The `/t/` presets go live as they are. A pozition removed later only sends an early
      bookmark to the tuning's first preset, so the live check is worth more than further
      review.
-3. **Next session: harpguru-cloud's container**, which has AWS access. Pull `master` in its
-   `/harpguru` checkout, then:
+3. **Done 2026-11-11, from harpguru-cloud's container: the first deploy is verified, and #4 is
+   deployed**, on harpguru-cloud's `1-aasa-browser-marker`, whose plan, `docs/plans/phase-b.md`,
+   holds the detail. The checks, as asked:
    - verify the first deploy: the role assumed through the trust policy's exact subject, the
      pages bucket's objects (`w/…`, `s/index.html`, `e/index.html` and the 10 tuning pages)
      with their `Cache-Control`, the
@@ -249,6 +261,46 @@ first design. What is left, in order:
    - confirm `assetlinks.json` carries the Play app-signing SHA-256, which step 7 relies on;
    - record the results in this section, on a branch off `master` in this repo, as the
      roadmap's "How the two connect" describes.
+
+   What they found:
+   - **The trust policy held on its first real test.** CloudTrail in `eu-west-2` has one
+     `AssumeRoleWithWebIdentity`, at 21:44:22, by a `WebIdentityUser` named
+     `repo:js-jslog/harpguru:environment:harpguru.com`, audience `sts.amazonaws.com`, for
+     `harpguru-pages-deploy`, with no error.
+   - **The bucket holds the 13 objects the contract asks for**, one bundle file, 1.8 MB,
+     `public, max-age=31536000, immutable`, and twelve pages, each `no-cache`. The
+     invalidation of `/e/*`, `/t/*` and `/s/*` completed at 21:44:30.
+   - **No CSP violation on the live pages**, in headless Chromium 131 at 1280×720 and 390×844,
+     listening for `securitypolicyviolation`, console errors and failed requests, on the four
+     URLs above. Each loads the page and the bundle, and nothing else; headless Chromium
+     skips the icon, `/icon.png`, which `curl` found served. `/t/no-such-tuning`
+     is the site's 404. Framed from `http://localhost`, `/e/` is refused by
+     `frame-ancestors 'self'` and `/s/` by `'none'`, `infra/lib/partners.ts` being empty.
+   - **The request logs record every view**, query string included, about two minutes later.
+     `cs-uri-stem` is the path the viewer asked for, so `/s/web` is counted apart from `/s/`.
+   - **#4 is live**: deployed from the branch at 22:02, the served AASA's components are
+     `[{"/":"/s/"}]`, and the site and pages smoke tests pass.
+   - **`assetlinks.json` carries the fingerprint the user gave on 2026-11-06 as the Play app
+     signing key**, `3A:52:4C:…:FC:11:92`, and Google's Digital Asset Links API returns it for
+     `com.jslog.harpguru`. The app signing key, not the upload key, is the one phones see on
+     Play's re-signed releases.
+   - **The pages correct their own address after loading, as the URL format intends**, with
+     `history.replaceState` and no request: `/t/major-diatonic` becomes `?p=2`, its first
+     preset, and `s=blues` becomes `d=1,3b,4,5b,5,7b`. So the logs keep the URL as it was
+     opened, which is what Phase D counts, and a link copied from the address bar afterwards
+     is the canonical `d=` form.
+
+   What surprised:
+   - **Devices read the AASA from Apple's CDN, not from harpguru.com**:
+     `https://app-site-association.cdn-apple.com/a/v1/harpguru.com`, with
+     `Cache-Control: max-age=21600`. A minute after #4's deploy it still held `/s/*`; by
+     2026-11-12 09:17 UTC it carried `[{"/":"/s/"}]`, the hours between unobserved. A later
+     AASA change wants the same check before a device test.
+   - **`no-cache` pages are kept for a second**, the minimum TTL of the managed
+     `CachingOptimized` policy, then revalidated with S3: a `RefreshHit` when unchanged.
+   - **The pages' HTML carries `<meta httpEquiv="X-UA-Compatible" …>`**, the JSX spelling,
+     which browsers ignore. Harmless, since the header it would set is obsolete, but it is a
+     sign the template's head is written as JSX props; `http-equiv` is the attribute.
 4. **The app changes (step 7), back in this repo, none started.** On a branch off `master`:
    - the share button, which writes the setup on screen with `writeSetupUrl` and draws its
      QR code on the device. A QR library is a new dependency, not yet chosen;
@@ -263,9 +315,9 @@ first design. What is left, in order:
    - the share button and the picker are app UI in `harpguru-core`, so it takes a version
      bump.
 
-   It needs #4 live before deep links are tested on a device, and a device test needs the
-   user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or later), and
-   merging that release to `master` sends it to open testing.
+   #4 is live since 2026-11-11, and on Apple's CDN since 2026-11-12 at the latest. A device
+   test of deep links needs the user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or
+   later), and merging that release to `master` sends it to open testing.
 
 Also open: **Harmonic minor's draw 6 and 10** want checking against the maker's layout
 before it gets a page; a fix there is a `harpparts` change, and reaches the app too.
@@ -323,7 +375,7 @@ opens the same parameters at `https://harpguru.com/s/web?<params>`.
   `{ "/": "/s/" }`, an exact path. An AASA `/` pattern ignores the query unless a `?` matcher
   is given, so `/s/?<anything>` opens the app and `/s/web?<anything>` does not. Ship it
   before, or with, the app release that adds `associatedDomains`; until then nothing claims
-  the links.
+  the links. *Shipped 2026-11-11, before the app; see "Where Phase B stands".*
 - **A hand-typed `/s?…` is redirected by CloudFront to `/s/?…`.** Neither platform opens an
   app from a redirect, so that link opens in the browser, which is the safe failure. The app
   and the widget only ever write `/s/?`.
