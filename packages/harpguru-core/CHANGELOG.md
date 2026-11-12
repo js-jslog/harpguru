@@ -13,7 +13,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.6.0...master) - yyyy-mm-dd
+
+## [v13.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.6.0) - 2026-11-12
 
 ### Added
 
@@ -30,7 +32,7 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
   shows it in Explore, and is brought into view
 - MINOR: `StoreProvider` takes an optional `store` made by its parent, so the
   app can reach each harp face's store from outside it
-- `toqr` as a dependency, to encode the QR code
+- MINOR: `toqr` as a dependency, to encode the QR code
 
 ## [v13.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0) - 2026-11-11
 
@@ -366,7 +368,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.6.0...HEAD)
+- [v13.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.6.0)
 - [v13.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0)
 - [v13.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.4.0)
 - [v13.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0)

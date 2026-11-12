@@ -13,7 +13,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.0.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.6.0...master) - yyyy-mm-dd
+
+## [v11.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.6.0) - 2026-11-12
 
 ### Added
 
@@ -337,7 +339,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.0.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.6.0...HEAD)
+- [v11.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.6.0)
 - [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v18.0.0)
 - [v10.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0)
 - [v9.0.0](https://github.com/js-jslog/harpguru/releases/tag/v16.0.0)
