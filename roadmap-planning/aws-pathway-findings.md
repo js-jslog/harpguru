@@ -316,8 +316,10 @@ first design. What is left, in order:
      bump.
 
    #4 is live since 2026-11-11, and on Apple's CDN since 2026-11-12 at the latest. A device
-   test of deep links needs the user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or
-   later), and merging that release to `master` sends it to open testing.
+   test of deep links needs the user to dispatch `test-build.yml`. Then a further
+   `/cut-release` (v18.6.0 or later), and merging that release to `master` sends it to open
+   testing. Once deep links work end to end, tell the user, so harpguru-cloud can record it
+   and refresh its learning material.
 
 Also open: **Harmonic minor's draw 6 and 10** want checking against the maker's layout
 before it gets a page; a fix there is a `harpparts` change, and reaches the app too.
