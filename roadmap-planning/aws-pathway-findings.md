@@ -320,8 +320,8 @@ first design. What is left, in order:
    - **The QR library is `toqr`**: 13.6 KB, no dependencies, MIT, by an Expo maintainer,
      and already in `yarn.lock` through `@expo/cli`. It returns the module grid, which the
      app draws as one `View` per dark run of a row, so no SVG native module.
-   - **The share button is "Share this harp face", at the top of the scales menu**, for
-     now. An eighth tab on the right edge was too much risk for existing users: seven tabs
+   - **Share is a third page of the scales menu**, after the scales and the quiz
+     questions, for now: the scales stay the menu's first page. An eighth tab on the right edge was too much risk for existing users: seven tabs
      fill 98% of the height. The likely later home is a drawer gathering the three yellow
      tabs, with share in it.
    - **Paste or scan accepting `/s/web` is left for when paste or scan is built.** The app

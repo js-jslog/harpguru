@@ -17,7 +17,8 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Added
 
-- MINOR: "Share this harp face", at the top of the scales menu: the setup on
+- MINOR: sharing a harp face, from a Share page in the scales menu, after
+  the scales and the quiz questions: the setup on
   the harp face as a harpguru.com `/s/` link, written with `writeSetupUrl`,
   and its QR code, drawn on the device, with the system share sheet for the
   link. No network, no account. The menu is a stopgap home for it

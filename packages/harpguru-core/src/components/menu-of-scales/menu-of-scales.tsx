@@ -20,6 +20,8 @@ import {
   useScaleItems,
   useQuizQuestionTitle,
   useQuizQuestionItems,
+  useShareTitle,
+  useShareItems,
 } from './hooks'
 
 export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
@@ -40,8 +42,13 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
   const closeShareSheet = useCallback(() => setIsShareSheetVisible(false), [])
   const useScalesTitleMemo = useCallback(() => useScaleTitle(), [])
   const useScalesItemsMemo = useCallback(
-    () => useScaleItems(scaleItemTapHandler, openShareSheet),
-    [scaleItemTapHandler, openShareSheet]
+    () => useScaleItems(scaleItemTapHandler),
+    [scaleItemTapHandler]
+  )
+  const useShareTitleMemo = useCallback(() => useShareTitle(), [])
+  const useShareItemsMemo = useCallback(
+    () => useShareItems(openShareSheet),
+    [openShareSheet]
   )
 
   const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
@@ -70,6 +77,11 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     {
       useTitle: useQuizQuestionTitleMemo,
       useItems: useQuizQuestionItemsMemo,
+      twoColumns: false,
+    },
+    {
+      useTitle: useShareTitleMemo,
+      useItems: useShareItemsMemo,
       twoColumns: false,
     },
   ]

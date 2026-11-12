@@ -19,12 +19,7 @@ type ScaleItems = ReadonlyArray<
   React.ReactElement<OptionItemProps<ItemCallback>>
 >
 
-// The share item sits at the top of the scales menu until the menus have a
-// better home for it
-export const useScaleItems = (
-  itemTapHandler: ItemTapHandler,
-  shareTapHandler: () => void
-): ScaleItems => {
+export const useScaleItems = (itemTapHandler: ItemTapHandler): ScaleItems => {
   const activeDegreeIds = useHarpGuruStore((state) => state.activeDegreeIds)
   const { label: activeScaleId } = getScaleByDegreeIds(activeDegreeIds) || {
     id: '',
@@ -37,14 +32,6 @@ export const useScaleItems = (
     .filter((scale) => scale.category === ScaleCategory.Chord)
 
   return [
-    <OptionItem
-      key={'share-this-harp-face'}
-      value={'Share this harp face'}
-      isSelected={false}
-      itemTapHandler={shareTapHandler}
-      callbackParam={undefined}
-      twoColumns={false}
-    />,
     <OptionItem
       key={'clear-all-scales'}
       value={'Clear all'}
