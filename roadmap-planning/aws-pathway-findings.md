@@ -301,7 +301,8 @@ first design. What is left, in order:
    - **The pages' HTML carries `<meta httpEquiv="X-UA-Compatible" …>`**, the JSX spelling,
      which browsers ignore. Harmless, since the header it would set is obsolete, but it is a
      sign the template's head is written as JSX props; `http-equiv` is the attribute.
-4. **The app changes (step 7), back in this repo, none started.** On a branch off `master`:
+4. **The app changes (step 7): built 2026-11-12 on `178-app-deep-links`, awaiting the device
+   test.** What was asked, on a branch off `master`:
    - the share button, which writes the setup on screen with `writeSetupUrl` and draws its
      QR code on the device. A QR library is a new dependency, not yet chosen;
    - `associatedDomains` with `applinks:harpguru.com`, and an Android intent filter with
@@ -315,9 +316,36 @@ first design. What is left, in order:
    - the share button and the picker are app UI in `harpguru-core`, so it takes a version
      bump.
 
+   What was built, and decided with the user on 2026-11-12:
+   - **The QR library is `toqr`**: 13.6 KB, no dependencies, MIT, by an Expo maintainer,
+     and already in `yarn.lock` through `@expo/cli`. It returns the module grid, which the
+     app draws as one `View` per dark run of a row, so no SVG native module.
+   - **The share button is "Share this harp face", at the top of the scales menu**, for
+     now. An eighth tab on the right edge was too much risk for existing users: seven tabs
+     fill 98% of the height. The likely later home is a drawer gathering the three yellow
+     tabs, with share in it.
+   - **Paste or scan accepting `/s/web` is left for when paste or scan is built.** The app
+     has neither; step 7 only takes links from the operating system, and those refuse
+     `/s/web`.
+   - **"Open in the browser" hands over the link's own query, unchanged**, at `/s/web`, not
+     the canonical rewrite, so the logs count what the link said.
+   - **A harp face that takes a link is switched to Explore**, since a quiz would hide the
+     setup, and any cell taps still waiting to be applied are dropped.
+   - `expo config --type introspect` shows the generated entitlement,
+     `applinks:harpguru.com`, and one `VIEW` filter with `android:autoVerify="true"` on
+     `https://harpguru.com` at `android:path="/s/"`. `MainActivity` is `singleTask`, so a
+     link arriving while the app runs reaches the `url` listener.
+
    #4 is live since 2026-11-11, and on Apple's CDN since 2026-11-12 at the latest. A device
-   test of deep links needs the user to dispatch `test-build.yml`. Then a further `/cut-release` (v18.6.0 or
+   test of deep links needs the user to dispatch `test-build.yml`: `/s/?t=major-diatonic&k=C&p=2&s=blues`
+   opens the app, `/s/web?…` stays in the browser, and a hand-typed `/s?…` lands in the
+   browser. Then a further `/cut-release` (v18.6.0 or
    later), and merging that release to `master` sends it to open testing.
+
+Also open: **a copied `/s/web` address never opens the app.** After "open in the browser"
+the page's address stays at `/s/web`, so a teacher who copies it from the address bar shares
+a link that opens in the browser for everyone. A fix would be on the widget's side, such as
+writing `/s/` when the address is corrected. Not decided.
 
 Also open: **Harmonic minor's draw 6 and 10** want checking against the maker's layout
 before it gets a page; a fix there is a `harpparts` change, and reaches the app too.
