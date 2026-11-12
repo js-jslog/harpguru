@@ -15,6 +15,14 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.0.0...master) - yyyy-mm-dd
 
+### Added
+
+- MINOR: app links for setup links. `expo.ios.associatedDomains` claims
+  `applinks:harpguru.com`, whose AASA file opens exactly the path `/s/`, and
+  an Android intent filter with `android:autoVerify="true"` matches
+  `https://harpguru.com` at `android:path="/s/"` exactly. So `/s/web`, the
+  app's own hand-off to the browser, falls outside both
+
 ## [v11.0.0](https://github.com/js-jslog/harpguru/releases/tag/v18.0.0) - 2026-09-14
 
 ### Changed
