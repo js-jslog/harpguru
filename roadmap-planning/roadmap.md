@@ -525,6 +525,31 @@ Ships: a monthly report worth putting in front of Hohner. **Sit SAA around here.
 - Geo-aware Hohner affiliate links: **CloudFront Functions**, not Lambda@Edge, using the
   `CloudFront-Viewer-Country` header. Faster, and a fraction of the cost.
 - Privacy-label declaration and privacy policy copy.
+- **A privacy notice for harpguru.com, which shouldn't wait for the rest of this phase.**
+  Raised 2026-11-17. The CloudFront request logs (Phase B step 3) have recorded every page
+  view since the first widget deploy on 2026-11-11, each with the viewer's IP address, user
+  agent and full URL, and they are kept for 90 days. An IP address is personal data under
+  UK GDPR, so these logs are not the "anonymous and unlinkable" signal described under
+  "Non-obvious conclusions": they are personal data, held for a stated purpose, which
+  this phase makes counting views. Nothing on the site says so yet.
+  - The app's share button, from v18.6.0, sends visitors to `/s/` and `/s/web`, so the
+    number of people in those logs starts growing with that release.
+  - The notice needs to say what is logged, why, for how long and on what lawful basis
+    (most likely legitimate interests, for security and aggregate counts), and who to
+    contact. A short page at the apex, linked from the pages' chrome, is enough. It is
+    copy and a link, not a compliance programme.
+  - Worth deciding alongside it: whether the logs need IP addresses, or cookies, at all.
+    Phase D's counts need the path, the query, `x-host-header` and `c-country`, not who
+    asked. The logs are standard logging v2, whose delivery picks its fields from 70
+    allowed ones (see the findings doc's "Phase B step 3 facts"), so `c-ip` and
+    `cs(Cookie)`, which is a default field, can be left out at source. That's a change in
+    harpguru-cloud. Less personal data in the logs makes the notice shorter and the
+    lawful basis easier to argue. CloudFront fills in `c-country` itself, so leaving out
+    the IP address keeps the country counts.
+  - The app's store privacy answers are unaffected: the app sends nothing itself, and
+    sharing goes through the system share sheet only when the user taps it. This is about
+    the website.
+  - Not legal advice: check the wording against the ICO's guidance before publishing.
 
 AWS: Kinesis Firehose · S3 · Glue · Athena · QuickSight · EventBridge Scheduler · SES
 
