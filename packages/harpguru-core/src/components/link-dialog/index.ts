@@ -1,1 +1,6 @@
-export { LinkDialog, LinkDialogButton, getLinkDialogSizes } from './link-dialog'
+export {
+  LinkDialog,
+  LinkDialogButton,
+  getLinkDialogScale,
+  linkDialogColors,
+} from './link-dialog'

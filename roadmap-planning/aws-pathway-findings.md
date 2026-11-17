@@ -329,6 +329,13 @@ first design. What is left, in order:
      `/s/web`.
    - **"Open in the browser" hands over the link's own query, unchanged**, at `/s/web`, not
      the canonical rewrite, so the logs count what the link said.
+   - **The dialogs' design, settled 2026-11-17 on the design canvas**, page "App link
+     dialogs": buttons pink with a dark border and dark text (white on the app's pink is
+     1.4:1); text of 21 px and more and buttons at least 56 px tall, for the app's many
+     older users; and each dialog shows the setup in full, its name, four facts and the
+     twelve degrees as the legend draws them, beside the choices or the QR code.
+     The app turns off the phone's own text size, `allowFontScaling={false}`, and the
+     dialogs follow it; respecting it app-wide is a bigger job, not yet planned.
    - **A harp face that takes a link is switched to Explore**, since a quiz would hide the
      setup, and any cell taps still waiting to be applied are dropped.
    - `expo config --type introspect` shows the generated entitlement,

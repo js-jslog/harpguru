@@ -6,16 +6,23 @@ import { TextWithoutOSScale } from '../text-without-os-scale'
 import { getColors } from '../../utils'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
 
-// The sizes a link dialog is drawn at, from the window's short edge, so it
-// reads the same on a phone and a tablet
-export const getLinkDialogSizes = (): {
-  readonly fontSize: number
-  readonly gap: number
-  readonly shortEdge: number
-} => {
-  const { shortEdge } = getWindowDimensions()
-  return { fontSize: shortEdge / 24, gap: shortEdge / 40, shortEdge }
+// The link dialogs are drawn for a landscape phone of 844 by 390, with large
+// type and large buttons for the app's many older users. Every size is
+// multiplied by this, so a smaller screen shrinks the whole dialog to fit and
+// a tablet grows it, within limits.
+export const getLinkDialogScale = (): number => {
+  const { longEdge, shortEdge } = getWindowDimensions()
+  const scale = Math.min(shortEdge / 390, longEdge / 844)
+  return Math.min(Math.max(scale, 0.75), 1.5)
 }
+
+// The colours the dialogs add to the app's own
+export const linkDialogColors = {
+  text: '#222222',
+  quietText: '#555555',
+  outline: '#555555',
+  panel: '#f4f1f4',
+} as const
 
 type LinkDialogProps = {
   readonly isVisible: boolean
@@ -33,8 +40,8 @@ export const LinkDialog = ({
   children,
   testID,
 }: LinkDialogProps): ReactElement => {
-  const { gap } = getLinkDialogSizes()
-  const { pageColor, inertOutline } = getColors()
+  const scale = getLinkDialogScale()
+  const { pageColor } = getColors()
   const styles = StyleSheet.create({
     overlay: {
       flex: 1,
@@ -44,13 +51,12 @@ export const LinkDialog = ({
     },
     card: {
       backgroundColor: pageColor,
-      borderColor: inertOutline,
+      borderColor: linkDialogColors.outline,
       borderWidth: 1,
-      borderRadius: gap,
-      padding: gap * 1.5,
-      maxWidth: '90%',
+      borderRadius: 12 * scale,
+      padding: 16 * scale,
+      maxWidth: '95%',
       maxHeight: '95%',
-      alignItems: 'center',
     },
   })
 
@@ -75,29 +81,34 @@ type LinkDialogButtonProps = {
   readonly isPrimary?: boolean
 }
 
+// Pink with a dark border and dark text for the choices, white for the way
+// out. White on the app's pink is 1.4:1 and reads as disabled; dark on it is
+// 11:1.
 export const LinkDialogButton = ({
   label,
   onPress,
   isPrimary = false,
 }: LinkDialogButtonProps): ReactElement => {
-  const { fontSize, gap } = getLinkDialogSizes()
-  const { harpguruPink, pageColor, inertOutline } = getColors()
+  const scale = getLinkDialogScale()
+  const { harpguruPink, pageColor } = getColors()
   const styles = StyleSheet.create({
     button: {
-      marginTop: gap / 2,
-      paddingVertical: gap / 2,
-      paddingHorizontal: gap,
-      borderRadius: gap / 2,
-      borderWidth: 1,
-      borderColor: isPrimary ? harpguruPink : inertOutline,
+      flex: 1,
+      minHeight: 56 * scale,
+      paddingVertical: 6 * scale,
+      paddingHorizontal: 14 * scale,
+      borderRadius: 8 * scale,
+      borderWidth: 2,
+      borderColor: linkDialogColors.outline,
       backgroundColor: isPrimary ? harpguruPink : pageColor,
-      alignSelf: 'stretch',
+      justifyContent: 'center',
       alignItems: 'center',
     },
     label: {
-      fontSize,
-      color: isPrimary ? pageColor : inertOutline,
-      fontWeight: isPrimary ? 'bold' : 'normal',
+      fontSize: 21 * scale,
+      color: linkDialogColors.text,
+      fontWeight: isPrimary ? '700' : '500',
+      textAlign: 'center',
     },
   })
 

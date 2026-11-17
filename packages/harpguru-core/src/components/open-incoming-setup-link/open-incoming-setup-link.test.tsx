@@ -31,7 +31,7 @@ afterEach(() => jest.restoreAllMocks())
 
 test('Opened by a setup link, the app asks where it goes: each harp face, or the browser', async () => {
   const { getByText } = await renderOpenedBy(link, 3)
-  getByText('Bb harp · 3rd position · Major diatonic')
+  getByText('Blues scale')
   getByText('Harp face 1')
   getByText('Harp face 2')
   getByText('Harp face 3')

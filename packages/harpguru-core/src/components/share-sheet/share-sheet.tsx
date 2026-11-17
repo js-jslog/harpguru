@@ -1,12 +1,16 @@
-import { Share, StyleSheet } from 'react-native'
+import { Share, StyleSheet, View } from 'react-native'
 import React from 'react'
 import type { ReactElement } from 'react'
 import { writeSetupUrl } from 'harpstrata'
 
-import { TextWithoutOSScale } from '../text-without-os-scale'
+import { SetupSummaryPanel } from '../setup-summary-panel'
 import { QrCode } from '../qr-code'
-import { LinkDialog, LinkDialogButton, getLinkDialogSizes } from '../link-dialog'
-import { getColors, getSetupFromState } from '../../utils'
+import {
+  LinkDialog,
+  LinkDialogButton,
+  getLinkDialogScale,
+} from '../link-dialog'
+import { getSetupFromState } from '../../utils'
 import { useHarpGuruStore } from '../../store'
 
 type ShareSheetProps = {
@@ -14,29 +18,25 @@ type ShareSheetProps = {
   readonly onDismiss: () => void
 }
 
-// The setup on this harp face as a link, and its QR code, drawn on the
-// device. No network, no account.
+// The setup on this harp face as a link and its QR code, drawn on the device,
+// beside the setup in full so it can be checked before it is shown. No
+// network, no account. The link itself goes by Share link rather than on
+// screen, where the panel says the same in words.
 export const ShareSheet = ({
   isVisible,
   onDismiss,
 }: ShareSheetProps): ReactElement => {
   const activeHarpStrata = useHarpGuruStore((state) => state.activeHarpStrata)
   const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
-  const { fontSize, gap, shortEdge } = getLinkDialogSizes()
-  const { inertOutline } = getColors()
+  const scale = getLinkDialogScale()
   const styles = StyleSheet.create({
-    url: {
-      fontSize: fontSize * 0.6,
-      color: inertOutline,
-      marginTop: gap / 2,
-      maxWidth: shortEdge * 0.9,
-      textAlign: 'center',
-    },
+    row: { flexDirection: 'row', alignItems: 'center', gap: 20 * scale },
+    side: { gap: 10 * scale },
+    buttons: { flexDirection: 'row', gap: 10 * scale },
   })
 
-  const url = isVisible
-    ? writeSetupUrl(getSetupFromState({ activeHarpStrata, activeDisplayMode }))
-    : ''
+  const setup = getSetupFromState({ activeHarpStrata, activeDisplayMode })
+  const url = isVisible ? writeSetupUrl(setup) : ''
   const shareLink = () => {
     Share.share({ message: url, url }).catch(() => undefined)
   }
@@ -44,14 +44,16 @@ export const ShareSheet = ({
   return (
     <LinkDialog isVisible={isVisible} onDismiss={onDismiss} testID="share-sheet">
       {isVisible && (
-        <>
-          <QrCode value={url} size={shortEdge * 0.5} />
-          <TextWithoutOSScale style={styles.url} selectable testID="share-url">
-            {url}
-          </TextWithoutOSScale>
-          <LinkDialogButton label="Share link" onPress={shareLink} isPrimary />
-          <LinkDialogButton label="Close" onPress={onDismiss} />
-        </>
+        <View style={styles.row}>
+          <QrCode value={url} size={290 * scale} />
+          <View style={styles.side}>
+            <SetupSummaryPanel setup={setup} eyebrow="Scan or share" width={410} />
+            <View style={styles.buttons}>
+              <LinkDialogButton label="Share link" onPress={shareLink} isPrimary />
+              <LinkDialogButton label="Close" onPress={onDismiss} />
+            </View>
+          </View>
+        </View>
       )}
     </LinkDialog>
   )

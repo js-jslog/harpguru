@@ -29,10 +29,12 @@ test('Nothing is drawn while it is closed', () => {
   expect(queryByTestId('qr-code')).toBeNull()
 })
 
-test('It writes the harp face\'s setup as a canonical link, and draws its QR code', () => {
-  const { getByTestId } = renderWithSetup(true)
-  expect(getByTestId('share-url').props.children).toBe(link)
+test('It draws the harp face\'s QR code beside its setup in full', () => {
+  const { getByTestId, getByText, getAllByTestId } = renderWithSetup(true)
   expect(getByTestId('qr-code').props.children.length).toBeGreaterThan(0)
+  getByText('B♭')
+  getByText('3rd')
+  expect(getAllByTestId('degree-lit')).toHaveLength(6)
 })
 
 test('Share link hands the link to the system share sheet, and Close closes', () => {

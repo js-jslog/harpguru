@@ -3,7 +3,7 @@ import { readSetupUrl } from 'harpstrata'
 import type { Setup } from 'harpstrata'
 import { fireEvent, render } from '@testing-library/react-native'
 
-import { OpenSetupPicker, describeSetup } from './open-setup-picker'
+import { OpenSetupPicker } from './open-setup-picker'
 
 const setup = readSetupUrl(
   'https://harpguru.com/s/?t=major-diatonic&k=Bb&p=3&s=blues'
@@ -15,8 +15,22 @@ const destinations = (count: number) =>
     onChoose: jest.fn(),
   }))
 
-test('A setup is described by its harp key, position and tuning', () => {
-  expect(describeSetup(setup)).toBe('Bb harp · 3rd position · Major diatonic')
+test('The setup is shown in full beside the choices', () => {
+  const { getByText, getAllByTestId } = render(
+    <OpenSetupPicker
+      setup={setup}
+      harpFaces={destinations(2)}
+      onOpenInBrowser={jest.fn()}
+      onDismiss={jest.fn()}
+    />
+  )
+  getByText('Blues scale')
+  getByText('B♭')
+  getByText('3rd')
+  getByText('C')
+  getByText('Major diatonic')
+  expect(getAllByTestId('degree-lit')).toHaveLength(6)
+  expect(getAllByTestId('degree-unlit')).toHaveLength(6)
 })
 
 test('Nothing is shown until there is a setup to open', () => {
@@ -41,7 +55,6 @@ test('Every harp face it is given is offered, however many, and each goes to its
       onDismiss={jest.fn()}
     />
   )
-  getByText('Bb harp · 3rd position · Major diatonic')
 
   fireEvent.press(getByText('Harp face 3'))
   expect(harpFaces[2].onChoose).toHaveBeenCalledTimes(1)
