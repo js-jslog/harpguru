@@ -13,7 +13,33 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...master) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.6.0...master) - yyyy-mm-dd
+
+## [v13.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.6.0) - 2026-11-12
+
+### Added
+
+- MINOR: sharing a harp face, from a Share page in the scales menu, after
+  the scales and the quiz questions: the setup on
+  the harp face as a harpguru.com `/s/` link, written with `writeSetupUrl`,
+  and its QR code, drawn on the device, with the system share sheet for the
+  link. No network, no account. The menu is a stopgap home for it. The QR
+  code sits beside the setup in full, to check before showing it
+- MINOR: opening a setup link. Every link the app is handed is read with
+  `readSetupUrl`; anything it refuses, `/s/web` included, changes nothing. A
+  link it accepts asks where the setup goes: each harp face, listed from the
+  app's stores so any number can be offered, or the browser, which is handed
+  the link's own query unchanged at `/s/web`. A harp face that takes a setup
+  shows it in Explore, and is brought into view. The setup is shown in full
+  beside the choices: its name, harp key, position, song key and tuning, and
+  the twelve degrees drawn as the legend draws them, the lit ones filled
+- MINOR: the link dialogs are drawn for the app's many older users: text of
+  21 px and more, buttons at least 56 px tall, pink with a dark border and
+  dark text, since white on the app's pink is 1.4:1. They are sized for a
+  landscape phone and scale with the screen, shrinking to fit a smaller one
+- MINOR: `StoreProvider` takes an optional `store` made by its parent, so the
+  app can reach each harp face's store from outside it
+- MINOR: `toqr` as a dependency, to encode the QR code
 
 ## [v13.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0) - 2026-11-11
 
@@ -349,7 +375,8 @@ AT THIS POINT THE TAGS ARE NOW MADE IN THE `harpguru` PROJECT AND MAY NO LONGER 
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.6.0...HEAD)
+- [v13.3.0](https://github.com/js-jslog/harpguru/releases/tag/v18.6.0)
 - [v13.2.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0)
 - [v13.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.4.0)
 - [v13.0.0](https://github.com/js-jslog/harpguru/releases/tag/v17.0.0)
