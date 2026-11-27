@@ -13,7 +13,16 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 - Fixed: for any bug fixes.
 - Security: to invite users to upgrade in case of vulnerabilities.
 
-## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD) - yyyy-mm-dd
+## [Unreleased](https://github.com/js-jslog/harpguru/compare/v18.6.0...HEAD) - yyyy-mm-dd
+
+## [v1.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.6.0) - 2026-11-27
+
+### Added
+
+- MINOR: a link to harpguru.com's privacy notice, `/privacy`, on every page:
+  beside the "Deliberately simple" note on `/t/` and `/s/`, and beside the
+  attribution in an embed, opening in a new tab there. The pages' views are
+  logged, and the ICO expects people to be pointed to the notice
 
 ## [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0) - 2026-11-11
 
@@ -33,5 +42,6 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## Github release list
 
-- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.5.0...HEAD)
+- [unreleased](https://github.com/js-jslog/harpguru/compare/v18.6.0...HEAD)
+- [v1.1.0](https://github.com/js-jslog/harpguru/releases/tag/v18.6.0)
 - [v1.0.0](https://github.com/js-jslog/harpguru/releases/tag/v18.5.0)

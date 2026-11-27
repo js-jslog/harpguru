@@ -5,3 +5,4 @@
 export { StandaloneHarpFace } from './src/components/standalone-harp-face'
 export type { StandaloneHarpFaceProps } from './src/components/standalone-harp-face'
 export { getColors } from './src/utils'
+export { privacyNoticeUrl } from './src/constants'

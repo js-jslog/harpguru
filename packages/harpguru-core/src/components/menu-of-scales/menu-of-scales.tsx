@@ -1,7 +1,8 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import type { DegreeIds } from 'harpparts'
 import { MaterialIcons } from '@expo/vector-icons'
 
+import { ShareSheet } from '../share-sheet'
 import { MemoOptionStack } from '../option-stack'
 import { MenuFace } from '../menu-face'
 import { MenuAccessOpen } from '../menu-access-open'
@@ -19,6 +20,8 @@ import {
   useScaleItems,
   useQuizQuestionTitle,
   useQuizQuestionItems,
+  useShareTitle,
+  useShareItems,
 } from './hooks'
 
 export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
@@ -34,10 +37,18 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
     },
     [store]
   )
+  const [isShareSheetVisible, setIsShareSheetVisible] = useState(false)
+  const openShareSheet = useCallback(() => setIsShareSheetVisible(true), [])
+  const closeShareSheet = useCallback(() => setIsShareSheetVisible(false), [])
   const useScalesTitleMemo = useCallback(() => useScaleTitle(), [])
   const useScalesItemsMemo = useCallback(
     () => useScaleItems(scaleItemTapHandler),
     [scaleItemTapHandler]
+  )
+  const useShareTitleMemo = useCallback(() => useShareTitle(), [])
+  const useShareItemsMemo = useCallback(
+    () => useShareItems(openShareSheet),
+    [openShareSheet]
   )
 
   const useQuizQuestionTitleMemo = useCallback(() => useQuizQuestionTitle(), [])
@@ -68,6 +79,11 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
       useItems: useQuizQuestionItemsMemo,
       twoColumns: false,
     },
+    {
+      useTitle: useShareTitleMemo,
+      useItems: useShareItemsMemo,
+      twoColumns: false,
+    },
   ]
 
   const dynamicSizes = useHarpGuruStore((state) => state.dynamicSizes)
@@ -83,6 +99,10 @@ export const MenuOfScales = (menuProps: MenuProps): React.ReactElement => {
           color={getColors().homeRowsColor}
         />
       </MenuAccessOpen>
+      <ShareSheet
+        isVisible={isShareSheetVisible}
+        onDismiss={closeShareSheet}
+      />
     </Menu>
   )
 }

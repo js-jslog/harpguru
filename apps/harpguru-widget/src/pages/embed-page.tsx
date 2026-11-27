@@ -5,6 +5,7 @@ import { readSetupQuery, writeSetupQuery, writeSetupUrl } from 'harpstrata'
 import { StandaloneHarpFace } from 'harpguru-core/standalone'
 
 import { colors, chromeStyles, linkStyle } from '../chrome/styles'
+import { PrivacyLink } from '../chrome/privacy-link'
 import { isUprightWindow } from '../chrome/orientation'
 import { correctAddress } from '../address'
 
@@ -38,6 +39,7 @@ export const EmbedPage = (): ReactElement => {
         >
           Harp Guru
         </a>
+        <PrivacyLink fontSize={12} opensNewTab />
       </View>
     </View>
   )
@@ -45,7 +47,10 @@ export const EmbedPage = (): ReactElement => {
 
 const styles = StyleSheet.create({
   attribution: {
-    alignItems: 'flex-end',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'baseline',
+    columnGap: 10,
     paddingHorizontal: 8,
     paddingVertical: 2,
   },

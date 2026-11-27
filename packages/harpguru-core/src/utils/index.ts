@@ -15,3 +15,8 @@ export { reduceFullMatrixToViewableMatrix } from './reduce-fullmatrix-to-viewabl
 export { reduceLayoutFactsToDynamicSizes } from './reduce-layoutfacts-to-dynamicsizes'
 export { reduceToStaticSizes } from './reduce-to-staticsizes'
 export { reduceToResizedSizes } from './reduce-to-resized-sizes'
+export { getQrRuns } from './get-qr-runs'
+export type { QrRun, QrRuns } from './get-qr-runs'
+export { getSetupFromState, getStateFromSetup } from './setup-from-state'
+export { getSetupSummary } from './get-setup-summary'
+export type { SetupSummary, SetupSummaryDegree } from './get-setup-summary'
