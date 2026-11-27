@@ -527,6 +527,6 @@ const styles = StyleSheet.create({
     minHeight: 44,
   },
   centred: {
-    textAlign: 'center',
+    justifyContent: 'center',
   },
 })

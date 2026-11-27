@@ -8,6 +8,7 @@ import { QrCode } from '../qr-code'
 import {
   LinkDialog,
   LinkDialogButton,
+  LinkDialogPrivacyLine,
   getLinkDialogScale,
 } from '../link-dialog'
 import { getSetupFromState } from '../../utils'
@@ -30,6 +31,7 @@ export const ShareSheet = ({
   const activeDisplayMode = useHarpGuruStore((state) => state.activeDisplayMode)
   const scale = getLinkDialogScale()
   const styles = StyleSheet.create({
+    contents: { gap: 8 * scale },
     row: { flexDirection: 'row', alignItems: 'center', gap: 20 * scale },
     side: { gap: 10 * scale },
     buttons: { flexDirection: 'row', gap: 10 * scale },
@@ -44,15 +46,18 @@ export const ShareSheet = ({
   return (
     <LinkDialog isVisible={isVisible} onDismiss={onDismiss} testID="share-sheet">
       {isVisible && (
-        <View style={styles.row}>
-          <QrCode value={url} size={290 * scale} />
-          <View style={styles.side}>
-            <SetupSummaryPanel setup={setup} eyebrow="Scan or share" width={410} />
-            <View style={styles.buttons}>
-              <LinkDialogButton label="Share link" onPress={shareLink} isPrimary />
-              <LinkDialogButton label="Close" onPress={onDismiss} />
+        <View style={styles.contents}>
+          <View style={styles.row}>
+            <QrCode value={url} size={290 * scale} />
+            <View style={styles.side}>
+              <SetupSummaryPanel setup={setup} eyebrow="Scan or share" width={410} />
+              <View style={styles.buttons}>
+                <LinkDialogButton label="Share link" onPress={shareLink} isPrimary />
+                <LinkDialogButton label="Close" onPress={onDismiss} />
+              </View>
             </View>
           </View>
+          <LinkDialogPrivacyLine />
         </View>
       )}
     </LinkDialog>

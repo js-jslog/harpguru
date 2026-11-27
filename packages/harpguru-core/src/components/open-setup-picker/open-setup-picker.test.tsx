@@ -1,3 +1,4 @@
+import { Linking } from 'react-native'
 import React from 'react'
 import { readSetupUrl } from 'harpstrata'
 import type { Setup } from 'harpstrata'
@@ -77,4 +78,19 @@ test('The browser and cancel are always offered', () => {
   expect(onOpenInBrowser).toHaveBeenCalledTimes(1)
   fireEvent.press(getByText('Cancel'))
   expect(onDismiss).toHaveBeenCalledTimes(1)
+})
+
+test('The privacy notice is a tap away, since the browser choice opens harpguru.com', () => {
+  const openURL = jest.spyOn(Linking, 'openURL').mockResolvedValue(true)
+  const { getByText } = render(
+    <OpenSetupPicker
+      setup={setup}
+      harpFaces={destinations(2)}
+      onOpenInBrowser={jest.fn()}
+      onDismiss={jest.fn()}
+    />
+  )
+  fireEvent.press(getByText('Privacy notice'))
+  expect(openURL).toHaveBeenCalledWith('https://harpguru.com/privacy')
+  openURL.mockRestore()
 })

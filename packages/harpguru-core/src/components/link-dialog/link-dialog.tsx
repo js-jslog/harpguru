@@ -1,10 +1,11 @@
-import { Modal, Pressable, StyleSheet, View } from 'react-native'
+import { Linking, Modal, Pressable, StyleSheet, View } from 'react-native'
 import React from 'react'
 import type { ReactElement, ReactNode } from 'react'
 
 import { TextWithoutOSScale } from '../text-without-os-scale'
 import { getColors } from '../../utils'
 import { getWindowDimensions } from '../../packages/get-window-dimensions'
+import { privacyNoticeUrl } from '../../constants'
 
 // The link dialogs are drawn for a landscape phone of 844 by 390, with large
 // type and large buttons for the app's many older users. Every size is
@@ -116,5 +117,45 @@ export const LinkDialogButton = ({
     <Pressable style={styles.button} onPress={onPress} accessibilityRole="button">
       <TextWithoutOSScale style={styles.label}>{label}</TextWithoutOSScale>
     </Pressable>
+  )
+}
+
+// The foot of each link dialog. Both send people to harpguru.com, whose
+// privacy notice covers what the site logs, and the ICO expects people to be
+// pointed to a notice, not just able to find it.
+export const LinkDialogPrivacyLine = (): ReactElement => {
+  const scale = getLinkDialogScale()
+  const styles = StyleSheet.create({
+    row: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    text: { fontSize: 15 * scale, color: linkDialogColors.quietText },
+    link: {
+      fontSize: 15 * scale,
+      color: linkDialogColors.text,
+      textDecorationLine: 'underline',
+    },
+    // The text is small, so the press reaches beyond it
+    press: { paddingVertical: 6 * scale, paddingHorizontal: 4 * scale },
+  })
+
+  return (
+    <View style={styles.row}>
+      <TextWithoutOSScale style={styles.text}>
+        Links open harpguru.com ·
+      </TextWithoutOSScale>
+      <Pressable
+        style={styles.press}
+        onPress={() => {
+          Linking.openURL(privacyNoticeUrl).catch(() => undefined)
+        }}
+        accessibilityRole="link"
+        hitSlop={8 * scale}
+      >
+        <TextWithoutOSScale style={styles.link}>Privacy notice</TextWithoutOSScale>
+      </Pressable>
+    </View>
   )
 }

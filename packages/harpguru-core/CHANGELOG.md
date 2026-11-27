@@ -37,6 +37,9 @@ and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0
   21 px and more, buttons at least 56 px tall, pink with a dark border and
   dark text, since white on the app's pink is 1.4:1. They are sized for a
   landscape phone and scale with the screen, shrinking to fit a smaller one
+- MINOR: both link dialogs end with "Links open harpguru.com · Privacy
+  notice", which opens the site's privacy notice. `privacyNoticeUrl` is
+  exported from `harpguru-core/standalone` for the pages to link to as well
 - MINOR: `StoreProvider` takes an optional `store` made by its parent, so the
   app can reach each harp face's store from outside it
 - MINOR: `toqr` as a dependency, to encode the QR code

@@ -8,6 +8,7 @@ import { SetupSummaryPanel } from '../setup-summary-panel'
 import {
   LinkDialog,
   LinkDialogButton,
+  LinkDialogPrivacyLine,
   getLinkDialogScale,
   linkDialogColors,
 } from '../link-dialog'
@@ -39,7 +40,7 @@ export const OpenSetupPicker = ({
 }: OpenSetupPickerProps): ReactElement => {
   const scale = getLinkDialogScale()
   const styles = StyleSheet.create({
-    contents: { gap: 12 * scale },
+    contents: { gap: 8 * scale },
     title: {
       fontSize: 23 * scale,
       fontWeight: '700',
@@ -82,6 +83,7 @@ export const OpenSetupPicker = ({
               <LinkDialogButton label="Cancel" onPress={onDismiss} />
             </View>
           </View>
+          <LinkDialogPrivacyLine />
         </View>
       )}
     </LinkDialog>

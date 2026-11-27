@@ -1,4 +1,4 @@
-import { Share } from 'react-native'
+import { Linking, Share } from 'react-native'
 import React from 'react'
 import { readSetupUrl } from 'harpstrata'
 import type { Setup } from 'harpstrata'
@@ -49,4 +49,11 @@ test('Share link hands the link to the system share sheet, and Close closes', ()
 
   fireEvent.press(getByText('Close'))
   expect(onDismiss).toHaveBeenCalledTimes(1)
+})
+
+test('The privacy notice is a tap away, since the link it shares opens harpguru.com', () => {
+  const openURL = jest.spyOn(Linking, 'openURL').mockResolvedValue(true)
+  const { getByText } = renderWithSetup(true)
+  fireEvent.press(getByText('Privacy notice'))
+  expect(openURL).toHaveBeenCalledWith('https://harpguru.com/privacy')
 })

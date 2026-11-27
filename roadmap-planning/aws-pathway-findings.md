@@ -385,6 +385,10 @@ first design. What is left, in order:
      twelve degrees as the legend draws them, beside the choices or the QR code.
      The app turns off the phone's own text size, `allowFontScaling={false}`, and the
      dialogs follow it; respecting it app-wide is a bigger job, not yet planned.
+   - **The privacy notice is linked, as step 5 asked**, 2026-11-27: "Links open
+     harpguru.com · Privacy notice" at the foot of both dialogs, and a "Privacy" link
+     beside the "Deliberately simple" note on `/t/` and `/s/` and beside an embed's
+     attribution. The widget's next deploy, on the merge, puts it on the pages.
    - **A harp face that takes a link is switched to Explore**, since a quiz would hide the
      setup, and any cell taps still waiting to be applied are dropped.
    - `expo config --type introspect` shows the generated entitlement,
