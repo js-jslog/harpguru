@@ -526,6 +526,9 @@ Ships: a monthly report worth putting in front of Hohner. **Sit SAA around here.
   `CloudFront-Viewer-Country` header. Faster, and a fraction of the cost.
 - Privacy-label declaration and privacy policy copy.
 - **A privacy notice for harpguru.com, which shouldn't wait for the rest of this phase.**
+  *Done 2026-11-27, ahead of the phase: `https://harpguru.com/privacy`, and the logs no longer
+  record IP addresses. See the findings doc's "Phase B step 5". The ICO's fee self-assessment
+  said no fee is due while nothing earns money: retake it before the affiliate links.*
   Raised 2026-11-17. The CloudFront request logs (Phase B step 3) have recorded every page
   view since the first widget deploy on 2026-11-11, each with the viewer's IP address, user
   agent and full URL, and they are kept for 90 days. An IP address is personal data under

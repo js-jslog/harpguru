@@ -196,6 +196,55 @@ new workspace needs both, or it will be linted inconsistently.
 
 ## Verified findings
 
+### Phase B step 5: the privacy notice, and no IP addresses in the logs, 2026-11-27
+
+Asked for by the roadmap's Phase D bullet "A privacy notice for harpguru.com, which shouldn't
+wait for the rest of this phase" (#187). Built and deployed from harpguru-cloud's
+`1-privacy-notice`, as its Phase B step 5; the detail is in its `docs/plans/phase-b.md`.
+
+- **The notice is live at `https://harpguru.com/privacy`.** Link to that exact address from the
+  pages' chrome and the app: CloudFront maps `/privacy` to the file, and only that path. The
+  landing page and the site's 404 page link to it already. It names the user as controller and
+  gives `contact@harpguru.com`, both the user's choices; wording approved by the user. Not legal
+  advice.
+- **What the ICO says a notice must hold**, read 2026-11-27 from its "right to be informed"
+  guidance, and covered: who the controller is and how to contact them; the purposes; the
+  lawful basis, and for legitimate interests, what the interests are; how long data is kept;
+  the rights, with the right to object "brought to people's attention clearly and separately";
+  and the right to complain to the ICO. A notice on the site is only enough if people are
+  "proactively" made aware of it, which is what the links from the pages and the app are for.
+  The ICO's head office moved from Wilmslow to Manchester in September 2026, so the notice
+  links to its complaints page rather than giving an address. Its guidance is marked "under
+  review" after the Data (Use and Access) Act.
+- **The logs had three fields holding an IP address, not one**: `c-ip`; `x-forwarded-for`,
+  which AWS's field reference says holds "the IP address of the viewer that originated the
+  request" when a proxy is in between; and `c-port`, which means nothing without the address.
+  All three are gone, leaving 31 fields. `cs(Cookie)` was already left out at step 3: the
+  roadmap's bullet assumed it was still logged. The user agent and referrer stay, by the user's
+  choice: Phase D needs them to filter bots and count embeds per partner site.
+- **The country survives.** AWS documents `c-country` as "determined by the viewer's IP
+  address", worked out at the edge, and nothing ties it to `c-ip` being logged.
+  harpguru-cloud's `smoke-request-logs.sh` checked a real line: a request at 22:08 UTC, minutes
+  after the deploy, landed within 6 minutes with no IP field and `c-country` `GB`. So the change
+  took effect at once, well inside the 12 hours AWS allows.
+- **A delivery's fields change in place.** `UpdateDeliveryConfiguration` takes `recordFields`,
+  and CloudFormation updated the `AWS::Logs::Delivery` without replacing it, in 9 seconds.
+- **The older files keep their IP addresses** and age out under the 90-day rule, the last by
+  the end of February 2027: the user's choice, over deleting the first weeks of views. The
+  notice says the addresses were recorded from 9 to 27 November 2026.
+- **The rest is probably still personal data, weakly.** The ICO counts IP addresses as
+  "online identifiers", and its test is whether data "on their own or in combination with other
+  information… may be used to distinguish one user from another"; where unsure, "treat the
+  information collected as though it is personal data". On a quiet site, a user agent, a
+  country and a time to the second could single out a visitor. So the notice stays, and the
+  lawful basis is legitimate interests. Dropping the user agent and referrer too would make the
+  logs much harder to tie to anyone, at the cost above; the user chose to keep them.
+- **No data protection fee is due yet.** The user took the ICO's fee self-assessment on
+  2026-11-27, answering "not started trading", since nothing in Harp Guru earns money, and it
+  concluded: "You don't need to pay a fee yet … Once you start trading you should retake this
+  self assessment." **Retake it before anything earns money**, such as Phase D's affiliate
+  links or a paid report.
+
 ### Phase B: the widget built, and checked under the live CSP, 2026-11-09
 
 `apps/harpguru-widget`, built on `178-build-the-harp-face-widget`, which merges to `master`
