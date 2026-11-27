@@ -226,10 +226,9 @@ wait for the rest of this phase" (#187). Built and deployed from harpguru-cloud'
   address", worked out at the edge, and nothing ties it to `c-ip` being logged.
   harpguru-cloud's `smoke-request-logs.sh` checked a real line: a request at 22:08 UTC, minutes
   after the deploy, landed within 6 minutes with no IP field and `c-country` `GB`. So the change
-  took effect at once, not within AWS's 12 hours.
+  took effect at once, well inside the 12 hours AWS allows.
 - **A delivery's fields change in place.** `UpdateDeliveryConfiguration` takes `recordFields`,
-  and CloudFormation updated the `AWS::Logs::Delivery` without replacing it, in 9 seconds. AWS
-  says logging changes "take effect within 12 hours".
+  and CloudFormation updated the `AWS::Logs::Delivery` without replacing it, in 9 seconds.
 - **The older files keep their IP addresses** and age out under the 90-day rule, the last by
   the end of February 2027: the user's choice, over deleting the first weeks of views. The
   notice says the addresses were recorded from 9 to 27 November 2026.
